@@ -10,18 +10,18 @@ xC3FFF0E decided to create an app where people can easily manage and install all
 
 Our aim is to make a simple yet very useful manager app for everyone's convenience. On this second version of the manager app, we added a couple of features such as the ability to uninstall, open the app's settings directly, clear the offline cached datas and launch the app. We hope that all users find these newly added features very useful.
 
-# Manager Developer
+# Developer
 
 xC3FFF0E 
 
-# Manager Contributers  
+# Contributers  
 
 Sherlock Holmes  
 jetfire  
 meech  
 cooldude69  
 
-# Manager Testers  
+# Testers  
 
 RishavG  
 meech  
