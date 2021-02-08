@@ -18,4 +18,33 @@ xC3FFF0E
 MrDude (Retired)  
 Sherlock Holmes  
 
+# Telegram Support Team  
 
+meech  
+cooldude69  
+roosphx  
+Sherlock Holmes  
+
+# Mod/Manager Testers  
+
+RishavG  
+meech  
+jetfire  
+Sherlock Holmes  
+Wu Tang Clam  
+Zach  
+aha  
+100RABH  
+cooldude69  
+Tunelover  
+
+# Mobilism Team  
+
+Balatan  
+RishavG  
+meech  
+Tunelover  
+
+# FORUM.APK-RELEASE.NET Team  
+
+Balatan  
