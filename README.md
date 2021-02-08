@@ -1,4 +1,4 @@
-For contributers, pull request should be done on the "Developer" branch. The "main" branch is for the release.
+NOTE: For contributers, pull request should be done on the "Developer" branch. The "main" branch is for the release.
 
 # xManager (Spotify)
 
