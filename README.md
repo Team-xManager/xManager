@@ -48,3 +48,12 @@ Tunelover
 # FORUM.APK-RELEASE.NET Team  
 
 Balatan  
+
+# xSpotify Manager (Old Manager)  
+
+cryiotic (Manager Icon)  
+farish278 (Manager Icon)  
+Sherlock Holmes  
+jetfire  
+100RABH  
+Light Yagami  
