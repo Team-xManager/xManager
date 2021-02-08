@@ -8,9 +8,10 @@ The successor of our previous manager app called "xSpotify Manager" that was rel
 
 xC3FFF0E decided to create an app where people can easily download and install all modified versions of the spotify app from their devices. Our aim is to make a simple yet very useful manager app where people can easily understand how to use or to operate things from downloading to installing the modified .apks.
 
-# Credits
+# xManager Developer
 
-Spotify Mod Developers:
-•xC3FFF0E
-•MrDude (Retired)
-•Sherlock Holmes
+xC3FFF0E  
+MrDude (Retired)  
+Sherlock Holmes  
+
+
