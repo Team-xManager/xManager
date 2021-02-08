@@ -11,6 +11,10 @@ xC3FFF0E decided to create an app where people can easily download and install a
 # xManager Developer
 
 xC3FFF0E  
+
+# Spotify Mod Developers  
+
+xC3FFF0E  
 MrDude (Retired)  
 Sherlock Holmes  
 
