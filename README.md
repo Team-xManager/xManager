@@ -8,7 +8,7 @@ The successor from our previous manager app called "xSpotify Manager" that was r
 
 xC3FFF0E decided to create an app where people can easily download and install all modified versions of the spotify app from their devices.  
 
-Our aim is to make a simple yet very useful manager app for everyone's convenience.On this second version of the manager app, we added a couple of features such as the ability to uninstall, open the app's settings directly, clear the offline cached datas and launch the app. We hope that all users find these newly added features very useful.
+Our aim is to make a simple yet very useful manager app for everyone's convenience. On this second version of the manager app, we added a couple of features such as the ability to uninstall, open the app's settings directly, clear the offline cached datas and launch the app. We hope that all users find these newly added features very useful.
 
 # xManager Developer
 
