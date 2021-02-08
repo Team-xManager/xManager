@@ -14,20 +14,7 @@ Our aim is to make a simple yet very useful manager app for everyone's convenien
 
 xC3FFF0E  
 
-# Spotify Mod Developers  
-
-xC3FFF0E  
-MrDude (Retired)  
-Sherlock Holmes  
-
-# Telegram Support Team  
-
-meech  
-cooldude69  
-roosphx  
-Sherlock Holmes  
-
-# Mod/Manager Testers  
+# Manager Testers  
 
 RishavG  
 meech  
@@ -39,17 +26,6 @@ aha
 100RABH  
 cooldude69  
 Tunelover  
-
-# Mobilism Team  
-
-Balatan  
-RishavG  
-meech  
-Tunelover  
-
-# FORUM.APK-RELEASE.NET Team  
-
-Balatan  
 
 # xSpotify Manager (Old Manager)  
 
