@@ -1,3 +1,5 @@
+For contributers, pull request should be done on the "Developer" branch. The "main" branch is for the release.
+
 # xManager (Spotify)
 
 An application where you can manage and install all versions of the spotify app.
