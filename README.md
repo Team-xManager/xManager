@@ -16,7 +16,7 @@ Our aim is to make a simple yet very useful manager app for everyone's convenien
 
 xC3FFF0E 
 
-# Contributers  
+# Contributors  
 
 Sherlock Holmes  
 jetfire  
