@@ -4,6 +4,10 @@ For contributors, pull request should be done on the "Developer" branch. The "ma
 
 An application where you can manage and install all versions of the spotify app.
 
+# How It Works
+
+Depending on what variant or version the user wants to install, the manager will directly fetch that selected url data. Once completed, the selected file can now be installed.
+
 # About The Project
 
 The successor from our previous manager app called "xSpotify Manager" that was released way back 2020 developed by xC3FFF0E and with the help of Sherlock Holmes.
