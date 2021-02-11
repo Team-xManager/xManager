@@ -2,7 +2,7 @@ For contributors, pull request should be done on the "Developer" branch. The "ma
 
 # xManager (Spotify)
 
-An application where you can manage and install all versions of the spotify app.
+An android application where you can manage and install all versions of the spotify app.
 
 # How It Works
 
