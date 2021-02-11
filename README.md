@@ -6,7 +6,9 @@ An application where you can manage and install all versions of the spotify app.
 
 # How It Works
 
-Depending on what variant or version the user wants to install, the manager will directly fetch that selected url data. Once completed, the selected file can now be installed.
+Depending on what variant or version the user wants to install, the manager will directly fetch that selected url data. Once completed, the selected file can now be installed.  
+
+All links are available publicly. IF, you know what it means then you know what it is.
 
 # About The Project
 
