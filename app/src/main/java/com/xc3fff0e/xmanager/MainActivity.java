@@ -1,35 +1,26 @@
 package com.xc3fff0e.xmanager;
 
-import com.xc3fff0e.xmanager.SplashActivity;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.annotation.*;
 import android.app.*;
 import android.os.*;
 import android.view.*;
 import android.view.View.*;
 import android.widget.*;
 import android.content.*;
-import android.content.res.*;
 import android.graphics.*;
-import android.graphics.drawable.*;
 import android.media.*;
 import android.net.*;
 import android.text.*;
-import android.text.style.*;
 import android.util.*;
 import android.webkit.*;
 import android.animation.*;
 import android.view.animation.*;
 import java.util.*;
-import java.util.regex.*;
 import java.text.*;
-import org.json.*;
 import java.util.HashMap;
 import java.util.ArrayList;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -52,31 +43,19 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
-import com.google.firebase.messaging.FirebaseMessaging;
-import androidx.core.content.FileProvider;
-import java.io.File;
 import android.widget.CompoundButton;
 import android.view.View;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.graphics.Typeface;
 import android.content.ClipData;
 import android.content.ClipboardManager;
-import com.wuyr.rippleanimation.*;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.DialogFragment;
 import androidx.core.content.ContextCompat;
 import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.content.pm.PackageManager;
 
-
-public class MainActivity extends  AppCompatActivity  { 
+public class MainActivity extends AppCompatActivity {
 	
 	private Timer _timer = new Timer();
 	private FirebaseDatabase _firebase = FirebaseDatabase.getInstance();
@@ -105,7 +84,7 @@ public class MainActivity extends  AppCompatActivity  {
 	private LinearLayout main_body_optimization;
 	private ScrollView main_scroll_settings;
 	private ScrollView main_scroll_about;
-	private SwipeRefreshLayout main_refresh_layout;
+	private  main_refresh_layout;
 	private TextView title_header;
 	private LinearLayout box_header_tab;
 	private LinearLayout box_switch;
@@ -312,12 +291,11 @@ public class MainActivity extends  AppCompatActivity  {
 	private ChildEventListener _xManager_Update_child_listener;
 	private DatabaseReference Mod_Changelogs = _firebase.getReference("Mod_Changelogs");
 	private ChildEventListener _Mod_Changelogs_child_listener;
-	
-	private OnCompleteListener xManager_Notification_onCompleteListener;
+	private  xManager_Notification;
 	private DatabaseReference xManager_Changelogs = _firebase.getReference("xManager_Changelogs");
 	private ChildEventListener _xManager_Changelogs_child_listener;
-	private FileProvider FileProvider;
-	private File File_Fixer;
+	private  FileProvider;
+	private  File_Fixer;
 	private Intent Source = new Intent();
 	private DatabaseReference Regular_Mod = _firebase.getReference("Regular_Mod");
 	private ChildEventListener _Regular_Mod_child_listener;
@@ -333,8 +311,8 @@ public class MainActivity extends  AppCompatActivity  {
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.main);
-		initialize(_savedInstanceState);
 		com.google.firebase.FirebaseApp.initializeApp(this);
+		initialize(_savedInstanceState);
 		if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED
 		|| ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
 			ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1000);
@@ -357,7 +335,7 @@ public class MainActivity extends  AppCompatActivity  {
 		main_body_optimization = (LinearLayout) findViewById(R.id.main_body_optimization);
 		main_scroll_settings = (ScrollView) findViewById(R.id.main_scroll_settings);
 		main_scroll_about = (ScrollView) findViewById(R.id.main_scroll_about);
-		main_refresh_layout = (SwipeRefreshLayout) findViewById(R.id.main_refresh_layout);
+		main_refresh_layout = () findViewById(R.id.main_refresh_layout);
 		title_header = (TextView) findViewById(R.id.title_header);
 		box_header_tab = (LinearLayout) findViewById(R.id.box_header_tab);
 		box_switch = (LinearLayout) findViewById(R.id.box_switch);
@@ -563,7 +541,7 @@ public class MainActivity extends  AppCompatActivity  {
 		box_switch.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				RippleAnimation.create(box_switch).setDuration((long)700).start();
+				
 				main_body_optimization.setVisibility(View.GONE);
 				main_scroll_settings.setVisibility(View.VISIBLE);
 				main_scroll_about.setVisibility(View.GONE);
@@ -732,11 +710,11 @@ public class MainActivity extends  AppCompatActivity  {
 				if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/") && FileUtil.isExistFile(apk_path_location.getText().toString())) {
 					FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/");
 					FileUtil.deleteFile(apk_path_location.getText().toString());
-					SketchwareUtil.CustomToast(getApplicationContext(), "Successfully deleted", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+					
 				}
 				else {
 					if (!(FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/") && FileUtil.isExistFile(apk_path_location.getText().toString()))) {
-						SketchwareUtil.CustomToast(getApplicationContext(), "Directory folders not found or deleted", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+						
 					}
 				}
 			}
@@ -761,14 +739,14 @@ public class MainActivity extends  AppCompatActivity  {
 				yellow_switch.setChecked(false);
 				gray_switch.setChecked(false);
 				apk_path_location.setText("/storage/emulated/0/xManager/");
-				SketchwareUtil.CustomToast(getApplicationContext(), "Back to default settings", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+				
 			}
 		});
 		
 		box_settings_icon_close.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				RippleAnimation.create(box_settings_icon_close).setDuration((long)700).start();
+				
 				main_body_optimization.setVisibility(View.GONE);
 				main_scroll_settings.setVisibility(View.GONE);
 				main_scroll_about.setVisibility(View.GONE);
@@ -791,7 +769,7 @@ public class MainActivity extends  AppCompatActivity  {
 				}
 				else {
 					LIST_REFRESH.edit().putString("UPDATE", "OFF").commit();
-					SketchwareUtil.CustomToast(getApplicationContext(), "NOTE: You can manually refresh the list by pulling down on the main screen", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+					
 				}
 			}
 		});
@@ -817,7 +795,7 @@ public class MainActivity extends  AppCompatActivity  {
 				final boolean _isChecked = _param2;
 				if (_isChecked) {
 					COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_ON").commit();
-					SketchwareUtil.CustomToast(getApplicationContext(), "URL MODE ACTIVATED", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+					
 				}
 				else {
 					COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_OFF").commit();
@@ -867,9 +845,9 @@ public class MainActivity extends  AppCompatActivity  {
 				final boolean _isChecked = _param2;
 				if (_isChecked) {
 					THEME.edit().putString("THEME", "1").commit();
-					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
-					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
-					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
+					
+					
+					
 					green_switch.setChecked(true);
 					purple_switch.setChecked(false);
 					red_switch.setChecked(false);
@@ -881,9 +859,9 @@ public class MainActivity extends  AppCompatActivity  {
 				else {
 					if (purple_switch.isChecked()) {
 						THEME.edit().putString("THEME", "2").commit();
-						main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
-						main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
-						main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
+						
+						
+						
 						green_switch.setChecked(false);
 						purple_switch.setChecked(true);
 						red_switch.setChecked(false);
@@ -895,9 +873,9 @@ public class MainActivity extends  AppCompatActivity  {
 					else {
 						if (red_switch.isChecked()) {
 							THEME.edit().putString("THEME", "3").commit();
-							main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
-							main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
-							main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
+							
+							
+							
 							green_switch.setChecked(false);
 							purple_switch.setChecked(false);
 							red_switch.setChecked(true);
@@ -909,9 +887,9 @@ public class MainActivity extends  AppCompatActivity  {
 						else {
 							if (blue_switch.isChecked()) {
 								THEME.edit().putString("THEME", "4").commit();
-								main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
-								main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
-								main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
+								
+								
+								
 								green_switch.setChecked(false);
 								purple_switch.setChecked(false);
 								red_switch.setChecked(false);
@@ -923,9 +901,9 @@ public class MainActivity extends  AppCompatActivity  {
 							else {
 								if (orange_switch.isChecked()) {
 									THEME.edit().putString("THEME", "5").commit();
-									main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
-									main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
-									main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
+									
+									
+									
 									green_switch.setChecked(false);
 									purple_switch.setChecked(false);
 									red_switch.setChecked(false);
@@ -937,9 +915,9 @@ public class MainActivity extends  AppCompatActivity  {
 								else {
 									if (yellow_switch.isChecked()) {
 										THEME.edit().putString("THEME", "6").commit();
-										main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
-										main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
-										main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
+										
+										
+										
 										green_switch.setChecked(false);
 										purple_switch.setChecked(false);
 										red_switch.setChecked(false);
@@ -951,9 +929,9 @@ public class MainActivity extends  AppCompatActivity  {
 									else {
 										if (gray_switch.isChecked()) {
 											THEME.edit().putString("THEME", "7").commit();
-											main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
-											main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
-											main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
+											
+											
+											
 											green_switch.setChecked(false);
 											purple_switch.setChecked(false);
 											red_switch.setChecked(false);
@@ -965,9 +943,9 @@ public class MainActivity extends  AppCompatActivity  {
 										else {
 											if (!(green_switch.isChecked() && (purple_switch.isChecked() && red_switch.isChecked()))) {
 												THEME.edit().putString("THEME", "0").commit();
-												main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
-												main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
-												main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
+												
+												
+												
 												green_switch.setChecked(false);
 												purple_switch.setChecked(false);
 												red_switch.setChecked(false);
@@ -992,9 +970,9 @@ public class MainActivity extends  AppCompatActivity  {
 				final boolean _isChecked = _param2;
 				if (_isChecked) {
 					THEME.edit().putString("THEME", "2").commit();
-					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
-					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
-					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
+					
+					
+					
 					green_switch.setChecked(false);
 					purple_switch.setChecked(true);
 					red_switch.setChecked(false);
@@ -1006,9 +984,9 @@ public class MainActivity extends  AppCompatActivity  {
 				else {
 					if (green_switch.isChecked()) {
 						THEME.edit().putString("THEME", "1").commit();
-						main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
-						main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
-						main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
+						
+						
+						
 						green_switch.setChecked(true);
 						purple_switch.setChecked(false);
 						red_switch.setChecked(false);
@@ -1020,9 +998,9 @@ public class MainActivity extends  AppCompatActivity  {
 					else {
 						if (red_switch.isChecked()) {
 							THEME.edit().putString("THEME", "3").commit();
-							main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
-							main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
-							main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
+							
+							
+							
 							green_switch.setChecked(false);
 							purple_switch.setChecked(false);
 							red_switch.setChecked(true);
@@ -1034,9 +1012,9 @@ public class MainActivity extends  AppCompatActivity  {
 						else {
 							if (blue_switch.isChecked()) {
 								THEME.edit().putString("THEME", "4").commit();
-								main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
-								main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
-								main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
+								
+								
+								
 								green_switch.setChecked(false);
 								purple_switch.setChecked(false);
 								red_switch.setChecked(false);
@@ -1048,9 +1026,9 @@ public class MainActivity extends  AppCompatActivity  {
 							else {
 								if (orange_switch.isChecked()) {
 									THEME.edit().putString("THEME", "5").commit();
-									main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
-									main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
-									main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
+									
+									
+									
 									green_switch.setChecked(false);
 									purple_switch.setChecked(false);
 									red_switch.setChecked(false);
@@ -1062,9 +1040,9 @@ public class MainActivity extends  AppCompatActivity  {
 								else {
 									if (yellow_switch.isChecked()) {
 										THEME.edit().putString("THEME", "6").commit();
-										main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
-										main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
-										main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
+										
+										
+										
 										green_switch.setChecked(false);
 										purple_switch.setChecked(false);
 										red_switch.setChecked(false);
@@ -1076,9 +1054,9 @@ public class MainActivity extends  AppCompatActivity  {
 									else {
 										if (gray_switch.isChecked()) {
 											THEME.edit().putString("THEME", "7").commit();
-											main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
-											main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
-											main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
+											
+											
+											
 											green_switch.setChecked(false);
 											purple_switch.setChecked(false);
 											red_switch.setChecked(false);
@@ -1090,9 +1068,9 @@ public class MainActivity extends  AppCompatActivity  {
 										else {
 											if (!(green_switch.isChecked() && (purple_switch.isChecked() && red_switch.isChecked()))) {
 												THEME.edit().putString("THEME", "0").commit();
-												main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
-												main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
-												main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
+												
+												
+												
 												green_switch.setChecked(false);
 												purple_switch.setChecked(false);
 												red_switch.setChecked(false);
@@ -1117,9 +1095,9 @@ public class MainActivity extends  AppCompatActivity  {
 				final boolean _isChecked = _param2;
 				if (_isChecked) {
 					THEME.edit().putString("THEME", "3").commit();
-					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
-					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
-					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
+					
+					
+					
 					green_switch.setChecked(false);
 					purple_switch.setChecked(false);
 					red_switch.setChecked(true);
@@ -1131,9 +1109,9 @@ public class MainActivity extends  AppCompatActivity  {
 				else {
 					if (purple_switch.isChecked()) {
 						THEME.edit().putString("THEME", "2").commit();
-						main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
-						main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
-						main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
+						
+						
+						
 						green_switch.setChecked(false);
 						purple_switch.setChecked(true);
 						red_switch.setChecked(false);
@@ -1145,9 +1123,9 @@ public class MainActivity extends  AppCompatActivity  {
 					else {
 						if (green_switch.isChecked()) {
 							THEME.edit().putString("THEME", "1").commit();
-							main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
-							main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
-							main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
+							
+							
+							
 							green_switch.setChecked(true);
 							purple_switch.setChecked(false);
 							red_switch.setChecked(false);
@@ -1159,9 +1137,9 @@ public class MainActivity extends  AppCompatActivity  {
 						else {
 							if (blue_switch.isChecked()) {
 								THEME.edit().putString("THEME", "4").commit();
-								main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
-								main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
-								main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
+								
+								
+								
 								green_switch.setChecked(false);
 								purple_switch.setChecked(false);
 								red_switch.setChecked(false);
@@ -1173,9 +1151,9 @@ public class MainActivity extends  AppCompatActivity  {
 							else {
 								if (orange_switch.isChecked()) {
 									THEME.edit().putString("THEME", "5").commit();
-									main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
-									main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
-									main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
+									
+									
+									
 									green_switch.setChecked(false);
 									purple_switch.setChecked(false);
 									red_switch.setChecked(false);
@@ -1187,9 +1165,9 @@ public class MainActivity extends  AppCompatActivity  {
 								else {
 									if (yellow_switch.isChecked()) {
 										THEME.edit().putString("THEME", "6").commit();
-										main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
-										main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
-										main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
+										
+										
+										
 										green_switch.setChecked(false);
 										purple_switch.setChecked(false);
 										red_switch.setChecked(false);
@@ -1201,9 +1179,9 @@ public class MainActivity extends  AppCompatActivity  {
 									else {
 										if (gray_switch.isChecked()) {
 											THEME.edit().putString("THEME", "7").commit();
-											main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
-											main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
-											main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
+											
+											
+											
 											green_switch.setChecked(false);
 											purple_switch.setChecked(false);
 											red_switch.setChecked(false);
@@ -1215,9 +1193,9 @@ public class MainActivity extends  AppCompatActivity  {
 										else {
 											if (!(green_switch.isChecked() && (purple_switch.isChecked() && red_switch.isChecked()))) {
 												THEME.edit().putString("THEME", "0").commit();
-												main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
-												main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
-												main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
+												
+												
+												
 												green_switch.setChecked(false);
 												purple_switch.setChecked(false);
 												red_switch.setChecked(false);
@@ -1242,9 +1220,9 @@ public class MainActivity extends  AppCompatActivity  {
 				final boolean _isChecked = _param2;
 				if (_isChecked) {
 					THEME.edit().putString("THEME", "4").commit();
-					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
-					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
-					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
+					
+					
+					
 					green_switch.setChecked(false);
 					purple_switch.setChecked(false);
 					red_switch.setChecked(false);
@@ -1256,9 +1234,9 @@ public class MainActivity extends  AppCompatActivity  {
 				else {
 					if (purple_switch.isChecked()) {
 						THEME.edit().putString("THEME", "2").commit();
-						main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
-						main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
-						main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
+						
+						
+						
 						green_switch.setChecked(false);
 						purple_switch.setChecked(true);
 						red_switch.setChecked(false);
@@ -1270,9 +1248,9 @@ public class MainActivity extends  AppCompatActivity  {
 					else {
 						if (red_switch.isChecked()) {
 							THEME.edit().putString("THEME", "3").commit();
-							main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
-							main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
-							main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
+							
+							
+							
 							green_switch.setChecked(false);
 							purple_switch.setChecked(false);
 							red_switch.setChecked(true);
@@ -1284,9 +1262,9 @@ public class MainActivity extends  AppCompatActivity  {
 						else {
 							if (green_switch.isChecked()) {
 								THEME.edit().putString("THEME", "1").commit();
-								main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
-								main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
-								main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
+								
+								
+								
 								green_switch.setChecked(true);
 								purple_switch.setChecked(false);
 								red_switch.setChecked(false);
@@ -1298,9 +1276,9 @@ public class MainActivity extends  AppCompatActivity  {
 							else {
 								if (orange_switch.isChecked()) {
 									THEME.edit().putString("THEME", "5").commit();
-									main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
-									main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
-									main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
+									
+									
+									
 									green_switch.setChecked(false);
 									purple_switch.setChecked(false);
 									red_switch.setChecked(false);
@@ -1312,9 +1290,9 @@ public class MainActivity extends  AppCompatActivity  {
 								else {
 									if (yellow_switch.isChecked()) {
 										THEME.edit().putString("THEME", "6").commit();
-										main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
-										main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
-										main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
+										
+										
+										
 										green_switch.setChecked(false);
 										purple_switch.setChecked(false);
 										red_switch.setChecked(false);
@@ -1326,9 +1304,9 @@ public class MainActivity extends  AppCompatActivity  {
 									else {
 										if (gray_switch.isChecked()) {
 											THEME.edit().putString("THEME", "7").commit();
-											main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
-											main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
-											main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
+											
+											
+											
 											green_switch.setChecked(false);
 											purple_switch.setChecked(false);
 											red_switch.setChecked(false);
@@ -1340,9 +1318,9 @@ public class MainActivity extends  AppCompatActivity  {
 										else {
 											if (!(green_switch.isChecked() && (purple_switch.isChecked() && red_switch.isChecked()))) {
 												THEME.edit().putString("THEME", "0").commit();
-												main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
-												main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
-												main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
+												
+												
+												
 												green_switch.setChecked(false);
 												purple_switch.setChecked(false);
 												red_switch.setChecked(false);
@@ -1367,9 +1345,9 @@ public class MainActivity extends  AppCompatActivity  {
 				final boolean _isChecked = _param2;
 				if (_isChecked) {
 					THEME.edit().putString("THEME", "5").commit();
-					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
-					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
-					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
+					
+					
+					
 					green_switch.setChecked(false);
 					purple_switch.setChecked(false);
 					red_switch.setChecked(false);
@@ -1381,9 +1359,9 @@ public class MainActivity extends  AppCompatActivity  {
 				else {
 					if (purple_switch.isChecked()) {
 						THEME.edit().putString("THEME", "2").commit();
-						main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
-						main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
-						main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
+						
+						
+						
 						green_switch.setChecked(false);
 						purple_switch.setChecked(true);
 						red_switch.setChecked(false);
@@ -1395,9 +1373,9 @@ public class MainActivity extends  AppCompatActivity  {
 					else {
 						if (red_switch.isChecked()) {
 							THEME.edit().putString("THEME", "3").commit();
-							main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
-							main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
-							main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
+							
+							
+							
 							green_switch.setChecked(false);
 							purple_switch.setChecked(false);
 							red_switch.setChecked(true);
@@ -1409,9 +1387,9 @@ public class MainActivity extends  AppCompatActivity  {
 						else {
 							if (blue_switch.isChecked()) {
 								THEME.edit().putString("THEME", "4").commit();
-								main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
-								main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
-								main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
+								
+								
+								
 								green_switch.setChecked(false);
 								purple_switch.setChecked(false);
 								red_switch.setChecked(false);
@@ -1423,9 +1401,9 @@ public class MainActivity extends  AppCompatActivity  {
 							else {
 								if (green_switch.isChecked()) {
 									THEME.edit().putString("THEME", "1").commit();
-									main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
-									main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
-									main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
+									
+									
+									
 									green_switch.setChecked(true);
 									purple_switch.setChecked(false);
 									red_switch.setChecked(false);
@@ -1437,9 +1415,9 @@ public class MainActivity extends  AppCompatActivity  {
 								else {
 									if (yellow_switch.isChecked()) {
 										THEME.edit().putString("THEME", "6").commit();
-										main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
-										main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
-										main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
+										
+										
+										
 										green_switch.setChecked(false);
 										purple_switch.setChecked(false);
 										red_switch.setChecked(false);
@@ -1451,9 +1429,9 @@ public class MainActivity extends  AppCompatActivity  {
 									else {
 										if (gray_switch.isChecked()) {
 											THEME.edit().putString("THEME", "7").commit();
-											main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
-											main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
-											main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
+											
+											
+											
 											green_switch.setChecked(false);
 											purple_switch.setChecked(false);
 											red_switch.setChecked(false);
@@ -1465,9 +1443,9 @@ public class MainActivity extends  AppCompatActivity  {
 										else {
 											if (!(green_switch.isChecked() && (purple_switch.isChecked() && red_switch.isChecked()))) {
 												THEME.edit().putString("THEME", "0").commit();
-												main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
-												main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
-												main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
+												
+												
+												
 												green_switch.setChecked(false);
 												purple_switch.setChecked(false);
 												red_switch.setChecked(false);
@@ -1492,9 +1470,9 @@ public class MainActivity extends  AppCompatActivity  {
 				final boolean _isChecked = _param2;
 				if (_isChecked) {
 					THEME.edit().putString("THEME", "6").commit();
-					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
-					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
-					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
+					
+					
+					
 					green_switch.setChecked(false);
 					purple_switch.setChecked(false);
 					red_switch.setChecked(false);
@@ -1506,9 +1484,9 @@ public class MainActivity extends  AppCompatActivity  {
 				else {
 					if (purple_switch.isChecked()) {
 						THEME.edit().putString("THEME", "2").commit();
-						main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
-						main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
-						main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
+						
+						
+						
 						green_switch.setChecked(false);
 						purple_switch.setChecked(true);
 						red_switch.setChecked(false);
@@ -1520,9 +1498,9 @@ public class MainActivity extends  AppCompatActivity  {
 					else {
 						if (red_switch.isChecked()) {
 							THEME.edit().putString("THEME", "3").commit();
-							main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
-							main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
-							main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
+							
+							
+							
 							green_switch.setChecked(false);
 							purple_switch.setChecked(false);
 							red_switch.setChecked(true);
@@ -1534,9 +1512,9 @@ public class MainActivity extends  AppCompatActivity  {
 						else {
 							if (blue_switch.isChecked()) {
 								THEME.edit().putString("THEME", "4").commit();
-								main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
-								main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
-								main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
+								
+								
+								
 								green_switch.setChecked(false);
 								purple_switch.setChecked(false);
 								red_switch.setChecked(false);
@@ -1548,9 +1526,9 @@ public class MainActivity extends  AppCompatActivity  {
 							else {
 								if (orange_switch.isChecked()) {
 									THEME.edit().putString("THEME", "5").commit();
-									main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
-									main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
-									main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
+									
+									
+									
 									green_switch.setChecked(false);
 									purple_switch.setChecked(false);
 									red_switch.setChecked(false);
@@ -1562,9 +1540,9 @@ public class MainActivity extends  AppCompatActivity  {
 								else {
 									if (green_switch.isChecked()) {
 										THEME.edit().putString("THEME", "1").commit();
-										main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
-										main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
-										main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
+										
+										
+										
 										green_switch.setChecked(true);
 										purple_switch.setChecked(false);
 										red_switch.setChecked(false);
@@ -1576,9 +1554,9 @@ public class MainActivity extends  AppCompatActivity  {
 									else {
 										if (gray_switch.isChecked()) {
 											THEME.edit().putString("THEME", "7").commit();
-											main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
-											main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
-											main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
+											
+											
+											
 											green_switch.setChecked(false);
 											purple_switch.setChecked(false);
 											red_switch.setChecked(false);
@@ -1590,9 +1568,9 @@ public class MainActivity extends  AppCompatActivity  {
 										else {
 											if (!(green_switch.isChecked() && (purple_switch.isChecked() && red_switch.isChecked()))) {
 												THEME.edit().putString("THEME", "0").commit();
-												main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
-												main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
-												main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
+												
+												
+												
 												green_switch.setChecked(false);
 												purple_switch.setChecked(false);
 												red_switch.setChecked(false);
@@ -1617,9 +1595,9 @@ public class MainActivity extends  AppCompatActivity  {
 				final boolean _isChecked = _param2;
 				if (_isChecked) {
 					THEME.edit().putString("THEME", "7").commit();
-					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
-					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
-					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
+					
+					
+					
 					green_switch.setChecked(false);
 					purple_switch.setChecked(false);
 					red_switch.setChecked(false);
@@ -1631,9 +1609,9 @@ public class MainActivity extends  AppCompatActivity  {
 				else {
 					if (purple_switch.isChecked()) {
 						THEME.edit().putString("THEME", "2").commit();
-						main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
-						main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
-						main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
+						
+						
+						
 						green_switch.setChecked(false);
 						purple_switch.setChecked(true);
 						red_switch.setChecked(false);
@@ -1645,9 +1623,9 @@ public class MainActivity extends  AppCompatActivity  {
 					else {
 						if (red_switch.isChecked()) {
 							THEME.edit().putString("THEME", "3").commit();
-							main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
-							main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
-							main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
+							
+							
+							
 							green_switch.setChecked(false);
 							purple_switch.setChecked(false);
 							red_switch.setChecked(true);
@@ -1659,9 +1637,9 @@ public class MainActivity extends  AppCompatActivity  {
 						else {
 							if (blue_switch.isChecked()) {
 								THEME.edit().putString("THEME", "4").commit();
-								main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
-								main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
-								main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
+								
+								
+								
 								green_switch.setChecked(false);
 								purple_switch.setChecked(false);
 								red_switch.setChecked(false);
@@ -1673,9 +1651,9 @@ public class MainActivity extends  AppCompatActivity  {
 							else {
 								if (orange_switch.isChecked()) {
 									THEME.edit().putString("THEME", "5").commit();
-									main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
-									main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
-									main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
+									
+									
+									
 									green_switch.setChecked(false);
 									purple_switch.setChecked(false);
 									red_switch.setChecked(false);
@@ -1687,9 +1665,9 @@ public class MainActivity extends  AppCompatActivity  {
 								else {
 									if (yellow_switch.isChecked()) {
 										THEME.edit().putString("THEME", "6").commit();
-										main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
-										main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
-										main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
+										
+										
+										
 										green_switch.setChecked(false);
 										purple_switch.setChecked(false);
 										red_switch.setChecked(false);
@@ -1701,9 +1679,9 @@ public class MainActivity extends  AppCompatActivity  {
 									else {
 										if (green_switch.isChecked()) {
 											THEME.edit().putString("THEME", "1").commit();
-											main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
-											main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
-											main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
+											
+											
+											
 											green_switch.setChecked(true);
 											purple_switch.setChecked(false);
 											red_switch.setChecked(false);
@@ -1715,9 +1693,9 @@ public class MainActivity extends  AppCompatActivity  {
 										else {
 											if (!(green_switch.isChecked() && (purple_switch.isChecked() && red_switch.isChecked()))) {
 												THEME.edit().putString("THEME", "0").commit();
-												main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
-												main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
-												main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
+												
+												
+												
 												green_switch.setChecked(false);
 												purple_switch.setChecked(false);
 												red_switch.setChecked(false);
@@ -1758,7 +1736,7 @@ public class MainActivity extends  AppCompatActivity  {
 		box_icon_close.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				RippleAnimation.create(box_icon_close).setDuration((long)700).start();
+				
 				main_body_optimization.setVisibility(View.GONE);
 				main_scroll_settings.setVisibility(View.GONE);
 				main_scroll_about.setVisibility(View.GONE);
@@ -2009,14 +1987,6 @@ public class MainActivity extends  AppCompatActivity  {
 			}
 		});
 		
-		box_uninstall.setOnLongClickListener(new View.OnLongClickListener() {
-			 @Override
-				public boolean onLongClick(View _view) {
-				SketchwareUtil.CustomToast(getApplicationContext(), "Uninstall spotify app", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-				return true;
-				}
-			 });
-		
 		box_uninstall.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
@@ -2030,14 +2000,6 @@ public class MainActivity extends  AppCompatActivity  {
 			}
 		});
 		
-		box_settings.setOnLongClickListener(new View.OnLongClickListener() {
-			 @Override
-				public boolean onLongClick(View _view) {
-				SketchwareUtil.CustomToast(getApplicationContext(), "Open spotify's app settings", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-				return true;
-				}
-			 });
-		
 		box_settings.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
@@ -2050,14 +2012,6 @@ public class MainActivity extends  AppCompatActivity  {
 				}
 			}
 		});
-		
-		box_cache.setOnLongClickListener(new View.OnLongClickListener() {
-			 @Override
-				public boolean onLongClick(View _view) {
-				SketchwareUtil.CustomToast(getApplicationContext(), "Clear offline cached datas", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-				return true;
-				}
-			 });
 		
 		box_cache.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -2110,7 +2064,7 @@ public class MainActivity extends  AppCompatActivity  {
 													}
 												};
 												_timer.schedule(Timer, (int)(100));
-												SketchwareUtil.CustomToast(getApplicationContext(), "Successfully deleted", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+												
 											}
 										});
 									}
@@ -2130,7 +2084,7 @@ public class MainActivity extends  AppCompatActivity  {
 									}
 								};
 								_timer.schedule(Timer, (int)(100));
-								SketchwareUtil.CustomToast(getApplicationContext(), "Directory files are empty", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+								
 							}
 						}
 					});
@@ -2158,14 +2112,6 @@ public class MainActivity extends  AppCompatActivity  {
 				}
 			}
 		});
-		
-		box_open.setOnLongClickListener(new View.OnLongClickListener() {
-			 @Override
-				public boolean onLongClick(View _view) {
-				SketchwareUtil.CustomToast(getApplicationContext(), "Launch spotify app", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-				return true;
-				}
-			 });
 		
 		box_open.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -2255,7 +2201,7 @@ public class MainActivity extends  AppCompatActivity  {
 		box_about.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				RippleAnimation.create(box_about).setDuration((long)700).start();
+				
 				main_body_optimization.setVisibility(View.GONE);
 				main_scroll_settings.setVisibility(View.GONE);
 				main_scroll_about.setVisibility(View.VISIBLE);
@@ -2269,10 +2215,9 @@ public class MainActivity extends  AppCompatActivity  {
 		
 		_Connection_request_listener = new RequestNetwork.RequestListener() {
 			@Override
-			public void onResponse(String _param1, String _param2, HashMap<String, Object> _param3) {
+			public void onResponse(String _param1, String _param2) {
 				final String _tag = _param1;
 				final String _response = _param2;
-				final HashMap<String, Object> _responseHeaders = _param3;
 				Regular_Mod.addListenerForSingleValueEvent(new ValueEventListener() {
 					@Override
 					public void onDataChange(DataSnapshot _dataSnapshot) {
@@ -2288,7 +2233,7 @@ public class MainActivity extends  AppCompatActivity  {
 							_e.printStackTrace();
 						}
 						sub_1.setText(SUB_1.getString("SUB_1", ""));
-						main_refresh_layout.setRefreshing(true);
+						
 						main_body.setEnabled(false);
 						main_body.setAlpha((float)(0.65d));
 					}
@@ -2311,7 +2256,7 @@ public class MainActivity extends  AppCompatActivity  {
 							_e.printStackTrace();
 						}
 						sub_3.setText(SUB_2.getString("SUB_2", ""));
-						main_refresh_layout.setRefreshing(false);
+						
 						main_body.setEnabled(true);
 						main_body.setAlpha((float)(1.0d));
 					}
@@ -2325,7 +2270,7 @@ public class MainActivity extends  AppCompatActivity  {
 			public void onErrorResponse(String _param1, String _param2) {
 				final String _tag = _param1;
 				final String _message = _param2;
-				main_refresh_layout.setRefreshing(true);
+				
 				main_body.setAlpha((float)(0.65d));
 				Timer = new TimerTask() {
 					@Override
@@ -2333,7 +2278,7 @@ public class MainActivity extends  AppCompatActivity  {
 						runOnUiThread(new Runnable() {
 							@Override
 							public void run() {
-								main_refresh_layout.setRefreshing(false);
+								
 								main_body.setAlpha((float)(1.0d));
 							}
 						});
@@ -2497,20 +2442,6 @@ public class MainActivity extends  AppCompatActivity  {
 			}
 		};
 		Mod_Changelogs.addChildEventListener(_Mod_Changelogs_child_listener);
-		
-		xManager_Notification_onCompleteListener = new OnCompleteListener<InstanceIdResult>() {
-			@Override
-			public void onComplete(Task<InstanceIdResult> task) {
-				final boolean _success = task.isSuccessful();
-				final String _token = task.getResult().getToken();
-				final String _errorMessage = task.getException() != null ? task.getException().getMessage() : "";
-				try {
-				}
-				catch(Exception e) {
-					SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Failed to receive notification", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-				}
-			}
-		};
 		
 		_xManager_Changelogs_child_listener = new ChildEventListener() {
 			@Override
@@ -2732,7 +2663,6 @@ public class MainActivity extends  AppCompatActivity  {
 		};
 		Amoled_Black.addChildEventListener(_Amoled_Black_child_listener);
 	}
-	
 	private void initializeLogic() {
 		try {
 			_Dark_Navigation();
@@ -2746,7 +2676,6 @@ public class MainActivity extends  AppCompatActivity  {
 	
 	@Override
 	protected void onActivityResult(int _requestCode, int _resultCode, Intent _data) {
-		
 		super.onActivityResult(_requestCode, _resultCode, _data);
 		
 		switch (_requestCode) {
@@ -2772,7 +2701,7 @@ public class MainActivity extends  AppCompatActivity  {
 				}
 			};
 			_timer.schedule(Timer, (int)(1000));
-			SketchwareUtil.CustomToast(getApplicationContext(), "Press back again to exit", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+			
 		}
 		else {
 			finishAndRemoveTask();
@@ -2785,7 +2714,7 @@ public class MainActivity extends  AppCompatActivity  {
 		super.onResume();
 		_Hide_Navigation();
 	}
-	public void _Informations () {
+	private void _Informations () {
 		sub_2.setText("N/A");
 		cpu.setText("N/A");
 		Timer = new TimerTask() {
@@ -2828,12 +2757,12 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _RequiredDialog (final AlertDialog.Builder _Dialog, final boolean _True) {
+	private void _RequiredDialog (final AlertDialog.Builder _Dialog, final boolean _True) {
 		_Dialog.setCancelable(_True);
 	}
 	
 	
-	public void _Download (final String _url, final String _path) {
+	private void _Download (final String _url, final String _path) {
 		try {
 			FileUtil.makeDir(FileUtil.getPackageDataDir(getApplicationContext()));
 			
@@ -3031,7 +2960,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _File_Remover () {
+	private void _File_Remover () {
 		if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")) {
 			FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
 		}
@@ -3044,7 +2973,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Update_Remover () {
+	private void _Update_Remover () {
 		if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")) {
 			FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk");
 		}
@@ -3054,7 +2983,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Model_UI () {
+	private void _Model_UI () {
 		title_header.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_sub.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -3115,37 +3044,37 @@ public class MainActivity extends  AppCompatActivity  {
 		force_auto_install_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		copy_url_mode.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		copy_file_url_mode_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		box_sub_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_8.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_9.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_10.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_11.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_12.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		list_menu_1.setVisibility(View.GONE);
 		list_menu_2.setVisibility(View.GONE);
 		box_5_sub_2.setVisibility(View.GONE);
 		box_6_sub_2.setVisibility(View.GONE);
 		list_menu_1.smoothScrollToPosition((int)(0));
 		list_menu_2.smoothScrollToPosition((int)(0));
-		box_support.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_donate.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_about.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_source.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_about_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1DB954));
-		box_about_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_about_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_about_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_about_4.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_about_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_about_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_about_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_about_sub.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF2962FF));
-		box_reset_settings.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF424242));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		if (!ON_SCREEN.getString("ON_SCREEN", "").equals("ON_SCREEN")) {
 			try {
 				final ProgressDialog prog_0 = new ProgressDialog(MainActivity.this, ProgressDialog.THEME_DEVICE_DEFAULT_DARK);
@@ -3251,7 +3180,7 @@ public class MainActivity extends  AppCompatActivity  {
 							_e.printStackTrace();
 						}
 						sub_3.setText(SUB_2.getString("SUB_2", ""));
-						main_refresh_layout.setRefreshing(true);
+						
 						Timer = new TimerTask() {
 							@Override
 							public void run() {
@@ -3279,7 +3208,7 @@ public class MainActivity extends  AppCompatActivity  {
 																runOnUiThread(new Runnable() {
 																	@Override
 																	public void run() {
-																		main_refresh_layout.setRefreshing(false);
+																		
 																		version_switch_1.setChecked(false);
 																		version_switch_2.setChecked(false);
 																		changelogs_switch.setChecked(false);
@@ -3399,7 +3328,7 @@ public class MainActivity extends  AppCompatActivity  {
 		}
 		else {
 			try {
-				main_refresh_layout.setRefreshing(true);
+				
 				Regular_Mod.addListenerForSingleValueEvent(new ValueEventListener() {
 					@Override
 					public void onDataChange(DataSnapshot _dataSnapshot) {
@@ -3445,7 +3374,7 @@ public class MainActivity extends  AppCompatActivity  {
 								runOnUiThread(new Runnable() {
 									@Override
 									public void run() {
-										main_refresh_layout.setRefreshing(false);
+										
 										list_menu_2.setAdapter(new List_menu_2Adapter(listdata));
 										((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
 										main_body.setEnabled(true);
@@ -3534,190 +3463,9 @@ public class MainActivity extends  AppCompatActivity  {
 			catch(Exception e) {
 			}
 		}
-		main_refresh_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-			@Override
-			public void onRefresh() {
-				try {
-					main_body.setEnabled(false);
-					main_refresh_layout.setRefreshing(true);
-					Regular_Mod.addListenerForSingleValueEvent(new ValueEventListener() {
-						@Override
-						public void onDataChange(DataSnapshot _dataSnapshot) {
-							listdata = new ArrayList<>();
-							try {
-								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-									HashMap<String, Object> _map = _data.getValue(_ind);
-									listdata.add(_map);
-								}
-							}
-							catch (Exception _e) {
-								_e.printStackTrace();
-							}
-							sub_1.setText(SUB_1.getString("SUB_1", ""));
-							Timer = new TimerTask() {
-								@Override
-								public void run() {
-									runOnUiThread(new Runnable() {
-										@Override
-										public void run() {
-											list_menu_1.smoothScrollToPosition((int)(999));
-											version_switch_1.setChecked(true);
-											version_switch_2.setChecked(false);
-											changelogs_switch.setChecked(false);
-											main_body.setAlpha((float)(0.65d));
-										}
-									});
-								}
-							};
-							_timer.schedule(Timer, (int)(300));
-						}
-						@Override
-						public void onCancelled(DatabaseError _databaseError) {
-						}
-					});
-					Amoled_Black.addListenerForSingleValueEvent(new ValueEventListener() {
-						@Override
-						public void onDataChange(DataSnapshot _dataSnapshot) {
-							listdata = new ArrayList<>();
-							try {
-								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-									HashMap<String, Object> _map = _data.getValue(_ind);
-									listdata.add(_map);
-								}
-							}
-							catch (Exception _e) {
-								_e.printStackTrace();
-							}
-							sub_3.setText(SUB_2.getString("SUB_2", ""));
-							main_refresh_layout.setRefreshing(true);
-							Timer = new TimerTask() {
-								@Override
-								public void run() {
-									runOnUiThread(new Runnable() {
-										@Override
-										public void run() {
-											list_menu_2.smoothScrollToPosition((int)(999));
-											version_switch_1.setChecked(false);
-											version_switch_2.setChecked(true);
-											changelogs_switch.setChecked(false);
-											main_body.setAlpha((float)(0.65d));
-											Timer = new TimerTask() {
-												@Override
-												public void run() {
-													runOnUiThread(new Runnable() {
-														@Override
-														public void run() {
-															version_switch_1.setChecked(false);
-															version_switch_2.setChecked(false);
-															changelogs_switch.setChecked(true);
-															main_body.setAlpha((float)(0.65d));
-															Timer = new TimerTask() {
-																@Override
-																public void run() {
-																	runOnUiThread(new Runnable() {
-																		@Override
-																		public void run() {
-																			main_refresh_layout.setRefreshing(false);
-																			version_switch_1.setChecked(false);
-																			version_switch_2.setChecked(false);
-																			changelogs_switch.setChecked(false);
-																			main_body.setEnabled(true);
-																			main_body.setAlpha((float)(1.0d));
-																		}
-																	});
-																}
-															};
-															_timer.schedule(Timer, (int)(900));
-														}
-													});
-												}
-											};
-											_timer.schedule(Timer, (int)(800));
-										}
-									});
-								}
-							};
-							_timer.schedule(Timer, (int)(800));
-						}
-						@Override
-						public void onCancelled(DatabaseError _databaseError) {
-						}
-					});
-					xManager_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
-						@Override
-						public void onDataChange(DataSnapshot _dataSnapshot) {
-							others = new ArrayList<>();
-							try {
-								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-									HashMap<String, Object> _map = _data.getValue(_ind);
-									others.add(_map);
-								}
-							}
-							catch (Exception _e) {
-								_e.printStackTrace();
-							}
-							xManager_Changelogs.addChildEventListener(_xManager_Changelogs_child_listener);
-						}
-						@Override
-						public void onCancelled(DatabaseError _databaseError) {
-						}
-					});
-					Mod_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
-						@Override
-						public void onDataChange(DataSnapshot _dataSnapshot) {
-							others = new ArrayList<>();
-							try {
-								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-									HashMap<String, Object> _map = _data.getValue(_ind);
-									others.add(_map);
-								}
-							}
-							catch (Exception _e) {
-								_e.printStackTrace();
-							}
-							Mod_Changelogs.addChildEventListener(_Mod_Changelogs_child_listener);
-						}
-						@Override
-						public void onCancelled(DatabaseError _databaseError) {
-						}
-					});
-					Version.addListenerForSingleValueEvent(new ValueEventListener() {
-						@Override
-						public void onDataChange(DataSnapshot _dataSnapshot) {
-							others = new ArrayList<>();
-							try {
-								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-									HashMap<String, Object> _map = _data.getValue(_ind);
-									others.add(_map);
-								}
-							}
-							catch (Exception _e) {
-								_e.printStackTrace();
-							}
-							Version.addChildEventListener(_Version_child_listener);
-						}
-						@Override
-						public void onCancelled(DatabaseError _databaseError) {
-						}
-					});
-					Connection.startRequestNetwork(RequestNetworkController.GET, "https://spotify.com", "PAWN!", _Connection_request_listener);
-					_Animation_4();
-				}
-				catch(Exception e) {
-				}
-			}
-		});
+		
 		apk_path_location.setText(APK_PATH.getString("PATH", ""));
-		if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
-			Window w =MainActivity.this.getWindow();
-			w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-			w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(0xFF212121);
-		}
+		
 		CHECK = 0;
 		_Update_Remover();
 		_Updater_Check();
@@ -3729,9 +3477,9 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Theme_UI () {
+	private void _Theme_UI () {
 		if (THEME.getString("THEME", "").equals("0")) {
-			main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF000000}));
+			
 			green_switch.setChecked(false);
 			purple_switch.setChecked(false);
 			red_switch.setChecked(false);
@@ -3742,7 +3490,7 @@ public class MainActivity extends  AppCompatActivity  {
 		}
 		else {
 			if (THEME.getString("THEME", "").equals("1")) {
-				main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF1DB954}));
+				
 				green_switch.setChecked(true);
 				purple_switch.setChecked(false);
 				red_switch.setChecked(false);
@@ -3753,7 +3501,7 @@ public class MainActivity extends  AppCompatActivity  {
 			}
 			else {
 				if (THEME.getString("THEME", "").equals("2")) {
-					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFAA00FF}));
+					
 					green_switch.setChecked(false);
 					purple_switch.setChecked(true);
 					red_switch.setChecked(false);
@@ -3764,7 +3512,7 @@ public class MainActivity extends  AppCompatActivity  {
 				}
 				else {
 					if (THEME.getString("THEME", "").equals("3")) {
-						main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFD50000}));
+						
 						green_switch.setChecked(false);
 						purple_switch.setChecked(false);
 						red_switch.setChecked(true);
@@ -3775,7 +3523,7 @@ public class MainActivity extends  AppCompatActivity  {
 					}
 					else {
 						if (THEME.getString("THEME", "").equals("4")) {
-							main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF2962FF}));
+							
 							green_switch.setChecked(false);
 							purple_switch.setChecked(false);
 							red_switch.setChecked(false);
@@ -3786,7 +3534,7 @@ public class MainActivity extends  AppCompatActivity  {
 						}
 						else {
 							if (THEME.getString("THEME", "").equals("5")) {
-								main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFF6D00}));
+								
 								green_switch.setChecked(false);
 								purple_switch.setChecked(false);
 								red_switch.setChecked(false);
@@ -3797,7 +3545,7 @@ public class MainActivity extends  AppCompatActivity  {
 							}
 							else {
 								if (THEME.getString("THEME", "").equals("6")) {
-									main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFFFFD600}));
+									
 									green_switch.setChecked(false);
 									purple_switch.setChecked(false);
 									red_switch.setChecked(false);
@@ -3808,7 +3556,7 @@ public class MainActivity extends  AppCompatActivity  {
 								}
 								else {
 									if (THEME.getString("THEME", "").equals("7")) {
-										main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL,new int[] {0xFF000000,0xFF616161}));
+										
 										green_switch.setChecked(false);
 										purple_switch.setChecked(false);
 										red_switch.setChecked(false);
@@ -3827,7 +3575,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Updater () {
+	private void _Updater () {
 		try {
 			Version.addListenerForSingleValueEvent(new ValueEventListener() {
 				@Override
@@ -3937,7 +3685,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Updater_Check () {
+	private void _Updater_Check () {
 		try {
 			Package_Name = "com.xc3fff0e.xmanager";
 			try {
@@ -3967,7 +3715,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Download_Update (final String _url, final String _path) {
+	private void _Download_Update (final String _url, final String _path) {
 		try {
 			FileUtil.makeDir(FileUtil.getPackageDataDir(getApplicationContext()));
 			
@@ -4167,13 +3915,13 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Effects () {
+	private void _Effects () {
 		_Ripple(box_update, "#9E9E9E");
 		_Ripple(box_switch, "#9E9E9E");
 	}
 	
 	
-	public void _Ripple (final View _view, final String _c) {
+	private void _Ripple (final View _view, final String _c) {
 		_view.setBackground(Drawables.getSelectableDrawableFor(Color.parseColor(_c)));
 		_view.setClickable(true);
 		
@@ -4382,7 +4130,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Hide_Navigation () {
+	private void _Hide_Navigation () {
 		try {
 			if (NAVIGATION_BAR.getString("NAVIGATION", "").equals("1")) {
 				getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
@@ -4404,7 +4152,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Animation_0 () {
+	private void _Animation_0 () {
 		Animation a;
 		a = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
 		a.setDuration(200); main_box_1.startAnimation(a);
@@ -4440,7 +4188,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Animation_1 () {
+	private void _Animation_1 () {
 		Animation i;
 		i = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
 		i.setDuration(200); box_settings_close.startAnimation(i);
@@ -4484,7 +4232,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Animation_2 () {
+	private void _Animation_2 () {
 		Animation m;
 		m = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
 		m.setDuration(200); box_about_close.startAnimation(m);
@@ -4536,7 +4284,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Animation_3 () {
+	private void _Animation_3 () {
 		Animation aa;
 		aa = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
 		aa.setDuration(200); box_theme_0.startAnimation(aa);
@@ -4568,7 +4316,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Animation_4 () {
+	private void _Animation_4 () {
 		Animation a;
 		a = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
 		a.setDuration(200); main_box_1.startAnimation(a);
@@ -4592,14 +4340,14 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Dark_Navigation () {
+	private void _Dark_Navigation () {
 		if (Build.VERSION.SDK_INT >= 21) {
 			getWindow().setNavigationBarColor(Color.parseColor("#212121"));
 		}
 	}
 	
 	
-	public void _Linear_Animation (final boolean _clickanim, final double _animDuration, final View _view) {
+	private void _Linear_Animation (final boolean _clickanim, final double _animDuration, final View _view) {
 		_view.setOnTouchListener(new View.OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
@@ -4645,7 +4393,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Animation_5 () {
+	private void _Animation_5 () {
 		_Linear_Animation(true, 200, box_uninstall);
 		_Linear_Animation(true, 200, box_settings);
 		_Linear_Animation(true, 200, box_cache);
@@ -4663,12 +4411,12 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _List_Updater () {
+	private void _List_Updater () {
 		if (LIST_REFRESH.getString("UPDATE", "").equals("ON")) {
 			list_auto_refresh_switch.setChecked(true);
 			try {
 				main_body.setEnabled(false);
-				main_refresh_layout.setRefreshing(true);
+				
 				Regular_Mod.addListenerForSingleValueEvent(new ValueEventListener() {
 					@Override
 					public void onDataChange(DataSnapshot _dataSnapshot) {
@@ -4720,7 +4468,7 @@ public class MainActivity extends  AppCompatActivity  {
 							_e.printStackTrace();
 						}
 						sub_3.setText(SUB_2.getString("SUB_2", ""));
-						main_refresh_layout.setRefreshing(true);
+						
 						Timer = new TimerTask() {
 							@Override
 							public void run() {
@@ -4748,7 +4496,7 @@ public class MainActivity extends  AppCompatActivity  {
 																runOnUiThread(new Runnable() {
 																	@Override
 																	public void run() {
-																		main_refresh_layout.setRefreshing(false);
+																		
 																		version_switch_1.setChecked(false);
 																		version_switch_2.setChecked(false);
 																		changelogs_switch.setChecked(false);
@@ -4866,7 +4614,7 @@ public class MainActivity extends  AppCompatActivity  {
 								_e.printStackTrace();
 							}
 							sub_1.setText(SUB_1.getString("SUB_1", ""));
-							main_refresh_layout.setRefreshing(true);
+							
 							list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
 							((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
 							main_body.setEnabled(false);
@@ -4897,7 +4645,7 @@ public class MainActivity extends  AppCompatActivity  {
 									runOnUiThread(new Runnable() {
 										@Override
 										public void run() {
-											main_refresh_layout.setRefreshing(false);
+											
 											list_menu_2.setAdapter(new List_menu_2Adapter(listdata));
 											((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
 											main_body.setEnabled(true);
@@ -4980,7 +4728,7 @@ public class MainActivity extends  AppCompatActivity  {
 					box_switch.setVisibility(View.VISIBLE);
 					icon_update.setAlpha((float)(1.0d));
 					icon_switch.setAlpha((float)(1.0d));
-					main_refresh_layout.setRefreshing(false);
+					
 					Connection.startRequestNetwork(RequestNetworkController.GET, "https://spotify.com", "PAWN!", _Connection_request_listener);
 					_Updater();
 				}
@@ -4991,7 +4739,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Default_Path () {
+	private void _Default_Path () {
 		if (PATH.equals("")) {
 			apk_path_location.setText("/storage/emulated/0/xManager/");
 		}
@@ -5001,7 +4749,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Download_Install (final String _url, final String _path) {
+	private void _Download_Install (final String _url, final String _path) {
 		try {
 			FileUtil.makeDir(FileUtil.getPackageDataDir(getApplicationContext()));
 			
@@ -5243,7 +4991,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Download_Update_Install (final String _url, final String _path) {
+	private void _Download_Update_Install (final String _url, final String _path) {
 		try {
 			FileUtil.makeDir(FileUtil.getPackageDataDir(getApplicationContext()));
 			
@@ -5487,7 +5235,7 @@ public class MainActivity extends  AppCompatActivity  {
 	}
 	
 	
-	public void _Url_Mode () {
+	private void _Url_Mode () {
 		if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
 			copy_url_mode_switch.setChecked(true);
 			title_header.setText("xManager (UM)");
@@ -5522,17 +5270,17 @@ public class MainActivity extends  AppCompatActivity  {
 			return _index;
 		}
 		@Override
-		public View getView(final int _position, View _v, ViewGroup _container) {
+		public View getView(final int _position, View _view, ViewGroup _viewGroup) {
 			LayoutInflater _inflater = (LayoutInflater)getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			View _view = _v;
-			if (_view == null) {
-				_view = _inflater.inflate(R.layout.list_menu_1, null);
+			View _v = _view;
+			if (_v == null) {
+				_v = _inflater.inflate(R.layout.list_menu_1, null);
 			}
 			
-			final LinearLayout box = (LinearLayout) _view.findViewById(R.id.box);
-			final TextView link = (TextView) _view.findViewById(R.id.link);
-			final ImageView icon = (ImageView) _view.findViewById(R.id.icon);
-			final TextView title = (TextView) _view.findViewById(R.id.title);
+			final LinearLayout box = (LinearLayout) _v.findViewById(R.id.box);
+			final TextView link = (TextView) _v.findViewById(R.id.link);
+			final ImageView icon = (ImageView) _v.findViewById(R.id.icon);
+			final TextView title = (TextView) _v.findViewById(R.id.title);
 			
 			try {
 				title.setVisibility(View.VISIBLE);
@@ -5640,7 +5388,7 @@ public class MainActivity extends  AppCompatActivity  {
 										try {
 											_RequiredDialog(Selected_Spotify, true);
 											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
-											SketchwareUtil.CustomToast(getApplicationContext(), "Url copied to clipboard", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+											
 										}
 										catch(Exception e) {
 										}
@@ -5691,7 +5439,7 @@ public class MainActivity extends  AppCompatActivity  {
 			catch(Exception e) {
 			}
 			
-			return _view;
+			return _v;
 		}
 	}
 	
@@ -5716,17 +5464,17 @@ public class MainActivity extends  AppCompatActivity  {
 			return _index;
 		}
 		@Override
-		public View getView(final int _position, View _v, ViewGroup _container) {
+		public View getView(final int _position, View _view, ViewGroup _viewGroup) {
 			LayoutInflater _inflater = (LayoutInflater)getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			View _view = _v;
-			if (_view == null) {
-				_view = _inflater.inflate(R.layout.list_menu_2, null);
+			View _v = _view;
+			if (_v == null) {
+				_v = _inflater.inflate(R.layout.list_menu_2, null);
 			}
 			
-			final LinearLayout box = (LinearLayout) _view.findViewById(R.id.box);
-			final TextView link = (TextView) _view.findViewById(R.id.link);
-			final ImageView icon = (ImageView) _view.findViewById(R.id.icon);
-			final TextView title = (TextView) _view.findViewById(R.id.title);
+			final LinearLayout box = (LinearLayout) _v.findViewById(R.id.box);
+			final TextView link = (TextView) _v.findViewById(R.id.link);
+			final ImageView icon = (ImageView) _v.findViewById(R.id.icon);
+			final TextView title = (TextView) _v.findViewById(R.id.title);
 			
 			try {
 				title.setVisibility(View.VISIBLE);
@@ -5834,7 +5582,7 @@ public class MainActivity extends  AppCompatActivity  {
 										try {
 											_RequiredDialog(Selected_Spotify, true);
 											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
-											SketchwareUtil.CustomToast(getApplicationContext(), "Url copied to clipboard", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+											
 										}
 										catch(Exception e) {
 										}
@@ -5885,7 +5633,7 @@ public class MainActivity extends  AppCompatActivity  {
 			catch(Exception e) {
 			}
 			
-			return _view;
+			return _v;
 		}
 	}
 	
