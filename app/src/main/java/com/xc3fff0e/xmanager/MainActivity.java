@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 	private LinearLayout main_box_5;
 	private LinearLayout main_box_9;
 	private LinearLayout main_box_10;
-	private LinearLayout box_reset_settings;
+	private LinearLayout main_box_13;
 	private LinearLayout box_settings_icon_close;
 	private ImageView settings_icon_close;
 	private LinearLayout box_8_sub_1;
@@ -166,7 +166,10 @@ public class MainActivity extends AppCompatActivity {
 	private EditText apk_path_location;
 	private TextView apk_location_info;
 	private LinearLayout box_10_sub_1;
+	private LinearLayout box_10_sub_2;
 	private TextView clear_directory_folders;
+	private TextView clear_directory_folders_info;
+	private LinearLayout box_reset_settings;
 	private TextView reset_settings;
 	private LinearLayout main_body_about;
 	private LinearLayout box_about_close;
@@ -307,6 +310,7 @@ public class MainActivity extends AppCompatActivity {
 	private SharedPreferences FORCE_INSTALL;
 	private SharedPreferences FORCE_INSTALL_UPDATE;
 	private SharedPreferences COPY_URL_MODE;
+	private AlertDialog.Builder Directory;
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
@@ -353,7 +357,7 @@ public class MainActivity extends AppCompatActivity {
 		main_box_5 = (LinearLayout) findViewById(R.id.main_box_5);
 		main_box_9 = (LinearLayout) findViewById(R.id.main_box_9);
 		main_box_10 = (LinearLayout) findViewById(R.id.main_box_10);
-		box_reset_settings = (LinearLayout) findViewById(R.id.box_reset_settings);
+		main_box_13 = (LinearLayout) findViewById(R.id.main_box_13);
 		box_settings_icon_close = (LinearLayout) findViewById(R.id.box_settings_icon_close);
 		settings_icon_close = (ImageView) findViewById(R.id.settings_icon_close);
 		box_8_sub_1 = (LinearLayout) findViewById(R.id.box_8_sub_1);
@@ -417,7 +421,10 @@ public class MainActivity extends AppCompatActivity {
 		apk_path_location = (EditText) findViewById(R.id.apk_path_location);
 		apk_location_info = (TextView) findViewById(R.id.apk_location_info);
 		box_10_sub_1 = (LinearLayout) findViewById(R.id.box_10_sub_1);
+		box_10_sub_2 = (LinearLayout) findViewById(R.id.box_10_sub_2);
 		clear_directory_folders = (TextView) findViewById(R.id.clear_directory_folders);
+		clear_directory_folders_info = (TextView) findViewById(R.id.clear_directory_folders_info);
+		box_reset_settings = (LinearLayout) findViewById(R.id.box_reset_settings);
 		reset_settings = (TextView) findViewById(R.id.reset_settings);
 		main_body_about = (LinearLayout) findViewById(R.id.main_body_about);
 		box_about_close = (LinearLayout) findViewById(R.id.box_about_close);
@@ -537,6 +544,7 @@ public class MainActivity extends AppCompatActivity {
 		FORCE_INSTALL = getSharedPreferences("FORCE_INSTALL", Activity.MODE_PRIVATE);
 		FORCE_INSTALL_UPDATE = getSharedPreferences("FORCE_INSTALL_UPDATE", Activity.MODE_PRIVATE);
 		COPY_URL_MODE = getSharedPreferences("COPY_URL_MODE", Activity.MODE_PRIVATE);
+		Directory = new AlertDialog.Builder(this);
 		
 		box_switch.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -550,22 +558,6 @@ public class MainActivity extends AppCompatActivity {
 				box_switch.setVisibility(View.GONE);
 				apk_path_location.setEnabled(true);
 				title_header.setText("Settings");
-				if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X") && FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
-					force_auto_install_switch.setChecked(true);
-				}
-				else {
-					if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y") && FORCE_INSTALL.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
-						force_auto_install_switch.setChecked(false);
-					}
-				}
-				if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
-					copy_url_mode_switch.setChecked(true);
-				}
-				else {
-					if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
-						copy_url_mode_switch.setChecked(false);
-					}
-				}
 				_Animation_1();
 			}
 		});
@@ -707,39 +699,17 @@ public class MainActivity extends AppCompatActivity {
 		main_box_10.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/") && FileUtil.isExistFile(apk_path_location.getText().toString())) {
+				if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/") && (FileUtil.isExistFile("/storage/emulated/0/xManager/") && FileUtil.isExistFile(apk_path_location.getText().toString()))) {
 					FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/");
+					FileUtil.deleteFile("/storage/emulated/0/xManager/");
 					FileUtil.deleteFile(apk_path_location.getText().toString());
 					
 				}
 				else {
-					if (!(FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/") && FileUtil.isExistFile(apk_path_location.getText().toString()))) {
+					if (!(FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/") && (FileUtil.isExistFile("/storage/emulated/0/xManager/") && FileUtil.isExistFile(apk_path_location.getText().toString())))) {
 						
 					}
 				}
-			}
-		});
-		
-		box_reset_settings.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View _view) {
-				version_switch_1.setChecked(false);
-				version_switch_2.setChecked(false);
-				changelogs_switch.setChecked(false);
-				list_auto_refresh_switch.setChecked(false);
-				force_auto_install_switch.setChecked(false);
-				copy_url_mode_switch.setChecked(false);
-				navigation_switch.setChecked(false);
-				theme_switch.setChecked(false);
-				green_switch.setChecked(false);
-				purple_switch.setChecked(false);
-				red_switch.setChecked(false);
-				blue_switch.setChecked(false);
-				orange_switch.setChecked(false);
-				yellow_switch.setChecked(false);
-				gray_switch.setChecked(false);
-				apk_path_location.setText("/storage/emulated/0/xManager/");
-				
 			}
 		});
 		
@@ -781,6 +751,7 @@ public class MainActivity extends AppCompatActivity {
 				if (_isChecked) {
 					FORCE_INSTALL.edit().putString("FORCE_INSTALL", "X").commit();
 					FORCE_INSTALL_UPDATE.edit().putString("FORCE_INSTALL_UPDATE", "XX").commit();
+					copy_url_mode_switch.setChecked(false);
 				}
 				else {
 					FORCE_INSTALL.edit().putString("FORCE_INSTALL", "Y").commit();
@@ -796,6 +767,7 @@ public class MainActivity extends AppCompatActivity {
 				if (_isChecked) {
 					COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_ON").commit();
 					
+					force_auto_install_switch.setChecked(false);
 				}
 				else {
 					COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_OFF").commit();
@@ -1733,6 +1705,29 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 		
+		box_reset_settings.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				version_switch_1.setChecked(false);
+				version_switch_2.setChecked(false);
+				changelogs_switch.setChecked(false);
+				list_auto_refresh_switch.setChecked(false);
+				force_auto_install_switch.setChecked(false);
+				copy_url_mode_switch.setChecked(false);
+				navigation_switch.setChecked(false);
+				theme_switch.setChecked(false);
+				green_switch.setChecked(false);
+				purple_switch.setChecked(false);
+				red_switch.setChecked(false);
+				blue_switch.setChecked(false);
+				orange_switch.setChecked(false);
+				yellow_switch.setChecked(false);
+				gray_switch.setChecked(false);
+				apk_path_location.setText("/storage/emulated/0/xManager/");
+				
+			}
+		});
+		
 		box_icon_close.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
@@ -1847,6 +1842,7 @@ public class MainActivity extends AppCompatActivity {
 							SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Fetching failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 						}
 						main_refresh_layout.setEnabled(false);
+						_Switches();
 					}
 					else {
 						main_refresh_layout.setEnabled(true);
@@ -1958,6 +1954,7 @@ public class MainActivity extends AppCompatActivity {
 							SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Fetching failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 						}
 						main_refresh_layout.setEnabled(false);
+						_Switches();
 					}
 					else {
 						main_refresh_layout.setEnabled(true);
@@ -2700,7 +2697,7 @@ public class MainActivity extends AppCompatActivity {
 					});
 				}
 			};
-			_timer.schedule(Timer, (int)(1000));
+			_timer.schedule(Timer, (int)(3000));
 			
 		}
 		else {
@@ -2749,6 +2746,7 @@ public class MainActivity extends AppCompatActivity {
 							SketchwareUtil.CustomToast(getApplicationContext(), "Application not installed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 						}
 						cpu.setText(Build.CPU_ABI);
+						cpu.setText(cpu.getText().toString().toUpperCase());
 					}
 				});
 			}
@@ -2865,7 +2863,6 @@ public class MainActivity extends AppCompatActivity {
 																
 																_RequiredDialog(Success_Download, false);
 																Success_Download.setTitle("SUCCESSFULLY DOWNLOADED");
-																Success_Download.setMessage("FILE DIRECTORY:\n<".concat(apk_path_location.getText().toString().concat(">")));
 																Success_Download.setPositiveButton("INSTALL NOW", new DialogInterface.OnClickListener() {
 																		@Override
 																		public void onClick(DialogInterface _dialog, int _which) {
@@ -2914,6 +2911,29 @@ public class MainActivity extends AppCompatActivity {
 																				SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 																			}
 																		}
+																		
+																	}
+																});
+																Success_Download.setNegativeButton("DIRECTORY", new DialogInterface.OnClickListener() {
+																		@Override
+																		public void onClick(DialogInterface _dialog, int _which) {
+																				_RequiredDialog(Success_Download, true);
+																		
+																		prog.cancel();
+																		
+																				_RequiredDialog(Directory, false);
+																				Directory.setTitle("FILE DIRECTORY");
+																				Directory.setMessage("<".concat(apk_path_location.getText().toString().concat(">")));
+																				Directory.setPositiveButton("GO BACK", new DialogInterface.OnClickListener() {
+																						@Override
+																						public void onClick(DialogInterface _dialog, int _which) {
+																								_RequiredDialog(Directory, true);
+																								_RequiredDialog(Success_Download, false);
+																								Success_Download.create().show();
+																						}
+																				});
+																				Directory.create().show();
+																		
 																	}
 																});
 																Success_Download.setNeutralButton("LATER", new DialogInterface.OnClickListener() {
@@ -3044,6 +3064,7 @@ public class MainActivity extends AppCompatActivity {
 		force_auto_install_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		copy_url_mode.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		copy_file_url_mode_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		clear_directory_folders_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		
 		
 		
@@ -3469,6 +3490,7 @@ public class MainActivity extends AppCompatActivity {
 		CHECK = 0;
 		_Update_Remover();
 		_Updater_Check();
+		_Switch_Fixer();
 		_Animation_5();
 		_List_Updater();
 		_Theme_UI();
@@ -3820,7 +3842,6 @@ public class MainActivity extends AppCompatActivity {
 																
 																_RequiredDialog(Success_Download, false);
 																Success_Download.setTitle("SUCCESSFULLY DOWNLOADED");
-																Success_Download.setMessage("FILE DIRECTORY:\n</storage/emulated/0/xManager/Update/>");
 																Success_Download.setPositiveButton("INSTALL UPDATE", new DialogInterface.OnClickListener() {
 																		@Override
 																		public void onClick(DialogInterface _dialog, int _which) {
@@ -3869,6 +3890,29 @@ public class MainActivity extends AppCompatActivity {
 																				SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 																			}
 																		}
+																		
+																	}
+																});
+																Success_Download.setNegativeButton("DIRECTORY", new DialogInterface.OnClickListener() {
+																		@Override
+																		public void onClick(DialogInterface _dialog, int _which) {
+																				_RequiredDialog(Success_Download, true);
+																		
+																		prog.cancel();
+																		
+																				_RequiredDialog(Directory, false);
+																				Directory.setTitle("FILE DIRECTORY");
+																		    Directory.setMessage("</storage/emulated/0/xManager/Update/>");
+																				Directory.setPositiveButton("GO BACK", new DialogInterface.OnClickListener() {
+																						@Override
+																						public void onClick(DialogInterface _dialog, int _which) {
+																								_RequiredDialog(Directory, true);
+																								_RequiredDialog(Success_Download, false);
+																								Success_Download.create().show();
+																						}
+																				});
+																				Directory.create().show();
+																		
 																	}
 																});
 																Success_Download.setNeutralButton("LATER", new DialogInterface.OnClickListener() {
@@ -4219,7 +4263,7 @@ public class MainActivity extends AppCompatActivity {
 		ii = null;
 		Animation jj;
 		jj = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		jj.setDuration(1000); box_reset_settings.startAnimation(jj);
+		jj.setDuration(1000); main_box_13.startAnimation(jj);
 		jj = null;
 		Animation kk;
 		kk = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
@@ -4852,7 +4896,6 @@ public class MainActivity extends AppCompatActivity {
 																
 																_RequiredDialog(Success_Download, false);
 																Success_Download.setTitle("SUCCESSFULLY DOWNLOADED");
-																Success_Download.setMessage("FILE DIRECTORY:\n<".concat(apk_path_location.getText().toString().concat(">")));
 																Success_Download.setPositiveButton("INSTALL NOW", new DialogInterface.OnClickListener() {
 																		@Override
 																		public void onClick(DialogInterface _dialog, int _which) {
@@ -4901,6 +4944,29 @@ public class MainActivity extends AppCompatActivity {
 																				SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 																			}
 																		}
+																		
+																	}
+																});
+																Success_Download.setNegativeButton("DIRECTORY", new DialogInterface.OnClickListener() {
+																		@Override
+																		public void onClick(DialogInterface _dialog, int _which) {
+																				_RequiredDialog(Success_Download, true);
+																		
+																		prog.cancel();
+																		
+																				_RequiredDialog(Directory, false);
+																				Directory.setTitle("FILE DIRECTORY");
+																				Directory.setMessage("<".concat(apk_path_location.getText().toString().concat(">")));
+																				Directory.setPositiveButton("GO BACK", new DialogInterface.OnClickListener() {
+																						@Override
+																						public void onClick(DialogInterface _dialog, int _which) {
+																								_RequiredDialog(Directory, true);
+																								_RequiredDialog(Success_Download, false);
+																								Success_Download.create().show();
+																						}
+																				});
+																				Directory.create().show();
+																		
 																	}
 																});
 																Success_Download.setNeutralButton("LATER", new DialogInterface.OnClickListener() {
@@ -5096,7 +5162,6 @@ public class MainActivity extends AppCompatActivity {
 																
 																_RequiredDialog(Success_Download, false);
 																Success_Download.setTitle("SUCCESSFULLY DOWNLOADED");
-																Success_Download.setMessage("FILE DIRECTORY:\n</storage/emulated/0/xManager/Update/>");
 																Success_Download.setPositiveButton("INSTALL UPDATE", new DialogInterface.OnClickListener() {
 																		@Override
 																		public void onClick(DialogInterface _dialog, int _which) {
@@ -5145,6 +5210,29 @@ public class MainActivity extends AppCompatActivity {
 																				SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 																			}
 																		}
+																		
+																	}
+																});
+																Success_Download.setNegativeButton("DIRECTORY", new DialogInterface.OnClickListener() {
+																		@Override
+																		public void onClick(DialogInterface _dialog, int _which) {
+																				_RequiredDialog(Success_Download, true);
+																		
+																		prog.cancel();
+																		
+																				_RequiredDialog(Directory, false);
+																				Directory.setTitle("FILE DIRECTORY");
+																		    Directory.setMessage("</storage/emulated/0/xManager/Update/>");
+																				Directory.setPositiveButton("GO BACK", new DialogInterface.OnClickListener() {
+																						@Override
+																						public void onClick(DialogInterface _dialog, int _which) {
+																								_RequiredDialog(Directory, true);
+																								_RequiredDialog(Success_Download, false);
+																								Success_Download.create().show();
+																						}
+																				});
+																				Directory.create().show();
+																		
 																	}
 																});
 																Success_Download.setNeutralButton("LATER", new DialogInterface.OnClickListener() {
@@ -5249,6 +5337,36 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
+	private void _Switches () {
+		if (copy_url_mode_switch.isChecked()) {
+			COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_ON").commit();
+		}
+		else {
+			COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_OFF").commit();
+		}
+		if (force_auto_install_switch.isChecked()) {
+			FORCE_INSTALL.edit().putString("FORCE_INSTALL", "X").commit();
+			FORCE_INSTALL_UPDATE.edit().putString("FORCE_INSTALL_UPDATE", "XX").commit();
+		}
+		else {
+			FORCE_INSTALL.edit().putString("FORCE_INSTALL", "Y").commit();
+			FORCE_INSTALL_UPDATE.edit().putString("FORCE_INSTALL_UPDATE", "YY").commit();
+		}
+	}
+	
+	
+	private void _Switch_Fixer () {
+		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X") && FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
+			force_auto_install_switch.setChecked(true);
+		}
+		else {
+			if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y") && FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
+				force_auto_install_switch.setChecked(false);
+			}
+		}
+	}
+	
+	
 	public class List_menu_1Adapter extends BaseAdapter {
 		ArrayList<HashMap<String, Object>> _data;
 		public List_menu_1Adapter(ArrayList<HashMap<String, Object>> _arr) {
@@ -5289,70 +5407,48 @@ public class MainActivity extends AppCompatActivity {
 				link.setText(listdata.get((int)(listdata.size() - 1) - _position).get("link").toString());
 				title.setText(title.getText().toString().replace("(Armeabi.v7a)", "(Armeabi-v7a)"));
 				title.setText(title.getText().toString().replace("(Arm64.v8a)", "(Arm64-v8a)"));
+				title.setText(title.getText().toString().toUpperCase().replace("SPOTIFY V", "SPOTIFY "));
 				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-				if ((_position == 0) && title.getText().toString().contains("(Armeabi-v7a)")) {
-					SUB_A = title.getText().toString().replace("Spotify v", " ");
-					SUB_B = SUB_A.replace("(Armeabi-v7a)", " ");
+				if ((_position == 0) && title.getText().toString().contains("(ARMEABI-V7A)")) {
+					SUB_A = title.getText().toString().replace("SPOTIFY ", " ");
+					SUB_B = SUB_A.replace("(ARMEABI-V7A)", " ");
 				}
 				else {
-					if ((_position == 0) && title.getText().toString().contains("(Arm64-v8a)")) {
-						SUB_A = title.getText().toString().replace("Spotify v", " ");
-						SUB_B = SUB_A.replace("(Arm64-v8a)", " ");
+					if ((_position == 0) && title.getText().toString().contains("(ARM64-V8A)")) {
+						SUB_A = title.getText().toString().replace("SPOTIFY ", " ");
+						SUB_B = SUB_A.replace("(ARM64-V8A)", " ");
 					}
 				}
 				SUB_1.edit().putString("SUB_1", SUB_B).commit();
 				box.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View _view) {
-						if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
+						if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
 							_RequiredDialog(Selected_Spotify, false);
-							Selected_Spotify.setTitle(title.getText().toString());
-							Selected_Spotify.setMessage("You selected this modified version. Do you want to continue?");
-							Selected_Spotify.setPositiveButton("CONTINUE", new DialogInterface.OnClickListener() {
+							Selected_Spotify.setTitle(title.getText().toString().toUpperCase().replace("SPOTIFY V", "SPOTIFY "));
+							Selected_Spotify.setMessage("You selected this modified version. Do you want to copy the url?");
+							Selected_Spotify.setPositiveButton("COPY URL", new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface _dialog, int _which) {
-									_RequiredDialog(Selected_Spotify, true);
-									_RequiredDialog(Download_Spotify, false);
-									Download_Spotify.setTitle("DOWNLOAD READY");
-									Download_Spotify.setMessage("Downloading this modified apk will overwrite the previous file located at the application's external file directory.");
-									Download_Spotify.setPositiveButton("DOWNLOAD", new DialogInterface.OnClickListener() {
+									try {
+										_RequiredDialog(Selected_Spotify, true);
+										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
+										
+									}
+									catch(Exception e) {
+									}
+									Timer = new TimerTask() {
 										@Override
-										public void onClick(DialogInterface _dialog, int _which) {
-											try {
-												_RequiredDialog(Download_Spotify, true);
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-													_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-												else {
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-												}
-												_File_Remover();
-											}
-											catch(Exception e) {
-											}
-										}
-									});
-									Download_Spotify.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
-										@Override
-										public void onClick(DialogInterface _dialog, int _which) {
-											_RequiredDialog(Download_Spotify, true);
-											Timer = new TimerTask() {
+										public void run() {
+											runOnUiThread(new Runnable() {
 												@Override
 												public void run() {
-													runOnUiThread(new Runnable() {
-														@Override
-														public void run() {
-															_Hide_Navigation();
-														}
-													});
+													_Hide_Navigation();
 												}
-											};
-											_timer.schedule(Timer, (int)(100));
+											});
 										}
-									});
-									Download_Spotify.create().show();
+									};
+									_timer.schedule(Timer, (int)(100));
 								}
 							});
 							Selected_Spotify.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
@@ -5378,32 +5474,55 @@ public class MainActivity extends AppCompatActivity {
 							FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 						}
 						else {
-							if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
+							if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
 								_RequiredDialog(Selected_Spotify, false);
-								Selected_Spotify.setTitle(title.getText().toString());
-								Selected_Spotify.setMessage("You selected this modified version. Do you want to copy the url?");
-								Selected_Spotify.setPositiveButton("COPY URL", new DialogInterface.OnClickListener() {
+								Selected_Spotify.setTitle(title.getText().toString().toUpperCase().replace("SPOTIFY V", "SPOTIFY "));
+								Selected_Spotify.setMessage("You selected this modified version. Do you want to continue?");
+								Selected_Spotify.setPositiveButton("CONTINUE", new DialogInterface.OnClickListener() {
 									@Override
 									public void onClick(DialogInterface _dialog, int _which) {
-										try {
-											_RequiredDialog(Selected_Spotify, true);
-											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
-											
-										}
-										catch(Exception e) {
-										}
-										Timer = new TimerTask() {
+										_RequiredDialog(Selected_Spotify, true);
+										_RequiredDialog(Download_Spotify, false);
+										Download_Spotify.setTitle("DOWNLOAD READY");
+										Download_Spotify.setMessage("Downloading this modified apk will overwrite the previous file located at the application's external file directory.");
+										Download_Spotify.setPositiveButton("DOWNLOAD", new DialogInterface.OnClickListener() {
 											@Override
-											public void run() {
-												runOnUiThread(new Runnable() {
+											public void onClick(DialogInterface _dialog, int _which) {
+												try {
+													_RequiredDialog(Download_Spotify, true);
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+														_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+													else {
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+															_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+													}
+													_File_Remover();
+												}
+												catch(Exception e) {
+												}
+											}
+										});
+										Download_Spotify.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
+											@Override
+											public void onClick(DialogInterface _dialog, int _which) {
+												_RequiredDialog(Download_Spotify, true);
+												Timer = new TimerTask() {
 													@Override
 													public void run() {
-														_Hide_Navigation();
+														runOnUiThread(new Runnable() {
+															@Override
+															public void run() {
+																_Hide_Navigation();
+															}
+														});
 													}
-												});
+												};
+												_timer.schedule(Timer, (int)(100));
 											}
-										};
-										_timer.schedule(Timer, (int)(100));
+										});
+										Download_Spotify.create().show();
 									}
 								});
 								Selected_Spotify.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
@@ -5483,70 +5602,48 @@ public class MainActivity extends AppCompatActivity {
 				link.setText(listdata.get((int)(listdata.size() - 1) - _position).get("link").toString());
 				title.setText(title.getText().toString().replace("(Armeabi.v7a)", "(Armeabi-v7a)"));
 				title.setText(title.getText().toString().replace("(Arm64.v8a)", "(Arm64-v8a)"));
+				title.setText(title.getText().toString().toUpperCase().replace("SPOTIFY V", "SPOTIFY "));
 				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-				if ((_position == 0) && title.getText().toString().contains("(Armeabi-v7a)")) {
-					SUB_X = title.getText().toString().replace("Spotify v", " ");
-					SUB_Y = SUB_X.replace("(Armeabi-v7a)", " ");
+				if ((_position == 0) && title.getText().toString().contains("(ARMEABI-V7A)")) {
+					SUB_X = title.getText().toString().replace("SPOTIFY ", " ");
+					SUB_Y = SUB_X.replace("(ARMEABI-V7A)", " ");
 				}
 				else {
-					if ((_position == 0) && title.getText().toString().contains("(Arm64-v8a)")) {
-						SUB_X = title.getText().toString().replace("Spotify v", " ");
-						SUB_Y = SUB_X.replace("(Arm64-v8a)", " ");
+					if ((_position == 0) && title.getText().toString().contains("(ARM64-V8A)")) {
+						SUB_X = title.getText().toString().replace("SPOTIFY ", " ");
+						SUB_Y = SUB_X.replace("(ARM64-V8A)", " ");
 					}
 				}
 				SUB_2.edit().putString("SUB_2", SUB_Y).commit();
 				box.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View _view) {
-						if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
+						if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
 							_RequiredDialog(Selected_Spotify, false);
-							Selected_Spotify.setTitle(title.getText().toString());
-							Selected_Spotify.setMessage("You selected this modified version. Do you want to continue?");
-							Selected_Spotify.setPositiveButton("CONTINUE", new DialogInterface.OnClickListener() {
+							Selected_Spotify.setTitle(title.getText().toString().toUpperCase().replace("SPOTIFY V", "SPOTIFY "));
+							Selected_Spotify.setMessage("You selected this modified version. Do you want to copy the url?");
+							Selected_Spotify.setPositiveButton("COPY URL", new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface _dialog, int _which) {
-									_RequiredDialog(Selected_Spotify, true);
-									_RequiredDialog(Download_Spotify, false);
-									Download_Spotify.setTitle("DOWNLOAD READY");
-									Download_Spotify.setMessage("Downloading this modified apk will overwrite the previous file located at the application's external file directory.");
-									Download_Spotify.setPositiveButton("DOWNLOAD", new DialogInterface.OnClickListener() {
+									try {
+										_RequiredDialog(Selected_Spotify, true);
+										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
+										
+									}
+									catch(Exception e) {
+									}
+									Timer = new TimerTask() {
 										@Override
-										public void onClick(DialogInterface _dialog, int _which) {
-											try {
-												_RequiredDialog(Download_Spotify, true);
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-													_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-												else {
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-												}
-												_File_Remover();
-											}
-											catch(Exception e) {
-											}
-										}
-									});
-									Download_Spotify.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
-										@Override
-										public void onClick(DialogInterface _dialog, int _which) {
-											_RequiredDialog(Download_Spotify, true);
-											Timer = new TimerTask() {
+										public void run() {
+											runOnUiThread(new Runnable() {
 												@Override
 												public void run() {
-													runOnUiThread(new Runnable() {
-														@Override
-														public void run() {
-															_Hide_Navigation();
-														}
-													});
+													_Hide_Navigation();
 												}
-											};
-											_timer.schedule(Timer, (int)(100));
+											});
 										}
-									});
-									Download_Spotify.create().show();
+									};
+									_timer.schedule(Timer, (int)(100));
 								}
 							});
 							Selected_Spotify.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
@@ -5572,32 +5669,55 @@ public class MainActivity extends AppCompatActivity {
 							FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 						}
 						else {
-							if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
+							if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
 								_RequiredDialog(Selected_Spotify, false);
-								Selected_Spotify.setTitle(title.getText().toString());
-								Selected_Spotify.setMessage("You selected this modified version. Do you want to copy the url?");
-								Selected_Spotify.setPositiveButton("COPY URL", new DialogInterface.OnClickListener() {
+								Selected_Spotify.setTitle(title.getText().toString().toUpperCase().replace("SPOTIFY V", "SPOTIFY "));
+								Selected_Spotify.setMessage("You selected this modified version. Do you want to continue?");
+								Selected_Spotify.setPositiveButton("CONTINUE", new DialogInterface.OnClickListener() {
 									@Override
 									public void onClick(DialogInterface _dialog, int _which) {
-										try {
-											_RequiredDialog(Selected_Spotify, true);
-											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
-											
-										}
-										catch(Exception e) {
-										}
-										Timer = new TimerTask() {
+										_RequiredDialog(Selected_Spotify, true);
+										_RequiredDialog(Download_Spotify, false);
+										Download_Spotify.setTitle("DOWNLOAD READY");
+										Download_Spotify.setMessage("Downloading this modified apk will overwrite the previous file located at the application's external file directory.");
+										Download_Spotify.setPositiveButton("DOWNLOAD", new DialogInterface.OnClickListener() {
 											@Override
-											public void run() {
-												runOnUiThread(new Runnable() {
+											public void onClick(DialogInterface _dialog, int _which) {
+												try {
+													_RequiredDialog(Download_Spotify, true);
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+														_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+													else {
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+															_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+													}
+													_File_Remover();
+												}
+												catch(Exception e) {
+												}
+											}
+										});
+										Download_Spotify.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
+											@Override
+											public void onClick(DialogInterface _dialog, int _which) {
+												_RequiredDialog(Download_Spotify, true);
+												Timer = new TimerTask() {
 													@Override
 													public void run() {
-														_Hide_Navigation();
+														runOnUiThread(new Runnable() {
+															@Override
+															public void run() {
+																_Hide_Navigation();
+															}
+														});
 													}
-												});
+												};
+												_timer.schedule(Timer, (int)(100));
 											}
-										};
-										_timer.schedule(Timer, (int)(100));
+										});
+										Download_Spotify.create().show();
 									}
 								});
 								Selected_Spotify.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
