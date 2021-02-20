@@ -655,7 +655,7 @@
 				android:layout_marginRight="10dp"
 				android:padding="10dp"
 				android:background="#212121"
-				android:orientation="horizontal">
+				android:orientation="vertical">
 				<LinearLayout
 					android:id="@+id/box_10_sub_1"
 					android:layout_width="match_parent"
@@ -671,28 +671,55 @@
 						android:textStyle="bold"
 						android:textColor="#1DB954"/>
 				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/box_10_sub_2"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="3dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/clear_directory_folders_info"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Tap to delete all directory folders including the downloaded apks and updates."
+						android:textSize="12sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF"/>
+				</LinearLayout>
 			</LinearLayout>
 			<LinearLayout
-				android:id="@+id/box_reset_settings"
+				android:id="@+id/main_box_13"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginLeft="150dp"
+				android:layout_marginLeft="10dp"
 				android:layout_marginTop="30dp"
-				android:layout_marginRight="150dp"
+				android:layout_marginRight="10dp"
 				android:layout_marginBottom="100dp"
-				android:paddingTop="10dp"
-				android:paddingBottom="10dp"
-				android:background="#616161"
 				android:gravity="center_horizontal|center_vertical"
 				android:orientation="horizontal">
-				<TextView
-					android:id="@+id/reset_settings"
+				<LinearLayout
+					android:id="@+id/box_reset_settings"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="RESET SETTINGS"
-					android:textSize="12sp"
-					android:textStyle="bold"
-					android:textColor="#FFFFFF"/>
+					android:paddingTop="10dp"
+					android:paddingBottom="10dp"
+					android:background="#616161"
+					android:gravity="center_horizontal|center_vertical"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/reset_settings"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:paddingLeft="10dp"
+						android:paddingRight="10dp"
+						android:text="RESET SETTINGS"
+						android:textSize="12sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF"/>
+				</LinearLayout>
 			</LinearLayout>
 		</LinearLayout>
 	</ScrollView>
@@ -1002,7 +1029,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="10dp"
-				android:layout_marginBottom="30dp"
+				android:layout_marginBottom="70dp"
 				android:padding="8dp"
 				android:text="THANKS TO ALL CONTRIBUTORS! ❤️"
 				android:textSize="14sp"
