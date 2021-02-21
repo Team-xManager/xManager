@@ -42,7 +42,7 @@ aha
 cooldude69  
 Tunelover  
 
-# xSpotify Manager Contributers (Old Manager)  
+# xSpotify Manager Contributors (Old Manager)  
 
 cryiotic (Manager Icon)  
 farish278 (Manager Icon)  
