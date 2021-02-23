@@ -60,21 +60,16 @@ public class MainActivity extends AppCompatActivity {
 	private Timer _timer = new Timer();
 	private FirebaseDatabase _firebase = FirebaseDatabase.getInstance();
 	
-	private String SUB_A = "";
-	private String SUB_B = "";
-	private String SUB_X = "";
-	private String SUB_Y = "";
 	private double CHECK = 0;
 	private String Latest_Version = "";
 	private String Current_Version = "";
 	private String Package_Name = "";
 	private HashMap<String, Object> Versions = new HashMap<>();
-	private String Regular_Title = "";
-	private String Regular_Link = "";
-	private String Amoled_Title = "";
-	private String Amoled_Link = "";
 	private String PATH = "";
-	private String ACCENT = "";
+	private double COUNTER = 0;
+	private double DELETE = 0;
+	private String VERSIONS_REGULAR = "";
+	private String VERSIONS_AMOLED = "";
 	
 	private ArrayList<HashMap<String, Object>> listdata = new ArrayList<>();
 	private ArrayList<HashMap<String, Object>> Versions_1 = new ArrayList<>();
@@ -202,6 +197,7 @@ public class MainActivity extends AppCompatActivity {
 	private TextView forum_1;
 	private TextView manager_team;
 	private TextView manager_1;
+	private ScrollView main_scroll_body;
 	private LinearLayout main_body;
 	private LinearLayout main_box_1;
 	private LinearLayout main_box_2;
@@ -275,8 +271,6 @@ public class MainActivity extends AppCompatActivity {
 	private AlertDialog.Builder Download_Spotify;
 	private AlertDialog.Builder Mod_Info;
 	private AlertDialog.Builder Credits;
-	private SharedPreferences SUB_1;
-	private SharedPreferences SUB_2;
 	private AlertDialog.Builder Success_Download;
 	private SharedPreferences ON_SCREEN;
 	private AlertDialog.Builder Restart;
@@ -311,6 +305,7 @@ public class MainActivity extends AppCompatActivity {
 	private SharedPreferences FORCE_INSTALL_UPDATE;
 	private SharedPreferences COPY_URL_MODE;
 	private AlertDialog.Builder Directory;
+	private SharedPreferences VERSIONS;
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
@@ -457,6 +452,7 @@ public class MainActivity extends AppCompatActivity {
 		forum_1 = (TextView) findViewById(R.id.forum_1);
 		manager_team = (TextView) findViewById(R.id.manager_team);
 		manager_1 = (TextView) findViewById(R.id.manager_1);
+		main_scroll_body = (ScrollView) findViewById(R.id.main_scroll_body);
 		main_body = (LinearLayout) findViewById(R.id.main_body);
 		main_box_1 = (LinearLayout) findViewById(R.id.main_box_1);
 		main_box_2 = (LinearLayout) findViewById(R.id.main_box_2);
@@ -526,8 +522,6 @@ public class MainActivity extends AppCompatActivity {
 		Download_Spotify = new AlertDialog.Builder(this);
 		Mod_Info = new AlertDialog.Builder(this);
 		Credits = new AlertDialog.Builder(this);
-		SUB_1 = getSharedPreferences("SUB_1", Activity.MODE_PRIVATE);
-		SUB_2 = getSharedPreferences("SUB_2", Activity.MODE_PRIVATE);
 		Success_Download = new AlertDialog.Builder(this);
 		ON_SCREEN = getSharedPreferences("ON_SCREEN", Activity.MODE_PRIVATE);
 		Restart = new AlertDialog.Builder(this);
@@ -545,6 +539,7 @@ public class MainActivity extends AppCompatActivity {
 		FORCE_INSTALL_UPDATE = getSharedPreferences("FORCE_INSTALL_UPDATE", Activity.MODE_PRIVATE);
 		COPY_URL_MODE = getSharedPreferences("COPY_URL_MODE", Activity.MODE_PRIVATE);
 		Directory = new AlertDialog.Builder(this);
+		VERSIONS = getSharedPreferences("VERSIONS", Activity.MODE_PRIVATE);
 		
 		box_switch.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -566,130 +561,163 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View _view) {
 				try {
-					Version.addListenerForSingleValueEvent(new ValueEventListener() {
-						@Override
-						public void onDataChange(DataSnapshot _dataSnapshot) {
-							Versions_1 = new ArrayList<>();
-							try {
-								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-									HashMap<String, Object> _map = _data.getValue(_ind);
-									Versions_1.add(_map);
-								}
-							}
-							catch (Exception _e) {
-								_e.printStackTrace();
-							}
-							Latest_Version = Versions_1.get((int)0).get("V").toString();
-							if (Double.parseDouble(Latest_Version) > Double.parseDouble(Current_Version)) {
-								try {
-									_RequiredDialog(Update_Authorized, false);
-									Update_Authorized.setTitle("NEW MANAGER UPDATE");
-									Update_Authorized.setPositiveButton("DOWNLOAD UPDATE", new DialogInterface.OnClickListener() {
+					if (true) {
+						com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or No Internet Connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
 										@Override
-										public void onClick(DialogInterface _dialog, int _which) {
-											try {
-												_RequiredDialog(Update_Authorized, true);
-												if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
-													_Download_Update_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
-												}
-												else {
-													if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
-														_Download_Update(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
+										public void onClick(View _view) {
+										}
+								}).show();
+					}
+					else {
+						Version.addListenerForSingleValueEvent(new ValueEventListener() {
+							@Override
+							public void onDataChange(DataSnapshot _dataSnapshot) {
+								Versions_1 = new ArrayList<>();
+								try {
+									GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+									for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+										HashMap<String, Object> _map = _data.getValue(_ind);
+										Versions_1.add(_map);
+									}
+								}
+								catch (Exception _e) {
+									_e.printStackTrace();
+								}
+								Latest_Version = Versions_1.get((int)0).get("V").toString();
+								if (Double.parseDouble(Latest_Version) > Double.parseDouble(Current_Version)) {
+									
+									Timer = new TimerTask() {
+										@Override
+										public void run() {
+											runOnUiThread(new Runnable() {
+												@Override
+												public void run() {
+													try {
+														_RequiredDialog(Update_Authorized, false);
+														Update_Authorized.setTitle("NEW MANAGER UPDATE");
+														Update_Authorized.setPositiveButton("DOWNLOAD UPDATE", new DialogInterface.OnClickListener() {
+															@Override
+															public void onClick(DialogInterface _dialog, int _which) {
+																try {
+																	_RequiredDialog(Update_Authorized, true);
+																	if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
+																		_Download_Update_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
+																	}
+																	else {
+																		if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
+																			_Download_Update(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
+																		}
+																	}
+																	_Update_Remover();
+																}
+																catch(Exception e) {
+																}
+																Timer = new TimerTask() {
+																	@Override
+																	public void run() {
+																		runOnUiThread(new Runnable() {
+																			@Override
+																			public void run() {
+																				_Hide_Navigation();
+																			}
+																		});
+																	}
+																};
+																_timer.schedule(Timer, (int)(100));
+															}
+														});
+														Update_Authorized.setNeutralButton("NOT NOW", new DialogInterface.OnClickListener() {
+															@Override
+															public void onClick(DialogInterface _dialog, int _which) {
+																_RequiredDialog(Update_Authorized, true);
+																Timer = new TimerTask() {
+																	@Override
+																	public void run() {
+																		runOnUiThread(new Runnable() {
+																			@Override
+																			public void run() {
+																				_Hide_Navigation();
+																			}
+																		});
+																	}
+																};
+																_timer.schedule(Timer, (int)(100));
+															}
+														});
+														Update_Authorized.create().show();
+													}
+													catch(Exception e) {
 													}
 												}
-												_Update_Remover();
-											}
-											catch(Exception e) {
-											}
-											Timer = new TimerTask() {
-												@Override
-												public void run() {
-													runOnUiThread(new Runnable() {
-														@Override
-														public void run() {
-															_Hide_Navigation();
-														}
-													});
-												}
-											};
-											_timer.schedule(Timer, (int)(100));
+											});
 										}
-									});
-									Update_Authorized.setNeutralButton("NOT NOW", new DialogInterface.OnClickListener() {
-										@Override
-										public void onClick(DialogInterface _dialog, int _which) {
-											_RequiredDialog(Update_Authorized, true);
-											Timer = new TimerTask() {
-												@Override
-												public void run() {
-													runOnUiThread(new Runnable() {
-														@Override
-														public void run() {
-															_Hide_Navigation();
-														}
-													});
-												}
-											};
-											_timer.schedule(Timer, (int)(100));
-										}
-									});
-									Update_Authorized.create().show();
-								}
-								catch(Exception e) {
-								}
-							}
-							else {
-								if (Double.parseDouble(Current_Version) > Double.parseDouble(Latest_Version)) {
-									Version.child("App").child("V").setValue(Current_Version);
+									};
+									_timer.schedule(Timer, (int)(1800));
 								}
 								else {
-									try {
-										xManager_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
-											@Override
-											public void onDataChange(DataSnapshot _dataSnapshot) {
-												listdata = new ArrayList<>();
-												try {
-													GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-													for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-														HashMap<String, Object> _map = _data.getValue(_ind);
-														listdata.add(_map);
-													}
-												}
-												catch (Exception _e) {
-													_e.printStackTrace();
-												}
-												xManager_Changelogs.addChildEventListener(_xManager_Changelogs_child_listener);
-											}
-											@Override
-											public void onCancelled(DatabaseError _databaseError) {
-											}
-										});
-										Update_Latest.setTitle("xManager v".concat(app_version.getText().toString().concat(" (Latest)")));
-										Update_Latest.setMessage(app_changelogs.getText().toString());
-										Update_Latest.create().show();
+									if (Double.parseDouble(Current_Version) > Double.parseDouble(Latest_Version)) {
+										Version.child("App").child("V").setValue(Current_Version);
+									}
+									else {
+										
 										Timer = new TimerTask() {
 											@Override
 											public void run() {
 												runOnUiThread(new Runnable() {
 													@Override
 													public void run() {
-														_Hide_Navigation();
+														try {
+															xManager_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
+																@Override
+																public void onDataChange(DataSnapshot _dataSnapshot) {
+																	listdata = new ArrayList<>();
+																	try {
+																		GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+																		for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+																			HashMap<String, Object> _map = _data.getValue(_ind);
+																			listdata.add(_map);
+																		}
+																	}
+																	catch (Exception _e) {
+																		_e.printStackTrace();
+																	}
+																	xManager_Changelogs.addChildEventListener(_xManager_Changelogs_child_listener);
+																}
+																@Override
+																public void onCancelled(DatabaseError _databaseError) {
+																}
+															});
+															Update_Latest.setTitle("xManager v".concat(app_version.getText().toString().concat(" (Latest)")));
+															Update_Latest.setMessage(app_changelogs.getText().toString());
+															Update_Latest.create().show();
+															Timer = new TimerTask() {
+																@Override
+																public void run() {
+																	runOnUiThread(new Runnable() {
+																		@Override
+																		public void run() {
+																			_Hide_Navigation();
+																		}
+																	});
+																}
+															};
+															_timer.schedule(Timer, (int)(100));
+														}
+														catch(Exception e) {
+														}
 													}
 												});
 											}
 										};
-										_timer.schedule(Timer, (int)(100));
-									}
-									catch(Exception e) {
+										_timer.schedule(Timer, (int)(1800));
 									}
 								}
 							}
-						}
-						@Override
-						public void onCancelled(DatabaseError _databaseError) {
-						}
-					});
+							@Override
+							public void onCancelled(DatabaseError _databaseError) {
+							}
+						});
+					}
 				}
 				catch(Exception e) {
 				}
@@ -703,13 +731,21 @@ public class MainActivity extends AppCompatActivity {
 					FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/");
 					FileUtil.deleteFile("/storage/emulated/0/xManager/");
 					FileUtil.deleteFile(apk_path_location.getText().toString());
-					
 				}
 				else {
 					if (!(FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/") && (FileUtil.isExistFile("/storage/emulated/0/xManager/") && FileUtil.isExistFile(apk_path_location.getText().toString())))) {
 						
 					}
 				}
+				if (DELETE == 1) {
+					
+				}
+				else {
+					if (DELETE == 0) {
+						
+					}
+				}
+				DELETE = 0;
 			}
 		});
 		
@@ -739,8 +775,8 @@ public class MainActivity extends AppCompatActivity {
 				}
 				else {
 					LIST_REFRESH.edit().putString("UPDATE", "OFF").commit();
-					
 				}
+				COUNTER = 1;
 			}
 		});
 		
@@ -757,6 +793,7 @@ public class MainActivity extends AppCompatActivity {
 					FORCE_INSTALL.edit().putString("FORCE_INSTALL", "Y").commit();
 					FORCE_INSTALL_UPDATE.edit().putString("FORCE_INSTALL_UPDATE", "YY").commit();
 				}
+				COUNTER = 1;
 			}
 		});
 		
@@ -766,12 +803,12 @@ public class MainActivity extends AppCompatActivity {
 				final boolean _isChecked = _param2;
 				if (_isChecked) {
 					COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_ON").commit();
-					
 					force_auto_install_switch.setChecked(false);
 				}
 				else {
 					COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_OFF").commit();
 				}
+				COUNTER = 1;
 			}
 		});
 		
@@ -791,6 +828,7 @@ public class MainActivity extends AppCompatActivity {
 						getWindow().setNavigationBarColor(Color.parseColor("#212121"));
 					}
 				}
+				COUNTER = 1;
 			}
 		});
 		
@@ -933,6 +971,7 @@ public class MainActivity extends AppCompatActivity {
 						}
 					}
 				}
+				COUNTER = 1;
 			}
 		});
 		
@@ -1058,6 +1097,7 @@ public class MainActivity extends AppCompatActivity {
 						}
 					}
 				}
+				COUNTER = 1;
 			}
 		});
 		
@@ -1183,6 +1223,7 @@ public class MainActivity extends AppCompatActivity {
 						}
 					}
 				}
+				COUNTER = 1;
 			}
 		});
 		
@@ -1308,6 +1349,7 @@ public class MainActivity extends AppCompatActivity {
 						}
 					}
 				}
+				COUNTER = 1;
 			}
 		});
 		
@@ -1433,6 +1475,7 @@ public class MainActivity extends AppCompatActivity {
 						}
 					}
 				}
+				COUNTER = 1;
 			}
 		});
 		
@@ -1558,6 +1601,7 @@ public class MainActivity extends AppCompatActivity {
 						}
 					}
 				}
+				COUNTER = 1;
 			}
 		});
 		
@@ -1683,6 +1727,7 @@ public class MainActivity extends AppCompatActivity {
 						}
 					}
 				}
+				COUNTER = 1;
 			}
 		});
 		
@@ -1724,7 +1769,10 @@ public class MainActivity extends AppCompatActivity {
 				yellow_switch.setChecked(false);
 				gray_switch.setChecked(false);
 				apk_path_location.setText("/storage/emulated/0/xManager/");
-				
+				if (COUNTER == 1) {
+					
+				}
+				COUNTER = 0;
 			}
 		});
 		
@@ -1769,7 +1817,7 @@ public class MainActivity extends AppCompatActivity {
 									catch (Exception _e) {
 										_e.printStackTrace();
 									}
-									sub_1.setText(SUB_1.getString("SUB_1", ""));
+									sub_1.setText(VERSIONS.getString("REGULAR", ""));
 									list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
 									((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
 								}
@@ -1842,6 +1890,13 @@ public class MainActivity extends AppCompatActivity {
 							SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Fetching failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 						}
 						main_refresh_layout.setEnabled(false);
+						if (true) {
+							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or No Internet Connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
+											@Override
+											public void onClick(View _view) {
+											}
+									}).show();
+						}
 						_Switches();
 					}
 					else {
@@ -1881,7 +1936,7 @@ public class MainActivity extends AppCompatActivity {
 									catch (Exception _e) {
 										_e.printStackTrace();
 									}
-									sub_3.setText(SUB_2.getString("SUB_2", ""));
+									sub_3.setText(VERSIONS.getString("AMOLED", ""));
 									list_menu_2.setAdapter(new List_menu_2Adapter(listdata));
 									((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
 								}
@@ -1954,6 +2009,13 @@ public class MainActivity extends AppCompatActivity {
 							SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Fetching failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 						}
 						main_refresh_layout.setEnabled(false);
+						if (true) {
+							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or No Internet Connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
+											@Override
+											public void onClick(View _view) {
+											}
+									}).show();
+						}
 						_Switches();
 					}
 					else {
@@ -1977,6 +2039,13 @@ public class MainActivity extends AppCompatActivity {
 					version_switch_1.setChecked(false);
 					version_switch_2.setChecked(false);
 					theme_switch.setChecked(false);
+					if (true) {
+						com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or No Internet Connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
+										@Override
+										public void onClick(View _view) {
+										}
+								}).show();
+					}
 				}
 				else {
 					box_6_sub_2.setVisibility(View.GONE);
@@ -2229,8 +2298,8 @@ public class MainActivity extends AppCompatActivity {
 						catch (Exception _e) {
 							_e.printStackTrace();
 						}
-						sub_1.setText(SUB_1.getString("SUB_1", ""));
 						
+						sub_1.setText(VERSIONS_REGULAR);
 						main_body.setEnabled(false);
 						main_body.setAlpha((float)(0.65d));
 					}
@@ -2252,8 +2321,8 @@ public class MainActivity extends AppCompatActivity {
 						catch (Exception _e) {
 							_e.printStackTrace();
 						}
-						sub_3.setText(SUB_2.getString("SUB_2", ""));
 						
+						sub_3.setText(VERSIONS_AMOLED);
 						main_body.setEnabled(true);
 						main_body.setAlpha((float)(1.0d));
 					}
@@ -2267,6 +2336,11 @@ public class MainActivity extends AppCompatActivity {
 			public void onErrorResponse(String _param1, String _param2) {
 				final String _tag = _param1;
 				final String _message = _param2;
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or No Internet Connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
+								@Override
+								public void onClick(View _view) {
+								}
+						}).show();
 				
 				main_body.setAlpha((float)(0.65d));
 				Timer = new TimerTask() {
@@ -2344,7 +2418,11 @@ public class MainActivity extends AppCompatActivity {
 						catch (Exception _e) {
 							_e.printStackTrace();
 						}
-						hidden_download.setText(_childValue.get("Links").toString());
+						try {
+							hidden_download.setText(_childValue.get("Links").toString());
+						}
+						catch(Exception e) {
+						}
 					}
 					@Override
 					public void onCancelled(DatabaseError _databaseError) {
@@ -2402,7 +2480,11 @@ public class MainActivity extends AppCompatActivity {
 						catch (Exception _e) {
 							_e.printStackTrace();
 						}
-						changelogs_x.setText(_childValue.get("Changelogs").toString());
+						try {
+							changelogs_x.setText(_childValue.get("Changelogs").toString());
+						}
+						catch(Exception e) {
+						}
 					}
 					@Override
 					public void onCancelled(DatabaseError _databaseError) {
@@ -2460,7 +2542,11 @@ public class MainActivity extends AppCompatActivity {
 						catch (Exception _e) {
 							_e.printStackTrace();
 						}
-						app_changelogs.setText(_childValue.get("App_Changelogs").toString());
+						try {
+							app_changelogs.setText(_childValue.get("App_Changelogs").toString());
+						}
+						catch(Exception e) {
+						}
 					}
 					@Override
 					public void onCancelled(DatabaseError _databaseError) {
@@ -2518,9 +2604,15 @@ public class MainActivity extends AppCompatActivity {
 						catch (Exception _e) {
 							_e.printStackTrace();
 						}
-						listdata.add(_childValue);
-						list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
-						((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
+						try {
+							listdata.add(_childValue);
+							sub_1.setText(_childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", " ").replace("(Arm64.v8a)", " "));
+							VERSIONS.edit().putString("REGULAR", _childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", "").replace("(Arm64.v8a)", "")).commit();
+							list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
+							((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
+						}
+						catch(Exception e) {
+						}
 					}
 					@Override
 					public void onCancelled(DatabaseError _databaseError) {
@@ -2533,28 +2625,7 @@ public class MainActivity extends AppCompatActivity {
 				GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
 				final String _childKey = _param1.getKey();
 				final HashMap<String, Object> _childValue = _param1.getValue(_ind);
-				Regular_Mod.addListenerForSingleValueEvent(new ValueEventListener() {
-					@Override
-					public void onDataChange(DataSnapshot _dataSnapshot) {
-						listdata = new ArrayList<>();
-						try {
-							GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-							for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-								HashMap<String, Object> _map = _data.getValue(_ind);
-								listdata.add(_map);
-							}
-						}
-						catch (Exception _e) {
-							_e.printStackTrace();
-						}
-						listdata.add(_childValue);
-						list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
-						((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-					}
-					@Override
-					public void onCancelled(DatabaseError _databaseError) {
-					}
-				});
+				
 			}
 			
 			@Override
@@ -2567,7 +2638,15 @@ public class MainActivity extends AppCompatActivity {
 				GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
 				final String _childKey = _param1.getKey();
 				final HashMap<String, Object> _childValue = _param1.getValue(_ind);
-				
+				try {
+					Intent intent = getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName() ); 
+					
+					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+					startActivity(intent);
+				}
+				catch(Exception e) {
+				}
 			}
 			
 			@Override
@@ -2599,9 +2678,15 @@ public class MainActivity extends AppCompatActivity {
 						catch (Exception _e) {
 							_e.printStackTrace();
 						}
-						listdata.add(_childValue);
-						list_menu_2.setAdapter(new List_menu_2Adapter(listdata));
-						((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
+						try {
+							listdata.add(_childValue);
+							sub_3.setText(_childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", " ").replace("(Arm64.v8a)", " "));
+							VERSIONS.edit().putString("AMOLED", _childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", "").replace("(Arm64.v8a)", "")).commit();
+							list_menu_2.setAdapter(new List_menu_2Adapter(listdata));
+							((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
+						}
+						catch(Exception e) {
+						}
 					}
 					@Override
 					public void onCancelled(DatabaseError _databaseError) {
@@ -2614,28 +2699,7 @@ public class MainActivity extends AppCompatActivity {
 				GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
 				final String _childKey = _param1.getKey();
 				final HashMap<String, Object> _childValue = _param1.getValue(_ind);
-				Amoled_Black.addListenerForSingleValueEvent(new ValueEventListener() {
-					@Override
-					public void onDataChange(DataSnapshot _dataSnapshot) {
-						listdata = new ArrayList<>();
-						try {
-							GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-							for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-								HashMap<String, Object> _map = _data.getValue(_ind);
-								listdata.add(_map);
-							}
-						}
-						catch (Exception _e) {
-							_e.printStackTrace();
-						}
-						listdata.add(_childValue);
-						list_menu_2.setAdapter(new List_menu_2Adapter(listdata));
-						((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
-					}
-					@Override
-					public void onCancelled(DatabaseError _databaseError) {
-					}
-				});
+				
 			}
 			
 			@Override
@@ -2648,7 +2712,15 @@ public class MainActivity extends AppCompatActivity {
 				GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
 				final String _childKey = _param1.getKey();
 				final HashMap<String, Object> _childValue = _param1.getValue(_ind);
-				
+				try {
+					Intent intent = getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName() ); 
+					
+					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+					startActivity(intent);
+				}
+				catch(Exception e) {
+				}
 			}
 			
 			@Override
@@ -2775,7 +2847,7 @@ public class MainActivity extends AppCompatActivity {
 				
 				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
 				
-				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION);
+				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				
 				request.setMimeType("application/vnd.android.package-archive");
 				
@@ -2958,7 +3030,11 @@ public class MainActivity extends AppCompatActivity {
 																	}
 																});
 																Success_Download.create().show();
+																
 																SketchwareUtil.CustomToast(getApplicationContext(), "Download Complete", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																
+																prog.cancel();
+																
 																		}
 																});
 														}
@@ -2972,7 +3048,11 @@ public class MainActivity extends AppCompatActivity {
 						} } }).start();
 				
 			} else {
-				SketchwareUtil.CustomToast(getApplicationContext(), "No Internet Connection", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "No Internet Connection", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
+								@Override
+								public void onClick(View _view) {
+								}
+						}).show();
 			}
 		}
 		catch(Exception e) {
@@ -3164,13 +3244,14 @@ public class MainActivity extends AppCompatActivity {
 						catch (Exception _e) {
 							_e.printStackTrace();
 						}
-						sub_1.setText(SUB_1.getString("SUB_1", ""));
+						
 						Timer = new TimerTask() {
 							@Override
 							public void run() {
 								runOnUiThread(new Runnable() {
 									@Override
 									public void run() {
+										sub_1.setText(VERSIONS.getString("REGULAR", ""));
 										list_menu_1.smoothScrollToPosition((int)(999));
 										version_switch_1.setChecked(true);
 										version_switch_2.setChecked(false);
@@ -3200,8 +3281,19 @@ public class MainActivity extends AppCompatActivity {
 						catch (Exception _e) {
 							_e.printStackTrace();
 						}
-						sub_3.setText(SUB_2.getString("SUB_2", ""));
 						
+						Timer = new TimerTask() {
+							@Override
+							public void run() {
+								runOnUiThread(new Runnable() {
+									@Override
+									public void run() {
+										sub_3.setText(VERSIONS.getString("AMOLED", ""));
+									}
+								});
+							}
+						};
+						_timer.schedule(Timer, (int)(300));
 						Timer = new TimerTask() {
 							@Override
 							public void run() {
@@ -3364,11 +3456,22 @@ public class MainActivity extends AppCompatActivity {
 						catch (Exception _e) {
 							_e.printStackTrace();
 						}
-						sub_1.setText(SUB_1.getString("SUB_1", ""));
-						list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
-						((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-						main_body.setEnabled(false);
-						main_body.setAlpha((float)(0.65d));
+						Timer = new TimerTask() {
+							@Override
+							public void run() {
+								runOnUiThread(new Runnable() {
+									@Override
+									public void run() {
+										sub_1.setText(VERSIONS.getString("REGULAR", ""));
+										list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
+										((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
+										main_body.setEnabled(false);
+										main_body.setAlpha((float)(0.65d));
+									}
+								});
+							}
+						};
+						_timer.schedule(Timer, (int)(300));
 					}
 					@Override
 					public void onCancelled(DatabaseError _databaseError) {
@@ -3388,7 +3491,18 @@ public class MainActivity extends AppCompatActivity {
 						catch (Exception _e) {
 							_e.printStackTrace();
 						}
-						sub_3.setText(SUB_2.getString("SUB_2", ""));
+						Timer = new TimerTask() {
+							@Override
+							public void run() {
+								runOnUiThread(new Runnable() {
+									@Override
+									public void run() {
+										sub_3.setText(VERSIONS.getString("AMOLED", ""));
+									}
+								});
+							}
+						};
+						_timer.schedule(Timer, (int)(300));
 						Timer = new TimerTask() {
 							@Override
 							public void run() {
@@ -3496,6 +3610,7 @@ public class MainActivity extends AppCompatActivity {
 		_Theme_UI();
 		_Effects();
 		_Url_Mode();
+		_Switch_Checker();
 	}
 	
 	
@@ -3708,32 +3823,28 @@ public class MainActivity extends AppCompatActivity {
 	
 	
 	private void _Updater_Check () {
+		Package_Name = "com.xc3fff0e.xmanager";
 		try {
-			Package_Name = "com.xc3fff0e.xmanager";
-			try {
-				android.content.pm.PackageInfo pinfo = getPackageManager().getPackageInfo(Package_Name, android.content.pm.PackageManager.GET_ACTIVITIES);
-				Current_Version = pinfo.versionName;
-			}
-			catch (Exception e) {
-				SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Version unidentified", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-			}
-			DatabaseReference rootRef = _firebase.getReference(); rootRef.child("version").addListenerForSingleValueEvent(new ValueEventListener() {
-				@Override
-				public void onDataChange(DataSnapshot snapshot) {
-					if (snapshot.exists()) {
-						
-					} else {
-						Versions = new HashMap<>();
-						Versions.put("V", Current_Version);
-						Versions.clear();
-						Version.child("App").updateChildren(Versions);
-					} }
-				@Override
-				public void onCancelled(DatabaseError _error) {
-				} });
+			android.content.pm.PackageInfo pinfo = getPackageManager().getPackageInfo(Package_Name, android.content.pm.PackageManager.GET_ACTIVITIES);
+			Current_Version = pinfo.versionName;
 		}
-		catch(Exception e) {
+		catch (Exception e) {
+			SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Version unidentified", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 		}
+		DatabaseReference rootRef = _firebase.getReference(); rootRef.child("version").addListenerForSingleValueEvent(new ValueEventListener() {
+			@Override
+			public void onDataChange(DataSnapshot snapshot) {
+				if (snapshot.exists()) {
+					
+				} else {
+					Versions = new HashMap<>();
+					Versions.put("V", Current_Version);
+					Versions.clear();
+					Version.child("App").updateChildren(Versions);
+				} }
+			@Override
+			public void onCancelled(DatabaseError _error) {
+			} });
 	}
 	
 	
@@ -3752,7 +3863,7 @@ public class MainActivity extends AppCompatActivity {
 				
 				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
 				
-				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION);
+				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				
 				request.setMimeType("application/vnd.android.package-archive");
 				
@@ -3937,7 +4048,11 @@ public class MainActivity extends AppCompatActivity {
 																	}
 																});
 																Success_Download.create().show();
+																
 																SketchwareUtil.CustomToast(getApplicationContext(), "Download Complete", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																
+																prog.cancel();
+																
 																		}
 																});
 														}
@@ -3951,7 +4066,11 @@ public class MainActivity extends AppCompatActivity {
 						} } }).start();
 				
 			} else {
-				SketchwareUtil.CustomToast(getApplicationContext(), "No Internet Connection", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "No Internet Connection", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
+								@Override
+								public void onClick(View _view) {
+								}
+						}).show();
 			}
 		}
 		catch(Exception e) {
@@ -4438,28 +4557,28 @@ public class MainActivity extends AppCompatActivity {
 	
 	
 	private void _Animation_5 () {
-		_Linear_Animation(true, 200, box_uninstall);
-		_Linear_Animation(true, 200, box_settings);
-		_Linear_Animation(true, 200, box_cache);
-		_Linear_Animation(true, 200, box_open);
-		_Linear_Animation(true, 200, box_source);
-		_Linear_Animation(true, 200, box_support);
-		_Linear_Animation(true, 200, box_donate);
-		_Linear_Animation(true, 200, box_about);
-		_Linear_Animation(true, 200, box_switch);
-		_Linear_Animation(true, 200, box_update);
-		_Linear_Animation(true, 200, box_icon_close);
-		_Linear_Animation(true, 200, box_settings_icon_close);
-		_Linear_Animation(true, 200, main_box_10);
-		_Linear_Animation(true, 200, box_reset_settings);
+		_Linear_Animation(true, 100, box_uninstall);
+		_Linear_Animation(true, 100, box_settings);
+		_Linear_Animation(true, 100, box_cache);
+		_Linear_Animation(true, 100, box_open);
+		_Linear_Animation(true, 100, box_source);
+		_Linear_Animation(true, 100, box_support);
+		_Linear_Animation(true, 100, box_donate);
+		_Linear_Animation(true, 100, box_about);
+		_Linear_Animation(true, 100, box_switch);
+		_Linear_Animation(true, 100, box_update);
+		_Linear_Animation(true, 100, main_box_10);
+		_Linear_Animation(true, 100, box_icon_close);
+		_Linear_Animation(true, 100, box_reset_settings);
+		_Linear_Animation(true, 100, box_settings_icon_close);
 	}
 	
 	
 	private void _List_Updater () {
 		if (LIST_REFRESH.getString("UPDATE", "").equals("ON")) {
-			list_auto_refresh_switch.setChecked(true);
 			try {
 				main_body.setEnabled(false);
+				list_auto_refresh_switch.setChecked(true);
 				
 				Regular_Mod.addListenerForSingleValueEvent(new ValueEventListener() {
 					@Override
@@ -4475,13 +4594,13 @@ public class MainActivity extends AppCompatActivity {
 						catch (Exception _e) {
 							_e.printStackTrace();
 						}
-						sub_1.setText(SUB_1.getString("SUB_1", ""));
 						Timer = new TimerTask() {
 							@Override
 							public void run() {
 								runOnUiThread(new Runnable() {
 									@Override
 									public void run() {
+										sub_1.setText(VERSIONS.getString("REGULAR", ""));
 										list_menu_1.smoothScrollToPosition((int)(999));
 										version_switch_1.setChecked(true);
 										version_switch_2.setChecked(false);
@@ -4492,6 +4611,13 @@ public class MainActivity extends AppCompatActivity {
 							}
 						};
 						_timer.schedule(Timer, (int)(300));
+						if (!force_auto_install_switch.isChecked() && !copy_url_mode_switch.isChecked()) {
+							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Refreshing List...", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
+											@Override
+											public void onClick(View _view) {
+											}
+									}).show();
+						}
 					}
 					@Override
 					public void onCancelled(DatabaseError _databaseError) {
@@ -4511,8 +4637,19 @@ public class MainActivity extends AppCompatActivity {
 						catch (Exception _e) {
 							_e.printStackTrace();
 						}
-						sub_3.setText(SUB_2.getString("SUB_2", ""));
 						
+						Timer = new TimerTask() {
+							@Override
+							public void run() {
+								runOnUiThread(new Runnable() {
+									@Override
+									public void run() {
+										sub_3.setText(VERSIONS.getString("AMOLED", ""));
+									}
+								});
+							}
+						};
+						_timer.schedule(Timer, (int)(300));
 						Timer = new TimerTask() {
 							@Override
 							public void run() {
@@ -4546,6 +4683,13 @@ public class MainActivity extends AppCompatActivity {
 																		changelogs_switch.setChecked(false);
 																		main_body.setEnabled(true);
 																		main_body.setAlpha((float)(1.0d));
+																		if (!force_auto_install_switch.isChecked() && !copy_url_mode_switch.isChecked()) {
+																			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "List Updated", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
+																							@Override
+																							public void onClick(View _view) {
+																							}
+																					}).show();
+																		}
 																	}
 																});
 															}
@@ -4641,8 +4785,9 @@ public class MainActivity extends AppCompatActivity {
 		}
 		else {
 			if (LIST_REFRESH.getString("UPDATE", "").equals("OFF")) {
-				list_auto_refresh_switch.setChecked(false);
 				try {
+					list_auto_refresh_switch.setChecked(false);
+					
 					Regular_Mod.addListenerForSingleValueEvent(new ValueEventListener() {
 						@Override
 						public void onDataChange(DataSnapshot _dataSnapshot) {
@@ -4657,12 +4802,23 @@ public class MainActivity extends AppCompatActivity {
 							catch (Exception _e) {
 								_e.printStackTrace();
 							}
-							sub_1.setText(SUB_1.getString("SUB_1", ""));
-							
-							list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
-							((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-							main_body.setEnabled(false);
-							main_body.setAlpha((float)(0.65d));
+							Timer = new TimerTask() {
+								@Override
+								public void run() {
+									runOnUiThread(new Runnable() {
+										@Override
+										public void run() {
+											sub_1.setText(VERSIONS.getString("REGULAR", ""));
+											
+											list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
+											((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
+											main_body.setEnabled(false);
+											main_body.setAlpha((float)(0.65d));
+										}
+									});
+								}
+							};
+							_timer.schedule(Timer, (int)(300));
 						}
 						@Override
 						public void onCancelled(DatabaseError _databaseError) {
@@ -4682,7 +4838,18 @@ public class MainActivity extends AppCompatActivity {
 							catch (Exception _e) {
 								_e.printStackTrace();
 							}
-							sub_3.setText(SUB_2.getString("SUB_2", ""));
+							Timer = new TimerTask() {
+								@Override
+								public void run() {
+									runOnUiThread(new Runnable() {
+										@Override
+										public void run() {
+											sub_3.setText(VERSIONS.getString("AMOLED", ""));
+										}
+									});
+								}
+							};
+							_timer.schedule(Timer, (int)(300));
 							Timer = new TimerTask() {
 								@Override
 								public void run() {
@@ -4808,7 +4975,7 @@ public class MainActivity extends AppCompatActivity {
 				
 				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
 				
-				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION);
+				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				
 				request.setMimeType("application/vnd.android.package-archive");
 				
@@ -5049,7 +5216,11 @@ public class MainActivity extends AppCompatActivity {
 						} } }).start();
 				
 			} else {
-				SketchwareUtil.CustomToast(getApplicationContext(), "No Internet Connection", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "No Internet Connection", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
+								@Override
+								public void onClick(View _view) {
+								}
+						}).show();
 			}
 		}
 		catch(Exception e) {
@@ -5072,7 +5243,7 @@ public class MainActivity extends AppCompatActivity {
 				
 				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
 				
-				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION);
+				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				
 				request.setMimeType("application/vnd.android.package-archive");
 				
@@ -5315,7 +5486,11 @@ public class MainActivity extends AppCompatActivity {
 						} } }).start();
 				
 			} else {
-				SketchwareUtil.CustomToast(getApplicationContext(), "No Internet Connection", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "No Internet Connection", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
+								@Override
+								public void onClick(View _view) {
+								}
+						}).show();
 			}
 		}
 		catch(Exception e) {
@@ -5367,6 +5542,44 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
+	private void _Switch_Checker () {
+		if (force_auto_install_switch.isChecked()) {
+			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "AUTO-INSTALL ENABLED", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("SETTINGS", new View.OnClickListener(){
+						@Override
+						public void onClick(View _view) {
+								RippleAnimation.create(box_switch).setDuration((long)700).start();
+								main_body_optimization.setVisibility(View.GONE);
+								main_scroll_settings.setVisibility(View.VISIBLE);
+								main_scroll_about.setVisibility(View.GONE);
+								main_refresh_layout.setVisibility(View.GONE);
+								box_update.setVisibility(View.GONE);
+								box_switch.setVisibility(View.GONE);
+								apk_path_location.setEnabled(true);
+								title_header.setText("Settings");
+								_Animation_1();
+						}
+				}).show();
+		}
+		if (copy_url_mode_switch.isChecked()) {
+			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "URL MODE ENABLED", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("SETTINGS", new View.OnClickListener(){
+						@Override
+						public void onClick(View _view) {
+								RippleAnimation.create(box_switch).setDuration((long)700).start();
+								main_body_optimization.setVisibility(View.GONE);
+								main_scroll_settings.setVisibility(View.VISIBLE);
+								main_scroll_about.setVisibility(View.GONE);
+								main_refresh_layout.setVisibility(View.GONE);
+								box_update.setVisibility(View.GONE);
+								box_switch.setVisibility(View.GONE);
+								apk_path_location.setEnabled(true);
+								title_header.setText("Settings");
+								_Animation_1();
+						}
+				}).show();
+		}
+	}
+	
+	
 	public class List_menu_1Adapter extends BaseAdapter {
 		ArrayList<HashMap<String, Object>> _data;
 		public List_menu_1Adapter(ArrayList<HashMap<String, Object>> _arr) {
@@ -5405,21 +5618,13 @@ public class MainActivity extends AppCompatActivity {
 				link.setVisibility(View.GONE);
 				title.setText(listdata.get((int)(listdata.size() - 1) - _position).get("title").toString().replace("-", "."));
 				link.setText(listdata.get((int)(listdata.size() - 1) - _position).get("link").toString());
-				title.setText(title.getText().toString().replace("(Armeabi.v7a)", "(Armeabi-v7a)"));
-				title.setText(title.getText().toString().replace("(Arm64.v8a)", "(Arm64-v8a)"));
-				title.setText(title.getText().toString().toUpperCase().replace("SPOTIFY V", "SPOTIFY "));
+				title.setText(title.getText().toString().replace("(Armeabi.v7a)", "(Armeabi-v7a)").replace("(Arm64.v8a)", "(Arm64-v8a)"));
+				title.setText(title.getText().toString().replace("Spotify v", "Spotify "));
+				title.setText(title.getText().toString().toUpperCase());
 				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-				if ((_position == 0) && title.getText().toString().contains("(ARMEABI-V7A)")) {
-					SUB_A = title.getText().toString().replace("SPOTIFY ", " ");
-					SUB_B = SUB_A.replace("(ARMEABI-V7A)", " ");
+				if (_position == 0) {
+					VERSIONS_REGULAR = listdata.get((int)(listdata.size() - 1) - _position).get("title").toString().replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", " ").replace("(Arm64.v8a)", " ");
 				}
-				else {
-					if ((_position == 0) && title.getText().toString().contains("(ARM64-V8A)")) {
-						SUB_A = title.getText().toString().replace("SPOTIFY ", " ");
-						SUB_B = SUB_A.replace("(ARM64-V8A)", " ");
-					}
-				}
-				SUB_1.edit().putString("SUB_1", SUB_B).commit();
 				box.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View _view) {
@@ -5472,6 +5677,7 @@ public class MainActivity extends AppCompatActivity {
 							Selected_Spotify.create().show();
 							FileUtil.makeDir("/storage/emulated/0/xManager");
 							FileUtil.makeDir("/storage/emulated/0/xManager/Update");
+							DELETE = 1;
 						}
 						else {
 							if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
@@ -5546,6 +5752,7 @@ public class MainActivity extends AppCompatActivity {
 								Selected_Spotify.create().show();
 								FileUtil.makeDir("/storage/emulated/0/xManager");
 								FileUtil.makeDir("/storage/emulated/0/xManager/Update");
+								DELETE = 1;
 							}
 						}
 					}
@@ -5600,21 +5807,13 @@ public class MainActivity extends AppCompatActivity {
 				link.setVisibility(View.GONE);
 				title.setText(listdata.get((int)(listdata.size() - 1) - _position).get("title").toString().replace("-", "."));
 				link.setText(listdata.get((int)(listdata.size() - 1) - _position).get("link").toString());
-				title.setText(title.getText().toString().replace("(Armeabi.v7a)", "(Armeabi-v7a)"));
-				title.setText(title.getText().toString().replace("(Arm64.v8a)", "(Arm64-v8a)"));
-				title.setText(title.getText().toString().toUpperCase().replace("SPOTIFY V", "SPOTIFY "));
+				title.setText(title.getText().toString().replace("(Armeabi.v7a)", "(Armeabi-v7a)").replace("(Arm64.v8a)", "(Arm64-v8a)"));
+				title.setText(title.getText().toString().replace("Spotify v", "Spotify "));
+				title.setText(title.getText().toString().toUpperCase());
 				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-				if ((_position == 0) && title.getText().toString().contains("(ARMEABI-V7A)")) {
-					SUB_X = title.getText().toString().replace("SPOTIFY ", " ");
-					SUB_Y = SUB_X.replace("(ARMEABI-V7A)", " ");
+				if (_position == 0) {
+					VERSIONS_AMOLED = listdata.get((int)(listdata.size() - 1) - _position).get("title").toString().replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", " ").replace("(Arm64.v8a)", " ");
 				}
-				else {
-					if ((_position == 0) && title.getText().toString().contains("(ARM64-V8A)")) {
-						SUB_X = title.getText().toString().replace("SPOTIFY ", " ");
-						SUB_Y = SUB_X.replace("(ARM64-V8A)", " ");
-					}
-				}
-				SUB_2.edit().putString("SUB_2", SUB_Y).commit();
 				box.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View _view) {
@@ -5667,6 +5866,7 @@ public class MainActivity extends AppCompatActivity {
 							Selected_Spotify.create().show();
 							FileUtil.makeDir("/storage/emulated/0/xManager");
 							FileUtil.makeDir("/storage/emulated/0/xManager/Update");
+							DELETE = 1;
 						}
 						else {
 							if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
@@ -5741,6 +5941,7 @@ public class MainActivity extends AppCompatActivity {
 								Selected_Spotify.create().show();
 								FileUtil.makeDir("/storage/emulated/0/xManager");
 								FileUtil.makeDir("/storage/emulated/0/xManager/Update");
+								DELETE = 1;
 							}
 						}
 					}
