@@ -70,6 +70,22 @@ public class MainActivity extends AppCompatActivity {
 	private double DELETE = 0;
 	private String VERSIONS_REGULAR = "";
 	private String VERSIONS_AMOLED = "";
+	private String download_selected_0 = "";
+	private String download_ready_0 = "";
+	private String download_ready_desc_0 = "";
+	private String downloading_file_0 = "";
+	private String download_success_0 = "";
+	private String copy_url_desc_0 = "";
+	private String file_directory_0 = "";
+	private String copy_url_0 = "";
+	private String download_0 = "";
+	private String cancel_0 = "";
+	private String continue_0 = "";
+	private String later_0 = "";
+	private String directory_0 = "";
+	private String install_now_0 = "";
+	private String go_back_0 = "";
+	private String install_update_0 = "";
 	
 	private ArrayList<HashMap<String, Object>> listdata = new ArrayList<>();
 	private ArrayList<HashMap<String, Object>> Versions_1 = new ArrayList<>();
@@ -88,6 +104,30 @@ public class MainActivity extends AppCompatActivity {
 	private ImageView icon_update;
 	private TextView hidden_download;
 	private TextView app_changelogs;
+	private TextView download_selected;
+	private TextView download_ready;
+	private TextView download_ready_desc;
+	private TextView downloading_file;
+	private TextView download_success;
+	private TextView copy_url_desc;
+	private TextView main_title;
+	private TextView settings_title;
+	private TextView about_title;
+	private TextView file_directory;
+	private TextView new_update;
+	private TextView continue_1;
+	private TextView cancel;
+	private TextView download;
+	private TextView later;
+	private TextView directory;
+	private TextView install_now;
+	private TextView install_update;
+	private TextView go_back;
+	private TextView download_update;
+	private TextView not_now;
+	private TextView copy_url;
+	private TextView show_support;
+	private TextView show_support_desc;
 	private LinearLayout main_body_settings;
 	private LinearLayout box_settings_close;
 	private LinearLayout main_box_8;
@@ -189,8 +229,11 @@ public class MainActivity extends AppCompatActivity {
 	private TextView developer_2;
 	private TextView support_team;
 	private TextView support_1;
-	private TextView mod_testers;
+	private TextView mod_testers_1;
 	private TextView testers_1;
+	private LinearLayout box_about_4_sub_1;
+	private TextView mod_testers_2;
+	private TextView testers_2;
 	private TextView mobilism_team;
 	private TextView mobilism_1;
 	private TextView forum_team;
@@ -343,6 +386,30 @@ public class MainActivity extends AppCompatActivity {
 		icon_update = (ImageView) findViewById(R.id.icon_update);
 		hidden_download = (TextView) findViewById(R.id.hidden_download);
 		app_changelogs = (TextView) findViewById(R.id.app_changelogs);
+		download_selected = (TextView) findViewById(R.id.download_selected);
+		download_ready = (TextView) findViewById(R.id.download_ready);
+		download_ready_desc = (TextView) findViewById(R.id.download_ready_desc);
+		downloading_file = (TextView) findViewById(R.id.downloading_file);
+		download_success = (TextView) findViewById(R.id.download_success);
+		copy_url_desc = (TextView) findViewById(R.id.copy_url_desc);
+		main_title = (TextView) findViewById(R.id.main_title);
+		settings_title = (TextView) findViewById(R.id.settings_title);
+		about_title = (TextView) findViewById(R.id.about_title);
+		file_directory = (TextView) findViewById(R.id.file_directory);
+		new_update = (TextView) findViewById(R.id.new_update);
+		continue_1 = (TextView) findViewById(R.id.continue_1);
+		cancel = (TextView) findViewById(R.id.cancel);
+		download = (TextView) findViewById(R.id.download);
+		later = (TextView) findViewById(R.id.later);
+		directory = (TextView) findViewById(R.id.directory);
+		install_now = (TextView) findViewById(R.id.install_now);
+		install_update = (TextView) findViewById(R.id.install_update);
+		go_back = (TextView) findViewById(R.id.go_back);
+		download_update = (TextView) findViewById(R.id.download_update);
+		not_now = (TextView) findViewById(R.id.not_now);
+		copy_url = (TextView) findViewById(R.id.copy_url);
+		show_support = (TextView) findViewById(R.id.show_support);
+		show_support_desc = (TextView) findViewById(R.id.show_support_desc);
 		main_body_settings = (LinearLayout) findViewById(R.id.main_body_settings);
 		box_settings_close = (LinearLayout) findViewById(R.id.box_settings_close);
 		main_box_8 = (LinearLayout) findViewById(R.id.main_box_8);
@@ -444,8 +511,11 @@ public class MainActivity extends AppCompatActivity {
 		developer_2 = (TextView) findViewById(R.id.developer_2);
 		support_team = (TextView) findViewById(R.id.support_team);
 		support_1 = (TextView) findViewById(R.id.support_1);
-		mod_testers = (TextView) findViewById(R.id.mod_testers);
+		mod_testers_1 = (TextView) findViewById(R.id.mod_testers_1);
 		testers_1 = (TextView) findViewById(R.id.testers_1);
+		box_about_4_sub_1 = (LinearLayout) findViewById(R.id.box_about_4_sub_1);
+		mod_testers_2 = (TextView) findViewById(R.id.mod_testers_2);
+		testers_2 = (TextView) findViewById(R.id.testers_2);
 		mobilism_team = (TextView) findViewById(R.id.mobilism_team);
 		mobilism_1 = (TextView) findViewById(R.id.mobilism_1);
 		forum_team = (TextView) findViewById(R.id.forum_team);
@@ -552,7 +622,7 @@ public class MainActivity extends AppCompatActivity {
 				box_update.setVisibility(View.GONE);
 				box_switch.setVisibility(View.GONE);
 				apk_path_location.setEnabled(true);
-				title_header.setText("Settings");
+				title_header.setText(settings_title.getText().toString());
 				_Animation_1();
 			}
 		});
@@ -561,104 +631,44 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View _view) {
 				try {
-					if (true) {
-						com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or No Internet Connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
-										@Override
-										public void onClick(View _view) {
-										}
-								}).show();
-					}
-					else {
-						Version.addListenerForSingleValueEvent(new ValueEventListener() {
+					if (CHECK == 0) {
+						CHECK = 1;
+						Timer = new TimerTask() {
 							@Override
-							public void onDataChange(DataSnapshot _dataSnapshot) {
-								Versions_1 = new ArrayList<>();
-								try {
-									GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-									for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-										HashMap<String, Object> _map = _data.getValue(_ind);
-										Versions_1.add(_map);
+							public void run() {
+								runOnUiThread(new Runnable() {
+									@Override
+									public void run() {
+										CHECK = 0;
 									}
-								}
-								catch (Exception _e) {
-									_e.printStackTrace();
-								}
-								Latest_Version = Versions_1.get((int)0).get("V").toString();
-								if (Double.parseDouble(Latest_Version) > Double.parseDouble(Current_Version)) {
-									
-									Timer = new TimerTask() {
-										@Override
-										public void run() {
-											runOnUiThread(new Runnable() {
-												@Override
-												public void run() {
-													try {
-														_RequiredDialog(Update_Authorized, false);
-														Update_Authorized.setTitle("NEW MANAGER UPDATE");
-														Update_Authorized.setPositiveButton("DOWNLOAD UPDATE", new DialogInterface.OnClickListener() {
-															@Override
-															public void onClick(DialogInterface _dialog, int _which) {
-																try {
-																	_RequiredDialog(Update_Authorized, true);
-																	if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
-																		_Download_Update_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
-																	}
-																	else {
-																		if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
-																			_Download_Update(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
-																		}
-																	}
-																	_Update_Remover();
-																}
-																catch(Exception e) {
-																}
-																Timer = new TimerTask() {
-																	@Override
-																	public void run() {
-																		runOnUiThread(new Runnable() {
-																			@Override
-																			public void run() {
-																				_Hide_Navigation();
-																			}
-																		});
-																	}
-																};
-																_timer.schedule(Timer, (int)(100));
-															}
-														});
-														Update_Authorized.setNeutralButton("NOT NOW", new DialogInterface.OnClickListener() {
-															@Override
-															public void onClick(DialogInterface _dialog, int _which) {
-																_RequiredDialog(Update_Authorized, true);
-																Timer = new TimerTask() {
-																	@Override
-																	public void run() {
-																		runOnUiThread(new Runnable() {
-																			@Override
-																			public void run() {
-																				_Hide_Navigation();
-																			}
-																		});
-																	}
-																};
-																_timer.schedule(Timer, (int)(100));
-															}
-														});
-														Update_Authorized.create().show();
-													}
-													catch(Exception e) {
-													}
-												}
-											});
+								});
+							}
+						};
+						_timer.schedule(Timer, (int)(2000));
+						if (true) {
+							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or No Internet Connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
+											@Override
+											public void onClick(View _view) {
+											}
+									}).show();
+						}
+						else {
+							Version.addListenerForSingleValueEvent(new ValueEventListener() {
+								@Override
+								public void onDataChange(DataSnapshot _dataSnapshot) {
+									Versions_1 = new ArrayList<>();
+									try {
+										GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+										for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+											HashMap<String, Object> _map = _data.getValue(_ind);
+											Versions_1.add(_map);
 										}
-									};
-									_timer.schedule(Timer, (int)(1800));
-								}
-								else {
-									if (Double.parseDouble(Current_Version) > Double.parseDouble(Latest_Version)) {
-										Version.child("App").child("V").setValue(Current_Version);
 									}
-									else {
+									catch (Exception _e) {
+										_e.printStackTrace();
+									}
+									Latest_Version = Versions_1.get((int)0).get("V").toString();
+									if (Double.parseDouble(Latest_Version) > Double.parseDouble(Current_Version)) {
 										
 										Timer = new TimerTask() {
 											@Override
@@ -667,41 +677,58 @@ public class MainActivity extends AppCompatActivity {
 													@Override
 													public void run() {
 														try {
-															xManager_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
+															_RequiredDialog(Update_Authorized, false);
+															Update_Authorized.setTitle(new_update.getText().toString());
+															Update_Authorized.setPositiveButton(download_update.getText().toString(), new DialogInterface.OnClickListener() {
 																@Override
-																public void onDataChange(DataSnapshot _dataSnapshot) {
-																	listdata = new ArrayList<>();
+																public void onClick(DialogInterface _dialog, int _which) {
 																	try {
-																		GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-																		for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-																			HashMap<String, Object> _map = _data.getValue(_ind);
-																			listdata.add(_map);
+																		_RequiredDialog(Update_Authorized, true);
+																		if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
+																			_Download_Update_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
 																		}
+																		else {
+																			if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
+																				_Download_Update(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
+																			}
+																		}
+																		_Update_Remover();
 																	}
-																	catch (Exception _e) {
-																		_e.printStackTrace();
+																	catch(Exception e) {
 																	}
-																	xManager_Changelogs.addChildEventListener(_xManager_Changelogs_child_listener);
-																}
-																@Override
-																public void onCancelled(DatabaseError _databaseError) {
-																}
-															});
-															Update_Latest.setTitle("xManager v".concat(app_version.getText().toString().concat(" (Latest)")));
-															Update_Latest.setMessage(app_changelogs.getText().toString());
-															Update_Latest.create().show();
-															Timer = new TimerTask() {
-																@Override
-																public void run() {
-																	runOnUiThread(new Runnable() {
+																	Timer = new TimerTask() {
 																		@Override
 																		public void run() {
-																			_Hide_Navigation();
+																			runOnUiThread(new Runnable() {
+																				@Override
+																				public void run() {
+																					_Hide_Navigation();
+																				}
+																			});
 																		}
-																	});
+																	};
+																	_timer.schedule(Timer, (int)(100));
 																}
-															};
-															_timer.schedule(Timer, (int)(100));
+															});
+															Update_Authorized.setNeutralButton(not_now.getText().toString(), new DialogInterface.OnClickListener() {
+																@Override
+																public void onClick(DialogInterface _dialog, int _which) {
+																	_RequiredDialog(Update_Authorized, true);
+																	Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																			runOnUiThread(new Runnable() {
+																				@Override
+																				public void run() {
+																					_Hide_Navigation();
+																				}
+																			});
+																		}
+																	};
+																	_timer.schedule(Timer, (int)(100));
+																}
+															});
+															Update_Authorized.create().show();
 														}
 														catch(Exception e) {
 														}
@@ -711,12 +738,70 @@ public class MainActivity extends AppCompatActivity {
 										};
 										_timer.schedule(Timer, (int)(1800));
 									}
+									else {
+										if (Double.parseDouble(Current_Version) > Double.parseDouble(Latest_Version)) {
+											Version.child("App").child("V").setValue(Current_Version);
+										}
+										else {
+											
+											Timer = new TimerTask() {
+												@Override
+												public void run() {
+													runOnUiThread(new Runnable() {
+														@Override
+														public void run() {
+															try {
+																xManager_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
+																	@Override
+																	public void onDataChange(DataSnapshot _dataSnapshot) {
+																		listdata = new ArrayList<>();
+																		try {
+																			GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+																			for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+																				HashMap<String, Object> _map = _data.getValue(_ind);
+																				listdata.add(_map);
+																			}
+																		}
+																		catch (Exception _e) {
+																			_e.printStackTrace();
+																		}
+																		xManager_Changelogs.addChildEventListener(_xManager_Changelogs_child_listener);
+																	}
+																	@Override
+																	public void onCancelled(DatabaseError _databaseError) {
+																	}
+																});
+																Update_Latest.setTitle("xManager v".concat(app_version.getText().toString().concat(" (Latest)")));
+																Update_Latest.setMessage(app_changelogs.getText().toString());
+																Update_Latest.create().show();
+																Timer = new TimerTask() {
+																	@Override
+																	public void run() {
+																		runOnUiThread(new Runnable() {
+																			@Override
+																			public void run() {
+																				_Hide_Navigation();
+																			}
+																		});
+																	}
+																};
+																_timer.schedule(Timer, (int)(100));
+															}
+															catch(Exception e) {
+															}
+														}
+													});
+												}
+											};
+											_timer.schedule(Timer, (int)(1800));
+										}
+									}
 								}
-							}
-							@Override
-							public void onCancelled(DatabaseError _databaseError) {
-							}
-						});
+								@Override
+								public void onCancelled(DatabaseError _databaseError) {
+								}
+							});
+						}
 					}
 				}
 				catch(Exception e) {
@@ -760,7 +845,7 @@ public class MainActivity extends AppCompatActivity {
 				box_update.setVisibility(View.VISIBLE);
 				box_switch.setVisibility(View.VISIBLE);
 				apk_path_location.setEnabled(false);
-				title_header.setText("xManager");
+				title_header.setText(main_title.getText().toString());
 				_Animation_0();
 				_Url_Mode();
 			}
@@ -1786,7 +1871,7 @@ public class MainActivity extends AppCompatActivity {
 				main_refresh_layout.setVisibility(View.VISIBLE);
 				box_update.setVisibility(View.VISIBLE);
 				box_switch.setVisibility(View.VISIBLE);
-				title_header.setText("xManager");
+				title_header.setText(main_title.getText().toString());
 				_Animation_0();
 				_Url_Mode();
 			}
@@ -2228,9 +2313,9 @@ public class MainActivity extends AppCompatActivity {
 			public void onClick(View _view) {
 				try {
 					_RequiredDialog(Donation, false);
-					Donation.setTitle("SHOW YOUR SUPPORT");
-					Donation.setMessage("We are a non-profit, non-corporate and non-compromised team. People like you encourage us to create an app to make things much easier especially from downloading to installing.\n\nWe are pouring all of our time and best efforts just to make things right and perfect. We will do our best to support this app as long as we could.\n\nAny amount will help and be very much appreciated!");
-					Donation.setPositiveButton("DONATE", new DialogInterface.OnClickListener() {
+					Donation.setTitle(show_support.getText().toString());
+					Donation.setMessage(show_support_desc.getText().toString());
+					Donation.setPositiveButton(donate.getText().toString(), new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface _dialog, int _which) {
 							_RequiredDialog(Donation, true);
@@ -2239,7 +2324,7 @@ public class MainActivity extends AppCompatActivity {
 							startActivity(Donate);
 						}
 					});
-					Donation.setNeutralButton("NOT NOW", new DialogInterface.OnClickListener() {
+					Donation.setNeutralButton(not_now.getText().toString(), new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface _dialog, int _which) {
 							_RequiredDialog(Donation, true);
@@ -2274,7 +2359,7 @@ public class MainActivity extends AppCompatActivity {
 				main_refresh_layout.setVisibility(View.GONE);
 				box_update.setVisibility(View.GONE);
 				box_switch.setVisibility(View.GONE);
-				title_header.setText("About");
+				title_header.setText(about_title.getText().toString());
 				_Animation_2();
 			}
 		});
@@ -2738,6 +2823,7 @@ public class MainActivity extends AppCompatActivity {
 			_Informations();
 			_Animation_0();
 			_Model_UI();
+			_Translations();
 		}
 		catch(Exception e) {
 		}
@@ -2863,7 +2949,7 @@ public class MainActivity extends AppCompatActivity {
 				prog.setIndeterminate(false);
 				prog.setCancelable(false);
 				prog.setCanceledOnTouchOutside(false);
-				prog.setTitle("DOWNLOADING FILE...");
+				prog.setTitle(downloading_file_0);
 				new Thread(new Runnable() {
 					
 					@Override
@@ -2911,7 +2997,7 @@ public class MainActivity extends AppCompatActivity {
 										@Override
 										public void run() {
 											
-											prog.setTitle("DOWNLOADING FILE...");
+											prog.setTitle(downloading_file_0);
 											prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 											prog.setProgress(dl_progress);
 											prog.setMax(100);
@@ -2934,8 +3020,8 @@ public class MainActivity extends AppCompatActivity {
 																}
 																
 																_RequiredDialog(Success_Download, false);
-																Success_Download.setTitle("SUCCESSFULLY DOWNLOADED");
-																Success_Download.setPositiveButton("INSTALL NOW", new DialogInterface.OnClickListener() {
+																Success_Download.setTitle(download_success_0);
+																Success_Download.setPositiveButton(install_now_0, new DialogInterface.OnClickListener() {
 																		@Override
 																		public void onClick(DialogInterface _dialog, int _which) {
 																				_RequiredDialog(Success_Download, true);
@@ -2986,7 +3072,7 @@ public class MainActivity extends AppCompatActivity {
 																		
 																	}
 																});
-																Success_Download.setNegativeButton("DIRECTORY", new DialogInterface.OnClickListener() {
+																Success_Download.setNegativeButton(directory_0, new DialogInterface.OnClickListener() {
 																		@Override
 																		public void onClick(DialogInterface _dialog, int _which) {
 																				_RequiredDialog(Success_Download, true);
@@ -2994,9 +3080,9 @@ public class MainActivity extends AppCompatActivity {
 																		prog.cancel();
 																		
 																				_RequiredDialog(Directory, false);
-																				Directory.setTitle("FILE DIRECTORY");
+																				Directory.setTitle(file_directory_0);
 																				Directory.setMessage("<".concat(apk_path_location.getText().toString().concat(">")));
-																				Directory.setPositiveButton("GO BACK", new DialogInterface.OnClickListener() {
+																				Directory.setPositiveButton(go_back_0, new DialogInterface.OnClickListener() {
 																						@Override
 																						public void onClick(DialogInterface _dialog, int _which) {
 																								_RequiredDialog(Directory, true);
@@ -3008,7 +3094,7 @@ public class MainActivity extends AppCompatActivity {
 																		
 																	}
 																});
-																Success_Download.setNeutralButton("LATER", new DialogInterface.OnClickListener() {
+																Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener() {
 																		@Override
 																		public void onClick(DialogInterface _dialog, int _which) {
 																				_RequiredDialog(Success_Download, true);
@@ -3088,23 +3174,23 @@ public class MainActivity extends AppCompatActivity {
 		title_sub.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_text_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-		sub_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-		sub_text_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-		sub_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-		sub_text_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-		sub_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-		sub_text_4.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-		sub_4.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+		sub_text_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_text_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_text_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_text_4.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_4.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_sub.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		device_cpu.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-		cpu.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+		device_cpu.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		cpu.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		support.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		donate.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		about.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		source.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		version_switch_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-		version_switch_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+		version_switch_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		version_switch_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		theme.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		green_theme.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
 		purple_theme.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
@@ -3116,16 +3202,16 @@ public class MainActivity extends AppCompatActivity {
 		title_about.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		developer_manager.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		developer_spotify.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		support_team.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-		mod_testers.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-		mobilism_team.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+		support_team.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		mod_testers_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		mobilism_team.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		forum_team.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_team.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		developer_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		developer_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		support_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-		testers_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-		mobilism_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+		support_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		testers_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		mobilism_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		forum_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		contributors_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -3145,6 +3231,8 @@ public class MainActivity extends AppCompatActivity {
 		copy_url_mode.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		copy_file_url_mode_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		clear_directory_folders_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		mod_testers_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		testers_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		
 		
 		
@@ -3880,7 +3968,7 @@ public class MainActivity extends AppCompatActivity {
 				prog.setIndeterminate(false);
 				prog.setCancelable(false);
 				prog.setCanceledOnTouchOutside(false);
-				prog.setTitle("DOWNLOADING FILE...");
+				prog.setTitle(downloading_file_0);
 				new Thread(new Runnable() {
 					
 					@Override
@@ -3928,7 +4016,7 @@ public class MainActivity extends AppCompatActivity {
 										@Override
 										public void run() {
 											
-											prog.setTitle("DOWNLOADING FILE...");
+											prog.setTitle(downloading_file_0);
 											prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 											prog.setProgress(dl_progress);
 											prog.setMax(100);
@@ -3952,8 +4040,8 @@ public class MainActivity extends AppCompatActivity {
 																}
 																
 																_RequiredDialog(Success_Download, false);
-																Success_Download.setTitle("SUCCESSFULLY DOWNLOADED");
-																Success_Download.setPositiveButton("INSTALL UPDATE", new DialogInterface.OnClickListener() {
+																Success_Download.setTitle(download_success_0);
+																Success_Download.setPositiveButton(install_update_0, new DialogInterface.OnClickListener() {
 																		@Override
 																		public void onClick(DialogInterface _dialog, int _which) {
 																				_RequiredDialog(Success_Download, true);
@@ -4004,7 +4092,7 @@ public class MainActivity extends AppCompatActivity {
 																		
 																	}
 																});
-																Success_Download.setNegativeButton("DIRECTORY", new DialogInterface.OnClickListener() {
+																Success_Download.setNegativeButton(directory_0, new DialogInterface.OnClickListener() {
 																		@Override
 																		public void onClick(DialogInterface _dialog, int _which) {
 																				_RequiredDialog(Success_Download, true);
@@ -4012,9 +4100,9 @@ public class MainActivity extends AppCompatActivity {
 																		prog.cancel();
 																		
 																				_RequiredDialog(Directory, false);
-																				Directory.setTitle("FILE DIRECTORY");
+																				Directory.setTitle(file_directory_0);
 																		    Directory.setMessage("</storage/emulated/0/xManager/Update/>");
-																				Directory.setPositiveButton("GO BACK", new DialogInterface.OnClickListener() {
+																				Directory.setPositiveButton(go_back_0, new DialogInterface.OnClickListener() {
 																						@Override
 																						public void onClick(DialogInterface _dialog, int _which) {
 																								_RequiredDialog(Directory, true);
@@ -4026,7 +4114,7 @@ public class MainActivity extends AppCompatActivity {
 																		
 																	}
 																});
-																Success_Download.setNeutralButton("LATER", new DialogInterface.OnClickListener() {
+																Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener() {
 																		@Override
 																		public void onClick(DialogInterface _dialog, int _which) {
 																				_RequiredDialog(Success_Download, true);
@@ -4991,7 +5079,7 @@ public class MainActivity extends AppCompatActivity {
 				prog.setIndeterminate(false);
 				prog.setCancelable(false);
 				prog.setCanceledOnTouchOutside(false);
-				prog.setTitle("DOWNLOADING FILE...");
+				prog.setTitle(downloading_file_0);
 				new Thread(new Runnable() {
 					
 					@Override
@@ -5039,7 +5127,7 @@ public class MainActivity extends AppCompatActivity {
 										@Override
 										public void run() {
 											
-											prog.setTitle("DOWNLOADING FILE...");
+											prog.setTitle(downloading_file_0);
 											prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 											prog.setProgress(dl_progress);
 											prog.setMax(100);
@@ -5062,8 +5150,8 @@ public class MainActivity extends AppCompatActivity {
 																}
 																
 																_RequiredDialog(Success_Download, false);
-																Success_Download.setTitle("SUCCESSFULLY DOWNLOADED");
-																Success_Download.setPositiveButton("INSTALL NOW", new DialogInterface.OnClickListener() {
+																Success_Download.setTitle(download_success_0);
+																Success_Download.setPositiveButton(install_now_0, new DialogInterface.OnClickListener() {
 																		@Override
 																		public void onClick(DialogInterface _dialog, int _which) {
 																				_RequiredDialog(Success_Download, true);
@@ -5114,7 +5202,7 @@ public class MainActivity extends AppCompatActivity {
 																		
 																	}
 																});
-																Success_Download.setNegativeButton("DIRECTORY", new DialogInterface.OnClickListener() {
+																Success_Download.setNegativeButton(directory_0, new DialogInterface.OnClickListener() {
 																		@Override
 																		public void onClick(DialogInterface _dialog, int _which) {
 																				_RequiredDialog(Success_Download, true);
@@ -5122,9 +5210,9 @@ public class MainActivity extends AppCompatActivity {
 																		prog.cancel();
 																		
 																				_RequiredDialog(Directory, false);
-																				Directory.setTitle("FILE DIRECTORY");
+																				Directory.setTitle(file_directory_0);
 																				Directory.setMessage("<".concat(apk_path_location.getText().toString().concat(">")));
-																				Directory.setPositiveButton("GO BACK", new DialogInterface.OnClickListener() {
+																				Directory.setPositiveButton(go_back_0, new DialogInterface.OnClickListener() {
 																						@Override
 																						public void onClick(DialogInterface _dialog, int _which) {
 																								_RequiredDialog(Directory, true);
@@ -5136,7 +5224,7 @@ public class MainActivity extends AppCompatActivity {
 																		
 																	}
 																});
-																Success_Download.setNeutralButton("LATER", new DialogInterface.OnClickListener() {
+																Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener() {
 																		@Override
 																		public void onClick(DialogInterface _dialog, int _which) {
 																				_RequiredDialog(Success_Download, true);
@@ -5260,7 +5348,7 @@ public class MainActivity extends AppCompatActivity {
 				prog.setIndeterminate(false);
 				prog.setCancelable(false);
 				prog.setCanceledOnTouchOutside(false);
-				prog.setTitle("DOWNLOADING FILE...");
+				prog.setTitle(downloading_file_0);
 				new Thread(new Runnable() {
 					
 					@Override
@@ -5308,7 +5396,7 @@ public class MainActivity extends AppCompatActivity {
 										@Override
 										public void run() {
 											
-											prog.setTitle("DOWNLOADING FILE...");
+											prog.setTitle(downloading_file_0);
 											prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 											prog.setProgress(dl_progress);
 											prog.setMax(100);
@@ -5332,8 +5420,8 @@ public class MainActivity extends AppCompatActivity {
 																}
 																
 																_RequiredDialog(Success_Download, false);
-																Success_Download.setTitle("SUCCESSFULLY DOWNLOADED");
-																Success_Download.setPositiveButton("INSTALL UPDATE", new DialogInterface.OnClickListener() {
+																Success_Download.setTitle(download_success_0);
+																Success_Download.setPositiveButton(install_update_0, new DialogInterface.OnClickListener() {
 																		@Override
 																		public void onClick(DialogInterface _dialog, int _which) {
 																				_RequiredDialog(Success_Download, true);
@@ -5384,7 +5472,7 @@ public class MainActivity extends AppCompatActivity {
 																		
 																	}
 																});
-																Success_Download.setNegativeButton("DIRECTORY", new DialogInterface.OnClickListener() {
+																Success_Download.setNegativeButton(directory_0, new DialogInterface.OnClickListener() {
 																		@Override
 																		public void onClick(DialogInterface _dialog, int _which) {
 																				_RequiredDialog(Success_Download, true);
@@ -5392,9 +5480,9 @@ public class MainActivity extends AppCompatActivity {
 																		prog.cancel();
 																		
 																				_RequiredDialog(Directory, false);
-																				Directory.setTitle("FILE DIRECTORY");
+																				Directory.setTitle(file_directory_0);
 																		    Directory.setMessage("</storage/emulated/0/xManager/Update/>");
-																				Directory.setPositiveButton("GO BACK", new DialogInterface.OnClickListener() {
+																				Directory.setPositiveButton(go_back_0, new DialogInterface.OnClickListener() {
 																						@Override
 																						public void onClick(DialogInterface _dialog, int _which) {
 																								_RequiredDialog(Directory, true);
@@ -5406,7 +5494,7 @@ public class MainActivity extends AppCompatActivity {
 																		
 																	}
 																});
-																Success_Download.setNeutralButton("LATER", new DialogInterface.OnClickListener() {
+																Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener() {
 																		@Override
 																		public void onClick(DialogInterface _dialog, int _which) {
 																				_RequiredDialog(Success_Download, true);
@@ -5580,6 +5668,94 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
+	private void _Translations () {
+		title_1.setText("");
+		title_2.setText("");
+		sub_text_2.setText("");
+		sub_text_4.setText("");
+		sub_text_1.setText("");
+		sub_text_3.setText("");
+		version_switch_1.setText("");
+		version_switch_2.setText("");
+		changelogs.setText("");
+		title_sub.setText("");
+		device_cpu.setText("");
+		source.setText("");
+		support.setText("");
+		donate.setText("");
+		about.setText("");
+		list_auto_refresh.setText("");
+		list_auto_refresh_info.setText("");
+		force_auto_install.setText("");
+		force_auto_install_info.setText("");
+		copy_url_mode.setText("");
+		copy_file_url_mode_info.setText("");
+		navigation_bar.setText("");
+		theme.setText("");
+		apk_location.setText("");
+		apk_location_info.setText("");
+		clear_directory_folders.setText("");
+		clear_directory_folders_info.setText("");
+		reset_settings.setText("");
+		green_theme.setText("");
+		purple_theme.setText("");
+		red_theme.setText("");
+		blue_theme.setText("");
+		orange_theme.setText("");
+		yellow_theme.setText("");
+		gray_theme.setText("");
+		sub_title.setText("");
+		developer_manager.setText("");
+		developer_spotify.setText("");
+		support_team.setText("");
+		mod_testers_1.setText("");
+		mod_testers_2.setText("");
+		mobilism_team.setText("");
+		forum_team.setText("");
+		manager_team.setText("");
+		contributors_1.setText("");
+		download_selected.setText("");
+		download_ready.setText("");
+		download_ready_desc.setText("");
+		downloading_file.setText("");
+		download_success.setText("");
+		copy_url_desc.setText("");
+		file_directory.setText("");
+		new_update.setText("");
+		download_selected_0 = download_selected.getText().toString();
+		download_ready_0 = download_ready.getText().toString();
+		download_ready_desc_0 = download_ready_desc.getText().toString();
+		downloading_file_0 = downloading_file.getText().toString();
+		download_success_0 = download_success.getText().toString();
+		copy_url_desc_0 = copy_url_desc.getText().toString();
+		file_directory_0 = file_directory.getText().toString();
+		continue_1.setText("");
+		cancel.setText("");
+		download.setText("");
+		later.setText("");
+		directory.setText("");
+		install_now.setText("");
+		install_update.setText("");
+		go_back.setText("");
+		download_update.setText("");
+		not_now.setText("");
+		show_support.setText("");
+		show_support_desc.setText("");
+		copy_url_0 = copy_url.getText().toString();
+		download_0 = download.getText().toString();
+		continue_0 = continue_1.getText().toString();
+		cancel_0 = cancel.getText().toString();
+		later_0 = later.getText().toString();
+		directory_0 = directory.getText().toString();
+		install_now_0 = install_now.getText().toString();
+		go_back_0 = go_back.getText().toString();
+		install_update_0 = install_update.getText().toString();
+		main_title.setText("");
+		settings_title.setText("");
+		about_title.setText("");
+	}
+	
+	
 	public class List_menu_1Adapter extends BaseAdapter {
 		ArrayList<HashMap<String, Object>> _data;
 		public List_menu_1Adapter(ArrayList<HashMap<String, Object>> _arr) {
@@ -5631,8 +5807,8 @@ public class MainActivity extends AppCompatActivity {
 						if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
 							_RequiredDialog(Selected_Spotify, false);
 							Selected_Spotify.setTitle(title.getText().toString().toUpperCase().replace("SPOTIFY V", "SPOTIFY "));
-							Selected_Spotify.setMessage("You selected this modified version. Do you want to copy the url?");
-							Selected_Spotify.setPositiveButton("COPY URL", new DialogInterface.OnClickListener() {
+							Selected_Spotify.setMessage(copy_url_desc_0);
+							Selected_Spotify.setPositiveButton(copy_url_0, new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface _dialog, int _which) {
 									try {
@@ -5656,7 +5832,7 @@ public class MainActivity extends AppCompatActivity {
 									_timer.schedule(Timer, (int)(100));
 								}
 							});
-							Selected_Spotify.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
+							Selected_Spotify.setNeutralButton(cancel_0, new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface _dialog, int _which) {
 									_RequiredDialog(Selected_Spotify, true);
@@ -5683,15 +5859,15 @@ public class MainActivity extends AppCompatActivity {
 							if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
 								_RequiredDialog(Selected_Spotify, false);
 								Selected_Spotify.setTitle(title.getText().toString().toUpperCase().replace("SPOTIFY V", "SPOTIFY "));
-								Selected_Spotify.setMessage("You selected this modified version. Do you want to continue?");
-								Selected_Spotify.setPositiveButton("CONTINUE", new DialogInterface.OnClickListener() {
+								Selected_Spotify.setMessage(download_selected_0);
+								Selected_Spotify.setPositiveButton(continue_0, new DialogInterface.OnClickListener() {
 									@Override
 									public void onClick(DialogInterface _dialog, int _which) {
 										_RequiredDialog(Selected_Spotify, true);
 										_RequiredDialog(Download_Spotify, false);
-										Download_Spotify.setTitle("DOWNLOAD READY");
-										Download_Spotify.setMessage("Downloading this modified apk will overwrite the previous file located at the application's external file directory.");
-										Download_Spotify.setPositiveButton("DOWNLOAD", new DialogInterface.OnClickListener() {
+										Download_Spotify.setTitle(download_ready_0);
+										Download_Spotify.setMessage(download_ready_desc_0);
+										Download_Spotify.setPositiveButton(download_0, new DialogInterface.OnClickListener() {
 											@Override
 											public void onClick(DialogInterface _dialog, int _which) {
 												try {
@@ -5710,7 +5886,7 @@ public class MainActivity extends AppCompatActivity {
 												}
 											}
 										});
-										Download_Spotify.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
+										Download_Spotify.setNeutralButton(cancel_0, new DialogInterface.OnClickListener() {
 											@Override
 											public void onClick(DialogInterface _dialog, int _which) {
 												_RequiredDialog(Download_Spotify, true);
@@ -5731,7 +5907,7 @@ public class MainActivity extends AppCompatActivity {
 										Download_Spotify.create().show();
 									}
 								});
-								Selected_Spotify.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
+								Selected_Spotify.setNeutralButton(cancel_0, new DialogInterface.OnClickListener() {
 									@Override
 									public void onClick(DialogInterface _dialog, int _which) {
 										_RequiredDialog(Selected_Spotify, true);
@@ -5820,8 +5996,8 @@ public class MainActivity extends AppCompatActivity {
 						if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
 							_RequiredDialog(Selected_Spotify, false);
 							Selected_Spotify.setTitle(title.getText().toString().toUpperCase().replace("SPOTIFY V", "SPOTIFY "));
-							Selected_Spotify.setMessage("You selected this modified version. Do you want to copy the url?");
-							Selected_Spotify.setPositiveButton("COPY URL", new DialogInterface.OnClickListener() {
+							Selected_Spotify.setMessage(copy_url_desc_0);
+							Selected_Spotify.setPositiveButton(copy_url_0, new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface _dialog, int _which) {
 									try {
@@ -5845,7 +6021,7 @@ public class MainActivity extends AppCompatActivity {
 									_timer.schedule(Timer, (int)(100));
 								}
 							});
-							Selected_Spotify.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
+							Selected_Spotify.setNeutralButton(cancel_0, new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface _dialog, int _which) {
 									_RequiredDialog(Selected_Spotify, true);
@@ -5872,15 +6048,15 @@ public class MainActivity extends AppCompatActivity {
 							if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
 								_RequiredDialog(Selected_Spotify, false);
 								Selected_Spotify.setTitle(title.getText().toString().toUpperCase().replace("SPOTIFY V", "SPOTIFY "));
-								Selected_Spotify.setMessage("You selected this modified version. Do you want to continue?");
-								Selected_Spotify.setPositiveButton("CONTINUE", new DialogInterface.OnClickListener() {
+								Selected_Spotify.setMessage(download_selected_0);
+								Selected_Spotify.setPositiveButton(continue_0, new DialogInterface.OnClickListener() {
 									@Override
 									public void onClick(DialogInterface _dialog, int _which) {
 										_RequiredDialog(Selected_Spotify, true);
 										_RequiredDialog(Download_Spotify, false);
-										Download_Spotify.setTitle("DOWNLOAD READY");
-										Download_Spotify.setMessage("Downloading this modified apk will overwrite the previous file located at the application's external file directory.");
-										Download_Spotify.setPositiveButton("DOWNLOAD", new DialogInterface.OnClickListener() {
+										Download_Spotify.setTitle(download_ready_0);
+										Download_Spotify.setMessage(download_ready_desc_0);
+										Download_Spotify.setPositiveButton(download_0, new DialogInterface.OnClickListener() {
 											@Override
 											public void onClick(DialogInterface _dialog, int _which) {
 												try {
@@ -5899,7 +6075,7 @@ public class MainActivity extends AppCompatActivity {
 												}
 											}
 										});
-										Download_Spotify.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
+										Download_Spotify.setNeutralButton(cancel_0, new DialogInterface.OnClickListener() {
 											@Override
 											public void onClick(DialogInterface _dialog, int _which) {
 												_RequiredDialog(Download_Spotify, true);
@@ -5920,7 +6096,7 @@ public class MainActivity extends AppCompatActivity {
 										Download_Spotify.create().show();
 									}
 								});
-								Selected_Spotify.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
+								Selected_Spotify.setNeutralButton(cancel_0, new DialogInterface.OnClickListener() {
 									@Override
 									public void onClick(DialogInterface _dialog, int _which) {
 										_RequiredDialog(Selected_Spotify, true);
