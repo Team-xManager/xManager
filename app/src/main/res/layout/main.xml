@@ -90,6 +90,222 @@
 			android:textStyle="bold"
 			android:textColor="#FFFFFF"
 			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/download_selected"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="You selected this modified version. Do you want to continue\?"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/download_ready"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="DOWNLOAD READY"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/download_ready_desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Downloading this modified apk will overwrite the previous file located at the application external file directory."
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/downloading_file"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="DOWNLOADING FILE..."
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/download_success"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="SUCCESSFULLY DOWNLOADED"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/copy_url_desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="You selected this modified version. Do you want to copy the url\?"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/main_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="xManager"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/settings_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Settings"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/about_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="About"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/file_directory"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="FILE DIRECTORY"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/new_update"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="NEW MANAGER UPDATE"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/continue_1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="CONTINUE"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/cancel"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="CANCEL"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/download"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="DOWNLOAD"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/later"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="LATER"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/directory"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="DIRECTORY"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/install_now"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="INSTALL NOW"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/install_update"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="INSTALL UPDATE"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/go_back"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="GO BACK"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/download_update"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="DOWNLOAD UPDATE"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/not_now"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="NOT NOW"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/copy_url"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="COPY URL"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/show_support"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="SHOW YOUR SUPPORT"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/show_support_desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="We are a non-profit, non-corporate and non-compromised team. People like you encourage us to create an app to make things much easier especially from downloading to installing.\n\nWe are pouring all of our time and best efforts just to make things right and perfect. We will do our best to support this app as long as we could.\n\nAny amount will help and be very much appreciated!"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
 	</LinearLayout>
 	<ScrollView
 		android:id="@+id/main_scroll_settings"
@@ -291,7 +507,7 @@
 						android:id="@+id/copy_file_url_mode_info"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Activating this will allow you to copy the file's direct url.\n\nNot recommended at all times unless you are having an issue downloading the files directly within the manager."
+						android:text="Activating this will allow you to copy the file direct url.\n\nNot recommended at all times unless you are having an issue downloading the files directly within the manager."
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF"/>
@@ -640,7 +856,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:paddingBottom="8dp"
-						android:text="File directory where you want to save the downloaded apk. If you don't know how to configure this feature, then leave this as it is.\n\nNOTE: This feature does not support external storage (SD Card) due to accessibility, permissions and storage limitations."
+						android:text="File directory where you want to save the downloaded apk. If you do not know how to configure this feature, then leave this as it is.\n\nNOTE: This feature does not support external storage (SD Card) due to accessibility, permissions and storage limitations."
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF"/>
@@ -864,7 +1080,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
-					android:text="xC3FFF0E\nMrDude\nSherlock Holmes"
+					android:text="xC3FFF0E\nMrDude (Retired)\nSherlock Holmes"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF"/>
@@ -911,7 +1127,7 @@
 				android:background="#424242"
 				android:orientation="vertical">
 				<TextView
-					android:id="@+id/mod_testers"
+					android:id="@+id/mod_testers_1"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:padding="8dp"
@@ -926,10 +1142,34 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
-					android:text="RishavG\nmeech\njetfire\nSherlock Holmes\nWu Tang Clam\nZach\naha\n100RABH\ncooldude69\nTunelover"
+					android:text="RishavG\nmeech\njetfire\nSherlock Holmes\nWu Tang Clam\nZach\naha\n100RABH\ncooldude69\nTunelover (Mobilism)"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF"/>
+				<LinearLayout
+					android:id="@+id/box_about_4_sub_1"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:orientation="vertical">
+					<TextView
+						android:id="@+id/mod_testers_2"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:paddingBottom="8dp"
+						android:text="Manager's Hosting Links"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#1DB954"/>
+					<TextView
+						android:id="@+id/testers_2"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="jetfire\nWu Tang Clam"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF"/>
+				</LinearLayout>
 			</LinearLayout>
 			<LinearLayout
 				android:id="@+id/box_about_5"
