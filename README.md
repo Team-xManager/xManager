@@ -24,22 +24,22 @@ xC3FFF0E
 
 # Manager Hosting Links
 
-jetfire
-Wu Tang Clam
+jetfire  
+Wu Tang Clam  
 
 # Manager Translators
 
-0V3R5!9H7 (Bengali Translation)
-Gent G (Chinese - Simplified Translation)
-The Punisher (French Translation)
-Walter's Cousin #CAF (Greek Translation)
-Mc.J & Deraidos (Indonesian Translation)
-Marco (Italian Translation)
-Loui's™ (Portuguese - Brazil Translation)
-Androide323 (Portuguese - Portugal Translation)
-Pegioner (Russian Translation)
-PetFix (Spanish - Spain Translation)
-NIKITA[beryllium] #PocoForEver
+0V3R5!9H7 (Bengali Translation)  
+Gent G (Chinese - Simplified Translation)  
+The Punisher (French Translation)  
+Walter's Cousin #CAF (Greek Translation)  
+Mc.J & Deraidos (Indonesian Translation)  
+Marco (Italian Translation)  
+Loui's™ (Portuguese - Brazil Translation)  
+Androide323 (Portuguese - Portugal Translation)  
+Pegioner (Russian Translation)  
+PetFix (Spanish - Spain Translation)  
+NIKITA[beryllium] #PocoForEver  
 
 # Contributors  
 
