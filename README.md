@@ -39,7 +39,7 @@ Loui's™ (Portuguese - Brazil Translation)
 Androide323 (Portuguese - Portugal Translation)  
 Pegioner (Russian Translation)  
 PetFix (Spanish - Spain Translation)  
-NIKITA[beryllium] #PocoForEver  
+NIKITA[beryllium] #PocoForEver (Ukrainian Translation)  
 
 # Contributors  
 
