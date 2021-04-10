@@ -40,6 +40,7 @@ Androide323 (Portuguese - Portugal Translation)
 Pegioner (Russian Translation)  
 PetFix (Spanish - Spain Translation)  
 NIKITA🇺🇦[beryllium] #PocoForEver (Ukrainian Translation)  
+Berkay (Turkish Translation)  
 
 # Contributors  
 
