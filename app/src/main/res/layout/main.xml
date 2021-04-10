@@ -136,11 +136,38 @@
 			android:textColor="#000000"
 			android:alpha="0.0"/>
 		<TextView
+			android:id="@+id/maintenance_desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="xManager is currently unavailable right now. Kindly check the application later."
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
 			android:id="@+id/copy_url_desc"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:padding="8dp"
 			android:text="You selected this modified version. Do you want to copy the url\?"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/maintenance"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="MAINTENANCE"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0"/>
+		<TextView
+			android:id="@+id/thanks"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="THANKS!"
 			android:textSize="12sp"
 			android:textColor="#000000"
 			android:alpha="0.0"/>
@@ -1212,6 +1239,36 @@
 								android:textColor="#000000"/>
 						</LinearLayout>
 					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_lang_12"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/lang_13"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:paddingTop="8dp"
+							android:paddingRight="8dp"
+							android:paddingBottom="8dp"
+							android:text="TURKISH"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#FFFFFF"/>
+						<LinearLayout
+							android:id="@+id/lang_13_switch_box"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:gravity="right|center_vertical"
+							android:orientation="horizontal">
+							<Switch
+								android:id="@+id/lang_13_switch"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textSize="12sp"
+								android:textColor="#000000"/>
+						</LinearLayout>
+					</LinearLayout>
 				</LinearLayout>
 			</LinearLayout>
 			<LinearLayout
@@ -1774,6 +1831,23 @@
 						android:layout_height="wrap_content"
 						android:paddingBottom="5dp"
 						android:text="NIKITA🇺🇦[beryllium] #PocoForEver"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF"/>
+					<TextView
+						android:id="@+id/manager_lang_12"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Turkish Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFEB3B"/>
+					<TextView
+						android:id="@+id/translator_12"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
+						android:text="Berkay"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF"/>
