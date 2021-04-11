@@ -29,6 +29,7 @@ Wu Tang Clam
 
 # Manager Translators
 
+Yazan Kasem (Arabic Translation)  
 0V3R5!9H7 (Bengali Translation)  
 Gent G (Chinese - Simplified Translation)  
 The Punisher (French Translation)  
@@ -38,9 +39,10 @@ Marco (Italian Translation)
 Loui's™ (Portuguese - Brazil Translation)  
 Androide323 (Portuguese - Portugal Translation)  
 Pegioner (Russian Translation)  
+MysticX (Slovenian Translation)  
 PetFix (Spanish - Spain Translation)  
-NIKITA🇺🇦[beryllium] #PocoForEver (Ukrainian Translation)  
 Berkay (Turkish Translation)  
+NIKITA🇺🇦[beryllium] #PocoForEver (Ukrainian Translation)  
 
 # Contributors  
 
