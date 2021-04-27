@@ -1180,29 +1180,29 @@
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
-						android:id="@+id/box_lang_14"
+						android:id="@+id/box_lang_15"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:orientation="horizontal">
 						<TextView
-							android:id="@+id/lang_15"
+							android:id="@+id/lang_16"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:paddingTop="8dp"
 							android:paddingRight="8dp"
 							android:paddingBottom="8dp"
-							android:text="SLOVENIAN"
+							android:text="ROMANIAN"
 							android:textSize="12sp"
 							android:textStyle="bold"
 							android:textColor="#FFFFFF"/>
 						<LinearLayout
-							android:id="@+id/lang_15_switch_box"
+							android:id="@+id/lang_16_switch_box"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
 							android:gravity="right|center_vertical"
 							android:orientation="horizontal">
 							<Switch
-								android:id="@+id/lang_15_switch"
+								android:id="@+id/lang_16_switch"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:textSize="12sp"
@@ -1233,6 +1233,36 @@
 							android:orientation="horizontal">
 							<Switch
 								android:id="@+id/lang_10_switch"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textSize="12sp"
+								android:textColor="#000000"/>
+						</LinearLayout>
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_lang_14"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/lang_15"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:paddingTop="8dp"
+							android:paddingRight="8dp"
+							android:paddingBottom="8dp"
+							android:text="SLOVENIAN"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#FFFFFF"/>
+						<LinearLayout
+							android:id="@+id/lang_15_switch_box"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:gravity="right|center_vertical"
+							android:orientation="horizontal">
+							<Switch
+								android:id="@+id/lang_15_switch"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:textSize="12sp"
@@ -1549,7 +1579,7 @@
 					android:layout_height="wrap_content"
 					android:padding="3dp"
 					android:gravity="center_horizontal|center_vertical"
-					android:text="No Ads | No Restrictions | New Features | Freedom"
+					android:text="No Ads | New Features | Freedom"
 					android:textSize="12sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF"
@@ -1854,6 +1884,23 @@
 						android:layout_height="wrap_content"
 						android:paddingBottom="5dp"
 						android:text="Androide323"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF"/>
+					<TextView
+						android:id="@+id/manager_lang_15"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Romanian Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFEB3B"/>
+					<TextView
+						android:id="@+id/translator_15"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
+						android:text="NACH"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF"/>
