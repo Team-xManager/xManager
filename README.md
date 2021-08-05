@@ -16,6 +16,17 @@ For contributors, pull request should be done on the "Developer" branch. The "ma
 
 An android application where you can manage and install all versions of the spotify app.
 
+# Main Features
+
+•Upgrade or Downgrade Anytime & Anywhere  
+•Manager Tools (Uninstall, Open Settings, Clean Cached Datas & Launch App)  
+•Able to Hide Navigation Bar  
+•Neat & Slick Minimalist UI  
+•Swipe Down to Refresh  
+•Lightweight Manager  
+•Theme Selector  
+•Easy to Use  
+
 # How It Works
 
 Depending on what variant or version the user wants to install, the manager will directly fetch that selected url data. Once completed, the selected file can now be installed.  
