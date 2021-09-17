@@ -14,14 +14,12 @@
 		android:orientation="horizontal">
 		<ImageView
 			android:id="@+id/icon"
-			android:focusable="false"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:src="@drawable/icon_spotify_2"
 			android:scaleType="center"/>
 		<TextView
 			android:id="@+id/title"
-			android:focusable="false"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:padding="5dp"
@@ -32,7 +30,6 @@
 	</LinearLayout>
 	<TextView
 		android:id="@+id/link"
-		android:focusable="false"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:padding="8dp"
