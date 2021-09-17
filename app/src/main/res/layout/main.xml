@@ -37,6 +37,7 @@
 			android:textSize="11sp"
 			android:textStyle="bold|italic"
 			android:textColor="#FFFFFF"
+			android:alpha="0.0"
 			android:translationY="-5.0dp"/>
 		<LinearLayout
 			android:id="@+id/box_header_tab"
@@ -599,7 +600,8 @@
 				android:layout_marginLeft="10dp"
 				android:layout_marginTop="10dp"
 				android:layout_marginRight="10dp"
-				android:padding="10dp"
+				android:paddingLeft="10dp"
+				android:paddingRight="10dp"
 				android:background="#212121"
 				android:orientation="vertical">
 				<LinearLayout
@@ -614,234 +616,24 @@
 						android:layout_height="wrap_content"
 						android:padding="8dp"
 						android:gravity="center_horizontal|center_vertical"
-						android:text="SHOW THEMES"
+						android:text="THEMES"
 						android:textSize="12sp"
 						android:textStyle="bold"
-						android:textColor="#1DB954"/>
+						android:textColor="#1DB954"
+						android:layout_gravity="center_horizontal|center_vertical"/>
 					<LinearLayout
 						android:id="@+id/box_theme_switch"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:gravity="right|center_vertical"
-						android:orientation="horizontal">
-						<Switch
-							android:id="@+id/theme_switch"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:textSize="12sp"
-							android:textColor="#000000"/>
-					</LinearLayout>
-				</LinearLayout>
-				<LinearLayout
-					android:id="@+id/box_5_sub_2"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingTop="8dp"
-					android:paddingBottom="8dp"
-					android:orientation="vertical">
-					<LinearLayout
-						android:id="@+id/box_theme_0"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="5dp"
-						android:gravity="left|center_vertical"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/green_theme"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:text="GREEN THEME"
-							android:textSize="11sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/box_green_switch"
+						android:gravity="center_horizontal|center_vertical"
+						android:orientation="horizontal"
+						android:layout_gravity="center_horizontal|center_vertical">
+						<Spinner
+							android:id="@+id/select_theme"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/green_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_theme_1"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="5dp"
-						android:gravity="left|center_vertical"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/purple_theme"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:text="PURPLE THEME"
-							android:textSize="11sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/box_purple_switch"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/purple_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_theme_2"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="5dp"
-						android:gravity="left|center_vertical"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/red_theme"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:text="RED THEME"
-							android:textSize="11sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/box_red_switch"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/red_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_theme_3"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="5dp"
-						android:gravity="left|center_vertical"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/blue_theme"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:text="BLUE THEME"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/box_blue_switch"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/blue_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_theme_4"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="5dp"
-						android:gravity="left|center_vertical"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/orange_theme"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:text="ORANGE THEME"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/box_orange_switch"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/orange_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_theme_5"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="5dp"
-						android:gravity="left|center_vertical"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/yellow_theme"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:text="YELLOW THEME"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/box_yellow_switch"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/yellow_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_theme_6"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="5dp"
-						android:gravity="left|center_vertical"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/gray_theme"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:text="GRAY THEME"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/box_gray_switch"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/gray_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
+							android:spinnerMode="dropdown"
+							android:layout_gravity="center_horizontal|center_vertical"/>
 					</LinearLayout>
 				</LinearLayout>
 			</LinearLayout>
@@ -852,7 +644,8 @@
 				android:layout_marginLeft="10dp"
 				android:layout_marginTop="10dp"
 				android:layout_marginRight="10dp"
-				android:padding="10dp"
+				android:paddingLeft="10dp"
+				android:paddingRight="10dp"
 				android:background="#212121"
 				android:orientation="vertical">
 				<LinearLayout
@@ -865,512 +658,25 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
 						android:text="LANGUAGE"
 						android:textSize="12sp"
 						android:textStyle="bold"
-						android:textColor="#1DB954"/>
+						android:textColor="#1DB954"
+						android:layout_gravity="center_horizontal|center_vertical"/>
 					<LinearLayout
 						android:id="@+id/box_language_switch"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:gravity="right|center_vertical"
-						android:orientation="horizontal">
-						<Switch
-							android:id="@+id/language_switch"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:textSize="12sp"
-							android:textColor="#000000"/>
-					</LinearLayout>
-				</LinearLayout>
-				<LinearLayout
-					android:id="@+id/box_14_sub_2"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingTop="8dp"
-					android:paddingBottom="8dp"
-					android:orientation="vertical">
-					<LinearLayout
-						android:id="@+id/box_lang_13"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="5dp"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/lang_14"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="ARABIC"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/lang_14_switch_box"
+						android:gravity="center_horizontal|center_vertical"
+						android:orientation="horizontal"
+						android:layout_gravity="center_horizontal|center_vertical">
+						<Spinner
+							android:id="@+id/select_language"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/lang_14_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_lang_0"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/lang_1"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="BENGALI"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/lang_1_switch_box"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/lang_1_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_lang_1"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/lang_2"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="CHINESE (SIMPLIFIED)"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/lang_2_switch_box"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/lang_2_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_lang_2"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/lang_3"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="FRENCH"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/lang_3_switch_box"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/lang_3_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_lang_3"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/lang_4"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="GREEK"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/lang_4_switch_box"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/lang_4_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_lang_4"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/lang_5"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="INDONESIAN"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/lang_5_switch_box"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/lang_5_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_lang_5"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/lang_6"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="ITALIAN"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/lang_6_switch_box"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/lang_6_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_lang_6"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/lang_7"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="POLISH"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/lang_7_switch_box"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/lang_7_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_lang_7"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/lang_8"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="PORTUGUESE (BRAZIL)"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/lang_8_switch_box"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/lang_8_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_lang_8"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/lang_9"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="PORTUGUESE (PORTUGAL)"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/lang_9_switch_box"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/lang_9_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_lang_15"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/lang_16"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="ROMANIAN"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/lang_16_switch_box"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/lang_16_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_lang_9"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/lang_10"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="RUSSIAN"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/lang_10_switch_box"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/lang_10_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_lang_14"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/lang_15"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="SLOVENIAN"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/lang_15_switch_box"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/lang_15_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_lang_10"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/lang_11"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="SPANISH"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/lang_11_switch_box"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/lang_11_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_lang_12"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/lang_13"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="TURKISH"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/lang_13_switch_box"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/lang_13_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_lang_11"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/lang_12"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="UKRAINIAN"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<LinearLayout
-							android:id="@+id/lang_12_switch_box"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<Switch
-								android:id="@+id/lang_12_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textSize="12sp"
-								android:textColor="#000000"/>
-						</LinearLayout>
+							android:spinnerMode="dropdown"
+							android:layout_gravity="center_horizontal|center_vertical"/>
 					</LinearLayout>
 				</LinearLayout>
 			</LinearLayout>
@@ -1425,7 +731,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:paddingBottom="8dp"
-						android:text="File directory where you want to save the downloaded apk. If you do not know how to configure this feature, then leave this as it is.\n\nNOTE: This feature does not support external storage (SD Card) due to accessibility, permissions and storage limitations."
+						android:text="File directory where you want to save the downloaded file. If you do not know how to configure this feature, then leave this as it is.\n\nNOTE: This feature does not support external storage (SD Card) due to accessibility, permissions and storage limitations."
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF"/>
@@ -1469,7 +775,7 @@
 						android:id="@+id/clear_directory_folders_info"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Tap to delete all directory folders including the downloaded apks and updates."
+						android:text="Tap to delete all directory folders including the downloaded files and updates."
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF"/>
@@ -1675,7 +981,7 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:padding="8dp"
-					android:text="Telegram Support Team"
+					android:text="Telegram/Discord Support Team"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#1DB954"/>
@@ -1686,7 +992,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
-					android:text="jetfire (Github Support)\nmeech\njuznem\nroosphx (Facebook Login Fixed)\nSherlock Holmes"
+					android:text="jetfire (Github Support)\nmeech (Discord Support)\njuznem\nroosphx (Facebook Login Fixed)\nSherlock Holmes"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF"/>
@@ -1726,7 +1032,7 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:padding="8dp"
-					android:text="Manager's Hosting Links"
+					android:text="Manager Hosting Links"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#1DB954"/>
@@ -2462,6 +1768,54 @@
 					android:background="#212121"
 					android:orientation="vertical">
 					<LinearLayout
+						android:id="@+id/box_16_sub_1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/device_cpu"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:paddingLeft="10dp"
+							android:paddingTop="8dp"
+							android:paddingRight="8dp"
+							android:paddingBottom="8dp"
+							android:gravity="center_horizontal|center_vertical"
+							android:text="CPU/ARCH"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#1DB954"
+							android:layout_gravity="center_horizontal|center_vertical"/>
+						<LinearLayout
+							android:id="@+id/box_cpu"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:gravity="right|center_vertical"
+							android:orientation="horizontal">
+							<TextView
+								android:id="@+id/cpu"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingLeft="8dp"
+								android:paddingTop="8dp"
+								android:paddingRight="10dp"
+								android:paddingBottom="8dp"
+								android:text="N/A"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:textColor="#FFFFFF"/>
+						</LinearLayout>
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_seperator_3"
+						android:layout_width="match_parent"
+						android:layout_height="2dp"
+						android:layout_marginLeft="15dp"
+						android:layout_marginRight="15dp"
+						android:padding="8dp"
+						android:background="#616161"
+						android:orientation="horizontal"/>
+					<LinearLayout
 						android:id="@+id/box_6_sub_1"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
@@ -2471,7 +1825,9 @@
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:paddingLeft="10dp"
+							android:paddingTop="8dp"
 							android:paddingRight="8dp"
+							android:paddingBottom="8dp"
 							android:gravity="center_horizontal|center_vertical"
 							android:text="CHANGELOGS"
 							android:textSize="12sp"
@@ -2488,7 +1844,9 @@
 								android:id="@+id/changelogs_switch"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
+								android:paddingTop="8dp"
 								android:paddingRight="2dp"
+								android:paddingBottom="8dp"
 								android:gravity="right|center_vertical"
 								android:textSize="12sp"
 								android:textStyle="bold"
@@ -2555,36 +1913,6 @@
 							android:textStyle="bold"
 							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical"/>
-						<LinearLayout
-							android:id="@+id/box_cpu"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<TextView
-								android:id="@+id/device_cpu"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:paddingLeft="8dp"
-								android:paddingTop="3dp"
-								android:paddingBottom="8dp"
-								android:text="CPU:"
-								android:textSize="11sp"
-								android:textStyle="bold"
-								android:textColor="#FFFFFF"/>
-							<TextView
-								android:id="@+id/cpu"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:paddingLeft="3dp"
-								android:paddingTop="3dp"
-								android:paddingRight="10dp"
-								android:paddingBottom="8dp"
-								android:text="N/A"
-								android:textSize="11sp"
-								android:textStyle="bold"
-								android:textColor="#FFFFFF"/>
-						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_sub_2"
@@ -2761,9 +2089,38 @@
 					android:layout_marginBottom="70dp"
 					android:orientation="horizontal">
 					<LinearLayout
+						android:id="@+id/box_discord"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:paddingTop="8dp"
+						android:paddingBottom="6dp"
+						android:background="#212121"
+						android:gravity="center_horizontal|center_vertical"
+						android:orientation="vertical"
+						android:layout_gravity="center_horizontal|center_vertical"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/discord"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="DISCORD"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#FFFFFF"/>
+						<ImageView
+							android:id="@+id/icon_discord"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/icon_discord"
+							android:scaleType="center"
+							android:scaleX="0.7"
+							android:scaleY="0.7"/>
+					</LinearLayout>
+					<LinearLayout
 						android:id="@+id/box_website"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
+						android:layout_marginLeft="10dp"
 						android:paddingTop="8dp"
 						android:paddingBottom="6dp"
 						android:background="#212121"
@@ -2800,6 +2157,7 @@
 						android:background="#212121"
 						android:gravity="center_horizontal|center_vertical"
 						android:orientation="vertical"
+						android:layout_gravity="center_horizontal|center_vertical"
 						android:layout_weight="1">
 						<TextView
 							android:id="@+id/source"
