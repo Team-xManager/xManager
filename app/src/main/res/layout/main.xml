@@ -417,6 +417,8 @@
 							android:id="@+id/list_auto_refresh_switch"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
+							android:paddingLeft="5dp"
+							android:paddingRight="2dp"
 							android:textSize="12sp"
 							android:textColor="#000000"/>
 					</LinearLayout>
@@ -474,6 +476,8 @@
 							android:id="@+id/force_auto_install_switch"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
+							android:paddingLeft="5dp"
+							android:paddingRight="2dp"
 							android:textSize="12sp"
 							android:textColor="#000000"/>
 					</LinearLayout>
@@ -531,6 +535,8 @@
 							android:id="@+id/copy_url_mode_switch"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
+							android:paddingLeft="5dp"
+							android:paddingRight="2dp"
 							android:textSize="12sp"
 							android:textColor="#000000"/>
 					</LinearLayout>
@@ -588,6 +594,8 @@
 							android:id="@+id/navigation_switch"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
+							android:paddingLeft="5dp"
+							android:paddingRight="2dp"
 							android:textSize="12sp"
 							android:textColor="#000000"/>
 					</LinearLayout>
@@ -918,7 +926,9 @@
 					android:id="@+id/developer_manager"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:padding="8dp"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
 					android:text="xManager Developer"
 					android:textSize="14sp"
 					android:textStyle="bold"
@@ -934,22 +944,13 @@
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF"/>
-			</LinearLayout>
-			<LinearLayout
-				android:id="@+id/box_about_2"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="10dp"
-				android:layout_marginTop="10dp"
-				android:layout_marginRight="10dp"
-				android:padding="8dp"
-				android:background="#424242"
-				android:orientation="vertical">
 				<TextView
 					android:id="@+id/developer_spotify"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:padding="8dp"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
 					android:text="Spotify Mod Developers"
 					android:textSize="14sp"
 					android:textStyle="bold"
@@ -967,7 +968,7 @@
 					android:textColor="#FFFFFF"/>
 			</LinearLayout>
 			<LinearLayout
-				android:id="@+id/box_about_3"
+				android:id="@+id/box_about_2"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginLeft="10dp"
@@ -980,7 +981,9 @@
 					android:id="@+id/support_team"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:padding="8dp"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
 					android:text="Telegram/Discord Support Team"
 					android:textSize="14sp"
 					android:textStyle="bold"
@@ -998,7 +1001,7 @@
 					android:textColor="#FFFFFF"/>
 			</LinearLayout>
 			<LinearLayout
-				android:id="@+id/box_about_4"
+				android:id="@+id/box_about_3"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginLeft="10dp"
@@ -1011,7 +1014,9 @@
 					android:id="@+id/mod_testers_1"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:padding="8dp"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
 					android:text="Mod/Manager Testers"
 					android:textSize="14sp"
 					android:textStyle="bold"
@@ -1031,7 +1036,9 @@
 					android:id="@+id/mod_testers_2"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:padding="8dp"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
 					android:text="Manager Hosting Links"
 					android:textSize="14sp"
 					android:textStyle="bold"
@@ -1047,6 +1054,116 @@
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF"/>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/box_about_4"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginRight="10dp"
+				android:padding="8dp"
+				android:background="#424242"
+				android:orientation="vertical">
+				<TextView
+					android:id="@+id/mobilism_team"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Mobilism Team"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954"/>
+				<TextView
+					android:id="@+id/mobilism_1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:text="Balatan (Uploader/Releaser)\nRishavG (Support)\nmeech\nTunelover"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF"/>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/box_about_5"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginRight="10dp"
+				android:padding="8dp"
+				android:background="#424242"
+				android:orientation="vertical">
+				<TextView
+					android:id="@+id/manager_team"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="xSpotify Manager (Old Manager)"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954"/>
+				<TextView
+					android:id="@+id/manager_1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:text="cryiotic3 (Manager Icon)\nfarish278 (Manager Icon)\nSherlock Holmes\njetfire\n100RABH\nLight Yagami"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF"/>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/box_about_6"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginRight="10dp"
+				android:padding="8dp"
+				android:background="#424242"
+				android:orientation="vertical">
+				<TextView
+					android:id="@+id/forum_team"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="FORUM.APK-RELEASE.NET Team"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954"/>
+				<TextView
+					android:id="@+id/forum_1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:text="Balatan"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF"/>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/box_about_7"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginRight="10dp"
+				android:padding="8dp"
+				android:background="#424242"
+				android:orientation="vertical">
 				<LinearLayout
 					android:id="@+id/box_about_4_sub_1"
 					android:layout_width="match_parent"
@@ -1309,99 +1426,6 @@
 						android:textColor="#FFFFFF"/>
 				</LinearLayout>
 			</LinearLayout>
-			<LinearLayout
-				android:id="@+id/box_about_5"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="10dp"
-				android:layout_marginTop="10dp"
-				android:layout_marginRight="10dp"
-				android:padding="8dp"
-				android:background="#424242"
-				android:orientation="vertical">
-				<TextView
-					android:id="@+id/mobilism_team"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:padding="8dp"
-					android:text="Mobilism Team"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#1DB954"/>
-				<TextView
-					android:id="@+id/mobilism_1"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingRight="8dp"
-					android:paddingBottom="8dp"
-					android:text="Balatan (Uploader/Releaser)\nRishavG (Support)\nmeech\nTunelover"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#FFFFFF"/>
-			</LinearLayout>
-			<LinearLayout
-				android:id="@+id/box_about_6"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="10dp"
-				android:layout_marginTop="10dp"
-				android:layout_marginRight="10dp"
-				android:padding="8dp"
-				android:background="#424242"
-				android:orientation="vertical">
-				<TextView
-					android:id="@+id/forum_team"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:padding="8dp"
-					android:text="FORUM.APK-RELEASE.NET Team"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#1DB954"/>
-				<TextView
-					android:id="@+id/forum_1"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingRight="8dp"
-					android:paddingBottom="8dp"
-					android:text="Balatan"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#FFFFFF"/>
-			</LinearLayout>
-			<LinearLayout
-				android:id="@+id/box_about_7"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="10dp"
-				android:layout_marginTop="10dp"
-				android:layout_marginRight="10dp"
-				android:padding="8dp"
-				android:background="#424242"
-				android:orientation="vertical">
-				<TextView
-					android:id="@+id/manager_team"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:padding="8dp"
-					android:text="xSpotify Manager (Old Manager)"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#1DB954"/>
-				<TextView
-					android:id="@+id/manager_1"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingRight="8dp"
-					android:paddingBottom="8dp"
-					android:text="cryiotic3 (Manager Icon)\nfarish278 (Manager Icon)\nSherlock Holmes\njetfire\n100RABH\nLight Yagami"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#FFFFFF"/>
-			</LinearLayout>
 			<TextView
 				android:id="@+id/contributors_1"
 				android:layout_width="wrap_content"
@@ -1580,6 +1604,7 @@
 								android:id="@+id/version_switch_01"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
+								android:paddingLeft="5dp"
 								android:paddingTop="8dp"
 								android:paddingRight="2dp"
 								android:paddingBottom="8dp"
@@ -1740,6 +1765,7 @@
 								android:id="@+id/version_switch_02"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
+								android:paddingLeft="5dp"
 								android:paddingTop="8dp"
 								android:paddingRight="2dp"
 								android:paddingBottom="8dp"
@@ -1844,6 +1870,7 @@
 								android:id="@+id/changelogs_switch"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
+								android:paddingLeft="5dp"
 								android:paddingTop="8dp"
 								android:paddingRight="2dp"
 								android:paddingBottom="8dp"
@@ -2007,7 +2034,7 @@
 							android:id="@+id/support"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
-							android:text="SUPPORT"
+							android:text="TELEGRAM"
 							android:textSize="12sp"
 							android:textStyle="bold"
 							android:textColor="#FFFFFF"/>
