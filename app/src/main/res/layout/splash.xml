@@ -20,4 +20,4 @@
 			android:src="@drawable/icon_manager"
 			android:scaleType="center"/>
 	</LinearLayout>
-</LinearLayout> 
+</LinearLayout>
