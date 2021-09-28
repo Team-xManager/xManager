@@ -226,6 +226,12 @@ public class MainActivity extends AppCompatActivity {
 	private TextView testers_1;
 	private TextView mod_testers_2;
 	private TextView testers_2;
+	private TextView mobilism_team;
+	private TextView mobilism_1;
+	private TextView manager_team;
+	private TextView manager_1;
+	private TextView forum_team;
+	private TextView forum_1;
 	private LinearLayout box_about_4_sub_1;
 	private TextView manager_lang_13;
 	private TextView translator_13;
@@ -257,12 +263,6 @@ public class MainActivity extends AppCompatActivity {
 	private TextView translator_12;
 	private TextView manager_lang_11;
 	private TextView translator_11;
-	private TextView mobilism_team;
-	private TextView mobilism_1;
-	private TextView forum_team;
-	private TextView forum_1;
-	private TextView manager_team;
-	private TextView manager_1;
 	private ScrollView main_scroll_body;
 	private LinearLayout main_body;
 	private LinearLayout main_box_1;
@@ -538,6 +538,12 @@ public class MainActivity extends AppCompatActivity {
 		testers_1 = (TextView) findViewById(R.id.testers_1);
 		mod_testers_2 = (TextView) findViewById(R.id.mod_testers_2);
 		testers_2 = (TextView) findViewById(R.id.testers_2);
+		mobilism_team = (TextView) findViewById(R.id.mobilism_team);
+		mobilism_1 = (TextView) findViewById(R.id.mobilism_1);
+		manager_team = (TextView) findViewById(R.id.manager_team);
+		manager_1 = (TextView) findViewById(R.id.manager_1);
+		forum_team = (TextView) findViewById(R.id.forum_team);
+		forum_1 = (TextView) findViewById(R.id.forum_1);
 		box_about_4_sub_1 = (LinearLayout) findViewById(R.id.box_about_4_sub_1);
 		manager_lang_13 = (TextView) findViewById(R.id.manager_lang_13);
 		translator_13 = (TextView) findViewById(R.id.translator_13);
@@ -569,12 +575,6 @@ public class MainActivity extends AppCompatActivity {
 		translator_12 = (TextView) findViewById(R.id.translator_12);
 		manager_lang_11 = (TextView) findViewById(R.id.manager_lang_11);
 		translator_11 = (TextView) findViewById(R.id.translator_11);
-		mobilism_team = (TextView) findViewById(R.id.mobilism_team);
-		mobilism_1 = (TextView) findViewById(R.id.mobilism_1);
-		forum_team = (TextView) findViewById(R.id.forum_team);
-		forum_1 = (TextView) findViewById(R.id.forum_1);
-		manager_team = (TextView) findViewById(R.id.manager_team);
-		manager_1 = (TextView) findViewById(R.id.manager_1);
 		main_scroll_body = (ScrollView) findViewById(R.id.main_scroll_body);
 		main_body = (LinearLayout) findViewById(R.id.main_body);
 		main_box_1 = (LinearLayout) findViewById(R.id.main_box_1);
@@ -810,7 +810,7 @@ public class MainActivity extends AppCompatActivity {
 												});
 											}
 										};
-										_timer.schedule(Timer, (int)(1800));
+										_timer.schedule(Timer, (int)(2800));
 									}
 									else {
 										if (Double.parseDouble(Current_Version) > Double.parseDouble(Latest_Version)) {
@@ -845,7 +845,7 @@ public class MainActivity extends AppCompatActivity {
 																	public void onCancelled(DatabaseError _databaseError) {
 																	}
 																});
-																Update_Latest.setTitle("xManager v".concat(app_version.getText().toString().concat(" (Public Release)")));
+																Update_Latest.setTitle("xManager v".concat(app_version.getText().toString().concat(" (Latest Version)")));
 																Update_Latest.setMessage(app_changelogs.getText().toString());
 																Update_Latest.create().show();
 																Timer = new TimerTask() {
@@ -867,7 +867,7 @@ public class MainActivity extends AppCompatActivity {
 													});
 												}
 											};
-											_timer.schedule(Timer, (int)(1800));
+											_timer.schedule(Timer, (int)(2800));
 										}
 									}
 								}
@@ -1050,7 +1050,7 @@ public class MainActivity extends AppCompatActivity {
 					
 					COUNTER = 1;
 				}
-				if (_position == 6) {
+				if (_position == 7) {
 					THEME.edit().putString("THEME", "7").commit();
 					
 					
@@ -4466,7 +4466,6 @@ public class MainActivity extends AppCompatActivity {
 				main_refresh_layout.setVisibility(View.GONE);
 				box_switch.setVisibility(View.GONE);
 				box_update.setVisibility(View.GONE);
-				_Default_Language();
 			}
 			catch(Exception e) {
 			}
@@ -4626,7 +4625,6 @@ public class MainActivity extends AppCompatActivity {
 				box_switch.setVisibility(View.VISIBLE);
 				icon_update.setAlpha((float)(1.0d));
 				icon_switch.setAlpha((float)(1.0d));
-				_Default_Language();
 				_Updater();
 			}
 			catch(Exception e) {
@@ -4641,8 +4639,8 @@ public class MainActivity extends AppCompatActivity {
 		_Switch_Fixer();
 		_Animation_5();
 		_List_Updater();
-		_Theme_UI();
 		_Language_UI();
+		_Theme_UI();
 		_Effects();
 		_Url_Mode();
 	}
@@ -8151,94 +8149,6 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _Default_Language () {
-		title_1.setText("");
-		title_2.setText("");
-		sub_text_2.setText("");
-		sub_text_4.setText("");
-		sub_text_1.setText("");
-		sub_text_3.setText("");
-		version_switch_1.setText("");
-		version_switch_2.setText("");
-		changelogs.setText("");
-		title_sub.setText("");
-		device_cpu.setText("");
-		source.setText("");
-		support.setText("");
-		donate.setText("");
-		discord.setText("");
-		about.setText("");
-		list_auto_refresh.setText("");
-		list_auto_refresh_info.setText("");
-		force_auto_install.setText("");
-		force_auto_install_info.setText("");
-		copy_url_mode.setText("");
-		copy_file_url_mode_info.setText("");
-		navigation_bar.setText("");
-		theme.setText("");
-		apk_location.setText("");
-		apk_location_info.setText("");
-		clear_directory_folders.setText("");
-		clear_directory_folders_info.setText("");
-		reset_settings.setText("");
-		sub_title.setText("");
-		developer_manager.setText("");
-		developer_spotify.setText("");
-		support_team.setText("");
-		mod_testers_1.setText("");
-		mod_testers_2.setText("");
-		mobilism_team.setText("");
-		forum_team.setText("");
-		manager_team.setText("");
-		contributors_1.setText("");
-		download_selected.setText("");
-		download_ready.setText("");
-		download_ready_desc.setText("");
-		downloading_file.setText("");
-		download_success.setText("");
-		copy_url_desc.setText("");
-		file_directory.setText("");
-		new_update.setText("");
-		download_selected_0 = download_selected.getText().toString();
-		download_ready_0 = download_ready.getText().toString();
-		download_ready_desc_0 = download_ready_desc.getText().toString();
-		downloading_file_0 = downloading_file.getText().toString();
-		download_success_0 = download_success.getText().toString();
-		copy_url_desc_0 = copy_url_desc.getText().toString();
-		file_directory_0 = file_directory.getText().toString();
-		copy_url.setText("");
-		continue_1.setText("");
-		cancel.setText("");
-		download.setText("");
-		later.setText("");
-		directory.setText("");
-		install_now.setText("");
-		install_update.setText("");
-		go_back.setText("");
-		download_update.setText("");
-		not_now.setText("");
-		show_support.setText("");
-		show_support_desc.setText("");
-		copy_url_0 = copy_url.getText().toString();
-		download_0 = download.getText().toString();
-		continue_0 = continue_1.getText().toString();
-		cancel_0 = cancel.getText().toString();
-		later_0 = later.getText().toString();
-		directory_0 = directory.getText().toString();
-		install_now_0 = install_now.getText().toString();
-		go_back_0 = go_back.getText().toString();
-		install_update_0 = install_update.getText().toString();
-		main_title.setText("");
-		settings_title.setText("");
-		about_title.setText("");
-		maintenance.setText("");
-		maintenance_desc.setText("");
-		thanks.setText("");
-		language.setText("");
-		website.setText("");
-	}
-	
-	
 	private void _Language_Pack () {
 		Language.add("English (Default)");
 		Language.add("Bengali");
@@ -8259,6 +8169,22 @@ public class MainActivity extends AppCompatActivity {
 		Language.add("Romanian");
 		select_language.setAdapter(new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, Language));
 		((ArrayAdapter)select_language.getAdapter()).notifyDataSetChanged();
+		select_language.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, Language) {
+			
+			@Override
+			public View getView(int position, View convertView, ViewGroup parent) {
+				TextView textViewv = (TextView) super.getView(position, convertView, parent);
+				textViewv.setTextColor(Color.parseColor("#FFFFFF"));
+				return textViewv; }
+			
+			@Override
+			public View getDropDownView(int position, View convertView, ViewGroup parent) {
+				TextView textViewv = (TextView) super.getDropDownView(position, convertView, parent); textViewv.setTextColor(Color.parseColor("#FFFFFF"));
+				textViewv.setBackgroundColor(Color.parseColor("#212121"));
+				
+				
+				return textViewv; }
+		});
 	}
 	
 	
@@ -8273,6 +8199,22 @@ public class MainActivity extends AppCompatActivity {
 		Theme.add("Gray");
 		select_theme.setAdapter(new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, Theme));
 		((ArrayAdapter)select_theme.getAdapter()).notifyDataSetChanged();
+		select_theme.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, Theme) {
+			
+			@Override
+			public View getView(int position, View convertView, ViewGroup parent) {
+				TextView textViewv = (TextView) super.getView(position, convertView, parent);
+				textViewv.setTextColor(Color.parseColor("#FFFFFF"));
+				return textViewv; }
+			
+			@Override
+			public View getDropDownView(int position, View convertView, ViewGroup parent) {
+				TextView textViewv = (TextView) super.getDropDownView(position, convertView, parent); textViewv.setTextColor(Color.parseColor("#FFFFFF"));
+				textViewv.setBackgroundColor(Color.parseColor("#212121"));
+				
+				
+				return textViewv; }
+		});
 	}
 	
 	
