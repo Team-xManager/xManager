@@ -9,6 +9,7 @@
 	<uses-permission	android:name="com.google.android.c2dm.permission.RECEIVE"/>
 	<application
 		android:allowBackup="true"
+        android:requestLegacyExternalStorage="true"
 		android:label="xManager"
 		android:icon="@drawable/app_icon"
 		android:largeHeap="true"
