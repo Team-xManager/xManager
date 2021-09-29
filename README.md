@@ -2,8 +2,8 @@ For contributors, pull request should be done on the "Developer" branch. The "ma
 
 # IMPORTANT NOTES (READ ME FIRST)
 
-**•xManager is created using Sketchware app via android.**  
-**•xManager only uses Firebase Database as its api.**  
+**•xManager is created using Sketchware Pro for android (https://github.com/Sketchware-Pro/Sketchware-Pro).**  
+**•xManager only uses Firebase Database as its API.**  
 **•No trackers, no spywares or any other malicious codes has been added on the source code. What you see on the source code is what's inside the build apk. You can extract the apk for yourself.**  
 **•The source code that can be seen here is what's inside the exported zip file for Android Studio.**  
 **•There are some instance that the source code is unbuildable, some parts might be missing and such due to limitations.**   
