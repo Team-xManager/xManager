@@ -1301,8 +1301,16 @@
 						android:id="@+id/translator_7"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
 						android:text="Loui's™"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF"/>
+					<TextView
+						android:id="@+id/translator_7_1"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
+						android:text="Zilberto Junior"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF"/>
@@ -1420,7 +1428,24 @@
 						android:id="@+id/translator_11"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
 						android:text="NIKITA🇺🇦[beryllium] #PocoForEver"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF"/>
+					<TextView
+						android:id="@+id/manager_lang_16"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Korean Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFEB3B"/>
+					<TextView
+						android:id="@+id/translator_16"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Apious"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF"/>
