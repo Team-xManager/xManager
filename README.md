@@ -60,7 +60,7 @@ The Punisher (French Translation)
 Walter's Cousin #CAF (Greek Translation)  
 Mc.J & Deraidos (Indonesian Translation)  
 Marco (Italian Translation)  
-Loui's™ (Portuguese - Brazil Translation)  
+Loui's™ & Zilberto Junior (Portuguese - Brazil Translation)  
 Androide323 (Portuguese - Portugal Translation)  
 NACH (Romanian Translation)  
 Pegioner (Russian Translation)  
@@ -68,6 +68,7 @@ MysticX (Slovenian Translation)
 PetFix (Spanish - Spain Translation)  
 Berkay (Turkish Translation)  
 NIKITA🇺🇦[beryllium] #PocoForEver (Ukrainian Translation)  
+Apious (Korean Translation)  
 
 # Contributors  
 
