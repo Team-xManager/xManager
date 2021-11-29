@@ -160,25 +160,29 @@ public class MainActivity extends AppCompatActivity {
 	private ImageView settings_icon_close;
 	private LinearLayout box_8_sub_1;
 	private LinearLayout box_8_sub_2;
-	private TextView list_auto_refresh;
+	private LinearLayout title_box_1;
 	private LinearLayout box_list_auto_refresh;
+	private TextView list_auto_refresh;
 	private Switch list_auto_refresh_switch;
 	private TextView list_auto_refresh_info;
 	private LinearLayout box_11_sub_1;
 	private LinearLayout box_11_sub_2;
-	private TextView force_auto_install;
+	private LinearLayout title_box_2;
 	private LinearLayout box_force_auto_install;
+	private TextView force_auto_install;
 	private Switch force_auto_install_switch;
 	private TextView force_auto_install_info;
 	private LinearLayout box_12_sub_1;
 	private LinearLayout box_12_sub_2;
-	private TextView copy_url_mode;
+	private LinearLayout title_box_3;
 	private LinearLayout box_copy_url_mode;
+	private TextView copy_url_mode;
 	private Switch copy_url_mode_switch;
 	private TextView copy_file_url_mode_info;
 	private LinearLayout box_7_sub_1;
-	private TextView navigation_bar;
+	private LinearLayout title_box_4;
 	private LinearLayout box_navigation_switch;
+	private TextView navigation_bar;
 	private Switch navigation_switch;
 	private LinearLayout box_5_sub_1;
 	private TextView theme;
@@ -266,6 +270,8 @@ public class MainActivity extends AppCompatActivity {
 	private TextView translator_11;
 	private TextView manager_lang_16;
 	private TextView translator_16;
+	private TextView manager_lang_17;
+	private TextView translator_17;
 	private ScrollView main_scroll_body;
 	private LinearLayout main_body;
 	private LinearLayout main_box_1;
@@ -282,10 +288,8 @@ public class MainActivity extends AppCompatActivity {
 	private TextView title_1;
 	private LinearLayout box_1_sub;
 	private TextView regular_info;
-	private TextView sub_text_2;
-	private TextView sub_2;
-	private LinearLayout box_switch_1;
 	private TextView sub_text_1;
+	private LinearLayout box_switch_1;
 	private TextView sub_1;
 	private TextView version_switch_1;
 	private LinearLayout box_sub_5;
@@ -298,21 +302,24 @@ public class MainActivity extends AppCompatActivity {
 	private TextView title_2;
 	private LinearLayout box_3_sub;
 	private TextView amoled_info;
-	private TextView sub_text_4;
-	private TextView sub_4;
-	private LinearLayout box_switch_2;
 	private TextView sub_text_3;
+	private LinearLayout box_switch_2;
 	private TextView sub_3;
 	private TextView version_switch_2;
 	private LinearLayout box_sub_6;
 	private Switch version_switch_02;
 	private LinearLayout box_16_sub_1;
 	private LinearLayout box_seperator_3;
+	private LinearLayout linear8;
+	private LinearLayout box_seperator_4;
 	private LinearLayout box_6_sub_1;
 	private LinearLayout box_6_sub_2;
 	private TextView device_cpu;
 	private LinearLayout box_cpu;
 	private TextView cpu;
+	private TextView sub_text_installed;
+	private LinearLayout box_installed;
+	private TextView sub_installed;
 	private TextView changelogs;
 	private LinearLayout box_changelogs;
 	private Switch changelogs_switch;
@@ -475,25 +482,29 @@ public class MainActivity extends AppCompatActivity {
 		settings_icon_close = (ImageView) findViewById(R.id.settings_icon_close);
 		box_8_sub_1 = (LinearLayout) findViewById(R.id.box_8_sub_1);
 		box_8_sub_2 = (LinearLayout) findViewById(R.id.box_8_sub_2);
-		list_auto_refresh = (TextView) findViewById(R.id.list_auto_refresh);
+		title_box_1 = (LinearLayout) findViewById(R.id.title_box_1);
 		box_list_auto_refresh = (LinearLayout) findViewById(R.id.box_list_auto_refresh);
+		list_auto_refresh = (TextView) findViewById(R.id.list_auto_refresh);
 		list_auto_refresh_switch = (Switch) findViewById(R.id.list_auto_refresh_switch);
 		list_auto_refresh_info = (TextView) findViewById(R.id.list_auto_refresh_info);
 		box_11_sub_1 = (LinearLayout) findViewById(R.id.box_11_sub_1);
 		box_11_sub_2 = (LinearLayout) findViewById(R.id.box_11_sub_2);
-		force_auto_install = (TextView) findViewById(R.id.force_auto_install);
+		title_box_2 = (LinearLayout) findViewById(R.id.title_box_2);
 		box_force_auto_install = (LinearLayout) findViewById(R.id.box_force_auto_install);
+		force_auto_install = (TextView) findViewById(R.id.force_auto_install);
 		force_auto_install_switch = (Switch) findViewById(R.id.force_auto_install_switch);
 		force_auto_install_info = (TextView) findViewById(R.id.force_auto_install_info);
 		box_12_sub_1 = (LinearLayout) findViewById(R.id.box_12_sub_1);
 		box_12_sub_2 = (LinearLayout) findViewById(R.id.box_12_sub_2);
-		copy_url_mode = (TextView) findViewById(R.id.copy_url_mode);
+		title_box_3 = (LinearLayout) findViewById(R.id.title_box_3);
 		box_copy_url_mode = (LinearLayout) findViewById(R.id.box_copy_url_mode);
+		copy_url_mode = (TextView) findViewById(R.id.copy_url_mode);
 		copy_url_mode_switch = (Switch) findViewById(R.id.copy_url_mode_switch);
 		copy_file_url_mode_info = (TextView) findViewById(R.id.copy_file_url_mode_info);
 		box_7_sub_1 = (LinearLayout) findViewById(R.id.box_7_sub_1);
-		navigation_bar = (TextView) findViewById(R.id.navigation_bar);
+		title_box_4 = (LinearLayout) findViewById(R.id.title_box_4);
 		box_navigation_switch = (LinearLayout) findViewById(R.id.box_navigation_switch);
+		navigation_bar = (TextView) findViewById(R.id.navigation_bar);
 		navigation_switch = (Switch) findViewById(R.id.navigation_switch);
 		box_5_sub_1 = (LinearLayout) findViewById(R.id.box_5_sub_1);
 		theme = (TextView) findViewById(R.id.theme);
@@ -581,6 +592,8 @@ public class MainActivity extends AppCompatActivity {
 		translator_11 = (TextView) findViewById(R.id.translator_11);
 		manager_lang_16 = (TextView) findViewById(R.id.manager_lang_16);
 		translator_16 = (TextView) findViewById(R.id.translator_16);
+		manager_lang_17 = (TextView) findViewById(R.id.manager_lang_17);
+		translator_17 = (TextView) findViewById(R.id.translator_17);
 		main_scroll_body = (ScrollView) findViewById(R.id.main_scroll_body);
 		main_body = (LinearLayout) findViewById(R.id.main_body);
 		main_box_1 = (LinearLayout) findViewById(R.id.main_box_1);
@@ -597,10 +610,8 @@ public class MainActivity extends AppCompatActivity {
 		title_1 = (TextView) findViewById(R.id.title_1);
 		box_1_sub = (LinearLayout) findViewById(R.id.box_1_sub);
 		regular_info = (TextView) findViewById(R.id.regular_info);
-		sub_text_2 = (TextView) findViewById(R.id.sub_text_2);
-		sub_2 = (TextView) findViewById(R.id.sub_2);
-		box_switch_1 = (LinearLayout) findViewById(R.id.box_switch_1);
 		sub_text_1 = (TextView) findViewById(R.id.sub_text_1);
+		box_switch_1 = (LinearLayout) findViewById(R.id.box_switch_1);
 		sub_1 = (TextView) findViewById(R.id.sub_1);
 		version_switch_1 = (TextView) findViewById(R.id.version_switch_1);
 		box_sub_5 = (LinearLayout) findViewById(R.id.box_sub_5);
@@ -613,21 +624,24 @@ public class MainActivity extends AppCompatActivity {
 		title_2 = (TextView) findViewById(R.id.title_2);
 		box_3_sub = (LinearLayout) findViewById(R.id.box_3_sub);
 		amoled_info = (TextView) findViewById(R.id.amoled_info);
-		sub_text_4 = (TextView) findViewById(R.id.sub_text_4);
-		sub_4 = (TextView) findViewById(R.id.sub_4);
-		box_switch_2 = (LinearLayout) findViewById(R.id.box_switch_2);
 		sub_text_3 = (TextView) findViewById(R.id.sub_text_3);
+		box_switch_2 = (LinearLayout) findViewById(R.id.box_switch_2);
 		sub_3 = (TextView) findViewById(R.id.sub_3);
 		version_switch_2 = (TextView) findViewById(R.id.version_switch_2);
 		box_sub_6 = (LinearLayout) findViewById(R.id.box_sub_6);
 		version_switch_02 = (Switch) findViewById(R.id.version_switch_02);
 		box_16_sub_1 = (LinearLayout) findViewById(R.id.box_16_sub_1);
 		box_seperator_3 = (LinearLayout) findViewById(R.id.box_seperator_3);
+		linear8 = (LinearLayout) findViewById(R.id.linear8);
+		box_seperator_4 = (LinearLayout) findViewById(R.id.box_seperator_4);
 		box_6_sub_1 = (LinearLayout) findViewById(R.id.box_6_sub_1);
 		box_6_sub_2 = (LinearLayout) findViewById(R.id.box_6_sub_2);
 		device_cpu = (TextView) findViewById(R.id.device_cpu);
 		box_cpu = (LinearLayout) findViewById(R.id.box_cpu);
 		cpu = (TextView) findViewById(R.id.cpu);
+		sub_text_installed = (TextView) findViewById(R.id.sub_text_installed);
+		box_installed = (LinearLayout) findViewById(R.id.box_installed);
+		sub_installed = (TextView) findViewById(R.id.sub_installed);
 		changelogs = (TextView) findViewById(R.id.changelogs);
 		box_changelogs = (LinearLayout) findViewById(R.id.box_changelogs);
 		changelogs_switch = (Switch) findViewById(R.id.changelogs_switch);
@@ -851,7 +865,7 @@ public class MainActivity extends AppCompatActivity {
 																	public void onCancelled(DatabaseError _databaseError) {
 																	}
 																});
-																Update_Latest.setTitle("xManager v".concat(app_version.getText().toString().concat(" (Latest - Hot Fixed)")));
+																Update_Latest.setTitle("xManager v".concat(app_version.getText().toString().concat(" (Latest Version)")));
 																Update_Latest.setMessage(app_changelogs.getText().toString());
 																Update_Latest.create().show();
 																Timer = new TimerTask() {
@@ -1084,6 +1098,27 @@ public class MainActivity extends AppCompatActivity {
 					
 					COUNTER = 1;
 				}
+				if (_position == 11) {
+					THEME.edit().putString("THEME", "11").commit();
+					
+					
+					
+					COUNTER = 1;
+				}
+				if (_position == 12) {
+					THEME.edit().putString("THEME", "12").commit();
+					
+					
+					
+					COUNTER = 1;
+				}
+				if (_position == 13) {
+					THEME.edit().putString("THEME", "13").commit();
+					
+					
+					
+					COUNTER = 1;
+				}
 			}
 			
 			@Override
@@ -1100,8 +1135,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "0").commit();
 					    title_1.setText(R.string.spotify_regular);
 						title_2.setText(R.string.spotify_amoled);
-						sub_text_2.setText(R.string.installed);
-						sub_text_4.setText(R.string.installed);
+						sub_text_installed.setText(R.string.installed);
 						sub_text_1.setText(R.string.latest);
 						sub_text_3.setText(R.string.latest);
 						version_switch_1.setText(R.string.versions);
@@ -1189,8 +1223,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "1").commit();
 					    title_1.setText(R.string.spotify_regular_01);
 						title_2.setText(R.string.spotify_amoled_01);
-						sub_text_2.setText(R.string.installed_01);
-						sub_text_4.setText(R.string.installed_01);
+						sub_text_installed.setText(R.string.installed_01);
 						sub_text_1.setText(R.string.latest_01);
 						sub_text_3.setText(R.string.latest_01);
 						version_switch_1.setText(R.string.versions_01);
@@ -1278,8 +1311,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "2").commit();
 					    title_1.setText(R.string.spotify_regular_02);
 						title_2.setText(R.string.spotify_amoled_02);
-						sub_text_2.setText(R.string.installed_02);
-						sub_text_4.setText(R.string.installed_02);
+						sub_text_installed.setText(R.string.installed_02);
 						sub_text_1.setText(R.string.latest_02);
 						sub_text_3.setText(R.string.latest_02);
 						version_switch_1.setText(R.string.versions_02);
@@ -1367,8 +1399,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "3").commit();
 					    title_1.setText(R.string.spotify_regular_03);
 						title_2.setText(R.string.spotify_amoled_03);
-						sub_text_2.setText(R.string.installed_03);
-						sub_text_4.setText(R.string.installed_03);
+						sub_text_installed.setText(R.string.installed_03);
 						sub_text_1.setText(R.string.latest_03);
 						sub_text_3.setText(R.string.latest_03);
 						version_switch_1.setText(R.string.versions_03);
@@ -1456,8 +1487,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "4").commit();
 					    title_1.setText(R.string.spotify_regular_04);
 						title_2.setText(R.string.spotify_amoled_04);
-						sub_text_2.setText(R.string.installed_04);
-						sub_text_4.setText(R.string.installed_04);
+						sub_text_installed.setText(R.string.installed_04);
 						sub_text_1.setText(R.string.latest_04);
 						sub_text_3.setText(R.string.latest_04);
 						version_switch_1.setText(R.string.versions_04);
@@ -1545,8 +1575,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "5").commit();
 					    title_1.setText(R.string.spotify_regular_05);
 						title_2.setText(R.string.spotify_amoled_05);
-						sub_text_2.setText(R.string.installed_05);
-						sub_text_4.setText(R.string.installed_05);
+						sub_text_installed.setText(R.string.installed_05);
 						sub_text_1.setText(R.string.latest_05);
 						sub_text_3.setText(R.string.latest_05);
 						version_switch_1.setText(R.string.versions_05);
@@ -1634,8 +1663,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "6").commit();
 					    title_1.setText(R.string.spotify_regular_06);
 						title_2.setText(R.string.spotify_amoled_06);
-						sub_text_2.setText(R.string.installed_06);
-						sub_text_4.setText(R.string.installed_06);
+						sub_text_installed.setText(R.string.installed_06);
 						sub_text_1.setText(R.string.latest_06);
 						sub_text_3.setText(R.string.latest_06);
 						version_switch_1.setText(R.string.versions_06);
@@ -1723,8 +1751,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "7").commit();
 					    title_1.setText(R.string.spotify_regular_07);
 						title_2.setText(R.string.spotify_amoled_07);
-						sub_text_2.setText(R.string.installed_07);
-						sub_text_4.setText(R.string.installed_07);
+						sub_text_installed.setText(R.string.installed_07);
 						sub_text_1.setText(R.string.latest_07);
 						sub_text_3.setText(R.string.latest_07);
 						version_switch_1.setText(R.string.versions_07);
@@ -1812,8 +1839,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "8").commit();
 					    title_1.setText(R.string.spotify_regular_08);
 						title_2.setText(R.string.spotify_amoled_08);
-						sub_text_2.setText(R.string.installed_08);
-						sub_text_4.setText(R.string.installed_08);
+						sub_text_installed.setText(R.string.installed_08);
 						sub_text_1.setText(R.string.latest_08);
 						sub_text_3.setText(R.string.latest_08);
 						version_switch_1.setText(R.string.versions_08);
@@ -1901,8 +1927,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "9").commit();
 					    title_1.setText(R.string.spotify_regular_09);
 						title_2.setText(R.string.spotify_amoled_09);
-						sub_text_2.setText(R.string.installed_09);
-						sub_text_4.setText(R.string.installed_09);
+						sub_text_installed.setText(R.string.installed_09);
 						sub_text_1.setText(R.string.latest_09);
 						sub_text_3.setText(R.string.latest_09);
 						version_switch_1.setText(R.string.versions_09);
@@ -1990,8 +2015,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "10").commit();
 					    title_1.setText(R.string.spotify_regular_10);
 						title_2.setText(R.string.spotify_amoled_10);
-						sub_text_2.setText(R.string.installed_10);
-						sub_text_4.setText(R.string.installed_10);
+						sub_text_installed.setText(R.string.installed_10);
 						sub_text_1.setText(R.string.latest_10);
 						sub_text_3.setText(R.string.latest_10);
 						version_switch_1.setText(R.string.versions_10);
@@ -2079,8 +2103,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "11").commit();
 					    title_1.setText(R.string.spotify_regular_11);
 						title_2.setText(R.string.spotify_amoled_11);
-						sub_text_2.setText(R.string.installed_11);
-						sub_text_4.setText(R.string.installed_11);
+						sub_text_installed.setText(R.string.installed_11);
 						sub_text_1.setText(R.string.latest_11);
 						sub_text_3.setText(R.string.latest_11);
 						version_switch_1.setText(R.string.versions_11);
@@ -2168,8 +2191,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "12").commit();
 					    title_1.setText(R.string.spotify_regular_12);
 						title_2.setText(R.string.spotify_amoled_12);
-						sub_text_2.setText(R.string.installed_12);
-						sub_text_4.setText(R.string.installed_12);
+						sub_text_installed.setText(R.string.installed_12);
 						sub_text_1.setText(R.string.latest_12);
 						sub_text_3.setText(R.string.latest_12);
 						version_switch_1.setText(R.string.versions_12);
@@ -2209,7 +2231,7 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_12);
 						downloading_file.setText(R.string.downloading_file_12);
 						download_success.setText(R.string.download_success_12);
-						copy_url_desc.setText(R.string.copy_url_desc_12);
+						copy_url_desc.setText(R.string.copy_url_mode_desc_12);
 						file_directory.setText(R.string.file_directory_12);
 						new_update.setText(R.string.new_update_12);
 						download_selected_0 = download_selected.getText().toString();
@@ -2257,8 +2279,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "13").commit();
 					    title_1.setText(R.string.spotify_regular_13);
 						title_2.setText(R.string.spotify_amoled_13);
-						sub_text_2.setText(R.string.installed_13);
-						sub_text_4.setText(R.string.installed_13);
+						sub_text_installed.setText(R.string.installed_13);
 						sub_text_1.setText(R.string.latest_13);
 						sub_text_3.setText(R.string.latest_13);
 						version_switch_1.setText(R.string.versions_13);
@@ -2346,8 +2367,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "14").commit();
 					    title_1.setText(R.string.spotify_regular_14);
 						title_2.setText(R.string.spotify_amoled_14);
-						sub_text_2.setText(R.string.installed_14);
-						sub_text_4.setText(R.string.installed_14);
+						sub_text_installed.setText(R.string.installed_14);
 						sub_text_1.setText(R.string.latest_14);
 						sub_text_3.setText(R.string.latest_14);
 						version_switch_1.setText(R.string.versions_14);
@@ -2435,8 +2455,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "15").commit();
 					    title_1.setText(R.string.spotify_regular_15);
 						title_2.setText(R.string.spotify_amoled_15);
-						sub_text_2.setText(R.string.installed_15);
-						sub_text_4.setText(R.string.installed_15);
+						sub_text_installed.setText(R.string.installed_15);
 						sub_text_1.setText(R.string.latest_15);
 						sub_text_3.setText(R.string.latest_15);
 						version_switch_1.setText(R.string.versions_15);
@@ -2524,8 +2543,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "16").commit();
 					    title_1.setText(R.string.spotify_regular_16);
 						title_2.setText(R.string.spotify_amoled_16);
-						sub_text_2.setText(R.string.installed_16);
-						sub_text_4.setText(R.string.installed_16);
+						sub_text_installed.setText(R.string.installed_16);
 						sub_text_1.setText(R.string.latest_16);
 						sub_text_3.setText(R.string.latest_16);
 						version_switch_1.setText(R.string.versions_16);
@@ -2613,8 +2631,7 @@ public class MainActivity extends AppCompatActivity {
 					LANGUAGE.edit().putString("LANGUAGE", "17").commit();
 					    title_1.setText(R.string.spotify_regular_17);
 						title_2.setText(R.string.spotify_amoled_17);
-						sub_text_2.setText(R.string.installed_17);
-						sub_text_4.setText(R.string.installed_17);
+						sub_text_installed.setText(R.string.installed_17);
 						sub_text_1.setText(R.string.latest_17);
 						sub_text_3.setText(R.string.latest_17);
 						version_switch_1.setText(R.string.versions_17);
@@ -2697,6 +2714,93 @@ public class MainActivity extends AppCompatActivity {
 					    discord.setText(R.string.discord_17);
 					COUNTER = 1;
 				}
+				if (_position == 18) {
+					LANGUAGE.edit().putString("LANGUAGE", "18").commit();
+					    title_1.setText(R.string.spotify_regular_18);
+						title_2.setText(R.string.spotify_amoled_18);
+						sub_text_installed.setText(R.string.installed_18);
+						sub_text_1.setText(R.string.latest_18);
+						sub_text_3.setText(R.string.latest_18);
+						version_switch_1.setText(R.string.versions_18);
+						version_switch_2.setText(R.string.versions_18);
+						changelogs.setText(R.string.changelogs_18);
+						title_sub.setText(R.string.manager_tools_18);
+						device_cpu.setText(R.string.device_cpu_18);
+						source.setText(R.string.source_18);
+						support.setText(R.string.support_18);
+						donate.setText(R.string.donate_18);
+						about.setText(R.string.about_18);
+						list_auto_refresh.setText(R.string.list_auto_refresh_18);
+						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_18);
+						force_auto_install.setText(R.string.force_auto_install_18);
+						force_auto_install_info.setText(R.string.force_auto_install_desc_18);
+						copy_url_mode.setText(R.string.copy_url_mode_18);
+						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_18);
+						navigation_bar.setText(R.string.hide_navigation_bar_18);
+						theme.setText(R.string.show_themes_18);
+						apk_location.setText(R.string.apk_location_18);
+						apk_location_info.setText(R.string.apk_location_desc_18);
+						clear_directory_folders.setText(R.string.clear_directory_folders_18);
+						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_18);
+						reset_settings.setText(R.string.reset_settings_18);
+						sub_title.setText(R.string.about_sub_18);
+						developer_manager.setText(R.string.xmanager_dev_18);
+						developer_spotify.setText(R.string.spotify_mod_devs_18);
+						support_team.setText(R.string.telegram_support_team_18);
+						mod_testers_1.setText(R.string.manager_testers_18);
+						mod_testers_2.setText(R.string.manager_hosting_18);
+						mobilism_team.setText(R.string.mobilism_team_18);
+						forum_team.setText(R.string.forum_team_18);
+						manager_team.setText(R.string.xspotify_team_18);
+						contributors_1.setText(R.string.contributors_18);
+						download_selected.setText(R.string.download_selected_18);
+						download_ready.setText(R.string.download_ready_18);
+						download_ready_desc.setText(R.string.download_ready_desc_18);
+						downloading_file.setText(R.string.downloading_file_18);
+						download_success.setText(R.string.download_success_18);
+						copy_url_desc.setText(R.string.copy_url_desc_18);
+						file_directory.setText(R.string.file_directory_18);
+						new_update.setText(R.string.new_update_18);
+						download_selected_0 = download_selected.getText().toString();
+						download_ready_0 = download_ready.getText().toString();
+						download_ready_desc_0 = download_ready_desc.getText().toString();
+						downloading_file_0 = downloading_file.getText().toString();
+						download_success_0 = download_success.getText().toString();
+						copy_url_desc_0 = copy_url_desc.getText().toString();
+						file_directory_0 = file_directory.getText().toString();
+						copy_url.setText(R.string.copy_url_18);
+						continue_1.setText(R.string.continue_1_18);
+						cancel.setText(R.string.cancel_18);
+						download.setText(R.string.download_18);
+						later.setText(R.string.later_18);
+						directory.setText(R.string.directory_18);
+						install_now.setText(R.string.install_now_18);
+						install_update.setText(R.string.install_update_18);
+						go_back.setText(R.string.go_back_18);
+						download_update.setText(R.string.download_update_18);
+						not_now.setText(R.string.not_now_18);
+						show_support.setText(R.string.show_support_18);
+						show_support_desc.setText(R.string.show_support_desc_18);
+						copy_url_0 = copy_url.getText().toString();
+						download_0 = download.getText().toString();
+						continue_0 = continue_1.getText().toString();
+						cancel_0 = cancel.getText().toString();
+						later_0 = later.getText().toString();
+						directory_0 = directory.getText().toString();
+						install_now_0 = install_now.getText().toString();
+						go_back_0 = go_back.getText().toString();
+						install_update_0 = install_update.getText().toString();
+						main_title.setText(R.string.main_title_18);
+						settings_title.setText(R.string.settings_title_18);
+						about_title.setText(R.string.about_title_18);
+						maintenance.setText(R.string.maintenance_18);
+						maintenance_desc.setText(R.string.maintenance_desc_18);
+						thanks.setText(R.string.thanks_18);
+						language.setText(R.string.language_18);
+					    website.setText(R.string.website_18);
+					    discord.setText(R.string.discord_18);
+					COUNTER = 1;
+				}
 			}
 			
 			@Override
@@ -2740,8 +2844,7 @@ public class MainActivity extends AppCompatActivity {
 				
 				    title_1.setText(R.string.spotify_regular);
 					title_2.setText(R.string.spotify_amoled);
-					sub_text_2.setText(R.string.installed);
-					sub_text_4.setText(R.string.installed);
+					sub_text_installed.setText(R.string.installed);
 					sub_text_1.setText(R.string.latest);
 					sub_text_3.setText(R.string.latest);
 					version_switch_1.setText(R.string.versions);
@@ -3874,7 +3977,7 @@ public class MainActivity extends AppCompatActivity {
 		_Hide_Navigation();
 	}
 	private void _Informations () {
-		sub_2.setText("N/A");
+		sub_installed.setText("N/A");
 		cpu.setText("N/A");
 		Timer = new TimerTask() {
 			@Override
@@ -3888,8 +3991,7 @@ public class MainActivity extends AppCompatActivity {
 						try {
 							android.content.pm.PackageInfo pInfo = pm.getPackageInfo(uri, android.content.pm.PackageManager.GET_ACTIVITIES);
 							String version = pInfo.versionName;
-							sub_2.setText(version);
-							sub_4.setText(version);
+							sub_installed.setText(version);
 							
 						}
 						catch (Exception e) {
@@ -4199,12 +4301,11 @@ public class MainActivity extends AppCompatActivity {
 		title_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_text_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_text_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_installed.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_text_installed.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_text_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_text_4.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_4.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_text_installed.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_sub.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		device_cpu.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		cpu.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -4271,6 +4372,7 @@ public class MainActivity extends AppCompatActivity {
 		manager_lang_14.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_15.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_16.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_17.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -4288,6 +4390,7 @@ public class MainActivity extends AppCompatActivity {
 		translator_14.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_15.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_16.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_17.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		
 		
 		
@@ -4584,7 +4687,6 @@ public class MainActivity extends AppCompatActivity {
 				main_refresh_layout.setVisibility(View.GONE);
 				box_switch.setVisibility(View.GONE);
 				box_update.setVisibility(View.GONE);
-				_Language_Fixer();
 			}
 			catch(Exception e) {
 			}
@@ -4745,7 +4847,6 @@ public class MainActivity extends AppCompatActivity {
 				icon_update.setAlpha((float)(1.0d));
 				icon_switch.setAlpha((float)(1.0d));
 				_Updater();
-				_Language_Fixer();
 			}
 			catch(Exception e) {
 			}
@@ -4843,6 +4944,30 @@ public class MainActivity extends AppCompatActivity {
 													
 													
 													select_theme.setSelection((int)(10));
+												}
+												else {
+													if (THEME.getString("THEME", "").equals("11")) {
+														
+														
+														
+														select_theme.setSelection((int)(11));
+													}
+													else {
+														if (THEME.getString("THEME", "").equals("12")) {
+															
+															
+															
+															select_theme.setSelection((int)(12));
+														}
+														else {
+															if (THEME.getString("THEME", "").equals("13")) {
+																
+																
+																
+																select_theme.setSelection((int)(13));
+															}
+														}
+													}
 												}
 											}
 										}
@@ -6766,8 +6891,7 @@ public class MainActivity extends AppCompatActivity {
 		if (LANGUAGE.getString("LANGUAGE", "").equals("0")) {
 			    title_1.setText(R.string.spotify_regular);
 				title_2.setText(R.string.spotify_amoled);
-				sub_text_2.setText(R.string.installed);
-				sub_text_4.setText(R.string.installed);
+				sub_text_installed.setText(R.string.installed);
 				sub_text_1.setText(R.string.latest);
 				sub_text_3.setText(R.string.latest);
 				version_switch_1.setText(R.string.versions);
@@ -6792,7 +6916,7 @@ public class MainActivity extends AppCompatActivity {
 				clear_directory_folders.setText(R.string.clear_directory_folders);
 				clear_directory_folders_info.setText(R.string.clear_directory_folders_desc);
 				reset_settings.setText(R.string.reset_settings);
-					sub_title.setText(R.string.about_sub);
+				sub_title.setText(R.string.about_sub);
 				developer_manager.setText(R.string.xmanager_dev);
 				developer_spotify.setText(R.string.spotify_mod_devs);
 				support_team.setText(R.string.telegram_support_team);
@@ -6855,8 +6979,7 @@ public class MainActivity extends AppCompatActivity {
 			if (LANGUAGE.getString("LANGUAGE", "").equals("1")) {
 				    title_1.setText(R.string.spotify_regular_01);
 					title_2.setText(R.string.spotify_amoled_01);
-					sub_text_2.setText(R.string.installed_01);
-					sub_text_4.setText(R.string.installed_01);
+					sub_text_installed.setText(R.string.installed_01);
 					sub_text_1.setText(R.string.latest_01);
 					sub_text_3.setText(R.string.latest_01);
 					version_switch_1.setText(R.string.versions_01);
@@ -6944,8 +7067,7 @@ public class MainActivity extends AppCompatActivity {
 				if (LANGUAGE.getString("LANGUAGE", "").equals("2")) {
 					    title_1.setText(R.string.spotify_regular_02);
 						title_2.setText(R.string.spotify_amoled_02);
-						sub_text_2.setText(R.string.installed_02);
-						sub_text_4.setText(R.string.installed_02);
+						sub_text_installed.setText(R.string.installed_02);
 						sub_text_1.setText(R.string.latest_02);
 						sub_text_3.setText(R.string.latest_02);
 						version_switch_1.setText(R.string.versions_02);
@@ -7033,8 +7155,7 @@ public class MainActivity extends AppCompatActivity {
 					if (LANGUAGE.getString("LANGUAGE", "").equals("3")) {
 						    title_1.setText(R.string.spotify_regular_03);
 							title_2.setText(R.string.spotify_amoled_03);
-							sub_text_2.setText(R.string.installed_03);
-							sub_text_4.setText(R.string.installed_03);
+							sub_text_installed.setText(R.string.installed_03);
 							sub_text_1.setText(R.string.latest_03);
 							sub_text_3.setText(R.string.latest_03);
 							version_switch_1.setText(R.string.versions_03);
@@ -7122,8 +7243,7 @@ public class MainActivity extends AppCompatActivity {
 						if (LANGUAGE.getString("LANGUAGE", "").equals("4")) {
 							    title_1.setText(R.string.spotify_regular_04);
 								title_2.setText(R.string.spotify_amoled_04);
-								sub_text_2.setText(R.string.installed_04);
-								sub_text_4.setText(R.string.installed_04);
+								sub_text_installed.setText(R.string.installed_04);
 								sub_text_1.setText(R.string.latest_04);
 								sub_text_3.setText(R.string.latest_04);
 								version_switch_1.setText(R.string.versions_04);
@@ -7211,8 +7331,7 @@ public class MainActivity extends AppCompatActivity {
 							if (LANGUAGE.getString("LANGUAGE", "").equals("5")) {
 								    title_1.setText(R.string.spotify_regular_05);
 									title_2.setText(R.string.spotify_amoled_05);
-									sub_text_2.setText(R.string.installed_05);
-									sub_text_4.setText(R.string.installed_05);
+									sub_text_installed.setText(R.string.installed_05);
 									sub_text_1.setText(R.string.latest_05);
 									sub_text_3.setText(R.string.latest_05);
 									version_switch_1.setText(R.string.versions_05);
@@ -7300,8 +7419,7 @@ public class MainActivity extends AppCompatActivity {
 								if (LANGUAGE.getString("LANGUAGE", "").equals("6")) {
 									    title_1.setText(R.string.spotify_regular_06);
 										title_2.setText(R.string.spotify_amoled_06);
-										sub_text_2.setText(R.string.installed_06);
-										sub_text_4.setText(R.string.installed_06);
+										sub_text_installed.setText(R.string.installed_06);
 										sub_text_1.setText(R.string.latest_06);
 										sub_text_3.setText(R.string.latest_06);
 										version_switch_1.setText(R.string.versions_06);
@@ -7389,8 +7507,7 @@ public class MainActivity extends AppCompatActivity {
 									if (LANGUAGE.getString("LANGUAGE", "").equals("7")) {
 										    title_1.setText(R.string.spotify_regular_07);
 											title_2.setText(R.string.spotify_amoled_07);
-											sub_text_2.setText(R.string.installed_07);
-											sub_text_4.setText(R.string.installed_07);
+											sub_text_installed.setText(R.string.installed_07);
 											sub_text_1.setText(R.string.latest_07);
 											sub_text_3.setText(R.string.latest_07);
 											version_switch_1.setText(R.string.versions_07);
@@ -7478,8 +7595,7 @@ public class MainActivity extends AppCompatActivity {
 										if (LANGUAGE.getString("LANGUAGE", "").equals("8")) {
 											    title_1.setText(R.string.spotify_regular_08);
 												title_2.setText(R.string.spotify_amoled_08);
-												sub_text_2.setText(R.string.installed_08);
-												sub_text_4.setText(R.string.installed_08);
+												sub_text_installed.setText(R.string.installed_08);
 												sub_text_1.setText(R.string.latest_08);
 												sub_text_3.setText(R.string.latest_08);
 												version_switch_1.setText(R.string.versions_08);
@@ -7567,8 +7683,7 @@ public class MainActivity extends AppCompatActivity {
 											if (LANGUAGE.getString("LANGUAGE", "").equals("9")) {
 												    title_1.setText(R.string.spotify_regular_09);
 													title_2.setText(R.string.spotify_amoled_09);
-													sub_text_2.setText(R.string.installed_09);
-													sub_text_4.setText(R.string.installed_09);
+													sub_text_installed.setText(R.string.installed_09);
 													sub_text_1.setText(R.string.latest_09);
 													sub_text_3.setText(R.string.latest_09);
 													version_switch_1.setText(R.string.versions_09);
@@ -7656,8 +7771,7 @@ public class MainActivity extends AppCompatActivity {
 												if (LANGUAGE.getString("LANGUAGE", "").equals("10")) {
 													    title_1.setText(R.string.spotify_regular_10);
 														title_2.setText(R.string.spotify_amoled_10);
-														sub_text_2.setText(R.string.installed_10);
-														sub_text_4.setText(R.string.installed_10);
+														sub_text_installed.setText(R.string.installed_10);
 														sub_text_1.setText(R.string.latest_10);
 														sub_text_3.setText(R.string.latest_10);
 														version_switch_1.setText(R.string.versions_10);
@@ -7745,8 +7859,7 @@ public class MainActivity extends AppCompatActivity {
 													if (LANGUAGE.getString("LANGUAGE", "").equals("11")) {
 														    title_1.setText(R.string.spotify_regular_11);
 															title_2.setText(R.string.spotify_amoled_11);
-															sub_text_2.setText(R.string.installed_11);
-															sub_text_4.setText(R.string.installed_11);
+															sub_text_installed.setText(R.string.installed_11);
 															sub_text_1.setText(R.string.latest_11);
 															sub_text_3.setText(R.string.latest_11);
 															version_switch_1.setText(R.string.versions_11);
@@ -7834,8 +7947,7 @@ public class MainActivity extends AppCompatActivity {
 														if (LANGUAGE.getString("LANGUAGE", "").equals("12")) {
 															    title_1.setText(R.string.spotify_regular_12);
 																title_2.setText(R.string.spotify_amoled_12);
-																sub_text_2.setText(R.string.installed_12);
-																sub_text_4.setText(R.string.installed_12);
+																sub_text_installed.setText(R.string.installed_12);
 																sub_text_1.setText(R.string.latest_12);
 																sub_text_3.setText(R.string.latest_12);
 																version_switch_1.setText(R.string.versions_12);
@@ -7875,7 +7987,7 @@ public class MainActivity extends AppCompatActivity {
 																download_ready_desc.setText(R.string.download_ready_desc_12);
 																downloading_file.setText(R.string.downloading_file_12);
 																download_success.setText(R.string.download_success_12);
-																copy_url_desc.setText(R.string.copy_url_desc_12);
+																copy_url_desc.setText(R.string.copy_url_mode_desc_12);
 																file_directory.setText(R.string.file_directory_12);
 																new_update.setText(R.string.new_update_12);
 																download_selected_0 = download_selected.getText().toString();
@@ -7923,8 +8035,7 @@ public class MainActivity extends AppCompatActivity {
 															if (LANGUAGE.getString("LANGUAGE", "").equals("13")) {
 																    title_1.setText(R.string.spotify_regular_13);
 																	title_2.setText(R.string.spotify_amoled_13);
-																	sub_text_2.setText(R.string.installed_13);
-																	sub_text_4.setText(R.string.installed_13);
+																	sub_text_installed.setText(R.string.installed_13);
 																	sub_text_1.setText(R.string.latest_13);
 																	sub_text_3.setText(R.string.latest_13);
 																	version_switch_1.setText(R.string.versions_13);
@@ -8012,8 +8123,7 @@ public class MainActivity extends AppCompatActivity {
 																if (LANGUAGE.getString("LANGUAGE", "").equals("14")) {
 																	    title_1.setText(R.string.spotify_regular_14);
 																		title_2.setText(R.string.spotify_amoled_14);
-																		sub_text_2.setText(R.string.installed_14);
-																		sub_text_4.setText(R.string.installed_14);
+																		sub_text_installed.setText(R.string.installed_14);
 																		sub_text_1.setText(R.string.latest_14);
 																		sub_text_3.setText(R.string.latest_14);
 																		version_switch_1.setText(R.string.versions_14);
@@ -8101,8 +8211,7 @@ public class MainActivity extends AppCompatActivity {
 																	if (LANGUAGE.getString("LANGUAGE", "").equals("15")) {
 																		    title_1.setText(R.string.spotify_regular_15);
 																			title_2.setText(R.string.spotify_amoled_15);
-																			sub_text_2.setText(R.string.installed_15);
-																			sub_text_4.setText(R.string.installed_15);
+																			sub_text_installed.setText(R.string.installed_15);
 																			sub_text_1.setText(R.string.latest_15);
 																			sub_text_3.setText(R.string.latest_15);
 																			version_switch_1.setText(R.string.versions_15);
@@ -8190,8 +8299,7 @@ public class MainActivity extends AppCompatActivity {
 																		if (LANGUAGE.getString("LANGUAGE", "").equals("16")) {
 																			    title_1.setText(R.string.spotify_regular_16);
 																				title_2.setText(R.string.spotify_amoled_16);
-																				sub_text_2.setText(R.string.installed_16);
-																				sub_text_4.setText(R.string.installed_16);
+																				sub_text_installed.setText(R.string.installed_16);
 																				sub_text_1.setText(R.string.latest_16);
 																				sub_text_3.setText(R.string.latest_16);
 																				version_switch_1.setText(R.string.versions_16);
@@ -8279,8 +8387,7 @@ public class MainActivity extends AppCompatActivity {
 																			if (LANGUAGE.getString("LANGUAGE", "").equals("17")) {
 																				    title_1.setText(R.string.spotify_regular_17);
 																					title_2.setText(R.string.spotify_amoled_17);
-																					sub_text_2.setText(R.string.installed_17);
-																					sub_text_4.setText(R.string.installed_17);
+																					sub_text_installed.setText(R.string.installed_17);
 																					sub_text_1.setText(R.string.latest_17);
 																					sub_text_3.setText(R.string.latest_17);
 																					version_switch_1.setText(R.string.versions_17);
@@ -8363,6 +8470,94 @@ public class MainActivity extends AppCompatActivity {
 																				    discord.setText(R.string.discord_17);
 																				select_language.setSelection((int)(17));
 																			}
+																			else {
+																				if (LANGUAGE.getString("LANGUAGE", "").equals("18")) {
+																					    title_1.setText(R.string.spotify_regular_18);
+																						title_2.setText(R.string.spotify_amoled_18);
+																						sub_text_installed.setText(R.string.installed_18);
+																						sub_text_1.setText(R.string.latest_18);
+																						sub_text_3.setText(R.string.latest_18);
+																						version_switch_1.setText(R.string.versions_18);
+																						version_switch_2.setText(R.string.versions_18);
+																						changelogs.setText(R.string.changelogs_18);
+																						title_sub.setText(R.string.manager_tools_18);
+																						device_cpu.setText(R.string.device_cpu_18);
+																						source.setText(R.string.source_18);
+																						support.setText(R.string.support_18);
+																						donate.setText(R.string.donate_18);
+																						about.setText(R.string.about_18);
+																						list_auto_refresh.setText(R.string.list_auto_refresh_18);
+																						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_18);
+																						force_auto_install.setText(R.string.force_auto_install_18);
+																						force_auto_install_info.setText(R.string.force_auto_install_desc_18);
+																						copy_url_mode.setText(R.string.copy_url_mode_18);
+																						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_18);
+																						navigation_bar.setText(R.string.hide_navigation_bar_18);
+																						theme.setText(R.string.show_themes_18);
+																						apk_location.setText(R.string.apk_location_18);
+																						apk_location_info.setText(R.string.apk_location_desc_18);
+																						clear_directory_folders.setText(R.string.clear_directory_folders_18);
+																						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_18);
+																						reset_settings.setText(R.string.reset_settings_18);
+																						sub_title.setText(R.string.about_sub_18);
+																						developer_manager.setText(R.string.xmanager_dev_18);
+																						developer_spotify.setText(R.string.spotify_mod_devs_18);
+																						support_team.setText(R.string.telegram_support_team_18);
+																						mod_testers_1.setText(R.string.manager_testers_18);
+																						mod_testers_2.setText(R.string.manager_hosting_18);
+																						mobilism_team.setText(R.string.mobilism_team_18);
+																						forum_team.setText(R.string.forum_team_18);
+																						manager_team.setText(R.string.xspotify_team_18);
+																						contributors_1.setText(R.string.contributors_18);
+																						download_selected.setText(R.string.download_selected_18);
+																						download_ready.setText(R.string.download_ready_18);
+																						download_ready_desc.setText(R.string.download_ready_desc_18);
+																						downloading_file.setText(R.string.downloading_file_18);
+																						download_success.setText(R.string.download_success_18);
+																						copy_url_desc.setText(R.string.copy_url_desc_18);
+																						file_directory.setText(R.string.file_directory_18);
+																						new_update.setText(R.string.new_update_18);
+																						download_selected_0 = download_selected.getText().toString();
+																						download_ready_0 = download_ready.getText().toString();
+																						download_ready_desc_0 = download_ready_desc.getText().toString();
+																						downloading_file_0 = downloading_file.getText().toString();
+																						download_success_0 = download_success.getText().toString();
+																						copy_url_desc_0 = copy_url_desc.getText().toString();
+																						file_directory_0 = file_directory.getText().toString();
+																						copy_url.setText(R.string.copy_url_18);
+																						continue_1.setText(R.string.continue_1_18);
+																						cancel.setText(R.string.cancel_18);
+																						download.setText(R.string.download_18);
+																						later.setText(R.string.later_18);
+																						directory.setText(R.string.directory_18);
+																						install_now.setText(R.string.install_now_18);
+																						install_update.setText(R.string.install_update_18);
+																						go_back.setText(R.string.go_back_18);
+																						download_update.setText(R.string.download_update_18);
+																						not_now.setText(R.string.not_now_18);
+																						show_support.setText(R.string.show_support_18);
+																						show_support_desc.setText(R.string.show_support_desc_18);
+																						copy_url_0 = copy_url.getText().toString();
+																						download_0 = download.getText().toString();
+																						continue_0 = continue_1.getText().toString();
+																						cancel_0 = cancel.getText().toString();
+																						later_0 = later.getText().toString();
+																						directory_0 = directory.getText().toString();
+																						install_now_0 = install_now.getText().toString();
+																						go_back_0 = go_back.getText().toString();
+																						install_update_0 = install_update.getText().toString();
+																						main_title.setText(R.string.main_title_18);
+																						settings_title.setText(R.string.settings_title_18);
+																						about_title.setText(R.string.about_title_18);
+																						maintenance.setText(R.string.maintenance_18);
+																						maintenance_desc.setText(R.string.maintenance_desc_18);
+																						thanks.setText(R.string.thanks_18);
+																						language.setText(R.string.language_18);
+																					    website.setText(R.string.website_18);
+																					    discord.setText(R.string.discord_18);
+																					select_language.setSelection((int)(18));
+																				}
+																			}
 																		}
 																	}
 																}
@@ -8402,6 +8597,7 @@ public class MainActivity extends AppCompatActivity {
 		Language.add("Slovenian");
 		Language.add("Romanian");
 		Language.add("Korean");
+		Language.add("Dutch");
 		select_language.setAdapter(new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, Language));
 		((ArrayAdapter)select_language.getAdapter()).notifyDataSetChanged();
 		select_language.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, Language) {
@@ -8435,6 +8631,9 @@ public class MainActivity extends AppCompatActivity {
 		Theme.add("Blue Grey");
 		Theme.add("Pink");
 		Theme.add("Cyan");
+		Theme.add("White");
+		Theme.add("Brown");
+		Theme.add("Indigo");
 		select_theme.setAdapter(new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, Theme));
 		((ArrayAdapter)select_theme.getAdapter()).notifyDataSetChanged();
 		select_theme.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, Theme) {
@@ -8457,91 +8656,89 @@ public class MainActivity extends AppCompatActivity {
 	
 	
 	private void _Language_Fixer () {
-		    title_1.setText(R.string.spotify_regular);
-			title_2.setText(R.string.spotify_amoled);
-			sub_text_2.setText(R.string.installed);
-			sub_text_4.setText(R.string.installed);
-			sub_text_1.setText(R.string.latest);
-			sub_text_3.setText(R.string.latest);
-			version_switch_1.setText(R.string.versions);
-			version_switch_2.setText(R.string.versions);
-			changelogs.setText(R.string.changelogs);
-			title_sub.setText(R.string.manager_tools);
-			device_cpu.setText(R.string.device_cpu);
-			source.setText(R.string.source);
-			support.setText(R.string.support);
-			donate.setText(R.string.donate);
-			about.setText(R.string.about);
-			list_auto_refresh.setText(R.string.list_auto_refresh);
-			list_auto_refresh_info.setText(R.string.list_auto_refresh_desc);
-			force_auto_install.setText(R.string.force_auto_install);
-			force_auto_install_info.setText(R.string.force_auto_install_desc);
-			copy_url_mode.setText(R.string.copy_url_mode);
-			copy_file_url_mode_info.setText(R.string.copy_url_mode_desc);
-			navigation_bar.setText(R.string.hide_navigation_bar);
-			theme.setText(R.string.show_themes);
-			apk_location.setText(R.string.apk_location);
-			apk_location_info.setText(R.string.apk_location_desc);
-			clear_directory_folders.setText(R.string.clear_directory_folders);
-			clear_directory_folders_info.setText(R.string.clear_directory_folders_desc);
-			reset_settings.setText(R.string.reset_settings);
-			sub_title.setText(R.string.about_sub);
-			developer_manager.setText(R.string.xmanager_dev);
-			developer_spotify.setText(R.string.spotify_mod_devs);
-			support_team.setText(R.string.telegram_support_team);
-			mod_testers_1.setText(R.string.manager_testers);
-			mod_testers_2.setText(R.string.manager_hosting);
-			mobilism_team.setText(R.string.mobilism_team);
-			forum_team.setText(R.string.forum_team);
-			manager_team.setText(R.string.xspotify_team);
-			contributors_1.setText(R.string.contributors);
-			download_selected.setText(R.string.download_selected);
-			download_ready.setText(R.string.download_ready);
-			download_ready_desc.setText(R.string.download_ready_desc);
-			downloading_file.setText(R.string.downloading_file);
-			download_success.setText(R.string.download_success);
-			copy_url_desc.setText(R.string.copy_url_desc);
-			file_directory.setText(R.string.file_directory);
-			new_update.setText(R.string.new_update);
-			download_selected_0 = download_selected.getText().toString();
-			download_ready_0 = download_ready.getText().toString();
-			download_ready_desc_0 = download_ready_desc.getText().toString();
-			downloading_file_0 = downloading_file.getText().toString();
-			download_success_0 = download_success.getText().toString();
-			copy_url_desc_0 = copy_url_desc.getText().toString();
-			file_directory_0 = file_directory.getText().toString();
-			copy_url.setText(R.string.copy_url);
-			continue_1.setText(R.string.continue_1);
-			cancel.setText(R.string.cancel);
-			download.setText(R.string.download);
-			later.setText(R.string.later);
-			directory.setText(R.string.directory);
-			install_now.setText(R.string.install_now);
-			install_update.setText(R.string.install_update);
-			go_back.setText(R.string.go_back);
-			download_update.setText(R.string.download_update);
-			not_now.setText(R.string.not_now);
-			show_support.setText(R.string.show_support);
-			show_support_desc.setText(R.string.show_support_desc);
-			copy_url_0 = copy_url.getText().toString();
-			download_0 = download.getText().toString();
-			continue_0 = continue_1.getText().toString();
-			cancel_0 = cancel.getText().toString();
-			later_0 = later.getText().toString();
-			directory_0 = directory.getText().toString();
-			install_now_0 = install_now.getText().toString();
-			go_back_0 = go_back.getText().toString();
-			install_update_0 = install_update.getText().toString();
-			main_title.setText(R.string.main_title);
-			settings_title.setText(R.string.settings_title);
-			about_title.setText(R.string.about_title);
-			maintenance.setText(R.string.maintenance);
-			maintenance_desc.setText(R.string.maintenance_desc);
-			thanks.setText(R.string.thanks);
-			language.setText(R.string.language);
-		  website.setText(R.string.website);
-		
-		discord.setText(R.string.discord);
+		title_1.setText("");
+		title_2.setText("");
+		sub_text_installed.setText("");
+		sub_text_1.setText("");
+		sub_text_3.setText("");
+		version_switch_1.setText("");
+		version_switch_2.setText("");
+		changelogs.setText("");
+		title_sub.setText("");
+		device_cpu.setText("");
+		source.setText("");
+		support.setText("");
+		donate.setText("");
+		discord.setText("");
+		about.setText("");
+		list_auto_refresh.setText("");
+		list_auto_refresh_info.setText("");
+		force_auto_install.setText("");
+		force_auto_install_info.setText("");
+		copy_url_mode.setText("");
+		copy_file_url_mode_info.setText("");
+		navigation_bar.setText("");
+		theme.setText("");
+		apk_location.setText("");
+		apk_location_info.setText("");
+		clear_directory_folders.setText("");
+		clear_directory_folders_info.setText("");
+		reset_settings.setText("");
+		sub_title.setText("");
+		developer_manager.setText("");
+		developer_spotify.setText("");
+		support_team.setText("");
+		mod_testers_1.setText("");
+		mod_testers_2.setText("");
+		mobilism_team.setText("");
+		forum_team.setText("");
+		manager_team.setText("");
+		contributors_1.setText("");
+		download_selected.setText("");
+		download_ready.setText("");
+		download_ready_desc.setText("");
+		downloading_file.setText("");
+		download_success.setText("");
+		copy_url_desc.setText("");
+		file_directory.setText("");
+		new_update.setText("");
+		download_selected_0 = download_selected.getText().toString();
+		download_ready_0 = download_ready.getText().toString();
+		download_ready_desc_0 = download_ready_desc.getText().toString();
+		downloading_file_0 = downloading_file.getText().toString();
+		download_success_0 = download_success.getText().toString();
+		copy_url_desc_0 = copy_url_desc.getText().toString();
+		file_directory_0 = file_directory.getText().toString();
+		copy_url.setText("");
+		continue_1.setText("");
+		cancel.setText("");
+		download.setText("");
+		later.setText("");
+		directory.setText("");
+		install_now.setText("");
+		install_update.setText("");
+		go_back.setText("");
+		download_update.setText("");
+		not_now.setText("");
+		show_support.setText("");
+		show_support_desc.setText("");
+		copy_url_0 = copy_url.getText().toString();
+		download_0 = download.getText().toString();
+		continue_0 = continue_1.getText().toString();
+		cancel_0 = cancel.getText().toString();
+		later_0 = later.getText().toString();
+		directory_0 = directory.getText().toString();
+		install_now_0 = install_now.getText().toString();
+		go_back_0 = go_back.getText().toString();
+		install_update_0 = install_update.getText().toString();
+		main_title.setText("");
+		settings_title.setText("");
+		about_title.setText("");
+		maintenance.setText("");
+		maintenance_desc.setText("");
+		thanks.setText("");
+		language.setText("");
+		website.setText("");
 	}
 	
 	
