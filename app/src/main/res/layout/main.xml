@@ -397,28 +397,39 @@
 					android:id="@+id/box_8_sub_1"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:orientation="horizontal">
-					<TextView
-						android:id="@+id/list_auto_refresh"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:padding="8dp"
-						android:text="LIST AUTO-REFRESH"
-						android:textSize="12sp"
-						android:textStyle="bold"
-						android:textColor="#1DB954"/>
+					android:gravity="right|center_vertical"
+					android:orientation="horizontal"
+					android:layout_weight="1">
 					<LinearLayout
-						android:id="@+id/box_list_auto_refresh"
+						android:id="@+id/title_box_1"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/list_auto_refresh"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="8dp"
+							android:text="LIST AUTO-REFRESH"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#1DB954"/>
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_list_auto_refresh"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
 						android:gravity="right|center_vertical"
-						android:orientation="horizontal">
+						android:orientation="horizontal"
+						android:layout_gravity="right">
 						<Switch
 							android:id="@+id/list_auto_refresh_switch"
 							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
+							android:layout_height="match_parent"
 							android:paddingLeft="5dp"
 							android:paddingRight="2dp"
+							android:gravity="center_horizontal|center_vertical"
 							android:textSize="12sp"
 							android:textColor="#000000"/>
 					</LinearLayout>
@@ -456,28 +467,37 @@
 					android:id="@+id/box_11_sub_1"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
+					android:gravity="right|center_vertical"
 					android:orientation="horizontal">
-					<TextView
-						android:id="@+id/force_auto_install"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:padding="8dp"
-						android:text="FORCE AUTO-INSTALL"
-						android:textSize="12sp"
-						android:textStyle="bold"
-						android:textColor="#1DB954"/>
+					<LinearLayout
+						android:id="@+id/title_box_2"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:orientation="vertical"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/force_auto_install"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="8dp"
+							android:text="FORCE AUTO-INSTALL"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#1DB954"/>
+					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_force_auto_install"
-						android:layout_width="match_parent"
+						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:gravity="right|center_vertical"
 						android:orientation="horizontal">
 						<Switch
 							android:id="@+id/force_auto_install_switch"
 							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
+							android:layout_height="match_parent"
 							android:paddingLeft="5dp"
 							android:paddingRight="2dp"
+							android:gravity="center_horizontal|center_vertical"
 							android:textSize="12sp"
 							android:textColor="#000000"/>
 					</LinearLayout>
@@ -515,28 +535,37 @@
 					android:id="@+id/box_12_sub_1"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
+					android:gravity="right|center_vertical"
 					android:orientation="horizontal">
-					<TextView
-						android:id="@+id/copy_url_mode"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:padding="8dp"
-						android:text="COPY URL MODE"
-						android:textSize="12sp"
-						android:textStyle="bold"
-						android:textColor="#1DB954"/>
+					<LinearLayout
+						android:id="@+id/title_box_3"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:orientation="vertical"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/copy_url_mode"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="8dp"
+							android:text="COPY URL MODE"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#1DB954"/>
+					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_copy_url_mode"
-						android:layout_width="match_parent"
+						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:gravity="right|center_vertical"
 						android:orientation="horizontal">
 						<Switch
 							android:id="@+id/copy_url_mode_switch"
 							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
+							android:layout_height="match_parent"
 							android:paddingLeft="5dp"
 							android:paddingRight="2dp"
+							android:gravity="center_horizontal|center_vertical"
 							android:textSize="12sp"
 							android:textColor="#000000"/>
 					</LinearLayout>
@@ -574,28 +603,37 @@
 					android:id="@+id/box_7_sub_1"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
+					android:gravity="right|center_vertical"
 					android:orientation="horizontal">
-					<TextView
-						android:id="@+id/navigation_bar"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:padding="8dp"
-						android:text="HIDE NAVIGATION BAR"
-						android:textSize="12sp"
-						android:textStyle="bold"
-						android:textColor="#1DB954"/>
+					<LinearLayout
+						android:id="@+id/title_box_4"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:orientation="vertical"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/navigation_bar"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="8dp"
+							android:text="HIDE NAVIGATION BAR"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#1DB954"/>
+					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_navigation_switch"
-						android:layout_width="match_parent"
+						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:gravity="right|center_vertical"
 						android:orientation="horizontal">
 						<Switch
 							android:id="@+id/navigation_switch"
 							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
+							android:layout_height="match_parent"
 							android:paddingLeft="5dp"
 							android:paddingRight="2dp"
+							android:gravity="center_horizontal|center_vertical"
 							android:textSize="12sp"
 							android:textColor="#000000"/>
 					</LinearLayout>
@@ -620,10 +658,10 @@
 					android:orientation="horizontal">
 					<TextView
 						android:id="@+id/theme"
-						android:layout_width="wrap_content"
+						android:layout_width="100dp"
 						android:layout_height="wrap_content"
 						android:padding="8dp"
-						android:gravity="center_horizontal|center_vertical"
+						android:gravity="left|center_vertical"
 						android:text="THEMES"
 						android:textSize="12sp"
 						android:textStyle="bold"
@@ -663,10 +701,10 @@
 					android:orientation="horizontal">
 					<TextView
 						android:id="@+id/language"
-						android:layout_width="wrap_content"
+						android:layout_width="100dp"
 						android:layout_height="wrap_content"
 						android:padding="8dp"
-						android:gravity="center_horizontal|center_vertical"
+						android:gravity="left|center_vertical"
 						android:text="LANGUAGE"
 						android:textSize="12sp"
 						android:textStyle="bold"
@@ -1445,7 +1483,24 @@
 						android:id="@+id/translator_16"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
 						android:text="Apious"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF"/>
+					<TextView
+						android:id="@+id/manager_lang_17"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Dutch Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFEB3B"/>
+					<TextView
+						android:id="@+id/translator_17"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Kevin"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF"/>
@@ -1535,48 +1590,25 @@
 						android:id="@+id/box_2"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
+						android:gravity="right|center_vertical"
 						android:orientation="horizontal">
 						<TextView
-							android:id="@+id/sub_text_2"
+							android:id="@+id/sub_text_1"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:paddingLeft="10dp"
 							android:paddingTop="8dp"
 							android:paddingBottom="8dp"
-							android:text="INSTALLED:"
-							android:textSize="11sp"
+							android:text="LATEST"
+							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<TextView
-							android:id="@+id/sub_2"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingLeft="3dp"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="N/A"
-							android:textSize="11sp"
-							android:textStyle="bold"
-							android:textColor="#BDBDBD"/>
+							android:textColor="#448AFF"/>
 						<LinearLayout
 							android:id="@+id/box_switch_1"
 							android:layout_width="match_parent"
-							android:layout_height="match_parent"
+							android:layout_height="wrap_content"
 							android:gravity="right|center_vertical"
-							android:orientation="horizontal"
-							android:layout_gravity="right|center_vertical">
-							<TextView
-								android:id="@+id/sub_text_1"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:paddingLeft="10dp"
-								android:paddingTop="8dp"
-								android:paddingBottom="8dp"
-								android:text="LATEST:"
-								android:textSize="11sp"
-								android:textStyle="bold"
-								android:textColor="#FFFFFF"/>
+							android:orientation="horizontal">
 							<TextView
 								android:id="@+id/sub_1"
 								android:layout_width="wrap_content"
@@ -1586,9 +1618,9 @@
 								android:paddingRight="8dp"
 								android:paddingBottom="8dp"
 								android:text="N/A"
-								android:textSize="11sp"
+								android:textSize="12sp"
 								android:textStyle="bold"
-								android:textColor="#2979FF"/>
+								android:textColor="#FFFFFF"/>
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
@@ -1699,45 +1731,22 @@
 						android:layout_height="wrap_content"
 						android:orientation="horizontal">
 						<TextView
-							android:id="@+id/sub_text_4"
+							android:id="@+id/sub_text_3"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:paddingLeft="10dp"
 							android:paddingTop="8dp"
 							android:paddingBottom="8dp"
-							android:text="INSTALLED:"
-							android:textSize="11sp"
+							android:text="LATEST"
+							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
-						<TextView
-							android:id="@+id/sub_4"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingLeft="3dp"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:text="N/A"
-							android:textSize="11sp"
-							android:textStyle="bold"
-							android:textColor="#BDBDBD"/>
+							android:textColor="#448AFF"/>
 						<LinearLayout
 							android:id="@+id/box_switch_2"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
 							android:gravity="right|center_vertical"
 							android:orientation="horizontal">
-							<TextView
-								android:id="@+id/sub_text_3"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:paddingLeft="10dp"
-								android:paddingTop="8dp"
-								android:paddingBottom="8dp"
-								android:text="LATEST:"
-								android:textSize="11sp"
-								android:textStyle="bold"
-								android:textColor="#FFFFFF"/>
 							<TextView
 								android:id="@+id/sub_3"
 								android:layout_width="wrap_content"
@@ -1747,9 +1756,9 @@
 								android:paddingRight="8dp"
 								android:paddingBottom="8dp"
 								android:text="N/A"
-								android:textSize="11sp"
+								android:textSize="12sp"
 								android:textStyle="bold"
-								android:textColor="#2979FF"/>
+								android:textColor="#FFFFFF"/>
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
@@ -1866,6 +1875,52 @@
 						android:padding="8dp"
 						android:background="#616161"
 						android:orientation="horizontal"/>
+					<LinearLayout
+						android:id="@+id/linear8"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/sub_text_installed"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:paddingLeft="10dp"
+							android:paddingTop="8dp"
+							android:paddingRight="8dp"
+							android:paddingBottom="8dp"
+							android:text="INSTALLED"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#1DB954"/>
+						<LinearLayout
+							android:id="@+id/box_installed"
+							android:layout_width="match_parent"
+							android:layout_height="match_parent"
+							android:gravity="right|center_vertical"
+							android:orientation="vertical">
+							<TextView
+								android:id="@+id/sub_installed"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingLeft="8dp"
+								android:paddingTop="8dp"
+								android:paddingRight="10dp"
+								android:paddingBottom="8dp"
+								android:text="N/A"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:textColor="#FFFFFF"/>
+						</LinearLayout>
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_seperator_4"
+						android:layout_width="match_parent"
+						android:layout_height="2dp"
+						android:layout_marginLeft="15dp"
+						android:layout_marginRight="15dp"
+						android:padding="8dp"
+						android:background="#616161"
+						android:orientation="vertical"/>
 					<LinearLayout
 						android:id="@+id/box_6_sub_1"
 						android:layout_width="match_parent"
@@ -2047,7 +2102,7 @@
 					android:orientation="horizontal">
 					<LinearLayout
 						android:id="@+id/box_support"
-						android:layout_width="wrap_content"
+						android:layout_width="100dp"
 						android:layout_height="wrap_content"
 						android:paddingTop="8dp"
 						android:paddingBottom="6dp"
@@ -2059,10 +2114,12 @@
 							android:id="@+id/support"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
+							android:gravity="center_horizontal|center_vertical"
 							android:text="TELEGRAM"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
+							android:textColor="#FFFFFF"
+							android:layout_gravity="center_horizontal|center_vertical"/>
 						<ImageView
 							android:id="@+id/icon_support"
 							android:layout_width="wrap_content"
@@ -2074,7 +2131,7 @@
 					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_donate"
-						android:layout_width="wrap_content"
+						android:layout_width="100dp"
 						android:layout_height="wrap_content"
 						android:layout_marginLeft="10dp"
 						android:paddingTop="8dp"
@@ -2087,10 +2144,12 @@
 							android:id="@+id/donate"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
+							android:gravity="center_horizontal|center_vertical"
 							android:text="DONATE"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
+							android:textColor="#FFFFFF"
+							android:layout_gravity="center_horizontal|center_vertical"/>
 						<ImageView
 							android:id="@+id/icon_donate"
 							android:layout_width="wrap_content"
@@ -2102,7 +2161,7 @@
 					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_about"
-						android:layout_width="wrap_content"
+						android:layout_width="100dp"
 						android:layout_height="wrap_content"
 						android:layout_marginLeft="10dp"
 						android:paddingTop="8dp"
@@ -2117,10 +2176,12 @@
 							android:layout_height="wrap_content"
 							android:paddingLeft="1dp"
 							android:paddingRight="1dp"
+							android:gravity="center_horizontal|center_vertical"
 							android:text="ABOUT"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
+							android:textColor="#FFFFFF"
+							android:layout_gravity="center_horizontal|center_vertical"/>
 						<ImageView
 							android:id="@+id/icon_about"
 							android:layout_width="wrap_content"
@@ -2142,7 +2203,7 @@
 					android:orientation="horizontal">
 					<LinearLayout
 						android:id="@+id/box_discord"
-						android:layout_width="wrap_content"
+						android:layout_width="100dp"
 						android:layout_height="wrap_content"
 						android:paddingTop="8dp"
 						android:paddingBottom="6dp"
@@ -2155,10 +2216,12 @@
 							android:id="@+id/discord"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
+							android:gravity="center_horizontal|center_vertical"
 							android:text="DISCORD"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
+							android:textColor="#FFFFFF"
+							android:layout_gravity="center_horizontal|center_vertical"/>
 						<ImageView
 							android:id="@+id/icon_discord"
 							android:layout_width="wrap_content"
@@ -2170,7 +2233,7 @@
 					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_website"
-						android:layout_width="wrap_content"
+						android:layout_width="100dp"
 						android:layout_height="wrap_content"
 						android:layout_marginLeft="10dp"
 						android:paddingTop="8dp"
@@ -2201,7 +2264,7 @@
 					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_source"
-						android:layout_width="wrap_content"
+						android:layout_width="100dp"
 						android:layout_height="wrap_content"
 						android:layout_marginLeft="10dp"
 						android:paddingTop="8dp"
@@ -2215,10 +2278,12 @@
 							android:id="@+id/source"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
+							android:gravity="center_horizontal|center_vertical"
 							android:text="SOURCE"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
+							android:textColor="#FFFFFF"
+							android:layout_gravity="center_horizontal|center_vertical"/>
 						<ImageView
 							android:id="@+id/icon_source"
 							android:layout_width="wrap_content"
