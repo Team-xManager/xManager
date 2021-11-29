@@ -69,6 +69,7 @@ PetFix (Spanish - Spain Translation)
 Berkay (Turkish Translation)  
 NIKITA🇺🇦[beryllium] #PocoForEver (Ukrainian Translation)  
 Apious (Korean Translation)  
+Kevin (Dutch Translation)  
 
 # Contributors  
 
