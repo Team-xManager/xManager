@@ -1,5 +1,6 @@
 package com.xc3fff0e.xmanager;
 
+import com.xc3fff0e.xmanager.SplashActivity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.*;
 import android.app.*;
@@ -8,21 +9,28 @@ import android.view.*;
 import android.view.View.*;
 import android.widget.*;
 import android.content.*;
+import android.content.res.*;
 import android.graphics.*;
+import android.graphics.drawable.*;
 import android.media.*;
 import android.net.*;
 import android.text.*;
+import android.text.style.*;
 import android.util.*;
 import android.webkit.*;
 import android.animation.*;
 import android.view.animation.*;
+import java.io.*;
 import java.util.*;
+import java.util.regex.*;
 import java.text.*;
+import org.json.*;
 import java.util.HashMap;
 import java.util.ArrayList;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -46,23 +54,32 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ChildEventListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 import com.google.firebase.messaging.FirebaseMessaging;
+import androidx.core.content.FileProvider;
+import java.io.File;
 import android.widget.CompoundButton;
 import android.view.View;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.AdapterView;
 import android.graphics.Typeface;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import androidx.browser.*;
+import com.wuyr.rippleanimation.*;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.DialogFragment;
 import androidx.core.content.ContextCompat;
 import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.content.pm.PackageManager;
+import androidx.core.widget.NestedScrollView;
+
 
 public class MainActivity extends AppCompatActivity {
 	
@@ -110,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
 	private ScrollView main_scroll_about;
 	private SwipeRefreshLayout main_refresh_layout;
 	private TextView title_header;
+	private TextView title_header_seperator;
 	private TextView title_header_beta;
 	private LinearLayout box_header_tab;
 	private LinearLayout box_switch;
@@ -308,12 +326,12 @@ public class MainActivity extends AppCompatActivity {
 	private TextView version_switch_2;
 	private LinearLayout box_sub_6;
 	private Switch version_switch_02;
-	private LinearLayout box_16_sub_1;
-	private LinearLayout box_seperator_3;
-	private LinearLayout linear8;
-	private LinearLayout box_seperator_4;
 	private LinearLayout box_6_sub_1;
+	private LinearLayout box_seperator_3;
 	private LinearLayout box_6_sub_2;
+	private LinearLayout box_seperator_4;
+	private LinearLayout box_6_sub_3;
+	private LinearLayout box_6_sub_4;
 	private TextView device_cpu;
 	private LinearLayout box_cpu;
 	private TextView cpu;
@@ -338,23 +356,29 @@ public class MainActivity extends AppCompatActivity {
 	private ImageView icon_cache;
 	private ImageView icon_open;
 	private LinearLayout box_support;
+	private LinearLayout box_reddit;
 	private LinearLayout box_donate;
 	private LinearLayout box_about;
 	private TextView support;
 	private ImageView icon_support;
+	private TextView reddit;
+	private ImageView icon_reddit;
 	private TextView donate;
 	private ImageView icon_donate;
 	private TextView about;
 	private ImageView icon_about;
 	private LinearLayout box_discord;
-	private LinearLayout box_website;
 	private LinearLayout box_source;
+	private LinearLayout box_website;
+	private LinearLayout box_faq;
 	private TextView discord;
 	private ImageView icon_discord;
-	private TextView website;
-	private ImageView icon_website;
 	private TextView source;
 	private ImageView icon_source;
+	private TextView website;
+	private ImageView icon_website;
+	private TextView faq;
+	private ImageView icon_faq;
 	
 	private TimerTask Timer;
 	private Intent Support = new Intent();
@@ -386,8 +410,8 @@ public class MainActivity extends AppCompatActivity {
 	private OnCompleteListener xManager_Notification_onCompleteListener;
 	private DatabaseReference xManager_Changelogs = _firebase.getReference("xManager_Changelogs");
 	private ChildEventListener _xManager_Changelogs_child_listener;
-	private  FileProvider;
-	private  File_Fixer;
+	private FileProvider FileProvider;
+	private File File_Fixer;
 	private Intent Source = new Intent();
 	private DatabaseReference Regular_Mod = _firebase.getReference("Regular_Mod");
 	private ChildEventListener _Regular_Mod_child_listener;
@@ -402,281 +426,277 @@ public class MainActivity extends AppCompatActivity {
 	private AlertDialog.Builder Directory;
 	private SharedPreferences VERSIONS;
 	private SharedPreferences LANGUAGE;
+	private AlertDialog.Builder Permission;
+	private SharedPreferences PERMISSION;
+	
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.main);
-		com.google.firebase.FirebaseApp.initializeApp(this);
 		initialize(_savedInstanceState);
-		if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED
-		|| ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
-			ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1000);
-		}
-		else {
-			initializeLogic();
-		}
-	}
-	@Override
-	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-		if (requestCode == 1000) {
-			initializeLogic();
-		}
+		com.google.firebase.FirebaseApp.initializeApp(this);
+		initializeLogic();
 	}
 	
 	private void initialize(Bundle _savedInstanceState) {
-		
-		box_header = (LinearLayout) findViewById(R.id.box_header);
-		main_body_optimization = (LinearLayout) findViewById(R.id.main_body_optimization);
-		main_scroll_settings = (ScrollView) findViewById(R.id.main_scroll_settings);
-		main_scroll_about = (ScrollView) findViewById(R.id.main_scroll_about);
-		main_refresh_layout = (SwipeRefreshLayout) findViewById(R.id.main_refresh_layout);
-		title_header = (TextView) findViewById(R.id.title_header);
-		title_header_beta = (TextView) findViewById(R.id.title_header_beta);
-		box_header_tab = (LinearLayout) findViewById(R.id.box_header_tab);
-		box_switch = (LinearLayout) findViewById(R.id.box_switch);
-		box_update = (LinearLayout) findViewById(R.id.box_update);
-		icon_switch = (ImageView) findViewById(R.id.icon_switch);
-		icon_update = (ImageView) findViewById(R.id.icon_update);
-		hidden_download = (TextView) findViewById(R.id.hidden_download);
-		app_changelogs = (TextView) findViewById(R.id.app_changelogs);
-		download_selected = (TextView) findViewById(R.id.download_selected);
-		download_ready = (TextView) findViewById(R.id.download_ready);
-		download_ready_desc = (TextView) findViewById(R.id.download_ready_desc);
-		downloading_file = (TextView) findViewById(R.id.downloading_file);
-		download_success = (TextView) findViewById(R.id.download_success);
-		maintenance_desc = (TextView) findViewById(R.id.maintenance_desc);
-		copy_url_desc = (TextView) findViewById(R.id.copy_url_desc);
-		maintenance = (TextView) findViewById(R.id.maintenance);
-		thanks = (TextView) findViewById(R.id.thanks);
-		main_title = (TextView) findViewById(R.id.main_title);
-		settings_title = (TextView) findViewById(R.id.settings_title);
-		about_title = (TextView) findViewById(R.id.about_title);
-		file_directory = (TextView) findViewById(R.id.file_directory);
-		new_update = (TextView) findViewById(R.id.new_update);
-		continue_1 = (TextView) findViewById(R.id.continue_1);
-		cancel = (TextView) findViewById(R.id.cancel);
-		download = (TextView) findViewById(R.id.download);
-		later = (TextView) findViewById(R.id.later);
-		directory = (TextView) findViewById(R.id.directory);
-		install_now = (TextView) findViewById(R.id.install_now);
-		install_update = (TextView) findViewById(R.id.install_update);
-		go_back = (TextView) findViewById(R.id.go_back);
-		download_update = (TextView) findViewById(R.id.download_update);
-		not_now = (TextView) findViewById(R.id.not_now);
-		copy_url = (TextView) findViewById(R.id.copy_url);
-		show_support = (TextView) findViewById(R.id.show_support);
-		show_support_desc = (TextView) findViewById(R.id.show_support_desc);
-		main_body_settings = (LinearLayout) findViewById(R.id.main_body_settings);
-		box_settings_close = (LinearLayout) findViewById(R.id.box_settings_close);
-		main_box_8 = (LinearLayout) findViewById(R.id.main_box_8);
-		main_box_11 = (LinearLayout) findViewById(R.id.main_box_11);
-		main_box_12 = (LinearLayout) findViewById(R.id.main_box_12);
-		main_box_7 = (LinearLayout) findViewById(R.id.main_box_7);
-		main_box_5 = (LinearLayout) findViewById(R.id.main_box_5);
-		main_box_14 = (LinearLayout) findViewById(R.id.main_box_14);
-		main_box_9 = (LinearLayout) findViewById(R.id.main_box_9);
-		main_box_10 = (LinearLayout) findViewById(R.id.main_box_10);
-		main_box_13 = (LinearLayout) findViewById(R.id.main_box_13);
-		box_settings_icon_close = (LinearLayout) findViewById(R.id.box_settings_icon_close);
-		settings_icon_close = (ImageView) findViewById(R.id.settings_icon_close);
-		box_8_sub_1 = (LinearLayout) findViewById(R.id.box_8_sub_1);
-		box_8_sub_2 = (LinearLayout) findViewById(R.id.box_8_sub_2);
-		title_box_1 = (LinearLayout) findViewById(R.id.title_box_1);
-		box_list_auto_refresh = (LinearLayout) findViewById(R.id.box_list_auto_refresh);
-		list_auto_refresh = (TextView) findViewById(R.id.list_auto_refresh);
-		list_auto_refresh_switch = (Switch) findViewById(R.id.list_auto_refresh_switch);
-		list_auto_refresh_info = (TextView) findViewById(R.id.list_auto_refresh_info);
-		box_11_sub_1 = (LinearLayout) findViewById(R.id.box_11_sub_1);
-		box_11_sub_2 = (LinearLayout) findViewById(R.id.box_11_sub_2);
-		title_box_2 = (LinearLayout) findViewById(R.id.title_box_2);
-		box_force_auto_install = (LinearLayout) findViewById(R.id.box_force_auto_install);
-		force_auto_install = (TextView) findViewById(R.id.force_auto_install);
-		force_auto_install_switch = (Switch) findViewById(R.id.force_auto_install_switch);
-		force_auto_install_info = (TextView) findViewById(R.id.force_auto_install_info);
-		box_12_sub_1 = (LinearLayout) findViewById(R.id.box_12_sub_1);
-		box_12_sub_2 = (LinearLayout) findViewById(R.id.box_12_sub_2);
-		title_box_3 = (LinearLayout) findViewById(R.id.title_box_3);
-		box_copy_url_mode = (LinearLayout) findViewById(R.id.box_copy_url_mode);
-		copy_url_mode = (TextView) findViewById(R.id.copy_url_mode);
-		copy_url_mode_switch = (Switch) findViewById(R.id.copy_url_mode_switch);
-		copy_file_url_mode_info = (TextView) findViewById(R.id.copy_file_url_mode_info);
-		box_7_sub_1 = (LinearLayout) findViewById(R.id.box_7_sub_1);
-		title_box_4 = (LinearLayout) findViewById(R.id.title_box_4);
-		box_navigation_switch = (LinearLayout) findViewById(R.id.box_navigation_switch);
-		navigation_bar = (TextView) findViewById(R.id.navigation_bar);
-		navigation_switch = (Switch) findViewById(R.id.navigation_switch);
-		box_5_sub_1 = (LinearLayout) findViewById(R.id.box_5_sub_1);
-		theme = (TextView) findViewById(R.id.theme);
-		box_theme_switch = (LinearLayout) findViewById(R.id.box_theme_switch);
-		select_theme = (Spinner) findViewById(R.id.select_theme);
-		box_14_sub_1 = (LinearLayout) findViewById(R.id.box_14_sub_1);
-		language = (TextView) findViewById(R.id.language);
-		box_language_switch = (LinearLayout) findViewById(R.id.box_language_switch);
-		select_language = (Spinner) findViewById(R.id.select_language);
-		box_9_sub_1 = (LinearLayout) findViewById(R.id.box_9_sub_1);
-		box_9_sub_2 = (LinearLayout) findViewById(R.id.box_9_sub_2);
-		apk_location = (TextView) findViewById(R.id.apk_location);
-		apk_path_location = (EditText) findViewById(R.id.apk_path_location);
-		apk_location_info = (TextView) findViewById(R.id.apk_location_info);
-		box_10_sub_1 = (LinearLayout) findViewById(R.id.box_10_sub_1);
-		box_10_sub_2 = (LinearLayout) findViewById(R.id.box_10_sub_2);
-		clear_directory_folders = (TextView) findViewById(R.id.clear_directory_folders);
-		clear_directory_folders_info = (TextView) findViewById(R.id.clear_directory_folders_info);
-		box_reset_settings = (LinearLayout) findViewById(R.id.box_reset_settings);
-		reset_settings = (TextView) findViewById(R.id.reset_settings);
-		main_body_about = (LinearLayout) findViewById(R.id.main_body_about);
-		box_about_close = (LinearLayout) findViewById(R.id.box_about_close);
-		box_about_header = (LinearLayout) findViewById(R.id.box_about_header);
-		box_about_sub = (LinearLayout) findViewById(R.id.box_about_sub);
-		box_about_1 = (LinearLayout) findViewById(R.id.box_about_1);
-		box_about_2 = (LinearLayout) findViewById(R.id.box_about_2);
-		box_about_3 = (LinearLayout) findViewById(R.id.box_about_3);
-		box_about_4 = (LinearLayout) findViewById(R.id.box_about_4);
-		box_about_5 = (LinearLayout) findViewById(R.id.box_about_5);
-		box_about_6 = (LinearLayout) findViewById(R.id.box_about_6);
-		box_about_7 = (LinearLayout) findViewById(R.id.box_about_7);
-		contributors_1 = (TextView) findViewById(R.id.contributors_1);
-		box_icon_close = (LinearLayout) findViewById(R.id.box_icon_close);
-		icon_close = (ImageView) findViewById(R.id.icon_close);
-		title_about = (TextView) findViewById(R.id.title_about);
-		app_version = (TextView) findViewById(R.id.app_version);
-		sub_title = (TextView) findViewById(R.id.sub_title);
-		developer_manager = (TextView) findViewById(R.id.developer_manager);
-		developer_1 = (TextView) findViewById(R.id.developer_1);
-		developer_spotify = (TextView) findViewById(R.id.developer_spotify);
-		developer_2 = (TextView) findViewById(R.id.developer_2);
-		support_team = (TextView) findViewById(R.id.support_team);
-		support_1 = (TextView) findViewById(R.id.support_1);
-		mod_testers_1 = (TextView) findViewById(R.id.mod_testers_1);
-		testers_1 = (TextView) findViewById(R.id.testers_1);
-		mod_testers_2 = (TextView) findViewById(R.id.mod_testers_2);
-		testers_2 = (TextView) findViewById(R.id.testers_2);
-		mobilism_team = (TextView) findViewById(R.id.mobilism_team);
-		mobilism_1 = (TextView) findViewById(R.id.mobilism_1);
-		manager_team = (TextView) findViewById(R.id.manager_team);
-		manager_1 = (TextView) findViewById(R.id.manager_1);
-		forum_team = (TextView) findViewById(R.id.forum_team);
-		forum_1 = (TextView) findViewById(R.id.forum_1);
-		box_about_4_sub_1 = (LinearLayout) findViewById(R.id.box_about_4_sub_1);
-		manager_lang_13 = (TextView) findViewById(R.id.manager_lang_13);
-		translator_13 = (TextView) findViewById(R.id.translator_13);
-		manager_lang_1 = (TextView) findViewById(R.id.manager_lang_1);
-		translator_1 = (TextView) findViewById(R.id.translator_1);
-		manager_lang_2 = (TextView) findViewById(R.id.manager_lang_2);
-		translator_2 = (TextView) findViewById(R.id.translator_2);
-		manager_lang_3 = (TextView) findViewById(R.id.manager_lang_3);
-		translator_3 = (TextView) findViewById(R.id.translator_3);
-		manager_lang_4 = (TextView) findViewById(R.id.manager_lang_4);
-		translator_4 = (TextView) findViewById(R.id.translator_4);
-		manager_lang_5 = (TextView) findViewById(R.id.manager_lang_5);
-		translator_5 = (TextView) findViewById(R.id.translator_5);
-		manager_lang_6 = (TextView) findViewById(R.id.manager_lang_6);
-		translator_6 = (TextView) findViewById(R.id.translator_6);
-		manager_lang_7 = (TextView) findViewById(R.id.manager_lang_7);
-		translator_7 = (TextView) findViewById(R.id.translator_7);
-		translator_7_1 = (TextView) findViewById(R.id.translator_7_1);
-		manager_lang_8 = (TextView) findViewById(R.id.manager_lang_8);
-		translator_8 = (TextView) findViewById(R.id.translator_8);
-		manager_lang_15 = (TextView) findViewById(R.id.manager_lang_15);
-		translator_15 = (TextView) findViewById(R.id.translator_15);
-		manager_lang_9 = (TextView) findViewById(R.id.manager_lang_9);
-		translator_9 = (TextView) findViewById(R.id.translator_9);
-		manager_lang_14 = (TextView) findViewById(R.id.manager_lang_14);
-		translator_14 = (TextView) findViewById(R.id.translator_14);
-		manager_lang_10 = (TextView) findViewById(R.id.manager_lang_10);
-		translator_10 = (TextView) findViewById(R.id.translator_10);
-		manager_lang_12 = (TextView) findViewById(R.id.manager_lang_12);
-		translator_12 = (TextView) findViewById(R.id.translator_12);
-		manager_lang_11 = (TextView) findViewById(R.id.manager_lang_11);
-		translator_11 = (TextView) findViewById(R.id.translator_11);
-		manager_lang_16 = (TextView) findViewById(R.id.manager_lang_16);
-		translator_16 = (TextView) findViewById(R.id.translator_16);
-		manager_lang_17 = (TextView) findViewById(R.id.manager_lang_17);
-		translator_17 = (TextView) findViewById(R.id.translator_17);
-		main_scroll_body = (ScrollView) findViewById(R.id.main_scroll_body);
-		main_body = (LinearLayout) findViewById(R.id.main_body);
-		main_box_1 = (LinearLayout) findViewById(R.id.main_box_1);
-		main_box_2 = (LinearLayout) findViewById(R.id.main_box_2);
-		main_box_6 = (LinearLayout) findViewById(R.id.main_box_6);
-		box_sub_header = (LinearLayout) findViewById(R.id.box_sub_header);
-		main_box_4 = (LinearLayout) findViewById(R.id.main_box_4);
-		main_box_15 = (LinearLayout) findViewById(R.id.main_box_15);
-		box_1 = (LinearLayout) findViewById(R.id.box_1);
-		box_2 = (LinearLayout) findViewById(R.id.box_2);
-		box_seperator_1 = (LinearLayout) findViewById(R.id.box_seperator_1);
-		box_5 = (LinearLayout) findViewById(R.id.box_5);
-		list_menu_1 = (ListView) findViewById(R.id.list_menu_1);
-		title_1 = (TextView) findViewById(R.id.title_1);
-		box_1_sub = (LinearLayout) findViewById(R.id.box_1_sub);
-		regular_info = (TextView) findViewById(R.id.regular_info);
-		sub_text_1 = (TextView) findViewById(R.id.sub_text_1);
-		box_switch_1 = (LinearLayout) findViewById(R.id.box_switch_1);
-		sub_1 = (TextView) findViewById(R.id.sub_1);
-		version_switch_1 = (TextView) findViewById(R.id.version_switch_1);
-		box_sub_5 = (LinearLayout) findViewById(R.id.box_sub_5);
-		version_switch_01 = (Switch) findViewById(R.id.version_switch_01);
-		box_3 = (LinearLayout) findViewById(R.id.box_3);
-		box_4 = (LinearLayout) findViewById(R.id.box_4);
-		box_seperator_2 = (LinearLayout) findViewById(R.id.box_seperator_2);
-		box_6 = (LinearLayout) findViewById(R.id.box_6);
-		list_menu_2 = (ListView) findViewById(R.id.list_menu_2);
-		title_2 = (TextView) findViewById(R.id.title_2);
-		box_3_sub = (LinearLayout) findViewById(R.id.box_3_sub);
-		amoled_info = (TextView) findViewById(R.id.amoled_info);
-		sub_text_3 = (TextView) findViewById(R.id.sub_text_3);
-		box_switch_2 = (LinearLayout) findViewById(R.id.box_switch_2);
-		sub_3 = (TextView) findViewById(R.id.sub_3);
-		version_switch_2 = (TextView) findViewById(R.id.version_switch_2);
-		box_sub_6 = (LinearLayout) findViewById(R.id.box_sub_6);
-		version_switch_02 = (Switch) findViewById(R.id.version_switch_02);
-		box_16_sub_1 = (LinearLayout) findViewById(R.id.box_16_sub_1);
-		box_seperator_3 = (LinearLayout) findViewById(R.id.box_seperator_3);
-		linear8 = (LinearLayout) findViewById(R.id.linear8);
-		box_seperator_4 = (LinearLayout) findViewById(R.id.box_seperator_4);
-		box_6_sub_1 = (LinearLayout) findViewById(R.id.box_6_sub_1);
-		box_6_sub_2 = (LinearLayout) findViewById(R.id.box_6_sub_2);
-		device_cpu = (TextView) findViewById(R.id.device_cpu);
-		box_cpu = (LinearLayout) findViewById(R.id.box_cpu);
-		cpu = (TextView) findViewById(R.id.cpu);
-		sub_text_installed = (TextView) findViewById(R.id.sub_text_installed);
-		box_installed = (LinearLayout) findViewById(R.id.box_installed);
-		sub_installed = (TextView) findViewById(R.id.sub_installed);
-		changelogs = (TextView) findViewById(R.id.changelogs);
-		box_changelogs = (LinearLayout) findViewById(R.id.box_changelogs);
-		changelogs_switch = (Switch) findViewById(R.id.changelogs_switch);
-		box_changelogs_1 = (LinearLayout) findViewById(R.id.box_changelogs_1);
-		scroll_changelogs_1 = (ScrollView) findViewById(R.id.scroll_changelogs_1);
-		changelogs_x = (TextView) findViewById(R.id.changelogs_x);
-		box_sub_1 = (LinearLayout) findViewById(R.id.box_sub_1);
-		box_sub_2 = (LinearLayout) findViewById(R.id.box_sub_2);
-		title_sub = (TextView) findViewById(R.id.title_sub);
-		box_uninstall = (LinearLayout) findViewById(R.id.box_uninstall);
-		box_settings = (LinearLayout) findViewById(R.id.box_settings);
-		box_cache = (LinearLayout) findViewById(R.id.box_cache);
-		box_open = (LinearLayout) findViewById(R.id.box_open);
-		icon_uninstall = (ImageView) findViewById(R.id.icon_uninstall);
-		icon_settings = (ImageView) findViewById(R.id.icon_settings);
-		icon_cache = (ImageView) findViewById(R.id.icon_cache);
-		icon_open = (ImageView) findViewById(R.id.icon_open);
-		box_support = (LinearLayout) findViewById(R.id.box_support);
-		box_donate = (LinearLayout) findViewById(R.id.box_donate);
-		box_about = (LinearLayout) findViewById(R.id.box_about);
-		support = (TextView) findViewById(R.id.support);
-		icon_support = (ImageView) findViewById(R.id.icon_support);
-		donate = (TextView) findViewById(R.id.donate);
-		icon_donate = (ImageView) findViewById(R.id.icon_donate);
-		about = (TextView) findViewById(R.id.about);
-		icon_about = (ImageView) findViewById(R.id.icon_about);
-		box_discord = (LinearLayout) findViewById(R.id.box_discord);
-		box_website = (LinearLayout) findViewById(R.id.box_website);
-		box_source = (LinearLayout) findViewById(R.id.box_source);
-		discord = (TextView) findViewById(R.id.discord);
-		icon_discord = (ImageView) findViewById(R.id.icon_discord);
-		website = (TextView) findViewById(R.id.website);
-		icon_website = (ImageView) findViewById(R.id.icon_website);
-		source = (TextView) findViewById(R.id.source);
-		icon_source = (ImageView) findViewById(R.id.icon_source);
+		box_header = findViewById(R.id.box_header);
+		main_body_optimization = findViewById(R.id.main_body_optimization);
+		main_scroll_settings = findViewById(R.id.main_scroll_settings);
+		main_scroll_about = findViewById(R.id.main_scroll_about);
+		main_refresh_layout = findViewById(R.id.main_refresh_layout);
+		title_header = findViewById(R.id.title_header);
+		title_header_seperator = findViewById(R.id.title_header_seperator);
+		title_header_beta = findViewById(R.id.title_header_beta);
+		box_header_tab = findViewById(R.id.box_header_tab);
+		box_switch = findViewById(R.id.box_switch);
+		box_update = findViewById(R.id.box_update);
+		icon_switch = findViewById(R.id.icon_switch);
+		icon_update = findViewById(R.id.icon_update);
+		hidden_download = findViewById(R.id.hidden_download);
+		app_changelogs = findViewById(R.id.app_changelogs);
+		download_selected = findViewById(R.id.download_selected);
+		download_ready = findViewById(R.id.download_ready);
+		download_ready_desc = findViewById(R.id.download_ready_desc);
+		downloading_file = findViewById(R.id.downloading_file);
+		download_success = findViewById(R.id.download_success);
+		maintenance_desc = findViewById(R.id.maintenance_desc);
+		copy_url_desc = findViewById(R.id.copy_url_desc);
+		maintenance = findViewById(R.id.maintenance);
+		thanks = findViewById(R.id.thanks);
+		main_title = findViewById(R.id.main_title);
+		settings_title = findViewById(R.id.settings_title);
+		about_title = findViewById(R.id.about_title);
+		file_directory = findViewById(R.id.file_directory);
+		new_update = findViewById(R.id.new_update);
+		continue_1 = findViewById(R.id.continue_1);
+		cancel = findViewById(R.id.cancel);
+		download = findViewById(R.id.download);
+		later = findViewById(R.id.later);
+		directory = findViewById(R.id.directory);
+		install_now = findViewById(R.id.install_now);
+		install_update = findViewById(R.id.install_update);
+		go_back = findViewById(R.id.go_back);
+		download_update = findViewById(R.id.download_update);
+		not_now = findViewById(R.id.not_now);
+		copy_url = findViewById(R.id.copy_url);
+		show_support = findViewById(R.id.show_support);
+		show_support_desc = findViewById(R.id.show_support_desc);
+		main_body_settings = findViewById(R.id.main_body_settings);
+		box_settings_close = findViewById(R.id.box_settings_close);
+		main_box_8 = findViewById(R.id.main_box_8);
+		main_box_11 = findViewById(R.id.main_box_11);
+		main_box_12 = findViewById(R.id.main_box_12);
+		main_box_7 = findViewById(R.id.main_box_7);
+		main_box_5 = findViewById(R.id.main_box_5);
+		main_box_14 = findViewById(R.id.main_box_14);
+		main_box_9 = findViewById(R.id.main_box_9);
+		main_box_10 = findViewById(R.id.main_box_10);
+		main_box_13 = findViewById(R.id.main_box_13);
+		box_settings_icon_close = findViewById(R.id.box_settings_icon_close);
+		settings_icon_close = findViewById(R.id.settings_icon_close);
+		box_8_sub_1 = findViewById(R.id.box_8_sub_1);
+		box_8_sub_2 = findViewById(R.id.box_8_sub_2);
+		title_box_1 = findViewById(R.id.title_box_1);
+		box_list_auto_refresh = findViewById(R.id.box_list_auto_refresh);
+		list_auto_refresh = findViewById(R.id.list_auto_refresh);
+		list_auto_refresh_switch = findViewById(R.id.list_auto_refresh_switch);
+		list_auto_refresh_info = findViewById(R.id.list_auto_refresh_info);
+		box_11_sub_1 = findViewById(R.id.box_11_sub_1);
+		box_11_sub_2 = findViewById(R.id.box_11_sub_2);
+		title_box_2 = findViewById(R.id.title_box_2);
+		box_force_auto_install = findViewById(R.id.box_force_auto_install);
+		force_auto_install = findViewById(R.id.force_auto_install);
+		force_auto_install_switch = findViewById(R.id.force_auto_install_switch);
+		force_auto_install_info = findViewById(R.id.force_auto_install_info);
+		box_12_sub_1 = findViewById(R.id.box_12_sub_1);
+		box_12_sub_2 = findViewById(R.id.box_12_sub_2);
+		title_box_3 = findViewById(R.id.title_box_3);
+		box_copy_url_mode = findViewById(R.id.box_copy_url_mode);
+		copy_url_mode = findViewById(R.id.copy_url_mode);
+		copy_url_mode_switch = findViewById(R.id.copy_url_mode_switch);
+		copy_file_url_mode_info = findViewById(R.id.copy_file_url_mode_info);
+		box_7_sub_1 = findViewById(R.id.box_7_sub_1);
+		title_box_4 = findViewById(R.id.title_box_4);
+		box_navigation_switch = findViewById(R.id.box_navigation_switch);
+		navigation_bar = findViewById(R.id.navigation_bar);
+		navigation_switch = findViewById(R.id.navigation_switch);
+		box_5_sub_1 = findViewById(R.id.box_5_sub_1);
+		theme = findViewById(R.id.theme);
+		box_theme_switch = findViewById(R.id.box_theme_switch);
+		select_theme = findViewById(R.id.select_theme);
+		box_14_sub_1 = findViewById(R.id.box_14_sub_1);
+		language = findViewById(R.id.language);
+		box_language_switch = findViewById(R.id.box_language_switch);
+		select_language = findViewById(R.id.select_language);
+		box_9_sub_1 = findViewById(R.id.box_9_sub_1);
+		box_9_sub_2 = findViewById(R.id.box_9_sub_2);
+		apk_location = findViewById(R.id.apk_location);
+		apk_path_location = findViewById(R.id.apk_path_location);
+		apk_location_info = findViewById(R.id.apk_location_info);
+		box_10_sub_1 = findViewById(R.id.box_10_sub_1);
+		box_10_sub_2 = findViewById(R.id.box_10_sub_2);
+		clear_directory_folders = findViewById(R.id.clear_directory_folders);
+		clear_directory_folders_info = findViewById(R.id.clear_directory_folders_info);
+		box_reset_settings = findViewById(R.id.box_reset_settings);
+		reset_settings = findViewById(R.id.reset_settings);
+		main_body_about = findViewById(R.id.main_body_about);
+		box_about_close = findViewById(R.id.box_about_close);
+		box_about_header = findViewById(R.id.box_about_header);
+		box_about_sub = findViewById(R.id.box_about_sub);
+		box_about_1 = findViewById(R.id.box_about_1);
+		box_about_2 = findViewById(R.id.box_about_2);
+		box_about_3 = findViewById(R.id.box_about_3);
+		box_about_4 = findViewById(R.id.box_about_4);
+		box_about_5 = findViewById(R.id.box_about_5);
+		box_about_6 = findViewById(R.id.box_about_6);
+		box_about_7 = findViewById(R.id.box_about_7);
+		contributors_1 = findViewById(R.id.contributors_1);
+		box_icon_close = findViewById(R.id.box_icon_close);
+		icon_close = findViewById(R.id.icon_close);
+		title_about = findViewById(R.id.title_about);
+		app_version = findViewById(R.id.app_version);
+		sub_title = findViewById(R.id.sub_title);
+		developer_manager = findViewById(R.id.developer_manager);
+		developer_1 = findViewById(R.id.developer_1);
+		developer_spotify = findViewById(R.id.developer_spotify);
+		developer_2 = findViewById(R.id.developer_2);
+		support_team = findViewById(R.id.support_team);
+		support_1 = findViewById(R.id.support_1);
+		mod_testers_1 = findViewById(R.id.mod_testers_1);
+		testers_1 = findViewById(R.id.testers_1);
+		mod_testers_2 = findViewById(R.id.mod_testers_2);
+		testers_2 = findViewById(R.id.testers_2);
+		mobilism_team = findViewById(R.id.mobilism_team);
+		mobilism_1 = findViewById(R.id.mobilism_1);
+		manager_team = findViewById(R.id.manager_team);
+		manager_1 = findViewById(R.id.manager_1);
+		forum_team = findViewById(R.id.forum_team);
+		forum_1 = findViewById(R.id.forum_1);
+		box_about_4_sub_1 = findViewById(R.id.box_about_4_sub_1);
+		manager_lang_13 = findViewById(R.id.manager_lang_13);
+		translator_13 = findViewById(R.id.translator_13);
+		manager_lang_1 = findViewById(R.id.manager_lang_1);
+		translator_1 = findViewById(R.id.translator_1);
+		manager_lang_2 = findViewById(R.id.manager_lang_2);
+		translator_2 = findViewById(R.id.translator_2);
+		manager_lang_3 = findViewById(R.id.manager_lang_3);
+		translator_3 = findViewById(R.id.translator_3);
+		manager_lang_4 = findViewById(R.id.manager_lang_4);
+		translator_4 = findViewById(R.id.translator_4);
+		manager_lang_5 = findViewById(R.id.manager_lang_5);
+		translator_5 = findViewById(R.id.translator_5);
+		manager_lang_6 = findViewById(R.id.manager_lang_6);
+		translator_6 = findViewById(R.id.translator_6);
+		manager_lang_7 = findViewById(R.id.manager_lang_7);
+		translator_7 = findViewById(R.id.translator_7);
+		translator_7_1 = findViewById(R.id.translator_7_1);
+		manager_lang_8 = findViewById(R.id.manager_lang_8);
+		translator_8 = findViewById(R.id.translator_8);
+		manager_lang_15 = findViewById(R.id.manager_lang_15);
+		translator_15 = findViewById(R.id.translator_15);
+		manager_lang_9 = findViewById(R.id.manager_lang_9);
+		translator_9 = findViewById(R.id.translator_9);
+		manager_lang_14 = findViewById(R.id.manager_lang_14);
+		translator_14 = findViewById(R.id.translator_14);
+		manager_lang_10 = findViewById(R.id.manager_lang_10);
+		translator_10 = findViewById(R.id.translator_10);
+		manager_lang_12 = findViewById(R.id.manager_lang_12);
+		translator_12 = findViewById(R.id.translator_12);
+		manager_lang_11 = findViewById(R.id.manager_lang_11);
+		translator_11 = findViewById(R.id.translator_11);
+		manager_lang_16 = findViewById(R.id.manager_lang_16);
+		translator_16 = findViewById(R.id.translator_16);
+		manager_lang_17 = findViewById(R.id.manager_lang_17);
+		translator_17 = findViewById(R.id.translator_17);
+		main_scroll_body = findViewById(R.id.main_scroll_body);
+		main_body = findViewById(R.id.main_body);
+		main_box_1 = findViewById(R.id.main_box_1);
+		main_box_2 = findViewById(R.id.main_box_2);
+		main_box_6 = findViewById(R.id.main_box_6);
+		box_sub_header = findViewById(R.id.box_sub_header);
+		main_box_4 = findViewById(R.id.main_box_4);
+		main_box_15 = findViewById(R.id.main_box_15);
+		box_1 = findViewById(R.id.box_1);
+		box_2 = findViewById(R.id.box_2);
+		box_seperator_1 = findViewById(R.id.box_seperator_1);
+		box_5 = findViewById(R.id.box_5);
+		list_menu_1 = findViewById(R.id.list_menu_1);
+		title_1 = findViewById(R.id.title_1);
+		box_1_sub = findViewById(R.id.box_1_sub);
+		regular_info = findViewById(R.id.regular_info);
+		sub_text_1 = findViewById(R.id.sub_text_1);
+		box_switch_1 = findViewById(R.id.box_switch_1);
+		sub_1 = findViewById(R.id.sub_1);
+		version_switch_1 = findViewById(R.id.version_switch_1);
+		box_sub_5 = findViewById(R.id.box_sub_5);
+		version_switch_01 = findViewById(R.id.version_switch_01);
+		box_3 = findViewById(R.id.box_3);
+		box_4 = findViewById(R.id.box_4);
+		box_seperator_2 = findViewById(R.id.box_seperator_2);
+		box_6 = findViewById(R.id.box_6);
+		list_menu_2 = findViewById(R.id.list_menu_2);
+		title_2 = findViewById(R.id.title_2);
+		box_3_sub = findViewById(R.id.box_3_sub);
+		amoled_info = findViewById(R.id.amoled_info);
+		sub_text_3 = findViewById(R.id.sub_text_3);
+		box_switch_2 = findViewById(R.id.box_switch_2);
+		sub_3 = findViewById(R.id.sub_3);
+		version_switch_2 = findViewById(R.id.version_switch_2);
+		box_sub_6 = findViewById(R.id.box_sub_6);
+		version_switch_02 = findViewById(R.id.version_switch_02);
+		box_6_sub_1 = findViewById(R.id.box_6_sub_1);
+		box_seperator_3 = findViewById(R.id.box_seperator_3);
+		box_6_sub_2 = findViewById(R.id.box_6_sub_2);
+		box_seperator_4 = findViewById(R.id.box_seperator_4);
+		box_6_sub_3 = findViewById(R.id.box_6_sub_3);
+		box_6_sub_4 = findViewById(R.id.box_6_sub_4);
+		device_cpu = findViewById(R.id.device_cpu);
+		box_cpu = findViewById(R.id.box_cpu);
+		cpu = findViewById(R.id.cpu);
+		sub_text_installed = findViewById(R.id.sub_text_installed);
+		box_installed = findViewById(R.id.box_installed);
+		sub_installed = findViewById(R.id.sub_installed);
+		changelogs = findViewById(R.id.changelogs);
+		box_changelogs = findViewById(R.id.box_changelogs);
+		changelogs_switch = findViewById(R.id.changelogs_switch);
+		box_changelogs_1 = findViewById(R.id.box_changelogs_1);
+		scroll_changelogs_1 = findViewById(R.id.scroll_changelogs_1);
+		changelogs_x = findViewById(R.id.changelogs_x);
+		box_sub_1 = findViewById(R.id.box_sub_1);
+		box_sub_2 = findViewById(R.id.box_sub_2);
+		title_sub = findViewById(R.id.title_sub);
+		box_uninstall = findViewById(R.id.box_uninstall);
+		box_settings = findViewById(R.id.box_settings);
+		box_cache = findViewById(R.id.box_cache);
+		box_open = findViewById(R.id.box_open);
+		icon_uninstall = findViewById(R.id.icon_uninstall);
+		icon_settings = findViewById(R.id.icon_settings);
+		icon_cache = findViewById(R.id.icon_cache);
+		icon_open = findViewById(R.id.icon_open);
+		box_support = findViewById(R.id.box_support);
+		box_reddit = findViewById(R.id.box_reddit);
+		box_donate = findViewById(R.id.box_donate);
+		box_about = findViewById(R.id.box_about);
+		support = findViewById(R.id.support);
+		icon_support = findViewById(R.id.icon_support);
+		reddit = findViewById(R.id.reddit);
+		icon_reddit = findViewById(R.id.icon_reddit);
+		donate = findViewById(R.id.donate);
+		icon_donate = findViewById(R.id.icon_donate);
+		about = findViewById(R.id.about);
+		icon_about = findViewById(R.id.icon_about);
+		box_discord = findViewById(R.id.box_discord);
+		box_source = findViewById(R.id.box_source);
+		box_website = findViewById(R.id.box_website);
+		box_faq = findViewById(R.id.box_faq);
+		discord = findViewById(R.id.discord);
+		icon_discord = findViewById(R.id.icon_discord);
+		source = findViewById(R.id.source);
+		icon_source = findViewById(R.id.icon_source);
+		website = findViewById(R.id.website);
+		icon_website = findViewById(R.id.icon_website);
+		faq = findViewById(R.id.faq);
+		icon_faq = findViewById(R.id.icon_faq);
 		Donation = new AlertDialog.Builder(this);
 		Mod_Features = new AlertDialog.Builder(this);
 		Selected_Spotify = new AlertDialog.Builder(this);
@@ -702,6 +722,8 @@ public class MainActivity extends AppCompatActivity {
 		Directory = new AlertDialog.Builder(this);
 		VERSIONS = getSharedPreferences("VERSIONS", Activity.MODE_PRIVATE);
 		LANGUAGE = getSharedPreferences("LANGUAGE", Activity.MODE_PRIVATE);
+		Permission = new AlertDialog.Builder(this);
+		PERMISSION = getSharedPreferences("PERMISSION", Activity.MODE_PRIVATE);
 		
 		box_switch.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -715,7 +737,8 @@ public class MainActivity extends AppCompatActivity {
 				box_switch.setVisibility(View.GONE);
 				apk_path_location.setEnabled(true);
 				title_header.setText(settings_title.getText().toString());
-				title_header_beta.setVisibility(View.GONE);
+				title_header_beta.setTextColor(Color.TRANSPARENT);
+				title_header_seperator.setTextColor(Color.TRANSPARENT);
 				CLOSER_2 = 1;
 				_Animation_1();
 			}
@@ -739,12 +762,8 @@ public class MainActivity extends AppCompatActivity {
 							}
 						};
 						_timer.schedule(Timer, (int)(2000));
-						if (true) {
-							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or No Internet Connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
-											@Override
-											public void onClick(View _view) {
-											}
-									}).show();
+						if (!SketchwareUtil.isConnected(getApplicationContext())) {
+							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or No Internet Connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 						}
 						else {
 							Version.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -763,7 +782,7 @@ public class MainActivity extends AppCompatActivity {
 									}
 									Latest_Version = Versions_1.get((int)0).get("V").toString();
 									if (Double.parseDouble(Latest_Version) > Double.parseDouble(Current_Version)) {
-										
+										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Checking Updates...", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 										Timer = new TimerTask() {
 											@Override
 											public void run() {
@@ -773,6 +792,7 @@ public class MainActivity extends AppCompatActivity {
 														try {
 															_RequiredDialog(Update_Authorized, false);
 															Update_Authorized.setTitle(new_update.getText().toString());
+															Update_Authorized.setMessage("What's New (Version ".concat(Latest_Version.concat("):\n\n".concat(app_changelogs.getText().toString()))));
 															Update_Authorized.setPositiveButton(download_update.getText().toString(), new DialogInterface.OnClickListener() {
 																@Override
 																public void onClick(DialogInterface _dialog, int _which) {
@@ -837,7 +857,7 @@ public class MainActivity extends AppCompatActivity {
 											Version.child("App").child("V").setValue(Current_Version);
 										}
 										else {
-											
+											com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Checking Updates...", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 											Timer = new TimerTask() {
 												@Override
 												public void run() {
@@ -917,11 +937,21 @@ public class MainActivity extends AppCompatActivity {
 					}
 				}
 				if (DELETE == 1) {
-					
+					com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Successfully deleted", com.google.android.material.snackbar.Snackbar.LENGTH_SHORT).setAction("", new View.OnClickListener(){
+						@Override
+						public void onClick(View _view) {
+							 
+						}
+					}).show();
 				}
 				else {
 					if (DELETE == 0) {
-						
+						com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Directory folders not found or deleted", com.google.android.material.snackbar.Snackbar.LENGTH_SHORT).setAction("", new View.OnClickListener(){
+							@Override
+							public void onClick(View _view) {
+								 
+							}
+						}).show();
 					}
 				}
 				DELETE = 0;
@@ -940,7 +970,8 @@ public class MainActivity extends AppCompatActivity {
 				box_switch.setVisibility(View.VISIBLE);
 				apk_path_location.setEnabled(false);
 				title_header.setText(main_title.getText().toString());
-				title_header_beta.setVisibility(View.VISIBLE);
+				title_header_beta.setTextColor(0xFFFFFFFF);
+				title_header_seperator.setTextColor(0xFFFFFFFF);
 				Animation header_beta;
 				header_beta = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
 				header_beta.setDuration(200); title_header_beta.startAnimation(header_beta);
@@ -953,7 +984,7 @@ public class MainActivity extends AppCompatActivity {
 		
 		list_auto_refresh_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
-			public void onCheckedChanged(CompoundButton _param1, boolean _param2)  {
+			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
 				final boolean _isChecked = _param2;
 				if (_isChecked) {
 					LIST_REFRESH.edit().putString("UPDATE", "ON").commit();
@@ -967,7 +998,7 @@ public class MainActivity extends AppCompatActivity {
 		
 		force_auto_install_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
-			public void onCheckedChanged(CompoundButton _param1, boolean _param2)  {
+			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
 				final boolean _isChecked = _param2;
 				if (_isChecked) {
 					FORCE_INSTALL.edit().putString("FORCE_INSTALL", "X").commit();
@@ -979,12 +1010,13 @@ public class MainActivity extends AppCompatActivity {
 					FORCE_INSTALL_UPDATE.edit().putString("FORCE_INSTALL_UPDATE", "YY").commit();
 				}
 				COUNTER = 1;
+				_Switch_Checker();
 			}
 		});
 		
 		copy_url_mode_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
-			public void onCheckedChanged(CompoundButton _param1, boolean _param2)  {
+			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
 				final boolean _isChecked = _param2;
 				if (_isChecked) {
 					COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_ON").commit();
@@ -994,12 +1026,13 @@ public class MainActivity extends AppCompatActivity {
 					COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_OFF").commit();
 				}
 				COUNTER = 1;
+				_Switch_Checker();
 			}
 		});
 		
 		navigation_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
-			public void onCheckedChanged(CompoundButton _param1, boolean _param2)  {
+			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
 				final boolean _isChecked = _param2;
 				if (_isChecked) {
 					NAVIGATION_BAR.edit().putString("NAVIGATION", "1").commit();
@@ -1023,100 +1056,100 @@ public class MainActivity extends AppCompatActivity {
 				final int _position = _param3;
 				if (_position == 0) {
 					THEME.edit().putString("THEME", "0").commit();
-					
-					
-					
+					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
+					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
+					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
 					COUNTER = 1;
 				}
 				if (_position == 1) {
 					THEME.edit().putString("THEME", "1").commit();
-					
-					
-					
+					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF1DB954}));
+					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF1DB954}));
+					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF1DB954}));
 					COUNTER = 1;
 				}
 				if (_position == 2) {
 					THEME.edit().putString("THEME", "2").commit();
-					
-					
-					
+					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFAA00FF}));
+					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFAA00FF}));
+					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFAA00FF}));
 					COUNTER = 1;
 				}
 				if (_position == 3) {
 					THEME.edit().putString("THEME", "3").commit();
-					
-					
-					
+					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFD50000}));
+					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFD50000}));
+					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFD50000}));
 					COUNTER = 1;
 				}
 				if (_position == 4) {
 					THEME.edit().putString("THEME", "4").commit();
-					
-					
-					
+					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF2962FF}));
+					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF2962FF}));
+					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF2962FF}));
 					COUNTER = 1;
 				}
 				if (_position == 5) {
 					THEME.edit().putString("THEME", "5").commit();
-					
-					
-					
+					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFF6D00}));
+					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFF6D00}));
+					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFF6D00}));
 					COUNTER = 1;
 				}
 				if (_position == 6) {
 					THEME.edit().putString("THEME", "6").commit();
-					
-					
-					
+					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFFD600}));
+					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFFD600}));
+					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFFD600}));
 					COUNTER = 1;
 				}
 				if (_position == 7) {
 					THEME.edit().putString("THEME", "7").commit();
-					
-					
-					
+					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF616161}));
+					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF616161}));
+					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF616161}));
 					COUNTER = 1;
 				}
 				if (_position == 8) {
 					THEME.edit().putString("THEME", "8").commit();
-					
-					
-					
+					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF607D8B}));
+					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF607D8B}));
+					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF607D8B}));
 					COUNTER = 1;
 				}
 				if (_position == 9) {
 					THEME.edit().putString("THEME", "9").commit();
-					
-					
-					
+					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFE91E63}));
+					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFE91E63}));
+					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFE91E63}));
 					COUNTER = 1;
 				}
 				if (_position == 10) {
 					THEME.edit().putString("THEME", "10").commit();
-					
-					
-					
+					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF00BCD4}));
+					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF00BCD4}));
+					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF00BCD4}));
 					COUNTER = 1;
 				}
 				if (_position == 11) {
 					THEME.edit().putString("THEME", "11").commit();
-					
-					
-					
+					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFFFFFF}));
+					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFFFFFF}));
+					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFFFFFF}));
 					COUNTER = 1;
 				}
 				if (_position == 12) {
 					THEME.edit().putString("THEME", "12").commit();
-					
-					
-					
+					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF795548}));
+					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF795548}));
+					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF795548}));
 					COUNTER = 1;
 				}
 				if (_position == 13) {
 					THEME.edit().putString("THEME", "13").commit();
-					
-					
-					
+					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF3F51B5}));
+					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF3F51B5}));
+					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF3F51B5}));
 					COUNTER = 1;
 				}
 			}
@@ -1214,9 +1247,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc);
 						thanks.setText(R.string.thanks);
 						language.setText(R.string.language);
-					  website.setText(R.string.website);
-					
-					discord.setText(R.string.discord);
+						website.setText(R.string.website);
+						discord.setText(R.string.discord);
+						reddit.setText(R.string.reddit);
+						faq.setText(R.string.faq);
 					COUNTER = 1;
 				}
 				if (_position == 1) {
@@ -1302,9 +1336,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_01);
 						thanks.setText(R.string.thanks_01);
 						language.setText(R.string.language_01);
-					  website.setText(R.string.website_01);
-					
-					discord.setText(R.string.discord_01);
+						website.setText(R.string.website_01);
+						discord.setText(R.string.discord_01);
+						reddit.setText(R.string.reddit_01);
+						faq.setText(R.string.faq_01);
 					COUNTER = 1;
 				}
 				if (_position == 2) {
@@ -1390,9 +1425,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_02);
 						thanks.setText(R.string.thanks_02);
 						language.setText(R.string.language_02);
-					  website.setText(R.string.website_02);
-					
-					discord.setText(R.string.discord_02);
+						website.setText(R.string.website_02);
+						discord.setText(R.string.discord_02);
+						reddit.setText(R.string.reddit_02);
+						faq.setText(R.string.faq_02);
 					COUNTER = 1;
 				}
 				if (_position == 3) {
@@ -1478,9 +1514,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_03);
 						thanks.setText(R.string.thanks_03);
 						language.setText(R.string.language_03);
-					  website.setText(R.string.website_03);
-					
-					discord.setText(R.string.discord_03);
+						website.setText(R.string.website_03);
+						discord.setText(R.string.discord_03);
+						reddit.setText(R.string.reddit_03);
+						faq.setText(R.string.faq_03);
 					COUNTER = 1;
 				}
 				if (_position == 4) {
@@ -1566,9 +1603,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_04);
 						thanks.setText(R.string.thanks_04);
 						language.setText(R.string.language_04);
-					  website.setText(R.string.website_04);
-					
-					discord.setText(R.string.discord_04);
+						website.setText(R.string.website_04);
+						discord.setText(R.string.discord_04);
+						reddit.setText(R.string.reddit_04);
+						faq.setText(R.string.faq_04);
 					COUNTER = 1;
 				}
 				if (_position == 5) {
@@ -1654,9 +1692,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_05);
 						thanks.setText(R.string.thanks_05);
 						language.setText(R.string.language_05);
-					  website.setText(R.string.website_05);
-					
-					discord.setText(R.string.discord_05);
+						website.setText(R.string.website_05);
+						discord.setText(R.string.discord_05);
+						reddit.setText(R.string.reddit_05);
+						faq.setText(R.string.faq_05);
 					COUNTER = 1;
 				}
 				if (_position == 6) {
@@ -1742,9 +1781,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_06);
 						thanks.setText(R.string.thanks_06);
 						language.setText(R.string.language_06);
-					  website.setText(R.string.website_06);
-					
-					discord.setText(R.string.discord_06);
+						website.setText(R.string.website_06);
+						discord.setText(R.string.discord_06);
+						reddit.setText(R.string.reddit_06);
+						faq.setText(R.string.faq_06);
 					COUNTER = 1;
 				}
 				if (_position == 7) {
@@ -1830,9 +1870,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_07);
 						thanks.setText(R.string.thanks_07);
 						language.setText(R.string.language_07);
-					  website.setText(R.string.website_07);
-					
-					discord.setText(R.string.discord_07);
+						website.setText(R.string.website_07);
+						discord.setText(R.string.discord_07);
+						reddit.setText(R.string.reddit_07);
+						faq.setText(R.string.faq_07);
 					COUNTER = 1;
 				}
 				if (_position == 8) {
@@ -1918,9 +1959,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_08);
 						thanks.setText(R.string.thanks_08);
 						language.setText(R.string.language_08);
-					  website.setText(R.string.website_08);
-					
-					discord.setText(R.string.discord_08);
+						website.setText(R.string.website_08);
+						discord.setText(R.string.discord_08);
+						reddit.setText(R.string.reddit_08);
+						faq.setText(R.string.faq_08);
 					COUNTER = 1;
 				}
 				if (_position == 9) {
@@ -2006,9 +2048,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_09);
 						thanks.setText(R.string.thanks_09);
 						language.setText(R.string.language_09);
-					  website.setText(R.string.website_09);
-					
-					discord.setText(R.string.discord_09);
+						website.setText(R.string.website_09);
+						discord.setText(R.string.discord_09);
+						reddit.setText(R.string.reddit_09);
+						faq.setText(R.string.faq_09);
 					COUNTER = 1;
 				}
 				if (_position == 10) {
@@ -2094,9 +2137,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_10);
 						thanks.setText(R.string.thanks_10);
 						language.setText(R.string.language_10);
-					  website.setText(R.string.website_10);
-					
-					discord.setText(R.string.discord_10);
+						website.setText(R.string.website_10);
+						discord.setText(R.string.discord_10);
+						reddit.setText(R.string.reddit_10);
+						faq.setText(R.string.faq_10);
 					COUNTER = 1;
 				}
 				if (_position == 11) {
@@ -2182,9 +2226,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_11);
 						thanks.setText(R.string.thanks_11);
 						language.setText(R.string.language_11);
-					  website.setText(R.string.website_11);
-					
-					discord.setText(R.string.discord_11);
+						website.setText(R.string.website_11);
+						discord.setText(R.string.discord_11);
+						reddit.setText(R.string.reddit_11);
+						faq.setText(R.string.faq_11);
 					COUNTER = 1;
 				}
 				if (_position == 12) {
@@ -2270,9 +2315,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_12);
 						thanks.setText(R.string.thanks_12);
 						language.setText(R.string.language_12);
-					  website.setText(R.string.website_12);
-					
-					discord.setText(R.string.discord_12);
+						website.setText(R.string.website_12);
+						discord.setText(R.string.discord_12);
+						reddit.setText(R.string.reddit_12);
+						faq.setText(R.string.faq_12);
 					COUNTER = 1;
 				}
 				if (_position == 13) {
@@ -2358,9 +2404,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_13);
 						thanks.setText(R.string.thanks_13);
 						language.setText(R.string.language_13);
-					  website.setText(R.string.website_13);
-					
-					discord.setText(R.string.discord_13);
+						website.setText(R.string.website_13);
+						discord.setText(R.string.discord_13);
+						reddit.setText(R.string.reddit_13);
+						faq.setText(R.string.faq_13);
 					COUNTER = 1;
 				}
 				if (_position == 14) {
@@ -2446,9 +2493,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_14);
 						thanks.setText(R.string.thanks_14);
 						language.setText(R.string.language_14);
-					  website.setText(R.string.website_14);
-					
-					discord.setText(R.string.discord_14);
+						website.setText(R.string.website_14);
+						discord.setText(R.string.discord_14);
+						reddit.setText(R.string.reddit_14);
+						faq.setText(R.string.faq_14);
 					COUNTER = 1;
 				}
 				if (_position == 15) {
@@ -2534,9 +2582,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_15);
 						thanks.setText(R.string.thanks_15);
 						language.setText(R.string.language_15);
-					  website.setText(R.string.website_15);
-					
-					discord.setText(R.string.discord_15);
+						website.setText(R.string.website_15);
+						discord.setText(R.string.discord_15);
+						reddit.setText(R.string.reddit_15);
+						faq.setText(R.string.faq_15);
 					COUNTER = 1;
 				}
 				if (_position == 16) {
@@ -2622,9 +2671,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_16);
 						thanks.setText(R.string.thanks_16);
 						language.setText(R.string.language_16);
-					  website.setText(R.string.website_16);
-					
-					discord.setText(R.string.discord_16);
+						website.setText(R.string.website_16);
+						discord.setText(R.string.discord_16);
+						reddit.setText(R.string.reddit_16);
+						faq.setText(R.string.faq_16);
 					COUNTER = 1;
 				}
 				if (_position == 17) {
@@ -2711,7 +2761,9 @@ public class MainActivity extends AppCompatActivity {
 						thanks.setText(R.string.thanks_17);
 						language.setText(R.string.language_17);
 					    website.setText(R.string.website_17);
-					    discord.setText(R.string.discord_17);
+						discord.setText(R.string.discord_17);
+						reddit.setText(R.string.reddit_17);
+						faq.setText(R.string.faq_17);
 					COUNTER = 1;
 				}
 				if (_position == 18) {
@@ -2798,7 +2850,9 @@ public class MainActivity extends AppCompatActivity {
 						thanks.setText(R.string.thanks_18);
 						language.setText(R.string.language_18);
 					    website.setText(R.string.website_18);
-					    discord.setText(R.string.discord_18);
+						discord.setText(R.string.discord_18);
+						reddit.setText(R.string.reddit_18);
+						faq.setText(R.string.faq_18);
 					COUNTER = 1;
 				}
 			}
@@ -2839,9 +2893,9 @@ public class MainActivity extends AppCompatActivity {
 				copy_url_mode_switch.setChecked(false);
 				navigation_switch.setChecked(false);
 				apk_path_location.setText("/storage/emulated/0/xManager/");
-				
-				
-				
+				main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
+				main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
+				main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
 				    title_1.setText(R.string.spotify_regular);
 					title_2.setText(R.string.spotify_amoled);
 					sub_text_installed.setText(R.string.installed);
@@ -2923,13 +2977,19 @@ public class MainActivity extends AppCompatActivity {
 					maintenance_desc.setText(R.string.maintenance_desc);
 					thanks.setText(R.string.thanks);
 					language.setText(R.string.language);
-				  website.setText(R.string.website);
-				
-				discord.setText(R.string.discord);
+					website.setText(R.string.website);
+					discord.setText(R.string.discord);
+					reddit.setText(R.string.reddit);
+					faq.setText(R.string.faq);
 				select_language.setSelection((int)(0));
 				select_theme.setSelection((int)(0));
 				if (COUNTER == 1) {
-					
+					com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Back to default settings", com.google.android.material.snackbar.Snackbar.LENGTH_SHORT).setAction("", new View.OnClickListener(){
+						@Override
+						public void onClick(View _view) {
+							 
+						}
+					}).show();
 				}
 				COUNTER = 0;
 			}
@@ -2946,7 +3006,8 @@ public class MainActivity extends AppCompatActivity {
 				box_update.setVisibility(View.VISIBLE);
 				box_switch.setVisibility(View.VISIBLE);
 				title_header.setText(main_title.getText().toString());
-				title_header_beta.setVisibility(View.VISIBLE);
+				title_header_beta.setTextColor(0xFFFFFFFF);
+				title_header_seperator.setTextColor(0xFFFFFFFF);
 				Animation header_beta;
 				header_beta = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
 				header_beta.setDuration(200); title_header_beta.startAnimation(header_beta);
@@ -2959,7 +3020,7 @@ public class MainActivity extends AppCompatActivity {
 		
 		version_switch_01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
-			public void onCheckedChanged(CompoundButton _param1, boolean _param2)  {
+			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
 				final boolean _isChecked = _param2;
 				try {
 					if (_isChecked) {
@@ -2989,79 +3050,15 @@ public class MainActivity extends AppCompatActivity {
 								public void onCancelled(DatabaseError _databaseError) {
 								}
 							});
-							xManager_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
-								@Override
-								public void onDataChange(DataSnapshot _dataSnapshot) {
-									others = new ArrayList<>();
-									try {
-										GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-										for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-											HashMap<String, Object> _map = _data.getValue(_ind);
-											others.add(_map);
-										}
-									}
-									catch (Exception _e) {
-										_e.printStackTrace();
-									}
-									xManager_Changelogs.addChildEventListener(_xManager_Changelogs_child_listener);
-								}
-								@Override
-								public void onCancelled(DatabaseError _databaseError) {
-								}
-							});
-							Mod_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
-								@Override
-								public void onDataChange(DataSnapshot _dataSnapshot) {
-									others = new ArrayList<>();
-									try {
-										GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-										for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-											HashMap<String, Object> _map = _data.getValue(_ind);
-											others.add(_map);
-										}
-									}
-									catch (Exception _e) {
-										_e.printStackTrace();
-									}
-									Mod_Changelogs.addChildEventListener(_Mod_Changelogs_child_listener);
-								}
-								@Override
-								public void onCancelled(DatabaseError _databaseError) {
-								}
-							});
-							Version.addListenerForSingleValueEvent(new ValueEventListener() {
-								@Override
-								public void onDataChange(DataSnapshot _dataSnapshot) {
-									others = new ArrayList<>();
-									try {
-										GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-										for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-											HashMap<String, Object> _map = _data.getValue(_ind);
-											others.add(_map);
-										}
-									}
-									catch (Exception _e) {
-										_e.printStackTrace();
-									}
-									Version.addChildEventListener(_Version_child_listener);
-								}
-								@Override
-								public void onCancelled(DatabaseError _databaseError) {
-								}
-							});
+							main_refresh_layout.setEnabled(false);
+							if (!SketchwareUtil.isConnected(getApplicationContext())) {
+								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+							}
+							_Switches();
 						}
 						catch(Exception e) {
-							SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Fetching failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+							SketchwareUtil.CustomToast(getApplicationContext(), "Fetching Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 						}
-						main_refresh_layout.setEnabled(false);
-						if (true) {
-							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or No Internet Connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
-											@Override
-											public void onClick(View _view) {
-											}
-									}).show();
-						}
-						_Switches();
 					}
 					else {
 						main_refresh_layout.setEnabled(true);
@@ -3077,7 +3074,7 @@ public class MainActivity extends AppCompatActivity {
 		
 		version_switch_02.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
-			public void onCheckedChanged(CompoundButton _param1, boolean _param2)  {
+			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
 				final boolean _isChecked = _param2;
 				try {
 					if (_isChecked) {
@@ -3107,79 +3104,15 @@ public class MainActivity extends AppCompatActivity {
 								public void onCancelled(DatabaseError _databaseError) {
 								}
 							});
-							xManager_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
-								@Override
-								public void onDataChange(DataSnapshot _dataSnapshot) {
-									others = new ArrayList<>();
-									try {
-										GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-										for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-											HashMap<String, Object> _map = _data.getValue(_ind);
-											others.add(_map);
-										}
-									}
-									catch (Exception _e) {
-										_e.printStackTrace();
-									}
-									xManager_Changelogs.addChildEventListener(_xManager_Changelogs_child_listener);
-								}
-								@Override
-								public void onCancelled(DatabaseError _databaseError) {
-								}
-							});
-							Mod_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
-								@Override
-								public void onDataChange(DataSnapshot _dataSnapshot) {
-									others = new ArrayList<>();
-									try {
-										GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-										for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-											HashMap<String, Object> _map = _data.getValue(_ind);
-											others.add(_map);
-										}
-									}
-									catch (Exception _e) {
-										_e.printStackTrace();
-									}
-									Mod_Changelogs.addChildEventListener(_Mod_Changelogs_child_listener);
-								}
-								@Override
-								public void onCancelled(DatabaseError _databaseError) {
-								}
-							});
-							Version.addListenerForSingleValueEvent(new ValueEventListener() {
-								@Override
-								public void onDataChange(DataSnapshot _dataSnapshot) {
-									others = new ArrayList<>();
-									try {
-										GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-										for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-											HashMap<String, Object> _map = _data.getValue(_ind);
-											others.add(_map);
-										}
-									}
-									catch (Exception _e) {
-										_e.printStackTrace();
-									}
-									Version.addChildEventListener(_Version_child_listener);
-								}
-								@Override
-								public void onCancelled(DatabaseError _databaseError) {
-								}
-							});
+							main_refresh_layout.setEnabled(false);
+							if (!SketchwareUtil.isConnected(getApplicationContext())) {
+								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+							}
+							_Switches();
 						}
 						catch(Exception e) {
-							SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Fetching failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+							SketchwareUtil.CustomToast(getApplicationContext(), "Fetching Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 						}
-						main_refresh_layout.setEnabled(false);
-						if (true) {
-							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or No Internet Connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
-											@Override
-											public void onClick(View _view) {
-											}
-									}).show();
-						}
-						_Switches();
 					}
 					else {
 						main_refresh_layout.setEnabled(true);
@@ -3195,39 +3128,43 @@ public class MainActivity extends AppCompatActivity {
 		
 		changelogs_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
-			public void onCheckedChanged(CompoundButton _param1, boolean _param2)  {
+			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
 				final boolean _isChecked = _param2;
 				try {
 					if (_isChecked) {
 						try {
-							box_6_sub_2.setVisibility(View.VISIBLE);
+							box_6_sub_4.setVisibility(View.VISIBLE);
 							version_switch_01.setChecked(false);
 							version_switch_02.setChecked(false);
-							if (true) {
-								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or No Internet Connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
-												@Override
-												public void onClick(View _view) {
-												}
-										}).show();
+							if (!SketchwareUtil.isConnected(getApplicationContext())) {
+								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or No Internet Connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 							}
 							main_refresh_layout.setEnabled(false);
 							_Switches();
 						}
 						catch(Exception e) {
-							SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Fetching failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+							SketchwareUtil.CustomToast(getApplicationContext(), "Fetching Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 						}
 					}
 					else {
-						box_6_sub_2.setVisibility(View.GONE);
+						box_6_sub_4.setVisibility(View.GONE);
 						main_refresh_layout.setEnabled(true);
 					}
 					Animation changelogs;
 					changelogs = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-					changelogs.setDuration(200); box_changelogs_1.startAnimation(changelogs);
+					changelogs.setDuration(300); box_changelogs_1.startAnimation(changelogs);
 					changelogs = null;
 				}
 				catch(Exception e) {
 				}
+			}
+		});
+		
+		box_uninstall.setOnLongClickListener(new View.OnLongClickListener() {
+			@Override
+			public boolean onLongClick(View _view) {
+				SketchwareUtil.CustomToast(getApplicationContext(), "Uninstall spotify app", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+				return true;
 			}
 		});
 		
@@ -3239,8 +3176,16 @@ public class MainActivity extends AppCompatActivity {
 					startActivity(intent);
 				}
 				catch(Exception e) {
-					SketchwareUtil.CustomToast(getApplicationContext(), "Application not installed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+					SketchwareUtil.CustomToast(getApplicationContext(), "Spotify not installed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 				}
+			}
+		});
+		
+		box_settings.setOnLongClickListener(new View.OnLongClickListener() {
+			@Override
+			public boolean onLongClick(View _view) {
+				SketchwareUtil.CustomToast(getApplicationContext(), "Open spotify's app settings", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+				return true;
 			}
 		});
 		
@@ -3254,6 +3199,14 @@ public class MainActivity extends AppCompatActivity {
 				catch(Exception e) {
 					SketchwareUtil.CustomToast(getApplicationContext(), "Application not installed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 				}
+			}
+		});
+		
+		box_cache.setOnLongClickListener(new View.OnLongClickListener() {
+			@Override
+			public boolean onLongClick(View _view) {
+				SketchwareUtil.CustomToast(getApplicationContext(), "Clear offline cached datas", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+				return true;
 			}
 		});
 		
@@ -3277,7 +3230,7 @@ public class MainActivity extends AppCompatActivity {
 						_timer.schedule(Timer, (int)(2000));
 						if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.music/")) {
 							FileUtil.deleteFile("/storage/emulated/0/Android/data/com.spotify.music/");
-							
+							SketchwareUtil.CustomToast(getApplicationContext(), "Successfully deleted", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 							Timer = new TimerTask() {
 								@Override
 								public void run() {
@@ -3292,7 +3245,7 @@ public class MainActivity extends AppCompatActivity {
 							_timer.schedule(Timer, (int)(100));
 						}
 						else {
-							
+							SketchwareUtil.CustomToast(getApplicationContext(), "Directory files are empty", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 							Timer = new TimerTask() {
 								@Override
 								public void run() {
@@ -3313,6 +3266,14 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 		
+		box_open.setOnLongClickListener(new View.OnLongClickListener() {
+			@Override
+			public boolean onLongClick(View _view) {
+				SketchwareUtil.CustomToast(getApplicationContext(), "Launch spotify app", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+				return true;
+			}
+		});
+		
 		box_open.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
@@ -3324,7 +3285,7 @@ public class MainActivity extends AppCompatActivity {
 					try {
 						intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + packageName));
 					} catch (Exception e) {
-						SketchwareUtil.CustomToast(getApplicationContext(), "Application not installed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+						SketchwareUtil.CustomToast(getApplicationContext(), "Spotify not installed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 					}
 				}
 				startActivity(intent);
@@ -3335,12 +3296,17 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View _view) {
 				try {
-					Support.setAction(Intent.ACTION_VIEW);
-					Support.setData(Uri.parse("https://t.me/SpotifyModSupport"));
-					startActivity(Support);
+					_Browser("https://t.me/SpotifyModSupport");
 				}
 				catch(Exception e) {
 				}
+			}
+		});
+		
+		box_reddit.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				SketchwareUtil.CustomToast(getApplicationContext(), "We are working on it :)", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 			}
 		});
 		
@@ -3355,9 +3321,11 @@ public class MainActivity extends AppCompatActivity {
 						@Override
 						public void onClick(DialogInterface _dialog, int _which) {
 							_RequiredDialog(Donation, true);
-							Donate.setAction(Intent.ACTION_VIEW);
-							Donate.setData(Uri.parse("https://www.paypal.me/mrvnce"));
-							startActivity(Donate);
+							try {
+								_Browser("https://www.paypal.me/mrvnce");
+							}
+							catch(Exception e) {
+							}
 						}
 					});
 					Donation.setNeutralButton(not_now.getText().toString(), new DialogInterface.OnClickListener() {
@@ -3396,7 +3364,8 @@ public class MainActivity extends AppCompatActivity {
 				box_update.setVisibility(View.GONE);
 				box_switch.setVisibility(View.GONE);
 				title_header.setText(about_title.getText().toString());
-				title_header_beta.setVisibility(View.GONE);
+				title_header_beta.setTextColor(Color.TRANSPARENT);
+				title_header_seperator.setTextColor(Color.TRANSPARENT);
 				CLOSER_1 = 1;
 				_Animation_2();
 			}
@@ -3406,22 +3375,7 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View _view) {
 				try {
-					Support.setAction(Intent.ACTION_VIEW);
-					Support.setData(Uri.parse("https://discord.gg/sZWsVvC3pu"));
-					startActivity(Support);
-				}
-				catch(Exception e) {
-				}
-			}
-		});
-		
-		box_website.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View _view) {
-				try {
-					Source.setAction(Intent.ACTION_VIEW);
-					Source.setData(Uri.parse("https://xmanager-v2.github.io/"));
-					startActivity(Source);
+					_Browser("https://discord.gg/sZWsVvC3pu");
 				}
 				catch(Exception e) {
 				}
@@ -3432,9 +3386,29 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View _view) {
 				try {
-					Source.setAction(Intent.ACTION_VIEW);
-					Source.setData(Uri.parse("https://github.com/xManager-v2/xManager-Spotify"));
-					startActivity(Source);
+					_Browser("https://github.com/xManager-v2/xManager-Spotify");
+				}
+				catch(Exception e) {
+				}
+			}
+		});
+		
+		box_website.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				try {
+					_Browser("https://xmanager-v2.github.io/");
+				}
+				catch(Exception e) {
+				}
+			}
+		});
+		
+		box_faq.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				try {
+					_Browser("https://telegra.ph/Spotify-Mod-FAQ-07-19");
 				}
 				catch(Exception e) {
 				}
@@ -3443,67 +3417,69 @@ public class MainActivity extends AppCompatActivity {
 		
 		_Connection_request_listener = new RequestNetwork.RequestListener() {
 			@Override
-			public void onResponse(String _param1, String _param2) {
+			public void onResponse(String _param1, String _param2, HashMap<String, Object> _param3) {
 				final String _tag = _param1;
 				final String _response = _param2;
-				Regular_Mod.addListenerForSingleValueEvent(new ValueEventListener() {
-					@Override
-					public void onDataChange(DataSnapshot _dataSnapshot) {
-						listdata = new ArrayList<>();
-						try {
-							GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-							for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-								HashMap<String, Object> _map = _data.getValue(_ind);
-								listdata.add(_map);
+				final HashMap<String, Object> _responseHeaders = _param3;
+				try {
+					Regular_Mod.addListenerForSingleValueEvent(new ValueEventListener() {
+						@Override
+						public void onDataChange(DataSnapshot _dataSnapshot) {
+							listdata = new ArrayList<>();
+							try {
+								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+									HashMap<String, Object> _map = _data.getValue(_ind);
+									listdata.add(_map);
+								}
 							}
-						}
-						catch (Exception _e) {
-							_e.printStackTrace();
-						}
-						
-						sub_1.setText(VERSIONS_REGULAR);
-						main_body.setEnabled(false);
-						main_body.setAlpha((float)(0.65d));
-					}
-					@Override
-					public void onCancelled(DatabaseError _databaseError) {
-					}
-				});
-				Amoled_Black.addListenerForSingleValueEvent(new ValueEventListener() {
-					@Override
-					public void onDataChange(DataSnapshot _dataSnapshot) {
-						listdata = new ArrayList<>();
-						try {
-							GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-							for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-								HashMap<String, Object> _map = _data.getValue(_ind);
-								listdata.add(_map);
+							catch (Exception _e) {
+								_e.printStackTrace();
 							}
+							main_refresh_layout.setRefreshing(true);
+							sub_1.setText(VERSIONS_REGULAR);
+							main_body.setEnabled(false);
+							main_body.setAlpha((float)(0.65d));
 						}
-						catch (Exception _e) {
-							_e.printStackTrace();
+						@Override
+						public void onCancelled(DatabaseError _databaseError) {
 						}
-						
-						sub_3.setText(VERSIONS_AMOLED);
-						main_body.setEnabled(true);
-						main_body.setAlpha((float)(1.0d));
-					}
-					@Override
-					public void onCancelled(DatabaseError _databaseError) {
-					}
-				});
+					});
+					Amoled_Black.addListenerForSingleValueEvent(new ValueEventListener() {
+						@Override
+						public void onDataChange(DataSnapshot _dataSnapshot) {
+							listdata = new ArrayList<>();
+							try {
+								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+									HashMap<String, Object> _map = _data.getValue(_ind);
+									listdata.add(_map);
+								}
+							}
+							catch (Exception _e) {
+								_e.printStackTrace();
+							}
+							main_refresh_layout.setRefreshing(false);
+							sub_3.setText(VERSIONS_AMOLED);
+							main_body.setEnabled(true);
+							main_body.setAlpha((float)(1.0d));
+						}
+						@Override
+						public void onCancelled(DatabaseError _databaseError) {
+						}
+					});
+				}
+				catch(Exception e) {
+					SketchwareUtil.CustomToast(getApplicationContext(), "API Fetching Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+				}
 			}
 			
 			@Override
 			public void onErrorResponse(String _param1, String _param2) {
 				final String _tag = _param1;
 				final String _message = _param2;
-				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or No Internet Connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
-								@Override
-								public void onClick(View _view) {
-								}
-						}).show();
-				
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+				main_refresh_layout.setRefreshing(true);
 				main_body.setAlpha((float)(0.65d));
 				Timer = new TimerTask() {
 					@Override
@@ -3511,7 +3487,7 @@ public class MainActivity extends AppCompatActivity {
 						runOnUiThread(new Runnable() {
 							@Override
 							public void run() {
-								
+								main_refresh_layout.setRefreshing(false);
 								main_body.setAlpha((float)(1.0d));
 							}
 						});
@@ -3566,30 +3542,31 @@ public class MainActivity extends AppCompatActivity {
 				GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
 				final String _childKey = _param1.getKey();
 				final HashMap<String, Object> _childValue = _param1.getValue(_ind);
-				xManager_Update.addListenerForSingleValueEvent(new ValueEventListener() {
-					@Override
-					public void onDataChange(DataSnapshot _dataSnapshot) {
-						others = new ArrayList<>();
-						try {
-							GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-							for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-								HashMap<String, Object> _map = _data.getValue(_ind);
-								others.add(_map);
+				try {
+					xManager_Update.addListenerForSingleValueEvent(new ValueEventListener() {
+						@Override
+						public void onDataChange(DataSnapshot _dataSnapshot) {
+							others = new ArrayList<>();
+							try {
+								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+									HashMap<String, Object> _map = _data.getValue(_ind);
+									others.add(_map);
+								}
 							}
-						}
-						catch (Exception _e) {
-							_e.printStackTrace();
-						}
-						try {
+							catch (Exception _e) {
+								_e.printStackTrace();
+							}
 							hidden_download.setText(_childValue.get("Links").toString());
 						}
-						catch(Exception e) {
+						@Override
+						public void onCancelled(DatabaseError _databaseError) {
 						}
-					}
-					@Override
-					public void onCancelled(DatabaseError _databaseError) {
-					}
-				});
+					});
+				}
+				catch(Exception e) {
+					SketchwareUtil.CustomToast(getApplicationContext(), "API Fetching Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+				}
 			}
 			
 			@Override
@@ -3628,30 +3605,31 @@ public class MainActivity extends AppCompatActivity {
 				GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
 				final String _childKey = _param1.getKey();
 				final HashMap<String, Object> _childValue = _param1.getValue(_ind);
-				Mod_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
-					@Override
-					public void onDataChange(DataSnapshot _dataSnapshot) {
-						others = new ArrayList<>();
-						try {
-							GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-							for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-								HashMap<String, Object> _map = _data.getValue(_ind);
-								others.add(_map);
+				try {
+					Mod_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
+						@Override
+						public void onDataChange(DataSnapshot _dataSnapshot) {
+							others = new ArrayList<>();
+							try {
+								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+									HashMap<String, Object> _map = _data.getValue(_ind);
+									others.add(_map);
+								}
 							}
-						}
-						catch (Exception _e) {
-							_e.printStackTrace();
-						}
-						try {
+							catch (Exception _e) {
+								_e.printStackTrace();
+							}
 							changelogs_x.setText(_childValue.get("Changelogs").toString());
 						}
-						catch(Exception e) {
+						@Override
+						public void onCancelled(DatabaseError _databaseError) {
 						}
-					}
-					@Override
-					public void onCancelled(DatabaseError _databaseError) {
-					}
-				});
+					});
+				}
+				catch(Exception e) {
+					SketchwareUtil.CustomToast(getApplicationContext(), "API Fetching Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+				}
 			}
 			
 			@Override
@@ -3691,9 +3669,11 @@ public class MainActivity extends AppCompatActivity {
 				final String _token = task.getResult().getToken();
 				final String _errorMessage = task.getException() != null ? task.getException().getMessage() : "";
 				try {
+					if (!_success) {
+						SketchwareUtil.CustomToast(getApplicationContext(), "Notification Error", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+					}
 				}
 				catch(Exception e) {
-					SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Failed to receive notification", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 				}
 			}
 		};
@@ -3704,30 +3684,31 @@ public class MainActivity extends AppCompatActivity {
 				GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
 				final String _childKey = _param1.getKey();
 				final HashMap<String, Object> _childValue = _param1.getValue(_ind);
-				xManager_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
-					@Override
-					public void onDataChange(DataSnapshot _dataSnapshot) {
-						others = new ArrayList<>();
-						try {
-							GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-							for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-								HashMap<String, Object> _map = _data.getValue(_ind);
-								others.add(_map);
+				try {
+					xManager_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
+						@Override
+						public void onDataChange(DataSnapshot _dataSnapshot) {
+							others = new ArrayList<>();
+							try {
+								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+									HashMap<String, Object> _map = _data.getValue(_ind);
+									others.add(_map);
+								}
 							}
-						}
-						catch (Exception _e) {
-							_e.printStackTrace();
-						}
-						try {
+							catch (Exception _e) {
+								_e.printStackTrace();
+							}
 							app_changelogs.setText(_childValue.get("App_Changelogs").toString());
 						}
-						catch(Exception e) {
+						@Override
+						public void onCancelled(DatabaseError _databaseError) {
 						}
-					}
-					@Override
-					public void onCancelled(DatabaseError _databaseError) {
-					}
-				});
+					});
+				}
+				catch(Exception e) {
+					SketchwareUtil.CustomToast(getApplicationContext(), "API Fetching Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+				}
 			}
 			
 			@Override
@@ -3766,34 +3747,35 @@ public class MainActivity extends AppCompatActivity {
 				GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
 				final String _childKey = _param1.getKey();
 				final HashMap<String, Object> _childValue = _param1.getValue(_ind);
-				Regular_Mod.addListenerForSingleValueEvent(new ValueEventListener() {
-					@Override
-					public void onDataChange(DataSnapshot _dataSnapshot) {
-						listdata = new ArrayList<>();
-						try {
-							GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-							for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-								HashMap<String, Object> _map = _data.getValue(_ind);
-								listdata.add(_map);
+				try {
+					Regular_Mod.addListenerForSingleValueEvent(new ValueEventListener() {
+						@Override
+						public void onDataChange(DataSnapshot _dataSnapshot) {
+							listdata = new ArrayList<>();
+							try {
+								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+									HashMap<String, Object> _map = _data.getValue(_ind);
+									listdata.add(_map);
+								}
 							}
-						}
-						catch (Exception _e) {
-							_e.printStackTrace();
-						}
-						try {
+							catch (Exception _e) {
+								_e.printStackTrace();
+							}
 							listdata.add(_childValue);
 							sub_1.setText(_childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", " ").replace("(Arm64.v8a)", " "));
 							VERSIONS.edit().putString("REGULAR", _childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", "").replace("(Arm64.v8a)", "")).commit();
 							list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
 							((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
 						}
-						catch(Exception e) {
+						@Override
+						public void onCancelled(DatabaseError _databaseError) {
 						}
-					}
-					@Override
-					public void onCancelled(DatabaseError _databaseError) {
-					}
-				});
+					});
+				}
+				catch(Exception e) {
+					SketchwareUtil.CustomToast(getApplicationContext(), "API Fetching Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+				}
 			}
 			
 			@Override
@@ -3840,34 +3822,35 @@ public class MainActivity extends AppCompatActivity {
 				GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
 				final String _childKey = _param1.getKey();
 				final HashMap<String, Object> _childValue = _param1.getValue(_ind);
-				Amoled_Black.addListenerForSingleValueEvent(new ValueEventListener() {
-					@Override
-					public void onDataChange(DataSnapshot _dataSnapshot) {
-						listdata = new ArrayList<>();
-						try {
-							GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-							for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-								HashMap<String, Object> _map = _data.getValue(_ind);
-								listdata.add(_map);
+				try {
+					Amoled_Black.addListenerForSingleValueEvent(new ValueEventListener() {
+						@Override
+						public void onDataChange(DataSnapshot _dataSnapshot) {
+							listdata = new ArrayList<>();
+							try {
+								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+									HashMap<String, Object> _map = _data.getValue(_ind);
+									listdata.add(_map);
+								}
 							}
-						}
-						catch (Exception _e) {
-							_e.printStackTrace();
-						}
-						try {
+							catch (Exception _e) {
+								_e.printStackTrace();
+							}
 							listdata.add(_childValue);
 							sub_3.setText(_childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", " ").replace("(Arm64.v8a)", " "));
 							VERSIONS.edit().putString("AMOLED", _childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", "").replace("(Arm64.v8a)", "")).commit();
 							list_menu_2.setAdapter(new List_menu_2Adapter(listdata));
 							((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
 						}
-						catch(Exception e) {
+						@Override
+						public void onCancelled(DatabaseError _databaseError) {
 						}
-					}
-					@Override
-					public void onCancelled(DatabaseError _databaseError) {
-					}
-				});
+					});
+				}
+				catch(Exception e) {
+					SketchwareUtil.CustomToast(getApplicationContext(), "API Fetching Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+				}
 			}
 			
 			@Override
@@ -3908,12 +3891,14 @@ public class MainActivity extends AppCompatActivity {
 		};
 		Amoled_Black.addChildEventListener(_Amoled_Black_child_listener);
 	}
+	
 	private void initializeLogic() {
 		try {
 			_Dark_Navigation();
 			_Language_Pack();
 			_Theme_Pack();
 			_Informations();
+			_Gate_Keeper();
 			_Animation_0();
 			_Model_UI();
 		}
@@ -3922,28 +3907,16 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	@Override
-	protected void onActivityResult(int _requestCode, int _resultCode, Intent _data) {
-		
-		super.onActivityResult(_requestCode, _resultCode, _data);
-		
-		switch (_requestCode) {
-			
-			default:
-			break;
-		}
-	}
-	
-	@Override
 	public void onBackPressed() {
 		try {
 			if (CLOSER_1 == 1) {
 				CHECK = 0;
-				
+				box_icon_close.performClick();
 			}
 			else {
 				if (CLOSER_2 == 1) {
 					CHECK = 0;
-					
+					box_settings_icon_close.performClick();
 				}
 			}
 			if (CHECK == 0) {
@@ -3960,7 +3933,7 @@ public class MainActivity extends AppCompatActivity {
 					}
 				};
 				_timer.schedule(Timer, (int)(3000));
-				
+				SketchwareUtil.CustomToast(getApplicationContext(), "Press back again to exit", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 			}
 			else {
 				finishAndRemoveTask();
@@ -3976,7 +3949,9 @@ public class MainActivity extends AppCompatActivity {
 		super.onResume();
 		_Hide_Navigation();
 	}
-	private void _Informations () {
+	
+
+	public void _Informations() {
 		sub_installed.setText("N/A");
 		cpu.setText("N/A");
 		Timer = new TimerTask() {
@@ -3995,7 +3970,7 @@ public class MainActivity extends AppCompatActivity {
 							
 						}
 						catch (Exception e) {
-							SketchwareUtil.CustomToast(getApplicationContext(), "Application not installed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+							SketchwareUtil.CustomToast(getApplicationContext(), "Spotify not installed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 						}
 						String app = "com.xc3fff0e.xmanager";
 						android.content.pm.PackageManager ver = getPackageManager();
@@ -4007,7 +3982,7 @@ public class MainActivity extends AppCompatActivity {
 							
 						}
 						catch (Exception e) {
-							SketchwareUtil.CustomToast(getApplicationContext(), "Spotify not installed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+							SketchwareUtil.CustomToast(getApplicationContext(), "Fatal Error", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 						}
 						cpu.setText(Build.CPU_ABI);
 						cpu.setText(cpu.getText().toString().toUpperCase());
@@ -4019,259 +3994,265 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _RequiredDialog (final AlertDialog.Builder _Dialog, final boolean _True) {
+	public void _RequiredDialog(final AlertDialog.Builder _Dialog, final boolean _True) {
 		_Dialog.setCancelable(_True);
 	}
 	
 	
-	private void _Download (final String _url, final String _path) {
+	public void _Download(final String _url, final String _path) {
 		try {
 			FileUtil.makeDir(FileUtil.getPackageDataDir(getApplicationContext()));
 			
 			android.net.ConnectivityManager connMgr = (android.net.ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
 			android.net.NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 			if (networkInfo != null && networkInfo.isConnected()) {
-				
-				
-				final String urlDownload = _url;
-				
-				DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
-				
-				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
-				
-				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
-				
-				request.setMimeType("application/vnd.android.package-archive");
-				
-				request.allowScanningByMediaScanner();
-					request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "Spotify Mod (Official).apk");
-				
-				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-				
-				final long downloadId = manager.enqueue(request);
-				
-				final ProgressDialog prog = new ProgressDialog(this, ProgressDialog.THEME_DEVICE_DEFAULT_DARK);
-				prog.setMax(100);
-				prog.setIndeterminate(false);
-				prog.setCancelable(false);
-				prog.setCanceledOnTouchOutside(false);
-				prog.setTitle(downloading_file_0);
-				new Thread(new Runnable() {
 					
-					@Override
-					public void run() {
-						
-						boolean downloading = true;
-						
-						while (downloading) {
+					
+					final String urlDownload = _url;
+					
+					DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
+					
+					final String fileName = URLUtil.guessFileName(urlDownload, null, null);
+					
+					request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
+					
+					request.setMimeType("application/vnd.android.package-archive");
+					
+					request.allowScanningByMediaScanner();
+					request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "Spotify Mod (Official).apk");
+					
+					final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+					
+					final long downloadId = manager.enqueue(request);
+					
+					final ProgressDialog prog = new ProgressDialog(this, ProgressDialog.THEME_DEVICE_DEFAULT_DARK);
+					prog.setMax(100);
+					prog.setIndeterminate(false);
+					prog.setCancelable(false);
+					prog.setCanceledOnTouchOutside(false);
+					prog.setTitle(downloading_file_0);
+					new Thread(new Runnable() {
 							
-							DownloadManager.Query q = new DownloadManager.Query();
-							
-							q.setFilterById(downloadId);
-							
-							android.database.Cursor cursor = manager.query(q);
-							
-							if (cursor != null) { 
-								  if (cursor.moveToFirst()) {
+							@Override
+							public void run() {
 									
-									int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
+									boolean downloading = true;
 									
-									int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
-									
-									if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
-										
-										downloading = false;
-										
-									}
-									
-									if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
-										
-										runOnUiThread(new Runnable() {
-											public void run() { 
-												
-												SketchwareUtil.CustomToast(getApplicationContext(), "The file or link is currently unavailable. Please try again later.", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-											}
-										});
-										prog.cancel();
-										break;
-										
-									}
-									
-									final int dl_progress = (int) ((bytes_downloaded * 100l) / bytes_total);
-									
-									runOnUiThread(new Runnable() {
-										@Override
-										public void run() {
+									while (downloading) {
 											
-											prog.setTitle(downloading_file_0);
-											prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-											prog.setProgress(bytes_downloaded);
-											prog.setMax(bytes_total);
-											prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-												@Override
-												public void onClick(DialogInterface dialog, int which) {
-													SketchwareUtil.CustomToast(getApplicationContext(), "Download cancelled", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-													manager.remove(downloadId);
-													Timer = new TimerTask() {
-																@Override
-																public void run() {
-																		runOnUiThread(new Runnable() {
-																				@Override
-																				public void run() {
-																						prog.cancel();
-																				}
-																		});
-																}
-														};
-														_timer.schedule(Timer, (int)(0));
-												}
-											});
-											prog.show();
+											DownloadManager.Query q = new DownloadManager.Query();
 											
-											if (bytes_downloaded == bytes_total) {
-												
-												Timer = new TimerTask() {
-														@Override
-														public void run() {
-																runOnUiThread(new Runnable() {
-																		@Override
-																		public void run() {
-																
-																try {
-																	FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk", apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
-																}
-																catch(Exception e) {
-																	SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Copying failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																}
-																
-																_RequiredDialog(Success_Download, false);
-																Success_Download.setTitle(download_success_0);
-																Success_Download.setPositiveButton(install_now_0, new DialogInterface.OnClickListener() {
-																		@Override
-																		public void onClick(DialogInterface _dialog, int _which) {
-																				_RequiredDialog(Success_Download, true);
-																		
-																		prog.cancel();
-																		
-																		StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																		
-																		if(android.os.Build.VERSION.SDK_INT >= 29){
+											q.setFilterById(downloadId);
+											
+											android.database.Cursor cursor = manager.query(q);
+											
+											if (cursor != null) { 
+													if (cursor.moveToFirst()) {
+															
+															int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
+															
+															int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
+															
+															if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
+																	
+																	downloading = false;
+																	
+															}
+															
+															if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
+																	
+																	runOnUiThread(new Runnable() {
+																			public void run() { 
+																					
+																					SketchwareUtil.CustomToast(getApplicationContext(), "The file or link is currently unavailable. Please try again later.", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																			}
+																	});
+																	prog.cancel();
+																	break;
+																	
+															}
+															
+															final int dl_progress = (int) ((bytes_downloaded * 100l) / bytes_total);
+															
+															final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
+															
+															final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
+															
+															String file_min = String.format("%.2f", file_front);
+															
+															String file_max = String.format("%.2f", file_end);
+															
+															runOnUiThread(new Runnable() {
+																	@Override
+																	public void run() {
 																			
-																			try {
-																				Intent intent = new Intent(Intent.ACTION_VIEW);
-																				
-																				intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																				 
-																				intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
-																				
-																				startActivity(intent);
-																			}
-																			catch(Exception e) {
-																				SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																			}
+																			prog.setTitle(downloading_file_0);
+																			prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																			prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																			prog.setProgress(dl_progress);
+																			prog.setMax(100);
+																			prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
+																					@Override
+																					public void onClick(DialogInterface dialog, int which) {
+																							SketchwareUtil.CustomToast(getApplicationContext(), "Download cancelled", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																							manager.remove(downloadId);
+																							Timer = new TimerTask() {
+																									@Override
+																									public void run() {
+																											runOnUiThread(new Runnable() {
+																													@Override
+																													public void run() {
+																															prog.cancel();
+																													}
+																											});
+																									}
+																							};
+																							_timer.schedule(Timer, (int)(0));
+																					}
+																			});
+																			prog.show();
 																			
-																		} else {
-																			
-																			try {
-																				Intent intent = new Intent(Intent.ACTION_VIEW);
-																				intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
-																				
-																				startActivity(intent);
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												_Hide_Navigation();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(100));
+																			if (bytes_downloaded == bytes_total) {
+																					
+																					Timer = new TimerTask() {
+																							@Override
+																							public void run() {
+																									runOnUiThread(new Runnable() {
+																											@Override
+																											public void run() {
+																													
+																													try {
+																															FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk", apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
+																													}
+																													catch(Exception e) {
+																															SketchwareUtil.CustomToast(getApplicationContext(), "Copying failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																													}
+																													
+																													_RequiredDialog(Success_Download, false);
+																													Success_Download.setTitle(download_success_0);
+																													Success_Download.setPositiveButton(install_now_0, new DialogInterface.OnClickListener() {
+																															@Override
+																															public void onClick(DialogInterface _dialog, int _which) {
+																																	_RequiredDialog(Success_Download, true);
+																																	
+																																	prog.cancel();
+																																	
+																																	StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+																																	
+																																	if(android.os.Build.VERSION.SDK_INT >= 29){
+																																			
+																																			try {
+																																					Intent intent = new Intent(Intent.ACTION_VIEW);
+																																					
+																																					intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																																					
+																																					intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
+																																					
+																																					startActivity(intent);
+																																			}
+																																			catch(Exception e) {
+																																					SketchwareUtil.CustomToast(getApplicationContext(), "Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																																			}
+																																			
+																																	} else {
+																																			
+																																			try {
+																																					Intent intent = new Intent(Intent.ACTION_VIEW);
+																																					intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
+																																					
+																																					startActivity(intent);
+																																					Timer = new TimerTask() {
+																																							@Override
+																																							public void run() {
+																																									runOnUiThread(new Runnable() {
+																																											@Override
+																																											public void run() {
+																																													_Hide_Navigation();
+																																											}
+																																									});
+																																							}
+																																					};
+																																					_timer.schedule(Timer, (int)(100));
+																																			}
+																																			catch(Exception e) {
+																																					SketchwareUtil.CustomToast(getApplicationContext(), "Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																																			}
+																																	}
+																																	
+																															}
+																													});
+																													Success_Download.setNegativeButton(directory_0, new DialogInterface.OnClickListener() {
+																															@Override
+																															public void onClick(DialogInterface _dialog, int _which) {
+																																	_RequiredDialog(Success_Download, true);
+																																	
+																																	prog.cancel();
+																																	
+																																	_RequiredDialog(Directory, false);
+																																	Directory.setTitle(file_directory_0);
+																																	Directory.setMessage("<".concat(apk_path_location.getText().toString().concat(">")));
+																																	Directory.setPositiveButton(go_back_0, new DialogInterface.OnClickListener() {
+																																			@Override
+																																			public void onClick(DialogInterface _dialog, int _which) {
+																																					_RequiredDialog(Directory, true);
+																																					_RequiredDialog(Success_Download, false);
+																																					Success_Download.create().show();
+																																			}
+																																	});
+																																	Directory.create().show();
+																																	
+																															}
+																													});
+																													Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener() {
+																															@Override
+																															public void onClick(DialogInterface _dialog, int _which) {
+																																	_RequiredDialog(Success_Download, true);
+																																	
+																																	prog.cancel();
+																																	
+																																	Timer = new TimerTask() {
+																																			@Override
+																																			public void run() {
+																																					runOnUiThread(new Runnable() {
+																																							@Override
+																																							public void run() {
+																																									_Hide_Navigation();
+																																							}
+																																					});
+																																			}
+																																	};
+																																	_timer.schedule(Timer, (int)(100));
+																															}
+																													});
+																													Success_Download.create().show();
+																													
+																													SketchwareUtil.CustomToast(getApplicationContext(), "Download complete", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																													
+																													prog.cancel();
+																													
+																											}
+																									});
+																							}
+																					};
+																					_timer.schedule(Timer, (int)(1500));
 																			}
-																			catch(Exception e) {
-																				SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																			}
-																		}
-																		
-																	}
-																});
-																Success_Download.setNegativeButton(directory_0, new DialogInterface.OnClickListener() {
-																		@Override
-																		public void onClick(DialogInterface _dialog, int _which) {
-																				_RequiredDialog(Success_Download, true);
-																		
-																		prog.cancel();
-																		
-																				_RequiredDialog(Directory, false);
-																				Directory.setTitle(file_directory_0);
-																				Directory.setMessage("<".concat(apk_path_location.getText().toString().concat(">")));
-																				Directory.setPositiveButton(go_back_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface _dialog, int _which) {
-																								_RequiredDialog(Directory, true);
-																								_RequiredDialog(Success_Download, false);
-																								Success_Download.create().show();
-																						}
-																				});
-																				Directory.create().show();
-																		
-																	}
-																});
-																Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener() {
-																		@Override
-																		public void onClick(DialogInterface _dialog, int _which) {
-																				_RequiredDialog(Success_Download, true);
-																		
-																		prog.cancel();
-																		
-																		Timer = new TimerTask() {
-																				@Override
-																				public void run() {
-																						runOnUiThread(new Runnable() {
-																								@Override
-																								public void run() {
-																										_Hide_Navigation();
-																								}
-																						});
-																				}
-																		};
-																		_timer.schedule(Timer, (int)(100));
-																	}
-																});
-																Success_Download.create().show();
-																
-																SketchwareUtil.CustomToast(getApplicationContext(), "Download Complete", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																
-																prog.cancel();
-																
-																		}
-																});
-														}
-												};
-												_timer.schedule(Timer, (int)(1500));
+																	} });
+													}
+													cursor.close();
 											}
-										} });
-									   }
-								    cursor.close();
-								     }
-						} } }).start();
-				
+									} } }).start();
+					
 			} else {
-				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "No Internet Connection", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
-								@Override
-								public void onClick(View _view) {
-								}
-						}).show();
+					com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 			}
+			
 		}
 		catch(Exception e) {
 		}
 	}
 	
 	
-	private void _File_Remover () {
+	public void _File_Remover() {
 		if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")) {
 			FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
 		}
@@ -4284,7 +4265,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _Update_Remover () {
+	public void _Update_Remover() {
 		if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")) {
 			FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk");
 		}
@@ -4294,7 +4275,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _Model_UI () {
+	public void _Model_UI() {
 		title_header.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_sub.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -4315,6 +4296,8 @@ public class MainActivity extends AppCompatActivity {
 		source.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		website.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		discord.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		reddit.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		faq.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		version_switch_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		version_switch_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		theme.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -4355,7 +4338,8 @@ public class MainActivity extends AppCompatActivity {
 		language.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		regular_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 2);
 		amoled_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 2);
-		title_header_beta.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 3);
+		title_header_beta.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		title_header_seperator.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -4391,42 +4375,44 @@ public class MainActivity extends AppCompatActivity {
 		translator_15.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_16.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_17.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		box_sub_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		main_box_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		main_box_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		main_box_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		main_box_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		main_box_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		main_box_8.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		main_box_9.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		main_box_10.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		main_box_11.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		main_box_12.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		main_box_14.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
 		list_menu_1.setVisibility(View.GONE);
 		list_menu_2.setVisibility(View.GONE);
-		box_6_sub_2.setVisibility(View.GONE);
+		box_6_sub_4.setVisibility(View.GONE);
 		list_menu_1.smoothScrollToPosition((int)(0));
 		list_menu_2.smoothScrollToPosition((int)(0));
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		box_support.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_donate.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_about.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_source.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_website.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_discord.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_reddit.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_faq.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_about_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1DB954));
+		box_about_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_about_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_about_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_about_4.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_about_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_about_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_about_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_about_sub.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF2962FF));
+		box_reset_settings.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF424242));
+		box_seperator_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF616161));
+		box_seperator_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF616161));
+		box_seperator_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF616161));
 		if (!ON_SCREEN.getString("ON_SCREEN", "").equals("ON_SCREEN")) {
 			try {
 				box_header.setVisibility(View.GONE);
@@ -4497,7 +4483,7 @@ public class MainActivity extends AppCompatActivity {
 						catch (Exception _e) {
 							_e.printStackTrace();
 						}
-						
+						main_refresh_layout.setRefreshing(true);
 						Timer = new TimerTask() {
 							@Override
 							public void run() {
@@ -4534,7 +4520,7 @@ public class MainActivity extends AppCompatActivity {
 						catch (Exception _e) {
 							_e.printStackTrace();
 						}
-						
+						main_refresh_layout.setRefreshing(true);
 						Timer = new TimerTask() {
 							@Override
 							public void run() {
@@ -4574,7 +4560,7 @@ public class MainActivity extends AppCompatActivity {
 																runOnUiThread(new Runnable() {
 																	@Override
 																	public void run() {
-																		
+																		main_refresh_layout.setRefreshing(false);
 																		version_switch_01.setChecked(false);
 																		version_switch_02.setChecked(false);
 																		changelogs_switch.setChecked(false);
@@ -4681,6 +4667,11 @@ public class MainActivity extends AppCompatActivity {
 					}
 				};
 				_timer.schedule(Timer, (int)(10000));
+				if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+					Window w =MainActivity.this.getWindow();
+					w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+					w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(0xFF000000);
+				}
 				main_body_optimization.setVisibility(View.VISIBLE);
 				main_scroll_settings.setVisibility(View.GONE);
 				main_scroll_about.setVisibility(View.GONE);
@@ -4693,8 +4684,8 @@ public class MainActivity extends AppCompatActivity {
 		}
 		else {
 			try {
-				
-				
+				main_refresh_layout.setRefreshing(true);
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Checking API Status...", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 				Regular_Mod.addListenerForSingleValueEvent(new ValueEventListener() {
 					@Override
 					public void onDataChange(DataSnapshot _dataSnapshot) {
@@ -4715,12 +4706,27 @@ public class MainActivity extends AppCompatActivity {
 								runOnUiThread(new Runnable() {
 									@Override
 									public void run() {
-										
-										sub_1.setText(VERSIONS.getString("REGULAR", ""));
-										list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
-										((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-										main_body.setEnabled(false);
-										main_body.setAlpha((float)(0.65d));
+										if (Double.parseDouble(Current_Version) > Double.parseDouble(Latest_Version)) {
+											try {
+												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "API Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+											}
+											catch(Exception e) {
+											}
+										}
+										else {
+											try {
+												String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
+												
+												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "API Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+												sub_1.setText(VERSIONS.getString("REGULAR", ""));
+												list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
+												((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
+												main_body.setEnabled(false);
+												main_body.setAlpha((float)(0.65d));
+											}
+											catch(Exception e) {
+											}
+										}
 									}
 								});
 							}
@@ -4763,7 +4769,7 @@ public class MainActivity extends AppCompatActivity {
 								runOnUiThread(new Runnable() {
 									@Override
 									public void run() {
-										
+										main_refresh_layout.setRefreshing(false);
 										list_menu_2.setAdapter(new List_menu_2Adapter(listdata));
 										((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
 										main_body.setEnabled(true);
@@ -4838,6 +4844,15 @@ public class MainActivity extends AppCompatActivity {
 					public void onCancelled(DatabaseError _databaseError) {
 					}
 				});
+				if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+					Window w =MainActivity.this.getWindow();
+					w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+					w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(0xFF212121);
+				}
+				title_header.setTextColor(0xFF1DB954);
+				title_header_seperator.setTextColor(0xFFFFFFFF);
+				title_header_beta.setTextColor(0xFFFFFFFF);
+				box_header.setBackgroundColor(0xFF212121);
 				main_body_optimization.setVisibility(View.GONE);
 				main_scroll_settings.setVisibility(View.GONE);
 				main_scroll_about.setVisibility(View.GONE);
@@ -4846,124 +4861,302 @@ public class MainActivity extends AppCompatActivity {
 				box_switch.setVisibility(View.VISIBLE);
 				icon_update.setAlpha((float)(1.0d));
 				icon_switch.setAlpha((float)(1.0d));
-				_Updater();
 			}
 			catch(Exception e) {
 			}
 		}
-		
+		main_refresh_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+			@Override
+			public void onRefresh() {
+				try {
+					main_body.setEnabled(false);
+					main_refresh_layout.setRefreshing(true);
+					Regular_Mod.addListenerForSingleValueEvent(new ValueEventListener() {
+						@Override
+						public void onDataChange(DataSnapshot _dataSnapshot) {
+							listdata = new ArrayList<>();
+							try {
+								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+									HashMap<String, Object> _map = _data.getValue(_ind);
+									listdata.add(_map);
+								}
+							}
+							catch (Exception _e) {
+								_e.printStackTrace();
+							}
+							Timer = new TimerTask() {
+								@Override
+								public void run() {
+									runOnUiThread(new Runnable() {
+										@Override
+										public void run() {
+											list_menu_1.smoothScrollToPosition((int)(999));
+											version_switch_01.setChecked(true);
+											version_switch_02.setChecked(false);
+											changelogs_switch.setChecked(false);
+											main_body.setAlpha((float)(0.65d));
+										}
+									});
+								}
+							};
+							_timer.schedule(Timer, (int)(300));
+						}
+						@Override
+						public void onCancelled(DatabaseError _databaseError) {
+						}
+					});
+					Amoled_Black.addListenerForSingleValueEvent(new ValueEventListener() {
+						@Override
+						public void onDataChange(DataSnapshot _dataSnapshot) {
+							listdata = new ArrayList<>();
+							try {
+								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+									HashMap<String, Object> _map = _data.getValue(_ind);
+									listdata.add(_map);
+								}
+							}
+							catch (Exception _e) {
+								_e.printStackTrace();
+							}
+							main_refresh_layout.setRefreshing(true);
+							Timer = new TimerTask() {
+								@Override
+								public void run() {
+									runOnUiThread(new Runnable() {
+										@Override
+										public void run() {
+											list_menu_2.smoothScrollToPosition((int)(999));
+											version_switch_01.setChecked(false);
+											version_switch_02.setChecked(true);
+											changelogs_switch.setChecked(false);
+											main_body.setAlpha((float)(0.65d));
+											Timer = new TimerTask() {
+												@Override
+												public void run() {
+													runOnUiThread(new Runnable() {
+														@Override
+														public void run() {
+															version_switch_01.setChecked(false);
+															version_switch_02.setChecked(false);
+															changelogs_switch.setChecked(true);
+															main_body.setAlpha((float)(0.65d));
+															Timer = new TimerTask() {
+																@Override
+																public void run() {
+																	runOnUiThread(new Runnable() {
+																		@Override
+																		public void run() {
+																			main_refresh_layout.setRefreshing(false);
+																			version_switch_01.setChecked(false);
+																			version_switch_02.setChecked(false);
+																			changelogs_switch.setChecked(false);
+																			main_body.setEnabled(true);
+																			main_body.setAlpha((float)(1.0d));
+																			String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
+																			
+																			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Data List Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																		}
+																	});
+																}
+															};
+															_timer.schedule(Timer, (int)(900));
+														}
+													});
+												}
+											};
+											_timer.schedule(Timer, (int)(800));
+										}
+									});
+								}
+							};
+							_timer.schedule(Timer, (int)(800));
+						}
+						@Override
+						public void onCancelled(DatabaseError _databaseError) {
+						}
+					});
+					xManager_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
+						@Override
+						public void onDataChange(DataSnapshot _dataSnapshot) {
+							others = new ArrayList<>();
+							try {
+								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+									HashMap<String, Object> _map = _data.getValue(_ind);
+									others.add(_map);
+								}
+							}
+							catch (Exception _e) {
+								_e.printStackTrace();
+							}
+							xManager_Changelogs.addChildEventListener(_xManager_Changelogs_child_listener);
+						}
+						@Override
+						public void onCancelled(DatabaseError _databaseError) {
+						}
+					});
+					Mod_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
+						@Override
+						public void onDataChange(DataSnapshot _dataSnapshot) {
+							others = new ArrayList<>();
+							try {
+								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+									HashMap<String, Object> _map = _data.getValue(_ind);
+									others.add(_map);
+								}
+							}
+							catch (Exception _e) {
+								_e.printStackTrace();
+							}
+							Mod_Changelogs.addChildEventListener(_Mod_Changelogs_child_listener);
+						}
+						@Override
+						public void onCancelled(DatabaseError _databaseError) {
+						}
+					});
+					Version.addListenerForSingleValueEvent(new ValueEventListener() {
+						@Override
+						public void onDataChange(DataSnapshot _dataSnapshot) {
+							others = new ArrayList<>();
+							try {
+								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+									HashMap<String, Object> _map = _data.getValue(_ind);
+									others.add(_map);
+								}
+							}
+							catch (Exception _e) {
+								_e.printStackTrace();
+							}
+							Version.addChildEventListener(_Version_child_listener);
+						}
+						@Override
+						public void onCancelled(DatabaseError _databaseError) {
+						}
+					});
+					com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Refreshing Data List...", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+					_Animation_3();
+				}
+				catch(Exception e) {
+				}
+			}
+		});
 		apk_path_location.setText(APK_PATH.getString("PATH", ""));
-		
 		CHECK = 0;
 		_Update_Remover();
-		_Updater_Check();
 		_Language_Fixer();
+		_Updater_Check();
+		_Tap_Animation();
 		_Switch_Fixer();
-		_Animation_5();
 		_List_Updater();
 		_Language_UI();
 		_Theme_UI();
 		_Effects();
 		_Url_Mode();
+		_Updater();
+		_Extra();
 	}
 	
 	
-	private void _Theme_UI () {
+	public void _Theme_UI() {
 		if (THEME.getString("THEME", "").equals("0")) {
-			
-			
-			
+			main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
+			main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
+			main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
 			select_theme.setSelection((int)(0));
 		}
 		else {
 			if (THEME.getString("THEME", "").equals("1")) {
-				
-				
-				
+				main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF1DB954}));
+				main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF1DB954}));
+				main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF1DB954}));
 				select_theme.setSelection((int)(1));
 			}
 			else {
 				if (THEME.getString("THEME", "").equals("2")) {
-					
-					
-					
+					main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFAA00FF}));
+					main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFAA00FF}));
+					main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFAA00FF}));
 					select_theme.setSelection((int)(2));
 				}
 				else {
 					if (THEME.getString("THEME", "").equals("3")) {
-						
-						
-						
+						main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFD50000}));
+						main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFD50000}));
+						main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFD50000}));
 						select_theme.setSelection((int)(3));
 					}
 					else {
 						if (THEME.getString("THEME", "").equals("4")) {
-							
-							
-							
+							main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF2962FF}));
+							main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF2962FF}));
+							main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF2962FF}));
 							select_theme.setSelection((int)(4));
 						}
 						else {
 							if (THEME.getString("THEME", "").equals("5")) {
-								
-								
-								
+								main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFF6D00}));
+								main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFF6D00}));
+								main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFF6D00}));
 								select_theme.setSelection((int)(5));
 							}
 							else {
 								if (THEME.getString("THEME", "").equals("6")) {
-									
-									
-									
+									main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFFD600}));
+									main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFFD600}));
+									main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFFD600}));
 									select_theme.setSelection((int)(6));
 								}
 								else {
 									if (THEME.getString("THEME", "").equals("7")) {
-										
-										
-										
+										main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF616161}));
+										main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF616161}));
+										main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF616161}));
 										select_theme.setSelection((int)(7));
 									}
 									else {
 										if (THEME.getString("THEME", "").equals("8")) {
-											
-											
-											
+											main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF607D8B}));
+											main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF607D8B}));
+											main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF607D8B}));
 											select_theme.setSelection((int)(8));
 										}
 										else {
 											if (THEME.getString("THEME", "").equals("9")) {
-												
-												
-												
+												main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFE91E63}));
+												main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFE91E63}));
+												main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFE91E63}));
 												select_theme.setSelection((int)(9));
 											}
 											else {
 												if (THEME.getString("THEME", "").equals("10")) {
-													
-													
-													
+													main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF00BCD4}));
+													main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF00BCD4}));
+													main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF00BCD4}));
 													select_theme.setSelection((int)(10));
 												}
 												else {
 													if (THEME.getString("THEME", "").equals("11")) {
-														
-														
-														
+														main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFFFFFF}));
+														main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFFFFFF}));
+														main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFFFFFFFF}));
 														select_theme.setSelection((int)(11));
 													}
 													else {
 														if (THEME.getString("THEME", "").equals("12")) {
-															
-															
-															
+															main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF795548}));
+															main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF795548}));
+															main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF795548}));
 															select_theme.setSelection((int)(12));
 														}
 														else {
 															if (THEME.getString("THEME", "").equals("13")) {
-																
-																
-																
+																main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF3F51B5}));
+																main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF3F51B5}));
+																main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF3F51B5}));
 																select_theme.setSelection((int)(13));
 															}
 														}
@@ -4982,7 +5175,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _Updater () {
+	public void _Updater() {
 		try {
 			Version.addListenerForSingleValueEvent(new ValueEventListener() {
 				@Override
@@ -5000,58 +5193,74 @@ public class MainActivity extends AppCompatActivity {
 					}
 					Latest_Version = Versions_1.get((int)0).get("V").toString();
 					if (Double.parseDouble(Latest_Version) > Double.parseDouble(Current_Version)) {
-						_RequiredDialog(Update_Authorized, false);
-						Update_Authorized.setTitle("NEW MANAGER UPDATE");
-						Update_Authorized.setPositiveButton("DOWNLOAD UPDATE", new DialogInterface.OnClickListener() {
+						Timer = new TimerTask() {
 							@Override
-							public void onClick(DialogInterface _dialog, int _which) {
-								try {
-									_RequiredDialog(Update_Authorized, true);
-									if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
-										_Download_Update_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
-									}
-									else {
-										if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
-											_Download_Update(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
+							public void run() {
+								runOnUiThread(new Runnable() {
+									@Override
+									public void run() {
+										try {
+											_RequiredDialog(Update_Authorized, false);
+											Update_Authorized.setTitle(new_update.getText().toString());
+											Update_Authorized.setMessage("What's New (Version ".concat(Latest_Version.concat("):\n\n".concat(app_changelogs.getText().toString()))));
+											Update_Authorized.setPositiveButton(download_update.getText().toString(), new DialogInterface.OnClickListener() {
+												@Override
+												public void onClick(DialogInterface _dialog, int _which) {
+													try {
+														_RequiredDialog(Update_Authorized, true);
+														if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
+															_Download_Update_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
+														}
+														else {
+															if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
+																_Download_Update(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
+															}
+														}
+														_Update_Remover();
+													}
+													catch(Exception e) {
+													}
+													Timer = new TimerTask() {
+														@Override
+														public void run() {
+															runOnUiThread(new Runnable() {
+																@Override
+																public void run() {
+																	_Hide_Navigation();
+																}
+															});
+														}
+													};
+													_timer.schedule(Timer, (int)(100));
+												}
+											});
+											Update_Authorized.setNeutralButton(not_now.getText().toString(), new DialogInterface.OnClickListener() {
+												@Override
+												public void onClick(DialogInterface _dialog, int _which) {
+													_RequiredDialog(Update_Authorized, true);
+													Timer = new TimerTask() {
+														@Override
+														public void run() {
+															runOnUiThread(new Runnable() {
+																@Override
+																public void run() {
+																	_Hide_Navigation();
+																}
+															});
+														}
+													};
+													_timer.schedule(Timer, (int)(100));
+												}
+											});
+											Update_Authorized.create().show();
+										}
+										catch(Exception e) {
 										}
 									}
-									_Update_Remover();
-								}
-								catch(Exception e) {
-								}
-								Timer = new TimerTask() {
-									@Override
-									public void run() {
-										runOnUiThread(new Runnable() {
-											@Override
-											public void run() {
-												_Hide_Navigation();
-											}
-										});
-									}
-								};
-								_timer.schedule(Timer, (int)(100));
+								});
 							}
-						});
-						Update_Authorized.setNeutralButton("NOT NOW", new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface _dialog, int _which) {
-								_RequiredDialog(Update_Authorized, true);
-								Timer = new TimerTask() {
-									@Override
-									public void run() {
-										runOnUiThread(new Runnable() {
-											@Override
-											public void run() {
-												_Hide_Navigation();
-											}
-										});
-									}
-								};
-								_timer.schedule(Timer, (int)(100));
-							}
-						});
-						Update_Authorized.create().show();
+						};
+						_timer.schedule(Timer, (int)(500));
 					}
 					else {
 						if (Double.parseDouble(Current_Version) > Double.parseDouble(Latest_Version)) {
@@ -5070,6 +5279,18 @@ public class MainActivity extends AppCompatActivity {
 										_RequiredDialog(Update_Unauthorized, true);
 										finishAndRemoveTask();
 										finishAffinity();
+									}
+								});
+								Update_Unauthorized.setNeutralButton(R.string.support, new DialogInterface.OnClickListener() {
+									@Override
+									public void onClick(DialogInterface _dialog, int _which) {
+										_RequiredDialog(Update_Unauthorized, false);
+										Update_Unauthorized.create().show();
+										try {
+											_Browser("https://t.me/SpotifyModSupport");
+										}
+										catch(Exception e) {
+										}
 									}
 								});
 								Update_Unauthorized.create().show();
@@ -5092,7 +5313,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _Updater_Check () {
+	public void _Updater_Check() {
 		Package_Name = "com.xc3fff0e.xmanager";
 		try {
 			android.content.pm.PackageInfo pinfo = getPackageManager().getPackageInfo(Package_Name, android.content.pm.PackageManager.GET_ACTIVITIES);
@@ -5118,471 +5339,476 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _Download_Update (final String _url, final String _path) {
+	public void _Download_Update(final String _url, final String _path) {
 		try {
 			FileUtil.makeDir(FileUtil.getPackageDataDir(getApplicationContext()));
 			
 			android.net.ConnectivityManager connMgr = (android.net.ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
 			android.net.NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 			if (networkInfo != null && networkInfo.isConnected()) {
-				
-				
-				final String urlDownload = _url;
-				
-				DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
-				
-				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
-				
-				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
-				
-				request.setMimeType("application/vnd.android.package-archive");
-				
-				request.allowScanningByMediaScanner();
-				
-				request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "/Update/xManager Update.apk");
-				
-				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-				
-				final long downloadId = manager.enqueue(request);
-				
-				final ProgressDialog prog = new ProgressDialog(this, ProgressDialog.THEME_DEVICE_DEFAULT_DARK);
-				prog.setMax(100);
-				prog.setIndeterminate(false);
-				prog.setCancelable(false);
-				prog.setCanceledOnTouchOutside(false);
-				prog.setTitle(downloading_file_0);
-				new Thread(new Runnable() {
 					
-					@Override
-					public void run() {
-						
-						boolean downloading = true;
-						
-						while (downloading) {
+					
+					final String urlDownload = _url;
+					
+					DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
+					
+					final String fileName = URLUtil.guessFileName(urlDownload, null, null);
+					
+					request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
+					
+					request.setMimeType("application/vnd.android.package-archive");
+					
+					request.allowScanningByMediaScanner();
+					
+					request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "/Update/xManager Update.apk");
+					
+					final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+					
+					final long downloadId = manager.enqueue(request);
+					
+					final ProgressDialog prog = new ProgressDialog(this, ProgressDialog.THEME_DEVICE_DEFAULT_DARK);
+					prog.setMax(100);
+					prog.setIndeterminate(false);
+					prog.setCancelable(false);
+					prog.setCanceledOnTouchOutside(false);
+					prog.setTitle(downloading_file_0);
+					new Thread(new Runnable() {
 							
-							DownloadManager.Query q = new DownloadManager.Query();
-							
-							q.setFilterById(downloadId);
-							
-							android.database.Cursor cursor = manager.query(q);
-							
-							if (cursor != null) { 
-								  if (cursor.moveToFirst()) {
+							@Override
+							public void run() {
 									
-									int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
+									boolean downloading = true;
 									
-									int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
-									
-									if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
-										
-										downloading = false;
-										
-									}
-									
-									if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
-										
-										runOnUiThread(new Runnable() {
-											public void run() { 
-												
-												SketchwareUtil.CustomToast(getApplicationContext(), "The file or link is currently unavailable. Please try again later.", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-											}
-										});
-										prog.cancel();
-										break;
-										
-									}
-									
-									final int dl_progress = (int) ((bytes_downloaded * 100l) / bytes_total);
-									
-									runOnUiThread(new Runnable() {
-										@Override
-										public void run() {
+									while (downloading) {
 											
-											prog.setTitle(downloading_file_0);
-											prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-											prog.setProgress(bytes_downloaded);
-											prog.setMax(bytes_total);
-											prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-												@Override
-												public void onClick(DialogInterface dialog, int which) {
-													SketchwareUtil.CustomToast(getApplicationContext(), "Download cancelled", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-													manager.remove(downloadId);
-													Timer = new TimerTask() {
-																@Override
-																public void run() {
-																		runOnUiThread(new Runnable() {
-																				@Override
-																				public void run() {
-																						prog.cancel();
-																				}
-																		});
-																}
-														};
-														_timer.schedule(Timer, (int)(0));
-												}
-											});
-											prog.show();
+											DownloadManager.Query q = new DownloadManager.Query();
 											
-											if (bytes_downloaded == bytes_total) {
-												
-												Timer = new TimerTask() {
-														@Override
-														public void run() {
-																runOnUiThread(new Runnable() {
-																		@Override
-																		public void run() {
-																
-																try {
-																	FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/xManager Update.apk", "/storage/emulated/0/xManager/Update/xManager Update.apk");
-																	prog.dismiss();
-																}
-																catch(Exception e) {
-																	SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Copying failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																}
-																
-																_RequiredDialog(Success_Download, false);
-																Success_Download.setTitle(download_success_0);
-																Success_Download.setPositiveButton(install_update_0, new DialogInterface.OnClickListener() {
-																		@Override
-																		public void onClick(DialogInterface _dialog, int _which) {
-																				_RequiredDialog(Success_Download, true);
-																		
-																		prog.cancel();
-																		
-																		StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																		
-																		if(android.os.Build.VERSION.SDK_INT >= 29){
+											q.setFilterById(downloadId);
+											
+											android.database.Cursor cursor = manager.query(q);
+											
+											if (cursor != null) { 
+													if (cursor.moveToFirst()) {
+															
+															int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
+															
+															int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
+															
+															if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
+																	
+																	downloading = false;
+																	
+															}
+															
+															if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
+																	
+																	runOnUiThread(new Runnable() {
+																			public void run() { 
+																					
+																					SketchwareUtil.CustomToast(getApplicationContext(), "The file or link is currently unavailable. Please try again later.", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																			}
+																	});
+																	prog.cancel();
+																	break;
+																	
+															}
+															
+															final int dl_progress = (int) ((bytes_downloaded * 100l) / bytes_total);
+															
+															final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
+															
+															final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
+															
+															String file_min = String.format("%.2f", file_front);
+															
+															String file_max = String.format("%.2f", file_end);
+															
+															runOnUiThread(new Runnable() {
+																	@Override
+																	public void run() {
 																			
-																			try {
-																				Intent intent = new Intent(Intent.ACTION_VIEW);
-																				
-																				intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																				 
-																				intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
-																				
-																				startActivity(intent);
-																			}
-																			catch(Exception e) {
-																				SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																			}
+																			prog.setTitle(downloading_file_0);
+																			prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																			prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																			prog.setProgress(dl_progress);
+																			prog.setMax(100);
+																			prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
+																					@Override
+																					public void onClick(DialogInterface dialog, int which) {
+																							SketchwareUtil.CustomToast(getApplicationContext(), "Download cancelled", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																							manager.remove(downloadId);
+																							Timer = new TimerTask() {
+																									@Override
+																									public void run() {
+																											runOnUiThread(new Runnable() {
+																													@Override
+																													public void run() {
+																															prog.cancel();
+																													}
+																											});
+																									}
+																							};
+																							_timer.schedule(Timer, (int)(0));
+																					}
+																			});
+																			prog.show();
 																			
-																		} else {
-																			
-																			try {
-																				Intent intent = new Intent(Intent.ACTION_VIEW);
-																				intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
-																				
-																				startActivity(intent);
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												_Hide_Navigation();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(100));
+																			if (bytes_downloaded == bytes_total) {
+																					
+																					Timer = new TimerTask() {
+																							@Override
+																							public void run() {
+																									runOnUiThread(new Runnable() {
+																											@Override
+																											public void run() {
+																													
+																													try {
+																															FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/xManager Update.apk", "/storage/emulated/0/xManager/Update/xManager Update.apk");
+																															prog.dismiss();
+																													}
+																													catch(Exception e) {
+																															SketchwareUtil.CustomToast(getApplicationContext(), "Copying failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																													}
+																													
+																													_RequiredDialog(Success_Download, false);
+																													Success_Download.setTitle(download_success_0);
+																													Success_Download.setPositiveButton(install_update_0, new DialogInterface.OnClickListener() {
+																															@Override
+																															public void onClick(DialogInterface _dialog, int _which) {
+																																	_RequiredDialog(Success_Download, true);
+																																	
+																																	prog.cancel();
+																																	
+																																	StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+																																	
+																																	if(android.os.Build.VERSION.SDK_INT >= 29){
+																																			
+																																			try {
+																																					Intent intent = new Intent(Intent.ACTION_VIEW);
+																																					
+																																					intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																																					
+																																					intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
+																																					
+																																					startActivity(intent);
+																																			}
+																																			catch(Exception e) {
+																																					SketchwareUtil.CustomToast(getApplicationContext(), "Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																																			}
+																																			
+																																	} else {
+																																			
+																																			try {
+																																					Intent intent = new Intent(Intent.ACTION_VIEW);
+																																					intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
+																																					
+																																					startActivity(intent);
+																																					Timer = new TimerTask() {
+																																							@Override
+																																							public void run() {
+																																									runOnUiThread(new Runnable() {
+																																											@Override
+																																											public void run() {
+																																													_Hide_Navigation();
+																																											}
+																																									});
+																																							}
+																																					};
+																																					_timer.schedule(Timer, (int)(100));
+																																			}
+																																			catch(Exception e) {
+																																					SketchwareUtil.CustomToast(getApplicationContext(), "Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																																			}
+																																	}
+																																	
+																															}
+																													});
+																													Success_Download.setNegativeButton(directory_0, new DialogInterface.OnClickListener() {
+																															@Override
+																															public void onClick(DialogInterface _dialog, int _which) {
+																																	_RequiredDialog(Success_Download, true);
+																																	
+																																	prog.cancel();
+																																	
+																																	_RequiredDialog(Directory, false);
+																																	Directory.setTitle(file_directory_0);
+																																	Directory.setMessage("</storage/emulated/0/xManager/Update/>");
+																																	Directory.setPositiveButton(go_back_0, new DialogInterface.OnClickListener() {
+																																			@Override
+																																			public void onClick(DialogInterface _dialog, int _which) {
+																																					_RequiredDialog(Directory, true);
+																																					_RequiredDialog(Success_Download, false);
+																																					Success_Download.create().show();
+																																			}
+																																	});
+																																	Directory.create().show();
+																																	
+																															}
+																													});
+																													Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener() {
+																															@Override
+																															public void onClick(DialogInterface _dialog, int _which) {
+																																	_RequiredDialog(Success_Download, true);
+																																	
+																																	prog.cancel();
+																																	
+																																	Timer = new TimerTask() {
+																																			@Override
+																																			public void run() {
+																																					runOnUiThread(new Runnable() {
+																																							@Override
+																																							public void run() {
+																																									_Hide_Navigation();
+																																							}
+																																					});
+																																			}
+																																	};
+																																	_timer.schedule(Timer, (int)(100));
+																															}
+																													});
+																													Success_Download.create().show();
+																													
+																													SketchwareUtil.CustomToast(getApplicationContext(), "Download complete", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																													
+																													prog.cancel();
+																													
+																											}
+																									});
+																							}
+																					};
+																					_timer.schedule(Timer, (int)(1500));
 																			}
-																			catch(Exception e) {
-																				SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																			}
-																		}
-																		
-																	}
-																});
-																Success_Download.setNegativeButton(directory_0, new DialogInterface.OnClickListener() {
-																		@Override
-																		public void onClick(DialogInterface _dialog, int _which) {
-																				_RequiredDialog(Success_Download, true);
-																		
-																		prog.cancel();
-																		
-																				_RequiredDialog(Directory, false);
-																				Directory.setTitle(file_directory_0);
-																		    Directory.setMessage("</storage/emulated/0/xManager/Update/>");
-																				Directory.setPositiveButton(go_back_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface _dialog, int _which) {
-																								_RequiredDialog(Directory, true);
-																								_RequiredDialog(Success_Download, false);
-																								Success_Download.create().show();
-																						}
-																				});
-																				Directory.create().show();
-																		
-																	}
-																});
-																Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener() {
-																		@Override
-																		public void onClick(DialogInterface _dialog, int _which) {
-																				_RequiredDialog(Success_Download, true);
-																		
-																		prog.cancel();
-																		
-																		Timer = new TimerTask() {
-																				@Override
-																				public void run() {
-																						runOnUiThread(new Runnable() {
-																								@Override
-																								public void run() {
-																										_Hide_Navigation();
-																								}
-																						});
-																				}
-																		};
-																		_timer.schedule(Timer, (int)(100));
-																	}
-																});
-																Success_Download.create().show();
-																
-																SketchwareUtil.CustomToast(getApplicationContext(), "Download Complete", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																
-																prog.cancel();
-																
-																		}
-																});
-														}
-												};
-												_timer.schedule(Timer, (int)(1500));
+																	} });
+													}
+													cursor.close();
 											}
-										} });
-									   }
-								    cursor.close();
-								     }
-						} } }).start();
-				
+									} } }).start();
+					
 			} else {
-				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "No Internet Connection", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
-								@Override
-								public void onClick(View _view) {
-								}
-						}).show();
+					com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 			}
+			
 		}
 		catch(Exception e) {
 		}
 	}
 	
 	
-	private void _Effects () {
+	public void _Effects() {
 		_Ripple(box_update, "#9E9E9E");
 		_Ripple(box_switch, "#9E9E9E");
 	}
 	
 	
-	private void _Ripple (final View _view, final String _c) {
+	public void _Ripple(final View _view, final String _c) {
 		_view.setBackground(Drawables.getSelectableDrawableFor(Color.parseColor(_c)));
 		_view.setClickable(true);
 		
 	}
 	
 	public static class Drawables {
-		    public static android.graphics.drawable.Drawable getSelectableDrawableFor(int color) {
-			        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-				            android.graphics.drawable.StateListDrawable stateListDrawable = new android.graphics.drawable.StateListDrawable();
-				            stateListDrawable.addState(
-				                new int[]{android.R.attr.state_pressed},
-				                new android.graphics.drawable.ColorDrawable(Color.parseColor("#ffffff"))
-				            );
-				            stateListDrawable.addState(
-				                new int[]{android.R.attr.state_focused},
-				                new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"))
-				            );
-				            stateListDrawable.addState(
-				                new int[]{},
-				                new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"))
-				            );
-				            return stateListDrawable;
-				        } else {
-				            android.content.res.ColorStateList pressedColor = android.content.res.ColorStateList.valueOf(color);
-				            android.graphics.drawable.ColorDrawable defaultColor = new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"));
-				            
-				android.graphics.drawable.Drawable rippleColor = getRippleColor(color);
-				            return new android.graphics.drawable.RippleDrawable(
-				                pressedColor,
-				                defaultColor,
-				                rippleColor
-				            );
-				        }
-			    }
+		public static android.graphics.drawable.Drawable getSelectableDrawableFor(int color) {
+				if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+						android.graphics.drawable.StateListDrawable stateListDrawable = new android.graphics.drawable.StateListDrawable();
+						stateListDrawable.addState(
+						new int[]{android.R.attr.state_pressed},
+						new android.graphics.drawable.ColorDrawable(Color.parseColor("#ffffff"))
+						);
+						stateListDrawable.addState(
+						new int[]{android.R.attr.state_focused},
+						new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"))
+						);
+						stateListDrawable.addState(
+						new int[]{},
+						new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"))
+						);
+						return stateListDrawable;
+				} else {
+						android.content.res.ColorStateList pressedColor = android.content.res.ColorStateList.valueOf(color);
+						android.graphics.drawable.ColorDrawable defaultColor = new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"));
+						
+						android.graphics.drawable.Drawable rippleColor = getRippleColor(color);
+						return new android.graphics.drawable.RippleDrawable(
+						pressedColor,
+						defaultColor,
+						rippleColor
+						);
+				}
+		}
 		
-		    private static android.graphics.drawable.Drawable getRippleColor(int color) {
-			        float[] outerRadii = new float[8];
-			        Arrays.fill(outerRadii, 0);
-			        android.graphics.drawable.shapes.RoundRectShape r = new android.graphics.drawable.shapes.RoundRectShape(outerRadii, null, null);
-			        
-			android.graphics.drawable.ShapeDrawable shapeDrawable = new 
-			android.graphics.drawable.ShapeDrawable(r);
-			        shapeDrawable.getPaint().setColor(color);
-			        return shapeDrawable;
-			    }
-		 
-		    private static int lightenOrDarken(int color, double fraction) {
-			        if (canLighten(color, fraction)) {
-				            return lighten(color, fraction);
-				        } else {
-				            return darken(color, fraction);
-				        }
-			    }
-		 
-		    private static int lighten(int color, double fraction) {
-			        int red = Color.red(color);
-			        int green = Color.green(color);
-			        int blue = Color.blue(color);
-			        red = lightenColor(red, fraction);
-			        green = lightenColor(green, fraction);
-			        blue = lightenColor(blue, fraction);
-			        int alpha = Color.alpha(color);
-			        return Color.argb(alpha, red, green, blue);
-			    }
-		 
-		    private static int darken(int color, double fraction) {
-			        int red = Color.red(color);
-			        int green = Color.green(color);
-			        int blue = Color.blue(color);
-			        red = darkenColor(red, fraction);
-			        green = darkenColor(green, fraction);
-			        blue = darkenColor(blue, fraction);
-			        int alpha = Color.alpha(color);
-			 
-			        return Color.argb(alpha, red, green, blue);
-			    }
-		 
-		    private static boolean canLighten(int color, double fraction) {
-			        int red = Color.red(color);
-			        int green = Color.green(color);
-			        int blue = Color.blue(color);
-			        return canLightenComponent(red, fraction)
-			            && canLightenComponent(green, fraction)
-			            && canLightenComponent(blue, fraction);
-			    }
-		 
-		    private static boolean canLightenComponent(int colorComponent, double fraction) {
-			        int red = Color.red(colorComponent);
-			        int green = Color.green(colorComponent);
-			        int blue = Color.blue(colorComponent);
-			        return red + (red * fraction) < 255
-			            && green + (green * fraction) < 255
-			            && blue + (blue * fraction) < 255;
-			    }
-		 
-		    private static int darkenColor(int color, double fraction) {
-			        return (int) Math.max(color - (color * fraction), 0);
-			    }
-		 
-		    private static int lightenColor(int color, double fraction) {
-			        return (int) Math.min(color + (color * fraction), 255);
-			    }
+		private static android.graphics.drawable.Drawable getRippleColor(int color) {
+				float[] outerRadii = new float[8];
+				Arrays.fill(outerRadii, 0);
+				android.graphics.drawable.shapes.RoundRectShape r = new android.graphics.drawable.shapes.RoundRectShape(outerRadii, null, null);
+				
+				android.graphics.drawable.ShapeDrawable shapeDrawable = new 
+				android.graphics.drawable.ShapeDrawable(r);
+				shapeDrawable.getPaint().setColor(color);
+				return shapeDrawable;
+		}
+		
+		private static int lightenOrDarken(int color, double fraction) {
+				if (canLighten(color, fraction)) {
+						return lighten(color, fraction);
+				} else {
+						return darken(color, fraction);
+				}
+		}
+		
+		private static int lighten(int color, double fraction) {
+				int red = Color.red(color);
+				int green = Color.green(color);
+				int blue = Color.blue(color);
+				red = lightenColor(red, fraction);
+				green = lightenColor(green, fraction);
+				blue = lightenColor(blue, fraction);
+				int alpha = Color.alpha(color);
+				return Color.argb(alpha, red, green, blue);
+		}
+		
+		private static int darken(int color, double fraction) {
+				int red = Color.red(color);
+				int green = Color.green(color);
+				int blue = Color.blue(color);
+				red = darkenColor(red, fraction);
+				green = darkenColor(green, fraction);
+				blue = darkenColor(blue, fraction);
+				int alpha = Color.alpha(color);
+				
+				return Color.argb(alpha, red, green, blue);
+		}
+		
+		private static boolean canLighten(int color, double fraction) {
+				int red = Color.red(color);
+				int green = Color.green(color);
+				int blue = Color.blue(color);
+				return canLightenComponent(red, fraction)
+				&& canLightenComponent(green, fraction)
+				&& canLightenComponent(blue, fraction);
+		}
+		
+		private static boolean canLightenComponent(int colorComponent, double fraction) {
+				int red = Color.red(colorComponent);
+				int green = Color.green(colorComponent);
+				int blue = Color.blue(colorComponent);
+				return red + (red * fraction) < 255
+				&& green + (green * fraction) < 255
+				&& blue + (blue * fraction) < 255;
+		}
+		
+		private static int darkenColor(int color, double fraction) {
+				return (int) Math.max(color - (color * fraction), 0);
+		}
+		
+		private static int lightenColor(int color, double fraction) {
+				return (int) Math.min(color + (color * fraction), 255);
+		}
 	}
 	public static class CircleDrawables {
-		    public static android.graphics.drawable.Drawable getSelectableDrawableFor(int color) {
-			        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-				            android.graphics.drawable.StateListDrawable stateListDrawable = new android.graphics.drawable.StateListDrawable();
-				            stateListDrawable.addState(
-				                new int[]{android.R.attr.state_pressed},
-				                new android.graphics.drawable.ColorDrawable(Color.parseColor("#ffffff"))
-				            );
-				            stateListDrawable.addState(
-				                new int[]{android.R.attr.state_focused},
-				                new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"))
-				            );
-				            stateListDrawable.addState(
-				                new int[]{},
-				                new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"))
-				            );
-				            return stateListDrawable;
-				        } else {
-				            android.content.res.ColorStateList pressedColor = android.content.res.ColorStateList.valueOf(color);
-				            android.graphics.drawable.ColorDrawable defaultColor = new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"));
-				            
-				android.graphics.drawable.Drawable rippleColor = getRippleColor(color);
-				            return new android.graphics.drawable.RippleDrawable(
-				                pressedColor,
-				                defaultColor,
-				                rippleColor
-				            );
-				        }
-			    }
+		public static android.graphics.drawable.Drawable getSelectableDrawableFor(int color) {
+				if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+						android.graphics.drawable.StateListDrawable stateListDrawable = new android.graphics.drawable.StateListDrawable();
+						stateListDrawable.addState(
+						new int[]{android.R.attr.state_pressed},
+						new android.graphics.drawable.ColorDrawable(Color.parseColor("#ffffff"))
+						);
+						stateListDrawable.addState(
+						new int[]{android.R.attr.state_focused},
+						new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"))
+						);
+						stateListDrawable.addState(
+						new int[]{},
+						new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"))
+						);
+						return stateListDrawable;
+				} else {
+						android.content.res.ColorStateList pressedColor = android.content.res.ColorStateList.valueOf(color);
+						android.graphics.drawable.ColorDrawable defaultColor = new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"));
+						
+						android.graphics.drawable.Drawable rippleColor = getRippleColor(color);
+						return new android.graphics.drawable.RippleDrawable(
+						pressedColor,
+						defaultColor,
+						rippleColor
+						);
+				}
+		}
 		
-		    private static android.graphics.drawable.Drawable getRippleColor(int color) {
-			        float[] outerRadii = new float[180];
-			        Arrays.fill(outerRadii, 80);
-			        android.graphics.drawable.shapes.RoundRectShape r = new android.graphics.drawable.shapes.RoundRectShape(outerRadii, null, null);
-			        
-			android.graphics.drawable.ShapeDrawable shapeDrawable = new 
-			android.graphics.drawable.ShapeDrawable(r);
-			        shapeDrawable.getPaint().setColor(color);
-			        return shapeDrawable;
-			    }
-		 
-		    private static int lightenOrDarken(int color, double fraction) {
-			        if (canLighten(color, fraction)) {
-				            return lighten(color, fraction);
-				        } else {
-				            return darken(color, fraction);
-				        }
-			    }
-		 
-		    private static int lighten(int color, double fraction) {
-			        int red = Color.red(color);
-			        int green = Color.green(color);
-			        int blue = Color.blue(color);
-			        red = lightenColor(red, fraction);
-			        green = lightenColor(green, fraction);
-			        blue = lightenColor(blue, fraction);
-			        int alpha = Color.alpha(color);
-			        return Color.argb(alpha, red, green, blue);
-			    }
-		 
-		    private static int darken(int color, double fraction) {
-			        int red = Color.red(color);
-			        int green = Color.green(color);
-			        int blue = Color.blue(color);
-			        red = darkenColor(red, fraction);
-			        green = darkenColor(green, fraction);
-			        blue = darkenColor(blue, fraction);
-			        int alpha = Color.alpha(color);
-			 
-			        return Color.argb(alpha, red, green, blue);
-			    }
-		 
-		    private static boolean canLighten(int color, double fraction) {
-			        int red = Color.red(color);
-			        int green = Color.green(color);
-			        int blue = Color.blue(color);
-			        return canLightenComponent(red, fraction)
-			            && canLightenComponent(green, fraction)
-			            && canLightenComponent(blue, fraction);
-			    }
-		 
-		    private static boolean canLightenComponent(int colorComponent, double fraction) {
-			        int red = Color.red(colorComponent);
-			        int green = Color.green(colorComponent);
-			        int blue = Color.blue(colorComponent);
-			        return red + (red * fraction) < 255
-			            && green + (green * fraction) < 255
-			            && blue + (blue * fraction) < 255;
-			    }
-		 
-		    private static int darkenColor(int color, double fraction) {
-			        return (int) Math.max(color - (color * fraction), 0);
-			    }
-		 
-		    private static int lightenColor(int color, double fraction) {
-			        return (int) Math.min(color + (color * fraction), 255);
+		private static android.graphics.drawable.Drawable getRippleColor(int color) {
+				float[] outerRadii = new float[180];
+				Arrays.fill(outerRadii, 80);
+				android.graphics.drawable.shapes.RoundRectShape r = new android.graphics.drawable.shapes.RoundRectShape(outerRadii, null, null);
+				
+				android.graphics.drawable.ShapeDrawable shapeDrawable = new 
+				android.graphics.drawable.ShapeDrawable(r);
+				shapeDrawable.getPaint().setColor(color);
+				return shapeDrawable;
+		}
+		
+		private static int lightenOrDarken(int color, double fraction) {
+				if (canLighten(color, fraction)) {
+						return lighten(color, fraction);
+				} else {
+						return darken(color, fraction);
+				}
+		}
+		
+		private static int lighten(int color, double fraction) {
+				int red = Color.red(color);
+				int green = Color.green(color);
+				int blue = Color.blue(color);
+				red = lightenColor(red, fraction);
+				green = lightenColor(green, fraction);
+				blue = lightenColor(blue, fraction);
+				int alpha = Color.alpha(color);
+				return Color.argb(alpha, red, green, blue);
+		}
+		
+		private static int darken(int color, double fraction) {
+				int red = Color.red(color);
+				int green = Color.green(color);
+				int blue = Color.blue(color);
+				red = darkenColor(red, fraction);
+				green = darkenColor(green, fraction);
+				blue = darkenColor(blue, fraction);
+				int alpha = Color.alpha(color);
+				
+				return Color.argb(alpha, red, green, blue);
+		}
+		
+		private static boolean canLighten(int color, double fraction) {
+				int red = Color.red(color);
+				int green = Color.green(color);
+				int blue = Color.blue(color);
+				return canLightenComponent(red, fraction)
+				&& canLightenComponent(green, fraction)
+				&& canLightenComponent(blue, fraction);
+		}
+		
+		private static boolean canLightenComponent(int colorComponent, double fraction) {
+				int red = Color.red(colorComponent);
+				int green = Color.green(colorComponent);
+				int blue = Color.blue(colorComponent);
+				return red + (red * fraction) < 255
+				&& green + (green * fraction) < 255
+				&& blue + (blue * fraction) < 255;
+		}
+		
+		private static int darkenColor(int color, double fraction) {
+				return (int) Math.max(color - (color * fraction), 0);
+		}
+		
+		private static int lightenColor(int color, double fraction) {
+				return (int) Math.min(color + (color * fraction), 255);
 		}
 	}
 	
 	public void drawableclass() {
 		
-		
 	}
 	
 	
-	private void _Hide_Navigation () {
+	public void _Hide_Navigation() {
 		try {
 			if (NAVIGATION_BAR.getString("NAVIGATION", "").equals("1")) {
 				getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
@@ -5604,7 +5830,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _Animation_0 () {
+	public void _Animation_0() {
 		Animation a;
 		a = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
 		a.setDuration(200); main_box_1.startAnimation(a);
@@ -5625,232 +5851,193 @@ public class MainActivity extends AppCompatActivity {
 		e = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
 		e.setDuration(600); main_box_4.startAnimation(e);
 		e = null;
-		Animation bbb;
-		bbb = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		bbb.setDuration(700); main_box_15.startAnimation(bbb);
-		bbb = null;
 		Animation f;
 		f = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		f.setDuration(300); title_header.startAnimation(f);
+		f.setDuration(700); main_box_15.startAnimation(f);
 		f = null;
 		Animation g;
 		g = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		g.setDuration(400); box_switch.startAnimation(g);
+		g.setDuration(300); title_header.startAnimation(g);
 		g = null;
 		Animation h;
 		h = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		h.setDuration(500); box_update.startAnimation(h);
+		h.setDuration(400); title_header_beta.startAnimation(h);
 		h = null;
-	}
-	
-	
-	private void _Animation_1 () {
 		Animation i;
 		i = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		i.setDuration(200); box_settings_close.startAnimation(i);
+		i.setDuration(500); title_header_seperator.startAnimation(i);
 		i = null;
 		Animation j;
 		j = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		j.setDuration(600); main_box_7.startAnimation(j);
+		j.setDuration(600); box_switch.startAnimation(j);
 		j = null;
 		Animation k;
 		k = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		k.setDuration(700); main_box_5.startAnimation(k);
+		k.setDuration(700); box_update.startAnimation(k);
 		k = null;
-		Animation l;
-		l = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		l.setDuration(300); title_header.startAnimation(l);
-		l = null;
-		Animation z;
-		z = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		z.setDuration(300); main_box_8.startAnimation(z);
-		z = null;
-		Animation hh;
-		hh = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		hh.setDuration(900); main_box_9.startAnimation(hh);
-		hh = null;
-		Animation ii;
-		ii = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		ii.setDuration(1000); main_box_10.startAnimation(ii);
-		ii = null;
-		Animation jj;
-		jj = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		jj.setDuration(1100); main_box_13.startAnimation(jj);
-		jj = null;
-		Animation kk;
-		kk = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		kk.setDuration(400); main_box_11.startAnimation(kk);
-		kk = null;
-		Animation ll;
-		ll = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		ll.setDuration(500); main_box_12.startAnimation(ll);
-		ll = null;
-		Animation mm;
-		mm = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		mm.setDuration(800); main_box_14.startAnimation(mm);
-		mm = null;
 	}
 	
 	
-	private void _Animation_2 () {
-		Animation m;
-		m = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		m.setDuration(200); box_about_close.startAnimation(m);
-		m = null;
-		Animation n;
-		n = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		n.setDuration(300); box_about_header.startAnimation(n);
-		n = null;
-		Animation o;
-		o = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		o.setDuration(400); sub_title.startAnimation(o);
-		o = null;
-		Animation p;
-		p = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		p.setDuration(500); box_about_1.startAnimation(p);
-		p = null;
-		Animation q;
-		q = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		q.setDuration(600); box_about_2.startAnimation(q);
-		q = null;
-		Animation r;
-		r = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		r.setDuration(700); box_about_3.startAnimation(r);
-		r = null;
-		Animation s;
-		s = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		s.setDuration(800); box_about_4.startAnimation(s);
-		s = null;
-		Animation t;
-		t = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		t.setDuration(900); box_about_5.startAnimation(t);
-		t = null;
-		Animation u;
-		u = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		u.setDuration(1000); box_about_6.startAnimation(u);
-		u = null;
-		Animation v;
-		v = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		v.setDuration(1100); box_about_7.startAnimation(v);
-		v = null;
-		Animation w;
-		w = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		w.setDuration(1200); contributors_1.startAnimation(w);
-		w = null;
-		Animation x;
-		x = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		x.setDuration(300); title_header.startAnimation(x);
-		x = null;
-	}
-	
-	
-	private void _Animation_4 () {
+	public void _Animation_1() {
 		Animation a;
 		a = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		a.setDuration(200); main_box_1.startAnimation(a);
+		a.setDuration(200); box_settings_close.startAnimation(a);
 		a = null;
 		Animation b;
 		b = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		b.setDuration(300); main_box_2.startAnimation(b);
+		b.setDuration(300); title_header.startAnimation(b);
 		b = null;
 		Animation c;
 		c = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		c.setDuration(400); main_box_6.startAnimation(c);
+		c.setDuration(300); main_box_8.startAnimation(c);
 		c = null;
 		Animation d;
 		d = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		d.setDuration(500); box_sub_header.startAnimation(d);
+		d.setDuration(400); main_box_11.startAnimation(d);
 		d = null;
 		Animation e;
 		e = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		e.setDuration(600); main_box_4.startAnimation(e);
+		e.setDuration(500); main_box_12.startAnimation(e);
 		e = null;
-		Animation bbb;
-		bbb = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		bbb.setDuration(700); main_box_15.startAnimation(bbb);
-		bbb = null;
+		Animation f;
+		f = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		f.setDuration(600); main_box_7.startAnimation(f);
+		f = null;
+		Animation g;
+		g = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		g.setDuration(700); main_box_5.startAnimation(g);
+		g = null;
+		Animation h;
+		h = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		h.setDuration(800); main_box_14.startAnimation(h);
+		h = null;
+		Animation i;
+		i = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		i.setDuration(900); main_box_9.startAnimation(i);
+		i = null;
+		Animation j;
+		j = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		j.setDuration(1000); main_box_10.startAnimation(j);
+		j = null;
+		Animation k;
+		k = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		k.setDuration(1100); main_box_13.startAnimation(k);
+		k = null;
 	}
 	
 	
-	private void _Dark_Navigation () {
+	public void _Animation_2() {
+		Animation a;
+		a = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		a.setDuration(200); box_about_close.startAnimation(a);
+		a = null;
+		Animation b;
+		b = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		b.setDuration(300); title_header.startAnimation(b);
+		b = null;
+		Animation c;
+		c = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		c.setDuration(300); box_about_header.startAnimation(c);
+		c = null;
+		Animation d;
+		d = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		d.setDuration(400); sub_title.startAnimation(d);
+		d = null;
+		Animation e;
+		e = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		e.setDuration(500); box_about_1.startAnimation(e);
+		e = null;
+		Animation f;
+		f = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		f.setDuration(600); box_about_2.startAnimation(f);
+		f = null;
+		Animation g;
+		g = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		g.setDuration(700); box_about_3.startAnimation(g);
+		g = null;
+		Animation h;
+		h = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		h.setDuration(800); box_about_4.startAnimation(h);
+		h = null;
+		Animation i;
+		i = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		i.setDuration(900); box_about_5.startAnimation(i);
+		i = null;
+		Animation j;
+		j = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		j.setDuration(1000); box_about_6.startAnimation(j);
+		j = null;
+		Animation k;
+		k = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		k.setDuration(1100); box_about_7.startAnimation(k);
+		k = null;
+		Animation l;
+		l = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		l.setDuration(1200); contributors_1.startAnimation(l);
+		l = null;
+	}
+	
+	
+	public void _Dark_Navigation() {
 		if (Build.VERSION.SDK_INT >= 21) {
 			getWindow().setNavigationBarColor(Color.parseColor("#212121"));
 		}
 	}
 	
 	
-	private void _Linear_Animation (final boolean _clickanim, final double _animDuration, final View _view) {
+	public void _Linear_Animation(final boolean _clickanim, final double _animDuration, final View _view) {
 		_view.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				switch (event.getAction()){
-					case MotionEvent.ACTION_DOWN:{
-						ObjectAnimator scaleX = new ObjectAnimator();
-						scaleX.setTarget(_view);
-						scaleX.setPropertyName("scaleX");
-						scaleX.setFloatValues(0.9f);
-						scaleX.setDuration((int)_animDuration);
-						scaleX.start();
-						
-						ObjectAnimator scaleY = new ObjectAnimator();
-						scaleY.setTarget(_view);
-						scaleY.setPropertyName("scaleY");
-						scaleY.setFloatValues(0.9f);
-						scaleY.setDuration((int)_animDuration);
-						scaleY.start();
-						break;
-					}
-					case MotionEvent.ACTION_UP:{
-						
-						ObjectAnimator scaleX = new ObjectAnimator();
-						scaleX.setTarget(_view);
-						scaleX.setPropertyName("scaleX");
-						scaleX.setFloatValues((float)1);
-						scaleX.setDuration((int)_animDuration);
-						scaleX.start();
-						
-						ObjectAnimator scaleY = new ObjectAnimator();
-						scaleY.setTarget(_view);
-						scaleY.setPropertyName("scaleY");
-						scaleY.setFloatValues((float)1);
-						scaleY.setDuration((int)_animDuration);
-						scaleY.start();
-						
-						break;
-					}
+				@Override
+				public boolean onTouch(View v, MotionEvent event) {
+						switch (event.getAction()){
+								case MotionEvent.ACTION_DOWN:{
+										ObjectAnimator scaleX = new ObjectAnimator();
+										scaleX.setTarget(_view);
+										scaleX.setPropertyName("scaleX");
+										scaleX.setFloatValues(0.9f);
+										scaleX.setDuration((int)_animDuration);
+										scaleX.start();
+										
+										ObjectAnimator scaleY = new ObjectAnimator();
+										scaleY.setTarget(_view);
+										scaleY.setPropertyName("scaleY");
+										scaleY.setFloatValues(0.9f);
+										scaleY.setDuration((int)_animDuration);
+										scaleY.start();
+										break;
+								}
+								case MotionEvent.ACTION_UP:{
+										
+										ObjectAnimator scaleX = new ObjectAnimator();
+										scaleX.setTarget(_view);
+										scaleX.setPropertyName("scaleX");
+										scaleX.setFloatValues((float)1);
+										scaleX.setDuration((int)_animDuration);
+										scaleX.start();
+										
+										ObjectAnimator scaleY = new ObjectAnimator();
+										scaleY.setTarget(_view);
+										scaleY.setPropertyName("scaleY");
+										scaleY.setFloatValues((float)1);
+										scaleY.setDuration((int)_animDuration);
+										scaleY.start();
+										
+										break;
+								}
+						}
+						return false;
 				}
-				return false;
-			}
 		});
+		
 	}
 	
 	
-	private void _Animation_5 () {
-		_Linear_Animation(true, 100, box_uninstall);
-		_Linear_Animation(true, 100, box_settings);
-		_Linear_Animation(true, 100, box_cache);
-		_Linear_Animation(true, 100, box_open);
-		_Linear_Animation(true, 100, box_website);
-		_Linear_Animation(true, 100, box_source);
-		_Linear_Animation(true, 100, box_support);
-		_Linear_Animation(true, 100, box_discord);
-		_Linear_Animation(true, 100, box_donate);
-		_Linear_Animation(true, 100, box_about);
-		_Linear_Animation(true, 100, box_switch);
-		_Linear_Animation(true, 100, box_update);
-		_Linear_Animation(true, 100, main_box_10);
-		_Linear_Animation(true, 100, box_icon_close);
-		_Linear_Animation(true, 100, box_reset_settings);
-		_Linear_Animation(true, 100, box_settings_icon_close);
-	}
-	
-	
-	private void _List_Updater () {
+	public void _List_Updater() {
 		if (LIST_REFRESH.getString("UPDATE", "").equals("ON")) {
 			try {
 				main_body.setEnabled(false);
 				list_auto_refresh_switch.setChecked(true);
-				
+				main_refresh_layout.setRefreshing(true);
 				Regular_Mod.addListenerForSingleValueEvent(new ValueEventListener() {
 					@Override
 					public void onDataChange(DataSnapshot _dataSnapshot) {
@@ -5883,11 +6070,7 @@ public class MainActivity extends AppCompatActivity {
 						};
 						_timer.schedule(Timer, (int)(300));
 						if (!force_auto_install_switch.isChecked() && !copy_url_mode_switch.isChecked()) {
-							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Refreshing List...", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
-											@Override
-											public void onClick(View _view) {
-											}
-									}).show();
+							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Refreshing Data List...", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 						}
 					}
 					@Override
@@ -5908,7 +6091,7 @@ public class MainActivity extends AppCompatActivity {
 						catch (Exception _e) {
 							_e.printStackTrace();
 						}
-						
+						main_refresh_layout.setRefreshing(true);
 						Timer = new TimerTask() {
 							@Override
 							public void run() {
@@ -5948,18 +6131,16 @@ public class MainActivity extends AppCompatActivity {
 																runOnUiThread(new Runnable() {
 																	@Override
 																	public void run() {
-																		
+																		main_refresh_layout.setRefreshing(false);
 																		version_switch_01.setChecked(false);
 																		version_switch_02.setChecked(false);
 																		changelogs_switch.setChecked(false);
 																		main_body.setEnabled(true);
 																		main_body.setAlpha((float)(1.0d));
 																		if (!force_auto_install_switch.isChecked() && !copy_url_mode_switch.isChecked()) {
-																			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "List Updated", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
-																							@Override
-																							public void onClick(View _view) {
-																							}
-																					}).show();
+																			String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
+																			
+																			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Data List Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																		}
 																	}
 																});
@@ -6057,7 +6238,7 @@ public class MainActivity extends AppCompatActivity {
 			if (LIST_REFRESH.getString("UPDATE", "").equals("OFF")) {
 				try {
 					list_auto_refresh_switch.setChecked(false);
-					
+					main_refresh_layout.setRefreshing(true);
 					Regular_Mod.addListenerForSingleValueEvent(new ValueEventListener() {
 						@Override
 						public void onDataChange(DataSnapshot _dataSnapshot) {
@@ -6079,7 +6260,7 @@ public class MainActivity extends AppCompatActivity {
 										@Override
 										public void run() {
 											sub_1.setText(VERSIONS.getString("REGULAR", ""));
-											
+											main_refresh_layout.setRefreshing(true);
 											list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
 											((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
 											main_body.setEnabled(false);
@@ -6126,7 +6307,7 @@ public class MainActivity extends AppCompatActivity {
 									runOnUiThread(new Runnable() {
 										@Override
 										public void run() {
-											
+											main_refresh_layout.setRefreshing(false);
 											list_menu_2.setAdapter(new List_menu_2Adapter(listdata));
 											((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
 											main_body.setEnabled(true);
@@ -6209,7 +6390,7 @@ public class MainActivity extends AppCompatActivity {
 					box_switch.setVisibility(View.VISIBLE);
 					icon_update.setAlpha((float)(1.0d));
 					icon_switch.setAlpha((float)(1.0d));
-					
+					main_refresh_layout.setRefreshing(false);
 					_Updater();
 				}
 				catch(Exception e) {
@@ -6219,7 +6400,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _Default_Path () {
+	public void _Default_Path() {
 		if (PATH.equals("")) {
 			apk_path_location.setText("/storage/emulated/0/xManager/");
 		}
@@ -6229,583 +6410,595 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _Download_Install (final String _url, final String _path) {
+	public void _Download_Install(final String _url, final String _path) {
 		try {
 			FileUtil.makeDir(FileUtil.getPackageDataDir(getApplicationContext()));
 			
 			android.net.ConnectivityManager connMgr = (android.net.ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
 			android.net.NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 			if (networkInfo != null && networkInfo.isConnected()) {
-				
-				
-				final String urlDownload = _url;
-				
-				DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
-				
-				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
-				
-				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
-				
-				request.setMimeType("application/vnd.android.package-archive");
-				
-				request.allowScanningByMediaScanner();
+					
+					
+					final String urlDownload = _url;
+					
+					DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
+					
+					final String fileName = URLUtil.guessFileName(urlDownload, null, null);
+					
+					request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
+					
+					request.setMimeType("application/vnd.android.package-archive");
+					
+					request.allowScanningByMediaScanner();
 					request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "Spotify Mod (Official).apk");
-				
-				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-				
-				final long downloadId = manager.enqueue(request);
-				
-				final ProgressDialog prog = new ProgressDialog(this, ProgressDialog.THEME_DEVICE_DEFAULT_DARK);
-				prog.setMax(100);
-				prog.setIndeterminate(false);
-				prog.setCancelable(false);
-				prog.setCanceledOnTouchOutside(false);
-				prog.setTitle(downloading_file_0);
-				new Thread(new Runnable() {
 					
-					@Override
-					public void run() {
-						
-						boolean downloading = true;
-						
-						while (downloading) {
+					final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+					
+					final long downloadId = manager.enqueue(request);
+					
+					final ProgressDialog prog = new ProgressDialog(this, ProgressDialog.THEME_DEVICE_DEFAULT_DARK);
+					prog.setMax(100);
+					prog.setIndeterminate(false);
+					prog.setCancelable(false);
+					prog.setCanceledOnTouchOutside(false);
+					prog.setTitle(downloading_file_0);
+					new Thread(new Runnable() {
 							
-							DownloadManager.Query q = new DownloadManager.Query();
-							
-							q.setFilterById(downloadId);
-							
-							android.database.Cursor cursor = manager.query(q);
-							
-							if (cursor != null) { 
-								  if (cursor.moveToFirst()) {
+							@Override
+							public void run() {
 									
-									int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
+									boolean downloading = true;
 									
-									int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
-									
-									if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
-										
-										downloading = false;
-										
-									}
-									
-									if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
-										
-										runOnUiThread(new Runnable() {
-											public void run() { 
-												
-												SketchwareUtil.CustomToast(getApplicationContext(), "The file or link is currently unavailable. Please try again later.", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-											}
-										});
-										prog.cancel();
-										break;
-										
-									}
-									
-									final int dl_progress = (int) ((bytes_downloaded * 100l) / bytes_total);
-									
-									runOnUiThread(new Runnable() {
-										@Override
-										public void run() {
+									while (downloading) {
 											
-											prog.setTitle(downloading_file_0);
-											prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-											prog.setProgress(bytes_downloaded);
-											prog.setMax(bytes_total);
-											prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-												@Override
-												public void onClick(DialogInterface dialog, int which) {
-													SketchwareUtil.CustomToast(getApplicationContext(), "Download cancelled", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-													manager.remove(downloadId);
-													Timer = new TimerTask() {
-																@Override
-																public void run() {
-																		runOnUiThread(new Runnable() {
-																				@Override
-																				public void run() {
-																						prog.cancel();
-																				}
-																		});
-																}
-														};
-														_timer.schedule(Timer, (int)(0));
-												}
-											});
-											prog.show();
+											DownloadManager.Query q = new DownloadManager.Query();
 											
-											if (bytes_downloaded == bytes_total) {
-												
-												Timer = new TimerTask() {
-														@Override
-														public void run() {
-																runOnUiThread(new Runnable() {
-																		@Override
-																		public void run() {
-																
-																try {
-																	FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk", apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
-																}
-																catch(Exception e) {
-																	SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Copying failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																}
-																
-																_RequiredDialog(Success_Download, false);
-																Success_Download.setTitle(download_success_0);
-																Success_Download.setPositiveButton(install_now_0, new DialogInterface.OnClickListener() {
-																		@Override
-																		public void onClick(DialogInterface _dialog, int _which) {
-																				_RequiredDialog(Success_Download, true);
-																		
-																		prog.cancel();
-																		
-																		StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																		
-																		if(android.os.Build.VERSION.SDK_INT >= 29){
-																			
-																			try {
-																				Intent intent = new Intent(Intent.ACTION_VIEW);
-																				
-																				intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																				 
-																				intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
-																				
-																				startActivity(intent);
-																			}
-																			catch(Exception e) {
-																				SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																			}
-																			
-																		} else {
-																			
-																			try {
-																				Intent intent = new Intent(Intent.ACTION_VIEW);
-																				intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
-																				
-																				startActivity(intent);
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												_Hide_Navigation();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(100));
-																			}
-																			catch(Exception e) {
-																				SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																			}
-																		}
-																		
-																	}
-																});
-																Success_Download.setNegativeButton(directory_0, new DialogInterface.OnClickListener() {
-																		@Override
-																		public void onClick(DialogInterface _dialog, int _which) {
-																				_RequiredDialog(Success_Download, true);
-																		
-																		prog.cancel();
-																		
-																				_RequiredDialog(Directory, false);
-																				Directory.setTitle(file_directory_0);
-																				Directory.setMessage("<".concat(apk_path_location.getText().toString().concat(">")));
-																				Directory.setPositiveButton(go_back_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface _dialog, int _which) {
-																								_RequiredDialog(Directory, true);
-																								_RequiredDialog(Success_Download, false);
-																								Success_Download.create().show();
-																						}
-																				});
-																				Directory.create().show();
-																		
-																	}
-																});
-																Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener() {
-																		@Override
-																		public void onClick(DialogInterface _dialog, int _which) {
-																				_RequiredDialog(Success_Download, true);
-																		
-																		prog.cancel();
-																		
-																		Timer = new TimerTask() {
-																				@Override
-																				public void run() {
-																						runOnUiThread(new Runnable() {
-																								@Override
-																								public void run() {
-																										_Hide_Navigation();
-																								}
-																						});
-																				}
-																		};
-																		_timer.schedule(Timer, (int)(100));
-																	}
-																});
-																
-																prog.cancel();
-																
-																Success_Download.create().dismiss();
-																
-																StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																
-																if(android.os.Build.VERSION.SDK_INT >= 29){
+											q.setFilterById(downloadId);
+											
+											android.database.Cursor cursor = manager.query(q);
+											
+											if (cursor != null) { 
+													if (cursor.moveToFirst()) {
+															
+															int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
+															
+															int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
+															
+															if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
 																	
-																	try {
-																		Intent intent = new Intent(Intent.ACTION_VIEW);
-																		
-																		intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																		 
-																		intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
-																		
-																		startActivity(intent);
-																	}
-																	catch(Exception e) {
-																		SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																	}
+																	downloading = false;
 																	
-																} else {
+															}
+															
+															if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
 																	
-																	try {
-																		Intent intent = new Intent(Intent.ACTION_VIEW);
-																		intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
-																		
-																		startActivity(intent);
-																		Timer = new TimerTask() {
-																				@Override
-																				public void run() {
-																						runOnUiThread(new Runnable() {
-																								@Override
-																								public void run() {
-																										_Hide_Navigation();
-																								}
-																						});
-																				}
-																		};
-																		_timer.schedule(Timer, (int)(100));
-																	}
-																	catch(Exception e) {
-																		SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																	}
-																}
-																		}
-																});
-														}
-												};
-												_timer.schedule(Timer, (int)(1500));
+																	runOnUiThread(new Runnable() {
+																			public void run() { 
+																					
+																					SketchwareUtil.CustomToast(getApplicationContext(), "The file or link is currently unavailable. Please try again later.", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																			}
+																	});
+																	prog.cancel();
+																	break;
+																	
+															}
+															
+															final int dl_progress = (int) ((bytes_downloaded * 100l) / bytes_total);
+															
+															final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
+															
+															final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
+															
+															String file_min = String.format("%.2f", file_front);
+															
+															String file_max = String.format("%.2f", file_end);
+															
+															runOnUiThread(new Runnable() {
+																	@Override
+																	public void run() {
+																			
+																			prog.setTitle(downloading_file_0);
+																			prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																			prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																			prog.setProgress(dl_progress);
+																			prog.setMax(100);
+																			prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
+																					@Override
+																					public void onClick(DialogInterface dialog, int which) {
+																							SketchwareUtil.CustomToast(getApplicationContext(), "Download cancelled", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																							manager.remove(downloadId);
+																							Timer = new TimerTask() {
+																									@Override
+																									public void run() {
+																											runOnUiThread(new Runnable() {
+																													@Override
+																													public void run() {
+																															prog.cancel();
+																													}
+																											});
+																									}
+																							};
+																							_timer.schedule(Timer, (int)(0));
+																					}
+																			});
+																			prog.show();
+																			
+																			if (bytes_downloaded == bytes_total) {
+																					
+																					Timer = new TimerTask() {
+																							@Override
+																							public void run() {
+																									runOnUiThread(new Runnable() {
+																											@Override
+																											public void run() {
+																													
+																													try {
+																															FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk", apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
+																													}
+																													catch(Exception e) {
+																															SketchwareUtil.CustomToast(getApplicationContext(), "Copying failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																													}
+																													
+																													_RequiredDialog(Success_Download, false);
+																													Success_Download.setTitle(download_success_0);
+																													Success_Download.setPositiveButton(install_now_0, new DialogInterface.OnClickListener() {
+																															@Override
+																															public void onClick(DialogInterface _dialog, int _which) {
+																																	_RequiredDialog(Success_Download, true);
+																																	
+																																	prog.cancel();
+																																	
+																																	StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+																																	
+																																	if(android.os.Build.VERSION.SDK_INT >= 29){
+																																			
+																																			try {
+																																					Intent intent = new Intent(Intent.ACTION_VIEW);
+																																					
+																																					intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																																					
+																																					intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
+																																					
+																																					startActivity(intent);
+																																			}
+																																			catch(Exception e) {
+																																					SketchwareUtil.CustomToast(getApplicationContext(), "Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																																			}
+																																			
+																																	} else {
+																																			
+																																			try {
+																																					Intent intent = new Intent(Intent.ACTION_VIEW);
+																																					intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
+																																					
+																																					startActivity(intent);
+																																					Timer = new TimerTask() {
+																																							@Override
+																																							public void run() {
+																																									runOnUiThread(new Runnable() {
+																																											@Override
+																																											public void run() {
+																																													_Hide_Navigation();
+																																											}
+																																									});
+																																							}
+																																					};
+																																					_timer.schedule(Timer, (int)(100));
+																																			}
+																																			catch(Exception e) {
+																																					SketchwareUtil.CustomToast(getApplicationContext(), "Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																																			}
+																																	}
+																																	
+																															}
+																													});
+																													Success_Download.setNegativeButton(directory_0, new DialogInterface.OnClickListener() {
+																															@Override
+																															public void onClick(DialogInterface _dialog, int _which) {
+																																	_RequiredDialog(Success_Download, true);
+																																	
+																																	prog.cancel();
+																																	
+																																	_RequiredDialog(Directory, false);
+																																	Directory.setTitle(file_directory_0);
+																																	Directory.setMessage("<".concat(apk_path_location.getText().toString().concat(">")));
+																																	Directory.setPositiveButton(go_back_0, new DialogInterface.OnClickListener() {
+																																			@Override
+																																			public void onClick(DialogInterface _dialog, int _which) {
+																																					_RequiredDialog(Directory, true);
+																																					_RequiredDialog(Success_Download, false);
+																																					Success_Download.create().show();
+																																			}
+																																	});
+																																	Directory.create().show();
+																																	
+																															}
+																													});
+																													Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener() {
+																															@Override
+																															public void onClick(DialogInterface _dialog, int _which) {
+																																	_RequiredDialog(Success_Download, true);
+																																	
+																																	prog.cancel();
+																																	
+																																	Timer = new TimerTask() {
+																																			@Override
+																																			public void run() {
+																																					runOnUiThread(new Runnable() {
+																																							@Override
+																																							public void run() {
+																																									_Hide_Navigation();
+																																							}
+																																					});
+																																			}
+																																	};
+																																	_timer.schedule(Timer, (int)(100));
+																															}
+																													});
+																													
+																													prog.cancel();
+																													
+																													Success_Download.create().dismiss();
+																													
+																													StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+																													
+																													if(android.os.Build.VERSION.SDK_INT >= 29){
+																															
+																															try {
+																																	Intent intent = new Intent(Intent.ACTION_VIEW);
+																																	
+																																	intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																																	
+																																	intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
+																																	
+																																	startActivity(intent);
+																															}
+																															catch(Exception e) {
+																																	SketchwareUtil.CustomToast(getApplicationContext(), "Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																															}
+																															
+																													} else {
+																															
+																															try {
+																																	Intent intent = new Intent(Intent.ACTION_VIEW);
+																																	intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
+																																	
+																																	startActivity(intent);
+																																	Timer = new TimerTask() {
+																																			@Override
+																																			public void run() {
+																																					runOnUiThread(new Runnable() {
+																																							@Override
+																																							public void run() {
+																																									_Hide_Navigation();
+																																							}
+																																					});
+																																			}
+																																	};
+																																	_timer.schedule(Timer, (int)(100));
+																															}
+																															catch(Exception e) {
+																																	SketchwareUtil.CustomToast(getApplicationContext(), "Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																															}
+																													}
+																											}
+																									});
+																							}
+																					};
+																					_timer.schedule(Timer, (int)(1500));
+																			}
+																	} });
+													}
+													cursor.close();
 											}
-										} });
-									   }
-								    cursor.close();
-								     }
-						} } }).start();
-				
+									} } }).start();
+					
 			} else {
-				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "No Internet Connection", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
-								@Override
-								public void onClick(View _view) {
-								}
-						}).show();
+					com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 			}
+			
 		}
 		catch(Exception e) {
 		}
 	}
 	
 	
-	private void _Download_Update_Install (final String _url, final String _path) {
+	public void _Download_Update_Install(final String _url, final String _path) {
 		try {
 			FileUtil.makeDir(FileUtil.getPackageDataDir(getApplicationContext()));
 			
 			android.net.ConnectivityManager connMgr = (android.net.ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
 			android.net.NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 			if (networkInfo != null && networkInfo.isConnected()) {
-				
-				
-				final String urlDownload = _url;
-				
-				DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
-				
-				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
-				
-				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
-				
-				request.setMimeType("application/vnd.android.package-archive");
-				
-				request.allowScanningByMediaScanner();
-				
-				request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "/Update/xManager Update.apk");
-				
-				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-				
-				final long downloadId = manager.enqueue(request);
-				
-				final ProgressDialog prog = new ProgressDialog(this, ProgressDialog.THEME_DEVICE_DEFAULT_DARK);
-				prog.setMax(100);
-				prog.setIndeterminate(false);
-				prog.setCancelable(false);
-				prog.setCanceledOnTouchOutside(false);
-				prog.setTitle(downloading_file_0);
-				new Thread(new Runnable() {
 					
-					@Override
-					public void run() {
-						
-						boolean downloading = true;
-						
-						while (downloading) {
+					
+					final String urlDownload = _url;
+					
+					DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
+					
+					final String fileName = URLUtil.guessFileName(urlDownload, null, null);
+					
+					request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
+					
+					request.setMimeType("application/vnd.android.package-archive");
+					
+					request.allowScanningByMediaScanner();
+					
+					request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "/Update/xManager Update.apk");
+					
+					final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+					
+					final long downloadId = manager.enqueue(request);
+					
+					final ProgressDialog prog = new ProgressDialog(this, ProgressDialog.THEME_DEVICE_DEFAULT_DARK);
+					prog.setMax(100);
+					prog.setIndeterminate(false);
+					prog.setCancelable(false);
+					prog.setCanceledOnTouchOutside(false);
+					prog.setTitle(downloading_file_0);
+					new Thread(new Runnable() {
 							
-							DownloadManager.Query q = new DownloadManager.Query();
-							
-							q.setFilterById(downloadId);
-							
-							android.database.Cursor cursor = manager.query(q);
-							
-							if (cursor != null) { 
-								  if (cursor.moveToFirst()) {
+							@Override
+							public void run() {
 									
-									int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
+									boolean downloading = true;
 									
-									int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
-									
-									if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
-										
-										downloading = false;
-										
-									}
-									
-									if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
-										
-										runOnUiThread(new Runnable() {
-											public void run() { 
-												
-												SketchwareUtil.CustomToast(getApplicationContext(), "The file or link is currently unavailable. Please try again later.", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-											}
-										});
-										prog.cancel();
-										break;
-										
-									}
-									
-									final int dl_progress = (int) ((bytes_downloaded * 100l) / bytes_total);
-									
-									runOnUiThread(new Runnable() {
-										@Override
-										public void run() {
+									while (downloading) {
 											
-											prog.setTitle(downloading_file_0);
-											prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-											prog.setProgress(bytes_downloaded);
-											prog.setMax(bytes_total);
-											prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-												@Override
-												public void onClick(DialogInterface dialog, int which) {
-													SketchwareUtil.CustomToast(getApplicationContext(), "Download cancelled", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-													manager.remove(downloadId);
-													Timer = new TimerTask() {
-																@Override
-																public void run() {
-																		runOnUiThread(new Runnable() {
-																				@Override
-																				public void run() {
-																						prog.cancel();
-																				}
-																		});
-																}
-														};
-														_timer.schedule(Timer, (int)(0));
-												}
-											});
-											prog.show();
+											DownloadManager.Query q = new DownloadManager.Query();
 											
-											if (bytes_downloaded == bytes_total) {
-												
-												Timer = new TimerTask() {
-														@Override
-														public void run() {
-																runOnUiThread(new Runnable() {
-																		@Override
-																		public void run() {
-																
-																try {
-																	FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/xManager Update.apk", "/storage/emulated/0/xManager/Update/xManager Update.apk");
-																	prog.dismiss();
-																}
-																catch(Exception e) {
-																	SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Copying failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																}
-																
-																_RequiredDialog(Success_Download, false);
-																Success_Download.setTitle(download_success_0);
-																Success_Download.setPositiveButton(install_update_0, new DialogInterface.OnClickListener() {
-																		@Override
-																		public void onClick(DialogInterface _dialog, int _which) {
-																				_RequiredDialog(Success_Download, true);
-																		
-																		prog.cancel();
-																		
-																		StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																		
-																		if(android.os.Build.VERSION.SDK_INT >= 29){
-																			
-																			try {
-																				Intent intent = new Intent(Intent.ACTION_VIEW);
-																				
-																				intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																				 
-																				intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
-																				
-																				startActivity(intent);
-																			}
-																			catch(Exception e) {
-																				SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																			}
-																			
-																		} else {
-																			
-																			try {
-																				Intent intent = new Intent(Intent.ACTION_VIEW);
-																				intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
-																				
-																				startActivity(intent);
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												_Hide_Navigation();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(100));
-																			}
-																			catch(Exception e) {
-																				SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																			}
-																		}
-																		
-																	}
-																});
-																Success_Download.setNegativeButton(directory_0, new DialogInterface.OnClickListener() {
-																		@Override
-																		public void onClick(DialogInterface _dialog, int _which) {
-																				_RequiredDialog(Success_Download, true);
-																		
-																		prog.cancel();
-																		
-																				_RequiredDialog(Directory, false);
-																				Directory.setTitle(file_directory_0);
-																		    Directory.setMessage("</storage/emulated/0/xManager/Update/>");
-																				Directory.setPositiveButton(go_back_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface _dialog, int _which) {
-																								_RequiredDialog(Directory, true);
-																								_RequiredDialog(Success_Download, false);
-																								Success_Download.create().show();
-																						}
-																				});
-																				Directory.create().show();
-																		
-																	}
-																});
-																Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener() {
-																		@Override
-																		public void onClick(DialogInterface _dialog, int _which) {
-																				_RequiredDialog(Success_Download, true);
-																		
-																		prog.cancel();
-																		
-																		Timer = new TimerTask() {
-																				@Override
-																				public void run() {
-																						runOnUiThread(new Runnable() {
-																								@Override
-																								public void run() {
-																										_Hide_Navigation();
-																								}
-																						});
-																				}
-																		};
-																		_timer.schedule(Timer, (int)(100));
-																	}
-																});
-																
-																prog.cancel();
-																
-																Success_Download.create().dismiss();
-																
-																StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																
-																if(android.os.Build.VERSION.SDK_INT >= 29){
+											q.setFilterById(downloadId);
+											
+											android.database.Cursor cursor = manager.query(q);
+											
+											if (cursor != null) { 
+													if (cursor.moveToFirst()) {
+															
+															int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
+															
+															int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
+															
+															if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
 																	
-																	try {
-																		Intent intent = new Intent(Intent.ACTION_VIEW);
-																		
-																		intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																		 
-																		intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
-																		
-																		startActivity(intent);
-																	}
-																	catch(Exception e) {
-																		SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																	}
+																	downloading = false;
 																	
-																} else {
+															}
+															
+															if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
 																	
-																	try {
-																		Intent intent = new Intent(Intent.ACTION_VIEW);
-																		intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
-																		
-																		startActivity(intent);
-																		Timer = new TimerTask() {
-																				@Override
-																				public void run() {
-																						runOnUiThread(new Runnable() {
-																								@Override
-																								public void run() {
-																										_Hide_Navigation();
-																								}
-																						});
-																				}
-																		};
-																		_timer.schedule(Timer, (int)(100));
-																	}
-																	catch(Exception e) {
-																		SketchwareUtil.CustomToast(getApplicationContext(), "Null 404: Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																	}
-																}
-																		}
-																});
-														}
-												};
-												_timer.schedule(Timer, (int)(1500));
+																	runOnUiThread(new Runnable() {
+																			public void run() { 
+																					
+																					SketchwareUtil.CustomToast(getApplicationContext(), "The file or link is currently unavailable. Please try again later.", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																			}
+																	});
+																	prog.cancel();
+																	break;
+																	
+															}
+															
+															final int dl_progress = (int) ((bytes_downloaded * 100l) / bytes_total);
+															
+															final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
+															
+															final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
+															
+															String file_min = String.format("%.2f", file_front);
+															
+															String file_max = String.format("%.2f", file_end);
+															
+															runOnUiThread(new Runnable() {
+																	@Override
+																	public void run() {
+																			
+																			prog.setTitle(downloading_file_0);
+																			prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																			prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																			prog.setProgress(dl_progress);
+																			prog.setMax(100);
+																			prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
+																					@Override
+																					public void onClick(DialogInterface dialog, int which) {
+																							SketchwareUtil.CustomToast(getApplicationContext(), "Download cancelled", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																							manager.remove(downloadId);
+																							Timer = new TimerTask() {
+																									@Override
+																									public void run() {
+																											runOnUiThread(new Runnable() {
+																													@Override
+																													public void run() {
+																															prog.cancel();
+																													}
+																											});
+																									}
+																							};
+																							_timer.schedule(Timer, (int)(0));
+																					}
+																			});
+																			prog.show();
+																			
+																			if (bytes_downloaded == bytes_total) {
+																					
+																					Timer = new TimerTask() {
+																							@Override
+																							public void run() {
+																									runOnUiThread(new Runnable() {
+																											@Override
+																											public void run() {
+																													
+																													try {
+																															FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/xManager Update.apk", "/storage/emulated/0/xManager/Update/xManager Update.apk");
+																															prog.dismiss();
+																													}
+																													catch(Exception e) {
+																															SketchwareUtil.CustomToast(getApplicationContext(), "Copying failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																													}
+																													
+																													_RequiredDialog(Success_Download, false);
+																													Success_Download.setTitle(download_success_0);
+																													Success_Download.setPositiveButton(install_update_0, new DialogInterface.OnClickListener() {
+																															@Override
+																															public void onClick(DialogInterface _dialog, int _which) {
+																																	_RequiredDialog(Success_Download, true);
+																																	
+																																	prog.cancel();
+																																	
+																																	StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+																																	
+																																	if(android.os.Build.VERSION.SDK_INT >= 29){
+																																			
+																																			try {
+																																					Intent intent = new Intent(Intent.ACTION_VIEW);
+																																					
+																																					intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																																					
+																																					intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
+																																					
+																																					startActivity(intent);
+																																			}
+																																			catch(Exception e) {
+																																					SketchwareUtil.CustomToast(getApplicationContext(), "Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																																			}
+																																			
+																																	} else {
+																																			
+																																			try {
+																																					Intent intent = new Intent(Intent.ACTION_VIEW);
+																																					intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
+																																					
+																																					startActivity(intent);
+																																					Timer = new TimerTask() {
+																																							@Override
+																																							public void run() {
+																																									runOnUiThread(new Runnable() {
+																																											@Override
+																																											public void run() {
+																																													_Hide_Navigation();
+																																											}
+																																									});
+																																							}
+																																					};
+																																					_timer.schedule(Timer, (int)(100));
+																																			}
+																																			catch(Exception e) {
+																																					SketchwareUtil.CustomToast(getApplicationContext(), "Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																																			}
+																																	}
+																																	
+																															}
+																													});
+																													Success_Download.setNegativeButton(directory_0, new DialogInterface.OnClickListener() {
+																															@Override
+																															public void onClick(DialogInterface _dialog, int _which) {
+																																	_RequiredDialog(Success_Download, true);
+																																	
+																																	prog.cancel();
+																																	
+																																	_RequiredDialog(Directory, false);
+																																	Directory.setTitle(file_directory_0);
+																																	Directory.setMessage("</storage/emulated/0/xManager/Update/>");
+																																	Directory.setPositiveButton(go_back_0, new DialogInterface.OnClickListener() {
+																																			@Override
+																																			public void onClick(DialogInterface _dialog, int _which) {
+																																					_RequiredDialog(Directory, true);
+																																					_RequiredDialog(Success_Download, false);
+																																					Success_Download.create().show();
+																																			}
+																																	});
+																																	Directory.create().show();
+																																	
+																															}
+																													});
+																													Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener() {
+																															@Override
+																															public void onClick(DialogInterface _dialog, int _which) {
+																																	_RequiredDialog(Success_Download, true);
+																																	
+																																	prog.cancel();
+																																	
+																																	Timer = new TimerTask() {
+																																			@Override
+																																			public void run() {
+																																					runOnUiThread(new Runnable() {
+																																							@Override
+																																							public void run() {
+																																									_Hide_Navigation();
+																																							}
+																																					});
+																																			}
+																																	};
+																																	_timer.schedule(Timer, (int)(100));
+																															}
+																													});
+																													
+																													prog.cancel();
+																													
+																													Success_Download.create().dismiss();
+																													
+																													StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+																													
+																													if(android.os.Build.VERSION.SDK_INT >= 29){
+																															
+																															try {
+																																	Intent intent = new Intent(Intent.ACTION_VIEW);
+																																	
+																																	intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																																	
+																																	intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
+																																	
+																																	startActivity(intent);
+																															}
+																															catch(Exception e) {
+																																	SketchwareUtil.CustomToast(getApplicationContext(), "Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																															}
+																															
+																													} else {
+																															
+																															try {
+																																	Intent intent = new Intent(Intent.ACTION_VIEW);
+																																	intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
+																																	
+																																	startActivity(intent);
+																																	Timer = new TimerTask() {
+																																			@Override
+																																			public void run() {
+																																					runOnUiThread(new Runnable() {
+																																							@Override
+																																							public void run() {
+																																									_Hide_Navigation();
+																																							}
+																																					});
+																																			}
+																																	};
+																																	_timer.schedule(Timer, (int)(100));
+																															}
+																															catch(Exception e) {
+																																	SketchwareUtil.CustomToast(getApplicationContext(), "Installation failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+																															}
+																													}
+																											}
+																									});
+																							}
+																					};
+																					_timer.schedule(Timer, (int)(1500));
+																			}
+																	} });
+													}
+													cursor.close();
 											}
-										} });
-									   }
-								    cursor.close();
-								     }
-						} } }).start();
-				
+									} } }).start();
+					
 			} else {
-				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "No Internet Connection", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("", new View.OnClickListener(){
-								@Override
-								public void onClick(View _view) {
-								}
-						}).show();
+					com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 			}
+			
 		}
 		catch(Exception e) {
 		}
 	}
 	
 	
-	private void _Url_Mode () {
+	public void _Url_Mode() {
 		if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
 			copy_url_mode_switch.setChecked(true);
 			title_header.setText("xManager (UM)");
@@ -6819,7 +7012,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _Switches () {
+	public void _Switches() {
 		if (copy_url_mode_switch.isChecked()) {
 			COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_ON").commit();
 		}
@@ -6837,7 +7030,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _Switch_Fixer () {
+	public void _Switch_Fixer() {
 		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X") && FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
 			force_auto_install_switch.setChecked(true);
 		}
@@ -6849,45 +7042,17 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _Switch_Checker () {
+	public void _Switch_Checker() {
 		if (force_auto_install_switch.isChecked()) {
-			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "AUTO-INSTALL ENABLED", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("SETTINGS", new View.OnClickListener(){
-						@Override
-						public void onClick(View _view) {
-								RippleAnimation.create(box_switch).setDuration((long)700).start();
-								main_body_optimization.setVisibility(View.GONE);
-								main_scroll_settings.setVisibility(View.VISIBLE);
-								main_scroll_about.setVisibility(View.GONE);
-								main_refresh_layout.setVisibility(View.GONE);
-								box_update.setVisibility(View.GONE);
-								box_switch.setVisibility(View.GONE);
-								apk_path_location.setEnabled(true);
-								title_header.setText("Settings");
-								_Animation_1();
-						}
-				}).show();
+			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "AUTO-INSTALL ENABLED", com.google.android.material.snackbar.Snackbar.LENGTH_SHORT).show();
 		}
 		if (copy_url_mode_switch.isChecked()) {
-			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "URL MODE ENABLED", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setAction("SETTINGS", new View.OnClickListener(){
-						@Override
-						public void onClick(View _view) {
-								RippleAnimation.create(box_switch).setDuration((long)700).start();
-								main_body_optimization.setVisibility(View.GONE);
-								main_scroll_settings.setVisibility(View.VISIBLE);
-								main_scroll_about.setVisibility(View.GONE);
-								main_refresh_layout.setVisibility(View.GONE);
-								box_update.setVisibility(View.GONE);
-								box_switch.setVisibility(View.GONE);
-								apk_path_location.setEnabled(true);
-								title_header.setText("Settings");
-								_Animation_1();
-						}
-				}).show();
+			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "URL MODE ENABLED", com.google.android.material.snackbar.Snackbar.LENGTH_SHORT).show();
 		}
 	}
 	
 	
-	private void _Language_UI () {
+	public void _Language_UI() {
 		if (LANGUAGE.getString("LANGUAGE", "").equals("0")) {
 			    title_1.setText(R.string.spotify_regular);
 				title_2.setText(R.string.spotify_amoled);
@@ -6970,9 +7135,10 @@ public class MainActivity extends AppCompatActivity {
 				maintenance_desc.setText(R.string.maintenance_desc);
 				thanks.setText(R.string.thanks);
 				language.setText(R.string.language);
-			  website.setText(R.string.website);
-			
-			discord.setText(R.string.discord);
+				website.setText(R.string.website);
+				discord.setText(R.string.discord);
+				reddit.setText(R.string.reddit);
+				faq.setText(R.string.faq);
 			select_language.setSelection((int)(0));
 		}
 		else {
@@ -7058,9 +7224,10 @@ public class MainActivity extends AppCompatActivity {
 					maintenance_desc.setText(R.string.maintenance_desc_01);
 					thanks.setText(R.string.thanks_01);
 					language.setText(R.string.language_01);
-				  website.setText(R.string.website_01);
-				
-				discord.setText(R.string.discord_01);
+					website.setText(R.string.website_01);
+					discord.setText(R.string.discord_01);
+					reddit.setText(R.string.reddit_01);
+					faq.setText(R.string.faq_01);
 				select_language.setSelection((int)(1));
 			}
 			else {
@@ -7146,9 +7313,10 @@ public class MainActivity extends AppCompatActivity {
 						maintenance_desc.setText(R.string.maintenance_desc_02);
 						thanks.setText(R.string.thanks_02);
 						language.setText(R.string.language_02);
-					  website.setText(R.string.website_02);
-					
-					discord.setText(R.string.discord_02);
+						website.setText(R.string.website_02);
+						discord.setText(R.string.discord_02);
+						reddit.setText(R.string.reddit_02);
+						faq.setText(R.string.faq_02);
 					select_language.setSelection((int)(2));
 				}
 				else {
@@ -7234,9 +7402,10 @@ public class MainActivity extends AppCompatActivity {
 							maintenance_desc.setText(R.string.maintenance_desc_03);
 							thanks.setText(R.string.thanks_03);
 							language.setText(R.string.language_03);
-						  website.setText(R.string.website_03);
-						
-						discord.setText(R.string.discord_03);
+							website.setText(R.string.website_03);
+							discord.setText(R.string.discord_03);
+							reddit.setText(R.string.reddit_03);
+							faq.setText(R.string.faq_03);
 						select_language.setSelection((int)(3));
 					}
 					else {
@@ -7322,9 +7491,10 @@ public class MainActivity extends AppCompatActivity {
 								maintenance_desc.setText(R.string.maintenance_desc_04);
 								thanks.setText(R.string.thanks_04);
 								language.setText(R.string.language_04);
-							  website.setText(R.string.website_04);
-							
-							discord.setText(R.string.discord_04);
+								website.setText(R.string.website_04);
+								discord.setText(R.string.discord_04);
+								reddit.setText(R.string.reddit_04);
+								faq.setText(R.string.faq_04);
 							select_language.setSelection((int)(4));
 						}
 						else {
@@ -7410,9 +7580,10 @@ public class MainActivity extends AppCompatActivity {
 									maintenance_desc.setText(R.string.maintenance_desc_05);
 									thanks.setText(R.string.thanks_05);
 									language.setText(R.string.language_05);
-								  website.setText(R.string.website_05);
-								
-								discord.setText(R.string.discord_05);
+									website.setText(R.string.website_05);
+									discord.setText(R.string.discord_05);
+									reddit.setText(R.string.reddit_05);
+									faq.setText(R.string.faq_05);
 								select_language.setSelection((int)(5));
 							}
 							else {
@@ -7498,9 +7669,10 @@ public class MainActivity extends AppCompatActivity {
 										maintenance_desc.setText(R.string.maintenance_desc_06);
 										thanks.setText(R.string.thanks_06);
 										language.setText(R.string.language_06);
-									  website.setText(R.string.website_06);
-									
-									discord.setText(R.string.discord_06);
+										website.setText(R.string.website_06);
+										discord.setText(R.string.discord_06);
+										reddit.setText(R.string.reddit_06);
+										faq.setText(R.string.faq_06);
 									select_language.setSelection((int)(6));
 								}
 								else {
@@ -7586,9 +7758,10 @@ public class MainActivity extends AppCompatActivity {
 											maintenance_desc.setText(R.string.maintenance_desc_07);
 											thanks.setText(R.string.thanks_07);
 											language.setText(R.string.language_07);
-										  website.setText(R.string.website_07);
-										
-										discord.setText(R.string.discord_07);
+											website.setText(R.string.website_07);
+											discord.setText(R.string.discord_07);
+											reddit.setText(R.string.reddit_07);
+											faq.setText(R.string.faq_07);
 										select_language.setSelection((int)(7));
 									}
 									else {
@@ -7674,9 +7847,10 @@ public class MainActivity extends AppCompatActivity {
 												maintenance_desc.setText(R.string.maintenance_desc_08);
 												thanks.setText(R.string.thanks_08);
 												language.setText(R.string.language_08);
-											  website.setText(R.string.website_08);
-											
-											discord.setText(R.string.discord_08);
+												website.setText(R.string.website_08);
+												discord.setText(R.string.discord_08);
+												reddit.setText(R.string.reddit_08);
+												faq.setText(R.string.faq_08);
 											select_language.setSelection((int)(8));
 										}
 										else {
@@ -7762,9 +7936,10 @@ public class MainActivity extends AppCompatActivity {
 													maintenance_desc.setText(R.string.maintenance_desc_09);
 													thanks.setText(R.string.thanks_09);
 													language.setText(R.string.language_09);
-												  website.setText(R.string.website_09);
-												
-												discord.setText(R.string.discord_09);
+													website.setText(R.string.website_09);
+													discord.setText(R.string.discord_09);
+													reddit.setText(R.string.reddit_09);
+													faq.setText(R.string.faq_09);
 												select_language.setSelection((int)(9));
 											}
 											else {
@@ -7850,9 +8025,10 @@ public class MainActivity extends AppCompatActivity {
 														maintenance_desc.setText(R.string.maintenance_desc_10);
 														thanks.setText(R.string.thanks_10);
 														language.setText(R.string.language_10);
-													  website.setText(R.string.website_10);
-													
-													discord.setText(R.string.discord_10);
+														website.setText(R.string.website_10);
+														discord.setText(R.string.discord_10);
+														reddit.setText(R.string.reddit_10);
+														faq.setText(R.string.faq_10);
 													select_language.setSelection((int)(10));
 												}
 												else {
@@ -7938,9 +8114,10 @@ public class MainActivity extends AppCompatActivity {
 															maintenance_desc.setText(R.string.maintenance_desc_11);
 															thanks.setText(R.string.thanks_11);
 															language.setText(R.string.language_11);
-														  website.setText(R.string.website_11);
-														
-														discord.setText(R.string.discord_11);
+															website.setText(R.string.website_11);
+															discord.setText(R.string.discord_11);
+															reddit.setText(R.string.reddit_11);
+															faq.setText(R.string.faq_11);
 														select_language.setSelection((int)(11));
 													}
 													else {
@@ -8026,9 +8203,10 @@ public class MainActivity extends AppCompatActivity {
 																maintenance_desc.setText(R.string.maintenance_desc_12);
 																thanks.setText(R.string.thanks_12);
 																language.setText(R.string.language_12);
-															  website.setText(R.string.website_12);
-															
-															discord.setText(R.string.discord_12);
+																website.setText(R.string.website_12);
+																discord.setText(R.string.discord_12);
+																reddit.setText(R.string.reddit_12);
+																faq.setText(R.string.faq_12);
 															select_language.setSelection((int)(12));
 														}
 														else {
@@ -8114,9 +8292,10 @@ public class MainActivity extends AppCompatActivity {
 																	maintenance_desc.setText(R.string.maintenance_desc_13);
 																	thanks.setText(R.string.thanks_13);
 																	language.setText(R.string.language_13);
-																  website.setText(R.string.website_13);
-																
-																discord.setText(R.string.discord_13);
+																	website.setText(R.string.website_13);
+																	discord.setText(R.string.discord_13);
+																	reddit.setText(R.string.reddit_13);
+																	faq.setText(R.string.faq_13);
 																select_language.setSelection((int)(13));
 															}
 															else {
@@ -8202,9 +8381,10 @@ public class MainActivity extends AppCompatActivity {
 																		maintenance_desc.setText(R.string.maintenance_desc_14);
 																		thanks.setText(R.string.thanks_14);
 																		language.setText(R.string.language_14);
-																	  website.setText(R.string.website_14);
-																	
-																	discord.setText(R.string.discord_14);
+																		website.setText(R.string.website_14);
+																		discord.setText(R.string.discord_14);
+																		reddit.setText(R.string.reddit_14);
+																		faq.setText(R.string.faq_14);
 																	select_language.setSelection((int)(14));
 																}
 																else {
@@ -8290,9 +8470,10 @@ public class MainActivity extends AppCompatActivity {
 																			maintenance_desc.setText(R.string.maintenance_desc_15);
 																			thanks.setText(R.string.thanks_15);
 																			language.setText(R.string.language_15);
-																		  website.setText(R.string.website_15);
-																		
-																		discord.setText(R.string.discord_15);
+																			website.setText(R.string.website_15);
+																			discord.setText(R.string.discord_15);
+																			reddit.setText(R.string.reddit_15);
+																			faq.setText(R.string.faq_15);
 																		select_language.setSelection((int)(15));
 																	}
 																	else {
@@ -8378,9 +8559,10 @@ public class MainActivity extends AppCompatActivity {
 																				maintenance_desc.setText(R.string.maintenance_desc_16);
 																				thanks.setText(R.string.thanks_16);
 																				language.setText(R.string.language_16);
-																			  website.setText(R.string.website_16);
-																			
-																			discord.setText(R.string.discord_16);
+																				website.setText(R.string.website_16);
+																				discord.setText(R.string.discord_16);
+																				reddit.setText(R.string.reddit_16);
+																				faq.setText(R.string.faq_16);
 																			select_language.setSelection((int)(16));
 																		}
 																		else {
@@ -8467,7 +8649,9 @@ public class MainActivity extends AppCompatActivity {
 																					thanks.setText(R.string.thanks_17);
 																					language.setText(R.string.language_17);
 																				    website.setText(R.string.website_17);
-																				    discord.setText(R.string.discord_17);
+																					discord.setText(R.string.discord_17);
+																					reddit.setText(R.string.reddit_17);
+																					faq.setText(R.string.faq_17);
 																				select_language.setSelection((int)(17));
 																			}
 																			else {
@@ -8554,7 +8738,9 @@ public class MainActivity extends AppCompatActivity {
 																						thanks.setText(R.string.thanks_18);
 																						language.setText(R.string.language_18);
 																					    website.setText(R.string.website_18);
-																					    discord.setText(R.string.discord_18);
+																						discord.setText(R.string.discord_18);
+																						reddit.setText(R.string.reddit_18);
+																						faq.setText(R.string.faq_18);
 																					select_language.setSelection((int)(18));
 																				}
 																			}
@@ -8578,7 +8764,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _Language_Pack () {
+	public void _Language_Pack() {
 		Language.add("English (Default)");
 		Language.add("Bengali");
 		Language.add("Chinese (Simplified)");
@@ -8619,7 +8805,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _Theme_Pack () {
+	public void _Theme_Pack() {
 		Theme.add("Black (Default)");
 		Theme.add("Green");
 		Theme.add("Purple");
@@ -8655,53 +8841,53 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _Language_Fixer () {
-		title_1.setText("");
-		title_2.setText("");
-		sub_text_installed.setText("");
-		sub_text_1.setText("");
-		sub_text_3.setText("");
-		version_switch_1.setText("");
-		version_switch_2.setText("");
-		changelogs.setText("");
-		title_sub.setText("");
-		device_cpu.setText("");
-		source.setText("");
-		support.setText("");
-		donate.setText("");
-		discord.setText("");
-		about.setText("");
-		list_auto_refresh.setText("");
-		list_auto_refresh_info.setText("");
-		force_auto_install.setText("");
-		force_auto_install_info.setText("");
-		copy_url_mode.setText("");
-		copy_file_url_mode_info.setText("");
-		navigation_bar.setText("");
-		theme.setText("");
-		apk_location.setText("");
-		apk_location_info.setText("");
-		clear_directory_folders.setText("");
-		clear_directory_folders_info.setText("");
-		reset_settings.setText("");
-		sub_title.setText("");
-		developer_manager.setText("");
-		developer_spotify.setText("");
-		support_team.setText("");
-		mod_testers_1.setText("");
-		mod_testers_2.setText("");
-		mobilism_team.setText("");
-		forum_team.setText("");
-		manager_team.setText("");
-		contributors_1.setText("");
-		download_selected.setText("");
-		download_ready.setText("");
-		download_ready_desc.setText("");
-		downloading_file.setText("");
-		download_success.setText("");
-		copy_url_desc.setText("");
-		file_directory.setText("");
-		new_update.setText("");
+	public void _Language_Fixer() {
+		title_1.setText(R.string.spotify_regular);
+		title_2.setText(R.string.spotify_amoled);
+		sub_text_installed.setText(R.string.installed);
+		sub_text_1.setText(R.string.latest);
+		sub_text_3.setText(R.string.latest);
+		version_switch_1.setText(R.string.versions);
+		version_switch_2.setText(R.string.versions);
+		changelogs.setText(R.string.changelogs);
+		title_sub.setText(R.string.manager_tools);
+		device_cpu.setText(R.string.device_cpu);
+		source.setText(R.string.source);
+		support.setText(R.string.support);
+		donate.setText(R.string.donate);
+		discord.setText(R.string.discord);
+		about.setText(R.string.about);
+		list_auto_refresh.setText(R.string.list_auto_refresh);
+		list_auto_refresh_info.setText(R.string.list_auto_refresh_desc);
+		force_auto_install.setText(R.string.force_auto_install);
+		force_auto_install_info.setText(R.string.force_auto_install_desc);
+		copy_url_mode.setText(R.string.copy_url_mode);
+		copy_file_url_mode_info.setText(R.string.copy_url_mode_desc);
+		navigation_bar.setText(R.string.hide_navigation_bar);
+		theme.setText(R.string.show_themes);
+		apk_location.setText(R.string.apk_location);
+		apk_location_info.setText(R.string.apk_location_desc);
+		clear_directory_folders.setText(R.string.clear_directory_folders);
+		clear_directory_folders_info.setText(R.string.clear_directory_folders_desc);
+		reset_settings.setText(R.string.reset_settings);
+		sub_title.setText(R.string.about_sub);
+		developer_manager.setText(R.string.xmanager_dev);
+		developer_spotify.setText(R.string.spotify_mod_devs);
+		support_team.setText(R.string.telegram_support_team);
+		mod_testers_1.setText(R.string.manager_testers);
+		mod_testers_2.setText(R.string.manager_hosting);
+		mobilism_team.setText(R.string.mobilism_team);
+		forum_team.setText(R.string.forum_team);
+		manager_team.setText(R.string.xspotify_team);
+		contributors_1.setText(R.string.contributors);
+		download_selected.setText(R.string.download_selected);
+		download_ready.setText(R.string.download_ready);
+		download_ready_desc.setText(R.string.download_ready_desc);
+		downloading_file.setText(R.string.downloading_file);
+		download_success.setText(R.string.download_success);
+		copy_url_desc.setText(R.string.copy_url_desc);
+		file_directory.setText(R.string.file_directory);
+		new_update.setText(R.string.new_update);
 		download_selected_0 = download_selected.getText().toString();
 		download_ready_0 = download_ready.getText().toString();
 		download_ready_desc_0 = download_ready_desc.getText().toString();
@@ -8709,19 +8895,19 @@ public class MainActivity extends AppCompatActivity {
 		download_success_0 = download_success.getText().toString();
 		copy_url_desc_0 = copy_url_desc.getText().toString();
 		file_directory_0 = file_directory.getText().toString();
-		copy_url.setText("");
-		continue_1.setText("");
-		cancel.setText("");
-		download.setText("");
-		later.setText("");
-		directory.setText("");
-		install_now.setText("");
-		install_update.setText("");
-		go_back.setText("");
-		download_update.setText("");
-		not_now.setText("");
-		show_support.setText("");
-		show_support_desc.setText("");
+		copy_url.setText(R.string.copy_url);
+		continue_1.setText(R.string.continue_1);
+		cancel.setText(R.string.cancel);
+		download.setText(R.string.download);
+		later.setText(R.string.later);
+		directory.setText(R.string.directory);
+		install_now.setText(R.string.install_now);
+		install_update.setText(R.string.install_update);
+		go_back.setText(R.string.go_back);
+		download_update.setText(R.string.download_update);
+		not_now.setText(R.string.not_now);
+		show_support.setText(R.string.show_support);
+		show_support_desc.setText(R.string.show_support_desc);
 		copy_url_0 = copy_url.getText().toString();
 		download_0 = download.getText().toString();
 		continue_0 = continue_1.getText().toString();
@@ -8731,19 +8917,161 @@ public class MainActivity extends AppCompatActivity {
 		install_now_0 = install_now.getText().toString();
 		go_back_0 = go_back.getText().toString();
 		install_update_0 = install_update.getText().toString();
-		main_title.setText("");
-		settings_title.setText("");
-		about_title.setText("");
-		maintenance.setText("");
-		maintenance_desc.setText("");
-		thanks.setText("");
-		language.setText("");
-		website.setText("");
+		main_title.setText(R.string.main_title);
+		settings_title.setText(R.string.settings_title);
+		about_title.setText(R.string.about_title);
+		maintenance.setText(R.string.maintenance);
+		maintenance_desc.setText(R.string.maintenance_desc);
+		thanks.setText(R.string.thanks);
+		language.setText(R.string.language);
+		website.setText(R.string.website);
+		reddit.setText(R.string.reddit);
+		faq.setText(R.string.faq);
 	}
 	
 	
+	public void _Browser(final String _String_Text) {
+		androidx.browser.customtabs.CustomTabsIntent.Builder builder = new androidx.browser.customtabs.CustomTabsIntent.Builder();
+		androidx.browser.customtabs.CustomTabsIntent customTabsIntent = builder.build();
+		customTabsIntent.launchUrl(getCurrentContext(this), Uri.parse(_String_Text));
+		
+	} public Context getCurrentContext(Context c) {
+		return c;
+		
+	} public Context getCurrentContext(Fragment c) {
+		return c.getActivity();
+		
+	} public Context getCurrentContext(DialogFragment c) {
+		return c.getActivity();
+		
+	}
+	
+	{
+	}
+	
+	
+	public void _Gate_Keeper() {
+		
+		
+	}
+	
+	
+	public void _Extra() {
+		Timer = new TimerTask() {
+			@Override
+			public void run() {
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						Timer = new TimerTask() {
+							@Override
+							public void run() {
+								runOnUiThread(new Runnable() {
+									@Override
+									public void run() {
+										Animation animation;
+										animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+										animation.setDuration(500); title_header_beta.startAnimation(animation);
+										animation = null;
+										title_header_beta.setText("NEW FEATURES");
+									}
+								});
+							}
+						};
+						_timer.schedule(Timer, (int)(3000));
+						Timer = new TimerTask() {
+							@Override
+							public void run() {
+								runOnUiThread(new Runnable() {
+									@Override
+									public void run() {
+										Animation animation;
+										animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+										animation.setDuration(500); title_header_beta.startAnimation(animation);
+										animation = null;
+										title_header_beta.setText("FREEDOM");
+									}
+								});
+							}
+						};
+						_timer.schedule(Timer, (int)(6000));
+						Timer = new TimerTask() {
+							@Override
+							public void run() {
+								runOnUiThread(new Runnable() {
+									@Override
+									public void run() {
+										Animation animation;
+										animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+										animation.setDuration(500); title_header_beta.startAnimation(animation);
+										animation = null;
+										title_header_beta.setText("AD-FREE");
+									}
+								});
+							}
+						};
+						_timer.schedule(Timer, (int)(9000));
+					}
+				});
+			}
+		};
+		_timer.scheduleAtFixedRate(Timer, (int)(0), (int)(9000));
+	}
+	
+	
+	public void _Animation_3() {
+		Animation a;
+		a = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		a.setDuration(200); main_box_1.startAnimation(a);
+		a = null;
+		Animation b;
+		b = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		b.setDuration(300); main_box_2.startAnimation(b);
+		b = null;
+		Animation c;
+		c = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		c.setDuration(400); main_box_6.startAnimation(c);
+		c = null;
+		Animation d;
+		d = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		d.setDuration(500); box_sub_header.startAnimation(d);
+		d = null;
+		Animation e;
+		e = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		e.setDuration(600); main_box_4.startAnimation(e);
+		e = null;
+		Animation f;
+		f = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		f.setDuration(700); main_box_15.startAnimation(f);
+		f = null;
+	}
+	
+	
+	public void _Tap_Animation() {
+		_Linear_Animation(true, 100, box_uninstall);
+		_Linear_Animation(true, 100, box_settings);
+		_Linear_Animation(true, 100, box_cache);
+		_Linear_Animation(true, 100, box_open);
+		_Linear_Animation(true, 100, box_website);
+		_Linear_Animation(true, 100, box_source);
+		_Linear_Animation(true, 100, box_support);
+		_Linear_Animation(true, 100, box_discord);
+		_Linear_Animation(true, 100, box_donate);
+		_Linear_Animation(true, 100, box_about);
+		_Linear_Animation(true, 100, box_reddit);
+		_Linear_Animation(true, 100, box_faq);
+		_Linear_Animation(true, 100, box_switch);
+		_Linear_Animation(true, 100, box_update);
+		_Linear_Animation(true, 100, main_box_10);
+		_Linear_Animation(true, 100, box_icon_close);
+		_Linear_Animation(true, 100, box_reset_settings);
+		_Linear_Animation(true, 100, box_settings_icon_close);
+	}
+	
 	public class List_menu_1Adapter extends BaseAdapter {
+		
 		ArrayList<HashMap<String, Object>> _data;
+		
 		public List_menu_1Adapter(ArrayList<HashMap<String, Object>> _arr) {
 			_data = _arr;
 		}
@@ -8762,18 +9090,19 @@ public class MainActivity extends AppCompatActivity {
 		public long getItemId(int _index) {
 			return _index;
 		}
+		
 		@Override
-		public View getView(final int _position, View _view, ViewGroup _viewGroup) {
-			LayoutInflater _inflater = (LayoutInflater)getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			View _v = _view;
-			if (_v == null) {
-				_v = _inflater.inflate(R.layout.list_menu_1, null);
+		public View getView(final int _position, View _v, ViewGroup _container) {
+			LayoutInflater _inflater = getLayoutInflater();
+			View _view = _v;
+			if (_view == null) {
+				_view = _inflater.inflate(R.layout.list_menu_1, null);
 			}
 			
-			final LinearLayout box = (LinearLayout) _v.findViewById(R.id.box);
-			final TextView link = (TextView) _v.findViewById(R.id.link);
-			final ImageView icon = (ImageView) _v.findViewById(R.id.icon);
-			final TextView title = (TextView) _v.findViewById(R.id.title);
+			final LinearLayout box = _view.findViewById(R.id.box);
+			final TextView link = _view.findViewById(R.id.link);
+			final ImageView icon = _view.findViewById(R.id.icon);
+			final TextView title = _view.findViewById(R.id.title);
 			
 			try {
 				title.setVisibility(View.VISIBLE);
@@ -8800,15 +9129,30 @@ public class MainActivity extends AppCompatActivity {
 					public void onClick(View _view) {
 						if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
 							_RequiredDialog(Selected_Spotify, false);
-							Selected_Spotify.setTitle(title.getText().toString().toUpperCase().replace("SPOTIFY V", "SPOTIFY "));
-							Selected_Spotify.setMessage(copy_url_desc_0);
+							Selected_Spotify.setTitle(download_ready_0);
+							if (_position < 2) {
+								if ((_position % 2) == 0) {
+									Selected_Spotify.setMessage("RELEASE:".concat("\n- Latest Version".concat("\n\nVERSION:\n- ".concat(title.getText().toString().replace("[LATEST] ", "").replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n\nCPU/ARCH:".concat("\n- Armeabi-v7a".concat("\n\nPATCHED TYPE:".concat("\n- Regular"))))))));
+								}
+								else {
+									Selected_Spotify.setMessage("RELEASE:".concat("\n- Latest Version".concat("\n\nVERSION:\n- ".concat(title.getText().toString().replace("[LATEST] ", "").replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n\nCPU/ARCH:".concat("\n- Arm64-v8a".concat("\n\nPATCHED TYPE:".concat("\n- Regular"))))))));
+								}
+							}
+							else {
+								if ((_position % 2) == 1) {
+									Selected_Spotify.setMessage("RELEASE:".concat("\n- Older Version".concat("\n\nVERSION:\n- ".concat(title.getText().toString().replace("[OLDER] ", "").replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n\nCPU/ARCH:".concat("\n- Arm64-v8a".concat("\n\nPATCHED TYPE:".concat("\n- Regular"))))))));
+								}
+								else {
+									Selected_Spotify.setMessage("RELEASE:".concat("\n- Older Version".concat("\n\nVERSION:\n- ".concat(title.getText().toString().replace("[OLDER] ", "").replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n\nCPU/ARCH:".concat("\n- Armeabi-v7a".concat("\n\nPATCHED TYPE:".concat("\n- Regular"))))))));
+								}
+							}
 							Selected_Spotify.setPositiveButton(copy_url_0, new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface _dialog, int _which) {
 									try {
 										_RequiredDialog(Selected_Spotify, true);
 										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
-										
+										SketchwareUtil.CustomToast(getApplicationContext(), "Url copied to clipboard", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 									}
 									catch(Exception e) {
 									}
@@ -8851,60 +9195,47 @@ public class MainActivity extends AppCompatActivity {
 						}
 						else {
 							if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
-								_RequiredDialog(Selected_Spotify, false);
-								Selected_Spotify.setTitle(title.getText().toString().toUpperCase().replace("SPOTIFY V", "SPOTIFY "));
-								Selected_Spotify.setMessage(download_selected_0);
-								Selected_Spotify.setPositiveButton(continue_0, new DialogInterface.OnClickListener() {
+								_RequiredDialog(Download_Spotify, false);
+								Download_Spotify.setTitle(download_ready_0);
+								if (_position < 2) {
+									if ((_position % 2) == 0) {
+										Download_Spotify.setMessage("RELEASE:".concat("\n- Latest Version".concat("\n\nVERSION:\n- ".concat(title.getText().toString().replace("[LATEST] ", "").replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n\nCPU/ARCH:".concat("\n- Armeabi-v7a".concat("\n\nPATCHED TYPE:".concat("\n- Regular\n\n").concat(download_ready_desc_0))))))));
+									}
+									else {
+										Download_Spotify.setMessage("RELEASE:".concat("\n- Latest Version".concat("\n\nVERSION:\n- ".concat(title.getText().toString().replace("[LATEST] ", "").replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n\nCPU/ARCH:".concat("\n- Arm64-v8a".concat("\n\nPATCHED TYPE:".concat("\n- Regular\n\n").concat(download_ready_desc_0))))))));
+									}
+								}
+								else {
+									if ((_position % 2) == 1) {
+										Download_Spotify.setMessage("RELEASE:".concat("\n- Older Version".concat("\n\nVERSION:\n- ".concat(title.getText().toString().replace("[OLDER] ", "").replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n\nCPU/ARCH:".concat("\n- Arm64-v8a".concat("\n\nPATCHED TYPE:".concat("\n- Regular\n\n").concat(download_ready_desc_0))))))));
+									}
+									else {
+										Download_Spotify.setMessage("RELEASE:".concat("\n- Older Version".concat("\n\nVERSION:\n- ".concat(title.getText().toString().replace("[OLDER] ", "").replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n\nCPU/ARCH:".concat("\n- Armeabi-v7a".concat("\n\nPATCHED TYPE:".concat("\n- Regular\n\n").concat(download_ready_desc_0))))))));
+									}
+								}
+								Download_Spotify.setPositiveButton(download_0, new DialogInterface.OnClickListener() {
 									@Override
 									public void onClick(DialogInterface _dialog, int _which) {
-										_RequiredDialog(Selected_Spotify, true);
-										_RequiredDialog(Download_Spotify, false);
-										Download_Spotify.setTitle(download_ready_0);
-										Download_Spotify.setMessage(download_ready_desc_0);
-										Download_Spotify.setPositiveButton(download_0, new DialogInterface.OnClickListener() {
-											@Override
-											public void onClick(DialogInterface _dialog, int _which) {
-												try {
-													_RequiredDialog(Download_Spotify, true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-													_File_Remover();
-												}
-												catch(Exception e) {
+										try {
+											_RequiredDialog(Download_Spotify, true);
+											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+												_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											}
+											else {
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+													_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
 												}
 											}
-										});
-										Download_Spotify.setNeutralButton(cancel_0, new DialogInterface.OnClickListener() {
-											@Override
-											public void onClick(DialogInterface _dialog, int _which) {
-												_RequiredDialog(Download_Spotify, true);
-												Timer = new TimerTask() {
-													@Override
-													public void run() {
-														runOnUiThread(new Runnable() {
-															@Override
-															public void run() {
-																_Hide_Navigation();
-															}
-														});
-													}
-												};
-												_timer.schedule(Timer, (int)(100));
-											}
-										});
-										Download_Spotify.create().show();
+											_File_Remover();
+										}
+										catch(Exception e) {
+										}
 									}
 								});
-								Selected_Spotify.setNeutralButton(cancel_0, new DialogInterface.OnClickListener() {
+								Download_Spotify.setNeutralButton(cancel_0, new DialogInterface.OnClickListener() {
 									@Override
 									public void onClick(DialogInterface _dialog, int _which) {
-										_RequiredDialog(Selected_Spotify, true);
+										_RequiredDialog(Download_Spotify, true);
 										Timer = new TimerTask() {
 											@Override
 											public void run() {
@@ -8919,7 +9250,7 @@ public class MainActivity extends AppCompatActivity {
 										_timer.schedule(Timer, (int)(100));
 									}
 								});
-								Selected_Spotify.create().show();
+								Download_Spotify.create().show();
 								FileUtil.makeDir("/storage/emulated/0/xManager");
 								FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 								DELETE = 1;
@@ -8929,18 +9260,20 @@ public class MainActivity extends AppCompatActivity {
 				});
 				Animation animation;
 				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-				animation.setDuration(200); box.startAnimation(animation);
+				animation.setDuration(300); box.startAnimation(animation);
 				animation = null;
 			}
 			catch(Exception e) {
 			}
 			
-			return _v;
+			return _view;
 		}
 	}
 	
 	public class List_menu_2Adapter extends BaseAdapter {
+		
 		ArrayList<HashMap<String, Object>> _data;
+		
 		public List_menu_2Adapter(ArrayList<HashMap<String, Object>> _arr) {
 			_data = _arr;
 		}
@@ -8959,18 +9292,19 @@ public class MainActivity extends AppCompatActivity {
 		public long getItemId(int _index) {
 			return _index;
 		}
+		
 		@Override
-		public View getView(final int _position, View _view, ViewGroup _viewGroup) {
-			LayoutInflater _inflater = (LayoutInflater)getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			View _v = _view;
-			if (_v == null) {
-				_v = _inflater.inflate(R.layout.list_menu_2, null);
+		public View getView(final int _position, View _v, ViewGroup _container) {
+			LayoutInflater _inflater = getLayoutInflater();
+			View _view = _v;
+			if (_view == null) {
+				_view = _inflater.inflate(R.layout.list_menu_2, null);
 			}
 			
-			final LinearLayout box = (LinearLayout) _v.findViewById(R.id.box);
-			final TextView link = (TextView) _v.findViewById(R.id.link);
-			final ImageView icon = (ImageView) _v.findViewById(R.id.icon);
-			final TextView title = (TextView) _v.findViewById(R.id.title);
+			final LinearLayout box = _view.findViewById(R.id.box);
+			final TextView link = _view.findViewById(R.id.link);
+			final ImageView icon = _view.findViewById(R.id.icon);
+			final TextView title = _view.findViewById(R.id.title);
 			
 			try {
 				title.setVisibility(View.VISIBLE);
@@ -8997,15 +9331,30 @@ public class MainActivity extends AppCompatActivity {
 					public void onClick(View _view) {
 						if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
 							_RequiredDialog(Selected_Spotify, false);
-							Selected_Spotify.setTitle(title.getText().toString().toUpperCase().replace("SPOTIFY V", "SPOTIFY "));
-							Selected_Spotify.setMessage(copy_url_desc_0);
+							Selected_Spotify.setTitle(download_ready_0);
+							if (_position < 2) {
+								if ((_position % 2) == 0) {
+									Selected_Spotify.setMessage("RELEASE:".concat("\n- Latest Version".concat("\n\nVERSION:\n- ".concat(title.getText().toString().replace("[LATEST] ", "").replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n\nCPU/ARCH:".concat("\n- Armeabi-v7a".concat("\n\nPATCHED TYPE:".concat("\n- Amoled"))))))));
+								}
+								else {
+									Selected_Spotify.setMessage("RELEASE:".concat("\n- Latest Version".concat("\n\nVERSION:\n- ".concat(title.getText().toString().replace("[LATEST] ", "").replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n\nCPU/ARCH:".concat("\n- Arm64-v8a".concat("\n\nPATCHED TYPE:".concat("\n- Amoled"))))))));
+								}
+							}
+							else {
+								if ((_position % 2) == 1) {
+									Selected_Spotify.setMessage("RELEASE:".concat("\n- Older Version".concat("\n\nVERSION:\n- ".concat(title.getText().toString().replace("[OLDER] ", "").replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n\nCPU/ARCH:".concat("\n- Arm64-v8a".concat("\n\nPATCHED TYPE:".concat("\n- Amoled"))))))));
+								}
+								else {
+									Selected_Spotify.setMessage("RELEASE:".concat("\n- Older Version".concat("\n\nVERSION:\n- ".concat(title.getText().toString().replace("[OLDER] ", "").replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n\nCPU/ARCH:".concat("\n- Armeabi-v7a".concat("\n\nPATCHED TYPE:".concat("\n- Amoled"))))))));
+								}
+							}
 							Selected_Spotify.setPositiveButton(copy_url_0, new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface _dialog, int _which) {
 									try {
 										_RequiredDialog(Selected_Spotify, true);
 										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
-										
+										SketchwareUtil.CustomToast(getApplicationContext(), "Url copied to clipboard", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 									}
 									catch(Exception e) {
 									}
@@ -9048,60 +9397,47 @@ public class MainActivity extends AppCompatActivity {
 						}
 						else {
 							if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
-								_RequiredDialog(Selected_Spotify, false);
-								Selected_Spotify.setTitle(title.getText().toString().toUpperCase().replace("SPOTIFY V", "SPOTIFY "));
-								Selected_Spotify.setMessage(download_selected_0);
-								Selected_Spotify.setPositiveButton(continue_0, new DialogInterface.OnClickListener() {
+								_RequiredDialog(Download_Spotify, false);
+								Download_Spotify.setTitle(download_ready_0);
+								if (_position < 2) {
+									if ((_position % 2) == 0) {
+										Download_Spotify.setMessage("RELEASE:".concat("\n- Latest Version".concat("\n\nVERSION:\n- ".concat(title.getText().toString().replace("[LATEST] ", "").replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n\nCPU/ARCH:".concat("\n- Armeabi-v7a".concat("\n\nPATCHED TYPE:".concat("\n- Amoled\n\n").concat(download_ready_desc_0))))))));
+									}
+									else {
+										Download_Spotify.setMessage("RELEASE:".concat("\n- Latest Version".concat("\n\nVERSION:\n- ".concat(title.getText().toString().replace("[LATEST] ", "").replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n\nCPU/ARCH:".concat("\n- Arm64-v8a".concat("\n\nPATCHED TYPE:".concat("\n- Amoled\n\n").concat(download_ready_desc_0))))))));
+									}
+								}
+								else {
+									if ((_position % 2) == 1) {
+										Download_Spotify.setMessage("RELEASE:".concat("\n- Older Version".concat("\n\nVERSION:\n- ".concat(title.getText().toString().replace("[OLDER] ", "").replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n\nCPU/ARCH:".concat("\n- Arm64-v8a".concat("\n\nPATCHED TYPE:".concat("\n- Amoled\n\n").concat(download_ready_desc_0))))))));
+									}
+									else {
+										Download_Spotify.setMessage("RELEASE:".concat("\n- Older Version".concat("\n\nVERSION:\n- ".concat(title.getText().toString().replace("[OLDER] ", "").replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n\nCPU/ARCH:".concat("\n- Armeabi-v7a".concat("\n\nPATCHED TYPE:".concat("\n- Amoled\n\n").concat(download_ready_desc_0))))))));
+									}
+								}
+								Download_Spotify.setPositiveButton(download_0, new DialogInterface.OnClickListener() {
 									@Override
 									public void onClick(DialogInterface _dialog, int _which) {
-										_RequiredDialog(Selected_Spotify, true);
-										_RequiredDialog(Download_Spotify, false);
-										Download_Spotify.setTitle(download_ready_0);
-										Download_Spotify.setMessage(download_ready_desc_0);
-										Download_Spotify.setPositiveButton(download_0, new DialogInterface.OnClickListener() {
-											@Override
-											public void onClick(DialogInterface _dialog, int _which) {
-												try {
-													_RequiredDialog(Download_Spotify, true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-													_File_Remover();
-												}
-												catch(Exception e) {
+										try {
+											_RequiredDialog(Download_Spotify, true);
+											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+												_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											}
+											else {
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+													_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
 												}
 											}
-										});
-										Download_Spotify.setNeutralButton(cancel_0, new DialogInterface.OnClickListener() {
-											@Override
-											public void onClick(DialogInterface _dialog, int _which) {
-												_RequiredDialog(Download_Spotify, true);
-												Timer = new TimerTask() {
-													@Override
-													public void run() {
-														runOnUiThread(new Runnable() {
-															@Override
-															public void run() {
-																_Hide_Navigation();
-															}
-														});
-													}
-												};
-												_timer.schedule(Timer, (int)(100));
-											}
-										});
-										Download_Spotify.create().show();
+											_File_Remover();
+										}
+										catch(Exception e) {
+										}
 									}
 								});
-								Selected_Spotify.setNeutralButton(cancel_0, new DialogInterface.OnClickListener() {
+								Download_Spotify.setNeutralButton(cancel_0, new DialogInterface.OnClickListener() {
 									@Override
 									public void onClick(DialogInterface _dialog, int _which) {
-										_RequiredDialog(Selected_Spotify, true);
+										_RequiredDialog(Download_Spotify, true);
 										Timer = new TimerTask() {
 											@Override
 											public void run() {
@@ -9116,7 +9452,7 @@ public class MainActivity extends AppCompatActivity {
 										_timer.schedule(Timer, (int)(100));
 									}
 								});
-								Selected_Spotify.create().show();
+								Download_Spotify.create().show();
 								FileUtil.makeDir("/storage/emulated/0/xManager");
 								FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 								DELETE = 1;
@@ -9126,13 +9462,13 @@ public class MainActivity extends AppCompatActivity {
 				});
 				Animation animation;
 				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-				animation.setDuration(200); box.startAnimation(animation);
+				animation.setDuration(300); box.startAnimation(animation);
 				animation = null;
 			}
 			catch(Exception e) {
 			}
 			
-			return _v;
+			return _view;
 		}
 	}
 	
@@ -9173,18 +9509,17 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	@Deprecated
-	public float getDip(int _input){
+	public float getDip(int _input) {
 		return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, _input, getResources().getDisplayMetrics());
 	}
 	
 	@Deprecated
-	public int getDisplayWidthPixels(){
+	public int getDisplayWidthPixels() {
 		return getResources().getDisplayMetrics().widthPixels;
 	}
 	
 	@Deprecated
-	public int getDisplayHeightPixels(){
+	public int getDisplayHeightPixels() {
 		return getResources().getDisplayMetrics().heightPixels;
 	}
-	
 }
