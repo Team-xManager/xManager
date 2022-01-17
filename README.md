@@ -1,7 +1,7 @@
 # FOR CONTRIBUTORS (01/18/22): 
 **CODE CHANGE:** Pull request should be done on the **"Main"** branch.  
-**TRANSLATION CHANGE/UPDATE:** Pull request should be done on the **"Translation"** branch. The translations can be found at * *resource/values/strings.xml.* *  
-**SUBMIT TRANSLATIONS:** Pull request should be done on the **"Translation"** branch. Please follow the <!--DEFAULT LANGUAGE--> format that can be found at * *resource/values/strings.xml.* *  
+**TRANSLATION CHANGE/UPDATE:** Pull request should be done on the **"Developer"** branch. The translations can be found at * *resource/values/strings.xml.* *  
+**SUBMIT TRANSLATIONS:** Pull request should be done on the **"Developer"** branch. Please follow the <!--DEFAULT LANGUAGE--> format that can be found at * *resource/values/strings.xml.* *  
 
 # IMPORTANT NOTES (READ ME FIRST)
 
