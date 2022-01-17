@@ -1205,7 +1205,7 @@
     <string	name="copy_url_15"	translatable="true">KOPIRAJ URL</string>
 	
 	<string	name="show_support_15"	translatable="true">POKAŽITE SVOJO PODPORO</string>
-    <string	name="show_support_desc_15"	translatable="true">Smo neprofitna, nekorporativna in brezkompromisna ekipa. Ljudje, kot ste vi, nas spodbujajo, da ustvarimo aplikacijo, ki bo olajšala stvari, zlasti od prenosa do namestitve. \n\nVes svoj \u010cas in najve\u010c truda vlagamo v to, da bi bile stvari pravilne in popolne. Potrudili se bomo, da bomo to aplikacijo podpirali, dokler bomo lahko.\n\nVsak znesek bo pomagal in bo zelo cenjen!</string>
+    <string	name="show_support_desc_15"	translatable="true">Smo neprofitna in nevladna organizacija. Ljudje, kot ste vi, nas spodbujate, da ustvarjamo aplikacijo, ki bo olajšala stvari, zlasti od prenosa do namestitve. \n\nVes svoj čas in največ truda vlagamo v to, da bi bile stvari pravilne in popolne. Potrudili se bomo, da bomo to aplikacijo posodabljali, dokler bomo lahko.\n\nVsak znesek pomaga in bo zelo cenjen!</string>
 	
 	<string	name="maintenance_15"	translatable="true">VZDRŽEVANJE</string>
 	<string	name="maintenance_desc_15"	translatable="true">xManager trenutno ni na voljo. Prosimo, preverite stanje aplikacije kasneje.</string>
@@ -1213,7 +1213,7 @@
 	<string	name="language_15"	translatable="true">JEZIK</string>
     <string	name="website_15"	translatable="true">SPLETNA STRAN</string>
     <string	name="reddit_15"	translatable="true">REDDIT</string>
-    <string	name="faq_15"	translatable="true">POGOSTO ZASTAVITE VPRAŠANJE</string>
+    <string	name="faq_15"	translatable="true">POGOSTA VPRAŠANJA</string>
 	
     <!--ROMANIAN LANGUAGE-->
 	<string	name="app_name_16"	translatable="true">xManager</string>
