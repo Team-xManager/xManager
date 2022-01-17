@@ -1,3 +1,76 @@
 <resources>
-	<string	name="app_name"	translatable="false">xManager</string>
+    <string	name="app_name"	translatable="true">xManager</string>
+    <string	name="spotify_regular"	translatable="true">SPOTIFY (BẢN THƯỜNG)</string>
+    <string	name="spotify_amoled"	translatable="true">SPOTIFY (AMOLED)</string>
+    <string	name="installed"	translatable="true">CÀI ĐẶT</string>
+    <string	name="latest"	translatable="true">MỚI NHẤT</string>
+    <string	name="versions"	translatable="true">PHIÊN BẢN</string>
+    <string	name="changelogs"	translatable="true">CHANGELOGS</string>
+    <string	name="manager_tools"	translatable="true">CÔNG CỤ QUẢN LÝ</string>
+    <string	name="device_cpu"	translatable="true">CPU/ARCH</string>
+    <string	name="source"	translatable="true">MÃ NGUỒN</string>
+    <string	name="support"	translatable="true">TELEGRAM</string>
+    <string	name="donate"	translatable="true">QUYÊN TẶNG</string>
+    <string	name="discord"	translatable="true">DISCORD</string>
+    <string	name="about"	translatable="true">GIỚI THIỆU</string>
+    <string	name="main_title"	translatable="true">xManager</string>
+    <string	name="settings_title"	translatable="true">Cài đặt</string>
+    <string	name="about_title"	translatable="true">Giới thiệu</string>
+	
+    <string	name="list_auto_refresh"	translatable="true">TỰ ĐỘNG LÀM MỚI DANH SÁCH</string>
+    <string	name="list_auto_refresh_desc"	translatable="true">Kích hoạt tính năng này sẽ tự động làm mới danh sách mỗi khi bạn khởi chạy ứng dụng. \n\nBạn có thể làm mới danh sách theo cách thủ công bằng cách kéo màn hình chính xuống.</string>
+    <string	name="force_auto_install"	translatable="true">BUỘC TỰ ĐỘNG CÀI ĐẶT</string>
+    <string	name="force_auto_install_desc"	translatable="true">Kích hoạt tính năng này sẽ tự động cài đặt ứng dụng đã vá và cập nhật sau khi tải xuống.</string>
+    <string	name="copy_url_mode"	translatable="true">CHẾ ĐỘ SAO CHÉP URL</string>
+    <string	name="copy_url_mode_desc"	translatable="true">Kích hoạt điều này sẽ cho phép bạn sao chép url trực tiếp của tệp. \n\nKhông được khuyến nghị mọi lúc trừ khi bạn gặp sự cố khi tải xuống tệp trực tiếp trong trình quản lý.</string>
+    <string	name="hide_navigation_bar"	translatable="true">Ẩn thanh điều hướng</string>
+    <string	name="show_themes"	translatable="true">Giao diện</string>
+    <string	name="apk_location"	translatable="true">VỊ TRÍ APK</string>
+    <string	name="apk_location_desc"	translatable="true">Thư mục tệp nơi bạn muốn lưu tệp đã tải xuống. Nếu bạn không biết cách định cấu hình tính năng này, hãy để nguyên tính năng này. \n\nLƯU Ý: Tính năng này không hỗ trợ bộ nhớ ngoài (Thẻ SD) do giới hạn khả năng truy cập, quyền và bộ nhớ.</string>
+    <string	name="clear_directory_folders"	translatable="true">XÓA THƯ MỤC DỮ LIỆU</string>
+    <string	name="clear_directory_folders_desc"	translatable="true">Nhấn để xóa tất cả các thư mục dữ liệu bao gồm các tệp đã tải xuống và các bản cập nhật.</string>
+    <string	name="reset_settings"	translatable="true">ĐẶT LẠI CÁC CÀI ĐẶT</string>
+	
+    <string	name="about_sub"	translatable="true">Không quảng cáo | Tính năng mới | Tự do</string>
+    <string	name="xmanager_dev"	translatable="true">Nhà phát triển xManager</string>
+    <string	name="spotify_mod_devs"	translatable="true">Nhà phát triển Spotify Mod</string>
+    <string	name="telegram_support_team"	translatable="true">Nhóm hỗ trợ Telegram / Discord</string>
+    <string	name="manager_testers"	translatable="true">Người kiểm tra Mod/Manager</string>
+    <string	name="manager_hosting"	translatable="true">Quản lý lưu trữ</string>
+    <string	name="mobilism_team"	translatable="true">Đội huy động viên</string>
+    <string	name="forum_team"	translatable="true">Nhóm FORUM.APK-RELEASE.NET</string>
+    <string	name="xspotify_team"	translatable="true">xSpotify Manager (Người quản lý cũ)</string>
+    <string	name="contributors"	translatable="true">CẢM ƠN TẤT CẢ CÁC NHÀ ĐÓNG GÓP! ❤️</string>
+	
+    <string	name="download_selected"	translatable="true">Bạn đã chọn bản vá này. Bạn có muốn tiếp tục?</string>
+    <string	name="download_ready"	translatable="true">THÔNG TIN ĐÓNG GÓP</string>
+    <string	name="download_ready_desc"	translatable="true">Tải xuống apk đã vá sẽ ghi đè lên tệp trước đó nằm ở thư mục tệp bên ngoài ứng dụng.</string>
+    <string	name="downloading_file"	translatable="true">ĐANG TẢI...</string>
+    <string	name="download_success"	translatable="true">ĐÃ TẢI XUỐNG THÀNH CÔNG</string>
+    <string	name="copy_url_desc"	translatable="true">Bạn đã chọn bản vá này. Bạn có muốn sao chép url không?</string>
+    <string	name="file_directory"	translatable="true">THƯ MỤC TẬP TIN</string>
+    <string	name="new_update"	translatable="true">CẬP NHẬT MỚI</string>
+	
+    <string	name="continue_1"	translatable="true">TIẾP TỤC</string>
+    <string	name="cancel"	translatable="true">HỦY BỎ</string>
+    <string	name="download"	translatable="true">TẢI XUỐNG</string>
+    <string	name="later"	translatable="true">MỘT LÁT SAU</string>
+    <string	name="directory"	translatable="true">DANH MỤC</string>
+    <string	name="install_now"	translatable="true">CÀI ĐẶT NGAY</string>
+    <string	name="install_update"	translatable="true">CÀI ĐẶT CẬP NHẬT</string>
+    <string	name="go_back"	translatable="true">QUAY LẠI</string>
+    <string	name="download_update"	translatable="true">TẢI XUỐNG BẢN CẬP NHẬT</string>
+    <string	name="not_now"	translatable="true">KHÔNG PHẢI BÂY GIỜ</string>
+    <string	name="copy_url"	translatable="true">SAO CHÉP URL</string>
+	
+    <string	name="show_support"	translatable="true">HIỂN THỊ HỖ TRỢ CỦA BẠN</string>
+    <string	name="show_support_desc"	translatable="true">Chúng tôi là một nhóm phi lợi nhuận, phi công ty và không thỏa hiệp. Những người như bạn khuyến khích chúng tôi tạo một ứng dụng để giúp mọi thứ trở nên dễ dàng hơn nhiều, đặc biệt là từ tải xuống đến cài đặt. \n\nChúng tôi đang dành toàn bộ thời gian và nỗ lực hết mình chỉ để làm cho mọi thứ trở nên đúng đắn và hoàn hảo. Chúng tôi sẽ cố gắng hết sức để hỗ trợ ứng dụng này miễn là chúng tôi có thể. \n\nBất kỳ số tiền nào cũng sẽ hữu ích và được đánh giá rất cao!</string>
+	
+    <string	name="maintenance"	translatable="true">BẢO TRÌ</string>
+    <string	name="maintenance_desc"	translatable="true">xManager hiện không khả dụng. Vui lòng kiểm tra ứng dụng sau.</string>
+    <string	name="thanks"	translatable="true">THANKS!</string>
+    <string	name="language"	translatable="true">NGÔN NGỮ</string>
+    <string	name="website"	translatable="true">TRANG WEB</string>
+    <string	name="reddit"	translatable="true">REDDIT</string>
+    <string	name="faq"	translatable="true">FAQ</string>
 </resources>
