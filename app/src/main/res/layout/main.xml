@@ -13,7 +13,7 @@
 		android:paddingTop="5dp"
 		android:paddingRight="10dp"
 		android:paddingBottom="5dp"
-		android:background="#212121"
+		android:background="#000000"
 		android:gravity="center_horizontal|center_vertical"
 		android:orientation="horizontal">
 		<TextView
@@ -26,19 +26,25 @@
 			android:text="xManager"
 			android:textSize="20sp"
 			android:textStyle="bold"
-			android:textColor="#1DB954"/>
+			android:textColor="#000000" />
+		<TextView
+			android:id="@+id/title_header_seperator"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="3dp"
+			android:paddingRight="3dp"
+			android:text="|"
+			android:textSize="16sp"
+			android:textStyle="bold"
+			android:textColor="#000000" />
 		<TextView
 			android:id="@+id/title_header_beta"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:paddingLeft="3dp"
-			android:paddingRight="8dp"
-			android:text="BETA"
-			android:textSize="11sp"
-			android:textStyle="bold|italic"
-			android:textColor="#FFFFFF"
-			android:alpha="0.0"
-			android:translationY="-5.0dp"/>
+			android:text="AD-FREE"
+			android:textSize="10sp"
+			android:textStyle="bold"
+			android:textColor="#000000" />
 		<LinearLayout
 			android:id="@+id/box_header_tab"
 			android:layout_width="match_parent"
@@ -58,7 +64,7 @@
 					android:layout_height="wrap_content"
 					android:src="@drawable/icon_switch"
 					android:scaleType="center"
-					android:alpha="0.0"/>
+					android:alpha="0.0" />
 			</LinearLayout>
 			<LinearLayout
 				android:id="@+id/box_update"
@@ -74,7 +80,7 @@
 					android:layout_height="wrap_content"
 					android:src="@drawable/icon_update"
 					android:scaleType="center"
-					android:alpha="0.0"/>
+					android:alpha="0.0" />
 			</LinearLayout>
 		</LinearLayout>
 	</LinearLayout>
@@ -93,7 +99,7 @@
 			android:text="N/A"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/app_changelogs"
 			android:layout_width="wrap_content"
@@ -103,7 +109,7 @@
 			android:textSize="12sp"
 			android:textStyle="bold"
 			android:textColor="#FFFFFF"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/download_selected"
 			android:layout_width="wrap_content"
@@ -112,7 +118,7 @@
 			android:text="You selected this modified version. Do you want to continue\?"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/download_ready"
 			android:layout_width="wrap_content"
@@ -121,7 +127,7 @@
 			android:text="DOWNLOAD READY"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/download_ready_desc"
 			android:layout_width="wrap_content"
@@ -130,7 +136,7 @@
 			android:text="Downloading this modified apk will overwrite the previous file located at the application external file directory."
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/downloading_file"
 			android:layout_width="wrap_content"
@@ -139,7 +145,7 @@
 			android:text="DOWNLOADING FILE..."
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/download_success"
 			android:layout_width="wrap_content"
@@ -148,7 +154,7 @@
 			android:text="SUCCESSFULLY DOWNLOADED"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/maintenance_desc"
 			android:layout_width="wrap_content"
@@ -157,7 +163,7 @@
 			android:text="xManager is currently unavailable right now. Kindly check the application later."
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/copy_url_desc"
 			android:layout_width="wrap_content"
@@ -166,7 +172,7 @@
 			android:text="You selected this modified version. Do you want to copy the url\?"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/maintenance"
 			android:layout_width="wrap_content"
@@ -175,7 +181,7 @@
 			android:text="MAINTENANCE"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/thanks"
 			android:layout_width="wrap_content"
@@ -184,7 +190,7 @@
 			android:text="THANKS!"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/main_title"
 			android:layout_width="wrap_content"
@@ -193,7 +199,7 @@
 			android:text="xManager"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/settings_title"
 			android:layout_width="wrap_content"
@@ -202,7 +208,7 @@
 			android:text="Settings"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/about_title"
 			android:layout_width="wrap_content"
@@ -211,7 +217,7 @@
 			android:text="About"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/file_directory"
 			android:layout_width="wrap_content"
@@ -220,7 +226,7 @@
 			android:text="FILE DIRECTORY"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/new_update"
 			android:layout_width="wrap_content"
@@ -229,7 +235,7 @@
 			android:text="NEW MANAGER UPDATE"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/continue_1"
 			android:layout_width="wrap_content"
@@ -238,7 +244,7 @@
 			android:text="CONTINUE"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/cancel"
 			android:layout_width="wrap_content"
@@ -247,7 +253,7 @@
 			android:text="CANCEL"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/download"
 			android:layout_width="wrap_content"
@@ -256,7 +262,7 @@
 			android:text="DOWNLOAD"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/later"
 			android:layout_width="wrap_content"
@@ -265,7 +271,7 @@
 			android:text="LATER"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/directory"
 			android:layout_width="wrap_content"
@@ -274,7 +280,7 @@
 			android:text="DIRECTORY"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/install_now"
 			android:layout_width="wrap_content"
@@ -283,7 +289,7 @@
 			android:text="INSTALL NOW"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/install_update"
 			android:layout_width="wrap_content"
@@ -292,7 +298,7 @@
 			android:text="INSTALL UPDATE"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/go_back"
 			android:layout_width="wrap_content"
@@ -301,7 +307,7 @@
 			android:text="GO BACK"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/download_update"
 			android:layout_width="wrap_content"
@@ -310,7 +316,7 @@
 			android:text="DOWNLOAD UPDATE"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/not_now"
 			android:layout_width="wrap_content"
@@ -319,7 +325,7 @@
 			android:text="NOT NOW"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/copy_url"
 			android:layout_width="wrap_content"
@@ -328,7 +334,7 @@
 			android:text="COPY URL"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/show_support"
 			android:layout_width="wrap_content"
@@ -337,7 +343,7 @@
 			android:text="SHOW YOUR SUPPORT"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/show_support_desc"
 			android:layout_width="wrap_content"
@@ -346,7 +352,7 @@
 			android:text="We are a non-profit, non-corporate and non-compromised team. People like you encourage us to create an app to make things much easier especially from downloading to installing.\n\nWe are pouring all of our time and best efforts just to make things right and perfect. We will do our best to support this app as long as we could.\n\nAny amount will help and be very much appreciated!"
 			android:textSize="12sp"
 			android:textColor="#000000"
-			android:alpha="0.0"/>
+			android:alpha="0.0" />
 	</LinearLayout>
 	<ScrollView
 		android:id="@+id/main_scroll_settings"
@@ -380,7 +386,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:src="@drawable/icon_close"
-						android:scaleType="center"/>
+						android:scaleType="center" />
 				</LinearLayout>
 			</LinearLayout>
 			<LinearLayout
@@ -414,7 +420,7 @@
 							android:text="LIST AUTO-REFRESH"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#1DB954"/>
+							android:textColor="#1DB954" />
 					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_list_auto_refresh"
@@ -431,7 +437,7 @@
 							android:paddingRight="2dp"
 							android:gravity="center_horizontal|center_vertical"
 							android:textSize="12sp"
-							android:textColor="#000000"/>
+							android:textColor="#000000" />
 					</LinearLayout>
 				</LinearLayout>
 				<LinearLayout
@@ -450,7 +456,7 @@
 						android:text="Activating this will automatically refresh the list everytime you launch the application.\n\nYou can manually refresh the list by dragging the main screen downward."
 						android:textSize="12sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 				</LinearLayout>
 			</LinearLayout>
 			<LinearLayout
@@ -472,7 +478,7 @@
 					<LinearLayout
 						android:id="@+id/title_box_2"
 						android:layout_width="match_parent"
-						android:layout_height="match_parent"
+						android:layout_height="wrap_content"
 						android:orientation="vertical"
 						android:layout_weight="1">
 						<TextView
@@ -483,7 +489,7 @@
 							android:text="FORCE AUTO-INSTALL"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#1DB954"/>
+							android:textColor="#1DB954" />
 					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_force_auto_install"
@@ -499,7 +505,7 @@
 							android:paddingRight="2dp"
 							android:gravity="center_horizontal|center_vertical"
 							android:textSize="12sp"
-							android:textColor="#000000"/>
+							android:textColor="#000000" />
 					</LinearLayout>
 				</LinearLayout>
 				<LinearLayout
@@ -518,7 +524,7 @@
 						android:text="Activating this will automatically install the patched application and update once downloaded."
 						android:textSize="12sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 				</LinearLayout>
 			</LinearLayout>
 			<LinearLayout
@@ -540,7 +546,7 @@
 					<LinearLayout
 						android:id="@+id/title_box_3"
 						android:layout_width="match_parent"
-						android:layout_height="match_parent"
+						android:layout_height="wrap_content"
 						android:orientation="vertical"
 						android:layout_weight="1">
 						<TextView
@@ -551,7 +557,7 @@
 							android:text="COPY URL MODE"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#1DB954"/>
+							android:textColor="#1DB954" />
 					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_copy_url_mode"
@@ -567,7 +573,7 @@
 							android:paddingRight="2dp"
 							android:gravity="center_horizontal|center_vertical"
 							android:textSize="12sp"
-							android:textColor="#000000"/>
+							android:textColor="#000000" />
 					</LinearLayout>
 				</LinearLayout>
 				<LinearLayout
@@ -586,7 +592,7 @@
 						android:text="Activating this will allow you to copy the file direct url.\n\nNot recommended at all times unless you are having an issue downloading the files directly within the manager."
 						android:textSize="12sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 				</LinearLayout>
 			</LinearLayout>
 			<LinearLayout
@@ -608,7 +614,7 @@
 					<LinearLayout
 						android:id="@+id/title_box_4"
 						android:layout_width="match_parent"
-						android:layout_height="match_parent"
+						android:layout_height="wrap_content"
 						android:orientation="vertical"
 						android:layout_weight="1">
 						<TextView
@@ -619,7 +625,7 @@
 							android:text="HIDE NAVIGATION BAR"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#1DB954"/>
+							android:textColor="#1DB954" />
 					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_navigation_switch"
@@ -635,7 +641,7 @@
 							android:paddingRight="2dp"
 							android:gravity="center_horizontal|center_vertical"
 							android:textSize="12sp"
-							android:textColor="#000000"/>
+							android:textColor="#000000" />
 					</LinearLayout>
 				</LinearLayout>
 			</LinearLayout>
@@ -666,7 +672,7 @@
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#1DB954"
-						android:layout_gravity="center_horizontal|center_vertical"/>
+						android:layout_gravity="center_horizontal|center_vertical" />
 					<LinearLayout
 						android:id="@+id/box_theme_switch"
 						android:layout_width="match_parent"
@@ -679,7 +685,7 @@
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
 							android:spinnerMode="dropdown"
-							android:layout_gravity="center_horizontal|center_vertical"/>
+							android:layout_gravity="center_horizontal|center_vertical" />
 					</LinearLayout>
 				</LinearLayout>
 			</LinearLayout>
@@ -709,7 +715,7 @@
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#1DB954"
-						android:layout_gravity="center_horizontal|center_vertical"/>
+						android:layout_gravity="center_horizontal|center_vertical" />
 					<LinearLayout
 						android:id="@+id/box_language_switch"
 						android:layout_width="match_parent"
@@ -722,7 +728,7 @@
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
 							android:spinnerMode="dropdown"
-							android:layout_gravity="center_horizontal|center_vertical"/>
+							android:layout_gravity="center_horizontal|center_vertical" />
 					</LinearLayout>
 				</LinearLayout>
 			</LinearLayout>
@@ -753,7 +759,7 @@
 						android:text="APK LOCATION:"
 						android:textSize="12sp"
 						android:textStyle="bold"
-						android:textColor="#1DB954"/>
+						android:textColor="#1DB954" />
 					<EditText
 						android:id="@+id/apk_path_location"
 						android:layout_width="match_parent"
@@ -765,7 +771,7 @@
 						android:textColor="#FFFFFF"
 						android:hint="/storage/emulated/0/xManager/"
 						android:textColorHint="#607D8B"
-						android:singleLine="true"/>
+						android:singleLine="true" />
 				</LinearLayout>
 				<LinearLayout
 					android:id="@+id/box_9_sub_2"
@@ -780,7 +786,7 @@
 						android:text="File directory where you want to save the downloaded file. If you do not know how to configure this feature, then leave this as it is.\n\nNOTE: This feature does not support external storage (SD Card) due to accessibility, permissions and storage limitations."
 						android:textSize="12sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 				</LinearLayout>
 			</LinearLayout>
 			<LinearLayout
@@ -806,7 +812,7 @@
 						android:text="CLEAR DIRECTORY FOLDERS"
 						android:textSize="12sp"
 						android:textStyle="bold"
-						android:textColor="#1DB954"/>
+						android:textColor="#1DB954" />
 				</LinearLayout>
 				<LinearLayout
 					android:id="@+id/box_10_sub_2"
@@ -824,7 +830,7 @@
 						android:text="Tap to delete all directory folders including the downloaded files and updates."
 						android:textSize="12sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 				</LinearLayout>
 			</LinearLayout>
 			<LinearLayout
@@ -855,7 +861,7 @@
 						android:text="RESET SETTINGS"
 						android:textSize="12sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 				</LinearLayout>
 			</LinearLayout>
 		</LinearLayout>
@@ -893,7 +899,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:src="@drawable/icon_close"
-						android:scaleType="center"/>
+						android:scaleType="center" />
 				</LinearLayout>
 			</LinearLayout>
 			<LinearLayout
@@ -915,7 +921,7 @@
 					android:textSize="18sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF"
-					android:layout_gravity="center_horizontal|center_vertical"/>
+					android:layout_gravity="center_horizontal|center_vertical" />
 				<TextView
 					android:id="@+id/app_version"
 					android:layout_width="wrap_content"
@@ -926,7 +932,7 @@
 					android:textSize="18sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF"
-					android:layout_gravity="center_horizontal|center_vertical"/>
+					android:layout_gravity="center_horizontal|center_vertical" />
 			</LinearLayout>
 			<LinearLayout
 				android:id="@+id/box_about_sub"
@@ -948,7 +954,7 @@
 					android:textSize="12sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF"
-					android:layout_gravity="center_horizontal|center_vertical"/>
+					android:layout_gravity="center_horizontal|center_vertical" />
 			</LinearLayout>
 			<LinearLayout
 				android:id="@+id/box_about_1"
@@ -970,7 +976,7 @@
 					android:text="xManager Developer"
 					android:textSize="14sp"
 					android:textStyle="bold"
-					android:textColor="#1DB954"/>
+					android:textColor="#1DB954" />
 				<TextView
 					android:id="@+id/developer_1"
 					android:layout_width="wrap_content"
@@ -981,7 +987,7 @@
 					android:text="xC3FFF0E"
 					android:textSize="14sp"
 					android:textStyle="bold"
-					android:textColor="#FFFFFF"/>
+					android:textColor="#FFFFFF" />
 				<TextView
 					android:id="@+id/developer_spotify"
 					android:layout_width="wrap_content"
@@ -992,7 +998,7 @@
 					android:text="Spotify Mod Developers"
 					android:textSize="14sp"
 					android:textStyle="bold"
-					android:textColor="#1DB954"/>
+					android:textColor="#1DB954" />
 				<TextView
 					android:id="@+id/developer_2"
 					android:layout_width="wrap_content"
@@ -1003,7 +1009,7 @@
 					android:text="xC3FFF0E\nMrDude (Retired)\nSherlock Holmes (Features &amp; Amoled)"
 					android:textSize="14sp"
 					android:textStyle="bold"
-					android:textColor="#FFFFFF"/>
+					android:textColor="#FFFFFF" />
 			</LinearLayout>
 			<LinearLayout
 				android:id="@+id/box_about_2"
@@ -1025,7 +1031,7 @@
 					android:text="Telegram/Discord Support Team"
 					android:textSize="14sp"
 					android:textStyle="bold"
-					android:textColor="#1DB954"/>
+					android:textColor="#1DB954" />
 				<TextView
 					android:id="@+id/support_1"
 					android:layout_width="wrap_content"
@@ -1036,7 +1042,7 @@
 					android:text="jetfire (Github Support)\nmeech (Discord Support)\njuznem\nroosphx (Facebook Login Fixed)\nSherlock Holmes"
 					android:textSize="14sp"
 					android:textStyle="bold"
-					android:textColor="#FFFFFF"/>
+					android:textColor="#FFFFFF" />
 			</LinearLayout>
 			<LinearLayout
 				android:id="@+id/box_about_3"
@@ -1058,7 +1064,7 @@
 					android:text="Mod/Manager Testers"
 					android:textSize="14sp"
 					android:textStyle="bold"
-					android:textColor="#1DB954"/>
+					android:textColor="#1DB954" />
 				<TextView
 					android:id="@+id/testers_1"
 					android:layout_width="wrap_content"
@@ -1069,7 +1075,7 @@
 					android:text="RishavG\nmeech\njetfire\nSherlock Holmes\nWu Tang Clam\nZach\naha\n100RABH\njuznem\nTunelover (Mobilism)"
 					android:textSize="14sp"
 					android:textStyle="bold"
-					android:textColor="#FFFFFF"/>
+					android:textColor="#FFFFFF" />
 				<TextView
 					android:id="@+id/mod_testers_2"
 					android:layout_width="wrap_content"
@@ -1080,7 +1086,7 @@
 					android:text="Manager Hosting Links"
 					android:textSize="14sp"
 					android:textStyle="bold"
-					android:textColor="#1DB954"/>
+					android:textColor="#1DB954" />
 				<TextView
 					android:id="@+id/testers_2"
 					android:layout_width="wrap_content"
@@ -1091,7 +1097,7 @@
 					android:text="jetfire\nWu Tang Clam"
 					android:textSize="14sp"
 					android:textStyle="bold"
-					android:textColor="#FFFFFF"/>
+					android:textColor="#FFFFFF" />
 			</LinearLayout>
 			<LinearLayout
 				android:id="@+id/box_about_4"
@@ -1113,7 +1119,7 @@
 					android:text="Mobilism Team"
 					android:textSize="14sp"
 					android:textStyle="bold"
-					android:textColor="#1DB954"/>
+					android:textColor="#1DB954" />
 				<TextView
 					android:id="@+id/mobilism_1"
 					android:layout_width="wrap_content"
@@ -1124,7 +1130,7 @@
 					android:text="Balatan (Uploader/Releaser)\nRishavG (Support)\nmeech\nTunelover"
 					android:textSize="14sp"
 					android:textStyle="bold"
-					android:textColor="#FFFFFF"/>
+					android:textColor="#FFFFFF" />
 			</LinearLayout>
 			<LinearLayout
 				android:id="@+id/box_about_5"
@@ -1146,7 +1152,7 @@
 					android:text="xSpotify Manager (Old Manager)"
 					android:textSize="14sp"
 					android:textStyle="bold"
-					android:textColor="#1DB954"/>
+					android:textColor="#1DB954" />
 				<TextView
 					android:id="@+id/manager_1"
 					android:layout_width="wrap_content"
@@ -1157,7 +1163,7 @@
 					android:text="cryiotic3 (Manager Icon)\nfarish278 (Manager Icon)\nSherlock Holmes\njetfire\n100RABH\nLight Yagami"
 					android:textSize="14sp"
 					android:textStyle="bold"
-					android:textColor="#FFFFFF"/>
+					android:textColor="#FFFFFF" />
 			</LinearLayout>
 			<LinearLayout
 				android:id="@+id/box_about_6"
@@ -1179,7 +1185,7 @@
 					android:text="FORUM.APK-RELEASE.NET Team"
 					android:textSize="14sp"
 					android:textStyle="bold"
-					android:textColor="#1DB954"/>
+					android:textColor="#1DB954" />
 				<TextView
 					android:id="@+id/forum_1"
 					android:layout_width="wrap_content"
@@ -1190,7 +1196,7 @@
 					android:text="Balatan"
 					android:textSize="14sp"
 					android:textStyle="bold"
-					android:textColor="#FFFFFF"/>
+					android:textColor="#FFFFFF" />
 			</LinearLayout>
 			<LinearLayout
 				android:id="@+id/box_about_7"
@@ -1215,7 +1221,7 @@
 						android:text="Arabic Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_13"
 						android:layout_width="wrap_content"
@@ -1224,7 +1230,7 @@
 						android:text="Yazan Kasem"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/manager_lang_1"
 						android:layout_width="wrap_content"
@@ -1232,7 +1238,7 @@
 						android:text="Bengali Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_1"
 						android:layout_width="wrap_content"
@@ -1241,7 +1247,7 @@
 						android:text="0V3R5!9H7"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/manager_lang_2"
 						android:layout_width="wrap_content"
@@ -1249,7 +1255,7 @@
 						android:text="Chinese (Simplified) Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_2"
 						android:layout_width="wrap_content"
@@ -1258,7 +1264,7 @@
 						android:text="Gent G"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/manager_lang_3"
 						android:layout_width="wrap_content"
@@ -1266,7 +1272,7 @@
 						android:text="French Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_3"
 						android:layout_width="wrap_content"
@@ -1275,7 +1281,7 @@
 						android:text="The Punisher"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/manager_lang_4"
 						android:layout_width="wrap_content"
@@ -1283,7 +1289,7 @@
 						android:text="Greek Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_4"
 						android:layout_width="wrap_content"
@@ -1292,7 +1298,7 @@
 						android:text="Walter's Cousin #CAF"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/manager_lang_5"
 						android:layout_width="wrap_content"
@@ -1300,7 +1306,7 @@
 						android:text="Indonesian Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_5"
 						android:layout_width="wrap_content"
@@ -1309,7 +1315,7 @@
 						android:text="Mc. J\nDeraidos"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/manager_lang_6"
 						android:layout_width="wrap_content"
@@ -1317,7 +1323,7 @@
 						android:text="Italian Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_6"
 						android:layout_width="wrap_content"
@@ -1326,7 +1332,7 @@
 						android:text="Marco"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/manager_lang_7"
 						android:layout_width="wrap_content"
@@ -1334,7 +1340,7 @@
 						android:text="Portuguese (Brazil) Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_7"
 						android:layout_width="wrap_content"
@@ -1342,7 +1348,7 @@
 						android:text="Loui's™"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/translator_7_1"
 						android:layout_width="wrap_content"
@@ -1351,7 +1357,7 @@
 						android:text="Zilberto Junior"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/manager_lang_8"
 						android:layout_width="wrap_content"
@@ -1359,7 +1365,7 @@
 						android:text="Portuguese (Portugal) Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_8"
 						android:layout_width="wrap_content"
@@ -1368,7 +1374,7 @@
 						android:text="Androide323"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/manager_lang_15"
 						android:layout_width="wrap_content"
@@ -1376,7 +1382,7 @@
 						android:text="Romanian Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_15"
 						android:layout_width="wrap_content"
@@ -1385,7 +1391,7 @@
 						android:text="NACH"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/manager_lang_9"
 						android:layout_width="wrap_content"
@@ -1393,7 +1399,7 @@
 						android:text="Russian Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_9"
 						android:layout_width="wrap_content"
@@ -1402,7 +1408,7 @@
 						android:text="Pegioner"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/manager_lang_14"
 						android:layout_width="wrap_content"
@@ -1410,7 +1416,7 @@
 						android:text="Slovenian Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_14"
 						android:layout_width="wrap_content"
@@ -1419,7 +1425,7 @@
 						android:text="MysticX"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/manager_lang_10"
 						android:layout_width="wrap_content"
@@ -1427,7 +1433,7 @@
 						android:text="Spanish (Spain) Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_10"
 						android:layout_width="wrap_content"
@@ -1436,7 +1442,7 @@
 						android:text="PetFix"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/manager_lang_12"
 						android:layout_width="wrap_content"
@@ -1444,7 +1450,7 @@
 						android:text="Turkish Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_12"
 						android:layout_width="wrap_content"
@@ -1453,7 +1459,7 @@
 						android:text="Berkay"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/manager_lang_11"
 						android:layout_width="wrap_content"
@@ -1461,7 +1467,7 @@
 						android:text="Ukrainian Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_11"
 						android:layout_width="wrap_content"
@@ -1470,7 +1476,7 @@
 						android:text="NIKITA🇺🇦[beryllium] #PocoForEver"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/manager_lang_16"
 						android:layout_width="wrap_content"
@@ -1478,7 +1484,7 @@
 						android:text="Korean Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_16"
 						android:layout_width="wrap_content"
@@ -1487,7 +1493,7 @@
 						android:text="Apious"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 					<TextView
 						android:id="@+id/manager_lang_17"
 						android:layout_width="wrap_content"
@@ -1495,7 +1501,7 @@
 						android:text="Dutch Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B"/>
+						android:textColor="#FFEB3B" />
 					<TextView
 						android:id="@+id/translator_17"
 						android:layout_width="wrap_content"
@@ -1503,7 +1509,7 @@
 						android:text="Kevin"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFFFFF"/>
+						android:textColor="#FFFFFF" />
 				</LinearLayout>
 			</LinearLayout>
 			<TextView
@@ -1518,7 +1524,7 @@
 				android:textSize="14sp"
 				android:textStyle="bold"
 				android:textColor="#FFFFFF"
-				android:layout_gravity="center_horizontal|center_vertical"/>
+				android:layout_gravity="center_horizontal|center_vertical" />
 		</LinearLayout>
 	</ScrollView>
 	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -1566,7 +1572,7 @@
 							android:textSize="12sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954"
-							android:layout_gravity="left|center_vertical"/>
+							android:layout_gravity="left|center_vertical" />
 						<LinearLayout
 							android:id="@+id/box_1_sub"
 							android:layout_width="match_parent"
@@ -1583,7 +1589,7 @@
 								android:textSize="11sp"
 								android:textStyle="bold|italic"
 								android:textColor="#FFEB3B"
-								android:layout_gravity="left|center_vertical"/>
+								android:layout_gravity="left|center_vertical" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
@@ -1602,7 +1608,7 @@
 							android:text="LATEST"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#448AFF"/>
+							android:textColor="#448AFF" />
 						<LinearLayout
 							android:id="@+id/box_switch_1"
 							android:layout_width="match_parent"
@@ -1620,7 +1626,7 @@
 								android:text="N/A"
 								android:textSize="12sp"
 								android:textStyle="bold"
-								android:textColor="#FFFFFF"/>
+								android:textColor="#FFFFFF" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
@@ -1630,7 +1636,7 @@
 						android:layout_marginLeft="15dp"
 						android:layout_marginRight="15dp"
 						android:background="#616161"
-						android:orientation="horizontal"/>
+						android:orientation="horizontal" />
 					<LinearLayout
 						android:id="@+id/box_5"
 						android:layout_width="match_parent"
@@ -1649,7 +1655,7 @@
 							android:text="VERSIONS"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
+							android:textColor="#FFFFFF" />
 						<LinearLayout
 							android:id="@+id/box_sub_5"
 							android:layout_width="match_parent"
@@ -1669,7 +1675,7 @@
 								android:textSize="11sp"
 								android:textStyle="bold"
 								android:textColor="#FFFFFF"
-								android:layout_gravity="right|center_vertical"/>
+								android:layout_gravity="right|center_vertical" />
 						</LinearLayout>
 					</LinearLayout>
 					<ListView
@@ -1677,7 +1683,8 @@
 						android:layout_width="match_parent"
 						android:layout_height="260dp"
 						android:dividerHeight="2dp"
-						android:choiceMode="none"/>
+						android:choiceMode="none"
+						android:nestedScrollingEnabled="true" />
 				</LinearLayout>
 				<LinearLayout
 					android:id="@+id/main_box_2"
@@ -1705,7 +1712,7 @@
 							android:text="SPOTIFY (AMOLED)"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#1DB954"/>
+							android:textColor="#1DB954" />
 						<LinearLayout
 							android:id="@+id/box_3_sub"
 							android:layout_width="match_parent"
@@ -1722,7 +1729,7 @@
 								android:textSize="11sp"
 								android:textStyle="bold|italic"
 								android:textColor="#FFEB3B"
-								android:layout_gravity="left|center_vertical"/>
+								android:layout_gravity="left|center_vertical" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
@@ -1740,7 +1747,7 @@
 							android:text="LATEST"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#448AFF"/>
+							android:textColor="#448AFF" />
 						<LinearLayout
 							android:id="@+id/box_switch_2"
 							android:layout_width="match_parent"
@@ -1758,7 +1765,7 @@
 								android:text="N/A"
 								android:textSize="12sp"
 								android:textStyle="bold"
-								android:textColor="#FFFFFF"/>
+								android:textColor="#FFFFFF" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
@@ -1768,7 +1775,7 @@
 						android:layout_marginLeft="15dp"
 						android:layout_marginRight="15dp"
 						android:background="#616161"
-						android:orientation="horizontal"/>
+						android:orientation="horizontal" />
 					<LinearLayout
 						android:id="@+id/box_6"
 						android:layout_width="match_parent"
@@ -1787,7 +1794,7 @@
 							android:text="VERSIONS"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"/>
+							android:textColor="#FFFFFF" />
 						<LinearLayout
 							android:id="@+id/box_sub_6"
 							android:layout_width="match_parent"
@@ -1807,7 +1814,7 @@
 								android:textSize="11sp"
 								android:textStyle="bold"
 								android:textColor="#FFFFFF"
-								android:layout_gravity="right|center_vertical"/>
+								android:layout_gravity="right|center_vertical" />
 						</LinearLayout>
 					</LinearLayout>
 					<ListView
@@ -1815,7 +1822,8 @@
 						android:layout_width="match_parent"
 						android:layout_height="260dp"
 						android:dividerHeight="2dp"
-						android:choiceMode="none"/>
+						android:choiceMode="none"
+						android:nestedScrollingEnabled="true" />
 				</LinearLayout>
 				<LinearLayout
 					android:id="@+id/main_box_6"
@@ -1828,7 +1836,7 @@
 					android:background="#212121"
 					android:orientation="vertical">
 					<LinearLayout
-						android:id="@+id/box_16_sub_1"
+						android:id="@+id/box_6_sub_1"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:orientation="horizontal">
@@ -1845,7 +1853,7 @@
 							android:textSize="12sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954"
-							android:layout_gravity="center_horizontal|center_vertical"/>
+							android:layout_gravity="center_horizontal|center_vertical" />
 						<LinearLayout
 							android:id="@+id/box_cpu"
 							android:layout_width="match_parent"
@@ -1863,7 +1871,7 @@
 								android:text="N/A"
 								android:textSize="12sp"
 								android:textStyle="bold"
-								android:textColor="#FFFFFF"/>
+								android:textColor="#FFFFFF" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
@@ -1874,9 +1882,9 @@
 						android:layout_marginRight="15dp"
 						android:padding="8dp"
 						android:background="#616161"
-						android:orientation="horizontal"/>
+						android:orientation="horizontal" />
 					<LinearLayout
-						android:id="@+id/linear8"
+						android:id="@+id/box_6_sub_2"
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"
 						android:orientation="horizontal">
@@ -1891,7 +1899,7 @@
 							android:text="INSTALLED"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#1DB954"/>
+							android:textColor="#1DB954" />
 						<LinearLayout
 							android:id="@+id/box_installed"
 							android:layout_width="match_parent"
@@ -1909,7 +1917,7 @@
 								android:text="N/A"
 								android:textSize="12sp"
 								android:textStyle="bold"
-								android:textColor="#FFFFFF"/>
+								android:textColor="#FFFFFF" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
@@ -1920,9 +1928,9 @@
 						android:layout_marginRight="15dp"
 						android:padding="8dp"
 						android:background="#616161"
-						android:orientation="vertical"/>
+						android:orientation="vertical" />
 					<LinearLayout
-						android:id="@+id/box_6_sub_1"
+						android:id="@+id/box_6_sub_3"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:orientation="horizontal">
@@ -1939,7 +1947,7 @@
 							android:textSize="12sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954"
-							android:layout_gravity="center_horizontal|center_vertical"/>
+							android:layout_gravity="center_horizontal|center_vertical" />
 						<LinearLayout
 							android:id="@+id/box_changelogs"
 							android:layout_width="match_parent"
@@ -1958,11 +1966,11 @@
 								android:textSize="12sp"
 								android:textStyle="bold"
 								android:textColor="#FFFFFF"
-								android:layout_gravity="right|center_vertical"/>
+								android:layout_gravity="right|center_vertical" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
-						android:id="@+id/box_6_sub_2"
+						android:id="@+id/box_6_sub_4"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:paddingLeft="10dp"
@@ -1979,13 +1987,14 @@
 							<ScrollView
 								android:id="@+id/scroll_changelogs_1"
 								android:layout_width="match_parent"
-								android:layout_height="match_parent">
+								android:layout_height="match_parent"
+								android:nestedScrollingEnabled="true">
 								<TextView
 									android:id="@+id/changelogs_x"
 									android:layout_width="wrap_content"
 									android:layout_height="wrap_content"
 									android:textSize="14sp"
-									android:textColor="#BDBDBD"/>
+									android:textColor="#BDBDBD" />
 							</ScrollView>
 						</LinearLayout>
 					</LinearLayout>
@@ -2019,7 +2028,7 @@
 							android:textSize="12sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954"
-							android:layout_gravity="center_horizontal|center_vertical"/>
+							android:layout_gravity="center_horizontal|center_vertical" />
 					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_sub_2"
@@ -2040,7 +2049,7 @@
 								android:src="@drawable/icon_uninstall"
 								android:scaleType="center"
 								android:scaleX="0.7"
-								android:scaleY="0.7"/>
+								android:scaleY="0.7" />
 						</LinearLayout>
 						<LinearLayout
 							android:id="@+id/box_settings"
@@ -2056,7 +2065,7 @@
 								android:src="@drawable/icon_settings"
 								android:scaleType="center"
 								android:scaleX="0.7"
-								android:scaleY="0.7"/>
+								android:scaleY="0.7" />
 						</LinearLayout>
 						<LinearLayout
 							android:id="@+id/box_cache"
@@ -2072,7 +2081,7 @@
 								android:src="@drawable/icon_cache"
 								android:scaleType="center"
 								android:scaleX="0.7"
-								android:scaleY="0.7"/>
+								android:scaleY="0.7" />
 						</LinearLayout>
 						<LinearLayout
 							android:id="@+id/box_open"
@@ -2088,7 +2097,7 @@
 								android:src="@drawable/icon_open"
 								android:scaleType="center"
 								android:scaleX="0.7"
-								android:scaleY="0.7"/>
+								android:scaleY="0.7" />
 						</LinearLayout>
 					</LinearLayout>
 				</LinearLayout>
@@ -2119,7 +2128,7 @@
 							android:textSize="12sp"
 							android:textStyle="bold"
 							android:textColor="#FFFFFF"
-							android:layout_gravity="center_horizontal|center_vertical"/>
+							android:layout_gravity="center_horizontal|center_vertical" />
 						<ImageView
 							android:id="@+id/icon_support"
 							android:layout_width="wrap_content"
@@ -2127,7 +2136,37 @@
 							android:src="@drawable/icon_support"
 							android:scaleType="center"
 							android:scaleX="0.7"
-							android:scaleY="0.7"/>
+							android:scaleY="0.7" />
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_reddit"
+						android:layout_width="100dp"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="10dp"
+						android:paddingTop="8dp"
+						android:paddingBottom="6dp"
+						android:background="#212121"
+						android:gravity="center_horizontal|center_vertical"
+						android:orientation="vertical"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/reddit"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:gravity="center_horizontal|center_vertical"
+							android:text="REDDIT"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#FFFFFF"
+							android:layout_gravity="center_horizontal|center_vertical" />
+						<ImageView
+							android:id="@+id/icon_reddit"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/icon_reddit"
+							android:scaleType="center"
+							android:scaleX="0.7"
+							android:scaleY="0.7" />
 					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_donate"
@@ -2149,7 +2188,7 @@
 							android:textSize="12sp"
 							android:textStyle="bold"
 							android:textColor="#FFFFFF"
-							android:layout_gravity="center_horizontal|center_vertical"/>
+							android:layout_gravity="center_horizontal|center_vertical" />
 						<ImageView
 							android:id="@+id/icon_donate"
 							android:layout_width="wrap_content"
@@ -2157,7 +2196,7 @@
 							android:src="@drawable/icon_donate"
 							android:scaleType="center"
 							android:scaleX="0.7"
-							android:scaleY="0.7"/>
+							android:scaleY="0.7" />
 					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_about"
@@ -2181,7 +2220,7 @@
 							android:textSize="12sp"
 							android:textStyle="bold"
 							android:textColor="#FFFFFF"
-							android:layout_gravity="center_horizontal|center_vertical"/>
+							android:layout_gravity="center_horizontal|center_vertical" />
 						<ImageView
 							android:id="@+id/icon_about"
 							android:layout_width="wrap_content"
@@ -2189,7 +2228,7 @@
 							android:src="@drawable/icon_about"
 							android:scaleType="center"
 							android:scaleX="0.7"
-							android:scaleY="0.7"/>
+							android:scaleY="0.7" />
 					</LinearLayout>
 				</LinearLayout>
 				<LinearLayout
@@ -2221,7 +2260,7 @@
 							android:textSize="12sp"
 							android:textStyle="bold"
 							android:textColor="#FFFFFF"
-							android:layout_gravity="center_horizontal|center_vertical"/>
+							android:layout_gravity="center_horizontal|center_vertical" />
 						<ImageView
 							android:id="@+id/icon_discord"
 							android:layout_width="wrap_content"
@@ -2229,38 +2268,7 @@
 							android:src="@drawable/icon_discord"
 							android:scaleType="center"
 							android:scaleX="0.7"
-							android:scaleY="0.7"/>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_website"
-						android:layout_width="100dp"
-						android:layout_height="wrap_content"
-						android:layout_marginLeft="10dp"
-						android:paddingTop="8dp"
-						android:paddingBottom="6dp"
-						android:background="#212121"
-						android:gravity="center_horizontal|center_vertical"
-						android:orientation="vertical"
-						android:layout_gravity="center_horizontal|center_vertical"
-						android:layout_weight="1">
-						<TextView
-							android:id="@+id/website"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:gravity="center_horizontal|center_vertical"
-							android:text="WEBSITE"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#FFFFFF"
-							android:layout_gravity="center_horizontal|center_vertical"/>
-						<ImageView
-							android:id="@+id/icon_website"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:src="@drawable/icon_website"
-							android:scaleType="center"
-							android:scaleX="0.7"
-							android:scaleY="0.7"/>
+							android:scaleY="0.7" />
 					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_source"
@@ -2283,7 +2291,7 @@
 							android:textSize="12sp"
 							android:textStyle="bold"
 							android:textColor="#FFFFFF"
-							android:layout_gravity="center_horizontal|center_vertical"/>
+							android:layout_gravity="center_horizontal|center_vertical" />
 						<ImageView
 							android:id="@+id/icon_source"
 							android:layout_width="wrap_content"
@@ -2291,7 +2299,68 @@
 							android:src="@drawable/icon_source"
 							android:scaleType="center"
 							android:scaleX="0.7"
-							android:scaleY="0.7"/>
+							android:scaleY="0.7" />
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_website"
+						android:layout_width="100dp"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="10dp"
+						android:paddingTop="8dp"
+						android:paddingBottom="6dp"
+						android:background="#212121"
+						android:gravity="center_horizontal|center_vertical"
+						android:orientation="vertical"
+						android:layout_gravity="center_horizontal|center_vertical"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/website"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:gravity="center_horizontal|center_vertical"
+							android:text="WEBSITE"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#FFFFFF"
+							android:layout_gravity="center_horizontal|center_vertical" />
+						<ImageView
+							android:id="@+id/icon_website"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/icon_website"
+							android:scaleType="center"
+							android:scaleX="0.7"
+							android:scaleY="0.7" />
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_faq"
+						android:layout_width="100dp"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="10dp"
+						android:paddingTop="8dp"
+						android:paddingBottom="6dp"
+						android:background="#212121"
+						android:gravity="center_horizontal|center_vertical"
+						android:orientation="vertical"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/faq"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:gravity="center_horizontal|center_vertical"
+							android:text="FAQ"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#FFFFFF"
+							android:layout_gravity="center_horizontal|center_vertical" />
+						<ImageView
+							android:id="@+id/icon_faq"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:src="@drawable/icon_faq"
+							android:scaleType="center"
+							android:scaleX="0.7"
+							android:scaleY="0.7" />
 					</LinearLayout>
 				</LinearLayout>
 			</LinearLayout>
