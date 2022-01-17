@@ -1,7 +1,7 @@
 # FOR CONTRIBUTORS:
-CODE CHANGE: Pull request should be done on the "Main" branch.  
-TRANSLATION CHANGE: Pull request should be done on the "Main" branch. The translations can be seen at resource/values/strings.xml.  
-ADD TRANSLATIONS: Pull request should be done on the "Developer" branch.  
+**CODE CHANGE:** Pull request should be done on the "Main" branch.  
+**TRANSLATION CHANGE/UPDATE:** Pull request should be done on the "Main" branch. The translations can be found at resource/values/strings.xml.  
+**SUBMIT TRANSLATIONS:** Pull request should be done on the "Developer" branch.  
 
 # IMPORTANT NOTES (READ ME FIRST)
 
