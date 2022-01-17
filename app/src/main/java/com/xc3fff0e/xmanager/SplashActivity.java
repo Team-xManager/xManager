@@ -8,16 +8,22 @@ import android.view.*;
 import android.view.View.*;
 import android.widget.*;
 import android.content.*;
+import android.content.res.*;
 import android.graphics.*;
+import android.graphics.drawable.*;
 import android.media.*;
 import android.net.*;
 import android.text.*;
+import android.text.style.*;
 import android.util.*;
 import android.webkit.*;
 import android.animation.*;
 import android.view.animation.*;
+import java.io.*;
 import java.util.*;
+import java.util.regex.*;
 import java.text.*;
+import org.json.*;
 import android.widget.LinearLayout;
 import android.widget.ImageView;
 import java.util.Timer;
@@ -26,6 +32,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.app.Activity;
 import android.content.SharedPreferences;
+import androidx.browser.*;
+import com.wuyr.rippleanimation.*;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.DialogFragment;
 
 public class SplashActivity extends AppCompatActivity {
 	
@@ -37,21 +48,22 @@ public class SplashActivity extends AppCompatActivity {
 	private TimerTask Timer;
 	private Intent Switch_Activity = new Intent();
 	private SharedPreferences NAVIGATION_BAR;
+	
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.splash);
-		com.google.firebase.FirebaseApp.initializeApp(this);
 		initialize(_savedInstanceState);
+		com.google.firebase.FirebaseApp.initializeApp(this);
 		initializeLogic();
 	}
 	
 	private void initialize(Bundle _savedInstanceState) {
-		
-		main_body = (LinearLayout) findViewById(R.id.main_body);
-		icon_manager = (ImageView) findViewById(R.id.icon_manager);
+		main_body = findViewById(R.id.main_body);
+		icon_manager = findViewById(R.id.icon_manager);
 		NAVIGATION_BAR = getSharedPreferences("NAVIGATION_BAR", Activity.MODE_PRIVATE);
 	}
+	
 	private void initializeLogic() {
 		Timer = new TimerTask() {
 			@Override
@@ -71,20 +83,8 @@ public class SplashActivity extends AppCompatActivity {
 	}
 	
 	@Override
-	protected void onActivityResult(int _requestCode, int _resultCode, Intent _data) {
-		
-		super.onActivityResult(_requestCode, _resultCode, _data);
-		
-		switch (_requestCode) {
-			
-			default:
-			break;
-		}
-	}
-	
-	@Override
 	public void onBackPressed() {
-		
+		SketchwareUtil.CustomToast(getApplicationContext(), "Please wait...", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 	}
 	
 	@Override
@@ -92,7 +92,7 @@ public class SplashActivity extends AppCompatActivity {
 		super.onResume();
 		_Hide_Navigation();
 	}
-	private void _Hide_Navigation () {
+	public void _Hide_Navigation() {
 		try {
 			if (NAVIGATION_BAR.getString("NAVIGATION", "").equals("1")) {
 				getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
@@ -112,7 +112,7 @@ public class SplashActivity extends AppCompatActivity {
 	}
 	
 	
-	private void _Dark_Navigation () {
+	public void _Dark_Navigation() {
 		if (Build.VERSION.SDK_INT >= 21) {
 			getWindow().setNavigationBarColor(Color.parseColor("#212121"));
 		}
@@ -156,18 +156,17 @@ public class SplashActivity extends AppCompatActivity {
 	}
 	
 	@Deprecated
-	public float getDip(int _input){
+	public float getDip(int _input) {
 		return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, _input, getResources().getDisplayMetrics());
 	}
 	
 	@Deprecated
-	public int getDisplayWidthPixels(){
+	public int getDisplayWidthPixels() {
 		return getResources().getDisplayMetrics().widthPixels;
 	}
 	
 	@Deprecated
-	public int getDisplayHeightPixels(){
+	public int getDisplayHeightPixels() {
 		return getResources().getDisplayMetrics().heightPixels;
 	}
-	
 }
