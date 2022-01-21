@@ -466,8 +466,8 @@
     <string	name="manager_tools_06"	translatable="true">STRUMENTI DEL MANAGER</string>
 	<string	name="device_cpu_06"	translatable="true">CPU/ARCH</string>
     <string	name="source_06"	translatable="true">FONTE</string>
-    <string	name="discord_06"	translatable="true">DISCORDIA</string>
-    <string	name="support_06"	translatable="true">TELEGRAMMA</string>
+    <string	name="discord_06"	translatable="true">DISCORD</string>
+    <string	name="support_06"	translatable="true">TELEGRAM</string>
     <string	name="donate_06"	translatable="true">DONA</string>
     <string	name="about_06"	translatable="true">INFO</string>
 	<string	name="main_title_06"	translatable="true">xManager</string>
@@ -475,23 +475,23 @@
     <string	name="about_title_06"	translatable="true">Informazioni</string>
 
     <string	name="list_auto_refresh_06"	translatable="true">AGGIORNAMENTO AUTOMATICO LISTA</string>
-    <string	name="list_auto_refresh_desc_06"	translatable="true">Attivando questa impostazione, la lista verrà aggiornato automaticamente ogni volta che verrà avviata l\'applicazione.\n\nPuoi aggiornare manualmente la lista trascinando la schermata principale verso il basso.</string>
+    <string	name="list_auto_refresh_desc_06"	translatable="true">Attivando questa impostazione, la lista verrà aggiornata automaticamente ogni volta che verrà avviata l\'applicazione.\n\nPuoi aggiornare manualmente la lista trascinando la schermata principale verso il basso.</string>
     <string	name="force_auto_install_06"	translatable="true">FORZA INSTALLAZIONE AUTOMATICA</string>
     <string	name="force_auto_install_desc_06"	translatable="true">Attivando questa impostazione verrà installata automaticamente l\'applicazione modificata e l\'aggiornamento una volta scaricato.</string>
-    <string	name="copy_url_mode_06"	translatable="true">MODALITÀ COPIA INDIRIZZO</string>
-    <string	name="copy_url_mode_desc_06"	translatable="true">Attivando questa impostazione potrete copiare direttamente l\'indirizzo url per poter scaricare il file.\n\nNon è sempre consigliato, a meno che non abbiate problemi a scaricare i file direttamente nel manager.</string>
+    <string	name="copy_url_mode_06"	translatable="true">MODALITÀ COPIA URL</string>
+    <string	name="copy_url_mode_desc_06"	translatable="true">Attivando questa impostazione potrete copiare direttamente l\'URL per poter scaricare il file.\n\nNon è sempre consigliato, a meno che non abbiate problemi a scaricare i file direttamente nel manager.</string>
     <string	name="hide_navigation_bar_06"	translatable="true">NASCONDI BARRA DI NAVIGAZIONE</string>
-    <string	name="show_themes_06"	translatable="true">MOSTRA TEMI</string>
-	<string	name="apk_location_06"	translatable="true">POSIZIONE FILE APK</string>
-    <string	name="apk_location_desc_06"	translatable="true">Cartella dove vuoi salvare l\'apk scaricato. Se non sapete come configurare questa funzione, lasciatela così com\'è.\n\nNOTA: Questa funzione non supporta l\'archiviazione esterna (scheda SD) a causa dell\'accessibilità, dei permessi e delle limitazioni di archiviazione.</string>
-    <string	name="clear_directory_folders_06"	translatable="true">PULIZIA DELLA CARTELLE</string>
-    <string	name="clear_directory_folders_desc_06"	translatable="true">Seleziona per eleminare tutte le cartelle inclusi gli apk scaricati e gli aggiornamenti.</string>
+    <string	name="show_themes_06"	translatable="true">TEMI</string>
+	<string	name="apk_location_06"	translatable="true">POSIZIONE APK</string>
+    <string	name="apk_location_desc_06"	translatable="true">Cartella dove vuoi salvare il file scaricato. Se non sapete come configurare questa funzione, lasciatela così com\'è.\n\nNOTA: Questa funzione non supporta l\'archiviazione esterna (scheda SD) a causa dell\'accessibilità, dei permessi e delle limitazioni di archiviazione.</string>
+    <string	name="clear_directory_folders_06"	translatable="true">PULIZIA DELLE CARTELLE</string>
+    <string	name="clear_directory_folders_desc_06"	translatable="true">Tocca per eleminare tutte le cartelle inclusi i file scaricati e gli aggiornamenti.</string>
     <string	name="reset_settings_06"	translatable="true">RIPRISTINA IMPOSTAZIONI</string>
 	
     <string	name="about_sub_06"	translatable="true">Niente Annunci | Nuove Funzionalità | Libertà</string>
     <string	name="xmanager_dev_06"	translatable="true">Sviluppatore di xManager</string>
     <string	name="spotify_mod_devs_06"	translatable="true">Sviluppatori della Mod di Spotify</string>
-    <string	name="telegram_support_team_06"	translatable="true">Team di Supporto Telegram</string>
+    <string	name="telegram_support_team_06"	translatable="true">Team di Supporto Telegram/Discord</string>
     <string	name="manager_testers_06"	translatable="true">Tester per Mod/Manager</string>
     <string	name="manager_hosting_06"	translatable="true">Link di hosting del Manager</string>
     <string	name="mobilism_team_06"	translatable="true">Team di Mobilism</string>
@@ -504,7 +504,7 @@
     <string	name="download_ready_desc_06"	translatable="true">Scaricando questo apk modificato sovrascriverai il file precedentemente situato nella cartella contenente i file esterni dell\'applicazione.</string>
 	<string	name="downloading_file_06"	translatable="true">SCARICANDO FILE...</string>
     <string	name="download_success_06"	translatable="true">SCARICATO CON SUCCESSO</string>
-	<string	name="copy_url_desc_06"	translatable="true">Hai selezionato questa versione modificata. Vuoi copiare l\'indirizzo url?</string>
+	<string	name="copy_url_desc_06"	translatable="true">Hai selezionato questa versione modificata. Vuoi copiare l\'URL?</string>
     <string	name="file_directory_06"	translatable="true">CARTELLA DEL FILE</string>
     <string	name="new_update_06"	translatable="true">NUOVO AGGIORNAMENTO DEL MANAGER</string>
 	
@@ -518,15 +518,15 @@
     <string	name="go_back_06"	translatable="true">TORNA INDIETRO</string>
     <string	name="download_update_06"	translatable="true">SCARICA AGGIORNAMENTO</string>
     <string	name="not_now_06"	translatable="true">NON ORA</string>
-    <string	name="copy_url_06"	translatable="true">COPIA INDIRIZZO</string>
+    <string	name="copy_url_06"	translatable="true">COPIA URL</string>
 	
 	<string	name="show_support_06"	translatable="true">MOSTRA IL TUO SOSTEGNO</string>
-    <string	name="show_support_desc_06"	translatable="true">Siamo un team senza scopo di lucro, non corporativa e non compromessa. Le persone come te ci incoraggiano a creare un\'app per rendere tutto molto più semplice soprattutto dallo scaricare all\'installazione.\n\nStiamo dedicando tutto il nostro tempo e i nostri migliori sforzi solo per rendere le cose corrette e perfette. Faremo del nostro meglio per supportare questa app il più a lungo possibile.\n\nQualsiasi importo aiuterà e sarà molto gradito!</string>
+    <string	name="show_support_desc_06"	translatable="true">Siamo un team senza scopo di lucro, non aziendale e senza compromessi. Le persone come te ci incoraggiano a creare un\'app per rendere tutto molto più semplice soprattutto dal download all\'installazione.\n\nStiamo dedicando tutto il nostro tempo e i nostri migliori sforzi solo per rendere le cose corrette e perfette. Faremo del nostro meglio per supportare questa app il più a lungo possibile.\n\nQualsiasi importo aiuterà e sarà molto gradito!</string>
 	
 	<string	name="maintenance_06"	translatable="true">MANUTENZIONE</string>
-	<string	name="maintenance_desc_06"	translatable="true">xManager non è attualmente disponibile in questo momento. Si prega di controllare l\'applicazione in un secondo momento.</string>
+	<string	name="maintenance_desc_06"	translatable="true">xManager non è attualmente disponibile. Si prega di controllare l\'applicazione in un secondo momento.</string>
 	<string	name="thanks_06"	translatable="true">GRAZIE!</string>
-	<string	name="language_06"	translatable="true">LINGUAGGIO</string>
+	<string	name="language_06"	translatable="true">LINGUA</string>
 	<string	name="website_06"	translatable="true">SITO</string>
 	<string	name="reddit_06"	translatable="true">REDDIT</string>
     <string	name="faq_06"	translatable="true">DOMANDE FREQUENTI</string>
