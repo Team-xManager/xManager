@@ -1217,12 +1217,12 @@
 	
     <!--ROMANIAN LANGUAGE-->
 	<string	name="app_name_16"	translatable="true">xManager</string>
-    <string	name="spotify_regular_16"	translatable="true">SPOTIFY (REGULAR)</string>
+    <string	name="spotify_regular_16"	translatable="true">SPOTIFY (NORMAL)</string>
     <string	name="spotify_amoled_16"	translatable="true">SPOTIFY (AMOLED)</string>
     <string	name="installed_16"	translatable="true">INSTALATE</string>
     <string	name="latest_16"	translatable="true">RECENTE</string>
     <string	name="versions_16"	translatable="true">VERSIUNI  </string>
-    <string	name="changelogs_16"	translatable="true">JURNALUL SCHIMBĂRILOR</string>
+    <string	name="changelogs_16"	translatable="true">JURNAL SCHIMBĂRI</string>
     <string	name="manager_tools_16"	translatable="true">INSTRUMENTELE ADMINISTRATORULUI</string>
 	<string	name="device_cpu_16"	translatable="true">CPU/ARCH</string>
     <string	name="source_16"	translatable="true">SURSĂ</string>
@@ -1235,34 +1235,34 @@
     <string	name="about_title_16"	translatable="true">Despre</string>
 	
     <string	name="list_auto_refresh_16"	translatable="true">LISTĂ DE REÎMPROSPĂTARE</string>
-    <string	name="list_auto_refresh_desc_16"	translatable="true">Activând asta automat lista o să se reîmprospăteze de fie care dată când deschizi aplicația.\n\nPoți reîmprospăta manual lista trăgând în jos de ecranul principal.</string>
-    <string	name="force_auto_install_16"	translatable="true">FORȚEAZĂ AUTO-INSTALAREA</string>
-    <string	name="force_auto_install_desc_16"	translatable="true">Activând asta automat o să instaleze aplicația reparată și actualizarea odată descărcată.</string>
-    <string	name="copy_url_mode_16"	translatable="true">MODUL DE COLIERE URL</string>
-    <string	name="copy_url_mode_desc_16"	translatable="true">Activând asta o să poți copia fișierul direct URL.\n\nNu este recomandat mereu doar dacă aveți probleme descărcând fișierul direct din manager.</string>
-    <string	name="hide_navigation_bar_16"	translatable="true">ASCUNDE BARA DE NAVIGAȚIE</string>
-    <string	name="show_themes_16"	translatable="true">TEMATICE</string>
-	<string	name="apk_location_16"	translatable="true">LOCAȚIA APK</string>
-    <string	name="apk_location_desc_16"	translatable="true">Directorul de fișiere unde vrei să salvezi fișierul descărcat. Dacă nu știi cum să figurezi această funcțiune, atunci las-o cum este.\n\nNOTIȚĂ: Această funcțiune nu suportă memorie externală (SD Card) datorită accesibilității, permisiunile și limitările de memorie.</string>
-    <string	name="clear_directory_folders_16"	translatable="true">CURĂȚĂ DOSARELE DIRECTORIEI</string>
-    <string	name="clear_directory_folders_desc_16"	translatable="true">Apasă ca să ștergi toate dosarele directoriei incluzând dosarele descărcate și actualizările.</string>
+    <string	name="list_auto_refresh_desc_16"	translatable="true">Activând asta se va reîmprospăta lista de fiecare dată când deschizi aplicația.\n\nPoți reîmprospăta manual lista trăgând în jos de ecranul principal.</string>
+    <string	name="force_auto_install_16"	translatable="true">FORȚEAZĂ AUTO-INSTALARE</string>
+    <string	name="force_auto_install_desc_16"	translatable="true">Activând asta se va instala automat aplicația modată și actualizarea îndată ce e descărcată.</string>
+    <string	name="copy_url_mode_16"	translatable="true">MODUL COPIERE URL</string>
+    <string	name="copy_url_mode_desc_16"	translatable="true">Activând asta o să poți copia fișierul direct URL.\n\nNu e recomandat decât dacă aveți probleme descărcând fișierul direct din manager.</string>
+    <string	name="hide_navigation_bar_16"	translatable="true">ASCUNDE BARA DE NAVIGARE</string>
+    <string	name="show_themes_16"	translatable="true">TEME</string>
+	<string	name="apk_location_16"	translatable="true">LOCAȚIE APK</string>
+    <string	name="apk_location_desc_16"	translatable="true">Directorul de fișiere unde vrei să salvezi fișierul descărcat. Dacă nu știi să setezi această funcție, atunci las-o cum este.\n\nNOTIȚĂ: Această funcție nu suportă memoria externă (SD Card) din cauza accesibilității, permisiunilor și limitărilor de memorie.</string>
+    <string	name="clear_directory_folders_16"	translatable="true">CURĂȚĂ FOLDERELE DIRECTORULUI</string>
+    <string	name="clear_directory_folders_desc_16"	translatable="true">Apasă ca să ștergi toate folderele directorului incluzând fișierele descărcate și actualizările.</string>
     <string	name="reset_settings_16"	translatable="true">RESETEAZĂ SETĂRILE</string>
 	
-    <string	name="about_sub_16"	translatable="true">Fără Reclame | Funcțiuni Noi | Libertate</string>
+    <string	name="about_sub_16"	translatable="true">Fără Reclame | Funcții Noi | Libertate</string>
     <string	name="xmanager_dev_16"	translatable="true">Dezvoltator xManager</string>
-    <string	name="spotify_mod_devs_16"	translatable="true">Dezvoltării Modului Spotify</string>
+    <string	name="spotify_mod_devs_16"	translatable="true">Dezvoltatorii Modului Spotify</string>
     <string	name="telegram_support_team_16"	translatable="true">Echipa de suport Telegram/Discord</string>
-    <string	name="manager_testers_16"	translatable="true">Mod/Manager testerii</string>
-    <string	name="manager_hosting_16"	translatable="true">Linkuri de găzduire ale Managerului</string>
+    <string	name="manager_testers_16"	translatable="true">Testeri Mod/Manager</string>
+    <string	name="manager_hosting_16"	translatable="true">Link-uri de găzduire ale Managerului</string>
     <string	name="mobilism_team_16"	translatable="true">Echipa Mobilism</string>
     <string	name="forum_team_16"	translatable="true">Echipa FORUM.APK-RELEASE.NET</string>
 	<string	name="xspotify_team_16"	translatable="true">xSpotify Manager (Vechiul Manager)</string>
-    <string	name="contributors_16"	translatable="true">MERSI TUTUROR CONTRIBUITORILOR! ❤️</string>
+    <string	name="contributors_16"	translatable="true">MULȚUMIRI TUTUROR CONTRIBUITORILOR! ❤️</string>
 	
-    <string	name="download_selected_16"	translatable="true">Ai selectat această versiune patch-uită. Ai Dorii să continui?</string>
+    <string	name="download_selected_16"	translatable="true">Ai selectat această versiune patch-uită. Ai dori să continui?</string>
     <string	name="download_ready_16"	translatable="true">INFORMAȚII DESPRE PATCH-URI</string>
-    <string	name="download_ready_desc_16"	translatable="true">Descărcând această versiune patch-uită o să suprascrie fișierul anterior locat în directorul aplicației de fișiere externe.</string>
-	<string	name="downloading_file_16"	translatable="true">DESCĂRCÂND FIȘIERUL...</string>
+    <string	name="download_ready_desc_16"	translatable="true">Descărcând această versiune patch-uită se va suprascrie fișierul anterior aflat în directorul aplicației de fișiere externe.</string>
+	<string	name="downloading_file_16"	translatable="true">SE DESCARCĂ FIȘIERUL...</string>
     <string	name="download_success_16"	translatable="true">DESCĂRCAT CU SUCCES</string>
 	<string	name="copy_url_desc_16"	translatable="true">Ai selectat această versiune patch-uită. Dorești să copiezi URL-ul?</string>
     <string	name="file_directory_16"	translatable="true">DIRECTORUL DE FIȘIERE</string>
@@ -1281,10 +1281,10 @@
     <string	name="copy_url_16"	translatable="true">COPIAZĂ URL</string>
 	
 	<string	name="show_support_16"	translatable="true">ARATĂ SUPORTUL TĂU</string>
-    <string	name="show_support_desc_16"	translatable="true">Suntem ne-profitabili, ne-corporativi și echipă ne-compromisă. Oamenii ca tine ne încurajează să creăm o aplicație să facem lucrurile mult mai ușor în special de la descărcat la instalat.\n\nPunem tot timpul nostru și cel mai nare efort doar ca să facem lucrurile corect și perfecte. O să facem tot ce putem să susținem aplicația pentru cât putem.\n\n Orice sumă ne ajută și este foarte apreciată!</string>
+    <string	name="show_support_desc_16"	translatable="true">Suntem o echipa non-profit, non-corporată și ne-compromisă. Oamenii ca tine ne încurajează să creăm o aplicație pentru a face lucrurile mult mai ușoare în special de la descărcat până la instalat.\n\nTurnam tot timpul nostru și cel mai bun efort doar ca să facem lucrurile corect și perfect. O să facem tot ce putem să susținem aplicația pentru cât putem.\n\n Orice sumă ne ajută și este foarte apreciată!</string>
 	
 	<string	name="maintenance_16"	translatable="true">MENTENANȚĂ</string>
-	<string	name="maintenance_desc_16"	translatable="true">xManager momentan nu este disponibil. Vă rugăm să încercați mai târziu.</string>
+	<string	name="maintenance_desc_16"	translatable="true">xManager momentan e indisponibil. Vă rugăm să încercați mai târziu.</string>
 	<string	name="thanks_16"	translatable="true">MULȚUMIM!</string>
 	<string	name="language_16"	translatable="true">LIMBĂ</string>
     <string	name="website_16"	translatable="true">WEBSITE</string>
