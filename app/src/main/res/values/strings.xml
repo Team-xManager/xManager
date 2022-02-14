@@ -1442,4 +1442,80 @@
     <string	name="website_18"	translatable="true">WEBSITE</string>
     <string	name="reddit_18"	translatable="true">REDDIT</string>
     <string	name="faq_18"	translatable="true">VEELGESTELDE VRAGEN</string>
+	
+    <!--PERSIAN LANGUAGE-->
+	<string	name="app_name_19"	translatable="true">xManager</string>
+    <string	name="spotify_regular_19"	translatable="true">SPOTIFY (عادی)</string>
+    <string	name="spotify_amoled_19"	translatable="true">SPOTIFY (آمولد)</string>
+    <string	name="installed_19"	translatable="true">نصب شده</string>
+    <string	name="latest_19"	translatable="true">آخرین نسخه</string>
+    <string	name="versions_19"	translatable="true">نسخه ها  </string>
+    <string	name="changelogs_19"	translatable="true">تغییرات</string>
+    <string	name="manager_tools_19"	translatable="true">ابزار</string>
+	<string	name="device_cpu_19"	translatable="true">پردازنده/معماری</string>
+    <string	name="source_19"	translatable="true">سورس</string>
+    <string	name="support_19"	translatable="true">تلگرام</string>
+    <string	name="donate_19"	translatable="true">حمایت</string>
+    <string	name="discord_19"	translatable="true">دیسکورد</string>
+    <string	name="about_19"	translatable="true">درباره</string>
+	<string	name="main_title_19"	translatable="true">xManager</string>
+    <string	name="settings_title_19"	translatable="true">تنظیمات</string>
+    <string	name="about_title_19"	translatable="true">درباره</string>
+	
+    <string	name="list_auto_refresh_19"	translatable="true">تازه سازی خودکار لیست</string>
+    <string	name="list_auto_refresh_desc_19"	translatable="true">با فعالسازی این گزینه، با هر بار باز شدن اپلیکیشن لیست به صورت خودکار تازه سازی می شود\n\nشما می توانید این کار را به صورت دستی، با پایین کشیدن صفحه اصلی هم انجام دهید</string>
+    <string	name="force_auto_install_19"	translatable="true">نصب خودکار اجباری</string>
+    <string	name="force_auto_install_desc_19"	translatable="true">با فعالسازی این گزینه نسخه پچ شده اپلیکیشن به صورت خودکار دریافت، نصب و بروزرسانی می شود</string>
+    <string	name="copy_url_mode_19"	translatable="true">حالت کپی لینک</string>
+    <string	name="copy_url_mode_desc_19"	translatable="true">فعالسازی این گزینه به شما اجازه می دهد که آدرس مستقیم دانلود فایل را کپی کنید\n\nفقط در صورتی که با دریافت فایل از این اپ مشکل دارید از این گزینه استفاده کنید</string>
+    <string	name="hide_navigation_bar_19"	translatable="true">پنهان سازی نوار ناوبری</string>
+    <string	name="show_themes_19"	translatable="true">پوسته ها</string>
+	<string	name="apk_location_19"	translatable="true">مسیر برنامه</string>
+    <string	name="apk_location_desc_19"	translatable="true">مسیری که فایل دریافت شده را در آن ذخیره می کنید. اگر نمی دانید چطور این گزینه را تنظیم کنید، همانطور که هست رهایش کنید\n\nتوجه: این ویژگی به دلیل محدودیت های موجود در دسترسی، مجوز ها و ذخیره سازی، از حافظه جانبی پشتیبانی نمی کند</string>
+    <string	name="clear_directory_folders_19"	translatable="true">پاکسازی پوشه های برنامه</string>
+    <string	name="clear_directory_folders_desc_19"	translatable="true">برای پاکسازی تمام پوشه های برنامه، شامل فایل ها و بروزرسانی های دریافت شده کلیک کنید</string>
+    <string	name="reset_settings_19"	translatable="true">بازنشانی تنظیمات</string>
+	
+    <string	name="about_sub_19"	translatable="true">بدون تبلیغات | قابلیت های جدید | آزادی</string>
+    <string	name="xmanager_dev_19"	translatable="true">سازنده xManager</string>
+    <string	name="spotify_mod_devs_19"	translatable="true">سازندگان اسپاتیفای مود شده</string>
+    <string	name="telegram_support_team_19"	translatable="true">تیم پشتیبانی تلگرام و دیسکورد</string>
+    <string	name="manager_testers_19"	translatable="true">آزمایش Mod/Manager</string>
+    <string	name="manager_hosting_19"	translatable="true">میزبانی لینک های برنامه</string>
+    <string	name="mobilism_team_19"	translatable="true">تیم Mobilism</string>
+    <string	name="forum_team_19"	translatable="true">تیم FORUM.APK-RELEASE.NET</string>
+	<string	name="xspotify_team_19"	translatable="true">xSpotify Manager (نسخه قدیمی)</string>
+    <string	name="contributors_19"	translatable="true">با تشکر از تمام مشارکت کنندگان! ❤️</string>
+	
+    <string	name="download_selected_19"	translatable="true">شما این نسخه پچ شده را انتخاب کردید. آیا می خواهید ادامه دهید؟</string>
+    <string	name="download_ready_19"	translatable="true">مشخصات پچ</string>
+    <string	name="download_ready_desc_19"	translatable="true">این فایل، جایگزین فایل دریافت شده قبلی می شود</string>
+	<string	name="downloading_file_19"	translatable="true">در حال دریافت فایل...</string>
+    <string	name="download_success_19"	translatable="true">دریافت با موفقیت انجام شد</string>
+	<string	name="copy_url_desc_19"	translatable="true">شما این نسخه پچ شده را انتخاب کردید. آیا می خواهید آدرس را کپی کنید؟</string>
+    <string	name="file_directory_19"	translatable="true">مسیر فایل</string>
+    <string	name="new_update_19"	translatable="true">بروزرسانی نرم افزار</string>
+	
+    <string	name="continue_1_19"	translatable="true">ادامه</string>
+    <string	name="cancel_19"	translatable="true">لغو کردن</string>
+    <string	name="download_19"	translatable="true">دریافت</string>
+    <string	name="later_19"	translatable="true">بعداً</string>
+    <string	name="directory_19"	translatable="true">مسیر</string>
+    <string	name="install_now_19"	translatable="true">حالا نصب کن</string>
+    <string	name="install_update_19"	translatable="true">نصب بروزرسانی</string>
+    <string	name="go_back_19"	translatable="true">بازگشت</string>
+    <string	name="download_update_19"	translatable="true">دریافت بروزرسانی</string>
+    <string	name="not_now_19"	translatable="true">حالا نه</string>
+    <string	name="copy_url_19"	translatable="true">کپی آدرس</string>
+	
+	<string	name="show_support_19"	translatable="true">حمایت خود را نشان دهید</string>
+    <string	name="show_support_desc_19"	translatable="true">ما یک تیم غیر انتفاعی، غیر سازمانی و مستقل هستیم. افرادی مانند شما ما را تشویق به ساخت برنامه ای می کنند که همه چیز را، از دانلود تا نصب، بسیار آسان تر می کند.\n\nما تمام وقت و تلاش خود را صرف بهبود دادن و بی نقص کردن این برنامه می کنیم. تیم ما تا زمانی که بتواند، تمام تلاش خود را برای پشتیبانی از این برنامه خواهد کرد.\n\nهر مقدار حمایت بسیار کمک کننده خواهد بود، و قدردانی ما را به همراه خواهد داشت!</string>
+	
+	<string	name="maintenance_19"	translatable="true">تعمیرات</string>
+	<string	name="maintenance_desc_19"	translatable="true">xManager در حال حاضر در دسترس نیست. لطفاً بعداً مراجعه کنید.</string>
+	<string	name="thanks_19"	translatable="true">ممنون!</string>
+	<string	name="language_19"	translatable="true">زبان</string>
+    <string	name="website_19"	translatable="true">وبسایت</string>
+	<string	name="reddit_19"	translatable="true">ردیت</string>
+    <string	name="faq_19"	translatable="true">پرسش های متداول</string>
 </resources>
