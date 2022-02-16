@@ -1442,4 +1442,79 @@
     <string	name="website_18"	translatable="true">WEBSITE</string>
     <string	name="reddit_18"	translatable="true">REDDIT</string>
     <string	name="faq_18"	translatable="true">VEELGESTELDE VRAGEN</string>
+	 <!--GERMAN LANGUAGE-->
+	<string	name="app_name"	translatable="true">xManager</string>
+    <string	name="spotify_regular"	translatable="true">SPOTIFY (REGULÄR)</string>
+    <string	name="spotify_amoled"	translatable="true">SPOTIFY (AMOLED)</string>
+    <string	name="installed"	translatable="true">INSTALLIERT</string>
+    <string	name="latest"	translatable="true">NEUSTE</string>
+    <string	name="versions"	translatable="true">VERSIONEN  </string>
+    <string	name="changelogs"	translatable="true">CHANGELOGS</string>
+    <string	name="manager_tools"	translatable="true">MANAGER TOOLS</string>
+	<string	name="device_cpu"	translatable="true">CPU/ARCH</string>
+    <string	name="source"	translatable="true">QUELLE</string>
+    <string	name="support"	translatable="true">TELEGRAM</string>
+    <string	name="donate"	translatable="true">SPENDEN</string>
+    <string	name="discord"	translatable="true">DISCORD</string>
+    <string	name="about"	translatable="true">ÜBER</string>
+	<string	name="main_title"	translatable="true">xManager</string>
+    <string	name="settings_title"	translatable="true">Einstellungen</string>
+    <string	name="about_title"	translatable="true">Über</string>
+	
+    <string	name="list_auto_refresh"	translatable="true">LISTE AUTOMATISCHE-AKTUALISIERUNG</string>
+    <string	name="list_auto_refresh_desc"	translatable="true">Wenn Du diese Funktion aktivierst, wird die Liste bei jedem Start der Anwendung automatisch aktualisiert.\n\nDu kannst die Liste auch manuell aktualisieren, indem Du nach auf der Hauptseite nach unten swipest.</string>
+    <string	name="force_auto_install"	translatable="true">ERZWINGE AUTOMATISCHE-INSTALLIERUNG</string>
+    <string	name="force_auto_install_desc"	translatable="true">Wenn Du diese Option aktivierst, wird die gepatchte Anwendung und das Update nach dem Herunterladen automatisch installiert.</string>
+    <string	name="copy_url_mode"	translatable="true">URL-KOPIERMODUS</string>
+    <string	name="copy_url_mode_desc"	translatable="true">Wenn Du diese Option aktivierst, kannst Du die Datei direkt über die URL kopieren.\n\nDies wird nicht immer empfohlen, es sei denn, Du hast Probleme mit dem direkten Herunterladen der Dateien im Manager.</string>
+    <string	name="hide_navigation_bar"	translatable="true">NAVIGATIONSLEISTE VERSTECKEN</string>
+    <string	name="show_themes"	translatable="true">THEMEN</string>
+	<string	name="apk_location"	translatable="true">APK SPEICHERORT</string>
+    <string	name="apk_location_desc"	translatable="true">Dateiverzeichnis, in dem Du die heruntergeladene Datei speichern möchtest. Wenn Du nicht weißt, wie Du diese Funktion konfigurieren kannst, lass diese Einstellung unverändert.\n\nHINWEIS: Diese Funktion unterstützt keine externen Speichermedien (SD-Karten) aufgrund von Zugriffsmöglichkeiten, Berechtigungen und Speicherplatzbeschränkungen..</string>
+    <string	name="clear_directory_folders"	translatable="true">VERZEICHNISORDNER LEEREN</string>
+    <string	name="clear_directory_folders_desc"	translatable="true">Tippe, um alle Verzeichnisordner einschließlich der heruntergeladenen Dateien und Updates zu löschen.</string>
+    <string	name="reset_settings"	translatable="true">EINSTELLUNGEN ZURÜCKSETZEN</string>
+	
+    <string	name="about_sub"	translatable="true">Werbefrei | Neue Funktionen | Unabhängigkeit</string>
+    <string	name="xmanager_dev"	translatable="true">xManager Entwickler</string>
+    <string	name="spotify_mod_devs"	translatable="true">Spotify Mod Entwickler</string>
+    <string	name="telegram_support_team"	translatable="true">Telegram/Discord Support Team</string>
+    <string	name="manager_testers"	translatable="true">Mod/Manager Tester</string>
+    <string	name="manager_hosting"	translatable="true">Manager Hosting Links</string>
+    <string	name="mobilism_team"	translatable="true">Mobilism Team</string>
+    <string	name="forum_team"	translatable="true">FORUM.APK-RELEASE.NET Team</string>
+	<string	name="xspotify_team"	translatable="true">xSpotify Manager (Alter Manager)</string>
+    <string	name="contributors"	translatable="true">DANKE AN ALLE MITWIRKENDEN! ❤️</string>
+	
+    <string	name="download_selected"	translatable="true">Du hast diese gepatchte Version ausgewählt. Möchtest Du fortfahren?</string>
+    <string	name="download_ready"	translatable="true">GEPATCHTE DATEN</string>
+    <string	name="download_ready_desc"	translatable="true">Das Herunterladen dieser gepatchten APK überschreibt die vorherige Datei, die sich im externen Dateiverzeichnis der Anwendung befindet.</string>
+	<string	name="downloading_file"	translatable="true">AM HERUNTERLADEN...</string>
+    <string	name="download_success"	translatable="true">ERFOLGREICH HERUNTERGELADEN</string>
+	<string	name="copy_url_desc"	translatable="true">Du hast diese gepatchte Version ausgewählt. Möchtest Du die URL kopieren?</string>
+    <string	name="file_directory"	translatable="true">DATEIVERZEICHNIS</string>
+    <string	name="new_update"	translatable="true">NEUES MANAGER UPDATE</string>
+	
+    <string	name="continue_1"	translatable="true">FORTFAHREN</string>
+    <string	name="cancel"	translatable="true">ABBRECHEN</string>
+    <string	name="download"	translatable="true">DOWNLOAD</string>
+    <string	name="later"	translatable="true">SPÄTER</string>
+    <string	name="directory"	translatable="true">VERZEICHNIS</string>
+    <string	name="install_now"	translatable="true">JETZT INSTALLIEREN</string>
+    <string	name="install_update"	translatable="true">UPDATE INSTALLIEREN</string>
+    <string	name="go_back"	translatable="true">GEHE ZURÜCK</string>
+    <string	name="download_update"	translatable="true">UPDATE DOWNLOADEN</string>
+    <string	name="not_now"	translatable="true">NICHT JETZT</string>
+    <string	name="copy_url"	translatable="true">URL KOPIEREN</string>
+	
+	<string	name="show_support"	translatable="true">ZEIGE DEINEN SUPPORT</string>
+    <string	name="show_support_desc"	translatable="true">Wir sind ein gemeinnütziges, nicht-korporatives und nicht-kompromittiertes Team. Menschen wie Dich haben uns ermutigt, eine App zu entwickeln, die alles einfacher macht, vor allem das Herunterladen und die Installation.\n\nWir investieren all unsere Zeit und Mühe, um alles richtig und perfekt zu machen. Wir werden unser Bestes tun, um diese App so lange wie möglich zu entwickeln.\n\nJeder Betrag wird helfen und sehr geschätzt werden!</string>
+	
+	<string	name="maintenance"	translatable="true">WARTUNG</string>
+	<string	name="maintenance_desc"	translatable="true">xManager ist derzeit nicht verfügbar. Bitte überprüfe die Anwendung später erneut.</string>
+	<string	name="thanks"	translatable="true">DANKE!</string>
+	<string	name="language"	translatable="true">SPRACHE</string>
+    <string	name="website"	translatable="true">WEBSITE</string>
+	<string	name="reddit"	translatable="true">REDDIT</string>
+    <string	name="faq"	translatable="true">FAQ</string>
 </resources>
