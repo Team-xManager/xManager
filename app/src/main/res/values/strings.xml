@@ -1136,8 +1136,8 @@
 	<string	name="thanks_14"	translatable="true">شكراً</string>
 	<string	name="language_14"	translatable="true">اللغة</string>
 	<string	name="website_14"	translatable="true">الموقع الالكتروني</string>
-	<string	name="reddit_14"	translatable="true">رديت</string>
-    <string	name="faq_14"	translatable="true">كثيرا ما نسأل السؤال</string>
+	<string	name="reddit_14"	translatable="true">ريديت</string>
+    <string	name="faq_14"	translatable="true">الأسئلة الشائعة</string>
 	
 	<!--SLOVENIAN LANGUAGE-->
 	<string	name="app_name_15"	translatable="true">xManager</string>
