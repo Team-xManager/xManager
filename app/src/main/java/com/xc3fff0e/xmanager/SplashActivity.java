@@ -55,6 +55,8 @@ public class SplashActivity extends AppCompatActivity {
 		setContentView(R.layout.splash);
 		initialize(_savedInstanceState);
 		com.google.firebase.FirebaseApp.initializeApp(this);
+		com.google.android.gms.ads.MobileAds.initialize(this);
+		
 		initializeLogic();
 	}
 	
