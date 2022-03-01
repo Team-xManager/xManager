@@ -20,7 +20,7 @@
 		android:name=".SketchApplication"
 		android:requestLegacyExternalStorage="true"
 		android:usesCleartextTraffic="true"
-		android:theme="@style/Theme.AppCompat.NoActionBar"
+		android:theme="@style/Theme_Origin"
 		android:preserveLegacyExternalStorage="true">
 		<activity
 			android:name=".MainActivity"
@@ -45,6 +45,10 @@
 		<activity
 			android:name=".DebugActivity"
 			android:screenOrientation="portrait" />
+		<activity
+			android:name="com.google.android.gms.ads.AdActivity"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+			android:theme="@android:style/Theme.Translucent" />
 		<meta-data
 			android:name="com.google.android.gms.version"
 			android:value="@integer/google_play_services_version" />
@@ -91,6 +95,9 @@
       <meta-data 
         android:name="android.support.FILE_PROVIDER_PATHS" 
         android:resource="@xml/provider_paths"/> 
+        <meta-data
+        android:name="com.google.android.gms.ads.APPLICATION_ID"
+        android:value="ca-app-pub-3319548483346434~9030061641"/>
       </provider>
 	</application>
 </manifest>
