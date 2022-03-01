@@ -1,15 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <resources>
-	<style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
-		<item name="colorPrimary">@color/colorPrimary</item>
-		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-		<item name="colorAccent">@color/colorAccent</item>
-		<item name="colorControlHighlight">@color/colorControlHighlight</item>
-		<item name="colorControlNormal">@color/colorControlNormal</item>
+    <style name="Theme_Origin" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorControlHighlight</item>
+        <item name="colorControlNormal">@color/colorControlNormal</item>
+    </style>
+    <style name="Progress_Dialog" parent="Theme.MaterialComponents.Light.Dialog">
+	    <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorControlHighlight</item>
+        <item name="colorControlNormal">@color/colorControlNormal</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="Alert_Dialog" parent="Theme.MaterialComponents.Light.Dialog">
+	    <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorControlHighlight</item>
+        <item name="colorControlNormal">@color/colorControlNormal</item>
+        <item name="android:textColor">#FFFFFF</item>
 	</style>
-	<style name="AppTheme.FullScreen" parent="AppTheme">
-		<item name="android:windowFullscreen">true</item>
-		<item name="android:windowContentOverlay">@null</item>
-	</style>
-	<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
-	<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 </resources>
