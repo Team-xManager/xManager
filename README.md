@@ -13,7 +13,7 @@
 **•There are some instance that the source code is unbuildable, some parts might be missing and such due to limitations.**   
 ~~•Most of the internal changes can only be seen in MainActivity.java. The file size already reached 1MB and Github won't allow us to edit and do further changes/commits unless removing and re-adding the new updated files.~~  
 **•Users might experience downtime and maintenance when using the manager app since we are manually changing the hosting links of each individual files from time to time.**  
-**•xManager is completely free and we do not get any comissions with it.**  
+**•xManager is completely free and we do not get any comissions with it (Rewarded Ads are now optional).**  
 **•We will support the app as long as we can. Internal improvements may not guaranteed.** 
 
 # xManager (Spotify)
@@ -62,10 +62,10 @@ Gent G (Chinese - Simplified Translation)
 The Punisher (French Translation)  
 Walter's Cousin #CAF (Greek Translation)  
 Mc.J & Deraidos (Indonesian Translation)  
-Marco (Italian Translation)  
+Marco | gdonisi (Italian Translation)  
 Loui's™ & Zilberto Junior (Portuguese - Brazil Translation)  
 Androide323 (Portuguese - Portugal Translation)  
-NACH (Romanian Translation)  
+NACH | f9branza (Romanian Translation)  
 Pegioner (Russian Translation)  
 MysticX (Slovenian Translation)  
 PetFix (Spanish - Spain Translation)  
@@ -73,6 +73,9 @@ Berkay (Turkish Translation)
 NIKITA🇺🇦[beryllium] #PocoForEver (Ukrainian Translation)  
 Apious (Korean Translation)  
 Kevin (Dutch Translation)  
+minhtamvn (Vietnamese Translation)  
+smokedzn (German Translation)  
+ohshahab (Persian Translation)  
 
 # Contributors  
 
