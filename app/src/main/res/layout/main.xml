@@ -28,7 +28,7 @@
 			android:textStyle="bold"
 			android:textColor="#000000" />
 		<TextView
-			android:id="@+id/title_header_seperator"
+			android:id="@+id/title_header_separator"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:paddingLeft="3dp"
@@ -91,6 +91,168 @@
 		android:padding="8dp"
 		android:background="#000000"
 		android:orientation="vertical">
+		<TextView
+			android:id="@+id/installation_failed"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="INSTALLATION FAILED"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/existing_patched_ream"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="EXISTING PATCHED"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/close"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="CLOSE"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/ream"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="RE/AM"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/uninstall_patched"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="UNINSTALL PATCHED"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/open_settings"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="OPEN SETTINGS"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/uninstall"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="UNINSTALL"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/delete"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="DELETE"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/open_patched"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="OPEN PATCHED"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/ignore"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="IGNORE"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/cloned"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="CLONED"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/install"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="INSTALL"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/existing_patched_cloned"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="EXISTING CLONED"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/existing_patched_cloned_desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="An existing cloned patched file found in one of the directory. What action would you like to do\?"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/existing_patched_ream_desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="An existing patched file found in one of the directory. What action would you like to do\?"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/installation_failed_cloned_desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Reason: The current cloned installed on this device did not came directly from xManager or from our team.&lt;br/&gt;&lt;br/&gt;Solution: Uninstall the current version of the application, restart xManager and try again. If the issue persist, check the FAQ."
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/installation_failed_ream_desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Reason: The current Spotify installed on this device did not came directly from xManager or from our team.&lt;br/&gt;&lt;br/&gt;Solution: Uninstall the current version of the application, restart xManager and try again. If the issue persist, check the FAQ."
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/installation_failed_desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Reason: You attempted to install a mod version lower than what is currently installed.&lt;br/&gt;&lt;br/&gt;Solutions:&lt;br/&gt;A. Select a version equal to or greater than.&lt;br/&gt;B. Uninstall the current version, then downgrade.&lt;br/&gt;&lt;br/&gt;If the issue persist, check the FAQ."
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/hidden_download"
 			android:layout_width="wrap_content"
@@ -390,6 +552,77 @@
 				</LinearLayout>
 			</LinearLayout>
 			<LinearLayout
+				android:id="@+id/main_box_16"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="8dp"
+				android:layout_marginRight="10dp"
+				android:padding="10dp"
+				android:background="#212121"
+				android:orientation="vertical">
+				<LinearLayout
+					android:id="@+id/box_16_sub_1"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="right|center_vertical"
+					android:orientation="horizontal">
+					<LinearLayout
+						android:id="@+id/title_box_5"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/cloned_version"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="8dp"
+							android:text="CLONED VERSION (BETA)"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#1DB954" />
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_cloned_version"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:gravity="right|center_vertical"
+						android:orientation="horizontal">
+						<Switch
+							android:id="@+id/cloned_version_switch"
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginRight="8dp"
+							android:paddingLeft="5dp"
+							android:paddingRight="2dp"
+							android:gravity="center_horizontal|center_vertical"
+							android:textSize="12sp"
+							android:textColor="#000000"
+							android:track="@drawable/track"
+							android:thumb="@drawable/thumb" />
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/box_16_sub_2"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="5dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/cloned_version_info"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Activating this allow you to download and install the cloned version of the patched application.\n\nThis will also resolve most of the installation errors or problems\nespecially if you have a pre-installed spotify application."
+						android:textSize="12sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout
 				android:id="@+id/main_box_8"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -427,17 +660,19 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:gravity="right|center_vertical"
-						android:orientation="horizontal"
-						android:layout_gravity="right">
+						android:orientation="horizontal">
 						<Switch
 							android:id="@+id/list_auto_refresh_switch"
 							android:layout_width="wrap_content"
 							android:layout_height="match_parent"
+							android:layout_marginRight="8dp"
 							android:paddingLeft="5dp"
 							android:paddingRight="2dp"
 							android:gravity="center_horizontal|center_vertical"
 							android:textSize="12sp"
-							android:textColor="#000000" />
+							android:textColor="#000000"
+							android:track="@drawable/track"
+							android:thumb="@drawable/thumb" />
 					</LinearLayout>
 				</LinearLayout>
 				<LinearLayout
@@ -501,11 +736,14 @@
 							android:id="@+id/force_auto_install_switch"
 							android:layout_width="wrap_content"
 							android:layout_height="match_parent"
+							android:layout_marginRight="8dp"
 							android:paddingLeft="5dp"
 							android:paddingRight="2dp"
 							android:gravity="center_horizontal|center_vertical"
 							android:textSize="12sp"
-							android:textColor="#000000" />
+							android:textColor="#000000"
+							android:track="@drawable/track"
+							android:thumb="@drawable/thumb" />
 					</LinearLayout>
 				</LinearLayout>
 				<LinearLayout
@@ -569,11 +807,14 @@
 							android:id="@+id/copy_url_mode_switch"
 							android:layout_width="wrap_content"
 							android:layout_height="match_parent"
+							android:layout_marginRight="8dp"
 							android:paddingLeft="5dp"
 							android:paddingRight="2dp"
 							android:gravity="center_horizontal|center_vertical"
 							android:textSize="12sp"
-							android:textColor="#000000" />
+							android:textColor="#000000"
+							android:track="@drawable/track"
+							android:thumb="@drawable/thumb" />
 					</LinearLayout>
 				</LinearLayout>
 				<LinearLayout
@@ -590,6 +831,77 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:text="Activating this will allow you to copy the file direct url.\n\nNot recommended at all times unless you are having an issue downloading the files directly within the manager."
+						android:textSize="12sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/main_box_17"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginRight="10dp"
+				android:padding="10dp"
+				android:background="#212121"
+				android:orientation="vertical">
+				<LinearLayout
+					android:id="@+id/box_17_sub_1"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="right|center_vertical"
+					android:orientation="horizontal">
+					<LinearLayout
+						android:id="@+id/title_box_6"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/disable_reward_ad"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="8dp"
+							android:text="DISABLE REWARDED ADS"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#1DB954" />
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_disable_reward_ad"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:gravity="right|center_vertical"
+						android:orientation="horizontal">
+						<Switch
+							android:id="@+id/disable_reward_ad_switch"
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginRight="8dp"
+							android:paddingLeft="5dp"
+							android:paddingRight="2dp"
+							android:gravity="center_horizontal|center_vertical"
+							android:textSize="12sp"
+							android:textColor="#000000"
+							android:track="@drawable/track"
+							android:thumb="@drawable/thumb" />
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/box_17_sub_2"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="5dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/disable_reward_ad_info"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="We know that most of us does not like ads but in our case, this significantly help us to fund our database, hosting links, updates, more patches and daily needs.\n\nThis is the simpliest way to support us without donating or spending anything."
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -637,11 +949,14 @@
 							android:id="@+id/navigation_switch"
 							android:layout_width="wrap_content"
 							android:layout_height="match_parent"
+							android:layout_marginRight="8dp"
 							android:paddingLeft="5dp"
 							android:paddingRight="2dp"
 							android:gravity="center_horizontal|center_vertical"
 							android:textSize="12sp"
-							android:textColor="#000000" />
+							android:textColor="#000000"
+							android:track="@drawable/track"
+							android:thumb="@drawable/thumb" />
 					</LinearLayout>
 				</LinearLayout>
 			</LinearLayout>
@@ -1329,7 +1644,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:paddingBottom="5dp"
-						android:text="Marco"
+						android:text="Marco | gdonisi"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1388,7 +1703,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:paddingBottom="5dp"
-						android:text="NACH"
+						android:text="NACH | f9branza"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1506,7 +1821,58 @@
 						android:id="@+id/translator_17"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
 						android:text="Kevin"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+					<TextView
+						android:id="@+id/manager_lang_18"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Vietnamese Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFEB3B" />
+					<TextView
+						android:id="@+id/translator_18"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
+						android:text="minhtamvn"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+					<TextView
+						android:id="@+id/manager_lang_19"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="German Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFEB3B" />
+					<TextView
+						android:id="@+id/translator_19"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
+						android:text="smokedzn"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+					<TextView
+						android:id="@+id/manager_lang_20"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Persian Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFEB3B" />
+					<TextView
+						android:id="@+id/translator_20"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="ohshahab"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1585,10 +1951,10 @@
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:gravity="left|center_vertical"
-								android:text="Unlimited skips, play any songs, ad-free and new features!"
+								android:text="Unlimited skips, play on-demand, ad-free and new features!"
 								android:textSize="11sp"
 								android:textStyle="bold|italic"
-								android:textColor="#FFEB3B"
+								android:textColor="#FFFFFF"
 								android:layout_gravity="left|center_vertical" />
 						</LinearLayout>
 					</LinearLayout>
@@ -1608,7 +1974,7 @@
 							android:text="LATEST"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#448AFF" />
+							android:textColor="#BDBDBD" />
 						<LinearLayout
 							android:id="@+id/box_switch_1"
 							android:layout_width="match_parent"
@@ -1630,7 +1996,7 @@
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
-						android:id="@+id/box_seperator_1"
+						android:id="@+id/box_separator_1"
 						android:layout_width="match_parent"
 						android:layout_height="2dp"
 						android:layout_marginLeft="15dp"
@@ -1667,6 +2033,7 @@
 								android:id="@+id/version_switch_01"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
+								android:layout_marginRight="8dp"
 								android:paddingLeft="5dp"
 								android:paddingTop="8dp"
 								android:paddingRight="2dp"
@@ -1675,7 +2042,9 @@
 								android:textSize="11sp"
 								android:textStyle="bold"
 								android:textColor="#FFFFFF"
-								android:layout_gravity="right|center_vertical" />
+								android:layout_gravity="right|center_vertical"
+								android:track="@drawable/track"
+								android:thumb="@drawable/thumb" />
 						</LinearLayout>
 					</LinearLayout>
 					<ListView
@@ -1728,7 +2097,7 @@
 								android:text="Same features as regular but in amoled black version!"
 								android:textSize="11sp"
 								android:textStyle="bold|italic"
-								android:textColor="#FFEB3B"
+								android:textColor="#FFFFFF"
 								android:layout_gravity="left|center_vertical" />
 						</LinearLayout>
 					</LinearLayout>
@@ -1747,7 +2116,7 @@
 							android:text="LATEST"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#448AFF" />
+							android:textColor="#BDBDBD" />
 						<LinearLayout
 							android:id="@+id/box_switch_2"
 							android:layout_width="match_parent"
@@ -1769,7 +2138,7 @@
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
-						android:id="@+id/box_seperator_2"
+						android:id="@+id/box_separator_2"
 						android:layout_width="match_parent"
 						android:layout_height="2dp"
 						android:layout_marginLeft="15dp"
@@ -1806,6 +2175,7 @@
 								android:id="@+id/version_switch_02"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
+								android:layout_marginRight="8dp"
 								android:paddingLeft="5dp"
 								android:paddingTop="8dp"
 								android:paddingRight="2dp"
@@ -1814,7 +2184,9 @@
 								android:textSize="11sp"
 								android:textStyle="bold"
 								android:textColor="#FFFFFF"
-								android:layout_gravity="right|center_vertical" />
+								android:layout_gravity="right|center_vertical"
+								android:track="@drawable/track"
+								android:thumb="@drawable/thumb" />
 						</LinearLayout>
 					</LinearLayout>
 					<ListView
@@ -1875,7 +2247,7 @@
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
-						android:id="@+id/box_seperator_3"
+						android:id="@+id/box_separator_3"
 						android:layout_width="match_parent"
 						android:layout_height="2dp"
 						android:layout_marginLeft="15dp"
@@ -1904,15 +2276,36 @@
 							android:id="@+id/box_installed"
 							android:layout_width="match_parent"
 							android:layout_height="match_parent"
+							android:paddingRight="10dp"
 							android:gravity="right|center_vertical"
-							android:orientation="vertical">
+							android:orientation="horizontal">
 							<TextView
 								android:id="@+id/sub_installed"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
-								android:paddingLeft="8dp"
 								android:paddingTop="8dp"
-								android:paddingRight="10dp"
+								android:paddingBottom="8dp"
+								android:text="N/A"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:textColor="#FFFFFF" />
+							<TextView
+								android:id="@+id/sub_separator"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingLeft="3dp"
+								android:paddingTop="8dp"
+								android:paddingRight="3dp"
+								android:paddingBottom="8dp"
+								android:text="|"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:textColor="#FFFFFF" />
+							<TextView
+								android:id="@+id/sub_installed_c"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingTop="8dp"
 								android:paddingBottom="8dp"
 								android:text="N/A"
 								android:textSize="12sp"
@@ -1921,7 +2314,7 @@
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
-						android:id="@+id/box_seperator_4"
+						android:id="@+id/box_separator_4"
 						android:layout_width="match_parent"
 						android:layout_height="2dp"
 						android:layout_marginLeft="15dp"
@@ -1958,6 +2351,7 @@
 								android:id="@+id/changelogs_switch"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
+								android:layout_marginRight="8dp"
 								android:paddingLeft="5dp"
 								android:paddingTop="8dp"
 								android:paddingRight="2dp"
@@ -1966,38 +2360,20 @@
 								android:textSize="12sp"
 								android:textStyle="bold"
 								android:textColor="#FFFFFF"
-								android:layout_gravity="right|center_vertical" />
+								android:layout_gravity="right|center_vertical"
+								android:track="@drawable/track"
+								android:thumb="@drawable/thumb" />
 						</LinearLayout>
 					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_6_sub_4"
+					<ListView
+						android:id="@+id/list_changelogs"
 						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:paddingLeft="10dp"
-						android:paddingTop="8dp"
-						android:paddingRight="10dp"
-						android:paddingBottom="8dp"
-						android:orientation="horizontal">
-						<LinearLayout
-							android:id="@+id/box_changelogs_1"
-							android:layout_width="match_parent"
-							android:layout_height="260dp"
-							android:gravity="left|center_vertical"
-							android:orientation="vertical">
-							<ScrollView
-								android:id="@+id/scroll_changelogs_1"
-								android:layout_width="match_parent"
-								android:layout_height="match_parent"
-								android:nestedScrollingEnabled="true">
-								<TextView
-									android:id="@+id/changelogs_x"
-									android:layout_width="wrap_content"
-									android:layout_height="wrap_content"
-									android:textSize="14sp"
-									android:textColor="#BDBDBD" />
-							</ScrollView>
-						</LinearLayout>
-					</LinearLayout>
+						android:layout_height="260dp"
+						android:dividerHeight="0dp"
+						android:divider="@null"
+						android:choiceMode="none"
+						android:nestedScrollingEnabled="true"
+						android:listSelector="@android:color/transparent" />
 				</LinearLayout>
 				<LinearLayout
 					android:id="@+id/box_sub_header"
@@ -2127,7 +2503,7 @@
 							android:text="TELEGRAM"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"
+							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical" />
 						<ImageView
 							android:id="@+id/icon_support"
@@ -2157,7 +2533,7 @@
 							android:text="REDDIT"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"
+							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical" />
 						<ImageView
 							android:id="@+id/icon_reddit"
@@ -2187,7 +2563,7 @@
 							android:text="DONATE"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"
+							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical" />
 						<ImageView
 							android:id="@+id/icon_donate"
@@ -2219,7 +2595,7 @@
 							android:text="ABOUT"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"
+							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical" />
 						<ImageView
 							android:id="@+id/icon_about"
@@ -2259,7 +2635,7 @@
 							android:text="DISCORD"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"
+							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical" />
 						<ImageView
 							android:id="@+id/icon_discord"
@@ -2290,7 +2666,7 @@
 							android:text="SOURCE"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"
+							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical" />
 						<ImageView
 							android:id="@+id/icon_source"
@@ -2321,7 +2697,7 @@
 							android:text="WEBSITE"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"
+							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical" />
 						<ImageView
 							android:id="@+id/icon_website"
@@ -2351,7 +2727,7 @@
 							android:text="FAQ"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#FFFFFF"
+							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical" />
 						<ImageView
 							android:id="@+id/icon_faq"
