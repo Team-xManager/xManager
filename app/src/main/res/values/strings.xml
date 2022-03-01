@@ -1936,7 +1936,7 @@
     <string	name="continue_1_19"	translatable="true">TIẾP TỤC</string>
     <string	name="cancel_19"	translatable="true">HỦY BỎ</string>
     <string	name="download_19"	translatable="true">TẢI XUỐNG</string>
-    <string	name="later_19"	translatable="true">MỘT LÁT SAU</string>
+    <string	name="later_19"	translatable="true">ĐỂ SAU</string>
     <string	name="install_now_19"	translatable="true">CÀI ĐẶT NGAY</string>
     <string	name="install_update_19"	translatable="true">CÀI ĐẶT CẬP NHẬT</string>
     <string	name="go_back_19"	translatable="true">QUAY LẠI</string>
@@ -1955,30 +1955,30 @@
     <string	name="reddit_19"	translatable="true">REDDIT</string>
     <string	name="faq_19"	translatable="true">FAQ</string>
 	
-	<string	name="cloned_version_19"	translatable="true">NHÂN BẢN PHIÊN BẢN (BETA)</string>
-	<string	name="cloned_version_desc_19"	translatable="true">Kích hoạt này cho phép bạn đặt các nhân bản phiên bản của các vá ứng dụng.\nsố liệu Này cũng sẽ giải quyết hầu hết các lỗi cài đặt hoặc các vấn đề đặc biệt nếu anh có một tiền cài đặt sử dụng.</string>
-	<string	name="disable_rewarded_ads_19"	translatable="true">VÔ HIỆU HÓA THƯỞNG QUẢNG CÁO</string>
-	<string	name="disable_rewarded_ads_desc_19"	translatable="true">Chúng tôi biết rằng, hầu hết chúng tôi không muốn quảng cáo, nhưng trong trường hợp của chúng ta, điều này đáng kể giúp chúng tôi đến quỹ dữ liệu của chúng tôi, lưu trữ liên kết cập vá, và hàng ngày.\nsố liệu Này là cách đơn giản nhất để hỗ trợ chúng tôi mà không cần quyên góp hay chi bất cứ điều gì.</string>
+	<string	name="cloned_version_19"	translatable="true">NHÂN BẢN (BETA)</string>
+	<string	name="cloned_version_desc_19"	translatable="true">Kích hoạt tính năng này cho phép bạn tải xuống và cài đặt phiên bản nhân bản của ứng dụng đã vá.\n\nĐiều này cũng sẽ giải quyết hầu hết các lỗi hoặc sự cố cài đặt, đặc biệt nếu bạn đã cài đặt sẵn ứng dụng Spotify.</string>
+	<string	name="disable_rewarded_ads_19"	translatable="true">TẮT QUẢNG CÁO CÓ THƯỞNG</string>
+	<string	name="disable_rewarded_ads_desc_19"	translatable="true">Chúng tôi biết rằng hầu hết chúng tôi không thích quảng cáo nhưng trong trường hợp của chúng tôi, điều này giúp chúng tôi đáng kể tài trợ cho cơ sở dữ liệu, liên kết lưu trữ, cập nhật, các bản vá khác và nhu cầu hàng ngày.\n\nĐây là cách đơn giản nhất để hỗ trợ chúng tôi mà không cần đóng góp hoặc chi tiêu bất cứ thứ gì.</string>
 	
 	<string	name="installation_failed_19"	translatable="true">CÀI ĐẶT THẤT BẠI</string>
-	<string	name="installation_failed_desc_19"	translatable="true">Lý do: Bạn đã cố gắng để cài đặt một phiên bản mod thấp hơn hơn những gì đang cài đặt.\n\nGiải pháp:\nA. Chọn một phiên bản bằng hoặc lớn hơn.\nB. Hướng phiên bản hiện tại, sau đó hạ cấp.\n\nNếu các vấn đề vẫn tồn tại, kiểm tra HỎI.</string>
-	<string	name="installation_failed_ream_desc_19"	translatable="true">Lý do: hiện tại Sử cài đặt trên thiết bị này đã không đến trực tiếp từ thông hoặc từ đội ngũ của chúng tôi.\n\nGiải pháp: loại bỏ sự hiện tại phiên bản của các ứng dụng, thông và cố gắng một lần nữa. Nếu các vấn đề vẫn tồn tại, kiểm tra HỎI.v</string>
-	<string	name="installation_failed_cloned_desc_19"	translatable="true">Lý do: hiện tại nhân bản cài đặt trên thiết bị này đã không đến trực tiếp từ thông hoặc từ đội ngũ của chúng tôi.\n\nGiải pháp: loại bỏ sự hiện tại phiên bản của các ứng dụng, thông và cố gắng một lần nữa. Nếu các vấn đề vẫn tồn tại, kiểm tra HỎI.</string>
-	<string	name="existing_patched_ream_19"	translatable="true">HIỆN TẠI VÁ</string>
-	<string	name="existing_patched_ream_desc_19"	translatable="true">Một hiện vá tập tin được tìm thấy trong một trong những mục. Hành động gì bạn muốn làm gì?</string>
-	<string	name="existing_patched_cloned_19"	translatable="true">HIỆN TẠI NHÂN BẢN</string>
-	<string	name="existing_patched_cloned_desc_19"	translatable="true">Một hiện nhân bản vá tập tin được tìm thấy trong một trong những mục. Hành động gì bạn muốn làm gì?</string>
+	<string	name="installation_failed_desc_19"	translatable="true">Lý do: Bạn đã cố cài đặt phiên bản mod thấp hơn phiên bản hiện đang được cài đặt.\n\nGiải pháp:\nA. Hãy chọn phiên bản bằng hoặc lớn hơn.\nB. Gỡ cài đặt phiên bản hiện tại, sau đó hạ cấp.\n\nNếu sự cố tiếp diễn, hãy kiểm tra câu hỏi thường gặp (FAQ).</string>
+	<string	name="installation_failed_ream_desc_19"	translatable="true">Lý do: Spotify hiện tại được cài đặt trên thiết bị này không đến trực tiếp từ xManager hoặc từ nhóm của chúng tôi.\n\nGiải pháp: Gỡ cài đặt phiên bản hiện tại của ứng dụng, khởi động lại xManager và thử lại. Nếu sự cố vẫn tiếp diễn, hãy kiểm tra câu hỏi thường gặp (FAQ).</string>
+	<string	name="installation_failed_cloned_desc_19"	translatable="true">Lý do: Bản sao hiện được cài đặt trên thiết bị này không đến trực tiếp từ xManager hoặc từ nhóm của chúng tôi.\n\nGiải pháp: Gỡ cài đặt phiên bản hiện tại của ứng dụng, khởi động lại xManager và thử lại. Nếu sự cố vẫn tiếp diễn, hãy kiểm tra câu hỏi thường gặp (FAQ).</string>
+	<string	name="existing_patched_ream_19"	translatable="true">BẢN VÁ HIỆN TẠI</string>
+	<string	name="existing_patched_ream_desc_19"	translatable="true">Có một tệp đã vá được tìm thấy ở một trong các thư mục. Bạn muốn thực hiện hành động nào?</string>
+	<string	name="existing_patched_cloned_19"	translatable="true">NHÂN BẢN HIỆN TẠI</string>
+	<string	name="existing_patched_cloned_desc_19"	translatable="true">Đã tìm thấy tệp vá được nhân bản ở một trong các thư mục. Bạn muốn thực hiện hành động nào?</string>
 	
-	<string	name="close_19"	translatable="true">GẦN</string>
-	<string	name="cloned_19"	translatable="true">NHÂN bản</string>
-	<string	name="ream_19"	translatable="true">LẠI/AM</string>
-	<string	name="install_19"	translatable="true">CÀI đặt</string>
-	<string	name="uninstall_19"	translatable="true">Rõ ràng</string>
-	<string	name="ignore_19"	translatable="true">Bỏ QUA</string>
+	<string	name="close_19"	translatable="true">ĐÓNG</string>
+	<string	name="cloned_19"	translatable="true">NHÂN BẢN</string>
+	<string	name="ream_19"	translatable="true">RE/AM</string>
+	<string	name="install_19"	translatable="true">CÀI ĐẶT</string>
+	<string	name="uninstall_19"	translatable="true">GỠ BỎ</string>
+	<string	name="ignore_19"	translatable="true">BỎ QUA</string>
 	<string	name="delete_19"	translatable="true">XÓA</string>
-	<string	name="uninstall_patched_19"	translatable="true">RÕ RÀNG VÁ</string>
+	<string	name="uninstall_patched_19"	translatable="true">GỠ BỎ BẢN VÁ</string>
 	<string	name="open_settings_19"	translatable="true">MỞ CÁC THIẾT LẬP</string>
-	<string	name="open_patched_19"	translatable="true">MỞ VÁ</string>
+	<string	name="open_patched_19"	translatable="true">MỞ BẢN VÁ</string>
 	
 	<!--GERMAN LANGUAGE-->
 	<string	name="app_name_20"	translatable="true">xManager</string>
