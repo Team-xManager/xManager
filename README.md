@@ -8,7 +8,7 @@
 **•xManager is created using Sketchware Pro for android (https://github.com/Sketchware-Pro/Sketchware-Pro).**  
 **•xManager uses Sketch2Any for converting the project to Android Studio (https://play.google.com/store/apps/details?id=com.sketch2any).**  
 **•xManager only uses Firebase Database as its API.**  
-**•No trackers, no spywares, no keyloggers or any other malicious codes has been added on the source code. What you see on the source code is what's inside the build apk. You can extract the apk for yourself. (NOTE: As of Version 2.8, component "com.google.android.gms.ads.AdActivity" was added due to Rewarded Ads)**  
+**•No trackers, no spywares, no keyloggers or any other malicious codes has been added on the source code. What you see on the source code is what's inside the build apk. You can extract the apk for yourself (NOTE: As of Version 2.8, component "com.google.android.gms.ads.AdActivity" was added due to Rewarded Ads).**  
 **•The source code that can be seen here is what's inside the exported zip file for Android Studio.**  
 **•There are some instance that the source code is unbuildable, some parts might be missing and such due to limitations.**   
 ~~•Most of the internal changes can only be seen in MainActivity.java. The file size already reached 1MB and Github won't allow us to edit and do further changes/commits unless removing and re-adding the new updated files.~~  
