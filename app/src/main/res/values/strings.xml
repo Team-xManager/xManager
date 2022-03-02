@@ -208,8 +208,8 @@
     <string	name="changelogs_02"	translatable="true">更新日志</string>
     <string	name="manager_tools_02"	translatable="true">快捷工具</string>
 	<string	name="device_cpu_02"	translatable="true">CPU/ARCH 类型</string>
-    <string	name="source_02"	translatable="true">支持</string>
-    <string	name="discord_02"	translatable="true">不和谐</string>
+    <string	name="source_02"	translatable="true">源代码</string>
+    <string	name="discord_02"	translatable="true">DISCORD</string>
     <string	name="support_02"	translatable="true">电报</string>
     <string	name="donate_02"	translatable="true">捐赠</string>
     <string	name="about_02"	translatable="true">关于</string>
@@ -218,25 +218,25 @@
     <string	name="about_title_02"	translatable="true">关于</string>
 	
     <string	name="list_auto_refresh_02"	translatable="true">自动刷新</string>
-    <string	name="list_auto_refresh_desc_02"	translatable="true">进入应用后将自动刷新获取新版 Spotify</string>
+    <string	name="list_auto_refresh_desc_02"	translatable="true">激活此功能将在您每次启动应用程序时自动刷新列表,您也可以通过向下拖动主屏幕来手动刷新列表.</string>
     <string	name="force_auto_install_02"	translatable="true">自动安装</string>
-    <string	name="force_auto_install_desc_02"	translatable="true">下载完成后将自动安装应用</string>
+    <string	name="force_auto_install_desc_02"	translatable="true">激活此功能将在下载完成后自动安装应用程序.</string>
     <string	name="copy_url_mode_02"	translatable="true">链接模式</string>
-    <string	name="copy_url_mode_desc_02"	translatable="true">开启此功能后将复制原始下载地址，将下载地址复制至浏览器/下载器下载</string>
+    <string	name="copy_url_mode_desc_02"	translatable="true">激活此功能将允许您复制文件下载链接.\n除非您在管理器中直接下载文件时遇到问题,否则不推荐此模式.</string>
     <string	name="hide_navigation_bar_02"	translatable="true">隐藏导航栏</string>
-    <string	name="show_themes_02"	translatable="true">应用主题「非 Spotify 主题」</string>
-	<string	name="apk_location_02"	translatable="true">保存路径</string>
-    <string	name="apk_location_desc_02"	translatable="true">请勿随意更改且不支持变更为外置SD卡路径</string>
+    <string	name="show_themes_02"	translatable="true">管理器的应用主题</string>
+	<string	name="apk_location_02"	translatable="true">安装包保存路径</string>
+    <string	name="apk_location_desc_02"	translatable="true">请勿随意更改保存路径.\n不支持变更为外置SD卡路径</string>
     <string	name="clear_directory_folders_02"	translatable="true">清除文件</string>
-    <string	name="clear_directory_folders_desc_02"	translatable="true">点击下方「清除」按钮将清除本应用产生的所有文件</string>
+    <string	name="clear_directory_folders_desc_02"	translatable="true">点击下方 清除 按钮将清除本应用产生的所有文件</string>
     <string	name="reset_settings_02"	translatable="true">清除</string>
 	
-    <string	name="about_sub_02"	translatable="true">没有广告|新功能|自由</string>
+    <string	name="about_sub_02"	translatable="true">无广告|新功能|全免费</string>
     <string	name="xmanager_dev_02"	translatable="true">xManager 开发团队</string>
     <string	name="spotify_mod_devs_02"	translatable="true">Spotify 修改团队</string>
-    <string	name="telegram_support_team_02"	translatable="true">Telegram 支持团队</string>
+    <string	name="telegram_support_team_02"	translatable="true">Telegram/Discord 支持团队</string>
     <string	name="manager_testers_02"	translatable="true">Mod/Manager 测试团队</string>
-    <string	name="manager_hosting_02"	translatable="true">网址维护</string>
+    <string	name="manager_hosting_02"	translatable="true">管理器网址维护</string>
     <string	name="mobilism_team_02"	translatable="true">Mobilism 团队</string>
     <string	name="forum_team_02"	translatable="true">FORUM.APK-RELEASE.NET 团队</string>
 	<string	name="xspotify_team_02"	translatable="true">xSpotify Manager (旧版贡献者)</string>
@@ -248,7 +248,7 @@
 	<string	name="downloading_file_02"	translatable="true">正在下载</string>
     <string	name="download_success_02"	translatable="true">下载完成</string>
 	<string	name="copy_url_desc_02"	translatable="true">版本已选定，是否复制链接？</string>
-    <string	name="new_update_02"	translatable="true">发现新版</string>
+    <string	name="new_update_02"	translatable="true">发现新版管理器</string>
 	
     <string	name="continue_1_02"	translatable="true">继续</string>
     <string	name="cancel_02"	translatable="true">取消</string>
@@ -261,41 +261,41 @@
     <string	name="not_now_02"	translatable="true">稍后</string>
     <string	name="copy_url_02"	translatable="true">复制链接</string>
 	
-	<string	name="show_support_02"	translatable="true">显示支持</string>
-    <string	name="show_support_desc_02"	translatable="true">项目非盈利，期待您捐赠</string>
+	<string	name="show_support_02"	translatable="true">支持我们</string>
+    <string	name="show_support_desc_02"	translatable="true">我们是一个非盈利和不妥协的团队.\n无论金额大小都对我们有帮助,十分感谢.</string>
 
 	<string	name="maintenance_02"	translatable="true">维护</string>
-	<string	name="maintenance_desc_02"	translatable="true">暂不可用，等待恢复</string>
+	<string	name="maintenance_desc_02"	translatable="true">暂不可用,请稍后查看</string>
 	<string	name="thanks_02"	translatable="true">感谢</string>
 	<string	name="language_02"	translatable="true">应用语言</string>
 	<string	name="website_02"	translatable="true">网站</string>
-	<string	name="reddit_02"	translatable="true">红色它</string>
+	<string	name="reddit_02"	translatable="true">REDDIT</string>
     <string	name="faq_02"	translatable="true">常见问题</string>
 	
 	<string	name="cloned_version_02"	translatable="true">克隆版本(测试版)</string>
-	<string	name="cloned_version_desc_02"	translatable="true">激活此选项可让您下载并安装已修补应用程序的克隆版本。\n\n这也将解决大多数安装错误或问题，特别是如果您有预安装的spotify应用程序。</string>
-	<string	name="disable_rewarded_ads_02"	translatable="true">禁用奖励广告</string>
-	<string	name="disable_rewarded_ads_desc_02"	translatable="true">我们知道，我们大多数人不喜欢广告，但在我们的情况下，这显着帮助我们为我们的数据库，托管链接，更新，更多补丁和日常需求提供资金。\n\n这是最简单的方式来支持我们，而无需捐赠或花费任何东西。</string>
+	<string	name="cloned_version_desc_02"	translatable="true">激活此选项可让您下载并安装已修改的克隆版本.\n\n这也将解决大多数安装问题,特别是当您已经安装spotify应用程序.</string>
+	<string	name="disable_rewarded_ads_02"	translatable="true">禁用广告</string>
+	<string	name="disable_rewarded_ads_desc_02"	translatable="true">大多数人不喜欢广告,但对于我们而言,这能在很大程度上为我们的数据库,托管链接,更新,更多补丁和日常需求提供资金.\n\n这是支持我们的最简单的方法,无需您捐赠或花销.</string>
 	
 	<string	name="installation_failed_02"	translatable="true">安装失败</string>
-	<string	name="installation_failed_desc_02"	translatable="true">原因：您尝试安装低于当前安装的mod版本。\n\n解决方案：\nA. 选择等于或大于的版本。\nB. 卸载当前版本，然后降级。\n\n如果问题仍然存在，请查看常见问题解答。</string>
-	<string	name="installation_failed_ream_desc_02"	translatable="true">原因：此设备上安装的当前Spotify不是直接来自xManager或来自我们的团队。\n\n解决方法：卸载当前版本的应用程序，重新启动xManager并重试。 如果问题仍然存在，请查看常见问题解答。</string>
-	<string	name="installation_failed_cloned_desc_02"	translatable="true">原因：此设备上安装的当前克隆不是直接来自xManager或来自我们的团队。\n\n解决方法：卸载当前版本的应用程序，重新启动xManager并重试。 如果问题仍然存在，请查看常见问题解答。</string>
-	<string	name="existing_patched_ream_02"	translatable="true">现有修补</string>
-	<string	name="existing_patched_ream_desc_02"	translatable="true">在其中一个目录中找到的现有修补文件。 你想做什么行动？</string>
+	<string	name="installation_failed_desc_02"	translatable="true">原因:您尝试安装低于当前安装的mod版本.\n\n解决方案:\nA. 选择等于或大于的版本.\nB. 卸载当前版本,然后降级.\n\n如果问题仍然存在,请查看常见问题解答.</string>
+	<string	name="installation_failed_ream_desc_02"	translatable="true">原因:此设备上安装的当前Spotify不是直接来自xManager或来自我们的团队.\n\n解决方法:卸载当前版本的应用程序,重新启动xManager并重试. 如果问题仍然存在,请查看常见问题解答.</string>
+	<string	name="installation_failed_cloned_desc_02"	translatable="true">原因:此设备上安装的当前克隆版本不是直接来自xManager或来自我们的团队.\n\n解决方法:卸载当前版本的应用程序,重新启动xManager并重试. 如果问题仍然存在,请查看常见问题解答.</string>
+	<string	name="existing_patched_ream_02"	translatable="true">现有补丁</string>
+	<string	name="existing_patched_ream_desc_02"	translatable="true">在目录中找到一个修改过的文件. 您想怎么做?</string>
 	<string	name="existing_patched_cloned_02"	translatable="true">现有克隆</string>
-	<string	name="existing_patched_cloned_desc_02"	translatable="true">在其中一个目录中找到的现有克隆的修补文件。 你想做什么行动？</string>
+	<string	name="existing_patched_cloned_desc_02"	translatable="true">在目录中找到一个修改过的克隆文件. 您想怎么做?</string>
 	
-	<string	name="close_02"	translatable="true">接近/接近</string>
-	<string	name="cloned_02"	translatable="true">克隆的</string>
-	<string	name="ream_02"	translatable="true">重新/上午</string>
-	<string	name="install_02"	translatable="true">安装/安装</string>
+	<string	name="close_02"	translatable="true">关闭</string>
+	<string	name="cloned_02"	translatable="true">克隆版</string>
+	<string	name="ream_02"	translatable="true">默认版或纯黑版</string>
+	<string	name="install_02"	translatable="true">安装</string>
 	<string	name="uninstall_02"	translatable="true">卸载</string>
 	<string	name="ignore_02"	translatable="true">忽略</string>
 	<string	name="delete_02"	translatable="true">删除</string>
-	<string	name="uninstall_patched_02"	translatable="true">卸载修补</string>
+	<string	name="uninstall_patched_02"	translatable="true">卸载补丁</string>
 	<string	name="open_settings_02"	translatable="true">打开设置</string>
-	<string	name="open_patched_02"	translatable="true">打开修补</string>
+	<string	name="open_patched_02"	translatable="true">打开修改版</string>
 	
 	<!--FRENCH LANGAUGE-->
 	<string	name="app_name_03"	translatable="true">xManager</string>
