@@ -58,7 +58,7 @@ Wu Tang Clam
 
 Yazan Kasem (Arabic Translation)  
 0V3R5!9H7 (Bengali Translation)  
-Gent G (Chinese - Simplified Translation)  
+Gent G | Softland99 (Chinese - Simplified Translation)  
 The Punisher (French Translation)  
 Walter's Cousin #CAF (Greek Translation)  
 Mc.J & Deraidos (Indonesian Translation)  
