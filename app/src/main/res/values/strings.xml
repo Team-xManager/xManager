@@ -35,10 +35,10 @@
 	
     <string	name="about_sub"	translatable="true">Ad-Free | New Features | Freedom</string>
     <string	name="xmanager_dev"	translatable="true">xManager Developer</string>
-    <string	name="spotify_mod_devs"	translatable="true">Spotify Mod Developers</string>
-    <string	name="telegram_support_team"	translatable="true">Telegram/Discord Support Team</string>
-    <string	name="manager_testers"	translatable="true">Mod/Manager Testers</string>
-    <string	name="manager_hosting"	translatable="true">Manager Hosting Links</string>
+    <string	name="spotify_mod_devs"	translatable="true">Spotify Patched Developers</string>
+    <string	name="telegram_support_team"	translatable="true">Telegram | Discord | Reddit Support Team</string>
+    <string	name="manager_testers"	translatable="true">Patched and Manager Testers</string>
+    <string	name="manager_hosting"	translatable="true">Manager Database and Hostings</string>
     <string	name="mobilism_team"	translatable="true">Mobilism Team</string>
     <string	name="forum_team"	translatable="true">FORUM.APK-RELEASE.NET Team</string>
 	<string	name="xspotify_team"	translatable="true">xSpotify Manager (Old Manager)</string>
@@ -83,11 +83,9 @@
 	<string	name="installation_failed_desc"	translatable="true">Reason: You attempted to install a mod version lower than what is currently installed.\n\nSolutions:\nA. Select a version equal to or greater than.\nB. Uninstall the current version, then downgrade.\n\nIf the issue persist, check the FAQ.</string>
 	<string	name="installation_failed_ream_desc"	translatable="true">Reason: The current Spotify installed on this device did not came directly from xManager or from our team.\n\nSolution: Uninstall the current version of the application, restart xManager and try again. If the issue persist, check the FAQ.</string>
 	<string	name="installation_failed_cloned_desc"	translatable="true">Reason: The current cloned installed on this device did not came directly from xManager or from our team.\n\nSolution: Uninstall the current version of the application, restart xManager and try again. If the issue persist, check the FAQ.</string>
-	<string	name="existing_patched_ream"	translatable="true">EXISTING PATCHED</string>
-	<string	name="existing_patched_ream_desc"	translatable="true">An existing patched file found in one of the directory. What action would you like to do?</string>
-	<string	name="existing_patched_cloned"	translatable="true">EXISTING CLONED</string>
-	<string	name="existing_patched_cloned_desc"	translatable="true">An existing cloned patched file found in one of the directory. What action would you like to do?</string>
-	
+	<string	name="existing_patched"	translatable="true">EXISTING PATCHED</string>
+	<string	name="existing_patched_desc"	translatable="true">An existing patched file found in one of the directory. What action would you like to do?</string>
+
 	<string	name="close"	translatable="true">CLOSE</string>
 	<string	name="cloned"	translatable="true">CLONED</string>
 	<string	name="ream"	translatable="true">RE/AM</string>
@@ -182,11 +180,9 @@
 	<string	name="installation_failed_desc_01"	translatable="true">কারণ: আপনি বর্তমানে ইনস্টল করা হয় কি কম একটি গেলিক সংস্করণ ইনস্টল করার চেষ্টা.সমাধান: একটি সংস্করণ সমান বা তার চেয়ে অনেক বেশী নির্বাচন করুন.বর্তমান সংস্করণ আনইনস্টল, তারপর ডাউনগ্রেড.সমস্যা জিদ, অনবরত জিজ্ঞাসিত প্রশ্ন চেক.</string>
 	<string	name="installation_failed_ream_desc_01"	translatable="true">কারণ: এই ডিভাইসে ইনস্টল করা বর্তমান স্পটিফাই সরাসরি এক্সম্যানেজার বা আমাদের দল থেকে আসে নিসমাধান: অ্যাপ্লিকেশনটির বর্তমান সংস্করণ আনইনস্টল করুন, এক্সম্যানেজার পুনরায় চালু করুন এবং আবার চেষ্টা করুন সমস্যা জিদ যদি, অনবরত জিজ্ঞাসিত প্রশ্ন চেক.</string>
 	<string	name="installation_failed_cloned_desc_01"	translatable="true">কারণ: এই ডিভাইসে ইনস্টল করা বর্তমান ক্লোনড সরাসরি এক্সম্যানেজার থেকে বা আমাদের দল থেকে আসে নিসমাধান: অ্যাপ্লিকেশনটির বর্তমান সংস্করণ আনইনস্টল করুন, এক্সম্যানেজার পুনরায় চালু করুন এবং আবার চেষ্টা করুন সমস্যা জিদ যদি, অনবরত জিজ্ঞাসিত প্রশ্ন চেক.</string>
-	<string	name="existing_patched_ream_01"	translatable="true">বিদ্যমান প্যাচড</string>
-	<string	name="existing_patched_ream_desc_01"	translatable="true">ডিরেক্টরি এক পাওয়া একটি বিদ্যমান প্যাচ ফাইল. আপনি কোন পদক্ষেপ করতে চান?</string>
-	<string	name="existing_patched_cloned_01"	translatable="true">বিদ্যমান ক্লোনড</string>
-	<string	name="existing_patched_cloned_desc_01"	translatable="true">ডিরেক্টরি এক পাওয়া একটি বিদ্যমান ক্লোন প্যাচ ফাইল. আপনি কোন পদক্ষেপ করতে চান?</string>
-	
+	<string	name="existing_patched_01"	translatable="true">বিদ্যমান প্যাচড</string>
+	<string	name="existing_patched_desc_01"	translatable="true">ডিরেক্টরি এক পাওয়া একটি বিদ্যমান প্যাচ ফাইল. আপনি কোন পদক্ষেপ করতে চান?</string>
+
 	<string	name="close_01"	translatable="true">বন্ধ</string>
 	<string	name="cloned_01"	translatable="true">ক্লোনড</string>
 	<string	name="ream_01"	translatable="true">আরই / এএম</string>
@@ -208,8 +204,8 @@
     <string	name="changelogs_02"	translatable="true">更新日志</string>
     <string	name="manager_tools_02"	translatable="true">快捷工具</string>
 	<string	name="device_cpu_02"	translatable="true">CPU/ARCH 类型</string>
-    <string	name="source_02"	translatable="true">支持</string>
-    <string	name="discord_02"	translatable="true">不和谐</string>
+    <string	name="source_02"	translatable="true">源代码</string>
+    <string	name="discord_02"	translatable="true">DISCORD</string>
     <string	name="support_02"	translatable="true">电报</string>
     <string	name="donate_02"	translatable="true">捐赠</string>
     <string	name="about_02"	translatable="true">关于</string>
@@ -218,25 +214,25 @@
     <string	name="about_title_02"	translatable="true">关于</string>
 	
     <string	name="list_auto_refresh_02"	translatable="true">自动刷新</string>
-    <string	name="list_auto_refresh_desc_02"	translatable="true">进入应用后将自动刷新获取新版 Spotify</string>
+    <string	name="list_auto_refresh_desc_02"	translatable="true">激活此功能将在您每次启动应用程序时自动刷新列表,您也可以通过向下拖动主屏幕来手动刷新列表.</string>
     <string	name="force_auto_install_02"	translatable="true">自动安装</string>
-    <string	name="force_auto_install_desc_02"	translatable="true">下载完成后将自动安装应用</string>
+    <string	name="force_auto_install_desc_02"	translatable="true">激活此功能将在下载完成后自动安装应用程序.</string>
     <string	name="copy_url_mode_02"	translatable="true">链接模式</string>
-    <string	name="copy_url_mode_desc_02"	translatable="true">开启此功能后将复制原始下载地址，将下载地址复制至浏览器/下载器下载</string>
+    <string	name="copy_url_mode_desc_02"	translatable="true">激活此功能将允许您复制文件下载链接.\n除非您在管理器中直接下载文件时遇到问题,否则不推荐此模式.</string>
     <string	name="hide_navigation_bar_02"	translatable="true">隐藏导航栏</string>
-    <string	name="show_themes_02"	translatable="true">应用主题「非 Spotify 主题」</string>
-	<string	name="apk_location_02"	translatable="true">保存路径</string>
-    <string	name="apk_location_desc_02"	translatable="true">请勿随意更改且不支持变更为外置SD卡路径</string>
+    <string	name="show_themes_02"	translatable="true">管理器的应用主题</string>
+	<string	name="apk_location_02"	translatable="true">安装包保存路径</string>
+    <string	name="apk_location_desc_02"	translatable="true">请勿随意更改保存路径.\n不支持变更为外置SD卡路径</string>
     <string	name="clear_directory_folders_02"	translatable="true">清除文件</string>
-    <string	name="clear_directory_folders_desc_02"	translatable="true">点击下方「清除」按钮将清除本应用产生的所有文件</string>
+    <string	name="clear_directory_folders_desc_02"	translatable="true">点击下方 清除 按钮将清除本应用产生的所有文件</string>
     <string	name="reset_settings_02"	translatable="true">清除</string>
 	
-    <string	name="about_sub_02"	translatable="true">没有广告|新功能|自由</string>
+    <string	name="about_sub_02"	translatable="true">无广告|新功能|全免费</string>
     <string	name="xmanager_dev_02"	translatable="true">xManager 开发团队</string>
     <string	name="spotify_mod_devs_02"	translatable="true">Spotify 修改团队</string>
-    <string	name="telegram_support_team_02"	translatable="true">Telegram 支持团队</string>
+    <string	name="telegram_support_team_02"	translatable="true">Telegram/Discord 支持团队</string>
     <string	name="manager_testers_02"	translatable="true">Mod/Manager 测试团队</string>
-    <string	name="manager_hosting_02"	translatable="true">网址维护</string>
+    <string	name="manager_hosting_02"	translatable="true">管理器网址维护</string>
     <string	name="mobilism_team_02"	translatable="true">Mobilism 团队</string>
     <string	name="forum_team_02"	translatable="true">FORUM.APK-RELEASE.NET 团队</string>
 	<string	name="xspotify_team_02"	translatable="true">xSpotify Manager (旧版贡献者)</string>
@@ -248,7 +244,7 @@
 	<string	name="downloading_file_02"	translatable="true">正在下载</string>
     <string	name="download_success_02"	translatable="true">下载完成</string>
 	<string	name="copy_url_desc_02"	translatable="true">版本已选定，是否复制链接？</string>
-    <string	name="new_update_02"	translatable="true">发现新版</string>
+    <string    name="new_update_02" translatable="true">发现新版管理器</string>
 	
     <string	name="continue_1_02"	translatable="true">继续</string>
     <string	name="cancel_02"	translatable="true">取消</string>
@@ -261,41 +257,39 @@
     <string	name="not_now_02"	translatable="true">稍后</string>
     <string	name="copy_url_02"	translatable="true">复制链接</string>
 	
-	<string	name="show_support_02"	translatable="true">显示支持</string>
-    <string	name="show_support_desc_02"	translatable="true">项目非盈利，期待您捐赠</string>
+	<string	name="show_support_02"	translatable="true">支持我们</string>
+    <string	name="show_support_desc_02"	translatable="true">我们是一个非盈利和不妥协的团队.\n无论金额大小都对我们有帮助,十分感谢.</string>
 
 	<string	name="maintenance_02"	translatable="true">维护</string>
-	<string	name="maintenance_desc_02"	translatable="true">暂不可用，等待恢复</string>
+	<string    name="maintenance_desc_02" translatable="true">暂不可用,请稍后查看</string>
 	<string	name="thanks_02"	translatable="true">感谢</string>
 	<string	name="language_02"	translatable="true">应用语言</string>
 	<string	name="website_02"	translatable="true">网站</string>
-	<string	name="reddit_02"	translatable="true">红色它</string>
+	<string    name="reddit_02" translatable="true">REDDIT</string>
     <string	name="faq_02"	translatable="true">常见问题</string>
 	
 	<string	name="cloned_version_02"	translatable="true">克隆版本(测试版)</string>
-	<string	name="cloned_version_desc_02"	translatable="true">激活此选项可让您下载并安装已修补应用程序的克隆版本。\n\n这也将解决大多数安装错误或问题，特别是如果您有预安装的spotify应用程序。</string>
-	<string	name="disable_rewarded_ads_02"	translatable="true">禁用奖励广告</string>
-	<string	name="disable_rewarded_ads_desc_02"	translatable="true">我们知道，我们大多数人不喜欢广告，但在我们的情况下，这显着帮助我们为我们的数据库，托管链接，更新，更多补丁和日常需求提供资金。\n\n这是最简单的方式来支持我们，而无需捐赠或花费任何东西。</string>
+	<string	name="cloned_version_desc_02"	translatable="true">激活此选项可让您下载并安装已修改的克隆版本.\n\n这也将解决大多数安装问题,特别是当您已经安装spotify应用程序.</string>
+	<string	name="disable_rewarded_ads_02"	translatable="true">禁用广告</string>
+	<string	name="disable_rewarded_ads_desc_02"	translatable="true">大多数人不喜欢广告,但对于我们而言,这能在很大程度上为我们的数据库,托管链接,更新,更多补丁和日常需求提供资金.\n\n这是支持我们的最简单的方法,无需您捐赠或花销.</string>
 	
 	<string	name="installation_failed_02"	translatable="true">安装失败</string>
-	<string	name="installation_failed_desc_02"	translatable="true">原因：您尝试安装低于当前安装的mod版本。\n\n解决方案：\nA. 选择等于或大于的版本。\nB. 卸载当前版本，然后降级。\n\n如果问题仍然存在，请查看常见问题解答。</string>
-	<string	name="installation_failed_ream_desc_02"	translatable="true">原因：此设备上安装的当前Spotify不是直接来自xManager或来自我们的团队。\n\n解决方法：卸载当前版本的应用程序，重新启动xManager并重试。 如果问题仍然存在，请查看常见问题解答。</string>
-	<string	name="installation_failed_cloned_desc_02"	translatable="true">原因：此设备上安装的当前克隆不是直接来自xManager或来自我们的团队。\n\n解决方法：卸载当前版本的应用程序，重新启动xManager并重试。 如果问题仍然存在，请查看常见问题解答。</string>
-	<string	name="existing_patched_ream_02"	translatable="true">现有修补</string>
-	<string	name="existing_patched_ream_desc_02"	translatable="true">在其中一个目录中找到的现有修补文件。 你想做什么行动？</string>
-	<string	name="existing_patched_cloned_02"	translatable="true">现有克隆</string>
-	<string	name="existing_patched_cloned_desc_02"	translatable="true">在其中一个目录中找到的现有克隆的修补文件。 你想做什么行动？</string>
-	
-	<string	name="close_02"	translatable="true">接近/接近</string>
-	<string	name="cloned_02"	translatable="true">克隆的</string>
-	<string	name="ream_02"	translatable="true">重新/上午</string>
-	<string	name="install_02"	translatable="true">安装/安装</string>
+	<string	name="installation_failed_desc_02"	translatable="true">原因:您尝试安装低于当前安装的mod版本.\n\n解决方案:\nA. 选择等于或大于的版本.\nB. 卸载当前版本,然后降级.\n\n如果问题仍然存在,请查看常见问题解答.</string>
+	<string	name="installation_failed_ream_desc_02"	translatable="true">原因:此设备上安装的当前Spotify不是直接来自xManager或来自我们的团队.\n\n解决方法:卸载当前版本的应用程序,重新启动xManager并重试. 如果问题仍然存在,请查看常见问题解答.</string>
+	<string	name="installation_failed_cloned_desc_02"	translatable="true">原因:此设备上安装的当前克隆版本不是直接来自xManager或来自我们的团队.\n\n解决方法:卸载当前版本的应用程序,重新启动xManager并重试. 如果问题仍然存在,请查看常见问题解答.</string>
+	<string	name="existing_patched_02"	translatable="true">现有补丁</string>
+	<string	name="existing_patched_desc_02"	translatable="true">在目录中找到一个修改过的文件. 您想怎么做?</string>
+
+	<string	name="close_02"	translatable="true">关闭</string>
+	<string	name="cloned_02"	translatable="true">克隆版</string>
+	<string	name="ream_02"	translatable="true">默认版或纯黑版</string>
+	<string	name="install_02"	translatable="true">安装</string>
 	<string	name="uninstall_02"	translatable="true">卸载</string>
 	<string	name="ignore_02"	translatable="true">忽略</string>
 	<string	name="delete_02"	translatable="true">删除</string>
-	<string	name="uninstall_patched_02"	translatable="true">卸载修补</string>
+	<string	name="uninstall_patched_02"	translatable="true">卸载补丁</string>
 	<string	name="open_settings_02"	translatable="true">打开设置</string>
-	<string	name="open_patched_02"	translatable="true">打开修补</string>
+	<string	name="open_patched_02"	translatable="true">打开修改版</string>
 	
 	<!--FRENCH LANGAUGE-->
 	<string	name="app_name_03"	translatable="true">xManager</string>
@@ -380,11 +374,9 @@
 	<string	name="installation_failed_desc_03"	translatable="true">Raison : Vous avez tenté d\'installer une version de mod inférieure à celle actuellement installée.\n\nSolutions:\nA. Sélectionnez une version égale ou supérieure à.\nB. Désinstallez la version actuelle, puis rétrogradez.\n\nSi le problème persiste, consultez la FAQ.</string>
 	<string	name="installation_failed_ream_desc_03"	translatable="true">Raison: Le Spotify actuellement installé sur cet appareil ne provenait pas directement de xManager ou de notre équipe.\n\nSolution: Désinstallez la version actuelle de l\'application, redémarrez xManager et réessayez. Si le problème persiste, consultez la FAQ.</string>
 	<string	name="installation_failed_cloned_desc_03"	translatable="true">Raison: Le cloné actuel installé sur cet appareil ne provenait pas directement de xManager ou de notre équipe.\n\nSolution: Désinstallez la version actuelle de l\'application, redémarrez xManager et réessayez. Si le problème persiste, consultez la FAQ.</string>
-	<string	name="existing_patched_ream_03"	translatable="true">PATCHÉ EXISTANT</string>
-	<string	name="existing_patched_ream_desc_03"	translatable="true">Un fichier patché existant trouvé dans l\'un des répertoires. Quelle action aimeriez-vous faire?</string>
-	<string	name="existing_patched_cloned_03"	translatable="true">CLONÉS EXISTANTS</string>
-	<string	name="existing_patched_cloned_desc_03"	translatable="true">Un fichier patché cloné existant trouvé dans l\'un des répertoires. Quelle action aimeriez-vous faire?</string>
-	
+	<string	name="existing_patched_03"	translatable="true">PATCHÉ EXISTANT</string>
+	<string	name="existing_patched_desc_03"	translatable="true">Un fichier patché existant trouvé dans l\'un des répertoires. Quelle action aimeriez-vous faire?</string>
+
 	<string	name="close_03"	translatable="true">PROCHE</string>
 	<string	name="cloned_03"	translatable="true">CLONER</string>
 	<string	name="ream_03"	translatable="true">RE/AM</string>
@@ -479,11 +471,9 @@
 	<string	name="installation_failed_desc_04"	translatable="true">Λόγος: προσπαθήσατε να εγκαταστήσετε μια έκδοση mod χαμηλότερη από αυτή που είναι εγκατεστημένη αυτήν τη στιγμή.\n\n λύσεις:\nA. Επιλέξτε μια έκδοση ίση ή μεγαλύτερη από.\nB. Καταργήστε την εγκατάσταση της τρέχουσας έκδοσης και, στη συνέχεια, υποβαθμίστε.\n\nΕάν το ζήτημα παραμένει, ελέγξτε τις Συχνές Ερωτήσεις.</string>
 	<string	name="installation_failed_ream_desc_04"	translatable="true">Λόγος: το τρέχον Spotify που εγκαταστάθηκε σε αυτήν τη συσκευή δεν προήλθε απευθείας από το xManager ή από την ομάδα μας.\n\nλύση: Καταργήστε την εγκατάσταση της τρέχουσας έκδοσης της εφαρμογής, κάντε επανεκκίνηση του xManager και δοκιμάστε ξανά. Εάν το ζήτημα παραμένει, ελέγξτε τις Συχνές Ερωτήσεις.</string>
 	<string	name="installation_failed_cloned_desc_04"	translatable="true">Λόγος: το τρέχον κλωνοποιημένο εγκατεστημένο σε αυτήν τη συσκευή δεν προήλθε απευθείας από το xManager ή από την ομάδα μας.\n\nλύση: Καταργήστε την εγκατάσταση της τρέχουσας έκδοσης της εφαρμογής, κάντε επανεκκίνηση του xManager και δοκιμάστε ξανά. Εάν το ζήτημα παραμένει, ελέγξτε τις Συχνές Ερωτήσεις.</string>
-	<string	name="existing_patched_ream_04"	translatable="true">ΥΠΆΡΧΟΝΤΑ PATCHED</string>
-	<string	name="existing_patched_ream_desc_04"	translatable="true">Ένα υπάρχον patched αρχείο που βρέθηκε σε έναν από τους καταλόγους. Τι δράση θα θέλατε να κάνετε;</string>
-	<string	name="existing_patched_cloned_04"	translatable="true">ΥΠΆΡΧΟΝΤΑ ΚΛΩΝΟΠΟΙΗΜΈΝΑ</string>
-	<string	name="existing_patched_cloned_desc_04"	translatable="true">Ένα υπάρχον κλωνοποιημένο patched αρχείο που βρέθηκε σε έναν από τους καταλόγους. Τι δράση θα θέλατε να κάνετε;</string>
-	
+	<string	name="existing_patched_04"	translatable="true">ΥΠΆΡΧΟΝΤΑ PATCHED</string>
+	<string	name="existing_patched_desc_04"	translatable="true">Ένα υπάρχον patched αρχείο που βρέθηκε σε έναν από τους καταλόγους. Τι δράση θα θέλατε να κάνετε;</string>
+
 	<string	name="close_04"	translatable="true">ΚΛΕΊΣΕΤΕ</string>
 	<string	name="cloned_04"	translatable="true">ΚΛΩΝΟΠΟΙΗΘΕΊ</string>
 	<string	name="ream_04"	translatable="true">RE/AM</string>
@@ -578,11 +568,9 @@
 	<string	name="installation_failed_desc_05"	translatable="true">Alasan: Anda mencoba menginstal versi mod lebih rendah dari yang saat ini diinstal.\n\nsolusi: \nA. Pilih versi yang sama dengan atau lebih besar dari.\nB. Uninstall versi saat ini, kemudian downgrade.\n\n jika masalah tetap ada, periksa FAQ.</string>
 	<string	name="installation_failed_ream_desc_05"	translatable="true">Alasan: Spotify saat ini yang diinstal pada perangkat ini tidak datang langsung dari xManager atau dari tim kami.\n\n solusi: Hapus instalan versi aplikasi saat ini, mulai ulang xManager dan coba lagi. Jika masalah tetap ada, periksa FAQ.</string>
 	<string	name="installation_failed_cloned_desc_05"	translatable="true">Alasan: kloning saat ini yang diinstal pada perangkat ini tidak datang langsung dari xManager atau dari tim kami.\n\n solusi: Hapus instalan versi aplikasi saat ini, mulai ulang xManager dan coba lagi. Jika masalah tetap ada, periksa FAQ.</string>
-	<string	name="existing_patched_ream_05"	translatable="true">ADA DITAMBAL</string>
-	<string	name="existing_patched_ream_desc_05"	translatable="true">File Ditambal Yang Ada ditemukan di salah satu direktori. Tindakan apa yang ingin Anda lakukan?</string>
-	<string	name="existing_patched_cloned_05"	translatable="true">KLONING YANG ADA</string>
-	<string	name="existing_patched_cloned_desc_05"	translatable="true">File patch kloning yang ada ditemukan di salah satu direktori. Tindakan apa yang ingin Anda lakukan?</string>
-	
+	<string	name="existing_patched_05"	translatable="true">ADA DITAMBAL</string>
+	<string	name="existing_patched_desc_05"	translatable="true">File Ditambal Yang Ada ditemukan di salah satu direktori. Tindakan apa yang ingin Anda lakukan?</string>
+
 	<string	name="close_05"	translatable="true">Sitemap</string>
 	<string	name="cloned_05"	translatable="true">Dikloning</string>
 	<string	name="ream_05"	translatable="true">RE/AM</string>
@@ -677,11 +665,9 @@
 	<string	name="installation_failed_desc_06"	translatable="true">Motivo: Hai tentato di installare una versione mod inferiore a quella attualmente installata.\n\nSoluzioni:\nA. Selezionare una versione uguale o maggiore di.\nB. Disinstallare la versione corrente, quindi eseguire il downgrade.\n\nSe il problema persiste, controlla le FAQ.</string>
 	<string	name="installation_failed_ream_desc_06"	translatable="true">Motivo: l\'attuale Spotify installato su questo dispositivo non proveniva direttamente da xManager o dal nostro team.\n\n Soluzione: disinstallare la versione corrente dell\'applicazione, riavviare xManager e riprovare. Se il problema persiste, controlla le FAQ.</string>
 	<string	name="installation_failed_cloned_desc_06"	translatable="true">Motivo: L\'attuale clonato installato su questo dispositivo non è venuto direttamente da xManager o dal nostro team.\n\n Soluzione: disinstallare la versione corrente dell\'applicazione, riavviare xManager e riprovare. Se il problema persiste, controlla le FAQ.</string>
-	<string	name="existing_patched_ream_06"	translatable="true">PATCH ESISTENTI</string>
-	<string	name="existing_patched_ream_desc_06"	translatable="true">Un file con patch esistente trovato in una delle directory. Che azione vorresti fare?</string>
-	<string	name="existing_patched_cloned_06"	translatable="true">ESISTENTE CLONATO</string>
-	<string	name="existing_patched_cloned_desc_06"	translatable="true">Un file patchato clonato esistente trovato in una delle directory. Che azione vorresti fare?</string>
-	
+	<string	name="existing_patched_06"	translatable="true">PATCH ESISTENTI</string>
+	<string	name="existing_patched_desc_06"	translatable="true">Un file con patch esistente trovato in una delle directory. Che azione vorresti fare?</string>
+
 	<string	name="close_06"	translatable="true">VICINO</string>
 	<string	name="cloned_06"	translatable="true">CLONARE</string>
 	<string	name="ream_06"	translatable="true">RE/AM</string>
@@ -776,11 +762,9 @@
 	<string	name="installation_failed_desc_07"	translatable="true">Powód: próbowałeś zainstalować wersję mod niższą niż obecnie zainstalowana.\n\nrozwiązania: \nA. Wybierz wersję równą lub większą niż.\nB. Odinstaluj bieżącą wersję, a następnie obniż wersję.\n\nJeśli problem nadal występuje, sprawdź FAQ.</string>
 	<string	name="installation_failed_ream_desc_07"	translatable="true">Powód: obecny Spotify zainstalowany na tym urządzeniu nie pochodzi bezpośrednio z xManager ani z naszego zespołu.\n\nrozwiązanie: Odinstaluj bieżącą wersję aplikacji, uruchom ponownie xManager i spróbuj ponownie. Jeśli problem nadal występuje, sprawdź FAQ.</string>
 	<string	name="installation_failed_cloned_desc_07"	translatable="true">Powód: bieżący sklonowany zainstalowany na tym urządzeniu nie pochodził bezpośrednio z xmanagera ani z naszego zespołu.\n\nrozwiązanie: Odinstaluj bieżącą wersję aplikacji, uruchom ponownie xManager i spróbuj ponownie. Jeśli problem nadal występuje, sprawdź FAQ.</string>
-	<string	name="existing_patched_ream_07"	translatable="true">ISTNIEJĄCE ZAŁATANE</string>
-	<string	name="existing_patched_ream_desc_07"	translatable="true">Istniejący poprawiony plik znaleziony w jednym z katalogów. Jaką akcję chciałbyś wykonać?</string>
-	<string	name="existing_patched_cloned_07"	translatable="true">ISTNIEJĄCE KLONOWANE</string>
-	<string	name="existing_patched_cloned_desc_07"	translatable="true">Istniejący sklonowany poprawiony plik znaleziony w jednym z katalogów. Jaką akcję chciałbyś wykonać?</string>
-	
+	<string	name="existing_patched_07"	translatable="true">ISTNIEJĄCE ZAŁATANE</string>
+	<string	name="existing_patched_desc_07"	translatable="true">Istniejący poprawiony plik znaleziony w jednym z katalogów. Jaką akcję chciałbyś wykonać?</string>
+
 	<string	name="close_07"	translatable="true">Zamknij</string>
 	<string	name="cloned_07"	translatable="true">Sklonowany</string>
 	<string	name="ream_07"	translatable="true">RE/AM</string>
@@ -875,11 +859,9 @@
 	<string	name="installation_failed_desc_08"	translatable="true">Razão: você tentou instalar uma versão mod menor do que o que está instalado atualmente.\n\n soluções: \nA. Selecione uma versão igual ou maior que.\nB. desinstale a versão atual e faça o downgrade.\n\nSe o problema persistir, verifique o FAQ.</string>
 	<string	name="installation_failed_ream_desc_08"	translatable="true">Motivo: o Spotify atual instalado neste dispositivo não veio diretamente do xManager ou de nossa equipe.\n\nsolução: desinstale a versão atual do aplicativo, reinicie o xManager e tente novamente. Se o problema persistir, verifique o FAQ.</string>
 	<string	name="installation_failed_cloned_desc_08"	translatable="true">Razão: o clonado atual instalado neste dispositivo não veio diretamente do xManager ou de nossa equipe.\n\nsolução: desinstale a versão atual do aplicativo, reinicie o xManager e tente novamente. Se o problema persistir, verifique o FAQ.</string>
-	<string	name="existing_patched_ream_08"	translatable="true">REMENDADO EXISTENTE</string>
-	<string	name="existing_patched_ream_desc_08"	translatable="true">Um arquivo corrigido existente encontrado em um dos diretórios. Que ação você gostaria de fazer?</string>
-	<string	name="existing_patched_cloned_08"	translatable="true">CLONADO EXISTENTE</string>
-	<string	name="existing_patched_cloned_desc_08"	translatable="true">Um arquivo corrigido clonado existente encontrado em um dos diretórios. Que ação você gostaria de fazer?</string>
-	
+	<string	name="existing_patched_08"	translatable="true">REMENDADO EXISTENTE</string>
+	<string	name="existing_patched_desc_08"	translatable="true">Um arquivo corrigido existente encontrado em um dos diretórios. Que ação você gostaria de fazer?</string>
+
 	<string	name="close_08"	translatable="true">FECHAR</string>
 	<string	name="cloned_08"	translatable="true">CLONAR</string>
 	<string	name="ream_08"	translatable="true">RE/AM</string>
@@ -974,11 +956,9 @@
 	<string	name="installation_failed_desc_09"	translatable="true">Razão: você tentou instalar uma versão mod menor do que o que está instalado atualmente.\n\n soluções: \nA. Selecione uma versão igual ou maior que.\nB. desinstale a versão atual e faça o downgrade.\n\nSe o problema persistir, verifique o FAQ.</string>
 	<string	name="installation_failed_ream_desc_09"	translatable="true">Motivo: o Spotify atual instalado neste dispositivo não veio diretamente do xManager ou de nossa equipe.\n\nsolução: desinstale a versão atual do aplicativo, reinicie o xManager e tente novamente. Se o problema persistir, verifique o FAQ.</string>
 	<string	name="installation_failed_cloned_desc_09"	translatable="true">Razão: o clonado atual instalado neste dispositivo não veio diretamente do xManager ou de nossa equipe.\n\nsolução: desinstale a versão atual do aplicativo, reinicie o xManager e tente novamente. Se o problema persistir, verifique o FAQ.</string>
-	<string	name="existing_patched_ream_09"	translatable="true">REMENDADO EXISTENTE</string>
-	<string	name="existing_patched_ream_desc_09"	translatable="true">Um arquivo corrigido existente encontrado em um dos diretórios. Que ação você gostaria de fazer?</string>
-	<string	name="existing_patched_cloned_09"	translatable="true">CLONADO EXISTENTE</string>
-	<string	name="existing_patched_cloned_desc_09"	translatable="true">Um arquivo corrigido clonado existente encontrado em um dos diretórios. Que ação você gostaria de fazer?</string>
-	
+	<string	name="existing_patched_09"	translatable="true">REMENDADO EXISTENTE</string>
+	<string	name="existing_patched_desc_09"	translatable="true">Um arquivo corrigido existente encontrado em um dos diretórios. Que ação você gostaria de fazer?</string>
+
 	<string	name="close_09"	translatable="true">FECHAR</string>
 	<string	name="cloned_09"	translatable="true">CLONAR</string>
 	<string	name="ream_09"	translatable="true">RE/AM</string>
@@ -1073,11 +1053,9 @@
 	<string	name="installation_failed_desc_10"	translatable="true">Причина: Вы пытались установить версию мода ниже установленной в данный момент.\n\n Pешения:\nA. Выберите версию, равную или большую.\nB. Удалите текущую версию, затем понизьте рейтинг.\n\nЕсли проблема не устранена, ознакомьтесь с часто задаваемыми вопросами.</string>
 	<string	name="installation_failed_ream_desc_10"	translatable="true">Причина: Текущий Spotify, установленный на этом устройстве, не был получен непосредственно от xManager или от нашей команды.\n\nPешение: Удалите текущую версию приложения, перезапустите xManager и повторите попытку. Если проблема не устранена, ознакомьтесь с часто задаваемыми вопросами.</string>
 	<string	name="installation_failed_cloned_desc_10"	translatable="true">Причина: Текущая клонированная версия, установленная на этом устройстве, не была получена непосредственно от xManager или от нашей команды.\n\n Pешение: Удалите текущую версию приложения, перезапустите xManager и повторите попытку. Если проблема не устранена, ознакомьтесь с часто задаваемыми вопросами.</string>
-	<string	name="existing_patched_ream_10"	translatable="true">СУЩЕСТВУЮЩИЙ ИСПPАВЛЕННЫЙ</string>
-	<string	name="existing_patched_ream_desc_10"	translatable="true">Существующий исправленный файл, найденный в одном из каталогов. Какое действие вы хотели бы совершить?</string>
-	<string	name="existing_patched_cloned_10"	translatable="true">СУЩЕСТВУЮЩИЙ КЛОНИPОВАННЫЙ</string>
-	<string	name="existing_patched_cloned_desc_10"	translatable="true">Существующий клонированный исправленный файл, найденный в одном из каталогов. Какое действие вы хотели бы совершить?</string>
-	
+	<string	name="existing_patched_10"	translatable="true">СУЩЕСТВУЮЩИЙ ИСПPАВЛЕННЫЙ</string>
+	<string	name="existing_patched_desc_10"	translatable="true">Существующий исправленный файл, найденный в одном из каталогов. Какое действие вы хотели бы совершить?</string>
+
 	<string	name="close_10"	translatable="true">закрывать</string>
 	<string	name="cloned_10"	translatable="true">КЛОНИPОВАННЫЙ</string>
 	<string	name="ream_10"	translatable="true">RE/AM</string>
@@ -1172,11 +1150,9 @@
 	<string	name="installation_failed_desc_11"	translatable="true">Motivo: Ha intentado instalar una versión mod inferior a la que está instalada actualmente.\n\nSoluciones:\nA. Seleccione una versión igual o mayor que.\nB. Desinstale la versión actual y, a continuación, baje de categoría.\n\nSi el problema persiste, consulte las preguntas frecuentes.</string>
 	<string	name="installation_failed_ream_desc_11"	translatable="true">Motivo: El Spotify instalado en este dispositivo no provenía directamente de xManager ni de nuestro equipo.\n\nSolución: Desinstale la versión actual de la aplicación, reinicie xManager e inténtelo de nuevo. Si el problema persiste, consulte las preguntas frecuentes.</string>
 	<string	name="installation_failed_cloned_desc_11"	translatable="true">Motivo: El clonado actual instalado en este dispositivo no provino directamente de xManager ni de nuestro equipo.\n\nSolución: Desinstale la versión actual de la aplicación, reinicie xManager e inténtelo de nuevo. Si el problema persiste, consulte las preguntas frecuentes.</string>
-	<string	name="existing_patched_ream_11"	translatable="true">PARCHES EXISTENTES</string>
-	<string	name="existing_patched_ream_desc_11"	translatable="true">Un archivo parcheado existente que se encuentra en uno de los directorios. Qué acción te gustaría hacer?</string>
-	<string	name="existing_patched_cloned_11"	translatable="true">CLONADO EXISTENTE</string>
-	<string	name="existing_patched_cloned_desc_11"	translatable="true">Un archivo parcheado clonado existente que se encuentra en uno de los directorios. Qué acción te gustaría hacer?</string>
-	
+	<string	name="existing_patched_11"	translatable="true">PARCHES EXISTENTES</string>
+	<string	name="existing_patched_desc_11"	translatable="true">Un archivo parcheado existente que se encuentra en uno de los directorios. Qué acción te gustaría hacer?</string>
+
 	<string	name="close_11"	translatable="true">CERCA</string>
 	<string	name="cloned_11"	translatable="true">CLONAR</string>
 	<string	name="ream_11"	translatable="true">RE/AM</string>
@@ -1271,11 +1247,9 @@
 	<string	name="installation_failed_desc_12"	translatable="true">Причина: ви намагалися встановити версію мода нижче встановленої в даний момент.\n\nрішення:\nA. Виберіть версію, рівну або більшу, ніж.\nB. Видаліть поточну версію, потім понизьте рейтинг.\n\nЯкщо проблема не вирішена, перегляньте поширені запитання.</string>
 	<string	name="installation_failed_ream_desc_12"	translatable="true">Причина: поточний Spotify, встановлений на цьому пристрої, не був отриманий безпосередньо від xManager або від нашої команди.\n\nрішення: видаліть поточну версію програми, перезапустіть xManager і повторіть спробу. Якщо проблема не вирішена, перегляньте поширені запитання.</string>
 	<string	name="installation_failed_cloned_desc_12"	translatable="true">Причина: поточний клонований, встановлений на цьому пристрої, не був отриманий безпосередньо від xManager або від нашої команди.\n\nрішення: видаліть поточну версію програми, перезапустіть xManager і повторіть спробу. Якщо проблема не вирішена, перегляньте поширені запитання.</string>
-	<string	name="existing_patched_ream_12"	translatable="true">ІСНУЮЧИЙ ВИПPАВЛЕНИЙ</string>
-	<string	name="existing_patched_ream_desc_12"	translatable="true">Існуючий виправлений файл, знайдений в одному з каталогів. Яку дію ви хотіли б зробити?</string>
-	<string	name="existing_patched_cloned_12"	translatable="true">ІСНУЮЧИЙ КЛОНОВАНИЙ</string>
-	<string	name="existing_patched_cloned_desc_12"	translatable="true">Існуючий клонований виправлений файл, знайдений в одному з каталогів. Яку дію ви хотіли б зробити?</string>
-	
+	<string	name="existing_patched_12"	translatable="true">ІСНУЮЧИЙ ВИПPАВЛЕНИЙ</string>
+	<string	name="existing_patched_desc_12"	translatable="true">Існуючий виправлений файл, знайдений в одному з каталогів. Яку дію ви хотіли б зробити?</string>
+
 	<string	name="close_12"	translatable="true">закривати</string>
 	<string	name="cloned_12"	translatable="true">КЛОНОВАНИЙ</string>
 	<string	name="ream_12"	translatable="true">RE/AM</string>
@@ -1370,11 +1344,9 @@
 	<string	name="installation_failed_desc_13"	translatable="true">Nedeni: Şu anda yüklü olandan daha düşük bir mod sürümü yüklemeye çalıştınız.\n\nÇözümler\nA. Eşit veya daha büyük bir sürüm seçin.\nB. Geçerli sürümü kaldırın, sonra düşürün.\n\n Sorun devam ederse, SSS bölümüne bakın.</string>
 	<string	name="installation_failed_ream_desc_13"	translatable="true">Sebep: Bu cihazda yüklü olan mevcut Spotify doğrudan Xmanager\'dan veya ekibimizden gelmedi.\n\nÇözüm: Uygulamanın geçerli sürümünü kaldırın, Xmanager\'ı yeniden başlatın ve yeniden deneyin. Sorun devam ederse, SSS bölümüne bakın.</string>
 	<string	name="installation_failed_cloned_desc_13"	translatable="true">Sebep: Bu aygıta yüklenen geçerli klonlama doğrudan xmanager\'dan veya ekibimizden gelmedi.\n\nÇözüm: Uygulamanın geçerli sürümünü kaldırın, Xmanager\'ı yeniden başlatın ve yeniden deneyin. Sorun devam ederse, SSS bölümüne bakın.</string>
-	<string	name="existing_patched_ream_13"	translatable="true">MEVCUT YAMALI</string>
-	<string	name="existing_patched_ream_desc_13"	translatable="true">Dizinden birinde bulunan varolan bir yamalı dosya. Ne tür bir eylem yapmak istersiniz?</string>
-	<string	name="existing_patched_cloned_13"	translatable="true">MEVCUT KLONLANMIŞ</string>
-	<string	name="existing_patched_cloned_desc_13"	translatable="true">Dizinlerden birinde bulunan varolan klonlanmış yamalı dosya. Ne tür bir eylem yapmak istersiniz?</string>
-	
+	<string	name="existing_patched_13"	translatable="true">MEVCUT YAMALI</string>
+	<string	name="existing_patched_desc_13"	translatable="true">Dizinden birinde bulunan varolan bir yamalı dosya. Ne tür bir eylem yapmak istersiniz?</string>
+
 	<string	name="close_13"	translatable="true">kapat</string>
 	<string	name="cloned_13"	translatable="true">KLONLUYORDU</string>
 	<string	name="ream_13"	translatable="true">RE/AM</string>
@@ -1469,11 +1441,9 @@
 	<string	name="installation_failed_desc_14"	translatable="true">السبب: حاولت تثبيت إصدار وزارة الدفاع أقل مما هو مثبت حاليا.الحلول: أ. حدد إصدارا مساويا أو أكبر من.ب. إلغاء تثبيت الإصدار الحالي ، ثم تقليله.إذا استمرت المشكلة ، تحقق من الأسئلة الشائعة.</string>
 	<string	name="installation_failed_ream_desc_14"	translatable="true">السبب: سبوتيفي الحالية المثبتة على هذا الجهاز لم يأت مباشرة من زماناجر أو من فريقنا.الحل: إلغاء تثبيت الإصدار الحالي من التطبيق ، إعادة تشغيل زماناجر وحاول مرة أخرى. إذا استمرت المشكلة ، تحقق من الأسئلة الشائعة.</string>
 	<string	name="installation_failed_cloned_desc_14"	translatable="true">السبب: المستنسخة الحالية المثبتة على هذا الجهاز لم يأت مباشرة من زماناجر أو من فريقنا.الحل: إلغاء تثبيت الإصدار الحالي من التطبيق ، إعادة تشغيل زماناجر وحاول مرة أخرى. إذا استمرت المشكلة ، تحقق من الأسئلة الشائعة.</string>
-	<string	name="existing_patched_ream_14"	translatable="true">القائمة مصححة</string>
-	<string	name="existing_patched_ream_desc_14"	translatable="true">ملف مصححة موجودة وجدت في واحدة من الدليل. ما العمل الذي تريد القيام به?</string>
-	<string	name="existing_patched_cloned_14"	translatable="true">القائمة المستنسخة</string>
-	<string	name="existing_patched_cloned_desc_14"	translatable="true">تم العثور على ملف مصحح مستنسخ موجود في أحد الدليل. ما العمل الذي تريد القيام به?</string>
-	
+	<string	name="existing_patched_14"	translatable="true">القائمة مصححة</string>
+	<string	name="existing_patched_desc_14"	translatable="true">ملف مصححة موجودة وجدت في واحدة من الدليل. ما العمل الذي تريد القيام به?</string>
+
 	<string	name="close_14"	translatable="true">إغلاق</string>
 	<string	name="cloned_14"	translatable="true">المستنسخة</string>
 	<string	name="ream_14"	translatable="true">ري / آم</string>
@@ -1560,19 +1530,17 @@
     <string    name="faq_15" translatable="true">POGOSTA VPRAŠANJA</string>
 	
 	<string	name="cloned_version_15"	translatable="true">KLONIRANA RAZLI\u010cICA (BETA)</string>
-	<string	name="cloned_version_desc_15"	translatable="true">\u010ce to aktivirate, lahko prenesete in namestite klonirano različico zakrpane aplikacije.\n\nto bo odpravilo tudi večino namestitvenih napak ali težav, še posebej, če imate vnaprej nameščeno aplikacijo.</string>
+	<string	name="cloned_version_desc_15"	translatable="true">Aktiviranje tega vam bo omogočilo prenos in namestitev klonirane različice spremenjene aplikacije.\n\nTo bo odpravilo tudi večino namestitvenih napak ali težav, še posebej, če imate že vnaprej nameščeno aplikacijo Spotify.</string>
 	<string	name="disable_rewarded_ads_15"	translatable="true">ONEMOGO\u010cI NAGRAJENE OGLASE</string>
-	<string	name="disable_rewarded_ads_desc_15"	translatable="true">Vemo, da večina od nas ne mara oglasov, vendar nam v našem primeru to bistveno pomaga pri financiranju naše baze podatkov, gostovanju povezav, posodobitev, več popravkov in dnevnih potreb.\n\nto je najbolj preprost način, da nas podprete, ne da bi kaj podarili ali porabili.</string>
+	<string	name="disable_rewarded_ads_desc_15"	translatable="true">Zavedamo se, da vas večina ne mara oglasov, vendar nam to bistveno pomaga pri financiranju naše baze podatkov, gostovanju povezav, posodobitvah in dnevnih potrebah.\n\nJe najbolj preprost način, da nas podprete zastonj in brez donacij.</string>
 	
 	<string	name="installation_failed_15"	translatable="true">NAMESTITEV NI USPELA</string>
-	<string	name="installation_failed_desc_15"	translatable="true">Razlog: poskušali ste namestiti različico mod, nižjo od trenutno nameščene.\n\nrešitve:\nA. Izberite različico, ki je enaka ali večja od.\nB. odstranite trenutno različico in jo nato znižajte.\n\nče se težava nadaljuje, preverite Pogosta vprašanja.</string>
-	<string	name="installation_failed_ream_desc_15"	translatable="true">Razlog: trenutni Spotif, nameščen na tej napravi, ni prišel neposredno iz url ali iz naše ekipe.\n\nRešitev: odstranite trenutno različico aplikacije, znova zaženite in poskusite znova. Če se težava nadaljuje, preverite Pogosta vprašanja.</string>
-	<string	name="installation_failed_cloned_desc_15"	translatable="true">Razlog: trenutno kloniran, nameščen na tej napravi, ni prišel neposredno iz url ali iz naše ekipe.\n\nRešitev: odstranite trenutno različico aplikacije, znova zaženite in poskusite znova. Če se težava nadaljuje, preverite Pogosta vprašanja.</string>
-	<string	name="existing_patched_ream_15"	translatable="true">OBSTOJE\u010cE ZAKRPANE</string>
-	<string	name="existing_patched_ream_desc_15"	translatable="true">Obstoječa zakrpana datoteka, najdena v enem od imenikov. Kakšno dejanje bi radi storili?</string>
-	<string	name="existing_patched_cloned_15"	translatable="true">OBSTOJE\u010cI KLONIRANI</string>
-	<string	name="existing_patched_cloned_desc_15"	translatable="true">Obstoječa klonirana zakrpana datoteka, najdena v enem od imenikov. Kakšno dejanje bi radi storili?</string>
-	
+	<string	name="installation_failed_desc_15"	translatable="true">Razlog: Poskušali ste namestiti različico, ki je nižja od trenutno nameščene.\n\nRešitve:\nA. Izberite različico, ki je enaka ali večja od trenutne.\nB. Odstranite trenutno nameščeno različico in namestite nižjo različico.\n\nČe se težava nadaljuje, preverite Pogosta vprašanja.</string>
+	<string    name="installation_failed_ream_desc_15" translatable="true">Razlog: Različica Spotify, ki je trenutno nameščena na tej napravi ni prišla neposredno iz strani naše xManager ekipe.\n\nRešitev: Odstranite trenutno različico aplikacije, znova zaženite xManager in poskusite znova. Če se težava nadaljuje, preverite rubriko "Pogosta vprašanja"".</string>
+	<string    name="installation_failed_cloned_desc_15" translatable="true">Razlog: trenutno kloniran, nameščen na tej napravi, ni prišel neposredno iz url ali iz naše ekipe.\n\nRešitev: odstranite trenutno različico aplikacije, znova zaženite in poskusite znova. Če se težava nadaljuje, preverite rubriko "Pogosta vprašanja".</string>
+	<string	name="existing_patched_15"	translatable="true">OBSTOJEČA DATOTEKA</string>
+	<string	name="existing_patched_desc_15"	translatable="true">Že obstoječa klonirana različica spremenjene aplikacije je bila najdena v mestu datotek. Kako želite nadaljevati?</string>
+
 	<string	name="close_15"	translatable="true">Zapri</string>
 	<string	name="cloned_15"	translatable="true">Klonirano</string>
 	<string	name="ream_15"	translatable="true">RE/AM</string>
@@ -1667,11 +1635,9 @@
 	<string	name="installation_failed_desc_16"	translatable="true">Motiv: ați încercat să instalați o versiune mod mai mică decât cea instalată în prezent.\n\nsoluții:\nA. Selectați o versiune egală sau mai mare decât.\nB. Dezinstalați versiunea curentă, apoi faceți downgrade.\n\nDacă problema persistă, verificați FAQ.</string>
 	<string	name="installation_failed_ream_desc_16"	translatable="true">Motiv: actualul Spotify instalat pe acest dispozitiv nu a venit direct de la xManager sau de la echipa noastră.\n\nsoluție: dezinstalați versiunea curentă a aplicației, reporniți xManager și încercați din nou. Dacă problema persistă, verificați FAQ.</string>
 	<string	name="installation_failed_cloned_desc_16"	translatable="true">Motiv: clonarea curentă instalată pe acest dispozitiv nu a venit direct de la xManager sau de la echipa noastră.\n\nsoluție: dezinstalați versiunea curentă a aplicației, reporniți xManager și încercați din nou. Dacă problema persistă, verificați FAQ.</string>
-	<string	name="existing_patched_ream_16"	translatable="true">PATCH-URI EXISTENTE</string>
-	<string	name="existing_patched_ream_desc_16"	translatable="true">Un fișier patch existent găsit într-unul din director. Ce acțiune ai vrea să faci?</string>
-	<string	name="existing_patched_cloned_16"	translatable="true">CLONAT EXISTENT</string>
-	<string	name="existing_patched_cloned_desc_16"	translatable="true">Un fișier existent patch-uri clonate găsite într-unul din Directorul. Ce acțiune ai vrea să faci?</string>
-	
+	<string	name="existing_patched_16"	translatable="true">PATCH-URI EXISTENTE</string>
+	<string	name="existing_patched_desc_16"	translatable="true">Un fișier patch existent găsit într-unul din director. Ce acțiune ai vrea să faci?</string>
+
 	<string	name="close_16"	translatable="true">Închide</string>
 	<string	name="cloned_16"	translatable="true">Clonat</string>
 	<string	name="ream_16"	translatable="true">RE/AM</string>
@@ -1766,11 +1732,9 @@
 	<string	name="installation_failed_desc_17"	translatable="true">이유:현재 설치된 것보다 낮은 모드 버전을 설치하려고 했습니다.솔루션:같거나보다 큰 버전을 선택합니다.현재 버전을 제거한 다음 다운 그레이드하십시오.문제가 지속되면,자주 묻는 질문을 확인합니다.</string>
 	<string	name="installation_failed_ream_desc_17"	translatable="true">이유:이 장치에 설치된 현재 스포티 파이는 엑스 매니저에서 또는 우리 팀에서 직접 온하지 않았다.해결 방법:응용 프로그램의 현재 버전을 제거,엑스 매니저를 다시 시작하고 다시 시도하십시오. 문제가 지속되면 자주 묻는 질문을 확인하십시오.</string>
 	<string	name="installation_failed_cloned_desc_17"	translatable="true">이유:이 장치에 설치된 현재 복제 된 것은 엑스 매니저에서 또는 우리 팀에서 직접 오지 않았다.해결 방법:응용 프로그램의 현재 버전을 제거,엑스 매니저를 다시 시작하고 다시 시도하십시오. 문제가 지속되면 자주 묻는 질문을 확인하십시오.</string>
-	<string	name="existing_patched_ream_17"	translatable="true">기존 패치</string>
-	<string	name="existing_patched_ream_desc_17"	translatable="true">디렉터리 중 하나에 있는 기존 패치 파일입니다. 너는 무슨 활동을 하고 싶는가 하고자 했는가?</string>
-	<string	name="existing_patched_cloned_17"	translatable="true">기존 복제</string>
-	<string	name="existing_patched_cloned_desc_17"	translatable="true">디렉터리 중 하나에 있는 기존 복제된 패치 파일입니다. 너는 무슨 활동을 하고 싶는가 하고자 했는가?</string>
-	
+	<string	name="existing_patched_17"	translatable="true">기존 패치</string>
+	<string	name="existing_patched_desc_17"	translatable="true">디렉터리 중 하나에 있는 기존 패치 파일입니다. 너는 무슨 활동을 하고 싶는가 하고자 했는가?</string>
+
 	<string	name="close_17"	translatable="true">닫기</string>
 	<string	name="cloned_17"	translatable="true">복제됨</string>
 	<string	name="ream_17"	translatable="true">다시/오전</string>
@@ -1865,11 +1829,9 @@
 	<string	name="installation_failed_desc_18"	translatable="true">Reden: u hebt geprobeerd om een mod-versie lager dan wat momenteel is geïnstalleerd installeren.\n\noplossingen:\nA. Selecteer een versie gelijk aan of groter dan.\nB. Verwijder de huidige versie en downgrade.\n\nIf het probleem blijft bestaan, controleer de FAQ.</string>
 	<string	name="installation_failed_ream_desc_18"	translatable="true">Reden: de huidige Spotify geïnstalleerd op dit apparaat kwam niet rechtstreeks van xManager of van ons team.\n\noplossing: verwijder de huidige versie van de applicatie, herstart xManager en probeer het opnieuw. Als het probleem blijft bestaan, controleer dan de FAQ.</string>
 	<string	name="installation_failed_cloned_desc_18"	translatable="true">Reden: de huidige gekloonde geïnstalleerd op dit apparaat kwam niet rechtstreeks van xManager of van ons team.\n\noplossing: verwijder de huidige versie van de applicatie, herstart xManager en probeer het opnieuw. Als het probleem blijft bestaan, controleer dan de FAQ.</string>
-	<string	name="existing_patched_ream_18"	translatable="true">BESTAANDE PATCHED</string>
-	<string	name="existing_patched_ream_desc_18"	translatable="true">Een bestaand gepatcht bestand gevonden in een van de directory. Welke actie wilt u ondernemen?</string>
-	<string	name="existing_patched_cloned_18"	translatable="true">BESTAANDE GEKLOOND</string>
-	<string	name="existing_patched_cloned_desc_18"	translatable="true">Een bestaand gekloond gepatcht bestand gevonden in een van de directory. Welke actie wilt u ondernemen?</string>
-	
+	<string	name="existing_patched_18"	translatable="true">BESTAANDE PATCHED</string>
+	<string	name="existing_patched_desc_18"	translatable="true">Een bestaand gepatcht bestand gevonden in een van de directory. Welke actie wilt u ondernemen?</string>
+
 	<string	name="close_18"	translatable="true">SLUITEN</string>
 	<string	name="cloned_18"	translatable="true">KLONEN</string>
 	<string	name="ream_18"	translatable="true">RE/AM</string>
@@ -1936,7 +1898,7 @@
     <string	name="continue_1_19"	translatable="true">TIẾP TỤC</string>
     <string	name="cancel_19"	translatable="true">HỦY BỎ</string>
     <string	name="download_19"	translatable="true">TẢI XUỐNG</string>
-    <string	name="later_19"	translatable="true">MỘT LÁT SAU</string>
+    <string    name="later_19" translatable="true">ĐỂ SAU</string>
     <string	name="install_now_19"	translatable="true">CÀI ĐẶT NGAY</string>
     <string	name="install_update_19"	translatable="true">CÀI ĐẶT CẬP NHẬT</string>
     <string	name="go_back_19"	translatable="true">QUAY LẠI</string>
@@ -1955,30 +1917,28 @@
     <string	name="reddit_19"	translatable="true">REDDIT</string>
     <string	name="faq_19"	translatable="true">FAQ</string>
 	
-	<string	name="cloned_version_19"	translatable="true">NHÂN BẢN PHIÊN BẢN (BETA)</string>
-	<string	name="cloned_version_desc_19"	translatable="true">Kích hoạt này cho phép bạn đặt các nhân bản phiên bản của các vá ứng dụng.\nsố liệu Này cũng sẽ giải quyết hầu hết các lỗi cài đặt hoặc các vấn đề đặc biệt nếu anh có một tiền cài đặt sử dụng.</string>
-	<string	name="disable_rewarded_ads_19"	translatable="true">VÔ HIỆU HÓA THƯỞNG QUẢNG CÁO</string>
-	<string	name="disable_rewarded_ads_desc_19"	translatable="true">Chúng tôi biết rằng, hầu hết chúng tôi không muốn quảng cáo, nhưng trong trường hợp của chúng ta, điều này đáng kể giúp chúng tôi đến quỹ dữ liệu của chúng tôi, lưu trữ liên kết cập vá, và hàng ngày.\nsố liệu Này là cách đơn giản nhất để hỗ trợ chúng tôi mà không cần quyên góp hay chi bất cứ điều gì.</string>
+	<string	name="cloned_version_19"	translatable="true">NHÂN BẢN (BETA)</string>
+	<string	name="cloned_version_desc_19"	translatable="true">Kích hoạt tính năng này cho phép bạn tải xuống và cài đặt phiên bản nhân bản của ứng dụng đã vá.\n\nĐiều này cũng sẽ giải quyết hầu hết các lỗi hoặc sự cố cài đặt, đặc biệt nếu bạn đã cài đặt sẵn ứng dụng Spotify.</string>
+	<string	name="disable_rewarded_ads_19"	translatable="true">TẮT QUẢNG CÁO CÓ THƯỞNG</string>
+	<string	name="disable_rewarded_ads_desc_19"	translatable="true">Chúng tôi biết rằng hầu hết chúng tôi không thích quảng cáo nhưng trong trường hợp của chúng tôi, điều này giúp chúng tôi đáng kể tài trợ cho cơ sở dữ liệu, liên kết lưu trữ, cập nhật, các bản vá khác và nhu cầu hàng ngày.\n\nĐây là cách đơn giản nhất để hỗ trợ chúng tôi mà không cần đóng góp hoặc chi tiêu bất cứ thứ gì.</string>
 	
 	<string	name="installation_failed_19"	translatable="true">CÀI ĐẶT THẤT BẠI</string>
-	<string	name="installation_failed_desc_19"	translatable="true">Lý do: Bạn đã cố gắng để cài đặt một phiên bản mod thấp hơn hơn những gì đang cài đặt.\n\nGiải pháp:\nA. Chọn một phiên bản bằng hoặc lớn hơn.\nB. Hướng phiên bản hiện tại, sau đó hạ cấp.\n\nNếu các vấn đề vẫn tồn tại, kiểm tra HỎI.</string>
-	<string	name="installation_failed_ream_desc_19"	translatable="true">Lý do: hiện tại Sử cài đặt trên thiết bị này đã không đến trực tiếp từ thông hoặc từ đội ngũ của chúng tôi.\n\nGiải pháp: loại bỏ sự hiện tại phiên bản của các ứng dụng, thông và cố gắng một lần nữa. Nếu các vấn đề vẫn tồn tại, kiểm tra HỎI.v</string>
-	<string	name="installation_failed_cloned_desc_19"	translatable="true">Lý do: hiện tại nhân bản cài đặt trên thiết bị này đã không đến trực tiếp từ thông hoặc từ đội ngũ của chúng tôi.\n\nGiải pháp: loại bỏ sự hiện tại phiên bản của các ứng dụng, thông và cố gắng một lần nữa. Nếu các vấn đề vẫn tồn tại, kiểm tra HỎI.</string>
-	<string	name="existing_patched_ream_19"	translatable="true">HIỆN TẠI VÁ</string>
-	<string	name="existing_patched_ream_desc_19"	translatable="true">Một hiện vá tập tin được tìm thấy trong một trong những mục. Hành động gì bạn muốn làm gì?</string>
-	<string	name="existing_patched_cloned_19"	translatable="true">HIỆN TẠI NHÂN BẢN</string>
-	<string	name="existing_patched_cloned_desc_19"	translatable="true">Một hiện nhân bản vá tập tin được tìm thấy trong một trong những mục. Hành động gì bạn muốn làm gì?</string>
-	
-	<string	name="close_19"	translatable="true">GẦN</string>
-	<string	name="cloned_19"	translatable="true">NHÂN bản</string>
-	<string	name="ream_19"	translatable="true">LẠI/AM</string>
-	<string	name="install_19"	translatable="true">CÀI đặt</string>
-	<string	name="uninstall_19"	translatable="true">Rõ ràng</string>
-	<string	name="ignore_19"	translatable="true">Bỏ QUA</string>
+	<string	name="installation_failed_desc_19"	translatable="true">Lý do: Bạn đã cố cài đặt phiên bản mod thấp hơn phiên bản hiện đang được cài đặt.\n\nGiải pháp:\nA. Hãy chọn phiên bản bằng hoặc lớn hơn.\nB. Gỡ cài đặt phiên bản hiện tại, sau đó hạ cấp.\n\nNếu sự cố tiếp diễn, hãy kiểm tra câu hỏi thường gặp (FAQ).</string>
+	<string	name="installation_failed_ream_desc_19"	translatable="true">Lý do: Spotify hiện tại được cài đặt trên thiết bị này không đến trực tiếp từ xManager hoặc từ nhóm của chúng tôi.\n\nGiải pháp: Gỡ cài đặt phiên bản hiện tại của ứng dụng, khởi động lại xManager và thử lại. Nếu sự cố vẫn tiếp diễn, hãy kiểm tra câu hỏi thường gặp (FAQ).</string>
+	<string	name="installation_failed_cloned_desc_19"	translatable="true">Lý do: Bản sao hiện được cài đặt trên thiết bị này không đến trực tiếp từ xManager hoặc từ nhóm của chúng tôi.\n\nGiải pháp: Gỡ cài đặt phiên bản hiện tại của ứng dụng, khởi động lại xManager và thử lại. Nếu sự cố vẫn tiếp diễn, hãy kiểm tra câu hỏi thường gặp (FAQ).</string>
+	<string	name="existing_patched_19"	translatable="true">BẢN VÁ HIỆN TẠI</string>
+	<string	name="existing_patched_desc_19"	translatable="true">Có một tệp đã vá được tìm thấy ở một trong các thư mục. Bạn muốn thực hiện hành động nào?</string>
+
+	<string	name="close_19"	translatable="true">ĐÓNG</string>
+	<string	name="cloned_19"	translatable="true">NHÂN BẢN</string>
+	<string	name="ream_19"	translatable="true">RE/AM</string>
+	<string	name="install_19"	translatable="true">CÀI ĐẶT</string>
+	<string	name="uninstall_19"	translatable="true">GỠ BỎ</string>
+	<string	name="ignore_19"	translatable="true">BỎ QUA</string>
 	<string	name="delete_19"	translatable="true">XÓA</string>
-	<string	name="uninstall_patched_19"	translatable="true">RÕ RÀNG VÁ</string>
+	<string	name="uninstall_patched_19"	translatable="true">GỠ BỎ BẢN VÁ</string>
 	<string	name="open_settings_19"	translatable="true">MỞ CÁC THIẾT LẬP</string>
-	<string	name="open_patched_19"	translatable="true">MỞ VÁ</string>
+	<string	name="open_patched_19"	translatable="true">MỞ BẢN VÁ</string>
 	
 	<!--GERMAN LANGUAGE-->
 	<string	name="app_name_20"	translatable="true">xManager</string>
@@ -2063,11 +2023,9 @@
 	<string	name="installation_failed_desc_20"	translatable="true">Grund: Sie haben versucht, eine Mod-Version zu installieren, die niedriger ist als die derzeit installierte.\n\nLösungen:\nA. Wählen Sie eine Version gleich oder größer als.\nB. Deinstallieren Sie die aktuelle Version und führen Sie ein Downgrade durch.\n\nWenn das Problem weiterhin besteht, lesen Sie die FAQ.</string>
 	<string	name="installation_failed_ream_desc_20"	translatable="true">Grund: Das auf diesem Gerät installierte Spotify kam nicht direkt von xManager oder von unserem Team.\n\nLösung: Deinstallieren Sie die aktuelle Version der Anwendung, starten Sie xManager neu und versuchen Sie es erneut. Wenn das Problem weiterhin besteht, lesen Sie die FAQ.</string>
 	<string	name="installation_failed_cloned_desc_20"	translatable="true">Grund: Das aktuell auf diesem Gerät installierte geklonte Programm kam nicht direkt von xManager oder von unserem Team.\n\nLösung: Deinstallieren Sie die aktuelle Version der Anwendung, starten Sie xManager neu und versuchen Sie es erneut. Wenn das Problem weiterhin besteht, lesen Sie die FAQ.</string>
-	<string	name="existing_patched_ream_20"	translatable="true">BESTEHENDE GEPATCHT</string>
-	<string	name="existing_patched_ream_desc_20"	translatable="true">Eine vorhandene gepatchte Datei in einem der Verzeichnis gefunden. Welche Aktion möchten Sie tun?</string>
-	<string	name="existing_patched_cloned_20"	translatable="true">BESTEHENDE GEKLONT</string>
-	<string	name="existing_patched_cloned_desc_20"	translatable="true">Eine vorhandene geklonte gepatchte Datei, die in einem der Verzeichnisse gefunden wurde. Welche Aktion möchten Sie tun?</string>
-	
+	<string	name="existing_patched_20"	translatable="true">BESTEHENDE GEPATCHT</string>
+	<string	name="existing_patched_desc_20"	translatable="true">Eine vorhandene gepatchte Datei in einem der Verzeichnis gefunden. Welche Aktion möchten Sie tun?</string>
+
 	<string	name="close_20"	translatable="true">SCHLIEßEN</string>
 	<string	name="cloned_20"	translatable="true">KLONEN</string>
 	<string	name="ream_20"	translatable="true">RE/AM</string>
@@ -2162,11 +2120,9 @@
 	<string	name="installation_failed_desc_21"	translatable="true">دلیل: شما اقدام به نصب یک نسخه وزارت دفاع پایین تر از چیزی است که در حال حاضر نصب شده است.نسخه ای برابر یا بزرگتر را انتخاب کنید.نسخه فعلی را حذف و سپس تنزل دهید.اگر این موضوع ادامه, بررسی پرسش و پاسخ.</string>
 	<string	name="installation_failed_ream_desc_21"	translatable="true">دلیل: اسپاتیفای فعلی نصب شده بر روی این دستگاه مستقیما از طرف مدیر یا تیم ما تهیه نشده است.راه حل: نسخه فعلی برنامه را حذف کنید, مدیر برنامه را مجددا راه اندازی کنید و دوباره امتحان کنید. اگر این موضوع ادامه, بررسی پرسش و پاسخ.</string>
 	<string	name="installation_failed_cloned_desc_21"	translatable="true">دلیل: کلون فعلی نصب شده روی این دستگاه مستقیما از طرف مدیر یا تیم ما تهیه نشده است.راه حل: نسخه فعلی برنامه را حذف کنید, مدیر برنامه را مجددا راه اندازی کنید و دوباره امتحان کنید. اگر این موضوع ادامه, بررسی پرسش و پاسخ.</string>
-	<string	name="existing_patched_ream_21"	translatable="true">موجود وصله</string>
-	<string	name="existing_patched_ream_desc_21"	translatable="true">یک فایل وصله موجود موجود در یکی از دایرکتوری. چه عمل شما می خواهم به انجام?</string>
-	<string	name="existing_patched_cloned_21"	translatable="true">کلون موجود</string>
-	<string	name="existing_patched_cloned_desc_21"	translatable="true">یک فایل وصله کلون موجود موجود در یکی از دایرکتوری. چه عمل شما می خواهم به انجام?</string>
-	
+	<string	name="existing_patched_21"	translatable="true">موجود وصله</string>
+	<string	name="existing_patched_desc_21"	translatable="true">یک فایل وصله موجود موجود در یکی از دایرکتوری. چه عمل شما می خواهم به انجام?</string>
+
 	<string	name="close_21"	translatable="true">بستن</string>
 	<string	name="cloned_21"	translatable="true">کلون شده</string>
 	<string	name="ream_21"	translatable="true">دوباره / صبح</string>
