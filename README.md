@@ -32,7 +32,7 @@ Our aim is to make a simple yet very useful manager app for everyone's convenien
 **TRANSLATION CHANGE/UPDATE:** Pull request should be done on the **"Developer"** branch. The translations can be found at * *resource/values/strings.xml.* *  
 **SUBMIT TRANSLATIONS:** Pull request should be done on the **"Developer"** branch. Please follow the **<--DEFAULT LANGUAGE-->** format that can be found at * *resource/values/strings.xml.* *  
 
-# IMPORTANT NOTES (READ ME FIRST)
+# IMPORTANT NOTES  
 
 **•xManager is created using Sketchware Pro for android (https://github.com/Sketchware-Pro/Sketchware-Pro).**  
 **•xManager uses Sketch2Any for converting the project to Android Studio (https://play.google.com/store/apps/details?id=com.sketch2any).**  
