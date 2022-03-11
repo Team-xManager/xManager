@@ -101,7 +101,7 @@
 			android:textColor="#000000"
 			android:alpha="0.0" />
 		<TextView
-			android:id="@+id/existing_patched_ream"
+			android:id="@+id/existing_patched"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:padding="8dp"
@@ -200,25 +200,7 @@
 			android:textColor="#000000"
 			android:alpha="0.0" />
 		<TextView
-			android:id="@+id/existing_patched_cloned"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:padding="8dp"
-			android:text="EXISTING CLONED"
-			android:textSize="12sp"
-			android:textColor="#000000"
-			android:alpha="0.0" />
-		<TextView
-			android:id="@+id/existing_patched_cloned_desc"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:padding="8dp"
-			android:text="An existing cloned patched file found in one of the directory. What action would you like to do\?"
-			android:textSize="12sp"
-			android:textColor="#000000"
-			android:alpha="0.0" />
-		<TextView
-			android:id="@+id/existing_patched_ream_desc"
+			android:id="@+id/existing_patched_desc"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:padding="8dp"
@@ -1310,7 +1292,7 @@
 					android:paddingLeft="8dp"
 					android:paddingTop="8dp"
 					android:paddingRight="8dp"
-					android:text="Spotify Mod Developers"
+					android:text="Spotify Patched Developers"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#1DB954" />
@@ -1343,7 +1325,7 @@
 					android:paddingLeft="8dp"
 					android:paddingTop="8dp"
 					android:paddingRight="8dp"
-					android:text="Telegram/Discord Support Team"
+					android:text="Telegram | Discord | Reddit Team"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#1DB954" />
@@ -1354,7 +1336,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
-					android:text="jetfire (Github Support)\nmeech (Discord Support)\njuznem\nroosphx (Facebook Login Fixed)\nSherlock Holmes"
+					android:text="jetfire\nmeech\nRishavG\nSherlock Holmes\njuznem\nmilindgoel15 (Reddit Moderator) [r/Vanced]\nstiles_stillinski (Reddit Moderator) [r/ApksApps]"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -1376,7 +1358,7 @@
 					android:paddingLeft="8dp"
 					android:paddingTop="8dp"
 					android:paddingRight="8dp"
-					android:text="Mod/Manager Testers"
+					android:text="Patched and Manager Testers"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#1DB954" />
@@ -1398,7 +1380,7 @@
 					android:paddingLeft="8dp"
 					android:paddingTop="8dp"
 					android:paddingRight="8dp"
-					android:text="Manager Hosting Links"
+					android:text="Manager Database and Hostings"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#1DB954" />
@@ -1458,39 +1440,6 @@
 				android:background="#424242"
 				android:orientation="vertical">
 				<TextView
-					android:id="@+id/manager_team"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingTop="8dp"
-					android:paddingRight="8dp"
-					android:text="xSpotify Manager (Old Manager)"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#1DB954" />
-				<TextView
-					android:id="@+id/manager_1"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingRight="8dp"
-					android:paddingBottom="8dp"
-					android:text="cryiotic3 (Manager Icon)\nfarish278 (Manager Icon)\nSherlock Holmes\njetfire\n100RABH\nLight Yagami"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#FFFFFF" />
-			</LinearLayout>
-			<LinearLayout
-				android:id="@+id/box_about_6"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="10dp"
-				android:layout_marginTop="10dp"
-				android:layout_marginRight="10dp"
-				android:padding="8dp"
-				android:background="#424242"
-				android:orientation="vertical">
-				<TextView
 					android:id="@+id/forum_team"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -1514,6 +1463,39 @@
 					android:textColor="#FFFFFF" />
 			</LinearLayout>
 			<LinearLayout
+				android:id="@+id/box_about_6"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginRight="10dp"
+				android:padding="8dp"
+				android:background="#424242"
+				android:orientation="vertical">
+				<TextView
+					android:id="@+id/manager_team"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="xSpotify Manager (Old Manager)"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/manager_1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:text="cryiotic3 (Manager Icon)\nfarish278 (Manager Icon)\nroosphx (Facebook Login Fixed)\nSherlock Holmes\njetfire\n100RABH\nLight Yagami"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+			</LinearLayout>
+			<LinearLayout
 				android:id="@+id/box_about_7"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -1529,6 +1511,32 @@
 					android:layout_height="wrap_content"
 					android:padding="8dp"
 					android:orientation="vertical">
+					<TextView
+						android:id="@+id/manager_donators"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="SUPPORTERS/DONATORS"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#00BCD4" />
+					<TextView
+						android:id="@+id/donators"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Ricardo G.\nAakarshit U.\nAmaricai A.\nAntonio M.\nJuleshwar Babu T.M.\nYash G.\nCamille D.\nAnudeep N.D.\nKrzysztof S.\nAlex C.\nCarlos C.\nPrabandaru P.\nRussel R.\nLucha G.S."
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+					<LinearLayout
+						android:id="@+id/about_separator"
+						android:layout_width="match_parent"
+						android:layout_height="2dp"
+						android:layout_marginLeft="15dp"
+						android:layout_marginTop="10dp"
+						android:layout_marginRight="15dp"
+						android:layout_marginBottom="10dp"
+						android:background="#616161"
+						android:orientation="horizontal" />
 					<TextView
 						android:id="@+id/manager_lang_13"
 						android:layout_width="wrap_content"
@@ -1576,7 +1584,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:paddingBottom="5dp"
-						android:text="Gent G"
+						android:text="Gent G | Softland99"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -2501,7 +2509,7 @@
 							android:layout_height="wrap_content"
 							android:gravity="center_horizontal|center_vertical"
 							android:text="TELEGRAM"
-							android:textSize="12sp"
+							android:textSize="11sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical" />
@@ -2531,7 +2539,7 @@
 							android:layout_height="wrap_content"
 							android:gravity="center_horizontal|center_vertical"
 							android:text="REDDIT"
-							android:textSize="12sp"
+							android:textSize="11sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical" />
@@ -2561,7 +2569,7 @@
 							android:layout_height="wrap_content"
 							android:gravity="center_horizontal|center_vertical"
 							android:text="DONATE"
-							android:textSize="12sp"
+							android:textSize="11sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical" />
@@ -2593,7 +2601,7 @@
 							android:paddingRight="1dp"
 							android:gravity="center_horizontal|center_vertical"
 							android:text="ABOUT"
-							android:textSize="12sp"
+							android:textSize="11sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical" />
@@ -2633,7 +2641,7 @@
 							android:layout_height="wrap_content"
 							android:gravity="center_horizontal|center_vertical"
 							android:text="DISCORD"
-							android:textSize="12sp"
+							android:textSize="11sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical" />
@@ -2664,7 +2672,7 @@
 							android:layout_height="wrap_content"
 							android:gravity="center_horizontal|center_vertical"
 							android:text="SOURCE"
-							android:textSize="12sp"
+							android:textSize="11sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical" />
@@ -2695,7 +2703,7 @@
 							android:layout_height="wrap_content"
 							android:gravity="center_horizontal|center_vertical"
 							android:text="WEBSITE"
-							android:textSize="12sp"
+							android:textSize="11sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical" />
@@ -2725,7 +2733,7 @@
 							android:layout_height="wrap_content"
 							android:gravity="center_horizontal|center_vertical"
 							android:text="FAQ"
-							android:textSize="12sp"
+							android:textSize="11sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954"
 							android:layout_gravity="center_horizontal|center_vertical" />
