@@ -86,7 +86,7 @@ public class SplashActivity extends AppCompatActivity {
 	
 	@Override
 	public void onBackPressed() {
-		SketchwareUtil.CustomToast(getApplicationContext(), "Please wait...", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+		SketchwareUtil.showMessage(getApplicationContext(), "Please wait...");
 	}
 	
 	@Override
