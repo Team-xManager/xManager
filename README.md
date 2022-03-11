@@ -1,21 +1,3 @@
-# FOR CONTRIBUTORS (01/18/22): 
-**CODE CHANGE:** Pull request should be done on the **"Developer"** branch.  
-**TRANSLATION CHANGE/UPDATE:** Pull request should be done on the **"Developer"** branch. The translations can be found at * *resource/values/strings.xml.* *  
-**SUBMIT TRANSLATIONS:** Pull request should be done on the **"Developer"** branch. Please follow the **<--DEFAULT LANGUAGE-->** format that can be found at * *resource/values/strings.xml.* *  
-
-# IMPORTANT NOTES (READ ME FIRST)
-
-**•xManager is created using Sketchware Pro for android (https://github.com/Sketchware-Pro/Sketchware-Pro).**  
-**•xManager uses Sketch2Any for converting the project to Android Studio (https://play.google.com/store/apps/details?id=com.sketch2any).**  
-**•xManager only uses Firebase Database as its API.**  
-**•No trackers, no spywares, no keyloggers or any other malicious codes has been added on the source code. What you see on the source code is what's inside the build apk. You can extract the apk for yourself (NOTE: As of Version 2.8, component "com.google.android.gms.ads.AdActivity" was added due to Rewarded Ads).**  
-**•The source code that can be seen here is what's inside the exported zip file for Android Studio.**  
-**•There are some instance that the source code is unbuildable, some parts might be missing and such due to limitations.**   
-~~•Most of the internal changes can only be seen in MainActivity.java. The file size already reached 1MB and Github won't allow us to edit and do further changes/commits unless removing and re-adding the new updated files.~~  
-**•Users might experience downtime and maintenance when using the manager app since we are manually changing the hosting links of each individual files from time to time.**  
-**•xManager is completely free and we do not get any comissions with it (Rewarded Ads are optional and can be disable via settings).**  
-**•We will support the app as long as we can. Internal improvements may not guaranteed.** 
-
 # xManager (Spotify)
 ![GitHub all releases](https://img.shields.io/github/downloads/xManager-v2/xManager-Spotify/total?label=DOWNLOADS&style=for-the-badge) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/xManager-v2/xManager-Spotify?label=RELEASE&style=for-the-badge)  
 An android application where you can manage and install all versions of the spotify app.
@@ -44,6 +26,24 @@ The successor from our previous manager app called "xSpotify Manager" that was r
 We decided to create an app where people can easily manage and install all versions of the spotify app from their devices.  
 
 Our aim is to make a simple yet very useful manager app for everyone's convenience. On this second version of the manager app, we added a couple of features such as the ability to uninstall, open the app's settings directly, clear the offline cached datas and launch the app. We hope that all users find these newly added features very useful.
+
+# FOR CONTRIBUTORS (01/18/22): 
+**CODE CHANGE:** Pull request should be done on the **"Developer"** branch.  
+**TRANSLATION CHANGE/UPDATE:** Pull request should be done on the **"Developer"** branch. The translations can be found at * *resource/values/strings.xml.* *  
+**SUBMIT TRANSLATIONS:** Pull request should be done on the **"Developer"** branch. Please follow the **<--DEFAULT LANGUAGE-->** format that can be found at * *resource/values/strings.xml.* *  
+
+# IMPORTANT NOTES (READ ME FIRST)
+
+**•xManager is created using Sketchware Pro for android (https://github.com/Sketchware-Pro/Sketchware-Pro).**  
+**•xManager uses Sketch2Any for converting the project to Android Studio (https://play.google.com/store/apps/details?id=com.sketch2any).**  
+**•xManager only uses Firebase Database as its API.**  
+**•No trackers, no spywares, no keyloggers or any other malicious codes has been added on the source code. What you see on the source code is what's inside the build apk. You can extract the apk for yourself (NOTE: As of Version 2.8, component "com.google.android.gms.ads.AdActivity" was added due to Rewarded Ads).**  
+**•The source code that can be seen here is what's inside the exported zip file for Android Studio.**  
+**•There are some instance that the source code is unbuildable, some parts might be missing and such due to limitations.**   
+~~•Most of the internal changes can only be seen in MainActivity.java. The file size already reached 1MB and Github won't allow us to edit and do further changes/commits unless removing and re-adding the new updated files.~~  
+**•Users might experience downtime and maintenance when using the manager app since we are manually changing the hosting links of each individual files from time to time.**  
+**•xManager is completely free and we do not get any comissions with it (Rewarded Ads are optional and can be disable via settings).**  
+**•We will support the app as long as we can. Internal improvements may not guaranteed.** 
 
 # Developer
 
