@@ -1,6 +1,7 @@
 # xManager (Spotify)
 ![GitHub all releases](https://img.shields.io/github/downloads/xManager-v2/xManager-Spotify/total?label=DOWNLOADS&style=for-the-badge) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/xManager-v2/xManager-Spotify?label=RELEASE&style=for-the-badge) ![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/xManagerApp?style=for-the-badge)  
 An android application where you can manage and install all versions of the spotify app.
+![image](https://user-images.githubusercontent.com/78732474/157924447-397aa7d8-c859-4d15-8464-ae11e933c932.png)
 
 # Main Features
 
