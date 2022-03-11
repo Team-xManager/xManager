@@ -8,6 +8,8 @@
 	<uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
 	<uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED" />
 	<uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+	<uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+	<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.WAKE_LOCK" />
 	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 	<uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
@@ -24,6 +26,7 @@
 		android:preserveLegacyExternalStorage="true">
 		<activity
 			android:name=".MainActivity"
+            android:exported="true"
 			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
 			android:hardwareAccelerated="true"
 			android:supportsPictureInPicture="true"
@@ -31,6 +34,7 @@
 			android:windowSoftInputMode="stateHidden" />
 		<activity
 			android:name=".SplashActivity"
+            android:exported="true"
 			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
 			android:hardwareAccelerated="true"
 			android:supportsPictureInPicture="true"
@@ -44,9 +48,11 @@
 		</activity>
 		<activity
 			android:name=".DebugActivity"
+            android:exported="true"
 			android:screenOrientation="portrait" />
 		<activity
 			android:name="com.google.android.gms.ads.AdActivity"
+            android:exported="true"
 			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
 			android:theme="@android:style/Theme.Translucent" />
 		<meta-data
@@ -85,19 +91,14 @@
 		<uses-library
 			android:name="org.apache.http.legacy"
 			android:required="false" />
-
-
-      <provider 
-        android:authorities="com.xc3fff0e.xmanager.provider" 
-        android:name="androidx.core.content.FileProvider" 
-        android:exported="false" 
-        android:grantUriPermissions="true"> 
-      <meta-data 
-        android:name="android.support.FILE_PROVIDER_PATHS" 
-        android:resource="@xml/provider_paths"/> 
-        <meta-data
-        android:name="com.google.android.gms.ads.APPLICATION_ID"
-        android:value="ca-app-pub-3319548483346434~9030061641"/>
-      </provider>
+        <provider 
+          android:authorities="com.xc3fff0e.xmanager.provider" 
+          android:name="androidx.core.content.FileProvider" 
+          android:exported="false" 
+          android:grantUriPermissions="true"> 
+        <meta-data 
+          android:name="android.support.FILE_PROVIDER_PATHS" 
+          android:resource="@xml/provider_paths"/>
+        </provider>
 	</application>
 </manifest>
