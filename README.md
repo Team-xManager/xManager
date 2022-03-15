@@ -1,4 +1,4 @@
-![image](https://i.ibb.co/d5XR1fv/x-Manager-Origins.png)
+![image](https://i.ibb.co/yS27jLC/x-Manager-Origins-Banner-JPEG.jpg)
 ![image](https://user-images.githubusercontent.com/78732474/157926338-709d56c3-0f6b-4c00-a6b2-e391773d67c2.png)
 ![GitHub all releases](https://img.shields.io/github/downloads/xManager-v2/xManager-Spotify/total?label=DOWNLOADS&style=for-the-badge) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/xManager-v2/xManager-Spotify?label=RELEASE&style=for-the-badge) ![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/xManagerApp?style=for-the-badge)  
 
