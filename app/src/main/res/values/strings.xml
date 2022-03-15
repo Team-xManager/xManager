@@ -2133,4 +2133,102 @@
 	<string	name="uninstall_patched_21"	translatable="true">حذف وصله</string>
 	<string	name="open_settings_21"	translatable="true">تنظیمات را باز کنید</string>
 	<string	name="open_patched_21"	translatable="true">باز کردن وصله</string>
+	
+	    <!--HEBREW LANGUAGE-->
+	<string	name="app_name_22"	translatable="true">xManager</string>
+    <string	name="spotify_regular_22"	translatable="true">SPOTIFY (REGULAR)</string>
+    <string	name="spotify_amoled_22"	translatable="true">SPOTIFY (AMOLED)</string>
+    <string	name="installed_22"	translatable="true">מותקן</string>
+    <string	name="latest_22"	translatable="true">אחרון</string>
+    <string	name="versions_22"	translatable="true">גרסאות  </string>
+    <string	name="changelogs_22"	translatable="true">שינויים</string>
+    <string	name="manager_tools_22"	translatable="true">כלי ניהול</string>
+	<string	name="device_cpu_22"	translatable="true">CPU/ARCH</string>
+    <string	name="source_22"	translatable="true">קוד מקור</string>
+    <string	name="support_22"	translatable="true">טלגרם</string>
+    <string	name="donate_22"	translatable="true">תרומה</string>
+    <string	name="discord_22"	translatable="true">דיסקורד</string>
+    <string	name="about_22"	translatable="true">על אודות</string>
+	<string	name="main_title_22"	translatable="true">xManager</string>
+    <string	name="settings_title_22"	translatable="true">הגדרות</string>
+    <string	name="about_title_22"	translatable="true">על אודות</string>
+	
+    <string	name="list_auto_refresh_22"	translatable="true">ריענון אוטומטי לרשימה</string>
+    <string	name="list_auto_refresh_desc_22"	translatable="true">הפעלת תכונה זו תגרום לריענון רשימת הקבצים באופן אוטומטי בכל פעם שהאפליקציה תופעל.\n\nניתן לרענן את הרשימה באופן ידני על ידי גרירת המסך הראשי כלפי מטה.</string>
+    <string	name="force_auto_install_22"	translatable="true">כפה התקנה אוטומטית</string>
+    <string	name="force_auto_install_desc_22"	translatable="true">הפעלת תכונה זו תגרום להורדה אוטומטית של האפליקציה המעודכנת והתקנתה לאחר ההורדה.</string>
+    <string	name="copy_url_mode_22"	translatable="true">מצב העתקת קישור</string>
+    <string	name="copy_url_mode_desc_22"	translatable="true">הפעלת תכונה זו תאפשר לך להעתיק את כתובת האתר הישירה של הקובץ.\n\nלא מומלץ בכל עת, אלא אם קיימת בעיה בהורדת הקבצים ישירות מתוך xManager.</string>
+    <string	name="hide_navigation_bar_22"	translatable="true">הסתרת סרגל הניווט</string>
+    <string	name="show_themes_22"	translatable="true">ערכות נושא</string>
+	<string	name="apk_location_22"	translatable="true">מיקום קובץ ההתקנה</string>
+    <string	name="apk_location_desc_22"	translatable="true">ספריית הקבצים שבה ברצונך לשמור את הקובץ שהורדת. אם אינך יודע כיצד להגדיר תכונה זו, השאר אותה כפי שהיא.\n\nהערה: תכונה זו אינה תומכת באחסון חיצוני (כרטיס SD) עקב נגישות, הרשאות ומגבלות אחסון.</string>
+    <string	name="clear_directory_folders_22"	translatable="true">ניקוי תיקיות המקור</string>
+    <string	name="clear_directory_folders_desc_22"	translatable="true">הקש כדי למחוק את כל תיקיות המקור כולל הקבצים והעדכונים שהורדו.</string>
+    <string	name="reset_settings_22"	translatable="true">איפוס הגדרות</string>
+	
+    <string	name="about_sub_22"	translatable="true">נקי מפרסומות | חדשני | חופשי</string>
+    <string	name="xmanager_dev_22"	translatable="true">מפתח xManager</string>
+    <string	name="spotify_mod_devs_22"	translatable="true">Spotify Patched Developers</string>
+    <string	name="telegram_support_team_22"	translatable="true">טלגרם | דיסקורד | קבוצת תמיכה ברדיט</string>
+    <string	name="manager_testers_22"	translatable="true">הבודקים והמתקנים של xManager</string>
+    <string	name="manager_hosting_22"	translatable="true">מסד הנתונים ומארח הדומיין של xManager</string>
+    <string	name="mobilism_team_22"	translatable="true">Mobilism Team</string>
+    <string	name="forum_team_22"	translatable="true">FORUM.APK-RELEASE.NET Team</string>
+	<string	name="xspotify_team_22"	translatable="true">xSpotify Manager (גרסה ישנה)</string>
+    <string	name="contributors_22"	translatable="true">תודה לכל התורמים! ❤️</string>
+	
+    <string	name="download_selected_22"	translatable="true">בחרת להוריד את גרסה זו. האם ברצנוך להמשיך?</string>
+    <string	name="download_ready_22"	translatable="true">מידע על הקובץ</string>
+    <string	name="download_ready_desc_22"	translatable="true">הורדת קובץ ההתקנה הזה תחליף את הקובץ הקודם שנמצא בספריית הקבציים החיצוניים של האפליקציה.</string>
+	<string	name="downloading_file_22"	translatable="true">מוריד קובץ...</string>
+    <string	name="download_success_22"	translatable="true">הורד בהצלחה</string>
+	<string	name="copy_url_desc_22"	translatable="true">בחרת להוריד את גרסה זו. האם ברצנוך להעתיק את כתובת הקישור?</string>
+    <string	name="new_update_22"	translatable="true">קיים עדכון חדש</string>
+	
+    <string	name="continue_1_22"	translatable="true">המשך</string>
+    <string	name="cancel_22"	translatable="true">ביטול</string>
+    <string	name="download_22"	translatable="true">הורדה</string>
+    <string	name="later_22"	translatable="true">מאוחר יותר</string>
+    <string	name="install_now_22"	translatable="true">התקן כעת</string>
+    <string	name="install_update_22"	translatable="true">התקן עדכון</string>
+    <string	name="go_back_22"	translatable="true">אחורה</string>
+    <string	name="download_update_22"	translatable="true">הורד עדכון</string>
+    <string	name="not_now_22"	translatable="true">לא עכשיו</string>
+    <string	name="copy_url_22"	translatable="true">העתק קישור</string>
+	
+	<string	name="show_support_22"	translatable="true">הראה את תמיכתך</string>
+    <string	name="show_support_desc_22"	translatable="true">אנחנו צוות ללא מטרות רווח, לא תאגידי וללא פשרות. אנשים כמוך מעודדים אותנו ליצור אפליקציה כדי להקל בהרבה, במיוחד מההורדה ועד ההתקנה.\n\nאנחנו משקיעים את כל הזמן ואת מיטב המאמצים שלנו רק כדי לעשות דברים נכונים ומושלמים. אנו נעשה כמיטב יכולתנו כדי לתמוך באפליקציה הזו כל עוד נוכל.\n\nכל סכום יעזור ויהיה מוערך מאוד!!</string>
+	
+	<string	name="maintenance_22"	translatable="true">תחזוקה</string>
+	<string	name="maintenance_desc_22"	translatable="true">xManager לא זמין כעת. אנא בדוק את האפליקציה בשנית מאוחר יותר.</string>
+	<string	name="thanks_22"	translatable="true">תודה!</string>
+	<string	name="language_22"	translatable="true">שפה</string>
+    <string	name="website_22"	translatable="true">אתר</string>
+	<string	name="reddit_22"	translatable="true">רדיט</string>
+    <string	name="faq_22"	translatable="true">שאלות נפוצות</string>
+	
+	<string	name="cloned_version_22"	translatable="true">גרסה משובטת (בטא)</string>
+	<string	name="cloned_version_desc_22"	translatable="true">הפעלת תכונה זו מאפשרת לך להוריד ולהתקין את הגרסה המשובטת של האפליקציה המותקנת.\n\nהתכונה ככל הנראה גם תפתור את רוב שגיאות ההתקנה או הבעיות, במיוחד אם ברשותך קיימת אפליקציית Spotify מותקנת מראש.</string>
+	<string	name="disable_rewarded_ads_22"	translatable="true">השבת מודעות מתגמלות</string>
+	<string	name="disable_rewarded_ads_desc_22"	translatable="true">אנחנו יודעים שרובנו לא אוהבים פרסומות, אבל במקרה שלנו זה עוזר לנו מאוד לממן את מסד הנתונים שלנו, אירוח האתרים, עדכונים, תיקונים נוספים וצרכים יומיומיים.\n\nזו הדרך הפשוטה ביותר לתמוך בנו מבלי לתרום או להוציא דבר.</string>
+	
+	<string	name="installation_failed_22"	translatable="true">ההתקנה נכשלה</string>
+	<string	name="installation_failed_desc_22"	translatable="true">סיבה: ניסית להתקין גרסה נמוכה מזו המותקנת כעת.\n\nSolutions:\nא. בחר גרסה שווה או חדשה יותר מזו הנוכחית.\nב. הסר את ההקתנה של זו הנוכחית, ולאחר מכן שנמך.\n\nאם הבעיה נמשכת, עיין בשאלות הנפוצות.</string>
+	<string	name="installation_failed_ream_desc_22"	translatable="true">סיבה: גרסת Spotify הנוכחית המותקנת במכשיר זה לא הגיעה ישירות מ־xManager או מהצוות שלנו.\n\nפתרון: הסר את ההתקנה של הגרסה הנוכחית של האפליקציה, הפעל מחדש את xManager ונסה שוב. אם הבעיה נמשכת, עיין בשאלות הנפוצות.</string>
+	<string	name="installation_failed_cloned_desc_22"	translatable="true">סיבה: הגרסה המשובטת Spotify הנוכחית המותקנת במכשיר זה לא הגיעה ישירות מ־xManager או מהצוות שלנו.\n\פתרון: הסר את ההתקנה של הגרסה הנוכחית של האפליקציה, הפעל מחדש את xManager ונסה שוב. אם הבעיה נמשכת, עיין בשאלות הנפוצות.</string>
+	<string	name="existing_patched_22"	translatable="true">נתיב קיים</string>
+	<string	name="existing_patched_desc_22"	translatable="true">קובץ הורדה קיים נמצא באחת מהספריות. מה ברצונך לעשות?</string>
+
+	<string	name="close_22"	translatable="true">סגור</string>
+	<string	name="cloned_22"	translatable="true">משובט</string>
+	<string	name="ream_22"	translatable="true">RE/AM</string>
+	<string	name="install_22"	translatable="true">התקן</string>
+	<string	name="uninstall_22"	translatable="true">הסר התקנה</string>
+	<string	name="ignore_22"	translatable="true">התעלם</string>
+	<string	name="delete_22"	translatable="true">מחק</string>
+	<string	name="uninstall_patched_22"	translatable="true">הסר התקנת הקובץ</string>
+	<string	name="open_settings_22"	translatable="true">פתח הגדרות</string>
+	<string	name="open_patched_22"	translatable="true">פתח קובץ</string>
+
 </resources>
