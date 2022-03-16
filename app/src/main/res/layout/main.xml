@@ -13,7 +13,7 @@
 		android:paddingTop="5dp"
 		android:paddingRight="10dp"
 		android:paddingBottom="5dp"
-		android:background="#000000"
+		android:background="#171717"
 		android:gravity="center_horizontal|center_vertical"
 		android:orientation="horizontal">
 		<TextView
@@ -26,7 +26,7 @@
 			android:text="xManager"
 			android:textSize="20sp"
 			android:textStyle="bold"
-			android:textColor="#000000" />
+			android:textColor="#171717" />
 		<TextView
 			android:id="@+id/title_header_separator"
 			android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
 			android:text="|"
 			android:textSize="16sp"
 			android:textStyle="bold"
-			android:textColor="#000000" />
+			android:textColor="#171717" />
 		<TextView
 			android:id="@+id/title_header_beta"
 			android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
 			android:text="AD-FREE"
 			android:textSize="10sp"
 			android:textStyle="bold"
-			android:textColor="#000000" />
+			android:textColor="#171717" />
 		<LinearLayout
 			android:id="@+id/box_header_tab"
 			android:layout_width="match_parent"
@@ -89,7 +89,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:padding="8dp"
-		android:background="#000000"
+		android:background="#171717"
 		android:orientation="vertical">
 		<TextView
 			android:id="@+id/installation_failed"
@@ -1336,7 +1336,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
-					android:text="jetfire\nmeech\nRishavG\nSherlock Holmes\njuznem\nmilindgoel15 (Reddit Moderator) [r/Vanced]\nstiles_stillinski (Reddit Moderator) [r/ApksApps]"
+					android:text="jetfire\nmeech\nRishavG\nSherlock Holmes\njuznem\nCivaaBTW (Discord Helper)\nmilindgoel15 (Reddit Moderator) [r/Vanced]\nstiles_stillinski (Reddit Moderator) [r/ApksApps]"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -1523,7 +1523,7 @@
 						android:id="@+id/donators"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Ricardo G.\nAakarshit U.\nAmaricai A.\nAntonio M.\nJuleshwar Babu T.M.\nYash G.\nCamille D.\nAnudeep N.D.\nKrzysztof S.\nAlex C.\nCarlos C.\nPrabandaru P.\nRussel R.\nLucha G.S."
+						android:text="Ricardo G.\nAakarshit U.\nAmaricai A.\nAntonio M.\nJuleshwar Babu T.M.\nYash G.\nCamille D.\nAnudeep N.D.\nKrzysztof S.\nAlex C.\nCarlos C.\nPrabandaru P.\nRussel R.\nLucha G.S.\nAleksandrs F."
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1880,7 +1880,24 @@
 						android:id="@+id/translator_20"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
 						android:text="ohshahab"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+					<TextView
+						android:id="@+id/manager_lang_21"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Hebrew Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFEB3B" />
+					<TextView
+						android:id="@+id/translator_21"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="GreenArmy18"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1991,6 +2008,18 @@
 							android:orientation="horizontal">
 							<TextView
 								android:id="@+id/sub_1"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingLeft="3dp"
+								android:paddingTop="8dp"
+								android:paddingRight="8dp"
+								android:paddingBottom="8dp"
+								android:text="N/A"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:textColor="#FFFFFF" />
+							<TextView
+								android:id="@+id/sub_5"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:paddingLeft="3dp"
@@ -2133,6 +2162,18 @@
 							android:orientation="horizontal">
 							<TextView
 								android:id="@+id/sub_3"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingLeft="3dp"
+								android:paddingTop="8dp"
+								android:paddingRight="8dp"
+								android:paddingBottom="8dp"
+								android:text="N/A"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:textColor="#FFFFFF" />
+							<TextView
+								android:id="@+id/sub_7"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:paddingLeft="3dp"
