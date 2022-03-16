@@ -10,7 +10,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:padding="8dp"
-		android:background="#000000"
+		android:background="#171717"
 		android:gravity="center_horizontal|center_vertical"
 		android:orientation="vertical">
 		<ImageView
@@ -18,6 +18,18 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:src="@drawable/icon_manager"
-			android:scaleType="center" />
+			android:scaleType="center"
+			android:scaleX="0.75"
+			android:scaleY="0.75" />
+		<TextView
+			android:id="@+id/title_manager"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="xManager"
+			android:textSize="25sp"
+			android:textStyle="bold"
+			android:textColor="#FFFFFF"
+			android:translationY="-50.0dp" />
 	</LinearLayout>
 </LinearLayout>
