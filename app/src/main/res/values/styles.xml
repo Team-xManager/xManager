@@ -7,6 +7,8 @@
         <item name="colorControlHighlight">@color/colorControlHighlight</item>
         <item name="colorControlNormal">@color/colorControlNormal</item>
     </style>
+	<style name="Theme_Origin.Splash" parent="Theme_Origin">
+    </style>
     <style name="Progress_Dialog" parent="Theme.MaterialComponents.Light.Dialog">
 	    <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
