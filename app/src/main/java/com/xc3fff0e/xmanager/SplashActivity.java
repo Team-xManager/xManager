@@ -26,13 +26,19 @@ import java.text.*;
 import org.json.*;
 import android.widget.LinearLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import java.util.Timer;
 import java.util.TimerTask;
 import android.content.Intent;
 import android.net.Uri;
 import android.app.Activity;
 import android.content.SharedPreferences;
-import androidx.browser.*;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import android.graphics.Typeface;
 import com.wuyr.rippleanimation.*;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -44,10 +50,25 @@ public class SplashActivity extends AppCompatActivity {
 	
 	private LinearLayout main_body;
 	private ImageView icon_manager;
+	private TextView title_manager;
 	
 	private TimerTask Timer;
 	private Intent Switch_Activity = new Intent();
 	private SharedPreferences NAVIGATION_BAR;
+	private FirebaseAuth xManager_Origins;
+	private OnCompleteListener<AuthResult> _xManager_Origins_create_user_listener;
+	private OnCompleteListener<AuthResult> _xManager_Origins_sign_in_listener;
+	private OnCompleteListener<Void> _xManager_Origins_reset_password_listener;
+	private OnCompleteListener<Void> xManager_Origins_updateEmailListener;
+	private OnCompleteListener<Void> xManager_Origins_updatePasswordListener;
+	private OnCompleteListener<Void> xManager_Origins_emailVerificationSentListener;
+	private OnCompleteListener<Void> xManager_Origins_deleteUserListener;
+	private OnCompleteListener<Void> xManager_Origins_updateProfileListener;
+	private OnCompleteListener<AuthResult> xManager_Origins_phoneAuthListener;
+	private OnCompleteListener<AuthResult> xManager_Origins_googleSignInListener;
+	
+	private RequestNetwork Authenticator;
+	private RequestNetwork.RequestListener _Authenticator_request_listener;
 	
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
@@ -63,24 +84,213 @@ public class SplashActivity extends AppCompatActivity {
 	private void initialize(Bundle _savedInstanceState) {
 		main_body = findViewById(R.id.main_body);
 		icon_manager = findViewById(R.id.icon_manager);
+		title_manager = findViewById(R.id.title_manager);
 		NAVIGATION_BAR = getSharedPreferences("NAVIGATION_BAR", Activity.MODE_PRIVATE);
+		xManager_Origins = FirebaseAuth.getInstance();
+		Authenticator = new RequestNetwork(this);
+		
+		_Authenticator_request_listener = new RequestNetwork.RequestListener() {
+			@Override
+			public void onResponse(String _param1, String _param2, HashMap<String, Object> _param3) {
+				final String _tag = _param1;
+				final String _response = _param2;
+				final HashMap<String, Object> _responseHeaders = _param3;
+				
+			}
+			
+			@Override
+			public void onErrorResponse(String _param1, String _param2) {
+				final String _tag = _param1;
+				final String _message = _param2;
+				
+			}
+		};
+		
+		xManager_Origins_updateEmailListener = new OnCompleteListener<Void>() {
+			@Override
+			public void onComplete(Task<Void> _param1) {
+				final boolean _success = _param1.isSuccessful();
+				final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
+				
+			}
+		};
+		
+		xManager_Origins_updatePasswordListener = new OnCompleteListener<Void>() {
+			@Override
+			public void onComplete(Task<Void> _param1) {
+				final boolean _success = _param1.isSuccessful();
+				final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
+				
+			}
+		};
+		
+		xManager_Origins_emailVerificationSentListener = new OnCompleteListener<Void>() {
+			@Override
+			public void onComplete(Task<Void> _param1) {
+				final boolean _success = _param1.isSuccessful();
+				final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
+				
+			}
+		};
+		
+		xManager_Origins_deleteUserListener = new OnCompleteListener<Void>() {
+			@Override
+			public void onComplete(Task<Void> _param1) {
+				final boolean _success = _param1.isSuccessful();
+				final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
+				
+			}
+		};
+		
+		xManager_Origins_phoneAuthListener = new OnCompleteListener<AuthResult>() {
+			@Override
+			public void onComplete(Task<AuthResult> task) {
+				final boolean _success = task.isSuccessful();
+				final String _errorMessage = task.getException() != null ? task.getException().getMessage() : "";
+				
+			}
+		};
+		
+		xManager_Origins_updateProfileListener = new OnCompleteListener<Void>() {
+			@Override
+			public void onComplete(Task<Void> _param1) {
+				final boolean _success = _param1.isSuccessful();
+				final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
+				
+			}
+		};
+		
+		xManager_Origins_googleSignInListener = new OnCompleteListener<AuthResult>() {
+			@Override
+			public void onComplete(Task<AuthResult> task) {
+				final boolean _success = task.isSuccessful();
+				final String _errorMessage = task.getException() != null ? task.getException().getMessage() : "";
+				
+			}
+		};
+		
+		_xManager_Origins_create_user_listener = new OnCompleteListener<AuthResult>() {
+			@Override
+			public void onComplete(Task<AuthResult> _param1) {
+				final boolean _success = _param1.isSuccessful();
+				final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
+				
+			}
+		};
+		
+		_xManager_Origins_sign_in_listener = new OnCompleteListener<AuthResult>() {
+			@Override
+			public void onComplete(Task<AuthResult> _param1) {
+				final boolean _success = _param1.isSuccessful();
+				final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
+				if (_success) {
+					Timer = new TimerTask() {
+						@Override
+						public void run() {
+							runOnUiThread(new Runnable() {
+								@Override
+								public void run() {
+									Switch_Activity.setClass(getApplicationContext(), MainActivity.class);
+									startActivity(Switch_Activity);
+									finish();
+								}
+							});
+						}
+					};
+					_timer.schedule(Timer, (int)(500));
+				}
+				else {
+					if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+						SketchwareUtil.showMessage(getApplicationContext(), "Detection: Graaavy!");
+					}
+					else {
+						if (1 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+							SketchwareUtil.showMessage(getApplicationContext(), "Detected: Salt Added");
+						}
+					}
+					finishAndRemoveTask();
+					finishAffinity();
+				}
+			}
+		};
+		
+		_xManager_Origins_reset_password_listener = new OnCompleteListener<Void>() {
+			@Override
+			public void onComplete(Task<Void> _param1) {
+				final boolean _success = _param1.isSuccessful();
+				
+			}
+		};
 	}
 	
 	private void initializeLogic() {
-		Timer = new TimerTask() {
-			@Override
-			public void run() {
-				runOnUiThread(new Runnable() {
-					@Override
-					public void run() {
-						Switch_Activity.setClass(getApplicationContext(), MainActivity.class);
-						startActivity(Switch_Activity);
-						finish();
-					}
-				});
+		if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+			Window w =SplashActivity.this.getWindow();
+			w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+			w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(0xFF171717);
+		}
+		title_manager.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_glitch.ttf"), 1);
+		if (0 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
+			title_manager.setText("xManager");
+			title_manager.setTextSize((int)25);
+		}
+		else {
+			if (1 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
+				title_manager.setText("Freedom");
+				title_manager.setTextSize((int)25);
 			}
-		};
-		_timer.schedule(Timer, (int)(1000));
+			else {
+				if (2 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
+					title_manager.setText("Superior");
+					title_manager.setTextSize((int)25);
+				}
+				else {
+					if (3 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
+						title_manager.setText("Uprising");
+						title_manager.setTextSize((int)25);
+					}
+					else {
+						if (4 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
+							title_manager.setText("Never Go Back");
+							title_manager.setTextSize((int)25);
+						}
+						else {
+							if (5 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
+								title_manager.setText("Keep Your $10");
+								title_manager.setTextSize((int)25);
+							}
+							else {
+								if (6 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
+									title_manager.setText("It's A Movement");
+									title_manager.setTextSize((int)25);
+								}
+								else {
+									if (7 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
+										title_manager.setText("Keep 'Em Coming");
+										title_manager.setTextSize((int)25);
+									}
+									else {
+										if (8 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
+											title_manager.setText("We Are Resistance");
+											title_manager.setTextSize((int)20);
+										}
+										else {
+											if (9 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
+												title_manager.setText("Spotify but on steroids");
+												title_manager.setTextSize((int)20);
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		if (SketchwareUtil.isConnected(getApplicationContext())) {
+			_xManager_Validator();
+		}
 		_Dark_Navigation();
 	}
 	
@@ -98,14 +308,16 @@ public class SplashActivity extends AppCompatActivity {
 		try {
 			if (NAVIGATION_BAR.getString("NAVIGATION", "").equals("1")) {
 				getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+				
 			}
 			else {
 				if (NAVIGATION_BAR.getString("NAVIGATION", "").equals("0")) {
 					getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
 					
 					if (Build.VERSION.SDK_INT >= 21) {
-						getWindow().setNavigationBarColor(Color.parseColor("#212121"));
+							getWindow().setNavigationBarColor(Color.parseColor("#171717"));
 					}
+					
 				}
 			}
 		}
@@ -116,8 +328,14 @@ public class SplashActivity extends AppCompatActivity {
 	
 	public void _Dark_Navigation() {
 		if (Build.VERSION.SDK_INT >= 21) {
-			getWindow().setNavigationBarColor(Color.parseColor("#212121"));
+				getWindow().setNavigationBarColor(Color.parseColor("#171717"));
 		}
+		
+	}
+	
+	
+	public void _xManager_Validator() {
+		xManager_Origins.signInWithEmailAndPassword("origins-public@xmanager.com", "xmanager-origins").addOnCompleteListener(SplashActivity.this, _xManager_Origins_sign_in_listener);
 	}
 	
 	
