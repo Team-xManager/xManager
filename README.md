@@ -77,6 +77,7 @@ Kevin (Dutch Translation)
 minhtamvn (Vietnamese Translation)  
 smokedzn (German Translation)  
 ohshahab (Persian Translation)  
+GreenArmy18 (Hebrew Translation)
 
 # Contributors  
 
