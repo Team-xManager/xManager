@@ -67,7 +67,6 @@ import android.widget.AdapterView;
 import android.graphics.Typeface;
 import android.content.ClipData;
 import android.content.ClipboardManager;
-import androidx.browser.*;
 import com.wuyr.rippleanimation.*;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -362,6 +361,8 @@ public class MainActivity extends AppCompatActivity {
 	private TextView translator_19;
 	private TextView manager_lang_20;
 	private TextView translator_20;
+	private TextView manager_lang_21;
+	private TextView translator_21;
 	private ScrollView main_scroll_body;
 	private LinearLayout main_body;
 	private LinearLayout main_box_1;
@@ -381,6 +382,7 @@ public class MainActivity extends AppCompatActivity {
 	private TextView sub_text_1;
 	private LinearLayout box_switch_1;
 	private TextView sub_1;
+	private TextView sub_5;
 	private TextView version_switch_1;
 	private LinearLayout box_sub_5;
 	private Switch version_switch_01;
@@ -395,6 +397,7 @@ public class MainActivity extends AppCompatActivity {
 	private TextView sub_text_3;
 	private LinearLayout box_switch_2;
 	private TextView sub_3;
+	private TextView sub_7;
 	private TextView version_switch_2;
 	private LinearLayout box_sub_6;
 	private Switch version_switch_02;
@@ -711,6 +714,8 @@ public class MainActivity extends AppCompatActivity {
 		translator_19 = findViewById(R.id.translator_19);
 		manager_lang_20 = findViewById(R.id.manager_lang_20);
 		translator_20 = findViewById(R.id.translator_20);
+		manager_lang_21 = findViewById(R.id.manager_lang_21);
+		translator_21 = findViewById(R.id.translator_21);
 		main_scroll_body = findViewById(R.id.main_scroll_body);
 		main_body = findViewById(R.id.main_body);
 		main_box_1 = findViewById(R.id.main_box_1);
@@ -730,6 +735,7 @@ public class MainActivity extends AppCompatActivity {
 		sub_text_1 = findViewById(R.id.sub_text_1);
 		box_switch_1 = findViewById(R.id.box_switch_1);
 		sub_1 = findViewById(R.id.sub_1);
+		sub_5 = findViewById(R.id.sub_5);
 		version_switch_1 = findViewById(R.id.version_switch_1);
 		box_sub_5 = findViewById(R.id.box_sub_5);
 		version_switch_01 = findViewById(R.id.version_switch_01);
@@ -744,6 +750,7 @@ public class MainActivity extends AppCompatActivity {
 		sub_text_3 = findViewById(R.id.sub_text_3);
 		box_switch_2 = findViewById(R.id.box_switch_2);
 		sub_3 = findViewById(R.id.sub_3);
+		sub_7 = findViewById(R.id.sub_7);
 		version_switch_2 = findViewById(R.id.version_switch_2);
 		box_sub_6 = findViewById(R.id.box_sub_6);
 		version_switch_02 = findViewById(R.id.version_switch_02);
@@ -1314,6 +1321,30 @@ public class MainActivity extends AppCompatActivity {
 					COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_OFF").commit();
 				}
 				COUNTER = 1;
+			}
+		});
+		
+		disable_reward_ad_switch.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				if (disable_reward_ad_switch.isChecked()) {
+					if (mRewardedAd != null) {
+						  Activity activityContext = MainActivity.this;
+						  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+							    @Override
+							    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+								       DISABLE_REWARD_AD.edit().putString("REWARD_AD", "ON").commit();
+								disable_reward_ad_switch.setChecked(true);
+								      int rewardAmount = rewardItem.getAmount();
+								      String rewardType = rewardItem.getType();
+								    }
+							  });
+					} else {
+						DISABLE_REWARD_AD.edit().putString("REWARD_AD", "ON").commit();
+						disable_reward_ad_switch.setChecked(true);
+					}
+				}
+				disable_reward_ad_switch.setChecked(false);
 			}
 		});
 		
@@ -3973,6 +4004,120 @@ public class MainActivity extends AppCompatActivity {
 					
 					COUNTER = 1;
 				}
+				if (_position == 22) {
+					LANGUAGE.edit().putString("LANGUAGE", "22").commit();
+					    title_1.setText(R.string.spotify_regular_22);
+						title_2.setText(R.string.spotify_amoled_22);
+						sub_text_installed.setText(R.string.installed_22);
+						sub_text_1.setText(R.string.latest_22);
+						sub_text_3.setText(R.string.latest_22);
+						version_switch_1.setText(R.string.versions_22);
+						version_switch_2.setText(R.string.versions_22);
+						changelogs.setText(R.string.changelogs_22);
+						title_sub.setText(R.string.manager_tools_22);
+						device_cpu.setText(R.string.device_cpu_22);
+						source.setText(R.string.source_22);
+						support.setText(R.string.support_22);
+						donate.setText(R.string.donate_22);
+						about.setText(R.string.about_22);
+						list_auto_refresh.setText(R.string.list_auto_refresh_22);
+						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_22);
+						force_auto_install.setText(R.string.force_auto_install_22);
+						force_auto_install_info.setText(R.string.force_auto_install_desc_22);
+						copy_url_mode.setText(R.string.copy_url_mode_22);
+						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_22);
+						navigation_bar.setText(R.string.hide_navigation_bar_22);
+						theme.setText(R.string.show_themes_22);
+						apk_location.setText(R.string.apk_location_22);
+						apk_location_info.setText(R.string.apk_location_desc_22);
+						clear_directory_folders.setText(R.string.clear_directory_folders_22);
+						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_22);
+						reset_settings.setText(R.string.reset_settings_22);
+						sub_title.setText(R.string.about_sub_22);
+						developer_manager.setText(R.string.xmanager_dev_22);
+						developer_spotify.setText(R.string.spotify_mod_devs_22);
+						support_team.setText(R.string.telegram_support_team_22);
+						mod_testers_1.setText(R.string.manager_testers_22);
+						mod_testers_2.setText(R.string.manager_hosting_22);
+						mobilism_team.setText(R.string.mobilism_team_22);
+						forum_team.setText(R.string.forum_team_22);
+						manager_team.setText(R.string.xspotify_team_22);
+						contributors_1.setText(R.string.contributors_22);
+						download_selected.setText(R.string.download_selected_22);
+						download_ready.setText(R.string.download_ready_22);
+						download_ready_desc.setText(R.string.download_ready_desc_22);
+						downloading_file.setText(R.string.downloading_file_22);
+						download_success.setText(R.string.download_success_22);
+						copy_url_desc.setText(R.string.copy_url_desc_22);
+						new_update.setText(R.string.new_update_22);
+						download_selected_0 = download_selected.getText().toString();
+						download_ready_0 = download_ready.getText().toString();
+						download_ready_desc_0 = download_ready_desc.getText().toString();
+						downloading_file_0 = downloading_file.getText().toString();
+						download_success_0 = download_success.getText().toString();
+						copy_url_desc_0 = copy_url_desc.getText().toString();
+						copy_url.setText(R.string.copy_url_22);
+						continue_1.setText(R.string.continue_1_22);
+						cancel.setText(R.string.cancel_22);
+						download.setText(R.string.download_22);
+						later.setText(R.string.later_22);
+						install_now.setText(R.string.install_now_22);
+						install_update.setText(R.string.install_update_22);
+						go_back.setText(R.string.go_back_22);
+						download_update.setText(R.string.download_update_22);
+						not_now.setText(R.string.not_now_22);
+						show_support.setText(R.string.show_support_22);
+						show_support_desc.setText(R.string.show_support_desc_22);
+						copy_url_0 = copy_url.getText().toString();
+						download_0 = download.getText().toString();
+						continue_0 = continue_1.getText().toString();
+						cancel_0 = cancel.getText().toString();
+						later_0 = later.getText().toString();
+						install_now_0 = install_now.getText().toString();
+						go_back_0 = go_back.getText().toString();
+						install_update_0 = install_update.getText().toString();
+						main_title.setText(R.string.main_title_22);
+						settings_title.setText(R.string.settings_title_22);
+						about_title.setText(R.string.about_title_22);
+						maintenance.setText(R.string.maintenance_22);
+						maintenance_desc.setText(R.string.maintenance_desc_22);
+						thanks.setText(R.string.thanks_22);
+						language.setText(R.string.language_22);
+						website.setText(R.string.website_22);
+						discord.setText(R.string.discord_22);
+						reddit.setText(R.string.reddit_22);
+						faq.setText(R.string.faq_22);
+						cloned_version.setText(R.string.cloned_version_22);
+						cloned_version_info.setText(R.string.cloned_version_desc_22);
+					    disable_reward_ad.setText(R.string.disable_rewarded_ads_22);
+					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_22);
+					    installation_failed.setText(R.string.installation_failed_22);
+					    installation_failed_desc.setText(R.string.installation_failed_desc_22);
+					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_22);
+					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_22);
+					    existing_patched.setText(R.string.existing_patched_22);
+					    existing_patched_desc.setText(R.string.existing_patched_desc_22);
+					    close.setText(R.string.close_22);
+					    cloned.setText(R.string.cloned_22);
+					    ream.setText(R.string.ream_22);
+					    install.setText(R.string.install_22);
+					    uninstall.setText(R.string.uninstall_22);
+					    ignore.setText(R.string.ignore_22);
+					    delete.setText(R.string.delete_22);
+					    uninstall_patched.setText(R.string.uninstall_patched_22);
+					    open_settings.setText(R.string.open_settings_22);
+					    open_patched.setText(R.string.open_patched_22);
+						installation_failed_0 = installation_failed.getText().toString();
+					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					    existing_patched_0 = existing_patched.getText().toString();
+					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					    close_0 = close.getText().toString();
+					    uninstall_0 = uninstall.getText().toString();
+					
+					COUNTER = 1;
+				}
 			}
 			
 			@Override
@@ -4190,7 +4335,7 @@ public class MainActivity extends AppCompatActivity {
 										catch (Exception _e) {
 											_e.printStackTrace();
 										}
-										sub_1.setText(VERSIONS.getString("REGULAR_CLONED", ""));
+										sub_5.setText(VERSIONS.getString("REGULAR_CLONED", ""));
 										list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
 										((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
 									}
@@ -4276,7 +4421,7 @@ public class MainActivity extends AppCompatActivity {
 										catch (Exception _e) {
 											_e.printStackTrace();
 										}
-										sub_3.setText(VERSIONS.getString("AMOLED_CLONED", ""));
+										sub_7.setText(VERSIONS.getString("AMOLED_CLONED", ""));
 										list_menu_2.setAdapter(new List_menu_2Adapter(listdata));
 										((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
 									}
@@ -5076,15 +5221,8 @@ public class MainActivity extends AppCompatActivity {
 							catch (Exception _e) {
 								_e.printStackTrace();
 							}
-							if (CLONED_VERSION.getString("CLONED", "").equals("ON")) {
-								sub_1.setText(VERSIONS.getString("REGULAR_CLONED", ""));
-							}
-							else {
-								if (CLONED_VERSION.getString("CLONED", "").equals("OFF")) {
-									sub_1.setText(_childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", " ").replace("(Arm64.v8a)", " "));
-									VERSIONS.edit().putString("REGULAR", _childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", "").replace("(Arm64.v8a)", "")).commit();
-								}
-							}
+							sub_1.setText(_childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", " ").replace("(Arm64.v8a)", " "));
+							VERSIONS.edit().putString("REGULAR", _childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", "").replace("(Arm64.v8a)", "")).commit();
 							list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
 							((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
 						}
@@ -5157,15 +5295,8 @@ public class MainActivity extends AppCompatActivity {
 							catch (Exception _e) {
 								_e.printStackTrace();
 							}
-							if (CLONED_VERSION.getString("CLONED", "").equals("ON")) {
-								sub_3.setText(VERSIONS.getString("AMOLED_CLONED", ""));
-							}
-							else {
-								if (CLONED_VERSION.getString("CLONED", "").equals("OFF")) {
-									sub_3.setText(_childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", " ").replace("(Arm64.v8a)", " "));
-									VERSIONS.edit().putString("AMOLED", _childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", "").replace("(Arm64.v8a)", "")).commit();
-								}
-							}
+							sub_3.setText(_childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", " ").replace("(Arm64.v8a)", " "));
+							VERSIONS.edit().putString("AMOLED", _childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", "").replace("(Arm64.v8a)", "")).commit();
 							list_menu_2.setAdapter(new List_menu_2Adapter(listdata));
 							((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
 						}
@@ -5238,15 +5369,8 @@ public class MainActivity extends AppCompatActivity {
 							catch (Exception _e) {
 								_e.printStackTrace();
 							}
-							if (CLONED_VERSION.getString("CLONED", "").equals("ON")) {
-								sub_1.setText(_childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", " ").replace("(Arm64.v8a)", " "));
-								VERSIONS.edit().putString("REGULAR_CLONED", _childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", "").replace("(Arm64.v8a)", "")).commit();
-							}
-							else {
-								if (CLONED_VERSION.getString("CLONED", "").equals("OFF")) {
-									sub_1.setText(VERSIONS.getString("REGULAR", ""));
-								}
-							}
+							sub_5.setText(_childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", " ").replace("(Arm64.v8a)", " "));
+							VERSIONS.edit().putString("REGULAR_CLONED", _childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", "").replace("(Arm64.v8a)", "")).commit();
 							list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
 							((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
 						}
@@ -5319,15 +5443,8 @@ public class MainActivity extends AppCompatActivity {
 							catch (Exception _e) {
 								_e.printStackTrace();
 							}
-							if (CLONED_VERSION.getString("CLONED", "").equals("ON")) {
-								sub_3.setText(_childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", " ").replace("(Arm64.v8a)", " "));
-								VERSIONS.edit().putString("AMOLED_CLONED", _childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", "").replace("(Arm64.v8a)", "")).commit();
-							}
-							else {
-								if (CLONED_VERSION.getString("CLONED", "").equals("OFF")) {
-									sub_3.setText(VERSIONS.getString("AMOLED", ""));
-								}
-							}
+							sub_7.setText(_childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", " ").replace("(Arm64.v8a)", " "));
+							VERSIONS.edit().putString("AMOLED_CLONED", _childKey.replace("-", ".").replace("Spotify v", " ").replace("(Armeabi.v7a)", "").replace("(Arm64.v8a)", "")).commit();
 							list_menu_2.setAdapter(new List_menu_2Adapter(listdata));
 							((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
 						}
@@ -5595,10 +5712,14 @@ public class MainActivity extends AppCompatActivity {
 																					SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
 																			}
 																	});
-																	prog.cancel();
-																	break;
-															}
-															final int dl_progress = (int) ((bytes_downloaded * 100l) / bytes_total);
+																	try {
+																			prog.cancel();
+																			break;
+																	} catch (Exception e) {
+																	}
+															}				
+															final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
+															final int dl_max = (int) (100);
 															final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
 															final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
 															String file_min = String.format("%.2f", file_front);
@@ -5615,7 +5736,7 @@ public class MainActivity extends AppCompatActivity {
 																			prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 																			prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
 																			prog.setProgress(dl_progress);
-																			prog.setMax(100);
+																			prog.setMax(dl_max);
 																			prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
 																					@Override
 																					public void onClick(DialogInterface dialog, int which) {
@@ -5626,8 +5747,11 @@ public class MainActivity extends AppCompatActivity {
 																											runOnUiThread(new Runnable() {
 																													@Override
 																													public void run() {
-																															_Hide_Navigation();
-																															prog.cancel();
+																															try {
+																																	_Hide_Navigation();
+																																	prog.cancel();
+																															} catch (Exception e) {
+																															}
 																													}
 																											});
 																									}
@@ -5645,6 +5769,9 @@ public class MainActivity extends AppCompatActivity {
 																											public void run() {	
 																													try {
 																															FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk", apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
+																															version_switch_01.setChecked(false);
+																															version_switch_02.setChecked(false);
+																															changelogs_switch.setChecked(false);
 																													}
 																													catch(Exception e) {
 																													}
@@ -5843,12 +5970,14 @@ public class MainActivity extends AppCompatActivity {
 		title_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_5.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_text_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_installed.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_separator.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_installed_c.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_text_installed.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_7.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_text_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_text_installed.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_sub.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -5929,6 +6058,7 @@ public class MainActivity extends AppCompatActivity {
 		manager_lang_18.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_19.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_20.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_21.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -5950,39 +6080,44 @@ public class MainActivity extends AppCompatActivity {
 		translator_18.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_19.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_20.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		box_sub_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_8.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_9.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_10.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_11.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_12.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_14.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_16.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		main_box_17.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		translator_21.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		box_sub_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		main_box_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		main_box_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		main_box_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		main_box_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		main_box_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		main_box_8.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		main_box_9.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		main_box_10.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		main_box_11.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		main_box_12.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		main_box_14.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		main_box_16.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		main_box_17.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		list_menu_1.setVisibility(View.GONE);
+		sub_1.setVisibility(View.GONE);
+		sub_3.setVisibility(View.GONE);
 		list_menu_2.setVisibility(View.GONE);
+		sub_5.setVisibility(View.GONE);
+		sub_7.setVisibility(View.GONE);
 		list_changelogs.setVisibility(View.GONE);
-		box_support.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_donate.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_about.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_source.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_website.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_discord.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_reddit.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_faq.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_support.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		box_donate.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		box_about.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		box_source.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		box_website.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		box_discord.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		box_reddit.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		box_faq.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_about_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1DB954));
-		box_about_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_about_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_about_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_about_4.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_about_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_about_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
-		box_about_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF212121));
+		box_about_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		box_about_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		box_about_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		box_about_4.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		box_about_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		box_about_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		box_about_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_about_sub.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF2962FF));
 		box_reset_settings.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF424242));
 		box_separator_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF616161));
@@ -6251,7 +6386,7 @@ public class MainActivity extends AppCompatActivity {
 				if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
 					Window w =MainActivity.this.getWindow();
 					w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-					w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(0xFF000000);
+					w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(0xFF171717);
 				}
 				main_body_optimization.setVisibility(View.VISIBLE);
 				main_scroll_settings.setVisibility(View.GONE);
@@ -6298,7 +6433,7 @@ public class MainActivity extends AppCompatActivity {
 											}
 											else {
 												try {
-													sub_1.setText(VERSIONS.getString("REGULAR_CLONED", ""));
+													sub_5.setText(VERSIONS.getString("REGULAR_CLONED", ""));
 													list_menu_1.setAdapter(new List_menu_1Adapter(listdata));
 													((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
 												}
@@ -6335,7 +6470,7 @@ public class MainActivity extends AppCompatActivity {
 									runOnUiThread(new Runnable() {
 										@Override
 										public void run() {
-											sub_3.setText(VERSIONS.getString("AMOLED_CLONED", ""));
+											sub_7.setText(VERSIONS.getString("AMOLED_CLONED", ""));
 											Timer = new TimerTask() {
 												@Override
 												public void run() {
@@ -6367,6 +6502,10 @@ public class MainActivity extends AppCompatActivity {
 						}
 					});
 					cloned_version_switch.setChecked(true);
+					sub_1.setVisibility(View.GONE);
+					sub_3.setVisibility(View.GONE);
+					sub_5.setVisibility(View.VISIBLE);
+					sub_7.setVisibility(View.VISIBLE);
 				}
 				else {
 					if (CLONED_VERSION.getString("CLONED", "").equals("OFF")) {
@@ -6468,6 +6607,10 @@ public class MainActivity extends AppCompatActivity {
 							}
 						});
 						cloned_version_switch.setChecked(false);
+						sub_1.setVisibility(View.VISIBLE);
+						sub_3.setVisibility(View.VISIBLE);
+						sub_5.setVisibility(View.GONE);
+						sub_7.setVisibility(View.GONE);
 					}
 				}
 				xManager_Changelogs.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -6533,12 +6676,12 @@ public class MainActivity extends AppCompatActivity {
 				if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
 					Window w =MainActivity.this.getWindow();
 					w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-					w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(0xFF212121);
+					w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(0xFF171717);
 				}
 				title_header.setTextColor(0xFF1DB954);
 				title_header_separator.setTextColor(0xFFFFFFFF);
 				title_header_beta.setTextColor(0xFFFFFFFF);
-				box_header.setBackgroundColor(0xFF212121);
+				box_header.setBackgroundColor(0xFF171717);
 				main_body_optimization.setVisibility(View.GONE);
 				main_scroll_settings.setVisibility(View.GONE);
 				main_scroll_about.setVisibility(View.GONE);
@@ -6550,6 +6693,7 @@ public class MainActivity extends AppCompatActivity {
 				main_body.setAlpha((float)(0.50d));
 				_Storage_Permission();
 				_External_Storage();
+				_Updater();
 			}
 			catch(Exception e) {
 			}
@@ -6759,7 +6903,6 @@ public class MainActivity extends AppCompatActivity {
 		_Theme_UI();
 		_Effects();
 		_Url_Mode();
-		_Updater();
 		_Ad_Setup();
 		_Extra();
 	}
@@ -7005,12 +7148,13 @@ public class MainActivity extends AppCompatActivity {
 										finishAffinity();
 										                }
 									            });
-								 Update_Unauthorized.setNeutralButton(R.string.support, new DialogInterface.OnClickListener(){
+								 Update_Unauthorized.setNeutralButton(support.getText().toString(), new DialogInterface.OnClickListener(){
 									
 									                @Override
 									                public void onClick(DialogInterface Update_Unauthorized, int p) {
 										AlertDialog.setCancelable(false);
 										AlertDialog.show();
+										_Maintenance();
 										try {
 											_Browser("https://t.me/SpotifyModSupport");
 										}
@@ -7110,10 +7254,14 @@ public class MainActivity extends AppCompatActivity {
 																					SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
 																			}
 																	});
-																	prog.cancel();
-																	break;
+																	try {
+																			prog.cancel();
+																			break;
+																	} catch (Exception e) {
+																	}
 															}
-															final int dl_progress = (int) ((bytes_downloaded * 100l) / bytes_total);
+															final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
+															final int dl_max = (int) (100);
 															final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
 															final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
 															String file_min = String.format("%.2f", file_front);
@@ -7130,7 +7278,7 @@ public class MainActivity extends AppCompatActivity {
 																			prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 																			prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
 																			prog.setProgress(dl_progress);
-																			prog.setMax(100);
+																			prog.setMax(dl_max);
 																			prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
 																					@Override
 																					public void onClick(DialogInterface dialog, int which) {
@@ -7141,8 +7289,11 @@ public class MainActivity extends AppCompatActivity {
 																											runOnUiThread(new Runnable() {
 																													@Override
 																													public void run() {
-																															_Hide_Navigation();
-																															prog.cancel();
+																															try {
+																																	_Hide_Navigation();
+																																	prog.cancel();
+																															} catch (Exception e) {
+																															}
 																													}
 																											});
 																									}
@@ -7160,6 +7311,9 @@ public class MainActivity extends AppCompatActivity {
 																											public void run() {
 																													try {
 																															FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/xManager Update.apk", "/storage/emulated/0/xManager/Update/xManager Update.apk");
+																															version_switch_01.setChecked(false);
+																															version_switch_02.setChecked(false);
+																															changelogs_switch.setChecked(false);
 																															prog.dismiss();
 																													}
 																													catch(Exception e) {
@@ -7460,6 +7614,7 @@ public class MainActivity extends AppCompatActivity {
 		try {
 			if (NAVIGATION_BAR.getString("NAVIGATION", "").equals("1")) {
 				getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+				
 				navigation_switch.setChecked(true);
 			}
 			else {
@@ -7467,8 +7622,9 @@ public class MainActivity extends AppCompatActivity {
 					getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
 					
 					if (Build.VERSION.SDK_INT >= 21) {
-						getWindow().setNavigationBarColor(Color.parseColor("#212121"));
+							getWindow().setNavigationBarColor(Color.parseColor("#171717"));
 					}
+					
 					navigation_switch.setChecked(false);
 				}
 			}
@@ -7636,8 +7792,9 @@ public class MainActivity extends AppCompatActivity {
 	
 	public void _Dark_Navigation() {
 		if (Build.VERSION.SDK_INT >= 21) {
-			getWindow().setNavigationBarColor(Color.parseColor("#212121"));
+				getWindow().setNavigationBarColor(Color.parseColor("#171717"));
 		}
+		
 	}
 	
 	
@@ -7897,10 +8054,14 @@ public class MainActivity extends AppCompatActivity {
 																					SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
 																			}
 																	});
-																	prog.cancel();
-																	break;
+																	try {
+																			prog.cancel();
+																			break;
+																	} catch (Exception e) {
+																	}
 															}
-															final int dl_progress = (int) ((bytes_downloaded * 100l) / bytes_total);
+															final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
+															final int dl_max = (int) (100);
 															final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
 															final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
 															String file_min = String.format("%.2f", file_front);
@@ -7917,7 +8078,7 @@ public class MainActivity extends AppCompatActivity {
 																			prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 																			prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
 																			prog.setProgress(dl_progress);
-																			prog.setMax(100);
+																			prog.setMax(dl_max);
 																			prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
 																					@Override
 																					public void onClick(DialogInterface dialog, int which) {
@@ -7928,8 +8089,11 @@ public class MainActivity extends AppCompatActivity {
 																											runOnUiThread(new Runnable() {
 																													@Override
 																													public void run() {
-																															_Hide_Navigation();
-																															prog.cancel();
+																															try {
+																																	_Hide_Navigation();
+																																	prog.cancel();
+																															} catch (Exception e) {
+																															}
 																													}
 																											});
 																									}
@@ -7947,6 +8111,9 @@ public class MainActivity extends AppCompatActivity {
 																											public void run() {	
 																													try {
 																															FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk", apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
+																															version_switch_01.setChecked(false);
+																															version_switch_02.setChecked(false);
+																															changelogs_switch.setChecked(false);
 																													}
 																													catch(Exception e) {
 																													}
@@ -8140,10 +8307,14 @@ public class MainActivity extends AppCompatActivity {
 																					SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
 																			}
 																	});
-																	prog.cancel();
-																	break;
+																	try {
+																			prog.cancel();
+																			break;
+																	} catch (Exception e) {
+																	}
 															}
-															final int dl_progress = (int) ((bytes_downloaded * 100l) / bytes_total);
+															final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
+															final int dl_max = (int) (100);
 															final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
 															final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
 															String file_min = String.format("%.2f", file_front);
@@ -8160,7 +8331,7 @@ public class MainActivity extends AppCompatActivity {
 																			prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 																			prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
 																			prog.setProgress(dl_progress);
-																			prog.setMax(100);
+																			prog.setMax(dl_max);
 																			prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
 																					@Override
 																					public void onClick(DialogInterface dialog, int which) {
@@ -8171,8 +8342,11 @@ public class MainActivity extends AppCompatActivity {
 																											runOnUiThread(new Runnable() {
 																													@Override
 																													public void run() {
-																															_Hide_Navigation();
-																															prog.cancel();
+																															try {
+																																	_Hide_Navigation();
+																																	prog.cancel();
+																															} catch (Exception e) {
+																															}
 																													}
 																											});
 																									}
@@ -8190,6 +8364,9 @@ public class MainActivity extends AppCompatActivity {
 																											public void run() {
 																													try {
 																															FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/xManager Update.apk", "/storage/emulated/0/xManager/Update/xManager Update.apk");
+																															version_switch_01.setChecked(false);
+																															version_switch_02.setChecked(false);
+																															changelogs_switch.setChecked(false);
 																															prog.dismiss();
 																													}
 																													catch(Exception e) {
@@ -10807,6 +10984,121 @@ public class MainActivity extends AppCompatActivity {
 																								
 																								select_language.setSelection((int)(21));
 																							}
+																							else {
+																								if (LANGUAGE.getString("LANGUAGE", "").equals("22")) {
+																									    title_1.setText(R.string.spotify_regular_22);
+																										title_2.setText(R.string.spotify_amoled_22);
+																										sub_text_installed.setText(R.string.installed_22);
+																										sub_text_1.setText(R.string.latest_22);
+																										sub_text_3.setText(R.string.latest_22);
+																										version_switch_1.setText(R.string.versions_22);
+																										version_switch_2.setText(R.string.versions_22);
+																										changelogs.setText(R.string.changelogs_22);
+																										title_sub.setText(R.string.manager_tools_22);
+																										device_cpu.setText(R.string.device_cpu_22);
+																										source.setText(R.string.source_22);
+																										support.setText(R.string.support_22);
+																										donate.setText(R.string.donate_22);
+																										about.setText(R.string.about_22);
+																										list_auto_refresh.setText(R.string.list_auto_refresh_22);
+																										list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_22);
+																										force_auto_install.setText(R.string.force_auto_install_22);
+																										force_auto_install_info.setText(R.string.force_auto_install_desc_22);
+																										copy_url_mode.setText(R.string.copy_url_mode_22);
+																										copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_22);
+																										navigation_bar.setText(R.string.hide_navigation_bar_22);
+																										theme.setText(R.string.show_themes_22);
+																										apk_location.setText(R.string.apk_location_22);
+																										apk_location_info.setText(R.string.apk_location_desc_22);
+																										clear_directory_folders.setText(R.string.clear_directory_folders_22);
+																										clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_22);
+																										reset_settings.setText(R.string.reset_settings_22);
+																										sub_title.setText(R.string.about_sub_22);
+																										developer_manager.setText(R.string.xmanager_dev_22);
+																										developer_spotify.setText(R.string.spotify_mod_devs_22);
+																										support_team.setText(R.string.telegram_support_team_22);
+																										mod_testers_1.setText(R.string.manager_testers_22);
+																										mod_testers_2.setText(R.string.manager_hosting_22);
+																										mobilism_team.setText(R.string.mobilism_team_22);
+																										forum_team.setText(R.string.forum_team_22);
+																										manager_team.setText(R.string.xspotify_team_22);
+																										contributors_1.setText(R.string.contributors_22);
+																										download_selected.setText(R.string.download_selected_22);
+																										download_ready.setText(R.string.download_ready_22);
+																										download_ready_desc.setText(R.string.download_ready_desc_22);
+																										downloading_file.setText(R.string.downloading_file_22);
+																										download_success.setText(R.string.download_success_22);
+																										copy_url_desc.setText(R.string.copy_url_desc_22);
+																										new_update.setText(R.string.new_update_22);
+																										download_selected_0 = download_selected.getText().toString();
+																										download_ready_0 = download_ready.getText().toString();
+																										download_ready_desc_0 = download_ready_desc.getText().toString();
+																										downloading_file_0 = downloading_file.getText().toString();
+																										download_success_0 = download_success.getText().toString();
+																										copy_url_desc_0 = copy_url_desc.getText().toString();
+																										copy_url.setText(R.string.copy_url_22);
+																										continue_1.setText(R.string.continue_1_22);
+																										cancel.setText(R.string.cancel_22);
+																										download.setText(R.string.download_22);
+																										later.setText(R.string.later_22);
+																										install_now.setText(R.string.install_now_22);
+																										install_update.setText(R.string.install_update_22);
+																										go_back.setText(R.string.go_back_22);
+																										download_update.setText(R.string.download_update_22);
+																										not_now.setText(R.string.not_now_22);
+																										show_support.setText(R.string.show_support_22);
+																										show_support_desc.setText(R.string.show_support_desc_22);
+																										copy_url_0 = copy_url.getText().toString();
+																										download_0 = download.getText().toString();
+																										continue_0 = continue_1.getText().toString();
+																										cancel_0 = cancel.getText().toString();
+																										later_0 = later.getText().toString();
+																										install_now_0 = install_now.getText().toString();
+																										go_back_0 = go_back.getText().toString();
+																										install_update_0 = install_update.getText().toString();
+																										main_title.setText(R.string.main_title_22);
+																										settings_title.setText(R.string.settings_title_22);
+																										about_title.setText(R.string.about_title_22);
+																										maintenance.setText(R.string.maintenance_22);
+																										maintenance_desc.setText(R.string.maintenance_desc_22);
+																										thanks.setText(R.string.thanks_22);
+																										language.setText(R.string.language_22);
+																										website.setText(R.string.website_22);
+																										discord.setText(R.string.discord_22);
+																										reddit.setText(R.string.reddit_22);
+																										faq.setText(R.string.faq_22);
+																										cloned_version.setText(R.string.cloned_version_22);
+																										cloned_version_info.setText(R.string.cloned_version_desc_22);
+																									    disable_reward_ad.setText(R.string.disable_rewarded_ads_22);
+																									    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_22);
+																									    installation_failed.setText(R.string.installation_failed_22);
+																									    installation_failed_desc.setText(R.string.installation_failed_desc_22);
+																									    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_22);
+																									    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_22);
+																									    existing_patched.setText(R.string.existing_patched_22);
+																									    existing_patched_desc.setText(R.string.existing_patched_desc_22);
+																									    close.setText(R.string.close_22);
+																									    cloned.setText(R.string.cloned_22);
+																									    ream.setText(R.string.ream_22);
+																									    install.setText(R.string.install_22);
+																									    uninstall.setText(R.string.uninstall_22);
+																									    ignore.setText(R.string.ignore_22);
+																									    delete.setText(R.string.delete_22);
+																									    uninstall_patched.setText(R.string.uninstall_patched_22);
+																									    open_settings.setText(R.string.open_settings_22);
+																									    open_patched.setText(R.string.open_patched_22);
+																										installation_failed_0 = installation_failed.getText().toString();
+																									    installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																									    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																									    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																									    existing_patched_0 = existing_patched.getText().toString();
+																									    existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																									    close_0 = close.getText().toString();
+																									    uninstall_0 = uninstall.getText().toString();
+																									
+																									select_language.setSelection((int)(22));
+																								}
+																							}
 																						}
 																					}
 																				}
@@ -10854,6 +11146,7 @@ public class MainActivity extends AppCompatActivity {
 		Language.add("Vietnamese");
 		Language.add("German");
 		Language.add("Persian");
+		Language.add("Hebrew");
 		select_language.setAdapter(new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, Language));
 		((ArrayAdapter)select_language.getAdapter()).notifyDataSetChanged();
 		select_language.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, Language) {
@@ -11440,10 +11733,14 @@ public class MainActivity extends AppCompatActivity {
 																					SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
 																			}
 																	});
-																	prog.cancel();
-																	break;
+																	try {
+																			prog.cancel();
+																			break;
+																	} catch (Exception e) {
+																	}
 															}
-															final int dl_progress = (int) ((bytes_downloaded * 100l) / bytes_total);
+															final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
+															final int dl_max = (int) (100);
 															final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
 															final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
 															String file_min = String.format("%.2f", file_front);
@@ -11460,7 +11757,7 @@ public class MainActivity extends AppCompatActivity {
 																			prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 																			prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
 																			prog.setProgress(dl_progress);
-																			prog.setMax(100);
+																			prog.setMax(dl_max);
 																			prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
 																					@Override
 																					public void onClick(DialogInterface dialog, int which) {
@@ -11471,8 +11768,11 @@ public class MainActivity extends AppCompatActivity {
 																											runOnUiThread(new Runnable() {
 																													@Override
 																													public void run() {
-																															_Hide_Navigation();
-																															prog.cancel();
+																															try {
+																																	_Hide_Navigation();
+																																	prog.cancel();
+																															} catch (Exception e) {
+																															}
 																													}
 																											});
 																									}
@@ -11490,6 +11790,9 @@ public class MainActivity extends AppCompatActivity {
 																											public void run() {	
 																													try {
 																															FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk", apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
+																															version_switch_01.setChecked(false);
+																															version_switch_02.setChecked(false);
+																															changelogs_switch.setChecked(false);
 																													}
 																													catch(Exception e) {
 																													}
@@ -11693,10 +11996,14 @@ public class MainActivity extends AppCompatActivity {
 																					SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
 																			}
 																	});
-																	prog.cancel();
-																	break;
+																	try {
+																			prog.cancel();
+																			break;
+																	} catch (Exception e) {
+																	}
 															}
-															final int dl_progress = (int) ((bytes_downloaded * 100l) / bytes_total);
+															final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
+															final int dl_max = (int) (100);
 															final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
 															final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
 															String file_min = String.format("%.2f", file_front);
@@ -11713,7 +12020,7 @@ public class MainActivity extends AppCompatActivity {
 																			prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 																			prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
 																			prog.setProgress(dl_progress);
-																			prog.setMax(100);
+																			prog.setMax(dl_max);
 																			prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
 																					@Override
 																					public void onClick(DialogInterface dialog, int which) {
@@ -11724,8 +12031,11 @@ public class MainActivity extends AppCompatActivity {
 																											runOnUiThread(new Runnable() {
 																													@Override
 																													public void run() {
-																															_Hide_Navigation();
-																															prog.cancel();
+																															try {
+																																	_Hide_Navigation();
+																																	prog.cancel();
+																															} catch (Exception e) {
+																															}
 																													}
 																											});
 																									}
@@ -11743,6 +12053,9 @@ public class MainActivity extends AppCompatActivity {
 																											public void run() {	
 																													try {
 																															FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk", apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
+																															version_switch_01.setChecked(false);
+																															version_switch_02.setChecked(false);
+																															changelogs_switch.setChecked(false);
 																													}
 																													catch(Exception e) {
 																													}
@@ -12025,7 +12338,7 @@ public class MainActivity extends AppCompatActivity {
 								String Title = "<b>".concat("STORAGE ACCESS".concat("</b>"));
 								String TitleColor = "FFEB3B";
 								External_Storage.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-								String Message = "Due to Android 11 (API 30) enhanced storage restriction or \"scoped storage\", xManager requires you to allow \"Manage External Storage\" permission.".replace("\n", "<br/>");
+								String Message = "Due to Android 11 (API 30) enhanced storage restriction or scoped storage, xManager requires you to allow \"Manage External Storage\" permission.".replace("\n", "<br/>");
 								String MessageColor = "FFFFFF";
 								External_Storage.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 								External_Storage.setPositiveButton("SETUP", new DialogInterface.OnClickListener(){
@@ -12051,6 +12364,51 @@ public class MainActivity extends AppCompatActivity {
 				}
 		}
 		
+	}
+	
+	
+	public void _Maintenance() {
+		try {
+			final AlertDialog.Builder Update_Unauthorized = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+			
+			String Title = "<b>".concat(maintenance.getText().toString().concat("</b>"));
+			String TitleColor = "1DB954";
+			
+			Update_Unauthorized.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+			String Message = maintenance_desc.getText().toString();
+			String MessageColor = "FFFFFF";
+			
+			Update_Unauthorized.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+			Update_Unauthorized.setPositiveButton(thanks.getText().toString(), new DialogInterface.OnClickListener(){
+				
+				                @Override
+				                public void onClick(DialogInterface Update_Unauthorized, int p) {
+					AlertDialog.setCancelable(true);
+					finishAndRemoveTask();
+					finishAffinity();
+					                }
+				            });
+			 Update_Unauthorized.setNeutralButton(support.getText().toString(), new DialogInterface.OnClickListener(){
+				
+				                @Override
+				                public void onClick(DialogInterface Update_Unauthorized, int p) {
+					AlertDialog.setCancelable(false);
+					AlertDialog.show();
+					_Maintenance();
+					try {
+						_Browser("https://t.me/SpotifyModSupport");
+					}
+					catch(Exception e) {
+					}
+					                }
+				            });
+			AlertDialog = Update_Unauthorized.create();
+			AlertDialog.setCancelable(false);
+			AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+			AlertDialog.show();
+		}
+		catch(Exception e) {
+		}
 	}
 	
 	public class List_menu_1Adapter extends BaseAdapter {
