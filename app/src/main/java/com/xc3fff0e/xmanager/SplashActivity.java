@@ -33,11 +33,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.app.Activity;
 import android.content.SharedPreferences;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import android.graphics.Typeface;
 import com.wuyr.rippleanimation.*;
 import androidx.fragment.app.Fragment;
@@ -55,20 +50,6 @@ public class SplashActivity extends AppCompatActivity {
 	private TimerTask Timer;
 	private Intent Switch_Activity = new Intent();
 	private SharedPreferences NAVIGATION_BAR;
-	private FirebaseAuth xManager_Origins;
-	private OnCompleteListener<AuthResult> _xManager_Origins_create_user_listener;
-	private OnCompleteListener<AuthResult> _xManager_Origins_sign_in_listener;
-	private OnCompleteListener<Void> _xManager_Origins_reset_password_listener;
-	private OnCompleteListener<Void> xManager_Origins_updateEmailListener;
-	private OnCompleteListener<Void> xManager_Origins_updatePasswordListener;
-	private OnCompleteListener<Void> xManager_Origins_emailVerificationSentListener;
-	private OnCompleteListener<Void> xManager_Origins_deleteUserListener;
-	private OnCompleteListener<Void> xManager_Origins_updateProfileListener;
-	private OnCompleteListener<AuthResult> xManager_Origins_phoneAuthListener;
-	private OnCompleteListener<AuthResult> xManager_Origins_googleSignInListener;
-	
-	private RequestNetwork Authenticator;
-	private RequestNetwork.RequestListener _Authenticator_request_listener;
 	
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
@@ -86,141 +67,6 @@ public class SplashActivity extends AppCompatActivity {
 		icon_manager = findViewById(R.id.icon_manager);
 		title_manager = findViewById(R.id.title_manager);
 		NAVIGATION_BAR = getSharedPreferences("NAVIGATION_BAR", Activity.MODE_PRIVATE);
-		xManager_Origins = FirebaseAuth.getInstance();
-		Authenticator = new RequestNetwork(this);
-		
-		_Authenticator_request_listener = new RequestNetwork.RequestListener() {
-			@Override
-			public void onResponse(String _param1, String _param2, HashMap<String, Object> _param3) {
-				final String _tag = _param1;
-				final String _response = _param2;
-				final HashMap<String, Object> _responseHeaders = _param3;
-				
-			}
-			
-			@Override
-			public void onErrorResponse(String _param1, String _param2) {
-				final String _tag = _param1;
-				final String _message = _param2;
-				
-			}
-		};
-		
-		xManager_Origins_updateEmailListener = new OnCompleteListener<Void>() {
-			@Override
-			public void onComplete(Task<Void> _param1) {
-				final boolean _success = _param1.isSuccessful();
-				final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
-				
-			}
-		};
-		
-		xManager_Origins_updatePasswordListener = new OnCompleteListener<Void>() {
-			@Override
-			public void onComplete(Task<Void> _param1) {
-				final boolean _success = _param1.isSuccessful();
-				final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
-				
-			}
-		};
-		
-		xManager_Origins_emailVerificationSentListener = new OnCompleteListener<Void>() {
-			@Override
-			public void onComplete(Task<Void> _param1) {
-				final boolean _success = _param1.isSuccessful();
-				final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
-				
-			}
-		};
-		
-		xManager_Origins_deleteUserListener = new OnCompleteListener<Void>() {
-			@Override
-			public void onComplete(Task<Void> _param1) {
-				final boolean _success = _param1.isSuccessful();
-				final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
-				
-			}
-		};
-		
-		xManager_Origins_phoneAuthListener = new OnCompleteListener<AuthResult>() {
-			@Override
-			public void onComplete(Task<AuthResult> task) {
-				final boolean _success = task.isSuccessful();
-				final String _errorMessage = task.getException() != null ? task.getException().getMessage() : "";
-				
-			}
-		};
-		
-		xManager_Origins_updateProfileListener = new OnCompleteListener<Void>() {
-			@Override
-			public void onComplete(Task<Void> _param1) {
-				final boolean _success = _param1.isSuccessful();
-				final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
-				
-			}
-		};
-		
-		xManager_Origins_googleSignInListener = new OnCompleteListener<AuthResult>() {
-			@Override
-			public void onComplete(Task<AuthResult> task) {
-				final boolean _success = task.isSuccessful();
-				final String _errorMessage = task.getException() != null ? task.getException().getMessage() : "";
-				
-			}
-		};
-		
-		_xManager_Origins_create_user_listener = new OnCompleteListener<AuthResult>() {
-			@Override
-			public void onComplete(Task<AuthResult> _param1) {
-				final boolean _success = _param1.isSuccessful();
-				final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
-				
-			}
-		};
-		
-		_xManager_Origins_sign_in_listener = new OnCompleteListener<AuthResult>() {
-			@Override
-			public void onComplete(Task<AuthResult> _param1) {
-				final boolean _success = _param1.isSuccessful();
-				final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
-				if (_success) {
-					Timer = new TimerTask() {
-						@Override
-						public void run() {
-							runOnUiThread(new Runnable() {
-								@Override
-								public void run() {
-									Switch_Activity.setClass(getApplicationContext(), MainActivity.class);
-									startActivity(Switch_Activity);
-									finish();
-								}
-							});
-						}
-					};
-					_timer.schedule(Timer, (int)(500));
-				}
-				else {
-					if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-						SketchwareUtil.showMessage(getApplicationContext(), "Detection: Graaavy!");
-					}
-					else {
-						if (1 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-							SketchwareUtil.showMessage(getApplicationContext(), "Detected: Salt Added");
-						}
-					}
-					finishAndRemoveTask();
-					finishAffinity();
-				}
-			}
-		};
-		
-		_xManager_Origins_reset_password_listener = new OnCompleteListener<Void>() {
-			@Override
-			public void onComplete(Task<Void> _param1) {
-				final boolean _success = _param1.isSuccessful();
-				
-			}
-		};
 	}
 	
 	private void initializeLogic() {
@@ -288,15 +134,26 @@ public class SplashActivity extends AppCompatActivity {
 				}
 			}
 		}
-		if (SketchwareUtil.isConnected(getApplicationContext())) {
-			_xManager_Validator();
-		}
+		Timer = new TimerTask() {
+			@Override
+			public void run() {
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						Switch_Activity.setClass(getApplicationContext(), MainActivity.class);
+						startActivity(Switch_Activity);
+						finish();
+					}
+				});
+			}
+		};
+		_timer.schedule(Timer, (int)(1500));
 		_Dark_Navigation();
 	}
 	
 	@Override
 	public void onBackPressed() {
-		SketchwareUtil.showMessage(getApplicationContext(), "Please wait...");
+		SketchwareUtil.showMessage(getApplicationContext(), "Can't Go Back");
 	}
 	
 	@Override
@@ -320,8 +177,7 @@ public class SplashActivity extends AppCompatActivity {
 					
 				}
 			}
-		}
-		catch(Exception e) {
+		} catch (Exception e) {
 		}
 	}
 	
@@ -331,11 +187,6 @@ public class SplashActivity extends AppCompatActivity {
 				getWindow().setNavigationBarColor(Color.parseColor("#171717"));
 		}
 		
-	}
-	
-	
-	public void _xManager_Validator() {
-		xManager_Origins.signInWithEmailAndPassword("origins-public@xmanager.com", "xmanager-origins").addOnCompleteListener(SplashActivity.this, _xManager_Origins_sign_in_listener);
 	}
 	
 	
