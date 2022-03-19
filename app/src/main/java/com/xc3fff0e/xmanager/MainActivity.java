@@ -5769,9 +5769,6 @@ public class MainActivity extends AppCompatActivity {
 																											public void run() {	
 																													try {
 																															FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk", apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
-																															version_switch_01.setChecked(false);
-																															version_switch_02.setChecked(false);
-																															changelogs_switch.setChecked(false);
 																													}
 																													catch(Exception e) {
 																													}
@@ -5784,6 +5781,9 @@ public class MainActivity extends AppCompatActivity {
 																															public void onClick(DialogInterface Success_Download, int p) {
 																																	AlertDialog.setCancelable(true);
 																																	prog.cancel();
+																																	version_switch_01.setChecked(false);
+																																	version_switch_02.setChecked(false);
+																																	changelogs_switch.setChecked(false);
 																																	if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
 																																			if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
 																																					StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
@@ -6402,7 +6402,7 @@ public class MainActivity extends AppCompatActivity {
 		else {
 			try {
 				main_refresh_layout.setRefreshing(true);
-				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Checking API Status...", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Checking SafetyNet Status...", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 				if (CLONED_VERSION.getString("CLONED", "").equals("ON")) {
 					Regular_Cloned.addListenerForSingleValueEvent(new ValueEventListener() {
 						@Override
@@ -6426,7 +6426,7 @@ public class MainActivity extends AppCompatActivity {
 										public void run() {
 											if (Double.parseDouble(Current_Version) > Double.parseDouble(Latest_Version)) {
 												try {
-													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "API Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "SafetyNet Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 												}
 												catch(Exception e) {
 												}
@@ -6470,27 +6470,40 @@ public class MainActivity extends AppCompatActivity {
 									runOnUiThread(new Runnable() {
 										@Override
 										public void run() {
-											sub_7.setText(VERSIONS.getString("AMOLED_CLONED", ""));
-											Timer = new TimerTask() {
-												@Override
-												public void run() {
-													runOnUiThread(new Runnable() {
+											if (Double.parseDouble(Current_Version) > Double.parseDouble(Latest_Version)) {
+												try {
+													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "SafetyNet Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+												}
+												catch(Exception e) {
+												}
+											}
+											else {
+												try {
+													sub_7.setText(VERSIONS.getString("AMOLED_CLONED", ""));
+													Timer = new TimerTask() {
 														@Override
 														public void run() {
-															main_refresh_layout.setRefreshing(false);
-															list_menu_2.setAdapter(new List_menu_2Adapter(listdata));
-															((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
-															main_body.setAlpha((float)(1.0d));
-															if (!LIST_REFRESH.getString("UPDATE", "").equals("ON")) {
-																String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
-																
-																com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "API Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-															}
+															runOnUiThread(new Runnable() {
+																@Override
+																public void run() {
+																	main_refresh_layout.setRefreshing(false);
+																	list_menu_2.setAdapter(new List_menu_2Adapter(listdata));
+																	((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
+																	main_body.setAlpha((float)(1.0d));
+																	if (!LIST_REFRESH.getString("UPDATE", "").equals("ON")) {
+																		String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
+																		
+																		com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "SafetyNet Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																	}
+																}
+															});
 														}
-													});
+													};
+													_timer.schedule(Timer, (int)(500));
 												}
-											};
-											_timer.schedule(Timer, (int)(500));
+												catch(Exception e) {
+												}
+											}
 										}
 									});
 								}
@@ -6531,7 +6544,7 @@ public class MainActivity extends AppCompatActivity {
 											public void run() {
 												if (Double.parseDouble(Current_Version) > Double.parseDouble(Latest_Version)) {
 													try {
-														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "API Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "SafetyNet Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 													}
 													catch(Exception e) {
 													}
@@ -6575,27 +6588,40 @@ public class MainActivity extends AppCompatActivity {
 										runOnUiThread(new Runnable() {
 											@Override
 											public void run() {
-												sub_3.setText(VERSIONS.getString("AMOLED", ""));
-												Timer = new TimerTask() {
-													@Override
-													public void run() {
-														runOnUiThread(new Runnable() {
+												if (Double.parseDouble(Current_Version) > Double.parseDouble(Latest_Version)) {
+													try {
+														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "SafetyNet Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+													}
+													catch(Exception e) {
+													}
+												}
+												else {
+													try {
+														sub_3.setText(VERSIONS.getString("AMOLED", ""));
+														Timer = new TimerTask() {
 															@Override
 															public void run() {
-																main_refresh_layout.setRefreshing(false);
-																list_menu_2.setAdapter(new List_menu_2Adapter(listdata));
-																((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
-																main_body.setAlpha((float)(1.0d));
-																if (!LIST_REFRESH.getString("UPDATE", "").equals("ON")) {
-																	String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
-																	
-																	com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "API Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																}
+																runOnUiThread(new Runnable() {
+																	@Override
+																	public void run() {
+																		main_refresh_layout.setRefreshing(false);
+																		list_menu_2.setAdapter(new List_menu_2Adapter(listdata));
+																		((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
+																		main_body.setAlpha((float)(1.0d));
+																		if (!LIST_REFRESH.getString("UPDATE", "").equals("ON")) {
+																			String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
+																			
+																			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "SafetyNet Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																		}
+																	}
+																});
 															}
-														});
+														};
+														_timer.schedule(Timer, (int)(500));
 													}
-												};
-												_timer.schedule(Timer, (int)(500));
+													catch(Exception e) {
+													}
+												}
 											}
 										});
 									}
@@ -7311,9 +7337,6 @@ public class MainActivity extends AppCompatActivity {
 																											public void run() {
 																													try {
 																															FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/xManager Update.apk", "/storage/emulated/0/xManager/Update/xManager Update.apk");
-																															version_switch_01.setChecked(false);
-																															version_switch_02.setChecked(false);
-																															changelogs_switch.setChecked(false);
 																															prog.dismiss();
 																													}
 																													catch(Exception e) {
@@ -7327,6 +7350,9 @@ public class MainActivity extends AppCompatActivity {
 																															@Override
 																															public void onClick(DialogInterface Success_Download, int p) {
 																																	AlertDialog.setCancelable(true);
+																																	version_switch_01.setChecked(false);
+																																	version_switch_02.setChecked(false);
+																																	changelogs_switch.setChecked(false);
 																																	StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
 																																	if(android.os.Build.VERSION.SDK_INT >= 29){
 																																			try {
@@ -8111,9 +8137,6 @@ public class MainActivity extends AppCompatActivity {
 																											public void run() {	
 																													try {
 																															FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk", apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
-																															version_switch_01.setChecked(false);
-																															version_switch_02.setChecked(false);
-																															changelogs_switch.setChecked(false);
 																													}
 																													catch(Exception e) {
 																													}
@@ -8124,6 +8147,9 @@ public class MainActivity extends AppCompatActivity {
 																																	runOnUiThread(new Runnable() {
 																																			@Override
 																																			public void run() {
+																																					version_switch_01.setChecked(false);
+																																					version_switch_02.setChecked(false);
+																																					changelogs_switch.setChecked(false);
 																																					if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
 																																							if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
 																																									StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
@@ -8364,14 +8390,14 @@ public class MainActivity extends AppCompatActivity {
 																											public void run() {
 																													try {
 																															FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/xManager Update.apk", "/storage/emulated/0/xManager/Update/xManager Update.apk");
-																															version_switch_01.setChecked(false);
-																															version_switch_02.setChecked(false);
-																															changelogs_switch.setChecked(false);
 																															prog.dismiss();
 																													}
 																													catch(Exception e) {
 																													}
 																													prog.cancel();
+																													version_switch_01.setChecked(false);
+																													version_switch_02.setChecked(false);
+																													changelogs_switch.setChecked(false);
 																													StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
 																													if(android.os.Build.VERSION.SDK_INT >= 29){
 																															try {
@@ -11790,9 +11816,6 @@ public class MainActivity extends AppCompatActivity {
 																											public void run() {	
 																													try {
 																															FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk", apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
-																															version_switch_01.setChecked(false);
-																															version_switch_02.setChecked(false);
-																															changelogs_switch.setChecked(false);
 																													}
 																													catch(Exception e) {
 																													}
@@ -11805,6 +11828,9 @@ public class MainActivity extends AppCompatActivity {
 																															public void onClick(DialogInterface Success_Download, int p) {
 																																	AlertDialog.setCancelable(true);
 																																	prog.cancel();
+																																	version_switch_01.setChecked(false);
+																																	version_switch_02.setChecked(false);
+																																	changelogs_switch.setChecked(false);
 																																	if ((Installed_Version_Cloned < Downloaded_Version_Cloned) || ((Downloaded_Version_Cloned > Installed_Version_Cloned) || ((Installed_Version_Cloned == Downloaded_Version_Cloned) || Installed_Checker_Cloned.equals("false")))) {
 																																			if (getICSignature(getApplicationContext()).equals(getDCSignature(getApplicationContext())) || Installed_Checker_Cloned.equals("false")) {
 																																					StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
@@ -12053,9 +12079,6 @@ public class MainActivity extends AppCompatActivity {
 																											public void run() {	
 																													try {
 																															FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk", apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
-																															version_switch_01.setChecked(false);
-																															version_switch_02.setChecked(false);
-																															changelogs_switch.setChecked(false);
 																													}
 																													catch(Exception e) {
 																													}
@@ -12066,6 +12089,9 @@ public class MainActivity extends AppCompatActivity {
 																																	runOnUiThread(new Runnable() {
 																																			@Override
 																																			public void run() {
+																																					version_switch_01.setChecked(false);
+																																					version_switch_02.setChecked(false);
+																																					changelogs_switch.setChecked(false);
 																																					if ((Installed_Version_Cloned < Downloaded_Version_Cloned) || ((Downloaded_Version_Cloned > Installed_Version_Cloned) || ((Installed_Version_Cloned == Downloaded_Version_Cloned) || Installed_Checker_Cloned.equals("false")))) {
 																																							if (getICSignature(getApplicationContext()).equals(getDCSignature(getApplicationContext())) || Installed_Checker_Cloned.equals("false")) {
 																																									StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
@@ -12876,8 +12902,11 @@ public class MainActivity extends AppCompatActivity {
 										AlertDialog.setCancelable(true);
 										SketchwareUtil.showMessage(getApplicationContext(), "Patched File Deleted");
 										FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
+										FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
 										FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
+										FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
 										FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk");
+										FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk");
 										_Hide_Navigation();
 										                }
 									            });
@@ -13782,8 +13811,11 @@ public class MainActivity extends AppCompatActivity {
 										AlertDialog.setCancelable(true);
 										SketchwareUtil.showMessage(getApplicationContext(), "Patched File Deleted");
 										FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
+										FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
 										FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
+										FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
 										FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk");
+										FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk");
 										_Hide_Navigation();
 										                }
 									            });
