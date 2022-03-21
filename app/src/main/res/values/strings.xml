@@ -753,28 +753,28 @@
     <string	name="reddit_07"	translatable="true">REDDIT</string>
     <string	name="faq_07"	translatable="true">FAQ</string>
 	
-	<string	name="cloned_version_07"	translatable="true">WERSJA SKLONOWANA (BETA)</string>
-	<string	name="cloned_version_desc_07"	translatable="true">Aktywacja umożliwia pobranie i zainstalowanie sklonowanej wersji poprawionej aplikacji.\n\nto również rozwiąże większość błędów lub problemów związanych z instalacją, zwłaszcza jeśli masz wstępnie zainstalowaną aplikację spotify.</string>
-	<string	name="disable_rewarded_ads_07"	translatable="true">WYŁĄCZ NAGRODZONE REKLAMY</string>
-	<string	name="disable_rewarded_ads_desc_07"	translatable="true">Wiemy, że większość z nas nie lubi reklam, ale w naszym przypadku znacznie pomaga nam to finansować naszą bazę danych, linki hostingowe, aktualizacje, więcej łatek i codzienne potrzeby.\n\nto najprostszy sposób na wsparcie nas bez darowizn i wydawania czegokolwiek.</string>
+	<string	name="cloned_version_07"	translatable="true">WERSJA KLONA (BETA)</string>
+	<string	name="cloned_version_desc_07"	translatable="true">Aktywacja umożliwi pobieranie i instalację sklonowanej wersji zmodowanej aplikacji.\n\nRozwiązuje to większość błędów i problemów związanych z instalacją, zwłaszcza jeśli posiadasz już aplikację zainstalowaną jako systemową.</string>
+	<string	name="disable_rewarded_ads_07"	translatable="true">WYŁĄCZ NAGRADZANE REKLAMY</string>
+	<string	name="disable_rewarded_ads_desc_07"	translatable="true">Wiemy, że większość z nas nie lubi reklam, ale w naszym przypadku znacznie pomagają nam one finansować naszą bazę danych, linki hostingowe, aktualizacje, więcej łatek i codzienne potrzeby.\n\nTo najprostszy sposób by nas wesprzeć bez darowizn i wydawania pieniędzy.</string>
 	
 	<string	name="installation_failed_07"	translatable="true">INSTALACJA NIE POWIODŁA SIĘ</string>
-	<string	name="installation_failed_desc_07"	translatable="true">Powód: próbowałeś zainstalować wersję mod niższą niż obecnie zainstalowana.\n\nrozwiązania: \nA. Wybierz wersję równą lub większą niż.\nB. Odinstaluj bieżącą wersję, a następnie obniż wersję.\n\nJeśli problem nadal występuje, sprawdź FAQ.</string>
-	<string	name="installation_failed_ream_desc_07"	translatable="true">Powód: obecny Spotify zainstalowany na tym urządzeniu nie pochodzi bezpośrednio z xManager ani z naszego zespołu.\n\nrozwiązanie: Odinstaluj bieżącą wersję aplikacji, uruchom ponownie xManager i spróbuj ponownie. Jeśli problem nadal występuje, sprawdź FAQ.</string>
-	<string	name="installation_failed_cloned_desc_07"	translatable="true">Powód: bieżący sklonowany zainstalowany na tym urządzeniu nie pochodził bezpośrednio z xmanagera ani z naszego zespołu.\n\nrozwiązanie: Odinstaluj bieżącą wersję aplikacji, uruchom ponownie xManager i spróbuj ponownie. Jeśli problem nadal występuje, sprawdź FAQ.</string>
-	<string	name="existing_patched_07"	translatable="true">ISTNIEJĄCE ZAŁATANE</string>
-	<string	name="existing_patched_desc_07"	translatable="true">Istniejący poprawiony plik znaleziony w jednym z katalogów. Jaką akcję chciałbyś wykonać?</string>
+	<string	name="installation_failed_desc_07"	translatable="true">Powód: Próbowałeś zainstalować starszą wersję modyfikacji niż obecnie zainstalowana.\n\nRozwiązania: \nA. Wybierz wersję taką samą lub nowszą.\nB. Odinstaluj bieżącą wersję, a następnie zanistaluj którą chcesz.\n\nJeśli problem nadal występuje, sprawdź FAQ.</string>
+	<string	name="installation_failed_ream_desc_07"	translatable="true">Powód: Obecny Spotify zainstalowany na tym urządzeniu nie pochodzi bezpośrednio z xManager ani z naszego zespołu.\n\nrozwiązanie: Odinstaluj bieżącą wersję aplikacji, uruchom ponownie xManager i spróbuj ponownie. Jeśli problem nadal występuje, sprawdź FAQ.</string>
+	<string	name="installation_failed_cloned_desc_07"	translatable="true">Powód: bieżący sklonowany zainstalowany na tym urządzeniu nie pochodzi bezpośrednio z xManagera ani od naszego zespołu.\n\nRozwiązanie: Odinstaluj bieżącą wersję aplikacji, uruchom ponownie xManager i spróbuj ponownie. Jeśli problem nadal występuje, sprawdź FAQ.</string>
+	<string	name="existing_patched_07"	translatable="true">ISTNIEJĄCA MODYFIKACJA</string>
+	<string	name="existing_patched_desc_07"	translatable="true">Znaleziono już pobrany plik APK modyfikacji. Co chcesz z nim zrobić?</string>
 
 	<string	name="close_07"	translatable="true">Zamknij</string>
-	<string	name="cloned_07"	translatable="true">Sklonowany</string>
-	<string	name="ream_07"	translatable="true">RE/AM</string>
+	<string	name="cloned_07"	translatable="true">Klona</string>
+	<string	name="ream_07"	translatable="true">ZW/AM</string>
 	<string	name="install_07"	translatable="true">Zainstaluj</string>
 	<string	name="uninstall_07"	translatable="true">Odinstaluj</string>
 	<string	name="ignore_07"	translatable="true">Ignoruj</string>
-	<string	name="delete_07"	translatable="true">Usunąć</string>
-	<string	name="uninstall_patched_07"	translatable="true">ODINSTALUJ POPRAWIONE</string>
+	<string	name="delete_07"	translatable="true">Usuń</string>
+	<string	name="uninstall_patched_07"	translatable="true">ODINSTALUJ MODYFIKACJĘ</string>
 	<string	name="open_settings_07"	translatable="true">OTWÓRZ USTAWIENIA</string>
-	<string	name="open_patched_07"	translatable="true">OTWARTE ZAŁATANE</string>
+	<string	name="open_patched_07"	translatable="true">OTWÓRZ MODYFIKACJĘ</string>
 	
 	<!--PORTUGUESE (BRAZIL) LANGUAGE-->
 	<string	name="app_name_08"	translatable="true">xManager</string>
