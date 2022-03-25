@@ -41,7 +41,6 @@ Our aim is to make a simple yet very useful manager app for everyone's convenien
 **•No trackers, no spywares, no keyloggers or any other malicious codes has been added on the source code. What you see on the source code is what's inside the build apk. You can extract the apk for yourself.**  
 **•The source code that can be seen here is what's inside the exported zip file for Android Studio.**  
 **•There are some instance that the source code is unbuildable, some parts might be missing and such due to limitations.**   
-~~•Most of the internal changes can only be seen in MainActivity.java. The file size already reached 1MB and Github won't allow us to edit and do further changes/commits unless removing and re-adding the new updated files.~~  
 **•Users might experience downtime and maintenance when using the manager app since we are manually changing the hosting links of each individual files from time to time.**  
 **•xManager is completely free and we do not get any comissions with it (Rewarded Ads are optional and can be disable via settings).**  
 **•We will support the app as long as we can. Internal improvements may not guaranteed.** 
@@ -78,7 +77,7 @@ minhtamvn (Vietnamese Translation)
 smokedzn (German Translation)  
 ohshahab (Persian Translation)  
 GreenArmy18 (Hebrew Translation)  
-dearminder (Polish Translation)
+dearminder (Polish Translation)  
 
 # Contributors  
 
