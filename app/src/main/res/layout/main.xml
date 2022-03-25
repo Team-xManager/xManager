@@ -236,7 +236,7 @@
 			android:textColor="#000000"
 			android:alpha="0.0" />
 		<TextView
-			android:id="@+id/hidden_download"
+			android:id="@+id/hidden_update"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:padding="8dp"
@@ -1523,7 +1523,7 @@
 						android:id="@+id/donators"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Ricardo G.\nAakarshit U.\nAmaricai A.\nAntonio M.\nJuleshwar Babu T.M.\nYash G.\nCamille D.\nAnudeep N.D.\nKrzysztof S.\nAlex C.\nCarlos C.\nPrabandaru P.\nRussel R.\nLucha G.S.\nAleksandrs F.\nGeorgios H."
+						android:text="Ricardo G.\nAakarshit U.\nAmaricai A.\nAntonio M.\nJuleshwar Babu T.M.\nYash G.\nCamille D.\nAnudeep N.D.\nKrzysztof S.\nAlex C.\nCarlos C.\nPrabandaru P.\nRussel R.\nLucha G.S.\nAleksandrs F.\nGeorgios H.\nLevente T."
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -2609,7 +2609,7 @@
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:gravity="center_horizontal|center_vertical"
-							android:text="DONATE"
+							android:text="SUPPORT"
 							android:textSize="11sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954"
