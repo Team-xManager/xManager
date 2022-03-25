@@ -67,7 +67,9 @@ import android.widget.AdapterView;
 import android.graphics.Typeface;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import androidx.browser.*;
 import com.wuyr.rippleanimation.*;
+import com.unity3d.ads.*;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.DialogFragment;
@@ -80,25 +82,10 @@ import static android.os.Build.VERSION.SDK_INT;
 import androidx.core.content.ContextCompat;
 import androidx.core.app.ActivityCompat;
 import androidx.annotation.NonNull;
-import com.google.android.gms.ads.*;
-import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.rewarded.RewardItem;
-import com.google.android.gms.ads.rewarded.RewardedAd;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.FullScreenContentCallback;
-import com.google.android.gms.ads.OnUserEarnedRewardListener;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 
 public class MainActivity extends AppCompatActivity {
 	
-     private RewardedAd mRewardedAd;
 	private Timer _timer = new Timer();
 	private FirebaseDatabase _firebase = FirebaseDatabase.getInstance();
 	
@@ -143,6 +130,10 @@ public class MainActivity extends AppCompatActivity {
 	private String uninstall_0 = "";
 	private String existing_patched_0 = "";
 	private String existing_patched_desc_0 = "";
+	private  Boolean testMode = true;
+	private  String unityGameID = "4673349";
+	private  String placementVideo = "Interstitial_Android";
+	private  String placementRewardedVideo = "Rewarded_Android";
 	
 	private ArrayList<HashMap<String, Object>> listdata = new ArrayList<>();
 	private ArrayList<HashMap<String, Object>> others = new ArrayList<>();
@@ -180,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
 	private TextView installation_failed_cloned_desc;
 	private TextView installation_failed_ream_desc;
 	private TextView installation_failed_desc;
-	private TextView hidden_download;
+	private TextView hidden_update;
 	private TextView app_changelogs;
 	private TextView download_selected;
 	private TextView download_ready;
@@ -491,6 +482,7 @@ public class MainActivity extends AppCompatActivity {
 	private SharedPreferences CLONED_VERSION;
 	private SharedPreferences DISABLE_REWARD_AD;
 	private Intent External_Storage_Manager = new Intent();
+	private SharedPreferences DOWNLOAD;
 	
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
@@ -498,8 +490,6 @@ public class MainActivity extends AppCompatActivity {
 		setContentView(R.layout.main);
 		initialize(_savedInstanceState);
 		com.google.firebase.FirebaseApp.initializeApp(this);
-		com.google.android.gms.ads.MobileAds.initialize(this);
-		
 		initializeLogic();
 	}
 	
@@ -533,7 +523,7 @@ public class MainActivity extends AppCompatActivity {
 		installation_failed_cloned_desc = findViewById(R.id.installation_failed_cloned_desc);
 		installation_failed_ream_desc = findViewById(R.id.installation_failed_ream_desc);
 		installation_failed_desc = findViewById(R.id.installation_failed_desc);
-		hidden_download = findViewById(R.id.hidden_download);
+		hidden_update = findViewById(R.id.hidden_update);
 		app_changelogs = findViewById(R.id.app_changelogs);
 		download_selected = findViewById(R.id.download_selected);
 		download_ready = findViewById(R.id.download_ready);
@@ -820,6 +810,7 @@ public class MainActivity extends AppCompatActivity {
 		LANGUAGE = getSharedPreferences("LANGUAGE", Activity.MODE_PRIVATE);
 		CLONED_VERSION = getSharedPreferences("CLONED_VERSION", Activity.MODE_PRIVATE);
 		DISABLE_REWARD_AD = getSharedPreferences("DISABLE_REWARD_AD", Activity.MODE_PRIVATE);
+		DOWNLOAD = getSharedPreferences("DOWNLOAD", Activity.MODE_PRIVATE);
 		
 		box_switch.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -903,90 +894,31 @@ public class MainActivity extends AppCompatActivity {
 																                @Override
 																                public void onClick(DialogInterface Update_Authorized, int p) {
 																	try {
-																		if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-																			AlertDialog.setCancelable(true);
-																			if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
-																				_Download_Update_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
-																			}
-																			else {
-																				if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
-																					_Download_Update(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
-																				}
-																			}
-																			_Update_Remover();
-																			Timer = new TimerTask() {
-																				@Override
-																				public void run() {
-																					runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																							_Hide_Navigation();
-																						}
-																					});
-																				}
-																			};
-																			_timer.schedule(Timer, (int)(100));
+																		AlertDialog.setCancelable(true);
+																		if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
+																			_Download_Update_Install(hidden_update.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
 																		}
 																		else {
-																			if (mRewardedAd != null) {
-																				  Activity activityContext = MainActivity.this;
-																				  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																					    @Override
-																					    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																						       AlertDialog.setCancelable(true);
-																						if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
-																							_Download_Update_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
-																						}
-																						else {
-																							if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
-																								_Download_Update(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
-																							}
-																						}
-																						_Update_Remover();
-																						Timer = new TimerTask() {
-																							@Override
-																							public void run() {
-																								runOnUiThread(new Runnable() {
-																									@Override
-																									public void run() {
-																										_Hide_Navigation();
-																									}
-																								});
-																							}
-																						};
-																						_timer.schedule(Timer, (int)(100));
-																						      int rewardAmount = rewardItem.getAmount();
-																						      String rewardType = rewardItem.getType();
-																						    }
-																					  });
-																			} else {
-																				AlertDialog.setCancelable(true);
-																				if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
-																					_Download_Update_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
-																				}
-																				else {
-																					if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
-																						_Download_Update(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
-																					}
-																				}
-																				_Update_Remover();
-																				Timer = new TimerTask() {
-																					@Override
-																					public void run() {
-																						runOnUiThread(new Runnable() {
-																							@Override
-																							public void run() {
-																								_Hide_Navigation();
-																							}
-																						});
-																					}
-																				};
-																				_timer.schedule(Timer, (int)(100));
+																			if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
+																				_Download_Update(hidden_update.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
 																			}
 																		}
 																	}
 																	catch(Exception e) {
 																	}
+																	_Update_Remover();
+																	Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																			runOnUiThread(new Runnable() {
+																				@Override
+																				public void run() {
+																					_Hide_Navigation();
+																				}
+																			});
+																		}
+																	};
+																	_timer.schedule(Timer, (int)(100));
 																	                }
 																            });
 															 Update_Authorized.setNeutralButton(not_now.getText().toString(), new DialogInterface.OnClickListener(){
@@ -1106,8 +1038,8 @@ public class MainActivity extends AppCompatActivity {
 		main_box_10.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/") && (FileUtil.isExistFile("/storage/emulated/0/xManager/") && FileUtil.isExistFile(apk_path_location.getText().toString()))) {
-					FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/");
+				if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/") && (FileUtil.isExistFile("/storage/emulated/0/xManager/") && FileUtil.isExistFile(apk_path_location.getText().toString()))) {
+					FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/");
 					FileUtil.deleteFile("/storage/emulated/0/xManager/");
 					FileUtil.deleteFile(apk_path_location.getText().toString());
 				}
@@ -1321,30 +1253,6 @@ public class MainActivity extends AppCompatActivity {
 					COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_OFF").commit();
 				}
 				COUNTER = 1;
-			}
-		});
-		
-		disable_reward_ad_switch.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View _view) {
-				if (disable_reward_ad_switch.isChecked()) {
-					if (mRewardedAd != null) {
-						  Activity activityContext = MainActivity.this;
-						  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-							    @Override
-							    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-								       DISABLE_REWARD_AD.edit().putString("REWARD_AD", "ON").commit();
-								disable_reward_ad_switch.setChecked(true);
-								      int rewardAmount = rewardItem.getAmount();
-								      String rewardType = rewardItem.getType();
-								    }
-							  });
-					} else {
-						DISABLE_REWARD_AD.edit().putString("REWARD_AD", "ON").commit();
-						disable_reward_ad_switch.setChecked(true);
-					}
-				}
-				disable_reward_ad_switch.setChecked(false);
 			}
 		});
 		
@@ -5015,14 +4923,13 @@ public class MainActivity extends AppCompatActivity {
 							catch (Exception _e) {
 								_e.printStackTrace();
 							}
-							hidden_download.setText(_childValue.get("Links").toString());
+							hidden_update.setText(_childValue.get("Links").toString());
 						}
 						@Override
 						public void onCancelled(DatabaseError _databaseError) {
 						}
 					});
-				}
-				catch(Exception e) {
+				} catch(Exception e) {
 					SketchwareUtil.showMessage(getApplicationContext(), "API Fetching Failed");
 				}
 			}
@@ -5085,8 +4992,7 @@ public class MainActivity extends AppCompatActivity {
 						public void onCancelled(DatabaseError _databaseError) {
 						}
 					});
-				}
-				catch(Exception e) {
+				} catch(Exception e) {
 					SketchwareUtil.CustomToast(getApplicationContext(), "API Fetching Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 				}
 			}
@@ -5131,8 +5037,7 @@ public class MainActivity extends AppCompatActivity {
 					if (!_success) {
 						SketchwareUtil.showMessage(getApplicationContext(), "Notification Error");
 					}
-				}
-				catch(Exception e) {
+				} catch(Exception e) {
 				}
 			}
 		};
@@ -5164,8 +5069,7 @@ public class MainActivity extends AppCompatActivity {
 						public void onCancelled(DatabaseError _databaseError) {
 						}
 					});
-				}
-				catch(Exception e) {
+				} catch(Exception e) {
 					SketchwareUtil.showMessage(getApplicationContext(), "Failed to Fetch API");
 				}
 			}
@@ -5230,8 +5134,7 @@ public class MainActivity extends AppCompatActivity {
 						public void onCancelled(DatabaseError _databaseError) {
 						}
 					});
-				}
-				catch(Exception e) {
+				} catch(Exception e) {
 					SketchwareUtil.showMessage(getApplicationContext(), "Failed to Fetch API");
 				}
 			}
@@ -5260,8 +5163,7 @@ public class MainActivity extends AppCompatActivity {
 					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 					startActivity(intent);
-				}
-				catch(Exception e) {
+				} catch(Exception e) {
 				}
 			}
 			
@@ -5304,8 +5206,7 @@ public class MainActivity extends AppCompatActivity {
 						public void onCancelled(DatabaseError _databaseError) {
 						}
 					});
-				}
-				catch(Exception e) {
+				} catch(Exception e) {
 					SketchwareUtil.showMessage(getApplicationContext(), "Failed to Fetch API");
 				}
 			}
@@ -5334,8 +5235,7 @@ public class MainActivity extends AppCompatActivity {
 					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 					startActivity(intent);
-				}
-				catch(Exception e) {
+				} catch(Exception e) {
 				}
 			}
 			
@@ -5378,8 +5278,7 @@ public class MainActivity extends AppCompatActivity {
 						public void onCancelled(DatabaseError _databaseError) {
 						}
 					});
-				}
-				catch(Exception e) {
+				} catch(Exception e) {
 					SketchwareUtil.showMessage(getApplicationContext(), "Failed to Fetch API");
 				}
 			}
@@ -5408,8 +5307,7 @@ public class MainActivity extends AppCompatActivity {
 					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 					startActivity(intent);
-				}
-				catch(Exception e) {
+				} catch(Exception e) {
 				}
 			}
 			
@@ -5452,8 +5350,7 @@ public class MainActivity extends AppCompatActivity {
 						public void onCancelled(DatabaseError _databaseError) {
 						}
 					});
-				}
-				catch(Exception e) {
+				} catch(Exception e) {
 					SketchwareUtil.showMessage(getApplicationContext(), "Failed to Fetch API");
 				}
 			}
@@ -5482,8 +5379,7 @@ public class MainActivity extends AppCompatActivity {
 					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 					startActivity(intent);
-				}
-				catch(Exception e) {
+				} catch(Exception e) {
 				}
 			}
 			
@@ -5555,7 +5451,61 @@ public class MainActivity extends AppCompatActivity {
 		_Hide_Navigation();
 	}
 	
-
+	
+	private class UnityAdsListener implements
+	IUnityAdsListener {
+		public void onUnityAdsReady(String placementRewardedVideo) {
+			 
+		}
+		@Override
+		public void onUnityAdsStart(String placementRewardedVideo) {
+			 
+		}
+		@Override
+		public void onUnityAdsFinish(String placementRewardedVideo, UnityAds.FinishState finishState) {
+			if (finishState.equals(UnityAds.FinishState.COMPLETED)) {
+				if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
+					((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", DOWNLOAD.getString("PATCHED", "")));
+					SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
+				}
+				if (CLONED_VERSION.getString("CLONED", "").equals("ON") && COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
+					if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+						_Download_Install_Cloned(DOWNLOAD.getString("PATCHED", ""), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+					}
+					else {
+						if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+							_Download_Cloned(DOWNLOAD.getString("PATCHED", ""), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+						}
+					}
+				}
+				else {
+					
+				}
+				if (CLONED_VERSION.getString("CLONED", "").equals("OFF") && COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
+					if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+						_Download_Install(DOWNLOAD.getString("PATCHED", ""), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+					}
+					else {
+						if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+							_Download(DOWNLOAD.getString("PATCHED", ""), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+						}
+					}
+				}
+				else {
+					
+				}
+			}
+			else {
+				if (finishState.equals(UnityAds.FinishState.ERROR)) {
+					SketchwareUtil.showMessage(getApplicationContext(), "Well, that was unexpected.");
+				}
+			}
+		}
+		@Override
+		public void onUnityAdsError(UnityAds.UnityAdsError error, String message) {
+			 
+		}
+	}
 	public void _Informations() {
 		Timer = new TimerTask() {
 			@Override
@@ -5710,6 +5660,7 @@ public class MainActivity extends AppCompatActivity {
 																	runOnUiThread(new Runnable() {
 																			public void run() {
 																					SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
+																					_File_Remover();
 																			}
 																	});
 																	try {
@@ -5728,38 +5679,41 @@ public class MainActivity extends AppCompatActivity {
 															runOnUiThread(new Runnable() {
 																	@Override
 																	public void run() {
-																			prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																			String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																			String TitleColor = "1DB954";
-																			prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																			prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																			prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																			prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
-																			prog.setProgress(dl_progress);
-																			prog.setMax(dl_max);
-																			prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-																					@Override
-																					public void onClick(DialogInterface dialog, int which) {
-																							manager.remove(downloadId);
-																							Timer = new TimerTask() {
-																									@Override
-																									public void run() {
-																											runOnUiThread(new Runnable() {
-																													@Override
-																													public void run() {
-																															try {
-																																	_Hide_Navigation();
-																																	prog.cancel();
-																															} catch (Exception e) {
+																			if (!MainActivity.this.isFinishing()) {
+																					prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+																					String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																					String TitleColor = "1DB954";
+																					prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																					prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																					prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																					prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");	
+																					prog.setProgress(dl_progress);
+																					prog.setMax(dl_max);
+																					prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
+																							@Override
+																							public void onClick(DialogInterface dialog, int which) {
+																									manager.remove(downloadId);
+																									Timer = new TimerTask() {
+																											@Override
+																											public void run() {
+																													runOnUiThread(new Runnable() {
+																															@Override
+																															public void run() {
+																																	try {
+																																			_Hide_Navigation();
+																																			_File_Remover();
+																																			prog.cancel();
+																																	} catch (Exception e) {
+																																	}
 																															}
-																													}
-																											});
-																									}
-																							};
-																							_timer.schedule(Timer, (int)(0));
-																					}
-																			});
-																			prog.show();
+																													});
+																											}
+																									};
+																									_timer.schedule(Timer, (int)(0));
+																							}
+																					});
+																					prog.show();
+																			}
 																			if (bytes_downloaded == bytes_total) {
 																					Timer = new TimerTask() {
 																							@Override
@@ -5772,144 +5726,150 @@ public class MainActivity extends AppCompatActivity {
 																													}
 																													catch(Exception e) {
 																													}
-																													final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																													String Title = "<b>".concat(download_success_0.concat("</b>"));
-																													String TitleColor = "1DB954";
-																													Success_Download.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																													Success_Download.setPositiveButton(install_now_0, new DialogInterface.OnClickListener(){
-																															@Override
-																															public void onClick(DialogInterface Success_Download, int p) {
-																																	AlertDialog.setCancelable(true);
-																																	prog.cancel();
-																																	version_switch_01.setChecked(false);
-																																	version_switch_02.setChecked(false);
-																																	changelogs_switch.setChecked(false);
-																																	if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
-																																			if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
-																																					StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																																					if(android.os.Build.VERSION.SDK_INT >= 29){
-																																							try {
-																																									Intent intent = new Intent(Intent.ACTION_VIEW);
-																																									intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																																									intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
-																																									startActivity(intent);
-																																							}
-																																							catch(Exception e) {
-																																							}
+																													if (!MainActivity.this.isFinishing()) {
+																															final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																															String Title = "<b>".concat(download_success_0.concat("</b>"));
+																															String TitleColor = "1DB954";
+																															Success_Download.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																															Success_Download.setPositiveButton(install_now_0, new DialogInterface.OnClickListener(){
+																																	@Override
+																																	public void onClick(DialogInterface Success_Download, int p) {
+																																			AlertDialog.setCancelable(true);
+																																			prog.cancel();
+																																			version_switch_01.setChecked(false);
+																																			version_switch_02.setChecked(false);
+																																			changelogs_switch.setChecked(false);
+																																			if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
+																																					if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
+																																							StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+																																							if(android.os.Build.VERSION.SDK_INT >= 29){
+																																									try {
+																																											Intent intent = new Intent(Intent.ACTION_VIEW);
+																																											intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																																											intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
+																																											startActivity(intent);
+																																									}
+																																									catch(Exception e) {
+																																									}
+																																							} else {
+																																									try {
+																																											Intent intent = new Intent(Intent.ACTION_VIEW);
+																																											intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
+																																											startActivity(intent);
+																																											Timer = new TimerTask() {
+																																													@Override
+																																													public void run() {
+																																															runOnUiThread(new Runnable() {
+																																																	@Override
+																																																	public void run() {
+																																																			_Hide_Navigation();
+																																																	}
+																																															});
+																																													}
+																																											};
+																																											_timer.schedule(Timer, (int)(100));
+																																									}
+																																									catch(Exception e) {
+																																									}
+																																							} 
 																																					} else {
-																																							try {
-																																									Intent intent = new Intent(Intent.ACTION_VIEW);
-																																									intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
-																																									startActivity(intent);
-																																									Timer = new TimerTask() {
+																																							if (!MainActivity.this.isFinishing()) {
+																																									final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																																									String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+																																									String TitleColor = "1DB954";
+																																									Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																									String Message = installation_failed_ream_desc_0.replace("\n", "<br/>");
+																																									String MessageColor = "FFFFFF";
+																																									Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+																																									Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
 																																											@Override
-																																											public void run() {
-																																													runOnUiThread(new Runnable() {
-																																															@Override
-																																															public void run() {
-																																																	_Hide_Navigation();
-																																															}
-																																													});
+																																											public void onClick(DialogInterface Signature_Check, int p) {
+																																													_Hide_Navigation();
+																																													AlertDialog.setCancelable(true);
+																																													try {
+																																															Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
+																																															startActivity(intent);
+																																													}
+																																													catch(Exception e) {
+																																													}
 																																											}
-																																									};
-																																									_timer.schedule(Timer, (int)(100));
+																																									});
+																																									Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+																																											@Override
+																																											public void onClick(DialogInterface Signature_Check, int p) {
+																																													_Hide_Navigation();
+																																													AlertDialog.setCancelable(true);
+																																											}
+																																									});
+																																									AlertDialog = Signature_Check.create();
+																																									AlertDialog.setCancelable(false);
+																																									AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																																									AlertDialog.show();
 																																							}
-																																							catch(Exception e) {
+																																					}	
+																																			}
+																																			else {
+																																					if (Downloaded_Version < Installed_Version) {
+																																							if (!MainActivity.this.isFinishing()) {
+																																									final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																																									String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+																																									String TitleColor = "1DB954";
+																																									Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																									String Message = installation_failed_desc_0.replace("\n", "<br/>");
+																																									String MessageColor = "FFFFFF";
+																																									Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+																																									Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+																																											@Override
+																																											public void onClick(DialogInterface Downgrade_Check, int p) {
+																																													_Hide_Navigation();
+																																													AlertDialog.setCancelable(true);
+																																													try {
+																																															Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
+																																															startActivity(intent);
+																																													}
+																																													catch(Exception e) {
+																																													}
+																																											}
+																																									});
+																																									Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+																																											@Override
+																																											public void onClick(DialogInterface Downgrade_Check, int p) {
+																																													_Hide_Navigation();
+																																													AlertDialog.setCancelable(true);
+																																											}
+																																									});
+																																									AlertDialog = Downgrade_Check.create();
+																																									AlertDialog.setCancelable(false);
+																																									AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																																									AlertDialog.show();
 																																							}
-																																					} 
-																																			} else {
-																																					final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																					String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																					String TitleColor = "1DB954";
-																																					Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																					String Message = installation_failed_ream_desc_0.replace("\n", "<br/>");
-																																					String MessageColor = "FFFFFF";
-																																					Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																					Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																							@Override
-																																							public void onClick(DialogInterface Signature_Check, int p) {
-																																									_Hide_Navigation();
-																																									AlertDialog.setCancelable(true);
-																																									try {
-																																											Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
-																																											startActivity(intent);
-																																									}
-																																									catch(Exception e) {
-																																									}
-																																							}
-																																					});
-																																					Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																							@Override
-																																							public void onClick(DialogInterface Signature_Check, int p) {
-																																									_Hide_Navigation();
-																																									AlertDialog.setCancelable(true);
-																																							}
-																																					});
-																																					AlertDialog = Signature_Check.create();
-																																					AlertDialog.setCancelable(false);
-																																					AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																					AlertDialog.show();
-																																			}	
-																																	}
-																																	else {
-																																			if (Downloaded_Version < Installed_Version) {
-																																					final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																					String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																					String TitleColor = "1DB954";
-																																					Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																					String Message = installation_failed_desc_0.replace("\n", "<br/>");
-																																					String MessageColor = "FFFFFF";
-																																					Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																					Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																							@Override
-																																							public void onClick(DialogInterface Downgrade_Check, int p) {
-																																									_Hide_Navigation();
-																																									AlertDialog.setCancelable(true);
-																																									try {
-																																											Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
-																																											startActivity(intent);
-																																									}
-																																									catch(Exception e) {
-																																									}
-																																							}
-																																					});
-																																					Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																							@Override
-																																							public void onClick(DialogInterface Downgrade_Check, int p) {
-																																									_Hide_Navigation();
-																																									AlertDialog.setCancelable(true);
-																																							}
-																																					});
-																																					AlertDialog = Downgrade_Check.create();
-																																					AlertDialog.setCancelable(false);
-																																					AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																					AlertDialog.show();
+																																					}
 																																			}
 																																	}
-																															}
-																													});
-																													Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener(){
-																															@Override
-																															public void onClick(DialogInterface Success_Download, int p) {
-																																	AlertDialog.setCancelable(true);
-																																	Timer = new TimerTask() {
-																																			@Override
-																																			public void run() {
-																																					runOnUiThread(new Runnable() {
-																																							@Override
-																																							public void run() {
-																																									_Hide_Navigation();
-																																							}
-																																					});
-																																			}
-																																	};
-																																	_timer.schedule(Timer, (int)(100));
-																															}
-																													});
-																													AlertDialog = Success_Download.create();
-																													AlertDialog.setCancelable(false);
-																													AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																													AlertDialog.show();
+																															});
+																															Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener(){
+																																	@Override
+																																	public void onClick(DialogInterface Success_Download, int p) {
+																																			AlertDialog.setCancelable(true);
+																																			Timer = new TimerTask() {
+																																					@Override
+																																					public void run() {
+																																							runOnUiThread(new Runnable() {
+																																									@Override
+																																									public void run() {
+																																											_Hide_Navigation();
+																																									}
+																																							});
+																																					}
+																																			};
+																																			_timer.schedule(Timer, (int)(100));
+																																	}
+																															});
+																															AlertDialog = Success_Download.create();
+																															AlertDialog.setCancelable(false);
+																															AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																															AlertDialog.show();
+																													}
 																													prog.cancel();
 																											}
 																									});
@@ -5933,11 +5893,15 @@ public class MainActivity extends AppCompatActivity {
 	
 	
 	public void _File_Remover() {
-		if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")) {
-			FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
+		if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/") && (FileUtil.isExistFile("/storage/emulated/0/xManager/") && FileUtil.isExistFile(apk_path_location.getText().toString()))) {
+			FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/");
+			FileUtil.deleteFile("/storage/emulated/0/xManager/");
+			FileUtil.deleteFile(apk_path_location.getText().toString());
 		}
-		if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")) {
-			FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
+		else {
+			if (!(FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/") && (FileUtil.isExistFile("/storage/emulated/0/xManager/") && FileUtil.isExistFile(apk_path_location.getText().toString())))) {
+				
+			}
 		}
 		if (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"))) {
 			FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
@@ -6402,7 +6366,7 @@ public class MainActivity extends AppCompatActivity {
 		else {
 			try {
 				main_refresh_layout.setRefreshing(true);
-				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Checking SafetyNet Status...", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Checking API Status...", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 				if (CLONED_VERSION.getString("CLONED", "").equals("ON")) {
 					Regular_Cloned.addListenerForSingleValueEvent(new ValueEventListener() {
 						@Override
@@ -6426,7 +6390,7 @@ public class MainActivity extends AppCompatActivity {
 										public void run() {
 											if (Double.parseDouble(Current_Version) > Double.parseDouble(Latest_Version)) {
 												try {
-													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "SafetyNet Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "API Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 												}
 												catch(Exception e) {
 												}
@@ -6472,7 +6436,7 @@ public class MainActivity extends AppCompatActivity {
 										public void run() {
 											if (Double.parseDouble(Current_Version) > Double.parseDouble(Latest_Version)) {
 												try {
-													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "SafetyNet Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "API Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 												}
 												catch(Exception e) {
 												}
@@ -6493,7 +6457,7 @@ public class MainActivity extends AppCompatActivity {
 																	if (!LIST_REFRESH.getString("UPDATE", "").equals("ON")) {
 																		String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
 																		
-																		com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "SafetyNet Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																		com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "API Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																	}
 																}
 															});
@@ -6544,7 +6508,7 @@ public class MainActivity extends AppCompatActivity {
 											public void run() {
 												if (Double.parseDouble(Current_Version) > Double.parseDouble(Latest_Version)) {
 													try {
-														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "SafetyNet Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "API Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 													}
 													catch(Exception e) {
 													}
@@ -6590,7 +6554,7 @@ public class MainActivity extends AppCompatActivity {
 											public void run() {
 												if (Double.parseDouble(Current_Version) > Double.parseDouble(Latest_Version)) {
 													try {
-														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "SafetyNet Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "API Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 													}
 													catch(Exception e) {
 													}
@@ -6611,7 +6575,7 @@ public class MainActivity extends AppCompatActivity {
 																		if (!LIST_REFRESH.getString("UPDATE", "").equals("ON")) {
 																			String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
 																			
-																			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "SafetyNet Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "API Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																		}
 																	}
 																});
@@ -6927,9 +6891,9 @@ public class MainActivity extends AppCompatActivity {
 		_List_Updater();
 		_Scroll_Fixed();
 		_Theme_UI();
+		_Unity_Ads();
 		_Effects();
 		_Url_Mode();
-		_Ad_Setup();
 		_Extra();
 	}
 	
@@ -7090,17 +7054,17 @@ public class MainActivity extends AppCompatActivity {
 													try {
 														AlertDialog.setCancelable(true);
 														if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
-															_Download_Update_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
+															_Download_Update_Install(hidden_update.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
 														}
 														else {
 															if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
-																_Download_Update(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
+																_Download_Update(hidden_update.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
 															}
 														}
-														_Update_Remover();
 													}
 													catch(Exception e) {
 													}
+													_Update_Remover();
 													Timer = new TimerTask() {
 														@Override
 														public void run() {
@@ -7278,6 +7242,7 @@ public class MainActivity extends AppCompatActivity {
 																	runOnUiThread(new Runnable() {
 																			public void run() { 
 																					SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
+																					_Update_Remover();
 																			}
 																	});
 																	try {
@@ -7296,38 +7261,41 @@ public class MainActivity extends AppCompatActivity {
 															runOnUiThread(new Runnable() {
 																	@Override
 																	public void run() {
-																			prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																			String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																			String TitleColor = "1DB954";
-																			prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																			prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																			prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																			prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
-																			prog.setProgress(dl_progress);
-																			prog.setMax(dl_max);
-																			prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-																					@Override
-																					public void onClick(DialogInterface dialog, int which) {
-																							manager.remove(downloadId);
-																							Timer = new TimerTask() {
-																									@Override
-																									public void run() {
-																											runOnUiThread(new Runnable() {
-																													@Override
-																													public void run() {
-																															try {
-																																	_Hide_Navigation();
-																																	prog.cancel();
-																															} catch (Exception e) {
+																			if (!MainActivity.this.isFinishing()) {
+																					prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+																					String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																					String TitleColor = "1DB954";
+																					prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																					prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																					prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																					prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																					prog.setProgress(dl_progress);
+																					prog.setMax(dl_max);
+																					prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
+																							@Override
+																							public void onClick(DialogInterface dialog, int which) {
+																									manager.remove(downloadId);
+																									Timer = new TimerTask() {
+																											@Override
+																											public void run() {
+																													runOnUiThread(new Runnable() {
+																															@Override
+																															public void run() {
+																																	try {
+																																			_Hide_Navigation();
+																																			_Update_Remover();
+																																			prog.cancel();
+																																	} catch (Exception e) {
+																																	}
 																															}
-																													}
-																											});
-																									}
-																							};
-																							_timer.schedule(Timer, (int)(0));
-																					}
-																			});
-																			prog.show();
+																													});
+																											}
+																									};
+																									_timer.schedule(Timer, (int)(0));
+																							}
+																					});
+																					prog.show();
+																			}
 																			if (bytes_downloaded == bytes_total) {
 																					Timer = new TimerTask() {
 																							@Override
@@ -7342,60 +7310,62 @@ public class MainActivity extends AppCompatActivity {
 																													catch(Exception e) {
 																													}
 																													prog.cancel();
-																													final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																													String Title = "<b>".concat(download_success_0.concat("</b>"));
-																													String TitleColor = "1DB954";
-																													Success_Download.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																													Success_Download.setPositiveButton(install_update_0, new DialogInterface.OnClickListener(){
-																															@Override
-																															public void onClick(DialogInterface Success_Download, int p) {
-																																	AlertDialog.setCancelable(true);
-																																	version_switch_01.setChecked(false);
-																																	version_switch_02.setChecked(false);
-																																	changelogs_switch.setChecked(false);
-																																	StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																																	if(android.os.Build.VERSION.SDK_INT >= 29){
-																																			try {
-																																					Intent intent = new Intent(Intent.ACTION_VIEW);
-																																					intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																																					intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
-																																					startActivity(intent);
-																																			}
-																																			catch(Exception e) {
-																																			}
-																																	} else {
-																																			try {
-																																					Intent intent = new Intent(Intent.ACTION_VIEW);
-																																					intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
-																																					startActivity(intent);
-																																					Timer = new TimerTask() {
-																																							@Override
-																																							public void run() {
-																																									runOnUiThread(new Runnable() {
-																																											@Override
-																																											public void run() {
-																																													_Hide_Navigation();
-																																											}
-																																									});
-																																							}
-																																					};
-																																					_timer.schedule(Timer, (int)(100));
-																																			}
-																																			catch(Exception e) {
+																													if (!MainActivity.this.isFinishing()) {
+																															final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																															String Title = "<b>".concat(download_success_0.concat("</b>"));
+																															String TitleColor = "1DB954";
+																															Success_Download.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																															Success_Download.setPositiveButton(install_update_0, new DialogInterface.OnClickListener(){
+																																	@Override
+																																	public void onClick(DialogInterface Success_Download, int p) {
+																																			AlertDialog.setCancelable(true);
+																																			version_switch_01.setChecked(false);
+																																			version_switch_02.setChecked(false);
+																																			changelogs_switch.setChecked(false);
+																																			StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+																																			if(android.os.Build.VERSION.SDK_INT >= 29){
+																																					try {
+																																							Intent intent = new Intent(Intent.ACTION_VIEW);
+																																							intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																																							intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
+																																							startActivity(intent);
+																																					}
+																																					catch(Exception e) {
+																																					}
+																																			} else {
+																																					try {
+																																							Intent intent = new Intent(Intent.ACTION_VIEW);
+																																							intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
+																																							startActivity(intent);
+																																							Timer = new TimerTask() {
+																																									@Override
+																																									public void run() {
+																																											runOnUiThread(new Runnable() {
+																																													@Override
+																																													public void run() {
+																																															_Hide_Navigation();
+																																													}
+																																											});
+																																									}
+																																							};
+																																							_timer.schedule(Timer, (int)(100));
+																																					}
+																																					catch(Exception e) {
+																																					}
 																																			}
 																																	}
-																															}
-																													});
-																													Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener(){
-																															@Override
-																															public void onClick(DialogInterface Success_Download, int p) {
-																																	AlertDialog.setCancelable(true);
-																															}
-																													});
-																													AlertDialog = Success_Download.create();
-																													AlertDialog.setCancelable(false);
-																													AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																													AlertDialog.show();
+																															});
+																															Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener(){
+																																	@Override
+																																	public void onClick(DialogInterface Success_Download, int p) {
+																																			AlertDialog.setCancelable(true);
+																																	}
+																															});
+																															AlertDialog = Success_Download.create();
+																															AlertDialog.setCancelable(false);
+																															AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																															AlertDialog.show();
+																													}
 																													prog.cancel();
 																											}
 																									});
@@ -8078,6 +8048,7 @@ public class MainActivity extends AppCompatActivity {
 																	runOnUiThread(new Runnable() {
 																			public void run() { 
 																					SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
+																					_File_Remover();
 																			}
 																	});
 																	try {
@@ -8096,38 +8067,41 @@ public class MainActivity extends AppCompatActivity {
 															runOnUiThread(new Runnable() {
 																	@Override
 																	public void run() {
-																			prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																			String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																			String TitleColor = "1DB954";
-																			prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																			prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																			prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																			prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
-																			prog.setProgress(dl_progress);
-																			prog.setMax(dl_max);
-																			prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-																					@Override
-																					public void onClick(DialogInterface dialog, int which) {
-																							manager.remove(downloadId);
-																							Timer = new TimerTask() {
-																									@Override
-																									public void run() {
-																											runOnUiThread(new Runnable() {
-																													@Override
-																													public void run() {
-																															try {
-																																	_Hide_Navigation();
-																																	prog.cancel();
-																															} catch (Exception e) {
+																			if (!MainActivity.this.isFinishing()) {
+																					prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+																					String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																					String TitleColor = "1DB954";
+																					prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																					prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																					prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																					prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																					prog.setProgress(dl_progress);
+																					prog.setMax(dl_max);
+																					prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
+																							@Override
+																							public void onClick(DialogInterface dialog, int which) {
+																									manager.remove(downloadId);
+																									Timer = new TimerTask() {
+																											@Override
+																											public void run() {
+																													runOnUiThread(new Runnable() {
+																															@Override
+																															public void run() {
+																																	try {
+																																			_Hide_Navigation();
+																																			_File_Remover();
+																																			prog.cancel();
+																																	} catch (Exception e) {
+																																	}
 																															}
-																													}
-																											});
-																									}
-																							};
-																							_timer.schedule(Timer, (int)(0));
-																					}
-																			});
-																			prog.show();
+																													});
+																											}
+																									};
+																									_timer.schedule(Timer, (int)(0));
+																							}
+																					});
+																					prog.show();
+																			}
 																			if (bytes_downloaded == bytes_total) {
 																					Timer = new TimerTask() {
 																							@Override
@@ -8184,72 +8158,76 @@ public class MainActivity extends AppCompatActivity {
 																																											}
 																																									} 
 																																							} else {
-																																									final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																									String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																									String TitleColor = "1DB954";
-																																									Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																									String Message = installation_failed_ream_desc_0.replace("\n", "<br/>");
-																																									String MessageColor = "FFFFFF";
-																																									Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																									Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																											@Override
-																																											public void onClick(DialogInterface Signature_Check, int p) {
-																																													_Hide_Navigation();
-																																													AlertDialog.setCancelable(true);
-																																													try {
-																																															Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
-																																															startActivity(intent);
+																																									if (!MainActivity.this.isFinishing()) {
+																																											final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																																											String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+																																											String TitleColor = "1DB954";
+																																											Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																											String Message = installation_failed_ream_desc_0.replace("\n", "<br/>");
+																																											String MessageColor = "FFFFFF";
+																																											Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+																																											Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+																																													@Override
+																																													public void onClick(DialogInterface Signature_Check, int p) {
+																																															_Hide_Navigation();
+																																															AlertDialog.setCancelable(true);
+																																															try {
+																																																	Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
+																																																	startActivity(intent);
+																																															}
+																																															catch(Exception e) {
+																																															}
 																																													}
-																																													catch(Exception e) {
+																																											});
+																																											Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+																																													@Override
+																																													public void onClick(DialogInterface Signature_Check, int p) {
+																																															_Hide_Navigation();
+																																															AlertDialog.setCancelable(true);
 																																													}
-																																											}
-																																									});
-																																									Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																											@Override
-																																											public void onClick(DialogInterface Signature_Check, int p) {
-																																													_Hide_Navigation();
-																																													AlertDialog.setCancelable(true);
-																																											}
-																																									});
-																																									AlertDialog = Signature_Check.create();
-																																									AlertDialog.setCancelable(false);
-																																									AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																									AlertDialog.show();
+																																											});
+																																											AlertDialog = Signature_Check.create();
+																																											AlertDialog.setCancelable(false);
+																																											AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																																											AlertDialog.show();
+																																									}
 																																							}	
 																																					}
 																																					else {
 																																							if (Downloaded_Version < Installed_Version) {
-																																									final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																									String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																									String TitleColor = "1DB954";
-																																									Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																									String Message = installation_failed_desc_0.replace("\n", "<br/>");
-																																									String MessageColor = "FFFFFF";
-																																									Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																									Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																											@Override
-																																											public void onClick(DialogInterface Downgrade_Check, int p) {
-																																													_Hide_Navigation();
-																																													AlertDialog.setCancelable(true);
-																																													try {
-																																															Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
-																																															startActivity(intent);
+																																									if (!MainActivity.this.isFinishing()) {
+																																											final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																																											String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+																																											String TitleColor = "1DB954";
+																																											Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																											String Message = installation_failed_desc_0.replace("\n", "<br/>");
+																																											String MessageColor = "FFFFFF";
+																																											Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+																																											Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+																																													@Override
+																																													public void onClick(DialogInterface Downgrade_Check, int p) {
+																																															_Hide_Navigation();
+																																															AlertDialog.setCancelable(true);
+																																															try {
+																																																	Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
+																																																	startActivity(intent);
+																																															}
+																																															catch(Exception e) {
+																																															}
 																																													}
-																																													catch(Exception e) {
+																																											});
+																																											Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+																																													@Override
+																																													public void onClick(DialogInterface Downgrade_Check, int p) {
+																																															_Hide_Navigation();
+																																															AlertDialog.setCancelable(true);
 																																													}
-																																											}
-																																									});
-																																									Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																											@Override
-																																											public void onClick(DialogInterface Downgrade_Check, int p) {
-																																													_Hide_Navigation();
-																																													AlertDialog.setCancelable(true);
-																																											}
-																																									});
-																																									AlertDialog = Downgrade_Check.create();
-																																									AlertDialog.setCancelable(false);
-																																									AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																									AlertDialog.show();
+																																											});
+																																											AlertDialog = Downgrade_Check.create();
+																																											AlertDialog.setCancelable(false);
+																																											AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																																											AlertDialog.show();
+																																									}
 																																							}
 																																					}
 																																			}
@@ -8331,6 +8309,7 @@ public class MainActivity extends AppCompatActivity {
 																	runOnUiThread(new Runnable() {
 																			public void run() { 
 																					SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
+																					_Update_Remover();
 																			}
 																	});
 																	try {
@@ -8349,38 +8328,41 @@ public class MainActivity extends AppCompatActivity {
 															runOnUiThread(new Runnable() {
 																	@Override
 																	public void run() {
-																			prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																			String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																			String TitleColor = "1DB954";
-																			prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																			prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																			prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																			prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
-																			prog.setProgress(dl_progress);
-																			prog.setMax(dl_max);
-																			prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-																					@Override
-																					public void onClick(DialogInterface dialog, int which) {
-																							manager.remove(downloadId);
-																							Timer = new TimerTask() {
-																									@Override
-																									public void run() {
-																											runOnUiThread(new Runnable() {
-																													@Override
-																													public void run() {
-																															try {
-																																	_Hide_Navigation();
-																																	prog.cancel();
-																															} catch (Exception e) {
+																			if (!MainActivity.this.isFinishing()) {
+																					prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+																					String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																					String TitleColor = "1DB954";
+																					prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																					prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																					prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																					prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																					prog.setProgress(dl_progress);
+																					prog.setMax(dl_max);
+																					prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
+																							@Override
+																							public void onClick(DialogInterface dialog, int which) {
+																									manager.remove(downloadId);
+																									Timer = new TimerTask() {
+																											@Override
+																											public void run() {
+																													runOnUiThread(new Runnable() {
+																															@Override
+																															public void run() {
+																																	try {
+																																			_Hide_Navigation();
+																																			_Update_Remover();
+																																			prog.cancel();
+																																	} catch (Exception e) {
+																																	}
 																															}
-																													}
-																											});
-																									}
-																							};
-																							_timer.schedule(Timer, (int)(0));
-																					}
-																			});
-																			prog.show();
+																													});
+																											}
+																									};
+																									_timer.schedule(Timer, (int)(0));
+																							}
+																					});
+																					prog.show();
+																			}
 																			if (bytes_downloaded == bytes_total) {
 																					Timer = new TimerTask() {
 																							@Override
@@ -11578,63 +11560,6 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	public void _Reward_Ad() {
-		
-		    AdRequest adRequest = new AdRequest.Builder().build();
-		
-		    RewardedAd.load(MainActivity.this, "ca-app-pub-3319548483346434/3903009420",
-		      adRequest, new RewardedAdLoadCallback() {
-			        @Override
-			        public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-				             
-				          mRewardedAd = null;
-			}
-			        @Override
-			        public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
-				          mRewardedAd = rewardedAd;
-				           
-				mRewardedAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-					  @Override
-					  public void onAdShowedFullScreenContent() {
-						       
-					}
-					  @Override
-					  public void onAdFailedToShowFullScreenContent(AdError adError) {
-						       
-					}
-					  @Override
-					  public void onAdDismissedFullScreenContent() {
-						      _Reward_Ad();
-						    mRewardedAd = null;
-						      }
-					    });
-				  }
-		});
-	}
-	
-	
-	public void _Ad_Setup() {
-		Timer = new TimerTask() {
-			@Override
-			public void run() {
-				runOnUiThread(new Runnable() {
-					@Override
-					public void run() {
-						        MobileAds.initialize(MainActivity.this, new OnInitializationCompleteListener() {
-								            @Override
-								            public void onInitializationComplete(InitializationStatus initializationStatus) {
-										            }
-								        });
-						MobileAds.setAppMuted(true);
-						_Reward_Ad();
-					}
-				});
-			}
-		};
-		_timer.schedule(Timer, (int)(100));
-	}
-	
-	
 	public void _Signature_Checker() {
 	}
 	public String getISignature(Context context) {
@@ -11757,6 +11682,7 @@ public class MainActivity extends AppCompatActivity {
 																	runOnUiThread(new Runnable() {
 																			public void run() { 
 																					SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
+																					_File_Remover();
 																			}
 																	});
 																	try {
@@ -11775,38 +11701,41 @@ public class MainActivity extends AppCompatActivity {
 															runOnUiThread(new Runnable() {
 																	@Override
 																	public void run() {
-																			prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																			String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																			String TitleColor = "1DB954";
-																			prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																			prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																			prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																			prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
-																			prog.setProgress(dl_progress);
-																			prog.setMax(dl_max);
-																			prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-																					@Override
-																					public void onClick(DialogInterface dialog, int which) {
-																							manager.remove(downloadId);
-																							Timer = new TimerTask() {
-																									@Override
-																									public void run() {
-																											runOnUiThread(new Runnable() {
-																													@Override
-																													public void run() {
-																															try {
-																																	_Hide_Navigation();
-																																	prog.cancel();
-																															} catch (Exception e) {
+																			if (!MainActivity.this.isFinishing()) {
+																					prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+																					String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																					String TitleColor = "1DB954";
+																					prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																					prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																					prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																					prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																					prog.setProgress(dl_progress);
+																					prog.setMax(dl_max);
+																					prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
+																							@Override
+																							public void onClick(DialogInterface dialog, int which) {
+																									manager.remove(downloadId);
+																									Timer = new TimerTask() {
+																											@Override
+																											public void run() {
+																													runOnUiThread(new Runnable() {
+																															@Override
+																															public void run() {
+																																	try {
+																																			_Hide_Navigation();
+																																			_File_Remover();
+																																			prog.cancel();
+																																	} catch (Exception e) {
+																																	}
 																															}
-																													}
-																											});
-																									}
-																							};
-																							_timer.schedule(Timer, (int)(0));
-																					}
-																			});
-																			prog.show();
+																													});
+																											}
+																									};
+																									_timer.schedule(Timer, (int)(0));
+																							}
+																					});
+																					prog.show();
+																			}
 																			if (bytes_downloaded == bytes_total) {
 																					Timer = new TimerTask() {
 																							@Override
@@ -11819,144 +11748,150 @@ public class MainActivity extends AppCompatActivity {
 																													}
 																													catch(Exception e) {
 																													}
-																													final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																													String Title = "<b>".concat(download_success_0.concat("</b>"));
-																													String TitleColor = "1DB954";
-																													Success_Download.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																													Success_Download.setPositiveButton(install_now_0, new DialogInterface.OnClickListener(){
-																															@Override
-																															public void onClick(DialogInterface Success_Download, int p) {
-																																	AlertDialog.setCancelable(true);
-																																	prog.cancel();
-																																	version_switch_01.setChecked(false);
-																																	version_switch_02.setChecked(false);
-																																	changelogs_switch.setChecked(false);
-																																	if ((Installed_Version_Cloned < Downloaded_Version_Cloned) || ((Downloaded_Version_Cloned > Installed_Version_Cloned) || ((Installed_Version_Cloned == Downloaded_Version_Cloned) || Installed_Checker_Cloned.equals("false")))) {
-																																			if (getICSignature(getApplicationContext()).equals(getDCSignature(getApplicationContext())) || Installed_Checker_Cloned.equals("false")) {
-																																					StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																																					if(android.os.Build.VERSION.SDK_INT >= 29){
-																																							try {
-																																									Intent intent = new Intent(Intent.ACTION_VIEW);
-																																									intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																																									intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
-																																									startActivity(intent);
-																																							}
-																																							catch(Exception e) {
-																																							}
+																													if (!MainActivity.this.isFinishing()) {
+																															final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																															String Title = "<b>".concat(download_success_0.concat("</b>"));
+																															String TitleColor = "1DB954";
+																															Success_Download.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																															Success_Download.setPositiveButton(install_now_0, new DialogInterface.OnClickListener(){
+																																	@Override
+																																	public void onClick(DialogInterface Success_Download, int p) {
+																																			AlertDialog.setCancelable(true);
+																																			prog.cancel();
+																																			version_switch_01.setChecked(false);
+																																			version_switch_02.setChecked(false);
+																																			changelogs_switch.setChecked(false);
+																																			if ((Installed_Version_Cloned < Downloaded_Version_Cloned) || ((Downloaded_Version_Cloned > Installed_Version_Cloned) || ((Installed_Version_Cloned == Downloaded_Version_Cloned) || Installed_Checker_Cloned.equals("false")))) {
+																																					if (getICSignature(getApplicationContext()).equals(getDCSignature(getApplicationContext())) || Installed_Checker_Cloned.equals("false")) {
+																																							StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+																																							if(android.os.Build.VERSION.SDK_INT >= 29){
+																																									try {
+																																											Intent intent = new Intent(Intent.ACTION_VIEW);
+																																											intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																																											intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
+																																											startActivity(intent);
+																																									}
+																																									catch(Exception e) {
+																																									}
+																																							} else {
+																																									try {
+																																											Intent intent = new Intent(Intent.ACTION_VIEW);
+																																											intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
+																																											startActivity(intent);
+																																											Timer = new TimerTask() {
+																																													@Override
+																																													public void run() {
+																																															runOnUiThread(new Runnable() {
+																																																	@Override
+																																																	public void run() {
+																																																			_Hide_Navigation();
+																																																	}
+																																															});
+																																													}
+																																											};
+																																											_timer.schedule(Timer, (int)(100));
+																																									}
+																																									catch(Exception e) {
+																																									}
+																																							} 
 																																					} else {
-																																							try {
-																																									Intent intent = new Intent(Intent.ACTION_VIEW);
-																																									intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
-																																									startActivity(intent);
-																																									Timer = new TimerTask() {
+																																							if (!MainActivity.this.isFinishing()) {
+																																									final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																																									String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+																																									String TitleColor = "1DB954";
+																																									Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																									String Message = installation_failed_cloned_desc_0.replace("\n", "<br/>");
+																																									String MessageColor = "FFFFFF";
+																																									Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+																																									Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
 																																											@Override
-																																											public void run() {
-																																													runOnUiThread(new Runnable() {
-																																															@Override
-																																															public void run() {
-																																																	_Hide_Navigation();
-																																															}
-																																													});
+																																											public void onClick(DialogInterface Signature_Check, int p) {
+																																													_Hide_Navigation();
+																																													AlertDialog.setCancelable(true);
+																																													try {
+																																															Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
+																																															startActivity(intent);
+																																													}
+																																													catch(Exception e) {
+																																													}
 																																											}
-																																									};
-																																									_timer.schedule(Timer, (int)(100));
+																																									});
+																																									Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+																																											@Override
+																																											public void onClick(DialogInterface Signature_Check, int p) {
+																																													_Hide_Navigation();
+																																													AlertDialog.setCancelable(true);
+																																											}
+																																									});
+																																									AlertDialog = Signature_Check.create();
+																																									AlertDialog.setCancelable(false);
+																																									AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																																									AlertDialog.show();
 																																							}
-																																							catch(Exception e) {
+																																					}	
+																																			}
+																																			else {
+																																					if (!MainActivity.this.isFinishing()) {
+																																							if (Downloaded_Version < Installed_Version) {
+																																									final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																																									String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+																																									String TitleColor = "1DB954";
+																																									Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																									String Message = installation_failed_desc_0.replace("\n", "<br/>");
+																																									String MessageColor = "FFFFFF";
+																																									Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+																																									Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+																																											@Override
+																																											public void onClick(DialogInterface Downgrade_Check, int p) {
+																																													_Hide_Navigation();
+																																													AlertDialog.setCancelable(true);
+																																													try {
+																																															Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
+																																															startActivity(intent);
+																																													}
+																																													catch(Exception e) {
+																																													}
+																																											}
+																																									});
+																																									Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+																																											@Override
+																																											public void onClick(DialogInterface Downgrade_Check, int p) {
+																																													_Hide_Navigation();
+																																													AlertDialog.setCancelable(true);
+																																											}
+																																									});
+																																									AlertDialog = Downgrade_Check.create();
+																																									AlertDialog.setCancelable(false);
+																																									AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																																									AlertDialog.show();
 																																							}
-																																					} 
-																																			} else {
-																																					final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																					String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																					String TitleColor = "1DB954";
-																																					Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																					String Message = installation_failed_cloned_desc_0.replace("\n", "<br/>");
-																																					String MessageColor = "FFFFFF";
-																																					Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																					Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																							@Override
-																																							public void onClick(DialogInterface Signature_Check, int p) {
-																																									_Hide_Navigation();
-																																									AlertDialog.setCancelable(true);
-																																									try {
-																																											Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
-																																											startActivity(intent);
-																																									}
-																																									catch(Exception e) {
-																																									}
-																																							}
-																																					});
-																																					Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																							@Override
-																																							public void onClick(DialogInterface Signature_Check, int p) {
-																																									_Hide_Navigation();
-																																									AlertDialog.setCancelable(true);
-																																							}
-																																					});
-																																					AlertDialog = Signature_Check.create();
-																																					AlertDialog.setCancelable(false);
-																																					AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																					AlertDialog.show();
-																																			}	
-																																	}
-																																	else {
-																																			if (Downloaded_Version < Installed_Version) {
-																																					final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																					String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																					String TitleColor = "1DB954";
-																																					Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																					String Message = installation_failed_desc_0.replace("\n", "<br/>");
-																																					String MessageColor = "FFFFFF";
-																																					Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																					Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																							@Override
-																																							public void onClick(DialogInterface Downgrade_Check, int p) {
-																																									_Hide_Navigation();
-																																									AlertDialog.setCancelable(true);
-																																									try {
-																																											Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
-																																											startActivity(intent);
-																																									}
-																																									catch(Exception e) {
-																																									}
-																																							}
-																																					});
-																																					Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																							@Override
-																																							public void onClick(DialogInterface Downgrade_Check, int p) {
-																																									_Hide_Navigation();
-																																									AlertDialog.setCancelable(true);
-																																							}
-																																					});
-																																					AlertDialog = Downgrade_Check.create();
-																																					AlertDialog.setCancelable(false);
-																																					AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																					AlertDialog.show();
+																																					}
 																																			}
 																																	}
-																															}
-																													});
-																													Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener(){
-																															@Override
-																															public void onClick(DialogInterface Success_Download, int p) {
-																																	AlertDialog.setCancelable(true);
-																																	Timer = new TimerTask() {
-																																			@Override
-																																			public void run() {
-																																					runOnUiThread(new Runnable() {
-																																							@Override
-																																							public void run() {
-																																									_Hide_Navigation();
-																																							}
-																																					});
-																																			}
-																																	};
-																																	_timer.schedule(Timer, (int)(100));
-																															}
-																													});
-																													AlertDialog = Success_Download.create();
-																													AlertDialog.setCancelable(false);
-																													AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																													AlertDialog.show();
+																															});
+																															Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener(){
+																																	@Override
+																																	public void onClick(DialogInterface Success_Download, int p) {
+																																			AlertDialog.setCancelable(true);
+																																			Timer = new TimerTask() {
+																																					@Override
+																																					public void run() {
+																																							runOnUiThread(new Runnable() {
+																																									@Override
+																																									public void run() {
+																																											_Hide_Navigation();
+																																									}
+																																							});
+																																					}
+																																			};
+																																			_timer.schedule(Timer, (int)(100));
+																																	}
+																															});
+																															AlertDialog = Success_Download.create();
+																															AlertDialog.setCancelable(false);
+																															AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																															AlertDialog.show();
+																													}
 																													prog.cancel();
 																											}
 																									});
@@ -12020,6 +11955,7 @@ public class MainActivity extends AppCompatActivity {
 																	runOnUiThread(new Runnable() {
 																			public void run() { 
 																					SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
+																					_File_Remover();
 																			}
 																	});
 																	try {
@@ -12038,38 +11974,41 @@ public class MainActivity extends AppCompatActivity {
 															runOnUiThread(new Runnable() {
 																	@Override
 																	public void run() {
-																			prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																			String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																			String TitleColor = "1DB954";
-																			prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																			prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																			prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																			prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
-																			prog.setProgress(dl_progress);
-																			prog.setMax(dl_max);
-																			prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-																					@Override
-																					public void onClick(DialogInterface dialog, int which) {
-																							manager.remove(downloadId);
-																							Timer = new TimerTask() {
-																									@Override
-																									public void run() {
-																											runOnUiThread(new Runnable() {
-																													@Override
-																													public void run() {
-																															try {
-																																	_Hide_Navigation();
-																																	prog.cancel();
-																															} catch (Exception e) {
+																			if (!MainActivity.this.isFinishing()) {
+																					prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+																					String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																					String TitleColor = "1DB954";
+																					prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																					prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																					prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																					prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																					prog.setProgress(dl_progress);
+																					prog.setMax(dl_max);
+																					prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
+																							@Override
+																							public void onClick(DialogInterface dialog, int which) {
+																									manager.remove(downloadId);
+																									Timer = new TimerTask() {
+																											@Override
+																											public void run() {
+																													runOnUiThread(new Runnable() {
+																															@Override
+																															public void run() {
+																																	try {
+																																			_Hide_Navigation();
+																																			_File_Remover();
+																																			prog.cancel();
+																																	} catch (Exception e) {
+																																	}
 																															}
-																													}
-																											});
-																									}
-																							};
-																							_timer.schedule(Timer, (int)(0));
-																					}
-																			});
-																			prog.show();
+																													});
+																											}
+																									};
+																									_timer.schedule(Timer, (int)(0));
+																							}
+																					});
+																					prog.show();
+																			}
 																			if (bytes_downloaded == bytes_total) {
 																					Timer = new TimerTask() {
 																							@Override
@@ -12126,72 +12065,76 @@ public class MainActivity extends AppCompatActivity {
 																																											}
 																																									} 
 																																							} else {
-																																									final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																									String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																									String TitleColor = "1DB954";
-																																									Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																									String Message = installation_failed_cloned_desc_0.replace("\n", "<br/>");
-																																									String MessageColor = "FFFFFF";
-																																									Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																									Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																											@Override
-																																											public void onClick(DialogInterface Signature_Check, int p) {
-																																													_Hide_Navigation();
-																																													AlertDialog.setCancelable(true);
-																																													try {
-																																															Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
-																																															startActivity(intent);
+																																									if (!MainActivity.this.isFinishing()) {
+																																											final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																																											String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+																																											String TitleColor = "1DB954";
+																																											Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																											String Message = installation_failed_cloned_desc_0.replace("\n", "<br/>");
+																																											String MessageColor = "FFFFFF";
+																																											Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+																																											Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+																																													@Override
+																																													public void onClick(DialogInterface Signature_Check, int p) {
+																																															_Hide_Navigation();
+																																															AlertDialog.setCancelable(true);
+																																															try {
+																																																	Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
+																																																	startActivity(intent);
+																																															}
+																																															catch(Exception e) {
+																																															}
 																																													}
-																																													catch(Exception e) {
+																																											});
+																																											Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+																																													@Override
+																																													public void onClick(DialogInterface Signature_Check, int p) {
+																																															_Hide_Navigation();
+																																															AlertDialog.setCancelable(true);
 																																													}
-																																											}
-																																									});
-																																									Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																											@Override
-																																											public void onClick(DialogInterface Signature_Check, int p) {
-																																													_Hide_Navigation();
-																																													AlertDialog.setCancelable(true);
-																																											}
-																																									});
-																																									AlertDialog = Signature_Check.create();
-																																									AlertDialog.setCancelable(false);
-																																									AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																									AlertDialog.show();
+																																											});
+																																											AlertDialog = Signature_Check.create();
+																																											AlertDialog.setCancelable(false);
+																																											AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																																											AlertDialog.show();
+																																									}
 																																							}	
 																																					}
 																																					else {
 																																							if (Downloaded_Version < Installed_Version) {
-																																									final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																									String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																									String TitleColor = "1DB954";
-																																									Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																									String Message = installation_failed_desc_0.replace("\n", "<br/>");
-																																									String MessageColor = "FFFFFF";
-																																									Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																									Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																											@Override
-																																											public void onClick(DialogInterface Downgrade_Check, int p) {
-																																													_Hide_Navigation();
-																																													AlertDialog.setCancelable(true);
-																																													try {
-																																															Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
-																																															startActivity(intent);
+																																									if (!MainActivity.this.isFinishing()) {
+																																											final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																																											String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+																																											String TitleColor = "1DB954";
+																																											Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																											String Message = installation_failed_desc_0.replace("\n", "<br/>");
+																																											String MessageColor = "FFFFFF";
+																																											Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+																																											Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+																																													@Override
+																																													public void onClick(DialogInterface Downgrade_Check, int p) {
+																																															_Hide_Navigation();
+																																															AlertDialog.setCancelable(true);
+																																															try {
+																																																	Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
+																																																	startActivity(intent);
+																																															}
+																																															catch(Exception e) {
+																																															}
 																																													}
-																																													catch(Exception e) {
+																																											});
+																																											Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+																																													@Override
+																																													public void onClick(DialogInterface Downgrade_Check, int p) {
+																																															_Hide_Navigation();
+																																															AlertDialog.setCancelable(true);
 																																													}
-																																											}
-																																									});
-																																									Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																											@Override
-																																											public void onClick(DialogInterface Downgrade_Check, int p) {
-																																													_Hide_Navigation();
-																																													AlertDialog.setCancelable(true);
-																																											}
-																																									});
-																																									AlertDialog = Downgrade_Check.create();
-																																									AlertDialog.setCancelable(false);
-																																									AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																									AlertDialog.show();
+																																											});
+																																											AlertDialog = Downgrade_Check.create();
+																																											AlertDialog.setCancelable(false);
+																																											AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																																											AlertDialog.show();
+																																									}
 																																							}
 																																					}
 																																			}
@@ -12437,6 +12380,19 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 	
+	
+	public void _Rewarded_Ads() {
+		UnityAds.show(this, placementRewardedVideo);
+	}
+	
+	
+	public void _Unity_Ads() {
+		testMode = false;
+		UnityAds.initialize(this, unityGameID, testMode);
+		final UnityAdsListener xC3FFF0E = new UnityAdsListener ();
+		UnityAds.addListener(xC3FFF0E);
+	}
+	
 	public class List_menu_1Adapter extends BaseAdapter {
 		
 		ArrayList<HashMap<String, Object>> _data;
@@ -12576,7 +12532,7 @@ public class MainActivity extends AppCompatActivity {
 										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 											AlertDialog.setCancelable(true);
 											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
-											SketchwareUtil.showMessage(getApplicationContext(), "Url copied to clipboard");
+											SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
 											Timer = new TimerTask() {
 												@Override
 												public void run() {
@@ -12591,34 +12547,27 @@ public class MainActivity extends AppCompatActivity {
 											_timer.schedule(Timer, (int)(100));
 										}
 										else {
-											if (mRewardedAd != null) {
-												  Activity activityContext = MainActivity.this;
-												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-													    @Override
-													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-														       AlertDialog.setCancelable(true);
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
-														SketchwareUtil.showMessage(getApplicationContext(), "Url copied to clipboard");
-														Timer = new TimerTask() {
+											if (UnityAds.isReady(placementRewardedVideo)) {
+												AlertDialog.setCancelable(true);
+												DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+												Timer = new TimerTask() {
+													@Override
+													public void run() {
+														runOnUiThread(new Runnable() {
 															@Override
 															public void run() {
-																runOnUiThread(new Runnable() {
-																	@Override
-																	public void run() {
-																		_Hide_Navigation();
-																	}
-																});
+																_Hide_Navigation();
 															}
-														};
-														_timer.schedule(Timer, (int)(100));
-														      int rewardAmount = rewardItem.getAmount();
-														      String rewardType = rewardItem.getType();
-														    }
-													  });
-											} else {
+														});
+													}
+												};
+												_timer.schedule(Timer, (int)(100));
+												_Rewarded_Ads();
+											}
+											else {
 												AlertDialog.setCancelable(true);
 												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
-												SketchwareUtil.showMessage(getApplicationContext(), "Url copied to clipboard");
+												SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
 												Timer = new TimerTask() {
 													@Override
 													public void run() {
@@ -13005,26 +12954,20 @@ public class MainActivity extends AppCompatActivity {
 															_File_Remover();
 														}
 														else {
-															if (mRewardedAd != null) {
-																  Activity activityContext = MainActivity.this;
-																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																	    @Override
-																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																		       AlertDialog.setCancelable(true);
-																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																			_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																		}
-																		else {
-																			if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																				_Download_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																			}
-																		}
-																		_File_Remover();
-																		      int rewardAmount = rewardItem.getAmount();
-																		      String rewardType = rewardItem.getType();
-																		    }
-																	  });
-															} else {
+															if (UnityAds.isReady(placementRewardedVideo)) {
+																AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																	DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																}
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																	}
+																}
+																_Rewarded_Ads();
+																_File_Remover();
+															}
+															else {
 																AlertDialog.setCancelable(true);
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																	_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
@@ -13053,26 +12996,20 @@ public class MainActivity extends AppCompatActivity {
 																_File_Remover();
 															}
 															else {
-																if (mRewardedAd != null) {
-																	  Activity activityContext = MainActivity.this;
-																	  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																		    @Override
-																		    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																			       AlertDialog.setCancelable(true);
-																			if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																				_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																			}
-																			else {
-																				if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																					_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																				}
-																			}
-																			_File_Remover();
-																			      int rewardAmount = rewardItem.getAmount();
-																			      String rewardType = rewardItem.getType();
-																			    }
-																		  });
-																} else {
+																if (UnityAds.isReady(placementRewardedVideo)) {
+																	AlertDialog.setCancelable(true);
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																		DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																	}
+																	else {
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																			DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																		}
+																	}
+																	_Rewarded_Ads();
+																	_File_Remover();
+																}
+																else {
 																	AlertDialog.setCancelable(true);
 																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																		_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
@@ -13216,26 +13153,20 @@ public class MainActivity extends AppCompatActivity {
 														_File_Remover();
 													}
 													else {
-														if (mRewardedAd != null) {
-															  Activity activityContext = MainActivity.this;
-															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																    @Override
-																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																	       AlertDialog.setCancelable(true);
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																		_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																	else {
-																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																			_Download_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																		}
-																	}
-																	_File_Remover();
-																	      int rewardAmount = rewardItem.getAmount();
-																	      String rewardType = rewardItem.getType();
-																	    }
-																  });
-														} else {
+														if (UnityAds.isReady(placementRewardedVideo)) {
+															AlertDialog.setCancelable(true);
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+															}
+															else {
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																	DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																}
+															}
+															_Rewarded_Ads();
+															_File_Remover();
+														}
+														else {
 															AlertDialog.setCancelable(true);
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
@@ -13264,26 +13195,20 @@ public class MainActivity extends AppCompatActivity {
 															_File_Remover();
 														}
 														else {
-															if (mRewardedAd != null) {
-																  Activity activityContext = MainActivity.this;
-																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																	    @Override
-																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																		       AlertDialog.setCancelable(true);
-																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																			_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																		}
-																		else {
-																			if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																				_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																			}
-																		}
-																		_File_Remover();
-																		      int rewardAmount = rewardItem.getAmount();
-																		      String rewardType = rewardItem.getType();
-																		    }
-																	  });
-															} else {
+															if (UnityAds.isReady(placementRewardedVideo)) {
+																AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																	DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																}
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																	}
+																}
+																_Rewarded_Ads();
+																_File_Remover();
+															}
+															else {
 																AlertDialog.setCancelable(true);
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																	_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
@@ -13485,7 +13410,7 @@ public class MainActivity extends AppCompatActivity {
 										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 											AlertDialog.setCancelable(true);
 											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
-											SketchwareUtil.showMessage(getApplicationContext(), "Url copied to clipboard");
+											SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
 											Timer = new TimerTask() {
 												@Override
 												public void run() {
@@ -13500,34 +13425,27 @@ public class MainActivity extends AppCompatActivity {
 											_timer.schedule(Timer, (int)(100));
 										}
 										else {
-											if (mRewardedAd != null) {
-												  Activity activityContext = MainActivity.this;
-												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-													    @Override
-													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-														       AlertDialog.setCancelable(true);
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
-														SketchwareUtil.showMessage(getApplicationContext(), "Url copied to clipboard");
-														Timer = new TimerTask() {
+											if (UnityAds.isReady(placementRewardedVideo)) {
+												AlertDialog.setCancelable(true);
+												DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+												Timer = new TimerTask() {
+													@Override
+													public void run() {
+														runOnUiThread(new Runnable() {
 															@Override
 															public void run() {
-																runOnUiThread(new Runnable() {
-																	@Override
-																	public void run() {
-																		_Hide_Navigation();
-																	}
-																});
+																_Hide_Navigation();
 															}
-														};
-														_timer.schedule(Timer, (int)(100));
-														      int rewardAmount = rewardItem.getAmount();
-														      String rewardType = rewardItem.getType();
-														    }
-													  });
-											} else {
+														});
+													}
+												};
+												_timer.schedule(Timer, (int)(100));
+												_Rewarded_Ads();
+											}
+											else {
 												AlertDialog.setCancelable(true);
 												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
-												SketchwareUtil.showMessage(getApplicationContext(), "Url copied to clipboard");
+												SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
 												Timer = new TimerTask() {
 													@Override
 													public void run() {
@@ -13914,26 +13832,20 @@ public class MainActivity extends AppCompatActivity {
 															_File_Remover();
 														}
 														else {
-															if (mRewardedAd != null) {
-																  Activity activityContext = MainActivity.this;
-																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																	    @Override
-																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																		       AlertDialog.setCancelable(true);
-																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																			_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																		}
-																		else {
-																			if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																				_Download_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																			}
-																		}
-																		_File_Remover();
-																		      int rewardAmount = rewardItem.getAmount();
-																		      String rewardType = rewardItem.getType();
-																		    }
-																	  });
-															} else {
+															if (UnityAds.isReady(placementRewardedVideo)) {
+																AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																	DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																}
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																	}
+																}
+																_Rewarded_Ads();
+																_File_Remover();
+															}
+															else {
 																AlertDialog.setCancelable(true);
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																	_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
@@ -13961,26 +13873,20 @@ public class MainActivity extends AppCompatActivity {
 															_File_Remover();
 														}
 														else {
-															if (mRewardedAd != null) {
-																  Activity activityContext = MainActivity.this;
-																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																	    @Override
-																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																		       AlertDialog.setCancelable(true);
-																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																			_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																		}
-																		else {
-																			if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																				_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																			}
-																		}
-																		_File_Remover();
-																		      int rewardAmount = rewardItem.getAmount();
-																		      String rewardType = rewardItem.getType();
-																		    }
-																	  });
-															} else {
+															if (UnityAds.isReady(placementRewardedVideo)) {
+																AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																	DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																}
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																	}
+																}
+																_Rewarded_Ads();
+																_File_Remover();
+															}
+															else {
 																AlertDialog.setCancelable(true);
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																	_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
@@ -14123,26 +14029,20 @@ public class MainActivity extends AppCompatActivity {
 														_File_Remover();
 													}
 													else {
-														if (mRewardedAd != null) {
-															  Activity activityContext = MainActivity.this;
-															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																    @Override
-																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																	       AlertDialog.setCancelable(true);
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																		_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																	else {
-																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																			_Download_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																		}
-																	}
-																	_File_Remover();
-																	      int rewardAmount = rewardItem.getAmount();
-																	      String rewardType = rewardItem.getType();
-																	    }
-																  });
-														} else {
+														if (UnityAds.isReady(placementRewardedVideo)) {
+															AlertDialog.setCancelable(true);
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+															}
+															else {
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																	DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																}
+															}
+															_Rewarded_Ads();
+															_File_Remover();
+														}
+														else {
 															AlertDialog.setCancelable(true);
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
@@ -14170,26 +14070,20 @@ public class MainActivity extends AppCompatActivity {
 														_File_Remover();
 													}
 													else {
-														if (mRewardedAd != null) {
-															  Activity activityContext = MainActivity.this;
-															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																    @Override
-																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																	       AlertDialog.setCancelable(true);
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																		_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																	else {
-																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																			_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																		}
-																	}
-																	_File_Remover();
-																	      int rewardAmount = rewardItem.getAmount();
-																	      String rewardType = rewardItem.getType();
-																	    }
-																  });
-														} else {
+														if (UnityAds.isReady(placementRewardedVideo)) {
+															AlertDialog.setCancelable(true);
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+															}
+															else {
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																	DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																}
+															}
+															_Rewarded_Ads();
+															_File_Remover();
+														}
+														else {
 															AlertDialog.setCancelable(true);
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
