@@ -354,6 +354,8 @@ public class MainActivity extends AppCompatActivity {
 	private TextView translator_20;
 	private TextView manager_lang_21;
 	private TextView translator_21;
+	private TextView manager_lang_22;
+	private TextView translator_22;
 	private ScrollView main_scroll_body;
 	private LinearLayout main_body;
 	private LinearLayout main_box_1;
@@ -706,6 +708,8 @@ public class MainActivity extends AppCompatActivity {
 		translator_20 = findViewById(R.id.translator_20);
 		manager_lang_21 = findViewById(R.id.manager_lang_21);
 		translator_21 = findViewById(R.id.translator_21);
+		manager_lang_22 = findViewById(R.id.manager_lang_22);
+		translator_22 = findViewById(R.id.translator_22);
 		main_scroll_body = findViewById(R.id.main_scroll_body);
 		main_body = findViewById(R.id.main_body);
 		main_box_1 = findViewById(R.id.main_box_1);
@@ -6023,6 +6027,7 @@ public class MainActivity extends AppCompatActivity {
 		manager_lang_19.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_20.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_21.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_22.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -6045,6 +6050,7 @@ public class MainActivity extends AppCompatActivity {
 		translator_19.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_20.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_21.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_22.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		box_sub_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
