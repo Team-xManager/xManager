@@ -1897,7 +1897,24 @@
 						android:id="@+id/translator_21"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
 						android:text="GreenArmy18"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+					<TextView
+						android:id="@+id/manager_lang_22"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Polish Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFEB3B" />
+					<TextView
+						android:id="@+id/translator_22"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="dearminder"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
