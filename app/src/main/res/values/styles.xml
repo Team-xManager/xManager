@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <style name="Theme_Origin" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme_Origins" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlHighlight">@color/colorControlHighlight</item>
         <item name="colorControlNormal">@color/colorControlNormal</item>
+   	<item name="android:fontFamily">@font/base_font</item>
     </style>
-	<style name="Theme_Origin.Splash" parent="Theme_Origin">
-    </style>
+    <style name="Theme_Origins.Splash" parent="Theme_Origins">
+	</style>
     <style name="Progress_Dialog" parent="Theme.MaterialComponents.Light.Dialog">
-	    <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlHighlight">@color/colorControlHighlight</item>
         <item name="colorControlNormal">@color/colorControlNormal</item>
+	<item name="android:fontFamily">@font/base_font</item>
         <item name="android:textColor">#FFFFFF</item>
+	<item name="android:textStyle">bold</item>
     </style>
     <style name="Alert_Dialog" parent="Theme.MaterialComponents.Light.Dialog">
-	    <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlHighlight">@color/colorControlHighlight</item>
         <item name="colorControlNormal">@color/colorControlNormal</item>
+	<item name="android:fontFamily">@font/base_font</item>
         <item name="android:textColor">#FFFFFF</item>
-	</style>
+	<item name="android:textStyle">bold</item>
+    </style>
 </resources>
