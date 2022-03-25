@@ -78,6 +78,7 @@ minhtamvn (Vietnamese Translation)
 smokedzn (German Translation)  
 ohshahab (Persian Translation)  
 GreenArmy18 (Hebrew Translation)
+dearminder (Polish Translation)
 
 # Contributors  
 
