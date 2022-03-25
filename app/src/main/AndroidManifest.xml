@@ -17,12 +17,12 @@
 	<application
 		android:allowBackup="true"
         android:requestLegacyExternalStorage="true"
-		android:icon="@mipmap/icon_origins"
+		android:icon="@mipmap/origins"
 		android:label="@string/app_name"
 		android:name=".SketchApplication"
 		android:requestLegacyExternalStorage="true"
 		android:usesCleartextTraffic="true"
-		android:theme="@style/Theme_Origin"
+		android:theme="@style/Theme_Origins"
 		android:preserveLegacyExternalStorage="true">
 		<activity
 			android:name=".MainActivity"
@@ -49,11 +49,6 @@
 			android:name=".DebugActivity"
             android:exported="true"
 			android:screenOrientation="portrait" />
-		<activity
-			android:name="com.google.android.gms.ads.AdActivity"
-            android:exported="true"
-			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-			android:theme="@android:style/Theme.Translucent" />
 		<meta-data
 			android:name="com.google.android.gms.version"
 			android:value="@integer/google_play_services_version" />
@@ -90,14 +85,34 @@
 		<uses-library
 			android:name="org.apache.http.legacy"
 			android:required="false" />
-		<provider 
-          		android:authorities="com.xc3fff0e.xmanager.provider" 
-          		android:name="androidx.core.content.FileProvider" 
-          		android:exported="false" 
-          		android:grantUriPermissions="true"> 
-		<meta-data 
-          		android:name="android.support.FILE_PROVIDER_PATHS" 
-          		android:resource="@xml/provider_paths"/>
-        </provider>
+                <provider 
+			android:authorities="com.xc3fff0e.xmanager.provider" 
+			android:name="androidx.core.content.FileProvider" 
+			android:exported="false" 
+			android:grantUriPermissions="true"> 
+                <meta-data 
+			android:name="android.support.FILE_PROVIDER_PATHS" 
+			android:resource="@xml/provider_paths"/>
+                </provider>
+			<activity
+			android:name="com.unity3d.services.ads.adunit.AdUnitActivity"
+			android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+			android:hardwareAccelerated="true" />
+                <activity
+			android:name="com.unity3d.services.ads.adunit.AdUnitTransparentActivity"
+			android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+			android:hardwareAccelerated="true" />
+                <activity
+			android:name="com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity"
+			android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+			android:hardwareAccelerated="false" />
+                <activity
+			android:name="com.unity3d.services.ads.adunit.AdUnitSoftwareActivity"
+			android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+			android:hardwareAccelerated="false" />
 	</application>
 </manifest>
