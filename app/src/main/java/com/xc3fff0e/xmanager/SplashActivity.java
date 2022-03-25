@@ -34,7 +34,9 @@ import android.net.Uri;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import androidx.browser.*;
 import com.wuyr.rippleanimation.*;
+import com.unity3d.ads.*;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.DialogFragment;
@@ -57,8 +59,6 @@ public class SplashActivity extends AppCompatActivity {
 		setContentView(R.layout.splash);
 		initialize(_savedInstanceState);
 		com.google.firebase.FirebaseApp.initializeApp(this);
-		com.google.android.gms.ads.MobileAds.initialize(this);
-		
 		initializeLogic();
 	}
 	
@@ -147,7 +147,7 @@ public class SplashActivity extends AppCompatActivity {
 				});
 			}
 		};
-		_timer.schedule(Timer, (int)(1500));
+		_timer.schedule(Timer, (int)(1000));
 		_Dark_Navigation();
 	}
 	
