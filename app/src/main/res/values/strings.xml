@@ -75,14 +75,14 @@
         <string	name="faq"	translatable="true">FAQ</string>
 	
 	<string	name="cloned_version"	translatable="true">CLONED VERSION (BETA)</string>
-	<string	name="cloned_version_desc"	translatable="true">Activating this allow you to download and install the cloned version of the patched application.\n\nThis will also resolve most of the installation errors or problems especially if you have a pre-installed spotify application.</string>
+	<string	name="cloned_version_desc"	translatable="true">Activating this allows you to download and install the cloned version of the patched application.\n\nThis will also resolve most of the installation errors or problems, especially if you have a pre-installed Spotify application.</string>
 	<string	name="disable_rewarded_ads"	translatable="true">DISABLE REWARDED ADS</string>
 	<string	name="disable_rewarded_ads_desc"	translatable="true">We know that most of us does not like ads but in our case, this significantly help us to fund our database, hosting links, updates, more patches, and daily needs.\n\nThis is the simpliest way to support us without donating or spending anything.</string>
 	
 	<string	name="installation_failed"	translatable="true">INSTALLATION FAILED</string>
 	<string	name="installation_failed_desc"	translatable="true">Reason: You attempted to install a mod version lower than what is currently installed.\n\nSolutions:\nA. Select a version equal to or greater than.\nB. Uninstall the current version, then downgrade.\n\nIf the issue persist, check the FAQ.</string>
-	<string	name="installation_failed_ream_desc"	translatable="true">Reason: The current Spotify installed on this device did not came directly from xManager or from our team.\n\nSolution: Uninstall the current version of the application, restart xManager and try again. If the issue persist, check the FAQ.</string>
-	<string	name="installation_failed_cloned_desc"	translatable="true">Reason: The current cloned installed on this device did not came directly from xManager or from our team.\n\nSolution: Uninstall the current version of the application, restart xManager and try again. If the issue persist, check the FAQ.</string>
+	<string	name="installation_failed_ream_desc"	translatable="true">Reason: The current Spotify installed on this device did not come directly from xManager or from our team.\n\nSolution: Uninstall the current version of the application, restart xManager and try again. If the issue persists, check the FAQ.</string>
+	<string	name="installation_failed_cloned_desc"	translatable="true">Reason: The current cloned installed on this device did not come directly from xManager or from our team.\n\nSolution: Uninstall the current version of the application, restart xManager and try again. If the issue persists, check the FAQ.</string>
 	<string	name="existing_patched"	translatable="true">EXISTING PATCHED</string>
 	<string	name="existing_patched_desc"	translatable="true">An existing patched apk found in one of the directory. What action would you like to do?</string>
 
