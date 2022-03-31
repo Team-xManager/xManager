@@ -38,7 +38,7 @@ Our aim is to make a simple yet very useful manager app for everyone's convenien
 **•xManager is created using [Sketchware Pro](https://github.com/Sketchware-Pro/Sketchware-Pro) for android.**  
 **•xManager uses [Sketch2Any](https://play.google.com/store/apps/details?id=com.sketch2any) for converting the project to Android Studio.**  
 **•xManager only uses Firebase Database as its API.**  
-**•No trackers, no spywares, no keyloggers or any other malicious codes has been added on the source code. What you see on the source code is what's inside the build apk. You can extract the apk for yourself.**  
+**•No trackers, no spywares, no keyloggers or any other malicious codes added on the source code. What you see on the source code is what's inside the build apk. You can extract the apk for yourself.**  
 **•The source code that can be seen here is what's inside the exported zip file for Android Studio.**  
 **•There are some instance that the source code is unbuildable, some parts might be missing and such due to limitations.**   
 **•Users might experience downtime and maintenance when using the manager app since we are manually changing the hosting links of each individual files from time to time.**  
