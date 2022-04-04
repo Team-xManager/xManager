@@ -36,7 +36,9 @@ These are the databases uses by "xSpotify Manager" up until xManager v1-v3.1. Th
 
 # FOR CONTRIBUTORS (01/18/22)  
 **CODE CHANGE:** Pull request should be done on the **"Developer"** branch.  
+
 **TRANSLATION CHANGE/UPDATE:** Pull request should be done on the **"Developer"** branch. The translations can be found at  `resource/values/strings.xml`.  
+
 **SUBMIT TRANSLATIONS:** Pull request should be done on the **"Developer"** branch. Please follow the `<--DEFAULT LANGUAGE-->` format that can be found at `resource/values/strings.xml`.  
 
 # IMPORTANT NOTES  
@@ -84,6 +86,7 @@ smokedzn (German Translation)
 ohshahab (Persian Translation)  
 GreenArmy18 (Hebrew Translation)  
 dearminder (Polish Translation)  
+Dyras (English Translation)  
 
 # Contributors  
 
