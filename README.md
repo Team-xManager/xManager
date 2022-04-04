@@ -28,7 +28,13 @@ We decided to create an app where people can easily manage and install all versi
 
 Our aim is to make a simple yet very useful manager app for everyone's convenience. On this second version of the manager app, we added a couple of features such as the ability to uninstall, open the app's settings directly, clear the offline cached datas and launch the app. We hope that all users find these newly added features very useful.
 
-# FOR CONTRIBUTORS (01/18/22): 
+# Legacy Databases Officially Shutdown (04/01/22)  
+Legacy databases are now officially shutdown. Update to the latest version of xManager (v3.2) to continue using the app.  
+
+**More Info:**  
+These are the databases uses by "xSpotify Manager" up until xManager v1-v3.1. Those databases are really old and deprecated at the same time that is why we decided to take them down.  
+
+# FOR CONTRIBUTORS (01/18/22)  
 **CODE CHANGE:** Pull request should be done on the **"Developer"** branch.  
 **TRANSLATION CHANGE/UPDATE:** Pull request should be done on the **"Developer"** branch. The translations can be found at  `resource/values/strings.xml`.  
 **SUBMIT TRANSLATIONS:** Pull request should be done on the **"Developer"** branch. Please follow the `<--DEFAULT LANGUAGE-->` format that can be found at `resource/values/strings.xml`.  
