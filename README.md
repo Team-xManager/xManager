@@ -1,6 +1,7 @@
 # xManager (Spotify)
 ![image](https://i.ibb.co/yS27jLC/x-Manager-Origins-Banner-JPEG.jpg)
 ![image](https://user-images.githubusercontent.com/78732474/157926338-709d56c3-0f6b-4c00-a6b2-e391773d67c2.png)
+# [🎉Check out our Roadmaps, Changelogs and Milestones here!🎉](https://github.com/xManager-v2/xManager-Spotify/wiki/xManager-(Spotify)-Roadmaps,-Changelogs-and-Milestones)
 ![GitHub all releases](https://img.shields.io/github/downloads/xManager-v2/xManager-Spotify/total?label=DOWNLOADS&style=for-the-badge) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/xManager-v2/xManager-Spotify?label=RELEASE&style=for-the-badge) ![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/xManagerApp?style=for-the-badge)  
 
 # Main Features
