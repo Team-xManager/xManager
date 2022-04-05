@@ -24,7 +24,7 @@
 
 # How It Works
 
-Depending on what variant or version the user wants to install, the manager will directly fetch that selected url data. Once completed, the selected file can now be installed.  
+Depending on what variant or version the user wants to install, the manager will directly fetch that selected url data. Once completed, the selected file can be installed.  
 
 All links are available publicly. IF, you know what it means then you know what it is.
 
@@ -34,13 +34,13 @@ The successor from our previous manager app called **"xSpotify Manager"** that w
 
 We decided to create an app where people can easily manage and install all versions of the spotify app from their devices.  
 
-Our aim is to make a simple yet very useful manager app for everyone's convenience. On this second version of the manager app, we added a couple of features such as the ability to uninstall, open the app's settings directly, clear the offline cached datas and launch the app. We hope that all users find these newly added features very useful.
+Our aim is to make a simple yet useful manager app for everyone's convenience. On this second version of the manager app, we added a couple of features such as the ability to uninstall, open the app's settings directly, clear the offline cached datas and launch the app. We hope that all users find these newly added features very useful.
 
 # Legacy Databases Officially Shutdown (04/01/22)  
 Legacy databases are now officially shutdown. Update to the latest version of xManager (v3.2) to continue using the app.  
 
 **More Info:**  
-> These are the databases uses by "xSpotify Manager" up until xManager v1-v3.1. Those databases are really old and deprecated at the same time that is why we decided to take them down.  
+> These are the databases used by "xSpotify Manager" up until xManager v1-v3.1. Those databases are very old and deprecated at the same time. That is why we decided to take them down.  
 
 # FOR CONTRIBUTORS (01/18/22)  
 **CODE CHANGE:** Pull request should be done on the **"Developer"** branch.  
@@ -51,15 +51,15 @@ Legacy databases are now officially shutdown. Update to the latest version of xM
 
 # IMPORTANT NOTES  
 
-•xManager is created using [Sketchware Pro](https://github.com/Sketchware-Pro/Sketchware-Pro) for android.  
-•xManager uses [Sketch2Any](https://play.google.com/store/apps/details?id=com.sketch2any) for converting the project to Android Studio.  
+•xManager was created using [Sketchware Pro](https://github.com/Sketchware-Pro/Sketchware-Pro) for android.  
+•xManager uses [Sketch2Any](https://play.google.com/store/apps/details?id=com.sketch2any) to convert the project to Android Studio.  
 •xManager only uses Firebase Database as its API.  
-•No trackers, no spywares, no keyloggers or any other malicious codes added on the source code. What you see on the source code is what's inside the build apk. You can extract the apk for yourself.  
+•No trackers, no spywares, no keyloggers or any other malicious codes added in the source code. What you see in the source code is what's inside the build apk. You can extract the apk for yourself.  
 •The source code that can be seen here is what's inside the exported zip file for Android Studio.  
-•There are some instance that the source code is unbuildable, some parts might be missing and such due to limitations.   
-•Users might experience downtime and maintenance when using the manager app since we are manually changing the hosting links of each individual files from time to time.  
-•xManager is completely free and we do not get any comissions with it **(Rewarded Ads are optional and can be disable via settings)**.  
-•We will support the app as long as we can. Internal improvements may not guaranteed. 
+•There are some instance of the source code that are unbuildable, some parts might be missing and such due to limitations.   
+•Users might experience downtime and maintenance when using the manager app since we are manually changing the hosting links of each individual file from time to time.  
+•xManager is completely free and we do not get any commissions from it **(Rewarded Ads are optional and can be disabled in the settings)**.  
+•We will support the app as long as we can. Internal improvements may not be guaranteed. 
 
 # Developer
 
