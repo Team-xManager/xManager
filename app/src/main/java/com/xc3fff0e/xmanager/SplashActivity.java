@@ -34,7 +34,6 @@ import android.net.Uri;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
-import androidx.browser.*;
 import com.wuyr.rippleanimation.*;
 import com.unity3d.ads.*;
 import androidx.fragment.app.Fragment;
@@ -59,6 +58,8 @@ public class SplashActivity extends AppCompatActivity {
 		setContentView(R.layout.splash);
 		initialize(_savedInstanceState);
 		com.google.firebase.FirebaseApp.initializeApp(this);
+		com.google.android.gms.ads.MobileAds.initialize(this);
+		
 		initializeLogic();
 	}
 	
