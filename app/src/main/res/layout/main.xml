@@ -976,7 +976,8 @@
 						android:layout_height="wrap_content"
 						android:gravity="center_horizontal|center_vertical"
 						android:orientation="horizontal"
-						android:layout_gravity="center_horizontal|center_vertical">
+						android:layout_gravity="center_horizontal|center_vertical"
+						android:animateLayoutChanges="true">
 						<Spinner
 							android:id="@+id/select_theme"
 							android:layout_width="match_parent"
@@ -1019,7 +1020,8 @@
 						android:layout_height="wrap_content"
 						android:gravity="center_horizontal|center_vertical"
 						android:orientation="horizontal"
-						android:layout_gravity="center_horizontal|center_vertical">
+						android:layout_gravity="center_horizontal|center_vertical"
+						android:animateLayoutChanges="true">
 						<Spinner
 							android:id="@+id/select_language"
 							android:layout_width="match_parent"
@@ -1523,7 +1525,7 @@
 						android:id="@+id/donators"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Ricardo G.\nAakarshit U.\nAmaricai A.\nAntonio M.\nJuleshwar Babu T.M.\nYash G.\nCamille D.\nAnudeep N.D.\nKrzysztof S.\nAlex C.\nCarlos C.\nPrabandaru P.\nRussel R.\nLucha G.S.\nAleksandrs F.\nGeorgios H.\nLevente T."
+						android:text="Ricardo G.\nAakarshit U.\nAmaricai A.\nAntonio M.\nJuleshwar Babu T.M.\nYash G.\nCamille D.\nAnudeep N.D.\nKrzysztof S.\nAlex C.\nCarlos C.\nPrabandaru P.\nRussel R.\nLucha G.S.\nAleksandrs F.\nGeorgios H.\nLevente T.\nFahim Fahim | Z.\nQuiet"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1635,7 +1637,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:paddingBottom="5dp"
-						android:text="Mc. J\nDeraidos"
+						android:text="Mc. J | Deraidos"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1668,16 +1670,8 @@
 						android:id="@+id/translator_7"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Loui's™"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/translator_7_1"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
 						android:paddingBottom="5dp"
-						android:text="Zilberto Junior"
+						android:text="Loui's™ | Zilberto Junior"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1914,7 +1908,24 @@
 						android:id="@+id/translator_22"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
 						android:text="dearminder"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+					<TextView
+						android:id="@+id/manager_lang_23"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="English Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFEB3B" />
+					<TextView
+						android:id="@+id/translator_23"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Dyras"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1960,7 +1971,8 @@
 					android:layout_marginRight="10dp"
 					android:padding="10dp"
 					android:background="#212121"
-					android:orientation="vertical">
+					android:orientation="vertical"
+					android:animateLayoutChanges="true">
 					<LinearLayout
 						android:id="@+id/box_1"
 						android:layout_width="match_parent"
@@ -2118,7 +2130,8 @@
 					android:layout_marginRight="10dp"
 					android:padding="10dp"
 					android:background="#212121"
-					android:orientation="vertical">
+					android:orientation="vertical"
+					android:animateLayoutChanges="true">
 					<LinearLayout
 						android:id="@+id/box_3"
 						android:layout_width="match_parent"
@@ -2272,7 +2285,8 @@
 					android:layout_marginRight="10dp"
 					android:padding="10dp"
 					android:background="#212121"
-					android:orientation="vertical">
+					android:orientation="vertical"
+					android:animateLayoutChanges="true">
 					<LinearLayout
 						android:id="@+id/box_6_sub_1"
 						android:layout_width="match_parent"
