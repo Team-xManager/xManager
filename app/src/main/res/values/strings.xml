@@ -291,12 +291,12 @@
 	<string	name="open_settings_02"	translatable="true">打开设置</string>
 	<string	name="open_patched_02"	translatable="true">打开修改版</string>
 	
-	<!--FRENCH LANGAUGE-->
+	<!--FRENCH LANGUAGE-->
 	<string	name="app_name_03"	translatable="true">xManager</string>
         <string	name="spotify_regular_03"	translatable="true">SPOTIFY (REGULAR)</string>
         <string	name="spotify_amoled_03"	translatable="true">SPOTIFY (AMOLED)</string>
         <string	name="installed_03"	translatable="true">INSTALLÉE</string>
-        <string	name="latest_03"	translatable="true">DERNIÉRE</string>
+        <string	name="latest_03"	translatable="true">DERNIÈRE</string>
         <string	name="versions_03"	translatable="true">VERSIONS </string>
         <string	name="changelogs_03"	translatable="true">LISTE DES CHANGEMENTS</string>
         <string	name="manager_tools_03"	translatable="true">OUTILS DE xMANAGER</string>
@@ -321,7 +321,7 @@
 	<string	name="apk_location_03"	translatable="true">EMPLACEMENT APK</string>
         <string	name="apk_location_desc_03"	translatable="true">Répertoire dans lequel vous souhaitez enregistrer l\'APK téléchargé. Si vous ne savez pas comment configurer cette fonctionnalité, veuillez la laisser telle quelle. REMARQUE : Cette fonctionnalité ne prend pas en charge le stockage externe (carte SD) en raison de l\'accessibilité, des autorisations et des limitations de stockage.</string>
         <string	name="clear_directory_folders_03"	translatable="true">NETTOYER LES DOSSIERS DE RÉPERTOIRE</string>
-        <string	name="clear_directory_folders_desc_03"	translatable="true">Appuyez pour supprimer tout le contenu du répertoire, y compris les fichiers APK et les mises à jour téléchargés.</string>
+        <string	name="clear_directory_folders_desc_03"	translatable="true">Appuyez pour supprimer tout le contenu du répertoire, y compris les fichiers APK et les mises à jour téléchargées.</string>
         <string	name="reset_settings_03"	translatable="true">RAZ RÉGLAGES</string>
 	
         <string	name="about_sub_03"	translatable="true">Sans Pubs | Nouvelles Options | Liberté</string>
@@ -375,7 +375,7 @@
 	<string	name="installation_failed_ream_desc_03"	translatable="true">Raison: Le Spotify actuellement installé sur cet appareil ne provenait pas directement de xManager ou de notre équipe.\n\nSolution: Désinstallez la version actuelle de l\'application, redémarrez xManager et réessayez. Si le problème persiste, consultez la FAQ.</string>
 	<string	name="installation_failed_cloned_desc_03"	translatable="true">Raison: Le cloné actuel installé sur cet appareil ne provenait pas directement de xManager ou de notre équipe.\n\nSolution: Désinstallez la version actuelle de l\'application, redémarrez xManager et réessayez. Si le problème persiste, consultez la FAQ.</string>
 	<string	name="existing_patched_03"	translatable="true">PATCHÉ EXISTANT</string>
-	<string	name="existing_patched_desc_03"	translatable="true">Un fichier patché existant trouvé dans l\'un des répertoires. Quelle action aimeriez-vous faire?</string>
+	<string	name="existing_patched_desc_03"	translatable="true">Un fichier patché existant trouvé dans l\'un des répertoires. Que voulez-vous faire?</string>
 
 	<string	name="close_03"	translatable="true">PROCHE</string>
 	<string	name="cloned_03"	translatable="true">CLONER</string>
@@ -386,7 +386,7 @@
 	<string	name="delete_03"	translatable="true">SUPPRIMER</string>
 	<string	name="uninstall_patched_03"	translatable="true">DÉSINSTALLER PATCHÉ</string>
 	<string	name="open_settings_03"	translatable="true">OUVRIR LES PARAMÈTRES</string>
-	<string	name="open_patched_03"	translatable="true">OUVERT PATCHÉ</string>
+	<string	name="open_patched_03"	translatable="true">OUVRIR PATCHÉ</string>
 	
 	<!--GREEK LANGUAGE-->
 	<string	name="app_name_04"	translatable="true">xManager</string>
