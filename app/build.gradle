@@ -11,8 +11,8 @@ android {
 		applicationId "com.xc3fff0e.xmanager"
 		minSdkVersion 21
 		targetSdkVersion 31
-		versionCode 2
-		versionName "3.2"
+		versionCode 3
+		versionName "3.3"
 	}
 	
 	buildTypes {
@@ -28,6 +28,7 @@ dependencies {
 	implementation 'androidx.appcompat:appcompat:1.2.0'
 	implementation 'com.google.android.material:material:1.4.0'
 	implementation 'com.google.firebase:firebase-database:19.0.0'
+	implementation 'com.google.android.gms:play-services-ads:20.1.0'
 	implementation 'com.google.code.gson:gson:2.8.7'
 	implementation 'com.squareup.okhttp3:okhttp:3.9.1'
 }
