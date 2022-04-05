@@ -9,6 +9,8 @@
 
 ### [<p align="center">🎉Check out our Roadmaps, Changelogs and Milestones here!🎉</p>](https://github.com/xManager-v2/xManager-Spotify/wiki/xManager-(Spotify)-Roadmaps,-Changelogs-and-Milestones)  
 
+### [<p align="center">🛠VirusTotal Result: Click Here🛠</p>](https://www.virustotal.com/gui/file/af4a14a67ef556d8e2cba9b4bb03c71320539bc31048e27c1fff418c7ae7f8e0/detection)
+
 # Main Features
 
 •Upgrade or Downgrade Anytime & Anywhere  
