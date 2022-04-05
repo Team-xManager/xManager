@@ -25,7 +25,6 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:padding="5dp"
-			android:text="TITLE"
 			android:textSize="12sp"
 			android:textStyle="bold"
 			android:textColor="#FFFFFF" />
@@ -36,7 +35,6 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:padding="8dp"
-		android:text="LINK"
 		android:textSize="12sp"
 		android:textColor="#000000" />
 </LinearLayout>
