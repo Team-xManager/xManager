@@ -1,8 +1,13 @@
 # xManager (Spotify)
-![image](https://i.ibb.co/yS27jLC/x-Manager-Origins-Banner-JPEG.jpg)
-![image](https://user-images.githubusercontent.com/78732474/157926338-709d56c3-0f6b-4c00-a6b2-e391773d67c2.png)
-### [🎉Check out our Roadmaps, Changelogs and Milestones here!🎉](https://github.com/xManager-v2/xManager-Spotify/wiki/xManager-(Spotify)-Roadmaps,-Changelogs-and-Milestones)  
-![GitHub all releases](https://img.shields.io/github/downloads/xManager-v2/xManager-Spotify/total?label=DOWNLOADS&style=for-the-badge) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/xManager-v2/xManager-Spotify?label=RELEASE&style=for-the-badge) ![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/xManagerApp?style=for-the-badge)  
+<p align="center">
+  <img src="https://i.ibb.co/yS27jLC/x-Manager-Origins-Banner-JPEG.jpg">
+  <img src="https://user-images.githubusercontent.com/78732474/157926338-709d56c3-0f6b-4c00-a6b2-e391773d67c2.png">
+  <img src="https://img.shields.io/github/downloads/xManager-v2/xManager-Spotify/total?label=DOWNLOADS&style=for-the-badge">
+  <img src="https://img.shields.io/github/v/tag/xManager-v2/xManager-Spotify?label=RELEASE&style=for-the-badge">
+  <img src="https://img.shields.io/reddit/subreddit-subscribers/xManagerApp?style=for-the-badge">
+</p>
+
+### [<p align="center">🎉Check out our Roadmaps, Changelogs and Milestones here!🎉</p>](https://github.com/xManager-v2/xManager-Spotify/wiki/xManager-(Spotify)-Roadmaps,-Changelogs-and-Milestones)  
 
 # Main Features
 
@@ -23,7 +28,7 @@ All links are available publicly. IF, you know what it means then you know what 
 
 # About The Project
 
-The successor from our previous manager app called "xSpotify Manager" that was released way back 2020 developed by xC3FFF0E and with the help of Sherlock Holmes.
+The successor from our previous manager app called **"xSpotify Manager"** that was released way back 2020 developed by xC3FFF0E and with the help of Sherlock Holmes.
 
 We decided to create an app where people can easily manage and install all versions of the spotify app from their devices.  
 
@@ -33,7 +38,7 @@ Our aim is to make a simple yet very useful manager app for everyone's convenien
 Legacy databases are now officially shutdown. Update to the latest version of xManager (v3.2) to continue using the app.  
 
 **More Info:**  
-These are the databases uses by "xSpotify Manager" up until xManager v1-v3.1. Those databases are really old and deprecated at the same time that is why we decided to take them down.  
+> These are the databases uses by "xSpotify Manager" up until xManager v1-v3.1. Those databases are really old and deprecated at the same time that is why we decided to take them down.  
 
 # FOR CONTRIBUTORS (01/18/22)  
 **CODE CHANGE:** Pull request should be done on the **"Developer"** branch.  
