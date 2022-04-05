@@ -67,7 +67,6 @@ import android.widget.AdapterView;
 import android.graphics.Typeface;
 import android.content.ClipData;
 import android.content.ClipboardManager;
-import androidx.browser.*;
 import com.wuyr.rippleanimation.*;
 import com.unity3d.ads.*;
 import androidx.fragment.app.Fragment;
@@ -82,10 +81,25 @@ import static android.os.Build.VERSION.SDK_INT;
 import androidx.core.content.ContextCompat;
 import androidx.core.app.ActivityCompat;
 import androidx.annotation.NonNull;
+import com.google.android.gms.ads.*;
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.rewarded.RewardItem;
+import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.OnUserEarnedRewardListener;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 
 public class MainActivity extends AppCompatActivity {
 	
+     private RewardedAd mRewardedAd;
 	private Timer _timer = new Timer();
 	private FirebaseDatabase _firebase = FirebaseDatabase.getInstance();
 	
@@ -134,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
 	private  String unityGameID = "4673349";
 	private  String placementVideo = "Interstitial_Android";
 	private  String placementRewardedVideo = "Rewarded_Android";
+	private double UNCLICK = 0;
 	
 	private ArrayList<HashMap<String, Object>> listdata = new ArrayList<>();
 	private ArrayList<HashMap<String, Object>> others = new ArrayList<>();
@@ -327,7 +342,6 @@ public class MainActivity extends AppCompatActivity {
 	private TextView translator_6;
 	private TextView manager_lang_7;
 	private TextView translator_7;
-	private TextView translator_7_1;
 	private TextView manager_lang_8;
 	private TextView translator_8;
 	private TextView manager_lang_15;
@@ -356,6 +370,8 @@ public class MainActivity extends AppCompatActivity {
 	private TextView translator_21;
 	private TextView manager_lang_22;
 	private TextView translator_22;
+	private TextView manager_lang_23;
+	private TextView translator_23;
 	private ScrollView main_scroll_body;
 	private LinearLayout main_body;
 	private LinearLayout main_box_1;
@@ -485,6 +501,9 @@ public class MainActivity extends AppCompatActivity {
 	private SharedPreferences DISABLE_REWARD_AD;
 	private Intent External_Storage_Manager = new Intent();
 	private SharedPreferences DOWNLOAD;
+	private DatabaseReference Rewarded_Ads = _firebase.getReference("Rewarded_Ads");
+	private ChildEventListener _Rewarded_Ads_child_listener;
+	private SharedPreferences AD_UNIT;
 	
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
@@ -492,6 +511,8 @@ public class MainActivity extends AppCompatActivity {
 		setContentView(R.layout.main);
 		initialize(_savedInstanceState);
 		com.google.firebase.FirebaseApp.initializeApp(this);
+		com.google.android.gms.ads.MobileAds.initialize(this);
+		
 		initializeLogic();
 	}
 	
@@ -681,7 +702,6 @@ public class MainActivity extends AppCompatActivity {
 		translator_6 = findViewById(R.id.translator_6);
 		manager_lang_7 = findViewById(R.id.manager_lang_7);
 		translator_7 = findViewById(R.id.translator_7);
-		translator_7_1 = findViewById(R.id.translator_7_1);
 		manager_lang_8 = findViewById(R.id.manager_lang_8);
 		translator_8 = findViewById(R.id.translator_8);
 		manager_lang_15 = findViewById(R.id.manager_lang_15);
@@ -710,6 +730,8 @@ public class MainActivity extends AppCompatActivity {
 		translator_21 = findViewById(R.id.translator_21);
 		manager_lang_22 = findViewById(R.id.manager_lang_22);
 		translator_22 = findViewById(R.id.translator_22);
+		manager_lang_23 = findViewById(R.id.manager_lang_23);
+		translator_23 = findViewById(R.id.translator_23);
 		main_scroll_body = findViewById(R.id.main_scroll_body);
 		main_body = findViewById(R.id.main_body);
 		main_box_1 = findViewById(R.id.main_box_1);
@@ -815,11 +837,12 @@ public class MainActivity extends AppCompatActivity {
 		CLONED_VERSION = getSharedPreferences("CLONED_VERSION", Activity.MODE_PRIVATE);
 		DISABLE_REWARD_AD = getSharedPreferences("DISABLE_REWARD_AD", Activity.MODE_PRIVATE);
 		DOWNLOAD = getSharedPreferences("DOWNLOAD", Activity.MODE_PRIVATE);
+		AD_UNIT = getSharedPreferences("AD_UNIT", Activity.MODE_PRIVATE);
 		
 		box_switch.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				RippleAnimation.create(box_switch).setDuration((long)700).start();
+				RippleAnimation.create(box_switch).setDuration((long)1000).start();
 				main_body_optimization.setVisibility(View.GONE);
 				main_scroll_settings.setVisibility(View.VISIBLE);
 				main_scroll_about.setVisibility(View.GONE);
@@ -897,8 +920,8 @@ public class MainActivity extends AppCompatActivity {
 																
 																                @Override
 																                public void onClick(DialogInterface Update_Authorized, int p) {
+																	AlertDialog.setCancelable(true);
 																	try {
-																		AlertDialog.setCancelable(true);
 																		if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
 																			_Download_Update_Install(hidden_update.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
 																		}
@@ -992,7 +1015,7 @@ public class MainActivity extends AppCompatActivity {
 																});
 																final AlertDialog.Builder Update_Latest = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
 																
-																String Title = "<b>".concat("xManager v".concat(app_version.getText().toString().concat(" (Latest Version)")).concat("</b>"));
+																String Title = "<b>".concat("xManager v".concat(app_version.getText().toString().concat(" (Latest)")).concat("</b>"));
 																String TitleColor = "1DB954";
 																
 																Update_Latest.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
@@ -1078,7 +1101,7 @@ public class MainActivity extends AppCompatActivity {
 		box_settings_icon_close.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				RippleAnimation.create(box_settings_icon_close).setDuration((long)700).start();
+				RippleAnimation.create(box_settings_icon_close).setDuration((long)1000).start();
 				main_body_optimization.setVisibility(View.GONE);
 				main_scroll_settings.setVisibility(View.GONE);
 				main_scroll_about.setVisibility(View.GONE);
@@ -4201,7 +4224,7 @@ public class MainActivity extends AppCompatActivity {
 		box_icon_close.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				RippleAnimation.create(box_icon_close).setDuration((long)700).start();
+				RippleAnimation.create(box_icon_close).setDuration((long)1000).start();
 				main_body_optimization.setVisibility(View.GONE);
 				main_scroll_settings.setVisibility(View.GONE);
 				main_scroll_about.setVisibility(View.GONE);
@@ -4459,7 +4482,7 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View _view) {
 				try {
-					final AlertDialog.Builder Uninstall = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+					final AlertDialog.Builder Uninstall = new AlertDialog.Builder(MainActivity.this, R.style.Other_Dialog);
 					
 					String Title = "<b>".concat(uninstall_patched.getText().toString().concat("</b>"));
 					String TitleColor = "1DB954";
@@ -4515,7 +4538,7 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View _view) {
 				try {
-					final AlertDialog.Builder Settings = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+					final AlertDialog.Builder Settings = new AlertDialog.Builder(MainActivity.this, R.style.Other_Dialog);
 					
 					String Title = "<b>".concat(open_settings.getText().toString().concat("</b>"));
 					String TitleColor = "1DB954";
@@ -4637,7 +4660,7 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View _view) {
 				try {
-					final AlertDialog.Builder Open = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+					final AlertDialog.Builder Open = new AlertDialog.Builder(MainActivity.this, R.style.Other_Dialog);
 					
 					String Title = "<b>".concat(open_patched.getText().toString().concat("</b>"));
 					String TitleColor = "1DB954";
@@ -4784,7 +4807,7 @@ public class MainActivity extends AppCompatActivity {
 		box_about.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				RippleAnimation.create(box_about).setDuration((long)700).start();
+				RippleAnimation.create(box_about).setDuration((long)1000).start();
 				main_body_optimization.setVisibility(View.GONE);
 				main_scroll_settings.setVisibility(View.GONE);
 				main_scroll_about.setVisibility(View.VISIBLE);
@@ -4804,7 +4827,7 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View _view) {
 				try {
-					_Browser("https://discord.gg/sZWsVvC3pu");
+					_Browser("https://discord.gg/dnpKn5Wufm");
 					_Tap_Animation(box_discord);
 				}
 				catch(Exception e) {
@@ -4840,7 +4863,7 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View _view) {
 				try {
-					_Browser("https://telegra.ph/Spotify-Mod-FAQ-07-19");
+					_Browser("https://i.ibb.co/nDJHDVd/x-Manager-FAQ.jpg");
 					_Tap_Animation(box_faq);
 				}
 				catch(Exception e) {
@@ -5395,6 +5418,68 @@ public class MainActivity extends AppCompatActivity {
 			}
 		};
 		Amoled_Cloned.addChildEventListener(_Amoled_Cloned_child_listener);
+		
+		_Rewarded_Ads_child_listener = new ChildEventListener() {
+			@Override
+			public void onChildAdded(DataSnapshot _param1, String _param2) {
+				GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+				final String _childKey = _param1.getKey();
+				final HashMap<String, Object> _childValue = _param1.getValue(_ind);
+				try {
+					Rewarded_Ads.addListenerForSingleValueEvent(new ValueEventListener() {
+						@Override
+						public void onDataChange(DataSnapshot _dataSnapshot) {
+							others = new ArrayList<>();
+							try {
+								GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+								for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+									HashMap<String, Object> _map = _data.getValue(_ind);
+									others.add(_map);
+								}
+							}
+							catch (Exception _e) {
+								_e.printStackTrace();
+							}
+							AD_UNIT.edit().putString("UNIT", _childValue.get("Ad_Unit").toString()).commit();
+						}
+						@Override
+						public void onCancelled(DatabaseError _databaseError) {
+						}
+					});
+				} catch(Exception e) {
+					SketchwareUtil.showMessage(getApplicationContext(), "Ads Fetching Failed");
+				}
+			}
+			
+			@Override
+			public void onChildChanged(DataSnapshot _param1, String _param2) {
+				GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+				final String _childKey = _param1.getKey();
+				final HashMap<String, Object> _childValue = _param1.getValue(_ind);
+				
+			}
+			
+			@Override
+			public void onChildMoved(DataSnapshot _param1, String _param2) {
+				
+			}
+			
+			@Override
+			public void onChildRemoved(DataSnapshot _param1) {
+				GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
+				final String _childKey = _param1.getKey();
+				final HashMap<String, Object> _childValue = _param1.getValue(_ind);
+				
+			}
+			
+			@Override
+			public void onCancelled(DatabaseError _param1) {
+				final int _errorCode = _param1.getCode();
+				final String _errorMessage = _param1.getMessage();
+				
+			}
+		};
+		Rewarded_Ads.addChildEventListener(_Rewarded_Ads_child_listener);
 	}
 	
 	private void initializeLogic() {
@@ -5690,7 +5775,7 @@ public class MainActivity extends AppCompatActivity {
 																					prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																					prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																					prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																					prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");	
+																					prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
 																					prog.setProgress(dl_progress);
 																					prog.setMax(dl_max);
 																					prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
@@ -5731,7 +5816,7 @@ public class MainActivity extends AppCompatActivity {
 																													catch(Exception e) {
 																													}
 																													if (!MainActivity.this.isFinishing()) {
-																															final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																															final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Other_Dialog);
 																															String Title = "<b>".concat(download_success_0.concat("</b>"));
 																															String TitleColor = "1DB954";
 																															Success_Download.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
@@ -6028,6 +6113,7 @@ public class MainActivity extends AppCompatActivity {
 		manager_lang_20.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_21.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_22.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_23.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -6035,7 +6121,6 @@ public class MainActivity extends AppCompatActivity {
 		translator_5.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_6.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_7.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_7_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_8.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_9.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_10.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -6051,6 +6136,7 @@ public class MainActivity extends AppCompatActivity {
 		translator_20.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_21.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_22.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_23.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		box_sub_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
@@ -6096,7 +6182,7 @@ public class MainActivity extends AppCompatActivity {
 		if (!ON_SCREEN.getString("INITIALIZATION", "").equals("DONE")) {
 			try {
 				box_header.setVisibility(View.GONE);
-				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
+				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Intro_Dialog);
 				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 				prog.setMax(100);
 				prog.setMessage("Initial optimization...");
@@ -6113,7 +6199,7 @@ public class MainActivity extends AppCompatActivity {
 							@Override
 							public void run() {
 								prog.dismiss();
-								final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
+								final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Intro_Dialog);
 								prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 								prog.setMax(100);
 								prog.setMessage("Relaunching...");
@@ -6889,6 +6975,7 @@ public class MainActivity extends AppCompatActivity {
 		};
 		_timer.scheduleAtFixedRate(Timer, (int)(0), (int)(150));
 		CHECK = 0;
+		_Rewarded_AdMob();
 		_Update_Remover();
 		_Language_Fixer();
 		_Updater_Check();
@@ -6896,8 +6983,9 @@ public class MainActivity extends AppCompatActivity {
 		_Language_UI();
 		_List_Updater();
 		_Scroll_Fixed();
+		_Ads_AdMob();
 		_Theme_UI();
-		_Unity_Ads();
+		_Ads_Unity();
 		_Effects();
 		_Url_Mode();
 		_Extra();
@@ -7057,8 +7145,8 @@ public class MainActivity extends AppCompatActivity {
 												
 												                @Override
 												                public void onClick(DialogInterface Update_Authorized, int p) {
+													AlertDialog.setCancelable(true);
 													try {
-														AlertDialog.setCancelable(true);
 														if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
 															_Download_Update_Install(hidden_update.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
 														}
@@ -7317,7 +7405,7 @@ public class MainActivity extends AppCompatActivity {
 																													}
 																													prog.cancel();
 																													if (!MainActivity.this.isFinishing()) {
-																															final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																															final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Other_Dialog);
 																															String Title = "<b>".concat(download_success_0.concat("</b>"));
 																															String TitleColor = "1DB954";
 																															Success_Download.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
@@ -11755,7 +11843,7 @@ public class MainActivity extends AppCompatActivity {
 																													catch(Exception e) {
 																													}
 																													if (!MainActivity.this.isFinishing()) {
-																															final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																															final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Other_Dialog);
 																															String Title = "<b>".concat(download_success_0.concat("</b>"));
 																															String TitleColor = "1DB954";
 																															Success_Download.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
@@ -12387,12 +12475,68 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	public void _Rewarded_Ads() {
+	public void _Rewarded_AdMob() {
+		
+		    AdRequest adRequest = new AdRequest.Builder().build();
+		
+		    RewardedAd.load(MainActivity.this, AD_UNIT.getString("UNIT", ""),
+		      adRequest, new RewardedAdLoadCallback() {
+			        @Override
+			        public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+				             
+				          mRewardedAd = null;
+			}
+			        @Override
+			        public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
+				          mRewardedAd = rewardedAd;
+				           
+				mRewardedAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+					  @Override
+					  public void onAdShowedFullScreenContent() {
+						       
+					}
+					  @Override
+					  public void onAdFailedToShowFullScreenContent(AdError adError) {
+						       
+					}
+					  @Override
+					  public void onAdDismissedFullScreenContent() {
+						      _Rewarded_AdMob();
+						    mRewardedAd = null;
+						      }
+					    });
+				  }
+		});
+	}
+	
+	
+	public void _Rewarded_Unity() {
 		UnityAds.show(this, placementRewardedVideo);
 	}
 	
 	
-	public void _Unity_Ads() {
+	public void _Ads_AdMob() {
+		Timer = new TimerTask() {
+			@Override
+			public void run() {
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						        MobileAds.initialize(MainActivity.this, new OnInitializationCompleteListener() {
+								            @Override
+								            public void onInitializationComplete(InitializationStatus initializationStatus) {
+										            }
+								        });
+						MobileAds.setAppMuted(true);
+					}
+				});
+			}
+		};
+		_timer.schedule(Timer, (int)(100));
+	}
+	
+	
+	public void _Ads_Unity() {
 		testMode = false;
 		UnityAds.initialize(this, unityGameID, testMode);
 		final UnityAdsListener xC3FFF0E = new UnityAdsListener ();
@@ -12553,39 +12697,76 @@ public class MainActivity extends AppCompatActivity {
 											_timer.schedule(Timer, (int)(100));
 										}
 										else {
-											if (UnityAds.isReady(placementRewardedVideo)) {
-												AlertDialog.setCancelable(true);
-												DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
-												Timer = new TimerTask() {
-													@Override
-													public void run() {
-														runOnUiThread(new Runnable() {
+											if (mRewardedAd != null) {
+												  Activity activityContext = MainActivity.this;
+												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+													    @Override
+													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+														       Timer = new TimerTask() {
 															@Override
 															public void run() {
-																_Hide_Navigation();
+																runOnUiThread(new Runnable() {
+																	@Override
+																	public void run() {
+																		AlertDialog.setCancelable(true);
+																		((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
+																		SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
+																		Timer = new TimerTask() {
+																			@Override
+																			public void run() {
+																				runOnUiThread(new Runnable() {
+																					@Override
+																					public void run() {
+																						_Hide_Navigation();
+																					}
+																				});
+																			}
+																		};
+																		_timer.schedule(Timer, (int)(100));
+																	}
+																});
 															}
-														});
-													}
-												};
-												_timer.schedule(Timer, (int)(100));
-												_Rewarded_Ads();
-											}
-											else {
-												AlertDialog.setCancelable(true);
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
-												SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
-												Timer = new TimerTask() {
-													@Override
-													public void run() {
-														runOnUiThread(new Runnable() {
-															@Override
-															public void run() {
-																_Hide_Navigation();
-															}
-														});
-													}
-												};
-												_timer.schedule(Timer, (int)(100));
+														};
+														_timer.schedule(Timer, (int)(1000));
+														      int rewardAmount = rewardItem.getAmount();
+														      String rewardType = rewardItem.getType();
+														    }
+													  });
+											} else {
+												if (UnityAds.isReady(placementRewardedVideo)) {
+													AlertDialog.setCancelable(true);
+													DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+													Timer = new TimerTask() {
+														@Override
+														public void run() {
+															runOnUiThread(new Runnable() {
+																@Override
+																public void run() {
+																	_Hide_Navigation();
+																}
+															});
+														}
+													};
+													_timer.schedule(Timer, (int)(100));
+													_Rewarded_Unity();
+												}
+												else {
+													AlertDialog.setCancelable(true);
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
+													SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
+													Timer = new TimerTask() {
+														@Override
+														public void run() {
+															runOnUiThread(new Runnable() {
+																@Override
+																public void run() {
+																	_Hide_Navigation();
+																}
+															});
+														}
+													};
+													_timer.schedule(Timer, (int)(100));
+												}
 											}
 										}
 									}
@@ -12621,7 +12802,7 @@ public class MainActivity extends AppCompatActivity {
 							DELETE = 1;
 						}
 						else {
-							if ((FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk"))) || (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk")))) {
+							if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")) {
 								final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
 								
 								String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
@@ -12960,30 +13141,62 @@ public class MainActivity extends AppCompatActivity {
 															_File_Remover();
 														}
 														else {
-															if (UnityAds.isReady(placementRewardedVideo)) {
-																AlertDialog.setCancelable(true);
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																	DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
-																}
-																else {
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+															if (mRewardedAd != null) {
+																  Activity activityContext = MainActivity.this;
+																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																	    @Override
+																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																		       Timer = new TimerTask() {
+																			@Override
+																			public void run() {
+																				runOnUiThread(new Runnable() {
+																					@Override
+																					public void run() {
+																						AlertDialog.setCancelable(true);
+																						if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																							_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																						}
+																						else {
+																							if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																								_Download_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																							}
+																						}
+																						_File_Remover();
+																					}
+																				});
+																			}
+																		};
+																		_timer.schedule(Timer, (int)(1000));
+																		      int rewardAmount = rewardItem.getAmount();
+																		      String rewardType = rewardItem.getType();
+																		    }
+																	  });
+															} else {
+																if (UnityAds.isReady(placementRewardedVideo)) {
+																	AlertDialog.setCancelable(true);
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																		DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
 																	}
-																}
-																_Rewarded_Ads();
-																_File_Remover();
-															}
-															else {
-																AlertDialog.setCancelable(true);
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																	_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	else {
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																			DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																		}
+																	}
+																	_Rewarded_Unity();
+																	_File_Remover();
 																}
 																else {
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																		_Download_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	AlertDialog.setCancelable(true);
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																		_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
 																	}
+																	else {
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																			_Download_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		}
+																	}
+																	_File_Remover();
 																}
-																_File_Remover();
 															}
 														}
 													}
@@ -13002,30 +13215,62 @@ public class MainActivity extends AppCompatActivity {
 																_File_Remover();
 															}
 															else {
-																if (UnityAds.isReady(placementRewardedVideo)) {
-																	AlertDialog.setCancelable(true);
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																		DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
-																	}
-																	else {
-																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																if (mRewardedAd != null) {
+																	  Activity activityContext = MainActivity.this;
+																	  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																		    @Override
+																		    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																			       Timer = new TimerTask() {
+																				@Override
+																				public void run() {
+																					runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																							AlertDialog.setCancelable(true);
+																							if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																								_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																							}
+																							else {
+																								if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																									_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																								}
+																							}
+																							_File_Remover();
+																						}
+																					});
+																				}
+																			};
+																			_timer.schedule(Timer, (int)(1000));
+																			      int rewardAmount = rewardItem.getAmount();
+																			      String rewardType = rewardItem.getType();
+																			    }
+																		  });
+																} else {
+																	if (UnityAds.isReady(placementRewardedVideo)) {
+																		AlertDialog.setCancelable(true);
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																			DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
 																		}
-																	}
-																	_Rewarded_Ads();
-																	_File_Remover();
-																}
-																else {
-																	AlertDialog.setCancelable(true);
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																		_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		else {
+																			if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																				DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																			}
+																		}
+																		_Rewarded_Unity();
+																		_File_Remover();
 																	}
 																	else {
-																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																			_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		AlertDialog.setCancelable(true);
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																			_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
 																		}
+																		else {
+																			if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																				_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																			}
+																		}
+																		_File_Remover();
 																	}
-																	_File_Remover();
 																}
 															}
 														}
@@ -13159,30 +13404,62 @@ public class MainActivity extends AppCompatActivity {
 														_File_Remover();
 													}
 													else {
-														if (UnityAds.isReady(placementRewardedVideo)) {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														if (mRewardedAd != null) {
+															  Activity activityContext = MainActivity.this;
+															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																    @Override
+																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																	       Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																			runOnUiThread(new Runnable() {
+																				@Override
+																				public void run() {
+																					AlertDialog.setCancelable(true);
+																					if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																						_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																					}
+																					else {
+																						if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																							_Download_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																						}
+																					}
+																					_File_Remover();
+																				}
+																			});
+																		}
+																	};
+																	_timer.schedule(Timer, (int)(1000));
+																	      int rewardAmount = rewardItem.getAmount();
+																	      String rewardType = rewardItem.getType();
+																	    }
+																  });
+														} else {
+															if (UnityAds.isReady(placementRewardedVideo)) {
+																AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																	DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
 																}
-															}
-															_Rewarded_Ads();
-															_File_Remover();
-														}
-														else {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																	}
+																}
+																_Rewarded_Unity();
+																_File_Remover();
 															}
 															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	_Download_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																	_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
 																}
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		_Download_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																}
+																_File_Remover();
 															}
-															_File_Remover();
 														}
 													}
 												}
@@ -13201,30 +13478,62 @@ public class MainActivity extends AppCompatActivity {
 															_File_Remover();
 														}
 														else {
-															if (UnityAds.isReady(placementRewardedVideo)) {
-																AlertDialog.setCancelable(true);
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																	DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
-																}
-																else {
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+															if (mRewardedAd != null) {
+																  Activity activityContext = MainActivity.this;
+																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																	    @Override
+																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																		       Timer = new TimerTask() {
+																			@Override
+																			public void run() {
+																				runOnUiThread(new Runnable() {
+																					@Override
+																					public void run() {
+																						AlertDialog.setCancelable(true);
+																						if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																							_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																						}
+																						else {
+																							if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																								_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																							}
+																						}
+																						_File_Remover();
+																					}
+																				});
+																			}
+																		};
+																		_timer.schedule(Timer, (int)(1000));
+																		      int rewardAmount = rewardItem.getAmount();
+																		      String rewardType = rewardItem.getType();
+																		    }
+																	  });
+															} else {
+																if (UnityAds.isReady(placementRewardedVideo)) {
+																	AlertDialog.setCancelable(true);
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																		DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
 																	}
-																}
-																_Rewarded_Ads();
-																_File_Remover();
-															}
-															else {
-																AlertDialog.setCancelable(true);
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																	_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	else {
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																			DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																		}
+																	}
+																	_Rewarded_Unity();
+																	_File_Remover();
 																}
 																else {
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																		_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	AlertDialog.setCancelable(true);
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																		_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
 																	}
+																	else {
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																			_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		}
+																	}
+																	_File_Remover();
 																}
-																_File_Remover();
 															}
 														}
 													}
@@ -13431,39 +13740,76 @@ public class MainActivity extends AppCompatActivity {
 											_timer.schedule(Timer, (int)(100));
 										}
 										else {
-											if (UnityAds.isReady(placementRewardedVideo)) {
-												AlertDialog.setCancelable(true);
-												DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
-												Timer = new TimerTask() {
-													@Override
-													public void run() {
-														runOnUiThread(new Runnable() {
+											if (mRewardedAd != null) {
+												  Activity activityContext = MainActivity.this;
+												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+													    @Override
+													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+														       Timer = new TimerTask() {
 															@Override
 															public void run() {
-																_Hide_Navigation();
+																runOnUiThread(new Runnable() {
+																	@Override
+																	public void run() {
+																		AlertDialog.setCancelable(true);
+																		((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
+																		SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
+																		Timer = new TimerTask() {
+																			@Override
+																			public void run() {
+																				runOnUiThread(new Runnable() {
+																					@Override
+																					public void run() {
+																						_Hide_Navigation();
+																					}
+																				});
+																			}
+																		};
+																		_timer.schedule(Timer, (int)(100));
+																	}
+																});
 															}
-														});
-													}
-												};
-												_timer.schedule(Timer, (int)(100));
-												_Rewarded_Ads();
-											}
-											else {
-												AlertDialog.setCancelable(true);
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
-												SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
-												Timer = new TimerTask() {
-													@Override
-													public void run() {
-														runOnUiThread(new Runnable() {
-															@Override
-															public void run() {
-																_Hide_Navigation();
-															}
-														});
-													}
-												};
-												_timer.schedule(Timer, (int)(100));
+														};
+														_timer.schedule(Timer, (int)(1000));
+														      int rewardAmount = rewardItem.getAmount();
+														      String rewardType = rewardItem.getType();
+														    }
+													  });
+											} else {
+												if (UnityAds.isReady(placementRewardedVideo)) {
+													AlertDialog.setCancelable(true);
+													DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+													Timer = new TimerTask() {
+														@Override
+														public void run() {
+															runOnUiThread(new Runnable() {
+																@Override
+																public void run() {
+																	_Hide_Navigation();
+																}
+															});
+														}
+													};
+													_timer.schedule(Timer, (int)(100));
+													_Rewarded_Unity();
+												}
+												else {
+													AlertDialog.setCancelable(true);
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", link.getText().toString()));
+													SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
+													Timer = new TimerTask() {
+														@Override
+														public void run() {
+															runOnUiThread(new Runnable() {
+																@Override
+																public void run() {
+																	_Hide_Navigation();
+																}
+															});
+														}
+													};
+													_timer.schedule(Timer, (int)(100));
+												}
 											}
 										}
 									}
@@ -13499,7 +13845,7 @@ public class MainActivity extends AppCompatActivity {
 							DELETE = 1;
 						}
 						else {
-							if ((FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk"))) || (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk")))) {
+							if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")) {
 								final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
 								
 								String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
@@ -13838,30 +14184,62 @@ public class MainActivity extends AppCompatActivity {
 															_File_Remover();
 														}
 														else {
-															if (UnityAds.isReady(placementRewardedVideo)) {
-																AlertDialog.setCancelable(true);
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																	DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
-																}
-																else {
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+															if (mRewardedAd != null) {
+																  Activity activityContext = MainActivity.this;
+																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																	    @Override
+																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																		       Timer = new TimerTask() {
+																			@Override
+																			public void run() {
+																				runOnUiThread(new Runnable() {
+																					@Override
+																					public void run() {
+																						AlertDialog.setCancelable(true);
+																						if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																							_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																						}
+																						else {
+																							if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																								_Download_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																							}
+																						}
+																						_File_Remover();
+																					}
+																				});
+																			}
+																		};
+																		_timer.schedule(Timer, (int)(1000));
+																		      int rewardAmount = rewardItem.getAmount();
+																		      String rewardType = rewardItem.getType();
+																		    }
+																	  });
+															} else {
+																if (UnityAds.isReady(placementRewardedVideo)) {
+																	AlertDialog.setCancelable(true);
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																		DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
 																	}
-																}
-																_Rewarded_Ads();
-																_File_Remover();
-															}
-															else {
-																AlertDialog.setCancelable(true);
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																	_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	else {
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																			DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																		}
+																	}
+																	_Rewarded_Unity();
+																	_File_Remover();
 																}
 																else {
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																		_Download_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	AlertDialog.setCancelable(true);
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																		_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
 																	}
+																	else {
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																			_Download_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		}
+																	}
+																	_File_Remover();
 																}
-																_File_Remover();
 															}
 														}
 													}
@@ -13879,30 +14257,62 @@ public class MainActivity extends AppCompatActivity {
 															_File_Remover();
 														}
 														else {
-															if (UnityAds.isReady(placementRewardedVideo)) {
-																AlertDialog.setCancelable(true);
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																	DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
-																}
-																else {
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+															if (mRewardedAd != null) {
+																  Activity activityContext = MainActivity.this;
+																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																	    @Override
+																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																		       Timer = new TimerTask() {
+																			@Override
+																			public void run() {
+																				runOnUiThread(new Runnable() {
+																					@Override
+																					public void run() {
+																						AlertDialog.setCancelable(true);
+																						if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																							_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																						}
+																						else {
+																							if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																								_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																							}
+																						}
+																						_File_Remover();
+																					}
+																				});
+																			}
+																		};
+																		_timer.schedule(Timer, (int)(1000));
+																		      int rewardAmount = rewardItem.getAmount();
+																		      String rewardType = rewardItem.getType();
+																		    }
+																	  });
+															} else {
+																if (UnityAds.isReady(placementRewardedVideo)) {
+																	AlertDialog.setCancelable(true);
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																		DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
 																	}
-																}
-																_Rewarded_Ads();
-																_File_Remover();
-															}
-															else {
-																AlertDialog.setCancelable(true);
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																	_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	else {
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																			DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																		}
+																	}
+																	_Rewarded_Unity();
+																	_File_Remover();
 																}
 																else {
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																		_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	AlertDialog.setCancelable(true);
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																		_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
 																	}
+																	else {
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																			_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		}
+																	}
+																	_File_Remover();
 																}
-																_File_Remover();
 															}
 														}
 													}
@@ -14035,30 +14445,62 @@ public class MainActivity extends AppCompatActivity {
 														_File_Remover();
 													}
 													else {
-														if (UnityAds.isReady(placementRewardedVideo)) {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														if (mRewardedAd != null) {
+															  Activity activityContext = MainActivity.this;
+															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																    @Override
+																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																	       Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																			runOnUiThread(new Runnable() {
+																				@Override
+																				public void run() {
+																					AlertDialog.setCancelable(true);
+																					if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																						_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																					}
+																					else {
+																						if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																							_Download_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																						}
+																					}
+																					_File_Remover();
+																				}
+																			});
+																		}
+																	};
+																	_timer.schedule(Timer, (int)(1000));
+																	      int rewardAmount = rewardItem.getAmount();
+																	      String rewardType = rewardItem.getType();
+																	    }
+																  });
+														} else {
+															if (UnityAds.isReady(placementRewardedVideo)) {
+																AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																	DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
 																}
-															}
-															_Rewarded_Ads();
-															_File_Remover();
-														}
-														else {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																	}
+																}
+																_Rewarded_Unity();
+																_File_Remover();
 															}
 															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	_Download_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																	_Download_Install_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
 																}
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		_Download_Cloned(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																}
+																_File_Remover();
 															}
-															_File_Remover();
 														}
 													}
 												}
@@ -14076,30 +14518,62 @@ public class MainActivity extends AppCompatActivity {
 														_File_Remover();
 													}
 													else {
-														if (UnityAds.isReady(placementRewardedVideo)) {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														if (mRewardedAd != null) {
+															  Activity activityContext = MainActivity.this;
+															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																    @Override
+																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																	       Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																			runOnUiThread(new Runnable() {
+																				@Override
+																				public void run() {
+																					AlertDialog.setCancelable(true);
+																					if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																						_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																					}
+																					else {
+																						if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																							_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																						}
+																					}
+																					_File_Remover();
+																				}
+																			});
+																		}
+																	};
+																	_timer.schedule(Timer, (int)(1000));
+																	      int rewardAmount = rewardItem.getAmount();
+																	      String rewardType = rewardItem.getType();
+																	    }
+																  });
+														} else {
+															if (UnityAds.isReady(placementRewardedVideo)) {
+																AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																	DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
 																}
-															}
-															_Rewarded_Ads();
-															_File_Remover();
-														}
-														else {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		DOWNLOAD.edit().putString("PATCHED", link.getText().toString()).commit();
+																	}
+																}
+																_Rewarded_Unity();
+																_File_Remover();
 															}
 															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																	_Download_Install(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
 																}
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		_Download(link.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																}
+																_File_Remover();
 															}
-															_File_Remover();
 														}
 													}
 												}
