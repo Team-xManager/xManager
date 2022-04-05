@@ -1,7 +1,7 @@
 # xManager (Spotify)
 <p align="center">
-  <img src="https://i.ibb.co/yS27jLC/x-Manager-Origins-Banner-JPEG.jpg">
-  <img src="https://user-images.githubusercontent.com/78732474/157926338-709d56c3-0f6b-4c00-a6b2-e391773d67c2.png">
+  <img width="1000" height="180" src="https://i.ibb.co/xGWnmZz/x-Manager-Banner-Animated.gif">
+  <img width="1000" height="180" src="https://user-images.githubusercontent.com/78732474/157926338-709d56c3-0f6b-4c00-a6b2-e391773d67c2.png">
   <img src="https://img.shields.io/github/downloads/xManager-v2/xManager-Spotify/total?label=DOWNLOADS&style=for-the-badge">
   <img src="https://img.shields.io/github/v/tag/xManager-v2/xManager-Spotify?label=RELEASE&style=for-the-badge">
   <img src="https://img.shields.io/reddit/subreddit-subscribers/xManagerApp?style=for-the-badge">
