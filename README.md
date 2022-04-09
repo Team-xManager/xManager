@@ -5,7 +5,6 @@
   <img src="https://img.shields.io/badge/Sketchware%20Build-Passing-brightgreen.svg?style=for-the-badge">
   <img src="https://img.shields.io/github/downloads/xManager-v2/xManager-Spotify/total?label=DOWNLOADS&style=for-the-badge">
   <img src="https://img.shields.io/github/v/tag/xManager-v2/xManager-Spotify?label=RELEASE&style=for-the-badge">
-  <img src="https://img.shields.io/reddit/subreddit-subscribers/xManagerApp?style=for-the-badge">
 </p>
 
 ### [<p align="center">🎉Check out our Roadmaps, Changelogs and Milestones here!🎉</p>](https://github.com/xManager-v2/xManager-Spotify/wiki/xManager-(Spotify)-Roadmaps,-Changelogs-and-Milestones)  
