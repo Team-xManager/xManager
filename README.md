@@ -90,7 +90,7 @@ Yazan Kasem
 Gent G | Softland99  
 
 **French Translation**  
-The Punisher  
+The Punisher | Luxchar  
 
 **Greek Translation**  
 Walter's Cousin #CAF  
@@ -99,7 +99,7 @@ Walter's Cousin #CAF
 Mc.J | Deraidos  
 
 **Italian Translation**  
-Marco | gdonisi  
+Marco | gdonisi | albertopasqualetto  
 
 **Portuguese - Brazil Translation**  
 Loui's™ | Zilberto Junior  
