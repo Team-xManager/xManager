@@ -593,9 +593,9 @@
         <string	name="manager_tools_06"	translatable="true">STRUMENTI DEL MANAGER</string>
 	<string	name="device_cpu_06"	translatable="true">CPU/ARCH</string>
         <string	name="source_06"	translatable="true">FONTE</string>
-        <string	name="discord_06"	translatable="true">DISCORD</string>
         <string	name="support_06"	translatable="true">TELEGRAM</string>
         <string	name="donate_06"	translatable="true">DONA</string>
+        <string	name="discord_06"	translatable="true">DISCORD</string>
         <string	name="about_06"	translatable="true">INFO</string>
 	<string	name="main_title_06"	translatable="true">xManager</string>
         <string	name="settings_title_06"	translatable="true">Impostazioni</string>
@@ -604,34 +604,34 @@
         <string	name="list_auto_refresh_06"	translatable="true">AGGIORNAMENTO AUTOMATICO LISTA</string>
         <string        name="list_auto_refresh_desc_06" translatable="true">Attivando questa impostazione, la lista verrà aggiornata automaticamente ogni volta che verrà avviata l\'applicazione.\n\nPuoi aggiornare manualmente la lista trascinando la schermata principale verso il basso.</string>
         <string	name="force_auto_install_06"	translatable="true">FORZA INSTALLAZIONE AUTOMATICA</string>
-        <string	name="force_auto_install_desc_06"	translatable="true">Attivando questa impostazione verrà installata automaticamente l\'applicazione modificata e l\'aggiornamento una volta scaricato.</string>
+        <string	name="force_auto_install_desc_06"	translatable="true">Attivando questa impostazione verrà installata automaticamente l\'applicazione patchata e l\'aggiornamento una volta scaricato.</string>
         <string	name="copy_url_mode_06"	translatable="true">MODALITÀ COPIA URL</string>
         <string	name="copy_url_mode_desc_06"	translatable="true">Attivando questa impostazione potrete copiare direttamente l\'URL per poter scaricare il file.\n\nNon è sempre consigliato, a meno che non abbiate problemi a scaricare i file direttamente nel manager.</string>
         <string	name="hide_navigation_bar_06"	translatable="true">NASCONDI BARRA DI NAVIGAZIONE</string>
         <string	name="show_themes_06"	translatable="true">TEMI</string>
 	<string	name="apk_location_06"	translatable="true">POSIZIONE APK</string>
-        <string	name="apk_location_desc_06"	translatable="true">Cartella dove vuoi salvare il file scaricato. Se non sapete come configurare questa funzione, lasciatela così com\'è.\n\nNOTA: Questa funzione non supporta l\'archiviazione esterna (scheda SD) a causa dell\'accessibilità, dei permessi e delle limitazioni di archiviazione.</string>
+        <string	name="apk_location_desc_06"	translatable="true">Cartella dove vuoi salvare il file scaricato. Se non sapete come configurare questa funzione, lasciatela così com\'è.\n\nNOTA: Questa funzione non supporta l\'archiviazione esterna (scheda SD) a causa delle limitazioni dati da accessibilità, permessi e archiviazione.</string>
         <string	name="clear_directory_folders_06"	translatable="true">PULIZIA DELLE CARTELLE</string>
         <string	name="clear_directory_folders_desc_06"	translatable="true">Tocca per eleminare tutte le cartelle inclusi i file scaricati e gli aggiornamenti.</string>
         <string	name="reset_settings_06"	translatable="true">RIPRISTINA IMPOSTAZIONI</string>
 	
         <string	name="about_sub_06"	translatable="true">Niente Annunci | Nuove Funzionalità | Libertà</string>
         <string	name="xmanager_dev_06"	translatable="true">Sviluppatore di xManager</string>
-        <string	name="spotify_mod_devs_06"	translatable="true">Sviluppatori della Mod di Spotify</string>
-        <string        name="telegram_support_team_06" translatable="true">Team di Supporto Telegram/Discord</string>
-        <string	name="manager_testers_06"	translatable="true">Tester per Mod/Manager</string>
+        <string	name="spotify_mod_devs_06"	translatable="true">Sviluppatori della Patch di Spotify</string>
+        <string        name="telegram_support_team_06" translatable="true">Team di Supporto Telegram | Discord | Reddit</string>
+        <string	name="manager_testers_06"	translatable="true">Tester per Patch e Manager</string>
         <string	name="manager_hosting_06"	translatable="true">Link di hosting del Manager</string>
         <string	name="mobilism_team_06"	translatable="true">Team di Mobilism</string>
         <string	name="forum_team_06"	translatable="true">Team di FORUM.APK-RELEASE.NET</string>
 	<string	name="xspotify_team_06"	translatable="true">xSpotify Manager (Vecchio Manager)</string>
         <string	name="contributors_06"	translatable="true">GRAZIE A TUTTI I COLLABORATORI! ❤️</string>
 	
-        <string	name="download_selected_06"	translatable="true">Hai selezionato questa versione modificata. Vuoi continuare?</string>
+        <string	name="download_selected_06"	translatable="true">Hai selezionato questa versione patchata. Vuoi continuare?</string>
         <string	name="download_ready_06"	translatable="true">INFORMAZIONI SULLE PATCH</string>
-        <string	name="download_ready_desc_06"	translatable="true">Scaricando questo apk modificato sovrascriverai il file precedentemente situato nella cartella contenente i file esterni dell\'applicazione.</string>
+        <string	name="download_ready_desc_06"	translatable="true">Scaricando questo apk patchato sovrascriverai il file precedentemente situato nella cartella contenente i file esterni dell\'applicazione.</string>
 	<string	name="downloading_file_06"	translatable="true">SCARICANDO FILE...</string>
         <string	name="download_success_06"	translatable="true">SCARICATO CON SUCCESSO</string>
-	<string        name="copy_url_desc_06" translatable="true">Hai selezionato questa versione modificata. Vuoi copiare l\'URL?</string>
+	<string        name="copy_url_desc_06" translatable="true">Hai selezionato questa versione patchata. Vuoi copiare l\'URL?</string>
         <string	name="new_update_06"	translatable="true">NUOVO AGGIORNAMENTO DEL MANAGER</string>
 	
         <string	name="continue_1_06"	translatable="true">CONTINUA</string>
@@ -643,7 +643,7 @@
         <string	name="go_back_06"	translatable="true">TORNA INDIETRO</string>
         <string	name="download_update_06"	translatable="true">SCARICA AGGIORNAMENTO</string>
         <string	name="not_now_06"	translatable="true">NON ORA</string>
-        <string        name="copy_url_06" translatable="true">COPIA URL</string>
+        <string	name="copy_url_06" translatable="true">COPIA URL</string>
 	
 	<string	name="show_support_06"	translatable="true">MOSTRA IL TUO SOSTEGNO</string>
         <string        name="show_support_desc_06" translatable="true">Siamo un team senza scopo di lucro, non aziendale e senza compromessi. Le persone come te ci incoraggiano a creare un\'app per rendere tutto molto più semplice soprattutto dal download all\'installazione.\n\nStiamo dedicando tutto il nostro tempo e i nostri migliori sforzi solo per rendere le cose corrette e perfette. Faremo del nostro meglio per supportare questa app il più a lungo possibile.\n\nQualsiasi importo aiuterà e sarà molto gradito!</string>
@@ -657,27 +657,27 @@
         <string	name="faq_06"	translatable="true">DOMANDE FREQUENTI</string>
 	
 	<string	name="cloned_version_06"	translatable="true">VERSIONE CLONATA (BETA)</string>
-	<string	name="cloned_version_desc_06"	translatable="true">Attivando questo consentono di scaricare e installare la versione clonata dell\'applicazione patch.\n\nQuesto risolverà anche la maggior parte degli errori di installazione o problemi, soprattutto se si dispone di un\'applicazione spotify preinstallata.</string>
+	<string	name="cloned_version_desc_06"	translatable="true">Attivando questo ti permette di scaricare e installare la versione clonata dell\'applicazione patchata.\n\nQuesto risolverà anche la maggior parte degli errori di installazione o problemi, soprattutto se si dispone di un\'applicazione Spotify preinstallata.</string>
 	<string	name="disable_rewarded_ads_06"	translatable="true">DISABILITA GLI ANNUNCI PREMIATI</string>
-	<string	name="disable_rewarded_ads_desc_06"	translatable="true">Sappiamo che la maggior parte di noi non piace annunci, ma nel nostro caso, questo ci aiuta in modo significativo a finanziare il nostro database, hosting link, aggiornamenti, più patch, e le esigenze quotidiane.\n\n Questo è il modo più semplice per sostenerci senza donare o spendere nulla.</string>
+	<string	name="disable_rewarded_ads_desc_06"	translatable="true">Sappiamo che alla maggior parte di noi non piacciono gli annunci, ma nel nostro caso, questo ci aiuta in modo significativo a finanziare il nostro database, l'hosting dei link, gli aggiornamenti, più patch, e le esigenze quotidiane.\n\nQuesto è il modo più semplice per sostenerci senza donare o spendere nulla.</string>
 	
 	<string	name="installation_failed_06"	translatable="true">INSTALLAZIONE NON RIUSCITA</string>
-	<string	name="installation_failed_desc_06"	translatable="true">Motivo: Hai tentato di installare una versione mod inferiore a quella attualmente installata.\n\nSoluzioni:\nA. Selezionare una versione uguale o maggiore di.\nB. Disinstallare la versione corrente, quindi eseguire il downgrade.\n\nSe il problema persiste, controlla le FAQ.</string>
-	<string	name="installation_failed_ream_desc_06"	translatable="true">Motivo: l\'attuale Spotify installato su questo dispositivo non proveniva direttamente da xManager o dal nostro team.\n\n Soluzione: disinstallare la versione corrente dell\'applicazione, riavviare xManager e riprovare. Se il problema persiste, controlla le FAQ.</string>
-	<string	name="installation_failed_cloned_desc_06"	translatable="true">Motivo: L\'attuale clonato installato su questo dispositivo non è venuto direttamente da xManager o dal nostro team.\n\n Soluzione: disinstallare la versione corrente dell\'applicazione, riavviare xManager e riprovare. Se il problema persiste, controlla le FAQ.</string>
+	<string	name="installation_failed_desc_06"	translatable="true">Motivo: Hai tentato di installare una versione della patch inferiore a quella attualmente installata.\n\nSoluzioni:\nA. Selezionare una versione uguale o successiva.\nB. Disinstallare la versione corrente, quindi eseguire il downgrade.\n\nSe il problema persiste, controlla le FAQ.</string>
+	<string	name="installation_failed_ream_desc_06"	translatable="true">Motivo: l\'attuale Spotify installato su questo dispositivo non proveniva direttamente da xManager o dal nostro team.\n\n Soluzione: Disinstallare la versione corrente dell\'applicazione, riavviare xManager e riprovare. Se il problema persiste, controlla le FAQ.</string>
+	<string	name="installation_failed_cloned_desc_06"	translatable="true">Motivo: L\'attuale app clone installata su questo dispositivo non proviene direttamente da xManager o dal nostro team.\n\n Soluzione: Disinstallare la versione corrente dell\'applicazione, riavviare xManager e riprovare. Se il problema persiste, controlla le FAQ.</string>
 	<string	name="existing_patched_06"	translatable="true">PATCH ESISTENTI</string>
-	<string	name="existing_patched_desc_06"	translatable="true">Un file con patch esistente trovato in una delle directory. Che azione vorresti fare?</string>
+	<string	name="existing_patched_desc_06"	translatable="true">Un file con patch esistente trovato in una delle directory. Cosa fare?</string>
 
-	<string	name="close_06"	translatable="true">VICINO</string>
-	<string	name="cloned_06"	translatable="true">CLONARE</string>
+	<string	name="close_06"	translatable="true">CHIUDI</string>
+	<string	name="cloned_06"	translatable="true">CLONA</string>
 	<string	name="ream_06"	translatable="true">RE/AM</string>
-	<string	name="install_06"	translatable="true">INSTALLARE</string>
-	<string	name="uninstall_06"	translatable="true">DISINSTALLATI</string>
-	<string	name="ignore_06"	translatable="true">IGNORARE</string>
-	<string	name="delete_06"	translatable="true">ELIMINARE</string>
-	<string	name="uninstall_patched_06"	translatable="true">DISINSTALLARE PATCHATO</string>
+	<string	name="install_06"	translatable="true">INSTALLA</string>
+	<string	name="uninstall_06"	translatable="true">DISINSTALLA</string>
+	<string	name="ignore_06"	translatable="true">IGNORA</string>
+	<string	name="delete_06"	translatable="true">ELIMINA</string>
+	<string	name="uninstall_patched_06"	translatable="true">DISINSTALLA PATCH</string>
 	<string	name="open_settings_06"	translatable="true">APRI IMPOSTAZIONI</string>
-	<string	name="open_patched_06"	translatable="true">APRI PATCHATO</string>
+	<string	name="open_patched_06"	translatable="true">APRI PATCH</string>
 	
 	<!--POLISH LANGUAGE-->
 	<string	name="app_name_07"	translatable="true">xManager</string>
