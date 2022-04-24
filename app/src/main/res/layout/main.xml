@@ -304,7 +304,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:padding="8dp"
-			android:text="xManager is currently unavailable right now. Kindly check the application later."
+			android:text="xManager is currently unavailable. Kindly check the application later."
 			android:textSize="12sp"
 			android:textColor="#000000"
 			android:alpha="0.0" />
@@ -1222,7 +1222,7 @@
 					android:textColor="#FFFFFF"
 					android:layout_gravity="center_horizontal|center_vertical" />
 				<TextView
-					android:id="@+id/app_version"
+					android:id="@+id/local_version"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:paddingRight="30dp"
@@ -1338,7 +1338,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
-					android:text="jetfire\nmeech\nRishavG\nSherlock Holmes\njuznem\nCivaaBTW (Discord Helper)\nmilindgoel15 (Reddit Moderator) [r/Vanced]\nstiles_stillinski (Reddit Moderator) [r/ApksApps]"
+					android:text="jetfire\nmeech\nRishavG\nSherlock Holmes\njuznem\nCivaaBTW (Discord Helper)\nDominik (Discord Helper)\nmilindgoel15 (Reddit Moderator) [r/Vanced]\nstiles_stillinski (Reddit Moderator) [r/ApksApps]"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -1525,7 +1525,6 @@
 						android:id="@+id/donators"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Ricardo G.\nAakarshit U.\nAmaricai A.\nAntonio M.\nJuleshwar Babu T.M.\nYash G.\nCamille D.\nAnudeep N.D.\nKrzysztof S.\nAlex C.\nCarlos C.\nPrabandaru P.\nRussel R.\nLucha G.S.\nAleksandrs F.\nGeorgios H.\nLevente T.\nFahim Fahim | Z.\nQuiet"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1603,7 +1602,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:paddingBottom="5dp"
-						android:text="The Punisher"
+						android:text="The Punisher | Luxchar"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1654,7 +1653,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:paddingBottom="5dp"
-						android:text="Marco | gdonisi"
+						android:text="Marco | gdonisi | albertopasqualetto"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -2119,7 +2118,16 @@
 						android:layout_height="260dp"
 						android:dividerHeight="2dp"
 						android:choiceMode="none"
-						android:nestedScrollingEnabled="true" />
+						android:nestedScrollingEnabled="true"
+						android:divider="#171717" />
+					<ListView
+						android:id="@+id/list_menu_3"
+						android:layout_width="match_parent"
+						android:layout_height="260dp"
+						android:dividerHeight="2dp"
+						android:choiceMode="none"
+						android:nestedScrollingEnabled="true"
+						android:divider="#171717" />
 				</LinearLayout>
 				<LinearLayout
 					android:id="@+id/main_box_2"
@@ -2274,7 +2282,16 @@
 						android:layout_height="260dp"
 						android:dividerHeight="2dp"
 						android:choiceMode="none"
-						android:nestedScrollingEnabled="true" />
+						android:nestedScrollingEnabled="true"
+						android:divider="#171717" />
+					<ListView
+						android:id="@+id/list_menu_4"
+						android:layout_width="match_parent"
+						android:layout_height="260dp"
+						android:dividerHeight="2dp"
+						android:choiceMode="none"
+						android:nestedScrollingEnabled="true"
+						android:divider="#171717" />
 				</LinearLayout>
 				<LinearLayout
 					android:id="@+id/main_box_6"
@@ -2449,11 +2466,11 @@
 						android:id="@+id/list_changelogs"
 						android:layout_width="match_parent"
 						android:layout_height="260dp"
-						android:dividerHeight="0dp"
-						android:divider="@null"
+						android:dividerHeight="2dp"
 						android:choiceMode="none"
 						android:nestedScrollingEnabled="true"
-						android:listSelector="@android:color/transparent" />
+						android:listSelector="@android:color/transparent"
+						android:divider="@drawable/divider" />
 				</LinearLayout>
 				<LinearLayout
 					android:id="@+id/box_sub_header"
