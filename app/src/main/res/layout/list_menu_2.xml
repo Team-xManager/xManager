@@ -20,6 +20,17 @@
 			android:src="@drawable/icon_spotify_2"
 			android:scaleType="center" />
 		<TextView
+			android:id="@+id/sub"
+			android:focusable="false"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="5dp"
+			android:paddingTop="5dp"
+			android:paddingBottom="5dp"
+			android:textSize="12sp"
+			android:textStyle="bold"
+			android:textColor="#000000" />
+		<TextView
 			android:id="@+id/title"
 			android:focusable="false"
 			android:layout_width="wrap_content"
