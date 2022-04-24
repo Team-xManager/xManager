@@ -17,7 +17,7 @@
 
 ### [<p align="center">🎉Check out our Roadmaps, Changelogs and Milestones here!🎉</p>](https://github.com/xManager-v2/xManager-Spotify/wiki/xManager-(Spotify)-Roadmaps,-Changelogs-and-Milestones)  
 
-### [<p align="center">🛠VirusTotal Result: Click Here🛠</p>](https://www.virustotal.com/gui/file/af4a14a67ef556d8e2cba9b4bb03c71320539bc31048e27c1fff418c7ae7f8e0/detection)
+### [<p align="center">🛠VirusTotal Result: Click Here🛠</p>](https://www.virustotal.com/gui/file/1a498e749c41da4effd610212b8524b9fadd1240ad9f6337d87cee0c7444f0dd/detection)
 
 # Main Features
 
