@@ -107,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
 	private String download_ready_desc_0 = "";
 	private String downloading_file_0 = "";
 	private String download_success_0 = "";
-	private String copy_url_desc_0 = "";
 	private String copy_url_0 = "";
 	private String download_0 = "";
 	private String cancel_0 = "";
@@ -147,6 +146,10 @@ public class MainActivity extends AppCompatActivity {
 	private String Mod_Changelogs = "";
 	private double Current_Version = 0;
 	private double Latest_Version = 0;
+	private double CLICKER = 0;
+	private double CLICKER_1 = 0;
+	private double CLICKER_2 = 0;
+	private double CLICKER_3 = 0;
 	
 	private ArrayList<String> Language = new ArrayList<>();
 	private ArrayList<String> Theme = new ArrayList<>();
@@ -193,7 +196,6 @@ public class MainActivity extends AppCompatActivity {
 	private TextView downloading_file;
 	private TextView download_success;
 	private TextView maintenance_desc;
-	private TextView copy_url_desc;
 	private TextView maintenance;
 	private TextView thanks;
 	private TextView main_title;
@@ -219,9 +221,7 @@ public class MainActivity extends AppCompatActivity {
 	private LinearLayout main_box_16;
 	private LinearLayout main_box_8;
 	private LinearLayout main_box_11;
-	private LinearLayout main_box_12;
 	private LinearLayout main_box_17;
-	private LinearLayout main_box_7;
 	private LinearLayout main_box_5;
 	private LinearLayout main_box_14;
 	private LinearLayout main_box_9;
@@ -250,13 +250,6 @@ public class MainActivity extends AppCompatActivity {
 	private TextView force_auto_install;
 	private Switch force_auto_install_switch;
 	private TextView force_auto_install_info;
-	private LinearLayout box_12_sub_1;
-	private LinearLayout box_12_sub_2;
-	private LinearLayout title_box_3;
-	private LinearLayout box_copy_url_mode;
-	private TextView copy_url_mode;
-	private Switch copy_url_mode_switch;
-	private TextView copy_file_url_mode_info;
 	private LinearLayout box_17_sub_1;
 	private LinearLayout box_17_sub_2;
 	private LinearLayout title_box_6;
@@ -264,11 +257,6 @@ public class MainActivity extends AppCompatActivity {
 	private TextView disable_reward_ad;
 	private Switch disable_reward_ad_switch;
 	private TextView disable_reward_ad_info;
-	private LinearLayout box_7_sub_1;
-	private LinearLayout title_box_4;
-	private LinearLayout box_navigation_switch;
-	private TextView navigation_bar;
-	private Switch navigation_switch;
 	private LinearLayout box_5_sub_1;
 	private TextView theme;
 	private LinearLayout box_theme_switch;
@@ -395,6 +383,7 @@ public class MainActivity extends AppCompatActivity {
 	private TextView version_switch_1;
 	private LinearLayout box_sub_5;
 	private Switch version_switch_01;
+	private ImageView version_oc_01;
 	private LinearLayout box_3;
 	private LinearLayout box_4;
 	private LinearLayout box_separator_2;
@@ -411,6 +400,7 @@ public class MainActivity extends AppCompatActivity {
 	private TextView version_switch_2;
 	private LinearLayout box_sub_6;
 	private Switch version_switch_02;
+	private ImageView version_oc_02;
 	private LinearLayout box_6_sub_1;
 	private LinearLayout box_separator_3;
 	private LinearLayout box_6_sub_2;
@@ -428,6 +418,7 @@ public class MainActivity extends AppCompatActivity {
 	private TextView changelogs;
 	private LinearLayout box_changelogs;
 	private Switch changelogs_switch;
+	private ImageView changelogs_oc;
 	private LinearLayout box_sub_1;
 	private LinearLayout box_sub_2;
 	private TextView title_sub;
@@ -474,12 +465,10 @@ public class MainActivity extends AppCompatActivity {
 	private OnCompleteListener xManager_Notification_onCompleteListener;
 	private FileProvider FileProvider;
 	private File File_Fixer;
-	private SharedPreferences NAVIGATION_BAR;
 	private SharedPreferences LIST_REFRESH;
 	private SharedPreferences APK_PATH;
 	private SharedPreferences FORCE_INSTALL;
 	private SharedPreferences FORCE_INSTALL_UPDATE;
-	private SharedPreferences COPY_URL_MODE;
 	private SharedPreferences LANGUAGE;
 	private SharedPreferences CLONED_VERSION;
 	private SharedPreferences DISABLE_REWARD_AD;
@@ -536,7 +525,6 @@ public class MainActivity extends AppCompatActivity {
 		downloading_file = findViewById(R.id.downloading_file);
 		download_success = findViewById(R.id.download_success);
 		maintenance_desc = findViewById(R.id.maintenance_desc);
-		copy_url_desc = findViewById(R.id.copy_url_desc);
 		maintenance = findViewById(R.id.maintenance);
 		thanks = findViewById(R.id.thanks);
 		main_title = findViewById(R.id.main_title);
@@ -562,9 +550,7 @@ public class MainActivity extends AppCompatActivity {
 		main_box_16 = findViewById(R.id.main_box_16);
 		main_box_8 = findViewById(R.id.main_box_8);
 		main_box_11 = findViewById(R.id.main_box_11);
-		main_box_12 = findViewById(R.id.main_box_12);
 		main_box_17 = findViewById(R.id.main_box_17);
-		main_box_7 = findViewById(R.id.main_box_7);
 		main_box_5 = findViewById(R.id.main_box_5);
 		main_box_14 = findViewById(R.id.main_box_14);
 		main_box_9 = findViewById(R.id.main_box_9);
@@ -593,13 +579,6 @@ public class MainActivity extends AppCompatActivity {
 		force_auto_install = findViewById(R.id.force_auto_install);
 		force_auto_install_switch = findViewById(R.id.force_auto_install_switch);
 		force_auto_install_info = findViewById(R.id.force_auto_install_info);
-		box_12_sub_1 = findViewById(R.id.box_12_sub_1);
-		box_12_sub_2 = findViewById(R.id.box_12_sub_2);
-		title_box_3 = findViewById(R.id.title_box_3);
-		box_copy_url_mode = findViewById(R.id.box_copy_url_mode);
-		copy_url_mode = findViewById(R.id.copy_url_mode);
-		copy_url_mode_switch = findViewById(R.id.copy_url_mode_switch);
-		copy_file_url_mode_info = findViewById(R.id.copy_file_url_mode_info);
 		box_17_sub_1 = findViewById(R.id.box_17_sub_1);
 		box_17_sub_2 = findViewById(R.id.box_17_sub_2);
 		title_box_6 = findViewById(R.id.title_box_6);
@@ -607,11 +586,6 @@ public class MainActivity extends AppCompatActivity {
 		disable_reward_ad = findViewById(R.id.disable_reward_ad);
 		disable_reward_ad_switch = findViewById(R.id.disable_reward_ad_switch);
 		disable_reward_ad_info = findViewById(R.id.disable_reward_ad_info);
-		box_7_sub_1 = findViewById(R.id.box_7_sub_1);
-		title_box_4 = findViewById(R.id.title_box_4);
-		box_navigation_switch = findViewById(R.id.box_navigation_switch);
-		navigation_bar = findViewById(R.id.navigation_bar);
-		navigation_switch = findViewById(R.id.navigation_switch);
 		box_5_sub_1 = findViewById(R.id.box_5_sub_1);
 		theme = findViewById(R.id.theme);
 		box_theme_switch = findViewById(R.id.box_theme_switch);
@@ -738,6 +712,7 @@ public class MainActivity extends AppCompatActivity {
 		version_switch_1 = findViewById(R.id.version_switch_1);
 		box_sub_5 = findViewById(R.id.box_sub_5);
 		version_switch_01 = findViewById(R.id.version_switch_01);
+		version_oc_01 = findViewById(R.id.version_oc_01);
 		box_3 = findViewById(R.id.box_3);
 		box_4 = findViewById(R.id.box_4);
 		box_separator_2 = findViewById(R.id.box_separator_2);
@@ -754,6 +729,7 @@ public class MainActivity extends AppCompatActivity {
 		version_switch_2 = findViewById(R.id.version_switch_2);
 		box_sub_6 = findViewById(R.id.box_sub_6);
 		version_switch_02 = findViewById(R.id.version_switch_02);
+		version_oc_02 = findViewById(R.id.version_oc_02);
 		box_6_sub_1 = findViewById(R.id.box_6_sub_1);
 		box_separator_3 = findViewById(R.id.box_separator_3);
 		box_6_sub_2 = findViewById(R.id.box_6_sub_2);
@@ -771,6 +747,7 @@ public class MainActivity extends AppCompatActivity {
 		changelogs = findViewById(R.id.changelogs);
 		box_changelogs = findViewById(R.id.box_changelogs);
 		changelogs_switch = findViewById(R.id.changelogs_switch);
+		changelogs_oc = findViewById(R.id.changelogs_oc);
 		box_sub_1 = findViewById(R.id.box_sub_1);
 		box_sub_2 = findViewById(R.id.box_sub_2);
 		title_sub = findViewById(R.id.title_sub);
@@ -810,12 +787,10 @@ public class MainActivity extends AppCompatActivity {
 		THEME = getSharedPreferences("THEME", Activity.MODE_PRIVATE);
 		DESC_X = getSharedPreferences("DESC_X", Activity.MODE_PRIVATE);
 		Connection = new RequestNetwork(this);
-		NAVIGATION_BAR = getSharedPreferences("NAVIGATION_BAR", Activity.MODE_PRIVATE);
 		LIST_REFRESH = getSharedPreferences("LIST_REFRESH", Activity.MODE_PRIVATE);
 		APK_PATH = getSharedPreferences("APK_PATH", Activity.MODE_PRIVATE);
 		FORCE_INSTALL = getSharedPreferences("FORCE_INSTALL", Activity.MODE_PRIVATE);
 		FORCE_INSTALL_UPDATE = getSharedPreferences("FORCE_INSTALL_UPDATE", Activity.MODE_PRIVATE);
-		COPY_URL_MODE = getSharedPreferences("COPY_URL_MODE", Activity.MODE_PRIVATE);
 		LANGUAGE = getSharedPreferences("LANGUAGE", Activity.MODE_PRIVATE);
 		CLONED_VERSION = getSharedPreferences("CLONED_VERSION", Activity.MODE_PRIVATE);
 		DISABLE_REWARD_AD = getSharedPreferences("DISABLE_REWARD_AD", Activity.MODE_PRIVATE);
@@ -902,18 +877,6 @@ public class MainActivity extends AppCompatActivity {
 															catch(Exception e) {
 															}
 															_Update_Remover();
-															Timer = new TimerTask() {
-																@Override
-																public void run() {
-																	runOnUiThread(new Runnable() {
-																		@Override
-																		public void run() {
-																			_Hide_Navigation();
-																		}
-																	});
-																}
-															};
-															_timer.schedule(Timer, (int)(100));
 															                }
 														            });
 													 Update_Authorized.setNeutralButton(not_now.getText().toString(), new DialogInterface.OnClickListener(){
@@ -921,18 +884,6 @@ public class MainActivity extends AppCompatActivity {
 														                @Override
 														                public void onClick(DialogInterface Update_Authorized, int p) {
 															AlertDialog.setCancelable(true);
-															Timer = new TimerTask() {
-																@Override
-																public void run() {
-																	runOnUiThread(new Runnable() {
-																		@Override
-																		public void run() {
-																			_Hide_Navigation();
-																		}
-																	});
-																}
-															};
-															_timer.schedule(Timer, (int)(100));
 															                }
 														            });
 													AlertDialog = Update_Authorized.create();
@@ -971,18 +922,6 @@ public class MainActivity extends AppCompatActivity {
 														AlertDialog = Update_Latest.create();
 														AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
 														AlertDialog.show();
-														Timer = new TimerTask() {
-															@Override
-															public void run() {
-																runOnUiThread(new Runnable() {
-																	@Override
-																	public void run() {
-																		_Hide_Navigation();
-																	}
-																});
-															}
-														};
-														_timer.schedule(Timer, (int)(100));
 													}
 													catch(Exception e) {
 													}
@@ -1059,7 +998,6 @@ public class MainActivity extends AppCompatActivity {
 				_Tap_Animation(box_settings_icon_close);
 				CLOSER_2 = 0;
 				_Animation_0();
-				_Url_Mode();
 			}
 		});
 		
@@ -1079,8 +1017,16 @@ public class MainActivity extends AppCompatActivity {
 					sub_3.setVisibility(View.GONE);
 					sub_5.setVisibility(View.VISIBLE);
 					sub_7.setVisibility(View.VISIBLE);
-					version_switch_01.setChecked(false);
-					version_switch_02.setChecked(false);
+					list_menu_1.setVisibility(View.GONE);
+					list_menu_2.setVisibility(View.GONE);
+					list_menu_3.setVisibility(View.GONE);
+					list_menu_4.setVisibility(View.GONE);
+					list_menu_3.setAdapter(new List_menu_3Adapter(regular_cloned));
+					list_menu_4.setAdapter(new List_menu_4Adapter(amoled_cloned));
+					((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
+					((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+					CLICKER_1 = 1;
+					CLICKER_2 = 1;
 				}
 				else {
 					CLONED_VERSION.edit().putString("CLONED", "OFF").commit();
@@ -1094,8 +1040,16 @@ public class MainActivity extends AppCompatActivity {
 					sub_3.setVisibility(View.VISIBLE);
 					sub_5.setVisibility(View.GONE);
 					sub_7.setVisibility(View.GONE);
-					version_switch_01.setChecked(false);
-					version_switch_02.setChecked(false);
+					list_menu_1.setVisibility(View.GONE);
+					list_menu_2.setVisibility(View.GONE);
+					list_menu_3.setVisibility(View.GONE);
+					list_menu_4.setVisibility(View.GONE);
+					list_menu_1.setAdapter(new List_menu_1Adapter(regular));
+					list_menu_2.setAdapter(new List_menu_2Adapter(amoled));
+					((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
+					((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
+					CLICKER_1 = 1;
+					CLICKER_2 = 1;
 				}
 				COUNTER = 1;
 			}
@@ -1122,26 +1076,10 @@ public class MainActivity extends AppCompatActivity {
 				if (_isChecked) {
 					FORCE_INSTALL.edit().putString("FORCE_INSTALL", "X").commit();
 					FORCE_INSTALL_UPDATE.edit().putString("FORCE_INSTALL_UPDATE", "XX").commit();
-					copy_url_mode_switch.setChecked(false);
 				}
 				else {
 					FORCE_INSTALL.edit().putString("FORCE_INSTALL", "Y").commit();
 					FORCE_INSTALL_UPDATE.edit().putString("FORCE_INSTALL_UPDATE", "YY").commit();
-				}
-				COUNTER = 1;
-			}
-		});
-		
-		copy_url_mode_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
-				final boolean _isChecked = _param2;
-				if (_isChecked) {
-					COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_ON").commit();
-					force_auto_install_switch.setChecked(false);
-				}
-				else {
-					COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_OFF").commit();
 				}
 				COUNTER = 1;
 			}
@@ -1156,26 +1094,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				else {
 					DISABLE_REWARD_AD.edit().putString("REWARD_AD", "OFF").commit();
-				}
-				COUNTER = 1;
-			}
-		});
-		
-		navigation_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
-				final boolean _isChecked = _param2;
-				if (_isChecked) {
-					NAVIGATION_BAR.edit().putString("NAVIGATION", "1").commit();
-					getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-				}
-				else {
-					NAVIGATION_BAR.edit().putString("NAVIGATION", "0").commit();
-					getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-					
-					if (Build.VERSION.SDK_INT >= 21) {
-						getWindow().setNavigationBarColor(Color.parseColor("#212121"));
-					}
 				}
 				COUNTER = 1;
 			}
@@ -1315,9 +1233,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc);
 						force_auto_install.setText(R.string.force_auto_install);
 						force_auto_install_info.setText(R.string.force_auto_install_desc);
-						copy_url_mode.setText(R.string.copy_url_mode);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc);
-						navigation_bar.setText(R.string.hide_navigation_bar);
 						theme.setText(R.string.show_themes);
 						apk_location.setText(R.string.apk_location);
 						apk_location_info.setText(R.string.apk_location_desc);
@@ -1339,14 +1254,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc);
 						downloading_file.setText(R.string.downloading_file);
 						download_success.setText(R.string.download_success);
-						copy_url_desc.setText(R.string.copy_url_desc);
 						new_update.setText(R.string.new_update);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url);
 						continue_1.setText(R.string.continue_1);
 						cancel.setText(R.string.cancel);
@@ -1429,9 +1342,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_01);
 						force_auto_install.setText(R.string.force_auto_install_01);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_01);
-						copy_url_mode.setText(R.string.copy_url_mode_01);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_01);
-						navigation_bar.setText(R.string.hide_navigation_bar_01);
 						theme.setText(R.string.show_themes_01);
 						apk_location.setText(R.string.apk_location_01);
 						apk_location_info.setText(R.string.apk_location_desc_01);
@@ -1453,14 +1363,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_01);
 						downloading_file.setText(R.string.downloading_file_01);
 						download_success.setText(R.string.download_success_01);
-						copy_url_desc.setText(R.string.copy_url_desc_01);
 						new_update.setText(R.string.new_update_01);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_01);
 						continue_1.setText(R.string.continue_1_01);
 						cancel.setText(R.string.cancel_01);
@@ -1543,9 +1451,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_02);
 						force_auto_install.setText(R.string.force_auto_install_02);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_02);
-						copy_url_mode.setText(R.string.copy_url_mode_02);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_02);
-						navigation_bar.setText(R.string.hide_navigation_bar_02);
 						theme.setText(R.string.show_themes_02);
 						apk_location.setText(R.string.apk_location_02);
 						apk_location_info.setText(R.string.apk_location_desc_02);
@@ -1567,14 +1472,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_02);
 						downloading_file.setText(R.string.downloading_file_02);
 						download_success.setText(R.string.download_success_02);
-						copy_url_desc.setText(R.string.copy_url_desc_02);
 						new_update.setText(R.string.new_update_02);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_02);
 						continue_1.setText(R.string.continue_1_02);
 						cancel.setText(R.string.cancel_02);
@@ -1657,9 +1560,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_03);
 						force_auto_install.setText(R.string.force_auto_install_03);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_03);
-						copy_url_mode.setText(R.string.copy_url_mode_03);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_03);
-						navigation_bar.setText(R.string.hide_navigation_bar_03);
 						theme.setText(R.string.show_themes_03);
 						apk_location.setText(R.string.apk_location_03);
 						apk_location_info.setText(R.string.apk_location_desc_03);
@@ -1681,14 +1581,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_03);
 						downloading_file.setText(R.string.downloading_file_03);
 						download_success.setText(R.string.download_success_03);
-						copy_url_desc.setText(R.string.copy_url_desc_03);
 						new_update.setText(R.string.new_update_03);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_03);
 						continue_1.setText(R.string.continue_1_03);
 						cancel.setText(R.string.cancel_03);
@@ -1771,9 +1669,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_04);
 						force_auto_install.setText(R.string.force_auto_install_04);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_04);
-						copy_url_mode.setText(R.string.copy_url_mode_04);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_04);
-						navigation_bar.setText(R.string.hide_navigation_bar_04);
 						theme.setText(R.string.show_themes_04);
 						apk_location.setText(R.string.apk_location_04);
 						apk_location_info.setText(R.string.apk_location_desc_04);
@@ -1795,14 +1690,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_04);
 						downloading_file.setText(R.string.downloading_file_04);
 						download_success.setText(R.string.download_success_04);
-						copy_url_desc.setText(R.string.copy_url_desc_04);
 						new_update.setText(R.string.new_update_04);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_04);
 						continue_1.setText(R.string.continue_1_04);
 						cancel.setText(R.string.cancel_04);
@@ -1885,9 +1778,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_05);
 						force_auto_install.setText(R.string.force_auto_install_05);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_05);
-						copy_url_mode.setText(R.string.copy_url_mode_05);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_05);
-						navigation_bar.setText(R.string.hide_navigation_bar_05);
 						theme.setText(R.string.show_themes_05);
 						apk_location.setText(R.string.apk_location_05);
 						apk_location_info.setText(R.string.apk_location_desc_05);
@@ -1909,14 +1799,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_05);
 						downloading_file.setText(R.string.downloading_file_05);
 						download_success.setText(R.string.download_success_05);
-						copy_url_desc.setText(R.string.copy_url_desc_05);
 						new_update.setText(R.string.new_update_05);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_05);
 						continue_1.setText(R.string.continue_1_05);
 						cancel.setText(R.string.cancel_05);
@@ -1999,9 +1887,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_06);
 						force_auto_install.setText(R.string.force_auto_install_06);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_06);
-						copy_url_mode.setText(R.string.copy_url_mode_06);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_06);
-						navigation_bar.setText(R.string.hide_navigation_bar_06);
 						theme.setText(R.string.show_themes_06);
 						apk_location.setText(R.string.apk_location_06);
 						apk_location_info.setText(R.string.apk_location_desc_06);
@@ -2023,14 +1908,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_06);
 						downloading_file.setText(R.string.downloading_file_06);
 						download_success.setText(R.string.download_success_06);
-						copy_url_desc.setText(R.string.copy_url_desc_06);
 						new_update.setText(R.string.new_update_06);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_06);
 						continue_1.setText(R.string.continue_1_06);
 						cancel.setText(R.string.cancel_06);
@@ -2113,9 +1996,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_07);
 						force_auto_install.setText(R.string.force_auto_install_07);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_07);
-						copy_url_mode.setText(R.string.copy_url_mode_07);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_07);
-						navigation_bar.setText(R.string.hide_navigation_bar_07);
 						theme.setText(R.string.show_themes_07);
 						apk_location.setText(R.string.apk_location_07);
 						apk_location_info.setText(R.string.apk_location_desc_07);
@@ -2137,14 +2017,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_07);
 						downloading_file.setText(R.string.downloading_file_07);
 						download_success.setText(R.string.download_success_07);
-						copy_url_desc.setText(R.string.copy_url_desc_07);
 						new_update.setText(R.string.new_update_07);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_07);
 						continue_1.setText(R.string.continue_1_07);
 						cancel.setText(R.string.cancel_07);
@@ -2227,9 +2105,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_08);
 						force_auto_install.setText(R.string.force_auto_install_08);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_08);
-						copy_url_mode.setText(R.string.copy_url_mode_08);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_08);
-						navigation_bar.setText(R.string.hide_navigation_bar_08);
 						theme.setText(R.string.show_themes_08);
 						apk_location.setText(R.string.apk_location_08);
 						apk_location_info.setText(R.string.apk_location_desc_08);
@@ -2251,14 +2126,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_08);
 						downloading_file.setText(R.string.downloading_file_08);
 						download_success.setText(R.string.download_success_08);
-						copy_url_desc.setText(R.string.copy_url_desc_08);
 						new_update.setText(R.string.new_update_08);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_08);
 						continue_1.setText(R.string.continue_1_08);
 						cancel.setText(R.string.cancel_08);
@@ -2341,9 +2214,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_09);
 						force_auto_install.setText(R.string.force_auto_install_09);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_09);
-						copy_url_mode.setText(R.string.copy_url_mode_09);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_09);
-						navigation_bar.setText(R.string.hide_navigation_bar_09);
 						theme.setText(R.string.show_themes_09);
 						apk_location.setText(R.string.apk_location_09);
 						apk_location_info.setText(R.string.apk_location_desc_09);
@@ -2365,14 +2235,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_09);
 						downloading_file.setText(R.string.downloading_file_09);
 						download_success.setText(R.string.download_success_09);
-						copy_url_desc.setText(R.string.copy_url_desc_09);
 						new_update.setText(R.string.new_update_09);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_09);
 						continue_1.setText(R.string.continue_1_09);
 						cancel.setText(R.string.cancel_09);
@@ -2455,9 +2323,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_10);
 						force_auto_install.setText(R.string.force_auto_install_10);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_10);
-						copy_url_mode.setText(R.string.copy_url_mode_10);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_10);
-						navigation_bar.setText(R.string.hide_navigation_bar_10);
 						theme.setText(R.string.show_themes_10);
 						apk_location.setText(R.string.apk_location_10);
 						apk_location_info.setText(R.string.apk_location_desc_10);
@@ -2479,14 +2344,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_10);
 						downloading_file.setText(R.string.downloading_file_10);
 						download_success.setText(R.string.download_success_10);
-						copy_url_desc.setText(R.string.copy_url_desc_10);
 						new_update.setText(R.string.new_update_10);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_10);
 						continue_1.setText(R.string.continue_1_10);
 						cancel.setText(R.string.cancel_10);
@@ -2569,9 +2432,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_11);
 						force_auto_install.setText(R.string.force_auto_install_11);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_11);
-						copy_url_mode.setText(R.string.copy_url_mode_11);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_11);
-						navigation_bar.setText(R.string.hide_navigation_bar_11);
 						theme.setText(R.string.show_themes_11);
 						apk_location.setText(R.string.apk_location_11);
 						apk_location_info.setText(R.string.apk_location_desc_11);
@@ -2593,14 +2453,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_11);
 						downloading_file.setText(R.string.downloading_file_11);
 						download_success.setText(R.string.download_success_11);
-						copy_url_desc.setText(R.string.copy_url_desc_11);
 						new_update.setText(R.string.new_update_11);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_11);
 						continue_1.setText(R.string.continue_1_11);
 						cancel.setText(R.string.cancel_11);
@@ -2683,9 +2541,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_12);
 						force_auto_install.setText(R.string.force_auto_install_12);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_12);
-						copy_url_mode.setText(R.string.copy_url_mode_12);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_12);
-						navigation_bar.setText(R.string.hide_navigation_bar_12);
 						theme.setText(R.string.show_themes_12);
 						apk_location.setText(R.string.apk_location_12);
 						apk_location_info.setText(R.string.apk_location_desc_12);
@@ -2707,14 +2562,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_12);
 						downloading_file.setText(R.string.downloading_file_12);
 						download_success.setText(R.string.download_success_12);
-						copy_url_desc.setText(R.string.copy_url_desc_12);
 						new_update.setText(R.string.new_update_12);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_12);
 						continue_1.setText(R.string.continue_1_12);
 						cancel.setText(R.string.cancel_12);
@@ -2797,9 +2650,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_13);
 						force_auto_install.setText(R.string.force_auto_install_13);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_13);
-						copy_url_mode.setText(R.string.copy_url_mode_13);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_13);
-						navigation_bar.setText(R.string.hide_navigation_bar_13);
 						theme.setText(R.string.show_themes_13);
 						apk_location.setText(R.string.apk_location_13);
 						apk_location_info.setText(R.string.apk_location_desc_13);
@@ -2821,14 +2671,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_13);
 						downloading_file.setText(R.string.downloading_file_13);
 						download_success.setText(R.string.download_success_13);
-						copy_url_desc.setText(R.string.copy_url_desc_13);
 						new_update.setText(R.string.new_update_13);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_13);
 						continue_1.setText(R.string.continue_1_13);
 						cancel.setText(R.string.cancel_13);
@@ -2911,9 +2759,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_14);
 						force_auto_install.setText(R.string.force_auto_install_14);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_14);
-						copy_url_mode.setText(R.string.copy_url_mode_14);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_14);
-						navigation_bar.setText(R.string.hide_navigation_bar_14);
 						theme.setText(R.string.show_themes_14);
 						apk_location.setText(R.string.apk_location_14);
 						apk_location_info.setText(R.string.apk_location_desc_14);
@@ -2935,14 +2780,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_14);
 						downloading_file.setText(R.string.downloading_file_14);
 						download_success.setText(R.string.download_success_14);
-						copy_url_desc.setText(R.string.copy_url_desc_14);
 						new_update.setText(R.string.new_update_14);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_14);
 						continue_1.setText(R.string.continue_1_14);
 						cancel.setText(R.string.cancel_14);
@@ -3025,9 +2868,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_15);
 						force_auto_install.setText(R.string.force_auto_install_15);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_15);
-						copy_url_mode.setText(R.string.copy_url_mode_15);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_15);
-						navigation_bar.setText(R.string.hide_navigation_bar_15);
 						theme.setText(R.string.show_themes_15);
 						apk_location.setText(R.string.apk_location_15);
 						apk_location_info.setText(R.string.apk_location_desc_15);
@@ -3049,14 +2889,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_15);
 						downloading_file.setText(R.string.downloading_file_15);
 						download_success.setText(R.string.download_success_15);
-						copy_url_desc.setText(R.string.copy_url_desc_15);
 						new_update.setText(R.string.new_update_15);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_15);
 						continue_1.setText(R.string.continue_1_15);
 						cancel.setText(R.string.cancel_15);
@@ -3139,9 +2977,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_16);
 						force_auto_install.setText(R.string.force_auto_install_16);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_16);
-						copy_url_mode.setText(R.string.copy_url_mode_16);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_16);
-						navigation_bar.setText(R.string.hide_navigation_bar_16);
 						theme.setText(R.string.show_themes_16);
 						apk_location.setText(R.string.apk_location_16);
 						apk_location_info.setText(R.string.apk_location_desc_16);
@@ -3163,14 +2998,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_16);
 						downloading_file.setText(R.string.downloading_file_16);
 						download_success.setText(R.string.download_success_16);
-						copy_url_desc.setText(R.string.copy_url_desc_16);
 						new_update.setText(R.string.new_update_16);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_16);
 						continue_1.setText(R.string.continue_1_16);
 						cancel.setText(R.string.cancel_16);
@@ -3253,9 +3086,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_17);
 						force_auto_install.setText(R.string.force_auto_install_17);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_17);
-						copy_url_mode.setText(R.string.copy_url_mode_17);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_17);
-						navigation_bar.setText(R.string.hide_navigation_bar_17);
 						theme.setText(R.string.show_themes_17);
 						apk_location.setText(R.string.apk_location_17);
 						apk_location_info.setText(R.string.apk_location_desc_17);
@@ -3277,14 +3107,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_17);
 						downloading_file.setText(R.string.downloading_file_17);
 						download_success.setText(R.string.download_success_17);
-						copy_url_desc.setText(R.string.copy_url_desc_17);
 						new_update.setText(R.string.new_update_17);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_17);
 						continue_1.setText(R.string.continue_1_17);
 						cancel.setText(R.string.cancel_17);
@@ -3367,9 +3195,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_18);
 						force_auto_install.setText(R.string.force_auto_install_18);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_18);
-						copy_url_mode.setText(R.string.copy_url_mode_18);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_18);
-						navigation_bar.setText(R.string.hide_navigation_bar_18);
 						theme.setText(R.string.show_themes_18);
 						apk_location.setText(R.string.apk_location_18);
 						apk_location_info.setText(R.string.apk_location_desc_18);
@@ -3391,14 +3216,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_18);
 						downloading_file.setText(R.string.downloading_file_18);
 						download_success.setText(R.string.download_success_18);
-						copy_url_desc.setText(R.string.copy_url_desc_18);
 						new_update.setText(R.string.new_update_18);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_18);
 						continue_1.setText(R.string.continue_1_18);
 						cancel.setText(R.string.cancel_18);
@@ -3481,9 +3304,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_19);
 						force_auto_install.setText(R.string.force_auto_install_19);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_19);
-						copy_url_mode.setText(R.string.copy_url_mode_19);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_19);
-						navigation_bar.setText(R.string.hide_navigation_bar_19);
 						theme.setText(R.string.show_themes_19);
 						apk_location.setText(R.string.apk_location_19);
 						apk_location_info.setText(R.string.apk_location_desc_19);
@@ -3505,14 +3325,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_19);
 						downloading_file.setText(R.string.downloading_file_19);
 						download_success.setText(R.string.download_success_19);
-						copy_url_desc.setText(R.string.copy_url_desc_19);
 						new_update.setText(R.string.new_update_19);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_19);
 						continue_1.setText(R.string.continue_1_19);
 						cancel.setText(R.string.cancel_19);
@@ -3595,9 +3413,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_20);
 						force_auto_install.setText(R.string.force_auto_install_20);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_20);
-						copy_url_mode.setText(R.string.copy_url_mode_20);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_20);
-						navigation_bar.setText(R.string.hide_navigation_bar_20);
 						theme.setText(R.string.show_themes_20);
 						apk_location.setText(R.string.apk_location_20);
 						apk_location_info.setText(R.string.apk_location_desc_20);
@@ -3619,14 +3434,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_20);
 						downloading_file.setText(R.string.downloading_file_20);
 						download_success.setText(R.string.download_success_20);
-						copy_url_desc.setText(R.string.copy_url_desc_20);
 						new_update.setText(R.string.new_update_20);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_20);
 						continue_1.setText(R.string.continue_1_20);
 						cancel.setText(R.string.cancel_20);
@@ -3709,9 +3522,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_21);
 						force_auto_install.setText(R.string.force_auto_install_21);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_21);
-						copy_url_mode.setText(R.string.copy_url_mode_21);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_21);
-						navigation_bar.setText(R.string.hide_navigation_bar_21);
 						theme.setText(R.string.show_themes_21);
 						apk_location.setText(R.string.apk_location_21);
 						apk_location_info.setText(R.string.apk_location_desc_21);
@@ -3733,14 +3543,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_21);
 						downloading_file.setText(R.string.downloading_file_21);
 						download_success.setText(R.string.download_success_21);
-						copy_url_desc.setText(R.string.copy_url_desc_21);
 						new_update.setText(R.string.new_update_21);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_21);
 						continue_1.setText(R.string.continue_1_21);
 						cancel.setText(R.string.cancel_21);
@@ -3823,9 +3631,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_22);
 						force_auto_install.setText(R.string.force_auto_install_22);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_22);
-						copy_url_mode.setText(R.string.copy_url_mode_22);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_22);
-						navigation_bar.setText(R.string.hide_navigation_bar_22);
 						theme.setText(R.string.show_themes_22);
 						apk_location.setText(R.string.apk_location_22);
 						apk_location_info.setText(R.string.apk_location_desc_22);
@@ -3847,14 +3652,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_22);
 						downloading_file.setText(R.string.downloading_file_22);
 						download_success.setText(R.string.download_success_22);
-						copy_url_desc.setText(R.string.copy_url_desc_22);
 						new_update.setText(R.string.new_update_22);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_22);
 						continue_1.setText(R.string.continue_1_22);
 						cancel.setText(R.string.cancel_22);
@@ -3953,9 +3756,7 @@ public class MainActivity extends AppCompatActivity {
 				cloned_version_switch.setChecked(false);
 				list_auto_refresh_switch.setChecked(false);
 				force_auto_install_switch.setChecked(false);
-				copy_url_mode_switch.setChecked(false);
 				disable_reward_ad_switch.setChecked(false);
-				navigation_switch.setChecked(false);
 				apk_path_location.setText("/storage/emulated/0/xManager/");
 				main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
 				main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
@@ -3978,9 +3779,6 @@ public class MainActivity extends AppCompatActivity {
 					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc);
 					force_auto_install.setText(R.string.force_auto_install);
 					force_auto_install_info.setText(R.string.force_auto_install_desc);
-					copy_url_mode.setText(R.string.copy_url_mode);
-					copy_file_url_mode_info.setText(R.string.copy_url_mode_desc);
-					navigation_bar.setText(R.string.hide_navigation_bar);
 					theme.setText(R.string.show_themes);
 					apk_location.setText(R.string.apk_location);
 					apk_location_info.setText(R.string.apk_location_desc);
@@ -4002,14 +3800,12 @@ public class MainActivity extends AppCompatActivity {
 					download_ready_desc.setText(R.string.download_ready_desc);
 					downloading_file.setText(R.string.downloading_file);
 					download_success.setText(R.string.download_success);
-					copy_url_desc.setText(R.string.copy_url_desc);
 					new_update.setText(R.string.new_update);
 					download_selected_0 = download_selected.getText().toString();
 					download_ready_0 = download_ready.getText().toString();
 					download_ready_desc_0 = download_ready_desc.getText().toString();
 					downloading_file_0 = downloading_file.getText().toString();
 					download_success_0 = download_success.getText().toString();
-					copy_url_desc_0 = copy_url_desc.getText().toString();
 					copy_url.setText(R.string.copy_url);
 					continue_1.setText(R.string.continue_1);
 					cancel.setText(R.string.cancel);
@@ -4105,7 +3901,127 @@ public class MainActivity extends AppCompatActivity {
 				_Tap_Animation(box_icon_close);
 				CLOSER_1 = 0;
 				_Animation_0();
-				_Url_Mode();
+			}
+		});
+		
+		main_box_1.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				if (CLICKER_1 == 1) {
+					if (!cloned_version_switch.isChecked()) {
+						list_menu_1.setVisibility(View.VISIBLE);
+						list_menu_3.setVisibility(View.GONE);
+						list_menu_1.setAdapter(new List_menu_1Adapter(regular));
+						((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
+					}
+					else {
+						if (cloned_version_switch.isChecked()) {
+							list_menu_1.setVisibility(View.GONE);
+							list_menu_3.setVisibility(View.VISIBLE);
+							list_menu_3.setAdapter(new List_menu_3Adapter(regular_cloned));
+							((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
+						}
+					}
+					version_oc_01.setImageResource(R.drawable.open);
+					version_oc_02.setImageResource(R.drawable.close);
+					changelogs_oc.setImageResource(R.drawable.close);
+					list_menu_2.setVisibility(View.GONE);
+					list_menu_4.setVisibility(View.GONE);
+					list_changelogs.setVisibility(View.GONE);
+					CLICKER_1 = 0;
+					CLICKER_2 = 1;
+					CLICKER_3 = 1;
+				}
+				else {
+					if (CLICKER_1 == 0) {
+						version_oc_01.setImageResource(R.drawable.close);
+						list_menu_1.setVisibility(View.GONE);
+						list_menu_3.setVisibility(View.GONE);
+						CLICKER_1 = 1;
+					}
+				}
+				Animation animation;
+				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+				animation.setDuration(500); version_oc_01.startAnimation(animation);
+				animation = null;
+				_Tap_Animation(main_box_1);
+			}
+		});
+		
+		main_box_2.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				if (CLICKER_2 == 1) {
+					if (!cloned_version_switch.isChecked()) {
+						list_menu_2.setVisibility(View.VISIBLE);
+						list_menu_4.setVisibility(View.GONE);
+						list_menu_2.setAdapter(new List_menu_2Adapter(amoled));
+						((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
+					}
+					else {
+						if (cloned_version_switch.isChecked()) {
+							list_menu_2.setVisibility(View.GONE);
+							list_menu_4.setVisibility(View.VISIBLE);
+							list_menu_4.setAdapter(new List_menu_4Adapter(amoled_cloned));
+							((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+						}
+					}
+					version_oc_01.setImageResource(R.drawable.close);
+					version_oc_02.setImageResource(R.drawable.open);
+					changelogs_oc.setImageResource(R.drawable.close);
+					list_menu_1.setVisibility(View.GONE);
+					list_menu_3.setVisibility(View.GONE);
+					list_changelogs.setVisibility(View.GONE);
+					CLICKER_1 = 1;
+					CLICKER_2 = 0;
+					CLICKER_3 = 1;
+				}
+				else {
+					if (CLICKER_2 == 0) {
+						version_oc_02.setImageResource(R.drawable.close);
+						list_menu_2.setVisibility(View.GONE);
+						list_menu_4.setVisibility(View.GONE);
+						CLICKER_2 = 1;
+					}
+				}
+				Animation animation;
+				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+				animation.setDuration(500); version_oc_02.startAnimation(animation);
+				animation = null;
+				_Tap_Animation(main_box_2);
+			}
+		});
+		
+		main_box_6.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				if (CLICKER_3 == 1) {
+					version_oc_01.setImageResource(R.drawable.close);
+					version_oc_02.setImageResource(R.drawable.close);
+					changelogs_oc.setImageResource(R.drawable.open);
+					list_menu_1.setVisibility(View.GONE);
+					list_menu_2.setVisibility(View.GONE);
+					list_menu_3.setVisibility(View.GONE);
+					list_menu_4.setVisibility(View.GONE);
+					list_changelogs.setVisibility(View.VISIBLE);
+					list_changelogs.setAdapter(new List_changelogsAdapter(mod_changelogs));
+					((BaseAdapter)list_changelogs.getAdapter()).notifyDataSetChanged();
+					CLICKER_1 = 1;
+					CLICKER_2 = 1;
+					CLICKER_3 = 0;
+				}
+				else {
+					if (CLICKER_3 == 0) {
+						changelogs_oc.setImageResource(R.drawable.close);
+						list_changelogs.setVisibility(View.GONE);
+						CLICKER_3 = 1;
+					}
+				}
+				Animation animation;
+				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+				animation.setDuration(500); changelogs_oc.startAnimation(animation);
+				animation = null;
+				_Tap_Animation(main_box_6);
 			}
 		});
 		
@@ -4114,481 +4030,153 @@ public class MainActivity extends AppCompatActivity {
 			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
 				final int _position = _param3;
 				try {
-					if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
-						final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+					if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")) {
+						final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
 						
-						String Title = "<b>".concat(download_ready_0.concat("</b>"));
+						String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
 						String TitleColor = "1DB954";
 						
-						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-						if (_position < 2) {
-							if ((_position % 2) == 0) {
-								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR")))))));
-								String MessageColor = "FFFFFF";
-								
-								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-							}
-							else {
-								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR")))))));
-								String MessageColor = "FFFFFF";
-								
-								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-							}
-						}
-						else {
-							if ((_position % 2) == 1) {
-								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR")))))));
-								String MessageColor = "FFFFFF";
-								
-								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-							}
-							else {
-								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR")))))));
-								String MessageColor = "FFFFFF";
-								
-								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-							}
-						}
-						Selected_Patched.setPositiveButton(copy_url_0, new DialogInterface.OnClickListener(){
+						File_Exist.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+						String Message = existing_patched_desc.getText().toString();
+						String MessageColor = "FFFFFF";
+						
+						File_Exist.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+						File_Exist.setPositiveButton(install.getText().toString(), new DialogInterface.OnClickListener(){
 							
 							                @Override
-							                public void onClick(DialogInterface Selected_Patched, int p) {
-								try {
-									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-										AlertDialog.setCancelable(true);
-										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular.get((int)(regular.size() - 1) - _position).get("Link").toString()));
-										SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
-										Timer = new TimerTask() {
-											@Override
-											public void run() {
-												runOnUiThread(new Runnable() {
-													@Override
-													public void run() {
-														_Hide_Navigation();
-													}
-												});
-											}
-										};
-										_timer.schedule(Timer, (int)(100));
-									}
-									else {
-										if (mRewardedAd != null) {
-											  Activity activityContext = MainActivity.this;
-											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-												    @Override
-												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-													       Timer = new TimerTask() {
-														@Override
-														public void run() {
-															runOnUiThread(new Runnable() {
-																@Override
-																public void run() {
-																	AlertDialog.setCancelable(true);
-																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular.get((int)(regular.size() - 1) - _position).get("Link").toString()));
-																	SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
-																	Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																			runOnUiThread(new Runnable() {
-																				@Override
-																				public void run() {
-																					_Hide_Navigation();
-																				}
-																			});
-																		}
-																	};
-																	_timer.schedule(Timer, (int)(100));
-																}
-															});
-														}
-													};
-													_timer.schedule(Timer, (int)(1000));
-													      int rewardAmount = rewardItem.getAmount();
-													      String rewardType = rewardItem.getType();
-													    }
-												  });
-										} else {
-											if (UnityAds.isReady(placementRewardedVideo)) {
-												AlertDialog.setCancelable(true);
-												DOWNLOAD.edit().putString("PATCHED", regular.get((int)(regular.size() - 1) - _position).get("Link").toString()).commit();
-												Timer = new TimerTask() {
-													@Override
-													public void run() {
-														runOnUiThread(new Runnable() {
-															@Override
-															public void run() {
-																_Hide_Navigation();
-															}
-														});
-													}
-												};
-												_timer.schedule(Timer, (int)(100));
-												_Rewarded_Unity();
-											}
-											else {
-												AlertDialog.setCancelable(true);
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular.get((int)(regular.size() - 1) - _position).get("Link").toString()));
-												SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
-												Timer = new TimerTask() {
-													@Override
-													public void run() {
-														runOnUiThread(new Runnable() {
-															@Override
-															public void run() {
-																_Hide_Navigation();
-															}
-														});
-													}
-												};
-												_timer.schedule(Timer, (int)(100));
-											}
-										}
-									}
-								}
-								catch(Exception e) {
-								}
-								                }
-							            });
-						 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface Selected_Patched, int p) {
+							                public void onClick(DialogInterface File_Exist, int p) {
 								AlertDialog.setCancelable(true);
-								Timer = new TimerTask() {
-									@Override
-									public void run() {
-										runOnUiThread(new Runnable() {
-											@Override
-											public void run() {
-												_Hide_Navigation();
-											}
-										});
-									}
-								};
-								_timer.schedule(Timer, (int)(100));
-								                }
-							            });
-						AlertDialog = Selected_Patched.create();
-						AlertDialog.setCancelable(false);
-						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-						AlertDialog.show();
-						FileUtil.makeDir("/storage/emulated/0/xManager");
-						FileUtil.makeDir("/storage/emulated/0/xManager/Update");
-						DELETE = 1;
-					}
-					else {
-						if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")) {
-							final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-							
-							String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
-							String TitleColor = "1DB954";
-							
-							File_Exist.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-							String Message = existing_patched_desc.getText().toString();
-							String MessageColor = "FFFFFF";
-							
-							File_Exist.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-							File_Exist.setPositiveButton(install.getText().toString(), new DialogInterface.OnClickListener(){
-								
-								                @Override
-								                public void onClick(DialogInterface File_Exist, int p) {
-									AlertDialog.setCancelable(true);
-									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk"))) {
-										if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
-												if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
-														StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-														if(android.os.Build.VERSION.SDK_INT >= 29){
-																try {
-																		Intent intent = new Intent(Intent.ACTION_VIEW);
-																		intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																		intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
-																		startActivity(intent);
-																}
-																catch(Exception e) {
-																		SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																}
-														} else {
-																try {
-																		Intent intent = new Intent(Intent.ACTION_VIEW);
-																		intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
-																		startActivity(intent);
-																		Timer = new TimerTask() {
-																				@Override
-																				public void run() {
-																						runOnUiThread(new Runnable() {
-																								@Override
-																								public void run() {
-																										_Hide_Navigation();
-																								}
-																						});
-																				}
-																		};
-																		_timer.schedule(Timer, (int)(100));
-																}
-																catch(Exception e) {
-																		SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																}
-														} 
-												} else {
-														final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-														String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-														String TitleColor = "1DB954";
-														Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-														String Message = installation_failed_ream_desc_0.replace("\n", "<br/>");
-														String MessageColor = "FFFFFF";
-														Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-														Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																@Override
-																public void onClick(DialogInterface Signature_Check, int p) {
-																		AlertDialog.setCancelable(true);
-																		try {
-																				Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
-																				startActivity(intent);
-																		}
-																		catch(Exception e) {
-																		}
-																}
-														});
-														Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																@Override
-																public void onClick(DialogInterface Signature_Check, int p) {
-																		AlertDialog.setCancelable(true);
-																}
-														});
-														AlertDialog = Signature_Check.create();
-														AlertDialog.setCancelable(false);
-														AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-														AlertDialog.show();
-												}	
-										}
-										else {
-												if (Downloaded_Version < Installed_Version) {
-														final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-														String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-														String TitleColor = "1DB954";
-														Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-														String Message = installation_failed_desc_0.replace("\n", "<br/>");
-														String MessageColor = "FFFFFF";
-														Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-														Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																@Override
-																public void onClick(DialogInterface Downgrade_Check, int p) {
-																		AlertDialog.setCancelable(true);
-																		try {
-																				Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
-																				startActivity(intent);
-																		}
-																		catch(Exception e) {
-																		}
-																}
-														});
-														Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																@Override
-																public void onClick(DialogInterface Downgrade_Check, int p) {
-																		AlertDialog.setCancelable(true);
-																}
-														});
-														AlertDialog = Downgrade_Check.create();
-														AlertDialog.setCancelable(false);
-														AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-														AlertDialog.show();
-												}
-										}	
-										
-										_Hide_Navigation();
-									}
-									                }
-								            });
-							File_Exist.setNegativeButton(delete.getText().toString(), new DialogInterface.OnClickListener(){
-								
-								                @Override
-								                public void onClick(DialogInterface File_Exist, int p) {
-									
-									AlertDialog.setCancelable(true);
-									SketchwareUtil.showMessage(getApplicationContext(), "Patched File Deleted");
-									FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
-									FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
-									FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
-									FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
-									FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk");
-									FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk");
-									_Hide_Navigation();
-									                }
-								            });
-							 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
-								
-								                @Override
-								                public void onClick(DialogInterface File_Exist, int p) {
-									AlertDialog.setCancelable(true);
-									_Hide_Navigation();
-									final AlertDialog.Builder Download_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-									
-									String Title = "<b>".concat(download_ready_0.concat("</b>"));
-									String TitleColor = "1DB954";
-									
-									Download_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-									if (_position < 2) {
-										if ((_position % 2) == 0) {
-											String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-										else {
-											String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
+								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk"))) {
+									if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
+											if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
+													StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+													if(android.os.Build.VERSION.SDK_INT >= 29){
+															try {
+																	Intent intent = new Intent(Intent.ACTION_VIEW);
+																	intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																	intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
+																	startActivity(intent);
+															}
+															catch(Exception e) {
+																	SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+															}
+													} else {
+															try {
+																	Intent intent = new Intent(Intent.ACTION_VIEW);
+																	intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
+																	startActivity(intent);
+															}
+															catch(Exception e) {
+																	SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+															}
+													} 
+											} else {
+													final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+													String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+													String TitleColor = "1DB954";
+													Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+													String Message = installation_failed_ream_desc_0.replace("\n", "<br/>");
+													String MessageColor = "FFFFFF";
+													Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+													Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+															@Override
+															public void onClick(DialogInterface Signature_Check, int p) {
+																	AlertDialog.setCancelable(true);
+																	try {
+																			Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
+																			startActivity(intent);
+																	}
+																	catch(Exception e) {
+																	}
+															}
+													});
+													Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+															@Override
+															public void onClick(DialogInterface Signature_Check, int p) {
+																	AlertDialog.setCancelable(true);
+															}
+													});
+													AlertDialog = Signature_Check.create();
+													AlertDialog.setCancelable(false);
+													AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+													AlertDialog.show();
+											}	
 									}
 									else {
-										if ((_position % 2) == 1) {
-											String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-										else {
-											String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-									}
-									Download_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
-										
-										                @Override
-										                public void onClick(DialogInterface Download_Patched, int p) {
-											try {
-												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-													AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														_Download_Install(regular.get((int)(regular.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															_Download(regular.get((int)(regular.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-													_File_Remover();
-												}
-												else {
-													if (mRewardedAd != null) {
-														  Activity activityContext = MainActivity.this;
-														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-															    @Override
-															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																       Timer = new TimerTask() {
-																	@Override
-																	public void run() {
-																		runOnUiThread(new Runnable() {
-																			@Override
-																			public void run() {
-																				AlertDialog.setCancelable(true);
-																				if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																					_Download_Install(regular.get((int)(regular.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																				}
-																				else {
-																					if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																						_Download(regular.get((int)(regular.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																					}
-																				}
-																				_File_Remover();
-																			}
-																		});
+											if (Downloaded_Version < Installed_Version) {
+													final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+													String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+													String TitleColor = "1DB954";
+													Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+													String Message = installation_failed_desc_0.replace("\n", "<br/>");
+													String MessageColor = "FFFFFF";
+													Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+													Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+															@Override
+															public void onClick(DialogInterface Downgrade_Check, int p) {
+																	AlertDialog.setCancelable(true);
+																	try {
+																			Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
+																			startActivity(intent);
 																	}
-																};
-																_timer.schedule(Timer, (int)(1000));
-																      int rewardAmount = rewardItem.getAmount();
-																      String rewardType = rewardItem.getType();
-																    }
-															  });
-													} else {
-														if (UnityAds.isReady(placementRewardedVideo)) {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																DOWNLOAD.edit().putString("PATCHED", regular.get((int)(regular.size() - 1) - _position).get("Link").toString()).commit();
+																	catch(Exception e) {
+																	}
 															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	DOWNLOAD.edit().putString("PATCHED", regular.get((int)(regular.size() - 1) - _position).get("Link").toString()).commit();
-																}
-															}
-															_Rewarded_Unity();
-															_File_Remover();
-														}
-														else {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																_Download_Install(regular.get((int)(regular.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	_Download(regular.get((int)(regular.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-															}
-															_File_Remover();
-														}
-													}
-												}
-											}
-											catch(Exception e) {
-											}
-											                }
-										            });
-									 Download_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
-										
-										                @Override
-										                public void onClick(DialogInterface Download_Patched, int p) {
-											AlertDialog.setCancelable(true);
-											Timer = new TimerTask() {
-												@Override
-												public void run() {
-													runOnUiThread(new Runnable() {
-														@Override
-														public void run() {
-															_Hide_Navigation();
-														}
 													});
-												}
-											};
-											_timer.schedule(Timer, (int)(100));
-											                }
-										            });
-									AlertDialog = Download_Patched.create();
-									AlertDialog.setCancelable(false);
-									AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-									AlertDialog.show();
-									FileUtil.makeDir("/storage/emulated/0/xManager");
-									FileUtil.makeDir("/storage/emulated/0/xManager/Update");
-									DELETE = 1;
-									                }
-								            });
-							AlertDialog = File_Exist.create();
-							AlertDialog.setCancelable(false);
-							AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-							AlertDialog.show();
-						}
-						else {
-							if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
-								final AlertDialog.Builder Download_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+													Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+															@Override
+															public void onClick(DialogInterface Downgrade_Check, int p) {
+																	AlertDialog.setCancelable(true);
+															}
+													});
+													AlertDialog = Downgrade_Check.create();
+													AlertDialog.setCancelable(false);
+													AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+													AlertDialog.show();
+											}
+									}	
+									
+								}
+								                }
+							            });
+						File_Exist.setNegativeButton(delete.getText().toString(), new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface File_Exist, int p) {
+								
+								AlertDialog.setCancelable(true);
+								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
+								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
+								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
+								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
+								FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk");
+								FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk");
+								                }
+							            });
+						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface File_Exist, int p) {
+								AlertDialog.setCancelable(true);
+								final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
 								
 								String Title = "<b>".concat(download_ready_0.concat("</b>"));
 								String TitleColor = "1DB954";
 								
-								Download_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+								Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 								if (_position < 2) {
 									if ((_position % 2) == 0) {
 										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
-										Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 									else {
 										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
-										Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 								}
 								else {
@@ -4596,19 +4184,19 @@ public class MainActivity extends AppCompatActivity {
 										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
-										Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 									else {
 										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
-										Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 								}
-								Download_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
+								Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
 									
 									                @Override
-									                public void onClick(DialogInterface Download_Patched, int p) {
+									                public void onClick(DialogInterface Selected_Patched, int p) {
 										try {
 											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
@@ -4686,47 +4274,81 @@ public class MainActivity extends AppCompatActivity {
 										}
 										                }
 									            });
-								 Download_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
+								Selected_Patched.setNegativeButton(copy_url_0, new DialogInterface.OnClickListener(){
 									
 									                @Override
-									                public void onClick(DialogInterface Download_Patched, int p) {
-										AlertDialog.setCancelable(true);
-										Timer = new TimerTask() {
-											@Override
-											public void run() {
-												runOnUiThread(new Runnable() {
-													@Override
-													public void run() {
-														_Hide_Navigation();
-													}
-												});
+									                public void onClick(DialogInterface Selected_Patched, int p) {
+										
+										try {
+											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+												AlertDialog.setCancelable(true);
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular.get((int)(regular.size() - 1) - _position).get("Link").toString()));
+												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 											}
-										};
-										_timer.schedule(Timer, (int)(100));
+											else {
+												if (mRewardedAd != null) {
+													  Activity activityContext = MainActivity.this;
+													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+														    @Override
+														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+															       Timer = new TimerTask() {
+																@Override
+																public void run() {
+																	runOnUiThread(new Runnable() {
+																		@Override
+																		public void run() {
+																			AlertDialog.setCancelable(true);
+																			((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular.get((int)(regular.size() - 1) - _position).get("Link").toString()));
+																			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																		}
+																	});
+																}
+															};
+															_timer.schedule(Timer, (int)(1000));
+															      int rewardAmount = rewardItem.getAmount();
+															      String rewardType = rewardItem.getType();
+															    }
+														  });
+												} else {
+													if (UnityAds.isReady(placementRewardedVideo)) {
+														AlertDialog.setCancelable(true);
+														DOWNLOAD.edit().putString("PATCHED", regular.get((int)(regular.size() - 1) - _position).get("Link").toString()).commit();
+														_Rewarded_Unity();
+													}
+													else {
+														AlertDialog.setCancelable(true);
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular.get((int)(regular.size() - 1) - _position).get("Link").toString()));
+														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+													}
+												}
+											}
+										}
+										catch(Exception e) {
+										}
 										                }
 									            });
-								AlertDialog = Download_Patched.create();
+								 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
+									
+									                @Override
+									                public void onClick(DialogInterface Selected_Patched, int p) {
+										AlertDialog.setCancelable(true);
+										                }
+									            });
+								AlertDialog = Selected_Patched.create();
 								AlertDialog.setCancelable(false);
 								AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
 								AlertDialog.show();
 								FileUtil.makeDir("/storage/emulated/0/xManager");
 								FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 								DELETE = 1;
-							}
-						}
+								                }
+							            });
+						AlertDialog = File_Exist.create();
+						AlertDialog.setCancelable(false);
+						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+						AlertDialog.show();
 					}
-				}
-				catch(Exception e) {
-				}
-			}
-		});
-		
-		list_menu_3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
-				final int _position = _param3;
-				try {
-					if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
+					else {
 						final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
 						
 						String Title = "<b>".concat(download_ready_0.concat("</b>"));
@@ -4735,13 +4357,13 @@ public class MainActivity extends AppCompatActivity {
 						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 						if (_position < 2) {
 							if ((_position % 2) == 0) {
-								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)")))))));
+								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 							else {
-								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)")))))));
+								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -4749,39 +4371,34 @@ public class MainActivity extends AppCompatActivity {
 						}
 						else {
 							if ((_position % 2) == 1) {
-								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)")))))));
+								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 							else {
-								String Message = "<b>RELEASE:  </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)")))))));
+								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 						}
-						Selected_Patched.setPositiveButton(copy_url_0, new DialogInterface.OnClickListener(){
+						Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
 							
 							                @Override
 							                public void onClick(DialogInterface Selected_Patched, int p) {
 								try {
 									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 										AlertDialog.setCancelable(true);
-										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString()));
-										SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
-										Timer = new TimerTask() {
-											@Override
-											public void run() {
-												runOnUiThread(new Runnable() {
-													@Override
-													public void run() {
-														_Hide_Navigation();
-													}
-												});
+										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+											_Download_Install(regular.get((int)(regular.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+										}
+										else {
+											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+												_Download(regular.get((int)(regular.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
 											}
-										};
-										_timer.schedule(Timer, (int)(100));
+										}
+										_File_Remover();
 									}
 									else {
 										if (mRewardedAd != null) {
@@ -4796,20 +4413,15 @@ public class MainActivity extends AppCompatActivity {
 																@Override
 																public void run() {
 																	AlertDialog.setCancelable(true);
-																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString()));
-																	SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
-																	Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																			runOnUiThread(new Runnable() {
-																				@Override
-																				public void run() {
-																					_Hide_Navigation();
-																				}
-																			});
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																		_Download_Install(regular.get((int)(regular.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																	else {
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																			_Download(regular.get((int)(regular.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
 																		}
-																	};
-																	_timer.schedule(Timer, (int)(100));
+																	}
+																	_File_Remover();
 																}
 															});
 														}
@@ -4822,37 +4434,81 @@ public class MainActivity extends AppCompatActivity {
 										} else {
 											if (UnityAds.isReady(placementRewardedVideo)) {
 												AlertDialog.setCancelable(true);
-												DOWNLOAD.edit().putString("PATCHED", regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString()).commit();
-												Timer = new TimerTask() {
-													@Override
-													public void run() {
-														runOnUiThread(new Runnable() {
-															@Override
-															public void run() {
-																_Hide_Navigation();
-															}
-														});
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													DOWNLOAD.edit().putString("PATCHED", regular.get((int)(regular.size() - 1) - _position).get("Link").toString()).commit();
+												}
+												else {
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														DOWNLOAD.edit().putString("PATCHED", regular.get((int)(regular.size() - 1) - _position).get("Link").toString()).commit();
 													}
-												};
-												_timer.schedule(Timer, (int)(100));
+												}
+												_Rewarded_Unity();
+												_File_Remover();
+											}
+											else {
+												AlertDialog.setCancelable(true);
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													_Download_Install(regular.get((int)(regular.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
+												else {
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														_Download(regular.get((int)(regular.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+												}
+												_File_Remover();
+											}
+										}
+									}
+								}
+								catch(Exception e) {
+								}
+								                }
+							            });
+						Selected_Patched.setNegativeButton(copy_url_0, new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface Selected_Patched, int p) {
+								
+								try {
+									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+										AlertDialog.setCancelable(true);
+										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular.get((int)(regular.size() - 1) - _position).get("Link").toString()));
+										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+									}
+									else {
+										if (mRewardedAd != null) {
+											  Activity activityContext = MainActivity.this;
+											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+												    @Override
+												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+													       Timer = new TimerTask() {
+														@Override
+														public void run() {
+															runOnUiThread(new Runnable() {
+																@Override
+																public void run() {
+																	AlertDialog.setCancelable(true);
+																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular.get((int)(regular.size() - 1) - _position).get("Link").toString()));
+																	com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																}
+															});
+														}
+													};
+													_timer.schedule(Timer, (int)(1000));
+													      int rewardAmount = rewardItem.getAmount();
+													      String rewardType = rewardItem.getType();
+													    }
+												  });
+										} else {
+											if (UnityAds.isReady(placementRewardedVideo)) {
+												AlertDialog.setCancelable(true);
+												DOWNLOAD.edit().putString("PATCHED", regular.get((int)(regular.size() - 1) - _position).get("Link").toString()).commit();
 												_Rewarded_Unity();
 											}
 											else {
 												AlertDialog.setCancelable(true);
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString()));
-												SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
-												Timer = new TimerTask() {
-													@Override
-													public void run() {
-														runOnUiThread(new Runnable() {
-															@Override
-															public void run() {
-																_Hide_Navigation();
-															}
-														});
-													}
-												};
-												_timer.schedule(Timer, (int)(100));
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular.get((int)(regular.size() - 1) - _position).get("Link").toString()));
+												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 											}
 										}
 									}
@@ -4866,18 +4522,6 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface Selected_Patched, int p) {
 								AlertDialog.setCancelable(true);
-								Timer = new TimerTask() {
-									@Override
-									public void run() {
-										runOnUiThread(new Runnable() {
-											@Override
-											public void run() {
-												_Hide_Navigation();
-											}
-										});
-									}
-								};
-								_timer.schedule(Timer, (int)(100));
 								                }
 							            });
 						AlertDialog = Selected_Patched.create();
@@ -4888,339 +4532,184 @@ public class MainActivity extends AppCompatActivity {
 						FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 						DELETE = 1;
 					}
-					else {
-						if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")) {
-							final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+				}
+				catch(Exception e) {
+				}
+			}
+		});
+		
+		list_menu_3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
+				final int _position = _param3;
+				try {
+					if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")) {
+						final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+						
+						String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
+						String TitleColor = "1DB954";
+						
+						File_Exist.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+						String Message = existing_patched_desc.getText().toString();
+						String MessageColor = "FFFFFF";
+						
+						File_Exist.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+						File_Exist.setPositiveButton(install.getText().toString(), new DialogInterface.OnClickListener(){
 							
-							String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
-							String TitleColor = "1DB954";
-							
-							File_Exist.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-							String Message = existing_patched_desc.getText().toString();
-							String MessageColor = "FFFFFF";
-							
-							File_Exist.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-							File_Exist.setPositiveButton(install.getText().toString(), new DialogInterface.OnClickListener(){
-								
-								                @Override
-								                public void onClick(DialogInterface File_Exist, int p) {
-									AlertDialog.setCancelable(true);
-									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk"))) {
-										if ((Installed_Version_Cloned < Downloaded_Version_Cloned) || ((Downloaded_Version_Cloned > Installed_Version_Cloned) || ((Installed_Version_Cloned == Downloaded_Version_Cloned) || Installed_Checker_Cloned.equals("false")))) {
-												if (getICSignature(getApplicationContext()).equals(getDCSignature(getApplicationContext())) || Installed_Checker_Cloned.equals("false")) {
-														StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-														if(android.os.Build.VERSION.SDK_INT >= 29){
-																try {
-																		Intent intent = new Intent(Intent.ACTION_VIEW);
-																		intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																		intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
-																		startActivity(intent);
-																}
-																catch(Exception e) {
-																		SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																}
-														} else {
-																try {
-																		Intent intent = new Intent(Intent.ACTION_VIEW);
-																		intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
-																		startActivity(intent);
-																		Timer = new TimerTask() {
-																				@Override
-																				public void run() {
-																						runOnUiThread(new Runnable() {
-																								@Override
-																								public void run() {
-																										_Hide_Navigation();
-																								}
-																						});
-																				}
-																		};
-																		_timer.schedule(Timer, (int)(100));
-																}
-																catch(Exception e) {
-																		SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																}
-														} 
-												} else {
-														final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-														String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-														String TitleColor = "1DB954";
-														Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-														String Message = installation_failed_cloned_desc_0.replace("\n", "<br/>");
-														String MessageColor = "FFFFFF";
-														Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-														Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																@Override
-																public void onClick(DialogInterface Signature_Check, int p) {
-																		AlertDialog.setCancelable(true);
-																		try {
-																				Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
-																				startActivity(intent);
-																		}
-																		catch(Exception e) {
-																		}
-																}
-														});
-														Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																@Override
-																public void onClick(DialogInterface Signature_Check, int p) {
-																		AlertDialog.setCancelable(true);
-																}
-														});
-														AlertDialog = Signature_Check.create();
-														AlertDialog.setCancelable(false);
-														AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-														AlertDialog.show();
-												}	
-										}
-										else {
-												if (Downloaded_Version_Cloned < Installed_Version_Cloned) {
-														final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-														String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-														String TitleColor = "1DB954";
-														Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-														String Message = installation_failed_desc_0.replace("\n", "<br/>");
-														String MessageColor = "FFFFFF";
-														Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-														Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																@Override
-																public void onClick(DialogInterface Downgrade_Check, int p) {
-																		AlertDialog.setCancelable(true);
-																		try {
-																				Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
-																				startActivity(intent);
-																		}
-																		catch(Exception e) {
-																		}
-																}
-														});
-														Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																@Override
-																public void onClick(DialogInterface Downgrade_Check, int p) {
-																		AlertDialog.setCancelable(true);
-																}
-														});
-														AlertDialog = Downgrade_Check.create();
-														AlertDialog.setCancelable(false);
-														AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-														AlertDialog.show();
-												}
-										}
-										
-										_Hide_Navigation();
-									}
-									                }
-								            });
-							File_Exist.setNegativeButton(delete.getText().toString(), new DialogInterface.OnClickListener(){
-								
-								                @Override
-								                public void onClick(DialogInterface File_Exist, int p) {
-									
-									AlertDialog.setCancelable(true);
-									SketchwareUtil.showMessage(getApplicationContext(), "Patched File Deleted");
-									FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
-									FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
-									FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
-									FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
-									FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk");
-									FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk");
-									_Hide_Navigation();
-									                }
-								            });
-							 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
-								
-								                @Override
-								                public void onClick(DialogInterface File_Exist, int p) {
-									AlertDialog.setCancelable(true);
-									_Hide_Navigation();
-									final AlertDialog.Builder Download_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-									
-									String Title = "<b>".concat(download_ready_0.concat("</b>"));
-									String TitleColor = "1DB954";
-									
-									Download_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-									if (_position < 2) {
-										if ((_position % 2) == 0) {
-											String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-										else {
-											String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
+							                @Override
+							                public void onClick(DialogInterface File_Exist, int p) {
+								AlertDialog.setCancelable(true);
+								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk"))) {
+									if ((Installed_Version_Cloned < Downloaded_Version_Cloned) || ((Downloaded_Version_Cloned > Installed_Version_Cloned) || ((Installed_Version_Cloned == Downloaded_Version_Cloned) || Installed_Checker_Cloned.equals("false")))) {
+											if (getICSignature(getApplicationContext()).equals(getDCSignature(getApplicationContext())) || Installed_Checker_Cloned.equals("false")) {
+													StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+													if(android.os.Build.VERSION.SDK_INT >= 29){
+															try {
+																	Intent intent = new Intent(Intent.ACTION_VIEW);
+																	intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																	intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
+																	startActivity(intent);
+															}
+															catch(Exception e) {
+																	SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+															}
+													} else {
+															try {
+																	Intent intent = new Intent(Intent.ACTION_VIEW);
+																	intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
+																	startActivity(intent);
+															}
+															catch(Exception e) {
+																	SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+															}
+													} 
+											} else {
+													final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+													String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+													String TitleColor = "1DB954";
+													Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+													String Message = installation_failed_cloned_desc_0.replace("\n", "<br/>");
+													String MessageColor = "FFFFFF";
+													Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+													Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+															@Override
+															public void onClick(DialogInterface Signature_Check, int p) {
+																	AlertDialog.setCancelable(true);
+																	try {
+																			Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
+																			startActivity(intent);
+																	}
+																	catch(Exception e) {
+																	}
+															}
+													});
+													Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+															@Override
+															public void onClick(DialogInterface Signature_Check, int p) {
+																	AlertDialog.setCancelable(true);
+															}
+													});
+													AlertDialog = Signature_Check.create();
+													AlertDialog.setCancelable(false);
+													AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+													AlertDialog.show();
+											}	
 									}
 									else {
-										if ((_position % 2) == 1) {
-											String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-										else {
-											String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-									}
-									Download_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
-										
-										                @Override
-										                public void onClick(DialogInterface Download_Patched, int p) {
-											try {
-												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-													AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														_Download_Install_Cloned(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															_Download_Cloned(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-													_File_Remover();
-												}
-												else {
-													if (mRewardedAd != null) {
-														  Activity activityContext = MainActivity.this;
-														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-															    @Override
-															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																       Timer = new TimerTask() {
-																	@Override
-																	public void run() {
-																		runOnUiThread(new Runnable() {
-																			@Override
-																			public void run() {
-																				AlertDialog.setCancelable(true);
-																				if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																					_Download_Install_Cloned(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																				}
-																				else {
-																					if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																						_Download_Cloned(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																					}
-																				}
-																				_File_Remover();
-																			}
-																		});
+											if (Downloaded_Version_Cloned < Installed_Version_Cloned) {
+													final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+													String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+													String TitleColor = "1DB954";
+													Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+													String Message = installation_failed_desc_0.replace("\n", "<br/>");
+													String MessageColor = "FFFFFF";
+													Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+													Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+															@Override
+															public void onClick(DialogInterface Downgrade_Check, int p) {
+																	AlertDialog.setCancelable(true);
+																	try {
+																			Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
+																			startActivity(intent);
 																	}
-																};
-																_timer.schedule(Timer, (int)(1000));
-																      int rewardAmount = rewardItem.getAmount();
-																      String rewardType = rewardItem.getType();
-																    }
-															  });
-													} else {
-														if (UnityAds.isReady(placementRewardedVideo)) {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																DOWNLOAD.edit().putString("PATCHED", regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString()).commit();
+																	catch(Exception e) {
+																	}
 															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	DOWNLOAD.edit().putString("PATCHED", regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString()).commit();
-																}
-															}
-															_Rewarded_Unity();
-															_File_Remover();
-														}
-														else {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																_Download_Install_Cloned(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	_Download_Cloned(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-															}
-															_File_Remover();
-														}
-													}
-												}
-											}
-											catch(Exception e) {
-											}
-											                }
-										            });
-									 Download_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
-										
-										                @Override
-										                public void onClick(DialogInterface Download_Patched, int p) {
-											AlertDialog.setCancelable(true);
-											Timer = new TimerTask() {
-												@Override
-												public void run() {
-													runOnUiThread(new Runnable() {
-														@Override
-														public void run() {
-															_Hide_Navigation();
-														}
 													});
-												}
-											};
-											_timer.schedule(Timer, (int)(100));
-											                }
-										            });
-									AlertDialog = Download_Patched.create();
-									AlertDialog.setCancelable(false);
-									AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-									AlertDialog.show();
-									FileUtil.makeDir("/storage/emulated/0/xManager");
-									FileUtil.makeDir("/storage/emulated/0/xManager/Update");
-									DELETE = 1;
-									                }
-								            });
-							AlertDialog = File_Exist.create();
-							AlertDialog.setCancelable(false);
-							AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-							AlertDialog.show();
-						}
-						else {
-							if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
-								final AlertDialog.Builder Download_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+													Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+															@Override
+															public void onClick(DialogInterface Downgrade_Check, int p) {
+																	AlertDialog.setCancelable(true);
+															}
+													});
+													AlertDialog = Downgrade_Check.create();
+													AlertDialog.setCancelable(false);
+													AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+													AlertDialog.show();
+											}
+									}
+									
+								}
+								                }
+							            });
+						File_Exist.setNegativeButton(delete.getText().toString(), new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface File_Exist, int p) {
+								
+								AlertDialog.setCancelable(true);
+								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
+								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
+								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
+								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
+								FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk");
+								FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk");
+								                }
+							            });
+						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface File_Exist, int p) {
+								AlertDialog.setCancelable(true);
+								final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
 								
 								String Title = "<b>".concat(download_ready_0.concat("</b>"));
 								String TitleColor = "1DB954";
 								
-								Download_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+								Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 								if (_position < 2) {
 									if ((_position % 2) == 0) {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
-										Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 									else {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
-										Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 								}
 								else {
 									if ((_position % 2) == 1) {
-										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
-										Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 									else {
-										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
-										Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 								}
-								Download_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
+								Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
 									
 									                @Override
-									                public void onClick(DialogInterface Download_Patched, int p) {
+									                public void onClick(DialogInterface Selected_Patched, int p) {
 										try {
 											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
@@ -5298,34 +4787,263 @@ public class MainActivity extends AppCompatActivity {
 										}
 										                }
 									            });
-								 Download_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
+								Selected_Patched.setNegativeButton(copy_url_0, new DialogInterface.OnClickListener(){
 									
 									                @Override
-									                public void onClick(DialogInterface Download_Patched, int p) {
-										AlertDialog.setCancelable(true);
-										Timer = new TimerTask() {
-											@Override
-											public void run() {
-												runOnUiThread(new Runnable() {
-													@Override
-													public void run() {
-														_Hide_Navigation();
-													}
-												});
+									                public void onClick(DialogInterface Selected_Patched, int p) {
+										
+										try {
+											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+												AlertDialog.setCancelable(true);
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString()));
+												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 											}
-										};
-										_timer.schedule(Timer, (int)(100));
+											else {
+												if (mRewardedAd != null) {
+													  Activity activityContext = MainActivity.this;
+													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+														    @Override
+														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+															       Timer = new TimerTask() {
+																@Override
+																public void run() {
+																	runOnUiThread(new Runnable() {
+																		@Override
+																		public void run() {
+																			AlertDialog.setCancelable(true);
+																			((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString()));
+																			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																		}
+																	});
+																}
+															};
+															_timer.schedule(Timer, (int)(1000));
+															      int rewardAmount = rewardItem.getAmount();
+															      String rewardType = rewardItem.getType();
+															    }
+														  });
+												} else {
+													if (UnityAds.isReady(placementRewardedVideo)) {
+														AlertDialog.setCancelable(true);
+														DOWNLOAD.edit().putString("PATCHED", regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString()).commit();
+														_Rewarded_Unity();
+													}
+													else {
+														AlertDialog.setCancelable(true);
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString()));
+														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+													}
+												}
+											}
+										}
+										catch(Exception e) {
+										}
 										                }
 									            });
-								AlertDialog = Download_Patched.create();
+								 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
+									
+									                @Override
+									                public void onClick(DialogInterface Selected_Patched, int p) {
+										AlertDialog.setCancelable(true);
+										                }
+									            });
+								AlertDialog = Selected_Patched.create();
 								AlertDialog.setCancelable(false);
 								AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
 								AlertDialog.show();
 								FileUtil.makeDir("/storage/emulated/0/xManager");
 								FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 								DELETE = 1;
+								                }
+							            });
+						AlertDialog = File_Exist.create();
+						AlertDialog.setCancelable(false);
+						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+						AlertDialog.show();
+					}
+					else {
+						final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+						
+						String Title = "<b>".concat(download_ready_0.concat("</b>"));
+						String TitleColor = "1DB954";
+						
+						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+						if (_position < 2) {
+							if ((_position % 2) == 0) {
+								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
+								String MessageColor = "FFFFFF";
+								
+								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+							}
+							else {
+								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
+								String MessageColor = "FFFFFF";
+								
+								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 						}
+						else {
+							if ((_position % 2) == 1) {
+								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
+								String MessageColor = "FFFFFF";
+								
+								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+							}
+							else {
+								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
+								String MessageColor = "FFFFFF";
+								
+								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+							}
+						}
+						Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface Selected_Patched, int p) {
+								try {
+									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+										AlertDialog.setCancelable(true);
+										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+											_Download_Install_Cloned(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+										}
+										else {
+											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+												_Download_Cloned(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											}
+										}
+										_File_Remover();
+									}
+									else {
+										if (mRewardedAd != null) {
+											  Activity activityContext = MainActivity.this;
+											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+												    @Override
+												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+													       Timer = new TimerTask() {
+														@Override
+														public void run() {
+															runOnUiThread(new Runnable() {
+																@Override
+																public void run() {
+																	AlertDialog.setCancelable(true);
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																		_Download_Install_Cloned(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																	else {
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																			_Download_Cloned(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		}
+																	}
+																	_File_Remover();
+																}
+															});
+														}
+													};
+													_timer.schedule(Timer, (int)(1000));
+													      int rewardAmount = rewardItem.getAmount();
+													      String rewardType = rewardItem.getType();
+													    }
+												  });
+										} else {
+											if (UnityAds.isReady(placementRewardedVideo)) {
+												AlertDialog.setCancelable(true);
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													DOWNLOAD.edit().putString("PATCHED", regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString()).commit();
+												}
+												else {
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														DOWNLOAD.edit().putString("PATCHED", regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString()).commit();
+													}
+												}
+												_Rewarded_Unity();
+												_File_Remover();
+											}
+											else {
+												AlertDialog.setCancelable(true);
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													_Download_Install_Cloned(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
+												else {
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														_Download_Cloned(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+												}
+												_File_Remover();
+											}
+										}
+									}
+								}
+								catch(Exception e) {
+								}
+								                }
+							            });
+						Selected_Patched.setNegativeButton(copy_url_0, new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface Selected_Patched, int p) {
+								
+								try {
+									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+										AlertDialog.setCancelable(true);
+										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString()));
+										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+									}
+									else {
+										if (mRewardedAd != null) {
+											  Activity activityContext = MainActivity.this;
+											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+												    @Override
+												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+													       Timer = new TimerTask() {
+														@Override
+														public void run() {
+															runOnUiThread(new Runnable() {
+																@Override
+																public void run() {
+																	AlertDialog.setCancelable(true);
+																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString()));
+																	com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																}
+															});
+														}
+													};
+													_timer.schedule(Timer, (int)(1000));
+													      int rewardAmount = rewardItem.getAmount();
+													      String rewardType = rewardItem.getType();
+													    }
+												  });
+										} else {
+											if (UnityAds.isReady(placementRewardedVideo)) {
+												AlertDialog.setCancelable(true);
+												DOWNLOAD.edit().putString("PATCHED", regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString()).commit();
+												_Rewarded_Unity();
+											}
+											else {
+												AlertDialog.setCancelable(true);
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString()));
+												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+											}
+										}
+									}
+								}
+								catch(Exception e) {
+								}
+								                }
+							            });
+						 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface Selected_Patched, int p) {
+								AlertDialog.setCancelable(true);
+								                }
+							            });
+						AlertDialog = Selected_Patched.create();
+						AlertDialog.setCancelable(false);
+						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+						AlertDialog.show();
+						FileUtil.makeDir("/storage/emulated/0/xManager");
+						FileUtil.makeDir("/storage/emulated/0/xManager/Update");
+						DELETE = 1;
 					}
 				}
 				catch(Exception e) {
@@ -5342,9 +5060,13 @@ public class MainActivity extends AppCompatActivity {
 						try {
 							version_switch_02.setChecked(false);
 							changelogs_switch.setChecked(false);
+							version_oc_01.setImageResource(R.drawable.open);
 							if (CLONED_VERSION.getString("CLONED", "").equals("ON")) {
 								list_menu_1.setVisibility(View.GONE);
+								list_menu_2.setVisibility(View.GONE);
 								list_menu_3.setVisibility(View.VISIBLE);
+								list_menu_4.setVisibility(View.GONE);
+								list_changelogs.setVisibility(View.GONE);
 								sub_1.setVisibility(View.GONE);
 								sub_5.setVisibility(View.VISIBLE);
 								list_menu_1.setAlpha((float)(0));
@@ -5353,7 +5075,10 @@ public class MainActivity extends AppCompatActivity {
 							else {
 								if (CLONED_VERSION.getString("CLONED", "").equals("OFF")) {
 									list_menu_1.setVisibility(View.VISIBLE);
+									list_menu_2.setVisibility(View.GONE);
 									list_menu_3.setVisibility(View.GONE);
+									list_menu_4.setVisibility(View.GONE);
+									list_changelogs.setVisibility(View.GONE);
 									sub_1.setVisibility(View.VISIBLE);
 									sub_5.setVisibility(View.GONE);
 									list_menu_1.setAlpha((float)(1));
@@ -5371,13 +5096,20 @@ public class MainActivity extends AppCompatActivity {
 					}
 					else {
 						list_menu_1.setVisibility(View.GONE);
+						list_menu_2.setVisibility(View.GONE);
 						list_menu_3.setVisibility(View.GONE);
+						list_menu_4.setVisibility(View.GONE);
+						list_changelogs.setVisibility(View.GONE);
+						version_oc_01.setImageResource(R.drawable.close);
 						main_refresh_layout.setEnabled(true);
 						list_menu_1.setSelection((int)0);
+						CLICKER_1 = 1;
+						CLICKER_2 = 1;
+						CLICKER_3 = 1;
 					}
 					Animation animation;
-					animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-					animation.setDuration(300); list_menu_1.startAnimation(animation);
+					animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+					animation.setDuration(500); version_oc_01.startAnimation(animation);
 					animation = null;
 				}
 				catch(Exception e) {
@@ -5390,501 +5122,173 @@ public class MainActivity extends AppCompatActivity {
 			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
 				final int _position = _param3;
 				try {
-					if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
-						final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+					if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")) {
+						final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
 						
-						String Title = "<b>".concat(download_ready_0.concat("</b>"));
+						String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
 						String TitleColor = "1DB954";
 						
-						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-						if (_position < 2) {
-							if ((_position % 2) == 0) {
-								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED")))))));
-								String MessageColor = "FFFFFF";
-								
-								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-							}
-							else {
-								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED")))))));
-								String MessageColor = "FFFFFF";
-								
-								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-							}
-						}
-						else {
-							if ((_position % 2) == 1) {
-								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED")))))));
-								String MessageColor = "FFFFFF";
-								
-								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-							}
-							else {
-								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED")))))));
-								String MessageColor = "FFFFFF";
-								
-								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-							}
-						}
-						Selected_Patched.setPositiveButton(copy_url_0, new DialogInterface.OnClickListener(){
+						File_Exist.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+						String Message = existing_patched_desc.getText().toString();
+						String MessageColor = "FFFFFF";
+						
+						File_Exist.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+						File_Exist.setPositiveButton(install.getText().toString(), new DialogInterface.OnClickListener(){
 							
 							                @Override
-							                public void onClick(DialogInterface Selected_Patched, int p) {
-								try {
-									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-										AlertDialog.setCancelable(true);
-										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString()));
-										SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
-										Timer = new TimerTask() {
-											@Override
-											public void run() {
-												runOnUiThread(new Runnable() {
-													@Override
-													public void run() {
-														_Hide_Navigation();
-													}
-												});
-											}
-										};
-										_timer.schedule(Timer, (int)(100));
-									}
-									else {
-										if (mRewardedAd != null) {
-											  Activity activityContext = MainActivity.this;
-											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-												    @Override
-												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-													       Timer = new TimerTask() {
-														@Override
-														public void run() {
-															runOnUiThread(new Runnable() {
-																@Override
-																public void run() {
-																	AlertDialog.setCancelable(true);
-																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString()));
-																	SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
-																	Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																			runOnUiThread(new Runnable() {
-																				@Override
-																				public void run() {
-																					_Hide_Navigation();
-																				}
-																			});
-																		}
-																	};
-																	_timer.schedule(Timer, (int)(100));
-																}
-															});
-														}
-													};
-													_timer.schedule(Timer, (int)(1000));
-													      int rewardAmount = rewardItem.getAmount();
-													      String rewardType = rewardItem.getType();
-													    }
-												  });
-										} else {
-											if (UnityAds.isReady(placementRewardedVideo)) {
-												AlertDialog.setCancelable(true);
-												DOWNLOAD.edit().putString("PATCHED", amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString()).commit();
-												Timer = new TimerTask() {
-													@Override
-													public void run() {
-														runOnUiThread(new Runnable() {
-															@Override
-															public void run() {
-																_Hide_Navigation();
-															}
-														});
-													}
-												};
-												_timer.schedule(Timer, (int)(100));
-												_Rewarded_Unity();
-											}
-											else {
-												AlertDialog.setCancelable(true);
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString()));
-												SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
-												Timer = new TimerTask() {
-													@Override
-													public void run() {
-														runOnUiThread(new Runnable() {
-															@Override
-															public void run() {
-																_Hide_Navigation();
-															}
-														});
-													}
-												};
-												_timer.schedule(Timer, (int)(100));
-											}
-										}
-									}
-								}
-								catch(Exception e) {
-								}
-								                }
-							            });
-						 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface Selected_Patched, int p) {
+							                public void onClick(DialogInterface File_Exist, int p) {
 								AlertDialog.setCancelable(true);
-								Timer = new TimerTask() {
-									@Override
-									public void run() {
-										runOnUiThread(new Runnable() {
-											@Override
-											public void run() {
-												_Hide_Navigation();
-											}
-										});
-									}
-								};
-								_timer.schedule(Timer, (int)(100));
-								                }
-							            });
-						AlertDialog = Selected_Patched.create();
-						AlertDialog.setCancelable(false);
-						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-						AlertDialog.show();
-						FileUtil.makeDir("/storage/emulated/0/xManager");
-						FileUtil.makeDir("/storage/emulated/0/xManager/Update");
-						DELETE = 1;
-					}
-					else {
-						if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")) {
-							final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-							
-							String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
-							String TitleColor = "1DB954";
-							
-							File_Exist.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-							String Message = existing_patched_desc.getText().toString();
-							String MessageColor = "FFFFFF";
-							
-							File_Exist.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-							File_Exist.setPositiveButton(install.getText().toString(), new DialogInterface.OnClickListener(){
-								
-								                @Override
-								                public void onClick(DialogInterface File_Exist, int p) {
-									AlertDialog.setCancelable(true);
-									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk"))) {
-										if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
-												if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
-														StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-														if(android.os.Build.VERSION.SDK_INT >= 29){
-																try {
-																		Intent intent = new Intent(Intent.ACTION_VIEW);
-																		intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																		intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
-																		startActivity(intent);
-																}
-																catch(Exception e) {
-																		SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																}
-														} else {
-																try {
-																		Intent intent = new Intent(Intent.ACTION_VIEW);
-																		intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
-																		startActivity(intent);
-																		Timer = new TimerTask() {
-																				@Override
-																				public void run() {
-																						runOnUiThread(new Runnable() {
-																								@Override
-																								public void run() {
-																										_Hide_Navigation();
-																								}
-																						});
-																				}
-																		};
-																		_timer.schedule(Timer, (int)(100));
-																}
-																catch(Exception e) {
-																		SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																}
-														} 
-												} else {
-														final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-														String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-														String TitleColor = "1DB954";
-														Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-														String Message = installation_failed_ream_desc_0.replace("\n", "<br/>");
-														String MessageColor = "FFFFFF";
-														Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-														Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																@Override
-																public void onClick(DialogInterface Signature_Check, int p) {
-																		AlertDialog.setCancelable(true);
-																		try {
-																				Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
-																				startActivity(intent);
-																		}
-																		catch(Exception e) {
-																		}
-																}
-														});
-														Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																@Override
-																public void onClick(DialogInterface Signature_Check, int p) {
-																		AlertDialog.setCancelable(true);
-																}
-														});
-														AlertDialog = Signature_Check.create();
-														AlertDialog.setCancelable(false);
-														AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-														AlertDialog.show();
-												}	
-										}
-										else {
-												if (Downloaded_Version < Installed_Version) {
-														final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-														String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-														String TitleColor = "1DB954";
-														Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-														String Message = installation_failed_desc_0.replace("\n", "<br/>");
-														String MessageColor = "FFFFFF";
-														Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-														Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																@Override
-																public void onClick(DialogInterface Downgrade_Check, int p) {
-																		AlertDialog.setCancelable(true);
-																		try {
-																				Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
-																				startActivity(intent);
-																		}
-																		catch(Exception e) {
-																		}
-																}
-														});
-														Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																@Override
-																public void onClick(DialogInterface Downgrade_Check, int p) {
-																		AlertDialog.setCancelable(true);
-																}
-														});
-														AlertDialog = Downgrade_Check.create();
-														AlertDialog.setCancelable(false);
-														AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-														AlertDialog.show();
-												}
-										}	
-										
-										_Hide_Navigation();
-									}
-									                }
-								            });
-							File_Exist.setNegativeButton(delete.getText().toString(), new DialogInterface.OnClickListener(){
-								
-								                @Override
-								                public void onClick(DialogInterface File_Exist, int p) {
-									
-									AlertDialog.setCancelable(true);
-									SketchwareUtil.showMessage(getApplicationContext(), "Patched File Deleted");
-									FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
-									FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
-									FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
-									FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
-									FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk");
-									FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk");
-									_Hide_Navigation();
-									                }
-								            });
-							 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
-								
-								                @Override
-								                public void onClick(DialogInterface File_Exist, int p) {
-									AlertDialog.setCancelable(true);
-									_Hide_Navigation();
-									final AlertDialog.Builder Download_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-									
-									String Title = "<b>".concat(download_ready_0.concat("</b>"));
-									String TitleColor = "1DB954";
-									
-									Download_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-									if (_position < 2) {
-										if ((_position % 2) == 0) {
-											String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-										else {
-											String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
+								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk"))) {
+									if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
+											if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
+													StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+													if(android.os.Build.VERSION.SDK_INT >= 29){
+															try {
+																	Intent intent = new Intent(Intent.ACTION_VIEW);
+																	intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																	intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
+																	startActivity(intent);
+															}
+															catch(Exception e) {
+																	SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+															}
+													} else {
+															try {
+																	Intent intent = new Intent(Intent.ACTION_VIEW);
+																	intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
+																	startActivity(intent);
+															}
+															catch(Exception e) {
+																	SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+															}
+													} 
+											} else {
+													final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+													String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+													String TitleColor = "1DB954";
+													Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+													String Message = installation_failed_ream_desc_0.replace("\n", "<br/>");
+													String MessageColor = "FFFFFF";
+													Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+													Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+															@Override
+															public void onClick(DialogInterface Signature_Check, int p) {
+																	AlertDialog.setCancelable(true);
+																	try {
+																			Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
+																			startActivity(intent);
+																	}
+																	catch(Exception e) {
+																	}
+															}
+													});
+													Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+															@Override
+															public void onClick(DialogInterface Signature_Check, int p) {
+																	AlertDialog.setCancelable(true);
+															}
+													});
+													AlertDialog = Signature_Check.create();
+													AlertDialog.setCancelable(false);
+													AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+													AlertDialog.show();
+											}	
 									}
 									else {
-										if ((_position % 2) == 1) {
-											String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-										else {
-											String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-									}
-									Download_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
-										
-										                @Override
-										                public void onClick(DialogInterface Download_Patched, int p) {
-											try {
-												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-													AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														_Download_Install(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															_Download(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-													_File_Remover();
-												}
-												else {
-													if (mRewardedAd != null) {
-														  Activity activityContext = MainActivity.this;
-														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-															    @Override
-															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																       Timer = new TimerTask() {
-																	@Override
-																	public void run() {
-																		runOnUiThread(new Runnable() {
-																			@Override
-																			public void run() {
-																				AlertDialog.setCancelable(true);
-																				if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																					_Download_Install(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																				}
-																				else {
-																					if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																						_Download(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																					}
-																				}
-																				_File_Remover();
-																			}
-																		});
+											if (Downloaded_Version < Installed_Version) {
+													final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+													String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+													String TitleColor = "1DB954";
+													Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+													String Message = installation_failed_desc_0.replace("\n", "<br/>");
+													String MessageColor = "FFFFFF";
+													Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+													Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+															@Override
+															public void onClick(DialogInterface Downgrade_Check, int p) {
+																	AlertDialog.setCancelable(true);
+																	try {
+																			Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
+																			startActivity(intent);
 																	}
-																};
-																_timer.schedule(Timer, (int)(1000));
-																      int rewardAmount = rewardItem.getAmount();
-																      String rewardType = rewardItem.getType();
-																    }
-															  });
-													} else {
-														if (UnityAds.isReady(placementRewardedVideo)) {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																DOWNLOAD.edit().putString("PATCHED", amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString()).commit();
+																	catch(Exception e) {
+																	}
 															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	DOWNLOAD.edit().putString("PATCHED", amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString()).commit();
-																}
-															}
-															_Rewarded_Unity();
-															_File_Remover();
-														}
-														else {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																_Download_Install(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	_Download(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-															}
-															_File_Remover();
-														}
-													}
-												}
-											}
-											catch(Exception e) {
-											}
-											                }
-										            });
-									 Download_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
-										
-										                @Override
-										                public void onClick(DialogInterface Download_Patched, int p) {
-											AlertDialog.setCancelable(true);
-											Timer = new TimerTask() {
-												@Override
-												public void run() {
-													runOnUiThread(new Runnable() {
-														@Override
-														public void run() {
-															_Hide_Navigation();
-														}
 													});
-												}
-											};
-											_timer.schedule(Timer, (int)(100));
-											                }
-										            });
-									AlertDialog = Download_Patched.create();
-									AlertDialog.setCancelable(false);
-									AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-									AlertDialog.show();
-									FileUtil.makeDir("/storage/emulated/0/xManager");
-									FileUtil.makeDir("/storage/emulated/0/xManager/Update");
-									DELETE = 1;
-									                }
-								            });
-							AlertDialog = File_Exist.create();
-							AlertDialog.setCancelable(false);
-							AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-							AlertDialog.show();
-						}
-						else {
-							if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
-								final AlertDialog.Builder Download_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+													Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+															@Override
+															public void onClick(DialogInterface Downgrade_Check, int p) {
+																	AlertDialog.setCancelable(true);
+															}
+													});
+													AlertDialog = Downgrade_Check.create();
+													AlertDialog.setCancelable(false);
+													AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+													AlertDialog.show();
+											}
+									}	
+									
+								}
+								                }
+							            });
+						File_Exist.setNegativeButton(delete.getText().toString(), new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface File_Exist, int p) {
+								
+								AlertDialog.setCancelable(true);
+								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
+								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
+								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
+								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
+								FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk");
+								FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk");
+								                }
+							            });
+						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface File_Exist, int p) {
+								AlertDialog.setCancelable(true);
+								final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
 								
 								String Title = "<b>".concat(download_ready_0.concat("</b>"));
 								String TitleColor = "1DB954";
 								
-								Download_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+								Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 								if (_position < 2) {
 									if ((_position % 2) == 0) {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
-										Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 									else {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
-										Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 								}
 								else {
 									if ((_position % 2) == 1) {
-										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
-										Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 									else {
-										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
-										Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 								}
-								Download_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
+								Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
 									
 									                @Override
-									                public void onClick(DialogInterface Download_Patched, int p) {
+									                public void onClick(DialogInterface Selected_Patched, int p) {
 										try {
 											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
@@ -5962,47 +5366,81 @@ public class MainActivity extends AppCompatActivity {
 										}
 										                }
 									            });
-								 Download_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
+								Selected_Patched.setNegativeButton(copy_url_0, new DialogInterface.OnClickListener(){
 									
 									                @Override
-									                public void onClick(DialogInterface Download_Patched, int p) {
-										AlertDialog.setCancelable(true);
-										Timer = new TimerTask() {
-											@Override
-											public void run() {
-												runOnUiThread(new Runnable() {
-													@Override
-													public void run() {
-														_Hide_Navigation();
-													}
-												});
+									                public void onClick(DialogInterface Selected_Patched, int p) {
+										
+										try {
+											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+												AlertDialog.setCancelable(true);
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString()));
+												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 											}
-										};
-										_timer.schedule(Timer, (int)(100));
+											else {
+												if (mRewardedAd != null) {
+													  Activity activityContext = MainActivity.this;
+													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+														    @Override
+														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+															       Timer = new TimerTask() {
+																@Override
+																public void run() {
+																	runOnUiThread(new Runnable() {
+																		@Override
+																		public void run() {
+																			AlertDialog.setCancelable(true);
+																			((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString()));
+																			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																		}
+																	});
+																}
+															};
+															_timer.schedule(Timer, (int)(1000));
+															      int rewardAmount = rewardItem.getAmount();
+															      String rewardType = rewardItem.getType();
+															    }
+														  });
+												} else {
+													if (UnityAds.isReady(placementRewardedVideo)) {
+														AlertDialog.setCancelable(true);
+														DOWNLOAD.edit().putString("PATCHED", amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString()).commit();
+														_Rewarded_Unity();
+													}
+													else {
+														AlertDialog.setCancelable(true);
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString()));
+														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+													}
+												}
+											}
+										}
+										catch(Exception e) {
+										}
 										                }
 									            });
-								AlertDialog = Download_Patched.create();
+								 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
+									
+									                @Override
+									                public void onClick(DialogInterface Selected_Patched, int p) {
+										AlertDialog.setCancelable(true);
+										                }
+									            });
+								AlertDialog = Selected_Patched.create();
 								AlertDialog.setCancelable(false);
 								AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
 								AlertDialog.show();
 								FileUtil.makeDir("/storage/emulated/0/xManager");
 								FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 								DELETE = 1;
-							}
-						}
+								                }
+							            });
+						AlertDialog = File_Exist.create();
+						AlertDialog.setCancelable(false);
+						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+						AlertDialog.show();
 					}
-				}
-				catch(Exception e) {
-				}
-			}
-		});
-		
-		list_menu_4.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
-				final int _position = _param3;
-				try {
-					if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
+					else {
 						final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
 						
 						String Title = "<b>".concat(download_ready_0.concat("</b>"));
@@ -6011,13 +5449,13 @@ public class MainActivity extends AppCompatActivity {
 						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 						if (_position < 2) {
 							if ((_position % 2) == 0) {
-								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)")))))));
+								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 							else {
-								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)")))))));
+								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -6025,39 +5463,34 @@ public class MainActivity extends AppCompatActivity {
 						}
 						else {
 							if ((_position % 2) == 1) {
-								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)")))))));
+								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 							else {
-								String Message = "<b>RELEASE:  </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)")))))));
+								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 						}
-						Selected_Patched.setPositiveButton(copy_url_0, new DialogInterface.OnClickListener(){
+						Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
 							
 							                @Override
 							                public void onClick(DialogInterface Selected_Patched, int p) {
 								try {
 									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 										AlertDialog.setCancelable(true);
-										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString()));
-										SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
-										Timer = new TimerTask() {
-											@Override
-											public void run() {
-												runOnUiThread(new Runnable() {
-													@Override
-													public void run() {
-														_Hide_Navigation();
-													}
-												});
+										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+											_Download_Install(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+										}
+										else {
+											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+												_Download(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
 											}
-										};
-										_timer.schedule(Timer, (int)(100));
+										}
+										_File_Remover();
 									}
 									else {
 										if (mRewardedAd != null) {
@@ -6072,20 +5505,15 @@ public class MainActivity extends AppCompatActivity {
 																@Override
 																public void run() {
 																	AlertDialog.setCancelable(true);
-																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString()));
-																	SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
-																	Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																			runOnUiThread(new Runnable() {
-																				@Override
-																				public void run() {
-																					_Hide_Navigation();
-																				}
-																			});
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																		_Download_Install(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																	else {
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																			_Download(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
 																		}
-																	};
-																	_timer.schedule(Timer, (int)(100));
+																	}
+																	_File_Remover();
 																}
 															});
 														}
@@ -6098,37 +5526,81 @@ public class MainActivity extends AppCompatActivity {
 										} else {
 											if (UnityAds.isReady(placementRewardedVideo)) {
 												AlertDialog.setCancelable(true);
-												DOWNLOAD.edit().putString("PATCHED", amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString()).commit();
-												Timer = new TimerTask() {
-													@Override
-													public void run() {
-														runOnUiThread(new Runnable() {
-															@Override
-															public void run() {
-																_Hide_Navigation();
-															}
-														});
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													DOWNLOAD.edit().putString("PATCHED", amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString()).commit();
+												}
+												else {
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														DOWNLOAD.edit().putString("PATCHED", amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString()).commit();
 													}
-												};
-												_timer.schedule(Timer, (int)(100));
+												}
+												_Rewarded_Unity();
+												_File_Remover();
+											}
+											else {
+												AlertDialog.setCancelable(true);
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													_Download_Install(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
+												else {
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														_Download(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+												}
+												_File_Remover();
+											}
+										}
+									}
+								}
+								catch(Exception e) {
+								}
+								                }
+							            });
+						Selected_Patched.setNegativeButton(copy_url_0, new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface Selected_Patched, int p) {
+								
+								try {
+									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+										AlertDialog.setCancelable(true);
+										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString()));
+										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+									}
+									else {
+										if (mRewardedAd != null) {
+											  Activity activityContext = MainActivity.this;
+											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+												    @Override
+												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+													       Timer = new TimerTask() {
+														@Override
+														public void run() {
+															runOnUiThread(new Runnable() {
+																@Override
+																public void run() {
+																	AlertDialog.setCancelable(true);
+																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString()));
+																	com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																}
+															});
+														}
+													};
+													_timer.schedule(Timer, (int)(1000));
+													      int rewardAmount = rewardItem.getAmount();
+													      String rewardType = rewardItem.getType();
+													    }
+												  });
+										} else {
+											if (UnityAds.isReady(placementRewardedVideo)) {
+												AlertDialog.setCancelable(true);
+												DOWNLOAD.edit().putString("PATCHED", amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString()).commit();
 												_Rewarded_Unity();
 											}
 											else {
 												AlertDialog.setCancelable(true);
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString()));
-												SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
-												Timer = new TimerTask() {
-													@Override
-													public void run() {
-														runOnUiThread(new Runnable() {
-															@Override
-															public void run() {
-																_Hide_Navigation();
-															}
-														});
-													}
-												};
-												_timer.schedule(Timer, (int)(100));
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString()));
+												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 											}
 										}
 									}
@@ -6142,18 +5614,6 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface Selected_Patched, int p) {
 								AlertDialog.setCancelable(true);
-								Timer = new TimerTask() {
-									@Override
-									public void run() {
-										runOnUiThread(new Runnable() {
-											@Override
-											public void run() {
-												_Hide_Navigation();
-											}
-										});
-									}
-								};
-								_timer.schedule(Timer, (int)(100));
 								                }
 							            });
 						AlertDialog = Selected_Patched.create();
@@ -6164,339 +5624,184 @@ public class MainActivity extends AppCompatActivity {
 						FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 						DELETE = 1;
 					}
-					else {
-						if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")) {
-							final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+				}
+				catch(Exception e) {
+				}
+			}
+		});
+		
+		list_menu_4.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
+				final int _position = _param3;
+				try {
+					if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")) {
+						final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+						
+						String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
+						String TitleColor = "1DB954";
+						
+						File_Exist.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+						String Message = existing_patched_desc.getText().toString();
+						String MessageColor = "FFFFFF";
+						
+						File_Exist.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+						File_Exist.setPositiveButton(install.getText().toString(), new DialogInterface.OnClickListener(){
 							
-							String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
-							String TitleColor = "1DB954";
-							
-							File_Exist.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-							String Message = existing_patched_desc.getText().toString();
-							String MessageColor = "FFFFFF";
-							
-							File_Exist.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-							File_Exist.setPositiveButton(install.getText().toString(), new DialogInterface.OnClickListener(){
-								
-								                @Override
-								                public void onClick(DialogInterface File_Exist, int p) {
-									AlertDialog.setCancelable(true);
-									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk"))) {
-										if ((Installed_Version_Cloned < Downloaded_Version_Cloned) || ((Downloaded_Version_Cloned > Installed_Version_Cloned) || ((Installed_Version_Cloned == Downloaded_Version_Cloned) || Installed_Checker_Cloned.equals("false")))) {
-												if (getICSignature(getApplicationContext()).equals(getDCSignature(getApplicationContext())) || Installed_Checker_Cloned.equals("false")) {
-														StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-														if(android.os.Build.VERSION.SDK_INT >= 29){
-																try {
-																		Intent intent = new Intent(Intent.ACTION_VIEW);
-																		intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																		intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
-																		startActivity(intent);
-																}
-																catch(Exception e) {
-																		SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																}
-														} else {
-																try {
-																		Intent intent = new Intent(Intent.ACTION_VIEW);
-																		intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
-																		startActivity(intent);
-																		Timer = new TimerTask() {
-																				@Override
-																				public void run() {
-																						runOnUiThread(new Runnable() {
-																								@Override
-																								public void run() {
-																										_Hide_Navigation();
-																								}
-																						});
-																				}
-																		};
-																		_timer.schedule(Timer, (int)(100));
-																}
-																catch(Exception e) {
-																		SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-																}
-														} 
-												} else {
-														final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-														String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-														String TitleColor = "1DB954";
-														Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-														String Message = installation_failed_cloned_desc_0.replace("\n", "<br/>");
-														String MessageColor = "FFFFFF";
-														Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-														Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																@Override
-																public void onClick(DialogInterface Signature_Check, int p) {
-																		AlertDialog.setCancelable(true);
-																		try {
-																				Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
-																				startActivity(intent);
-																		}
-																		catch(Exception e) {
-																		}
-																}
-														});
-														Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																@Override
-																public void onClick(DialogInterface Signature_Check, int p) {
-																		AlertDialog.setCancelable(true);
-																}
-														});
-														AlertDialog = Signature_Check.create();
-														AlertDialog.setCancelable(false);
-														AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-														AlertDialog.show();
-												}	
-										}
-										else {
-												if (Downloaded_Version_Cloned < Installed_Version_Cloned) {
-														final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-														String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-														String TitleColor = "1DB954";
-														Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-														String Message = installation_failed_desc_0.replace("\n", "<br/>");
-														String MessageColor = "FFFFFF";
-														Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-														Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																@Override
-																public void onClick(DialogInterface Downgrade_Check, int p) {
-																		AlertDialog.setCancelable(true);
-																		try {
-																				Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
-																				startActivity(intent);
-																		}
-																		catch(Exception e) {
-																		}
-																}
-														});
-														Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																@Override
-																public void onClick(DialogInterface Downgrade_Check, int p) {
-																		AlertDialog.setCancelable(true);
-																}
-														});
-														AlertDialog = Downgrade_Check.create();
-														AlertDialog.setCancelable(false);
-														AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-														AlertDialog.show();
-												}
-										}
-										
-										_Hide_Navigation();
-									}
-									                }
-								            });
-							File_Exist.setNegativeButton(delete.getText().toString(), new DialogInterface.OnClickListener(){
-								
-								                @Override
-								                public void onClick(DialogInterface File_Exist, int p) {
-									
-									AlertDialog.setCancelable(true);
-									SketchwareUtil.showMessage(getApplicationContext(), "Patched File Deleted");
-									FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
-									FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
-									FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
-									FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
-									FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk");
-									FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk");
-									_Hide_Navigation();
-									                }
-								            });
-							 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
-								
-								                @Override
-								                public void onClick(DialogInterface File_Exist, int p) {
-									AlertDialog.setCancelable(true);
-									_Hide_Navigation();
-									final AlertDialog.Builder Download_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-									
-									String Title = "<b>".concat(download_ready_0.concat("</b>"));
-									String TitleColor = "1DB954";
-									
-									Download_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-									if (_position < 2) {
-										if ((_position % 2) == 0) {
-											String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-										else {
-											String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
+							                @Override
+							                public void onClick(DialogInterface File_Exist, int p) {
+								AlertDialog.setCancelable(true);
+								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk"))) {
+									if ((Installed_Version_Cloned < Downloaded_Version_Cloned) || ((Downloaded_Version_Cloned > Installed_Version_Cloned) || ((Installed_Version_Cloned == Downloaded_Version_Cloned) || Installed_Checker_Cloned.equals("false")))) {
+											if (getICSignature(getApplicationContext()).equals(getDCSignature(getApplicationContext())) || Installed_Checker_Cloned.equals("false")) {
+													StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+													if(android.os.Build.VERSION.SDK_INT >= 29){
+															try {
+																	Intent intent = new Intent(Intent.ACTION_VIEW);
+																	intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																	intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
+																	startActivity(intent);
+															}
+															catch(Exception e) {
+																	SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+															}
+													} else {
+															try {
+																	Intent intent = new Intent(Intent.ACTION_VIEW);
+																	intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
+																	startActivity(intent);
+															}
+															catch(Exception e) {
+																	SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+															}
+													} 
+											} else {
+													final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+													String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+													String TitleColor = "1DB954";
+													Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+													String Message = installation_failed_cloned_desc_0.replace("\n", "<br/>");
+													String MessageColor = "FFFFFF";
+													Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+													Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+															@Override
+															public void onClick(DialogInterface Signature_Check, int p) {
+																	AlertDialog.setCancelable(true);
+																	try {
+																			Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
+																			startActivity(intent);
+																	}
+																	catch(Exception e) {
+																	}
+															}
+													});
+													Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+															@Override
+															public void onClick(DialogInterface Signature_Check, int p) {
+																	AlertDialog.setCancelable(true);
+															}
+													});
+													AlertDialog = Signature_Check.create();
+													AlertDialog.setCancelable(false);
+													AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+													AlertDialog.show();
+											}	
 									}
 									else {
-										if ((_position % 2) == 1) {
-											String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-										else {
-											String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-									}
-									Download_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
-										
-										                @Override
-										                public void onClick(DialogInterface Download_Patched, int p) {
-											try {
-												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-													AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														_Download_Install_Cloned(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															_Download_Cloned(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-													_File_Remover();
-												}
-												else {
-													if (mRewardedAd != null) {
-														  Activity activityContext = MainActivity.this;
-														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-															    @Override
-															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																       Timer = new TimerTask() {
-																	@Override
-																	public void run() {
-																		runOnUiThread(new Runnable() {
-																			@Override
-																			public void run() {
-																				AlertDialog.setCancelable(true);
-																				if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																					_Download_Install_Cloned(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																				}
-																				else {
-																					if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																						_Download_Cloned(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																					}
-																				}
-																				_File_Remover();
-																			}
-																		});
+											if (Downloaded_Version_Cloned < Installed_Version_Cloned) {
+													final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+													String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+													String TitleColor = "1DB954";
+													Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+													String Message = installation_failed_desc_0.replace("\n", "<br/>");
+													String MessageColor = "FFFFFF";
+													Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+													Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+															@Override
+															public void onClick(DialogInterface Downgrade_Check, int p) {
+																	AlertDialog.setCancelable(true);
+																	try {
+																			Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
+																			startActivity(intent);
 																	}
-																};
-																_timer.schedule(Timer, (int)(1000));
-																      int rewardAmount = rewardItem.getAmount();
-																      String rewardType = rewardItem.getType();
-																    }
-															  });
-													} else {
-														if (UnityAds.isReady(placementRewardedVideo)) {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																DOWNLOAD.edit().putString("PATCHED", amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString()).commit();
+																	catch(Exception e) {
+																	}
 															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	DOWNLOAD.edit().putString("PATCHED", amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString()).commit();
-																}
-															}
-															_Rewarded_Unity();
-															_File_Remover();
-														}
-														else {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																_Download_Install_Cloned(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	_Download_Cloned(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-															}
-															_File_Remover();
-														}
-													}
-												}
-											}
-											catch(Exception e) {
-											}
-											                }
-										            });
-									 Download_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
-										
-										                @Override
-										                public void onClick(DialogInterface Download_Patched, int p) {
-											AlertDialog.setCancelable(true);
-											Timer = new TimerTask() {
-												@Override
-												public void run() {
-													runOnUiThread(new Runnable() {
-														@Override
-														public void run() {
-															_Hide_Navigation();
-														}
 													});
-												}
-											};
-											_timer.schedule(Timer, (int)(100));
-											                }
-										            });
-									AlertDialog = Download_Patched.create();
-									AlertDialog.setCancelable(false);
-									AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-									AlertDialog.show();
-									FileUtil.makeDir("/storage/emulated/0/xManager");
-									FileUtil.makeDir("/storage/emulated/0/xManager/Update");
-									DELETE = 1;
-									                }
-								            });
-							AlertDialog = File_Exist.create();
-							AlertDialog.setCancelable(false);
-							AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-							AlertDialog.show();
-						}
-						else {
-							if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
-								final AlertDialog.Builder Download_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+													Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+															@Override
+															public void onClick(DialogInterface Downgrade_Check, int p) {
+																	AlertDialog.setCancelable(true);
+															}
+													});
+													AlertDialog = Downgrade_Check.create();
+													AlertDialog.setCancelable(false);
+													AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+													AlertDialog.show();
+											}
+									}
+									
+								}
+								                }
+							            });
+						File_Exist.setNegativeButton(delete.getText().toString(), new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface File_Exist, int p) {
+								
+								AlertDialog.setCancelable(true);
+								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
+								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
+								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
+								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
+								FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk");
+								FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk");
+								                }
+							            });
+						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface File_Exist, int p) {
+								AlertDialog.setCancelable(true);
+								final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
 								
 								String Title = "<b>".concat(download_ready_0.concat("</b>"));
 								String TitleColor = "1DB954";
 								
-								Download_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+								Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 								if (_position < 2) {
 									if ((_position % 2) == 0) {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
-										Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 									else {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("\n<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
-										Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 								}
 								else {
 									if ((_position % 2) == 1) {
-										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
-										Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 									else {
-										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
-										Download_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 								}
-								Download_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
+								Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
 									
 									                @Override
-									                public void onClick(DialogInterface Download_Patched, int p) {
+									                public void onClick(DialogInterface Selected_Patched, int p) {
 										try {
 											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
@@ -6574,34 +5879,263 @@ public class MainActivity extends AppCompatActivity {
 										}
 										                }
 									            });
-								 Download_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
+								Selected_Patched.setNegativeButton(copy_url_0, new DialogInterface.OnClickListener(){
 									
 									                @Override
-									                public void onClick(DialogInterface Download_Patched, int p) {
-										AlertDialog.setCancelable(true);
-										Timer = new TimerTask() {
-											@Override
-											public void run() {
-												runOnUiThread(new Runnable() {
-													@Override
-													public void run() {
-														_Hide_Navigation();
-													}
-												});
+									                public void onClick(DialogInterface Selected_Patched, int p) {
+										
+										try {
+											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+												AlertDialog.setCancelable(true);
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString()));
+												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 											}
-										};
-										_timer.schedule(Timer, (int)(100));
+											else {
+												if (mRewardedAd != null) {
+													  Activity activityContext = MainActivity.this;
+													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+														    @Override
+														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+															       Timer = new TimerTask() {
+																@Override
+																public void run() {
+																	runOnUiThread(new Runnable() {
+																		@Override
+																		public void run() {
+																			AlertDialog.setCancelable(true);
+																			((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString()));
+																			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																		}
+																	});
+																}
+															};
+															_timer.schedule(Timer, (int)(1000));
+															      int rewardAmount = rewardItem.getAmount();
+															      String rewardType = rewardItem.getType();
+															    }
+														  });
+												} else {
+													if (UnityAds.isReady(placementRewardedVideo)) {
+														AlertDialog.setCancelable(true);
+														DOWNLOAD.edit().putString("PATCHED", amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString()).commit();
+														_Rewarded_Unity();
+													}
+													else {
+														AlertDialog.setCancelable(true);
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString()));
+														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+													}
+												}
+											}
+										}
+										catch(Exception e) {
+										}
 										                }
 									            });
-								AlertDialog = Download_Patched.create();
+								 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
+									
+									                @Override
+									                public void onClick(DialogInterface Selected_Patched, int p) {
+										AlertDialog.setCancelable(true);
+										                }
+									            });
+								AlertDialog = Selected_Patched.create();
 								AlertDialog.setCancelable(false);
 								AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
 								AlertDialog.show();
 								FileUtil.makeDir("/storage/emulated/0/xManager");
 								FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 								DELETE = 1;
+								                }
+							            });
+						AlertDialog = File_Exist.create();
+						AlertDialog.setCancelable(false);
+						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+						AlertDialog.show();
+					}
+					else {
+						final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+						
+						String Title = "<b>".concat(download_ready_0.concat("</b>"));
+						String TitleColor = "1DB954";
+						
+						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+						if (_position < 2) {
+							if ((_position % 2) == 0) {
+								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
+								String MessageColor = "FFFFFF";
+								
+								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+							}
+							else {
+								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
+								String MessageColor = "FFFFFF";
+								
+								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 						}
+						else {
+							if ((_position % 2) == 1) {
+								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
+								String MessageColor = "FFFFFF";
+								
+								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+							}
+							else {
+								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
+								String MessageColor = "FFFFFF";
+								
+								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+							}
+						}
+						Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface Selected_Patched, int p) {
+								try {
+									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+										AlertDialog.setCancelable(true);
+										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+											_Download_Install_Cloned(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+										}
+										else {
+											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+												_Download_Cloned(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											}
+										}
+										_File_Remover();
+									}
+									else {
+										if (mRewardedAd != null) {
+											  Activity activityContext = MainActivity.this;
+											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+												    @Override
+												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+													       Timer = new TimerTask() {
+														@Override
+														public void run() {
+															runOnUiThread(new Runnable() {
+																@Override
+																public void run() {
+																	AlertDialog.setCancelable(true);
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																		_Download_Install_Cloned(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																	else {
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																			_Download_Cloned(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		}
+																	}
+																	_File_Remover();
+																}
+															});
+														}
+													};
+													_timer.schedule(Timer, (int)(1000));
+													      int rewardAmount = rewardItem.getAmount();
+													      String rewardType = rewardItem.getType();
+													    }
+												  });
+										} else {
+											if (UnityAds.isReady(placementRewardedVideo)) {
+												AlertDialog.setCancelable(true);
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													DOWNLOAD.edit().putString("PATCHED", amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString()).commit();
+												}
+												else {
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														DOWNLOAD.edit().putString("PATCHED", amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString()).commit();
+													}
+												}
+												_Rewarded_Unity();
+												_File_Remover();
+											}
+											else {
+												AlertDialog.setCancelable(true);
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													_Download_Install_Cloned(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
+												else {
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														_Download_Cloned(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+												}
+												_File_Remover();
+											}
+										}
+									}
+								}
+								catch(Exception e) {
+								}
+								                }
+							            });
+						Selected_Patched.setNegativeButton(copy_url_0, new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface Selected_Patched, int p) {
+								
+								try {
+									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+										AlertDialog.setCancelable(true);
+										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString()));
+										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+									}
+									else {
+										if (mRewardedAd != null) {
+											  Activity activityContext = MainActivity.this;
+											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+												    @Override
+												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+													       Timer = new TimerTask() {
+														@Override
+														public void run() {
+															runOnUiThread(new Runnable() {
+																@Override
+																public void run() {
+																	AlertDialog.setCancelable(true);
+																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString()));
+																	com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																}
+															});
+														}
+													};
+													_timer.schedule(Timer, (int)(1000));
+													      int rewardAmount = rewardItem.getAmount();
+													      String rewardType = rewardItem.getType();
+													    }
+												  });
+										} else {
+											if (UnityAds.isReady(placementRewardedVideo)) {
+												AlertDialog.setCancelable(true);
+												DOWNLOAD.edit().putString("PATCHED", amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString()).commit();
+												_Rewarded_Unity();
+											}
+											else {
+												AlertDialog.setCancelable(true);
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString()));
+												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+											}
+										}
+									}
+								}
+								catch(Exception e) {
+								}
+								                }
+							            });
+						 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface Selected_Patched, int p) {
+								AlertDialog.setCancelable(true);
+								                }
+							            });
+						AlertDialog = Selected_Patched.create();
+						AlertDialog.setCancelable(false);
+						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+						AlertDialog.show();
+						FileUtil.makeDir("/storage/emulated/0/xManager");
+						FileUtil.makeDir("/storage/emulated/0/xManager/Update");
+						DELETE = 1;
 					}
 				}
 				catch(Exception e) {
@@ -6618,9 +6152,13 @@ public class MainActivity extends AppCompatActivity {
 						try {
 							version_switch_01.setChecked(false);
 							changelogs_switch.setChecked(false);
+							version_oc_02.setImageResource(R.drawable.open);
 							if (CLONED_VERSION.getString("CLONED", "").equals("ON")) {
+								list_menu_1.setVisibility(View.GONE);
 								list_menu_2.setVisibility(View.GONE);
+								list_menu_3.setVisibility(View.GONE);
 								list_menu_4.setVisibility(View.VISIBLE);
+								list_changelogs.setVisibility(View.GONE);
 								sub_3.setVisibility(View.GONE);
 								sub_7.setVisibility(View.VISIBLE);
 								list_menu_2.setAlpha((float)(0));
@@ -6628,8 +6166,12 @@ public class MainActivity extends AppCompatActivity {
 							}
 							else {
 								if (CLONED_VERSION.getString("CLONED", "").equals("OFF")) {
+									list_menu_1.setVisibility(View.GONE);
 									list_menu_2.setVisibility(View.VISIBLE);
+									list_menu_3.setVisibility(View.GONE);
 									list_menu_4.setVisibility(View.GONE);
+									list_changelogs.setVisibility(View.GONE);
+									version_oc_02.setImageResource(R.drawable.close);
 									sub_3.setVisibility(View.VISIBLE);
 									sub_7.setVisibility(View.GONE);
 									list_menu_2.setAlpha((float)(1));
@@ -6646,14 +6188,21 @@ public class MainActivity extends AppCompatActivity {
 						}
 					}
 					else {
+						list_menu_1.setVisibility(View.GONE);
 						list_menu_2.setVisibility(View.GONE);
+						list_menu_3.setVisibility(View.GONE);
 						list_menu_4.setVisibility(View.GONE);
+						list_changelogs.setVisibility(View.GONE);
+						version_oc_02.setImageResource(R.drawable.close);
 						main_refresh_layout.setEnabled(true);
 						list_menu_2.setSelection((int)0);
+						CLICKER_1 = 1;
+						CLICKER_2 = 1;
+						CLICKER_3 = 1;
 					}
 					Animation animation;
-					animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-					animation.setDuration(300); list_menu_2.startAnimation(animation);
+					animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+					animation.setDuration(500); version_oc_02.startAnimation(animation);
 					animation = null;
 				}
 				catch(Exception e) {
@@ -6670,7 +6219,12 @@ public class MainActivity extends AppCompatActivity {
 						try {
 							version_switch_01.setChecked(false);
 							version_switch_02.setChecked(false);
+							list_menu_1.setVisibility(View.GONE);
+							list_menu_2.setVisibility(View.GONE);
+							list_menu_3.setVisibility(View.GONE);
+							list_menu_4.setVisibility(View.GONE);
 							list_changelogs.setVisibility(View.VISIBLE);
+							changelogs_oc.setImageResource(R.drawable.open);
 							if (!SketchwareUtil.isConnected(getApplicationContext())) {
 								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or No Internet Connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 							}
@@ -6681,13 +6235,21 @@ public class MainActivity extends AppCompatActivity {
 						}
 					}
 					else {
+						list_menu_1.setVisibility(View.GONE);
+						list_menu_2.setVisibility(View.GONE);
+						list_menu_3.setVisibility(View.GONE);
+						list_menu_4.setVisibility(View.GONE);
 						list_changelogs.setVisibility(View.GONE);
+						changelogs_oc.setImageResource(R.drawable.close);
 						main_refresh_layout.setEnabled(true);
 						list_changelogs.setSelection((int)0);
+						CLICKER_1 = 1;
+						CLICKER_2 = 1;
+						CLICKER_3 = 1;
 					}
 					Animation animation;
-					animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-					animation.setDuration(300); list_changelogs.startAnimation(animation);
+					animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+					animation.setDuration(500); changelogs_oc.startAnimation(animation);
 					animation = null;
 				}
 				catch(Exception e) {
@@ -6837,33 +6399,9 @@ public class MainActivity extends AppCompatActivity {
 							FileUtil.deleteFile("/storage/emulated/0/Android/data/com.spotify.music/");
 							FileUtil.deleteFile("/storage/emulated/0/Android/data/com.spotify.musix/");
 							SketchwareUtil.showMessage(getApplicationContext(), "Successfully deleted");
-							Timer = new TimerTask() {
-								@Override
-								public void run() {
-									runOnUiThread(new Runnable() {
-										@Override
-										public void run() {
-											_Hide_Navigation();
-										}
-									});
-								}
-							};
-							_timer.schedule(Timer, (int)(100));
 						}
 						else {
 							SketchwareUtil.showMessage(getApplicationContext(), "Directory files are empty");
-							Timer = new TimerTask() {
-								@Override
-								public void run() {
-									runOnUiThread(new Runnable() {
-										@Override
-										public void run() {
-											_Hide_Navigation();
-										}
-									});
-								}
-							};
-							_timer.schedule(Timer, (int)(100));
 						}
 					}
 					_Tap_Animation(box_cache);
@@ -7004,18 +6542,6 @@ public class MainActivity extends AppCompatActivity {
 						                @Override
 						                public void onClick(DialogInterface Donation, int p) {
 							AlertDialog.setCancelable(true);
-							Timer = new TimerTask() {
-								@Override
-								public void run() {
-									runOnUiThread(new Runnable() {
-										@Override
-										public void run() {
-											_Hide_Navigation();
-										}
-									});
-								}
-							};
-							_timer.schedule(Timer, (int)(100));
 							                }
 						            });
 					AlertDialog = Donation.create();
@@ -7172,12 +6698,6 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 	
-	@Override
-	public void onResume() {
-		super.onResume();
-		_Hide_Navigation();
-	}
-	
 	
 	private class UnityAdsListener implements
 	IUnityAdsListener {
@@ -7191,11 +6711,11 @@ public class MainActivity extends AppCompatActivity {
 		@Override
 		public void onUnityAdsFinish(String placementRewardedVideo, UnityAds.FinishState finishState) {
 			if (finishState.equals(UnityAds.FinishState.COMPLETED)) {
-				if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
+				if ("".equals("URL_ON")) {
 					((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", DOWNLOAD.getString("PATCHED", "")));
-					SketchwareUtil.showMessage(getApplicationContext(), "Copied Successfully");
+					com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 				}
-				if (CLONED_VERSION.getString("CLONED", "").equals("ON") && COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
+				if (CLONED_VERSION.getString("CLONED", "").equals("ON") && "".equals("URL_OFF")) {
 					if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 						_Download_Install_Cloned(DOWNLOAD.getString("PATCHED", ""), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
 					}
@@ -7208,7 +6728,7 @@ public class MainActivity extends AppCompatActivity {
 				else {
 					
 				}
-				if (CLONED_VERSION.getString("CLONED", "").equals("OFF") && COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
+				if (CLONED_VERSION.getString("CLONED", "").equals("OFF") && "".equals("URL_OFF")) {
 					if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 						_Download_Install(DOWNLOAD.getString("PATCHED", ""), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
 					}
@@ -7224,7 +6744,7 @@ public class MainActivity extends AppCompatActivity {
 			}
 			else {
 				if (finishState.equals(UnityAds.FinishState.ERROR)) {
-					SketchwareUtil.showMessage(getApplicationContext(), "Well, that was unexpected.");
+					com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Well, that was unexpected.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 				}
 			}
 		}
@@ -7427,7 +6947,6 @@ public class MainActivity extends AppCompatActivity {
 																															@Override
 																															public void run() {
 																																	try {
-																																			_Hide_Navigation();
 																																			_File_Remover();
 																																			prog.cancel();
 																																	} catch (Exception e) {
@@ -7483,18 +7002,6 @@ public class MainActivity extends AppCompatActivity {
 																																											Intent intent = new Intent(Intent.ACTION_VIEW);
 																																											intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
 																																											startActivity(intent);
-																																											Timer = new TimerTask() {
-																																													@Override
-																																													public void run() {
-																																															runOnUiThread(new Runnable() {
-																																																	@Override
-																																																	public void run() {
-																																																			_Hide_Navigation();
-																																																	}
-																																															});
-																																													}
-																																											};
-																																											_timer.schedule(Timer, (int)(100));
 																																									}
 																																									catch(Exception e) {
 																																									}
@@ -7511,7 +7018,6 @@ public class MainActivity extends AppCompatActivity {
 																																									Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
 																																											@Override
 																																											public void onClick(DialogInterface Signature_Check, int p) {
-																																													_Hide_Navigation();
 																																													AlertDialog.setCancelable(true);
 																																													try {
 																																															Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
@@ -7524,7 +7030,6 @@ public class MainActivity extends AppCompatActivity {
 																																									Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
 																																											@Override
 																																											public void onClick(DialogInterface Signature_Check, int p) {
-																																													_Hide_Navigation();
 																																													AlertDialog.setCancelable(true);
 																																											}
 																																									});
@@ -7548,7 +7053,6 @@ public class MainActivity extends AppCompatActivity {
 																																									Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
 																																											@Override
 																																											public void onClick(DialogInterface Downgrade_Check, int p) {
-																																													_Hide_Navigation();
 																																													AlertDialog.setCancelable(true);
 																																													try {
 																																															Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
@@ -7561,7 +7065,6 @@ public class MainActivity extends AppCompatActivity {
 																																									Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
 																																											@Override
 																																											public void onClick(DialogInterface Downgrade_Check, int p) {
-																																													_Hide_Navigation();
 																																													AlertDialog.setCancelable(true);
 																																											}
 																																									});
@@ -7578,18 +7081,6 @@ public class MainActivity extends AppCompatActivity {
 																																	@Override
 																																	public void onClick(DialogInterface Success_Download, int p) {
 																																			AlertDialog.setCancelable(true);
-																																			Timer = new TimerTask() {
-																																					@Override
-																																					public void run() {
-																																							runOnUiThread(new Runnable() {
-																																									@Override
-																																									public void run() {
-																																											_Hide_Navigation();
-																																									}
-																																							});
-																																					}
-																																			};
-																																			_timer.schedule(Timer, (int)(100));
 																																	}
 																															});
 																															AlertDialog = Success_Download.create();
@@ -7801,18 +7292,6 @@ public class MainActivity extends AppCompatActivity {
 							catch(Exception e) {
 							}
 							_Update_Remover();
-							Timer = new TimerTask() {
-								@Override
-								public void run() {
-									runOnUiThread(new Runnable() {
-										@Override
-										public void run() {
-											_Hide_Navigation();
-										}
-									});
-								}
-							};
-							_timer.schedule(Timer, (int)(100));
 							                }
 						            });
 					 Update_Authorized.setNeutralButton(not_now.getText().toString(), new DialogInterface.OnClickListener(){
@@ -7820,18 +7299,6 @@ public class MainActivity extends AppCompatActivity {
 						                @Override
 						                public void onClick(DialogInterface Update_Authorized, int p) {
 							AlertDialog.setCancelable(true);
-							Timer = new TimerTask() {
-								@Override
-								public void run() {
-									runOnUiThread(new Runnable() {
-										@Override
-										public void run() {
-											_Hide_Navigation();
-										}
-									});
-								}
-							};
-							_timer.schedule(Timer, (int)(100));
 							                }
 						            });
 					AlertDialog = Update_Authorized.create();
@@ -7979,7 +7446,6 @@ public class MainActivity extends AppCompatActivity {
 																															@Override
 																															public void run() {
 																																	try {
-																																			_Hide_Navigation();
 																																			_Update_Remover();
 																																			prog.cancel();
 																																	} catch (Exception e) {
@@ -8034,18 +7500,6 @@ public class MainActivity extends AppCompatActivity {
 																																							Intent intent = new Intent(Intent.ACTION_VIEW);
 																																							intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
 																																							startActivity(intent);
-																																							Timer = new TimerTask() {
-																																									@Override
-																																									public void run() {
-																																											runOnUiThread(new Runnable() {
-																																													@Override
-																																													public void run() {
-																																															_Hide_Navigation();
-																																													}
-																																											});
-																																									}
-																																							};
-																																							_timer.schedule(Timer, (int)(100));
 																																					}
 																																					catch(Exception e) {
 																																					}
@@ -8303,30 +7757,6 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	public void _Hide_Navigation() {
-		try {
-			if (NAVIGATION_BAR.getString("NAVIGATION", "").equals("1")) {
-				getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-				
-				navigation_switch.setChecked(true);
-			}
-			else {
-				if (NAVIGATION_BAR.getString("NAVIGATION", "").equals("0")) {
-					getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-					
-					if (Build.VERSION.SDK_INT >= 21) {
-							getWindow().setNavigationBarColor(Color.parseColor("#171717"));
-					}
-					
-					navigation_switch.setChecked(false);
-				}
-			}
-		}
-		catch(Exception e) {
-		}
-	}
-	
-	
 	public void _Animation_0() {
 		Animation a;
 		a = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
@@ -8398,36 +7828,28 @@ public class MainActivity extends AppCompatActivity {
 		e = null;
 		Animation f;
 		f = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		f.setDuration(600); main_box_12.startAnimation(f);
+		f.setDuration(600); main_box_17.startAnimation(f);
 		f = null;
-		Animation g;
-		g = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		g.setDuration(700); main_box_17.startAnimation(g);
-		g = null;
 		Animation h;
 		h = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		h.setDuration(800); main_box_7.startAnimation(h);
+		h.setDuration(700); main_box_5.startAnimation(h);
 		h = null;
 		Animation i;
 		i = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		i.setDuration(900); main_box_5.startAnimation(i);
+		i.setDuration(800); main_box_14.startAnimation(i);
 		i = null;
 		Animation j;
 		j = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		j.setDuration(1000); main_box_14.startAnimation(j);
+		j.setDuration(900); main_box_9.startAnimation(j);
 		j = null;
 		Animation k;
 		k = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		k.setDuration(1100); main_box_9.startAnimation(k);
+		k.setDuration(1000); main_box_10.startAnimation(k);
 		k = null;
 		Animation l;
 		l = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		l.setDuration(1200); main_box_10.startAnimation(l);
+		l.setDuration(1100); main_box_13.startAnimation(l);
 		l = null;
-		Animation m;
-		m = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		m.setDuration(1300); main_box_13.startAnimation(m);
-		m = null;
 	}
 	
 	
@@ -8496,7 +7918,7 @@ public class MainActivity extends AppCompatActivity {
 			try {
 				list_auto_refresh_switch.setChecked(true);
 				main_refresh_layout.setRefreshing(true);
-				if (!force_auto_install_switch.isChecked() && !copy_url_mode_switch.isChecked()) {
+				if (!force_auto_install_switch.isChecked()) {
 					com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Refreshing Data List...", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 				}
 				Timer = new TimerTask() {
@@ -8694,7 +8116,6 @@ public class MainActivity extends AppCompatActivity {
 																															@Override
 																															public void run() {
 																																	try {
-																																			_Hide_Navigation();
 																																			_File_Remover();
 																																			prog.cancel();
 																																	} catch (Exception e) {
@@ -8747,18 +8168,6 @@ public class MainActivity extends AppCompatActivity {
 																																													Intent intent = new Intent(Intent.ACTION_VIEW);
 																																													intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
 																																													startActivity(intent);
-																																													Timer = new TimerTask() {
-																																															@Override
-																																															public void run() {
-																																																	runOnUiThread(new Runnable() {
-																																																			@Override
-																																																			public void run() {
-																																																					_Hide_Navigation();
-																																																			}
-																																																	});
-																																															}
-																																													};
-																																													_timer.schedule(Timer, (int)(100));
 																																											}
 																																											catch(Exception e) {
 																																											}
@@ -8775,7 +8184,6 @@ public class MainActivity extends AppCompatActivity {
 																																											Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
 																																													@Override
 																																													public void onClick(DialogInterface Signature_Check, int p) {
-																																															_Hide_Navigation();
 																																															AlertDialog.setCancelable(true);
 																																															try {
 																																																	Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
@@ -8788,7 +8196,6 @@ public class MainActivity extends AppCompatActivity {
 																																											Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
 																																													@Override
 																																													public void onClick(DialogInterface Signature_Check, int p) {
-																																															_Hide_Navigation();
 																																															AlertDialog.setCancelable(true);
 																																													}
 																																											});
@@ -8812,7 +8219,6 @@ public class MainActivity extends AppCompatActivity {
 																																											Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
 																																													@Override
 																																													public void onClick(DialogInterface Downgrade_Check, int p) {
-																																															_Hide_Navigation();
 																																															AlertDialog.setCancelable(true);
 																																															try {
 																																																	Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
@@ -8825,7 +8231,6 @@ public class MainActivity extends AppCompatActivity {
 																																											Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
 																																													@Override
 																																													public void onClick(DialogInterface Downgrade_Check, int p) {
-																																															_Hide_Navigation();
 																																															AlertDialog.setCancelable(true);
 																																													}
 																																											});
@@ -8836,18 +8241,6 @@ public class MainActivity extends AppCompatActivity {
 																																									}
 																																							}
 																																					}
-																																			}
-																																	});
-																															}
-																													};
-																													_timer.schedule(Timer, (int)(100));
-																													Timer = new TimerTask() {
-																															@Override
-																															public void run() {
-																																	runOnUiThread(new Runnable() {
-																																			@Override
-																																			public void run() {
-																																					_Hide_Navigation();
 																																			}
 																																	});
 																															}
@@ -8955,7 +8348,6 @@ public class MainActivity extends AppCompatActivity {
 																															@Override
 																															public void run() {
 																																	try {
-																																			_Hide_Navigation();
 																																			_Update_Remover();
 																																			prog.cancel();
 																																	} catch (Exception e) {
@@ -9001,18 +8393,6 @@ public class MainActivity extends AppCompatActivity {
 																																	Intent intent = new Intent(Intent.ACTION_VIEW);
 																																	intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
 																																	startActivity(intent);
-																																	Timer = new TimerTask() {
-																																			@Override
-																																			public void run() {
-																																					runOnUiThread(new Runnable() {
-																																							@Override
-																																							public void run() {
-																																									_Hide_Navigation();
-																																							}
-																																					});
-																																			}
-																																	};
-																																	_timer.schedule(Timer, (int)(100));
 																															}
 																															catch(Exception e) {
 																															}
@@ -9038,27 +8418,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	public void _Url_Mode() {
-		if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_ON")) {
-			copy_url_mode_switch.setChecked(true);
-			title_header.setText("xManager (UM)");
-		}
-		else {
-			if (COPY_URL_MODE.getString("COPY_URL_MODE", "").equals("URL_OFF")) {
-				copy_url_mode_switch.setChecked(false);
-				title_header.setText("xManager");
-			}
-		}
-	}
-	
-	
 	public void _Switches() {
-		if (copy_url_mode_switch.isChecked()) {
-			COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_ON").commit();
-		}
-		else {
-			COPY_URL_MODE.edit().putString("COPY_URL_MODE", "URL_OFF").commit();
-		}
 		if (force_auto_install_switch.isChecked()) {
 			FORCE_INSTALL.edit().putString("FORCE_INSTALL", "X").commit();
 			FORCE_INSTALL_UPDATE.edit().putString("FORCE_INSTALL_UPDATE", "XX").commit();
@@ -9110,9 +8470,6 @@ public class MainActivity extends AppCompatActivity {
 				list_auto_refresh_info.setText(R.string.list_auto_refresh_desc);
 				force_auto_install.setText(R.string.force_auto_install);
 				force_auto_install_info.setText(R.string.force_auto_install_desc);
-				copy_url_mode.setText(R.string.copy_url_mode);
-				copy_file_url_mode_info.setText(R.string.copy_url_mode_desc);
-				navigation_bar.setText(R.string.hide_navigation_bar);
 				theme.setText(R.string.show_themes);
 				apk_location.setText(R.string.apk_location);
 				apk_location_info.setText(R.string.apk_location_desc);
@@ -9134,14 +8491,12 @@ public class MainActivity extends AppCompatActivity {
 				download_ready_desc.setText(R.string.download_ready_desc);
 				downloading_file.setText(R.string.downloading_file);
 				download_success.setText(R.string.download_success);
-				copy_url_desc.setText(R.string.copy_url_desc);
 				new_update.setText(R.string.new_update);
 				download_selected_0 = download_selected.getText().toString();
 				download_ready_0 = download_ready.getText().toString();
 				download_ready_desc_0 = download_ready_desc.getText().toString();
 				downloading_file_0 = downloading_file.getText().toString();
 				download_success_0 = download_success.getText().toString();
-				copy_url_desc_0 = copy_url_desc.getText().toString();
 				copy_url.setText(R.string.copy_url);
 				continue_1.setText(R.string.continue_1);
 				cancel.setText(R.string.cancel);
@@ -9224,9 +8579,6 @@ public class MainActivity extends AppCompatActivity {
 					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_01);
 					force_auto_install.setText(R.string.force_auto_install_01);
 					force_auto_install_info.setText(R.string.force_auto_install_desc_01);
-					copy_url_mode.setText(R.string.copy_url_mode_01);
-					copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_01);
-					navigation_bar.setText(R.string.hide_navigation_bar_01);
 					theme.setText(R.string.show_themes_01);
 					apk_location.setText(R.string.apk_location_01);
 					apk_location_info.setText(R.string.apk_location_desc_01);
@@ -9248,14 +8600,12 @@ public class MainActivity extends AppCompatActivity {
 					download_ready_desc.setText(R.string.download_ready_desc_01);
 					downloading_file.setText(R.string.downloading_file_01);
 					download_success.setText(R.string.download_success_01);
-					copy_url_desc.setText(R.string.copy_url_desc_01);
 					new_update.setText(R.string.new_update_01);
 					download_selected_0 = download_selected.getText().toString();
 					download_ready_0 = download_ready.getText().toString();
 					download_ready_desc_0 = download_ready_desc.getText().toString();
 					downloading_file_0 = downloading_file.getText().toString();
 					download_success_0 = download_success.getText().toString();
-					copy_url_desc_0 = copy_url_desc.getText().toString();
 					copy_url.setText(R.string.copy_url_01);
 					continue_1.setText(R.string.continue_1_01);
 					cancel.setText(R.string.cancel_01);
@@ -9338,9 +8688,6 @@ public class MainActivity extends AppCompatActivity {
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_02);
 						force_auto_install.setText(R.string.force_auto_install_02);
 						force_auto_install_info.setText(R.string.force_auto_install_desc_02);
-						copy_url_mode.setText(R.string.copy_url_mode_02);
-						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_02);
-						navigation_bar.setText(R.string.hide_navigation_bar_02);
 						theme.setText(R.string.show_themes_02);
 						apk_location.setText(R.string.apk_location_02);
 						apk_location_info.setText(R.string.apk_location_desc_02);
@@ -9362,14 +8709,12 @@ public class MainActivity extends AppCompatActivity {
 						download_ready_desc.setText(R.string.download_ready_desc_02);
 						downloading_file.setText(R.string.downloading_file_02);
 						download_success.setText(R.string.download_success_02);
-						copy_url_desc.setText(R.string.copy_url_desc_02);
 						new_update.setText(R.string.new_update_02);
 						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
 						downloading_file_0 = downloading_file.getText().toString();
 						download_success_0 = download_success.getText().toString();
-						copy_url_desc_0 = copy_url_desc.getText().toString();
 						copy_url.setText(R.string.copy_url_02);
 						continue_1.setText(R.string.continue_1_02);
 						cancel.setText(R.string.cancel_02);
@@ -9452,9 +8797,6 @@ public class MainActivity extends AppCompatActivity {
 							list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_03);
 							force_auto_install.setText(R.string.force_auto_install_03);
 							force_auto_install_info.setText(R.string.force_auto_install_desc_03);
-							copy_url_mode.setText(R.string.copy_url_mode_03);
-							copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_03);
-							navigation_bar.setText(R.string.hide_navigation_bar_03);
 							theme.setText(R.string.show_themes_03);
 							apk_location.setText(R.string.apk_location_03);
 							apk_location_info.setText(R.string.apk_location_desc_03);
@@ -9476,14 +8818,12 @@ public class MainActivity extends AppCompatActivity {
 							download_ready_desc.setText(R.string.download_ready_desc_03);
 							downloading_file.setText(R.string.downloading_file_03);
 							download_success.setText(R.string.download_success_03);
-							copy_url_desc.setText(R.string.copy_url_desc_03);
 							new_update.setText(R.string.new_update_03);
 							download_selected_0 = download_selected.getText().toString();
 							download_ready_0 = download_ready.getText().toString();
 							download_ready_desc_0 = download_ready_desc.getText().toString();
 							downloading_file_0 = downloading_file.getText().toString();
 							download_success_0 = download_success.getText().toString();
-							copy_url_desc_0 = copy_url_desc.getText().toString();
 							copy_url.setText(R.string.copy_url_03);
 							continue_1.setText(R.string.continue_1_03);
 							cancel.setText(R.string.cancel_03);
@@ -9566,9 +8906,6 @@ public class MainActivity extends AppCompatActivity {
 								list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_04);
 								force_auto_install.setText(R.string.force_auto_install_04);
 								force_auto_install_info.setText(R.string.force_auto_install_desc_04);
-								copy_url_mode.setText(R.string.copy_url_mode_04);
-								copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_04);
-								navigation_bar.setText(R.string.hide_navigation_bar_04);
 								theme.setText(R.string.show_themes_04);
 								apk_location.setText(R.string.apk_location_04);
 								apk_location_info.setText(R.string.apk_location_desc_04);
@@ -9590,14 +8927,12 @@ public class MainActivity extends AppCompatActivity {
 								download_ready_desc.setText(R.string.download_ready_desc_04);
 								downloading_file.setText(R.string.downloading_file_04);
 								download_success.setText(R.string.download_success_04);
-								copy_url_desc.setText(R.string.copy_url_desc_04);
 								new_update.setText(R.string.new_update_04);
 								download_selected_0 = download_selected.getText().toString();
 								download_ready_0 = download_ready.getText().toString();
 								download_ready_desc_0 = download_ready_desc.getText().toString();
 								downloading_file_0 = downloading_file.getText().toString();
 								download_success_0 = download_success.getText().toString();
-								copy_url_desc_0 = copy_url_desc.getText().toString();
 								copy_url.setText(R.string.copy_url_04);
 								continue_1.setText(R.string.continue_1_04);
 								cancel.setText(R.string.cancel_04);
@@ -9680,9 +9015,6 @@ public class MainActivity extends AppCompatActivity {
 									list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_05);
 									force_auto_install.setText(R.string.force_auto_install_05);
 									force_auto_install_info.setText(R.string.force_auto_install_desc_05);
-									copy_url_mode.setText(R.string.copy_url_mode_05);
-									copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_05);
-									navigation_bar.setText(R.string.hide_navigation_bar_05);
 									theme.setText(R.string.show_themes_05);
 									apk_location.setText(R.string.apk_location_05);
 									apk_location_info.setText(R.string.apk_location_desc_05);
@@ -9704,14 +9036,12 @@ public class MainActivity extends AppCompatActivity {
 									download_ready_desc.setText(R.string.download_ready_desc_05);
 									downloading_file.setText(R.string.downloading_file_05);
 									download_success.setText(R.string.download_success_05);
-									copy_url_desc.setText(R.string.copy_url_desc_05);
 									new_update.setText(R.string.new_update_05);
 									download_selected_0 = download_selected.getText().toString();
 									download_ready_0 = download_ready.getText().toString();
 									download_ready_desc_0 = download_ready_desc.getText().toString();
 									downloading_file_0 = downloading_file.getText().toString();
 									download_success_0 = download_success.getText().toString();
-									copy_url_desc_0 = copy_url_desc.getText().toString();
 									copy_url.setText(R.string.copy_url_05);
 									continue_1.setText(R.string.continue_1_05);
 									cancel.setText(R.string.cancel_05);
@@ -9794,9 +9124,6 @@ public class MainActivity extends AppCompatActivity {
 										list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_06);
 										force_auto_install.setText(R.string.force_auto_install_06);
 										force_auto_install_info.setText(R.string.force_auto_install_desc_06);
-										copy_url_mode.setText(R.string.copy_url_mode_06);
-										copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_06);
-										navigation_bar.setText(R.string.hide_navigation_bar_06);
 										theme.setText(R.string.show_themes_06);
 										apk_location.setText(R.string.apk_location_06);
 										apk_location_info.setText(R.string.apk_location_desc_06);
@@ -9818,14 +9145,12 @@ public class MainActivity extends AppCompatActivity {
 										download_ready_desc.setText(R.string.download_ready_desc_06);
 										downloading_file.setText(R.string.downloading_file_06);
 										download_success.setText(R.string.download_success_06);
-										copy_url_desc.setText(R.string.copy_url_desc_06);
 										new_update.setText(R.string.new_update_06);
 										download_selected_0 = download_selected.getText().toString();
 										download_ready_0 = download_ready.getText().toString();
 										download_ready_desc_0 = download_ready_desc.getText().toString();
 										downloading_file_0 = downloading_file.getText().toString();
 										download_success_0 = download_success.getText().toString();
-										copy_url_desc_0 = copy_url_desc.getText().toString();
 										copy_url.setText(R.string.copy_url_06);
 										continue_1.setText(R.string.continue_1_06);
 										cancel.setText(R.string.cancel_06);
@@ -9908,9 +9233,6 @@ public class MainActivity extends AppCompatActivity {
 											list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_07);
 											force_auto_install.setText(R.string.force_auto_install_07);
 											force_auto_install_info.setText(R.string.force_auto_install_desc_07);
-											copy_url_mode.setText(R.string.copy_url_mode_07);
-											copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_07);
-											navigation_bar.setText(R.string.hide_navigation_bar_07);
 											theme.setText(R.string.show_themes_07);
 											apk_location.setText(R.string.apk_location_07);
 											apk_location_info.setText(R.string.apk_location_desc_07);
@@ -9932,14 +9254,12 @@ public class MainActivity extends AppCompatActivity {
 											download_ready_desc.setText(R.string.download_ready_desc_07);
 											downloading_file.setText(R.string.downloading_file_07);
 											download_success.setText(R.string.download_success_07);
-											copy_url_desc.setText(R.string.copy_url_desc_07);
 											new_update.setText(R.string.new_update_07);
 											download_selected_0 = download_selected.getText().toString();
 											download_ready_0 = download_ready.getText().toString();
 											download_ready_desc_0 = download_ready_desc.getText().toString();
 											downloading_file_0 = downloading_file.getText().toString();
 											download_success_0 = download_success.getText().toString();
-											copy_url_desc_0 = copy_url_desc.getText().toString();
 											copy_url.setText(R.string.copy_url_07);
 											continue_1.setText(R.string.continue_1_07);
 											cancel.setText(R.string.cancel_07);
@@ -10022,9 +9342,6 @@ public class MainActivity extends AppCompatActivity {
 												list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_08);
 												force_auto_install.setText(R.string.force_auto_install_08);
 												force_auto_install_info.setText(R.string.force_auto_install_desc_08);
-												copy_url_mode.setText(R.string.copy_url_mode_08);
-												copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_08);
-												navigation_bar.setText(R.string.hide_navigation_bar_08);
 												theme.setText(R.string.show_themes_08);
 												apk_location.setText(R.string.apk_location_08);
 												apk_location_info.setText(R.string.apk_location_desc_08);
@@ -10046,14 +9363,12 @@ public class MainActivity extends AppCompatActivity {
 												download_ready_desc.setText(R.string.download_ready_desc_08);
 												downloading_file.setText(R.string.downloading_file_08);
 												download_success.setText(R.string.download_success_08);
-												copy_url_desc.setText(R.string.copy_url_desc_08);
 												new_update.setText(R.string.new_update_08);
 												download_selected_0 = download_selected.getText().toString();
 												download_ready_0 = download_ready.getText().toString();
 												download_ready_desc_0 = download_ready_desc.getText().toString();
 												downloading_file_0 = downloading_file.getText().toString();
 												download_success_0 = download_success.getText().toString();
-												copy_url_desc_0 = copy_url_desc.getText().toString();
 												copy_url.setText(R.string.copy_url_08);
 												continue_1.setText(R.string.continue_1_08);
 												cancel.setText(R.string.cancel_08);
@@ -10136,9 +9451,6 @@ public class MainActivity extends AppCompatActivity {
 													list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_09);
 													force_auto_install.setText(R.string.force_auto_install_09);
 													force_auto_install_info.setText(R.string.force_auto_install_desc_09);
-													copy_url_mode.setText(R.string.copy_url_mode_09);
-													copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_09);
-													navigation_bar.setText(R.string.hide_navigation_bar_09);
 													theme.setText(R.string.show_themes_09);
 													apk_location.setText(R.string.apk_location_09);
 													apk_location_info.setText(R.string.apk_location_desc_09);
@@ -10160,14 +9472,12 @@ public class MainActivity extends AppCompatActivity {
 													download_ready_desc.setText(R.string.download_ready_desc_09);
 													downloading_file.setText(R.string.downloading_file_09);
 													download_success.setText(R.string.download_success_09);
-													copy_url_desc.setText(R.string.copy_url_desc_09);
 													new_update.setText(R.string.new_update_09);
 													download_selected_0 = download_selected.getText().toString();
 													download_ready_0 = download_ready.getText().toString();
 													download_ready_desc_0 = download_ready_desc.getText().toString();
 													downloading_file_0 = downloading_file.getText().toString();
 													download_success_0 = download_success.getText().toString();
-													copy_url_desc_0 = copy_url_desc.getText().toString();
 													copy_url.setText(R.string.copy_url_09);
 													continue_1.setText(R.string.continue_1_09);
 													cancel.setText(R.string.cancel_09);
@@ -10250,9 +9560,6 @@ public class MainActivity extends AppCompatActivity {
 														list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_10);
 														force_auto_install.setText(R.string.force_auto_install_10);
 														force_auto_install_info.setText(R.string.force_auto_install_desc_10);
-														copy_url_mode.setText(R.string.copy_url_mode_10);
-														copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_10);
-														navigation_bar.setText(R.string.hide_navigation_bar_10);
 														theme.setText(R.string.show_themes_10);
 														apk_location.setText(R.string.apk_location_10);
 														apk_location_info.setText(R.string.apk_location_desc_10);
@@ -10274,14 +9581,12 @@ public class MainActivity extends AppCompatActivity {
 														download_ready_desc.setText(R.string.download_ready_desc_10);
 														downloading_file.setText(R.string.downloading_file_10);
 														download_success.setText(R.string.download_success_10);
-														copy_url_desc.setText(R.string.copy_url_desc_10);
 														new_update.setText(R.string.new_update_10);
 														download_selected_0 = download_selected.getText().toString();
 														download_ready_0 = download_ready.getText().toString();
 														download_ready_desc_0 = download_ready_desc.getText().toString();
 														downloading_file_0 = downloading_file.getText().toString();
 														download_success_0 = download_success.getText().toString();
-														copy_url_desc_0 = copy_url_desc.getText().toString();
 														copy_url.setText(R.string.copy_url_10);
 														continue_1.setText(R.string.continue_1_10);
 														cancel.setText(R.string.cancel_10);
@@ -10364,9 +9669,6 @@ public class MainActivity extends AppCompatActivity {
 															list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_11);
 															force_auto_install.setText(R.string.force_auto_install_11);
 															force_auto_install_info.setText(R.string.force_auto_install_desc_11);
-															copy_url_mode.setText(R.string.copy_url_mode_11);
-															copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_11);
-															navigation_bar.setText(R.string.hide_navigation_bar_11);
 															theme.setText(R.string.show_themes_11);
 															apk_location.setText(R.string.apk_location_11);
 															apk_location_info.setText(R.string.apk_location_desc_11);
@@ -10388,14 +9690,12 @@ public class MainActivity extends AppCompatActivity {
 															download_ready_desc.setText(R.string.download_ready_desc_11);
 															downloading_file.setText(R.string.downloading_file_11);
 															download_success.setText(R.string.download_success_11);
-															copy_url_desc.setText(R.string.copy_url_desc_11);
 															new_update.setText(R.string.new_update_11);
 															download_selected_0 = download_selected.getText().toString();
 															download_ready_0 = download_ready.getText().toString();
 															download_ready_desc_0 = download_ready_desc.getText().toString();
 															downloading_file_0 = downloading_file.getText().toString();
 															download_success_0 = download_success.getText().toString();
-															copy_url_desc_0 = copy_url_desc.getText().toString();
 															copy_url.setText(R.string.copy_url_11);
 															continue_1.setText(R.string.continue_1_11);
 															cancel.setText(R.string.cancel_11);
@@ -10478,9 +9778,6 @@ public class MainActivity extends AppCompatActivity {
 																list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_12);
 																force_auto_install.setText(R.string.force_auto_install_12);
 																force_auto_install_info.setText(R.string.force_auto_install_desc_12);
-																copy_url_mode.setText(R.string.copy_url_mode_12);
-																copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_12);
-																navigation_bar.setText(R.string.hide_navigation_bar_12);
 																theme.setText(R.string.show_themes_12);
 																apk_location.setText(R.string.apk_location_12);
 																apk_location_info.setText(R.string.apk_location_desc_12);
@@ -10502,14 +9799,12 @@ public class MainActivity extends AppCompatActivity {
 																download_ready_desc.setText(R.string.download_ready_desc_12);
 																downloading_file.setText(R.string.downloading_file_12);
 																download_success.setText(R.string.download_success_12);
-																copy_url_desc.setText(R.string.copy_url_desc_12);
 																new_update.setText(R.string.new_update_12);
 																download_selected_0 = download_selected.getText().toString();
 																download_ready_0 = download_ready.getText().toString();
 																download_ready_desc_0 = download_ready_desc.getText().toString();
 																downloading_file_0 = downloading_file.getText().toString();
 																download_success_0 = download_success.getText().toString();
-																copy_url_desc_0 = copy_url_desc.getText().toString();
 																copy_url.setText(R.string.copy_url_12);
 																continue_1.setText(R.string.continue_1_12);
 																cancel.setText(R.string.cancel_12);
@@ -10592,9 +9887,6 @@ public class MainActivity extends AppCompatActivity {
 																	list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_13);
 																	force_auto_install.setText(R.string.force_auto_install_13);
 																	force_auto_install_info.setText(R.string.force_auto_install_desc_13);
-																	copy_url_mode.setText(R.string.copy_url_mode_13);
-																	copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_13);
-																	navigation_bar.setText(R.string.hide_navigation_bar_13);
 																	theme.setText(R.string.show_themes_13);
 																	apk_location.setText(R.string.apk_location_13);
 																	apk_location_info.setText(R.string.apk_location_desc_13);
@@ -10616,14 +9908,12 @@ public class MainActivity extends AppCompatActivity {
 																	download_ready_desc.setText(R.string.download_ready_desc_13);
 																	downloading_file.setText(R.string.downloading_file_13);
 																	download_success.setText(R.string.download_success_13);
-																	copy_url_desc.setText(R.string.copy_url_desc_13);
 																	new_update.setText(R.string.new_update_13);
 																	download_selected_0 = download_selected.getText().toString();
 																	download_ready_0 = download_ready.getText().toString();
 																	download_ready_desc_0 = download_ready_desc.getText().toString();
 																	downloading_file_0 = downloading_file.getText().toString();
 																	download_success_0 = download_success.getText().toString();
-																	copy_url_desc_0 = copy_url_desc.getText().toString();
 																	copy_url.setText(R.string.copy_url_13);
 																	continue_1.setText(R.string.continue_1_13);
 																	cancel.setText(R.string.cancel_13);
@@ -10706,9 +9996,6 @@ public class MainActivity extends AppCompatActivity {
 																		list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_14);
 																		force_auto_install.setText(R.string.force_auto_install_14);
 																		force_auto_install_info.setText(R.string.force_auto_install_desc_14);
-																		copy_url_mode.setText(R.string.copy_url_mode_14);
-																		copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_14);
-																		navigation_bar.setText(R.string.hide_navigation_bar_14);
 																		theme.setText(R.string.show_themes_14);
 																		apk_location.setText(R.string.apk_location_14);
 																		apk_location_info.setText(R.string.apk_location_desc_14);
@@ -10730,14 +10017,12 @@ public class MainActivity extends AppCompatActivity {
 																		download_ready_desc.setText(R.string.download_ready_desc_14);
 																		downloading_file.setText(R.string.downloading_file_14);
 																		download_success.setText(R.string.download_success_14);
-																		copy_url_desc.setText(R.string.copy_url_desc_14);
 																		new_update.setText(R.string.new_update_14);
 																		download_selected_0 = download_selected.getText().toString();
 																		download_ready_0 = download_ready.getText().toString();
 																		download_ready_desc_0 = download_ready_desc.getText().toString();
 																		downloading_file_0 = downloading_file.getText().toString();
 																		download_success_0 = download_success.getText().toString();
-																		copy_url_desc_0 = copy_url_desc.getText().toString();
 																		copy_url.setText(R.string.copy_url_14);
 																		continue_1.setText(R.string.continue_1_14);
 																		cancel.setText(R.string.cancel_14);
@@ -10820,9 +10105,6 @@ public class MainActivity extends AppCompatActivity {
 																			list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_15);
 																			force_auto_install.setText(R.string.force_auto_install_15);
 																			force_auto_install_info.setText(R.string.force_auto_install_desc_15);
-																			copy_url_mode.setText(R.string.copy_url_mode_15);
-																			copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_15);
-																			navigation_bar.setText(R.string.hide_navigation_bar_15);
 																			theme.setText(R.string.show_themes_15);
 																			apk_location.setText(R.string.apk_location_15);
 																			apk_location_info.setText(R.string.apk_location_desc_15);
@@ -10844,14 +10126,12 @@ public class MainActivity extends AppCompatActivity {
 																			download_ready_desc.setText(R.string.download_ready_desc_15);
 																			downloading_file.setText(R.string.downloading_file_15);
 																			download_success.setText(R.string.download_success_15);
-																			copy_url_desc.setText(R.string.copy_url_desc_15);
 																			new_update.setText(R.string.new_update_15);
 																			download_selected_0 = download_selected.getText().toString();
 																			download_ready_0 = download_ready.getText().toString();
 																			download_ready_desc_0 = download_ready_desc.getText().toString();
 																			downloading_file_0 = downloading_file.getText().toString();
 																			download_success_0 = download_success.getText().toString();
-																			copy_url_desc_0 = copy_url_desc.getText().toString();
 																			copy_url.setText(R.string.copy_url_15);
 																			continue_1.setText(R.string.continue_1_15);
 																			cancel.setText(R.string.cancel_15);
@@ -10934,9 +10214,6 @@ public class MainActivity extends AppCompatActivity {
 																				list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_16);
 																				force_auto_install.setText(R.string.force_auto_install_16);
 																				force_auto_install_info.setText(R.string.force_auto_install_desc_16);
-																				copy_url_mode.setText(R.string.copy_url_mode_16);
-																				copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_16);
-																				navigation_bar.setText(R.string.hide_navigation_bar_16);
 																				theme.setText(R.string.show_themes_16);
 																				apk_location.setText(R.string.apk_location_16);
 																				apk_location_info.setText(R.string.apk_location_desc_16);
@@ -10958,14 +10235,12 @@ public class MainActivity extends AppCompatActivity {
 																				download_ready_desc.setText(R.string.download_ready_desc_16);
 																				downloading_file.setText(R.string.downloading_file_16);
 																				download_success.setText(R.string.download_success_16);
-																				copy_url_desc.setText(R.string.copy_url_desc_16);
 																				new_update.setText(R.string.new_update_16);
 																				download_selected_0 = download_selected.getText().toString();
 																				download_ready_0 = download_ready.getText().toString();
 																				download_ready_desc_0 = download_ready_desc.getText().toString();
 																				downloading_file_0 = downloading_file.getText().toString();
 																				download_success_0 = download_success.getText().toString();
-																				copy_url_desc_0 = copy_url_desc.getText().toString();
 																				copy_url.setText(R.string.copy_url_16);
 																				continue_1.setText(R.string.continue_1_16);
 																				cancel.setText(R.string.cancel_16);
@@ -11048,9 +10323,6 @@ public class MainActivity extends AppCompatActivity {
 																					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_17);
 																					force_auto_install.setText(R.string.force_auto_install_17);
 																					force_auto_install_info.setText(R.string.force_auto_install_desc_17);
-																					copy_url_mode.setText(R.string.copy_url_mode_17);
-																					copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_17);
-																					navigation_bar.setText(R.string.hide_navigation_bar_17);
 																					theme.setText(R.string.show_themes_17);
 																					apk_location.setText(R.string.apk_location_17);
 																					apk_location_info.setText(R.string.apk_location_desc_17);
@@ -11072,14 +10344,12 @@ public class MainActivity extends AppCompatActivity {
 																					download_ready_desc.setText(R.string.download_ready_desc_17);
 																					downloading_file.setText(R.string.downloading_file_17);
 																					download_success.setText(R.string.download_success_17);
-																					copy_url_desc.setText(R.string.copy_url_desc_17);
 																					new_update.setText(R.string.new_update_17);
 																					download_selected_0 = download_selected.getText().toString();
 																					download_ready_0 = download_ready.getText().toString();
 																					download_ready_desc_0 = download_ready_desc.getText().toString();
 																					downloading_file_0 = downloading_file.getText().toString();
 																					download_success_0 = download_success.getText().toString();
-																					copy_url_desc_0 = copy_url_desc.getText().toString();
 																					copy_url.setText(R.string.copy_url_17);
 																					continue_1.setText(R.string.continue_1_17);
 																					cancel.setText(R.string.cancel_17);
@@ -11162,9 +10432,6 @@ public class MainActivity extends AppCompatActivity {
 																						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_18);
 																						force_auto_install.setText(R.string.force_auto_install_18);
 																						force_auto_install_info.setText(R.string.force_auto_install_desc_18);
-																						copy_url_mode.setText(R.string.copy_url_mode_18);
-																						copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_18);
-																						navigation_bar.setText(R.string.hide_navigation_bar_18);
 																						theme.setText(R.string.show_themes_18);
 																						apk_location.setText(R.string.apk_location_18);
 																						apk_location_info.setText(R.string.apk_location_desc_18);
@@ -11186,14 +10453,12 @@ public class MainActivity extends AppCompatActivity {
 																						download_ready_desc.setText(R.string.download_ready_desc_18);
 																						downloading_file.setText(R.string.downloading_file_18);
 																						download_success.setText(R.string.download_success_18);
-																						copy_url_desc.setText(R.string.copy_url_desc_18);
 																						new_update.setText(R.string.new_update_18);
 																						download_selected_0 = download_selected.getText().toString();
 																						download_ready_0 = download_ready.getText().toString();
 																						download_ready_desc_0 = download_ready_desc.getText().toString();
 																						downloading_file_0 = downloading_file.getText().toString();
 																						download_success_0 = download_success.getText().toString();
-																						copy_url_desc_0 = copy_url_desc.getText().toString();
 																						copy_url.setText(R.string.copy_url_18);
 																						continue_1.setText(R.string.continue_1_18);
 																						cancel.setText(R.string.cancel_18);
@@ -11276,9 +10541,6 @@ public class MainActivity extends AppCompatActivity {
 																							list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_19);
 																							force_auto_install.setText(R.string.force_auto_install_19);
 																							force_auto_install_info.setText(R.string.force_auto_install_desc_19);
-																							copy_url_mode.setText(R.string.copy_url_mode_19);
-																							copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_19);
-																							navigation_bar.setText(R.string.hide_navigation_bar_19);
 																							theme.setText(R.string.show_themes_19);
 																							apk_location.setText(R.string.apk_location_19);
 																							apk_location_info.setText(R.string.apk_location_desc_19);
@@ -11300,14 +10562,12 @@ public class MainActivity extends AppCompatActivity {
 																							download_ready_desc.setText(R.string.download_ready_desc_19);
 																							downloading_file.setText(R.string.downloading_file_19);
 																							download_success.setText(R.string.download_success_19);
-																							copy_url_desc.setText(R.string.copy_url_desc_19);
 																							new_update.setText(R.string.new_update_19);
 																							download_selected_0 = download_selected.getText().toString();
 																							download_ready_0 = download_ready.getText().toString();
 																							download_ready_desc_0 = download_ready_desc.getText().toString();
 																							downloading_file_0 = downloading_file.getText().toString();
 																							download_success_0 = download_success.getText().toString();
-																							copy_url_desc_0 = copy_url_desc.getText().toString();
 																							copy_url.setText(R.string.copy_url_19);
 																							continue_1.setText(R.string.continue_1_19);
 																							cancel.setText(R.string.cancel_19);
@@ -11390,9 +10650,6 @@ public class MainActivity extends AppCompatActivity {
 																								list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_20);
 																								force_auto_install.setText(R.string.force_auto_install_20);
 																								force_auto_install_info.setText(R.string.force_auto_install_desc_20);
-																								copy_url_mode.setText(R.string.copy_url_mode_20);
-																								copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_20);
-																								navigation_bar.setText(R.string.hide_navigation_bar_20);
 																								theme.setText(R.string.show_themes_20);
 																								apk_location.setText(R.string.apk_location_20);
 																								apk_location_info.setText(R.string.apk_location_desc_20);
@@ -11414,14 +10671,12 @@ public class MainActivity extends AppCompatActivity {
 																								download_ready_desc.setText(R.string.download_ready_desc_20);
 																								downloading_file.setText(R.string.downloading_file_20);
 																								download_success.setText(R.string.download_success_20);
-																								copy_url_desc.setText(R.string.copy_url_desc_20);
 																								new_update.setText(R.string.new_update_20);
 																								download_selected_0 = download_selected.getText().toString();
 																								download_ready_0 = download_ready.getText().toString();
 																								download_ready_desc_0 = download_ready_desc.getText().toString();
 																								downloading_file_0 = downloading_file.getText().toString();
 																								download_success_0 = download_success.getText().toString();
-																								copy_url_desc_0 = copy_url_desc.getText().toString();
 																								copy_url.setText(R.string.copy_url_20);
 																								continue_1.setText(R.string.continue_1_20);
 																								cancel.setText(R.string.cancel_20);
@@ -11504,9 +10759,6 @@ public class MainActivity extends AppCompatActivity {
 																									list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_21);
 																									force_auto_install.setText(R.string.force_auto_install_21);
 																									force_auto_install_info.setText(R.string.force_auto_install_desc_21);
-																									copy_url_mode.setText(R.string.copy_url_mode_21);
-																									copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_21);
-																									navigation_bar.setText(R.string.hide_navigation_bar_21);
 																									theme.setText(R.string.show_themes_21);
 																									apk_location.setText(R.string.apk_location_21);
 																									apk_location_info.setText(R.string.apk_location_desc_21);
@@ -11528,14 +10780,12 @@ public class MainActivity extends AppCompatActivity {
 																									download_ready_desc.setText(R.string.download_ready_desc_21);
 																									downloading_file.setText(R.string.downloading_file_21);
 																									download_success.setText(R.string.download_success_21);
-																									copy_url_desc.setText(R.string.copy_url_desc_21);
 																									new_update.setText(R.string.new_update_21);
 																									download_selected_0 = download_selected.getText().toString();
 																									download_ready_0 = download_ready.getText().toString();
 																									download_ready_desc_0 = download_ready_desc.getText().toString();
 																									downloading_file_0 = downloading_file.getText().toString();
 																									download_success_0 = download_success.getText().toString();
-																									copy_url_desc_0 = copy_url_desc.getText().toString();
 																									copy_url.setText(R.string.copy_url_21);
 																									continue_1.setText(R.string.continue_1_21);
 																									cancel.setText(R.string.cancel_21);
@@ -11618,9 +10868,6 @@ public class MainActivity extends AppCompatActivity {
 																										list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_22);
 																										force_auto_install.setText(R.string.force_auto_install_22);
 																										force_auto_install_info.setText(R.string.force_auto_install_desc_22);
-																										copy_url_mode.setText(R.string.copy_url_mode_22);
-																										copy_file_url_mode_info.setText(R.string.copy_url_mode_desc_22);
-																										navigation_bar.setText(R.string.hide_navigation_bar_22);
 																										theme.setText(R.string.show_themes_22);
 																										apk_location.setText(R.string.apk_location_22);
 																										apk_location_info.setText(R.string.apk_location_desc_22);
@@ -11642,14 +10889,12 @@ public class MainActivity extends AppCompatActivity {
 																										download_ready_desc.setText(R.string.download_ready_desc_22);
 																										downloading_file.setText(R.string.downloading_file_22);
 																										download_success.setText(R.string.download_success_22);
-																										copy_url_desc.setText(R.string.copy_url_desc_22);
 																										new_update.setText(R.string.new_update_22);
 																										download_selected_0 = download_selected.getText().toString();
 																										download_ready_0 = download_ready.getText().toString();
 																										download_ready_desc_0 = download_ready_desc.getText().toString();
 																										downloading_file_0 = downloading_file.getText().toString();
 																										download_success_0 = download_success.getText().toString();
-																										copy_url_desc_0 = copy_url_desc.getText().toString();
 																										copy_url.setText(R.string.copy_url_22);
 																										continue_1.setText(R.string.continue_1_22);
 																										cancel.setText(R.string.cancel_22);
@@ -11838,9 +11083,6 @@ public class MainActivity extends AppCompatActivity {
 		list_auto_refresh_info.setText(R.string.list_auto_refresh_desc);
 		force_auto_install.setText(R.string.force_auto_install);
 		force_auto_install_info.setText(R.string.force_auto_install_desc);
-		copy_url_mode.setText(R.string.copy_url_mode);
-		copy_file_url_mode_info.setText(R.string.copy_url_mode_desc);
-		navigation_bar.setText(R.string.hide_navigation_bar);
 		theme.setText(R.string.show_themes);
 		apk_location.setText(R.string.apk_location);
 		apk_location_info.setText(R.string.apk_location_desc);
@@ -11866,7 +11108,6 @@ public class MainActivity extends AppCompatActivity {
 		download_ready_desc.setText(R.string.download_ready_desc);
 		downloading_file.setText(R.string.downloading_file);
 		download_success.setText(R.string.download_success);
-		copy_url_desc.setText(R.string.copy_url_desc);
 		new_update.setText(R.string.new_update);
 		installation_failed_0 = installation_failed.getText().toString();
 		installation_failed_desc_0 = installation_failed_desc.getText().toString();
@@ -11879,7 +11120,6 @@ public class MainActivity extends AppCompatActivity {
 		download_ready_desc_0 = download_ready_desc.getText().toString();
 		downloading_file_0 = downloading_file.getText().toString();
 		download_success_0 = download_success.getText().toString();
-		copy_url_desc_0 = copy_url_desc.getText().toString();
 		copy_url.setText(R.string.copy_url);
 		continue_1.setText(R.string.continue_1);
 		cancel.setText(R.string.cancel);
@@ -12052,7 +11292,7 @@ public class MainActivity extends AppCompatActivity {
 	public void _Tap_Animation(final View _Linear) {
 		ScaleAnimation fade_in = new
 		ScaleAnimation(0.9f, 1f, 0.9f, 1f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.7f);
-		fade_in.setDuration(100);
+		fade_in.setDuration(80);
 		fade_in.setFillAfter(true);
 		_Linear.startAnimation(fade_in);
 	}
@@ -12328,7 +11568,6 @@ public class MainActivity extends AppCompatActivity {
 																															@Override
 																															public void run() {
 																																	try {
-																																			_Hide_Navigation();
 																																			_File_Remover();
 																																			prog.cancel();
 																																	} catch (Exception e) {
@@ -12384,18 +11623,6 @@ public class MainActivity extends AppCompatActivity {
 																																											Intent intent = new Intent(Intent.ACTION_VIEW);
 																																											intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
 																																											startActivity(intent);
-																																											Timer = new TimerTask() {
-																																													@Override
-																																													public void run() {
-																																															runOnUiThread(new Runnable() {
-																																																	@Override
-																																																	public void run() {
-																																																			_Hide_Navigation();
-																																																	}
-																																															});
-																																													}
-																																											};
-																																											_timer.schedule(Timer, (int)(100));
 																																									}
 																																									catch(Exception e) {
 																																									}
@@ -12412,7 +11639,6 @@ public class MainActivity extends AppCompatActivity {
 																																									Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
 																																											@Override
 																																											public void onClick(DialogInterface Signature_Check, int p) {
-																																													_Hide_Navigation();
 																																													AlertDialog.setCancelable(true);
 																																													try {
 																																															Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
@@ -12425,7 +11651,6 @@ public class MainActivity extends AppCompatActivity {
 																																									Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
 																																											@Override
 																																											public void onClick(DialogInterface Signature_Check, int p) {
-																																													_Hide_Navigation();
 																																													AlertDialog.setCancelable(true);
 																																											}
 																																									});
@@ -12449,7 +11674,6 @@ public class MainActivity extends AppCompatActivity {
 																																									Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
 																																											@Override
 																																											public void onClick(DialogInterface Downgrade_Check, int p) {
-																																													_Hide_Navigation();
 																																													AlertDialog.setCancelable(true);
 																																													try {
 																																															Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
@@ -12462,7 +11686,6 @@ public class MainActivity extends AppCompatActivity {
 																																									Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
 																																											@Override
 																																											public void onClick(DialogInterface Downgrade_Check, int p) {
-																																													_Hide_Navigation();
 																																													AlertDialog.setCancelable(true);
 																																											}
 																																									});
@@ -12479,18 +11702,6 @@ public class MainActivity extends AppCompatActivity {
 																																	@Override
 																																	public void onClick(DialogInterface Success_Download, int p) {
 																																			AlertDialog.setCancelable(true);
-																																			Timer = new TimerTask() {
-																																					@Override
-																																					public void run() {
-																																							runOnUiThread(new Runnable() {
-																																									@Override
-																																									public void run() {
-																																											_Hide_Navigation();
-																																									}
-																																							});
-																																					}
-																																			};
-																																			_timer.schedule(Timer, (int)(100));
 																																	}
 																															});
 																															AlertDialog = Success_Download.create();
@@ -12601,7 +11812,6 @@ public class MainActivity extends AppCompatActivity {
 																															@Override
 																															public void run() {
 																																	try {
-																																			_Hide_Navigation();
 																																			_File_Remover();
 																																			prog.cancel();
 																																	} catch (Exception e) {
@@ -12654,18 +11864,6 @@ public class MainActivity extends AppCompatActivity {
 																																													Intent intent = new Intent(Intent.ACTION_VIEW);
 																																													intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
 																																													startActivity(intent);
-																																													Timer = new TimerTask() {
-																																															@Override
-																																															public void run() {
-																																																	runOnUiThread(new Runnable() {
-																																																			@Override
-																																																			public void run() {
-																																																					_Hide_Navigation();
-																																																			}
-																																																	});
-																																															}
-																																													};
-																																													_timer.schedule(Timer, (int)(100));
 																																											}
 																																											catch(Exception e) {
 																																											}
@@ -12682,7 +11880,6 @@ public class MainActivity extends AppCompatActivity {
 																																											Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
 																																													@Override
 																																													public void onClick(DialogInterface Signature_Check, int p) {
-																																															_Hide_Navigation();
 																																															AlertDialog.setCancelable(true);
 																																															try {
 																																																	Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
@@ -12695,7 +11892,6 @@ public class MainActivity extends AppCompatActivity {
 																																											Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
 																																													@Override
 																																													public void onClick(DialogInterface Signature_Check, int p) {
-																																															_Hide_Navigation();
 																																															AlertDialog.setCancelable(true);
 																																													}
 																																											});
@@ -12719,7 +11915,6 @@ public class MainActivity extends AppCompatActivity {
 																																											Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
 																																													@Override
 																																													public void onClick(DialogInterface Downgrade_Check, int p) {
-																																															_Hide_Navigation();
 																																															AlertDialog.setCancelable(true);
 																																															try {
 																																																	Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
@@ -12732,7 +11927,6 @@ public class MainActivity extends AppCompatActivity {
 																																											Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
 																																													@Override
 																																													public void onClick(DialogInterface Downgrade_Check, int p) {
-																																															_Hide_Navigation();
 																																															AlertDialog.setCancelable(true);
 																																													}
 																																											});
@@ -12743,18 +11937,6 @@ public class MainActivity extends AppCompatActivity {
 																																									}
 																																							}
 																																					}
-																																			}
-																																	});
-																															}
-																													};
-																													_timer.schedule(Timer, (int)(100));
-																													Timer = new TimerTask() {
-																															@Override
-																															public void run() {
-																																	runOnUiThread(new Runnable() {
-																																			@Override
-																																			public void run() {
-																																					_Hide_Navigation();
 																																			}
 																																	});
 																															}
@@ -13113,7 +12295,7 @@ public class MainActivity extends AppCompatActivity {
 				});
 			}
 		};
-		_timer.schedule(Timer, (int)(500));
+		_timer.schedule(Timer, (int)(100));
 	}
 	
 	
@@ -13170,7 +12352,6 @@ public class MainActivity extends AppCompatActivity {
 		changelogs.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		local_version.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		navigation_bar.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		list_auto_refresh.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		list_auto_refresh_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		apk_location_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -13179,8 +12360,6 @@ public class MainActivity extends AppCompatActivity {
 		clear_directory_folders.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		force_auto_install.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		force_auto_install_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		copy_url_mode.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		copy_file_url_mode_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		clear_directory_folders_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		language.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		regular_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 2);
@@ -13242,12 +12421,10 @@ public class MainActivity extends AppCompatActivity {
 		main_box_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		main_box_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_8.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_9.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_10.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_11.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		main_box_12.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_14.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_16.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_17.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
@@ -13613,6 +12790,9 @@ public class MainActivity extends AppCompatActivity {
 			}
 		};
 		_timer.scheduleAtFixedRate(Timer, (int)(0), (int)(150));
+		CLICKER_1 = 1;
+		CLICKER_2 = 1;
+		CLICKER_3 = 1;
 		CHECK = 0;
 		_Rewarded_AdMob();
 		_Update_Remover();
@@ -13625,7 +12805,6 @@ public class MainActivity extends AppCompatActivity {
 		_Theme_UI();
 		_Ads_Unity();
 		_Effects();
-		_Url_Mode();
 		_Extra();
 	}
 	
@@ -13633,61 +12812,38 @@ public class MainActivity extends AppCompatActivity {
 	public void _API_Token() {
 		main_refresh_layout.setRefreshing(true);
 		if (SketchwareUtil.isConnected(getApplicationContext())) {
+			try {
+				Current_Version = Double.parseDouble(local_version.getText().toString());
+				Latest_Version = Double.parseDouble(Datas.get("Server").toString());
+			} catch (Exception e) {
+			}
 			Timer = new TimerTask() {
 				@Override
 				public void run() {
 					runOnUiThread(new Runnable() {
 						@Override
 						public void run() {
-							try {
-								Current_Version = Double.parseDouble(local_version.getText().toString());
-								Latest_Version = Double.parseDouble(Datas.get("Server").toString());
-							} catch (Exception e) {
-								Timer = new TimerTask() {
-										@Override
-										public void run() {
-												runOnUiThread(new Runnable() {
-														@Override
-														public void run() {
-																try {
-																	Intent intent = getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName() );
-																	intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-																	intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-																	startActivity(intent);
-																} catch (Exception e) {
-																  }
-														}
-												});
-										}
-								};
-								_timer.schedule(Timer, (int)(1000));
-							}
 							if (Latest_Version < Current_Version) {
 								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "API Token Expired", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-								list_menu_1.setVisibility(View.GONE);
-								list_menu_2.setVisibility(View.GONE);
-								list_menu_3.setVisibility(View.GONE);
-								list_menu_4.setVisibility(View.GONE);
-								list_changelogs.setVisibility(View.GONE);
-								sub_1.setText("N/A");
-								sub_3.setText("N/A");
-								sub_5.setText("N/A");
-								sub_7.setText("N/A");
+								main_refresh_layout.setRefreshing(false);
+								main_body.setAlpha((float)(1.0d));
 							}
 							else {
 								if (Latest_Version > Current_Version) {
 									com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "New Update Available", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+									main_refresh_layout.setRefreshing(false);
+									main_body.setAlpha((float)(1.0d));
 								}
 								else {
 									if (!list_auto_refresh_switch.isChecked()) {
 										String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
 										
 										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "API Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+										main_refresh_layout.setRefreshing(false);
+										main_body.setAlpha((float)(1.0d));
 									}
 								}
 							}
-							main_refresh_layout.setRefreshing(false);
-							main_body.setAlpha((float)(1.0d));
 						}
 					});
 				}
@@ -13695,8 +12851,20 @@ public class MainActivity extends AppCompatActivity {
 			_timer.schedule(Timer, (int)(500));
 		}
 		else {
-			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "API Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-			main_refresh_layout.setRefreshing(true);
+			Timer = new TimerTask() {
+				@Override
+				public void run() {
+					runOnUiThread(new Runnable() {
+						@Override
+						public void run() {
+							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "API Update Failed", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+							main_refresh_layout.setRefreshing(false);
+							main_body.setAlpha((float)(1.0d));
+						}
+					});
+				}
+			};
+			_timer.schedule(Timer, (int)(500));
 		}
 	}
 	
@@ -13744,8 +12912,8 @@ public class MainActivity extends AppCompatActivity {
 				title.setText(regular.get((int)(regular.size() - 1) - _position).get("Title").toString());
 				link.setText(regular.get((int)(regular.size() - 1) - _position).get("Link").toString());
 				Animation animation;
-				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-				animation.setDuration(300); box.startAnimation(animation);
+				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+				animation.setDuration(500); box.startAnimation(animation);
 				animation = null;
 				if (_position < 2) {
 					sub.setTextColor(0xFFFF1744);
@@ -13806,8 +12974,8 @@ public class MainActivity extends AppCompatActivity {
 				title.setText(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString());
 				link.setText(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString());
 				Animation animation;
-				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-				animation.setDuration(300); box_cloned.startAnimation(animation);
+				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+				animation.setDuration(500); box_cloned.startAnimation(animation);
 				animation = null;
 				if (_position < 2) {
 					sub.setTextColor(0xFFFF1744);
@@ -13868,8 +13036,8 @@ public class MainActivity extends AppCompatActivity {
 				title.setText(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString());
 				link.setText(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString());
 				Animation animation;
-				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-				animation.setDuration(300); box.startAnimation(animation);
+				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+				animation.setDuration(500); box.startAnimation(animation);
 				animation = null;
 				if (_position < 2) {
 					sub.setTextColor(0xFFFF1744);
@@ -13930,8 +13098,8 @@ public class MainActivity extends AppCompatActivity {
 				title.setText(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString());
 				link.setText(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString());
 				Animation animation;
-				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-				animation.setDuration(300); box_cloned.startAnimation(animation);
+				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+				animation.setDuration(500); box_cloned.startAnimation(animation);
 				animation = null;
 				if (_position < 2) {
 					sub.setTextColor(0xFFFF1744);
@@ -13986,8 +13154,8 @@ public class MainActivity extends AppCompatActivity {
 				info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 				info.setText(mod_changelogs.get((int)(mod_changelogs.size() - 1) - _position).get("Mod_Changelogs").toString());
 				Animation animation;
-				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-				animation.setDuration(300); box.startAnimation(animation);
+				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+				animation.setDuration(500); box.startAnimation(animation);
 				animation = null;
 			}
 			catch(Exception e) {
