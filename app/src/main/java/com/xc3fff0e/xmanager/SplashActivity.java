@@ -31,8 +31,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 import android.content.Intent;
 import android.net.Uri;
-import android.app.Activity;
-import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import com.wuyr.rippleanimation.*;
 import com.unity3d.ads.*;
@@ -50,7 +48,6 @@ public class SplashActivity extends AppCompatActivity {
 	
 	private TimerTask Timer;
 	private Intent Switch_Activity = new Intent();
-	private SharedPreferences NAVIGATION_BAR;
 	
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
@@ -67,7 +64,6 @@ public class SplashActivity extends AppCompatActivity {
 		main_body = findViewById(R.id.main_body);
 		icon_manager = findViewById(R.id.icon_manager);
 		title_manager = findViewById(R.id.title_manager);
-		NAVIGATION_BAR = getSharedPreferences("NAVIGATION_BAR", Activity.MODE_PRIVATE);
 	}
 	
 	private void initializeLogic() {
@@ -103,7 +99,7 @@ public class SplashActivity extends AppCompatActivity {
 						}
 						else {
 							if (5 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-								title_manager.setText("Keep Your $10");
+								title_manager.setText("Saving Your $10");
 								title_manager.setTextSize((int)25);
 							}
 							else {
@@ -156,33 +152,6 @@ public class SplashActivity extends AppCompatActivity {
 	public void onBackPressed() {
 		SketchwareUtil.showMessage(getApplicationContext(), "Can't Go Back");
 	}
-	
-	@Override
-	public void onResume() {
-		super.onResume();
-		_Hide_Navigation();
-	}
-	public void _Hide_Navigation() {
-		try {
-			if (NAVIGATION_BAR.getString("NAVIGATION", "").equals("1")) {
-				getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-				
-			}
-			else {
-				if (NAVIGATION_BAR.getString("NAVIGATION", "").equals("0")) {
-					getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-					
-					if (Build.VERSION.SDK_INT >= 21) {
-							getWindow().setNavigationBarColor(Color.parseColor("#171717"));
-					}
-					
-				}
-			}
-		} catch (Exception e) {
-		}
-	}
-	
-	
 	public void _Dark_Navigation() {
 		if (Build.VERSION.SDK_INT >= 21) {
 				getWindow().setNavigationBarColor(Color.parseColor("#171717"));
