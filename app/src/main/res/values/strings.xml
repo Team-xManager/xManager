@@ -23,9 +23,6 @@
 	<string	name="list_auto_refresh_desc"	translatable="true">Activating this will automatically refresh the list everytime you launch the application.\n\nYou can manually refresh the list by dragging the main screen downward.</string>
 	<string	name="force_auto_install"	translatable="true">FORCE AUTO-INSTALL</string>
 	<string	name="force_auto_install_desc"	translatable="true">Activating this will automatically install the patched application and update once downloaded.</string>
-	<string	name="copy_url_mode"	translatable="true">COPY URL MODE</string>
-	<string	name="copy_url_mode_desc"	translatable="true">Activating this will allow you to copy the file direct url.\n\nNot recommended at all times unless you are having an issue downloading the files directly within the manager.</string>
-	<string	name="hide_navigation_bar"	translatable="true">HIDE NAVIGATION BAR</string>
 	<string	name="show_themes"	translatable="true">THEMES</string>
 	<string	name="apk_location"	translatable="true">APK LOCATION</string>
 	<string	name="apk_location_desc"	translatable="true">File directory where you want to save the downloaded file. If you do not know how to configure this feature, then leave this as it is.\n\nNOTE: This feature does not support external storage (SD Card) due to accessibility, permissions and storage limitations.</string>
@@ -49,7 +46,6 @@
 	<string	name="download_ready_desc"	translatable="true">Downloading this patched apk will overwrite the previous file located at the external directory.</string>
 	<string	name="downloading_file"	translatable="true">DOWNLOADING FILE...</string>
 	<string	name="download_success"	translatable="true">SUCCESSFULLY DOWNLOADED</string>
-	<string	name="copy_url_desc"	translatable="true">You selected this patched version. Do you want to copy the url?</string>
 	<string	name="new_update"	translatable="true">NEW MANAGER UPDATE</string>
 	
 	<string	name="continue_1"	translatable="true">CONTINUE</string>
@@ -120,9 +116,6 @@
 	<string	name="list_auto_refresh_desc_01"	translatable="true">এটি চালু করা হলে আপনি অ্যাপ্লিকেশনটি প্রতিবার চালু করার সাথে সাথে তালিকাটিকে স্বয়ংক্রিয়ভাবে রিফ্রেশ হবে। আপনি মূল পেজটি নীচের দিকে টেনে এনে ম্যানুয়ালি তালিকাটি রিফ্রেশ করতে পারেন।</string>
 	<string	name="force_auto_install_01"	translatable="true">স্বয়ং-ইনস্টল করুন</string>
 	<string	name="force_auto_install_desc_01"	translatable="true">এটি চালু থাকলে স্বয়ংক্রিয়ভাবে পরিবর্তিত অ্যাপ্লিকেশনটি ইনস্টল করাহবে এবং একবার ডাউনলোড হয়ে গেলে আপনাআপনি আপডেট হবে।</string>
-	<string	name="copy_url_mode_01"	translatable="true">কপি ইউআরএল মোড</string>
-	<string	name="copy_url_mode_desc_01"	translatable="true">এটি চালু করা হলে আপনাকে ফাইলের সরাসরি ইউআরএল কপি করার অনুমতি দেওয়া হবে। সরাসরি ম্যানেজারের মধ্যে ফাইলগুলি ডাউনলোড করার সমস্যা না থাকলে এটি চালু করবেন না।</string>
-	<string	name="hide_navigation_bar_01"	translatable="true">নেভিগেশন বারটি আড়াল কুরুন</string>
 	<string	name="show_themes_01"	translatable="true">থিম গুল দেখুন</string>
 	<string	name="apk_location_01"	translatable="true">APK ফাইল লোকেশন</string>
 	<string	name="apk_location_desc_01"	translatable="true">ফাইল ডিরেক্টরি: যেখানে ডাউনলোড করা apk সংরক্ষণ করতে চান। কীভাবে এটা কনফিগার করতে হয় সেটা জানা না থাকলে এটি যেমন রয়েছে সেভাবেই রাখুন।</string>
@@ -146,7 +139,6 @@
 	<string	name="download_ready_desc_01"	translatable="true">এই পরিবর্তিত apk ডাউনলোড করা অ্যাপ্লিকেশন ফাইল ডিরেক্টরিতে অবস্থিত পূর্ববর্তী ফাইলটি ওভাররাইট করবে।</string>
 	<string	name="downloading_file_01"	translatable="true">ফাইল ডাউনলোড হচ্ছে ...</string>
 	<string	name="download_success_01"	translatable="true">সফলভাবে ডাউনলোড হয়েছে</string>
-	<string	name="copy_url_desc_01"	translatable="true">আপনি এই পরিবর্তিত সংস্করণটি নির্বাচন করেছেন। আপনি কি url কপি করতে চান?</string>
 	<string	name="new_update_01"	translatable="true">নতুন MANAGER আপডেট</string>
 	
 	<string	name="continue_1_01"	translatable="true">চালিয়ে যান</string>
@@ -217,9 +209,6 @@
 	<string	name="list_auto_refresh_desc_02"	translatable="true">激活此功能将在您每次启动应用程序时自动刷新列表,您也可以通过向下拖动主屏幕来手动刷新列表.</string>
 	<string	name="force_auto_install_02"	translatable="true">自动安装</string>
 	<string	name="force_auto_install_desc_02"	translatable="true">激活此功能将在下载完成后自动安装应用程序.</string>
-	<string	name="copy_url_mode_02"	translatable="true">链接模式</string>
-	<string	name="copy_url_mode_desc_02"	translatable="true">激活此功能将允许您复制文件下载链接.\n除非您在管理器中直接下载文件时遇到问题,否则不推荐此模式.</string>
-	<string	name="hide_navigation_bar_02"	translatable="true">隐藏导航栏</string>
 	<string	name="show_themes_02"	translatable="true">管理器的应用主题</string>
 	<string	name="apk_location_02"	translatable="true">安装包保存路径</string>
 	<string	name="apk_location_desc_02"	translatable="true">请勿随意更改保存路径.\n不支持变更为外置SD卡路径</string>
@@ -243,7 +232,6 @@
 	<string	name="download_ready_desc_02"	translatable="true">继续将覆盖历史下载</string>
 	<string	name="downloading_file_02"	translatable="true">正在下载</string>
 	<string	name="download_success_02"	translatable="true">下载完成</string>
-	<string	name="copy_url_desc_02"	translatable="true">版本已选定，是否复制链接？</string>
 	<string	name="new_update_02" translatable="true">发现新版管理器</string>
 	
 	<string	name="continue_1_02"	translatable="true">继续</string>
@@ -314,9 +302,6 @@
 	<string	name="list_auto_refresh_desc_03"	translatable="true">En activant cette option, la liste s\'actualisera automatiquement chaque fois que vous démarrerez l\'application. Vous pouvez actualiser la liste manuellement en faisant glisser l\'écran principal vers le bas..</string>
 	<string	name="force_auto_install_03"	translatable="true">FORCER L\'INSTALLATION AUTOMATIQUE</string>
 	<string	name="force_auto_install_desc_03"	translatable="true">En activant cette option, l\'application modifiée ou la mise à jour s\'installeront automatiquement une fois téléchargées.</string>
-	<string	name="copy_url_mode_03"	translatable="true">COPIER URL</string>
-	<string	name="copy_url_mode_desc_03"	translatable="true">L\'activation de cette option vous permettra de copier l\'URL du fichier. Non recommandé, sauf si vous rencontrez un problème pour télécharger les fichiers directement dans le gestionnaire.</string>
-	<string	name="hide_navigation_bar_03"	translatable="true">MASQUER LA BARRE DE NAVIGATION</string>
 	<string	name="show_themes_03"	translatable="true">MONTRER LES THÈMES</string>
 	<string	name="apk_location_03"	translatable="true">EMPLACEMENT APK</string>
 	<string	name="apk_location_desc_03"	translatable="true">Répertoire dans lequel vous souhaitez enregistrer l\'APK téléchargé. Si vous ne savez pas comment configurer cette fonctionnalité, veuillez la laisser telle quelle. REMARQUE : Cette fonctionnalité ne prend pas en charge le stockage externe (carte SD) en raison de l\'accessibilité, des autorisations et des limitations de stockage.</string>
@@ -340,7 +325,6 @@
 	<string	name="download_ready_desc_03"	translatable="true">Le téléchargement de cet APK modifié écrasera le fichier précédent situé dans le répertoire des fichiers externes de l\'application.</string>
 	<string	name="downloading_file_03"	translatable="true">TÉLÉCHARGEMENT DU FICHIER...</string>
 	<string	name="download_success_03"	translatable="true">TÉLÉCHARGEMENT RÉUSSI</string>
-	<string	name="copy_url_desc_03"	translatable="true">Vous avez sélectionné cette version modifiée. Voulez-vous copier l\'URL ?</string>
 	<string	name="new_update_03"	translatable="true">NOUVELLE MISE À JOUR DU GESTIONNAIRE</string>
 	
 	<string	name="continue_1_03"	translatable="true">CONTINUER</string>
@@ -411,9 +395,6 @@
 	<string	name="list_auto_refresh_desc_04"	translatable="true">Ενεργοποιώντας αυτό, θα ανανεώνεται αυτόματα η λίστα κάθε φορά που ανοίγετε την εφαρμογή\n\nΜπορείτε χειροκίνητα να ανανεώσετε την λίστα τραβώντας την κύρια οθόνη προς τα κάτω.</string>
 	<string	name="force_auto_install_04"	translatable="true">ΑΝΑΓΚΑΣΤΙΚΗ ΑΥΤΟΜΑΤΗ ΕΓΚΑΤΑΣΤΑΣΗ</string>
 	<string	name="force_auto_install_desc_04"	translatable="true">Ενεργοποιώντας αυτό, θα εγκατασταθεί αυτόματα η τροποποιημένη εφαρμογή και θα αναβαθμιστεί μόλις ληφθεί.</string>
-	<string	name="copy_url_mode_04"	translatable="true">ΛΕΙΤΟΥΡΓΙΑ ΑΝΤΙΓΡΑΦΗΣ URL</string>
-	<string	name="copy_url_mode_desc_04"	translatable="true">Ενεργοποιώντας αυτό, θα σας επιτρέψει να αντιγράψετε το ακριβές URL του αρχείου.\n\nΔεν προτείνεται για όλες τις περιπτώσεις εκτός αν έχετε πρόβλημα με την λήψη των αρχείων απευθείας μέσω του manager.</string>
-	<string	name="hide_navigation_bar_04"	translatable="true">ΑΠΟΚΡΥΨΗ ΜΠΑΡΑ ΠΛΟΗΓΗΣΗΣ</string>
 	<string	name="show_themes_04"	translatable="true">ΕΜΦΑΝΙΣΗ ΘΕΜΑΤΩΝ</string>
 	<string	name="apk_location_04"	translatable="true">ΤΟΠΟΘΕΣΙΑ APK</string>
 	<string	name="apk_location_desc_04"	translatable="true">Τοποθεσία αρχείου εκεί όπου θέλετε να αποθηκεύσετε το ληφθέν apk. Άμα δεν γνωρίζετε πως να διαμορφώσετε αυτή τη δυνατότητα, τότε αφήστε το όπως είναι.\n\nΣΗΜΕΙΩΣΗ: Αυτή η δυνατότητα δεν υποστηρίζει αποθήκευση στον εξωτερικό αποθηκευτικό χώρο (κάρτα μνήμης) λόγω των περιορισμών προσβασιμότητας, αδειών και αποθηκευτικού χώρου.</string>
@@ -437,7 +418,6 @@
 	<string	name="download_ready_desc_04"	translatable="true">Με την λήψη αυτού του τροποποιημένου apk, θα αντικατασταθεί το προηγούμενο αρχείο που βρισκόταν στην εξωτερική τοποθεσία αρχείων της εφαρμογής.</string>
 	<string	name="downloading_file_04"	translatable="true">ΓΙΝΕΤΑΙ ΛΗΨΗ ΑΡΧΕΙΟΥ...</string>
 	<string	name="download_success_04"	translatable="true">ΕΠΙΤΥΧΗΣ ΛΗΨΗ</string>
-	<string	name="copy_url_desc_04"	translatable="true">Επιλέξατε αυτή την τροποποιημένη έκδοση. Θέλετε να αντιγράψετε το URL;</string>
 	<string	name="new_update_04"	translatable="true">ΝΕΑ ΕΝΗΜΕΡΩΣΗ MANAGER</string>
 	
 	<string	name="continue_1_04"	translatable="true">ΣΥΝΕΧΕΙΑ</string>
@@ -508,9 +488,6 @@
 	<string	name="list_auto_refresh_desc_05"	translatable="true">Jika diaktifkan maka setiap aplikasi diluncurkan secara otomatis akan memperbarui daftar.\n\nKamu juga dapat memperbarui daftar secara manual dengan menyeret layar utama ke bawah.</string>
 	<string	name="force_auto_install_05"	translatable="true">FORCE AUTO-INSTALL</string>
 	<string	name="force_auto_install_desc_05"	translatable="true">Jika diaktifkan maka fitur pemasangan aplikasi yang sudah dimodifikasi akan dilakukan secara otomatis setelah diunduh.</string>
-	<string	name="copy_url_mode_05"	translatable="true">COPY URL MODE</string>
-	<string	name="copy_url_mode_desc_05"	translatable="true">Jika diaktifkan maka anda akan menyalin file url secara langsung.\n\nJangan diaktifkan bila anda tidak mengalami masalah saat mengunduh file secara langsung dari dalam aplikasi.</string>
-	<string	name="hide_navigation_bar_05"	translatable="true">SEMBUNYIKAN TOMBOL NAVIGASI</string>
 	<string	name="show_themes_05"	translatable="true">LIHAT TEMA</string>
 	<string	name="apk_location_05"	translatable="true">LOKASI APK</string>
 	<string	name="apk_location_desc_05"	translatable="true">Atur direktori tempat Anda ingin menyimpan file apk yang diunduh. Jika Anda tidak tahu gunanya mengonfigurasi ini, biarkan saja.\n\nCATATAN: Fitur ini tidak mendukung penyimpanan di memori eksternal karena alasan aksesibilitas, izin, dan batasan penyimpanan.</string>
@@ -534,7 +511,6 @@
 	<string	name="download_ready_desc_05"	translatable="true">Mengunduh apk yang ini akan menimpa file sebelumnya yang terletak di direktori.</string>
 	<string	name="downloading_file_05"	translatable="true">MENGUNDUH FILE...</string>
 	<string	name="download_success_05"	translatable="true">SUKSES MENGUNDUH</string>
-	<string	name="copy_url_desc_05"	translatable="true">Kamu memilih versi yang ini. Apakah ingin menyalin urlnya? </string>
 	<string	name="new_update_05"	translatable="true">UPDATE MANAGER BARU</string>
 	
 	<string	name="continue_1_05"	translatable="true">LANJUT</string>
@@ -605,9 +581,6 @@
 	<string	name="list_auto_refresh_desc_06" translatable="true">Attivando questa impostazione, la lista verrà aggiornata automaticamente ogni volta che verrà avviata l\'applicazione.\n\nPuoi aggiornare manualmente la lista trascinando la schermata principale verso il basso.</string>
 	<string	name="force_auto_install_06"	translatable="true">FORZA INSTALLAZIONE AUTOMATICA</string>
 	<string	name="force_auto_install_desc_06" translatable="true">Attivando questa impostazione verrà installata automaticamente l\'applicazione patchata e l\'aggiornamento una volta scaricato.</string>
-	<string	name="copy_url_mode_06"	translatable="true">MODALITÀ COPIA URL</string>
-	<string	name="copy_url_mode_desc_06"	translatable="true">Attivando questa impostazione potrete copiare direttamente l\'URL per poter scaricare il file.\n\nNon è sempre consigliato, a meno che non abbiate problemi a scaricare i file direttamente nel manager.</string>
-	<string	name="hide_navigation_bar_06"	translatable="true">NASCONDI BARRA DI NAVIGAZIONE</string>
 	<string	name="show_themes_06"	translatable="true">TEMI</string>
 	<string	name="apk_location_06"	translatable="true">POSIZIONE APK</string>
 	<string	name="apk_location_desc_06" translatable="true">Cartella dove vuoi salvare il file scaricato. Se non sapete come configurare questa funzione, lasciatela così com\'è.\n\nNOTA: Questa funzione non supporta l\'archiviazione esterna (scheda SD) a causa delle limitazioni dati da accessibilità, permessi e archiviazione.</string>
@@ -631,7 +604,6 @@
 	<string	name="download_ready_desc_06"	translatable="true">Scaricando questo apk patchato sovrascriverai il file precedentemente situato nella cartella contenente i file esterni dell\'applicazione.</string>
 	<string	name="downloading_file_06"	translatable="true">SCARICANDO FILE...</string>
 	<string	name="download_success_06"	translatable="true">SCARICATO CON SUCCESSO</string>
-	<string	name="copy_url_desc_06" translatable="true">Hai selezionato questa versione patchata. Vuoi copiare l\'URL?</string>
 	<string	name="new_update_06"	translatable="true">NUOVO AGGIORNAMENTO DEL MANAGER</string>
 	
 	<string	name="continue_1_06"	translatable="true">CONTINUA</string>
@@ -702,9 +674,6 @@
 	<string	name="list_auto_refresh_desc_07"	translatable="true">Aktywacja tej opcji spowoduje automatyczne odświeżenie listy przy każdym uruchomieniu aplikacji.\n\nMożesz ręcznie odświeżyć listę przeciągając główny ekran w dół.</string>
 	<string	name="force_auto_install_07"	translatable="true">WYMUŚ AUTOINSTALACJĘ</string>
 	<string	name="force_auto_install_desc_07"	translatable="true">Aktywacja tej opcji spowoduje automatyczną instalację i aktualizację zmodyfikowanej aplikacji po pobraniu.</string>
-	<string	name="copy_url_mode_07"	translatable="true">TRYB KOPIOWANIA LINKÓW</string>
-	<string	name="copy_url_mode_desc_07"	translatable="true">Aktywacja tej opcji umożliwi kopiowanie bezpośredniego linku do pliku.\n\nNiezalecane chyba że masz problem z pobieraniem plików w menedżerze.</string>
-	<string	name="hide_navigation_bar_07"	translatable="true">UKRYJ PASEK NAWIGACJI</string>
 	<string	name="show_themes_07"	translatable="true">MOTYWY</string>
 	<string	name="apk_location_07"	translatable="true">LOKALIZACJA APK</string>
 	<string	name="apk_location_desc_07"	translatable="true">Katalog w którym chcesz zapisywać pobrany plik APK. Jeśli nie wiesz, jak ustawić tę funkcję, pozostaw ją tak, jak jest.\n\nUWAGA: Ta funkcja nie obsługuje pamięci zewnętrznej (Karty SD) ze względu na ułatwienia dostępu, uprawnienia i ograniczenia pamięci.</string>
@@ -728,7 +697,6 @@
 	<string	name="download_ready_desc_07"	translatable="true">Pobranie tego zmodyfikowanego pliku APK spowoduje nadpisanie poprzedniego pliku znajdującego się w katalogu pobierania aplikacji.</string>
 	<string	name="downloading_file_07"	translatable="true">POBIERAM PLIK...</string>
 	<string	name="download_success_07"	translatable="true">ZAKOŃCZONO POBIERANIE</string>
-	<string	name="copy_url_desc_07"	translatable="true">Wybrałeś tę zmodyfikowaną wersję. Czy chcesz skopiować adres URL?</string>
 	<string	name="new_update_07"	translatable="true">NOWA AKTUALIZACJA MENDAŻERA</string>
 	
 	<string	name="continue_1_07"	translatable="true">KONTYNUUJ</string>
@@ -799,9 +767,6 @@
 	<string	name="list_auto_refresh_desc_08"	translatable="true">Ativar isso atualizará automaticamente a lista sempre que iniciar o aplicativo. \n Você pode atualizar manualmente a lista arrastando a tela principal para baixo.</string>
 	<string	name="force_auto_install_08"	translatable="true">FORÇAR AUTO-INSTALAÇÃO</string>
 	<string	name="force_auto_install_desc_08"	translatable="true">Ativar isso instalará automaticamente o aplicativo corrigido e atualizará depois de baixado.</string>
-	<string	name="copy_url_mode_08"	translatable="true">MODO DE CÓPIA DE URL</string>
-	<string	name="copy_url_mode_desc_08"	translatable="true">Ativar isso permitirá que você copie o url direto do arquivo. \n Não recomendado em todos os momentos, a menos que você esteja tendo problemas para baixar os arquivos diretamente no gerenciador.</string>
-	<string	name="hide_navigation_bar_08"	translatable="true">OCULTAR BARRA DE NAVEGAÇÃO</string>
 	<string	name="show_themes_08"	translatable="true">TEMAS</string>
 	<string	name="apk_location_08"	translatable="true">LOCALIZAÇÃO DO APK</string>
 	<string	name="apk_location_desc_08"	translatable="true">Diretório de arquivo onde deseja salvar o arquivo baixado. Se você não sabe como configurar este recurso, deixe como está. \n NOTA: Este recurso não oferece suporte a armazenamento externo (cartão SD) devido à acessibilidade, permissões e limitações de armazenamento.</string>
@@ -825,7 +790,6 @@
 	<string	name="download_ready_desc_08"	translatable="true">Baixar este apk corrigido sobrescreverá o arquivo anterior localizado no diretório de arquivo externo do aplicativo.</string>
 	<string	name="downloading_file_08"	translatable="true">BAIXANDO ARQUIVO...</string>
 	<string	name="download_success_08"	translatable="true">BAIXADO COM SUCESSO</string>
-	<string	name="copy_url_desc_08"	translatable="true">Você selecionou esta versão corrigida. Você quer copiar o url?</string>
 	<string	name="new_update_08"	translatable="true">NOVA ATUALIZAÇÃO DO MANAGER</string>
 	
 	<string	name="continue_1_08"	translatable="true">PROSSEGUIR</string>
@@ -896,9 +860,6 @@
 	<string	name="list_auto_refresh_desc_09"	translatable="true">Ativar isto irá automaticamente refrescar a lista a cada vez que abrires a aplicação.\n\nPodes manualmente refrescar a lista ao arrastar o ecrã principal para baixo.</string>
 	<string	name="force_auto_install_09"	translatable="true">FORÇAR AUTO-INSTALAR</string>
 	<string	name="force_auto_install_desc_09"	translatable="true">Ativar isto irá automaticamente instalar a aplicação modificada e atualizar uma vez que feita a transferência.</string>
-	<string	name="copy_url_mode_09"	translatable="true">MODO DE CÓPIA DO URL</string>
-	<string	name="copy_url_mode_desc_09"	translatable="true">Ativar isto irá permitir-te que copies o URL direto do ficheiro.\n\nNão é recomendado todas as vezes a não ser que estejas a ter problemas ao fazer a transferência dos ficheiros diretamente no manager.</string>
-	<string	name="hide_navigation_bar_09"	translatable="true">ESCONDER BARRA DE NAVEGAÇÃO</string>
 	<string	name="show_themes_09"	translatable="true">MOSTRAR TEMAS</string>
 	<string	name="apk_location_09"	translatable="true">LOCALIZAÇÃO DA APK</string>
 	<string	name="apk_location_desc_09"	translatable="true">Diretório do ficheiro onde queres guardar a apk transferida. Se não souberes como configurar esta funcionalidade, então deixa isto como está.\n\nNOTA: Esta funcionalidade não suporta armazenamento externo (Cartão SD) devido à acessibilidade, permissões e limitações de armazenamento.</string>
@@ -922,7 +883,6 @@
 	<string	name="download_ready_desc_09"	translatable="true">Transferir esta apk modificada irá substituir o ficheiro anterior localizado no directório de ficheiros externos da aplicação.</string>
 	<string	name="downloading_file_09"	translatable="true">A FAZER TRANSFERÊNCIA DO FICHEIRO...</string>
 	<string	name="download_success_09"	translatable="true">TRANSFERÊNCIA FEITA COM SUCESSO</string>
-	<string	name="copy_url_desc_09"	translatable="true">Selecionaste esta versão modificada. Queres copiar o URL?</string>
 	<string	name="new_update_09"	translatable="true">NOVA ATUALIZAÇÃO DO MANAGER</string>
 	
 	<string	name="continue_1_09"	translatable="true">CONTINUAR</string>
@@ -993,9 +953,6 @@
 	<string	name="list_auto_refresh_desc_10"	translatable="true">При активация этого параметра список будет автоматически обновляться при каждом запуске приложения.\n\nВы можете обновить список вручную, потянув вниз на главном экране.</string>
 	<string	name="force_auto_install_10"	translatable="true">ПPИНУДИТЕЛЬНАЯ АВТОУСТАНОВКА</string>
 	<string	name="force_auto_install_desc_10"	translatable="true">При активации автоматически устанавливается модифицированное приложение и обновляется после загрузки.</string>
-	<string	name="copy_url_mode_10"	translatable="true">PЕЖИМ КОПИPОВАНИЯ ССЫЛКИ</string>
-	<string	name="copy_url_mode_desc_10"	translatable="true">При активация Вы сможете скопировать прямой URL-адрес файла.\n\nНе рекомендуется использовать, если у Вас нет проблем с загрузкой файлов непосредственно в самом менеджере.</string>
-	<string	name="hide_navigation_bar_10"	translatable="true">СКPЫТЬ ПАНЕЛЬ НАВИГАЦИИ</string>
 	<string	name="show_themes_10"	translatable="true">ТЕМЫ</string>
 	<string	name="apk_location_10"	translatable="true">PАСПОЛОЖЕНИЕ APK</string>
 	<string	name="apk_location_desc_10"	translatable="true">Файловый каталог, в котором Вы хотите сохранить загруженный apk файл. Если Вы не знаете, как настроить эту функцию, оставьте все как есть.\n\nПPИМЕЧАНИЕ: эта функция не поддерживает внешнее хранилище (SD-карту) из-за доступности, разрешений и ограничений хранилища.</string>
@@ -1019,7 +976,6 @@
 	<string	name="download_ready_desc_10"	translatable="true">При загрузке этого измененного apk файла будет перезаписан предыдущий файл, расположенный во внешнем каталоге файлов приложения.</string>
 	<string	name="downloading_file_10"	translatable="true">ЗАГPУЗКА ФАЙЛА...</string>
 	<string	name="download_success_10"	translatable="true">УСПЕШНО ЗАГPУЖЕНО</string>
-	<string	name="copy_url_desc_10"	translatable="true">Вы выбрали данную модифицированную версию. Хотите скопировать URL?</string>
 	<string	name="new_update_10"	translatable="true">ОБНОВЛЕНИЕ МЕНЕДЖЕPА</string>
 	
 	<string	name="continue_1_10"	translatable="true">ПPОДОЛЖИТЬ</string>
@@ -1090,9 +1046,6 @@
 	<string	name="list_auto_refresh_desc_11"	translatable="true">Al activar esto, la lista se refrescará automáticamente cada vez que inicie la aplicación.\n\nPuede refrescar la lista manualmente arrastrando la pantalla principal hacia abajo.</string>
 	<string	name="force_auto_install_11"	translatable="true">FORZAR LA AUTOINSTALACIÓN</string>
 	<string	name="force_auto_install_desc_11"	translatable="true">Al activar esto se instalará automáticamente la aplicación modificada y la actualización una vez descargada.</string>
-	<string	name="copy_url_mode_11"	translatable="true">MODO COPIAR URL</string>
-	<string	name="copy_url_mode_desc_11"	translatable="true">Activar esto le permitirá copiar la URL directa del archivo.\n\nNo se recomienda en todo momento a menos que tenga un problema para descargar los archivos directamente dentro del gestor.</string>
-	<string	name="hide_navigation_bar_11"	translatable="true">OCULTAR BARRA DE NAVEGACIÓN</string>
 	<string	name="show_themes_11"	translatable="true">MOSTRAR TEMAS</string>
 	<string	name="apk_location_11"	translatable="true">UBICACIÓN DEL APK</string>
 	<string	name="apk_location_desc_11"	translatable="true">Directorio de archivos donde desea guardar el APK descargado. Si no sabe cómo configurar esta función, déjelo como está.\n\nNOTA: Esta función no es compatible con el almacenamiento externo (tarjeta SD) debido a la accesibilidad, los permisos y las limitaciones de almacenamiento.</string>
@@ -1116,7 +1069,6 @@
 	<string	name="download_ready_desc_11"	translatable="true">La descarga de este APK modificado sobrescribirá el archivo anterior ubicado en el directorio de archivos externos de la aplicación.</string>
 	<string	name="downloading_file_11"	translatable="true">DESCARGANDO ARCHIVO...</string>
 	<string	name="download_success_11"	translatable="true">DESCARGADO CON ÉXITO</string>
-	<string	name="copy_url_desc_11"	translatable="true">Has seleccionado esta versión modificada. ¿Quieres copiar la URL?</string>
 	<string	name="new_update_11"	translatable="true">NUEVA ACTUALIZACIÓN DEL GESTOR</string>
 	
 	<string	name="continue_1_11"	translatable="true">CONTINUAR</string>
@@ -1187,9 +1139,6 @@
 	<string	name="list_auto_refresh_desc_12"	translatable="true">Активація цього параметра автоматично оновлюватиме список кожного разу, коли ви запускаєте програму.\n\n Список можна оновити вручну, перетягнувши головний екран вниз.</string>
 	<string	name="force_auto_install_12"	translatable="true">АВТОМАТИЧНЕ ВСТАНОВЛЕННЯ</string>
 	<string	name="force_auto_install_desc_12"	translatable="true">Активація цієї функціі дозволить автоматично встановити змінений додаток та оновити його після завантаження.</string>
-	<string	name="copy_url_mode_12"	translatable="true">PЕЖИМ КОПІЮВАННЯ ПОСИЛАННЯ</string>
-	<string	name="copy_url_mode_desc_12"	translatable="true">Активація цієї функції дозволить скопіювати шлях до файлу.\n\nНе рекомендується постійно, якщо у вас не виникає проблем із завантаженням файлів безпосередньо у додатку.</string>
-	<string	name="hide_navigation_bar_12"	translatable="true">СХОВАТИ ПАНЕЛЬ НАВІГАЦІЇ</string>
 	<string	name="show_themes_12"	translatable="true">ТЕМИ</string>
 	<string	name="apk_location_12"	translatable="true">PОЗТАШУВАННЯ APK</string>
 	<string	name="apk_location_desc_12"	translatable="true">Шлях до каталогу, у якому ви хочете зберегти завантаженний apk. Якщо ви не знаєте, як налаштувати цю фунцію, залиште це як є\n\nПPИМІТКА: Ця функція не підтримує зовнішню пам’ять (SD-накопичувач) через доступність, дозволи та обмеження пам’яті.</string>
@@ -1213,7 +1162,6 @@
 	<string	name="download_ready_desc_12"	translatable="true">Завантаження цього apk модифікації замінить попередній файл, розташований у зовнішньому каталозі файлів програми.</string>
 	<string	name="downloading_file_12"	translatable="true">ЗАВАНТАЖЕННЯ ФАЙЛУ...</string>
 	<string	name="download_success_12"	translatable="true">УСПІШНО ЗАВАНТАЖЕНО</string>
-	<string	name="copy_url_desc_12"	translatable="true">Ви обрали цю версію модифікації. Скопіювати посилання?</string>
 	<string	name="new_update_12"	translatable="true">НОВЕ ОНОВЛЕННЯ МЕНЕДЖЕPА</string>
 	
 	<string	name="continue_1_12"	translatable="true">ПPОДОВЖИТИ</string>
@@ -1284,9 +1232,6 @@
 	<string	name="list_auto_refresh_desc_13"	translatable="true">Bu ayarı etkinleştirmek, uygulamayı her başlattığınızda listeyi otomatik olarak yenileyecektir.\n\nAna ekranı aşağı doğru sürükleyerek listeyi manuel olarak yenileyebilirsiniz.</string>
 	<string	name="force_auto_install_13"	translatable="true">OTOMATİK YÜKLEMEYİ ZORLA</string>
 	<string	name="force_auto_install_desc_13"	translatable="true">Bunu etkinleştirmek, yamalı uygulamayı otomatik olarak yükleyecek ve indirildikten sonra güncellenecektir.</string>
-	<string	name="copy_url_mode_13"	translatable="true">URL MODUNU KOPYALA</string>
-	<string	name="copy_url_mode_desc_13"	translatable="true">Bunu etkinleştirmek, dosyayı doğrudan url\'ye kopyalamanıza izin verir.\in\Dosyaları doğrudan yöneticinin içinden indirirken sorun yaşamadığınız sürece her zaman önerilmez.</string>
-	<string	name="hide_navigation_bar_13"	translatable="true">GEZİNME ÇUBUĞUNU GİZLE</string>
 	<string	name="show_themes_13"	translatable="true">TEMALAR</string>
 	<string	name="apk_location_13"	translatable="true">APK KONUMU</string>
 	<string	name="apk_location_desc_13"	translatable="true">İndirilen dosyayı kaydetmek istediğiniz dosya dizini. Bu özelliği nasıl yapılandıracağınızı bilmiyorsanız, olduğu gibi bırakın.\n\nNOT: Bu özellik harici depolamayı (SD Kart) desteklemez.</string>
@@ -1310,7 +1255,6 @@
 	<string	name="download_ready_desc_13"	translatable="true">Bu yamalı apk\'yı indirmek, uygulamanın harici dosya dizininde bulunan önceki dosyanın üzerine yazacaktır.</string>
 	<string	name="downloading_file_13"	translatable="true">DOSYA İNDİRİLİYOR...</string>
 	<string	name="download_success_13"	translatable="true">BAŞARIYLA İNDİRİLDİ</string>
-	<string	name="copy_url_desc_13"	translatable="true">Bu yamalı sürümü seçtiniz. URL\'yi kopyalamak istiyor musunuz?</string>
 	<string	name="new_update_13"	translatable="true">YENİ YÖNETİCİ GÜNCELLEMESİ</string>
 	
 	<string	name="continue_1_13"	translatable="true">DEVAM ET</string>
@@ -1381,9 +1325,6 @@
 	<string	name="list_auto_refresh_desc_14"	translatable="true">سيؤدي تفعيل هذا الخيار إلى تحديث القائمة تلقائياً كل مرة تشغل فيها التطبيق \n\nتستطيع يدوياً تحديث القائمة عن طريق السحب للأسفل في الشاشة الرئيسية</string>
 	<string	name="force_auto_install_14"	translatable="true">فرض التثبيت التلقائي</string>
 	<string	name="force_auto_install_desc_14"	translatable="true">تفعيل هذا الخيار سيؤدي لتثبيت التطبيق المعدل وتحديثه بمجرد تنزيله.</string>
-	<string	name="copy_url_mode_14"	translatable="true">وضع نسخ الروابط</string>
-	<string	name="copy_url_mode_desc_14"	translatable="true">تفعيل هذا الخيار سيسمح لك بنسخ رابط الملف المباشر \n\nلا ينصح به في كل الأوقات إلا إذا كنت تواجه مشكلة في تنزيل الملفات مباشرة داخل xmanager</string>
-	<string	name="hide_navigation_bar_14"	translatable="true">إخفاء شريط التنقل</string>
 	<string	name="show_themes_14"	translatable="true">عرض الثيمات</string>
 	<string	name="apk_location_14"	translatable="true">مسار التطبيق</string>
 	<string	name="apk_location_desc_14"	translatable="true">  مسار الملفات حيث تريد حفظ الملف الذي تم تحميله. إذا كنت لا تعرف كيفية تعديل هذه الميزة ، فاتركها كما هي. \n\nملاحظة: هذه الميزة لا تدعم التخزين الخارجي (بطاقة SD) بسبب إمكانية الوصول والأذونات وقيود التخزين.</string>
@@ -1407,7 +1348,6 @@
 	<string	name="download_ready_desc_14"	translatable="true">سيؤدي تنزيل ملف apk المعدل هذا إلى استبدال الملف السابق الموجود في مسار الملف الخارجي للتطبيق.</string>
 	<string	name="downloading_file_14"	translatable="true">جاري تحميل الملف..</string>
 	<string	name="download_success_14"	translatable="true">تم التحميل بنجاح</string>
-	<string	name="copy_url_desc_14"	translatable="true">لقد اخترت هذه النسخة المعدلة. هل تريد نسخ الرابط؟</string>
 	<string	name="new_update_14"	translatable="true">يوجد تحديث جديد</string>
 	
 	<string	name="continue_1_14"	translatable="true">استمرار</string>
@@ -1478,9 +1418,6 @@
 	<string	name="list_auto_refresh_desc_15"	translatable="true">Aktiviranje tega bo samodejno osvežilo seznam vsaki\u010d, ko zaženete aplikacijo.\n\nSeznam lahko ro\u010dno posodobite tako, da povle\u010dete glavni zaslon navzdol.</string>
 	<string	name="force_auto_install_15"	translatable="true">PRISILNA SAMODEJNA NAMESTITEV</string>
 	<string	name="force_auto_install_desc_15"	translatable="true">Aktiviranje tega bo samodejno namestilo spremenjeno aplikacijo in jo posodobilo, ko bo prenesena.</string>
-	<string	name="copy_url_mode_15"	translatable="true">NA\u010cIN ZA KOPIRANJE URL PRENOSOV</string>
-	<string	name="copy_url_mode_desc_15"	translatable="true">Aktiviranje tega vam bo omogo\u010dilo kopiranje direktnega url datoteke.\n\nNastavitve ni priporo\u010dljivo imeti omogo\u010dene ves \u010das, razen \u010de imate težave s prenosom datotek neposredno znotraj manager-ja.</string>
-	<string	name="hide_navigation_bar_15"	translatable="true">SKRIJ NAVIGACIJSKO VRSTICO</string>
 	<string	name="show_themes_15"	translatable="true">TEME</string>
 	<string	name="apk_location_15"	translatable="true">LOKACIJA APK</string>
 	<string	name="apk_location_desc_15"	translatable="true">Mesto v datotekah, kjer želite shraniti naloženo apk. \u010ce ne veste, kako konfigurirati to funkcijo, jo pustite, kot je. \n\nOPOMBA: Ta funkcija ne podpira zunanjega pomnilnika (SD kartice) zaradi dostopnosti, dovoljenj in omejitev shranjevanja.</string>
@@ -1504,7 +1441,6 @@
 	<string	name="download_ready_desc_15"	translatable="true">Prenos te spremenjene apk bo zamenjal prejšnjo datoteko, ki se nahaja v zunanjem mestu datotek aplikacije.</string>
 	<string	name="downloading_file_15"	translatable="true">PRENAŠANJE DATOTEKE...</string>
 	<string	name="download_success_15"	translatable="true">USPEŠNO PRENESENO</string>
-	<string	name="copy_url_desc_15"	translatable="true">Izbrali ste to spremenjeno verzijo. Ali želite kopirati url?</string>
 	<string	name="new_update_15"	translatable="true">NOVA POSODOBITEV MANAGER-JA</string>
 	
 	<string	name="continue_1_15"	translatable="true">NADALJUJ</string>
@@ -1575,9 +1511,6 @@
 	<string	name="list_auto_refresh_desc_16"	translatable="true">Activând asta se va reîmprospăta lista de fiecare dată când deschizi aplicația.\n\nPoți reîmprospăta manual lista trăgând în jos de ecranul principal.</string>
 	<string	name="force_auto_install_16"	translatable="true">FORȚEAZĂ AUTO-INSTALARE</string>
 	<string	name="force_auto_install_desc_16"	translatable="true">Activând asta se va instala automat aplicația modată și actualizarea îndată ce e descărcată.</string>
-	<string	name="copy_url_mode_16"	translatable="true">MODUL COPIERE URL</string>
-	<string	name="copy_url_mode_desc_16"	translatable="true">Activând asta o să poți copia fișierul direct URL.\n\nNu e recomandat decât dacă aveți probleme descărcând fișierul direct din manager.</string>
-	<string	name="hide_navigation_bar_16"	translatable="true">ASCUNDE BARA DE NAVIGARE</string>
 	<string	name="show_themes_16"	translatable="true">TEME</string>
 	<string	name="apk_location_16"	translatable="true">LOCAȚIE APK</string>
 	<string	name="apk_location_desc_16"	translatable="true">Directorul de fișiere unde vrei să salvezi fișierul descărcat. Dacă nu știi să setezi această funcție, atunci las-o cum este.\n\nNOTIȚĂ: Această funcție nu suportă memoria externă (SD Card) din cauza accesibilității, permisiunilor și limitărilor de memorie.</string>
@@ -1601,7 +1534,6 @@
 	<string	name="download_ready_desc_16"	translatable="true">Descărcând această versiune patch-uită se va suprascrie fișierul anterior aflat în directorul aplicației de fișiere externe.</string>
 	<string	name="downloading_file_16"	translatable="true">SE DESCARCĂ FIȘIERUL...</string>
 	<string	name="download_success_16"	translatable="true">DESCĂRCAT CU SUCCES</string>
-	<string	name="copy_url_desc_16"	translatable="true">Ai selectat această versiune patch-uită. Dorești să copiezi URL-ul?</string>
 	<string	name="new_update_16"	translatable="true">ACTUALIZARE NOUĂ LA MANAGER</string>
 	
 	<string	name="continue_1_16"	translatable="true">CONTINUĂ</string>
@@ -1672,9 +1604,6 @@
 	<string	name="list_auto_refresh_desc_17"	translatable="true">시작되면 새 리스트를 가져 옵니다.\n\n화면을 아래로 드래그하면 수동으로 가져 옵니다.</string>
 	<string	name="force_auto_install_17"	translatable="true">자동 설치</string>
 	<string	name="force_auto_install_desc_17"	translatable="true">자동으로 새 버전을 다운로드하고 설치 합니다.</string>
-	<string	name="copy_url_mode_17"	translatable="true">URL 복사 모드</string>
-	<string	name="copy_url_mode_desc_17"	translatable="true">파일 URL 주소를 복사 합니다.\n\n수동 다운로드에만 적용 됩니다.</string>
-	<string	name="hide_navigation_bar_17"	translatable="true">내비게이션 바 숨김</string>
 	<string	name="show_themes_17"	translatable="true">테마</string>
 	<string	name="apk_location_17"	translatable="true">APK 저장위치</string>
 	<string	name="apk_location_desc_17"	translatable="true">다운로드 할 경로 지정(경로를 모르면 기본으로 두세요)\n\n안내: 저장공간 사용 권한 필요!, 권한 제한으로 외부 저장소(SD 카드) 미지원.</string>
@@ -1698,7 +1627,6 @@
 	<string	name="download_ready_desc_17"	translatable="true">새 버전 APK로 교체 됩니다.</string>
 	<string	name="downloading_file_17"	translatable="true">파일 다운로드...</string>
 	<string	name="download_success_17"	translatable="true">다운로드 완료!</string>
-	<string	name="copy_url_desc_17"	translatable="true">이 버전으로 URL 주소를 복사 하시겠습니까?</string>
 	<string	name="new_update_17"	translatable="true">새 버전 업데이트</string>
 
 	<string	name="continue_1_17"	translatable="true">계속</string>
@@ -1769,9 +1697,6 @@
 	<string	name="list_auto_refresh_desc_18"	translatable="true">Dit activeren zal de lijst automatisch opnieuw laden elke keer dat je de applicatie opent.\n\nJe kan manueel de lijst herladen door het homescherm naar beneden te trekken.</string>
 	<string	name="force_auto_install_18"	translatable="true">FORCEER AUTOMATISCH INSTALLEREN</string>
 	<string	name="force_auto_install_desc_18"	translatable="true">Dit activeren zal de gepatchte applicatie automatisch installeren en updaten als het gedownload is.</string>
-	<string	name="copy_url_mode_18"	translatable="true">URL KOPIËREN MODUS</string>
-	<string	name="copy_url_mode_desc_18"	translatable="true">Dit activeren zal jouw in staat stellen om de directe url van het bestand te kopiëren.\n\nNiet aanbeloven als je geen problemen hebt met het downloaden van de bestanden direkt in de manager app.</string>
-	<string	name="hide_navigation_bar_18"	translatable="true">NAVIGATIE BAR VERBERGEN</string>
 	<string	name="show_themes_18"	translatable="true">THEMAS</string>
 	<string	name="apk_location_18"	translatable="true">APK LOCATIE</string>
 	<string	name="apk_location_desc_18"	translatable="true">Bestandsmap waarin je het bestand wil opslaan. Als je niet weet hoe je dit moet instellen, laat het dan zoals het is.\n\nOPMERKING: Deze functie ondersteunt niet de externe opslag (SD Kaart) vanwege toegankelijkheid, toestemmingen en opslag beperkingen.</string>
@@ -1795,7 +1720,6 @@
 	<string	name="download_ready_desc_18"	translatable="true">Deze gepatchte apk downloaden zal het vorige bestand in de externe applicatie bestandsmap overschrijven.</string>
 	<string	name="downloading_file_18"	translatable="true">BESTAND DOWNLOADEN...</string>
 	<string	name="download_success_18"	translatable="true">SUCCESVOL GEDOWNLOAD</string>
-	<string	name="copy_url_desc_18"	translatable="true">Je hebt deze gepatchte versie geselecteert. Wil je de url kopiëren?</string>
 	<string	name="new_update_18"	translatable="true">NIEUWE MANAGER UPDATE</string>
 
 	<string	name="continue_1_18"	translatable="true">VERDERGAAN</string>
@@ -1866,9 +1790,6 @@
 	<string	name="list_auto_refresh_desc_19"	translatable="true">Kích hoạt tính năng này sẽ tự động làm mới danh sách mỗi khi bạn khởi chạy ứng dụng. \n\nBạn có thể làm mới danh sách theo cách thủ công bằng cách kéo màn hình chính xuống.</string>
 	<string	name="force_auto_install_19"	translatable="true">BUỘC TỰ ĐỘNG CÀI ĐẶT</string>
 	<string	name="force_auto_install_desc_19"	translatable="true">Kích hoạt tính năng này sẽ tự động cài đặt ứng dụng đã vá và cập nhật sau khi tải xuống.</string>
-	<string	name="copy_url_mode_19"	translatable="true">CHẾ ĐỘ SAO CHÉP URL</string>
-	<string	name="copy_url_mode_desc_19"	translatable="true">Kích hoạt điều này sẽ cho phép bạn sao chép url trực tiếp của tệp. \n\nKhông được khuyến nghị mọi lúc trừ khi bạn gặp sự cố khi tải xuống tệp trực tiếp trong trình quản lý.</string>
-	<string	name="hide_navigation_bar_19"	translatable="true">Ẩn thanh điều hướng</string>
 	<string	name="show_themes_19"	translatable="true">Giao diện</string>
 	<string	name="apk_location_19"	translatable="true">VỊ TRÍ APK</string>
 	<string	name="apk_location_desc_19"	translatable="true">Thư mục tệp nơi bạn muốn lưu tệp đã tải xuống. Nếu bạn không biết cách định cấu hình tính năng này, hãy để nguyên tính năng này. \n\nLƯU Ý: Tính năng này không hỗ trợ bộ nhớ ngoài (Thẻ SD) do giới hạn khả năng truy cập, quyền và bộ nhớ.</string>
@@ -1892,7 +1813,6 @@
 	<string	name="download_ready_desc_19"	translatable="true">Tải xuống apk đã vá sẽ ghi đè lên tệp trước đó nằm ở thư mục tệp bên ngoài ứng dụng.</string>
 	<string	name="downloading_file_19"	translatable="true">ĐANG TẢI...</string>
 	<string	name="download_success_19"	translatable="true">ĐÃ TẢI XUỐNG THÀNH CÔNG</string>
-	<string	name="copy_url_desc_19"	translatable="true">Bạn đã chọn bản vá này. Bạn có muốn sao chép url không?</string>
 	<string	name="new_update_19"	translatable="true">CẬP NHẬT MỚI</string>
 
 	<string	name="continue_1_19"	translatable="true">TIẾP TỤC</string>
@@ -1963,9 +1883,6 @@
 	<string	name="list_auto_refresh_desc_20"	translatable="true">Wenn Du diese Funktion aktivierst, wird die Liste bei jedem Start der Anwendung automatisch aktualisiert.\n\nDu kannst die Liste auch manuell aktualisieren, indem Du nach auf der Hauptseite nach unten swipest.</string>
 	<string	name="force_auto_install_20"	translatable="true">ERZWINGE AUTOMATISCHE-INSTALLIERUNG</string>
 	<string	name="force_auto_install_desc_20"	translatable="true">Wenn Du diese Option aktivierst, wird die gepatchte Anwendung und das Update nach dem Herunterladen automatisch installiert.</string>
-	<string	name="copy_url_mode_20"	translatable="true">URL-KOPIERMODUS</string>
-	<string	name="copy_url_mode_desc_20"	translatable="true">Wenn Du diese Option aktivierst, kannst Du die Datei direkt über die URL kopieren.\n\nDies wird nicht immer empfohlen, es sei denn, Du hast Probleme mit dem direkten Herunterladen der Dateien im Manager.</string>
-	<string	name="hide_navigation_bar_20"	translatable="true">NAVIGATIONSLEISTE VERSTECKEN</string>
 	<string	name="show_themes_20"	translatable="true">THEMEN</string>
 	<string	name="apk_location_20"	translatable="true">APK SPEICHERORT</string>
 	<string	name="apk_location_desc_20"	translatable="true">Dateiverzeichnis, in dem Du die heruntergeladene Datei speichern möchtest. Wenn Du nicht weißt, wie Du diese Funktion konfigurieren kannst, lass diese Einstellung unverändert.\n\nHINWEIS: Diese Funktion unterstützt keine externen Speichermedien (SD-Karten) aufgrund von Zugriffsmöglichkeiten, Berechtigungen und Speicherplatzbeschränkungen..</string>
@@ -1989,7 +1906,6 @@
 	<string	name="download_ready_desc_20"	translatable="true">Das Herunterladen dieser gepatchten APK überschreibt die vorherige Datei, die sich im externen Dateiverzeichnis der Anwendung befindet.</string>
 	<string	name="downloading_file_20"	translatable="true">AM HERUNTERLADEN...</string>
 	<string	name="download_success_20"	translatable="true">ERFOLGREICH HERUNTERGELADEN</string>
-	<string	name="copy_url_desc_20"	translatable="true">Du hast diese gepatchte Version ausgewählt. Möchtest Du die URL kopieren?</string>
 	<string	name="new_update_20"	translatable="true">NEUES MANAGER UPDATE</string>
 
 	<string	name="continue_1_20"	translatable="true">FORTFAHREN</string>
@@ -2060,9 +1976,6 @@
 	<string	name="list_auto_refresh_desc_21"	translatable="true">با فعالسازی این گزینه، با هر بار باز شدن اپلیکیشن لیست به صورت خودکار تازه سازی می شود\n\nشما می توانید این کار را به صورت دستی، با پایین کشیدن صفحه اصلی هم انجام دهید</string>
 	<string	name="force_auto_install_21"	translatable="true">نصب خودکار اجباری</string>
 	<string	name="force_auto_install_desc_21"	translatable="true">با فعالسازی این گزینه نسخه پچ شده اپلیکیشن به صورت خودکار دریافت، نصب و بروزرسانی می شود</string>
-	<string	name="copy_url_mode_21"	translatable="true">حالت کپی لینک</string>
-	<string	name="copy_url_mode_desc_21"	translatable="true">فعالسازی این گزینه به شما اجازه می دهد که آدرس مستقیم دانلود فایل را کپی کنید\n\nفقط در صورتی که با دریافت فایل از این اپ مشکل دارید از این گزینه استفاده کنید</string>
-	<string	name="hide_navigation_bar_21"	translatable="true">پنهان سازی نوار ناوبری</string>
 	<string	name="show_themes_21"	translatable="true">پوسته ها</string>
 	<string	name="apk_location_21"	translatable="true">مسیر برنامه</string>
 	<string	name="apk_location_desc_21"	translatable="true">مسیری که فایل دریافت شده را در آن ذخیره می کنید. اگر نمی دانید چطور این گزینه را تنظیم کنید، همانطور که هست رهایش کنید\n\nتوجه: این ویژگی به دلیل محدودیت های موجود در دسترسی، مجوز ها و ذخیره سازی، از حافظه جانبی پشتیبانی نمی کند</string>
@@ -2086,7 +1999,6 @@
 	<string	name="download_ready_desc_21"	translatable="true">این فایل، جایگزین فایل دریافت شده قبلی می شود</string>
 	<string	name="downloading_file_21"	translatable="true">در حال دریافت فایل...</string>
 	<string	name="download_success_21"	translatable="true">دریافت با موفقیت انجام شد</string>
-	<string	name="copy_url_desc_21"	translatable="true">شما این نسخه پچ شده را انتخاب کردید. آیا می خواهید آدرس را کپی کنید؟</string>
 	<string	name="new_update_21"	translatable="true">بروزرسانی نرم افزار</string>
 
 	<string	name="continue_1_21"	translatable="true">ادامه</string>
@@ -2157,9 +2069,6 @@
 	<string	name="list_auto_refresh_desc_22"	translatable="true">הפעלת תכונה זו תגרום לריענון רשימת הקבצים באופן אוטומטי בכל פעם שהאפליקציה תופעל.\n\nניתן לרענן את הרשימה באופן ידני על ידי גרירת המסך הראשי כלפי מטה.</string>
 	<string	name="force_auto_install_22"	translatable="true">כפה התקנה אוטומטית</string>
 	<string	name="force_auto_install_desc_22"	translatable="true">הפעלת תכונה זו תגרום להורדה אוטומטית של האפליקציה המעודכנת והתקנתה לאחר ההורדה.</string>
-	<string	name="copy_url_mode_22"	translatable="true">מצב העתקת קישור</string>
-	<string	name="copy_url_mode_desc_22"	translatable="true">הפעלת תכונה זו תאפשר לך להעתיק את כתובת האתר הישירה של הקובץ.\n\nלא מומלץ בכל עת, אלא אם קיימת בעיה בהורדת הקבצים ישירות מתוך xManager.</string>
-	<string	name="hide_navigation_bar_22"	translatable="true">הסתרת סרגל הניווט</string>
 	<string	name="show_themes_22"	translatable="true">ערכות נושא</string>
 	<string	name="apk_location_22"	translatable="true">מיקום קובץ ההתקנה</string>
 	<string	name="apk_location_desc_22"	translatable="true">ספריית הקבצים שבה ברצונך לשמור את הקובץ שהורדת. אם אינך יודע כיצד להגדיר תכונה זו, השאר אותה כפי שהיא.\n\nהערה: תכונה זו אינה תומכת באחסון חיצוני (כרטיס SD) עקב נגישות, הרשאות ומגבלות אחסון.</string>
@@ -2183,7 +2092,6 @@
 	<string	name="download_ready_desc_22"	translatable="true">הורדת קובץ ההתקנה הזה תחליף את הקובץ הקודם שנמצא בספריית הקבציים החיצוניים של האפליקציה.</string>
 	<string	name="downloading_file_22"	translatable="true">מוריד קובץ...</string>
 	<string	name="download_success_22"	translatable="true">הורד בהצלחה</string>
-	<string	name="copy_url_desc_22"	translatable="true">בחרת להוריד את גרסה זו. האם ברצנוך להעתיק את כתובת הקישור?</string>
 	<string	name="new_update_22"	translatable="true">קיים עדכון חדש</string>
 
 	<string	name="continue_1_22"	translatable="true">המשך</string>
