@@ -58,55 +58,79 @@
     </style>
 	<style name="PositiveButtonOrigins" parent="Widget.MaterialComponents.Button.UnelevatedButton">
 	    <item name="android:fontFamily">@font/base_font</item>
+		<item name="android:layout_marginStart">5dp</item>
         <item name="android:textColor">#1DB954</item>ns
 		<item name="rippleColor">#616161</item>
 		<item name="android:fillColor">#252525</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:textSize">12sp</item>
+		<item name="android:paddingTop">5dip</item>
+		<item name="android:paddingBottom">5dip</item>
+		<item name="android:paddingLeft">5dip</item>
+		<item name="android:paddingRight">5dip</item>
 	</style>
 	<style name="NegativeButtonOrigins" parent="Widget.MaterialComponents.Button.UnelevatedButton">
 	    <item name="android:fontFamily">@font/base_font</item>
-		<item name="android:layout_marginEnd">8dp</item>
+		<item name="android:layout_marginStart">5dp</item>
         <item name="android:textColor">#1DB954</item>
 		<item name="rippleColor">#616161</item>
 		<item name="android:fillColor">#252525</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:textSize">12sp</item>
+		<item name="android:paddingTop">5dip</item>
+		<item name="android:paddingBottom">5dip</item>
+		<item name="android:paddingLeft">5dip</item>
+		<item name="android:paddingRight">5dip</item>
 	</style>
 	<style name="NeutralButtonOrigins" parent="Widget.MaterialComponents.Button.OutlinedButton">
 	    <item name="android:fontFamily">@font/base_font</item>
-		<item name="android:layout_marginEnd">8dp</item>
         <item name="android:textColor">#1DB954</item>
 		<item name="rippleColor">#616161</item>
 		<item name="strokeColor">#303030</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:textSize">12sp</item>
+		<item name="android:paddingTop">5dip</item>
+		<item name="android:paddingBottom">5dip</item>
+		<item name="android:paddingLeft">5dip</item>
+		<item name="android:paddingRight">5dip</item>
 	</style>
 	<style name="PositiveButtonOther" parent="Widget.MaterialComponents.Button.UnelevatedButton">
 	    <item name="android:fontFamily">@font/base_font</item>
+		<item name="android:layout_marginStart">5dp</item>
         <item name="android:textColor">#FFFFFF</item>
 		<item name="rippleColor">#616161</item>
 		<item name="android:fillColor">#252525</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:textSize">12sp</item>
+		<item name="android:paddingTop">5dip</item>
+		<item name="android:paddingBottom">5dip</item>
+		<item name="android:paddingLeft">5dip</item>
+		<item name="android:paddingRight">5dip</item>
 	</style>
 	<style name="NegativeButtonOther" parent="Widget.MaterialComponents.Button.UnelevatedButton">
 	    <item name="android:fontFamily">@font/base_font</item>
-		<item name="android:layout_marginEnd">8dp</item>
+		<item name="android:layout_marginStart">5dp</item>
         <item name="android:textColor">#FFFFFF</item>
 		<item name="rippleColor">#616161</item>
 		<item name="android:fillColor">#252525</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:textSize">12sp</item>
+		<item name="android:paddingTop">5dip</item>
+		<item name="android:paddingBottom">5dip</item>
+		<item name="android:paddingLeft">5dip</item>
+		<item name="android:paddingRight">5dip</item>
 	</style>
 	<style name="NeutralButtonOther" parent="Widget.MaterialComponents.Button.OutlinedButton">
 	    <item name="android:fontFamily">@font/base_font</item>
-		<item name="android:layout_marginEnd">8dp</item>
         <item name="android:textColor">#FFFFFF</item>
 		<item name="rippleColor">#616161</item>
 		<item name="strokeColor">#303030</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:textSize">12sp</item>
+		<item name="android:paddingTop">5dip</item>
+		<item name="android:paddingBottom">5dip</item>
+		<item name="android:paddingLeft">5dip</item>
+		<item name="android:paddingRight">5dip</item>
 	</style>
 	<style name="NegativeButtonProgress" parent="Widget.MaterialComponents.Button.OutlinedButton">
 	    <item name="android:fontFamily">@font/base_font</item>
@@ -115,6 +139,10 @@
 		<item name="strokeColor">#303030</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:textSize">12sp</item>
+		<item name="android:paddingTop">5dip</item>
+		<item name="android:paddingBottom">5dip</item>
+		<item name="android:paddingLeft">5dip</item>
+		<item name="android:paddingRight">5dip</item>
 	</style>
 	<style name="Title_Origins" parent="TextAppearance.AppCompat.Large">
 	    <item name="android:fontFamily">@font/base_font</item>
