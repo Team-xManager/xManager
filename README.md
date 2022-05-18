@@ -149,6 +149,9 @@ dearminder
 **English Translation**  
 Dyras  
 
+**Slovak Translation**  
+KaldonM  
+
 # Contributors  
 
 Sherlock Holmes  
