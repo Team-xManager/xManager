@@ -2157,7 +2157,7 @@
 	<string	name="main_title_23"	translatable="true">xManager</string>
 	<string	name="settings_title_23"	translatable="true">Nastavenia</string>
 	<string	name="about_title_23"	translatable="true">O</string>
-	
+
 	<string	name="list_auto_refresh_23"	translatable="true">AUTOMATICKY OBNOVIŤ ZOZNAM</string>
 	<string	name="list_auto_refresh_desc_23"	translatable="true">Aktiváciou sa automaticky obnoví zoznam pri každom spustení aplikácie.\n\nZoznam môžete manuálne obnoviť potiahnutím hlavnej obrazovky nadol.</string>
 	<string	name="force_auto_install_23"	translatable="true">VYNÚTIŤ AUTOMATICKÚ INŠTALÁCIU</string>
@@ -2171,7 +2171,7 @@
 	<string	name="clear_directory_folders_23"	translatable="true">VYMAZAŤ SÚBORY ADRESÁRA</string>
 	<string	name="clear_directory_folders_desc_23"	translatable="true">Klepnutím odstránite všetky súbory adresárov vrátane stiahnutých súborov a aktualizácií.</string>
 	<string	name="reset_settings_23"	translatable="true">OBNOVIŤ NASTAVENIA</string>
-	
+
 	<string	name="about_sub_23"	translatable="true">Bez reklám | Nové funkcie | Sloboda</string>
 	<string	name="xmanager_dev_23"	translatable="true">xManager vývojár</string>
 	<string	name="spotify_mod_devs_23"	translatable="true">Vývojári zaplátaného Spotify</string>
@@ -2182,7 +2182,7 @@
 	<string	name="forum_team_23"	translatable="true">FORUM.APK-RELEASE.NET tím</string>
 	<string	name="xspotify_team_23"	translatable="true">xSpotify Manager (Starý manažér)</string>
 	<string	name="contributors_23"	translatable="true">ĎAKUJEME VŠETKÝM PRISPIEVATEĽOM! ❤️</string>
-	
+
 	<string	name="download_selected_23"	translatable="true">Vybrali ste túto zaplátanú verziu. Chcete pokračovať?</string>
 	<string	name="download_ready_23"	translatable="true">ZAPLÁTANÉ INFORMÁCIE</string>
 	<string	name="download_ready_desc_23"	translatable="true">Stiahnutím tohto zaplátaného súboru APK sa prepíše predchádzajúci súbor umiestnený v externom adresári.</string>
@@ -2190,7 +2190,7 @@
 	<string	name="download_success_23"	translatable="true">ÚSPEŠNE STIAHNUTÉ</string>
 	<string	name="copy_url_desc_23"	translatable="true">Vybrali ste túto zaplátanú verziu. Chcete skopírovať adresu URL?</string>
 	<string	name="new_update_23"	translatable="true">NOVÁ AKTUALIZÁCIA MANAŽÉRA</string>
-	
+
 	<string	name="continue_1_23"	translatable="true">ĎALEJ</string>
 	<string	name="cancel_23"	translatable="true">ZRUŠIŤ</string>
 	<string	name="download_23"	translatable="true">STIAHNUŤ</string>
@@ -2201,10 +2201,10 @@
 	<string	name="download_update_23"	translatable="true">STIAHNUŤ AKTUALIZÁCIU</string>
 	<string	name="not_now_23"	translatable="true">TERAZ NIE</string>
 	<string	name="copy_url_23"	translatable="true">KOPÍROVAŤ URL</string>
-	
+
 	<string	name="show_support_23"	translatable="true">UKÁŽTE VAŠU PODPORU</string>
 	<string	name="show_support_desc_23"	translatable="true">Sme neziskový, nekorporátny a nekompromisný tím. Ľudia ako vy nás povzbudzujú, aby sme vytvorili aplikáciu, ktorá veci oveľa zjednoduší, najmä od sťahovania po inštaláciu.\n\nVynakladáme všetok svoj čas a maximálne úsilie, aby boli veci správne a dokonalé. Budeme sa snažiť podporovať túto aplikáciu tak dlho, ako budeme môcť.\n\nAkákoľvek suma pomôže a budeme si ju veľmi vážiť!</string>
-	
+
 	<string	name="maintenance_23"	translatable="true">ÚDRŽBA</string>
 	<string	name="maintenance_desc_23"	translatable="true">xManager je momentálne nedostupný. Prosím, skontrolujte aplikáciu neskôr.</string>
 	<string	name="thanks_23"	translatable="true">VĎAKA!</string>
@@ -2212,19 +2212,19 @@
 	<string	name="website_23"	translatable="true">WEBOVÁ STRÁNKA</string>
 	<string	name="reddit_23"	translatable="true">REDDIT</string>
 	<string	name="faq_23"	translatable="true">FAQ</string>
-	
+
 	<string	name="cloned_version_23"	translatable="true">KLONOVANÁ VERZIA (BETA)</string>
 	<string	name="cloned_version_desc_23"	translatable="true">Aktivácia vám umožní stiahnuť a nainštalovať klonovanú verziu zaplátanej aplikácie.\n\nTo tiež vyrieši väčšinu chýb alebo problémov pri inštalácii, najmä ak máte predinštalovanú aplikáciu Spotify.</string>
 	<string	name="disable_rewarded_ads_23"	translatable="true">ZAKÁZAŤ REKLAMY S ODMENOU</string>
 	<string	name="disable_rewarded_ads_desc_23"	translatable="true">Vieme, že väčšina z nás nemá rada reklamy, ale v našom prípade nám to výrazne pomáha financovať našu databázu, odkazy na hosting, aktualizácie, ďalšie záplaty a každodenné potreby.\n\nToto je najjednoduchší spôsob, ako nás podporiť bez toho, aby ste niečo darovali alebo minuli.</string>
-	
+
 	<string	name="installation_failed_23"	translatable="true">INŠTALÁCIA ZLYHALA</string>
 	<string	name="installation_failed_desc_23"	translatable="true">Dôvod: Pokúsili ste sa nainštalovať verziu módu nižšiu, ako je aktuálne nainštalovaná.\n\nRiešenia:\nA. Vyberte verziu rovnakú alebo vyššiu.\nB. Odinštalujte aktuálnu verziu a potom prejdite na nižšiu verziu.\n\nAk problém pretrváva, pozrite si FAQ.</string>
 	<string	name="installation_failed_ream_desc_23"	translatable="true">Dôvod: Aktuálny Spotify nainštalovaný na tomto zariadení nepochádza priamo od xManager alebo od nášho tímu.\n\nRiešenie: Odinštalujte aktuálnu verziu aplikácie, reštartujte xManager a skúste to znova. Ak problém pretrváva, pozrite si FAQ.</string>
 	<string	name="installation_failed_cloned_desc_23"	translatable="true">Dôvod: Aktuálny klon nainštalovaný na tomto zariadení nepochádza priamo od xManager alebo od nášho tímu.\n\nRiešenie: Odinštalujte aktuálnu verziu aplikácie, reštartujte xManager a skúste to znova. Ak problém pretrváva, pozrite si FAQ.</string>
 	<string	name="existing_patched_23"	translatable="true">EXISTUJÚCE ZAPLÁTANÉ</string>
 	<string	name="existing_patched_desc_23"	translatable="true">V jednom z adresárov sa našiel existujúci zaplátaný súbor APK. Akú akciu chcete urobiť?</string>
-	
+
 	<string	name="close_23"	translatable="true">ZAVRIEŤ</string>
 	<string	name="cloned_23"	translatable="true">KLONOVANÝ</string>
 	<string	name="ream_23"	translatable="true">RE/AM</string>
