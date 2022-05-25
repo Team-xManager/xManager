@@ -20,7 +20,7 @@
 			android:id="@+id/title_header"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:paddingLeft="8dp"
+			android:paddingLeft="5dp"
 			android:paddingTop="8dp"
 			android:paddingBottom="8dp"
 			android:text="xManager"
@@ -91,6 +91,15 @@
 		android:padding="8dp"
 		android:background="#171717"
 		android:orientation="vertical">
+		<TextView
+			android:id="@+id/hidden_download"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="N/A"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/installation_failed"
 			android:layout_width="wrap_content"
@@ -1791,7 +1800,24 @@
 						android:id="@+id/translator_23"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
 						android:text="Dyras"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+					<TextView
+						android:id="@+id/manager_lang_24"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Slovak Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFEB3B" />
+					<TextView
+						android:id="@+id/translator_24"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="KaldonM"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1982,8 +2008,10 @@
 								android:id="@+id/version_oc_01"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
-								android:layout_marginRight="8dp"
-								android:padding="8dp"
+								android:paddingLeft="8dp"
+								android:paddingTop="8dp"
+								android:paddingRight="10dp"
+								android:paddingBottom="8dp"
 								android:src="@drawable/close"
 								android:scaleType="center" />
 						</LinearLayout>
@@ -2155,8 +2183,10 @@
 								android:id="@+id/version_oc_02"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
-								android:layout_marginRight="8dp"
-								android:padding="8dp"
+								android:paddingLeft="8dp"
+								android:paddingTop="8dp"
+								android:paddingRight="10dp"
+								android:paddingBottom="8dp"
 								android:src="@drawable/close"
 								android:scaleType="center" />
 						</LinearLayout>
@@ -2351,8 +2381,10 @@
 								android:id="@+id/changelogs_oc"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
-								android:layout_marginRight="8dp"
-								android:padding="8dp"
+								android:paddingLeft="8dp"
+								android:paddingTop="8dp"
+								android:paddingRight="10dp"
+								android:paddingBottom="8dp"
 								android:src="@drawable/close"
 								android:scaleType="center" />
 						</LinearLayout>
