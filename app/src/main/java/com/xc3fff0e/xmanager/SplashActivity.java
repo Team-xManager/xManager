@@ -1,50 +1,51 @@
 package com.xc3fff0e.xmanager;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.annotation.*;
+import android.animation.*;
 import android.app.*;
-import android.os.*;
-import android.view.*;
-import android.view.View.*;
-import android.widget.*;
 import android.content.*;
+import android.content.Intent;
 import android.content.res.*;
 import android.graphics.*;
+import android.graphics.Typeface;
 import android.graphics.drawable.*;
 import android.media.*;
 import android.net.*;
+import android.net.Uri;
+import android.os.*;
 import android.text.*;
 import android.text.style.*;
 import android.util.*;
-import android.webkit.*;
-import android.animation.*;
+import android.view.*;
+import android.view.View.*;
 import android.view.animation.*;
-import java.io.*;
-import java.util.*;
-import java.util.regex.*;
-import java.text.*;
-import org.json.*;
-import android.widget.LinearLayout;
+import android.webkit.*;
+import android.widget.*;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import java.util.Timer;
-import java.util.TimerTask;
-import android.content.Intent;
-import android.net.Uri;
-import android.graphics.Typeface;
-import com.wuyr.rippleanimation.*;
-import com.unity3d.ads.*;
+import androidx.annotation.*;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.DialogFragment;
+import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.FirebaseApp;
+import com.wuyr.rippleanimation.*;
+import java.io.*;
+import java.text.*;
+import java.util.*;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.regex.*;
+import org.json.*;
 
 public class SplashActivity extends AppCompatActivity {
 	
 	private Timer _timer = new Timer();
 	
 	private LinearLayout main_body;
-	private ImageView icon_manager;
-	private TextView title_manager;
+	private ImageView icon_splash;
+	private TextView title_splash;
 	
 	private TimerTask Timer;
 	private Intent Switch_Activity = new Intent();
@@ -54,16 +55,16 @@ public class SplashActivity extends AppCompatActivity {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.splash);
 		initialize(_savedInstanceState);
-		
-		com.google.android.gms.ads.MobileAds.initialize(this);
+		FirebaseApp.initializeApp(this);
+		MobileAds.initialize(this);
 		
 		initializeLogic();
 	}
 	
 	private void initialize(Bundle _savedInstanceState) {
 		main_body = findViewById(R.id.main_body);
-		icon_manager = findViewById(R.id.icon_manager);
-		title_manager = findViewById(R.id.title_manager);
+		icon_splash = findViewById(R.id.icon_splash);
+		title_splash = findViewById(R.id.title_splash);
 	}
 	
 	private void initializeLogic() {
@@ -72,55 +73,55 @@ public class SplashActivity extends AppCompatActivity {
 			w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 			w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(0xFF171717);
 		}
-		title_manager.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_glitch.ttf"), 1);
+		title_splash.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_glitch.ttf"), 1);
 		if (0 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-			title_manager.setText("xManager");
-			title_manager.setTextSize((int)25);
+			title_splash.setText("xManager");
+			title_splash.setTextSize((int)25);
 		}
 		else {
 			if (1 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-				title_manager.setText("Freedom");
-				title_manager.setTextSize((int)25);
+				title_splash.setText("Freedom");
+				title_splash.setTextSize((int)25);
 			}
 			else {
 				if (2 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-					title_manager.setText("Superior");
-					title_manager.setTextSize((int)25);
+					title_splash.setText("Superior");
+					title_splash.setTextSize((int)25);
 				}
 				else {
 					if (3 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-						title_manager.setText("Uprising");
-						title_manager.setTextSize((int)25);
+						title_splash.setText("Uprising");
+						title_splash.setTextSize((int)25);
 					}
 					else {
 						if (4 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-							title_manager.setText("Never Go Back");
-							title_manager.setTextSize((int)25);
+							title_splash.setText("Never Go Back");
+							title_splash.setTextSize((int)25);
 						}
 						else {
 							if (5 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-								title_manager.setText("Saving Your $10");
-								title_manager.setTextSize((int)25);
+								title_splash.setText("Saving Your $10");
+								title_splash.setTextSize((int)25);
 							}
 							else {
 								if (6 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-									title_manager.setText("It's A Movement");
-									title_manager.setTextSize((int)25);
+									title_splash.setText("It's A Movement");
+									title_splash.setTextSize((int)25);
 								}
 								else {
 									if (7 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-										title_manager.setText("Keep 'Em Coming");
-										title_manager.setTextSize((int)25);
+										title_splash.setText("Keep 'Em Coming");
+										title_splash.setTextSize((int)25);
 									}
 									else {
 										if (8 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-											title_manager.setText("We Are Resistance");
-											title_manager.setTextSize((int)20);
+											title_splash.setText("We Are Resistance");
+											title_splash.setTextSize((int)20);
 										}
 										else {
 											if (9 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-												title_manager.setText("Spotify but on steroids");
-												title_manager.setTextSize((int)20);
+												title_splash.setText("Spotify but on steroids");
+												title_splash.setTextSize((int)20);
 											}
 										}
 									}
@@ -131,6 +132,14 @@ public class SplashActivity extends AppCompatActivity {
 				}
 			}
 		}
+		Animation animation_icon;
+		animation_icon = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+		animation_icon.setDuration(800); icon_splash.startAnimation(animation_icon);
+		animation_icon = null;
+		Animation animation_title;
+		animation_title = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+		animation_title.setDuration(800); title_splash.startAnimation(animation_title);
+		animation_title = null;
 		Timer = new TimerTask() {
 			@Override
 			public void run() {
