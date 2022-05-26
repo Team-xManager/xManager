@@ -10,8 +10,8 @@
 
 ### <p align="center">DOWNLOAD MILESTONE</p>
 <p align="center">
-  <img src="https://img.shields.io/github/downloads/xManager-v2/xManager-Spotify/total?label=ORIGINS%20DOWNLOADS%20(ACTIVE)&style=for-the-badge">
-  <img src="https://img.shields.io/badge/LEGACY%20DOWNLOADS%20(SHUTDOWN)-400K-brightgreen.svg?style=for-the-badge">
+  <img src="https://img.shields.io/github/downloads/xManager-v2/xManager-Spotify/total?label=ORIGINS%20(ACTIVE)&style=for-the-badge">
+  <img src="https://img.shields.io/badge/LEGACY%20(SHUTDOWN)-400K-brightgreen.svg?style=for-the-badge">
 </p>
 
 ### <p align="center">SERVER STATUS</p>
