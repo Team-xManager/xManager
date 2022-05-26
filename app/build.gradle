@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-	compileSdkVersion 31
+	compileSdkVersion 29
 	
 	useLibrary 'org.apache.http.legacy'
 	
 	defaultConfig {
 		applicationId "com.xc3fff0e.xmanager"
-		minSdkVersion 26
+		minSdkVersion 21
 		targetSdkVersion 31
 		versionCode 3
 		versionName "3.6"
