@@ -1116,99 +1116,6 @@
 	<string	name="open_settings_11"	translatable="true">CONFIGURACIÓN ABIERTA</string>
 	<string	name="open_patched_11"	translatable="true">PARCHE ABIERTO</string>
 	
-	<!--SWEDISH LANGUAGE-->
-	<string	name="app_name"	translatable="true">xManager</string>
-	<string	name="spotify_regular"	translatable="true">SPOTIFY (VANLIG)</string>
-	<string	name="spotify_amoled"	translatable="true">SPOTIFY (AMOLED)</string>
-	<string	name="installed"	translatable="true">INSTALLERAD</string>
-	<string	name="latest"	translatable="true">SENASTE</string>
-	<string	name="versions"	translatable="true">VERSIONER  </string>
-	<string	name="changelogs"	translatable="true">ÄNDRINGSLOGGAR</string>
-	<string	name="manager_tools"	translatable="true">MANAGER-VERKTYG</string>
-	<string	name="device_cpu"	translatable="true">CPU/ARCH</string>
-	<string	name="source"	translatable="true">KÄLLA</string>
-	<string	name="support"	translatable="true">TELEGRAM</string>
-	<string	name="donate"	translatable="true">SUPPORT</string>
-	<string	name="discord"	translatable="true">DISCORD</string>
-	<string	name="about"	translatable="true">OM OSS</string>
-	<string	name="main_title"	translatable="true">xManager</string>
-	<string	name="settings_title"	translatable="true">Inställningar</string>
-	<string	name="about_title"	translatable="true">Om oss</string>
-	
-	<string	name="list_auto_refresh"	translatable="true">AUTO-UPPDATERING AV LISTA</string>
-	<string	name="list_auto_refresh_desc"	translatable="true">Om du aktiverar detta uppdateras listan automatiskt varje gång du startar applikationen.\n\nDu kan uppdatera listan manuellt genom att dra huvudsidan nedåt.</string>
-	<string	name="force_auto_install"	translatable="true">TVINGA AUTO-INSTALLERING</string>
-	<string	name="force_auto_install_desc"	translatable="true">Aktivering av detta kommer automatiskt att installera den patchade applikationen och uppdatera när den har laddats ned.</string>
-	<string	name="show_themes"	translatable="true">TEMAN</string>
-	<string	name="apk_location"	translatable="true">APK-PLATS</string>
-	<string	name="apk_location_desc"	translatable="true">Filkatalog där du vill spara den nedladdade filen. Om du inte vet hur man konfigurerar denna funktion, lämna den som den är.\n\nOBS: Denna funktion har inte stöd för extern lagring (SD-kort) p.g.a. tillgänglighet, behörigheter och lagringsbegränsningar.</string>
-	<string	name="clear_directory_folders"	translatable="true">TÖM KATALOGMAPPAR</string>
-	<string	name="clear_directory_folders_desc"	translatable="true">Tryck för att ta bort alla katalogmappar inklusive de nedladdade filerna och uppdateringarna.</string>
-	<string	name="reset_settings"	translatable="true">ÅTERSTÄLL INSTÄLLNINGARNA</string>
-	
-	<string	name="about_sub"	translatable="true">Reklamfritt | Nya funktioner | Frihet</string>
-	<string	name="xmanager_dev"	translatable="true">Utvecklare av xManager</string>
-	<string	name="spotify_mod_devs"	translatable="true">Utvecklare av Spotify Patched</string>
-	<string	name="telegram_support_team"	translatable="true">Telegram | Discord | Reddit Support-teamet</string>
-	<string	name="manager_testers"	translatable="true">Patched- och Manager-testare</string>
-	<string	name="manager_hosting"	translatable="true">Manager-databas och Hostings</string>
-	<string	name="mobilism_team"	translatable="true">Mobilism-teamet</string>
-	<string	name="forum_team"	translatable="true">FORUM.APK-RELEASE.NET-teamet</string>
-	<string	name="xspotify_team"	translatable="true">xSpotify Manager (Gamla Managern)</string>
-	<string	name="contributors"	translatable="true">TACK TILL ALLA BIDRAGSGIVARE! ❤️</string>
-	
-	<string	name="download_selected"	translatable="true">Du har valt denna patchade version. Vill du fortsätta?</string>
-	<string	name="download_ready"	translatable="true">PATCHAD INFORMATION</string>
-	<string	name="download_ready_desc"	translatable="true">Nedladdning av denna patchade apk kommer att skriva över föregående fil i den externa katalogen.</string>
-	<string	name="downloading_file"	translatable="true">LADDAR NER FIL...</string>
-	<string	name="download_success"	translatable="true">NEDLADDNING SLUTFÖRD</string>
-	<string	name="new_update"	translatable="true">NY MANAGER-UPPDATERING</string>
-	
-	<string	name="continue_1"	translatable="true">FORTSÄTT</string>
-	<string	name="cancel"	translatable="true">AVBRYT</string>
-	<string	name="download"	translatable="true">LADDA NER</string>
-	<string	name="later"	translatable="true">SENARE</string>
-	<string	name="install_now"	translatable="true">INSTALLERA NU</string>
-	<string	name="install_update"	translatable="true">INSTALLERA UPPDATERING</string>
-	<string	name="go_back"	translatable="true">GÅ TILLBAKA</string>
-	<string	name="download_update"	translatable="true">LADDA NER UPPDATERING</string>
-	<string	name="not_now"	translatable="true">INTE NU</string>
-	<string	name="copy_url"	translatable="true">KOPIERA URL</string>
-	
-	<string	name="show_support"	translatable="true">VISA DITT STÖD</string>
-	<string	name="show_support_desc"	translatable="true">Vi är ett ideellt, icke-företags- och kompromisslöst team. Människor som du uppmuntrar oss att skapa en app för att göra saker mycket enklare, särskilt från nedladdning till installation.\n\nVi lägger all vår tid och vårt bästa för att göra saker rätt och perfekt. Vi kommer att göra vårt bästa för att stödja den här appen så länge vi kan.\n\nAll hjälp kommer att uppskatas mycket!</string>
-	
-	<string	name="maintenance"	translatable="true">UNDERHÅLL</string>
-	<string	name="maintenance_desc"	translatable="true">xManager är för närvarande inte tillgänglig. Vänligen kontrollera applikationen senare.</string>
-	<string	name="thanks"	translatable="true">TACK!</string>
-	<string	name="language"	translatable="true">SPRÅK</string>
-	<string	name="website"	translatable="true">WEBBPLATS</string>
-	<string	name="reddit"	translatable="true">REDDIT</string>
-	<string	name="faq"	translatable="true">FAQ</string>
-	
-	<string	name="cloned_version"	translatable="true">KLONAD VERSION (BETA)</string>
-	<string	name="cloned_version_desc"	translatable="true">Genom att aktivera detta kan du ladda ner och installera den klonade versionen av den patchade applikationen.\n\nDetta kommer också att lösa de flesta installationsfel eller problem, särskilt om du har en förinstallerad Spotify-applikation.</string>
-	<string	name="disable_rewarded_ads"	translatable="true">INAKTIVERA BELÖNADE ANNONSER</string>
-	<string	name="disable_rewarded_ads_desc"	translatable="true">Vi vet att de flesta av oss inte gillar annonser, men i vårt fall hjälper detta oss avsevärt att finansiera vår databas, hostinglänkar, uppdateringar, fler patchar och daglig drift.\n\nDetta är det enklaste sättet att stödja oss utan att donera eller spendera något.</string>
-	
-	<string	name="installation_failed"	translatable="true">INSTALLATIONEN MISSLYCKADES</string>
-	<string	name="installation_failed_desc"	translatable="true">Anledning: Du försökte installera en modversion som är lägre än den som för närvarande är installerad.\n\nLösningar:\nA. Välj en version lika med eller större än.\nB. Avinstallera den aktuella versionen och nedgradera sedan.\n\nOm problemet kvarstår, kontrollera FAQ.</string>
-	<string	name="installation_failed_ream_desc"	translatable="true">Orsak: Den aktuella Spotify installerad på den här enheten kom inte direkt från xManager eller från vårt team.\n\nLösning: Avinstallera den aktuella versionen av applikationen, starta om xManager och försök igen. Om problemet kvarstår, kontrollera FAQ.</string>
-	<string	name="installation_failed_cloned_desc"	translatable="true">Orsak: Den nuvarande klonade installerade på den här enheten kom inte direkt från xManager eller från vårt team.\n\nLösning: Avinstallera den aktuella versionen av applikationen, starta om xManager och försök igen. Om problemet kvarstår, kontrollera FAQ.</string>
-	<string	name="existing_patched"	translatable="true">EXISTERANDE PATCHAD</string>
-	<string	name="existing_patched_desc"	translatable="true">En befintlig patchad apk hittades i en av katalogerna. Vilken åtgärd skulle du vilja göra?</string>
-	
-	<string	name="close"	translatable="true">STÄNG</string>
-	<string	name="cloned"	translatable="true">KLONAD</string>
-	<string	name="ream"	translatable="true">VA/AM</string>
-	<string	name="install"	translatable="true">INSTALLERA</string>
-	<string	name="uninstall"	translatable="true">AVINSTALLERA</string>
-	<string	name="ignore"	translatable="true">IGNORERA</string>
-	<string	name="delete"	translatable="true">TA BORT</string>
-	<string	name="uninstall_patched"	translatable="true">AVINSTALLERA PATCHAD</string>
-	<string	name="open_settings"	translatable="true">ÖPPNA INSTÄLLNINGAR</string>
-	<string	name="open_patched"	translatable="true">ÖPPNA PATCHAD</string>
-	
 	<!--UKRAINIAN LANGUAGE-->
 	<string	name="app_name_12"	translatable="true">xManager</string>
 	<string	name="spotify_regular_12"	translatable="true">SPOTIFY (ЗВИЧАЙНИЙ)</string>
@@ -2328,4 +2235,97 @@
 	<string	name="uninstall_patched_23"	translatable="true">ODINŠTALOVAŤ ZAPLÁTANÉ</string>
 	<string	name="open_settings_23"	translatable="true">OTVORIŤ NASTAVENIA</string>
 	<string	name="open_patched_23"	translatable="true">OTVORIŤ ZAPLÁTANÉ</string>
+
+	<!--SWEDISH LANGUAGE-->
+	<string	name="app_name_24"	translatable="true">xManager</string>
+	<string	name="spotify_regular_24"	translatable="true">SPOTIFY (VANLIG)</string>
+	<string	name="spotify_amoled_24"	translatable="true">SPOTIFY (AMOLED)</string>
+	<string	name="installed_24"	translatable="true">INSTALLERAD</string>
+	<string	name="latest_24"	translatable="true">SENASTE</string>
+	<string	name="versions_24"	translatable="true">VERSIONER  </string>
+	<string	name="changelogs_24"	translatable="true">ÄNDRINGSLOGGAR</string>
+	<string	name="manager_tools_24"	translatable="true">MANAGER-VERKTYG</string>
+	<string	name="device_cpu_24"	translatable="true">CPU/ARCH</string>
+	<string	name="source_24"	translatable="true">KÄLLA</string>
+	<string	name="support_24"	translatable="true">TELEGRAM</string>
+	<string	name="donate_24"	translatable="true">SUPPORT</string>
+	<string	name="discord_24"	translatable="true">DISCORD</string>
+	<string	name="about_24"	translatable="true">OM OSS</string>
+	<string	name="main_title_24"	translatable="true">xManager</string>
+	<string	name="settings_title_24"	translatable="true">Inställningar</string>
+	<string	name="about_title_24"	translatable="true">Om oss</string>
+	
+	<string	name="list_auto_refresh_24"	translatable="true">AUTO-UPPDATERING AV LISTA</string>
+	<string	name="list_auto_refresh_desc_24"	translatable="true">Om du aktiverar detta uppdateras listan automatiskt varje gång du startar applikationen.\n\nDu kan uppdatera listan manuellt genom att dra huvudsidan nedåt.</string>
+	<string	name="force_auto_install_24"	translatable="true">TVINGA AUTO-INSTALLERING</string>
+	<string	name="force_auto_install_desc_24"	translatable="true">Aktivering av detta kommer automatiskt att installera den patchade applikationen och uppdatera när den har laddats ned.</string>
+	<string	name="show_themes_24"	translatable="true">TEMAN</string>
+	<string	name="apk_location_24"	translatable="true">APK-PLATS</string>
+	<string	name="apk_location_desc_24"	translatable="true">Filkatalog där du vill spara den nedladdade filen. Om du inte vet hur man konfigurerar denna funktion, lämna den som den är.\n\nOBS: Denna funktion har inte stöd för extern lagring (SD-kort) p.g.a. tillgänglighet, behörigheter och lagringsbegränsningar.</string>
+	<string	name="clear_directory_folders_24"	translatable="true">TÖM KATALOGMAPPAR</string>
+	<string	name="clear_directory_folders_desc_24"	translatable="true">Tryck för att ta bort alla katalogmappar inklusive de nedladdade filerna och uppdateringarna.</string>
+	<string	name="reset_settings_24"	translatable="true">ÅTERSTÄLL INSTÄLLNINGARNA</string>
+	
+	<string	name="about_sub_24"	translatable="true">Reklamfritt | Nya funktioner | Frihet</string>
+	<string	name="xmanager_dev_24"	translatable="true">Utvecklare av xManager</string>
+	<string	name="spotify_mod_devs_24"	translatable="true">Utvecklare av Spotify Patched</string>
+	<string	name="telegram_support_team_24"	translatable="true">Telegram | Discord | Reddit Support-teamet</string>
+	<string	name="manager_testers_24"	translatable="true">Patched- och Manager-testare</string>
+	<string	name="manager_hosting_24"	translatable="true">Manager-databas och Hostings</string>
+	<string	name="mobilism_team_24"	translatable="true">Mobilism-teamet</string>
+	<string	name="forum_team_24"	translatable="true">FORUM.APK-RELEASE.NET-teamet</string>
+	<string	name="xspotify_team_24"	translatable="true">xSpotify Manager (Gamla Managern)</string>
+	<string	name="contributors_24"	translatable="true">TACK TILL ALLA BIDRAGSGIVARE! ❤️</string>
+	
+	<string	name="download_selected_24"	translatable="true">Du har valt denna patchade version. Vill du fortsätta?</string>
+	<string	name="download_ready_24"	translatable="true">PATCHAD INFORMATION</string>
+	<string	name="download_ready_desc_24"	translatable="true">Nedladdning av denna patchade apk kommer att skriva över föregående fil i den externa katalogen.</string>
+	<string	name="downloading_file_24"	translatable="true">LADDAR NER FIL...</string>
+	<string	name="download_success_24"	translatable="true">NEDLADDNING SLUTFÖRD</string>
+	<string	name="new_update_24"	translatable="true">NY MANAGER-UPPDATERING</string>
+	
+	<string	name="continue_1_24"	translatable="true">FORTSÄTT</string>
+	<string	name="cancel_24"	translatable="true">AVBRYT</string>
+	<string	name="download_24"	translatable="true">LADDA NER</string>
+	<string	name="later_24"	translatable="true">SENARE</string>
+	<string	name="install_now_24"	translatable="true">INSTALLERA NU</string>
+	<string	name="install_update_24"	translatable="true">INSTALLERA UPPDATERING</string>
+	<string	name="go_back_24"	translatable="true">GÅ TILLBAKA</string>
+	<string	name="download_update_24"	translatable="true">LADDA NER UPPDATERING</string>
+	<string	name="not_now_24"	translatable="true">INTE NU</string>
+	<string	name="copy_url_24"	translatable="true">KOPIERA URL</string>
+	
+	<string	name="show_support_24"	translatable="true">VISA DITT STÖD</string>
+	<string	name="show_support_desc_24"	translatable="true">Vi är ett ideellt, icke-företags- och kompromisslöst team. Människor som du uppmuntrar oss att skapa en app för att göra saker mycket enklare, särskilt från nedladdning till installation.\n\nVi lägger all vår tid och vårt bästa för att göra saker rätt och perfekt. Vi kommer att göra vårt bästa för att stödja den här appen så länge vi kan.\n\nAll hjälp kommer att uppskatas mycket!</string>
+	
+	<string	name="maintenance_24"	translatable="true">UNDERHÅLL</string>
+	<string	name="maintenance_desc_24"	translatable="true">xManager är för närvarande inte tillgänglig. Vänligen kontrollera applikationen senare.</string>
+	<string	name="thanks_24"	translatable="true">TACK!</string>
+	<string	name="language_24"	translatable="true">SPRÅK</string>
+	<string	name="website_24"	translatable="true">WEBBPLATS</string>
+	<string	name="reddit_24"	translatable="true">REDDIT</string>
+	<string	name="faq_24"	translatable="true">FAQ</string>
+	
+	<string	name="cloned_version_24"	translatable="true">KLONAD VERSION (BETA)</string>
+	<string	name="cloned_version_desc_24"	translatable="true">Genom att aktivera detta kan du ladda ner och installera den klonade versionen av den patchade applikationen.\n\nDetta kommer också att lösa de flesta installationsfel eller problem, särskilt om du har en förinstallerad Spotify-applikation.</string>
+	<string	name="disable_rewarded_ads_24"	translatable="true">INAKTIVERA BELÖNADE ANNONSER</string>
+	<string	name="disable_rewarded_ads_desc_24"	translatable="true">Vi vet att de flesta av oss inte gillar annonser, men i vårt fall hjälper detta oss avsevärt att finansiera vår databas, hostinglänkar, uppdateringar, fler patchar och daglig drift.\n\nDetta är det enklaste sättet att stödja oss utan att donera eller spendera något.</string>
+	
+	<string	name="installation_failed_24"	translatable="true">INSTALLATIONEN MISSLYCKADES</string>
+	<string	name="installation_failed_desc_24"	translatable="true">Anledning: Du försökte installera en modversion som är lägre än den som för närvarande är installerad.\n\nLösningar:\nA. Välj en version lika med eller större än.\nB. Avinstallera den aktuella versionen och nedgradera sedan.\n\nOm problemet kvarstår, kontrollera FAQ.</string>
+	<string	name="installation_failed_ream_desc_24"	translatable="true">Orsak: Den aktuella Spotify installerad på den här enheten kom inte direkt från xManager eller från vårt team.\n\nLösning: Avinstallera den aktuella versionen av applikationen, starta om xManager och försök igen. Om problemet kvarstår, kontrollera FAQ.</string>
+	<string	name="installation_failed_cloned_desc_24"	translatable="true">Orsak: Den nuvarande klonade installerade på den här enheten kom inte direkt från xManager eller från vårt team.\n\nLösning: Avinstallera den aktuella versionen av applikationen, starta om xManager och försök igen. Om problemet kvarstår, kontrollera FAQ.</string>
+	<string	name="existing_patched_24"	translatable="true">EXISTERANDE PATCHAD</string>
+	<string	name="existing_patched_desc_24"	translatable="true">En befintlig patchad apk hittades i en av katalogerna. Vilken åtgärd skulle du vilja göra?</string>
+	
+	<string	name="close_24"	translatable="true">STÄNG</string>
+	<string	name="cloned_24"	translatable="true">KLONAD</string>
+	<string	name="ream_24"	translatable="true">VA/AM</string>
+	<string	name="install_24"	translatable="true">INSTALLERA</string>
+	<string	name="uninstall_24"	translatable="true">AVINSTALLERA</string>
+	<string	name="ignore_24"	translatable="true">IGNORERA</string>
+	<string	name="delete_24"	translatable="true">TA BORT</string>
+	<string	name="uninstall_patched_24"	translatable="true">AVINSTALLERA PATCHAD</string>
+	<string	name="open_settings_24"	translatable="true">ÖPPNA INSTÄLLNINGAR</string>
+	<string	name="open_patched_24"	translatable="true">ÖPPNA PATCHAD</string>
 </resources>
