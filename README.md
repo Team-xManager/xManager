@@ -3,7 +3,6 @@
   <img width="1000" src="https://i.ibb.co/xGWnmZz/x-Manager-Banner-Animated.gif">
   <img width="1000" src="https://user-images.githubusercontent.com/78732474/157926338-709d56c3-0f6b-4c00-a6b2-e391773d67c2.png">
   <img src="https://img.shields.io/badge/Sketchware%20Build-Passing-brightgreen.svg?style=for-the-badge">
-  <img src="https://img.shields.io/github/languages/code-size/xManager-v2/xManager-Spotify?style=for-the-badge">
   <img src="https://img.shields.io/github/v/tag/xManager-v2/xManager-Spotify?label=LATEST%20VERSION&style=for-the-badge">
   <img src="https://img.shields.io/github/release-date/xManager-v2/xManager-Spotify?label=UPDATED%20SINCE&style=for-the-badge">
 </p>
