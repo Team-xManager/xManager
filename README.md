@@ -158,6 +158,9 @@ Dyras
 **Slovak Translation**  
 KaldonM  
 
+**Swedish Translation**  
+rexobo  
+
 # Contributors  
 
 Sherlock Holmes  
