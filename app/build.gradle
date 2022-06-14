@@ -12,7 +12,7 @@ android {
 		minSdkVersion 21
 		targetSdkVersion 31
 		versionCode 3
-		versionName "3.6"
+		versionName "3.7"
 	}
 	
 	buildTypes {
