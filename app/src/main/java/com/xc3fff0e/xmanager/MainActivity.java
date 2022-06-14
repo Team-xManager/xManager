@@ -53,12 +53,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
-import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.wuyr.rippleanimation.*;
@@ -357,6 +351,8 @@ public class MainActivity extends AppCompatActivity {
 	private TextView translator_23;
 	private TextView manager_lang_24;
 	private TextView translator_24;
+	private TextView manager_lang_25;
+	private TextView translator_25;
 	private ScrollView main_scroll_body;
 	private LinearLayout main_body;
 	private LinearLayout main_box_1;
@@ -471,14 +467,12 @@ public class MainActivity extends AppCompatActivity {
 	private Intent External_Storage_Manager = new Intent();
 	private SharedPreferences AD_UNIT;
 	
-	private OnCompleteListener Notifications_onCompleteListener;
-	
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.main);
 		initialize(_savedInstanceState);
-		FirebaseApp.initializeApp(this);
+		
 		MobileAds.initialize(this);
 		
 		initializeLogic();
@@ -688,6 +682,8 @@ public class MainActivity extends AppCompatActivity {
 		translator_23 = findViewById(R.id.translator_23);
 		manager_lang_24 = findViewById(R.id.manager_lang_24);
 		translator_24 = findViewById(R.id.translator_24);
+		manager_lang_25 = findViewById(R.id.manager_lang_25);
+		translator_25 = findViewById(R.id.translator_25);
 		main_scroll_body = findViewById(R.id.main_scroll_body);
 		main_body = findViewById(R.id.main_body);
 		main_box_1 = findViewById(R.id.main_box_1);
@@ -943,13 +939,13 @@ public class MainActivity extends AppCompatActivity {
 		main_box_10.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/") && (FileUtil.isExistFile("/storage/emulated/0/xManager/") && FileUtil.isExistFile(apk_path_location.getText().toString()))) {
+				if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/") && (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk")) || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk")))) {
+					FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
+					FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
 					FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/");
-					FileUtil.deleteFile("/storage/emulated/0/xManager/");
-					FileUtil.deleteFile(apk_path_location.getText().toString());
 				}
 				else {
-					if (!(FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/") && (FileUtil.isExistFile("/storage/emulated/0/xManager/") && FileUtil.isExistFile(apk_path_location.getText().toString())))) {
+					if (!(FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/") && (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk")) || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"))))) {
 						
 					}
 				}
@@ -3822,6 +3818,115 @@ public class MainActivity extends AppCompatActivity {
 					
 					COUNTER = 1;
 				}
+				if (_position == 24) {
+					LANGUAGE.edit().putString("LANGUAGE", "24").commit();
+					    title_1.setText(R.string.spotify_regular_24);
+						title_2.setText(R.string.spotify_amoled_24);
+						sub_text_installed.setText(R.string.installed_24);
+						sub_text_1.setText(R.string.latest_24);
+						sub_text_3.setText(R.string.latest_24);
+						version_switch_1.setText(R.string.versions_24);
+						version_switch_2.setText(R.string.versions_24);
+						changelogs.setText(R.string.changelogs_24);
+						title_sub.setText(R.string.manager_tools_24);
+						device_cpu.setText(R.string.device_cpu_24);
+						source.setText(R.string.source_24);
+						support.setText(R.string.support_24);
+						donate.setText(R.string.donate_24);
+						about.setText(R.string.about_24);
+						list_auto_refresh.setText(R.string.list_auto_refresh_24);
+						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_24);
+						force_auto_install.setText(R.string.force_auto_install_24);
+						force_auto_install_info.setText(R.string.force_auto_install_desc_24);
+						theme.setText(R.string.show_themes_24);
+						apk_location.setText(R.string.apk_location_24);
+						apk_location_info.setText(R.string.apk_location_desc_24);
+						clear_directory_folders.setText(R.string.clear_directory_folders_24);
+						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_24);
+						reset_settings.setText(R.string.reset_settings_24);
+						sub_title.setText(R.string.about_sub_24);
+						developer_manager.setText(R.string.xmanager_dev_24);
+						developer_spotify.setText(R.string.spotify_mod_devs_24);
+						support_team.setText(R.string.telegram_support_team_24);
+						mod_testers_1.setText(R.string.manager_testers_24);
+						mod_testers_2.setText(R.string.manager_hosting_24);
+						mobilism_team.setText(R.string.mobilism_team_24);
+						forum_team.setText(R.string.forum_team_24);
+						manager_team.setText(R.string.xspotify_team_24);
+						contributors_1.setText(R.string.contributors_24);
+						download_selected.setText(R.string.download_selected_24);
+						download_ready.setText(R.string.download_ready_24);
+						download_ready_desc.setText(R.string.download_ready_desc_24);
+						downloading_file.setText(R.string.downloading_file_24);
+						download_success.setText(R.string.download_success_24);
+						new_update.setText(R.string.new_update_24);
+						download_selected_0 = download_selected.getText().toString();
+						download_ready_0 = download_ready.getText().toString();
+						download_ready_desc_0 = download_ready_desc.getText().toString();
+						downloading_file_0 = downloading_file.getText().toString();
+						download_success_0 = download_success.getText().toString();
+						copy_url.setText(R.string.copy_url_24);
+						continue_1.setText(R.string.continue_1_24);
+						cancel.setText(R.string.cancel_24);
+						download.setText(R.string.download_24);
+						later.setText(R.string.later_24);
+						install_now.setText(R.string.install_now_24);
+						install_update.setText(R.string.install_update_24);
+						go_back.setText(R.string.go_back_24);
+						download_update.setText(R.string.download_update_24);
+						not_now.setText(R.string.not_now_24);
+						show_support.setText(R.string.show_support_24);
+						show_support_desc.setText(R.string.show_support_desc_24);
+						copy_url_0 = copy_url.getText().toString();
+						download_0 = download.getText().toString();
+						continue_0 = continue_1.getText().toString();
+						cancel_0 = cancel.getText().toString();
+						later_0 = later.getText().toString();
+						install_now_0 = install_now.getText().toString();
+						go_back_0 = go_back.getText().toString();
+						install_update_0 = install_update.getText().toString();
+						main_title.setText(R.string.main_title_24);
+						settings_title.setText(R.string.settings_title_24);
+						about_title.setText(R.string.about_title_24);
+						maintenance.setText(R.string.maintenance_24);
+						maintenance_desc.setText(R.string.maintenance_desc_24);
+						thanks.setText(R.string.thanks_24);
+						language.setText(R.string.language_24);
+						website.setText(R.string.website_24);
+						discord.setText(R.string.discord_24);
+						reddit.setText(R.string.reddit_24);
+						faq.setText(R.string.faq_24);
+						cloned_version.setText(R.string.cloned_version_24);
+						cloned_version_info.setText(R.string.cloned_version_desc_24);
+					    disable_reward_ad.setText(R.string.disable_rewarded_ads_24);
+					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_24);
+					    installation_failed.setText(R.string.installation_failed_24);
+					    installation_failed_desc.setText(R.string.installation_failed_desc_24);
+					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_24);
+					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_24);
+					    existing_patched.setText(R.string.existing_patched_24);
+					    existing_patched_desc.setText(R.string.existing_patched_desc_24);
+					    close.setText(R.string.close_24);
+					    cloned.setText(R.string.cloned_24);
+					    ream.setText(R.string.ream_24);
+					    install.setText(R.string.install_24);
+					    uninstall.setText(R.string.uninstall_24);
+					    ignore.setText(R.string.ignore_24);
+					    delete.setText(R.string.delete_24);
+					    uninstall_patched.setText(R.string.uninstall_patched_24);
+					    open_settings.setText(R.string.open_settings_24);
+					    open_patched.setText(R.string.open_patched_24);
+						installation_failed_0 = installation_failed.getText().toString();
+					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					    existing_patched_0 = existing_patched.getText().toString();
+					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					    close_0 = close.getText().toString();
+					    uninstall_0 = uninstall.getText().toString();
+					
+					COUNTER = 1;
+				}
 			}
 			
 			@Override
@@ -3859,7 +3964,7 @@ public class MainActivity extends AppCompatActivity {
 				list_auto_refresh_switch.setChecked(false);
 				force_auto_install_switch.setChecked(false);
 				disable_reward_ad_switch.setChecked(false);
-				apk_path_location.setText("/storage/emulated/0/xManager/");
+				apk_path_location.setText("/storage/emulated/0/Download/");
 				main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
 				main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
 				main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
@@ -4143,11 +4248,11 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface File_Exist, int p) {
 								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk"))) {
+								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"))) {
 									_Extension_4();
 								}
 								else {
-									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk"))) {
+									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"))) {
 										_Extension_5();
 									}
 								}
@@ -4164,8 +4269,6 @@ public class MainActivity extends AppCompatActivity {
 								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
 								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
 								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
-								FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk");
-								FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk");
 								                }
 							            });
 						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
@@ -4216,10 +4319,12 @@ public class MainActivity extends AppCompatActivity {
 												AlertDialog.setCancelable(true);
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 													_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 												}
 												else {
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 														_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 													}
 												}
 												_File_Remover();
@@ -4233,10 +4338,12 @@ public class MainActivity extends AppCompatActivity {
 															       AlertDialog.setCancelable(true);
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 															}
 															else {
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 																	_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 																}
 															}
 															_File_Remover();
@@ -4248,10 +4355,12 @@ public class MainActivity extends AppCompatActivity {
 													AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 														_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 															_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 														}
 													}
 													_File_Remover();
@@ -4308,8 +4417,6 @@ public class MainActivity extends AppCompatActivity {
 								AlertDialog.setCancelable(false);
 								AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
 								AlertDialog.show();
-								FileUtil.makeDir("/storage/emulated/0/xManager");
-								FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 								DELETE = 1;
 								                }
 							            });
@@ -4362,10 +4469,12 @@ public class MainActivity extends AppCompatActivity {
 										AlertDialog.setCancelable(true);
 										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 											_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 										}
 										else {
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 												_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 											}
 										}
 										_File_Remover();
@@ -4379,10 +4488,12 @@ public class MainActivity extends AppCompatActivity {
 													       AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 														_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 															_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 														}
 													}
 													_File_Remover();
@@ -4394,10 +4505,12 @@ public class MainActivity extends AppCompatActivity {
 											AlertDialog.setCancelable(true);
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 												_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 											}
 											else {
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 													_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 												}
 											}
 											_File_Remover();
@@ -4454,8 +4567,6 @@ public class MainActivity extends AppCompatActivity {
 						AlertDialog.setCancelable(false);
 						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
 						AlertDialog.show();
-						FileUtil.makeDir("/storage/emulated/0/xManager");
-						FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 						DELETE = 1;
 					}
 					hidden_download.setText(regular.get((int)(regular.size() - 1) - _position).get("Link").toString());
@@ -4486,11 +4597,11 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface File_Exist, int p) {
 								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk"))) {
+								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"))) {
 									_Extension_4();
 								}
 								else {
-									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk"))) {
+									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"))) {
 										_Extension_5();
 									}
 								}
@@ -4507,8 +4618,6 @@ public class MainActivity extends AppCompatActivity {
 								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
 								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
 								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
-								FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk");
-								FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk");
 								                }
 							            });
 						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
@@ -4559,10 +4668,12 @@ public class MainActivity extends AppCompatActivity {
 												AlertDialog.setCancelable(true);
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 													_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 												}
 												else {
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 														_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 													}
 												}
 												_File_Remover();
@@ -4576,10 +4687,12 @@ public class MainActivity extends AppCompatActivity {
 															       AlertDialog.setCancelable(true);
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 															}
 															else {
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 																	_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 																}
 															}
 															_File_Remover();
@@ -4591,10 +4704,12 @@ public class MainActivity extends AppCompatActivity {
 													AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 														_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 															_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 														}
 													}
 													_File_Remover();
@@ -4651,8 +4766,6 @@ public class MainActivity extends AppCompatActivity {
 								AlertDialog.setCancelable(false);
 								AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
 								AlertDialog.show();
-								FileUtil.makeDir("/storage/emulated/0/xManager");
-								FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 								DELETE = 1;
 								                }
 							            });
@@ -4705,10 +4818,12 @@ public class MainActivity extends AppCompatActivity {
 										AlertDialog.setCancelable(true);
 										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 											_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 										}
 										else {
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 												_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 											}
 										}
 										_File_Remover();
@@ -4722,10 +4837,12 @@ public class MainActivity extends AppCompatActivity {
 													       AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 														_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 															_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 														}
 													}
 													_File_Remover();
@@ -4737,10 +4854,12 @@ public class MainActivity extends AppCompatActivity {
 											AlertDialog.setCancelable(true);
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 												_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 											}
 											else {
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 													_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 												}
 											}
 											_File_Remover();
@@ -4797,8 +4916,6 @@ public class MainActivity extends AppCompatActivity {
 						AlertDialog.setCancelable(false);
 						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
 						AlertDialog.show();
-						FileUtil.makeDir("/storage/emulated/0/xManager");
-						FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 						DELETE = 1;
 					}
 					hidden_download.setText(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString());
@@ -4829,11 +4946,11 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface File_Exist, int p) {
 								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk"))) {
+								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"))) {
 									_Extension_4();
 								}
 								else {
-									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk"))) {
+									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"))) {
 										_Extension_5();
 									}
 								}
@@ -4850,8 +4967,6 @@ public class MainActivity extends AppCompatActivity {
 								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
 								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
 								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
-								FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk");
-								FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk");
 								                }
 							            });
 						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
@@ -4902,10 +5017,12 @@ public class MainActivity extends AppCompatActivity {
 												AlertDialog.setCancelable(true);
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 													_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 												}
 												else {
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 														_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 													}
 												}
 												_File_Remover();
@@ -4919,10 +5036,12 @@ public class MainActivity extends AppCompatActivity {
 															       AlertDialog.setCancelable(true);
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 															}
 															else {
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 																	_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 																}
 															}
 															_File_Remover();
@@ -4934,10 +5053,12 @@ public class MainActivity extends AppCompatActivity {
 													AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 														_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 															_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 														}
 													}
 													_File_Remover();
@@ -4994,8 +5115,6 @@ public class MainActivity extends AppCompatActivity {
 								AlertDialog.setCancelable(false);
 								AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
 								AlertDialog.show();
-								FileUtil.makeDir("/storage/emulated/0/xManager");
-								FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 								DELETE = 1;
 								                }
 							            });
@@ -5048,10 +5167,12 @@ public class MainActivity extends AppCompatActivity {
 										AlertDialog.setCancelable(true);
 										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 											_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 										}
 										else {
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 												_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 											}
 										}
 										_File_Remover();
@@ -5065,10 +5186,12 @@ public class MainActivity extends AppCompatActivity {
 													       AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 														_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 															_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 														}
 													}
 													_File_Remover();
@@ -5080,10 +5203,12 @@ public class MainActivity extends AppCompatActivity {
 											AlertDialog.setCancelable(true);
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 												_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 											}
 											else {
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 													_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 												}
 											}
 											_File_Remover();
@@ -5140,8 +5265,6 @@ public class MainActivity extends AppCompatActivity {
 						AlertDialog.setCancelable(false);
 						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
 						AlertDialog.show();
-						FileUtil.makeDir("/storage/emulated/0/xManager");
-						FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 						DELETE = 1;
 					}
 					hidden_download.setText(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString());
@@ -5172,11 +5295,11 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface File_Exist, int p) {
 								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk"))) {
+								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"))) {
 									_Extension_4();
 								}
 								else {
-									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk")) || FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk"))) {
+									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"))) {
 										_Extension_5();
 									}
 								}
@@ -5193,8 +5316,6 @@ public class MainActivity extends AppCompatActivity {
 								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
 								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
 								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
-								FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk");
-								FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk");
 								                }
 							            });
 						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
@@ -5245,10 +5366,12 @@ public class MainActivity extends AppCompatActivity {
 												AlertDialog.setCancelable(true);
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 													_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 												}
 												else {
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 														_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 													}
 												}
 												_File_Remover();
@@ -5262,10 +5385,12 @@ public class MainActivity extends AppCompatActivity {
 															       AlertDialog.setCancelable(true);
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 															}
 															else {
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 																	_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 																}
 															}
 															_File_Remover();
@@ -5277,10 +5402,12 @@ public class MainActivity extends AppCompatActivity {
 													AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 														_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 															_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 														}
 													}
 													_File_Remover();
@@ -5391,10 +5518,12 @@ public class MainActivity extends AppCompatActivity {
 										AlertDialog.setCancelable(true);
 										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 											_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 										}
 										else {
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 												_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 											}
 										}
 										_File_Remover();
@@ -5408,10 +5537,12 @@ public class MainActivity extends AppCompatActivity {
 													       AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 														_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 															_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 														}
 													}
 													_File_Remover();
@@ -5423,10 +5554,12 @@ public class MainActivity extends AppCompatActivity {
 											AlertDialog.setCancelable(true);
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 												_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 											}
 											else {
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 													_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
 												}
 											}
 											_File_Remover();
@@ -5881,22 +6014,6 @@ public class MainActivity extends AppCompatActivity {
 				
 			}
 		};
-		
-		Notifications_onCompleteListener = new OnCompleteListener<InstanceIdResult>() {
-			@Override
-			public void onComplete(Task<InstanceIdResult> task) {
-				final boolean _success = task.isSuccessful();
-				final String _token = task.getResult().getToken();
-				final String _errorMessage = task.getException() != null ? task.getException().getMessage() : "";
-				try {
-						if (!_success) {
-								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Notification Error", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-						}
-				} catch(Exception e) {
-				}
-				
-			}
-		};
 	}
 	
 	private void initializeLogic() {
@@ -6103,6 +6220,11 @@ public class MainActivity extends AppCompatActivity {
 																				_File_Remover();
 																		}
 																});
+																try {
+																		prog.cancel();
+																		break;
+																} catch (Exception e) {
+																}
 														}				
 														final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
 														final int dl_max = (int) (100);
@@ -6481,6 +6603,11 @@ public class MainActivity extends AppCompatActivity {
 																				_File_Remover();
 																		}
 																});
+																try {
+																		prog.cancel();
+																		break;
+																} catch (Exception e) {
+																}
 														}				
 														final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
 														final int dl_max = (int) (100);
@@ -6537,11 +6664,6 @@ public class MainActivity extends AppCompatActivity {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {	
-																								try {
-																										FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/xManager Update.apk", "/storage/emulated/0/xManager/Update/xManager Update.apk");
-																								}
-																								catch(Exception e) {
-																								}
 																								if (!MainActivity.this.isFinishing()) {
 																										_Extension_3();
 																										prog.dismiss();
@@ -7083,7 +7205,7 @@ public class MainActivity extends AppCompatActivity {
 	
 	public void _Default_Path() {
 		if (PATH.equals("")) {
-			apk_path_location.setText("/storage/emulated/0/xManager/");
+			apk_path_location.setText("/storage/emulated/0/Download/");
 		}
 		else {
 			APK_PATH.edit().putString("PATH", apk_path_location.getText().toString()).commit();
@@ -7128,6 +7250,11 @@ public class MainActivity extends AppCompatActivity {
 																				_File_Remover();
 																		}
 																});
+																try {
+																		prog.cancel();
+																		break;
+																} catch (Exception e) {
+																}
 														}				
 														final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
 														final int dl_max = (int) (100);
@@ -7351,6 +7478,11 @@ public class MainActivity extends AppCompatActivity {
 																				_File_Remover();
 																		}
 																});
+																try {
+																		prog.cancel();
+																		break;
+																} catch (Exception e) {
+																}
 														}				
 														final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
 														final int dl_max = (int) (100);
@@ -7406,7 +7538,6 @@ public class MainActivity extends AppCompatActivity {
 																										@Override
 																										public void run() {
 																												try {
-																														FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/xManager Update.apk", "/storage/emulated/0/xManager/Update/xManager Update.apk");
 																														prog.dismiss();
 																												}
 																												catch(Exception e) {
@@ -10092,6 +10223,116 @@ public class MainActivity extends AppCompatActivity {
 																										
 																										select_language.setSelection((int)(23));
 																									}
+																									else {
+																										if (LANGUAGE.getString("LANGUAGE", "").equals("24")) {
+																											    title_1.setText(R.string.spotify_regular_24);
+																												title_2.setText(R.string.spotify_amoled_24);
+																												sub_text_installed.setText(R.string.installed_24);
+																												sub_text_1.setText(R.string.latest_24);
+																												sub_text_3.setText(R.string.latest_24);
+																												version_switch_1.setText(R.string.versions_24);
+																												version_switch_2.setText(R.string.versions_24);
+																												changelogs.setText(R.string.changelogs_24);
+																												title_sub.setText(R.string.manager_tools_24);
+																												device_cpu.setText(R.string.device_cpu_24);
+																												source.setText(R.string.source_24);
+																												support.setText(R.string.support_24);
+																												donate.setText(R.string.donate_24);
+																												about.setText(R.string.about_24);
+																												list_auto_refresh.setText(R.string.list_auto_refresh_24);
+																												list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_24);
+																												force_auto_install.setText(R.string.force_auto_install_24);
+																												force_auto_install_info.setText(R.string.force_auto_install_desc_24);
+																												theme.setText(R.string.show_themes_24);
+																												apk_location.setText(R.string.apk_location_24);
+																												apk_location_info.setText(R.string.apk_location_desc_24);
+																												clear_directory_folders.setText(R.string.clear_directory_folders_24);
+																												clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_24);
+																												reset_settings.setText(R.string.reset_settings_24);
+																												sub_title.setText(R.string.about_sub_24);
+																												developer_manager.setText(R.string.xmanager_dev_24);
+																												developer_spotify.setText(R.string.spotify_mod_devs_24);
+																												support_team.setText(R.string.telegram_support_team_24);
+																												mod_testers_1.setText(R.string.manager_testers_24);
+																												mod_testers_2.setText(R.string.manager_hosting_24);
+																												mobilism_team.setText(R.string.mobilism_team_24);
+																												forum_team.setText(R.string.forum_team_24);
+																												manager_team.setText(R.string.xspotify_team_24);
+																												contributors_1.setText(R.string.contributors_24);
+																												download_selected.setText(R.string.download_selected_24);
+																												download_ready.setText(R.string.download_ready_24);
+																												download_ready_desc.setText(R.string.download_ready_desc_24);
+																												downloading_file.setText(R.string.downloading_file_24);
+																												download_success.setText(R.string.download_success_24);
+																												new_update.setText(R.string.new_update_24);
+																												download_selected_0 = download_selected.getText().toString();
+																												download_ready_0 = download_ready.getText().toString();
+																												download_ready_desc_0 = download_ready_desc.getText().toString();
+																												downloading_file_0 = downloading_file.getText().toString();
+																												download_success_0 = download_success.getText().toString();
+																												copy_url.setText(R.string.copy_url_24);
+																												continue_1.setText(R.string.continue_1_24);
+																												cancel.setText(R.string.cancel_24);
+																												download.setText(R.string.download_24);
+																												later.setText(R.string.later_24);
+																												install_now.setText(R.string.install_now_24);
+																												install_update.setText(R.string.install_update_24);
+																												go_back.setText(R.string.go_back_24);
+																												download_update.setText(R.string.download_update_24);
+																												not_now.setText(R.string.not_now_24);
+																												show_support.setText(R.string.show_support_24);
+																												show_support_desc.setText(R.string.show_support_desc_24);
+																												copy_url_0 = copy_url.getText().toString();
+																												download_0 = download.getText().toString();
+																												continue_0 = continue_1.getText().toString();
+																												cancel_0 = cancel.getText().toString();
+																												later_0 = later.getText().toString();
+																												install_now_0 = install_now.getText().toString();
+																												go_back_0 = go_back.getText().toString();
+																												install_update_0 = install_update.getText().toString();
+																												main_title.setText(R.string.main_title_24);
+																												settings_title.setText(R.string.settings_title_24);
+																												about_title.setText(R.string.about_title_24);
+																												maintenance.setText(R.string.maintenance_24);
+																												maintenance_desc.setText(R.string.maintenance_desc_24);
+																												thanks.setText(R.string.thanks_24);
+																												language.setText(R.string.language_24);
+																												website.setText(R.string.website_24);
+																												discord.setText(R.string.discord_24);
+																												reddit.setText(R.string.reddit_24);
+																												faq.setText(R.string.faq_24);
+																												cloned_version.setText(R.string.cloned_version_24);
+																												cloned_version_info.setText(R.string.cloned_version_desc_24);
+																											    disable_reward_ad.setText(R.string.disable_rewarded_ads_24);
+																											    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_24);
+																											    installation_failed.setText(R.string.installation_failed_24);
+																											    installation_failed_desc.setText(R.string.installation_failed_desc_24);
+																											    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_24);
+																											    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_24);
+																											    existing_patched.setText(R.string.existing_patched_24);
+																											    existing_patched_desc.setText(R.string.existing_patched_desc_24);
+																											    close.setText(R.string.close_24);
+																											    cloned.setText(R.string.cloned_24);
+																											    ream.setText(R.string.ream_24);
+																											    install.setText(R.string.install_24);
+																											    uninstall.setText(R.string.uninstall_24);
+																											    ignore.setText(R.string.ignore_24);
+																											    delete.setText(R.string.delete_24);
+																											    uninstall_patched.setText(R.string.uninstall_patched_24);
+																											    open_settings.setText(R.string.open_settings_24);
+																											    open_patched.setText(R.string.open_patched_24);
+																												installation_failed_0 = installation_failed.getText().toString();
+																											    installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																											    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																											    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																											    existing_patched_0 = existing_patched.getText().toString();
+																											    existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																											    close_0 = close.getText().toString();
+																											    uninstall_0 = uninstall.getText().toString();
+																											
+																											select_language.setSelection((int)(24));
+																										}
+																									}
 																								}
 																							}
 																						}
@@ -10143,6 +10384,7 @@ public class MainActivity extends AppCompatActivity {
 		Language.add("Persian");
 		Language.add("Hebrew");
 		Language.add("Slovak");
+		Language.add("Swedish");
 		select_language.setAdapter(new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, Language));
 		((ArrayAdapter)select_language.getAdapter()).notifyDataSetChanged();
 		select_language.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, Language) {
@@ -10663,6 +10905,11 @@ public class MainActivity extends AppCompatActivity {
 																				_File_Remover();
 																		}
 																});
+																try {
+																		prog.cancel();
+																		break;
+																} catch (Exception e) {
+																}
 														}				
 														final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
 														final int dl_max = (int) (100);
@@ -10786,6 +11033,11 @@ public class MainActivity extends AppCompatActivity {
 																				_File_Remover();
 																		}
 																});
+																try {
+																		prog.cancel();
+																		break;
+																} catch (Exception e) {
+																}
 														}				
 														final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
 														final int dl_max = (int) (100);
@@ -11390,6 +11642,7 @@ public class MainActivity extends AppCompatActivity {
 		manager_lang_22.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_23.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_24.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_25.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -11414,6 +11667,7 @@ public class MainActivity extends AppCompatActivity {
 		translator_22.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_23.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_24.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_25.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		box_sub_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
@@ -11471,9 +11725,6 @@ public class MainActivity extends AppCompatActivity {
 				
 				if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/")) {
 					FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/");
-				}
-				if (FileUtil.isExistFile("/storage/emulated/0/xManager/")) {
-					FileUtil.deleteFile("/storage/emulated/0/xManager/");
 				}
 				Timer = new TimerTask() {
 					@Override
