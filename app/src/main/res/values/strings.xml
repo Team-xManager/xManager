@@ -27,7 +27,7 @@
 	<string	name="apk_location"	translatable="true">APK LOCATION</string>
 	<string	name="apk_location_desc"	translatable="true">File directory where you want to save the downloaded file. If you do not know how to configure this feature, then leave this as it is.\n\nNOTE: This feature does not support external storage (SD Card) due to accessibility, permissions and storage limitations.</string>
 	<string	name="clear_directory_folders"	translatable="true">CLEAR DIRECTORY FOLDERS</string>
-	<string	name="clear_directory_folders_desc"	translatable="true">Tap to delete all directory folders including the downloaded files and updates.</string>
+	<string	name="clear_directory_folders_desc"	translatable="true">Tap to delete all downloaded files and updates.</string>
 	<string	name="reset_settings"	translatable="true">RESET SETTINGS</string>
 	
 	<string	name="about_sub"	translatable="true">Ad-Free | New Features | Freedom</string>
@@ -2235,7 +2235,7 @@
 	<string	name="uninstall_patched_23"	translatable="true">ODINŠTALOVAŤ ZAPLÁTANÉ</string>
 	<string	name="open_settings_23"	translatable="true">OTVORIŤ NASTAVENIA</string>
 	<string	name="open_patched_23"	translatable="true">OTVORIŤ ZAPLÁTANÉ</string>
-
+	
 	<!--SWEDISH LANGUAGE-->
 	<string	name="app_name_24"	translatable="true">xManager</string>
 	<string	name="spotify_regular_24"	translatable="true">SPOTIFY (VANLIG)</string>
