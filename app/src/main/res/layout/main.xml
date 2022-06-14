@@ -1002,7 +1002,7 @@
 						android:id="@+id/clear_directory_folders_info"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Tap to delete all directory folders including the downloaded files and updates."
+						android:text="Tap to delete all downloaded files and updates."
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1817,7 +1817,24 @@
 						android:id="@+id/translator_24"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
 						android:text="KaldonM"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+					<TextView
+						android:id="@+id/manager_lang_25"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Swedish Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFEB3B" />
+					<TextView
+						android:id="@+id/translator_25"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="rexobo"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
