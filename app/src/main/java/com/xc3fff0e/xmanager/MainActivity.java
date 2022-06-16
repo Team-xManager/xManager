@@ -53,6 +53,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
 import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.FirebaseApp;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.wuyr.rippleanimation.*;
@@ -472,7 +473,7 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.main);
 		initialize(_savedInstanceState);
-		
+		FirebaseApp.initializeApp(this);
 		MobileAds.initialize(this);
 		
 		initializeLogic();
