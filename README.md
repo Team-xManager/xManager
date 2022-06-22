@@ -29,7 +29,6 @@
 
 •Upgrade or Downgrade Anytime & Anywhere  
 •Manager Tools (Uninstall, Open Settings, Clean Cached Datas & Launch App)  
-•Able to Hide Navigation Bar  
 •Neat & Slick Minimalist UI  
 •Swipe Down to Refresh  
 •Lightweight Manager  
