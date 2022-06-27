@@ -161,8 +161,8 @@ KaldonM
 **Swedish Translation**  
 rexobo  
 
-**Finnish Translation**
-AfraidOfTheBigBlack | Lilko1ra
+**Finnish Translation**  
+AfraidOfTheBigBlack | Lilko1ra  
 
 # Contributors  
 
