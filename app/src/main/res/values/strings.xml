@@ -1437,7 +1437,7 @@
 	<string	name="contributors_15"	translatable="true">HVALA VSEM SODELUJO\u010cIM! ❤️</string>
 	
 	<string	name="download_selected_15"	translatable="true">Izbrali ste to spremenjeno verzijo. Ali želite nadaljevati?</string>
-	<string	name="download_ready_15"	translatable="true">INFORMACIJE O POPRAVKU</string>
+	<string	name="download_ready_15"	translatable="true">INFORMACIJE O DATOTEKI</string>
 	<string	name="download_ready_desc_15"	translatable="true">Prenos te spremenjene apk bo zamenjal prejšnjo datoteko, ki se nahaja v zunanjem mestu datotek aplikacije.</string>
 	<string	name="downloading_file_15"	translatable="true">PRENAŠANJE DATOTEKE...</string>
 	<string	name="download_success_15"	translatable="true">USPEŠNO PRENESENO</string>
@@ -1472,8 +1472,8 @@
 	
 	<string	name="installation_failed_15"	translatable="true">NAMESTITEV NI USPELA</string>
 	<string	name="installation_failed_desc_15"	translatable="true">Razlog: Poskušali ste namestiti različico, ki je nižja od trenutno nameščene.\n\nRešitve:\nA. Izberite različico, ki je enaka ali večja od trenutne.\nB. Odstranite trenutno nameščeno različico in namestite nižjo različico.\n\nČe se težava nadaljuje, preverite Pogosta vprašanja.</string>
-	<string	name="installation_failed_ream_desc_15" translatable="true">Razlog: Različica Spotify, ki je trenutno nameščena na tej napravi ni prišla neposredno iz strani naše xManager ekipe.\n\nRešitev: Odstranite trenutno različico aplikacije, znova zaženite xManager in poskusite znova. Če se težava nadaljuje, preverite rubriko "Pogosta vprašanja"".</string>
-	<string	name="installation_failed_cloned_desc_15" translatable="true">Razlog: trenutno kloniran, nameščen na tej napravi, ni prišel neposredno iz url ali iz naše ekipe.\n\nRešitev: odstranite trenutno različico aplikacije, znova zaženite in poskusite znova. Če se težava nadaljuje, preverite rubriko "Pogosta vprašanja".</string>
+	<string	name="installation_failed_ream_desc_15" translatable="true">Razlog: Različica Spotify, ki je trenutno nameščena na tej napravi ni prišla neposredno iz strani naše xManager ekipe.\n\nRešitev: Odstranite trenutno različico aplikacije, znova zaženite xManager in poskusite znova. Če se težava nadaljuje, preverite rubriko "Pogosta vprašanja".</string>
+	<string	name="installation_failed_cloned_desc_15" translatable="true">Razlog: Klonirana različica Spotify, ki je trenutno nameščena na tej napravi ni prišla neposredno iz strani naše xManager ekipe.\n\nRešitev: Odstranite trenutno različico aplikacije, znova zaženite xManager in poskusite znova. Če se težava nadaljuje, preverite rubriko "Pogosta vprašanja".</string>
 	<string	name="existing_patched_15"	translatable="true">OBSTOJEČA DATOTEKA</string>
 	<string	name="existing_patched_desc_15"	translatable="true">Že obstoječa klonirana različica spremenjene aplikacije je bila najdena v mestu datotek. Kako želite nadaljevati?</string>
 
@@ -1484,9 +1484,9 @@
 	<string	name="uninstall_15"	translatable="true">Odstrani</string>
 	<string	name="ignore_15"	translatable="true">Prezri</string>
 	<string	name="delete_15"	translatable="true">Zbriši</string>
-	<string	name="uninstall_patched_15"	translatable="true">ODSTRANI POPRAVLJENO</string>
+	<string	name="uninstall_patched_15"	translatable="true">ODSTRANITE APLIKACIJO</string>
 	<string	name="open_settings_15"	translatable="true">ODPRITE NASTAVITVE</string>
-	<string	name="open_patched_15"	translatable="true">ODPRTO ZAKRPANO</string>
+	<string	name="open_patched_15"	translatable="true">ODPRITE APLIKACIJO</string>
 	
 	<!--ROMANIAN LANGUAGE-->
 	<string	name="app_name_16"	translatable="true">xManager</string>
