@@ -1437,7 +1437,7 @@
 	<string	name="contributors_15"	translatable="true">HVALA VSEM SODELUJO\u010cIM! ❤️</string>
 	
 	<string	name="download_selected_15"	translatable="true">Izbrali ste to spremenjeno verzijo. Ali želite nadaljevati?</string>
-	<string	name="download_ready_15"	translatable="true">INFORMACIJE O POPRAVKU</string>
+	<string	name="download_ready_15"	translatable="true">INFORMACIJE O DATOTEKI</string>
 	<string	name="download_ready_desc_15"	translatable="true">Prenos te spremenjene apk bo zamenjal prejšnjo datoteko, ki se nahaja v zunanjem mestu datotek aplikacije.</string>
 	<string	name="downloading_file_15"	translatable="true">PRENAŠANJE DATOTEKE...</string>
 	<string	name="download_success_15"	translatable="true">USPEŠNO PRENESENO</string>
@@ -1472,8 +1472,8 @@
 	
 	<string	name="installation_failed_15"	translatable="true">NAMESTITEV NI USPELA</string>
 	<string	name="installation_failed_desc_15"	translatable="true">Razlog: Poskušali ste namestiti različico, ki je nižja od trenutno nameščene.\n\nRešitve:\nA. Izberite različico, ki je enaka ali večja od trenutne.\nB. Odstranite trenutno nameščeno različico in namestite nižjo različico.\n\nČe se težava nadaljuje, preverite Pogosta vprašanja.</string>
-	<string	name="installation_failed_ream_desc_15" translatable="true">Razlog: Različica Spotify, ki je trenutno nameščena na tej napravi ni prišla neposredno iz strani naše xManager ekipe.\n\nRešitev: Odstranite trenutno različico aplikacije, znova zaženite xManager in poskusite znova. Če se težava nadaljuje, preverite rubriko "Pogosta vprašanja"".</string>
-	<string	name="installation_failed_cloned_desc_15" translatable="true">Razlog: trenutno kloniran, nameščen na tej napravi, ni prišel neposredno iz url ali iz naše ekipe.\n\nRešitev: odstranite trenutno različico aplikacije, znova zaženite in poskusite znova. Če se težava nadaljuje, preverite rubriko "Pogosta vprašanja".</string>
+	<string	name="installation_failed_ream_desc_15" translatable="true">Razlog: Različica Spotify, ki je trenutno nameščena na tej napravi ni prišla neposredno iz strani naše xManager ekipe.\n\nRešitev: Odstranite trenutno različico aplikacije, znova zaženite xManager in poskusite znova. Če se težava nadaljuje, preverite rubriko "Pogosta vprašanja".</string>
+	<string	name="installation_failed_cloned_desc_15" translatable="true">Razlog: Klonirana različica Spotify, ki je trenutno nameščena na tej napravi ni prišla neposredno iz strani naše xManager ekipe.\n\nRešitev: Odstranite trenutno različico aplikacije, znova zaženite xManager in poskusite znova. Če se težava nadaljuje, preverite rubriko "Pogosta vprašanja".</string>
 	<string	name="existing_patched_15"	translatable="true">OBSTOJEČA DATOTEKA</string>
 	<string	name="existing_patched_desc_15"	translatable="true">Že obstoječa klonirana različica spremenjene aplikacije je bila najdena v mestu datotek. Kako želite nadaljevati?</string>
 
@@ -1484,9 +1484,9 @@
 	<string	name="uninstall_15"	translatable="true">Odstrani</string>
 	<string	name="ignore_15"	translatable="true">Prezri</string>
 	<string	name="delete_15"	translatable="true">Zbriši</string>
-	<string	name="uninstall_patched_15"	translatable="true">ODSTRANI POPRAVLJENO</string>
+	<string	name="uninstall_patched_15"	translatable="true">ODSTRANITE APLIKACIJO</string>
 	<string	name="open_settings_15"	translatable="true">ODPRITE NASTAVITVE</string>
-	<string	name="open_patched_15"	translatable="true">ODPRTO ZAKRPANO</string>
+	<string	name="open_patched_15"	translatable="true">ODPRITE APLIKACIJO</string>
 	
 	<!--ROMANIAN LANGUAGE-->
 	<string	name="app_name_16"	translatable="true">xManager</string>
@@ -2328,4 +2328,97 @@
 	<string	name="uninstall_patched_24"	translatable="true">AVINSTALLERA PATCHAD</string>
 	<string	name="open_settings_24"	translatable="true">ÖPPNA INSTÄLLNINGAR</string>
 	<string	name="open_patched_24"	translatable="true">ÖPPNA PATCHAD</string>
+
+	<!--FINNISH LANGUAGE-->
+	<string	name="app_name_25"	translatable="true">xManager</string>
+	<string	name="spotify_regular_25"	translatable="true">SPOTIFY (PERUS)</string>
+	<string	name="spotify_amoled_25"	translatable="true">SPOTIFY (AMOLED)</string>
+	<string	name="installed_25"	translatable="true">ASENNETTU</string>
+	<string	name="latest_25"	translatable="true">VIIMEISIN</string>
+	<string	name="versions_25"	translatable="true">VERSIOT  </string>
+	<string	name="changelogs_25"	translatable="true">MUUTOSLOKI</string>
+	<string	name="manager_tools_25"	translatable="true">MANAGER TYÖKALUT</string>
+	<string	name="device_cpu_25"	translatable="true">CPU/ARCH</string>
+	<string	name="source_25"	translatable="true">LÄHDE</string>
+	<string	name="support_25"	translatable="true">TELEGRAM</string>
+	<string	name="donate_25"	translatable="true">TUKI</string>
+	<string	name="discord_25"	translatable="true">DISCORD</string>
+	<string	name="about_25"	translatable="true">TIETOJA</string>
+	<string	name="main_title_25"	translatable="true">xManager</string>
+	<string	name="settings_title_25"	translatable="true">Asetukset</string>
+	<string	name="about_title_25"	translatable="true">Tietoja</string>
+	
+	<string	name="list_auto_refresh_25"	translatable="true">LISTAN AUTOMAATTINEN PÄIVITYS</string>
+	<string	name="list_auto_refresh_desc_25"	translatable="true">Tämän aktivointi automaattisesti päivittää listan joka kerta, kun avaat sovelluksen.\n\nVoit myös päivittää listan manuaalisesti raahaamalla päänäkymän alaspäin.</string>
+	<string	name="force_auto_install_25"	translatable="true">PAKOTA AUTOMAATTINEN ASENTAMINEN</string>
+	<string	name="force_auto_install_desc_25"	translatable="true">Tämän aktivointi automaattisesti asentaa patched sovelluksen, ja päivittää sen jälkeen kun se on asennettu.</string>
+	<string	name="show_themes_25"	translatable="true">TEEMAT</string>
+	<string	name="apk_location_25"	translatable="true">APK SIJAINTI</string>
+	<string	name="apk_location_desc_25"	translatable="true">Kansio minne haluat tallentaa ladatun tiedoston. Jos et tiedä miten konfiguroida tätä ominaisuutta, niin jätä se sellaisenaan kuin se on.\n\nMUISTA: Tämä ominaisuus ei tue ulkoista tallennustilaa (SD Kortti) käyttömahdollisuuden, lupien ja tallennustilan rajoitusten takia.</string>
+	<string	name="clear_directory_folders_25"	translatable="true">PUHDISTA LUETTELON KANSIOT</string>
+	<string	name="clear_directory_folders_desc_25"	translatable="true">Napauta poistaaksesi kaikki asennetut tiedostot ja päivitykset.</string>
+	<string	name="reset_settings_25"	translatable="true">PALAUTA OLETUSASETUKSET</string>
+	
+	<string	name="about_sub_25"	translatable="true">Ei mainoksia | Uusia ominaisuuksia | Vapaus</string>
+	<string	name="xmanager_dev_25"	translatable="true">xManager Ohjelmoija</string>
+	<string	name="spotify_mod_devs_25"	translatable="true">Spotify patched ohjelmoijat</string>
+	<string	name="telegram_support_team_25"	translatable="true">Telegram | Discord | Reddit Tukitiimi</string>
+	<string	name="manager_testers_25"	translatable="true">Patched- ja Manager Testaajat</string>
+	<string	name="manager_hosting_25"	translatable="true">Manager Tietokanta ja Hostaukset</string>
+	<string	name="mobilism_team_25"	translatable="true">Mobilism Tiimi</string>
+	<string	name="forum_team_25"	translatable="true">FORUM.APK-RELEASE.NET Tiimi</string>
+	<string	name="xspotify_team_25"	translatable="true">xSpotify Manager (Vanha Manager)</string>
+	<string	name="contributors_25"	translatable="true">KIITOKSET KAIKILLE AVUSATAJILLE! ❤️</string>
+	
+	<string	name="download_selected_25"	translatable="true">Valitsit tämän patched version. Haluatko jatkaa?</string>
+	<string	name="download_ready_25"	translatable="true">PATCHED TIETOJA</string>
+	<string	name="download_ready_desc_25"	translatable="true">Tämän patched apk:n lataaminen asentaa entisen tiedoston päälle, joka löytyy ulkoisesta kansiosta.</string>
+	<string	name="downloading_file_25"	translatable="true">LADATAAN TIEDOSTOA...</string>
+	<string	name="download_success_25"	translatable="true">LATAUS ONNISTUI</string>
+	<string	name="new_update_25"	translatable="true">UUSI MANAGER PÄIVITYS</string>
+	
+	<string	name="continue_1_25"	translatable="true">JATKA</string>
+	<string	name="cancel_25"	translatable="true">PERUUTA</string>
+	<string	name="download_25"	translatable="true">LATAA</string>
+	<string	name="later_25"	translatable="true">MYÖHEMMIN</string>
+	<string	name="install_now_25"	translatable="true">ASENNA NYT</string>
+	<string	name="install_update_25"	translatable="true">ASENNA PÄIVITYS</string>
+	<string	name="go_back_25"	translatable="true">MENE TAKAISIN</string>
+	<string	name="download_update_25"	translatable="true">LATAA PÄIVITYS</string>
+	<string	name="not_now_25"	translatable="true">EI NYT</string>
+	<string	name="copy_url_25"	translatable="true">KOPIOI URL</string>
+	
+	<string	name="show_support_25"	translatable="true">NÄYTÄ TUKESI</string>
+	<string	name="show_support_desc_25"	translatable="true">Me olemme voittoa tavoittelematon, ei yritys ja tinkimätön tiimi. Kaltaisesi ihmiset kannustavat meitä luomaan sovelluksen, joka tekee asioista paljon helpompaa, etenkin lataamisesta asennukseen.\n\nKäytämme kaiken aikamme ja parhaamme tehdäksemme asiat oikein ja täydellisinä. Teemme parhaamme tukeaksemme tätä sovellusta niin kauan kuin voimme.\n\nMikä tahansa summa auttaa ja sitä arvostetaan suuresti!</string>
+	
+	<string	name="maintenance_25"	translatable="true">HUOLTOKATKO</string>
+	<string	name="maintenance_desc_25"	translatable="true">xManager ei ole tällä hetkellä saatavilla. Ole hyvä, ja tarkista sovellus myöhemmin.</string>
+	<string	name="thanks_25"	translatable="true">KIITOS!</string>
+	<string	name="language_25"	translatable="true">KIELI</string>
+	<string	name="website_25"	translatable="true">NETTISIVU</string>
+	<string	name="reddit_25"	translatable="true">REDDIT</string>
+	<string	name="faq_25"	translatable="true">UKK</string>
+	
+	<string	name="cloned_version_25"	translatable="true">KLOONATTU VERSIO (BETA)</string>
+	<string	name="cloned_version_desc_25"	translatable="true">Tämän aktivoinnin avulla voit ladata ja asentaa korjatun sovelluksen kloonatun version.\n\nTämä myös ratkaisee useimmat asennusvirheet tai -ongelmat, varsinkin jos sinulla on esiasennettu Spotify-sovellus.</string>
+	<string	name="disable_rewarded_ads_25"	translatable="true">POISTA PALKITUT MAINOKSET KÄYTÖSTÄ.</string>
+	<string	name="disable_rewarded_ads_desc_25"	translatable="true">Tiedämme, että useimmat meistä eivät pidä mainoksista, mutta meidän tapauksessamme tämä auttaa meitä merkittävästi rahoittamaan tietokantaamme, isännöintilinkkejä, päivityksiä, lisää korjauksia ja päivittäisiä tarpeita.\n\nTämä on yksinkertaisin tapa tukea meitä lahjoittamatta tai kuluttamatta mitään.</string>
+	
+	<string	name="installation_failed_25"	translatable="true">ASENNUS EPÄONNISTUI</string>
+	<string	name="installation_failed_desc_25"	translatable="true">Syy: Yritit asentaa mod-version, joka on vanhempi kuin tällä hetkellä asennettuna.\n\nRatkaisut:\nA. Valitse versio, joka on yhtä suuri tai suurempi kuin.\nB. Poista nykyisen version asennus ja alenna sitten.\n\nJos ongelma jatkuu, tarkista usein kysytyt kysymykset.</string>
+	<string	name="installation_failed_ream_desc_25"	translatable="true">Syy: Tälle laitteelle asennettu nykyinen Spotify ei tullut suoraan xManagerista tai tiimiltään.\n\nRatkaisu: Poista sovelluksen nykyinen versio, käynnistä xManager uudelleen ja yritä uudelleen. Jos ongelma jatkuu, tarkista usein kysytyt kysymykset.</string>
+	<string	name="installation_failed_cloned_desc_25"	translatable="true">Syy: Tälle laitteelle asennettu nykyinen kloonattu versio ei tullut suoraan xManagerista tai tiimiltään.\n\nRatkaisu: Poista sovelluksen nykyinen versio, käynnistä xManager uudelleen ja yritä uudelleen. Jos ongelma jatkuu, tarkista usein kysytyt kysymykset.</string>
+	<string	name="existing_patched_25"	translatable="true">OLEMASSA OLEVA PATCHED</string>
+	<string	name="existing_patched_desc_25"	translatable="true">Yhdestä hakemistosta löytyi olemassa oleva korjattu apk. Millaisen toimenpiteen haluaisit tehdä?</string>
+	
+	<string	name="close_25"	translatable="true">SULJE</string>
+	<string	name="cloned_25"	translatable="true">KLOONATTU</string>
+	<string	name="ream_25"	translatable="true">RE/AM</string>
+	<string	name="install_25"	translatable="true">ASENNA</string>
+	<string	name="uninstall_25"	translatable="true">POISTA ASENNUS</string>
+	<string	name="ignore_25"	translatable="true">ÄLÄ HUOMIOI</string>
+	<string	name="delete_25"	translatable="true">POISTA</string>
+	<string	name="uninstall_patched_25"	translatable="true">POISTA PATCHED</string>
+	<string	name="open_settings_25"	translatable="true">AVAA ASETUKSET</string>
+	<string	name="open_patched_25"	translatable="true">AVAA PATCHED</string>
 </resources>
