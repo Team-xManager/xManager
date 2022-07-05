@@ -354,6 +354,8 @@ public class MainActivity extends AppCompatActivity {
 	private TextView translator_24;
 	private TextView manager_lang_25;
 	private TextView translator_25;
+	private TextView manager_lang_26;
+	private TextView translator_26;
 	private ScrollView main_scroll_body;
 	private LinearLayout main_body;
 	private LinearLayout main_box_1;
@@ -685,6 +687,8 @@ public class MainActivity extends AppCompatActivity {
 		translator_24 = findViewById(R.id.translator_24);
 		manager_lang_25 = findViewById(R.id.manager_lang_25);
 		translator_25 = findViewById(R.id.translator_25);
+		manager_lang_26 = findViewById(R.id.manager_lang_26);
+		translator_26 = findViewById(R.id.translator_26);
 		main_scroll_body = findViewById(R.id.main_scroll_body);
 		main_body = findViewById(R.id.main_body);
 		main_box_1 = findViewById(R.id.main_box_1);
@@ -940,13 +944,11 @@ public class MainActivity extends AppCompatActivity {
 		main_box_10.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/") && (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk")) || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk")))) {
-					FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
-					FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
+				if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/")) {
 					FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/");
 				}
 				else {
-					if (!(FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/") && (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk")) || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"))))) {
+					if (!FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/")) {
 						
 					}
 				}
@@ -955,7 +957,7 @@ public class MainActivity extends AppCompatActivity {
 				}
 				else {
 					if (DELETE == 0) {
-						com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Directory folders not found or deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+						com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Directory folder not found or deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 					}
 				}
 				_Tap_Animation(main_box_10);
@@ -3928,6 +3930,115 @@ public class MainActivity extends AppCompatActivity {
 					
 					COUNTER = 1;
 				}
+				if (_position == 25) {
+					LANGUAGE.edit().putString("LANGUAGE", "25").commit();
+					    title_1.setText(R.string.spotify_regular_25);
+						title_2.setText(R.string.spotify_amoled_25);
+						sub_text_installed.setText(R.string.installed_25);
+						sub_text_1.setText(R.string.latest_25);
+						sub_text_3.setText(R.string.latest_25);
+						version_switch_1.setText(R.string.versions_25);
+						version_switch_2.setText(R.string.versions_25);
+						changelogs.setText(R.string.changelogs_25);
+						title_sub.setText(R.string.manager_tools_25);
+						device_cpu.setText(R.string.device_cpu_25);
+						source.setText(R.string.source_25);
+						support.setText(R.string.support_25);
+						donate.setText(R.string.donate_25);
+						about.setText(R.string.about_25);
+						list_auto_refresh.setText(R.string.list_auto_refresh_25);
+						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_25);
+						force_auto_install.setText(R.string.force_auto_install_25);
+						force_auto_install_info.setText(R.string.force_auto_install_desc_25);
+						theme.setText(R.string.show_themes_25);
+						apk_location.setText(R.string.apk_location_25);
+						apk_location_info.setText(R.string.apk_location_desc_25);
+						clear_directory_folders.setText(R.string.clear_directory_folders_25);
+						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_25);
+						reset_settings.setText(R.string.reset_settings_25);
+						sub_title.setText(R.string.about_sub_25);
+						developer_manager.setText(R.string.xmanager_dev_25);
+						developer_spotify.setText(R.string.spotify_mod_devs_25);
+						support_team.setText(R.string.telegram_support_team_25);
+						mod_testers_1.setText(R.string.manager_testers_25);
+						mod_testers_2.setText(R.string.manager_hosting_25);
+						mobilism_team.setText(R.string.mobilism_team_25);
+						forum_team.setText(R.string.forum_team_25);
+						manager_team.setText(R.string.xspotify_team_25);
+						contributors_1.setText(R.string.contributors_25);
+						download_selected.setText(R.string.download_selected_25);
+						download_ready.setText(R.string.download_ready_25);
+						download_ready_desc.setText(R.string.download_ready_desc_25);
+						downloading_file.setText(R.string.downloading_file_25);
+						download_success.setText(R.string.download_success_25);
+						new_update.setText(R.string.new_update_25);
+						download_selected_0 = download_selected.getText().toString();
+						download_ready_0 = download_ready.getText().toString();
+						download_ready_desc_0 = download_ready_desc.getText().toString();
+						downloading_file_0 = downloading_file.getText().toString();
+						download_success_0 = download_success.getText().toString();
+						copy_url.setText(R.string.copy_url_25);
+						continue_1.setText(R.string.continue_1_25);
+						cancel.setText(R.string.cancel_25);
+						download.setText(R.string.download_25);
+						later.setText(R.string.later_25);
+						install_now.setText(R.string.install_now_25);
+						install_update.setText(R.string.install_update_25);
+						go_back.setText(R.string.go_back_25);
+						download_update.setText(R.string.download_update_25);
+						not_now.setText(R.string.not_now_25);
+						show_support.setText(R.string.show_support_25);
+						show_support_desc.setText(R.string.show_support_desc_25);
+						copy_url_0 = copy_url.getText().toString();
+						download_0 = download.getText().toString();
+						continue_0 = continue_1.getText().toString();
+						cancel_0 = cancel.getText().toString();
+						later_0 = later.getText().toString();
+						install_now_0 = install_now.getText().toString();
+						go_back_0 = go_back.getText().toString();
+						install_update_0 = install_update.getText().toString();
+						main_title.setText(R.string.main_title_25);
+						settings_title.setText(R.string.settings_title_25);
+						about_title.setText(R.string.about_title_25);
+						maintenance.setText(R.string.maintenance_25);
+						maintenance_desc.setText(R.string.maintenance_desc_25);
+						thanks.setText(R.string.thanks_25);
+						language.setText(R.string.language_25);
+						website.setText(R.string.website_25);
+						discord.setText(R.string.discord_25);
+						reddit.setText(R.string.reddit_25);
+						faq.setText(R.string.faq_25);
+						cloned_version.setText(R.string.cloned_version_25);
+						cloned_version_info.setText(R.string.cloned_version_desc_25);
+					    disable_reward_ad.setText(R.string.disable_rewarded_ads_25);
+					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_25);
+					    installation_failed.setText(R.string.installation_failed_25);
+					    installation_failed_desc.setText(R.string.installation_failed_desc_25);
+					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_25);
+					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_25);
+					    existing_patched.setText(R.string.existing_patched_25);
+					    existing_patched_desc.setText(R.string.existing_patched_desc_25);
+					    close.setText(R.string.close_25);
+					    cloned.setText(R.string.cloned_25);
+					    ream.setText(R.string.ream_25);
+					    install.setText(R.string.install_25);
+					    uninstall.setText(R.string.uninstall_25);
+					    ignore.setText(R.string.ignore_25);
+					    delete.setText(R.string.delete_25);
+					    uninstall_patched.setText(R.string.uninstall_patched_25);
+					    open_settings.setText(R.string.open_settings_25);
+					    open_patched.setText(R.string.open_patched_25);
+						installation_failed_0 = installation_failed.getText().toString();
+					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					    existing_patched_0 = existing_patched.getText().toString();
+					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					    close_0 = close.getText().toString();
+					    uninstall_0 = uninstall.getText().toString();
+					
+					COUNTER = 1;
+				}
 			}
 			
 			@Override
@@ -4249,11 +4360,11 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface File_Exist, int p) {
 								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"))) {
+								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")) {
 									_Extension_4();
 								}
 								else {
-									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"))) {
+									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")) {
 										_Extension_5();
 									}
 								}
@@ -4268,8 +4379,6 @@ public class MainActivity extends AppCompatActivity {
 								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
 								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
-								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
-								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
 								                }
 							            });
 						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
@@ -4598,11 +4707,11 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface File_Exist, int p) {
 								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"))) {
+								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")) {
 									_Extension_4();
 								}
 								else {
-									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"))) {
+									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")) {
 										_Extension_5();
 									}
 								}
@@ -4617,8 +4726,6 @@ public class MainActivity extends AppCompatActivity {
 								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
 								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
-								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
-								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
 								                }
 							            });
 						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
@@ -4947,11 +5054,11 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface File_Exist, int p) {
 								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"))) {
+								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")) {
 									_Extension_4();
 								}
 								else {
-									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"))) {
+									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")) {
 										_Extension_5();
 									}
 								}
@@ -4966,8 +5073,6 @@ public class MainActivity extends AppCompatActivity {
 								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
 								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
-								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
-								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
 								                }
 							            });
 						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
@@ -5296,11 +5401,11 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface File_Exist, int p) {
 								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk") || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"))) {
+								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")) {
 									_Extension_4();
 								}
 								else {
-									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk") || FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"))) {
+									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")) {
 										_Extension_5();
 									}
 								}
@@ -5315,8 +5420,6 @@ public class MainActivity extends AppCompatActivity {
 								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk");
 								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk");
-								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
-								FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
 								                }
 							            });
 						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
@@ -6025,6 +6128,7 @@ public class MainActivity extends AppCompatActivity {
 			_Informations();
 			_Gate_Keeper();
 			_Animation_0();
+			_Reinitialize();
 			_Initialize();
 			_API();
 		}
@@ -6313,27 +6417,13 @@ public class MainActivity extends AppCompatActivity {
 	
 	
 	public void _File_Remover() {
-		if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/") && (FileUtil.isExistFile("/storage/emulated/0/xManager/") && FileUtil.isExistFile(apk_path_location.getText().toString()))) {
+		if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/")) {
 			FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/");
-			FileUtil.deleteFile("/storage/emulated/0/xManager/");
-			FileUtil.deleteFile(apk_path_location.getText().toString());
 		}
 		else {
-			if (!(FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/") && (FileUtil.isExistFile("/storage/emulated/0/xManager/") && FileUtil.isExistFile(apk_path_location.getText().toString())))) {
+			if (!FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/")) {
 				
 			}
-		}
-		if (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"))) {
-			FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"));
-		}
-		if (FileUtil.isExistFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"))) {
-			FileUtil.deleteFile(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"));
-		}
-		if (FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk")) {
-			FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official).apk");
-		}
-		if (FileUtil.isExistFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk")) {
-			FileUtil.deleteFile("/storage/emulated/0/xManager/Spotify Mod (Official) [Cloned].apk");
 		}
 	}
 	
@@ -7334,6 +7424,7 @@ public class MainActivity extends AppCompatActivity {
 																																												intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 																																												intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
 																																												startActivity(intent);
+																							                                                                                    _Reminder();
 																																										}
 																																										catch(Exception e) {
 																																										}
@@ -7342,6 +7433,7 @@ public class MainActivity extends AppCompatActivity {
 																																												Intent intent = new Intent(Intent.ACTION_VIEW);
 																																												intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
 																																												startActivity(intent);
+																							                                                                                    _Reminder();
 																																										}
 																																										catch(Exception e) {
 																																										}
@@ -10333,6 +10425,116 @@ public class MainActivity extends AppCompatActivity {
 																											
 																											select_language.setSelection((int)(24));
 																										}
+																										else {
+																											if (LANGUAGE.getString("LANGUAGE", "").equals("25")) {
+																												    title_1.setText(R.string.spotify_regular_25);
+																													title_2.setText(R.string.spotify_amoled_25);
+																													sub_text_installed.setText(R.string.installed_25);
+																													sub_text_1.setText(R.string.latest_25);
+																													sub_text_3.setText(R.string.latest_25);
+																													version_switch_1.setText(R.string.versions_25);
+																													version_switch_2.setText(R.string.versions_25);
+																													changelogs.setText(R.string.changelogs_25);
+																													title_sub.setText(R.string.manager_tools_25);
+																													device_cpu.setText(R.string.device_cpu_25);
+																													source.setText(R.string.source_25);
+																													support.setText(R.string.support_25);
+																													donate.setText(R.string.donate_25);
+																													about.setText(R.string.about_25);
+																													list_auto_refresh.setText(R.string.list_auto_refresh_25);
+																													list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_25);
+																													force_auto_install.setText(R.string.force_auto_install_25);
+																													force_auto_install_info.setText(R.string.force_auto_install_desc_25);
+																													theme.setText(R.string.show_themes_25);
+																													apk_location.setText(R.string.apk_location_25);
+																													apk_location_info.setText(R.string.apk_location_desc_25);
+																													clear_directory_folders.setText(R.string.clear_directory_folders_25);
+																													clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_25);
+																													reset_settings.setText(R.string.reset_settings_25);
+																													sub_title.setText(R.string.about_sub_25);
+																													developer_manager.setText(R.string.xmanager_dev_25);
+																													developer_spotify.setText(R.string.spotify_mod_devs_25);
+																													support_team.setText(R.string.telegram_support_team_25);
+																													mod_testers_1.setText(R.string.manager_testers_25);
+																													mod_testers_2.setText(R.string.manager_hosting_25);
+																													mobilism_team.setText(R.string.mobilism_team_25);
+																													forum_team.setText(R.string.forum_team_25);
+																													manager_team.setText(R.string.xspotify_team_25);
+																													contributors_1.setText(R.string.contributors_25);
+																													download_selected.setText(R.string.download_selected_25);
+																													download_ready.setText(R.string.download_ready_25);
+																													download_ready_desc.setText(R.string.download_ready_desc_25);
+																													downloading_file.setText(R.string.downloading_file_25);
+																													download_success.setText(R.string.download_success_25);
+																													new_update.setText(R.string.new_update_25);
+																													download_selected_0 = download_selected.getText().toString();
+																													download_ready_0 = download_ready.getText().toString();
+																													download_ready_desc_0 = download_ready_desc.getText().toString();
+																													downloading_file_0 = downloading_file.getText().toString();
+																													download_success_0 = download_success.getText().toString();
+																													copy_url.setText(R.string.copy_url_25);
+																													continue_1.setText(R.string.continue_1_25);
+																													cancel.setText(R.string.cancel_25);
+																													download.setText(R.string.download_25);
+																													later.setText(R.string.later_25);
+																													install_now.setText(R.string.install_now_25);
+																													install_update.setText(R.string.install_update_25);
+																													go_back.setText(R.string.go_back_25);
+																													download_update.setText(R.string.download_update_25);
+																													not_now.setText(R.string.not_now_25);
+																													show_support.setText(R.string.show_support_25);
+																													show_support_desc.setText(R.string.show_support_desc_25);
+																													copy_url_0 = copy_url.getText().toString();
+																													download_0 = download.getText().toString();
+																													continue_0 = continue_1.getText().toString();
+																													cancel_0 = cancel.getText().toString();
+																													later_0 = later.getText().toString();
+																													install_now_0 = install_now.getText().toString();
+																													go_back_0 = go_back.getText().toString();
+																													install_update_0 = install_update.getText().toString();
+																													main_title.setText(R.string.main_title_25);
+																													settings_title.setText(R.string.settings_title_25);
+																													about_title.setText(R.string.about_title_25);
+																													maintenance.setText(R.string.maintenance_25);
+																													maintenance_desc.setText(R.string.maintenance_desc_25);
+																													thanks.setText(R.string.thanks_25);
+																													language.setText(R.string.language_25);
+																													website.setText(R.string.website_25);
+																													discord.setText(R.string.discord_25);
+																													reddit.setText(R.string.reddit_25);
+																													faq.setText(R.string.faq_25);
+																													cloned_version.setText(R.string.cloned_version_25);
+																													cloned_version_info.setText(R.string.cloned_version_desc_25);
+																												    disable_reward_ad.setText(R.string.disable_rewarded_ads_25);
+																												    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_25);
+																												    installation_failed.setText(R.string.installation_failed_25);
+																												    installation_failed_desc.setText(R.string.installation_failed_desc_25);
+																												    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_25);
+																												    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_25);
+																												    existing_patched.setText(R.string.existing_patched_25);
+																												    existing_patched_desc.setText(R.string.existing_patched_desc_25);
+																												    close.setText(R.string.close_25);
+																												    cloned.setText(R.string.cloned_25);
+																												    ream.setText(R.string.ream_25);
+																												    install.setText(R.string.install_25);
+																												    uninstall.setText(R.string.uninstall_25);
+																												    ignore.setText(R.string.ignore_25);
+																												    delete.setText(R.string.delete_25);
+																												    uninstall_patched.setText(R.string.uninstall_patched_25);
+																												    open_settings.setText(R.string.open_settings_25);
+																												    open_patched.setText(R.string.open_patched_25);
+																													installation_failed_0 = installation_failed.getText().toString();
+																												    installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																												    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																												    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																												    existing_patched_0 = existing_patched.getText().toString();
+																												    existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																												    close_0 = close.getText().toString();
+																												    uninstall_0 = uninstall.getText().toString();
+																												
+																												select_language.setSelection((int)(25));
+																											}
+																										}
 																									}
 																								}
 																							}
@@ -10386,6 +10588,7 @@ public class MainActivity extends AppCompatActivity {
 		Language.add("Hebrew");
 		Language.add("Slovak");
 		Language.add("Swedish");
+		Language.add("Finnish");
 		select_language.setAdapter(new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, Language));
 		((ArrayAdapter)select_language.getAdapter()).notifyDataSetChanged();
 		select_language.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, Language) {
@@ -11117,6 +11320,7 @@ public class MainActivity extends AppCompatActivity {
 																																												intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 																																												intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
 																																												startActivity(intent);
+																							                                                                                    _Reminder();
 																																										}
 																																										catch(Exception e) {
 																																										}
@@ -11125,6 +11329,7 @@ public class MainActivity extends AppCompatActivity {
 																																												Intent intent = new Intent(Intent.ACTION_VIEW);
 																																												intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
 																																												startActivity(intent);
+																							                                                                                    _Reminder();
 																																										}
 																																										catch(Exception e) {
 																																										}
@@ -11619,56 +11824,6 @@ public class MainActivity extends AppCompatActivity {
 		cloned_version_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		disable_reward_ad.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		disable_reward_ad_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_4.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_5.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_6.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_7.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_8.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_9.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_10.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_11.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_12.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_13.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_14.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_15.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_16.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_17.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_18.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_19.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_20.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_21.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_22.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_23.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_24.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_lang_25.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_4.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_5.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_6.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_7.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_8.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_9.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_10.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_11.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_12.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_13.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_14.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_15.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_16.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_17.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_18.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_19.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_20.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_21.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_22.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_23.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_24.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		translator_25.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		box_sub_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
@@ -11681,15 +11836,6 @@ public class MainActivity extends AppCompatActivity {
 		main_box_14.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_16.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_17.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		sub_1.setVisibility(View.GONE);
-		sub_3.setVisibility(View.GONE);
-		sub_5.setVisibility(View.GONE);
-		sub_7.setVisibility(View.GONE);
-		list_menu_1.setVisibility(View.GONE);
-		list_menu_2.setVisibility(View.GONE);
-		list_menu_3.setVisibility(View.GONE);
-		list_menu_4.setVisibility(View.GONE);
-		list_changelogs.setVisibility(View.GONE);
 		box_support.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_donate.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_about.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
@@ -11711,6 +11857,15 @@ public class MainActivity extends AppCompatActivity {
 		box_separator_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF616161));
 		box_separator_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF616161));
 		box_separator_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF616161));
+		sub_1.setVisibility(View.GONE);
+		sub_3.setVisibility(View.GONE);
+		sub_5.setVisibility(View.GONE);
+		sub_7.setVisibility(View.GONE);
+		list_menu_1.setVisibility(View.GONE);
+		list_menu_2.setVisibility(View.GONE);
+		list_menu_3.setVisibility(View.GONE);
+		list_menu_4.setVisibility(View.GONE);
+		list_changelogs.setVisibility(View.GONE);
 		if (!ON_SCREEN.getString("INITIALIZATION", "").equals("DONE")) {
 			try {
 				box_header.setVisibility(View.GONE);
@@ -12154,6 +12309,7 @@ public class MainActivity extends AppCompatActivity {
 														intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
+								                        _Reminder();
 												}
 												catch(Exception e) {
 												}
@@ -12162,6 +12318,7 @@ public class MainActivity extends AppCompatActivity {
 														Intent intent = new Intent(Intent.ACTION_VIEW);
 														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
+								                        _Reminder();
 												}
 												catch(Exception e) {
 												}
@@ -12241,6 +12398,7 @@ public class MainActivity extends AppCompatActivity {
 				@Override
 				public void onClick(DialogInterface Success_Download, int p) {
 						AlertDialog.setCancelable(true);
+						_Reminder();
 				}
 		});
 		AlertDialog = Success_Download.create();
@@ -12272,6 +12430,7 @@ public class MainActivity extends AppCompatActivity {
 														intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
+														_Reminder();
 												}
 												catch(Exception e) {
 												}
@@ -12280,6 +12439,7 @@ public class MainActivity extends AppCompatActivity {
 														Intent intent = new Intent(Intent.ACTION_VIEW);
 														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
+														_Reminder();
 												}
 												catch(Exception e) {
 												}
@@ -12359,6 +12519,7 @@ public class MainActivity extends AppCompatActivity {
 				@Override
 				public void onClick(DialogInterface Success_Download, int p) {
 						AlertDialog.setCancelable(true);
+						_Reminder();
 				}
 		});
 		AlertDialog = Success_Download.create();
@@ -12426,6 +12587,7 @@ public class MainActivity extends AppCompatActivity {
 										intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
+						                _Reminder();
 								}
 								catch(Exception e) {
 										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
@@ -12435,6 +12597,7 @@ public class MainActivity extends AppCompatActivity {
 										Intent intent = new Intent(Intent.ACTION_VIEW);
 										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
+						                _Reminder();
 								}
 								catch(Exception e) {
 										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
@@ -12519,6 +12682,7 @@ public class MainActivity extends AppCompatActivity {
 										intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
+						                _Reminder();
 								}
 								catch(Exception e) {
 										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
@@ -12528,6 +12692,7 @@ public class MainActivity extends AppCompatActivity {
 										Intent intent = new Intent(Intent.ACTION_VIEW);
 										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
+						                _Reminder();
 								}
 								catch(Exception e) {
 										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
@@ -12599,6 +12764,67 @@ public class MainActivity extends AppCompatActivity {
 				}
 		}
 		
+	}
+	
+	
+	public void _Reinitialize() {
+		manager_lang_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_4.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_5.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_6.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_7.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_8.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_9.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_10.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_11.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_12.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_13.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_14.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_15.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_16.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_17.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_18.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_19.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_20.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_21.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_22.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_23.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_24.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_25.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_26.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_4.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_5.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_6.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_7.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_8.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_9.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_10.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_11.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_12.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_13.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_14.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_15.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_16.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_17.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_18.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_19.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_20.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_21.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_22.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_23.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_24.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_25.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_26.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+	}
+	
+	
+	public void _Reminder() {
+		com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Important: After installing, reopen or force close the Spotify app to enable the mod features.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).setDuration(10000).show();
 	}
 	
 	public class List_menu_1Adapter extends BaseAdapter {
