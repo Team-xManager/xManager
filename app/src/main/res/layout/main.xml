@@ -598,7 +598,7 @@
 						android:id="@+id/cloned_version_info"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Activating this allow you to download and install the cloned version of the patched application.\n\nThis will also resolve most of the installation errors or problems\nespecially if you have a pre-installed spotify application."
+						android:text="Enabling this allow you to download and install the cloned version of the patched application.\n\nThis will also resolve most of the installation errors or problems\nespecially if you have a pre-installed spotify application."
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -670,7 +670,7 @@
 						android:id="@+id/list_auto_refresh_info"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Activating this will automatically refresh the list everytime you launch the application.\n\nYou can manually refresh the list by dragging the main screen downward."
+						android:text="Enabling this will automatically refresh the list everytime you launch the application.\n\nYou can manually refresh the list by dragging the main screen downward."
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -741,7 +741,7 @@
 						android:id="@+id/force_auto_install_info"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Activating this will automatically install the patched application and update once downloaded."
+						android:text="Enabling this will automatically install the patched application and update once downloaded."
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -940,7 +940,7 @@
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:gravity="left|right|center_vertical"
-						android:text="/storage/emulated/0/xManager/"
+						android:text="/storage/emulated/0/Download/"
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF"
@@ -958,7 +958,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:paddingBottom="8dp"
-						android:text="File directory where you want to save the downloaded file. If you do not know how to configure this feature, then leave this as it is.\n\nNOTE: This feature does not support external storage (SD Card) due to accessibility, permissions and storage limitations."
+						android:text="The directory where you want to save the copy of the downloaded file. If you do not know how to configure this feature, leave this as it is.\n\nNOTE: This feature does not support external storage (SD Card) due to accessibility, permissions and storage limitations."
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -984,7 +984,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:padding="8dp"
-						android:text="CLEAR DIRECTORY FOLDERS"
+						android:text="CLEAR DIRECTORY FOLDER"
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#1DB954" />
@@ -1002,7 +1002,7 @@
 						android:id="@+id/clear_directory_folders_info"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Tap to delete all downloaded files and updates."
+						android:text="Tap to delete the directory folder. This includes the downloaded files and updates."
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1247,7 +1247,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
-					android:text="RishavG\nmeech\njetfire\nSherlock Holmes\nWu Tang Clam\nZach\naha\n100RABH\njuznem\nTunelover (Mobilism)"
+					android:text="RishavG\nmeech\njetfire\nSherlock Holmes\nWu Tang Clam\nZach\naha\n100RABH\njuznem\nTunelover (Mobilism)\njar3cki (xManager Tester)"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -1834,7 +1834,24 @@
 						android:id="@+id/translator_25"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
 						android:text="rexobo"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+					<TextView
+						android:id="@+id/manager_lang_26"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Finnish Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFEB3B" />
+					<TextView
+						android:id="@+id/translator_26"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="AfraidOfTheBigBlack | lilko1ra"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
