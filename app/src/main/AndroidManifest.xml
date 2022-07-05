@@ -44,16 +44,24 @@
 		</activity>
 		<activity
 			android:name=".DebugActivity"
-            android:exported="true"
+			android:exported="true"
 			android:screenOrientation="portrait" />
 		<activity
 			android:name="com.google.android.gms.ads.AdActivity"
-            android:exported="true"
+			android:exported="true"
 			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
 			android:theme="@android:style/Theme.Translucent" />
 		<meta-data
 			android:name="com.google.android.gms.version"
 			android:value="@integer/google_play_services_version" />
+		<provider
+			android:name="com.google.firebase.provider.FirebaseInitProvider"
+			android:authorities="com.xc3fff0e.xmanager.firebaseinitprovider"
+			android:exported="false"
+			android:initOrder="100" />
+		<service
+			android:name="com.google.firebase.components.ComponentDiscoveryService"
+			android:exported="false" />
 		<uses-library
 			android:name="org.apache.http.legacy"
 			android:required="false" />
