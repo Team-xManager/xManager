@@ -20,14 +20,14 @@
 	<string	name="about_title"	translatable="true">About</string>
 	
 	<string	name="list_auto_refresh"	translatable="true">LIST AUTO-REFRESH</string>
-	<string	name="list_auto_refresh_desc"	translatable="true">Activating this will automatically refresh the list everytime you launch the application.\n\nYou can manually refresh the list by dragging the main screen downward.</string>
+	<string	name="list_auto_refresh_desc"	translatable="true">Enabling this will automatically refresh the list everytime you launch the application.\n\nYou can manually refresh the list by dragging the main screen downward.</string>
 	<string	name="force_auto_install"	translatable="true">FORCE AUTO-INSTALL</string>
-	<string	name="force_auto_install_desc"	translatable="true">Activating this will automatically install the patched application and update once downloaded.</string>
+	<string	name="force_auto_install_desc"	translatable="true">Enabling this will automatically install the patched application and update once downloaded.</string>
 	<string	name="show_themes"	translatable="true">THEMES</string>
 	<string	name="apk_location"	translatable="true">APK LOCATION</string>
-	<string	name="apk_location_desc"	translatable="true">File directory where you want to save the downloaded file. If you do not know how to configure this feature, then leave this as it is.\n\nNOTE: This feature does not support external storage (SD Card) due to accessibility, permissions and storage limitations.</string>
-	<string	name="clear_directory_folders"	translatable="true">CLEAR DIRECTORY FOLDERS</string>
-	<string	name="clear_directory_folders_desc"	translatable="true">Tap to delete all downloaded files and updates.</string>
+	<string	name="apk_location_desc"	translatable="true">The directory where you want to save the copy of the downloaded file. If you do not know how to configure this feature, leave this as it is.\n\nNOTE: This feature does not support external storage (SD Card) due to accessibility, permissions and storage limitations.</string>
+	<string	name="clear_directory_folders"	translatable="true">CLEAR DIRECTORY FOLDER</string>
+	<string	name="clear_directory_folders_desc"	translatable="true">Tap to delete the directory folder. This includes the downloaded files and updates.</string>
 	<string	name="reset_settings"	translatable="true">RESET SETTINGS</string>
 	
 	<string	name="about_sub"	translatable="true">Ad-Free | New Features | Freedom</string>
@@ -71,7 +71,7 @@
 	<string	name="faq"	translatable="true">FAQ</string>
 	
 	<string	name="cloned_version"	translatable="true">CLONED VERSION (BETA)</string>
-	<string	name="cloned_version_desc"	translatable="true">Activating this allow you to download and install the cloned version of the patched application.\n\nThis will also resolve most of the installation errors or problems, especially if you have a pre-installed Spotify application.</string>
+	<string	name="cloned_version_desc"	translatable="true">Enabling this allow you to download and install the cloned version of the patched application.\n\nThis will also resolve most of the installation errors or problems, especially if you have a pre-installed Spotify application.</string>
 	<string	name="disable_rewarded_ads"	translatable="true">DISABLE REWARDED ADS</string>
 	<string	name="disable_rewarded_ads_desc"	translatable="true">We know that most of us do not like ads but in our case, this significantly help us to fund our database, hosting links, updates, more patches, and daily needs.\n\nThis is the simplest way to support us without donating or spending anything.</string>
 	
@@ -1437,7 +1437,7 @@
 	<string	name="contributors_15"	translatable="true">HVALA VSEM SODELUJO\u010cIM! ❤️</string>
 	
 	<string	name="download_selected_15"	translatable="true">Izbrali ste to spremenjeno verzijo. Ali želite nadaljevati?</string>
-	<string	name="download_ready_15"	translatable="true">INFORMACIJE O DATOTEKI</string>
+	<string	name="download_ready_15" translatable="true">INFORMACIJE O DATOTEKI</string>
 	<string	name="download_ready_desc_15"	translatable="true">Prenos te spremenjene apk bo zamenjal prejšnjo datoteko, ki se nahaja v zunanjem mestu datotek aplikacije.</string>
 	<string	name="downloading_file_15"	translatable="true">PRENAŠANJE DATOTEKE...</string>
 	<string	name="download_success_15"	translatable="true">USPEŠNO PRENESENO</string>
@@ -1472,9 +1472,9 @@
 	
 	<string	name="installation_failed_15"	translatable="true">NAMESTITEV NI USPELA</string>
 	<string	name="installation_failed_desc_15"	translatable="true">Razlog: Poskušali ste namestiti različico, ki je nižja od trenutno nameščene.\n\nRešitve:\nA. Izberite različico, ki je enaka ali večja od trenutne.\nB. Odstranite trenutno nameščeno različico in namestite nižjo različico.\n\nČe se težava nadaljuje, preverite Pogosta vprašanja.</string>
-	<string	name="installation_failed_ream_desc_15" translatable="true">Razlog: Različica Spotify, ki je trenutno nameščena na tej napravi ni prišla neposredno iz strani naše xManager ekipe.\n\nRešitev: Odstranite trenutno različico aplikacije, znova zaženite xManager in poskusite znova. Če se težava nadaljuje, preverite rubriko "Pogosta vprašanja".</string>
+	<string	name="installation_failed_ream_desc_15" translatable="true">Razlog: Različica Spotify, ki je trenutno nameščena na tej napravi ni prišla neposredno iz strani naše xManager ekipe.\n\nRešitev: Odstranite trenutno različico aplikacije, znova zaženite xManager in poskusite znova. Če se težava nadaljuje, preverite rubriko "Pogosta vprašanja"".</string>
 	<string	name="installation_failed_cloned_desc_15" translatable="true">Razlog: Klonirana različica Spotify, ki je trenutno nameščena na tej napravi ni prišla neposredno iz strani naše xManager ekipe.\n\nRešitev: Odstranite trenutno različico aplikacije, znova zaženite xManager in poskusite znova. Če se težava nadaljuje, preverite rubriko "Pogosta vprašanja".</string>
-	<string	name="existing_patched_15"	translatable="true">OBSTOJEČA DATOTEKA</string>
+	<string	name="existing_patched_15" translatable="true">OBSTOJEČA DATOTEKA</string>
 	<string	name="existing_patched_desc_15"	translatable="true">Že obstoječa klonirana različica spremenjene aplikacije je bila najdena v mestu datotek. Kako želite nadaljevati?</string>
 
 	<string	name="close_15"	translatable="true">Zapri</string>
@@ -1484,9 +1484,9 @@
 	<string	name="uninstall_15"	translatable="true">Odstrani</string>
 	<string	name="ignore_15"	translatable="true">Prezri</string>
 	<string	name="delete_15"	translatable="true">Zbriši</string>
-	<string	name="uninstall_patched_15"	translatable="true">ODSTRANITE APLIKACIJO</string>
+	<string	name="uninstall_patched_15" translatable="true">ODSTRANITE APLIKACIJO</string>
 	<string	name="open_settings_15"	translatable="true">ODPRITE NASTAVITVE</string>
-	<string	name="open_patched_15"	translatable="true">ODPRITE APLIKACIJO</string>
+	<string	name="open_patched_15" translatable="true">ODPRITE APLIKACIJO</string>
 	
 	<!--ROMANIAN LANGUAGE-->
 	<string	name="app_name_16"	translatable="true">xManager</string>
@@ -2328,7 +2328,7 @@
 	<string	name="uninstall_patched_24"	translatable="true">AVINSTALLERA PATCHAD</string>
 	<string	name="open_settings_24"	translatable="true">ÖPPNA INSTÄLLNINGAR</string>
 	<string	name="open_patched_24"	translatable="true">ÖPPNA PATCHAD</string>
-
+	
 	<!--FINNISH LANGUAGE-->
 	<string	name="app_name_25"	translatable="true">xManager</string>
 	<string	name="spotify_regular_25"	translatable="true">SPOTIFY (PERUS)</string>
