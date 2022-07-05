@@ -11,8 +11,8 @@ android {
 		applicationId "com.xc3fff0e.xmanager"
 		minSdkVersion 21
 		targetSdkVersion 31
-		versionCode 3
-		versionName "3.7"
+		versionCode 210209
+		versionName "3.8"
 	}
 	
 	buildTypes {
