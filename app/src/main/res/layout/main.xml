@@ -128,6 +128,15 @@
 			android:textColor="#000000"
 			android:alpha="0.0" />
 		<TextView
+			android:id="@+id/fixer"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="FIXER"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
 			android:id="@+id/ream"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
