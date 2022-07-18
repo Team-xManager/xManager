@@ -12,7 +12,7 @@ android {
 		minSdkVersion 21
 		targetSdkVersion 31
 		versionCode 210209
-		versionName "3.8"
+		versionName "3.9"
 	}
 	
 	buildTypes {
