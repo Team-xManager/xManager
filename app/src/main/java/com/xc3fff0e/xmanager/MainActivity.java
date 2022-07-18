@@ -140,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
 	private double CLICKER_2 = 0;
 	private double CLICKER_3 = 0;
 	private  AlertDialog AlertDialog;
+	private String fixer_0 = "";
 	
 	private ArrayList<String> Language = new ArrayList<>();
 	private ArrayList<String> Theme = new ArrayList<>();
@@ -166,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
 	private TextView installation_failed;
 	private TextView existing_patched;
 	private TextView close;
+	private TextView fixer;
 	private TextView ream;
 	private TextView uninstall_patched;
 	private TextView open_settings;
@@ -499,6 +501,7 @@ public class MainActivity extends AppCompatActivity {
 		installation_failed = findViewById(R.id.installation_failed);
 		existing_patched = findViewById(R.id.existing_patched);
 		close = findViewById(R.id.close);
+		fixer = findViewById(R.id.fixer);
 		ream = findViewById(R.id.ream);
 		uninstall_patched = findViewById(R.id.uninstall_patched);
 		open_settings = findViewById(R.id.open_settings);
@@ -1255,6 +1258,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url);
 						continue_1.setText(R.string.continue_1);
 						cancel.setText(R.string.cancel);
+					    fixer.setText(R.string.fixer);
 						download.setText(R.string.download);
 						later.setText(R.string.later);
 						install_now.setText(R.string.install_now);
@@ -1268,6 +1272,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -1311,7 +1316,7 @@ public class MainActivity extends AppCompatActivity {
 					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
 					    close_0 = close.getText().toString();
 					    uninstall_0 = uninstall.getText().toString();
-
+					
 					COUNTER = 1;
 				}
 				if (_position == 1) {
@@ -1364,6 +1369,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_01);
 						continue_1.setText(R.string.continue_1_01);
 						cancel.setText(R.string.cancel_01);
+					    fixer.setText(R.string.fixer_01);
 						download.setText(R.string.download_01);
 						later.setText(R.string.later_01);
 						install_now.setText(R.string.install_now_01);
@@ -1377,6 +1383,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -1420,7 +1427,7 @@ public class MainActivity extends AppCompatActivity {
 					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
 					    close_0 = close.getText().toString();
 					    uninstall_0 = uninstall.getText().toString();
-
+					
 					COUNTER = 1;
 				}
 				if (_position == 2) {
@@ -1473,6 +1480,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_02);
 						continue_1.setText(R.string.continue_1_02);
 						cancel.setText(R.string.cancel_02);
+					    fixer.setText(R.string.fixer_02);
 						download.setText(R.string.download_02);
 						later.setText(R.string.later_02);
 						install_now.setText(R.string.install_now_02);
@@ -1486,6 +1494,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -1582,6 +1591,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_03);
 						continue_1.setText(R.string.continue_1_03);
 						cancel.setText(R.string.cancel_03);
+					    fixer.setText(R.string.fixer_03);
 						download.setText(R.string.download_03);
 						later.setText(R.string.later_03);
 						install_now.setText(R.string.install_now_03);
@@ -1595,6 +1605,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -1691,6 +1702,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_04);
 						continue_1.setText(R.string.continue_1_04);
 						cancel.setText(R.string.cancel_04);
+					    fixer.setText(R.string.fixer_04);
 						download.setText(R.string.download_04);
 						later.setText(R.string.later_04);
 						install_now.setText(R.string.install_now_04);
@@ -1704,6 +1716,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -1800,6 +1813,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_05);
 						continue_1.setText(R.string.continue_1_05);
 						cancel.setText(R.string.cancel_05);
+					    fixer.setText(R.string.fixer_05);
 						download.setText(R.string.download_05);
 						later.setText(R.string.later_05);
 						install_now.setText(R.string.install_now_05);
@@ -1813,6 +1827,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -1909,6 +1924,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_06);
 						continue_1.setText(R.string.continue_1_06);
 						cancel.setText(R.string.cancel_06);
+					    fixer.setText(R.string.fixer_06);
 						download.setText(R.string.download_06);
 						later.setText(R.string.later_06);
 						install_now.setText(R.string.install_now_06);
@@ -1922,6 +1938,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -2018,6 +2035,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_07);
 						continue_1.setText(R.string.continue_1_07);
 						cancel.setText(R.string.cancel_07);
+					    fixer.setText(R.string.fixer_07);
 						download.setText(R.string.download_07);
 						later.setText(R.string.later_07);
 						install_now.setText(R.string.install_now_07);
@@ -2031,6 +2049,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -2127,6 +2146,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_08);
 						continue_1.setText(R.string.continue_1_08);
 						cancel.setText(R.string.cancel_08);
+					    fixer.setText(R.string.fixer_08);
 						download.setText(R.string.download_08);
 						later.setText(R.string.later_08);
 						install_now.setText(R.string.install_now_08);
@@ -2140,6 +2160,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -2236,6 +2257,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_09);
 						continue_1.setText(R.string.continue_1_09);
 						cancel.setText(R.string.cancel_09);
+					    fixer.setText(R.string.fixer_09);
 						download.setText(R.string.download_09);
 						later.setText(R.string.later_09);
 						install_now.setText(R.string.install_now_09);
@@ -2249,6 +2271,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -2345,6 +2368,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_10);
 						continue_1.setText(R.string.continue_1_10);
 						cancel.setText(R.string.cancel_10);
+					    fixer.setText(R.string.fixer_10);
 						download.setText(R.string.download_10);
 						later.setText(R.string.later_10);
 						install_now.setText(R.string.install_now_10);
@@ -2358,6 +2382,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -2454,6 +2479,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_11);
 						continue_1.setText(R.string.continue_1_11);
 						cancel.setText(R.string.cancel_11);
+					    fixer.setText(R.string.fixer_11);
 						download.setText(R.string.download_11);
 						later.setText(R.string.later_11);
 						install_now.setText(R.string.install_now_11);
@@ -2467,6 +2493,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -2563,6 +2590,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_12);
 						continue_1.setText(R.string.continue_1_12);
 						cancel.setText(R.string.cancel_12);
+					    fixer.setText(R.string.fixer_12);
 						download.setText(R.string.download_12);
 						later.setText(R.string.later_12);
 						install_now.setText(R.string.install_now_12);
@@ -2576,6 +2604,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -2672,6 +2701,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_13);
 						continue_1.setText(R.string.continue_1_13);
 						cancel.setText(R.string.cancel_13);
+					    fixer.setText(R.string.fixer_13);
 						download.setText(R.string.download_13);
 						later.setText(R.string.later_13);
 						install_now.setText(R.string.install_now_13);
@@ -2685,6 +2715,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -2781,6 +2812,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_14);
 						continue_1.setText(R.string.continue_1_14);
 						cancel.setText(R.string.cancel_14);
+					    fixer.setText(R.string.fixer_14);
 						download.setText(R.string.download_14);
 						later.setText(R.string.later_14);
 						install_now.setText(R.string.install_now_14);
@@ -2794,6 +2826,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -2890,6 +2923,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_15);
 						continue_1.setText(R.string.continue_1_15);
 						cancel.setText(R.string.cancel_15);
+					    fixer.setText(R.string.fixer_15);
 						download.setText(R.string.download_15);
 						later.setText(R.string.later_15);
 						install_now.setText(R.string.install_now_15);
@@ -2903,6 +2937,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -2999,6 +3034,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_16);
 						continue_1.setText(R.string.continue_1_16);
 						cancel.setText(R.string.cancel_16);
+					    fixer.setText(R.string.fixer_16);
 						download.setText(R.string.download_16);
 						later.setText(R.string.later_16);
 						install_now.setText(R.string.install_now_16);
@@ -3012,6 +3048,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -3108,6 +3145,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_17);
 						continue_1.setText(R.string.continue_1_17);
 						cancel.setText(R.string.cancel_17);
+					    fixer.setText(R.string.fixer_17);
 						download.setText(R.string.download_17);
 						later.setText(R.string.later_17);
 						install_now.setText(R.string.install_now_17);
@@ -3121,6 +3159,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -3217,6 +3256,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_18);
 						continue_1.setText(R.string.continue_1_18);
 						cancel.setText(R.string.cancel_18);
+					    fixer.setText(R.string.fixer_18);
 						download.setText(R.string.download_18);
 						later.setText(R.string.later_18);
 						install_now.setText(R.string.install_now_18);
@@ -3230,6 +3270,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -3326,6 +3367,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_19);
 						continue_1.setText(R.string.continue_1_19);
 						cancel.setText(R.string.cancel_19);
+					    fixer.setText(R.string.fixer_19);
 						download.setText(R.string.download_19);
 						later.setText(R.string.later_19);
 						install_now.setText(R.string.install_now_19);
@@ -3339,6 +3381,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -3435,6 +3478,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_20);
 						continue_1.setText(R.string.continue_1_20);
 						cancel.setText(R.string.cancel_20);
+					    fixer.setText(R.string.fixer_20);
 						download.setText(R.string.download_20);
 						later.setText(R.string.later_20);
 						install_now.setText(R.string.install_now_20);
@@ -3448,6 +3492,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -3544,6 +3589,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_21);
 						continue_1.setText(R.string.continue_1_21);
 						cancel.setText(R.string.cancel_21);
+					    fixer.setText(R.string.fixer_21);
 						download.setText(R.string.download_21);
 						later.setText(R.string.later_21);
 						install_now.setText(R.string.install_now_21);
@@ -3557,6 +3603,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -3653,6 +3700,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_22);
 						continue_1.setText(R.string.continue_1_22);
 						cancel.setText(R.string.cancel_22);
+					    fixer.setText(R.string.fixer_22);
 						download.setText(R.string.download_22);
 						later.setText(R.string.later_22);
 						install_now.setText(R.string.install_now_22);
@@ -3666,6 +3714,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -3762,6 +3811,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_23);
 						continue_1.setText(R.string.continue_1_23);
 						cancel.setText(R.string.cancel_23);
+					    fixer.setText(R.string.fixer_23);
 						download.setText(R.string.download_23);
 						later.setText(R.string.later_23);
 						install_now.setText(R.string.install_now_23);
@@ -3775,6 +3825,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -3871,6 +3922,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_24);
 						continue_1.setText(R.string.continue_1_24);
 						cancel.setText(R.string.cancel_24);
+					    fixer.setText(R.string.fixer_24);
 						download.setText(R.string.download_24);
 						later.setText(R.string.later_24);
 						install_now.setText(R.string.install_now_24);
@@ -3884,6 +3936,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -3980,6 +4033,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_25);
 						continue_1.setText(R.string.continue_1_25);
 						cancel.setText(R.string.cancel_25);
+					    fixer.setText(R.string.fixer_25);
 						download.setText(R.string.download_25);
 						later.setText(R.string.later_25);
 						install_now.setText(R.string.install_now_25);
@@ -3993,6 +4047,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -6375,6 +6430,31 @@ public class MainActivity extends AppCompatActivity {
 																								_timer.schedule(Timer, (int)(0));
 																						}
 																				});
+																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, fixer_0, new DialogInterface.OnClickListener() {
+																						@Override
+																						public void onClick(DialogInterface dialog, int which) {
+																								prog.setCancelable(true);
+																								manager.remove(downloadId);
+																								_File_Remover();
+																								Timer = new TimerTask() {
+																										@Override
+																										public void run() {
+																												runOnUiThread(new Runnable() {
+																														@Override
+																														public void run() {
+																																try {
+																																		prog.dismiss();
+																		                                                                _Reminder();
+																		                                                                _Browser(hidden_download.getText().toString());
+																																} catch (Exception e) {
+																																}
+																														}
+																												});
+																										}
+																								};
+																								_timer.schedule(Timer, (int)(0));
+																						}
+																				});
 																				prog.show();
 																		}
 																}
@@ -6735,6 +6815,30 @@ public class MainActivity extends AppCompatActivity {
 																														public void run() {
 																																try {
 																																		prog.dismiss();
+																																} catch (Exception e) {
+																																}
+																														}
+																												});
+																										}
+																								};
+																								_timer.schedule(Timer, (int)(0));
+																						}
+																				});
+																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, fixer_0, new DialogInterface.OnClickListener() {
+																						@Override
+																						public void onClick(DialogInterface dialog, int which) {
+																								prog.setCancelable(true);
+																								manager.remove(downloadId);
+																								_File_Remover();
+																								Timer = new TimerTask() {
+																										@Override
+																										public void run() {
+																												runOnUiThread(new Runnable() {
+																														@Override
+																														public void run() {
+																																try {
+																																		prog.dismiss();
+																																		_Browser(hidden_update.getText().toString());
 																																} catch (Exception e) {
 																																}
 																														}
@@ -7391,6 +7495,31 @@ public class MainActivity extends AppCompatActivity {
 																								_timer.schedule(Timer, (int)(0));
 																						}
 																				});
+																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, fixer_0, new DialogInterface.OnClickListener() {
+																						@Override
+																						public void onClick(DialogInterface dialog, int which) {
+																								prog.setCancelable(true);
+																								manager.remove(downloadId);
+																								_File_Remover();
+																								Timer = new TimerTask() {
+																										@Override
+																										public void run() {
+																												runOnUiThread(new Runnable() {
+																														@Override
+																														public void run() {
+																																try {
+																																		prog.dismiss();
+																		                                                                _Reminder();
+																																		_Browser(hidden_download.getText().toString());
+																																} catch (Exception e) {
+																																}
+																														}
+																												});
+																										}
+																								};
+																								_timer.schedule(Timer, (int)(0));
+																						}
+																				});
 																				prog.show();
 																		}
 																		if (bytes_downloaded == bytes_total) {
@@ -7424,7 +7553,7 @@ public class MainActivity extends AppCompatActivity {
 																																												intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 																																												intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
 																																												startActivity(intent);
-																							                                                                                    _Reminder();
+																																												_Reminder();
 																																										}
 																																										catch(Exception e) {
 																																										}
@@ -7433,7 +7562,7 @@ public class MainActivity extends AppCompatActivity {
 																																												Intent intent = new Intent(Intent.ACTION_VIEW);
 																																												intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
 																																												startActivity(intent);
-																							                                                                                    _Reminder();
+																																												_Reminder();
 																																										}
 																																										catch(Exception e) {
 																																										}
@@ -7621,6 +7750,30 @@ public class MainActivity extends AppCompatActivity {
 																								_timer.schedule(Timer, (int)(0));
 																						}
 																				});
+																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, fixer_0, new DialogInterface.OnClickListener() {
+																						@Override
+																						public void onClick(DialogInterface dialog, int which) {
+																								prog.setCancelable(true);
+																								manager.remove(downloadId);
+																								_File_Remover();
+																								Timer = new TimerTask() {
+																										@Override
+																										public void run() {
+																												runOnUiThread(new Runnable() {
+																														@Override
+																														public void run() {
+																																try {
+																																		prog.dismiss();
+																																		_Browser(hidden_update.getText().toString());
+																																} catch (Exception e) {
+																																}
+																														}
+																												});
+																										}
+																								};
+																								_timer.schedule(Timer, (int)(0));
+																						}
+																				});
 																				prog.show();
 																		}
 																		if (bytes_downloaded == bytes_total) {
@@ -7750,6 +7903,7 @@ public class MainActivity extends AppCompatActivity {
 				copy_url.setText(R.string.copy_url);
 				continue_1.setText(R.string.continue_1);
 				cancel.setText(R.string.cancel);
+			    fixer.setText(R.string.fixer);
 				download.setText(R.string.download);
 				later.setText(R.string.later);
 				install_now.setText(R.string.install_now);
@@ -7763,6 +7917,7 @@ public class MainActivity extends AppCompatActivity {
 				download_0 = download.getText().toString();
 				continue_0 = continue_1.getText().toString();
 				cancel_0 = cancel.getText().toString();
+			    fixer_0 = fixer.getText().toString();
 				later_0 = later.getText().toString();
 				install_now_0 = install_now.getText().toString();
 				go_back_0 = go_back.getText().toString();
@@ -7806,7 +7961,7 @@ public class MainActivity extends AppCompatActivity {
 			    existing_patched_desc_0 = existing_patched_desc.getText().toString();
 			    close_0 = close.getText().toString();
 			    uninstall_0 = uninstall.getText().toString();
-
+			
 			select_language.setSelection((int)(0));
 		}
 		else {
@@ -7859,6 +8014,7 @@ public class MainActivity extends AppCompatActivity {
 					copy_url.setText(R.string.copy_url_01);
 					continue_1.setText(R.string.continue_1_01);
 					cancel.setText(R.string.cancel_01);
+				    fixer.setText(R.string.fixer_01);
 					download.setText(R.string.download_01);
 					later.setText(R.string.later_01);
 					install_now.setText(R.string.install_now_01);
@@ -7872,6 +8028,7 @@ public class MainActivity extends AppCompatActivity {
 					download_0 = download.getText().toString();
 					continue_0 = continue_1.getText().toString();
 					cancel_0 = cancel.getText().toString();
+				    fixer_0 = fixer.getText().toString();
 					later_0 = later.getText().toString();
 					install_now_0 = install_now.getText().toString();
 					go_back_0 = go_back.getText().toString();
@@ -7915,7 +8072,7 @@ public class MainActivity extends AppCompatActivity {
 				    existing_patched_desc_0 = existing_patched_desc.getText().toString();
 				    close_0 = close.getText().toString();
 				    uninstall_0 = uninstall.getText().toString();
-
+				
 				select_language.setSelection((int)(1));
 			}
 			else {
@@ -7968,6 +8125,7 @@ public class MainActivity extends AppCompatActivity {
 						copy_url.setText(R.string.copy_url_02);
 						continue_1.setText(R.string.continue_1_02);
 						cancel.setText(R.string.cancel_02);
+					    fixer.setText(R.string.fixer_02);
 						download.setText(R.string.download_02);
 						later.setText(R.string.later_02);
 						install_now.setText(R.string.install_now_02);
@@ -7981,6 +8139,7 @@ public class MainActivity extends AppCompatActivity {
 						download_0 = download.getText().toString();
 						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
+					    fixer_0 = fixer.getText().toString();
 						later_0 = later.getText().toString();
 						install_now_0 = install_now.getText().toString();
 						go_back_0 = go_back.getText().toString();
@@ -8077,6 +8236,7 @@ public class MainActivity extends AppCompatActivity {
 							copy_url.setText(R.string.copy_url_03);
 							continue_1.setText(R.string.continue_1_03);
 							cancel.setText(R.string.cancel_03);
+						    fixer.setText(R.string.fixer_03);
 							download.setText(R.string.download_03);
 							later.setText(R.string.later_03);
 							install_now.setText(R.string.install_now_03);
@@ -8090,6 +8250,7 @@ public class MainActivity extends AppCompatActivity {
 							download_0 = download.getText().toString();
 							continue_0 = continue_1.getText().toString();
 							cancel_0 = cancel.getText().toString();
+						    fixer_0 = fixer.getText().toString();
 							later_0 = later.getText().toString();
 							install_now_0 = install_now.getText().toString();
 							go_back_0 = go_back.getText().toString();
@@ -8186,6 +8347,7 @@ public class MainActivity extends AppCompatActivity {
 								copy_url.setText(R.string.copy_url_04);
 								continue_1.setText(R.string.continue_1_04);
 								cancel.setText(R.string.cancel_04);
+							    fixer.setText(R.string.fixer_04);
 								download.setText(R.string.download_04);
 								later.setText(R.string.later_04);
 								install_now.setText(R.string.install_now_04);
@@ -8199,6 +8361,7 @@ public class MainActivity extends AppCompatActivity {
 								download_0 = download.getText().toString();
 								continue_0 = continue_1.getText().toString();
 								cancel_0 = cancel.getText().toString();
+							    fixer_0 = fixer.getText().toString();
 								later_0 = later.getText().toString();
 								install_now_0 = install_now.getText().toString();
 								go_back_0 = go_back.getText().toString();
@@ -8295,6 +8458,7 @@ public class MainActivity extends AppCompatActivity {
 									copy_url.setText(R.string.copy_url_05);
 									continue_1.setText(R.string.continue_1_05);
 									cancel.setText(R.string.cancel_05);
+								    fixer.setText(R.string.fixer_05);
 									download.setText(R.string.download_05);
 									later.setText(R.string.later_05);
 									install_now.setText(R.string.install_now_05);
@@ -8308,6 +8472,7 @@ public class MainActivity extends AppCompatActivity {
 									download_0 = download.getText().toString();
 									continue_0 = continue_1.getText().toString();
 									cancel_0 = cancel.getText().toString();
+								    fixer_0 = fixer.getText().toString();
 									later_0 = later.getText().toString();
 									install_now_0 = install_now.getText().toString();
 									go_back_0 = go_back.getText().toString();
@@ -8404,6 +8569,7 @@ public class MainActivity extends AppCompatActivity {
 										copy_url.setText(R.string.copy_url_06);
 										continue_1.setText(R.string.continue_1_06);
 										cancel.setText(R.string.cancel_06);
+									    fixer.setText(R.string.fixer_06);
 										download.setText(R.string.download_06);
 										later.setText(R.string.later_06);
 										install_now.setText(R.string.install_now_06);
@@ -8417,6 +8583,7 @@ public class MainActivity extends AppCompatActivity {
 										download_0 = download.getText().toString();
 										continue_0 = continue_1.getText().toString();
 										cancel_0 = cancel.getText().toString();
+									    fixer_0 = fixer.getText().toString();
 										later_0 = later.getText().toString();
 										install_now_0 = install_now.getText().toString();
 										go_back_0 = go_back.getText().toString();
@@ -8513,6 +8680,7 @@ public class MainActivity extends AppCompatActivity {
 											copy_url.setText(R.string.copy_url_07);
 											continue_1.setText(R.string.continue_1_07);
 											cancel.setText(R.string.cancel_07);
+										    fixer.setText(R.string.fixer_07);
 											download.setText(R.string.download_07);
 											later.setText(R.string.later_07);
 											install_now.setText(R.string.install_now_07);
@@ -8526,6 +8694,7 @@ public class MainActivity extends AppCompatActivity {
 											download_0 = download.getText().toString();
 											continue_0 = continue_1.getText().toString();
 											cancel_0 = cancel.getText().toString();
+										    fixer_0 = fixer.getText().toString();
 											later_0 = later.getText().toString();
 											install_now_0 = install_now.getText().toString();
 											go_back_0 = go_back.getText().toString();
@@ -8622,6 +8791,7 @@ public class MainActivity extends AppCompatActivity {
 												copy_url.setText(R.string.copy_url_08);
 												continue_1.setText(R.string.continue_1_08);
 												cancel.setText(R.string.cancel_08);
+											    fixer.setText(R.string.fixer_08);
 												download.setText(R.string.download_08);
 												later.setText(R.string.later_08);
 												install_now.setText(R.string.install_now_08);
@@ -8635,6 +8805,7 @@ public class MainActivity extends AppCompatActivity {
 												download_0 = download.getText().toString();
 												continue_0 = continue_1.getText().toString();
 												cancel_0 = cancel.getText().toString();
+											    fixer_0 = fixer.getText().toString();
 												later_0 = later.getText().toString();
 												install_now_0 = install_now.getText().toString();
 												go_back_0 = go_back.getText().toString();
@@ -8731,6 +8902,7 @@ public class MainActivity extends AppCompatActivity {
 													copy_url.setText(R.string.copy_url_09);
 													continue_1.setText(R.string.continue_1_09);
 													cancel.setText(R.string.cancel_09);
+												    fixer.setText(R.string.fixer_09);
 													download.setText(R.string.download_09);
 													later.setText(R.string.later_09);
 													install_now.setText(R.string.install_now_09);
@@ -8744,6 +8916,7 @@ public class MainActivity extends AppCompatActivity {
 													download_0 = download.getText().toString();
 													continue_0 = continue_1.getText().toString();
 													cancel_0 = cancel.getText().toString();
+												    fixer_0 = fixer.getText().toString();
 													later_0 = later.getText().toString();
 													install_now_0 = install_now.getText().toString();
 													go_back_0 = go_back.getText().toString();
@@ -8840,6 +9013,7 @@ public class MainActivity extends AppCompatActivity {
 														copy_url.setText(R.string.copy_url_10);
 														continue_1.setText(R.string.continue_1_10);
 														cancel.setText(R.string.cancel_10);
+													    fixer.setText(R.string.fixer_10);
 														download.setText(R.string.download_10);
 														later.setText(R.string.later_10);
 														install_now.setText(R.string.install_now_10);
@@ -8853,6 +9027,7 @@ public class MainActivity extends AppCompatActivity {
 														download_0 = download.getText().toString();
 														continue_0 = continue_1.getText().toString();
 														cancel_0 = cancel.getText().toString();
+													    fixer_0 = fixer.getText().toString();
 														later_0 = later.getText().toString();
 														install_now_0 = install_now.getText().toString();
 														go_back_0 = go_back.getText().toString();
@@ -8949,6 +9124,7 @@ public class MainActivity extends AppCompatActivity {
 															copy_url.setText(R.string.copy_url_11);
 															continue_1.setText(R.string.continue_1_11);
 															cancel.setText(R.string.cancel_11);
+														    fixer.setText(R.string.fixer_11);
 															download.setText(R.string.download_11);
 															later.setText(R.string.later_11);
 															install_now.setText(R.string.install_now_11);
@@ -8962,6 +9138,7 @@ public class MainActivity extends AppCompatActivity {
 															download_0 = download.getText().toString();
 															continue_0 = continue_1.getText().toString();
 															cancel_0 = cancel.getText().toString();
+														    fixer_0 = fixer.getText().toString();
 															later_0 = later.getText().toString();
 															install_now_0 = install_now.getText().toString();
 															go_back_0 = go_back.getText().toString();
@@ -9058,6 +9235,7 @@ public class MainActivity extends AppCompatActivity {
 																copy_url.setText(R.string.copy_url_12);
 																continue_1.setText(R.string.continue_1_12);
 																cancel.setText(R.string.cancel_12);
+															    fixer.setText(R.string.fixer_12);
 																download.setText(R.string.download_12);
 																later.setText(R.string.later_12);
 																install_now.setText(R.string.install_now_12);
@@ -9071,6 +9249,7 @@ public class MainActivity extends AppCompatActivity {
 																download_0 = download.getText().toString();
 																continue_0 = continue_1.getText().toString();
 																cancel_0 = cancel.getText().toString();
+															    fixer_0 = fixer.getText().toString();
 																later_0 = later.getText().toString();
 																install_now_0 = install_now.getText().toString();
 																go_back_0 = go_back.getText().toString();
@@ -9167,6 +9346,7 @@ public class MainActivity extends AppCompatActivity {
 																	copy_url.setText(R.string.copy_url_13);
 																	continue_1.setText(R.string.continue_1_13);
 																	cancel.setText(R.string.cancel_13);
+																    fixer.setText(R.string.fixer_13);
 																	download.setText(R.string.download_13);
 																	later.setText(R.string.later_13);
 																	install_now.setText(R.string.install_now_13);
@@ -9180,6 +9360,7 @@ public class MainActivity extends AppCompatActivity {
 																	download_0 = download.getText().toString();
 																	continue_0 = continue_1.getText().toString();
 																	cancel_0 = cancel.getText().toString();
+																    fixer_0 = fixer.getText().toString();
 																	later_0 = later.getText().toString();
 																	install_now_0 = install_now.getText().toString();
 																	go_back_0 = go_back.getText().toString();
@@ -9276,6 +9457,7 @@ public class MainActivity extends AppCompatActivity {
 																		copy_url.setText(R.string.copy_url_14);
 																		continue_1.setText(R.string.continue_1_14);
 																		cancel.setText(R.string.cancel_14);
+																	    fixer.setText(R.string.fixer_14);
 																		download.setText(R.string.download_14);
 																		later.setText(R.string.later_14);
 																		install_now.setText(R.string.install_now_14);
@@ -9289,6 +9471,7 @@ public class MainActivity extends AppCompatActivity {
 																		download_0 = download.getText().toString();
 																		continue_0 = continue_1.getText().toString();
 																		cancel_0 = cancel.getText().toString();
+																	    fixer_0 = fixer.getText().toString();
 																		later_0 = later.getText().toString();
 																		install_now_0 = install_now.getText().toString();
 																		go_back_0 = go_back.getText().toString();
@@ -9385,6 +9568,7 @@ public class MainActivity extends AppCompatActivity {
 																			copy_url.setText(R.string.copy_url_15);
 																			continue_1.setText(R.string.continue_1_15);
 																			cancel.setText(R.string.cancel_15);
+																		    fixer.setText(R.string.fixer_15);
 																			download.setText(R.string.download_15);
 																			later.setText(R.string.later_15);
 																			install_now.setText(R.string.install_now_15);
@@ -9398,6 +9582,7 @@ public class MainActivity extends AppCompatActivity {
 																			download_0 = download.getText().toString();
 																			continue_0 = continue_1.getText().toString();
 																			cancel_0 = cancel.getText().toString();
+																		    fixer_0 = fixer.getText().toString();
 																			later_0 = later.getText().toString();
 																			install_now_0 = install_now.getText().toString();
 																			go_back_0 = go_back.getText().toString();
@@ -9494,6 +9679,7 @@ public class MainActivity extends AppCompatActivity {
 																				copy_url.setText(R.string.copy_url_16);
 																				continue_1.setText(R.string.continue_1_16);
 																				cancel.setText(R.string.cancel_16);
+																			    fixer.setText(R.string.fixer_16);
 																				download.setText(R.string.download_16);
 																				later.setText(R.string.later_16);
 																				install_now.setText(R.string.install_now_16);
@@ -9507,6 +9693,7 @@ public class MainActivity extends AppCompatActivity {
 																				download_0 = download.getText().toString();
 																				continue_0 = continue_1.getText().toString();
 																				cancel_0 = cancel.getText().toString();
+																			    fixer_0 = fixer.getText().toString();
 																				later_0 = later.getText().toString();
 																				install_now_0 = install_now.getText().toString();
 																				go_back_0 = go_back.getText().toString();
@@ -9603,6 +9790,7 @@ public class MainActivity extends AppCompatActivity {
 																					copy_url.setText(R.string.copy_url_17);
 																					continue_1.setText(R.string.continue_1_17);
 																					cancel.setText(R.string.cancel_17);
+																				    fixer.setText(R.string.fixer_17);
 																					download.setText(R.string.download_17);
 																					later.setText(R.string.later_17);
 																					install_now.setText(R.string.install_now_17);
@@ -9616,6 +9804,7 @@ public class MainActivity extends AppCompatActivity {
 																					download_0 = download.getText().toString();
 																					continue_0 = continue_1.getText().toString();
 																					cancel_0 = cancel.getText().toString();
+																				    fixer_0 = fixer.getText().toString();
 																					later_0 = later.getText().toString();
 																					install_now_0 = install_now.getText().toString();
 																					go_back_0 = go_back.getText().toString();
@@ -9712,6 +9901,7 @@ public class MainActivity extends AppCompatActivity {
 																						copy_url.setText(R.string.copy_url_18);
 																						continue_1.setText(R.string.continue_1_18);
 																						cancel.setText(R.string.cancel_18);
+																					    fixer.setText(R.string.fixer_18);
 																						download.setText(R.string.download_18);
 																						later.setText(R.string.later_18);
 																						install_now.setText(R.string.install_now_18);
@@ -9725,6 +9915,7 @@ public class MainActivity extends AppCompatActivity {
 																						download_0 = download.getText().toString();
 																						continue_0 = continue_1.getText().toString();
 																						cancel_0 = cancel.getText().toString();
+																					    fixer_0 = fixer.getText().toString();
 																						later_0 = later.getText().toString();
 																						install_now_0 = install_now.getText().toString();
 																						go_back_0 = go_back.getText().toString();
@@ -9821,6 +10012,7 @@ public class MainActivity extends AppCompatActivity {
 																							copy_url.setText(R.string.copy_url_19);
 																							continue_1.setText(R.string.continue_1_19);
 																							cancel.setText(R.string.cancel_19);
+																						    fixer.setText(R.string.fixer_19);
 																							download.setText(R.string.download_19);
 																							later.setText(R.string.later_19);
 																							install_now.setText(R.string.install_now_19);
@@ -9834,6 +10026,7 @@ public class MainActivity extends AppCompatActivity {
 																							download_0 = download.getText().toString();
 																							continue_0 = continue_1.getText().toString();
 																							cancel_0 = cancel.getText().toString();
+																						    fixer_0 = fixer.getText().toString();
 																							later_0 = later.getText().toString();
 																							install_now_0 = install_now.getText().toString();
 																							go_back_0 = go_back.getText().toString();
@@ -9930,6 +10123,7 @@ public class MainActivity extends AppCompatActivity {
 																								copy_url.setText(R.string.copy_url_20);
 																								continue_1.setText(R.string.continue_1_20);
 																								cancel.setText(R.string.cancel_20);
+																							    fixer.setText(R.string.fixer_20);
 																								download.setText(R.string.download_20);
 																								later.setText(R.string.later_20);
 																								install_now.setText(R.string.install_now_20);
@@ -9943,6 +10137,7 @@ public class MainActivity extends AppCompatActivity {
 																								download_0 = download.getText().toString();
 																								continue_0 = continue_1.getText().toString();
 																								cancel_0 = cancel.getText().toString();
+																							    fixer_0 = fixer.getText().toString();
 																								later_0 = later.getText().toString();
 																								install_now_0 = install_now.getText().toString();
 																								go_back_0 = go_back.getText().toString();
@@ -10039,6 +10234,7 @@ public class MainActivity extends AppCompatActivity {
 																									copy_url.setText(R.string.copy_url_21);
 																									continue_1.setText(R.string.continue_1_21);
 																									cancel.setText(R.string.cancel_21);
+																								    fixer.setText(R.string.fixer_21);
 																									download.setText(R.string.download_21);
 																									later.setText(R.string.later_21);
 																									install_now.setText(R.string.install_now_21);
@@ -10052,6 +10248,7 @@ public class MainActivity extends AppCompatActivity {
 																									download_0 = download.getText().toString();
 																									continue_0 = continue_1.getText().toString();
 																									cancel_0 = cancel.getText().toString();
+																								    fixer_0 = fixer.getText().toString();
 																									later_0 = later.getText().toString();
 																									install_now_0 = install_now.getText().toString();
 																									go_back_0 = go_back.getText().toString();
@@ -10148,6 +10345,7 @@ public class MainActivity extends AppCompatActivity {
 																										copy_url.setText(R.string.copy_url_22);
 																										continue_1.setText(R.string.continue_1_22);
 																										cancel.setText(R.string.cancel_22);
+																									    fixer.setText(R.string.fixer_22);
 																										download.setText(R.string.download_22);
 																										later.setText(R.string.later_22);
 																										install_now.setText(R.string.install_now_22);
@@ -10161,6 +10359,7 @@ public class MainActivity extends AppCompatActivity {
 																										download_0 = download.getText().toString();
 																										continue_0 = continue_1.getText().toString();
 																										cancel_0 = cancel.getText().toString();
+																									    fixer_0 = fixer.getText().toString();
 																										later_0 = later.getText().toString();
 																										install_now_0 = install_now.getText().toString();
 																										go_back_0 = go_back.getText().toString();
@@ -10257,6 +10456,7 @@ public class MainActivity extends AppCompatActivity {
 																											copy_url.setText(R.string.copy_url_23);
 																											continue_1.setText(R.string.continue_1_23);
 																											cancel.setText(R.string.cancel_23);
+																										    fixer.setText(R.string.fixer_23);
 																											download.setText(R.string.download_23);
 																											later.setText(R.string.later_23);
 																											install_now.setText(R.string.install_now_23);
@@ -10270,6 +10470,7 @@ public class MainActivity extends AppCompatActivity {
 																											download_0 = download.getText().toString();
 																											continue_0 = continue_1.getText().toString();
 																											cancel_0 = cancel.getText().toString();
+																										    fixer_0 = fixer.getText().toString();
 																											later_0 = later.getText().toString();
 																											install_now_0 = install_now.getText().toString();
 																											go_back_0 = go_back.getText().toString();
@@ -10366,6 +10567,7 @@ public class MainActivity extends AppCompatActivity {
 																												copy_url.setText(R.string.copy_url_24);
 																												continue_1.setText(R.string.continue_1_24);
 																												cancel.setText(R.string.cancel_24);
+																											    fixer.setText(R.string.fixer_24);
 																												download.setText(R.string.download_24);
 																												later.setText(R.string.later_24);
 																												install_now.setText(R.string.install_now_24);
@@ -10379,6 +10581,7 @@ public class MainActivity extends AppCompatActivity {
 																												download_0 = download.getText().toString();
 																												continue_0 = continue_1.getText().toString();
 																												cancel_0 = cancel.getText().toString();
+																											    fixer_0 = fixer.getText().toString();
 																												later_0 = later.getText().toString();
 																												install_now_0 = install_now.getText().toString();
 																												go_back_0 = go_back.getText().toString();
@@ -10475,6 +10678,7 @@ public class MainActivity extends AppCompatActivity {
 																													copy_url.setText(R.string.copy_url_25);
 																													continue_1.setText(R.string.continue_1_25);
 																													cancel.setText(R.string.cancel_25);
+																												    fixer.setText(R.string.fixer_25);
 																													download.setText(R.string.download_25);
 																													later.setText(R.string.later_25);
 																													install_now.setText(R.string.install_now_25);
@@ -10488,6 +10692,7 @@ public class MainActivity extends AppCompatActivity {
 																													download_0 = download.getText().toString();
 																													continue_0 = continue_1.getText().toString();
 																													cancel_0 = cancel.getText().toString();
+																												    fixer_0 = fixer.getText().toString();
 																													later_0 = later.getText().toString();
 																													install_now_0 = install_now.getText().toString();
 																													go_back_0 = go_back.getText().toString();
@@ -10706,6 +10911,7 @@ public class MainActivity extends AppCompatActivity {
 		copy_url.setText(R.string.copy_url);
 		continue_1.setText(R.string.continue_1);
 		cancel.setText(R.string.cancel);
+		fixer.setText(R.string.fixer);
 		download.setText(R.string.download);
 		later.setText(R.string.later);
 		install_now.setText(R.string.install_now);
@@ -10720,6 +10926,7 @@ public class MainActivity extends AppCompatActivity {
 		continue_0 = continue_1.getText().toString();
 		cancel_0 = cancel.getText().toString();
 		later_0 = later.getText().toString();
+		fixer_0 = fixer.getText().toString();
 		install_now_0 = install_now.getText().toString();
 		go_back_0 = go_back.getText().toString();
 		install_update_0 = install_update.getText().toString();
@@ -11159,6 +11366,31 @@ public class MainActivity extends AppCompatActivity {
 																								_timer.schedule(Timer, (int)(0));
 																						}
 																				});
+																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, fixer_0, new DialogInterface.OnClickListener() {
+																						@Override
+																						public void onClick(DialogInterface dialog, int which) {
+																								prog.setCancelable(true);
+																								manager.remove(downloadId);
+																								_File_Remover();
+																								Timer = new TimerTask() {
+																										@Override
+																										public void run() {
+																												runOnUiThread(new Runnable() {
+																														@Override
+																														public void run() {
+																																try {
+																																		prog.dismiss();
+																		                                                                _Reminder();
+																																		_Browser(hidden_download.getText().toString());
+																																} catch (Exception e) {
+																																}
+																														}
+																												});
+																										}
+																								};
+																								_timer.schedule(Timer, (int)(0));
+																						}
+																				});
 																				prog.show();
 																		}
 																}
@@ -11287,6 +11519,31 @@ public class MainActivity extends AppCompatActivity {
 																								_timer.schedule(Timer, (int)(0));
 																						}
 																				});
+																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, fixer_0, new DialogInterface.OnClickListener() {
+																						@Override
+																						public void onClick(DialogInterface dialog, int which) {
+																								prog.setCancelable(true);
+																								manager.remove(downloadId);
+																								_File_Remover();
+																								Timer = new TimerTask() {
+																										@Override
+																										public void run() {
+																												runOnUiThread(new Runnable() {
+																														@Override
+																														public void run() {
+																																try {
+																																		prog.dismiss();
+																		                                                                _Reminder();
+																																		_Browser(hidden_download.getText().toString());
+																																} catch (Exception e) {
+																																}
+																														}
+																												});
+																										}
+																								};
+																								_timer.schedule(Timer, (int)(0));
+																						}
+																				});
 																				prog.show();
 																		}
 																		if (bytes_downloaded == bytes_total) {
@@ -11320,7 +11577,7 @@ public class MainActivity extends AppCompatActivity {
 																																												intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 																																												intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
 																																												startActivity(intent);
-																							                                                                                    _Reminder();
+																																												_Reminder();
 																																										}
 																																										catch(Exception e) {
 																																										}
@@ -11329,7 +11586,7 @@ public class MainActivity extends AppCompatActivity {
 																																												Intent intent = new Intent(Intent.ACTION_VIEW);
 																																												intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official) [Cloned].apk")), "application/vnd.android.package-archive");
 																																												startActivity(intent);
-																							                                                                                    _Reminder();
+																																												_Reminder();
 																																										}
 																																										catch(Exception e) {
 																																										}
