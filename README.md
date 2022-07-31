@@ -1,6 +1,6 @@
 # xManager (Spotify)
 <p align="center">
-  <img width="800" src="https://i.ibb.co/xGWnmZz/x-Manager-Banner-Animated.gif">
+  <img width="800" src="https://camo.githubusercontent.com/128a9b81108bff2616661ca38a827864757ec0def0286dfaa88737c40fbae91b/68747470733a2f2f692e6962622e636f2f7847576e6d5a7a2f782d4d616e616765722d42616e6e65722d416e696d617465642e676966">
   <img width="800" src="https://user-images.githubusercontent.com/78732474/157926338-709d56c3-0f6b-4c00-a6b2-e391773d67c2.png">
 </p>
 <p align="center">
