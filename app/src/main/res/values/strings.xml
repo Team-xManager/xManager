@@ -307,7 +307,7 @@
     <string    name="force_auto_install_desc_03"    translatable="true">L\’activation de cette option installera automatiquement l\’application modifiée et la mise à jour une fois téléchargées.</string>
     <string    name="show_themes_03"    translatable="true">THÈMES</string>
     <string    name="apk_location_03"    translatable="true">EMPLACEMENT DE L\’APK</string>
-    <string    name="apk_location_desc_03"    translatable="true">Répertoire dans lequel vous souhaitez enregistrer le fichier téléchargé. Si vous ne savez pas comment configurer cette fonctionnalité, veuillez la laisser telle quelle. REMARQUE: Cette fonctionnalité ne prend pas en charge le stockage externe (carte micro-SD) en raison de l\'accessibilité, des autorisations et des limitations du stockage.</string>
+    <string    name="apk_location_desc_03"    translatable="true">Répertoire dans lequel vous souhaitez enregistrer le fichier téléchargé. Si vous ne savez pas comment configurer cette fonctionnalité, veuillez la laisser telle quelle. REMARQUE: Cette fonctionnalité ne prend pas en charge le stockage externe (carte micro-SD) en raison de l\’accessibilité, des autorisations et des limitations du stockage.</string>
     <string    name="clear_directory_folders_03"    translatable="true">ÉFFACER LE CONTENU DU DOSSIER</string>
     <string    name="clear_directory_folders_desc_03"    translatable="true">Appuyez pour supprimer tout le contenu du répertoire. Celà inclus les fichiers APK et les mises à jour téléchargées.</string>
     <string    name="reset_settings_03"    translatable="true">RÉINITIALISER LES RÉGLAGES</string>
@@ -354,9 +354,9 @@
     <string    name="faq_03"    translatable="true">FAQ</string>
     
     <string    name="cloned_version_03"    translatable="true">VERSION CLONÉE (BÉTA)</string>
-    <string    name="cloned_version_desc_03"    translatable="true">L\'activation de cette option vous permet de télécharger et d\’installer la version clonée de l\’application corrigée.\n\nCelà résoudra également la plupart des erreurs ou problèmes d\’installation, en particulier si vous avez une application spotify préinstallée.</string>
+    <string    name="cloned_version_desc_03"    translatable="true">L\’activation de cette option vous permet de télécharger et d\’installer la version clonée de l\’application corrigée.\n\nCelà résoudra également la plupart des erreurs ou problèmes d\’installation, en particulier si vous avez une application spotify préinstallée.</string>
     <string    name="disable_rewarded_ads_03"    translatable="true">DÉSACTIVER LES PUBS RÉCOMPENSÉES</string>
-    <string    name="disable_rewarded_ads_desc_03"    translatable="true">Nous savons que la plupart d\’entre nous n\’aiment pas les publicités mais dans notre cas, cela nous aide considérablement à financer notre base de données, nos liens d\'hébergement, nos mises à jour, plus de correctifs et nos besoins quotidiens.\n\nC\'est le moyen le plus simple de nous soutenir sans faire de don ni dépenser quoi que ce soit.</string>
+    <string    name="disable_rewarded_ads_desc_03"    translatable="true">Nous savons que la plupart d\’entre nous n\’aiment pas les publicités mais dans notre cas, cela nous aide considérablement à financer notre base de données, nos liens d\’hébergement, nos mises à jour, plus de correctifs et nos besoins quotidiens.\n\nC\’est le moyen le plus simple de nous soutenir sans faire de don ni dépenser quoi que ce soit.</string>
     
     <string    name="installation_failed_03"    translatable="true">ÉCHEC DE L\’INSTALLATION</string>
     <string    name="installation_failed_desc_03"    translatable="true">Raison: Vous avez tenté d\’installer une version modifiée inférieure à celle actuellement installée.\n\nSolutions:\nA. Sélectionnez une version égale ou supérieure à.\nB. Désinstallez la version actuelle, puis rétrogradez.\n\nSi le problème persiste, consultez la FAQ.</string>
