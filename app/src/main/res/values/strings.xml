@@ -294,9 +294,9 @@
     <string    name="device_cpu_03"    translatable="true">CPU/ARCH</string>
     <string    name="source_03"    translatable="true">SOURCE</string>
     <string    name="discord_03"    translatable="true">DISCORD</string>
-    <string    name="support_03"    translatable="true">TÉLÉGRAMME</string>
+    <string    name="support_03"    translatable="true">TELEGRAM</string>
     <string    name="donate_03"    translatable="true">DON</string>
-    <string    name="about_03"    translatable="true">A PROPOS</string>
+    <string    name="about_03"    translatable="true">À PROPOS</string>
     <string    name="main_title_03"    translatable="true">xManager</string>
     <string    name="settings_title_03"    translatable="true">Paramètres</string>
     <string    name="about_title_03"    translatable="true">À propos de</string>
