@@ -2447,4 +2447,98 @@
     <string    name="uninstall_patched_25"    translatable="true">POISTA PATCHED</string>
     <string    name="open_settings_25"    translatable="true">AVAA ASETUKSET</string>
     <string    name="open_patched_25"    translatable="true">AVAA PATCHED</string>
+    
+     <!--CZECH LANGUAGE-->
+    <string    name="app_name_26"    translatable="true">xManager</string>
+    <string    name="spotify_regular_26"    translatable="true">SPOTIFY (BĚŽNÝ)</string>
+    <string    name="spotify_amoled_26"    translatable="true">SPOTIFY (AMOLED)</string>
+    <string    name="installed_26"    translatable="true">NAINSTALOVÁNO</string>
+    <string    name="latest_26"    translatable="true">NEJNOVĚJŠÍ</string>
+    <string    name="versions_26"    translatable="true">VERZE  </string>
+    <string    name="changelogs_26"    translatable="true">SEZNAM ZMĚN</string>
+    <string    name="manager_tools_26"    translatable="true">NÁSTROJE MANAŽERA</string>
+    <string    name="device_cpu_26"    translatable="true">CPU/ARCH</string>
+    <string    name="source_26"    translatable="true">ZDROJ</string>
+    <string    name="support_26"    translatable="true">TELEGRAM</string>
+    <string    name="donate_26"    translatable="true">PODPOŘIT</string>
+    <string    name="discord_26"    translatable="true">DISCORD</string>
+    <string    name="about_26"    translatable="true">O</string>
+    <string    name="main_title_26"    translatable="true">xManager</string>
+    <string    name="settings_title_26"    translatable="true">Nastavení</string>
+    <string    name="about_title_26"    translatable="true">O</string>
+    
+    <string    name="list_auto_refresh_26"    translatable="true">AUTOMATICKÉ OBNOVENÍ SEZNAMU</string>
+    <string    name="list_auto_refresh_desc_26"    translatable="true">Po aktivaci se po každém spuštení aplikace obnoví seznam.\n\nSeznam můžete také manuálně obnovit potažením obrazovky dolů.</string>
+    <string    name="force_auto_install_26"    translatable="true">VYNUCENÍ AUTOMATICKÉ INSTALACE</string>
+    <string    name="force_auto_install_desc_26"    translatable="true">Aktivací povolíte automatickou instalaci aktualizované aplikace hned po stažení.</string>
+    <string    name="show_themes_26"    translatable="true">VZHLED</string>
+    <string    name="apk_location_26"    translatable="true">UMÍSTĚNÍ APK</string>
+    <string    name="apk_location_desc_26"    translatable="true">Adresář, kde chcete zkopírovat stažený soubor. Pokud nevíte, jak tuto funkci nastavit, ponechejte ji tak, jak je.\n\nPOZNÁMKA: Tato funkce nepodporuje externí úložiště (SD Kartu) kvůli přístupu, právům a limitacím úložiště.</string>
+    <string    name="clear_directory_folders_26"    translatable="true">PROMAZAT SLOŽKU ADRESÁŘE</string>
+    <string    name="clear_directory_folders_desc_26"    translatable="true">Stiskněte pro smazání složky adresáře. To zahrnuje stažené soubory a aktualizace.</string>
+    <string    name="reset_settings_26"    translatable="true">DEFAULTNÍ NASTAVENÍ</string>
+    
+    <string    name="about_sub_26"    translatable="true">Bez reklam | Nové funkce | Svoboda</string>
+    <string    name="xmanager_dev_26"    translatable="true">xManager vývojář</string>
+    <string    name="spotify_mod_devs_26"    translatable="true">Vývojář upraveného Spotify</string>
+    <string    name="telegram_support_team_26"    translatable="true">Telegram | Discord | Reddit tým podpory</string>
+    <string    name="manager_testers_26"    translatable="true">Testeři Spotify aplikace a manažera</string>
+    <string    name="manager_hosting_26"    translatable="true">Databáze Managera a hostingy</string>
+    <string    name="mobilism_team_26"    translatable="true">Mobilní tým</string>
+    <string    name="forum_team_26"    translatable="true">Tým z FORUM.APK-RELEASE.NET</string>
+    <string    name="xspotify_team_26"    translatable="true">xSpotify Manager (Starý manažer)</string>
+    <string    name="contributors_26"    translatable="true">DĚKUJEME VŠEM PŘISPĚVATELŮM! ❤️</string>
+    
+    <string    name="download_selected_26"    translatable="true">Vybrali jste si tuto upravenou verzi. Opravdu chcete pokračovat?</string>
+    <string    name="download_ready_26"    translatable="true">INFORMACE K UPRAVENÉ APLIKACI</string>
+    <string    name="download_ready_desc_26"    translatable="true">Stažení upravené aplikace přepíše předchozí soubor umístěný v externím adresáři.</string>
+    <string    name="downloading_file_26"    translatable="true">STAHOVÁNÍ SOUBORU...</string>
+    <string    name="download_success_26"    translatable="true">STAŽENO ÚSPĚŠNĚ</string>
+    <string    name="new_update_26"    translatable="true">NOVÁ AKTUALIZACE MANAŽERA</string>
+    
+    <string    name="continue_1_26"    translatable="true">POKRAČOVAT</string>
+    <string    name="cancel_26"    translatable="true">ZRUŠIT</string>
+    <string    name="download_26"    translatable="true">STÁHNOUT</string>
+    <string    name="later_26"    translatable="true">POZDĚJI</string>
+    <string    name="install_now_26"    translatable="true">NAINSTALOVAT NYNÍ</string>
+    <string    name="install_update_26"    translatable="true">NAINSTALOVAT AKTUALIZACI</string>
+    <string    name="go_back_26"    translatable="true">VRÁTIT SE</string>
+    <string    name="download_update_26"    translatable="true">STÁHNOUT AKTUALIZACI</string>
+    <string    name="not_now_26"    translatable="true">POZDĚJI</string>
+    <string    name="copy_url_26"    translatable="true">KOPÍROVAT ODKAZ</string>
+    <string    name="fixer_26"    translatable="true">FIXER</string>
+    
+    <string    name="show_support_26"    translatable="true">PŘEDVEĎTE NÁM VAŠI PODPORU</string>
+    <string    name="show_support_desc"    translatable="true">Jsme neziskoví, nejsme korporát a nekompromitovaný tým. Lidi jako vy nás posouvají ve vývoji aplikace, která věci mnohem zjednoduší, hlavně už od stažení až po instalaci.\n\nVkládáme veškerý náš čas a maximální úsilí, aby bylo vše správně a dokonalé. Pokusíme se podporovat tuto aplikaci tak dlouho, jak to jen bude možné.\n\nJakákoliv peněžní částka nám pomůže a budeme si jí opravdu velmi vážit!</string>
+    
+    <string    name="maintenance"    translatable="true">ÚDRŽBA</string>
+    <string    name="maintenance_desc"    translatable="true">xManager je momentálně nedostupný. Prosíme o kontrolu aplikace později.</string>
+    <string    name="thanks"    translatable="true">DĚKUJEME!</string>
+    <string    name="language"    translatable="true">JAZYK</string>
+    <string    name="website"    translatable="true">WEB</string>
+    <string    name="reddit"    translatable="true">REDDIT</string>
+    <string    name="faq"    translatable="true">FAQ</string>
+    
+    <string    name="cloned_version"    translatable="true">KLONOVANÁ VERZE (BETA)</string>
+    <string    name="cloned_version_desc"    translatable="true">Po aktivaci si budete moci stáhnout naklonovanou upravenou aplikaci.\n\nTohle vyřeší většinu problémů s instalací, hlavně pokud je aplikace předinstalována v telefonu.</string>
+    <string    name="disable_rewarded_ads"    translatable="true">ZAKÁZAT PODPORUJÍCÍ REKLAMY</string>
+    <string    name="disable_rewarded_ads_desc"    translatable="true">Víme, že většina z nás nemá ráda reklamy, ale v našem případě nám výrazě pomáhají k financování naší databáze, hostingu, aktualizací, více úprav a denní potřeby.\n\nTohle je nejjednodušší možnost podpory bez posílání vlastních peněz.</string>
+    
+    <string    name="installation_failed"    translatable="true">INSTALACE SELHALA</string>
+    <string    name="installation_failed_desc"    translatable="true">Důvod: Pokusili jste se nainstalovat upravenou verzi, která je starší, než momentálně nainstalovaná.\n\nŘešení:\nA. Vyberte verzi stejnou nebo vyšší, než .\nB. Odinstalujte aktuální verzi, poté nainstalujte tu starší.\n\nPokud problém bude přetrvávat, tak zkontrolujte "FAQ".</string>
+    <string    name="installation_failed_ream_desc"    translatable="true">Důvod: Momentálně nainstalovaná nepochází od našeho xManager týmu.\n\Řešení: Odinstalujte momentální verzi, restartujte xManager a zkuste to znovu. Pokud bude problém přetrvávat, zkontrolujte "FAQ".</string>
+    <string    name="installation_failed_cloned_desc"    translatable="true">Důvod: Momentálně nainstalovaná klonovaná aplikace na tomto zařízení nepochází přímo od xManager týmu.\n\Řešení: Odinstalujte momentální verzi, restartujte xManager a zkuste to znovu. Pokud bude problém přetrvávat, zkontrolujte "FAQ".</string>
+    <string    name="existing_patched"    translatable="true">EXISTUJÍCÍ UPRAVENÁ APLIKACE</string>
+    <string    name="existing_patched_desc"    translatable="true">Již existuje upravený apk soubor v jednom z adresářů. Jak si přejete pokračovat?</string>
+    
+    <string    name="close"    translatable="true">ZAVŘÍT</string>
+    <string    name="cloned"    translatable="true">KLONOVANÁ</string>
+    <string    name="ream"    translatable="true">RE/AM</string>
+    <string    name="install"    translatable="true">INSTALOVAT</string>
+    <string    name="uninstall"    translatable="true">ODINSTALOVAT</string>
+    <string    name="ignore"    translatable="true">IGNOROVAT</string>
+    <string    name="delete"    translatable="true">SMAZAT</string>
+    <string    name="uninstall_patched"    translatable="true">ODINSTALOVAT UPRAVENOU APLIKACI</string>
+    <string    name="open_settings"    translatable="true">OTEVŘÍT NASTAVENÍ</string>
+    <string    name="open_patched"    translatable="true">OTEVŘÍT UPRAVENOU APLIKACI</string>
 </resources>
