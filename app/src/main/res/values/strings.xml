@@ -2509,36 +2509,36 @@
     <string    name="fixer_26"    translatable="true">FIXER</string>
     
     <string    name="show_support_26"    translatable="true">PŘEDVEĎTE NÁM VAŠI PODPORU</string>
-    <string    name="show_support_desc"    translatable="true">Jsme neziskoví, nejsme korporát a nekompromitovaný tým. Lidi jako vy nás posouvají ve vývoji aplikace, která věci mnohem zjednoduší, hlavně už od stažení až po instalaci.\n\nVkládáme veškerý náš čas a maximální úsilí, aby bylo vše správně a dokonalé. Pokusíme se podporovat tuto aplikaci tak dlouho, jak to jen bude možné.\n\nJakákoliv peněžní částka nám pomůže a budeme si jí opravdu velmi vážit!</string>
+    <string    name="show_support_desc_26"    translatable="true">Jsme neziskoví, nejsme korporát a nekompromitovaný tým. Lidi jako vy nás posouvají ve vývoji aplikace, která věci mnohem zjednoduší, hlavně už od stažení až po instalaci.\n\nVkládáme veškerý náš čas a maximální úsilí, aby bylo vše správně a dokonalé. Pokusíme se podporovat tuto aplikaci tak dlouho, jak to jen bude možné.\n\nJakákoliv peněžní částka nám pomůže a budeme si jí opravdu velmi vážit!</string>
     
-    <string    name="maintenance"    translatable="true">ÚDRŽBA</string>
-    <string    name="maintenance_desc"    translatable="true">xManager je momentálně nedostupný. Prosíme o kontrolu aplikace později.</string>
-    <string    name="thanks"    translatable="true">DĚKUJEME!</string>
-    <string    name="language"    translatable="true">JAZYK</string>
-    <string    name="website"    translatable="true">WEB</string>
-    <string    name="reddit"    translatable="true">REDDIT</string>
-    <string    name="faq"    translatable="true">FAQ</string>
+    <string    name="maintenance_26"    translatable="true">ÚDRŽBA</string>
+    <string    name="maintenance_desc_26"    translatable="true">xManager je momentálně nedostupný. Prosíme o kontrolu aplikace později.</string>
+    <string    name="thanks_26"    translatable="true">DĚKUJEME!</string>
+    <string    name="language_26"    translatable="true">JAZYK</string>
+    <string    name="website_26"    translatable="true">WEB</string>
+    <string    name="reddit_26"    translatable="true">REDDIT</string>
+    <string    name="faq_26"    translatable="true">FAQ</string>
     
-    <string    name="cloned_version"    translatable="true">KLONOVANÁ VERZE (BETA)</string>
-    <string    name="cloned_version_desc"    translatable="true">Po aktivaci si budete moci stáhnout naklonovanou upravenou aplikaci.\n\nTohle vyřeší většinu problémů s instalací, hlavně pokud je aplikace předinstalována v telefonu.</string>
-    <string    name="disable_rewarded_ads"    translatable="true">ZAKÁZAT PODPORUJÍCÍ REKLAMY</string>
-    <string    name="disable_rewarded_ads_desc"    translatable="true">Víme, že většina z nás nemá ráda reklamy, ale v našem případě nám výrazě pomáhají k financování naší databáze, hostingu, aktualizací, více úprav a denní potřeby.\n\nTohle je nejjednodušší možnost podpory bez posílání vlastních peněz.</string>
+    <string    name="cloned_version_26"    translatable="true">KLONOVANÁ VERZE (BETA)</string>
+    <string    name="cloned_version_desc_26"    translatable="true">Po aktivaci si budete moci stáhnout naklonovanou upravenou aplikaci.\n\nTohle vyřeší většinu problémů s instalací, hlavně pokud je aplikace předinstalována v telefonu.</string>
+    <string    name="disable_rewarded_ads_26"    translatable="true">ZAKÁZAT PODPORUJÍCÍ REKLAMY</string>
+    <string    name="disable_rewarded_ads_desc_26"    translatable="true">Víme, že většina z nás nemá ráda reklamy, ale v našem případě nám výrazě pomáhají k financování naší databáze, hostingu, aktualizací, více úprav a denní potřeby.\n\nTohle je nejjednodušší možnost podpory bez posílání vlastních peněz.</string>
     
-    <string    name="installation_failed"    translatable="true">INSTALACE SELHALA</string>
-    <string    name="installation_failed_desc"    translatable="true">Důvod: Pokusili jste se nainstalovat upravenou verzi, která je starší, než momentálně nainstalovaná.\n\nŘešení:\nA. Vyberte verzi stejnou nebo vyšší, než .\nB. Odinstalujte aktuální verzi, poté nainstalujte tu starší.\n\nPokud problém bude přetrvávat, tak zkontrolujte "FAQ".</string>
-    <string    name="installation_failed_ream_desc"    translatable="true">Důvod: Momentálně nainstalovaná nepochází od našeho xManager týmu.\n\Řešení: Odinstalujte momentální verzi, restartujte xManager a zkuste to znovu. Pokud bude problém přetrvávat, zkontrolujte "FAQ".</string>
-    <string    name="installation_failed_cloned_desc"    translatable="true">Důvod: Momentálně nainstalovaná klonovaná aplikace na tomto zařízení nepochází přímo od xManager týmu.\n\Řešení: Odinstalujte momentální verzi, restartujte xManager a zkuste to znovu. Pokud bude problém přetrvávat, zkontrolujte "FAQ".</string>
-    <string    name="existing_patched"    translatable="true">EXISTUJÍCÍ UPRAVENÁ APLIKACE</string>
-    <string    name="existing_patched_desc"    translatable="true">Již existuje upravený apk soubor v jednom z adresářů. Jak si přejete pokračovat?</string>
+    <string    name="installation_failed_26"    translatable="true">INSTALACE SELHALA</string>
+    <string    name="installation_failed_desc_26"    translatable="true">Důvod: Pokusili jste se nainstalovat upravenou verzi, která je starší, než momentálně nainstalovaná.\n\nŘešení:\nA. Vyberte verzi stejnou nebo vyšší, než .\nB. Odinstalujte aktuální verzi, poté nainstalujte tu starší.\n\nPokud problém bude přetrvávat, tak zkontrolujte "FAQ".</string>
+    <string    name="installation_failed_ream_desc_26"    translatable="true">Důvod: Momentálně nainstalovaná nepochází od našeho xManager týmu.\n\Řešení: Odinstalujte momentální verzi, restartujte xManager a zkuste to znovu. Pokud bude problém přetrvávat, zkontrolujte "FAQ".</string>
+    <string    name="installation_failed_cloned_desc_26"    translatable="true">Důvod: Momentálně nainstalovaná klonovaná aplikace na tomto zařízení nepochází přímo od xManager týmu.\n\Řešení: Odinstalujte momentální verzi, restartujte xManager a zkuste to znovu. Pokud bude problém přetrvávat, zkontrolujte "FAQ".</string>
+    <string    name="existing_patched_26"    translatable="true">EXISTUJÍCÍ UPRAVENÁ APLIKACE</string>
+    <string    name="existing_patched_desc_26"    translatable="true">Již existuje upravený apk soubor v jednom z adresářů. Jak si přejete pokračovat?</string>
     
-    <string    name="close"    translatable="true">ZAVŘÍT</string>
-    <string    name="cloned"    translatable="true">KLONOVANÁ</string>
-    <string    name="ream"    translatable="true">RE/AM</string>
-    <string    name="install"    translatable="true">INSTALOVAT</string>
-    <string    name="uninstall"    translatable="true">ODINSTALOVAT</string>
-    <string    name="ignore"    translatable="true">IGNOROVAT</string>
-    <string    name="delete"    translatable="true">SMAZAT</string>
-    <string    name="uninstall_patched"    translatable="true">ODINSTALOVAT UPRAVENOU APLIKACI</string>
-    <string    name="open_settings"    translatable="true">OTEVŘÍT NASTAVENÍ</string>
-    <string    name="open_patched"    translatable="true">OTEVŘÍT UPRAVENOU APLIKACI</string>
+    <string    name="close_26"    translatable="true">ZAVŘÍT</string>
+    <string    name="cloned_26"    translatable="true">KLONOVANÁ</string>
+    <string    name="ream_26"    translatable="true">RE/AM</string>
+    <string    name="install_26"    translatable="true">INSTALOVAT</string>
+    <string    name="uninstall_26"    translatable="true">ODINSTALOVAT</string>
+    <string    name="ignore_26"    translatable="true">IGNOROVAT</string>
+    <string    name="delete_26"    translatable="true">SMAZAT</string>
+    <string    name="uninstall_patched_26"    translatable="true">ODINSTALOVAT UPRAVENOU APLIKACI</string>
+    <string    name="open_settings_26"    translatable="true">OTEVŘÍT NASTAVENÍ</string>
+    <string    name="open_patched_26"    translatable="true">OTEVŘÍT UPRAVENOU APLIKACI</string>
 </resources>
