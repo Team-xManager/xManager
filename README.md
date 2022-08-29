@@ -163,7 +163,7 @@ KaldonM
 rexobo  
 
 **Finnish Translation**  
-AfraidOfTheBigBlack | Lilko1ra  
+AfraidOfTheBigBlack | Lilko1ra | KasperiP
 
 # Contributors  
 
