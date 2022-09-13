@@ -2356,13 +2356,13 @@
     
     <!--FINNISH LANGUAGE-->
     <string    name="app_name_25"    translatable="true">xManager</string>
-    <string    name="spotify_regular_25"    translatable="true">SPOTIFY (PERUS)</string>
+    <string    name="spotify_regular_25"    translatable="true">SPOTIFY (TAVALLINEN)</string>
     <string    name="spotify_amoled_25"    translatable="true">SPOTIFY (AMOLED)</string>
     <string    name="installed_25"    translatable="true">ASENNETTU</string>
     <string    name="latest_25"    translatable="true">VIIMEISIN</string>
     <string    name="versions_25"    translatable="true">VERSIOT  </string>
     <string    name="changelogs_25"    translatable="true">MUUTOSLOKI</string>
-    <string    name="manager_tools_25"    translatable="true">MANAGER TYÖKALUT</string>
+    <string    name="manager_tools_25"    translatable="true">HALLINNOINTITYÖKALUT</string>
     <string    name="device_cpu_25"    translatable="true">CPU/ARCH</string>
     <string    name="source_25"    translatable="true">LÄHDE</string>
     <string    name="support_25"    translatable="true">TELEGRAM</string>
@@ -2376,28 +2376,28 @@
     <string    name="list_auto_refresh_25"    translatable="true">LISTAN AUTOMAATTINEN PÄIVITYS</string>
     <string    name="list_auto_refresh_desc_25"    translatable="true">Tämän aktivointi automaattisesti päivittää listan joka kerta, kun avaat sovelluksen.\n\nVoit myös päivittää listan manuaalisesti raahaamalla päänäkymän alaspäin.</string>
     <string    name="force_auto_install_25"    translatable="true">PAKOTA AUTOMAATTINEN ASENTAMINEN</string>
-    <string    name="force_auto_install_desc_25"    translatable="true">Tämän aktivointi automaattisesti asentaa patched sovelluksen, ja päivittää sen jälkeen kun se on asennettu.</string>
+    <string    name="force_auto_install_desc_25"    translatable="true">Tämän aktivointi automaattisesti asentaa korjatun sovelluksen, ja päivittää sen asennuksen jälkeen.</string>
     <string    name="show_themes_25"    translatable="true">TEEMAT</string>
     <string    name="apk_location_25"    translatable="true">APK SIJAINTI</string>
-    <string    name="apk_location_desc_25"    translatable="true">Kansio minne haluat tallentaa ladatun tiedoston. Jos et tiedä miten konfiguroida tätä ominaisuutta, niin jätä se sellaisenaan kuin se on.\n\nMUISTA: Tämä ominaisuus ei tue ulkoista tallennustilaa (SD Kortti) käyttömahdollisuuden, lupien ja tallennustilan rajoitusten takia.</string>
+    <string    name="apk_location_desc_25"    translatable="true">Kansio minne haluat tallentaa ladatun tiedoston. Jos et tiedä miten konfiguroida tätä ominaisuutta, niin jätä se koskemattomaksi.\n\nMUISTA: Tämä ominaisuus ei tue ulkoista tallennustilaa (SD-Kortti) käyttömahdollisuus, lupa ja tallennustilan rajoitusten takia.</string>
     <string    name="clear_directory_folders_25"    translatable="true">PUHDISTA LUETTELON KANSIOT</string>
     <string    name="clear_directory_folders_desc_25"    translatable="true">Napauta poistaaksesi kaikki asennetut tiedostot ja päivitykset.</string>
     <string    name="reset_settings_25"    translatable="true">PALAUTA OLETUSASETUKSET</string>
     
     <string    name="about_sub_25"    translatable="true">Ei mainoksia | Uusia ominaisuuksia | Vapaus</string>
     <string    name="xmanager_dev_25"    translatable="true">xManager Ohjelmoija</string>
-    <string    name="spotify_mod_devs_25"    translatable="true">Spotify patched ohjelmoijat</string>
+    <string    name="spotify_mod_devs_25"    translatable="true">Spotify korjaustiedosto ohjelmoija</string>
     <string    name="telegram_support_team_25"    translatable="true">Telegram | Discord | Reddit Tukitiimi</string>
-    <string    name="manager_testers_25"    translatable="true">Patched- ja Manager Testaajat</string>
+    <string    name="manager_testers_25"    translatable="true">Korjaustiedosto- ja Manager Testaajat</string>
     <string    name="manager_hosting_25"    translatable="true">Manager Tietokanta ja Hostaukset</string>
     <string    name="mobilism_team_25"    translatable="true">Mobilism Tiimi</string>
     <string    name="forum_team_25"    translatable="true">FORUM.APK-RELEASE.NET Tiimi</string>
     <string    name="xspotify_team_25"    translatable="true">xSpotify Manager (Vanha Manager)</string>
     <string    name="contributors_25"    translatable="true">KIITOKSET KAIKILLE AVUSATAJILLE! ❤️</string>
     
-    <string    name="download_selected_25"    translatable="true">Valitsit tämän patched version. Haluatko jatkaa?</string>
-    <string    name="download_ready_25"    translatable="true">PATCHED TIETOJA</string>
-    <string    name="download_ready_desc_25"    translatable="true">Tämän patched apk:n lataaminen asentaa entisen tiedoston päälle, joka löytyy ulkoisesta kansiosta.</string>
+    <string    name="download_selected_25"    translatable="true">Valitsit tämän korjaustiedoston version. Haluatko jatkaa?</string>
+    <string    name="download_ready_25"    translatable="true">KORJAUSTIEDOSTO TIETOJA</string>
+    <string    name="download_ready_desc_25"    translatable="true">Tämän korjaustiedosto apk:n lataaminen asentuu entisen tiedoston päälle, joka löytyy ulkoisesta kansiosta.</string>
     <string    name="downloading_file_25"    translatable="true">LADATAAN TIEDOSTOA...</string>
     <string    name="download_success_25"    translatable="true">LATAUS ONNISTUI</string>
     <string    name="new_update_25"    translatable="true">UUSI MANAGER PÄIVITYS</string>
@@ -2421,7 +2421,7 @@
     <string    name="maintenance_desc_25"    translatable="true">xManager ei ole tällä hetkellä saatavilla. Ole hyvä, ja tarkista sovellus myöhemmin.</string>
     <string    name="thanks_25"    translatable="true">KIITOS!</string>
     <string    name="language_25"    translatable="true">KIELI</string>
-    <string    name="website_25"    translatable="true">NETTISIVU</string>
+    <string    name="website_25"    translatable="true">VERKKOSIVU</string>
     <string    name="reddit_25"    translatable="true">REDDIT</string>
     <string    name="faq_25"    translatable="true">UKK</string>
     
@@ -2434,7 +2434,7 @@
     <string    name="installation_failed_desc_25"    translatable="true">Syy: Yritit asentaa mod-version, joka on vanhempi kuin tällä hetkellä asennettuna.\n\nRatkaisut:\nA. Valitse versio, joka on yhtä suuri tai suurempi kuin.\nB. Poista nykyisen version asennus ja alenna sitten.\n\nJos ongelma jatkuu, tarkista usein kysytyt kysymykset.</string>
     <string    name="installation_failed_ream_desc_25"    translatable="true">Syy: Tälle laitteelle asennettu nykyinen Spotify ei tullut suoraan xManagerista tai tiimiltään.\n\nRatkaisu: Poista sovelluksen nykyinen versio, käynnistä xManager uudelleen ja yritä uudelleen. Jos ongelma jatkuu, tarkista usein kysytyt kysymykset.</string>
     <string    name="installation_failed_cloned_desc_25"    translatable="true">Syy: Tälle laitteelle asennettu nykyinen kloonattu versio ei tullut suoraan xManagerista tai tiimiltään.\n\nRatkaisu: Poista sovelluksen nykyinen versio, käynnistä xManager uudelleen ja yritä uudelleen. Jos ongelma jatkuu, tarkista usein kysytyt kysymykset.</string>
-    <string    name="existing_patched_25"    translatable="true">OLEMASSA OLEVA PATCHED</string>
+    <string    name="existing_patched_25"    translatable="true">OLEMASSA OLEVA KORJAUSTIEDOSTO</string>
     <string    name="existing_patched_desc_25"    translatable="true">Yhdestä hakemistosta löytyi olemassa oleva korjattu apk. Millaisen toimenpiteen haluaisit tehdä?</string>
     
     <string    name="close_25"    translatable="true">SULJE</string>
@@ -2444,8 +2444,9 @@
     <string    name="uninstall_25"    translatable="true">POISTA ASENNUS</string>
     <string    name="ignore_25"    translatable="true">ÄLÄ HUOMIOI</string>
     <string    name="delete_25"    translatable="true">POISTA</string>
-    <string    name="uninstall_patched_25"    translatable="true">POISTA PATCHED</string>
+    <string    name="uninstall_patched_25"    translatable="true">POISTA KORJAUSTIEDOSTO</string>
     <string    name="open_settings_25"    translatable="true">AVAA ASETUKSET</string>
+
     <string    name="open_patched_25"    translatable="true">AVAA PATCHED</string>
 
     <!--CHINESE (TRADITIONAL) LANGUAGE-->
@@ -2541,4 +2542,5 @@
     <string    name="uninstall_patched_26"    translatable="true">解除安裝補丁</string>
     <string    name="open_settings_26"    translatable="true">開啟設定</string>
     <string    name="open_patched_26"    translatable="true">開啟修改版</string>
+
 </resources>
