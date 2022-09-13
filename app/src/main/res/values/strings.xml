@@ -2546,15 +2546,15 @@
     <string	name="app_name_27"    translatable="true">xManager</string>
     <string	name="spotify_regular_27"    translatable="true">SPOTIFY (預設背景)</string>
     <string	name="spotify_amoled_27"    translatable="true">SPOTIFY (純黑背景)</string>
-    <string	name="installed_27"    translatable="true">已裝版本</string>
+    <string	name="installed_27"    translatable="true">已安裝版本</string>
     <string	name="latest_27"    translatable="true">最新版本</string>
     <string	name="versions_27"    translatable="true">顯示版本  </string>
-    <string	name="changelogs_27"    translatable="true">更新日誌</string>
-    <string	name="manager_tools_27"    translatable="true">快捷工具</string>
-    <string	name="device_cpu_27"    translatable="true">CPU/ARCH 型別</string>
+    <string	name="changelogs_27"    translatable="true">更新紀錄</string>
+    <string	name="manager_tools_27"    translatable="true">快速工具</string>
+    <string	name="device_cpu_27"    translatable="true">CPU/ARCH 類型</string>
     <string	name="source_27"    translatable="true">原始碼</string>
     <string	name="discord_27"    translatable="true">DISCORD</string>
-    <string	name="support_27"    translatable="true">電報</string>
+    <string	name="support_27"    translatable="true">Telegram</string>
     <string	name="donate_27"    translatable="true">捐贈</string>
     <string	name="about_27"    translatable="true">關於</string>
     <string	name="main_title_27"    translatable="true">xManager</string>
@@ -2562,17 +2562,17 @@
     <string	name="about_title_27"    translatable="true">關於</string>
 
     <string	name="list_auto_refresh_27"    translatable="true">自動重新整理</string>
-    <string	name="list_auto_refresh_desc_27"    translatable="true">啟用此功能將在您每次啟動應用程式時自動重新整理列表,您也可以透過向下拖動主螢幕來手動重新整理列表.</string>
+    <string	name="list_auto_refresh_desc_27"    translatable="true">啟用此功能將在您每次啟動應用程式時自動重新整理清單，您也可以透過向下拖動主頁面來手動重新整理清單。</string>
     <string	name="force_auto_install_27"    translatable="true">自動安裝</string>
-    <string	name="force_auto_install_desc_27"    translatable="true">啟用此功能將在下載完成後自動安裝應用程式.</string>
-    <string	name="show_themes_27"    translatable="true">管理器的應用主題</string>
-    <string	name="apk_location_27"    translatable="true">安裝包儲存路徑</string>
-    <string	name="apk_location_desc_27"    translatable="true">請勿隨意更改儲存路徑.\n不支援變更為外接SD卡路徑</string>
+    <string	name="force_auto_install_desc_27"    translatable="true">啟用此功能將在下載完成後自動安裝應用程式。</string>
+    <string	name="show_themes_27"    translatable="true">管理器的程式主題</string>
+    <string	name="apk_location_27"    translatable="true">安裝套件儲存路徑</string>
+    <string	name="apk_location_desc_27"    translatable="true">請勿隨意變更儲存路徑。\n不支援使用外掛SD記憶卡路徑</string>
     <string	name="clear_directory_folders_27"    translatable="true">清除檔案</string>
-    <string	name="clear_directory_folders_desc_27"    translatable="true">點選下方 清除 按鈕將清除本應用產生的所有檔案</string>
+    <string	name="clear_directory_folders_desc_27"    translatable="true">點選下方 清除 按鈕將清除本程式產生的所有檔案</string>
     <string	name="reset_settings_27"    translatable="true">清除</string>
 
-    <string	name="about_sub_27"    translatable="true">無廣告|新功能|全免費</string>
+    <string	name="about_sub_27"    translatable="true">不含廣告|新增功能|全部免費</string>
     <string	name="xmanager_dev_27"    translatable="true">xManager 開發團隊</string>
     <string	name="spotify_mod_devs_27"    translatable="true">Spotify 修改團隊</string>
     <string	name="telegram_support_team_27"    translatable="true">Telegram/Discord 支援團隊</string>
@@ -2583,56 +2583,56 @@
     <string	name="xspotify_team_27"    translatable="true">xSpotify Manager (舊版貢獻者)</string>
     <string	name="contributors_27"    translatable="true">❤感謝所有參與人員❤️</string>
 
-    <string	name="download_selected_27"    translatable="true">版本已選定，是否繼續？</string>
-    <string	name="download_ready_27"    translatable="true">補丁資訊</string>
+    <string	name="download_selected_27"    translatable="true">已選定版本，是否繼續？</string>
+    <string	name="download_ready_27"    translatable="true">修補程式資訊</string>
     <string	name="download_ready_desc_27"    translatable="true">繼續將覆蓋歷史下載</string>
     <string	name="downloading_file_27"    translatable="true">正在下載</string>
     <string	name="download_success_27"    translatable="true">下載完成</string>
-    <string	name="new_update_27" translatable="true">發現新版管理器</string>
+    <string	name="new_update_27" translatable="true">發現管理器新版本</string>
 
     <string	name="continue_1_27"    translatable="true">繼續</string>
     <string	name="cancel_27"    translatable="true">取消</string>
     <string	name="download_27"    translatable="true">下載</string>
     <string	name="later_27"    translatable="true">稍後</string>
     <string	name="install_now_27"    translatable="true">現在安裝</string>
-    <string	name="install_update_27"    translatable="true">安裝新版</string>
+    <string	name="install_update_27"    translatable="true">安裝新版本</string>
     <string	name="go_back_27"    translatable="true">返回</string>
-    <string	name="download_update_27"    translatable="true">下載新版</string>
+    <string	name="download_update_27"    translatable="true">下載新版本</string>
     <string	name="not_now_27"    translatable="true">稍後</string>
     <string	name="copy_url_27"    translatable="true">複製連結</string>
-    <string	name="fixer_27"    translatable="true">固定器</string>
+    <string	name="fixer_27"    translatable="true">修正下載</string>
 
     <string	name="show_support_27"    translatable="true">支援我們</string>
-    <string	name="show_support_desc_27"    translatable="true">我們是一個非盈利和不妥協的團隊.\n無論金額大小都對我們有幫助,十分感謝.</string>
+    <string	name="show_support_desc_27"    translatable="true">我們是一個非盈利和不妥協的團隊。\n無論金額大小都對我們有所幫助，萬分感謝！</string>
 
-    <string	name="maintenance_27"    translatable="true">維護</string>
-    <string	name="maintenance_desc_27" translatable="true">暫不可用,請稍後檢視</string>
+    <string	name="maintenance_27"    translatable="true">維護中</string>
+    <string	name="maintenance_desc_27" translatable="true">暫不可用，請稍後再試</string>
     <string	name="thanks_27"    translatable="true">感謝</string>
-    <string	name="language_27"    translatable="true">應用語言</string>
+    <string	name="language_27"    translatable="true">程式語言</string>
     <string	name="website_27"    translatable="true">網站</string>
     <string	name="reddit_27" translatable="true">REDDIT</string>
     <string	name="faq_27"    translatable="true">常見問題</string>
 
-    <string	name="cloned_version_27"    translatable="true">克隆版本(測試版)</string>
-    <string	name="cloned_version_desc_27"    translatable="true">啟用此選項可讓您下載並安裝已修改的克隆版本.\n\n這也將解決大多數安裝問題,特別是當您已經安裝spotify應用程式.</string>
+    <string	name="cloned_version_27"    translatable="true">克隆版本 (測試中)</string>
+    <string	name="cloned_version_desc_27"    translatable="true">啟用此選項可讓您下載並安裝已修改的克隆版本。\n\n這也將解決大多數安裝問題，特別是當您已經安裝 Spotify 官方應用程式。</string>
     <string	name="disable_rewarded_ads_27"    translatable="true">禁用廣告</string>
-    <string	name="disable_rewarded_ads_desc_27"    translatable="true">大多數人不喜歡廣告,但對於我們而言,這能在很大程度上為我們的資料庫,託管連結,更新,更多補丁和日常需求提供資金.\n\n這是支援我們的最簡單的方法,無需您捐贈或花銷.</string>
+    <string	name="disable_rewarded_ads_desc_27"    translatable="true">大多數人不喜歡廣告，但對於我們而言，這能在很大程度上為我們的資料庫、託管連結、更新、更多修補程式和日常需求提供資金。\n\n這是支援我們的最簡單的方法，無需您捐贈或付費。</string>
 
     <string	name="installation_failed_27"    translatable="true">安裝失敗</string>
-    <string	name="installation_failed_desc_27"    translatable="true">原因:您嘗試安裝低於當前安裝的 mod 版本.\n\n解決方案:\nA. 選擇等於或大於的版本.\nB. 解除安裝當前版本,然後降級.\n\n如果問題仍然存在,請檢視常見問題解答.</string>
-    <string	name="installation_failed_ream_desc_27"    translatable="true">原因:此裝置上安裝的當前 Spotify 不是直接來自 xManager 或來自我們的團隊.\n\n解決方法:解除安裝當前版本的應用程式,重新啟動 xManager 並重試. 如果問題仍然存在,請檢視常見問題解答.</string>
-    <string	name="installation_failed_cloned_desc_27"    translatable="true">原因:此裝置上安裝的當前克隆版本不是直接來自 xManager 或來自我們的團隊.\n\n解決方法:解除安裝當前版本的應用程式,重新啟動 xManager 並重試. 如果問題仍然存在,請檢視常見問題解答.</string>
-    <string	name="existing_patched_27"    translatable="true">現有補丁</string>
-    <string	name="existing_patched_desc_27"    translatable="true">在目錄中找到一個修改過的檔案. 您想怎麼做?</string>
+    <string	name="installation_failed_desc_27"    translatable="true">原因: 您嘗試安裝低於目前安裝的修改版本。\n\n解決方案:\nA. 選擇等於或大於的版本。\nB. 解除安裝目前版本，然後降級。\n\n如果問題依然存在，請檢視常見問題解答。</string>
+    <string	name="installation_failed_ream_desc_27"    translatable="true">原因: 此裝置目前安裝的 Spotify 不是直接來自 xManager 或來自我們的團隊。\n\n解決方案: 解除安裝目前版本的應用程式，重新啟動 xManager 並重試。如果問題依然存在，請檢視常見問題解答。</string>
+    <string	name="installation_failed_cloned_desc_27"    translatable="true">原因:此裝置目前安裝的克隆版本不是直接來自 xManager 或來自我們的團隊。\n\n解決方案: 解除安裝目前版本的應用程式，重新啟動 xManager 並重試。如果問題仍然存在，請檢視常見問題解答。</string>
+    <string	name="existing_patched_27"    translatable="true">現有修補程式</string>
+    <string	name="existing_patched_desc_27"    translatable="true">在目錄中找到一個修改過的檔案。 您想怎麼做？</string>
 
     <string	name="close_27"    translatable="true">關閉</string>
-    <string	name="cloned_27"    translatable="true">克隆版</string>
-    <string	name="ream_27"    translatable="true">預設版或純黑版</string>
+    <string	name="cloned_27"    translatable="true">克隆版本</string>
+    <string	name="ream_27"    translatable="true">預設或純黑版本</string>
     <string	name="install_27"    translatable="true">安裝</string>
     <string	name="uninstall_27"    translatable="true">解除安裝</string>
     <string	name="ignore_27"    translatable="true">忽略</string>
     <string	name="delete_27"    translatable="true">刪除</string>
-    <string	name="uninstall_patched_27"    translatable="true">解除安裝補丁</string>
+    <string	name="uninstall_patched_27"    translatable="true">解除安裝修補程式</string>
     <string	name="open_settings_27"    translatable="true">開啟設定</string>
-    <string	name="open_patched_27"    translatable="true">開啟修改版</string>
+    <string	name="open_patched_27"    translatable="true">開啟修改版本</string>
 </resources>
