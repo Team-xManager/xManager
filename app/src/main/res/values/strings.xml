@@ -1505,98 +1505,98 @@
 	<string	name="open_patched_15" translatable="true">ODPRITE APLIKACIJO</string>
 	
     <!--ROMANIAN LANGUAGE-->
-	<string	name="app_name_16"	translatable="true">xManager</string>
-    <string	name="spotify_regular_16" translatable="true">SPOTIFY (NORMAL)</string>
+		<string	name="app_name_16"	translatable="true">xManager</string>
+    <string	name="spotify_regular_16"	translatable="true">SPOTIFY (OBIȘNUITĂ)</string>
     <string	name="spotify_amoled_16"	translatable="true">SPOTIFY (AMOLED)</string>
-    <string	name="installed_16"	translatable="true">INSTALATE</string>
-    <string	name="latest_16"	translatable="true">RECENTE</string>
+    <string	name="installed_16"	translatable="true">INSTALATĂ</string>
+    <string	name="latest_16"	translatable="true">RECENTĂ</string>
     <string	name="versions_16"	translatable="true">VERSIUNI  </string>
-    <string	name="changelogs_16" translatable="true">JURNAL SCHIMBĂRI</string>
-    <string	name="manager_tools_16"	translatable="true">INSTRUMENTELE ADMINISTRATORULUI</string>
-	<string	name="device_cpu_16"	translatable="true">CPU/ARCH</string>
+    <string	name="changelogs_16"	translatable="true">JURNAL SCHIMBĂRI</string>
+    <string	name="manager_tools_16"	translatable="true">UNELTE DE ADMINISTRARE</string>
+	<string	name="device_cpu_16"	translatable="true">PROCESOR/ARHITECTURĂ</string>
     <string	name="source_16"	translatable="true">SURSĂ</string>
     <string	name="support_16"	translatable="true">TELEGRAM</string>
-    <string	name="donate_16"	translatable="true">DONEAZĂ</string>
+    <string	name="donate_16"	translatable="true">SUSȚINE</string>
     <string	name="discord_16"	translatable="true">DISCORD</string>
     <string	name="about_16"	translatable="true">DESPRE</string>
 	<string	name="main_title_16"	translatable="true">xManager</string>
     <string	name="settings_title_16"	translatable="true">Setări</string>
     <string	name="about_title_16"	translatable="true">Despre</string>
-	
-    <string	name="list_auto_refresh_16"	translatable="true">LISTĂ DE REÎMPROSPĂTARE</string>
-    <string	name="list_auto_refresh_desc_16"	translatable="true">Activând asta se va reîmprospăta lista de fiecare dată când deschizi aplicația.\n\nPoți reîmprospăta manual lista trăgând în jos de ecranul principal.</string>
-    <string	name="force_auto_install_16"	translatable="true">FORȚEAZĂ AUTO-INSTALARE</string>
-    <string	name="force_auto_install_desc_16"	translatable="true">Activând asta se va instala automat aplicația modată și actualizarea îndată ce e descărcată.</string>
+
+    <string	name="list_auto_refresh_16"	translatable="true">AUTO-REÎMPROSPĂTAREA LISTEI</string>
+    <string	name="list_auto_refresh_desc_16"	translatable="true">La activare, lista va fi automat reîmprospătată de fiecare dată când deschizi aplicația.\n\nVei putea să reîmprospătezi manual lista prin tragerea în jos a ecranului principal.</string>
+    <string	name="force_auto_install_16"	translatable="true">AUTO-INSTALARE FORȚATĂ</string>
+    <string	name="force_auto_install_desc_16"	translatable="true">La activare, aplicația modificată și actualizarea se vor instala automat după descărcare.</string>
     <string	name="show_themes_16"	translatable="true">TEME</string>
-	<string	name="apk_location_16"	translatable="true">LOCAȚIE APK</string>
-    <string	name="apk_location_desc_16"	translatable="true">Directorul de fișiere unde vrei să salvezi fișierul descărcat. Dacă nu știi să setezi această funcție, atunci las-o cum este.\n\nNOTIȚĂ: Această funcție nu suportă memoria externă (SD Card) din cauza accesibilității, permisiunilor și limitărilor de memorie.</string>
-    <string	name="clear_directory_folders_16"	translatable="true">CURĂȚĂ FOLDERELE DIRECTORULUI</string>
-    <string	name="clear_directory_folders_desc_16"	translatable="true">Apasă ca să ștergi toate folderele directorului incluzând fișierele descărcate și actualizările.</string>
-    <string	name="reset_settings_16"	translatable="true">RESETEAZĂ SETĂRILE</string>
-	
-    <string	name="about_sub_16" translatable="true">Fără Reclame | Funcții Noi | Libertate</string>
+	<string	name="apk_location_16"	translatable="true">LOCAȚIA APK-ULUI</string>
+    <string	name="apk_location_desc_16"	translatable="true">Locația în care va fi salvată copia fișierului descărcat. Dacă nu cunoști cum să configurezi această setare, te sfătuim să o lași așa cum e.\n\nNOTIȚĂ: Această setare nu funcționează cu memorie externă (Card SD) din cauza accesibilității, permisiunilor și restricțiilor de stocare.</string>
+    <string	name="clear_directory_folders_16"	translatable="true">CURĂȚĂ MAPA DE LA LOCAȚIE</string>
+    <string	name="clear_directory_folders_desc_16"	translatable="true">Apasă pentru a șterge mapa de la locație. Asta va include fișierele descărcate și actualizările.</string>
+    <string	name="reset_settings_16"	translatable="true">RESTABILEȘTE SETĂRILE</string>
+
+    <string	name="about_sub_16"	translatable="true">Fără Reclame | Funcții Noi | Libertate</string>
     <string	name="xmanager_dev_16"	translatable="true">Dezvoltator xManager</string>
-    <string	name="spotify_mod_devs_16" translatable="true">Dezvoltatorii Modului Spotify</string>
-    <string	name="telegram_support_team_16"	translatable="true">Echipa de suport Telegram/Discord</string>
-    <string	name="manager_testers_16"	translatable="true">Testeri Mod/Manager</string>
-    <string	name="manager_hosting_16"	translatable="true">Link-uri de găzduire ale Managerului</string>
+    <string	name="spotify_mod_devs_16"	translatable="true">Dezvoltatorii Spotify Modificat</string>
+    <string	name="telegram_support_team_16"	translatable="true">Echipa de Suport Telegram | Discord | Reddit</string>
+    <string	name="manager_testers_16"	translatable="true">Testeri xManager și Spotify Modificat</string>
+    <string	name="manager_hosting_16"	translatable="true">Baza de Date și Găzduire pentru xManager</string>
     <string	name="mobilism_team_16"	translatable="true">Echipa Mobilism</string>
     <string	name="forum_team_16"	translatable="true">Echipa FORUM.APK-RELEASE.NET</string>
-	<string	name="xspotify_team_16"	translatable="true">xSpotify Manager (Vechiul Manager)</string>
-    <string	name="contributors_16" translatable="true">MULȚUMIRI TUTUROR CONTRIBUITORILOR! ❤️</string>
-	
-    <string	name="download_selected_16"	translatable="true">Ai selectat această versiune patch-uită. Ai Dorii să continui?</string>
-    <string	name="download_ready_16"	translatable="true">INFORMAȚII DESPRE PATCH-URI</string>
-    <string	name="download_ready_desc_16"	translatable="true">Descărcând această versiune patch-uită se va suprascrie fișierul anterior aflat în directorul aplicației de fișiere externe.</string>
-	<string	name="downloading_file_16"	translatable="true">SE DESCARCĂ FIȘIERUL...</string>
+	<string	name="xspotify_team_16"	translatable="true">xSpotify Manager (Versiunea Veche)</string>
+    <string	name="contributors_16"	translatable="true">MULȚUMIRI TUTUROR CONTRIBUITORILOR! ❤️</string>
+
+    <string	name="download_selected_16"	translatable="true">Ai selectată această versiune modificată. Dorești să continui?</string>
+    <string	name="download_ready_16"	translatable="true">INFORMAȚIE DESPRE VERSIUNE</string>
+    <string	name="download_ready_desc_16"	translatable="true">Descărcarea acestui apk modificat va înlocui fișierul anterior care e stocat la locație.</string>
+	<string	name="downloading_file_16"	translatable="true">FIȘIERUL SE DESCARCĂ...</string>
     <string	name="download_success_16"	translatable="true">DESCĂRCAT CU SUCCES</string>
-    <string	name="new_update_16"	translatable="true">ACTUALIZARE NOUĂ LA MANAGER</string>
-	
+    <string	name="new_update_16"	translatable="true">ACTUALIZARE NOUĂ PENTRU XMANAGER</string>
+
     <string	name="continue_1_16"	translatable="true">CONTINUĂ</string>
-    <string	name="cancel_16"	translatable="true">ANULARE</string>
+    <string	name="cancel_16"	translatable="true">ANULEAZĂ</string>
     <string	name="download_16"	translatable="true">DESCARCĂ</string>
     <string	name="later_16"	translatable="true">MAI TÂRZIU</string>
     <string	name="install_now_16"	translatable="true">INSTALEAZĂ ACUM</string>
     <string	name="install_update_16"	translatable="true">INSTALEAZĂ ACTUALIZAREA</string>
-    <string	name="go_back_16"	translatable="true">ÎNAPOI</string>
-    <string	name="download_update_16"	translatable="true">DESCARCĂ ACTUALIZAREA</string>
+    <string	name="go_back_16"	translatable="true">ÎNTOARCE-TE</string>
+    <string	name="download_update_16"	translatable="true">DESCARCĂ APLICAȚIA</string>
     <string	name="not_now_16"	translatable="true">NU ACUM</string>
-    <string	name="copy_url_16"	translatable="true">COPIAZĂ URL</string>
-    <string	name="fixer_16"	translatable="true">FIXATOR</string>
-	
-	<string	name="show_support_16"	translatable="true">ARATĂ SUPORTUL TĂU</string>
-    <string	name="show_support_desc_16" translatable="true">Suntem o echipa non-profit, non-corporată și ne-compromisă. Oamenii ca tine ne încurajează să creăm o aplicație pentru a face lucrurile mult mai ușoare în special de la descărcat până la instalat.\n\nTurnam tot timpul nostru și cel mai bun efort doar ca să facem lucrurile corect și perfect. O să facem tot ce putem să susținem aplicația pentru cât putem.\n\nOrice sumă ne ajută și este foarte apreciată!</string>
-	
-	<string	name="maintenance_16"	translatable="true">MENTENANȚĂ</string>
-	<string	name="maintenance_desc_16" translatable="true">xManager momentan e indisponibil. Vă rugăm să încercați mai târziu.</string>
-	<string	name="thanks_16"	translatable="true">MULȚUMIM!</string>
-	<string	name="language_16"	translatable="true">LIMBĂ</string>
-    <string	name="website_16"	translatable="true">WEBSITE</string>
-    <string	name="reddit_16"	translatable="true">REDDIT</string>
-    <string	name="faq_16"	translatable="true">ÎNTREBĂRI FRECVENTE</string>
-	
-	<string	name="cloned_version_16"	translatable="true">VERSIUNE CLONATĂ (BETA)</string>
-	<string	name="cloned_version_desc_16"	translatable="true">Activarea acestui lucru vă permite să descărcați și să instalați versiunea clonată a aplicației patch-uri.\n\nAcest lucru va rezolva, de asemenea, majoritatea erorilor sau problemelor de instalare, mai ales dacă aveți o aplicație spotify preinstalată.</string>
-	<string	name="disable_rewarded_ads_16"	translatable="true">DEZACTIVAȚI ANUNȚURILE RECOMPENSATE</string>
-	<string	name="disable_rewarded_ads_desc_16"	translatable="true">Știm că majoritatea dintre noi nu-i plac anunțurile, dar în cazul nostru, acest lucru ne ajută în mod semnificativ să ne finanțăm baza de date, să găzduim link-uri, actualizări, mai multe patch-uri și nevoile zilnice.\n\naceasta este cea mai simplă modalitate de a ne sprijini fără a dona sau a cheltui nimic.</string>
-	
-	<string	name="installation_failed_16"	translatable="true">INSTALAREA A EȘUAT</string>
-	<string	name="installation_failed_desc_16"	translatable="true">Motiv: ați încercat să instalați o versiune mod mai mică decât cea instalată în prezent.\n\nsoluții:\nA. Selectați o versiune egală sau mai mare decât.\nB. Dezinstalați versiunea curentă, apoi faceți downgrade.\n\nDacă problema persistă, verificați FAQ.</string>
-	<string	name="installation_failed_ream_desc_16"	translatable="true">Motiv: actualul Spotify instalat pe acest dispozitiv nu a venit direct de la xManager sau de la echipa noastră.\n\nsoluție: dezinstalați versiunea curentă a aplicației, reporniți xManager și încercați din nou. Dacă problema persistă, verificați FAQ.</string>
-	<string	name="installation_failed_cloned_desc_16"	translatable="true">Motiv: clonarea curentă instalată pe acest dispozitiv nu a venit direct de la xManager sau de la echipa noastră.\n\nsoluție: dezinstalați versiunea curentă a aplicației, reporniți xManager și încercați din nou. Dacă problema persistă, verificați FAQ.</string>
-	<string	name="existing_patched_16"	translatable="true">PATCH-URI EXISTENTE</string>
-	<string	name="existing_patched_desc_16"	translatable="true">Un fișier patch existent găsit într-unul din director. Ce acțiune ai vrea să faci?</string>
+    <string	name="copy_url_16"	translatable="true">COPIE ADRESA</string>
+    <string	name="fixer_16"	translatable="true">REMEDIU</string>
 
-	<string	name="close_16"	translatable="true">Închide</string>
-	<string	name="cloned_16"	translatable="true">Clonat</string>
-	<string	name="ream_16"	translatable="true">RE/AM</string>
-	<string	name="install_16"	translatable="true">Instalare</string>
-	<string	name="uninstall_16"	translatable="true">Dezinstalare</string>
-	<string	name="ignore_16"	translatable="true">Ignoră</string>
-	<string	name="delete_16"	translatable="true">Șterge</string>
-	<string	name="uninstall_patched_16"	translatable="true">DEZINSTALAȚI PATCH-URI</string>
-	<string	name="open_settings_16"	translatable="true">DESCHIDEȚI SETĂRILE</string>
-	<string	name="open_patched_16"	translatable="true">DESCHIS PATCH-URI</string>
+	<string	name="show_support_16"	translatable="true">OFERĂ-NE SPRIJIN</string>
+    <string	name="show_support_desc_16"	translatable="true">Noi suntem o echipă nonprofit, noncorporativă și necompromisă. Oameni ca tine ne dau curajul să creăm o aplicație care face lucrurile mult mai ușoare, de la descărcat până la instalare.\n\nNoi dedicăm tot timpul și efortul nostru pentru a face totul bine și perfect. O să facem tot ce putem ca să întreținem această aplicație pentru cât mai mult timp.\n\nOrice sumă ne va ajuta și va fi enorm apreciată!</string>
+
+	<string	name="maintenance_16"	translatable="true">MENTENANȚĂ</string>
+	<string	name="maintenance_desc_16"	translatable="true">xManager nu este disponibil la moment. Revino mai târziu.</string>
+	<string	name="thanks_16"	translatable="true">MERSI!</string>
+	<string	name="language_16"	translatable="true">LIMBĂ</string>
+    <string	name="website_16"	translatable="true">SITE WEB</string>
+	<string	name="reddit_16"	translatable="true">REDDIT</string>
+    <string	name="faq_16"	translatable="true">ÎNTREBĂRI FRECVENTE</string>
+
+	<string	name="cloned_version_16"	translatable="true">VERSIUNE CLONĂ (BETA)</string>
+	<string	name="cloned_version_desc_16"	translatable="true">La activare, vei putea să descarci și să instalezi versiunea clonă a aplicației modificate.\n\nAceastă versiunea de-asemenea va rezolva majoritatea problemelor sau erorilor legate de instalare, în special dacă ai o versiune preinstalată a aplicației Spotify.</string>
+	<string	name="disable_rewarded_ads_16"	translatable="true">DEZACTIVEAZĂ RECLAMELE CU RECOMPENSĂ</string>
+	<string	name="disable_rewarded_ads_desc_16"	translatable="true">Știu că multora nu le plac reclamele, dar în cazul nostru, ele ne ajută semnificativ la finanțarea bazei de date, gazdei pentru fișiere, actualizărilor, versiunilor modificate și necesităților zilnice.\n\nAsta este forma cea mai simplă de a ne susține fără să donezi sau să cheltui bani.</string>
+
+	<string	name="installation_failed_16"	translatable="true">INSTALAREA A EȘUAT</string>
+	<string	name="installation_failed_desc_16"	translatable="true">Motivul: Ai încercat să instalezi o versiune mai veche decât versiunea deja instalată.\n\nSoluții:\nA. Alege o versiune egală sau mai nouă.\nB. Dezinstalează versiunea curentă și instalează versiunea veche.\n\nDacă problema persistă, verifică secția Întrebări Frecvente.</string>
+	<string	name="installation_failed_ream_desc_16"	translatable="true">Motivul: Versiunea curentă Spotify de pe dispozitiv nu a fost creată de echipa noastră.\n\nSoluție: Dezinstalează versiunea curentă a aplicației, restartează xManager și încearcă din nou. Dacă problema persistă, verifică secția Întrebări Frecvente.</string>
+	<string	name="installation_failed_cloned_desc_16"	translatable="true">Reason: Versiunea curentă a clonei de pe dispozitiv nu a fost creată de echipa noastră.\n\nSoluție: Dezinstalează versiunea curentă a aplicației, restartează xManager și încearcă din nou. Dacă problema persistă, verifică secția Întrebări Frecvente.</string>
+	<string	name="existing_patched_16"	translatable="true">APK EXISTENT</string>
+	<string	name="existing_patched_desc_16"	translatable="true">Un apk existent a fost găsit la locație. Ce acțiune ai dori să întreprinzi?</string>
+	
+	<string	name="close_16"	translatable="true">ÎNCHIDE</string>
+	<string	name="cloned_16"	translatable="true">CLONĂ</string>
+	<string	name="ream_16"	translatable="true">OB/AM</string>
+	<string	name="install_16"	translatable="true">INSTALEAZĂ</string>
+	<string	name="uninstall_16"	translatable="true">DEZINSTALEAZĂ</string>
+	<string	name="ignore_16"	translatable="true">IGNORĂ</string>
+	<string	name="delete_16"	translatable="true">ȘTERGE</string>
+	<string	name="uninstall_patched_16"	translatable="true">DEZINSTALEAZĂ VERSIUNEA MODIFICATĂ</string>
+	<string	name="open_settings_16"	translatable="true">DESCHIDE SETĂRI</string>
+	<string	name="open_patched_16"	translatable="true">DESCHIDE VERSIUNEA MODIFICATĂ</string>
 		
     <!--KOREAN LANGUAGE-->
     <string	name="app_name_17"	translatable="true">xManager</string>
