@@ -2548,12 +2548,12 @@
     <string	name="spotify_amoled_27"    translatable="true">SPOTIFY (純黑背景)</string>
     <string	name="installed_27"    translatable="true">已安裝版本</string>
     <string	name="latest_27"    translatable="true">最新版本</string>
-    <string	name="versions_27"    translatable="true">顯示版本  </string>
+    <string	name="versions_27"    translatable="true">所有版本  </string>
     <string	name="changelogs_27"    translatable="true">更新紀錄</string>
     <string	name="manager_tools_27"    translatable="true">快速工具</string>
     <string	name="device_cpu_27"    translatable="true">CPU/ARCH 類型</string>
     <string	name="source_27"    translatable="true">原始碼</string>
-    <string	name="discord_27"    translatable="true">DISCORD</string>
+    <string	name="discord_27"    translatable="true">Discord</string>
     <string	name="support_27"    translatable="true">Telegram</string>
     <string	name="donate_27"    translatable="true">捐贈</string>
     <string	name="about_27"    translatable="true">關於</string>
@@ -2561,18 +2561,18 @@
     <string	name="settings_title_27"    translatable="true">設定</string>
     <string	name="about_title_27"    translatable="true">關於</string>
 
-    <string	name="list_auto_refresh_27"    translatable="true">自動重新整理</string>
+    <string	name="list_auto_refresh_27"    translatable="true">清單自動重新整理</string>
     <string	name="list_auto_refresh_desc_27"    translatable="true">啟用此功能將在您每次啟動應用程式時自動重新整理清單，您也可以透過向下拖動主頁面來手動重新整理清單。</string>
     <string	name="force_auto_install_27"    translatable="true">自動安裝</string>
     <string	name="force_auto_install_desc_27"    translatable="true">啟用此功能將在下載完成後自動安裝應用程式。</string>
-    <string	name="show_themes_27"    translatable="true">管理器的程式主題</string>
+    <string	name="show_themes_27"    translatable="true">程式主題</string>
     <string	name="apk_location_27"    translatable="true">安裝套件儲存路徑</string>
     <string	name="apk_location_desc_27"    translatable="true">請勿隨意變更儲存路徑。\n不支援使用外掛SD記憶卡路徑</string>
     <string	name="clear_directory_folders_27"    translatable="true">清除檔案</string>
     <string	name="clear_directory_folders_desc_27"    translatable="true">點選下方 清除 按鈕將清除本程式產生的所有檔案</string>
     <string	name="reset_settings_27"    translatable="true">清除</string>
 
-    <string	name="about_sub_27"    translatable="true">不含廣告|新增功能|全部免費</string>
+    <string	name="about_sub_27"    translatable="true">不含廣告|新增功能|完全免費</string>
     <string	name="xmanager_dev_27"    translatable="true">xManager 開發團隊</string>
     <string	name="spotify_mod_devs_27"    translatable="true">Spotify 修改團隊</string>
     <string	name="telegram_support_team_27"    translatable="true">Telegram/Discord 支援團隊</string>
@@ -2610,7 +2610,7 @@
     <string	name="thanks_27"    translatable="true">感謝</string>
     <string	name="language_27"    translatable="true">程式語言</string>
     <string	name="website_27"    translatable="true">網站</string>
-    <string	name="reddit_27" translatable="true">REDDIT</string>
+    <string	name="reddit_27" translatable="true">Reddit</string>
     <string	name="faq_27"    translatable="true">常見問題</string>
 
     <string	name="cloned_version_27"    translatable="true">克隆版本 (測試中)</string>
