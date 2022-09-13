@@ -94,10 +94,10 @@ Yazan Kasem
 0V3R5!9H7  
 
 **Chinese - Simplified Translation**  
-Gent G | Softland99  
+Gent G | Softland99 | zelixdxin  
 
 **French Translation**  
-The Punisher | Luxchar  
+The Punisher | Luxchar | xerta555 | GlThibault  
 
 **Greek Translation**  
 Walter's Cousin #CAF  
@@ -163,7 +163,13 @@ KaldonM
 rexobo  
 
 **Finnish Translation**  
-AfraidOfTheBigBlack | Lilko1ra | KasperiP
+AfraidOfTheBigBlack | Lilko1ra | KasperiP  
+
+**Czech Translation**  
+rex2630  
+
+**Chinese (Traditional) Translation**  
+cracky5322  
 
 # Contributors  
 
