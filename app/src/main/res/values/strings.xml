@@ -189,98 +189,98 @@
     <string    name="open_patched_01"    translatable="true">প্যাচড খুলুন</string>
     
     <!--BULGARIAN LANGUAGE-->
-    <string    name="app_name"    translatable="true">xManager</string>
-    <string    name="spotify_regular"    translatable="true">SPOTIFY (ОБИКНОВЕН)</string>
-    <string    name="spotify_amoled"    translatable="true">SPOTIFY (AMOLED)</string>
-    <string    name="installed"    translatable="true">ИНСТАЛИРАНА</string>
-    <string    name="latest"    translatable="true">ПОСЛЕДНА</string>
-    <string    name="versions"    translatable="true">ВЕРСИИ  </string>
-    <string    name="changelogs"    translatable="true">ПРОМЕНИ</string>
-    <string    name="manager_tools"    translatable="true">ИНСТРУМЕНТИ</string>
-    <string    name="device_cpu"    translatable="true">CPU/ARCH</string>
-    <string    name="source"    translatable="true">ИЗТОЧНИК</string>
-    <string    name="support"    translatable="true">TELEGRAM</string>
-    <string    name="donate"    translatable="true">ПОДКРЕПА</string>
-    <string    name="discord"    translatable="true">DISCORD</string>
-    <string    name="about"    translatable="true">ЗА НАС</string>
-    <string    name="main_title"    translatable="true">xManager</string>
-    <string    name="settings_title"    translatable="true">Настройки</string>
-    <string    name="about_title"    translatable="true">За нас</string>
+    <string    name="app_name_26"    translatable="true">xManager</string>
+    <string    name="spotify_regular_26"    translatable="true">SPOTIFY (ОБИКНОВЕН)</string>
+    <string    name="spotify_amoled_26"    translatable="true">SPOTIFY (AMOLED)</string>
+    <string    name="installed_26"    translatable="true">ИНСТАЛИРАНА</string>
+    <string    name="latest_26"    translatable="true">ПОСЛЕДНА</string>
+    <string    name="versions_26"    translatable="true">ВЕРСИИ  </string>
+    <string    name="changelogs_26"    translatable="true">ПРОМЕНИ</string>
+    <string    name="manager_tools_26"    translatable="true">ИНСТРУМЕНТИ</string>
+    <string    name="device_cpu_26"    translatable="true">CPU/ARCH</string>
+    <string    name="source_26"    translatable="true">ИЗТОЧНИК</string>
+    <string    name="support_26"    translatable="true">TELEGRAM</string>
+    <string    name="donate_26"    translatable="true">ПОДКРЕПА</string>
+    <string    name="discord_26"    translatable="true">DISCORD</string>
+    <string    name="about_26"    translatable="true">ЗА НАС</string>
+    <string    name="main_title_26"    translatable="true">xManager</string>
+    <string    name="settings_title_26"    translatable="true">Настройки</string>
+    <string    name="about_title_26"    translatable="true">За нас</string>
     
-    <string    name="list_auto_refresh"    translatable="true">АВТОМАТИЧНО ОБНОВЯВАНЕ НА СПИСЪКА</string>
-    <string    name="list_auto_refresh_desc"    translatable="true">Ако активирате тази опция, списъкът ще се опреснява автоматично при всяко стартиране на приложението.\n\nМожете ръчно да опреснявате списъка, като плъзнете основния екран надолу.</string>
-    <string    name="force_auto_install"    translatable="true">ПРИНУДИТЕЛНО АВТОМАТИЧНО ИНСТАЛИРАНЕ</string>
-    <string    name="force_auto_install_desc"    translatable="true">Активирането на тази опция ще доведе до автоматично инсталиране на модифицираното приложение и актуализация след изтеглянето му.</string>
-    <string    name="show_themes"    translatable="true">ТЕМИ</string>
-    <string    name="apk_location"    translatable="true">APK МЕСТОПОЛОЖЕНИЕ</string>
-    <string    name="apk_location_desc"    translatable="true">Директорията, в която искате да запазите копието на изтегления файл. Ако не знаете как да конфигурирате тази функция, оставете я такава, каквато е.\n\nЗАБЕЛЕЖКА: Тази функция не поддържа външна памет (SD карта) поради ограничения на достъпността, разрешенията и съхранението.</string>
-    <string    name="clear_directory_folders"    translatable="true">ИЗЧИСТВАНЕ НА ПАПКАТА С ДИРЕКТОРИИ</string>
-    <string    name="clear_directory_folders_desc"    translatable="true">Натиснете, за да изтриете папката с директории. Това включва изтеглените файлове и актуализации.</string>
-    <string    name="reset_settings"    translatable="true">ВЪЗСТАНОВЯВАНЕ НА НАСТРОЙКИТЕ</string>
+    <string    name="list_auto_refresh_26"    translatable="true">АВТОМАТИЧНО ОБНОВЯВАНЕ НА СПИСЪКА</string>
+    <string    name="list_auto_refresh_desc_26"    translatable="true">Ако активирате тази опция, списъкът ще се опреснява автоматично при всяко стартиране на приложението.\n\nМожете ръчно да опреснявате списъка, като плъзнете основния екран надолу.</string>
+    <string    name="force_auto_install_26"    translatable="true">ПРИНУДИТЕЛНО АВТОМАТИЧНО ИНСТАЛИРАНЕ</string>
+    <string    name="force_auto_install_desc_26"    translatable="true">Активирането на тази опция ще доведе до автоматично инсталиране на модифицираното приложение и актуализация след изтеглянето му.</string>
+    <string    name="show_themes_26"    translatable="true">ТЕМИ</string>
+    <string    name="apk_location_26"    translatable="true">APK МЕСТОПОЛОЖЕНИЕ</string>
+    <string    name="apk_location_desc_26"    translatable="true">Директорията, в която искате да запазите копието на изтегления файл. Ако не знаете как да конфигурирате тази функция, оставете я такава, каквато е.\n\nЗАБЕЛЕЖКА: Тази функция не поддържа външна памет (SD карта) поради ограничения на достъпността, разрешенията и съхранението.</string>
+    <string    name="clear_directory_folders_26"    translatable="true">ИЗЧИСТВАНЕ НА ПАПКАТА С ДИРЕКТОРИИ</string>
+    <string    name="clear_directory_folders_desc_26"    translatable="true">Натиснете, за да изтриете папката с директории. Това включва изтеглените файлове и актуализации.</string>
+    <string    name="reset_settings_26"    translatable="true">ВЪЗСТАНОВЯВАНЕ НА НАСТРОЙКИТЕ</string>
     
-    <string    name="about_sub"    translatable="true">Без реклами | Нови функции | Свобода</string>
-    <string    name="xmanager_dev"    translatable="true">Разработчик на xManager</string>
-    <string    name="spotify_mod_devs"    translatable="true">Разработчици на модифицирания Spotify</string>
-    <string    name="telegram_support_team"    translatable="true">Екип за поддръжка на Telegram | Discord | Reddit</string>
-    <string    name="manager_testers"    translatable="true">Тестъри на мода и мениджъра</string>
-    <string    name="manager_hosting"    translatable="true">Мениджър на база данни и хостинг</string>
-    <string    name="mobilism_team"    translatable="true">Екип Mobilism</string>
-    <string    name="forum_team"    translatable="true">Екип FORUM.APK-RELEASE.NET</string>
-    <string    name="xspotify_team"    translatable="true">xSpotify Manager (стар мениджър)</string>
-    <string    name="contributors"    translatable="true">БЛАГОДАРИМ НА ВСИЧКИ СЪТРУДНИЦИ! ❤️</string>
+    <string    name="about_sub_26"    translatable="true">Без реклами | Нови функции | Свобода</string>
+    <string    name="xmanager_dev_26"    translatable="true">Разработчик на xManager</string>
+    <string    name="spotify_mod_devs_26"    translatable="true">Разработчици на модифицирания Spotify</string>
+    <string    name="telegram_support_team_26"    translatable="true">Екип за поддръжка на Telegram | Discord | Reddit</string>
+    <string    name="manager_testers_26"    translatable="true">Тестъри на мода и мениджъра</string>
+    <string    name="manager_hosting_26"    translatable="true">Мениджър на база данни и хостинг</string>
+    <string    name="mobilism_team_26"    translatable="true">Екип Mobilism</string>
+    <string    name="forum_team_26"    translatable="true">Екип FORUM.APK-RELEASE.NET</string>
+    <string    name="xspotify_team_26"    translatable="true">xSpotify Manager (стар мениджър)</string>
+    <string    name="contributors_26"    translatable="true">БЛАГОДАРИМ НА ВСИЧКИ СЪТРУДНИЦИ! ❤️</string>
     
-    <string    name="download_selected"    translatable="true">Избрали сте тази модифицирана версия. Искате ли да продължите?</string>
-    <string    name="download_ready"    translatable="true">ИНФОРМАЦИЯ ЗА МОДИФИКАЦИЯТА</string>
-    <string    name="download_ready_desc"    translatable="true">Изтеглянето на това модифицирано APK ще презапише предишния файл, намиращ се във външната директория.</string>
-    <string    name="downloading_file"    translatable="true">ИЗТЕГЛЯНЕ НА ФАЙЛА...</string>
-    <string    name="download_success"    translatable="true">УСПЕШНО ИЗТЕГЛЯНЕ</string>
-    <string    name="new_update"    translatable="true">АКТУАЛИЗАЦИЯ НА НОВ МЕНИДЖЪР</string>
+    <string    name="download_selected_26"    translatable="true">Избрали сте тази модифицирана версия. Искате ли да продължите?</string>
+    <string    name="download_ready_26"    translatable="true">ИНФОРМАЦИЯ ЗА МОДИФИКАЦИЯТА</string>
+    <string    name="download_ready_desc_26"    translatable="true">Изтеглянето на това модифицирано APK ще презапише предишния файл, намиращ се във външната директория.</string>
+    <string    name="downloading_file_26"    translatable="true">ИЗТЕГЛЯНЕ НА ФАЙЛА...</string>
+    <string    name="download_success_26"    translatable="true">УСПЕШНО ИЗТЕГЛЯНЕ</string>
+    <string    name="new_update_26"    translatable="true">АКТУАЛИЗАЦИЯ НА НОВ МЕНИДЖЪР</string>
     
-    <string    name="continue_1"    translatable="true">ПРОДЪЛЖИ</string>
-    <string    name="cancel"    translatable="true">ОТМЕНИ</string>
-    <string    name="download"    translatable="true">ИЗТЕГЛИ</string>
-    <string    name="later"    translatable="true">ПО-КЪСНО</string>
-    <string    name="install_now"    translatable="true">ИНСТАЛИРАЙ СЕГА</string>
-    <string    name="install_update"    translatable="true">ИНСТАЛИРАНЕ НА АКТУАЛИЗАЦИЯ</string>
-    <string    name="go_back"    translatable="true">ВРЪЩАНЕ НАЗАД</string>
-    <string    name="download_update"    translatable="true">ИЗТЕГЛЯНЕ НА АКТУАЛИЗАЦИЯ</string>
-    <string    name="not_now"    translatable="true">НЕ СЕГА</string>
-    <string    name="copy_url"    translatable="true">КОПИРАНЕ НА URL</string>
-    <string    name="fixer"    translatable="true">ПОПРАВЧИК</string>
+    <string    name="continue_1_26"    translatable="true">ПРОДЪЛЖИ</string>
+    <string    name="cancel_26"    translatable="true">ОТМЕНИ</string>
+    <string    name="download_26"    translatable="true">ИЗТЕГЛИ</string>
+    <string    name="later_26"    translatable="true">ПО-КЪСНО</string>
+    <string    name="install_now_26"    translatable="true">ИНСТАЛИРАЙ СЕГА</string>
+    <string    name="install_update_26"    translatable="true">ИНСТАЛИРАНЕ НА АКТУАЛИЗАЦИЯ</string>
+    <string    name="go_back_26"    translatable="true">ВРЪЩАНЕ НАЗАД</string>
+    <string    name="download_update_26"    translatable="true">ИЗТЕГЛЯНЕ НА АКТУАЛИЗАЦИЯ</string>
+    <string    name="not_now_26"    translatable="true">НЕ СЕГА</string>
+    <string    name="copy_url_26"    translatable="true">КОПИРАНЕ НА URL</string>
+    <string    name="fixer_26"    translatable="true">ПОПРАВЧИК</string>
     
-    <string    name="show_support"    translatable="true">ПОКАЖЕТЕ СВОЯТА ПОДКРЕПА</string>
-    <string    name="show_support_desc"    translatable="true">Ние сме екип с нестопанска цел, без корпоративни цели и некомпрометирани. Хора като Вас ни насърчават да създаваме приложение, което да улесни нещата, особено от изтеглянето до инсталирането.\n\nНие влагаме цялото си време и усилия само за да направим нещата правилни и перфектни. Ще направим всичко възможно да поддържаме това приложение толкова дълго, колкото можем.\n\nВсяка сума ще помогне и ще бъде много ценена!</string>
+    <string    name="show_support_26"    translatable="true">ПОКАЖЕТЕ СВОЯТА ПОДКРЕПА</string>
+    <string    name="show_support_desc_26"    translatable="true">Ние сме екип с нестопанска цел, без корпоративни цели и некомпрометирани. Хора като Вас ни насърчават да създаваме приложение, което да улесни нещата, особено от изтеглянето до инсталирането.\n\nНие влагаме цялото си време и усилия само за да направим нещата правилни и перфектни. Ще направим всичко възможно да поддържаме това приложение толкова дълго, колкото можем.\n\nВсяка сума ще помогне и ще бъде много ценена!</string>
     
-    <string    name="maintenance"    translatable="true">ПОДДРЪЖКА</string>
-    <string    name="maintenance_desc"    translatable="true">xManager в момента не е достъпен. Моля, проверете приложението по-късно.</string>
-    <string    name="thanks"    translatable="true">БЛАГОДАРИМ ВИ!</string>
-    <string    name="language"    translatable="true">ЕЗИК</string>
-    <string    name="website"    translatable="true">УЕБСАЙТ</string>
-    <string    name="reddit"    translatable="true">REDDIT</string>
-    <string    name="faq"    translatable="true">ЧЕСТО ЗАДАВАНИ ВЪПРОСИ</string>
+    <string    name="maintenance_26"    translatable="true">ПОДДРЪЖКА</string>
+    <string    name="maintenance_desc_26"    translatable="true">xManager в момента не е достъпен. Моля, проверете приложението по-късно.</string>
+    <string    name="thanks_26"    translatable="true">БЛАГОДАРИМ ВИ!</string>
+    <string    name="language_26"    translatable="true">ЕЗИК</string>
+    <string    name="website_26"    translatable="true">УЕБСАЙТ</string>
+    <string    name="reddit_26"    translatable="true">REDDIT</string>
+    <string    name="faq_26"    translatable="true">ЧЕСТО ЗАДАВАНИ ВЪПРОСИ</string>
     
-    <string    name="cloned_version"    translatable="true">КЛОНИРАНА ВЕРСИЯ (BETA)</string>
-    <string    name="cloned_version_desc"    translatable="true">Активирането на тази опция Ви позволява да изтеглите и инсталирате клонираната версия на модифицираното приложение.\n\nТова също така ще разреши повечето грешки или проблеми при инсталирането особено ако имате предварително инсталирано Spotify приложение.</string>
-    <string    name="disable_rewarded_ads"    translatable="true">ДЕАКТИВИРАНЕ НА НАГРАДНИТЕ РЕКЛАМИ</string>
-    <string    name="disable_rewarded_ads_desc"    translatable="true">Знаем, че повечето от нас не харесват рекламите, но в нашия случай това значително ни помага да финансираме нашата база данни, хостинг връзки, актуализации, повече модове и ежедневни нужди.\n\nТова е най-простият начин да ни подкрепите, без да дарявате или харчите нищо.</string>
+    <string    name="cloned_version_26"    translatable="true">КЛОНИРАНА ВЕРСИЯ (BETA)</string>
+    <string    name="cloned_version_desc_26"    translatable="true">Активирането на тази опция Ви позволява да изтеглите и инсталирате клонираната версия на модифицираното приложение.\n\nТова също така ще разреши повечето грешки или проблеми при инсталирането особено ако имате предварително инсталирано Spotify приложение.</string>
+    <string    name="disable_rewarded_ads_26"    translatable="true">ДЕАКТИВИРАНЕ НА НАГРАДНИТЕ РЕКЛАМИ</string>
+    <string    name="disable_rewarded_ads_desc_26"    translatable="true">Знаем, че повечето от нас не харесват рекламите, но в нашия случай това значително ни помага да финансираме нашата база данни, хостинг връзки, актуализации, повече модове и ежедневни нужди.\n\nТова е най-простият начин да ни подкрепите, без да дарявате или харчите нищо.</string>
     
-    <string    name="installation_failed"    translatable="true">ИНСТАЛАЦИЯТА Е НЕУСПЕШНА</string>
-    <string    name="installation_failed_desc"    translatable="true">Причина: Опитали сте се да инсталирате версия на мода, която е по-ниска от инсталираната в момента.\n\nРешения:\nA. Изберете версия, равна на или по-голяма от.\nB. Деинсталирайте текущата версия, след което я понижете.\n\nАко проблемът продължава, проверете в често задавани въпроси.</string>
-    <string    name="installation_failed_ream_desc"    translatable="true">Причина: Текущият Spotify, инсталиран на това устройство, не идва директно от xManager или от нашия екип.\n\nРешение: Деинсталирайте текущата версия на приложението, рестартирайте xManager и опитайте отново. Ако проблемът продължава, проверете в често задаваните въпроси.</string>
-    <string    name="installation_failed_cloned_desc"    translatable="true">Причина: Сегашният клонинг, инсталиран на това устройство, не идва директно от xManager или от нашия екип.\n\nРешение: Деинсталирайте текущата версия на приложението, рестартирайте xManager и опитайте отново. Ако проблемът продължава, проверете в често задаваните въпроси.</string>
-    <string    name="existing_patched"    translatable="true">СЪЩЕСТВУВАЩ МОД</string>
-    <string    name="existing_patched_desc"    translatable="true">В една от директориите е намерено модифицирано APK. Какво действие бихте искали да извършите?</string>
+    <string    name="installation_failed_26"    translatable="true">ИНСТАЛАЦИЯТА Е НЕУСПЕШНА</string>
+    <string    name="installation_failed_desc_26"    translatable="true">Причина: Опитали сте се да инсталирате версия на мода, която е по-ниска от инсталираната в момента.\n\nРешения:\nA. Изберете версия, равна на или по-голяма от.\nB. Деинсталирайте текущата версия, след което я понижете.\n\nАко проблемът продължава, проверете в често задавани въпроси.</string>
+    <string    name="installation_failed_ream_desc_26"    translatable="true">Причина: Текущият Spotify, инсталиран на това устройство, не идва директно от xManager или от нашия екип.\n\nРешение: Деинсталирайте текущата версия на приложението, рестартирайте xManager и опитайте отново. Ако проблемът продължава, проверете в често задаваните въпроси.</string>
+    <string    name="installation_failed_cloned_desc_26"    translatable="true">Причина: Сегашният клонинг, инсталиран на това устройство, не идва директно от xManager или от нашия екип.\n\nРешение: Деинсталирайте текущата версия на приложението, рестартирайте xManager и опитайте отново. Ако проблемът продължава, проверете в често задаваните въпроси.</string>
+    <string    name="existing_patched_26"    translatable="true">СЪЩЕСТВУВАЩ МОД</string>
+    <string    name="existing_patched_desc_26"    translatable="true">В една от директориите е намерено модифицирано APK. Какво действие бихте искали да извършите?</string>
     
-    <string    name="close"    translatable="true">ЗАТВОРИ</string>
-    <string    name="cloned"    translatable="true">КЛОНИРАЙ</string>
-    <string    name="ream"    translatable="true">RE/AM</string>
-    <string    name="install"    translatable="true">ИНСТАЛИРАЙ</string>
-    <string    name="uninstall"    translatable="true">ДЕИНСТАЛИРАЙ</string>
+    <string    name="close_26"    translatable="true">ЗАТВОРИ</string>
+    <string    name="cloned_26"    translatable="true">КЛОНИРАЙ</string>
+    <string    name="ream_26"    translatable="true">RE/AM</string>
+    <string    name="install_26"    translatable="true">ИНСТАЛИРАЙ</string>
+    <string    name="uninstall_26"    translatable="true">ДЕИНСТАЛИРАЙ</string>
     <string    name="ignore"    translatable="true">ИГНОРИРАЙ</string>
-    <string    name="delete"    translatable="true">ИЗТРИЙ</string>
-    <string    name="uninstall_patched"    translatable="true">ДЕИНСТАЛИРАНЕ НА МОДА</string>
-    <string    name="open_settings"    translatable="true">ОТВОРИ НАСТРОЙКИ</string>
-    <string    name="open_patched"    translatable="true">ОТВОРИ МОДА</string>
+    <string    name="delete_26"    translatable="true">ИЗТРИЙ</string>
+    <string    name="uninstall_patched_26"    translatable="true">ДЕИНСТАЛИРАНЕ НА МОДА</string>
+    <string    name="open_settings_26"    translatable="true">ОТВОРИ НАСТРОЙКИ</string>
+    <string    name="open_patched_26"    translatable="true">ОТВОРИ МОДА</string>
     
     <!--CHINESE (SIMPLIFIED) LANGUAGE-->
     <string    name="app_name_02"    translatable="true">xManager</string>
