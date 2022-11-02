@@ -115,7 +115,7 @@ Loui's™ | Zilberto Junior
 Androide323  
 
 **Romanian Translation**  
-NACH | f9branza  
+NACH | f9branza | BitterJames
 
 **Russian Translation**  
 Pegioner  
