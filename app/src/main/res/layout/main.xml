@@ -1589,7 +1589,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:paddingBottom="5dp"
-						android:text="NACH | f9branza"
+						android:text="NACH | f9branza | StephenTheMoldovan"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1640,7 +1640,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:paddingBottom="5dp"
-						android:text="PetFix"
+						android:text="PetFix | Snapdragon845GMS"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1691,7 +1691,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:paddingBottom="5dp"
-						android:text="Apious"
+						android:text="Apious | Annyeong-One"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1894,7 +1894,24 @@
 						android:id="@+id/translator_28"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="cracky5322"
+						android:paddingBottom="5dp"
+						android:text="cracky5322 | TragicLifeHu"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+					<TextView
+						android:id="@+id/manager_lang_29"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Bulgarian Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFEB3B" />
+					<TextView
+						android:id="@+id/translator_29"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="meorro | martinov83"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
