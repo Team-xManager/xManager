@@ -2355,98 +2355,98 @@
 	<string	name="open_patched_24"	translatable="true">ÖPPNA PATCHAD</string>
     
     <!--FINNISH LANGUAGE-->
-	<string	name="app_name_25"    translatable="true">xManager</string>
-    <string	name="spotify_regular_25"    translatable="true">SPOTIFY (TAVALLINEN)</string>
-    <string	name="spotify_amoled_25"    translatable="true">SPOTIFY (AMOLED)</string>
-    <string	name="installed_25"    translatable="true">ASENNETTU</string>
-    <string	name="latest_25"    translatable="true">VIIMEISIN</string>
-    <string	name="versions_25"    translatable="true">VERSIOT  </string>
-    <string	name="changelogs_25"    translatable="true">MUUTOSLOKI</string>
-    <string	name="manager_tools_25"    translatable="true">HALLINNOINTITYÖKALUT</string>
-    <string	name="device_cpu_25"    translatable="true">CPU/ARCH</string>
-    <string	name="source_25"    translatable="true">LÄHDE</string>
-    <string	name="support_25"    translatable="true">TELEGRAM</string>
-	<string	name="donate_25"	translatable="true">TUKI</string>
-	<string	name="discord_25"	translatable="true">DISCORD</string>
-	<string	name="about_25"	translatable="true">TIETOJA</string>
-	<string	name="main_title_25"	translatable="true">xManager</string>
-	<string	name="settings_title_25"	translatable="true">Asetukset</string>
-	<string	name="about_title_25"	translatable="true">Tietoja</string>
-	
-	<string	name="list_auto_refresh_25"	translatable="true">LISTAN AUTOMAATTINEN PÄIVITYS</string>
-	<string	name="list_auto_refresh_desc_25"	translatable="true">Tämän aktivointi automaattisesti päivittää listan joka kerta, kun avaat sovelluksen.\n\nVoit myös päivittää listan manuaalisesti raahaamalla päänäkymän alaspäin.</string>
-	<string	name="force_auto_install_25"	translatable="true">PAKOTA AUTOMAATTINEN ASENTAMINEN</string>
-	<string	name="force_auto_install_desc_25" translatable="true">Tämän aktivointi automaattisesti asentaa korjatun sovelluksen, ja päivittää sen asennuksen jälkeen.</string>
-	<string	name="show_themes_25"	translatable="true">TEEMAT</string>
-	<string	name="apk_location_25"	translatable="true">APK SIJAINTI</string>
-	<string	name="apk_location_desc_25" translatable="true">Kansio minne haluat tallentaa ladatun tiedoston. Jos et tiedä miten konfiguroida tätä ominaisuutta, niin jätä se koskemattomaksi.\n\nMUISTA: Tämä ominaisuus ei tue ulkoista tallennustilaa (SD-Kortti) käyttömahdollisuus, lupa ja tallennustilan rajoitusten takia.</string>
-	<string	name="clear_directory_folders_25"	translatable="true">PUHDISTA LUETTELON KANSIOT</string>
-	<string	name="clear_directory_folders_desc_25"	translatable="true">Napauta poistaaksesi kaikki asennetut tiedostot ja päivitykset.</string>
-	<string	name="reset_settings_25"	translatable="true">PALAUTA OLETUSASETUKSET</string>
-	
-	<string	name="about_sub_25"	translatable="true">Ei mainoksia | Uusia ominaisuuksia | Vapaus</string>
-	<string	name="xmanager_dev_25"	translatable="true">xManager Ohjelmoija</string>
-	<string	name="spotify_mod_devs_25" translatable="true">Spotify korjaustiedosto ohjelmoija</string>
-	<string	name="telegram_support_team_25"	translatable="true">Telegram | Discord | Reddit Tukitiimi</string>
-	<string	name="manager_testers_25" translatable="true">Korjaustiedosto- ja Manager Testaajat</string>
-	<string	name="manager_hosting_25"	translatable="true">Manager Tietokanta ja Hostaukset</string>
-	<string	name="mobilism_team_25"	translatable="true">Mobilism Tiimi</string>
-	<string	name="forum_team_25"	translatable="true">FORUM.APK-RELEASE.NET Tiimi</string>
-	<string	name="xspotify_team_25"	translatable="true">xSpotify Manager (Vanha Manager)</string>
-	<string	name="contributors_25"	translatable="true">KIITOKSET KAIKILLE AVUSATAJILLE! ❤️</string>
-	
-	<string	name="download_selected_25"    translatable="true">Valitsit tämän korjaustiedoston version. Haluatko jatkaa?</string>
-    <string	name="download_ready_25"    translatable="true">KORJAUSTIEDOSTO TIETOJA</string>
-    <string	name="download_ready_desc_25"    translatable="true">Tämän korjaustiedosto apk:n lataaminen asentuu entisen tiedoston päälle, joka löytyy ulkoisesta kansiosta.</string>
-	<string	name="downloading_file_25"	translatable="true">LADATAAN TIEDOSTOA...</string>
-	<string	name="download_success_25"	translatable="true">LATAUS ONNISTUI</string>
-	<string	name="new_update_25"	translatable="true">UUSI MANAGER PÄIVITYS</string>
-	
-	<string	name="continue_1_25"	translatable="true">JATKA</string>
-	<string	name="cancel_25"	translatable="true">PERUUTA</string>
-	<string	name="download_25"	translatable="true">LATAA</string>
-	<string	name="later_25"	translatable="true">MYÖHEMMIN</string>
-	<string	name="install_now_25"	translatable="true">ASENNA NYT</string>
-	<string	name="install_update_25"	translatable="true">ASENNA PÄIVITYS</string>
-	<string	name="go_back_25"	translatable="true">MENE TAKAISIN</string>
-	<string	name="download_update_25"	translatable="true">LATAA PÄIVITYS</string>
-	<string	name="not_now_25"	translatable="true">EI NYT</string>
-	<string	name="copy_url_25"	translatable="true">KOPIOI URL</string>
-    <string	name="fixer_25"	translatable="true">KIINNITYSAINE</string>
-	
-	<string	name="show_support_25"	translatable="true">NÄYTÄ TUKESI</string>
-	<string	name="show_support_desc_25"	translatable="true">Me olemme voittoa tavoittelematon, ei yritys ja tinkimätön tiimi. Kaltaisesi ihmiset kannustavat meitä luomaan sovelluksen, joka tekee asioista paljon helpompaa, etenkin lataamisesta asennukseen.\n\nKäytämme kaiken aikamme ja parhaamme tehdäksemme asiat oikein ja täydellisinä. Teemme parhaamme tukeaksemme tätä sovellusta niin kauan kuin voimme.\n\nMikä tahansa summa auttaa ja sitä arvostetaan suuresti!</string>
-	
-	<string	name="maintenance_25"	translatable="true">HUOLTOKATKO</string>
-	<string	name="maintenance_desc_25"	translatable="true">xManager ei ole tällä hetkellä saatavilla. Ole hyvä, ja tarkista sovellus myöhemmin.</string>
-	<string	name="thanks_25"	translatable="true">KIITOS!</string>
-	<string	name="language_25"	translatable="true">KIELI</string>
-	<string	name="website_25" translatable="true">VERKKOSIVU</string>
-	<string	name="reddit_25"	translatable="true">REDDIT</string>
-	<string	name="faq_25"	translatable="true">UKK</string>
-	
-	<string	name="cloned_version_25"	translatable="true">KLOONATTU VERSIO (BETA)</string>
-	<string	name="cloned_version_desc_25"	translatable="true">Tämän aktivoinnin avulla voit ladata ja asentaa korjatun sovelluksen kloonatun version.\n\nTämä myös ratkaisee useimmat asennusvirheet tai -ongelmat, varsinkin jos sinulla on esiasennettu Spotify-sovellus.</string>
-	<string	name="disable_rewarded_ads_25"	translatable="true">POISTA PALKITUT MAINOKSET KÄYTÖSTÄ.</string>
-	<string	name="disable_rewarded_ads_desc_25"	translatable="true">Tiedämme, että useimmat meistä eivät pidä mainoksista, mutta meidän tapauksessamme tämä auttaa meitä merkittävästi rahoittamaan tietokantaamme, isännöintilinkkejä, päivityksiä, lisää korjauksia ja päivittäisiä tarpeita.\n\nTämä on yksinkertaisin tapa tukea meitä lahjoittamatta tai kuluttamatta mitään.</string>
-	
-	<string	name="installation_failed_25"	translatable="true">ASENNUS EPÄONNISTUI</string>
-	<string	name="installation_failed_desc_25"	translatable="true">Syy: Yritit asentaa mod-version, joka on vanhempi kuin tällä hetkellä asennettuna.\n\nRatkaisut:\nA. Valitse versio, joka on yhtä suuri tai suurempi kuin.\nB. Poista nykyisen version asennus ja alenna sitten.\n\nJos ongelma jatkuu, tarkista usein kysytyt kysymykset.</string>
-	<string	name="installation_failed_ream_desc_25"	translatable="true">Syy: Tälle laitteelle asennettu nykyinen Spotify ei tullut suoraan xManagerista tai tiimiltään.\n\nRatkaisu: Poista sovelluksen nykyinen versio, käynnistä xManager uudelleen ja yritä uudelleen. Jos ongelma jatkuu, tarkista usein kysytyt kysymykset.</string>
-	<string	name="installation_failed_cloned_desc_25"	translatable="true">Syy: Tälle laitteelle asennettu nykyinen kloonattu versio ei tullut suoraan xManagerista tai tiimiltään.\n\nRatkaisu: Poista sovelluksen nykyinen versio, käynnistä xManager uudelleen ja yritä uudelleen. Jos ongelma jatkuu, tarkista usein kysytyt kysymykset.</string>
-	<string	name="existing_patched_25" translatable="true">OLEMASSA OLEVA KORJAUSTIEDOSTO</string>
-	<string	name="existing_patched_desc_25"	translatable="true">Yhdestä hakemistosta löytyi olemassa oleva korjattu apk. Millaisen toimenpiteen haluaisit tehdä?</string>
-	
-	<string	name="close_25"	translatable="true">SULJE</string>
-	<string	name="cloned_25"	translatable="true">KLOONATTU</string>
-	<string	name="ream_25"	translatable="true">RE/AM</string>
-	<string	name="install_25"	translatable="true">ASENNA</string>
-	<string	name="uninstall_25"	translatable="true">POISTA ASENNUS</string>
-	<string	name="ignore_25"	translatable="true">ÄLÄ HUOMIOI</string>
-	<string	name="delete_25"	translatable="true">POISTA</string>
-	<string	name="uninstall_patched_25"    translatable="true">POISTA KORJAUSTIEDOSTO</string>
-    <string	name="open_settings_25"    translatable="true">AVAA ASETUKSET</string>
-    <string	name="open_patched_25"    translatable="true">AVAA KORJAUSTIEDOSTO</string>
+    <string    name="app_name_25"    translatable="true">xManager</string>
+    <string    name="spotify_regular_25"    translatable="true">SPOTIFY (PERUS)</string>
+    <string    name="spotify_amoled_25"    translatable="true">SPOTIFY (AMOLED)</string>
+    <string    name="installed_25"    translatable="true">ASENNETTU</string>
+    <string    name="latest_25"    translatable="true">VIIMEISIN</string>
+    <string    name="versions_25"    translatable="true">VERSIOT  </string>
+    <string    name="changelogs_25"    translatable="true">MUUTOSLOKI</string>
+    <string    name="manager_tools_25"    translatable="true">MANAGER TYÖKALUT</string>
+    <string    name="device_cpu_25"    translatable="true">CPU/ARCH</string>
+    <string    name="source_25"    translatable="true">LÄHDE</string>
+    <string    name="support_25"    translatable="true">TELEGRAM</string>
+    <string    name="donate_25"    translatable="true">TUKI</string>
+    <string    name="discord_25"    translatable="true">DISCORD</string>
+    <string    name="about_25"    translatable="true">TIETOJA</string>
+    <string    name="main_title_25"    translatable="true">xManager</string>
+    <string    name="settings_title_25"    translatable="true">Asetukset</string>
+    <string    name="about_title_25"    translatable="true">Tietoja</string>
+    
+    <string    name="list_auto_refresh_25"    translatable="true">LISTAN AUTOMAATTINEN PÄIVITYS</string>
+    <string    name="list_auto_refresh_desc_25"    translatable="true">Tämän aktivointi automaattisesti päivittää listan joka kerta, kun avaat sovelluksen.\n\nVoit myös päivittää listan manuaalisesti raahaamalla päänäkymän alaspäin.</string>
+    <string    name="force_auto_install_25"    translatable="true">PAKOTA AUTOMAATTINEN ASENTAMINEN</string>
+    <string    name="force_auto_install_desc_25"    translatable="true">Tämän aktivointi automaattisesti asentaa patched sovelluksen, ja päivittää sen jälkeen kun se on asennettu.</string>
+    <string    name="show_themes_25"    translatable="true">TEEMAT</string>
+    <string    name="apk_location_25"    translatable="true">APK SIJAINTI</string>
+    <string    name="apk_location_desc_25"    translatable="true">Kansio minne haluat tallentaa ladatun tiedoston. Jos et tiedä miten konfiguroida tätä ominaisuutta, niin jätä se sellaisenaan kuin se on.\n\nMUISTA: Tämä ominaisuus ei tue ulkoista tallennustilaa (SD Kortti) käyttömahdollisuuden, lupien ja tallennustilan rajoitusten takia.</string>
+    <string    name="clear_directory_folders_25"    translatable="true">PUHDISTA LUETTELON KANSIOT</string>
+    <string    name="clear_directory_folders_desc_25"    translatable="true">Napauta poistaaksesi kaikki asennetut tiedostot ja päivitykset.</string>
+    <string    name="reset_settings_25"    translatable="true">PALAUTA OLETUSASETUKSET</string>
+    
+    <string    name="about_sub_25"    translatable="true">Ei mainoksia | Uusia ominaisuuksia | Vapaus</string>
+    <string    name="xmanager_dev_25"    translatable="true">xManager Ohjelmoija</string>
+    <string    name="spotify_mod_devs_25"    translatable="true">Spotify patched ohjelmoijat</string>
+    <string    name="telegram_support_team_25"    translatable="true">Telegram | Discord | Reddit Tukitiimi</string>
+    <string    name="manager_testers_25"    translatable="true">Patched- ja Manager Testaajat</string>
+    <string    name="manager_hosting_25"    translatable="true">Manager Tietokanta ja Hostaukset</string>
+    <string    name="mobilism_team_25"    translatable="true">Mobilism Tiimi</string>
+    <string    name="forum_team_25"    translatable="true">FORUM.APK-RELEASE.NET Tiimi</string>
+    <string    name="xspotify_team_25"    translatable="true">xSpotify Manager (Vanha Manager)</string>
+    <string    name="contributors_25"    translatable="true">KIITOKSET KAIKILLE AVUSATAJILLE! ❤️</string>
+    
+    <string    name="download_selected_25"    translatable="true">Valitsit tämän patched version. Haluatko jatkaa?</string>
+    <string    name="download_ready_25"    translatable="true">PATCHED TIETOJA</string>
+    <string    name="download_ready_desc_25"    translatable="true">Tämän patched apk:n lataaminen asentaa entisen tiedoston päälle, joka löytyy ulkoisesta kansiosta.</string>
+    <string    name="downloading_file_25"    translatable="true">LADATAAN TIEDOSTOA...</string>
+    <string    name="download_success_25"    translatable="true">LATAUS ONNISTUI</string>
+    <string    name="new_update_25"    translatable="true">UUSI MANAGER PÄIVITYS</string>
+    
+    <string    name="continue_1_25"    translatable="true">JATKA</string>
+    <string    name="cancel_25"    translatable="true">PERUUTA</string>
+    <string    name="download_25"    translatable="true">LATAA</string>
+    <string    name="later_25"    translatable="true">MYÖHEMMIN</string>
+    <string    name="install_now_25"    translatable="true">ASENNA NYT</string>
+    <string    name="install_update_25"    translatable="true">ASENNA PÄIVITYS</string>
+    <string    name="go_back_25"    translatable="true">MENE TAKAISIN</string>
+    <string    name="download_update_25"    translatable="true">LATAA PÄIVITYS</string>
+    <string    name="not_now_25"    translatable="true">EI NYT</string>
+    <string    name="copy_url_25"    translatable="true">KOPIOI URL</string>
+    <string    name="fixer_25"    translatable="true">KIINNITYSAINE</string>
+    
+    <string    name="show_support_25"    translatable="true">NÄYTÄ TUKESI</string>
+    <string    name="show_support_desc_25"    translatable="true">Me olemme voittoa tavoittelematon, ei yritys ja tinkimätön tiimi. Kaltaisesi ihmiset kannustavat meitä luomaan sovelluksen, joka tekee asioista paljon helpompaa, etenkin lataamisesta asennukseen.\n\nKäytämme kaiken aikamme ja parhaamme tehdäksemme asiat oikein ja täydellisinä. Teemme parhaamme tukeaksemme tätä sovellusta niin kauan kuin voimme.\n\nMikä tahansa summa auttaa ja sitä arvostetaan suuresti!</string>
+    
+    <string    name="maintenance_25"    translatable="true">HUOLTOKATKO</string>
+    <string    name="maintenance_desc_25"    translatable="true">xManager ei ole tällä hetkellä saatavilla. Ole hyvä, ja tarkista sovellus myöhemmin.</string>
+    <string    name="thanks_25"    translatable="true">KIITOS!</string>
+    <string    name="language_25"    translatable="true">KIELI</string>
+    <string    name="website_25"    translatable="true">NETTISIVU</string>
+    <string    name="reddit_25"    translatable="true">REDDIT</string>
+    <string    name="faq_25"    translatable="true">UKK</string>
+    
+    <string    name="cloned_version_25"    translatable="true">KLOONATTU VERSIO (BETA)</string>
+    <string    name="cloned_version_desc_25"    translatable="true">Tämän aktivoinnin avulla voit ladata ja asentaa korjatun sovelluksen kloonatun version.\n\nTämä myös ratkaisee useimmat asennusvirheet tai -ongelmat, varsinkin jos sinulla on esiasennettu Spotify-sovellus.</string>
+    <string    name="disable_rewarded_ads_25"    translatable="true">POISTA PALKITUT MAINOKSET KÄYTÖSTÄ.</string>
+    <string    name="disable_rewarded_ads_desc_25"    translatable="true">Tiedämme, että useimmat meistä eivät pidä mainoksista, mutta meidän tapauksessamme tämä auttaa meitä merkittävästi rahoittamaan tietokantaamme, isännöintilinkkejä, päivityksiä, lisää korjauksia ja päivittäisiä tarpeita.\n\nTämä on yksinkertaisin tapa tukea meitä lahjoittamatta tai kuluttamatta mitään.</string>
+    
+    <string    name="installation_failed_25"    translatable="true">ASENNUS EPÄONNISTUI</string>
+    <string    name="installation_failed_desc_25"    translatable="true">Syy: Yritit asentaa mod-version, joka on vanhempi kuin tällä hetkellä asennettuna.\n\nRatkaisut:\nA. Valitse versio, joka on yhtä suuri tai suurempi kuin.\nB. Poista nykyisen version asennus ja alenna sitten.\n\nJos ongelma jatkuu, tarkista usein kysytyt kysymykset.</string>
+    <string    name="installation_failed_ream_desc_25"    translatable="true">Syy: Tälle laitteelle asennettu nykyinen Spotify ei tullut suoraan xManagerista tai tiimiltään.\n\nRatkaisu: Poista sovelluksen nykyinen versio, käynnistä xManager uudelleen ja yritä uudelleen. Jos ongelma jatkuu, tarkista usein kysytyt kysymykset.</string>
+    <string    name="installation_failed_cloned_desc_25"    translatable="true">Syy: Tälle laitteelle asennettu nykyinen kloonattu versio ei tullut suoraan xManagerista tai tiimiltään.\n\nRatkaisu: Poista sovelluksen nykyinen versio, käynnistä xManager uudelleen ja yritä uudelleen. Jos ongelma jatkuu, tarkista usein kysytyt kysymykset.</string>
+    <string    name="existing_patched_25"    translatable="true">OLEMASSA OLEVA PATCHED</string>
+    <string    name="existing_patched_desc_25"    translatable="true">Yhdestä hakemistosta löytyi olemassa oleva korjattu apk. Millaisen toimenpiteen haluaisit tehdä?</string>
+    
+    <string    name="close_25"    translatable="true">SULJE</string>
+    <string    name="cloned_25"    translatable="true">KLOONATTU</string>
+    <string    name="ream_25"    translatable="true">RE/AM</string>
+    <string    name="install_25"    translatable="true">ASENNA</string>
+    <string    name="uninstall_25"    translatable="true">POISTA ASENNUS</string>
+    <string    name="ignore_25"    translatable="true">ÄLÄ HUOMIOI</string>
+    <string    name="delete_25"    translatable="true">POISTA</string>
+    <string    name="uninstall_patched_25"    translatable="true">POISTA PATCHED</string>
+    <string    name="open_settings_25"    translatable="true">AVAA ASETUKSET</string>
+    <string    name="open_patched_25"    translatable="true">AVAA PATCHED</string>
     
     <!--CZECH LANGUAGE-->
     <string	name="app_name_26"    translatable="true">xManager</string>
@@ -2635,4 +2635,98 @@
     <string	name="uninstall_patched_27"    translatable="true">解除安裝修補程式</string>
     <string	name="open_settings_27"    translatable="true">開啟設定</string>
     <string	name="open_patched_27"    translatable="true">開啟修改版本</string>
+    
+    <!--BULGARIAN LANGUAGE-->
+    <string    name="app_name_28"    translatable="true">xManager</string>
+    <string    name="spotify_regular_28"    translatable="true">SPOTIFY (НОРМАЛЕН)</string>
+    <string    name="spotify_amoled_28"    translatable="true">SPOTIFY (AMOLED)</string>
+    <string    name="installed_28"    translatable="true">ИНСТАЛИРАН</string>
+    <string    name="latest_28"    translatable="true">НАЙ-НОВА</string>
+    <string    name="versions_28"    translatable="true">ВЕРСИИ  </string>
+    <string    name="changelogs_28"    translatable="true">СПИСЪК С ПРОМЕНИ</string>
+    <string    name="manager_tools_28"    translatable="true">ИНСТРУМЕНТИ НА МЕНИДЖЪРА</string>
+    <string    name="device_cpu_28"    translatable="true">ПРОЦЕСОР/АРХИТЕКТУРА</string>
+    <string    name="source_28"    translatable="true">КОД</string>
+    <string    name="support_28"    translatable="true">TELEGRAM</string>
+    <string    name="donate_28"    translatable="true">ПОДКРЕПА</string>
+    <string    name="discord_28"    translatable="true">DISCORD</string>
+    <string    name="about_28"    translatable="true">ЗА НАС</string>
+    <string    name="main_title_28"    translatable="true">xManager</string>
+    <string    name="settings_title_28"    translatable="true">Настройки</string>
+    <string    name="about_title_28"    translatable="true">За приложението</string>
+    
+    <string    name="list_auto_refresh_28"    translatable="true">АВТ. ОПРЕСНЯВАНЕ НА СПИСЪКА</string>
+    <string    name="list_auto_refresh_desc_28"    translatable="true">Ако активирате тази опция, списъкът ще се опреснява автоматично при всяко стартиране на приложението.\n\nМожете ръчно да опресните списъка, като плъзнете основния екран надолу.</string>
+    <string    name="force_auto_install_28"    translatable="true">ПРИНУДИТЕЛНО АВТ. ИНСТАЛИРАНЕ</string>
+    <string    name="force_auto_install_desc_28"    translatable="true">Разрешаването на тази опция ще доведе до автоматично инсталиране на коригираното приложение и актуализация след изтеглянето му.</string>
+    <string    name="show_themes_28"    translatable="true">ТЕМИ</string>
+    <string    name="apk_location_28"    translatable="true">МЯСТО ЗА APK</string>
+    <string    name="apk_location_desc_28"    translatable="true">Директорията, в която искате да запазите копието на изтегления файл. Ако не знаете как да конфигурирате тази функция, оставете я така.\n\nЗАБЕЛЕЖКА: Тази функция не поддържа външно хранилище (SD карта) поради ограничения на достъпността, разрешенията и хранилището.</string>
+    <string    name="clear_directory_folders_28"    translatable="true">ИЗЧИСТВАНЕ НА ПАПКАТА</string>
+    <string    name="clear_directory_folders_desc_28"    translatable="true">Докоснете, за да изтриете папката. Това включва изтеглените файлове и актуализации.</string>
+    <string    name="reset_settings_28"    translatable="true">НУЛИРАНЕ НА НАСТРОЙКИТЕ</string>
+    
+    <string    name="about_sub_28"    translatable="true">Без реклами | Нови функции | Свобода</string>
+    <string    name="xmanager_dev_28"    translatable="true">Разработчик на xManager</string>
+    <string    name="spotify_mod_devs_28"    translatable="true">Разработчици на коригирания Spotify</string>
+    <string    name="telegram_support_team_28"    translatable="true">Telegram | Discord | Поддръжка в Reddit</string>
+    <string    name="manager_testers_28"    translatable="true">Тестери на пачовете и мениджъра</string>
+    <string    name="manager_hosting_28"    translatable="true">База данни и хостинги на мениджъра</string>
+    <string    name="mobilism_team_28"    translatable="true">Екип на Mobilism</string>
+    <string    name="forum_team_28"    translatable="true">Екип на FORUM.APK-RELEASE.NET</string>
+    <string    name="xspotify_team_28"    translatable="true">xSpotify Manager (стар мениджър)</string>
+    <string    name="contributors_28"    translatable="true">БЛАГОДАРИМ НА ВСИЧКИ СЪТРУДНИЦИ! ❤️</string>
+    
+    <string    name="download_selected_28"    translatable="true">Избрали сте тази коригирана версия. Искате ли да продължите?</string>
+    <string    name="download_ready_28"    translatable="true">ИНФОРМАЦИЯ ЗА КРЪПКАТА</string>
+    <string    name="download_ready_desc_28"    translatable="true">Изтеглянето на този коригиран APK ще презапише предишния файл, намиращ се във външната директория.</string>
+    <string    name="downloading_file_28"    translatable="true">ИЗТЕГЛЯНЕ НА ФАЙЛА...</string>
+    <string    name="download_success_28"    translatable="true">УСПЕШНО ИЗТЕГЛЕН</string>
+    <string    name="new_update_28"    translatable="true">НОВА АКТУАЛИЗАЦИЯ НА МЕНИДЖЪРА</string>
+    
+    <string    name="continue_1_28"    translatable="true">НАПРЕД</string>
+    <string    name="cancel_28"    translatable="true">ОТКАЗ</string>
+    <string    name="download_28"    translatable="true">ИЗТЕГЛЯНЕ</string>
+    <string    name="later_28"    translatable="true">ПО-КЪСНО</string>
+    <string    name="install_now_28"    translatable="true">ИНСТАЛИРАНЕ СЕГА</string>
+    <string    name="install_update_28"    translatable="true">ИНСТАЛИРАНЕ НА АКТУАЛИЗАЦИЯТА</string>
+    <string    name="go_back_28"    translatable="true">НАЗАД</string>
+    <string    name="download_update_28"    translatable="true">ИЗТЕГЛЯНЕ НА АКТУАЛИЗАЦИЯТА</string>
+    <string    name="not_now_28"    translatable="true">НЕ СЕГА</string>
+    <string    name="copy_url_28"    translatable="true">КОПИРАНЕ НА АДРЕС</string>
+    <string    name="fixer_28"    translatable="true">ПОПРАВЯНЕ</string>
+    
+    <string    name="show_support_28"    translatable="true">ПОКАЖЕТЕ ПОДКРЕПАТА СИ</string>
+    <string    name="show_support_desc_28"    translatable="true">Ние сме екип с нестопанска цел, без корпоративни цели и без компромиси. Хора като вас ни насърчават да създадем приложение, което да направи нещата много по-лесни, особено от изтеглянето до инсталирането.\n\nВлагаме цялото си време и усилия, за да направим нещата правилно и съвършено. Ще направим всичко възможно да поддържаме това приложение толкова дълго, колкото можем.\n\nВсяка сума ще помогне и ще бъде много ценна!</string>
+    
+    <string    name="maintenance_28"    translatable="true">ПОДДРЪЖКА</string>
+    <string    name="maintenance_desc_28"    translatable="true">xManager в момента не е достъпен. Моля, проверете приложението по-късно.</string>
+    <string    name="thanks_28"    translatable="true">БЛАГОДАРИМ!</string>
+    <string    name="language_28"    translatable="true">ЕЗИК</string>
+    <string    name="website_28"    translatable="true">УЕБСАЙТ</string>
+    <string    name="reddit_28"    translatable="true">REDDIT</string>
+    <string    name="faq_28"    translatable="true">ЧЗВ</string>
+    
+    <string    name="cloned_version_28"    translatable="true">КЛОНИРАНА ВЕРСИЯ (БЕТА)</string>
+    <string    name="cloned_version_desc_28"    translatable="true">Разрешаването на тази опция ви позволява да изтеглите и инсталирате клонираната версия на коригираното приложение.\n\nПо този начин ще бъдат отстранени повечето грешки или проблеми при инсталирането, особено ако имате предварително инсталирано приложение Spotify.</string>
+    <string    name="disable_rewarded_ads_28"    translatable="true">ДЕАКТИВИРАНЕ НА РЕКЛАМИТЕ</string>
+    <string    name="disable_rewarded_ads_desc_28"    translatable="true">Знаем, че повечето от нас не харесват рекламите, но в нашия случай това значително ни помага да финансираме нашата база данни, хостинг връзки, актуализации, повече кръпки и ежедневни нужди.\n\nТова е най-простият начин да ни подкрепите, без да дарявате или харчите нищо.</string>
+    
+    <string    name="installation_failed_28"    translatable="true">ИНСТАЛИРАНЕТО Е НЕУСПЕШНО</string>
+    <string    name="installation_failed_desc_28"    translatable="true">Причина: Опитали сте се да инсталирате версия на мода, която е по-ниска от инсталираната в момента.\n\nРешения:\nA. Изберете версия, равна или по-голяма от тази.\nB. Деинсталирайте текущата версия, след което инсталирайте по-ниската.\n\nАко проблемът не е отстранен, проверете често задаваните въпроси (ЧЗВ).</string>
+    <string    name="installation_failed_ream_desc_28"    translatable="true">Причина: Текущата версия на Spotify, инсталирана на това устройство, не идва директно от xManager или от нашия екип.\n\nРешение: Деинсталирайте текущата версия на приложението, рестартирайте xManager и опитайте отново. Ако проблемът продължава, проверете в ЧЗВ.</string>
+    <string    name="installation_failed_cloned_desc_28"    translatable="true">Причина: Текущата клонирана версия, инсталирана на това устройство, не идва директно от xManager или от нашия екип.\n\nРешение: Деинсталирайте текущата версия на приложението, рестартирайте xManager и опитайте отново. Ако проблемът продължава, проверете в ЧЗВ.</string>
+    <string    name="existing_patched_28"    translatable="true">СЪЩЕСТВУВАЩО КОРИГИРАНО ПРИЛОЖЕНИЕ</string>
+    <string    name="existing_patched_desc_28"    translatable="true">В една от директориите е намерен съществуващ коригиран APK. Какво действие искате да извършите?</string>
+    
+    <string    name="close_28"    translatable="true">ЗАТВАРЯНЕ</string>
+    <string    name="cloned_28"    translatable="true">КЛОНИРАН</string>
+    <string    name="ream_28"    translatable="true">RE/AM</string>
+    <string    name="install_28"    translatable="true">ИНСТАЛИРАНЕ</string>
+    <string    name="uninstall_28"    translatable="true">ДЕИНСТАЛИРАНЕ</string>
+    <string    name="ignore_28"    translatable="true">ИГНОРИРАНЕ</string>
+    <string    name="delete_28"    translatable="true">ИЗТРИВАНЕ</string>
+    <string    name="uninstall_patched_28"    translatable="true">ДЕИНСТАЛИРАНЕ НА КОРИГИРАНОТО</string>
+    <string    name="open_settings_28"    translatable="true">НАСТРОЙКИ</string>
+    <string    name="open_patched_28"    translatable="true">ОТВАРЯНЕ НА КОРИГИРАНОТО</string>
 </resources>
