@@ -1470,7 +1470,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:paddingBottom="5dp"
-						android:text="Gent G | Softland99"
+						android:text="Gent G | Softland99 | zelixdxin"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1487,7 +1487,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:paddingBottom="5dp"
-						android:text="The Punisher | Luxchar"
+						android:text="The Punisher | Luxchar | xerta555 | GlThibault"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1860,7 +1860,41 @@
 						android:id="@+id/translator_26"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="AfraidOfTheBigBlack | lilko1ra"
+						android:paddingBottom="5dp"
+						android:text="AfraidOfTheBigBlack | lilko1ra | KasperiP"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+					<TextView
+						android:id="@+id/manager_lang_27"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Czech Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFEB3B" />
+					<TextView
+						android:id="@+id/translator_27"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
+						android:text="rex2630"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+					<TextView
+						android:id="@+id/manager_lang_28"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Chinese (Traditional) Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFEB3B" />
+					<TextView
+						android:id="@+id/translator_28"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="cracky5322"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
