@@ -1,7 +1,9 @@
 # xManager (Spotify)
 <p align="center">
-  <img width="1000" src="https://i.ibb.co/xGWnmZz/x-Manager-Banner-Animated.gif">
-  <img width="1000" src="https://user-images.githubusercontent.com/78732474/157926338-709d56c3-0f6b-4c00-a6b2-e391773d67c2.png">
+  <img width="800" src="https://camo.githubusercontent.com/128a9b81108bff2616661ca38a827864757ec0def0286dfaa88737c40fbae91b/68747470733a2f2f692e6962622e636f2f7847576e6d5a7a2f782d4d616e616765722d42616e6e65722d416e696d617465642e676966">
+  <img width="800" src="https://user-images.githubusercontent.com/78732474/157926338-709d56c3-0f6b-4c00-a6b2-e391773d67c2.png">
+</p>
+<p align="center">
   <img src="https://img.shields.io/badge/Sketchware%20Build-Passing-brightgreen.svg?style=for-the-badge">
   <img src="https://img.shields.io/github/v/tag/xManager-v2/xManager-Spotify?label=LATEST%20VERSION&style=for-the-badge">
   <img src="https://img.shields.io/github/release-date/xManager-v2/xManager-Spotify?label=UPDATED%20SINCE&style=for-the-badge">
@@ -23,7 +25,7 @@
 
 ### [<p align="center">🎉Check out our Roadmaps, Changelogs and Milestones here!🎉</p>](https://github.com/xManager-v2/xManager-Spotify/wiki/xManager-(Spotify)-Roadmaps,-Changelogs-and-Milestones)  
 
-### [<p align="center">🛠VirusTotal Result: Click Here🛠</p>](https://www.virustotal.com/gui/file/82dc69132797b5e72e4a977abae05b661e6298858625b220fdcbd4a4dc4a53a5/detection)
+### [<p align="center">🛠VirusTotal Result: Click Here🛠</p>](https://www.virustotal.com/gui/file/d81e3a89b1fbe8d759ea7b4030dc77f0ef8825b37a4b20c7038f0c9caa64bdf0/detection)
 
 # Main Features
 
@@ -92,10 +94,10 @@ Yazan Kasem
 0V3R5!9H7  
 
 **Chinese - Simplified Translation**  
-Gent G | Softland99  
+Gent G | Softland99 | zelixdxin  
 
 **French Translation**  
-The Punisher | Luxchar  
+The Punisher | Luxchar | xerta555 | GlThibault  
 
 **Greek Translation**  
 Walter's Cousin #CAF  
@@ -113,7 +115,7 @@ Loui's™ | Zilberto Junior
 Androide323  
 
 **Romanian Translation**  
-NACH | f9branza  
+NACH | f9branza | BitterJames
 
 **Russian Translation**  
 Pegioner  
@@ -161,7 +163,13 @@ KaldonM
 rexobo  
 
 **Finnish Translation**  
-AfraidOfTheBigBlack | Lilko1ra  
+AfraidOfTheBigBlack | Lilko1ra | KasperiP  
+
+**Czech Translation**  
+rex2630  
+
+**Chinese (Traditional) Translation**  
+cracky5322  
 
 # Contributors  
 
