@@ -115,7 +115,7 @@ Loui's™ | Zilberto Junior
 Androide323  
 
 **Romanian Translation**  
-NACH | f9branza | BitterJames
+NACH | f9branza | StephenTheMoldovan  
 
 **Russian Translation**  
 Pegioner  
@@ -124,7 +124,7 @@ Pegioner
 MysticX  
 
 **Spanish - Spain Translation**  
-PetFix
+PetFix | Snapdragon845GMS  
 
 **Turkish Translation**  
 Berkay  
@@ -133,7 +133,7 @@ Berkay
 NIKITA🇺🇦[beryllium] #PocoForEver  
 
 **Korean Translation**  
-Apious  
+Apious | Annyeong-One  
 
 **Dutch Translation**  
 Kevin  
@@ -169,7 +169,10 @@ AfraidOfTheBigBlack | Lilko1ra | KasperiP
 rex2630  
 
 **Chinese (Traditional) Translation**  
-cracky5322  
+cracky5322 | TragicLifeHu  
+
+**Bulgarian Translation**  
+meorro | martinov83  
 
 # Contributors  
 
