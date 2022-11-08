@@ -13789,7 +13789,7 @@ public class MainActivity extends AppCompatActivity {
 			.setContentTitle("IMPORTANT REMINDER")
 			.setContentText("After installing and logging-in, make sure to reopen or force close the Spotify app to enable the mod features.")
 			.setPriority(androidx.core.app.NotificationCompat.PRIORITY_MAX)
-			
+					.setStyle(NotificationCompat.BigTextStyle().bigText(contentText))
 			.setAutoCancel(true);
 			
 			androidx.core.app.NotificationManagerCompat notificationManager = androidx.core.app.NotificationManagerCompat.from(MainActivity.this);
