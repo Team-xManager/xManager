@@ -13,7 +13,7 @@ body:
           required: true
         - label: I did a clean install of xManager
           required: true
-        - label: This is an xManager issue -- NOT a Spotify issue
+        - label: This is an xManager app issue -- NOT a Spotify mod issue
           required: true
 - type: markdown
   attributes:
