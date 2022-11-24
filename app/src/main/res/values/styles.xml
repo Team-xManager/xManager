@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-		<item name="Theme_Origins" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme_Origins" parent="Theme.MaterialComponents.Light.NoActionBar">
 		<item name="colorPrimary">@color/colorPrimary</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 		<item name="colorAccent">@color/colorAccent</item>
@@ -10,11 +10,11 @@
 		<item name="android:colorBackground">#212121</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:textSize">13sp</item>
-         </style>
-		<item name="Theme_Origins.Splash" parent="Theme_Origins">
-	 </style>
-		<item name="Progress_Dialog" parent="Theme.MaterialComponents.Light.Dialog">
-		<item name="android:buttonBarNegativeButtonStyle">@style/NegativeButtonProgress</item>
+    </style>
+    <style name="Theme_Origins.Splash" parent="Theme_Origins">
+	</style>
+    <style name="Progress_Dialog" parent="Theme.MaterialComponents.Light.Dialog">
+	    <item name="android:buttonBarNegativeButtonStyle">@style/NegativeButtonProgress</item>
 		<item name="android:buttonBarNeutralButtonStyle">@style/NeutralButtonProgress</item>
 		<item name="android:windowTitleStyle">@style/Title_Origins</item>
 		<item name="android:fontFamily">@font/base_font</item>
@@ -23,9 +23,9 @@
 		<item name="android:textColor">#FFFFFF</item>
 		<item name="android:textSize">13sp</item>
 		<item name="colorPrimary">#252525</item>
-         </style>
-	        <style name="Intro_Dialog" parent="Theme.MaterialComponents.Light.Dialog">
-		<item name="colorPrimary">@color/colorPrimary</item>
+    </style>
+	<style name="Intro_Dialog" parent="Theme.MaterialComponents.Light.Dialog">
+	    <item name="colorPrimary">@color/colorPrimary</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 		<item name="colorAccent">@color/colorAccent</item>
 		<item name="colorControlHighlight">@color/colorControlHighlight</item>
@@ -34,9 +34,9 @@
 		<item name="android:layout_width">wrap_content</item>
 		<item name="android:textSize">14sp</item>
 		<item name="android:textColor">#FFFFFF</item>
-        </style>
-		<item name="Alert_Dialog" parent="Theme.MaterialComponents.Light.Dialog">
-		<item name="android:buttonBarPositiveButtonStyle">@style/PositiveButtonOrigins</item>
+    </style>
+    <style name="Alert_Dialog" parent="Theme.MaterialComponents.Light.Dialog">
+	    <item name="android:buttonBarPositiveButtonStyle">@style/PositiveButtonOrigins</item>
 		<item name="android:buttonBarNegativeButtonStyle">@style/NegativeButtonOrigins</item>
 		<item name="android:buttonBarNeutralButtonStyle">@style/NeutralButtonOrigins</item>
 		<item name="android:windowTitleStyle">@style/Title_Origins</item>
@@ -45,9 +45,9 @@
 		<item name="android:layout_width">wrap_content</item>
 		<item name="android:textColor">#FFFFFF</item>
 		<item name="colorPrimary">#252525</item>
-        </style>
-	        <style name="Other_Dialog" parent="Theme.MaterialComponents.Light.Dialog">
-		<item name="android:buttonBarPositiveButtonStyle">@style/PositiveButtonOther</item>
+    </style>
+	<style name="Other_Dialog" parent="Theme.MaterialComponents.Light.Dialog">
+	    <item name="android:buttonBarPositiveButtonStyle">@style/PositiveButtonOther</item>
 		<item name="android:buttonBarNegativeButtonStyle">@style/NegativeButtonOther</item>
 		<item name="android:buttonBarNeutralButtonStyle">@style/NeutralButtonOther</item>
 		<item name="android:windowTitleStyle">@style/Title_Origins</item>
@@ -56,9 +56,9 @@
 		<item name="android:layout_width">wrap_content</item>
 		<item name="android:textColor">#FFFFFF</item>
 		<item name="colorPrimary">#252525</item>
-        </style>
-	        <style name="PositiveButtonOrigins" parent="Widget.MaterialComponents.Button.UnelevatedButton">
-		<item name="android:fontFamily">@font/base_font</item>
+    </style>
+	<style name="PositiveButtonOrigins" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+	    <item name="android:fontFamily">@font/base_font</item>
 		<item name="android:layout_marginStart">5dp</item>
 		<item name="android:textColor">#1DB954</item>ns
 		<item name="rippleColor">#616161</item>
@@ -70,8 +70,8 @@
 		<item name="android:paddingLeft">5dip</item>
 		<item name="android:paddingRight">5dip</item>
 	</style>
-	        <style name="NegativeButtonOrigins" parent="Widget.MaterialComponents.Button.UnelevatedButton">
-		<item name="android:fontFamily">@font/base_font</item>
+	<style name="NegativeButtonOrigins" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+	    <item name="android:fontFamily">@font/base_font</item>
 		<item name="android:layout_marginStart">5dp</item>
 		<item name="android:textColor">#1DB954</item>
 		<item name="rippleColor">#616161</item>
@@ -83,8 +83,8 @@
 		<item name="android:paddingLeft">5dip</item>
 		<item name="android:paddingRight">5dip</item>
 	</style>
-	        <style name="NeutralButtonOrigins" parent="Widget.MaterialComponents.Button.OutlinedButton">
-		<item name="android:fontFamily">@font/base_font</item>
+	<style name="NeutralButtonOrigins" parent="Widget.MaterialComponents.Button.OutlinedButton">
+	    <item name="android:fontFamily">@font/base_font</item>
 		<item name="android:textColor">#1DB954</item>
 		<item name="rippleColor">#616161</item>
 		<item name="strokeColor">#303030</item>
@@ -95,8 +95,8 @@
 		<item name="android:paddingLeft">5dip</item>
 		<item name="android:paddingRight">5dip</item>
 	</style>
-	        <style name="PositiveButtonOther" parent="Widget.MaterialComponents.Button.UnelevatedButton">
-		<item name="android:fontFamily">@font/base_font</item>
+	<style name="PositiveButtonOther" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+	    <item name="android:fontFamily">@font/base_font</item>
 		<item name="android:layout_marginStart">5dp</item>
 		<item name="android:textColor">#FFFFFF</item>
 		<item name="rippleColor">#616161</item>
@@ -108,8 +108,8 @@
 		<item name="android:paddingLeft">5dip</item>
 		<item name="android:paddingRight">5dip</item>
 	</style>
-	        <style name="NegativeButtonOther" parent="Widget.MaterialComponents.Button.UnelevatedButton">
-		<item name="android:fontFamily">@font/base_font</item>
+	<style name="NegativeButtonOther" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+	    <item name="android:fontFamily">@font/base_font</item>
 		<item name="android:layout_marginStart">5dp</item>
 		<item name="android:textColor">#FFFFFF</item>
 		<item name="rippleColor">#616161</item>
@@ -121,8 +121,8 @@
 		<item name="android:paddingLeft">5dip</item>
 		<item name="android:paddingRight">5dip</item>
 	</style>
-	        <style name="NeutralButtonOther" parent="Widget.MaterialComponents.Button.OutlinedButton">
-		<item name="android:fontFamily">@font/base_font</item>
+	<style name="NeutralButtonOther" parent="Widget.MaterialComponents.Button.OutlinedButton">
+	    <item name="android:fontFamily">@font/base_font</item>
 		<item name="android:textColor">#FFFFFF</item>
 		<item name="rippleColor">#616161</item>
 		<item name="strokeColor">#303030</item>
@@ -133,8 +133,8 @@
 		<item name="android:paddingLeft">5dip</item>
 		<item name="android:paddingRight">5dip</item>
 	</style>
-	        <style name="NegativeButtonProgress" parent="Widget.MaterialComponents.Button.OutlinedButton">
-		<item name="android:fontFamily">@font/base_font</item>
+	<style name="NegativeButtonProgress" parent="Widget.MaterialComponents.Button.OutlinedButton">
+	    <item name="android:fontFamily">@font/base_font</item>
 		<item name="android:textColor">#1DB954</item>
 		<item name="rippleColor">#616161</item>
 		<item name="strokeColor">#303030</item>
@@ -145,8 +145,8 @@
 		<item name="android:paddingLeft">5dip</item>
 		<item name="android:paddingRight">5dip</item>
 	</style>
-		<item name="NeutralButtonProgress" parent="Widget.MaterialComponents.Button.UnelevatedButton">
-		<item name="android:fontFamily">@font/base_font</item>
+	<style name="NeutralButtonProgress" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+	    <item name="android:fontFamily">@font/base_font</item>
 		<item name="android:layout_marginStart">5dp</item>
 		<item name="android:textColor">#FFEB3B</item>ns
 		<item name="rippleColor">#616161</item>
@@ -158,9 +158,9 @@
 		<item name="android:paddingLeft">5dip</item>
 		<item name="android:paddingRight">5dip</item>
 	</style>
-	        <style name="Title_Origins" parent="TextAppearance.AppCompat.Large">
-		<item name="android:fontFamily">@font/base_font</item>
+	<style name="Title_Origins" parent="TextAppearance.AppCompat.Large">
+	    <item name="android:fontFamily">@font/base_font</item>
 		<item name="android:textStyle">bold</item>
-		<item name="android:textSize">18sp</item>
+	    <item name="android:textSize">18sp</item>
 	</style>
 </resources>
