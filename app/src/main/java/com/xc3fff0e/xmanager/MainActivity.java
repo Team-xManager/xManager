@@ -13783,13 +13783,15 @@ public class MainActivity extends AppCompatActivity {
 	
 	public void _Reminder() {
 		try {
+			val contentText = "After installing and logging-in, make sure to reopen or force close the Spotify app to enable the mod features."
+
 			androidx.core.app.NotificationCompat.Builder builder = new androidx.core.app.NotificationCompat.Builder(MainActivity.this, "id 1")
 			.setSmallIcon(R.drawable.icon_notification)
 			.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
 			.setContentTitle("IMPORTANT REMINDER")
-			.setContentText("After installing and logging-in, make sure to reopen or force close the Spotify app to enable the mod features.")
+			.setContentText(contentText)
 			.setPriority(androidx.core.app.NotificationCompat.PRIORITY_MAX)
-			
+					.setStyle(NotificationCompat.BigTextStyle().bigText(contentText))
 			.setAutoCancel(true);
 			
 			androidx.core.app.NotificationManagerCompat notificationManager = androidx.core.app.NotificationManagerCompat.from(MainActivity.this);
