@@ -1256,7 +1256,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
-					android:text="RishavG\nmeech\njetfire\nSherlock Holmes\nWu Tang Clam\nZach\naha\n100RABH\njuznem\nTunelover (Mobilism)\njar3cki (xManager Tester)"
+					android:text="RishavG\nmeech\njetfire\nSherlock Holmes\nWu Tang Clam\nZach\naha\n100RABH\njuznem\nTunelover (Mobilism)\njar3cki (xManager Tester)\nzankyr (Notification Fixed)"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -1640,7 +1640,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:paddingBottom="5dp"
-						android:text="PetFix | Snapdragon845GMS"
+						android:text="PetFix | Snapdragon845GMS | Zkyclad"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1936,7 +1936,8 @@
 		android:id="@+id/main_refresh_layout"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:background="#000000">
+		android:background="#000000"
+		android:orientation="vertical">
 		<ScrollView
 			android:id="@+id/main_scroll_body"
 			android:layout_width="match_parent"
@@ -1983,19 +1984,19 @@
 							android:id="@+id/box_1_sub"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:gravity="left|center_vertical"
+							android:gravity="right|center_vertical"
 							android:orientation="horizontal"
-							android:layout_gravity="left|center_vertical">
+							android:layout_gravity="right|center_vertical">
 							<TextView
 								android:id="@+id/regular_info"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
-								android:gravity="left|center_vertical"
-								android:text="Unlimited skips, play on-demand, ad-free and new features!"
-								android:textSize="11sp"
-								android:textStyle="bold|italic"
+								android:paddingRight="8dp"
+								android:gravity="right|center_vertical"
+								android:text="Ad-free, unlimited skips, play on-demand and new features!"
+								android:textSize="12sp"
 								android:textColor="#FFFFFF"
-								android:layout_gravity="left|center_vertical" />
+								android:layout_gravity="right|center_vertical" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
@@ -2029,10 +2030,12 @@
 								android:paddingTop="8dp"
 								android:paddingRight="8dp"
 								android:paddingBottom="8dp"
+								android:gravity="right|center_vertical"
 								android:text="N/A"
 								android:textSize="12sp"
 								android:textStyle="bold"
-								android:textColor="#FFFFFF" />
+								android:textColor="#FFFFFF"
+								android:layout_gravity="right|center_vertical" />
 							<TextView
 								android:id="@+id/sub_5"
 								android:layout_width="wrap_content"
@@ -2041,10 +2044,12 @@
 								android:paddingTop="8dp"
 								android:paddingRight="8dp"
 								android:paddingBottom="8dp"
+								android:gravity="right|center_vertical"
 								android:text="N/A"
 								android:textSize="12sp"
 								android:textStyle="bold"
-								android:textColor="#FFFFFF" />
+								android:textColor="#FFFFFF"
+								android:layout_gravity="right|center_vertical" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
@@ -2081,23 +2086,6 @@
 							android:gravity="right|center_vertical"
 							android:orientation="horizontal"
 							android:layout_gravity="right|center_vertical">
-							<Switch
-								android:id="@+id/version_switch_01"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:layout_marginRight="8dp"
-								android:paddingLeft="5dp"
-								android:paddingTop="8dp"
-								android:paddingRight="2dp"
-								android:paddingBottom="8dp"
-								android:gravity="right|center_vertical"
-								android:textSize="11sp"
-								android:textStyle="bold"
-								android:textColor="#FFFFFF"
-								android:layout_gravity="right|center_vertical"
-								android:track="@drawable/track"
-								android:thumb="@drawable/thumb"
-								android:visibility="gone" />
 							<ImageView
 								android:id="@+id/version_oc_01"
 								android:layout_width="wrap_content"
@@ -2151,27 +2139,29 @@
 							android:paddingTop="8dp"
 							android:paddingRight="8dp"
 							android:paddingBottom="8dp"
+							android:gravity="left|center_vertical"
 							android:text="SPOTIFY (AMOLED)"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#1DB954" />
+							android:textColor="#1DB954"
+							android:layout_gravity="left|center_vertical" />
 						<LinearLayout
-							android:id="@+id/box_3_sub"
+							android:id="@+id/box_2_sub"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:gravity="left|center_vertical"
+							android:gravity="right|center_vertical"
 							android:orientation="horizontal"
-							android:layout_gravity="left|center_vertical">
+							android:layout_gravity="right|center_vertical">
 							<TextView
 								android:id="@+id/amoled_info"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
-								android:gravity="left|center_vertical"
-								android:text="Same features as regular but in amoled black version!"
-								android:textSize="11sp"
-								android:textStyle="bold|italic"
+								android:paddingRight="8dp"
+								android:gravity="right|center_vertical"
+								android:text="Same features but in amoled black theme!"
+								android:textSize="12sp"
 								android:textColor="#FFFFFF"
-								android:layout_gravity="left|center_vertical" />
+								android:layout_gravity="right|center_vertical" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
@@ -2180,7 +2170,7 @@
 						android:layout_height="wrap_content"
 						android:orientation="horizontal">
 						<TextView
-							android:id="@+id/sub_text_3"
+							android:id="@+id/sub_text_2"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:paddingLeft="10dp"
@@ -2204,10 +2194,12 @@
 								android:paddingTop="8dp"
 								android:paddingRight="8dp"
 								android:paddingBottom="8dp"
+								android:gravity="right|center_vertical"
 								android:text="N/A"
 								android:textSize="12sp"
 								android:textStyle="bold"
-								android:textColor="#FFFFFF" />
+								android:textColor="#FFFFFF"
+								android:layout_gravity="right|center_vertical" />
 							<TextView
 								android:id="@+id/sub_7"
 								android:layout_width="wrap_content"
@@ -2216,10 +2208,12 @@
 								android:paddingTop="8dp"
 								android:paddingRight="8dp"
 								android:paddingBottom="8dp"
+								android:gravity="right|center_vertical"
 								android:text="N/A"
 								android:textSize="12sp"
 								android:textStyle="bold"
-								android:textColor="#FFFFFF" />
+								android:textColor="#FFFFFF"
+								android:layout_gravity="right|center_vertical" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
@@ -2256,23 +2250,6 @@
 							android:gravity="right|center_vertical"
 							android:orientation="horizontal"
 							android:layout_gravity="right|center_vertical">
-							<Switch
-								android:id="@+id/version_switch_02"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:layout_marginRight="8dp"
-								android:paddingLeft="5dp"
-								android:paddingTop="8dp"
-								android:paddingRight="2dp"
-								android:paddingBottom="8dp"
-								android:gravity="right|center_vertical"
-								android:textSize="11sp"
-								android:textStyle="bold"
-								android:textColor="#FFFFFF"
-								android:layout_gravity="right|center_vertical"
-								android:track="@drawable/track"
-								android:thumb="@drawable/thumb"
-								android:visibility="gone" />
 							<ImageView
 								android:id="@+id/version_oc_02"
 								android:layout_width="wrap_content"
@@ -2295,6 +2272,146 @@
 						android:divider="#171717" />
 					<ListView
 						android:id="@+id/list_menu_4"
+						android:layout_width="match_parent"
+						android:layout_height="260dp"
+						android:dividerHeight="2dp"
+						android:choiceMode="none"
+						android:nestedScrollingEnabled="true"
+						android:divider="#171717" />
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/main_box_3"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="10dp"
+					android:layout_marginTop="10dp"
+					android:layout_marginRight="10dp"
+					android:padding="10dp"
+					android:background="#212121"
+					android:orientation="vertical"
+					android:animateLayoutChanges="true">
+					<LinearLayout
+						android:id="@+id/box_7"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/title_3"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:paddingLeft="10dp"
+							android:paddingTop="8dp"
+							android:paddingRight="8dp"
+							android:paddingBottom="8dp"
+							android:gravity="left|center_vertical"
+							android:text="SPOTIFY LITE"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#1DB954"
+							android:layout_gravity="left|center_vertical" />
+						<LinearLayout
+							android:id="@+id/box_3_sub"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:gravity="right|center_vertical"
+							android:orientation="horizontal"
+							android:layout_gravity="right|center_vertical">
+							<TextView
+								android:id="@+id/lite_info"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingRight="8dp"
+								android:gravity="right|center_vertical"
+								android:text="Less is more. An ad-free, unlimited skips and play on-demand lightweight experience!"
+								android:textSize="12sp"
+								android:textColor="#FFFFFF"
+								android:layout_gravity="right|center_vertical" />
+						</LinearLayout>
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_8"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/sub_text_3"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:paddingLeft="10dp"
+							android:paddingTop="8dp"
+							android:paddingBottom="8dp"
+							android:text="LATEST"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#BDBDBD" />
+						<LinearLayout
+							android:id="@+id/box_switch_3"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:gravity="right|center_vertical"
+							android:orientation="horizontal">
+							<TextView
+								android:id="@+id/sub_9"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingLeft="3dp"
+								android:paddingTop="8dp"
+								android:paddingRight="8dp"
+								android:paddingBottom="8dp"
+								android:gravity="right|center_vertical"
+								android:text="N/A"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:textColor="#FFFFFF"
+								android:layout_gravity="right|center_vertical" />
+						</LinearLayout>
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_separator_5"
+						android:layout_width="match_parent"
+						android:layout_height="2dp"
+						android:layout_marginLeft="15dp"
+						android:layout_marginRight="15dp"
+						android:background="#616161"
+						android:orientation="horizontal" />
+					<LinearLayout
+						android:id="@+id/box_9"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/version_switch_3"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:paddingLeft="10dp"
+							android:paddingTop="8dp"
+							android:paddingRight="8dp"
+							android:paddingBottom="8dp"
+							android:text="VERSIONS"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#FFFFFF" />
+						<LinearLayout
+							android:id="@+id/box_sub_7"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:gravity="right|center_vertical"
+							android:orientation="horizontal"
+							android:layout_gravity="right|center_vertical">
+							<ImageView
+								android:id="@+id/version_oc_03"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingLeft="8dp"
+								android:paddingTop="8dp"
+								android:paddingRight="10dp"
+								android:paddingBottom="8dp"
+								android:src="@drawable/close"
+								android:scaleType="center" />
+						</LinearLayout>
+					</LinearLayout>
+					<ListView
+						android:id="@+id/list_menu_5"
 						android:layout_width="match_parent"
 						android:layout_height="260dp"
 						android:dividerHeight="2dp"
@@ -2346,10 +2463,12 @@
 								android:paddingTop="8dp"
 								android:paddingRight="10dp"
 								android:paddingBottom="8dp"
+								android:gravity="right|center_vertical"
 								android:text="N/A"
 								android:textSize="12sp"
 								android:textStyle="bold"
-								android:textColor="#FFFFFF" />
+								android:textColor="#FFFFFF"
+								android:layout_gravity="right|center_vertical" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
@@ -2374,14 +2493,16 @@
 							android:paddingTop="8dp"
 							android:paddingRight="8dp"
 							android:paddingBottom="8dp"
+							android:gravity="center_horizontal|center_vertical"
 							android:text="INSTALLED"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#1DB954" />
+							android:textColor="#1DB954"
+							android:layout_gravity="center_horizontal|center_vertical" />
 						<LinearLayout
 							android:id="@+id/box_installed"
 							android:layout_width="match_parent"
-							android:layout_height="match_parent"
+							android:layout_height="wrap_content"
 							android:paddingRight="10dp"
 							android:gravity="right|center_vertical"
 							android:orientation="horizontal">
@@ -2391,32 +2512,64 @@
 								android:layout_height="wrap_content"
 								android:paddingTop="8dp"
 								android:paddingBottom="8dp"
+								android:gravity="right|center_vertical"
 								android:text="N/A"
 								android:textSize="12sp"
 								android:textStyle="bold"
-								android:textColor="#FFFFFF" />
+								android:textColor="#FFFFFF"
+								android:layout_gravity="right|center_vertical" />
 							<TextView
-								android:id="@+id/sub_separator"
+								android:id="@+id/sub_separator_1"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:paddingLeft="3dp"
 								android:paddingTop="8dp"
 								android:paddingRight="3dp"
 								android:paddingBottom="8dp"
+								android:gravity="right|center_vertical"
 								android:text="|"
 								android:textSize="12sp"
 								android:textStyle="bold"
-								android:textColor="#FFFFFF" />
+								android:textColor="#FFFFFF"
+								android:layout_gravity="right|center_vertical" />
 							<TextView
 								android:id="@+id/sub_installed_c"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:paddingTop="8dp"
 								android:paddingBottom="8dp"
+								android:gravity="right|center_vertical"
 								android:text="N/A"
 								android:textSize="12sp"
 								android:textStyle="bold"
-								android:textColor="#FFFFFF" />
+								android:textColor="#FFFFFF"
+								android:layout_gravity="right|center_vertical" />
+							<TextView
+								android:id="@+id/sub_separator_2"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingLeft="3dp"
+								android:paddingTop="8dp"
+								android:paddingRight="3dp"
+								android:paddingBottom="8dp"
+								android:gravity="right|center_vertical"
+								android:text="|"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:textColor="#FFFFFF"
+								android:layout_gravity="right|center_vertical" />
+							<TextView
+								android:id="@+id/sub_installed_l"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingTop="8dp"
+								android:paddingBottom="8dp"
+								android:gravity="right|center_vertical"
+								android:text="N/A"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:textColor="#FFFFFF"
+								android:layout_gravity="right|center_vertical" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
@@ -2454,23 +2607,6 @@
 							android:gravity="right|center_vertical"
 							android:orientation="horizontal"
 							android:layout_gravity="right|center_vertical">
-							<Switch
-								android:id="@+id/changelogs_switch"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:layout_marginRight="8dp"
-								android:paddingLeft="5dp"
-								android:paddingTop="8dp"
-								android:paddingRight="2dp"
-								android:paddingBottom="8dp"
-								android:gravity="right|center_vertical"
-								android:textSize="12sp"
-								android:textStyle="bold"
-								android:textColor="#FFFFFF"
-								android:layout_gravity="right|center_vertical"
-								android:track="@drawable/track"
-								android:thumb="@drawable/thumb"
-								android:visibility="gone" />
 							<ImageView
 								android:id="@+id/changelogs_oc"
 								android:layout_width="wrap_content"
