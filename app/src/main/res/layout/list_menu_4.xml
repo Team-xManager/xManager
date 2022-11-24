@@ -17,7 +17,7 @@
 			android:focusable="false"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:src="@drawable/icon_spotify_2"
+			android:src="@drawable/icon_spotify_1"
 			android:scaleType="center" />
 		<TextView
 			android:id="@+id/sub"
