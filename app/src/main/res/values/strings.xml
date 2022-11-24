@@ -2794,7 +2794,7 @@
     <string    name="show_support_desc_29"	translatable="true">Ми смо непрофитни, некорпоративни и некомпромитовани тим. Људи попут Вас подстичу нас да направимо апликацију како бисмо ствари учинили много лакшим, посебно од преузимања до инсталирања.\n\nУлажемо све наше време и све напоре како би ствари биле исправне и савршене. Даћемо све од себе да подржавамо ову апликацију колико год можемо.\n\nСваки износ ће помоћи и бити веома цењен!</string>
 	
     <string    name="maintenance_29"	translatable="true">ОДРЖАВАЊЕ</string>
-    <string    name="maintenance_desc_29"	translatable="true">xManager тренутно није доступан. Молимо Вас да касније роверите апликацију!</string>
+    <string    name="maintenance_desc_29"	translatable="true">xManager тренутно није доступан. Молимо Вас да касније проверите апликацију!</string>
     <string    name="thanks_29"	translatable="true">ХВАЛА!</string>
     <string    name="language_29"	translatable="true">ЈЕЗИК</string>
     <string    name="website_29"	translatable="true">ВЕБ-САЈТ</string>
