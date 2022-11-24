@@ -29,7 +29,6 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import com.google.android.gms.ads.MobileAds;
-import com.google.firebase.FirebaseApp;
 import com.wuyr.rippleanimation.*;
 import java.io.*;
 import java.text.*;
@@ -55,7 +54,7 @@ public class SplashActivity extends AppCompatActivity {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.splash);
 		initialize(_savedInstanceState);
-		FirebaseApp.initializeApp(this);
+		
 		MobileAds.initialize(this);
 		
 		initializeLogic();
@@ -80,37 +79,37 @@ public class SplashActivity extends AppCompatActivity {
 		}
 		else {
 			if (1 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-				title_splash.setText("Freedom");
+				title_splash.setText("Made with Love");
 				title_splash.setTextSize((int)25);
 			}
 			else {
 				if (2 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-					title_splash.setText("Superior");
+					title_splash.setText("Freedom");
 					title_splash.setTextSize((int)25);
 				}
 				else {
 					if (3 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-						title_splash.setText("Uprising");
+						title_splash.setText("Superior");
 						title_splash.setTextSize((int)25);
 					}
 					else {
 						if (4 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-							title_splash.setText("Never Go Back");
+							title_splash.setText("Superlative");
 							title_splash.setTextSize((int)25);
 						}
 						else {
 							if (5 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-								title_splash.setText("Saving Your $10");
+								title_splash.setText("Never Go Back");
 								title_splash.setTextSize((int)25);
 							}
 							else {
 								if (6 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-									title_splash.setText("It's A Movement");
+									title_splash.setText("Saving Your $10");
 									title_splash.setTextSize((int)25);
 								}
 								else {
 									if (7 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-										title_splash.setText("Keep 'Em Coming");
+										title_splash.setText("It's A Movement");
 										title_splash.setTextSize((int)25);
 									}
 									else {
@@ -136,10 +135,12 @@ public class SplashActivity extends AppCompatActivity {
 		animation_icon = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
 		animation_icon.setDuration(800); icon_splash.startAnimation(animation_icon);
 		animation_icon = null;
+		
 		Animation animation_title;
 		animation_title = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
 		animation_title.setDuration(800); title_splash.startAnimation(animation_title);
 		animation_title = null;
+		
 		Timer = new TimerTask() {
 			@Override
 			public void run() {
