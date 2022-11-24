@@ -1041,11 +1041,11 @@
 	<string	name="installed_11"	translatable="true">INSTALADO</string>
 	<string	name="latest_11"	translatable="true">ÚLTIMO</string>
 	<string	name="versions_11"	translatable="true">VERSIONES</string>
-	<string	name="changelogs_11"	translatable="true">REGISTROS DE CAMBIOS</string>
+	<string	name="changelogs_11"	translatable="true">REGISTRO DE CAMBIOS</string>
 	<string	name="manager_tools_11"	translatable="true">HERRAMIENTAS DEL GESTOR</string>
-	<string	name="device_cpu_11"	translatable="true">CPU/ARCH</string>
+	<string	name="device_cpu_11"	translatable="true">CPU/ARQ</string>
 	<string	name="source_11"	translatable="true">FUENTE</string>
-	<string	name="discord_11"	translatable="true">DISCORDIA</string>
+	<string	name="discord_11"	translatable="true">DISCORD</string>
 	<string	name="support_11"	translatable="true">TELEGRAM</string>
 	<string	name="donate_11"	translatable="true">DONAR</string>
 	<string	name="about_11"	translatable="true">ACERCA DE</string>
@@ -1054,30 +1054,30 @@
 	<string	name="about_title_11"	translatable="true">Acerca de</string>
 
 	<string	name="list_auto_refresh_11"	translatable="true">ACTUALIZACIÓN AUTOMÁTICA DE LA LISTA</string>
-	<string	name="list_auto_refresh_desc_11"	translatable="true">Al activar esto, la lista se actualizara automáticamente cada vez que inicie la aplicación.\n\nPuede refrescar la lista manualmente arrastrando la pantalla principal hacia abajo.</string>
+	<string	name="list_auto_refresh_desc_11"	translatable="true">Al activar esta opción, la lista se actualizara automáticamente cada vez que inicie la aplicación.\n\nPuede actualizar la lista manualmente arrastrando la pantalla principal hacia abajo.</string>
 	<string	name="force_auto_install_11"	translatable="true">FORZAR LA AUTOINSTALACIÓN</string>
-	<string	name="force_auto_install_desc_11"	translatable="true">Al activar esto se instalará automáticamente la aplicación modificada y la actualización una vez descargada.</string>
-	<string	name="show_themes_11"	translatable="true">MOSTRAR TEMAS</string>
+	<string	name="force_auto_install_desc_11"	translatable="true">Al activar esta opción, se instalará automáticamente la aplicación modificada y la actualización una vez descargadas.</string>
+	<string	name="show_themes_11"	translatable="true">TEMAS</string>
 	<string	name="apk_location_11"	translatable="true">UBICACIÓN DEL APK</string>
-	<string	name="apk_location_desc_11"	translatable="true">Directorio de archivos donde desea guardar el APK descargado. Si no sabe cómo configurar esta función, déjelo como está.\n\nNOTA: Esta función no es compatible con el almacenamiento externo (tarjeta SD) debido a la accesibilidad, los permisos y las limitaciones de almacenamiento.</string>
-	<string	name="clear_directory_folders_11"	translatable="true">VACIAR LAS CARPETAS DEL DIRECTORIO</string>
-	<string	name="clear_directory_folders_desc_11"	translatable="true">Pulse para eliminar todas las carpetas del directorio, incluyendo las APKs y las actualizaciones descargadas.</string>
+	<string	name="apk_location_desc_11"	translatable="true">Carpeta donde desea guardar los archivos descargados. Si no sabe cómo configurar esta función, déjela como está.\n\nNOTA: Esta función no es compatible con el almacenamiento externo (tarjetas SD) debido a limitaciones de almacenamiento, accesibilidad y permisos.</string>
+	<string	name="clear_directory_folders_11"	translatable="true">VACIAR LA CARPETA DE DESCARGAS</string>
+	<string	name="clear_directory_folders_desc_11"	translatable="true">Pulse para eliminar la carpeta de descargas, incluyendo los archivos y actualizaciones descargadas.</string>
 	<string	name="reset_settings_11"	translatable="true">RESTABLECER AJUSTES</string>
 	
 	<string	name="about_sub_11"	translatable="true">Sin anuncios | Nuevas funciones | Libertad</string>
 	<string	name="xmanager_dev_11"	translatable="true">Desarrollador de xManager</string>
 	<string	name="spotify_mod_devs_11"	translatable="true">Desarrolladores del mod de Spotify</string>
-	<string	name="telegram_support_team_11"	translatable="true">Equipo de soporte de Telegram</string>
-	<string	name="manager_testers_11"	translatable="true">Comprobadores del mod/gestor</string>
-	<string	name="manager_hosting_11"	translatable="true">Enlaces de alojamiento del gestor</string>
+	<string	name="telegram_support_team_11"	translatable="true">Equipo de soporte de Discord, Reddit y Telegram</string>
+	<string	name="manager_testers_11"	translatable="true">Testers del mod/gestor</string>
+	<string	name="manager_hosting_11"	translatable="true">Base de datos y alojamiento del gestor</string>
 	<string	name="mobilism_team_11"	translatable="true">Equipo de Mobilism</string>
-	<string	name="forum_team_11"	translatable="true">Equipo FORUM.APK-RELEASE.NET</string>
+	<string	name="forum_team_11"	translatable="true">Equipo de FORUM.APK-RELEASE.NET</string>
 	<string	name="xspotify_team_11"	translatable="true">Gestor de xSpotify (antiguo gestor)</string>
 	<string	name="contributors_11"	translatable="true">¡GRACIAS A TODOS LOS COLABORADORES! ❤️</string>
 	
 	<string	name="download_selected_11"	translatable="true">Ha seleccionado esta versión modificada. ¿Desea continuar?</string>
 	<string	name="download_ready_11"	translatable="true">INFORMACIÓN DEL PARCHE</string>
-	<string	name="download_ready_desc_11"	translatable="true">La descarga de este APK modificado sobrescribirá el archivo anterior ubicado en el directorio de archivos externos de la aplicación.</string>
+	<string	name="download_ready_desc_11"	translatable="true">La descarga de este APK modificado sobrescribirá el archivo anterior ubicado en la carpeta externa de archivos descargados.</string>
 	<string	name="downloading_file_11"	translatable="true">DESCARGANDO ARCHIVO...</string>
 	<string	name="download_success_11"	translatable="true">DESCARGADO CON ÉXITO</string>
 	<string	name="new_update_11"	translatable="true">NUEVA ACTUALIZACIÓN DEL GESTOR</string>
@@ -1092,41 +1092,41 @@
 	<string	name="download_update_11"	translatable="true">DESCARGAR ACTUALIZACIÓN</string>
 	<string	name="not_now_11"	translatable="true">AHORA NO</string>
 	<string	name="copy_url_11"	translatable="true">COPIAR URL</string>
-	<string	name="fixer_11"	translatable="true">SOLUCIONADOR</string>
+	<string	name="fixer_11"	translatable="true">FORZAR DESCARGA</string>
 	
 	<string	name="show_support_11"	translatable="true">DEMUESTRE SU APOYO</string>
-	<string	name="show_support_desc_11"	translatable="true">Somos un equipo sin ánimo de lucro, no corporativo y no comprometido. La gente como usted nos anima a crear una aplicación para hacer las cosas mucho más fáciles, especialmente desde la descarga hasta la instalación.\n\nEstamos invirtiendo todo nuestro tiempo y esfuerzos para hacer las cosas bien y perfectas. Haremos todo lo posible para apoyar esta aplicación tanto como podamos.\n\nCualquier monto ayudará y será muy apreciado!</string>
+	<string	name="show_support_desc_11"	translatable="true">Somos un equipo no corporativo y sin fines de lucro. Las personas como usted nos animan a crear una aplicación para facilitar las cosas, especialmente desde la descarga hasta la instalación del mod.\n\nEstamos invirtiendo todo nuestro tiempo y esfuerzos para hacer las cosas bien. Haremos todo lo posible para continuar desarrollando esta aplicación tanto como podamos.\n\nEstaremos muy agradecidos con tu donación, cualquier monto nos ayudará!</string>
 	
 	<string	name="maintenance_11"	translatable="true">MANTENIMIENTO</string>
-	<string	name="maintenance_desc_11"	translatable="true">xManager no está disponible en este momento. Por favor revise la aplicación más tarde.</string>
+	<string	name="maintenance_desc_11"	translatable="true">xManager no está disponible en este momento. Por favor, revise la aplicación más tarde.</string>
 	<string	name="thanks_11"	translatable="true">¡GRACIAS!</string>
 	<string	name="language_11"	translatable="true">IDIOMA</string>
-	<string	name="website_11"	translatable="true">SITIO</string>
+	<string	name="website_11"	translatable="true">SITIO WEB</string>
 	<string	name="reddit_11"	translatable="true">REDDIT</string>
 	<string	name="faq_11"	translatable="true">PREGUNTAS FRECUENTES</string>
 	
 	<string	name="cloned_version_11"	translatable="true">VERSIÓN CLONADA (BETA)</string>
-	<string	name="cloned_version_desc_11"	translatable="true">Al activar esto, puede descargar e instalar la versión clonada de la aplicación parcheada.\n\nEsto también resolverá la mayoría de los errores o problemas de instalación, especialmente si tiene una aplicación de Spotify preinstalada.</string>
-	<string	name="disable_rewarded_ads_11"	translatable="true">DESHABILITAR ANUNCIOS RECOMPENSADOS</string>
-	<string	name="disable_rewarded_ads_desc_11"	translatable="true">Sabemos que a la mayoría de nosotros no nos gustan los anuncios, pero en nuestro caso, esto nos ayuda significativamente a financiar nuestra base de datos, enlaces de alojamiento, actualizaciones, más parches y necesidades diarias.\n\nEsta es la forma más sencilla de apoyarnos sin donar ni gastar nada.</string>
+	<string	name="cloned_version_desc_11"	translatable="true">Al activar esta opción, puede descargar e instalar la versión clonada de la aplicación modificada.\n\nEsto también resolverá la mayoría de los errores o problemas de instalación, especialmente si tiene una aplicación de Spotify preinstalada.</string>
+	<string	name="disable_rewarded_ads_11"	translatable="true">DESHABILITAR ANUNCIOS CON RECOMPENSAS</string>
+	<string	name="disable_rewarded_ads_desc_11"	translatable="true">Sabemos que a la mayoría de nosotros no nos gustan los anuncios, pero en nuestro caso, esto nos ayuda enormemente a financiar nuestra base de datos, enlaces de alojamiento, actualizaciones, parches y necesidades diarias.\n\nEsta es la forma más sencilla de apoyarnos sin donar ni gastar nada.</string>
 	
-	<string	name="installation_failed_11"	translatable="true">ERROR DE INSTALACIÓN</string>
-	<string	name="installation_failed_desc_11"	translatable="true">Motivo: Ha intentado instalar una versión mod inferior a la que está instalada actualmente.\n\nSoluciones:\nA. Seleccione una versión igual o mayor que.\nB. Desinstale la versión actual y, a continuación, baje de categoría.\n\nSi el problema persiste, consulte las preguntas frecuentes.</string>
+	<string	name="installation_failed_11"	translatable="true">INSTALACIÓN FALLIDA</string>
+	<string	name="installation_failed_desc_11"	translatable="true">Motivo: Intentó instalar una versión del mod inferior a la que ya está instalada.\n\nSoluciones:\nA. Seleccione una versión igual o superior.\nB. Desinstale la versión actual y, a continuación, instale la versión inferior.\n\nSi el problema persiste, consulte las preguntas frecuentes.</string>
 	<string	name="installation_failed_ream_desc_11"	translatable="true">Motivo: El Spotify instalado en este dispositivo no provenía directamente de xManager ni de nuestro equipo.\n\nSolución: Desinstale la versión actual de la aplicación, reinicie xManager e inténtelo de nuevo. Si el problema persiste, consulte las preguntas frecuentes.</string>
-	<string	name="installation_failed_cloned_desc_11"	translatable="true">Motivo: El clonado actual instalado en este dispositivo no provino directamente de xManager ni de nuestro equipo.\n\nSolución: Desinstale la versión actual de la aplicación, reinicie xManager e inténtelo de nuevo. Si el problema persiste, consulte las preguntas frecuentes.</string>
-	<string	name="existing_patched_11"	translatable="true">PARCHES EXISTENTES</string>
-	<string	name="existing_patched_desc_11"	translatable="true">Un archivo parcheado existente que se encuentra en uno de los directorios. Qué acción te gustaría hacer?</string>
+	<string	name="installation_failed_cloned_desc_11"	translatable="true">Motivo: La aplicación clonada instalada en este dispositivo no provino directamente de xManager ni de nuestro equipo.\n\nSolución: Desinstale la versión actual de la aplicación, reinicie xManager e inténtelo de nuevo. Si el problema persiste, consulte las preguntas frecuentes.</string>
+	<string	name="existing_patched_11"	translatable="true">PARCHE ENCONTRADO</string>
+	<string	name="existing_patched_desc_11"	translatable="true">Se ha encontrado un APK parcheado en la carpeta de descargas. ¿Qué desea hacer?</string>
 
-	<string	name="close_11"	translatable="true">CERCA</string>
+	<string	name="close_11"	translatable="true">CERRAR</string>
 	<string	name="cloned_11"	translatable="true">CLONAR</string>
-	<string	name="ream_11"	translatable="true">RE/AM</string>
+	<string	name="ream_11"	translatable="true">SÍ/INFO</string>
 	<string	name="install_11"	translatable="true">INSTALAR</string>
-	<string	name="uninstall_11"	translatable="true">DESINSTALA</string>
+	<string	name="uninstall_11"	translatable="true">DESINSTALAR</string>
 	<string	name="ignore_11"	translatable="true">IGNORAR</string>
 	<string	name="delete_11"	translatable="true">ELIMINAR</string>
-	<string	name="uninstall_patched_11"	translatable="true">DESINSTALAR PARCHEADO</string>
-	<string	name="open_settings_11"	translatable="true">CONFIGURACIÓN ABIERTA</string>
-	<string	name="open_patched_11"	translatable="true">PARCHE ABIERTO</string>
+	<string	name="uninstall_patched_11"	translatable="true">¿DESINSTALAR MOD?</string>
+	<string	name="open_settings_11"	translatable="true">AJUSTES DE SPOTIFY</string>
+	<string	name="open_patched_11"	translatable="true">AJUSTES DEL MOD</string>
 	
 	<!--UKRAINIAN LANGUAGE-->
 	<string	name="app_name_12"	translatable="true">xManager</string>
