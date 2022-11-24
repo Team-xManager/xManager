@@ -25,7 +25,7 @@
 
 ### [<p align="center">🎉Check out our Roadmaps, Changelogs and Milestones here!🎉</p>](https://github.com/xManager-v2/xManager-Spotify/wiki/xManager-(Spotify)-Roadmaps,-Changelogs-and-Milestones)  
 
-### [<p align="center">🛠VirusTotal Result: Click Here🛠</p>](https://www.virustotal.com/gui/file/d6e3bd395c20a53a4e1849d8627be7b17b3ed9f2b30a853af1b1bfd7c900a2b4/detection)
+### [<p align="center">🛠VirusTotal Result: Click Here🛠</p>](https://www.virustotal.com/gui/file/f4680fb97d23e88896d426005b33051b9a793f612765129deb1f1ecd428448ad/detection)
 
 # Main Features
 
@@ -124,7 +124,7 @@ Pegioner
 MysticX  
 
 **Spanish - Spain Translation**  
-PetFix | Snapdragon845GMS  
+PetFix | Snapdragon845GMS | Zkyclad  
 
 **Turkish Translation**  
 Berkay  
@@ -180,6 +180,7 @@ Sherlock Holmes
 jetfire  
 meech  
 cooldude69  
+zankyr  
 
 # Testers  
 
