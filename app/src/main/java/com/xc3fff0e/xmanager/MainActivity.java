@@ -53,7 +53,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
 import com.google.android.gms.ads.MobileAds;
-import com.google.firebase.FirebaseApp;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.wuyr.rippleanimation.*;
@@ -127,7 +126,6 @@ public class MainActivity extends AppCompatActivity {
 	private String uninstall_0 = "";
 	private String existing_patched_0 = "";
 	private String existing_patched_desc_0 = "";
-	private String REGULAR = "";
 	private HashMap<String, Object> Datas = new HashMap<>();
 	private String Regular = "";
 	private String Amoled = "";
@@ -139,8 +137,13 @@ public class MainActivity extends AppCompatActivity {
 	private double CLICKER_1 = 0;
 	private double CLICKER_2 = 0;
 	private double CLICKER_3 = 0;
-	AlertDialog AlertDialog;
+	private  AlertDialog AlertDialog;
 	private String fixer_0 = "";
+	private String Lite = "";
+	private double CLICKER_4 = 0;
+	private double Installed_Version_Lite = 0;
+	private double Downloaded_Version_Lite = 0;
+	private String Installed_Checker_Lite = "";
 	
 	private ArrayList<String> Language = new ArrayList<>();
 	private ArrayList<String> Theme = new ArrayList<>();
@@ -149,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
 	private ArrayList<HashMap<String, Object>> regular_cloned = new ArrayList<>();
 	private ArrayList<HashMap<String, Object>> amoled_cloned = new ArrayList<>();
 	private ArrayList<HashMap<String, Object>> mod_changelogs = new ArrayList<>();
+	private ArrayList<HashMap<String, Object>> lite = new ArrayList<>();
 	
 	private LinearLayout box_header;
 	private LinearLayout main_body_optimization;
@@ -368,6 +372,7 @@ public class MainActivity extends AppCompatActivity {
 	private LinearLayout main_body;
 	private LinearLayout main_box_1;
 	private LinearLayout main_box_2;
+	private LinearLayout main_box_3;
 	private LinearLayout main_box_6;
 	private LinearLayout box_sub_header;
 	private LinearLayout main_box_4;
@@ -387,7 +392,6 @@ public class MainActivity extends AppCompatActivity {
 	private TextView sub_5;
 	private TextView version_switch_1;
 	private LinearLayout box_sub_5;
-	private Switch version_switch_01;
 	private ImageView version_oc_01;
 	private LinearLayout box_3;
 	private LinearLayout box_4;
@@ -396,16 +400,29 @@ public class MainActivity extends AppCompatActivity {
 	private ListView list_menu_2;
 	private ListView list_menu_4;
 	private TextView title_2;
-	private LinearLayout box_3_sub;
+	private LinearLayout box_2_sub;
 	private TextView amoled_info;
-	private TextView sub_text_3;
+	private TextView sub_text_2;
 	private LinearLayout box_switch_2;
 	private TextView sub_3;
 	private TextView sub_7;
 	private TextView version_switch_2;
 	private LinearLayout box_sub_6;
-	private Switch version_switch_02;
 	private ImageView version_oc_02;
+	private LinearLayout box_7;
+	private LinearLayout box_8;
+	private LinearLayout box_separator_5;
+	private LinearLayout box_9;
+	private ListView list_menu_5;
+	private TextView title_3;
+	private LinearLayout box_3_sub;
+	private TextView lite_info;
+	private TextView sub_text_3;
+	private LinearLayout box_switch_3;
+	private TextView sub_9;
+	private TextView version_switch_3;
+	private LinearLayout box_sub_7;
+	private ImageView version_oc_03;
 	private LinearLayout box_6_sub_1;
 	private LinearLayout box_separator_3;
 	private LinearLayout box_6_sub_2;
@@ -418,11 +435,12 @@ public class MainActivity extends AppCompatActivity {
 	private TextView sub_text_installed;
 	private LinearLayout box_installed;
 	private TextView sub_installed;
-	private TextView sub_separator;
+	private TextView sub_separator_1;
 	private TextView sub_installed_c;
+	private TextView sub_separator_2;
+	private TextView sub_installed_l;
 	private TextView changelogs;
 	private LinearLayout box_changelogs;
-	private Switch changelogs_switch;
 	private ImageView changelogs_oc;
 	private LinearLayout box_sub_1;
 	private LinearLayout box_sub_2;
@@ -483,7 +501,7 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.main);
 		initialize(_savedInstanceState);
-		FirebaseApp.initializeApp(this);
+		
 		MobileAds.initialize(this);
 		
 		initializeLogic();
@@ -708,6 +726,7 @@ public class MainActivity extends AppCompatActivity {
 		main_body = findViewById(R.id.main_body);
 		main_box_1 = findViewById(R.id.main_box_1);
 		main_box_2 = findViewById(R.id.main_box_2);
+		main_box_3 = findViewById(R.id.main_box_3);
 		main_box_6 = findViewById(R.id.main_box_6);
 		box_sub_header = findViewById(R.id.box_sub_header);
 		main_box_4 = findViewById(R.id.main_box_4);
@@ -727,7 +746,6 @@ public class MainActivity extends AppCompatActivity {
 		sub_5 = findViewById(R.id.sub_5);
 		version_switch_1 = findViewById(R.id.version_switch_1);
 		box_sub_5 = findViewById(R.id.box_sub_5);
-		version_switch_01 = findViewById(R.id.version_switch_01);
 		version_oc_01 = findViewById(R.id.version_oc_01);
 		box_3 = findViewById(R.id.box_3);
 		box_4 = findViewById(R.id.box_4);
@@ -736,16 +754,29 @@ public class MainActivity extends AppCompatActivity {
 		list_menu_2 = findViewById(R.id.list_menu_2);
 		list_menu_4 = findViewById(R.id.list_menu_4);
 		title_2 = findViewById(R.id.title_2);
-		box_3_sub = findViewById(R.id.box_3_sub);
+		box_2_sub = findViewById(R.id.box_2_sub);
 		amoled_info = findViewById(R.id.amoled_info);
-		sub_text_3 = findViewById(R.id.sub_text_3);
+		sub_text_2 = findViewById(R.id.sub_text_2);
 		box_switch_2 = findViewById(R.id.box_switch_2);
 		sub_3 = findViewById(R.id.sub_3);
 		sub_7 = findViewById(R.id.sub_7);
 		version_switch_2 = findViewById(R.id.version_switch_2);
 		box_sub_6 = findViewById(R.id.box_sub_6);
-		version_switch_02 = findViewById(R.id.version_switch_02);
 		version_oc_02 = findViewById(R.id.version_oc_02);
+		box_7 = findViewById(R.id.box_7);
+		box_8 = findViewById(R.id.box_8);
+		box_separator_5 = findViewById(R.id.box_separator_5);
+		box_9 = findViewById(R.id.box_9);
+		list_menu_5 = findViewById(R.id.list_menu_5);
+		title_3 = findViewById(R.id.title_3);
+		box_3_sub = findViewById(R.id.box_3_sub);
+		lite_info = findViewById(R.id.lite_info);
+		sub_text_3 = findViewById(R.id.sub_text_3);
+		box_switch_3 = findViewById(R.id.box_switch_3);
+		sub_9 = findViewById(R.id.sub_9);
+		version_switch_3 = findViewById(R.id.version_switch_3);
+		box_sub_7 = findViewById(R.id.box_sub_7);
+		version_oc_03 = findViewById(R.id.version_oc_03);
 		box_6_sub_1 = findViewById(R.id.box_6_sub_1);
 		box_separator_3 = findViewById(R.id.box_separator_3);
 		box_6_sub_2 = findViewById(R.id.box_6_sub_2);
@@ -758,11 +789,12 @@ public class MainActivity extends AppCompatActivity {
 		sub_text_installed = findViewById(R.id.sub_text_installed);
 		box_installed = findViewById(R.id.box_installed);
 		sub_installed = findViewById(R.id.sub_installed);
-		sub_separator = findViewById(R.id.sub_separator);
+		sub_separator_1 = findViewById(R.id.sub_separator_1);
 		sub_installed_c = findViewById(R.id.sub_installed_c);
+		sub_separator_2 = findViewById(R.id.sub_separator_2);
+		sub_installed_l = findViewById(R.id.sub_installed_l);
 		changelogs = findViewById(R.id.changelogs);
 		box_changelogs = findViewById(R.id.box_changelogs);
-		changelogs_switch = findViewById(R.id.changelogs_switch);
 		changelogs_oc = findViewById(R.id.changelogs_oc);
 		box_sub_1 = findViewById(R.id.box_sub_1);
 		box_sub_2 = findViewById(R.id.box_sub_2);
@@ -1010,12 +1042,12 @@ public class MainActivity extends AppCompatActivity {
 				final boolean _isChecked = _param2;
 				if (_isChecked) {
 					CLONED_VERSION.edit().putString("CLONED", "ON").commit();
-					regular_info.setText("Unlimited skips, play on-demand, ad-free and new features but in CLONED VERSION!");
-					amoled_info.setText("Same features as regular combined with amoled black theme but in CLONED VERSION!");
-					regular_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 2);
-					amoled_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 2);
-					regular_info.setTextSize((int)11);
-					amoled_info.setTextSize((int)11);
+					regular_info.setText("Ad-free, unlimited skips, play on-demand and new features but in CLONED VERSION!");
+					amoled_info.setText("Same features combined with amoled black theme but in CLONED VERSION!");
+					regular_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+					amoled_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+					regular_info.setTextSize((int)12);
+					amoled_info.setTextSize((int)12);
 					sub_1.setVisibility(View.GONE);
 					sub_3.setVisibility(View.GONE);
 					sub_5.setVisibility(View.VISIBLE);
@@ -1024,23 +1056,29 @@ public class MainActivity extends AppCompatActivity {
 					list_menu_2.setVisibility(View.GONE);
 					list_menu_3.setVisibility(View.GONE);
 					list_menu_4.setVisibility(View.GONE);
+					list_menu_5.setVisibility(View.GONE);
+					list_changelogs.setVisibility(View.GONE);
 					version_oc_01.setImageResource(R.drawable.close);
 					version_oc_02.setImageResource(R.drawable.close);
+					version_oc_03.setImageResource(R.drawable.close);
+					changelogs_oc.setImageResource(R.drawable.close);
 					list_menu_3.setAdapter(new List_menu_3Adapter(regular_cloned));
 					list_menu_4.setAdapter(new List_menu_4Adapter(amoled_cloned));
 					((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
 					((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
 					CLICKER_1 = 1;
 					CLICKER_2 = 1;
+					CLICKER_3 = 1;
+					CLICKER_4 = 1;
 				}
 				else {
 					CLONED_VERSION.edit().putString("CLONED", "OFF").commit();
-					regular_info.setText("Unlimited skips, play on-demand, ad-free and new features!");
-					amoled_info.setText("Same features as regular but in amoled black version!");
-					regular_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 2);
-					amoled_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 2);
-					regular_info.setTextSize((int)11);
-					amoled_info.setTextSize((int)11);
+					regular_info.setText("Ad-free, unlimited skips, play on-demand and new features!");
+					amoled_info.setText("Same features but in amoled black theme!");
+					regular_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+					amoled_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+					regular_info.setTextSize((int)12);
+					amoled_info.setTextSize((int)12);
 					sub_1.setVisibility(View.VISIBLE);
 					sub_3.setVisibility(View.VISIBLE);
 					sub_5.setVisibility(View.GONE);
@@ -1049,14 +1087,20 @@ public class MainActivity extends AppCompatActivity {
 					list_menu_2.setVisibility(View.GONE);
 					list_menu_3.setVisibility(View.GONE);
 					list_menu_4.setVisibility(View.GONE);
+					list_menu_5.setVisibility(View.GONE);
+					list_changelogs.setVisibility(View.GONE);
 					version_oc_01.setImageResource(R.drawable.close);
 					version_oc_02.setImageResource(R.drawable.close);
+					version_oc_03.setImageResource(R.drawable.close);
+					changelogs_oc.setImageResource(R.drawable.close);
 					list_menu_1.setAdapter(new List_menu_1Adapter(regular));
 					list_menu_2.setAdapter(new List_menu_2Adapter(amoled));
 					((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
 					((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
 					CLICKER_1 = 1;
 					CLICKER_2 = 1;
+					CLICKER_3 = 1;
+					CLICKER_4 = 1;
 				}
 				COUNTER = 1;
 			}
@@ -1222,3220 +1266,3278 @@ public class MainActivity extends AppCompatActivity {
 				final int _position = _param3;
 				if (_position == 0) {
 					LANGUAGE.edit().putString("LANGUAGE", "0").commit();
-					    title_1.setText(R.string.spotify_regular);
-						title_2.setText(R.string.spotify_amoled);
-						sub_text_installed.setText(R.string.installed);
-						sub_text_1.setText(R.string.latest);
-						sub_text_3.setText(R.string.latest);
-						version_switch_1.setText(R.string.versions);
-						version_switch_2.setText(R.string.versions);
-						changelogs.setText(R.string.changelogs);
-						title_sub.setText(R.string.manager_tools);
-						device_cpu.setText(R.string.device_cpu);
-						source.setText(R.string.source);
-						support.setText(R.string.support);
-						donate.setText(R.string.donate);
-						about.setText(R.string.about);
-						list_auto_refresh.setText(R.string.list_auto_refresh);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc);
-						force_auto_install.setText(R.string.force_auto_install);
-						force_auto_install_info.setText(R.string.force_auto_install_desc);
-						theme.setText(R.string.show_themes);
-						apk_location.setText(R.string.apk_location);
-						apk_location_info.setText(R.string.apk_location_desc);
-						clear_directory_folders.setText(R.string.clear_directory_folders);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc);
-						reset_settings.setText(R.string.reset_settings);
-						sub_title.setText(R.string.about_sub);
-						developer_manager.setText(R.string.xmanager_dev);
-						developer_spotify.setText(R.string.spotify_mod_devs);
-						support_team.setText(R.string.telegram_support_team);
-						mod_testers_1.setText(R.string.manager_testers);
-						mod_testers_2.setText(R.string.manager_hosting);
-						mobilism_team.setText(R.string.mobilism_team);
-						forum_team.setText(R.string.forum_team);
-						manager_team.setText(R.string.xspotify_team);
-						contributors_1.setText(R.string.contributors);
-						download_selected.setText(R.string.download_selected);
-						download_ready.setText(R.string.download_ready);
-						download_ready_desc.setText(R.string.download_ready_desc);
-						downloading_file.setText(R.string.downloading_file);
-						download_success.setText(R.string.download_success);
-						new_update.setText(R.string.new_update);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url);
-						continue_1.setText(R.string.continue_1);
-						cancel.setText(R.string.cancel);
-					    fixer.setText(R.string.fixer);
-						download.setText(R.string.download);
-						later.setText(R.string.later);
-						install_now.setText(R.string.install_now);
-						install_update.setText(R.string.install_update);
-						go_back.setText(R.string.go_back_01);
-						download_update.setText(R.string.download_update);
-						not_now.setText(R.string.not_now);
-						show_support.setText(R.string.show_support);
-						show_support_desc.setText(R.string.show_support_desc);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title);
-						settings_title.setText(R.string.settings_title);
-						about_title.setText(R.string.about_title);
-						maintenance.setText(R.string.maintenance);
-						maintenance_desc.setText(R.string.maintenance_desc);
-						thanks.setText(R.string.thanks);
-						language.setText(R.string.language);
-						website.setText(R.string.website);
-						discord.setText(R.string.discord);
-						reddit.setText(R.string.reddit);
-						faq.setText(R.string.faq);
-						cloned_version.setText(R.string.cloned_version);
-						cloned_version_info.setText(R.string.cloned_version_desc);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc);
-					    installation_failed.setText(R.string.installation_failed);
-					    installation_failed_desc.setText(R.string.installation_failed_desc);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc);
-					    existing_patched.setText(R.string.existing_patched);
-					    existing_patched_desc.setText(R.string.existing_patched_desc);
-					    close.setText(R.string.close);
-					    cloned.setText(R.string.cloned);
-					    ream.setText(R.string.ream);
-					    install.setText(R.string.install);
-					    uninstall.setText(R.string.uninstall);
-					    ignore.setText(R.string.ignore);
-					    delete.setText(R.string.delete);
-					    uninstall_patched.setText(R.string.uninstall_patched);
-					    open_settings.setText(R.string.open_settings);
-					    open_patched.setText(R.string.open_patched);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular);
+					title_2.setText(R.string.spotify_amoled);
+					sub_text_installed.setText(R.string.installed);
+					sub_text_1.setText(R.string.latest);
+					sub_text_2.setText(R.string.latest);
+					sub_text_3.setText(R.string.latest);
+					version_switch_1.setText(R.string.versions);
+					version_switch_2.setText(R.string.versions);
+					version_switch_3.setText(R.string.versions);
+					changelogs.setText(R.string.changelogs);
+					title_sub.setText(R.string.manager_tools);
+					device_cpu.setText(R.string.device_cpu);
+					source.setText(R.string.source);
+					support.setText(R.string.support);
+					donate.setText(R.string.donate);
+					about.setText(R.string.about);
+					list_auto_refresh.setText(R.string.list_auto_refresh);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc);
+					force_auto_install.setText(R.string.force_auto_install);
+					force_auto_install_info.setText(R.string.force_auto_install_desc);
+					theme.setText(R.string.show_themes);
+					apk_location.setText(R.string.apk_location);
+					apk_location_info.setText(R.string.apk_location_desc);
+					clear_directory_folders.setText(R.string.clear_directory_folders);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc);
+					reset_settings.setText(R.string.reset_settings);
+					sub_title.setText(R.string.about_sub);
+					developer_manager.setText(R.string.xmanager_dev);
+					developer_spotify.setText(R.string.spotify_mod_devs);
+					support_team.setText(R.string.telegram_support_team);
+					mod_testers_1.setText(R.string.manager_testers);
+					mod_testers_2.setText(R.string.manager_hosting);
+					mobilism_team.setText(R.string.mobilism_team);
+					forum_team.setText(R.string.forum_team);
+					manager_team.setText(R.string.xspotify_team);
+					contributors_1.setText(R.string.contributors);
+					download_selected.setText(R.string.download_selected);
+					download_ready.setText(R.string.download_ready);
+					download_ready_desc.setText(R.string.download_ready_desc);
+					downloading_file.setText(R.string.downloading_file);
+					download_success.setText(R.string.download_success);
+					new_update.setText(R.string.new_update);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url);
+					continue_1.setText(R.string.continue_1);
+					cancel.setText(R.string.cancel);
+					fixer.setText(R.string.fixer);
+					download.setText(R.string.download);
+					later.setText(R.string.later);
+					install_now.setText(R.string.install_now);
+					install_update.setText(R.string.install_update);
+					go_back.setText(R.string.go_back_01);
+					download_update.setText(R.string.download_update);
+					not_now.setText(R.string.not_now);
+					show_support.setText(R.string.show_support);
+					show_support_desc.setText(R.string.show_support_desc);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title);
+					settings_title.setText(R.string.settings_title);
+					about_title.setText(R.string.about_title);
+					maintenance.setText(R.string.maintenance);
+					maintenance_desc.setText(R.string.maintenance_desc);
+					thanks.setText(R.string.thanks);
+					language.setText(R.string.language);
+					website.setText(R.string.website);
+					discord.setText(R.string.discord);
+					reddit.setText(R.string.reddit);
+					faq.setText(R.string.faq);
+					cloned_version.setText(R.string.cloned_version);
+					cloned_version_info.setText(R.string.cloned_version_desc);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc);
+					installation_failed.setText(R.string.installation_failed);
+					installation_failed_desc.setText(R.string.installation_failed_desc);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc);
+					existing_patched.setText(R.string.existing_patched);
+					existing_patched_desc.setText(R.string.existing_patched_desc);
+					close.setText(R.string.close);
+					cloned.setText(R.string.cloned);
+					ream.setText(R.string.ream);
+					install.setText(R.string.install);
+					uninstall.setText(R.string.uninstall);
+					ignore.setText(R.string.ignore);
+					delete.setText(R.string.delete);
+					uninstall_patched.setText(R.string.uninstall_patched);
+					open_settings.setText(R.string.open_settings);
+					open_patched.setText(R.string.open_patched);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 1) {
 					LANGUAGE.edit().putString("LANGUAGE", "1").commit();
-					    title_1.setText(R.string.spotify_regular_01);
-						title_2.setText(R.string.spotify_amoled_01);
-						sub_text_installed.setText(R.string.installed_01);
-						sub_text_1.setText(R.string.latest_01);
-						sub_text_3.setText(R.string.latest_01);
-						version_switch_1.setText(R.string.versions_01);
-						version_switch_2.setText(R.string.versions_01);
-						changelogs.setText(R.string.changelogs_01);
-						title_sub.setText(R.string.manager_tools_01);
-						device_cpu.setText(R.string.device_cpu_01);
-						source.setText(R.string.source_01);
-						support.setText(R.string.support_01);
-						donate.setText(R.string.donate_01);
-						about.setText(R.string.about_01);
-						list_auto_refresh.setText(R.string.list_auto_refresh_01);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_01);
-						force_auto_install.setText(R.string.force_auto_install_01);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_01);
-						theme.setText(R.string.show_themes_01);
-						apk_location.setText(R.string.apk_location_01);
-						apk_location_info.setText(R.string.apk_location_desc_01);
-						clear_directory_folders.setText(R.string.clear_directory_folders_01);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_01);
-						reset_settings.setText(R.string.reset_settings_01);
-						sub_title.setText(R.string.about_sub_01);
-						developer_manager.setText(R.string.xmanager_dev_01);
-						developer_spotify.setText(R.string.spotify_mod_devs_01);
-						support_team.setText(R.string.telegram_support_team_01);
-						mod_testers_1.setText(R.string.manager_testers_01);
-						mod_testers_2.setText(R.string.manager_hosting_01);
-						mobilism_team.setText(R.string.mobilism_team_01);
-						forum_team.setText(R.string.forum_team_01);
-						manager_team.setText(R.string.xspotify_team_01);
-						contributors_1.setText(R.string.contributors_01);
-						download_selected.setText(R.string.download_selected_01);
-						download_ready.setText(R.string.download_ready_01);
-						download_ready_desc.setText(R.string.download_ready_desc_01);
-						downloading_file.setText(R.string.downloading_file_01);
-						download_success.setText(R.string.download_success_01);
-						new_update.setText(R.string.new_update_01);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_01);
-						continue_1.setText(R.string.continue_1_01);
-						cancel.setText(R.string.cancel_01);
-					    fixer.setText(R.string.fixer_01);
-						download.setText(R.string.download_01);
-						later.setText(R.string.later_01);
-						install_now.setText(R.string.install_now_01);
-						install_update.setText(R.string.install_update_01);
-						go_back.setText(R.string.go_back_01);
-						download_update.setText(R.string.download_update_01);
-						not_now.setText(R.string.not_now_01);
-						show_support.setText(R.string.show_support_01);
-						show_support_desc.setText(R.string.show_support_desc_01);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_01);
-						settings_title.setText(R.string.settings_title_01);
-						about_title.setText(R.string.about_title_01);
-						maintenance.setText(R.string.maintenance_01);
-						maintenance_desc.setText(R.string.maintenance_desc_01);
-						thanks.setText(R.string.thanks_01);
-						language.setText(R.string.language_01);
-						website.setText(R.string.website_01);
-						discord.setText(R.string.discord_01);
-						reddit.setText(R.string.reddit_01);
-						faq.setText(R.string.faq_01);
-						cloned_version.setText(R.string.cloned_version_01);
-						cloned_version_info.setText(R.string.cloned_version_desc_01);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_01);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_01);
-					    installation_failed.setText(R.string.installation_failed_01);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_01);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_01);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_01);
-					    existing_patched.setText(R.string.existing_patched_01);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_01);
-					    close.setText(R.string.close_01);
-					    cloned.setText(R.string.cloned_01);
-					    ream.setText(R.string.ream_01);
-					    install.setText(R.string.install_01);
-					    uninstall.setText(R.string.uninstall_01);
-					    ignore.setText(R.string.ignore_01);
-					    delete.setText(R.string.delete_01);
-					    uninstall_patched.setText(R.string.uninstall_patched_01);
-					    open_settings.setText(R.string.open_settings_01);
-					    open_patched.setText(R.string.open_patched_01);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_01);
+					title_2.setText(R.string.spotify_amoled_01);
+					sub_text_installed.setText(R.string.installed_01);
+					sub_text_1.setText(R.string.latest_01);
+					sub_text_2.setText(R.string.latest_01);
+					sub_text_3.setText(R.string.latest_01);
+					version_switch_1.setText(R.string.versions_01);
+					version_switch_2.setText(R.string.versions_01);
+					version_switch_3.setText(R.string.versions_01);
+					changelogs.setText(R.string.changelogs_01);
+					title_sub.setText(R.string.manager_tools_01);
+					device_cpu.setText(R.string.device_cpu_01);
+					source.setText(R.string.source_01);
+					support.setText(R.string.support_01);
+					donate.setText(R.string.donate_01);
+					about.setText(R.string.about_01);
+					list_auto_refresh.setText(R.string.list_auto_refresh_01);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_01);
+					force_auto_install.setText(R.string.force_auto_install_01);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_01);
+					theme.setText(R.string.show_themes_01);
+					apk_location.setText(R.string.apk_location_01);
+					apk_location_info.setText(R.string.apk_location_desc_01);
+					clear_directory_folders.setText(R.string.clear_directory_folders_01);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_01);
+					reset_settings.setText(R.string.reset_settings_01);
+					sub_title.setText(R.string.about_sub_01);
+					developer_manager.setText(R.string.xmanager_dev_01);
+					developer_spotify.setText(R.string.spotify_mod_devs_01);
+					support_team.setText(R.string.telegram_support_team_01);
+					mod_testers_1.setText(R.string.manager_testers_01);
+					mod_testers_2.setText(R.string.manager_hosting_01);
+					mobilism_team.setText(R.string.mobilism_team_01);
+					forum_team.setText(R.string.forum_team_01);
+					manager_team.setText(R.string.xspotify_team_01);
+					contributors_1.setText(R.string.contributors_01);
+					download_selected.setText(R.string.download_selected_01);
+					download_ready.setText(R.string.download_ready_01);
+					download_ready_desc.setText(R.string.download_ready_desc_01);
+					downloading_file.setText(R.string.downloading_file_01);
+					download_success.setText(R.string.download_success_01);
+					new_update.setText(R.string.new_update_01);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_01);
+					continue_1.setText(R.string.continue_1_01);
+					cancel.setText(R.string.cancel_01);
+					fixer.setText(R.string.fixer_01);
+					download.setText(R.string.download_01);
+					later.setText(R.string.later_01);
+					install_now.setText(R.string.install_now_01);
+					install_update.setText(R.string.install_update_01);
+					go_back.setText(R.string.go_back_01);
+					download_update.setText(R.string.download_update_01);
+					not_now.setText(R.string.not_now_01);
+					show_support.setText(R.string.show_support_01);
+					show_support_desc.setText(R.string.show_support_desc_01);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_01);
+					settings_title.setText(R.string.settings_title_01);
+					about_title.setText(R.string.about_title_01);
+					maintenance.setText(R.string.maintenance_01);
+					maintenance_desc.setText(R.string.maintenance_desc_01);
+					thanks.setText(R.string.thanks_01);
+					language.setText(R.string.language_01);
+					website.setText(R.string.website_01);
+					discord.setText(R.string.discord_01);
+					reddit.setText(R.string.reddit_01);
+					faq.setText(R.string.faq_01);
+					cloned_version.setText(R.string.cloned_version_01);
+					cloned_version_info.setText(R.string.cloned_version_desc_01);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_01);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_01);
+					installation_failed.setText(R.string.installation_failed_01);
+					installation_failed_desc.setText(R.string.installation_failed_desc_01);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_01);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_01);
+					existing_patched.setText(R.string.existing_patched_01);
+					existing_patched_desc.setText(R.string.existing_patched_desc_01);
+					close.setText(R.string.close_01);
+					cloned.setText(R.string.cloned_01);
+					ream.setText(R.string.ream_01);
+					install.setText(R.string.install_01);
+					uninstall.setText(R.string.uninstall_01);
+					ignore.setText(R.string.ignore_01);
+					delete.setText(R.string.delete_01);
+					uninstall_patched.setText(R.string.uninstall_patched_01);
+					open_settings.setText(R.string.open_settings_01);
+					open_patched.setText(R.string.open_patched_01);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 2) {
 					LANGUAGE.edit().putString("LANGUAGE", "2").commit();
-					    title_1.setText(R.string.spotify_regular_02);
-						title_2.setText(R.string.spotify_amoled_02);
-						sub_text_installed.setText(R.string.installed_02);
-						sub_text_1.setText(R.string.latest_02);
-						sub_text_3.setText(R.string.latest_02);
-						version_switch_1.setText(R.string.versions_02);
-						version_switch_2.setText(R.string.versions_02);
-						changelogs.setText(R.string.changelogs_02);
-						title_sub.setText(R.string.manager_tools_02);
-						device_cpu.setText(R.string.device_cpu_02);
-						source.setText(R.string.source_02);
-						support.setText(R.string.support_02);
-						donate.setText(R.string.donate_02);
-						about.setText(R.string.about_02);
-						list_auto_refresh.setText(R.string.list_auto_refresh_02);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_02);
-						force_auto_install.setText(R.string.force_auto_install_02);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_02);
-						theme.setText(R.string.show_themes_02);
-						apk_location.setText(R.string.apk_location_02);
-						apk_location_info.setText(R.string.apk_location_desc_02);
-						clear_directory_folders.setText(R.string.clear_directory_folders_02);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_02);
-						reset_settings.setText(R.string.reset_settings_02);
-						sub_title.setText(R.string.about_sub_02);
-						developer_manager.setText(R.string.xmanager_dev_02);
-						developer_spotify.setText(R.string.spotify_mod_devs_02);
-						support_team.setText(R.string.telegram_support_team_02);
-						mod_testers_1.setText(R.string.manager_testers_02);
-						mod_testers_2.setText(R.string.manager_hosting_02);
-						mobilism_team.setText(R.string.mobilism_team_02);
-						forum_team.setText(R.string.forum_team_02);
-						manager_team.setText(R.string.xspotify_team_02);
-						contributors_1.setText(R.string.contributors_02);
-						download_selected.setText(R.string.download_selected_02);
-						download_ready.setText(R.string.download_ready_02);
-						download_ready_desc.setText(R.string.download_ready_desc_02);
-						downloading_file.setText(R.string.downloading_file_02);
-						download_success.setText(R.string.download_success_02);
-						new_update.setText(R.string.new_update_02);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_02);
-						continue_1.setText(R.string.continue_1_02);
-						cancel.setText(R.string.cancel_02);
-					    fixer.setText(R.string.fixer_02);
-						download.setText(R.string.download_02);
-						later.setText(R.string.later_02);
-						install_now.setText(R.string.install_now_02);
-						install_update.setText(R.string.install_update_02);
-						go_back.setText(R.string.go_back_02);
-						download_update.setText(R.string.download_update_02);
-						not_now.setText(R.string.not_now_02);
-						show_support.setText(R.string.show_support_02);
-						show_support_desc.setText(R.string.show_support_desc_02);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_02);
-						settings_title.setText(R.string.settings_title_02);
-						about_title.setText(R.string.about_title_02);
-						maintenance.setText(R.string.maintenance_02);
-						maintenance_desc.setText(R.string.maintenance_desc_02);
-						thanks.setText(R.string.thanks_02);
-						language.setText(R.string.language_02);
-						website.setText(R.string.website_02);
-						discord.setText(R.string.discord_02);
-						reddit.setText(R.string.reddit_02);
-						faq.setText(R.string.faq_02);
-						cloned_version.setText(R.string.cloned_version_02);
-						cloned_version_info.setText(R.string.cloned_version_desc_02);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_02);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_02);
-					    installation_failed.setText(R.string.installation_failed_02);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_02);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_02);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_02);
-					    existing_patched.setText(R.string.existing_patched_02);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_02);
-					    close.setText(R.string.close_02);
-					    cloned.setText(R.string.cloned_02);
-					    ream.setText(R.string.ream_02);
-					    install.setText(R.string.install_02);
-					    uninstall.setText(R.string.uninstall_02);
-					    ignore.setText(R.string.ignore_02);
-					    delete.setText(R.string.delete_02);
-					    uninstall_patched.setText(R.string.uninstall_patched_02);
-					    open_settings.setText(R.string.open_settings_02);
-					    open_patched.setText(R.string.open_patched_02);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_02);
+					title_2.setText(R.string.spotify_amoled_02);
+					sub_text_installed.setText(R.string.installed_02);
+					sub_text_1.setText(R.string.latest_02);
+					sub_text_2.setText(R.string.latest_02);
+					sub_text_3.setText(R.string.latest_02);
+					version_switch_1.setText(R.string.versions_02);
+					version_switch_2.setText(R.string.versions_02);
+					version_switch_3.setText(R.string.versions_02);
+					changelogs.setText(R.string.changelogs_02);
+					title_sub.setText(R.string.manager_tools_02);
+					device_cpu.setText(R.string.device_cpu_02);
+					source.setText(R.string.source_02);
+					support.setText(R.string.support_02);
+					donate.setText(R.string.donate_02);
+					about.setText(R.string.about_02);
+					list_auto_refresh.setText(R.string.list_auto_refresh_02);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_02);
+					force_auto_install.setText(R.string.force_auto_install_02);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_02);
+					theme.setText(R.string.show_themes_02);
+					apk_location.setText(R.string.apk_location_02);
+					apk_location_info.setText(R.string.apk_location_desc_02);
+					clear_directory_folders.setText(R.string.clear_directory_folders_02);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_02);
+					reset_settings.setText(R.string.reset_settings_02);
+					sub_title.setText(R.string.about_sub_02);
+					developer_manager.setText(R.string.xmanager_dev_02);
+					developer_spotify.setText(R.string.spotify_mod_devs_02);
+					support_team.setText(R.string.telegram_support_team_02);
+					mod_testers_1.setText(R.string.manager_testers_02);
+					mod_testers_2.setText(R.string.manager_hosting_02);
+					mobilism_team.setText(R.string.mobilism_team_02);
+					forum_team.setText(R.string.forum_team_02);
+					manager_team.setText(R.string.xspotify_team_02);
+					contributors_1.setText(R.string.contributors_02);
+					download_selected.setText(R.string.download_selected_02);
+					download_ready.setText(R.string.download_ready_02);
+					download_ready_desc.setText(R.string.download_ready_desc_02);
+					downloading_file.setText(R.string.downloading_file_02);
+					download_success.setText(R.string.download_success_02);
+					new_update.setText(R.string.new_update_02);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_02);
+					continue_1.setText(R.string.continue_1_02);
+					cancel.setText(R.string.cancel_02);
+					fixer.setText(R.string.fixer_02);
+					download.setText(R.string.download_02);
+					later.setText(R.string.later_02);
+					install_now.setText(R.string.install_now_02);
+					install_update.setText(R.string.install_update_02);
+					go_back.setText(R.string.go_back_02);
+					download_update.setText(R.string.download_update_02);
+					not_now.setText(R.string.not_now_02);
+					show_support.setText(R.string.show_support_02);
+					show_support_desc.setText(R.string.show_support_desc_02);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_02);
+					settings_title.setText(R.string.settings_title_02);
+					about_title.setText(R.string.about_title_02);
+					maintenance.setText(R.string.maintenance_02);
+					maintenance_desc.setText(R.string.maintenance_desc_02);
+					thanks.setText(R.string.thanks_02);
+					language.setText(R.string.language_02);
+					website.setText(R.string.website_02);
+					discord.setText(R.string.discord_02);
+					reddit.setText(R.string.reddit_02);
+					faq.setText(R.string.faq_02);
+					cloned_version.setText(R.string.cloned_version_02);
+					cloned_version_info.setText(R.string.cloned_version_desc_02);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_02);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_02);
+					installation_failed.setText(R.string.installation_failed_02);
+					installation_failed_desc.setText(R.string.installation_failed_desc_02);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_02);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_02);
+					existing_patched.setText(R.string.existing_patched_02);
+					existing_patched_desc.setText(R.string.existing_patched_desc_02);
+					close.setText(R.string.close_02);
+					cloned.setText(R.string.cloned_02);
+					ream.setText(R.string.ream_02);
+					install.setText(R.string.install_02);
+					uninstall.setText(R.string.uninstall_02);
+					ignore.setText(R.string.ignore_02);
+					delete.setText(R.string.delete_02);
+					uninstall_patched.setText(R.string.uninstall_patched_02);
+					open_settings.setText(R.string.open_settings_02);
+					open_patched.setText(R.string.open_patched_02);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 3) {
 					LANGUAGE.edit().putString("LANGUAGE", "3").commit();
-					    title_1.setText(R.string.spotify_regular_03);
-						title_2.setText(R.string.spotify_amoled_03);
-						sub_text_installed.setText(R.string.installed_03);
-						sub_text_1.setText(R.string.latest_03);
-						sub_text_3.setText(R.string.latest_03);
-						version_switch_1.setText(R.string.versions_03);
-						version_switch_2.setText(R.string.versions_03);
-						changelogs.setText(R.string.changelogs_03);
-						title_sub.setText(R.string.manager_tools_03);
-						device_cpu.setText(R.string.device_cpu_03);
-						source.setText(R.string.source_03);
-						support.setText(R.string.support_03);
-						donate.setText(R.string.donate_03);
-						about.setText(R.string.about_03);
-						list_auto_refresh.setText(R.string.list_auto_refresh_03);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_03);
-						force_auto_install.setText(R.string.force_auto_install_03);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_03);
-						theme.setText(R.string.show_themes_03);
-						apk_location.setText(R.string.apk_location_03);
-						apk_location_info.setText(R.string.apk_location_desc_03);
-						clear_directory_folders.setText(R.string.clear_directory_folders_03);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_03);
-						reset_settings.setText(R.string.reset_settings_03);
-						sub_title.setText(R.string.about_sub_03);
-						developer_manager.setText(R.string.xmanager_dev_03);
-						developer_spotify.setText(R.string.spotify_mod_devs_03);
-						support_team.setText(R.string.telegram_support_team_03);
-						mod_testers_1.setText(R.string.manager_testers_03);
-						mod_testers_2.setText(R.string.manager_hosting_03);
-						mobilism_team.setText(R.string.mobilism_team_03);
-						forum_team.setText(R.string.forum_team_03);
-						manager_team.setText(R.string.xspotify_team_03);
-						contributors_1.setText(R.string.contributors_03);
-						download_selected.setText(R.string.download_selected_03);
-						download_ready.setText(R.string.download_ready_03);
-						download_ready_desc.setText(R.string.download_ready_desc_03);
-						downloading_file.setText(R.string.downloading_file_03);
-						download_success.setText(R.string.download_success_03);
-						new_update.setText(R.string.new_update_03);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_03);
-						continue_1.setText(R.string.continue_1_03);
-						cancel.setText(R.string.cancel_03);
-					    fixer.setText(R.string.fixer_03);
-						download.setText(R.string.download_03);
-						later.setText(R.string.later_03);
-						install_now.setText(R.string.install_now_03);
-						install_update.setText(R.string.install_update_03);
-						go_back.setText(R.string.go_back_03);
-						download_update.setText(R.string.download_update_03);
-						not_now.setText(R.string.not_now_03);
-						show_support.setText(R.string.show_support_03);
-						show_support_desc.setText(R.string.show_support_desc_03);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_03);
-						settings_title.setText(R.string.settings_title_03);
-						about_title.setText(R.string.about_title_03);
-						maintenance.setText(R.string.maintenance_03);
-						maintenance_desc.setText(R.string.maintenance_desc_03);
-						thanks.setText(R.string.thanks_03);
-						language.setText(R.string.language_03);
-						website.setText(R.string.website_03);
-						discord.setText(R.string.discord_03);
-						reddit.setText(R.string.reddit_03);
-						faq.setText(R.string.faq_03);
-						cloned_version.setText(R.string.cloned_version_03);
-						cloned_version_info.setText(R.string.cloned_version_desc_03);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_03);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_03);
-					    installation_failed.setText(R.string.installation_failed_03);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_03);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_03);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_03);
-					    existing_patched.setText(R.string.existing_patched_03);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_03);
-					    close.setText(R.string.close_03);
-					    cloned.setText(R.string.cloned_03);
-					    ream.setText(R.string.ream_03);
-					    install.setText(R.string.install_03);
-					    uninstall.setText(R.string.uninstall_03);
-					    ignore.setText(R.string.ignore_03);
-					    delete.setText(R.string.delete_03);
-					    uninstall_patched.setText(R.string.uninstall_patched_03);
-					    open_settings.setText(R.string.open_settings_03);
-					    open_patched.setText(R.string.open_patched_03);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_03);
+					title_2.setText(R.string.spotify_amoled_03);
+					sub_text_installed.setText(R.string.installed_03);
+					sub_text_1.setText(R.string.latest_03);
+					sub_text_2.setText(R.string.latest_03);
+					sub_text_3.setText(R.string.latest_03);
+					version_switch_1.setText(R.string.versions_03);
+					version_switch_2.setText(R.string.versions_03);
+					version_switch_3.setText(R.string.versions_03);
+					changelogs.setText(R.string.changelogs_03);
+					title_sub.setText(R.string.manager_tools_03);
+					device_cpu.setText(R.string.device_cpu_03);
+					source.setText(R.string.source_03);
+					support.setText(R.string.support_03);
+					donate.setText(R.string.donate_03);
+					about.setText(R.string.about_03);
+					list_auto_refresh.setText(R.string.list_auto_refresh_03);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_03);
+					force_auto_install.setText(R.string.force_auto_install_03);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_03);
+					theme.setText(R.string.show_themes_03);
+					apk_location.setText(R.string.apk_location_03);
+					apk_location_info.setText(R.string.apk_location_desc_03);
+					clear_directory_folders.setText(R.string.clear_directory_folders_03);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_03);
+					reset_settings.setText(R.string.reset_settings_03);
+					sub_title.setText(R.string.about_sub_03);
+					developer_manager.setText(R.string.xmanager_dev_03);
+					developer_spotify.setText(R.string.spotify_mod_devs_03);
+					support_team.setText(R.string.telegram_support_team_03);
+					mod_testers_1.setText(R.string.manager_testers_03);
+					mod_testers_2.setText(R.string.manager_hosting_03);
+					mobilism_team.setText(R.string.mobilism_team_03);
+					forum_team.setText(R.string.forum_team_03);
+					manager_team.setText(R.string.xspotify_team_03);
+					contributors_1.setText(R.string.contributors_03);
+					download_selected.setText(R.string.download_selected_03);
+					download_ready.setText(R.string.download_ready_03);
+					download_ready_desc.setText(R.string.download_ready_desc_03);
+					downloading_file.setText(R.string.downloading_file_03);
+					download_success.setText(R.string.download_success_03);
+					new_update.setText(R.string.new_update_03);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_03);
+					continue_1.setText(R.string.continue_1_03);
+					cancel.setText(R.string.cancel_03);
+					fixer.setText(R.string.fixer_03);
+					download.setText(R.string.download_03);
+					later.setText(R.string.later_03);
+					install_now.setText(R.string.install_now_03);
+					install_update.setText(R.string.install_update_03);
+					go_back.setText(R.string.go_back_03);
+					download_update.setText(R.string.download_update_03);
+					not_now.setText(R.string.not_now_03);
+					show_support.setText(R.string.show_support_03);
+					show_support_desc.setText(R.string.show_support_desc_03);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_03);
+					settings_title.setText(R.string.settings_title_03);
+					about_title.setText(R.string.about_title_03);
+					maintenance.setText(R.string.maintenance_03);
+					maintenance_desc.setText(R.string.maintenance_desc_03);
+					thanks.setText(R.string.thanks_03);
+					language.setText(R.string.language_03);
+					website.setText(R.string.website_03);
+					discord.setText(R.string.discord_03);
+					reddit.setText(R.string.reddit_03);
+					faq.setText(R.string.faq_03);
+					cloned_version.setText(R.string.cloned_version_03);
+					cloned_version_info.setText(R.string.cloned_version_desc_03);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_03);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_03);
+					installation_failed.setText(R.string.installation_failed_03);
+					installation_failed_desc.setText(R.string.installation_failed_desc_03);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_03);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_03);
+					existing_patched.setText(R.string.existing_patched_03);
+					existing_patched_desc.setText(R.string.existing_patched_desc_03);
+					close.setText(R.string.close_03);
+					cloned.setText(R.string.cloned_03);
+					ream.setText(R.string.ream_03);
+					install.setText(R.string.install_03);
+					uninstall.setText(R.string.uninstall_03);
+					ignore.setText(R.string.ignore_03);
+					delete.setText(R.string.delete_03);
+					uninstall_patched.setText(R.string.uninstall_patched_03);
+					open_settings.setText(R.string.open_settings_03);
+					open_patched.setText(R.string.open_patched_03);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 4) {
 					LANGUAGE.edit().putString("LANGUAGE", "4").commit();
-					    title_1.setText(R.string.spotify_regular_04);
-						title_2.setText(R.string.spotify_amoled_04);
-						sub_text_installed.setText(R.string.installed_04);
-						sub_text_1.setText(R.string.latest_04);
-						sub_text_3.setText(R.string.latest_04);
-						version_switch_1.setText(R.string.versions_04);
-						version_switch_2.setText(R.string.versions_04);
-						changelogs.setText(R.string.changelogs_04);
-						title_sub.setText(R.string.manager_tools_04);
-						device_cpu.setText(R.string.device_cpu_04);
-						source.setText(R.string.source_04);
-						support.setText(R.string.support_04);
-						donate.setText(R.string.donate_04);
-						about.setText(R.string.about_04);
-						list_auto_refresh.setText(R.string.list_auto_refresh_04);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_04);
-						force_auto_install.setText(R.string.force_auto_install_04);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_04);
-						theme.setText(R.string.show_themes_04);
-						apk_location.setText(R.string.apk_location_04);
-						apk_location_info.setText(R.string.apk_location_desc_04);
-						clear_directory_folders.setText(R.string.clear_directory_folders_04);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_04);
-						reset_settings.setText(R.string.reset_settings_04);
-						sub_title.setText(R.string.about_sub_04);
-						developer_manager.setText(R.string.xmanager_dev_04);
-						developer_spotify.setText(R.string.spotify_mod_devs_04);
-						support_team.setText(R.string.telegram_support_team_04);
-						mod_testers_1.setText(R.string.manager_testers_04);
-						mod_testers_2.setText(R.string.manager_hosting_04);
-						mobilism_team.setText(R.string.mobilism_team_04);
-						forum_team.setText(R.string.forum_team_04);
-						manager_team.setText(R.string.xspotify_team_04);
-						contributors_1.setText(R.string.contributors_04);
-						download_selected.setText(R.string.download_selected_04);
-						download_ready.setText(R.string.download_ready_04);
-						download_ready_desc.setText(R.string.download_ready_desc_04);
-						downloading_file.setText(R.string.downloading_file_04);
-						download_success.setText(R.string.download_success_04);
-						new_update.setText(R.string.new_update_04);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_04);
-						continue_1.setText(R.string.continue_1_04);
-						cancel.setText(R.string.cancel_04);
-					    fixer.setText(R.string.fixer_04);
-						download.setText(R.string.download_04);
-						later.setText(R.string.later_04);
-						install_now.setText(R.string.install_now_04);
-						install_update.setText(R.string.install_update_04);
-						go_back.setText(R.string.go_back_04);
-						download_update.setText(R.string.download_update_04);
-						not_now.setText(R.string.not_now_04);
-						show_support.setText(R.string.show_support_04);
-						show_support_desc.setText(R.string.show_support_desc_04);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_04);
-						settings_title.setText(R.string.settings_title_04);
-						about_title.setText(R.string.about_title_04);
-						maintenance.setText(R.string.maintenance_04);
-						maintenance_desc.setText(R.string.maintenance_desc_04);
-						thanks.setText(R.string.thanks_04);
-						language.setText(R.string.language_04);
-						website.setText(R.string.website_04);
-						discord.setText(R.string.discord_04);
-						reddit.setText(R.string.reddit_04);
-						faq.setText(R.string.faq_04);
-						cloned_version.setText(R.string.cloned_version_04);
-						cloned_version_info.setText(R.string.cloned_version_desc_04);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_04);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_04);
-					    installation_failed.setText(R.string.installation_failed_04);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_04);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_04);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_04);
-					    existing_patched.setText(R.string.existing_patched_04);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_04);
-					    close.setText(R.string.close_04);
-					    cloned.setText(R.string.cloned_04);
-					    ream.setText(R.string.ream_04);
-					    install.setText(R.string.install_04);
-					    uninstall.setText(R.string.uninstall_04);
-					    ignore.setText(R.string.ignore_04);
-					    delete.setText(R.string.delete_04);
-					    uninstall_patched.setText(R.string.uninstall_patched_04);
-					    open_settings.setText(R.string.open_settings_04);
-					    open_patched.setText(R.string.open_patched_04);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_04);
+					title_2.setText(R.string.spotify_amoled_04);
+					sub_text_installed.setText(R.string.installed_04);
+					sub_text_1.setText(R.string.latest_04);
+					sub_text_2.setText(R.string.latest_04);
+					sub_text_3.setText(R.string.latest_04);
+					version_switch_1.setText(R.string.versions_04);
+					version_switch_2.setText(R.string.versions_04);
+					version_switch_3.setText(R.string.versions_04);
+					changelogs.setText(R.string.changelogs_04);
+					title_sub.setText(R.string.manager_tools_04);
+					device_cpu.setText(R.string.device_cpu_04);
+					source.setText(R.string.source_04);
+					support.setText(R.string.support_04);
+					donate.setText(R.string.donate_04);
+					about.setText(R.string.about_04);
+					list_auto_refresh.setText(R.string.list_auto_refresh_04);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_04);
+					force_auto_install.setText(R.string.force_auto_install_04);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_04);
+					theme.setText(R.string.show_themes_04);
+					apk_location.setText(R.string.apk_location_04);
+					apk_location_info.setText(R.string.apk_location_desc_04);
+					clear_directory_folders.setText(R.string.clear_directory_folders_04);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_04);
+					reset_settings.setText(R.string.reset_settings_04);
+					sub_title.setText(R.string.about_sub_04);
+					developer_manager.setText(R.string.xmanager_dev_04);
+					developer_spotify.setText(R.string.spotify_mod_devs_04);
+					support_team.setText(R.string.telegram_support_team_04);
+					mod_testers_1.setText(R.string.manager_testers_04);
+					mod_testers_2.setText(R.string.manager_hosting_04);
+					mobilism_team.setText(R.string.mobilism_team_04);
+					forum_team.setText(R.string.forum_team_04);
+					manager_team.setText(R.string.xspotify_team_04);
+					contributors_1.setText(R.string.contributors_04);
+					download_selected.setText(R.string.download_selected_04);
+					download_ready.setText(R.string.download_ready_04);
+					download_ready_desc.setText(R.string.download_ready_desc_04);
+					downloading_file.setText(R.string.downloading_file_04);
+					download_success.setText(R.string.download_success_04);
+					new_update.setText(R.string.new_update_04);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_04);
+					continue_1.setText(R.string.continue_1_04);
+					cancel.setText(R.string.cancel_04);
+					fixer.setText(R.string.fixer_04);
+					download.setText(R.string.download_04);
+					later.setText(R.string.later_04);
+					install_now.setText(R.string.install_now_04);
+					install_update.setText(R.string.install_update_04);
+					go_back.setText(R.string.go_back_04);
+					download_update.setText(R.string.download_update_04);
+					not_now.setText(R.string.not_now_04);
+					show_support.setText(R.string.show_support_04);
+					show_support_desc.setText(R.string.show_support_desc_04);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_04);
+					settings_title.setText(R.string.settings_title_04);
+					about_title.setText(R.string.about_title_04);
+					maintenance.setText(R.string.maintenance_04);
+					maintenance_desc.setText(R.string.maintenance_desc_04);
+					thanks.setText(R.string.thanks_04);
+					language.setText(R.string.language_04);
+					website.setText(R.string.website_04);
+					discord.setText(R.string.discord_04);
+					reddit.setText(R.string.reddit_04);
+					faq.setText(R.string.faq_04);
+					cloned_version.setText(R.string.cloned_version_04);
+					cloned_version_info.setText(R.string.cloned_version_desc_04);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_04);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_04);
+					installation_failed.setText(R.string.installation_failed_04);
+					installation_failed_desc.setText(R.string.installation_failed_desc_04);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_04);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_04);
+					existing_patched.setText(R.string.existing_patched_04);
+					existing_patched_desc.setText(R.string.existing_patched_desc_04);
+					close.setText(R.string.close_04);
+					cloned.setText(R.string.cloned_04);
+					ream.setText(R.string.ream_04);
+					install.setText(R.string.install_04);
+					uninstall.setText(R.string.uninstall_04);
+					ignore.setText(R.string.ignore_04);
+					delete.setText(R.string.delete_04);
+					uninstall_patched.setText(R.string.uninstall_patched_04);
+					open_settings.setText(R.string.open_settings_04);
+					open_patched.setText(R.string.open_patched_04);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 5) {
 					LANGUAGE.edit().putString("LANGUAGE", "5").commit();
-					    title_1.setText(R.string.spotify_regular_05);
-						title_2.setText(R.string.spotify_amoled_05);
-						sub_text_installed.setText(R.string.installed_05);
-						sub_text_1.setText(R.string.latest_05);
-						sub_text_3.setText(R.string.latest_05);
-						version_switch_1.setText(R.string.versions_05);
-						version_switch_2.setText(R.string.versions_05);
-						changelogs.setText(R.string.changelogs_05);
-						title_sub.setText(R.string.manager_tools_05);
-						device_cpu.setText(R.string.device_cpu_05);
-						source.setText(R.string.source_05);
-						support.setText(R.string.support_05);
-						donate.setText(R.string.donate_05);
-						about.setText(R.string.about_05);
-						list_auto_refresh.setText(R.string.list_auto_refresh_05);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_05);
-						force_auto_install.setText(R.string.force_auto_install_05);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_05);
-						theme.setText(R.string.show_themes_05);
-						apk_location.setText(R.string.apk_location_05);
-						apk_location_info.setText(R.string.apk_location_desc_05);
-						clear_directory_folders.setText(R.string.clear_directory_folders_05);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_05);
-						reset_settings.setText(R.string.reset_settings_05);
-						sub_title.setText(R.string.about_sub_05);
-						developer_manager.setText(R.string.xmanager_dev_05);
-						developer_spotify.setText(R.string.spotify_mod_devs_05);
-						support_team.setText(R.string.telegram_support_team_05);
-						mod_testers_1.setText(R.string.manager_testers_05);
-						mod_testers_2.setText(R.string.manager_hosting_05);
-						mobilism_team.setText(R.string.mobilism_team_05);
-						forum_team.setText(R.string.forum_team_05);
-						manager_team.setText(R.string.xspotify_team_05);
-						contributors_1.setText(R.string.contributors_05);
-						download_selected.setText(R.string.download_selected_05);
-						download_ready.setText(R.string.download_ready_05);
-						download_ready_desc.setText(R.string.download_ready_desc_05);
-						downloading_file.setText(R.string.downloading_file_05);
-						download_success.setText(R.string.download_success_05);
-						new_update.setText(R.string.new_update_05);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_05);
-						continue_1.setText(R.string.continue_1_05);
-						cancel.setText(R.string.cancel_05);
-					    fixer.setText(R.string.fixer_05);
-						download.setText(R.string.download_05);
-						later.setText(R.string.later_05);
-						install_now.setText(R.string.install_now_05);
-						install_update.setText(R.string.install_update_05);
-						go_back.setText(R.string.go_back_05);
-						download_update.setText(R.string.download_update_05);
-						not_now.setText(R.string.not_now_05);
-						show_support.setText(R.string.show_support_05);
-						show_support_desc.setText(R.string.show_support_desc_05);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_05);
-						settings_title.setText(R.string.settings_title_05);
-						about_title.setText(R.string.about_title_05);
-						maintenance.setText(R.string.maintenance_05);
-						maintenance_desc.setText(R.string.maintenance_desc_05);
-						thanks.setText(R.string.thanks_05);
-						language.setText(R.string.language_05);
-						website.setText(R.string.website_05);
-						discord.setText(R.string.discord_05);
-						reddit.setText(R.string.reddit_05);
-						faq.setText(R.string.faq_05);
-						cloned_version.setText(R.string.cloned_version_05);
-						cloned_version_info.setText(R.string.cloned_version_desc_05);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_05);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_05);
-					    installation_failed.setText(R.string.installation_failed_05);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_05);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_05);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_05);
-					    existing_patched.setText(R.string.existing_patched_05);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_05);
-					    close.setText(R.string.close_05);
-					    cloned.setText(R.string.cloned_05);
-					    ream.setText(R.string.ream_05);
-					    install.setText(R.string.install_05);
-					    uninstall.setText(R.string.uninstall_05);
-					    ignore.setText(R.string.ignore_05);
-					    delete.setText(R.string.delete_05);
-					    uninstall_patched.setText(R.string.uninstall_patched_05);
-					    open_settings.setText(R.string.open_settings_05);
-					    open_patched.setText(R.string.open_patched_05);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_05);
+					title_2.setText(R.string.spotify_amoled_05);
+					sub_text_installed.setText(R.string.installed_05);
+					sub_text_1.setText(R.string.latest_05);
+					sub_text_2.setText(R.string.latest_05);
+					sub_text_3.setText(R.string.latest_05);
+					version_switch_1.setText(R.string.versions_05);
+					version_switch_2.setText(R.string.versions_05);
+					version_switch_3.setText(R.string.versions_05);
+					changelogs.setText(R.string.changelogs_05);
+					title_sub.setText(R.string.manager_tools_05);
+					device_cpu.setText(R.string.device_cpu_05);
+					source.setText(R.string.source_05);
+					support.setText(R.string.support_05);
+					donate.setText(R.string.donate_05);
+					about.setText(R.string.about_05);
+					list_auto_refresh.setText(R.string.list_auto_refresh_05);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_05);
+					force_auto_install.setText(R.string.force_auto_install_05);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_05);
+					theme.setText(R.string.show_themes_05);
+					apk_location.setText(R.string.apk_location_05);
+					apk_location_info.setText(R.string.apk_location_desc_05);
+					clear_directory_folders.setText(R.string.clear_directory_folders_05);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_05);
+					reset_settings.setText(R.string.reset_settings_05);
+					sub_title.setText(R.string.about_sub_05);
+					developer_manager.setText(R.string.xmanager_dev_05);
+					developer_spotify.setText(R.string.spotify_mod_devs_05);
+					support_team.setText(R.string.telegram_support_team_05);
+					mod_testers_1.setText(R.string.manager_testers_05);
+					mod_testers_2.setText(R.string.manager_hosting_05);
+					mobilism_team.setText(R.string.mobilism_team_05);
+					forum_team.setText(R.string.forum_team_05);
+					manager_team.setText(R.string.xspotify_team_05);
+					contributors_1.setText(R.string.contributors_05);
+					download_selected.setText(R.string.download_selected_05);
+					download_ready.setText(R.string.download_ready_05);
+					download_ready_desc.setText(R.string.download_ready_desc_05);
+					downloading_file.setText(R.string.downloading_file_05);
+					download_success.setText(R.string.download_success_05);
+					new_update.setText(R.string.new_update_05);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_05);
+					continue_1.setText(R.string.continue_1_05);
+					cancel.setText(R.string.cancel_05);
+					fixer.setText(R.string.fixer_05);
+					download.setText(R.string.download_05);
+					later.setText(R.string.later_05);
+					install_now.setText(R.string.install_now_05);
+					install_update.setText(R.string.install_update_05);
+					go_back.setText(R.string.go_back_05);
+					download_update.setText(R.string.download_update_05);
+					not_now.setText(R.string.not_now_05);
+					show_support.setText(R.string.show_support_05);
+					show_support_desc.setText(R.string.show_support_desc_05);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_05);
+					settings_title.setText(R.string.settings_title_05);
+					about_title.setText(R.string.about_title_05);
+					maintenance.setText(R.string.maintenance_05);
+					maintenance_desc.setText(R.string.maintenance_desc_05);
+					thanks.setText(R.string.thanks_05);
+					language.setText(R.string.language_05);
+					website.setText(R.string.website_05);
+					discord.setText(R.string.discord_05);
+					reddit.setText(R.string.reddit_05);
+					faq.setText(R.string.faq_05);
+					cloned_version.setText(R.string.cloned_version_05);
+					cloned_version_info.setText(R.string.cloned_version_desc_05);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_05);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_05);
+					installation_failed.setText(R.string.installation_failed_05);
+					installation_failed_desc.setText(R.string.installation_failed_desc_05);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_05);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_05);
+					existing_patched.setText(R.string.existing_patched_05);
+					existing_patched_desc.setText(R.string.existing_patched_desc_05);
+					close.setText(R.string.close_05);
+					cloned.setText(R.string.cloned_05);
+					ream.setText(R.string.ream_05);
+					install.setText(R.string.install_05);
+					uninstall.setText(R.string.uninstall_05);
+					ignore.setText(R.string.ignore_05);
+					delete.setText(R.string.delete_05);
+					uninstall_patched.setText(R.string.uninstall_patched_05);
+					open_settings.setText(R.string.open_settings_05);
+					open_patched.setText(R.string.open_patched_05);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 6) {
 					LANGUAGE.edit().putString("LANGUAGE", "6").commit();
-					    title_1.setText(R.string.spotify_regular_06);
-						title_2.setText(R.string.spotify_amoled_06);
-						sub_text_installed.setText(R.string.installed_06);
-						sub_text_1.setText(R.string.latest_06);
-						sub_text_3.setText(R.string.latest_06);
-						version_switch_1.setText(R.string.versions_06);
-						version_switch_2.setText(R.string.versions_06);
-						changelogs.setText(R.string.changelogs_06);
-						title_sub.setText(R.string.manager_tools_06);
-						device_cpu.setText(R.string.device_cpu_06);
-						source.setText(R.string.source_06);
-						support.setText(R.string.support_06);
-						donate.setText(R.string.donate_06);
-						about.setText(R.string.about_06);
-						list_auto_refresh.setText(R.string.list_auto_refresh_06);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_06);
-						force_auto_install.setText(R.string.force_auto_install_06);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_06);
-						theme.setText(R.string.show_themes_06);
-						apk_location.setText(R.string.apk_location_06);
-						apk_location_info.setText(R.string.apk_location_desc_06);
-						clear_directory_folders.setText(R.string.clear_directory_folders_06);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_06);
-						reset_settings.setText(R.string.reset_settings_06);
-						sub_title.setText(R.string.about_sub_06);
-						developer_manager.setText(R.string.xmanager_dev_06);
-						developer_spotify.setText(R.string.spotify_mod_devs_06);
-						support_team.setText(R.string.telegram_support_team_06);
-						mod_testers_1.setText(R.string.manager_testers_06);
-						mod_testers_2.setText(R.string.manager_hosting_06);
-						mobilism_team.setText(R.string.mobilism_team_06);
-						forum_team.setText(R.string.forum_team_06);
-						manager_team.setText(R.string.xspotify_team_06);
-						contributors_1.setText(R.string.contributors_06);
-						download_selected.setText(R.string.download_selected_06);
-						download_ready.setText(R.string.download_ready_06);
-						download_ready_desc.setText(R.string.download_ready_desc_06);
-						downloading_file.setText(R.string.downloading_file_06);
-						download_success.setText(R.string.download_success_06);
-						new_update.setText(R.string.new_update_06);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_06);
-						continue_1.setText(R.string.continue_1_06);
-						cancel.setText(R.string.cancel_06);
-					    fixer.setText(R.string.fixer_06);
-						download.setText(R.string.download_06);
-						later.setText(R.string.later_06);
-						install_now.setText(R.string.install_now_06);
-						install_update.setText(R.string.install_update_06);
-						go_back.setText(R.string.go_back_06);
-						download_update.setText(R.string.download_update_06);
-						not_now.setText(R.string.not_now_06);
-						show_support.setText(R.string.show_support_06);
-						show_support_desc.setText(R.string.show_support_desc_06);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_06);
-						settings_title.setText(R.string.settings_title_06);
-						about_title.setText(R.string.about_title_06);
-						maintenance.setText(R.string.maintenance_06);
-						maintenance_desc.setText(R.string.maintenance_desc_06);
-						thanks.setText(R.string.thanks_06);
-						language.setText(R.string.language_06);
-						website.setText(R.string.website_06);
-						discord.setText(R.string.discord_06);
-						reddit.setText(R.string.reddit_06);
-						faq.setText(R.string.faq_06);
-						cloned_version.setText(R.string.cloned_version_06);
-						cloned_version_info.setText(R.string.cloned_version_desc_06);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_06);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_06);
-					    installation_failed.setText(R.string.installation_failed_06);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_06);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_06);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_06);
-					    existing_patched.setText(R.string.existing_patched_06);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_06);
-					    close.setText(R.string.close_06);
-					    cloned.setText(R.string.cloned_06);
-					    ream.setText(R.string.ream_06);
-					    install.setText(R.string.install_06);
-					    uninstall.setText(R.string.uninstall_06);
-					    ignore.setText(R.string.ignore_06);
-					    delete.setText(R.string.delete_06);
-					    uninstall_patched.setText(R.string.uninstall_patched_06);
-					    open_settings.setText(R.string.open_settings_06);
-					    open_patched.setText(R.string.open_patched_06);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_06);
+					title_2.setText(R.string.spotify_amoled_06);
+					sub_text_installed.setText(R.string.installed_06);
+					sub_text_1.setText(R.string.latest_06);
+					sub_text_2.setText(R.string.latest_06);
+					sub_text_3.setText(R.string.latest_06);
+					version_switch_1.setText(R.string.versions_06);
+					version_switch_2.setText(R.string.versions_06);
+					version_switch_3.setText(R.string.versions_06);
+					changelogs.setText(R.string.changelogs_06);
+					title_sub.setText(R.string.manager_tools_06);
+					device_cpu.setText(R.string.device_cpu_06);
+					source.setText(R.string.source_06);
+					support.setText(R.string.support_06);
+					donate.setText(R.string.donate_06);
+					about.setText(R.string.about_06);
+					list_auto_refresh.setText(R.string.list_auto_refresh_06);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_06);
+					force_auto_install.setText(R.string.force_auto_install_06);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_06);
+					theme.setText(R.string.show_themes_06);
+					apk_location.setText(R.string.apk_location_06);
+					apk_location_info.setText(R.string.apk_location_desc_06);
+					clear_directory_folders.setText(R.string.clear_directory_folders_06);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_06);
+					reset_settings.setText(R.string.reset_settings_06);
+					sub_title.setText(R.string.about_sub_06);
+					developer_manager.setText(R.string.xmanager_dev_06);
+					developer_spotify.setText(R.string.spotify_mod_devs_06);
+					support_team.setText(R.string.telegram_support_team_06);
+					mod_testers_1.setText(R.string.manager_testers_06);
+					mod_testers_2.setText(R.string.manager_hosting_06);
+					mobilism_team.setText(R.string.mobilism_team_06);
+					forum_team.setText(R.string.forum_team_06);
+					manager_team.setText(R.string.xspotify_team_06);
+					contributors_1.setText(R.string.contributors_06);
+					download_selected.setText(R.string.download_selected_06);
+					download_ready.setText(R.string.download_ready_06);
+					download_ready_desc.setText(R.string.download_ready_desc_06);
+					downloading_file.setText(R.string.downloading_file_06);
+					download_success.setText(R.string.download_success_06);
+					new_update.setText(R.string.new_update_06);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_06);
+					continue_1.setText(R.string.continue_1_06);
+					cancel.setText(R.string.cancel_06);
+					fixer.setText(R.string.fixer_06);
+					download.setText(R.string.download_06);
+					later.setText(R.string.later_06);
+					install_now.setText(R.string.install_now_06);
+					install_update.setText(R.string.install_update_06);
+					go_back.setText(R.string.go_back_06);
+					download_update.setText(R.string.download_update_06);
+					not_now.setText(R.string.not_now_06);
+					show_support.setText(R.string.show_support_06);
+					show_support_desc.setText(R.string.show_support_desc_06);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_06);
+					settings_title.setText(R.string.settings_title_06);
+					about_title.setText(R.string.about_title_06);
+					maintenance.setText(R.string.maintenance_06);
+					maintenance_desc.setText(R.string.maintenance_desc_06);
+					thanks.setText(R.string.thanks_06);
+					language.setText(R.string.language_06);
+					website.setText(R.string.website_06);
+					discord.setText(R.string.discord_06);
+					reddit.setText(R.string.reddit_06);
+					faq.setText(R.string.faq_06);
+					cloned_version.setText(R.string.cloned_version_06);
+					cloned_version_info.setText(R.string.cloned_version_desc_06);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_06);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_06);
+					installation_failed.setText(R.string.installation_failed_06);
+					installation_failed_desc.setText(R.string.installation_failed_desc_06);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_06);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_06);
+					existing_patched.setText(R.string.existing_patched_06);
+					existing_patched_desc.setText(R.string.existing_patched_desc_06);
+					close.setText(R.string.close_06);
+					cloned.setText(R.string.cloned_06);
+					ream.setText(R.string.ream_06);
+					install.setText(R.string.install_06);
+					uninstall.setText(R.string.uninstall_06);
+					ignore.setText(R.string.ignore_06);
+					delete.setText(R.string.delete_06);
+					uninstall_patched.setText(R.string.uninstall_patched_06);
+					open_settings.setText(R.string.open_settings_06);
+					open_patched.setText(R.string.open_patched_06);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 7) {
 					LANGUAGE.edit().putString("LANGUAGE", "7").commit();
-					    title_1.setText(R.string.spotify_regular_07);
-						title_2.setText(R.string.spotify_amoled_07);
-						sub_text_installed.setText(R.string.installed_07);
-						sub_text_1.setText(R.string.latest_07);
-						sub_text_3.setText(R.string.latest_07);
-						version_switch_1.setText(R.string.versions_07);
-						version_switch_2.setText(R.string.versions_07);
-						changelogs.setText(R.string.changelogs_07);
-						title_sub.setText(R.string.manager_tools_07);
-						device_cpu.setText(R.string.device_cpu_07);
-						source.setText(R.string.source_07);
-						support.setText(R.string.support_07);
-						donate.setText(R.string.donate_07);
-						about.setText(R.string.about_07);
-						list_auto_refresh.setText(R.string.list_auto_refresh_07);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_07);
-						force_auto_install.setText(R.string.force_auto_install_07);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_07);
-						theme.setText(R.string.show_themes_07);
-						apk_location.setText(R.string.apk_location_07);
-						apk_location_info.setText(R.string.apk_location_desc_07);
-						clear_directory_folders.setText(R.string.clear_directory_folders_07);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_07);
-						reset_settings.setText(R.string.reset_settings_07);
-						sub_title.setText(R.string.about_sub_07);
-						developer_manager.setText(R.string.xmanager_dev_07);
-						developer_spotify.setText(R.string.spotify_mod_devs_07);
-						support_team.setText(R.string.telegram_support_team_07);
-						mod_testers_1.setText(R.string.manager_testers_07);
-						mod_testers_2.setText(R.string.manager_hosting_07);
-						mobilism_team.setText(R.string.mobilism_team_07);
-						forum_team.setText(R.string.forum_team_07);
-						manager_team.setText(R.string.xspotify_team_07);
-						contributors_1.setText(R.string.contributors_07);
-						download_selected.setText(R.string.download_selected_07);
-						download_ready.setText(R.string.download_ready_07);
-						download_ready_desc.setText(R.string.download_ready_desc_07);
-						downloading_file.setText(R.string.downloading_file_07);
-						download_success.setText(R.string.download_success_07);
-						new_update.setText(R.string.new_update_07);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_07);
-						continue_1.setText(R.string.continue_1_07);
-						cancel.setText(R.string.cancel_07);
-					    fixer.setText(R.string.fixer_07);
-						download.setText(R.string.download_07);
-						later.setText(R.string.later_07);
-						install_now.setText(R.string.install_now_07);
-						install_update.setText(R.string.install_update_07);
-						go_back.setText(R.string.go_back_07);
-						download_update.setText(R.string.download_update_07);
-						not_now.setText(R.string.not_now_07);
-						show_support.setText(R.string.show_support_07);
-						show_support_desc.setText(R.string.show_support_desc_07);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_07);
-						settings_title.setText(R.string.settings_title_07);
-						about_title.setText(R.string.about_title_07);
-						maintenance.setText(R.string.maintenance_07);
-						maintenance_desc.setText(R.string.maintenance_desc_07);
-						thanks.setText(R.string.thanks_07);
-						language.setText(R.string.language_07);
-						website.setText(R.string.website_07);
-						discord.setText(R.string.discord_07);
-						reddit.setText(R.string.reddit_07);
-						faq.setText(R.string.faq_07);
-						cloned_version.setText(R.string.cloned_version_07);
-						cloned_version_info.setText(R.string.cloned_version_desc_07);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_07);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_07);
-					    installation_failed.setText(R.string.installation_failed_07);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_07);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_07);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_07);
-					    existing_patched.setText(R.string.existing_patched_07);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_07);
-					    close.setText(R.string.close_07);
-					    cloned.setText(R.string.cloned_07);
-					    ream.setText(R.string.ream_07);
-					    install.setText(R.string.install_07);
-					    uninstall.setText(R.string.uninstall_07);
-					    ignore.setText(R.string.ignore_07);
-					    delete.setText(R.string.delete_07);
-					    uninstall_patched.setText(R.string.uninstall_patched_07);
-					    open_settings.setText(R.string.open_settings_07);
-					    open_patched.setText(R.string.open_patched_07);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_07);
+					title_2.setText(R.string.spotify_amoled_07);
+					sub_text_installed.setText(R.string.installed_07);
+					sub_text_1.setText(R.string.latest_07);
+					sub_text_2.setText(R.string.latest_07);
+					sub_text_3.setText(R.string.latest_07);
+					version_switch_1.setText(R.string.versions_07);
+					version_switch_2.setText(R.string.versions_07);
+					version_switch_3.setText(R.string.versions_07);
+					changelogs.setText(R.string.changelogs_07);
+					title_sub.setText(R.string.manager_tools_07);
+					device_cpu.setText(R.string.device_cpu_07);
+					source.setText(R.string.source_07);
+					support.setText(R.string.support_07);
+					donate.setText(R.string.donate_07);
+					about.setText(R.string.about_07);
+					list_auto_refresh.setText(R.string.list_auto_refresh_07);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_07);
+					force_auto_install.setText(R.string.force_auto_install_07);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_07);
+					theme.setText(R.string.show_themes_07);
+					apk_location.setText(R.string.apk_location_07);
+					apk_location_info.setText(R.string.apk_location_desc_07);
+					clear_directory_folders.setText(R.string.clear_directory_folders_07);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_07);
+					reset_settings.setText(R.string.reset_settings_07);
+					sub_title.setText(R.string.about_sub_07);
+					developer_manager.setText(R.string.xmanager_dev_07);
+					developer_spotify.setText(R.string.spotify_mod_devs_07);
+					support_team.setText(R.string.telegram_support_team_07);
+					mod_testers_1.setText(R.string.manager_testers_07);
+					mod_testers_2.setText(R.string.manager_hosting_07);
+					mobilism_team.setText(R.string.mobilism_team_07);
+					forum_team.setText(R.string.forum_team_07);
+					manager_team.setText(R.string.xspotify_team_07);
+					contributors_1.setText(R.string.contributors_07);
+					download_selected.setText(R.string.download_selected_07);
+					download_ready.setText(R.string.download_ready_07);
+					download_ready_desc.setText(R.string.download_ready_desc_07);
+					downloading_file.setText(R.string.downloading_file_07);
+					download_success.setText(R.string.download_success_07);
+					new_update.setText(R.string.new_update_07);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_07);
+					continue_1.setText(R.string.continue_1_07);
+					cancel.setText(R.string.cancel_07);
+					fixer.setText(R.string.fixer_07);
+					download.setText(R.string.download_07);
+					later.setText(R.string.later_07);
+					install_now.setText(R.string.install_now_07);
+					install_update.setText(R.string.install_update_07);
+					go_back.setText(R.string.go_back_07);
+					download_update.setText(R.string.download_update_07);
+					not_now.setText(R.string.not_now_07);
+					show_support.setText(R.string.show_support_07);
+					show_support_desc.setText(R.string.show_support_desc_07);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_07);
+					settings_title.setText(R.string.settings_title_07);
+					about_title.setText(R.string.about_title_07);
+					maintenance.setText(R.string.maintenance_07);
+					maintenance_desc.setText(R.string.maintenance_desc_07);
+					thanks.setText(R.string.thanks_07);
+					language.setText(R.string.language_07);
+					website.setText(R.string.website_07);
+					discord.setText(R.string.discord_07);
+					reddit.setText(R.string.reddit_07);
+					faq.setText(R.string.faq_07);
+					cloned_version.setText(R.string.cloned_version_07);
+					cloned_version_info.setText(R.string.cloned_version_desc_07);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_07);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_07);
+					installation_failed.setText(R.string.installation_failed_07);
+					installation_failed_desc.setText(R.string.installation_failed_desc_07);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_07);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_07);
+					existing_patched.setText(R.string.existing_patched_07);
+					existing_patched_desc.setText(R.string.existing_patched_desc_07);
+					close.setText(R.string.close_07);
+					cloned.setText(R.string.cloned_07);
+					ream.setText(R.string.ream_07);
+					install.setText(R.string.install_07);
+					uninstall.setText(R.string.uninstall_07);
+					ignore.setText(R.string.ignore_07);
+					delete.setText(R.string.delete_07);
+					uninstall_patched.setText(R.string.uninstall_patched_07);
+					open_settings.setText(R.string.open_settings_07);
+					open_patched.setText(R.string.open_patched_07);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 8) {
 					LANGUAGE.edit().putString("LANGUAGE", "8").commit();
-					    title_1.setText(R.string.spotify_regular_08);
-						title_2.setText(R.string.spotify_amoled_08);
-						sub_text_installed.setText(R.string.installed_08);
-						sub_text_1.setText(R.string.latest_08);
-						sub_text_3.setText(R.string.latest_08);
-						version_switch_1.setText(R.string.versions_08);
-						version_switch_2.setText(R.string.versions_08);
-						changelogs.setText(R.string.changelogs_08);
-						title_sub.setText(R.string.manager_tools_08);
-						device_cpu.setText(R.string.device_cpu_08);
-						source.setText(R.string.source_08);
-						support.setText(R.string.support_08);
-						donate.setText(R.string.donate_08);
-						about.setText(R.string.about_08);
-						list_auto_refresh.setText(R.string.list_auto_refresh_08);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_08);
-						force_auto_install.setText(R.string.force_auto_install_08);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_08);
-						theme.setText(R.string.show_themes_08);
-						apk_location.setText(R.string.apk_location_08);
-						apk_location_info.setText(R.string.apk_location_desc_08);
-						clear_directory_folders.setText(R.string.clear_directory_folders_08);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_08);
-						reset_settings.setText(R.string.reset_settings_08);
-						sub_title.setText(R.string.about_sub_08);
-						developer_manager.setText(R.string.xmanager_dev_08);
-						developer_spotify.setText(R.string.spotify_mod_devs_08);
-						support_team.setText(R.string.telegram_support_team_08);
-						mod_testers_1.setText(R.string.manager_testers_08);
-						mod_testers_2.setText(R.string.manager_hosting_08);
-						mobilism_team.setText(R.string.mobilism_team_08);
-						forum_team.setText(R.string.forum_team_08);
-						manager_team.setText(R.string.xspotify_team_08);
-						contributors_1.setText(R.string.contributors_08);
-						download_selected.setText(R.string.download_selected_08);
-						download_ready.setText(R.string.download_ready_08);
-						download_ready_desc.setText(R.string.download_ready_desc_08);
-						downloading_file.setText(R.string.downloading_file_08);
-						download_success.setText(R.string.download_success_08);
-						new_update.setText(R.string.new_update_08);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_08);
-						continue_1.setText(R.string.continue_1_08);
-						cancel.setText(R.string.cancel_08);
-					    fixer.setText(R.string.fixer_08);
-						download.setText(R.string.download_08);
-						later.setText(R.string.later_08);
-						install_now.setText(R.string.install_now_08);
-						install_update.setText(R.string.install_update_08);
-						go_back.setText(R.string.go_back_08);
-						download_update.setText(R.string.download_update_08);
-						not_now.setText(R.string.not_now_08);
-						show_support.setText(R.string.show_support_08);
-						show_support_desc.setText(R.string.show_support_desc_08);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_08);
-						settings_title.setText(R.string.settings_title_08);
-						about_title.setText(R.string.about_title_08);
-						maintenance.setText(R.string.maintenance_08);
-						maintenance_desc.setText(R.string.maintenance_desc_08);
-						thanks.setText(R.string.thanks_08);
-						language.setText(R.string.language_08);
-						website.setText(R.string.website_08);
-						discord.setText(R.string.discord_08);
-						reddit.setText(R.string.reddit_08);
-						faq.setText(R.string.faq_08);
-						cloned_version.setText(R.string.cloned_version_08);
-						cloned_version_info.setText(R.string.cloned_version_desc_08);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_08);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_08);
-					    installation_failed.setText(R.string.installation_failed_08);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_08);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_08);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_08);
-					    existing_patched.setText(R.string.existing_patched_08);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_08);
-					    close.setText(R.string.close_08);
-					    cloned.setText(R.string.cloned_08);
-					    ream.setText(R.string.ream_08);
-					    install.setText(R.string.install_08);
-					    uninstall.setText(R.string.uninstall_08);
-					    ignore.setText(R.string.ignore_08);
-					    delete.setText(R.string.delete_08);
-					    uninstall_patched.setText(R.string.uninstall_patched_08);
-					    open_settings.setText(R.string.open_settings_08);
-					    open_patched.setText(R.string.open_patched_08);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_08);
+					title_2.setText(R.string.spotify_amoled_08);
+					sub_text_installed.setText(R.string.installed_08);
+					sub_text_1.setText(R.string.latest_08);
+					sub_text_2.setText(R.string.latest_08);
+					sub_text_3.setText(R.string.latest_08);
+					version_switch_1.setText(R.string.versions_08);
+					version_switch_2.setText(R.string.versions_08);
+					version_switch_3.setText(R.string.versions_08);
+					changelogs.setText(R.string.changelogs_08);
+					title_sub.setText(R.string.manager_tools_08);
+					device_cpu.setText(R.string.device_cpu_08);
+					source.setText(R.string.source_08);
+					support.setText(R.string.support_08);
+					donate.setText(R.string.donate_08);
+					about.setText(R.string.about_08);
+					list_auto_refresh.setText(R.string.list_auto_refresh_08);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_08);
+					force_auto_install.setText(R.string.force_auto_install_08);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_08);
+					theme.setText(R.string.show_themes_08);
+					apk_location.setText(R.string.apk_location_08);
+					apk_location_info.setText(R.string.apk_location_desc_08);
+					clear_directory_folders.setText(R.string.clear_directory_folders_08);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_08);
+					reset_settings.setText(R.string.reset_settings_08);
+					sub_title.setText(R.string.about_sub_08);
+					developer_manager.setText(R.string.xmanager_dev_08);
+					developer_spotify.setText(R.string.spotify_mod_devs_08);
+					support_team.setText(R.string.telegram_support_team_08);
+					mod_testers_1.setText(R.string.manager_testers_08);
+					mod_testers_2.setText(R.string.manager_hosting_08);
+					mobilism_team.setText(R.string.mobilism_team_08);
+					forum_team.setText(R.string.forum_team_08);
+					manager_team.setText(R.string.xspotify_team_08);
+					contributors_1.setText(R.string.contributors_08);
+					download_selected.setText(R.string.download_selected_08);
+					download_ready.setText(R.string.download_ready_08);
+					download_ready_desc.setText(R.string.download_ready_desc_08);
+					downloading_file.setText(R.string.downloading_file_08);
+					download_success.setText(R.string.download_success_08);
+					new_update.setText(R.string.new_update_08);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_08);
+					continue_1.setText(R.string.continue_1_08);
+					cancel.setText(R.string.cancel_08);
+					fixer.setText(R.string.fixer_08);
+					download.setText(R.string.download_08);
+					later.setText(R.string.later_08);
+					install_now.setText(R.string.install_now_08);
+					install_update.setText(R.string.install_update_08);
+					go_back.setText(R.string.go_back_08);
+					download_update.setText(R.string.download_update_08);
+					not_now.setText(R.string.not_now_08);
+					show_support.setText(R.string.show_support_08);
+					show_support_desc.setText(R.string.show_support_desc_08);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_08);
+					settings_title.setText(R.string.settings_title_08);
+					about_title.setText(R.string.about_title_08);
+					maintenance.setText(R.string.maintenance_08);
+					maintenance_desc.setText(R.string.maintenance_desc_08);
+					thanks.setText(R.string.thanks_08);
+					language.setText(R.string.language_08);
+					website.setText(R.string.website_08);
+					discord.setText(R.string.discord_08);
+					reddit.setText(R.string.reddit_08);
+					faq.setText(R.string.faq_08);
+					cloned_version.setText(R.string.cloned_version_08);
+					cloned_version_info.setText(R.string.cloned_version_desc_08);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_08);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_08);
+					installation_failed.setText(R.string.installation_failed_08);
+					installation_failed_desc.setText(R.string.installation_failed_desc_08);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_08);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_08);
+					existing_patched.setText(R.string.existing_patched_08);
+					existing_patched_desc.setText(R.string.existing_patched_desc_08);
+					close.setText(R.string.close_08);
+					cloned.setText(R.string.cloned_08);
+					ream.setText(R.string.ream_08);
+					install.setText(R.string.install_08);
+					uninstall.setText(R.string.uninstall_08);
+					ignore.setText(R.string.ignore_08);
+					delete.setText(R.string.delete_08);
+					uninstall_patched.setText(R.string.uninstall_patched_08);
+					open_settings.setText(R.string.open_settings_08);
+					open_patched.setText(R.string.open_patched_08);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 9) {
 					LANGUAGE.edit().putString("LANGUAGE", "9").commit();
-					    title_1.setText(R.string.spotify_regular_09);
-						title_2.setText(R.string.spotify_amoled_09);
-						sub_text_installed.setText(R.string.installed_09);
-						sub_text_1.setText(R.string.latest_09);
-						sub_text_3.setText(R.string.latest_09);
-						version_switch_1.setText(R.string.versions_09);
-						version_switch_2.setText(R.string.versions_09);
-						changelogs.setText(R.string.changelogs_09);
-						title_sub.setText(R.string.manager_tools_09);
-						device_cpu.setText(R.string.device_cpu_09);
-						source.setText(R.string.source_09);
-						support.setText(R.string.support_09);
-						donate.setText(R.string.donate_09);
-						about.setText(R.string.about_09);
-						list_auto_refresh.setText(R.string.list_auto_refresh_09);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_09);
-						force_auto_install.setText(R.string.force_auto_install_09);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_09);
-						theme.setText(R.string.show_themes_09);
-						apk_location.setText(R.string.apk_location_09);
-						apk_location_info.setText(R.string.apk_location_desc_09);
-						clear_directory_folders.setText(R.string.clear_directory_folders_09);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_09);
-						reset_settings.setText(R.string.reset_settings_09);
-						sub_title.setText(R.string.about_sub_09);
-						developer_manager.setText(R.string.xmanager_dev_09);
-						developer_spotify.setText(R.string.spotify_mod_devs_09);
-						support_team.setText(R.string.telegram_support_team_09);
-						mod_testers_1.setText(R.string.manager_testers_09);
-						mod_testers_2.setText(R.string.manager_hosting_09);
-						mobilism_team.setText(R.string.mobilism_team_09);
-						forum_team.setText(R.string.forum_team_09);
-						manager_team.setText(R.string.xspotify_team_09);
-						contributors_1.setText(R.string.contributors_09);
-						download_selected.setText(R.string.download_selected_09);
-						download_ready.setText(R.string.download_ready_09);
-						download_ready_desc.setText(R.string.download_ready_desc_09);
-						downloading_file.setText(R.string.downloading_file_09);
-						download_success.setText(R.string.download_success_09);
-						new_update.setText(R.string.new_update_09);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_09);
-						continue_1.setText(R.string.continue_1_09);
-						cancel.setText(R.string.cancel_09);
-					    fixer.setText(R.string.fixer_09);
-						download.setText(R.string.download_09);
-						later.setText(R.string.later_09);
-						install_now.setText(R.string.install_now_09);
-						install_update.setText(R.string.install_update_09);
-						go_back.setText(R.string.go_back_09);
-						download_update.setText(R.string.download_update_09);
-						not_now.setText(R.string.not_now_09);
-						show_support.setText(R.string.show_support_09);
-						show_support_desc.setText(R.string.show_support_desc_09);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_09);
-						settings_title.setText(R.string.settings_title_09);
-						about_title.setText(R.string.about_title_09);
-						maintenance.setText(R.string.maintenance_09);
-						maintenance_desc.setText(R.string.maintenance_desc_09);
-						thanks.setText(R.string.thanks_09);
-						language.setText(R.string.language_09);
-						website.setText(R.string.website_09);
-						discord.setText(R.string.discord_09);
-						reddit.setText(R.string.reddit_09);
-						faq.setText(R.string.faq_09);
-						cloned_version.setText(R.string.cloned_version_09);
-						cloned_version_info.setText(R.string.cloned_version_desc_09);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_09);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_09);
-					    installation_failed.setText(R.string.installation_failed_09);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_09);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_09);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_09);
-					    existing_patched.setText(R.string.existing_patched_09);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_09);
-					    close.setText(R.string.close_09);
-					    cloned.setText(R.string.cloned_09);
-					    ream.setText(R.string.ream_09);
-					    install.setText(R.string.install_09);
-					    uninstall.setText(R.string.uninstall_09);
-					    ignore.setText(R.string.ignore_09);
-					    delete.setText(R.string.delete_09);
-					    uninstall_patched.setText(R.string.uninstall_patched_09);
-					    open_settings.setText(R.string.open_settings_09);
-					    open_patched.setText(R.string.open_patched_09);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_09);
+					title_2.setText(R.string.spotify_amoled_09);
+					sub_text_installed.setText(R.string.installed_09);
+					sub_text_1.setText(R.string.latest_09);
+					sub_text_2.setText(R.string.latest_09);
+					sub_text_3.setText(R.string.latest_09);
+					version_switch_1.setText(R.string.versions_09);
+					version_switch_2.setText(R.string.versions_09);
+					version_switch_3.setText(R.string.versions_09);
+					changelogs.setText(R.string.changelogs_09);
+					title_sub.setText(R.string.manager_tools_09);
+					device_cpu.setText(R.string.device_cpu_09);
+					source.setText(R.string.source_09);
+					support.setText(R.string.support_09);
+					donate.setText(R.string.donate_09);
+					about.setText(R.string.about_09);
+					list_auto_refresh.setText(R.string.list_auto_refresh_09);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_09);
+					force_auto_install.setText(R.string.force_auto_install_09);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_09);
+					theme.setText(R.string.show_themes_09);
+					apk_location.setText(R.string.apk_location_09);
+					apk_location_info.setText(R.string.apk_location_desc_09);
+					clear_directory_folders.setText(R.string.clear_directory_folders_09);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_09);
+					reset_settings.setText(R.string.reset_settings_09);
+					sub_title.setText(R.string.about_sub_09);
+					developer_manager.setText(R.string.xmanager_dev_09);
+					developer_spotify.setText(R.string.spotify_mod_devs_09);
+					support_team.setText(R.string.telegram_support_team_09);
+					mod_testers_1.setText(R.string.manager_testers_09);
+					mod_testers_2.setText(R.string.manager_hosting_09);
+					mobilism_team.setText(R.string.mobilism_team_09);
+					forum_team.setText(R.string.forum_team_09);
+					manager_team.setText(R.string.xspotify_team_09);
+					contributors_1.setText(R.string.contributors_09);
+					download_selected.setText(R.string.download_selected_09);
+					download_ready.setText(R.string.download_ready_09);
+					download_ready_desc.setText(R.string.download_ready_desc_09);
+					downloading_file.setText(R.string.downloading_file_09);
+					download_success.setText(R.string.download_success_09);
+					new_update.setText(R.string.new_update_09);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_09);
+					continue_1.setText(R.string.continue_1_09);
+					cancel.setText(R.string.cancel_09);
+					fixer.setText(R.string.fixer_09);
+					download.setText(R.string.download_09);
+					later.setText(R.string.later_09);
+					install_now.setText(R.string.install_now_09);
+					install_update.setText(R.string.install_update_09);
+					go_back.setText(R.string.go_back_09);
+					download_update.setText(R.string.download_update_09);
+					not_now.setText(R.string.not_now_09);
+					show_support.setText(R.string.show_support_09);
+					show_support_desc.setText(R.string.show_support_desc_09);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_09);
+					settings_title.setText(R.string.settings_title_09);
+					about_title.setText(R.string.about_title_09);
+					maintenance.setText(R.string.maintenance_09);
+					maintenance_desc.setText(R.string.maintenance_desc_09);
+					thanks.setText(R.string.thanks_09);
+					language.setText(R.string.language_09);
+					website.setText(R.string.website_09);
+					discord.setText(R.string.discord_09);
+					reddit.setText(R.string.reddit_09);
+					faq.setText(R.string.faq_09);
+					cloned_version.setText(R.string.cloned_version_09);
+					cloned_version_info.setText(R.string.cloned_version_desc_09);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_09);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_09);
+					installation_failed.setText(R.string.installation_failed_09);
+					installation_failed_desc.setText(R.string.installation_failed_desc_09);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_09);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_09);
+					existing_patched.setText(R.string.existing_patched_09);
+					existing_patched_desc.setText(R.string.existing_patched_desc_09);
+					close.setText(R.string.close_09);
+					cloned.setText(R.string.cloned_09);
+					ream.setText(R.string.ream_09);
+					install.setText(R.string.install_09);
+					uninstall.setText(R.string.uninstall_09);
+					ignore.setText(R.string.ignore_09);
+					delete.setText(R.string.delete_09);
+					uninstall_patched.setText(R.string.uninstall_patched_09);
+					open_settings.setText(R.string.open_settings_09);
+					open_patched.setText(R.string.open_patched_09);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 10) {
 					LANGUAGE.edit().putString("LANGUAGE", "10").commit();
-					    title_1.setText(R.string.spotify_regular_10);
-						title_2.setText(R.string.spotify_amoled_10);
-						sub_text_installed.setText(R.string.installed_10);
-						sub_text_1.setText(R.string.latest_10);
-						sub_text_3.setText(R.string.latest_10);
-						version_switch_1.setText(R.string.versions_10);
-						version_switch_2.setText(R.string.versions_10);
-						changelogs.setText(R.string.changelogs_10);
-						title_sub.setText(R.string.manager_tools_10);
-						device_cpu.setText(R.string.device_cpu_10);
-						source.setText(R.string.source_10);
-						support.setText(R.string.support_10);
-						donate.setText(R.string.donate_10);
-						about.setText(R.string.about_10);
-						list_auto_refresh.setText(R.string.list_auto_refresh_10);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_10);
-						force_auto_install.setText(R.string.force_auto_install_10);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_10);
-						theme.setText(R.string.show_themes_10);
-						apk_location.setText(R.string.apk_location_10);
-						apk_location_info.setText(R.string.apk_location_desc_10);
-						clear_directory_folders.setText(R.string.clear_directory_folders_10);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_10);
-						reset_settings.setText(R.string.reset_settings_10);
-						sub_title.setText(R.string.about_sub_10);
-						developer_manager.setText(R.string.xmanager_dev_10);
-						developer_spotify.setText(R.string.spotify_mod_devs_10);
-						support_team.setText(R.string.telegram_support_team_10);
-						mod_testers_1.setText(R.string.manager_testers_10);
-						mod_testers_2.setText(R.string.manager_hosting_10);
-						mobilism_team.setText(R.string.mobilism_team_10);
-						forum_team.setText(R.string.forum_team_10);
-						manager_team.setText(R.string.xspotify_team_10);
-						contributors_1.setText(R.string.contributors_10);
-						download_selected.setText(R.string.download_selected_10);
-						download_ready.setText(R.string.download_ready_10);
-						download_ready_desc.setText(R.string.download_ready_desc_10);
-						downloading_file.setText(R.string.downloading_file_10);
-						download_success.setText(R.string.download_success_10);
-						new_update.setText(R.string.new_update_10);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_10);
-						continue_1.setText(R.string.continue_1_10);
-						cancel.setText(R.string.cancel_10);
-					    fixer.setText(R.string.fixer_10);
-						download.setText(R.string.download_10);
-						later.setText(R.string.later_10);
-						install_now.setText(R.string.install_now_10);
-						install_update.setText(R.string.install_update_10);
-						go_back.setText(R.string.go_back_10);
-						download_update.setText(R.string.download_update_10);
-						not_now.setText(R.string.not_now_10);
-						show_support.setText(R.string.show_support_10);
-						show_support_desc.setText(R.string.show_support_desc_10);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_10);
-						settings_title.setText(R.string.settings_title_10);
-						about_title.setText(R.string.about_title_10);
-						maintenance.setText(R.string.maintenance_10);
-						maintenance_desc.setText(R.string.maintenance_desc_10);
-						thanks.setText(R.string.thanks_10);
-						language.setText(R.string.language_10);
-						website.setText(R.string.website_10);
-						discord.setText(R.string.discord_10);
-						reddit.setText(R.string.reddit_10);
-						faq.setText(R.string.faq_10);
-						cloned_version.setText(R.string.cloned_version_10);
-						cloned_version_info.setText(R.string.cloned_version_desc_10);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_10);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_10);
-					    installation_failed.setText(R.string.installation_failed_10);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_10);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_10);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_10);
-					    existing_patched.setText(R.string.existing_patched_10);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_10);
-					    close.setText(R.string.close_10);
-					    cloned.setText(R.string.cloned_10);
-					    ream.setText(R.string.ream_10);
-					    install.setText(R.string.install_10);
-					    uninstall.setText(R.string.uninstall_10);
-					    ignore.setText(R.string.ignore_10);
-					    delete.setText(R.string.delete_10);
-					    uninstall_patched.setText(R.string.uninstall_patched_10);
-					    open_settings.setText(R.string.open_settings_10);
-					    open_patched.setText(R.string.open_patched_10);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_10);
+					title_2.setText(R.string.spotify_amoled_10);
+					sub_text_installed.setText(R.string.installed_10);
+					sub_text_1.setText(R.string.latest_10);
+					sub_text_2.setText(R.string.latest_10);
+					sub_text_3.setText(R.string.latest_10);
+					version_switch_1.setText(R.string.versions_10);
+					version_switch_2.setText(R.string.versions_10);
+					version_switch_3.setText(R.string.versions_10);
+					changelogs.setText(R.string.changelogs_10);
+					title_sub.setText(R.string.manager_tools_10);
+					device_cpu.setText(R.string.device_cpu_10);
+					source.setText(R.string.source_10);
+					support.setText(R.string.support_10);
+					donate.setText(R.string.donate_10);
+					about.setText(R.string.about_10);
+					list_auto_refresh.setText(R.string.list_auto_refresh_10);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_10);
+					force_auto_install.setText(R.string.force_auto_install_10);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_10);
+					theme.setText(R.string.show_themes_10);
+					apk_location.setText(R.string.apk_location_10);
+					apk_location_info.setText(R.string.apk_location_desc_10);
+					clear_directory_folders.setText(R.string.clear_directory_folders_10);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_10);
+					reset_settings.setText(R.string.reset_settings_10);
+					sub_title.setText(R.string.about_sub_10);
+					developer_manager.setText(R.string.xmanager_dev_10);
+					developer_spotify.setText(R.string.spotify_mod_devs_10);
+					support_team.setText(R.string.telegram_support_team_10);
+					mod_testers_1.setText(R.string.manager_testers_10);
+					mod_testers_2.setText(R.string.manager_hosting_10);
+					mobilism_team.setText(R.string.mobilism_team_10);
+					forum_team.setText(R.string.forum_team_10);
+					manager_team.setText(R.string.xspotify_team_10);
+					contributors_1.setText(R.string.contributors_10);
+					download_selected.setText(R.string.download_selected_10);
+					download_ready.setText(R.string.download_ready_10);
+					download_ready_desc.setText(R.string.download_ready_desc_10);
+					downloading_file.setText(R.string.downloading_file_10);
+					download_success.setText(R.string.download_success_10);
+					new_update.setText(R.string.new_update_10);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_10);
+					continue_1.setText(R.string.continue_1_10);
+					cancel.setText(R.string.cancel_10);
+					fixer.setText(R.string.fixer_10);
+					download.setText(R.string.download_10);
+					later.setText(R.string.later_10);
+					install_now.setText(R.string.install_now_10);
+					install_update.setText(R.string.install_update_10);
+					go_back.setText(R.string.go_back_10);
+					download_update.setText(R.string.download_update_10);
+					not_now.setText(R.string.not_now_10);
+					show_support.setText(R.string.show_support_10);
+					show_support_desc.setText(R.string.show_support_desc_10);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_10);
+					settings_title.setText(R.string.settings_title_10);
+					about_title.setText(R.string.about_title_10);
+					maintenance.setText(R.string.maintenance_10);
+					maintenance_desc.setText(R.string.maintenance_desc_10);
+					thanks.setText(R.string.thanks_10);
+					language.setText(R.string.language_10);
+					website.setText(R.string.website_10);
+					discord.setText(R.string.discord_10);
+					reddit.setText(R.string.reddit_10);
+					faq.setText(R.string.faq_10);
+					cloned_version.setText(R.string.cloned_version_10);
+					cloned_version_info.setText(R.string.cloned_version_desc_10);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_10);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_10);
+					installation_failed.setText(R.string.installation_failed_10);
+					installation_failed_desc.setText(R.string.installation_failed_desc_10);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_10);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_10);
+					existing_patched.setText(R.string.existing_patched_10);
+					existing_patched_desc.setText(R.string.existing_patched_desc_10);
+					close.setText(R.string.close_10);
+					cloned.setText(R.string.cloned_10);
+					ream.setText(R.string.ream_10);
+					install.setText(R.string.install_10);
+					uninstall.setText(R.string.uninstall_10);
+					ignore.setText(R.string.ignore_10);
+					delete.setText(R.string.delete_10);
+					uninstall_patched.setText(R.string.uninstall_patched_10);
+					open_settings.setText(R.string.open_settings_10);
+					open_patched.setText(R.string.open_patched_10);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 11) {
 					LANGUAGE.edit().putString("LANGUAGE", "11").commit();
-					    title_1.setText(R.string.spotify_regular_11);
-						title_2.setText(R.string.spotify_amoled_11);
-						sub_text_installed.setText(R.string.installed_11);
-						sub_text_1.setText(R.string.latest_11);
-						sub_text_3.setText(R.string.latest_11);
-						version_switch_1.setText(R.string.versions_11);
-						version_switch_2.setText(R.string.versions_11);
-						changelogs.setText(R.string.changelogs_11);
-						title_sub.setText(R.string.manager_tools_11);
-						device_cpu.setText(R.string.device_cpu_11);
-						source.setText(R.string.source_11);
-						support.setText(R.string.support_11);
-						donate.setText(R.string.donate_11);
-						about.setText(R.string.about_11);
-						list_auto_refresh.setText(R.string.list_auto_refresh_11);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_11);
-						force_auto_install.setText(R.string.force_auto_install_11);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_11);
-						theme.setText(R.string.show_themes_11);
-						apk_location.setText(R.string.apk_location_11);
-						apk_location_info.setText(R.string.apk_location_desc_11);
-						clear_directory_folders.setText(R.string.clear_directory_folders_11);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_11);
-						reset_settings.setText(R.string.reset_settings_11);
-						sub_title.setText(R.string.about_sub_11);
-						developer_manager.setText(R.string.xmanager_dev_11);
-						developer_spotify.setText(R.string.spotify_mod_devs_11);
-						support_team.setText(R.string.telegram_support_team_11);
-						mod_testers_1.setText(R.string.manager_testers_11);
-						mod_testers_2.setText(R.string.manager_hosting_11);
-						mobilism_team.setText(R.string.mobilism_team_11);
-						forum_team.setText(R.string.forum_team_11);
-						manager_team.setText(R.string.xspotify_team_11);
-						contributors_1.setText(R.string.contributors_11);
-						download_selected.setText(R.string.download_selected_11);
-						download_ready.setText(R.string.download_ready_11);
-						download_ready_desc.setText(R.string.download_ready_desc_11);
-						downloading_file.setText(R.string.downloading_file_11);
-						download_success.setText(R.string.download_success_11);
-						new_update.setText(R.string.new_update_11);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_11);
-						continue_1.setText(R.string.continue_1_11);
-						cancel.setText(R.string.cancel_11);
-					    fixer.setText(R.string.fixer_11);
-						download.setText(R.string.download_11);
-						later.setText(R.string.later_11);
-						install_now.setText(R.string.install_now_11);
-						install_update.setText(R.string.install_update_11);
-						go_back.setText(R.string.go_back_11);
-						download_update.setText(R.string.download_update_11);
-						not_now.setText(R.string.not_now_11);
-						show_support.setText(R.string.show_support_11);
-						show_support_desc.setText(R.string.show_support_desc_11);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_11);
-						settings_title.setText(R.string.settings_title_11);
-						about_title.setText(R.string.about_title_11);
-						maintenance.setText(R.string.maintenance_11);
-						maintenance_desc.setText(R.string.maintenance_desc_11);
-						thanks.setText(R.string.thanks_11);
-						language.setText(R.string.language_11);
-						website.setText(R.string.website_11);
-						discord.setText(R.string.discord_11);
-						reddit.setText(R.string.reddit_11);
-						faq.setText(R.string.faq_11);
-						cloned_version.setText(R.string.cloned_version_11);
-						cloned_version_info.setText(R.string.cloned_version_desc_11);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_11);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_11);
-					    installation_failed.setText(R.string.installation_failed_11);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_11);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_11);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_11);
-					    existing_patched.setText(R.string.existing_patched_11);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_11);
-					    close.setText(R.string.close_11);
-					    cloned.setText(R.string.cloned_11);
-					    ream.setText(R.string.ream_11);
-					    install.setText(R.string.install_11);
-					    uninstall.setText(R.string.uninstall_11);
-					    ignore.setText(R.string.ignore_11);
-					    delete.setText(R.string.delete_11);
-					    uninstall_patched.setText(R.string.uninstall_patched_11);
-					    open_settings.setText(R.string.open_settings_11);
-					    open_patched.setText(R.string.open_patched_11);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_11);
+					title_2.setText(R.string.spotify_amoled_11);
+					sub_text_installed.setText(R.string.installed_11);
+					sub_text_1.setText(R.string.latest_11);
+					sub_text_2.setText(R.string.latest_11);
+					sub_text_3.setText(R.string.latest_11);
+					version_switch_1.setText(R.string.versions_11);
+					version_switch_2.setText(R.string.versions_11);
+					version_switch_3.setText(R.string.versions_11);
+					changelogs.setText(R.string.changelogs_11);
+					title_sub.setText(R.string.manager_tools_11);
+					device_cpu.setText(R.string.device_cpu_11);
+					source.setText(R.string.source_11);
+					support.setText(R.string.support_11);
+					donate.setText(R.string.donate_11);
+					about.setText(R.string.about_11);
+					list_auto_refresh.setText(R.string.list_auto_refresh_11);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_11);
+					force_auto_install.setText(R.string.force_auto_install_11);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_11);
+					theme.setText(R.string.show_themes_11);
+					apk_location.setText(R.string.apk_location_11);
+					apk_location_info.setText(R.string.apk_location_desc_11);
+					clear_directory_folders.setText(R.string.clear_directory_folders_11);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_11);
+					reset_settings.setText(R.string.reset_settings_11);
+					sub_title.setText(R.string.about_sub_11);
+					developer_manager.setText(R.string.xmanager_dev_11);
+					developer_spotify.setText(R.string.spotify_mod_devs_11);
+					support_team.setText(R.string.telegram_support_team_11);
+					mod_testers_1.setText(R.string.manager_testers_11);
+					mod_testers_2.setText(R.string.manager_hosting_11);
+					mobilism_team.setText(R.string.mobilism_team_11);
+					forum_team.setText(R.string.forum_team_11);
+					manager_team.setText(R.string.xspotify_team_11);
+					contributors_1.setText(R.string.contributors_11);
+					download_selected.setText(R.string.download_selected_11);
+					download_ready.setText(R.string.download_ready_11);
+					download_ready_desc.setText(R.string.download_ready_desc_11);
+					downloading_file.setText(R.string.downloading_file_11);
+					download_success.setText(R.string.download_success_11);
+					new_update.setText(R.string.new_update_11);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_11);
+					continue_1.setText(R.string.continue_1_11);
+					cancel.setText(R.string.cancel_11);
+					fixer.setText(R.string.fixer_11);
+					download.setText(R.string.download_11);
+					later.setText(R.string.later_11);
+					install_now.setText(R.string.install_now_11);
+					install_update.setText(R.string.install_update_11);
+					go_back.setText(R.string.go_back_11);
+					download_update.setText(R.string.download_update_11);
+					not_now.setText(R.string.not_now_11);
+					show_support.setText(R.string.show_support_11);
+					show_support_desc.setText(R.string.show_support_desc_11);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_11);
+					settings_title.setText(R.string.settings_title_11);
+					about_title.setText(R.string.about_title_11);
+					maintenance.setText(R.string.maintenance_11);
+					maintenance_desc.setText(R.string.maintenance_desc_11);
+					thanks.setText(R.string.thanks_11);
+					language.setText(R.string.language_11);
+					website.setText(R.string.website_11);
+					discord.setText(R.string.discord_11);
+					reddit.setText(R.string.reddit_11);
+					faq.setText(R.string.faq_11);
+					cloned_version.setText(R.string.cloned_version_11);
+					cloned_version_info.setText(R.string.cloned_version_desc_11);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_11);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_11);
+					installation_failed.setText(R.string.installation_failed_11);
+					installation_failed_desc.setText(R.string.installation_failed_desc_11);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_11);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_11);
+					existing_patched.setText(R.string.existing_patched_11);
+					existing_patched_desc.setText(R.string.existing_patched_desc_11);
+					close.setText(R.string.close_11);
+					cloned.setText(R.string.cloned_11);
+					ream.setText(R.string.ream_11);
+					install.setText(R.string.install_11);
+					uninstall.setText(R.string.uninstall_11);
+					ignore.setText(R.string.ignore_11);
+					delete.setText(R.string.delete_11);
+					uninstall_patched.setText(R.string.uninstall_patched_11);
+					open_settings.setText(R.string.open_settings_11);
+					open_patched.setText(R.string.open_patched_11);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 12) {
 					LANGUAGE.edit().putString("LANGUAGE", "12").commit();
-					    title_1.setText(R.string.spotify_regular_12);
-						title_2.setText(R.string.spotify_amoled_12);
-						sub_text_installed.setText(R.string.installed_12);
-						sub_text_1.setText(R.string.latest_12);
-						sub_text_3.setText(R.string.latest_12);
-						version_switch_1.setText(R.string.versions_12);
-						version_switch_2.setText(R.string.versions_12);
-						changelogs.setText(R.string.changelogs_12);
-						title_sub.setText(R.string.manager_tools_12);
-						device_cpu.setText(R.string.device_cpu_12);
-						source.setText(R.string.source_12);
-						support.setText(R.string.support_12);
-						donate.setText(R.string.donate_12);
-						about.setText(R.string.about_12);
-						list_auto_refresh.setText(R.string.list_auto_refresh_12);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_12);
-						force_auto_install.setText(R.string.force_auto_install_12);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_12);
-						theme.setText(R.string.show_themes_12);
-						apk_location.setText(R.string.apk_location_12);
-						apk_location_info.setText(R.string.apk_location_desc_12);
-						clear_directory_folders.setText(R.string.clear_directory_folders_12);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_12);
-						reset_settings.setText(R.string.reset_settings_12);
-						sub_title.setText(R.string.about_sub_12);
-						developer_manager.setText(R.string.xmanager_dev_12);
-						developer_spotify.setText(R.string.spotify_mod_devs_12);
-						support_team.setText(R.string.telegram_support_team_12);
-						mod_testers_1.setText(R.string.manager_testers_12);
-						mod_testers_2.setText(R.string.manager_hosting_12);
-						mobilism_team.setText(R.string.mobilism_team_12);
-						forum_team.setText(R.string.forum_team_12);
-						manager_team.setText(R.string.xspotify_team_12);
-						contributors_1.setText(R.string.contributors_12);
-						download_selected.setText(R.string.download_selected_12);
-						download_ready.setText(R.string.download_ready_12);
-						download_ready_desc.setText(R.string.download_ready_desc_12);
-						downloading_file.setText(R.string.downloading_file_12);
-						download_success.setText(R.string.download_success_12);
-						new_update.setText(R.string.new_update_12);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_12);
-						continue_1.setText(R.string.continue_1_12);
-						cancel.setText(R.string.cancel_12);
-					    fixer.setText(R.string.fixer_12);
-						download.setText(R.string.download_12);
-						later.setText(R.string.later_12);
-						install_now.setText(R.string.install_now_12);
-						install_update.setText(R.string.install_update_12);
-						go_back.setText(R.string.go_back_12);
-						download_update.setText(R.string.download_update_12);
-						not_now.setText(R.string.not_now_12);
-						show_support.setText(R.string.show_support_12);
-						show_support_desc.setText(R.string.show_support_desc_12);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_12);
-						settings_title.setText(R.string.settings_title_12);
-						about_title.setText(R.string.about_title_12);
-						maintenance.setText(R.string.maintenance_12);
-						maintenance_desc.setText(R.string.maintenance_desc_12);
-						thanks.setText(R.string.thanks_12);
-						language.setText(R.string.language_12);
-						website.setText(R.string.website_12);
-						discord.setText(R.string.discord_12);
-						reddit.setText(R.string.reddit_12);
-						faq.setText(R.string.faq_12);
-						cloned_version.setText(R.string.cloned_version_12);
-						cloned_version_info.setText(R.string.cloned_version_desc_12);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_12);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_12);
-					    installation_failed.setText(R.string.installation_failed_12);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_12);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_12);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_12);
-					    existing_patched.setText(R.string.existing_patched_12);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_12);
-					    close.setText(R.string.close_12);
-					    cloned.setText(R.string.cloned_12);
-					    ream.setText(R.string.ream_12);
-					    install.setText(R.string.install_12);
-					    uninstall.setText(R.string.uninstall_12);
-					    ignore.setText(R.string.ignore_12);
-					    delete.setText(R.string.delete_12);
-					    uninstall_patched.setText(R.string.uninstall_patched_12);
-					    open_settings.setText(R.string.open_settings_12);
-					    open_patched.setText(R.string.open_patched_12);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_12);
+					title_2.setText(R.string.spotify_amoled_12);
+					sub_text_installed.setText(R.string.installed_12);
+					sub_text_1.setText(R.string.latest_12);
+					sub_text_2.setText(R.string.latest_12);
+					sub_text_3.setText(R.string.latest_12);
+					version_switch_1.setText(R.string.versions_12);
+					version_switch_2.setText(R.string.versions_12);
+					version_switch_3.setText(R.string.versions_12);
+					changelogs.setText(R.string.changelogs_12);
+					title_sub.setText(R.string.manager_tools_12);
+					device_cpu.setText(R.string.device_cpu_12);
+					source.setText(R.string.source_12);
+					support.setText(R.string.support_12);
+					donate.setText(R.string.donate_12);
+					about.setText(R.string.about_12);
+					list_auto_refresh.setText(R.string.list_auto_refresh_12);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_12);
+					force_auto_install.setText(R.string.force_auto_install_12);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_12);
+					theme.setText(R.string.show_themes_12);
+					apk_location.setText(R.string.apk_location_12);
+					apk_location_info.setText(R.string.apk_location_desc_12);
+					clear_directory_folders.setText(R.string.clear_directory_folders_12);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_12);
+					reset_settings.setText(R.string.reset_settings_12);
+					sub_title.setText(R.string.about_sub_12);
+					developer_manager.setText(R.string.xmanager_dev_12);
+					developer_spotify.setText(R.string.spotify_mod_devs_12);
+					support_team.setText(R.string.telegram_support_team_12);
+					mod_testers_1.setText(R.string.manager_testers_12);
+					mod_testers_2.setText(R.string.manager_hosting_12);
+					mobilism_team.setText(R.string.mobilism_team_12);
+					forum_team.setText(R.string.forum_team_12);
+					manager_team.setText(R.string.xspotify_team_12);
+					contributors_1.setText(R.string.contributors_12);
+					download_selected.setText(R.string.download_selected_12);
+					download_ready.setText(R.string.download_ready_12);
+					download_ready_desc.setText(R.string.download_ready_desc_12);
+					downloading_file.setText(R.string.downloading_file_12);
+					download_success.setText(R.string.download_success_12);
+					new_update.setText(R.string.new_update_12);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_12);
+					continue_1.setText(R.string.continue_1_12);
+					cancel.setText(R.string.cancel_12);
+					fixer.setText(R.string.fixer_12);
+					download.setText(R.string.download_12);
+					later.setText(R.string.later_12);
+					install_now.setText(R.string.install_now_12);
+					install_update.setText(R.string.install_update_12);
+					go_back.setText(R.string.go_back_12);
+					download_update.setText(R.string.download_update_12);
+					not_now.setText(R.string.not_now_12);
+					show_support.setText(R.string.show_support_12);
+					show_support_desc.setText(R.string.show_support_desc_12);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_12);
+					settings_title.setText(R.string.settings_title_12);
+					about_title.setText(R.string.about_title_12);
+					maintenance.setText(R.string.maintenance_12);
+					maintenance_desc.setText(R.string.maintenance_desc_12);
+					thanks.setText(R.string.thanks_12);
+					language.setText(R.string.language_12);
+					website.setText(R.string.website_12);
+					discord.setText(R.string.discord_12);
+					reddit.setText(R.string.reddit_12);
+					faq.setText(R.string.faq_12);
+					cloned_version.setText(R.string.cloned_version_12);
+					cloned_version_info.setText(R.string.cloned_version_desc_12);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_12);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_12);
+					installation_failed.setText(R.string.installation_failed_12);
+					installation_failed_desc.setText(R.string.installation_failed_desc_12);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_12);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_12);
+					existing_patched.setText(R.string.existing_patched_12);
+					existing_patched_desc.setText(R.string.existing_patched_desc_12);
+					close.setText(R.string.close_12);
+					cloned.setText(R.string.cloned_12);
+					ream.setText(R.string.ream_12);
+					install.setText(R.string.install_12);
+					uninstall.setText(R.string.uninstall_12);
+					ignore.setText(R.string.ignore_12);
+					delete.setText(R.string.delete_12);
+					uninstall_patched.setText(R.string.uninstall_patched_12);
+					open_settings.setText(R.string.open_settings_12);
+					open_patched.setText(R.string.open_patched_12);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 13) {
 					LANGUAGE.edit().putString("LANGUAGE", "13").commit();
-					    title_1.setText(R.string.spotify_regular_13);
-						title_2.setText(R.string.spotify_amoled_13);
-						sub_text_installed.setText(R.string.installed_13);
-						sub_text_1.setText(R.string.latest_13);
-						sub_text_3.setText(R.string.latest_13);
-						version_switch_1.setText(R.string.versions_13);
-						version_switch_2.setText(R.string.versions_13);
-						changelogs.setText(R.string.changelogs_13);
-						title_sub.setText(R.string.manager_tools_13);
-						device_cpu.setText(R.string.device_cpu_13);
-						source.setText(R.string.source_13);
-						support.setText(R.string.support_13);
-						donate.setText(R.string.donate_13);
-						about.setText(R.string.about_13);
-						list_auto_refresh.setText(R.string.list_auto_refresh_13);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_13);
-						force_auto_install.setText(R.string.force_auto_install_13);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_13);
-						theme.setText(R.string.show_themes_13);
-						apk_location.setText(R.string.apk_location_13);
-						apk_location_info.setText(R.string.apk_location_desc_13);
-						clear_directory_folders.setText(R.string.clear_directory_folders_13);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_13);
-						reset_settings.setText(R.string.reset_settings_13);
-						sub_title.setText(R.string.about_sub_13);
-						developer_manager.setText(R.string.xmanager_dev_13);
-						developer_spotify.setText(R.string.spotify_mod_devs_13);
-						support_team.setText(R.string.telegram_support_team_13);
-						mod_testers_1.setText(R.string.manager_testers_13);
-						mod_testers_2.setText(R.string.manager_hosting_13);
-						mobilism_team.setText(R.string.mobilism_team_13);
-						forum_team.setText(R.string.forum_team_13);
-						manager_team.setText(R.string.xspotify_team_13);
-						contributors_1.setText(R.string.contributors_13);
-						download_selected.setText(R.string.download_selected_13);
-						download_ready.setText(R.string.download_ready_13);
-						download_ready_desc.setText(R.string.download_ready_desc_13);
-						downloading_file.setText(R.string.downloading_file_13);
-						download_success.setText(R.string.download_success_13);
-						new_update.setText(R.string.new_update_13);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_13);
-						continue_1.setText(R.string.continue_1_13);
-						cancel.setText(R.string.cancel_13);
-					    fixer.setText(R.string.fixer_13);
-						download.setText(R.string.download_13);
-						later.setText(R.string.later_13);
-						install_now.setText(R.string.install_now_13);
-						install_update.setText(R.string.install_update_13);
-						go_back.setText(R.string.go_back_13);
-						download_update.setText(R.string.download_update_13);
-						not_now.setText(R.string.not_now_13);
-						show_support.setText(R.string.show_support_13);
-						show_support_desc.setText(R.string.show_support_desc_13);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_13);
-						settings_title.setText(R.string.settings_title_13);
-						about_title.setText(R.string.about_title_13);
-						maintenance.setText(R.string.maintenance_13);
-						maintenance_desc.setText(R.string.maintenance_desc_13);
-						thanks.setText(R.string.thanks_13);
-						language.setText(R.string.language_13);
-						website.setText(R.string.website_13);
-						discord.setText(R.string.discord_13);
-						reddit.setText(R.string.reddit_13);
-						faq.setText(R.string.faq_13);
-						cloned_version.setText(R.string.cloned_version_13);
-						cloned_version_info.setText(R.string.cloned_version_desc_13);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_13);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_13);
-					    installation_failed.setText(R.string.installation_failed_13);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_13);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_13);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_13);
-					    existing_patched.setText(R.string.existing_patched_13);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_13);
-					    close.setText(R.string.close_13);
-					    cloned.setText(R.string.cloned_13);
-					    ream.setText(R.string.ream_13);
-					    install.setText(R.string.install_13);
-					    uninstall.setText(R.string.uninstall_13);
-					    ignore.setText(R.string.ignore_13);
-					    delete.setText(R.string.delete_13);
-					    uninstall_patched.setText(R.string.uninstall_patched_13);
-					    open_settings.setText(R.string.open_settings_13);
-					    open_patched.setText(R.string.open_patched_13);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_13);
+					title_2.setText(R.string.spotify_amoled_13);
+					sub_text_installed.setText(R.string.installed_13);
+					sub_text_1.setText(R.string.latest_13);
+					sub_text_2.setText(R.string.latest_13);
+					sub_text_3.setText(R.string.latest_13);
+					version_switch_1.setText(R.string.versions_13);
+					version_switch_2.setText(R.string.versions_13);
+					version_switch_3.setText(R.string.versions_13);
+					changelogs.setText(R.string.changelogs_13);
+					title_sub.setText(R.string.manager_tools_13);
+					device_cpu.setText(R.string.device_cpu_13);
+					source.setText(R.string.source_13);
+					support.setText(R.string.support_13);
+					donate.setText(R.string.donate_13);
+					about.setText(R.string.about_13);
+					list_auto_refresh.setText(R.string.list_auto_refresh_13);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_13);
+					force_auto_install.setText(R.string.force_auto_install_13);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_13);
+					theme.setText(R.string.show_themes_13);
+					apk_location.setText(R.string.apk_location_13);
+					apk_location_info.setText(R.string.apk_location_desc_13);
+					clear_directory_folders.setText(R.string.clear_directory_folders_13);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_13);
+					reset_settings.setText(R.string.reset_settings_13);
+					sub_title.setText(R.string.about_sub_13);
+					developer_manager.setText(R.string.xmanager_dev_13);
+					developer_spotify.setText(R.string.spotify_mod_devs_13);
+					support_team.setText(R.string.telegram_support_team_13);
+					mod_testers_1.setText(R.string.manager_testers_13);
+					mod_testers_2.setText(R.string.manager_hosting_13);
+					mobilism_team.setText(R.string.mobilism_team_13);
+					forum_team.setText(R.string.forum_team_13);
+					manager_team.setText(R.string.xspotify_team_13);
+					contributors_1.setText(R.string.contributors_13);
+					download_selected.setText(R.string.download_selected_13);
+					download_ready.setText(R.string.download_ready_13);
+					download_ready_desc.setText(R.string.download_ready_desc_13);
+					downloading_file.setText(R.string.downloading_file_13);
+					download_success.setText(R.string.download_success_13);
+					new_update.setText(R.string.new_update_13);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_13);
+					continue_1.setText(R.string.continue_1_13);
+					cancel.setText(R.string.cancel_13);
+					fixer.setText(R.string.fixer_13);
+					download.setText(R.string.download_13);
+					later.setText(R.string.later_13);
+					install_now.setText(R.string.install_now_13);
+					install_update.setText(R.string.install_update_13);
+					go_back.setText(R.string.go_back_13);
+					download_update.setText(R.string.download_update_13);
+					not_now.setText(R.string.not_now_13);
+					show_support.setText(R.string.show_support_13);
+					show_support_desc.setText(R.string.show_support_desc_13);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_13);
+					settings_title.setText(R.string.settings_title_13);
+					about_title.setText(R.string.about_title_13);
+					maintenance.setText(R.string.maintenance_13);
+					maintenance_desc.setText(R.string.maintenance_desc_13);
+					thanks.setText(R.string.thanks_13);
+					language.setText(R.string.language_13);
+					website.setText(R.string.website_13);
+					discord.setText(R.string.discord_13);
+					reddit.setText(R.string.reddit_13);
+					faq.setText(R.string.faq_13);
+					cloned_version.setText(R.string.cloned_version_13);
+					cloned_version_info.setText(R.string.cloned_version_desc_13);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_13);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_13);
+					installation_failed.setText(R.string.installation_failed_13);
+					installation_failed_desc.setText(R.string.installation_failed_desc_13);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_13);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_13);
+					existing_patched.setText(R.string.existing_patched_13);
+					existing_patched_desc.setText(R.string.existing_patched_desc_13);
+					close.setText(R.string.close_13);
+					cloned.setText(R.string.cloned_13);
+					ream.setText(R.string.ream_13);
+					install.setText(R.string.install_13);
+					uninstall.setText(R.string.uninstall_13);
+					ignore.setText(R.string.ignore_13);
+					delete.setText(R.string.delete_13);
+					uninstall_patched.setText(R.string.uninstall_patched_13);
+					open_settings.setText(R.string.open_settings_13);
+					open_patched.setText(R.string.open_patched_13);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 14) {
 					LANGUAGE.edit().putString("LANGUAGE", "14").commit();
-					    title_1.setText(R.string.spotify_regular_14);
-						title_2.setText(R.string.spotify_amoled_14);
-						sub_text_installed.setText(R.string.installed_14);
-						sub_text_1.setText(R.string.latest_14);
-						sub_text_3.setText(R.string.latest_14);
-						version_switch_1.setText(R.string.versions_14);
-						version_switch_2.setText(R.string.versions_14);
-						changelogs.setText(R.string.changelogs_14);
-						title_sub.setText(R.string.manager_tools_14);
-						device_cpu.setText(R.string.device_cpu_14);
-						source.setText(R.string.source_14);
-						support.setText(R.string.support_14);
-						donate.setText(R.string.donate_14);
-						about.setText(R.string.about_14);
-						list_auto_refresh.setText(R.string.list_auto_refresh_14);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_14);
-						force_auto_install.setText(R.string.force_auto_install_14);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_14);
-						theme.setText(R.string.show_themes_14);
-						apk_location.setText(R.string.apk_location_14);
-						apk_location_info.setText(R.string.apk_location_desc_14);
-						clear_directory_folders.setText(R.string.clear_directory_folders_14);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_14);
-						reset_settings.setText(R.string.reset_settings_14);
-						sub_title.setText(R.string.about_sub_14);
-						developer_manager.setText(R.string.xmanager_dev_14);
-						developer_spotify.setText(R.string.spotify_mod_devs_14);
-						support_team.setText(R.string.telegram_support_team_14);
-						mod_testers_1.setText(R.string.manager_testers_14);
-						mod_testers_2.setText(R.string.manager_hosting_14);
-						mobilism_team.setText(R.string.mobilism_team_14);
-						forum_team.setText(R.string.forum_team_14);
-						manager_team.setText(R.string.xspotify_team_14);
-						contributors_1.setText(R.string.contributors_14);
-						download_selected.setText(R.string.download_selected_14);
-						download_ready.setText(R.string.download_ready_14);
-						download_ready_desc.setText(R.string.download_ready_desc_14);
-						downloading_file.setText(R.string.downloading_file_14);
-						download_success.setText(R.string.download_success_14);
-						new_update.setText(R.string.new_update_14);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_14);
-						continue_1.setText(R.string.continue_1_14);
-						cancel.setText(R.string.cancel_14);
-					    fixer.setText(R.string.fixer_14);
-						download.setText(R.string.download_14);
-						later.setText(R.string.later_14);
-						install_now.setText(R.string.install_now_14);
-						install_update.setText(R.string.install_update_14);
-						go_back.setText(R.string.go_back_14);
-						download_update.setText(R.string.download_update_14);
-						not_now.setText(R.string.not_now_14);
-						show_support.setText(R.string.show_support_14);
-						show_support_desc.setText(R.string.show_support_desc_14);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_14);
-						settings_title.setText(R.string.settings_title_14);
-						about_title.setText(R.string.about_title_14);
-						maintenance.setText(R.string.maintenance_14);
-						maintenance_desc.setText(R.string.maintenance_desc_14);
-						thanks.setText(R.string.thanks_14);
-						language.setText(R.string.language_14);
-						website.setText(R.string.website_14);
-						discord.setText(R.string.discord_14);
-						reddit.setText(R.string.reddit_14);
-						faq.setText(R.string.faq_14);
-						cloned_version.setText(R.string.cloned_version_14);
-						cloned_version_info.setText(R.string.cloned_version_desc_14);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_14);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_14);
-					    installation_failed.setText(R.string.installation_failed_14);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_14);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_14);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_14);
-					    existing_patched.setText(R.string.existing_patched_14);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_14);
-					    close.setText(R.string.close_14);
-					    cloned.setText(R.string.cloned_14);
-					    ream.setText(R.string.ream_14);
-					    install.setText(R.string.install_14);
-					    uninstall.setText(R.string.uninstall_14);
-					    ignore.setText(R.string.ignore_14);
-					    delete.setText(R.string.delete_14);
-					    uninstall_patched.setText(R.string.uninstall_patched_14);
-					    open_settings.setText(R.string.open_settings_14);
-					    open_patched.setText(R.string.open_patched_14);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_14);
+					title_2.setText(R.string.spotify_amoled_14);
+					sub_text_installed.setText(R.string.installed_14);
+					sub_text_1.setText(R.string.latest_14);
+					sub_text_2.setText(R.string.latest_14);
+					sub_text_3.setText(R.string.latest_14);
+					version_switch_1.setText(R.string.versions_14);
+					version_switch_2.setText(R.string.versions_14);
+					version_switch_3.setText(R.string.versions_14);
+					changelogs.setText(R.string.changelogs_14);
+					title_sub.setText(R.string.manager_tools_14);
+					device_cpu.setText(R.string.device_cpu_14);
+					source.setText(R.string.source_14);
+					support.setText(R.string.support_14);
+					donate.setText(R.string.donate_14);
+					about.setText(R.string.about_14);
+					list_auto_refresh.setText(R.string.list_auto_refresh_14);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_14);
+					force_auto_install.setText(R.string.force_auto_install_14);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_14);
+					theme.setText(R.string.show_themes_14);
+					apk_location.setText(R.string.apk_location_14);
+					apk_location_info.setText(R.string.apk_location_desc_14);
+					clear_directory_folders.setText(R.string.clear_directory_folders_14);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_14);
+					reset_settings.setText(R.string.reset_settings_14);
+					sub_title.setText(R.string.about_sub_14);
+					developer_manager.setText(R.string.xmanager_dev_14);
+					developer_spotify.setText(R.string.spotify_mod_devs_14);
+					support_team.setText(R.string.telegram_support_team_14);
+					mod_testers_1.setText(R.string.manager_testers_14);
+					mod_testers_2.setText(R.string.manager_hosting_14);
+					mobilism_team.setText(R.string.mobilism_team_14);
+					forum_team.setText(R.string.forum_team_14);
+					manager_team.setText(R.string.xspotify_team_14);
+					contributors_1.setText(R.string.contributors_14);
+					download_selected.setText(R.string.download_selected_14);
+					download_ready.setText(R.string.download_ready_14);
+					download_ready_desc.setText(R.string.download_ready_desc_14);
+					downloading_file.setText(R.string.downloading_file_14);
+					download_success.setText(R.string.download_success_14);
+					new_update.setText(R.string.new_update_14);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_14);
+					continue_1.setText(R.string.continue_1_14);
+					cancel.setText(R.string.cancel_14);
+					fixer.setText(R.string.fixer_14);
+					download.setText(R.string.download_14);
+					later.setText(R.string.later_14);
+					install_now.setText(R.string.install_now_14);
+					install_update.setText(R.string.install_update_14);
+					go_back.setText(R.string.go_back_14);
+					download_update.setText(R.string.download_update_14);
+					not_now.setText(R.string.not_now_14);
+					show_support.setText(R.string.show_support_14);
+					show_support_desc.setText(R.string.show_support_desc_14);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_14);
+					settings_title.setText(R.string.settings_title_14);
+					about_title.setText(R.string.about_title_14);
+					maintenance.setText(R.string.maintenance_14);
+					maintenance_desc.setText(R.string.maintenance_desc_14);
+					thanks.setText(R.string.thanks_14);
+					language.setText(R.string.language_14);
+					website.setText(R.string.website_14);
+					discord.setText(R.string.discord_14);
+					reddit.setText(R.string.reddit_14);
+					faq.setText(R.string.faq_14);
+					cloned_version.setText(R.string.cloned_version_14);
+					cloned_version_info.setText(R.string.cloned_version_desc_14);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_14);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_14);
+					installation_failed.setText(R.string.installation_failed_14);
+					installation_failed_desc.setText(R.string.installation_failed_desc_14);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_14);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_14);
+					existing_patched.setText(R.string.existing_patched_14);
+					existing_patched_desc.setText(R.string.existing_patched_desc_14);
+					close.setText(R.string.close_14);
+					cloned.setText(R.string.cloned_14);
+					ream.setText(R.string.ream_14);
+					install.setText(R.string.install_14);
+					uninstall.setText(R.string.uninstall_14);
+					ignore.setText(R.string.ignore_14);
+					delete.setText(R.string.delete_14);
+					uninstall_patched.setText(R.string.uninstall_patched_14);
+					open_settings.setText(R.string.open_settings_14);
+					open_patched.setText(R.string.open_patched_14);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 15) {
 					LANGUAGE.edit().putString("LANGUAGE", "15").commit();
-					    title_1.setText(R.string.spotify_regular_15);
-						title_2.setText(R.string.spotify_amoled_15);
-						sub_text_installed.setText(R.string.installed_15);
-						sub_text_1.setText(R.string.latest_15);
-						sub_text_3.setText(R.string.latest_15);
-						version_switch_1.setText(R.string.versions_15);
-						version_switch_2.setText(R.string.versions_15);
-						changelogs.setText(R.string.changelogs_15);
-						title_sub.setText(R.string.manager_tools_15);
-						device_cpu.setText(R.string.device_cpu_15);
-						source.setText(R.string.source_15);
-						support.setText(R.string.support_15);
-						donate.setText(R.string.donate_15);
-						about.setText(R.string.about_15);
-						list_auto_refresh.setText(R.string.list_auto_refresh_15);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_15);
-						force_auto_install.setText(R.string.force_auto_install_15);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_15);
-						theme.setText(R.string.show_themes_15);
-						apk_location.setText(R.string.apk_location_15);
-						apk_location_info.setText(R.string.apk_location_desc_15);
-						clear_directory_folders.setText(R.string.clear_directory_folders_15);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_15);
-						reset_settings.setText(R.string.reset_settings_15);
-						sub_title.setText(R.string.about_sub_15);
-						developer_manager.setText(R.string.xmanager_dev_15);
-						developer_spotify.setText(R.string.spotify_mod_devs_15);
-						support_team.setText(R.string.telegram_support_team_15);
-						mod_testers_1.setText(R.string.manager_testers_15);
-						mod_testers_2.setText(R.string.manager_hosting_15);
-						mobilism_team.setText(R.string.mobilism_team_15);
-						forum_team.setText(R.string.forum_team_15);
-						manager_team.setText(R.string.xspotify_team_15);
-						contributors_1.setText(R.string.contributors_15);
-						download_selected.setText(R.string.download_selected_15);
-						download_ready.setText(R.string.download_ready_15);
-						download_ready_desc.setText(R.string.download_ready_desc_15);
-						downloading_file.setText(R.string.downloading_file_15);
-						download_success.setText(R.string.download_success_15);
-						new_update.setText(R.string.new_update_15);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_15);
-						continue_1.setText(R.string.continue_1_15);
-						cancel.setText(R.string.cancel_15);
-					    fixer.setText(R.string.fixer_15);
-						download.setText(R.string.download_15);
-						later.setText(R.string.later_15);
-						install_now.setText(R.string.install_now_15);
-						install_update.setText(R.string.install_update_15);
-						go_back.setText(R.string.go_back_15);
-						download_update.setText(R.string.download_update_15);
-						not_now.setText(R.string.not_now_15);
-						show_support.setText(R.string.show_support_15);
-						show_support_desc.setText(R.string.show_support_desc_15);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_15);
-						settings_title.setText(R.string.settings_title_15);
-						about_title.setText(R.string.about_title_15);
-						maintenance.setText(R.string.maintenance_15);
-						maintenance_desc.setText(R.string.maintenance_desc_15);
-						thanks.setText(R.string.thanks_15);
-						language.setText(R.string.language_15);
-						website.setText(R.string.website_15);
-						discord.setText(R.string.discord_15);
-						reddit.setText(R.string.reddit_15);
-						faq.setText(R.string.faq_15);
-						cloned_version.setText(R.string.cloned_version_15);
-						cloned_version_info.setText(R.string.cloned_version_desc_15);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_15);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_15);
-					    installation_failed.setText(R.string.installation_failed_15);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_15);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_15);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_15);
-					    existing_patched.setText(R.string.existing_patched_15);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_15);
-					    close.setText(R.string.close_15);
-					    cloned.setText(R.string.cloned_15);
-					    ream.setText(R.string.ream_15);
-					    install.setText(R.string.install_15);
-					    uninstall.setText(R.string.uninstall_15);
-					    ignore.setText(R.string.ignore_15);
-					    delete.setText(R.string.delete_15);
-					    uninstall_patched.setText(R.string.uninstall_patched_15);
-					    open_settings.setText(R.string.open_settings_15);
-					    open_patched.setText(R.string.open_patched_15);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_15);
+					title_2.setText(R.string.spotify_amoled_15);
+					sub_text_installed.setText(R.string.installed_15);
+					sub_text_1.setText(R.string.latest_15);
+					sub_text_2.setText(R.string.latest_15);
+					sub_text_3.setText(R.string.latest_15);
+					version_switch_1.setText(R.string.versions_15);
+					version_switch_2.setText(R.string.versions_15);
+					version_switch_3.setText(R.string.versions_15);
+					changelogs.setText(R.string.changelogs_15);
+					title_sub.setText(R.string.manager_tools_15);
+					device_cpu.setText(R.string.device_cpu_15);
+					source.setText(R.string.source_15);
+					support.setText(R.string.support_15);
+					donate.setText(R.string.donate_15);
+					about.setText(R.string.about_15);
+					list_auto_refresh.setText(R.string.list_auto_refresh_15);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_15);
+					force_auto_install.setText(R.string.force_auto_install_15);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_15);
+					theme.setText(R.string.show_themes_15);
+					apk_location.setText(R.string.apk_location_15);
+					apk_location_info.setText(R.string.apk_location_desc_15);
+					clear_directory_folders.setText(R.string.clear_directory_folders_15);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_15);
+					reset_settings.setText(R.string.reset_settings_15);
+					sub_title.setText(R.string.about_sub_15);
+					developer_manager.setText(R.string.xmanager_dev_15);
+					developer_spotify.setText(R.string.spotify_mod_devs_15);
+					support_team.setText(R.string.telegram_support_team_15);
+					mod_testers_1.setText(R.string.manager_testers_15);
+					mod_testers_2.setText(R.string.manager_hosting_15);
+					mobilism_team.setText(R.string.mobilism_team_15);
+					forum_team.setText(R.string.forum_team_15);
+					manager_team.setText(R.string.xspotify_team_15);
+					contributors_1.setText(R.string.contributors_15);
+					download_selected.setText(R.string.download_selected_15);
+					download_ready.setText(R.string.download_ready_15);
+					download_ready_desc.setText(R.string.download_ready_desc_15);
+					downloading_file.setText(R.string.downloading_file_15);
+					download_success.setText(R.string.download_success_15);
+					new_update.setText(R.string.new_update_15);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_15);
+					continue_1.setText(R.string.continue_1_15);
+					cancel.setText(R.string.cancel_15);
+					fixer.setText(R.string.fixer_15);
+					download.setText(R.string.download_15);
+					later.setText(R.string.later_15);
+					install_now.setText(R.string.install_now_15);
+					install_update.setText(R.string.install_update_15);
+					go_back.setText(R.string.go_back_15);
+					download_update.setText(R.string.download_update_15);
+					not_now.setText(R.string.not_now_15);
+					show_support.setText(R.string.show_support_15);
+					show_support_desc.setText(R.string.show_support_desc_15);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_15);
+					settings_title.setText(R.string.settings_title_15);
+					about_title.setText(R.string.about_title_15);
+					maintenance.setText(R.string.maintenance_15);
+					maintenance_desc.setText(R.string.maintenance_desc_15);
+					thanks.setText(R.string.thanks_15);
+					language.setText(R.string.language_15);
+					website.setText(R.string.website_15);
+					discord.setText(R.string.discord_15);
+					reddit.setText(R.string.reddit_15);
+					faq.setText(R.string.faq_15);
+					cloned_version.setText(R.string.cloned_version_15);
+					cloned_version_info.setText(R.string.cloned_version_desc_15);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_15);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_15);
+					installation_failed.setText(R.string.installation_failed_15);
+					installation_failed_desc.setText(R.string.installation_failed_desc_15);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_15);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_15);
+					existing_patched.setText(R.string.existing_patched_15);
+					existing_patched_desc.setText(R.string.existing_patched_desc_15);
+					close.setText(R.string.close_15);
+					cloned.setText(R.string.cloned_15);
+					ream.setText(R.string.ream_15);
+					install.setText(R.string.install_15);
+					uninstall.setText(R.string.uninstall_15);
+					ignore.setText(R.string.ignore_15);
+					delete.setText(R.string.delete_15);
+					uninstall_patched.setText(R.string.uninstall_patched_15);
+					open_settings.setText(R.string.open_settings_15);
+					open_patched.setText(R.string.open_patched_15);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 16) {
 					LANGUAGE.edit().putString("LANGUAGE", "16").commit();
-					    title_1.setText(R.string.spotify_regular_16);
-						title_2.setText(R.string.spotify_amoled_16);
-						sub_text_installed.setText(R.string.installed_16);
-						sub_text_1.setText(R.string.latest_16);
-						sub_text_3.setText(R.string.latest_16);
-						version_switch_1.setText(R.string.versions_16);
-						version_switch_2.setText(R.string.versions_16);
-						changelogs.setText(R.string.changelogs_16);
-						title_sub.setText(R.string.manager_tools_16);
-						device_cpu.setText(R.string.device_cpu_16);
-						source.setText(R.string.source_16);
-						support.setText(R.string.support_16);
-						donate.setText(R.string.donate_16);
-						about.setText(R.string.about_16);
-						list_auto_refresh.setText(R.string.list_auto_refresh_16);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_16);
-						force_auto_install.setText(R.string.force_auto_install_16);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_16);
-						theme.setText(R.string.show_themes_16);
-						apk_location.setText(R.string.apk_location_16);
-						apk_location_info.setText(R.string.apk_location_desc_16);
-						clear_directory_folders.setText(R.string.clear_directory_folders_16);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_16);
-						reset_settings.setText(R.string.reset_settings_16);
-						sub_title.setText(R.string.about_sub_16);
-						developer_manager.setText(R.string.xmanager_dev_16);
-						developer_spotify.setText(R.string.spotify_mod_devs_16);
-						support_team.setText(R.string.telegram_support_team_16);
-						mod_testers_1.setText(R.string.manager_testers_16);
-						mod_testers_2.setText(R.string.manager_hosting_16);
-						mobilism_team.setText(R.string.mobilism_team_16);
-						forum_team.setText(R.string.forum_team_16);
-						manager_team.setText(R.string.xspotify_team_16);
-						contributors_1.setText(R.string.contributors_16);
-						download_selected.setText(R.string.download_selected_16);
-						download_ready.setText(R.string.download_ready_16);
-						download_ready_desc.setText(R.string.download_ready_desc_16);
-						downloading_file.setText(R.string.downloading_file_16);
-						download_success.setText(R.string.download_success_16);
-						new_update.setText(R.string.new_update_16);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_16);
-						continue_1.setText(R.string.continue_1_16);
-						cancel.setText(R.string.cancel_16);
-					    fixer.setText(R.string.fixer_16);
-						download.setText(R.string.download_16);
-						later.setText(R.string.later_16);
-						install_now.setText(R.string.install_now_16);
-						install_update.setText(R.string.install_update_16);
-						go_back.setText(R.string.go_back_16);
-						download_update.setText(R.string.download_update_16);
-						not_now.setText(R.string.not_now_16);
-						show_support.setText(R.string.show_support_16);
-						show_support_desc.setText(R.string.show_support_desc_16);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_16);
-						settings_title.setText(R.string.settings_title_16);
-						about_title.setText(R.string.about_title_16);
-						maintenance.setText(R.string.maintenance_16);
-						maintenance_desc.setText(R.string.maintenance_desc_16);
-						thanks.setText(R.string.thanks_16);
-						language.setText(R.string.language_16);
-						website.setText(R.string.website_16);
-						discord.setText(R.string.discord_16);
-						reddit.setText(R.string.reddit_16);
-						faq.setText(R.string.faq_16);
-						cloned_version.setText(R.string.cloned_version_16);
-						cloned_version_info.setText(R.string.cloned_version_desc_16);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_16);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_16);
-					    installation_failed.setText(R.string.installation_failed_16);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_16);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_16);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_16);
-					    existing_patched.setText(R.string.existing_patched_16);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_16);
-					    close.setText(R.string.close_16);
-					    cloned.setText(R.string.cloned_16);
-					    ream.setText(R.string.ream_16);
-					    install.setText(R.string.install_16);
-					    uninstall.setText(R.string.uninstall_16);
-					    ignore.setText(R.string.ignore_16);
-					    delete.setText(R.string.delete_16);
-					    uninstall_patched.setText(R.string.uninstall_patched_16);
-					    open_settings.setText(R.string.open_settings_16);
-					    open_patched.setText(R.string.open_patched_16);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_16);
+					title_2.setText(R.string.spotify_amoled_16);
+					sub_text_installed.setText(R.string.installed_16);
+					sub_text_1.setText(R.string.latest_16);
+					sub_text_2.setText(R.string.latest_16);
+					sub_text_3.setText(R.string.latest_16);
+					version_switch_1.setText(R.string.versions_16);
+					version_switch_2.setText(R.string.versions_16);
+					version_switch_3.setText(R.string.versions_16);
+					changelogs.setText(R.string.changelogs_16);
+					title_sub.setText(R.string.manager_tools_16);
+					device_cpu.setText(R.string.device_cpu_16);
+					source.setText(R.string.source_16);
+					support.setText(R.string.support_16);
+					donate.setText(R.string.donate_16);
+					about.setText(R.string.about_16);
+					list_auto_refresh.setText(R.string.list_auto_refresh_16);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_16);
+					force_auto_install.setText(R.string.force_auto_install_16);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_16);
+					theme.setText(R.string.show_themes_16);
+					apk_location.setText(R.string.apk_location_16);
+					apk_location_info.setText(R.string.apk_location_desc_16);
+					clear_directory_folders.setText(R.string.clear_directory_folders_16);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_16);
+					reset_settings.setText(R.string.reset_settings_16);
+					sub_title.setText(R.string.about_sub_16);
+					developer_manager.setText(R.string.xmanager_dev_16);
+					developer_spotify.setText(R.string.spotify_mod_devs_16);
+					support_team.setText(R.string.telegram_support_team_16);
+					mod_testers_1.setText(R.string.manager_testers_16);
+					mod_testers_2.setText(R.string.manager_hosting_16);
+					mobilism_team.setText(R.string.mobilism_team_16);
+					forum_team.setText(R.string.forum_team_16);
+					manager_team.setText(R.string.xspotify_team_16);
+					contributors_1.setText(R.string.contributors_16);
+					download_selected.setText(R.string.download_selected_16);
+					download_ready.setText(R.string.download_ready_16);
+					download_ready_desc.setText(R.string.download_ready_desc_16);
+					downloading_file.setText(R.string.downloading_file_16);
+					download_success.setText(R.string.download_success_16);
+					new_update.setText(R.string.new_update_16);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_16);
+					continue_1.setText(R.string.continue_1_16);
+					cancel.setText(R.string.cancel_16);
+					fixer.setText(R.string.fixer_16);
+					download.setText(R.string.download_16);
+					later.setText(R.string.later_16);
+					install_now.setText(R.string.install_now_16);
+					install_update.setText(R.string.install_update_16);
+					go_back.setText(R.string.go_back_16);
+					download_update.setText(R.string.download_update_16);
+					not_now.setText(R.string.not_now_16);
+					show_support.setText(R.string.show_support_16);
+					show_support_desc.setText(R.string.show_support_desc_16);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_16);
+					settings_title.setText(R.string.settings_title_16);
+					about_title.setText(R.string.about_title_16);
+					maintenance.setText(R.string.maintenance_16);
+					maintenance_desc.setText(R.string.maintenance_desc_16);
+					thanks.setText(R.string.thanks_16);
+					language.setText(R.string.language_16);
+					website.setText(R.string.website_16);
+					discord.setText(R.string.discord_16);
+					reddit.setText(R.string.reddit_16);
+					faq.setText(R.string.faq_16);
+					cloned_version.setText(R.string.cloned_version_16);
+					cloned_version_info.setText(R.string.cloned_version_desc_16);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_16);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_16);
+					installation_failed.setText(R.string.installation_failed_16);
+					installation_failed_desc.setText(R.string.installation_failed_desc_16);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_16);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_16);
+					existing_patched.setText(R.string.existing_patched_16);
+					existing_patched_desc.setText(R.string.existing_patched_desc_16);
+					close.setText(R.string.close_16);
+					cloned.setText(R.string.cloned_16);
+					ream.setText(R.string.ream_16);
+					install.setText(R.string.install_16);
+					uninstall.setText(R.string.uninstall_16);
+					ignore.setText(R.string.ignore_16);
+					delete.setText(R.string.delete_16);
+					uninstall_patched.setText(R.string.uninstall_patched_16);
+					open_settings.setText(R.string.open_settings_16);
+					open_patched.setText(R.string.open_patched_16);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 17) {
 					LANGUAGE.edit().putString("LANGUAGE", "17").commit();
-					    title_1.setText(R.string.spotify_regular_17);
-						title_2.setText(R.string.spotify_amoled_17);
-						sub_text_installed.setText(R.string.installed_17);
-						sub_text_1.setText(R.string.latest_17);
-						sub_text_3.setText(R.string.latest_17);
-						version_switch_1.setText(R.string.versions_17);
-						version_switch_2.setText(R.string.versions_17);
-						changelogs.setText(R.string.changelogs_17);
-						title_sub.setText(R.string.manager_tools_17);
-						device_cpu.setText(R.string.device_cpu_17);
-						source.setText(R.string.source_17);
-						support.setText(R.string.support_17);
-						donate.setText(R.string.donate_17);
-						about.setText(R.string.about_17);
-						list_auto_refresh.setText(R.string.list_auto_refresh_17);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_17);
-						force_auto_install.setText(R.string.force_auto_install_17);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_17);
-						theme.setText(R.string.show_themes_17);
-						apk_location.setText(R.string.apk_location_17);
-						apk_location_info.setText(R.string.apk_location_desc_17);
-						clear_directory_folders.setText(R.string.clear_directory_folders_17);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_17);
-						reset_settings.setText(R.string.reset_settings_17);
-						sub_title.setText(R.string.about_sub_17);
-						developer_manager.setText(R.string.xmanager_dev_17);
-						developer_spotify.setText(R.string.spotify_mod_devs_17);
-						support_team.setText(R.string.telegram_support_team_17);
-						mod_testers_1.setText(R.string.manager_testers_17);
-						mod_testers_2.setText(R.string.manager_hosting_17);
-						mobilism_team.setText(R.string.mobilism_team_17);
-						forum_team.setText(R.string.forum_team_17);
-						manager_team.setText(R.string.xspotify_team_17);
-						contributors_1.setText(R.string.contributors_17);
-						download_selected.setText(R.string.download_selected_17);
-						download_ready.setText(R.string.download_ready_17);
-						download_ready_desc.setText(R.string.download_ready_desc_17);
-						downloading_file.setText(R.string.downloading_file_17);
-						download_success.setText(R.string.download_success_17);
-						new_update.setText(R.string.new_update_17);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_17);
-						continue_1.setText(R.string.continue_1_17);
-						cancel.setText(R.string.cancel_17);
-					    fixer.setText(R.string.fixer_17);
-						download.setText(R.string.download_17);
-						later.setText(R.string.later_17);
-						install_now.setText(R.string.install_now_17);
-						install_update.setText(R.string.install_update_17);
-						go_back.setText(R.string.go_back_17);
-						download_update.setText(R.string.download_update_17);
-						not_now.setText(R.string.not_now_17);
-						show_support.setText(R.string.show_support_17);
-						show_support_desc.setText(R.string.show_support_desc_17);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_17);
-						settings_title.setText(R.string.settings_title_17);
-						about_title.setText(R.string.about_title_17);
-						maintenance.setText(R.string.maintenance_17);
-						maintenance_desc.setText(R.string.maintenance_desc_17);
-						thanks.setText(R.string.thanks_17);
-						language.setText(R.string.language_17);
-						website.setText(R.string.website_17);
-						discord.setText(R.string.discord_17);
-						reddit.setText(R.string.reddit_17);
-						faq.setText(R.string.faq_17);
-						cloned_version.setText(R.string.cloned_version_17);
-						cloned_version_info.setText(R.string.cloned_version_desc_17);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_17);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_17);
-					    installation_failed.setText(R.string.installation_failed_17);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_17);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_17);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_17);
-					    existing_patched.setText(R.string.existing_patched_17);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_17);
-					    close.setText(R.string.close_17);
-					    cloned.setText(R.string.cloned_17);
-					    ream.setText(R.string.ream_17);
-					    install.setText(R.string.install_17);
-					    uninstall.setText(R.string.uninstall_17);
-					    ignore.setText(R.string.ignore_17);
-					    delete.setText(R.string.delete_17);
-					    uninstall_patched.setText(R.string.uninstall_patched_17);
-					    open_settings.setText(R.string.open_settings_17);
-					    open_patched.setText(R.string.open_patched_17);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_17);
+					title_2.setText(R.string.spotify_amoled_17);
+					sub_text_installed.setText(R.string.installed_17);
+					sub_text_1.setText(R.string.latest_17);
+					sub_text_2.setText(R.string.latest_17);
+					sub_text_3.setText(R.string.latest_17);
+					version_switch_1.setText(R.string.versions_17);
+					version_switch_2.setText(R.string.versions_17);
+					version_switch_3.setText(R.string.versions_17);
+					changelogs.setText(R.string.changelogs_17);
+					title_sub.setText(R.string.manager_tools_17);
+					device_cpu.setText(R.string.device_cpu_17);
+					source.setText(R.string.source_17);
+					support.setText(R.string.support_17);
+					donate.setText(R.string.donate_17);
+					about.setText(R.string.about_17);
+					list_auto_refresh.setText(R.string.list_auto_refresh_17);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_17);
+					force_auto_install.setText(R.string.force_auto_install_17);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_17);
+					theme.setText(R.string.show_themes_17);
+					apk_location.setText(R.string.apk_location_17);
+					apk_location_info.setText(R.string.apk_location_desc_17);
+					clear_directory_folders.setText(R.string.clear_directory_folders_17);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_17);
+					reset_settings.setText(R.string.reset_settings_17);
+					sub_title.setText(R.string.about_sub_17);
+					developer_manager.setText(R.string.xmanager_dev_17);
+					developer_spotify.setText(R.string.spotify_mod_devs_17);
+					support_team.setText(R.string.telegram_support_team_17);
+					mod_testers_1.setText(R.string.manager_testers_17);
+					mod_testers_2.setText(R.string.manager_hosting_17);
+					mobilism_team.setText(R.string.mobilism_team_17);
+					forum_team.setText(R.string.forum_team_17);
+					manager_team.setText(R.string.xspotify_team_17);
+					contributors_1.setText(R.string.contributors_17);
+					download_selected.setText(R.string.download_selected_17);
+					download_ready.setText(R.string.download_ready_17);
+					download_ready_desc.setText(R.string.download_ready_desc_17);
+					downloading_file.setText(R.string.downloading_file_17);
+					download_success.setText(R.string.download_success_17);
+					new_update.setText(R.string.new_update_17);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_17);
+					continue_1.setText(R.string.continue_1_17);
+					cancel.setText(R.string.cancel_17);
+					fixer.setText(R.string.fixer_17);
+					download.setText(R.string.download_17);
+					later.setText(R.string.later_17);
+					install_now.setText(R.string.install_now_17);
+					install_update.setText(R.string.install_update_17);
+					go_back.setText(R.string.go_back_17);
+					download_update.setText(R.string.download_update_17);
+					not_now.setText(R.string.not_now_17);
+					show_support.setText(R.string.show_support_17);
+					show_support_desc.setText(R.string.show_support_desc_17);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_17);
+					settings_title.setText(R.string.settings_title_17);
+					about_title.setText(R.string.about_title_17);
+					maintenance.setText(R.string.maintenance_17);
+					maintenance_desc.setText(R.string.maintenance_desc_17);
+					thanks.setText(R.string.thanks_17);
+					language.setText(R.string.language_17);
+					website.setText(R.string.website_17);
+					discord.setText(R.string.discord_17);
+					reddit.setText(R.string.reddit_17);
+					faq.setText(R.string.faq_17);
+					cloned_version.setText(R.string.cloned_version_17);
+					cloned_version_info.setText(R.string.cloned_version_desc_17);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_17);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_17);
+					installation_failed.setText(R.string.installation_failed_17);
+					installation_failed_desc.setText(R.string.installation_failed_desc_17);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_17);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_17);
+					existing_patched.setText(R.string.existing_patched_17);
+					existing_patched_desc.setText(R.string.existing_patched_desc_17);
+					close.setText(R.string.close_17);
+					cloned.setText(R.string.cloned_17);
+					ream.setText(R.string.ream_17);
+					install.setText(R.string.install_17);
+					uninstall.setText(R.string.uninstall_17);
+					ignore.setText(R.string.ignore_17);
+					delete.setText(R.string.delete_17);
+					uninstall_patched.setText(R.string.uninstall_patched_17);
+					open_settings.setText(R.string.open_settings_17);
+					open_patched.setText(R.string.open_patched_17);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 18) {
 					LANGUAGE.edit().putString("LANGUAGE", "18").commit();
-					    title_1.setText(R.string.spotify_regular_18);
-						title_2.setText(R.string.spotify_amoled_18);
-						sub_text_installed.setText(R.string.installed_18);
-						sub_text_1.setText(R.string.latest_18);
-						sub_text_3.setText(R.string.latest_18);
-						version_switch_1.setText(R.string.versions_18);
-						version_switch_2.setText(R.string.versions_18);
-						changelogs.setText(R.string.changelogs_18);
-						title_sub.setText(R.string.manager_tools_18);
-						device_cpu.setText(R.string.device_cpu_18);
-						source.setText(R.string.source_18);
-						support.setText(R.string.support_18);
-						donate.setText(R.string.donate_18);
-						about.setText(R.string.about_18);
-						list_auto_refresh.setText(R.string.list_auto_refresh_18);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_18);
-						force_auto_install.setText(R.string.force_auto_install_18);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_18);
-						theme.setText(R.string.show_themes_18);
-						apk_location.setText(R.string.apk_location_18);
-						apk_location_info.setText(R.string.apk_location_desc_18);
-						clear_directory_folders.setText(R.string.clear_directory_folders_18);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_18);
-						reset_settings.setText(R.string.reset_settings_18);
-						sub_title.setText(R.string.about_sub_18);
-						developer_manager.setText(R.string.xmanager_dev_18);
-						developer_spotify.setText(R.string.spotify_mod_devs_18);
-						support_team.setText(R.string.telegram_support_team_18);
-						mod_testers_1.setText(R.string.manager_testers_18);
-						mod_testers_2.setText(R.string.manager_hosting_18);
-						mobilism_team.setText(R.string.mobilism_team_18);
-						forum_team.setText(R.string.forum_team_18);
-						manager_team.setText(R.string.xspotify_team_18);
-						contributors_1.setText(R.string.contributors_18);
-						download_selected.setText(R.string.download_selected_18);
-						download_ready.setText(R.string.download_ready_18);
-						download_ready_desc.setText(R.string.download_ready_desc_18);
-						downloading_file.setText(R.string.downloading_file_18);
-						download_success.setText(R.string.download_success_18);
-						new_update.setText(R.string.new_update_18);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_18);
-						continue_1.setText(R.string.continue_1_18);
-						cancel.setText(R.string.cancel_18);
-					    fixer.setText(R.string.fixer_18);
-						download.setText(R.string.download_18);
-						later.setText(R.string.later_18);
-						install_now.setText(R.string.install_now_18);
-						install_update.setText(R.string.install_update_18);
-						go_back.setText(R.string.go_back_18);
-						download_update.setText(R.string.download_update_18);
-						not_now.setText(R.string.not_now_18);
-						show_support.setText(R.string.show_support_18);
-						show_support_desc.setText(R.string.show_support_desc_18);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_18);
-						settings_title.setText(R.string.settings_title_18);
-						about_title.setText(R.string.about_title_18);
-						maintenance.setText(R.string.maintenance_18);
-						maintenance_desc.setText(R.string.maintenance_desc_18);
-						thanks.setText(R.string.thanks_18);
-						language.setText(R.string.language_18);
-						website.setText(R.string.website_18);
-						discord.setText(R.string.discord_18);
-						reddit.setText(R.string.reddit_18);
-						faq.setText(R.string.faq_18);
-						cloned_version.setText(R.string.cloned_version_18);
-						cloned_version_info.setText(R.string.cloned_version_desc_18);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_18);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_18);
-					    installation_failed.setText(R.string.installation_failed_18);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_18);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_18);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_18);
-					    existing_patched.setText(R.string.existing_patched_18);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_18);
-					    close.setText(R.string.close_18);
-					    cloned.setText(R.string.cloned_18);
-					    ream.setText(R.string.ream_18);
-					    install.setText(R.string.install_18);
-					    uninstall.setText(R.string.uninstall_18);
-					    ignore.setText(R.string.ignore_18);
-					    delete.setText(R.string.delete_18);
-					    uninstall_patched.setText(R.string.uninstall_patched_18);
-					    open_settings.setText(R.string.open_settings_18);
-					    open_patched.setText(R.string.open_patched_18);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_18);
+					title_2.setText(R.string.spotify_amoled_18);
+					sub_text_installed.setText(R.string.installed_18);
+					sub_text_1.setText(R.string.latest_18);
+					sub_text_2.setText(R.string.latest_18);
+					sub_text_3.setText(R.string.latest_18);
+					version_switch_1.setText(R.string.versions_18);
+					version_switch_2.setText(R.string.versions_18);
+					version_switch_3.setText(R.string.versions_18);
+					changelogs.setText(R.string.changelogs_18);
+					title_sub.setText(R.string.manager_tools_18);
+					device_cpu.setText(R.string.device_cpu_18);
+					source.setText(R.string.source_18);
+					support.setText(R.string.support_18);
+					donate.setText(R.string.donate_18);
+					about.setText(R.string.about_18);
+					list_auto_refresh.setText(R.string.list_auto_refresh_18);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_18);
+					force_auto_install.setText(R.string.force_auto_install_18);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_18);
+					theme.setText(R.string.show_themes_18);
+					apk_location.setText(R.string.apk_location_18);
+					apk_location_info.setText(R.string.apk_location_desc_18);
+					clear_directory_folders.setText(R.string.clear_directory_folders_18);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_18);
+					reset_settings.setText(R.string.reset_settings_18);
+					sub_title.setText(R.string.about_sub_18);
+					developer_manager.setText(R.string.xmanager_dev_18);
+					developer_spotify.setText(R.string.spotify_mod_devs_18);
+					support_team.setText(R.string.telegram_support_team_18);
+					mod_testers_1.setText(R.string.manager_testers_18);
+					mod_testers_2.setText(R.string.manager_hosting_18);
+					mobilism_team.setText(R.string.mobilism_team_18);
+					forum_team.setText(R.string.forum_team_18);
+					manager_team.setText(R.string.xspotify_team_18);
+					contributors_1.setText(R.string.contributors_18);
+					download_selected.setText(R.string.download_selected_18);
+					download_ready.setText(R.string.download_ready_18);
+					download_ready_desc.setText(R.string.download_ready_desc_18);
+					downloading_file.setText(R.string.downloading_file_18);
+					download_success.setText(R.string.download_success_18);
+					new_update.setText(R.string.new_update_18);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_18);
+					continue_1.setText(R.string.continue_1_18);
+					cancel.setText(R.string.cancel_18);
+					fixer.setText(R.string.fixer_18);
+					download.setText(R.string.download_18);
+					later.setText(R.string.later_18);
+					install_now.setText(R.string.install_now_18);
+					install_update.setText(R.string.install_update_18);
+					go_back.setText(R.string.go_back_18);
+					download_update.setText(R.string.download_update_18);
+					not_now.setText(R.string.not_now_18);
+					show_support.setText(R.string.show_support_18);
+					show_support_desc.setText(R.string.show_support_desc_18);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_18);
+					settings_title.setText(R.string.settings_title_18);
+					about_title.setText(R.string.about_title_18);
+					maintenance.setText(R.string.maintenance_18);
+					maintenance_desc.setText(R.string.maintenance_desc_18);
+					thanks.setText(R.string.thanks_18);
+					language.setText(R.string.language_18);
+					website.setText(R.string.website_18);
+					discord.setText(R.string.discord_18);
+					reddit.setText(R.string.reddit_18);
+					faq.setText(R.string.faq_18);
+					cloned_version.setText(R.string.cloned_version_18);
+					cloned_version_info.setText(R.string.cloned_version_desc_18);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_18);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_18);
+					installation_failed.setText(R.string.installation_failed_18);
+					installation_failed_desc.setText(R.string.installation_failed_desc_18);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_18);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_18);
+					existing_patched.setText(R.string.existing_patched_18);
+					existing_patched_desc.setText(R.string.existing_patched_desc_18);
+					close.setText(R.string.close_18);
+					cloned.setText(R.string.cloned_18);
+					ream.setText(R.string.ream_18);
+					install.setText(R.string.install_18);
+					uninstall.setText(R.string.uninstall_18);
+					ignore.setText(R.string.ignore_18);
+					delete.setText(R.string.delete_18);
+					uninstall_patched.setText(R.string.uninstall_patched_18);
+					open_settings.setText(R.string.open_settings_18);
+					open_patched.setText(R.string.open_patched_18);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 19) {
 					LANGUAGE.edit().putString("LANGUAGE", "19").commit();
-					    title_1.setText(R.string.spotify_regular_19);
-						title_2.setText(R.string.spotify_amoled_19);
-						sub_text_installed.setText(R.string.installed_19);
-						sub_text_1.setText(R.string.latest_19);
-						sub_text_3.setText(R.string.latest_19);
-						version_switch_1.setText(R.string.versions_19);
-						version_switch_2.setText(R.string.versions_19);
-						changelogs.setText(R.string.changelogs_19);
-						title_sub.setText(R.string.manager_tools_19);
-						device_cpu.setText(R.string.device_cpu_19);
-						source.setText(R.string.source_19);
-						support.setText(R.string.support_19);
-						donate.setText(R.string.donate_19);
-						about.setText(R.string.about_19);
-						list_auto_refresh.setText(R.string.list_auto_refresh_19);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_19);
-						force_auto_install.setText(R.string.force_auto_install_19);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_19);
-						theme.setText(R.string.show_themes_19);
-						apk_location.setText(R.string.apk_location_19);
-						apk_location_info.setText(R.string.apk_location_desc_19);
-						clear_directory_folders.setText(R.string.clear_directory_folders_19);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_19);
-						reset_settings.setText(R.string.reset_settings_19);
-						sub_title.setText(R.string.about_sub_19);
-						developer_manager.setText(R.string.xmanager_dev_19);
-						developer_spotify.setText(R.string.spotify_mod_devs_19);
-						support_team.setText(R.string.telegram_support_team_19);
-						mod_testers_1.setText(R.string.manager_testers_19);
-						mod_testers_2.setText(R.string.manager_hosting_19);
-						mobilism_team.setText(R.string.mobilism_team_19);
-						forum_team.setText(R.string.forum_team_19);
-						manager_team.setText(R.string.xspotify_team_19);
-						contributors_1.setText(R.string.contributors_19);
-						download_selected.setText(R.string.download_selected_19);
-						download_ready.setText(R.string.download_ready_19);
-						download_ready_desc.setText(R.string.download_ready_desc_19);
-						downloading_file.setText(R.string.downloading_file_19);
-						download_success.setText(R.string.download_success_19);
-						new_update.setText(R.string.new_update_19);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_19);
-						continue_1.setText(R.string.continue_1_19);
-						cancel.setText(R.string.cancel_19);
-					    fixer.setText(R.string.fixer_19);
-						download.setText(R.string.download_19);
-						later.setText(R.string.later_19);
-						install_now.setText(R.string.install_now_19);
-						install_update.setText(R.string.install_update_19);
-						go_back.setText(R.string.go_back_19);
-						download_update.setText(R.string.download_update_19);
-						not_now.setText(R.string.not_now_19);
-						show_support.setText(R.string.show_support_19);
-						show_support_desc.setText(R.string.show_support_desc_19);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_19);
-						settings_title.setText(R.string.settings_title_19);
-						about_title.setText(R.string.about_title_19);
-						maintenance.setText(R.string.maintenance_19);
-						maintenance_desc.setText(R.string.maintenance_desc_19);
-						thanks.setText(R.string.thanks_19);
-						language.setText(R.string.language_19);
-						website.setText(R.string.website_19);
-						discord.setText(R.string.discord_19);
-						reddit.setText(R.string.reddit_19);
-						faq.setText(R.string.faq_19);
-						cloned_version.setText(R.string.cloned_version_19);
-						cloned_version_info.setText(R.string.cloned_version_desc_19);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_19);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_19);
-					    installation_failed.setText(R.string.installation_failed_19);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_19);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_19);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_19);
-					    existing_patched.setText(R.string.existing_patched_19);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_19);
-					    close.setText(R.string.close_19);
-					    cloned.setText(R.string.cloned_19);
-					    ream.setText(R.string.ream_19);
-					    install.setText(R.string.install_19);
-					    uninstall.setText(R.string.uninstall_19);
-					    ignore.setText(R.string.ignore_19);
-					    delete.setText(R.string.delete_19);
-					    uninstall_patched.setText(R.string.uninstall_patched_19);
-					    open_settings.setText(R.string.open_settings_19);
-					    open_patched.setText(R.string.open_patched_19);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_19);
+					title_2.setText(R.string.spotify_amoled_19);
+					sub_text_installed.setText(R.string.installed_19);
+					sub_text_1.setText(R.string.latest_19);
+					sub_text_2.setText(R.string.latest_19);
+					sub_text_3.setText(R.string.latest_19);
+					version_switch_1.setText(R.string.versions_19);
+					version_switch_2.setText(R.string.versions_19);
+					version_switch_3.setText(R.string.versions_19);
+					changelogs.setText(R.string.changelogs_19);
+					title_sub.setText(R.string.manager_tools_19);
+					device_cpu.setText(R.string.device_cpu_19);
+					source.setText(R.string.source_19);
+					support.setText(R.string.support_19);
+					donate.setText(R.string.donate_19);
+					about.setText(R.string.about_19);
+					list_auto_refresh.setText(R.string.list_auto_refresh_19);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_19);
+					force_auto_install.setText(R.string.force_auto_install_19);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_19);
+					theme.setText(R.string.show_themes_19);
+					apk_location.setText(R.string.apk_location_19);
+					apk_location_info.setText(R.string.apk_location_desc_19);
+					clear_directory_folders.setText(R.string.clear_directory_folders_19);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_19);
+					reset_settings.setText(R.string.reset_settings_19);
+					sub_title.setText(R.string.about_sub_19);
+					developer_manager.setText(R.string.xmanager_dev_19);
+					developer_spotify.setText(R.string.spotify_mod_devs_19);
+					support_team.setText(R.string.telegram_support_team_19);
+					mod_testers_1.setText(R.string.manager_testers_19);
+					mod_testers_2.setText(R.string.manager_hosting_19);
+					mobilism_team.setText(R.string.mobilism_team_19);
+					forum_team.setText(R.string.forum_team_19);
+					manager_team.setText(R.string.xspotify_team_19);
+					contributors_1.setText(R.string.contributors_19);
+					download_selected.setText(R.string.download_selected_19);
+					download_ready.setText(R.string.download_ready_19);
+					download_ready_desc.setText(R.string.download_ready_desc_19);
+					downloading_file.setText(R.string.downloading_file_19);
+					download_success.setText(R.string.download_success_19);
+					new_update.setText(R.string.new_update_19);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_19);
+					continue_1.setText(R.string.continue_1_19);
+					cancel.setText(R.string.cancel_19);
+					fixer.setText(R.string.fixer_19);
+					download.setText(R.string.download_19);
+					later.setText(R.string.later_19);
+					install_now.setText(R.string.install_now_19);
+					install_update.setText(R.string.install_update_19);
+					go_back.setText(R.string.go_back_19);
+					download_update.setText(R.string.download_update_19);
+					not_now.setText(R.string.not_now_19);
+					show_support.setText(R.string.show_support_19);
+					show_support_desc.setText(R.string.show_support_desc_19);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_19);
+					settings_title.setText(R.string.settings_title_19);
+					about_title.setText(R.string.about_title_19);
+					maintenance.setText(R.string.maintenance_19);
+					maintenance_desc.setText(R.string.maintenance_desc_19);
+					thanks.setText(R.string.thanks_19);
+					language.setText(R.string.language_19);
+					website.setText(R.string.website_19);
+					discord.setText(R.string.discord_19);
+					reddit.setText(R.string.reddit_19);
+					faq.setText(R.string.faq_19);
+					cloned_version.setText(R.string.cloned_version_19);
+					cloned_version_info.setText(R.string.cloned_version_desc_19);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_19);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_19);
+					installation_failed.setText(R.string.installation_failed_19);
+					installation_failed_desc.setText(R.string.installation_failed_desc_19);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_19);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_19);
+					existing_patched.setText(R.string.existing_patched_19);
+					existing_patched_desc.setText(R.string.existing_patched_desc_19);
+					close.setText(R.string.close_19);
+					cloned.setText(R.string.cloned_19);
+					ream.setText(R.string.ream_19);
+					install.setText(R.string.install_19);
+					uninstall.setText(R.string.uninstall_19);
+					ignore.setText(R.string.ignore_19);
+					delete.setText(R.string.delete_19);
+					uninstall_patched.setText(R.string.uninstall_patched_19);
+					open_settings.setText(R.string.open_settings_19);
+					open_patched.setText(R.string.open_patched_19);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 20) {
 					LANGUAGE.edit().putString("LANGUAGE", "20").commit();
-					    title_1.setText(R.string.spotify_regular_20);
-						title_2.setText(R.string.spotify_amoled_20);
-						sub_text_installed.setText(R.string.installed_20);
-						sub_text_1.setText(R.string.latest_20);
-						sub_text_3.setText(R.string.latest_20);
-						version_switch_1.setText(R.string.versions_20);
-						version_switch_2.setText(R.string.versions_20);
-						changelogs.setText(R.string.changelogs_20);
-						title_sub.setText(R.string.manager_tools_20);
-						device_cpu.setText(R.string.device_cpu_20);
-						source.setText(R.string.source_20);
-						support.setText(R.string.support_20);
-						donate.setText(R.string.donate_20);
-						about.setText(R.string.about_20);
-						list_auto_refresh.setText(R.string.list_auto_refresh_20);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_20);
-						force_auto_install.setText(R.string.force_auto_install_20);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_20);
-						theme.setText(R.string.show_themes_20);
-						apk_location.setText(R.string.apk_location_20);
-						apk_location_info.setText(R.string.apk_location_desc_20);
-						clear_directory_folders.setText(R.string.clear_directory_folders_20);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_20);
-						reset_settings.setText(R.string.reset_settings_20);
-						sub_title.setText(R.string.about_sub_20);
-						developer_manager.setText(R.string.xmanager_dev_20);
-						developer_spotify.setText(R.string.spotify_mod_devs_20);
-						support_team.setText(R.string.telegram_support_team_20);
-						mod_testers_1.setText(R.string.manager_testers_20);
-						mod_testers_2.setText(R.string.manager_hosting_20);
-						mobilism_team.setText(R.string.mobilism_team_20);
-						forum_team.setText(R.string.forum_team_20);
-						manager_team.setText(R.string.xspotify_team_20);
-						contributors_1.setText(R.string.contributors_20);
-						download_selected.setText(R.string.download_selected_20);
-						download_ready.setText(R.string.download_ready_20);
-						download_ready_desc.setText(R.string.download_ready_desc_20);
-						downloading_file.setText(R.string.downloading_file_20);
-						download_success.setText(R.string.download_success_20);
-						new_update.setText(R.string.new_update_20);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_20);
-						continue_1.setText(R.string.continue_1_20);
-						cancel.setText(R.string.cancel_20);
-					    fixer.setText(R.string.fixer_20);
-						download.setText(R.string.download_20);
-						later.setText(R.string.later_20);
-						install_now.setText(R.string.install_now_20);
-						install_update.setText(R.string.install_update_20);
-						go_back.setText(R.string.go_back_20);
-						download_update.setText(R.string.download_update_20);
-						not_now.setText(R.string.not_now_20);
-						show_support.setText(R.string.show_support_20);
-						show_support_desc.setText(R.string.show_support_desc_20);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_20);
-						settings_title.setText(R.string.settings_title_20);
-						about_title.setText(R.string.about_title_20);
-						maintenance.setText(R.string.maintenance_20);
-						maintenance_desc.setText(R.string.maintenance_desc_20);
-						thanks.setText(R.string.thanks_20);
-						language.setText(R.string.language_20);
-						website.setText(R.string.website_20);
-						discord.setText(R.string.discord_20);
-						reddit.setText(R.string.reddit_20);
-						faq.setText(R.string.faq_20);
-						cloned_version.setText(R.string.cloned_version_20);
-						cloned_version_info.setText(R.string.cloned_version_desc_20);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_20);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_20);
-					    installation_failed.setText(R.string.installation_failed_20);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_20);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_20);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_20);
-					    existing_patched.setText(R.string.existing_patched_20);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_20);
-					    close.setText(R.string.close_20);
-					    cloned.setText(R.string.cloned_20);
-					    ream.setText(R.string.ream_20);
-					    install.setText(R.string.install_20);
-					    uninstall.setText(R.string.uninstall_20);
-					    ignore.setText(R.string.ignore_20);
-					    delete.setText(R.string.delete_20);
-					    uninstall_patched.setText(R.string.uninstall_patched_20);
-					    open_settings.setText(R.string.open_settings_20);
-					    open_patched.setText(R.string.open_patched_20);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_20);
+					title_2.setText(R.string.spotify_amoled_20);
+					sub_text_installed.setText(R.string.installed_20);
+					sub_text_1.setText(R.string.latest_20);
+					sub_text_2.setText(R.string.latest_20);
+					sub_text_3.setText(R.string.latest_20);
+					version_switch_1.setText(R.string.versions_20);
+					version_switch_2.setText(R.string.versions_20);
+					version_switch_3.setText(R.string.versions_20);
+					changelogs.setText(R.string.changelogs_20);
+					title_sub.setText(R.string.manager_tools_20);
+					device_cpu.setText(R.string.device_cpu_20);
+					source.setText(R.string.source_20);
+					support.setText(R.string.support_20);
+					donate.setText(R.string.donate_20);
+					about.setText(R.string.about_20);
+					list_auto_refresh.setText(R.string.list_auto_refresh_20);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_20);
+					force_auto_install.setText(R.string.force_auto_install_20);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_20);
+					theme.setText(R.string.show_themes_20);
+					apk_location.setText(R.string.apk_location_20);
+					apk_location_info.setText(R.string.apk_location_desc_20);
+					clear_directory_folders.setText(R.string.clear_directory_folders_20);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_20);
+					reset_settings.setText(R.string.reset_settings_20);
+					sub_title.setText(R.string.about_sub_20);
+					developer_manager.setText(R.string.xmanager_dev_20);
+					developer_spotify.setText(R.string.spotify_mod_devs_20);
+					support_team.setText(R.string.telegram_support_team_20);
+					mod_testers_1.setText(R.string.manager_testers_20);
+					mod_testers_2.setText(R.string.manager_hosting_20);
+					mobilism_team.setText(R.string.mobilism_team_20);
+					forum_team.setText(R.string.forum_team_20);
+					manager_team.setText(R.string.xspotify_team_20);
+					contributors_1.setText(R.string.contributors_20);
+					download_selected.setText(R.string.download_selected_20);
+					download_ready.setText(R.string.download_ready_20);
+					download_ready_desc.setText(R.string.download_ready_desc_20);
+					downloading_file.setText(R.string.downloading_file_20);
+					download_success.setText(R.string.download_success_20);
+					new_update.setText(R.string.new_update_20);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_20);
+					continue_1.setText(R.string.continue_1_20);
+					cancel.setText(R.string.cancel_20);
+					fixer.setText(R.string.fixer_20);
+					download.setText(R.string.download_20);
+					later.setText(R.string.later_20);
+					install_now.setText(R.string.install_now_20);
+					install_update.setText(R.string.install_update_20);
+					go_back.setText(R.string.go_back_20);
+					download_update.setText(R.string.download_update_20);
+					not_now.setText(R.string.not_now_20);
+					show_support.setText(R.string.show_support_20);
+					show_support_desc.setText(R.string.show_support_desc_20);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_20);
+					settings_title.setText(R.string.settings_title_20);
+					about_title.setText(R.string.about_title_20);
+					maintenance.setText(R.string.maintenance_20);
+					maintenance_desc.setText(R.string.maintenance_desc_20);
+					thanks.setText(R.string.thanks_20);
+					language.setText(R.string.language_20);
+					website.setText(R.string.website_20);
+					discord.setText(R.string.discord_20);
+					reddit.setText(R.string.reddit_20);
+					faq.setText(R.string.faq_20);
+					cloned_version.setText(R.string.cloned_version_20);
+					cloned_version_info.setText(R.string.cloned_version_desc_20);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_20);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_20);
+					installation_failed.setText(R.string.installation_failed_20);
+					installation_failed_desc.setText(R.string.installation_failed_desc_20);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_20);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_20);
+					existing_patched.setText(R.string.existing_patched_20);
+					existing_patched_desc.setText(R.string.existing_patched_desc_20);
+					close.setText(R.string.close_20);
+					cloned.setText(R.string.cloned_20);
+					ream.setText(R.string.ream_20);
+					install.setText(R.string.install_20);
+					uninstall.setText(R.string.uninstall_20);
+					ignore.setText(R.string.ignore_20);
+					delete.setText(R.string.delete_20);
+					uninstall_patched.setText(R.string.uninstall_patched_20);
+					open_settings.setText(R.string.open_settings_20);
+					open_patched.setText(R.string.open_patched_20);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 21) {
 					LANGUAGE.edit().putString("LANGUAGE", "21").commit();
-					    title_1.setText(R.string.spotify_regular_21);
-						title_2.setText(R.string.spotify_amoled_21);
-						sub_text_installed.setText(R.string.installed_21);
-						sub_text_1.setText(R.string.latest_21);
-						sub_text_3.setText(R.string.latest_21);
-						version_switch_1.setText(R.string.versions_21);
-						version_switch_2.setText(R.string.versions_21);
-						changelogs.setText(R.string.changelogs_21);
-						title_sub.setText(R.string.manager_tools_21);
-						device_cpu.setText(R.string.device_cpu_21);
-						source.setText(R.string.source_21);
-						support.setText(R.string.support_21);
-						donate.setText(R.string.donate_21);
-						about.setText(R.string.about_21);
-						list_auto_refresh.setText(R.string.list_auto_refresh_21);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_21);
-						force_auto_install.setText(R.string.force_auto_install_21);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_21);
-						theme.setText(R.string.show_themes_21);
-						apk_location.setText(R.string.apk_location_21);
-						apk_location_info.setText(R.string.apk_location_desc_21);
-						clear_directory_folders.setText(R.string.clear_directory_folders_21);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_21);
-						reset_settings.setText(R.string.reset_settings_21);
-						sub_title.setText(R.string.about_sub_21);
-						developer_manager.setText(R.string.xmanager_dev_21);
-						developer_spotify.setText(R.string.spotify_mod_devs_21);
-						support_team.setText(R.string.telegram_support_team_21);
-						mod_testers_1.setText(R.string.manager_testers_21);
-						mod_testers_2.setText(R.string.manager_hosting_21);
-						mobilism_team.setText(R.string.mobilism_team_21);
-						forum_team.setText(R.string.forum_team_21);
-						manager_team.setText(R.string.xspotify_team_21);
-						contributors_1.setText(R.string.contributors_21);
-						download_selected.setText(R.string.download_selected_21);
-						download_ready.setText(R.string.download_ready_21);
-						download_ready_desc.setText(R.string.download_ready_desc_21);
-						downloading_file.setText(R.string.downloading_file_21);
-						download_success.setText(R.string.download_success_21);
-						new_update.setText(R.string.new_update_21);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_21);
-						continue_1.setText(R.string.continue_1_21);
-						cancel.setText(R.string.cancel_21);
-					    fixer.setText(R.string.fixer_21);
-						download.setText(R.string.download_21);
-						later.setText(R.string.later_21);
-						install_now.setText(R.string.install_now_21);
-						install_update.setText(R.string.install_update_21);
-						go_back.setText(R.string.go_back_21);
-						download_update.setText(R.string.download_update_21);
-						not_now.setText(R.string.not_now_21);
-						show_support.setText(R.string.show_support_21);
-						show_support_desc.setText(R.string.show_support_desc_21);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_21);
-						settings_title.setText(R.string.settings_title_21);
-						about_title.setText(R.string.about_title_21);
-						maintenance.setText(R.string.maintenance_21);
-						maintenance_desc.setText(R.string.maintenance_desc_21);
-						thanks.setText(R.string.thanks_21);
-						language.setText(R.string.language_21);
-						website.setText(R.string.website_21);
-						discord.setText(R.string.discord_21);
-						reddit.setText(R.string.reddit_21);
-						faq.setText(R.string.faq_21);
-						cloned_version.setText(R.string.cloned_version_21);
-						cloned_version_info.setText(R.string.cloned_version_desc_21);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_21);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_21);
-					    installation_failed.setText(R.string.installation_failed_21);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_21);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_21);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_21);
-					    existing_patched.setText(R.string.existing_patched_21);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_21);
-					    close.setText(R.string.close_21);
-					    cloned.setText(R.string.cloned_21);
-					    ream.setText(R.string.ream_21);
-					    install.setText(R.string.install_21);
-					    uninstall.setText(R.string.uninstall_21);
-					    ignore.setText(R.string.ignore_21);
-					    delete.setText(R.string.delete_21);
-					    uninstall_patched.setText(R.string.uninstall_patched_21);
-					    open_settings.setText(R.string.open_settings_21);
-					    open_patched.setText(R.string.open_patched_21);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_21);
+					title_2.setText(R.string.spotify_amoled_21);
+					sub_text_installed.setText(R.string.installed_21);
+					sub_text_1.setText(R.string.latest_21);
+					sub_text_2.setText(R.string.latest_21);
+					sub_text_3.setText(R.string.latest_21);
+					version_switch_1.setText(R.string.versions_21);
+					version_switch_2.setText(R.string.versions_21);
+					version_switch_3.setText(R.string.versions_21);
+					changelogs.setText(R.string.changelogs_21);
+					title_sub.setText(R.string.manager_tools_21);
+					device_cpu.setText(R.string.device_cpu_21);
+					source.setText(R.string.source_21);
+					support.setText(R.string.support_21);
+					donate.setText(R.string.donate_21);
+					about.setText(R.string.about_21);
+					list_auto_refresh.setText(R.string.list_auto_refresh_21);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_21);
+					force_auto_install.setText(R.string.force_auto_install_21);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_21);
+					theme.setText(R.string.show_themes_21);
+					apk_location.setText(R.string.apk_location_21);
+					apk_location_info.setText(R.string.apk_location_desc_21);
+					clear_directory_folders.setText(R.string.clear_directory_folders_21);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_21);
+					reset_settings.setText(R.string.reset_settings_21);
+					sub_title.setText(R.string.about_sub_21);
+					developer_manager.setText(R.string.xmanager_dev_21);
+					developer_spotify.setText(R.string.spotify_mod_devs_21);
+					support_team.setText(R.string.telegram_support_team_21);
+					mod_testers_1.setText(R.string.manager_testers_21);
+					mod_testers_2.setText(R.string.manager_hosting_21);
+					mobilism_team.setText(R.string.mobilism_team_21);
+					forum_team.setText(R.string.forum_team_21);
+					manager_team.setText(R.string.xspotify_team_21);
+					contributors_1.setText(R.string.contributors_21);
+					download_selected.setText(R.string.download_selected_21);
+					download_ready.setText(R.string.download_ready_21);
+					download_ready_desc.setText(R.string.download_ready_desc_21);
+					downloading_file.setText(R.string.downloading_file_21);
+					download_success.setText(R.string.download_success_21);
+					new_update.setText(R.string.new_update_21);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_21);
+					continue_1.setText(R.string.continue_1_21);
+					cancel.setText(R.string.cancel_21);
+					fixer.setText(R.string.fixer_21);
+					download.setText(R.string.download_21);
+					later.setText(R.string.later_21);
+					install_now.setText(R.string.install_now_21);
+					install_update.setText(R.string.install_update_21);
+					go_back.setText(R.string.go_back_21);
+					download_update.setText(R.string.download_update_21);
+					not_now.setText(R.string.not_now_21);
+					show_support.setText(R.string.show_support_21);
+					show_support_desc.setText(R.string.show_support_desc_21);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_21);
+					settings_title.setText(R.string.settings_title_21);
+					about_title.setText(R.string.about_title_21);
+					maintenance.setText(R.string.maintenance_21);
+					maintenance_desc.setText(R.string.maintenance_desc_21);
+					thanks.setText(R.string.thanks_21);
+					language.setText(R.string.language_21);
+					website.setText(R.string.website_21);
+					discord.setText(R.string.discord_21);
+					reddit.setText(R.string.reddit_21);
+					faq.setText(R.string.faq_21);
+					cloned_version.setText(R.string.cloned_version_21);
+					cloned_version_info.setText(R.string.cloned_version_desc_21);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_21);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_21);
+					installation_failed.setText(R.string.installation_failed_21);
+					installation_failed_desc.setText(R.string.installation_failed_desc_21);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_21);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_21);
+					existing_patched.setText(R.string.existing_patched_21);
+					existing_patched_desc.setText(R.string.existing_patched_desc_21);
+					close.setText(R.string.close_21);
+					cloned.setText(R.string.cloned_21);
+					ream.setText(R.string.ream_21);
+					install.setText(R.string.install_21);
+					uninstall.setText(R.string.uninstall_21);
+					ignore.setText(R.string.ignore_21);
+					delete.setText(R.string.delete_21);
+					uninstall_patched.setText(R.string.uninstall_patched_21);
+					open_settings.setText(R.string.open_settings_21);
+					open_patched.setText(R.string.open_patched_21);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 22) {
 					LANGUAGE.edit().putString("LANGUAGE", "22").commit();
-					    title_1.setText(R.string.spotify_regular_22);
-						title_2.setText(R.string.spotify_amoled_22);
-						sub_text_installed.setText(R.string.installed_22);
-						sub_text_1.setText(R.string.latest_22);
-						sub_text_3.setText(R.string.latest_22);
-						version_switch_1.setText(R.string.versions_22);
-						version_switch_2.setText(R.string.versions_22);
-						changelogs.setText(R.string.changelogs_22);
-						title_sub.setText(R.string.manager_tools_22);
-						device_cpu.setText(R.string.device_cpu_22);
-						source.setText(R.string.source_22);
-						support.setText(R.string.support_22);
-						donate.setText(R.string.donate_22);
-						about.setText(R.string.about_22);
-						list_auto_refresh.setText(R.string.list_auto_refresh_22);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_22);
-						force_auto_install.setText(R.string.force_auto_install_22);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_22);
-						theme.setText(R.string.show_themes_22);
-						apk_location.setText(R.string.apk_location_22);
-						apk_location_info.setText(R.string.apk_location_desc_22);
-						clear_directory_folders.setText(R.string.clear_directory_folders_22);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_22);
-						reset_settings.setText(R.string.reset_settings_22);
-						sub_title.setText(R.string.about_sub_22);
-						developer_manager.setText(R.string.xmanager_dev_22);
-						developer_spotify.setText(R.string.spotify_mod_devs_22);
-						support_team.setText(R.string.telegram_support_team_22);
-						mod_testers_1.setText(R.string.manager_testers_22);
-						mod_testers_2.setText(R.string.manager_hosting_22);
-						mobilism_team.setText(R.string.mobilism_team_22);
-						forum_team.setText(R.string.forum_team_22);
-						manager_team.setText(R.string.xspotify_team_22);
-						contributors_1.setText(R.string.contributors_22);
-						download_selected.setText(R.string.download_selected_22);
-						download_ready.setText(R.string.download_ready_22);
-						download_ready_desc.setText(R.string.download_ready_desc_22);
-						downloading_file.setText(R.string.downloading_file_22);
-						download_success.setText(R.string.download_success_22);
-						new_update.setText(R.string.new_update_22);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_22);
-						continue_1.setText(R.string.continue_1_22);
-						cancel.setText(R.string.cancel_22);
-					    fixer.setText(R.string.fixer_22);
-						download.setText(R.string.download_22);
-						later.setText(R.string.later_22);
-						install_now.setText(R.string.install_now_22);
-						install_update.setText(R.string.install_update_22);
-						go_back.setText(R.string.go_back_22);
-						download_update.setText(R.string.download_update_22);
-						not_now.setText(R.string.not_now_22);
-						show_support.setText(R.string.show_support_22);
-						show_support_desc.setText(R.string.show_support_desc_22);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_22);
-						settings_title.setText(R.string.settings_title_22);
-						about_title.setText(R.string.about_title_22);
-						maintenance.setText(R.string.maintenance_22);
-						maintenance_desc.setText(R.string.maintenance_desc_22);
-						thanks.setText(R.string.thanks_22);
-						language.setText(R.string.language_22);
-						website.setText(R.string.website_22);
-						discord.setText(R.string.discord_22);
-						reddit.setText(R.string.reddit_22);
-						faq.setText(R.string.faq_22);
-						cloned_version.setText(R.string.cloned_version_22);
-						cloned_version_info.setText(R.string.cloned_version_desc_22);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_22);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_22);
-					    installation_failed.setText(R.string.installation_failed_22);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_22);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_22);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_22);
-					    existing_patched.setText(R.string.existing_patched_22);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_22);
-					    close.setText(R.string.close_22);
-					    cloned.setText(R.string.cloned_22);
-					    ream.setText(R.string.ream_22);
-					    install.setText(R.string.install_22);
-					    uninstall.setText(R.string.uninstall_22);
-					    ignore.setText(R.string.ignore_22);
-					    delete.setText(R.string.delete_22);
-					    uninstall_patched.setText(R.string.uninstall_patched_22);
-					    open_settings.setText(R.string.open_settings_22);
-					    open_patched.setText(R.string.open_patched_22);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_22);
+					title_2.setText(R.string.spotify_amoled_22);
+					sub_text_installed.setText(R.string.installed_22);
+					sub_text_1.setText(R.string.latest_22);
+					sub_text_2.setText(R.string.latest_22);
+					sub_text_3.setText(R.string.latest_22);
+					version_switch_1.setText(R.string.versions_22);
+					version_switch_2.setText(R.string.versions_22);
+					version_switch_3.setText(R.string.versions_22);
+					changelogs.setText(R.string.changelogs_22);
+					title_sub.setText(R.string.manager_tools_22);
+					device_cpu.setText(R.string.device_cpu_22);
+					source.setText(R.string.source_22);
+					support.setText(R.string.support_22);
+					donate.setText(R.string.donate_22);
+					about.setText(R.string.about_22);
+					list_auto_refresh.setText(R.string.list_auto_refresh_22);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_22);
+					force_auto_install.setText(R.string.force_auto_install_22);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_22);
+					theme.setText(R.string.show_themes_22);
+					apk_location.setText(R.string.apk_location_22);
+					apk_location_info.setText(R.string.apk_location_desc_22);
+					clear_directory_folders.setText(R.string.clear_directory_folders_22);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_22);
+					reset_settings.setText(R.string.reset_settings_22);
+					sub_title.setText(R.string.about_sub_22);
+					developer_manager.setText(R.string.xmanager_dev_22);
+					developer_spotify.setText(R.string.spotify_mod_devs_22);
+					support_team.setText(R.string.telegram_support_team_22);
+					mod_testers_1.setText(R.string.manager_testers_22);
+					mod_testers_2.setText(R.string.manager_hosting_22);
+					mobilism_team.setText(R.string.mobilism_team_22);
+					forum_team.setText(R.string.forum_team_22);
+					manager_team.setText(R.string.xspotify_team_22);
+					contributors_1.setText(R.string.contributors_22);
+					download_selected.setText(R.string.download_selected_22);
+					download_ready.setText(R.string.download_ready_22);
+					download_ready_desc.setText(R.string.download_ready_desc_22);
+					downloading_file.setText(R.string.downloading_file_22);
+					download_success.setText(R.string.download_success_22);
+					new_update.setText(R.string.new_update_22);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_22);
+					continue_1.setText(R.string.continue_1_22);
+					cancel.setText(R.string.cancel_22);
+					fixer.setText(R.string.fixer_22);
+					download.setText(R.string.download_22);
+					later.setText(R.string.later_22);
+					install_now.setText(R.string.install_now_22);
+					install_update.setText(R.string.install_update_22);
+					go_back.setText(R.string.go_back_22);
+					download_update.setText(R.string.download_update_22);
+					not_now.setText(R.string.not_now_22);
+					show_support.setText(R.string.show_support_22);
+					show_support_desc.setText(R.string.show_support_desc_22);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_22);
+					settings_title.setText(R.string.settings_title_22);
+					about_title.setText(R.string.about_title_22);
+					maintenance.setText(R.string.maintenance_22);
+					maintenance_desc.setText(R.string.maintenance_desc_22);
+					thanks.setText(R.string.thanks_22);
+					language.setText(R.string.language_22);
+					website.setText(R.string.website_22);
+					discord.setText(R.string.discord_22);
+					reddit.setText(R.string.reddit_22);
+					faq.setText(R.string.faq_22);
+					cloned_version.setText(R.string.cloned_version_22);
+					cloned_version_info.setText(R.string.cloned_version_desc_22);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_22);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_22);
+					installation_failed.setText(R.string.installation_failed_22);
+					installation_failed_desc.setText(R.string.installation_failed_desc_22);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_22);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_22);
+					existing_patched.setText(R.string.existing_patched_22);
+					existing_patched_desc.setText(R.string.existing_patched_desc_22);
+					close.setText(R.string.close_22);
+					cloned.setText(R.string.cloned_22);
+					ream.setText(R.string.ream_22);
+					install.setText(R.string.install_22);
+					uninstall.setText(R.string.uninstall_22);
+					ignore.setText(R.string.ignore_22);
+					delete.setText(R.string.delete_22);
+					uninstall_patched.setText(R.string.uninstall_patched_22);
+					open_settings.setText(R.string.open_settings_22);
+					open_patched.setText(R.string.open_patched_22);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 23) {
 					LANGUAGE.edit().putString("LANGUAGE", "23").commit();
-					    title_1.setText(R.string.spotify_regular_23);
-						title_2.setText(R.string.spotify_amoled_23);
-						sub_text_installed.setText(R.string.installed_23);
-						sub_text_1.setText(R.string.latest_23);
-						sub_text_3.setText(R.string.latest_23);
-						version_switch_1.setText(R.string.versions_23);
-						version_switch_2.setText(R.string.versions_23);
-						changelogs.setText(R.string.changelogs_23);
-						title_sub.setText(R.string.manager_tools_23);
-						device_cpu.setText(R.string.device_cpu_23);
-						source.setText(R.string.source_23);
-						support.setText(R.string.support_23);
-						donate.setText(R.string.donate_23);
-						about.setText(R.string.about_23);
-						list_auto_refresh.setText(R.string.list_auto_refresh_23);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_23);
-						force_auto_install.setText(R.string.force_auto_install_23);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_23);
-						theme.setText(R.string.show_themes_23);
-						apk_location.setText(R.string.apk_location_23);
-						apk_location_info.setText(R.string.apk_location_desc_23);
-						clear_directory_folders.setText(R.string.clear_directory_folders_23);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_23);
-						reset_settings.setText(R.string.reset_settings_23);
-						sub_title.setText(R.string.about_sub_23);
-						developer_manager.setText(R.string.xmanager_dev_23);
-						developer_spotify.setText(R.string.spotify_mod_devs_23);
-						support_team.setText(R.string.telegram_support_team_23);
-						mod_testers_1.setText(R.string.manager_testers_23);
-						mod_testers_2.setText(R.string.manager_hosting_23);
-						mobilism_team.setText(R.string.mobilism_team_23);
-						forum_team.setText(R.string.forum_team_23);
-						manager_team.setText(R.string.xspotify_team_23);
-						contributors_1.setText(R.string.contributors_23);
-						download_selected.setText(R.string.download_selected_23);
-						download_ready.setText(R.string.download_ready_23);
-						download_ready_desc.setText(R.string.download_ready_desc_23);
-						downloading_file.setText(R.string.downloading_file_23);
-						download_success.setText(R.string.download_success_23);
-						new_update.setText(R.string.new_update_23);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_23);
-						continue_1.setText(R.string.continue_1_23);
-						cancel.setText(R.string.cancel_23);
-					    fixer.setText(R.string.fixer_23);
-						download.setText(R.string.download_23);
-						later.setText(R.string.later_23);
-						install_now.setText(R.string.install_now_23);
-						install_update.setText(R.string.install_update_23);
-						go_back.setText(R.string.go_back_23);
-						download_update.setText(R.string.download_update_23);
-						not_now.setText(R.string.not_now_23);
-						show_support.setText(R.string.show_support_23);
-						show_support_desc.setText(R.string.show_support_desc_23);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_23);
-						settings_title.setText(R.string.settings_title_23);
-						about_title.setText(R.string.about_title_23);
-						maintenance.setText(R.string.maintenance_23);
-						maintenance_desc.setText(R.string.maintenance_desc_23);
-						thanks.setText(R.string.thanks_23);
-						language.setText(R.string.language_23);
-						website.setText(R.string.website_23);
-						discord.setText(R.string.discord_23);
-						reddit.setText(R.string.reddit_23);
-						faq.setText(R.string.faq_23);
-						cloned_version.setText(R.string.cloned_version_23);
-						cloned_version_info.setText(R.string.cloned_version_desc_23);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_23);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_23);
-					    installation_failed.setText(R.string.installation_failed_23);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_23);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_23);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_23);
-					    existing_patched.setText(R.string.existing_patched_23);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_23);
-					    close.setText(R.string.close_23);
-					    cloned.setText(R.string.cloned_23);
-					    ream.setText(R.string.ream_23);
-					    install.setText(R.string.install_23);
-					    uninstall.setText(R.string.uninstall_23);
-					    ignore.setText(R.string.ignore_23);
-					    delete.setText(R.string.delete_23);
-					    uninstall_patched.setText(R.string.uninstall_patched_23);
-					    open_settings.setText(R.string.open_settings_23);
-					    open_patched.setText(R.string.open_patched_23);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_23);
+					title_2.setText(R.string.spotify_amoled_23);
+					sub_text_installed.setText(R.string.installed_23);
+					sub_text_1.setText(R.string.latest_23);
+					sub_text_2.setText(R.string.latest_23);
+					sub_text_3.setText(R.string.latest_23);
+					version_switch_1.setText(R.string.versions_23);
+					version_switch_2.setText(R.string.versions_23);
+					version_switch_3.setText(R.string.versions_23);
+					changelogs.setText(R.string.changelogs_23);
+					title_sub.setText(R.string.manager_tools_23);
+					device_cpu.setText(R.string.device_cpu_23);
+					source.setText(R.string.source_23);
+					support.setText(R.string.support_23);
+					donate.setText(R.string.donate_23);
+					about.setText(R.string.about_23);
+					list_auto_refresh.setText(R.string.list_auto_refresh_23);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_23);
+					force_auto_install.setText(R.string.force_auto_install_23);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_23);
+					theme.setText(R.string.show_themes_23);
+					apk_location.setText(R.string.apk_location_23);
+					apk_location_info.setText(R.string.apk_location_desc_23);
+					clear_directory_folders.setText(R.string.clear_directory_folders_23);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_23);
+					reset_settings.setText(R.string.reset_settings_23);
+					sub_title.setText(R.string.about_sub_23);
+					developer_manager.setText(R.string.xmanager_dev_23);
+					developer_spotify.setText(R.string.spotify_mod_devs_23);
+					support_team.setText(R.string.telegram_support_team_23);
+					mod_testers_1.setText(R.string.manager_testers_23);
+					mod_testers_2.setText(R.string.manager_hosting_23);
+					mobilism_team.setText(R.string.mobilism_team_23);
+					forum_team.setText(R.string.forum_team_23);
+					manager_team.setText(R.string.xspotify_team_23);
+					contributors_1.setText(R.string.contributors_23);
+					download_selected.setText(R.string.download_selected_23);
+					download_ready.setText(R.string.download_ready_23);
+					download_ready_desc.setText(R.string.download_ready_desc_23);
+					downloading_file.setText(R.string.downloading_file_23);
+					download_success.setText(R.string.download_success_23);
+					new_update.setText(R.string.new_update_23);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_23);
+					continue_1.setText(R.string.continue_1_23);
+					cancel.setText(R.string.cancel_23);
+					fixer.setText(R.string.fixer_23);
+					download.setText(R.string.download_23);
+					later.setText(R.string.later_23);
+					install_now.setText(R.string.install_now_23);
+					install_update.setText(R.string.install_update_23);
+					go_back.setText(R.string.go_back_23);
+					download_update.setText(R.string.download_update_23);
+					not_now.setText(R.string.not_now_23);
+					show_support.setText(R.string.show_support_23);
+					show_support_desc.setText(R.string.show_support_desc_23);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_23);
+					settings_title.setText(R.string.settings_title_23);
+					about_title.setText(R.string.about_title_23);
+					maintenance.setText(R.string.maintenance_23);
+					maintenance_desc.setText(R.string.maintenance_desc_23);
+					thanks.setText(R.string.thanks_23);
+					language.setText(R.string.language_23);
+					website.setText(R.string.website_23);
+					discord.setText(R.string.discord_23);
+					reddit.setText(R.string.reddit_23);
+					faq.setText(R.string.faq_23);
+					cloned_version.setText(R.string.cloned_version_23);
+					cloned_version_info.setText(R.string.cloned_version_desc_23);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_23);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_23);
+					installation_failed.setText(R.string.installation_failed_23);
+					installation_failed_desc.setText(R.string.installation_failed_desc_23);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_23);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_23);
+					existing_patched.setText(R.string.existing_patched_23);
+					existing_patched_desc.setText(R.string.existing_patched_desc_23);
+					close.setText(R.string.close_23);
+					cloned.setText(R.string.cloned_23);
+					ream.setText(R.string.ream_23);
+					install.setText(R.string.install_23);
+					uninstall.setText(R.string.uninstall_23);
+					ignore.setText(R.string.ignore_23);
+					delete.setText(R.string.delete_23);
+					uninstall_patched.setText(R.string.uninstall_patched_23);
+					open_settings.setText(R.string.open_settings_23);
+					open_patched.setText(R.string.open_patched_23);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 24) {
 					LANGUAGE.edit().putString("LANGUAGE", "24").commit();
-					    title_1.setText(R.string.spotify_regular_24);
-						title_2.setText(R.string.spotify_amoled_24);
-						sub_text_installed.setText(R.string.installed_24);
-						sub_text_1.setText(R.string.latest_24);
-						sub_text_3.setText(R.string.latest_24);
-						version_switch_1.setText(R.string.versions_24);
-						version_switch_2.setText(R.string.versions_24);
-						changelogs.setText(R.string.changelogs_24);
-						title_sub.setText(R.string.manager_tools_24);
-						device_cpu.setText(R.string.device_cpu_24);
-						source.setText(R.string.source_24);
-						support.setText(R.string.support_24);
-						donate.setText(R.string.donate_24);
-						about.setText(R.string.about_24);
-						list_auto_refresh.setText(R.string.list_auto_refresh_24);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_24);
-						force_auto_install.setText(R.string.force_auto_install_24);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_24);
-						theme.setText(R.string.show_themes_24);
-						apk_location.setText(R.string.apk_location_24);
-						apk_location_info.setText(R.string.apk_location_desc_24);
-						clear_directory_folders.setText(R.string.clear_directory_folders_24);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_24);
-						reset_settings.setText(R.string.reset_settings_24);
-						sub_title.setText(R.string.about_sub_24);
-						developer_manager.setText(R.string.xmanager_dev_24);
-						developer_spotify.setText(R.string.spotify_mod_devs_24);
-						support_team.setText(R.string.telegram_support_team_24);
-						mod_testers_1.setText(R.string.manager_testers_24);
-						mod_testers_2.setText(R.string.manager_hosting_24);
-						mobilism_team.setText(R.string.mobilism_team_24);
-						forum_team.setText(R.string.forum_team_24);
-						manager_team.setText(R.string.xspotify_team_24);
-						contributors_1.setText(R.string.contributors_24);
-						download_selected.setText(R.string.download_selected_24);
-						download_ready.setText(R.string.download_ready_24);
-						download_ready_desc.setText(R.string.download_ready_desc_24);
-						downloading_file.setText(R.string.downloading_file_24);
-						download_success.setText(R.string.download_success_24);
-						new_update.setText(R.string.new_update_24);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_24);
-						continue_1.setText(R.string.continue_1_24);
-						cancel.setText(R.string.cancel_24);
-					    fixer.setText(R.string.fixer_24);
-						download.setText(R.string.download_24);
-						later.setText(R.string.later_24);
-						install_now.setText(R.string.install_now_24);
-						install_update.setText(R.string.install_update_24);
-						go_back.setText(R.string.go_back_24);
-						download_update.setText(R.string.download_update_24);
-						not_now.setText(R.string.not_now_24);
-						show_support.setText(R.string.show_support_24);
-						show_support_desc.setText(R.string.show_support_desc_24);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_24);
-						settings_title.setText(R.string.settings_title_24);
-						about_title.setText(R.string.about_title_24);
-						maintenance.setText(R.string.maintenance_24);
-						maintenance_desc.setText(R.string.maintenance_desc_24);
-						thanks.setText(R.string.thanks_24);
-						language.setText(R.string.language_24);
-						website.setText(R.string.website_24);
-						discord.setText(R.string.discord_24);
-						reddit.setText(R.string.reddit_24);
-						faq.setText(R.string.faq_24);
-						cloned_version.setText(R.string.cloned_version_24);
-						cloned_version_info.setText(R.string.cloned_version_desc_24);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_24);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_24);
-					    installation_failed.setText(R.string.installation_failed_24);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_24);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_24);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_24);
-					    existing_patched.setText(R.string.existing_patched_24);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_24);
-					    close.setText(R.string.close_24);
-					    cloned.setText(R.string.cloned_24);
-					    ream.setText(R.string.ream_24);
-					    install.setText(R.string.install_24);
-					    uninstall.setText(R.string.uninstall_24);
-					    ignore.setText(R.string.ignore_24);
-					    delete.setText(R.string.delete_24);
-					    uninstall_patched.setText(R.string.uninstall_patched_24);
-					    open_settings.setText(R.string.open_settings_24);
-					    open_patched.setText(R.string.open_patched_24);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_24);
+					title_2.setText(R.string.spotify_amoled_24);
+					sub_text_installed.setText(R.string.installed_24);
+					sub_text_1.setText(R.string.latest_24);
+					sub_text_2.setText(R.string.latest_24);
+					sub_text_3.setText(R.string.latest_24);
+					version_switch_1.setText(R.string.versions_24);
+					version_switch_2.setText(R.string.versions_24);
+					version_switch_3.setText(R.string.versions_24);
+					changelogs.setText(R.string.changelogs_24);
+					title_sub.setText(R.string.manager_tools_24);
+					device_cpu.setText(R.string.device_cpu_24);
+					source.setText(R.string.source_24);
+					support.setText(R.string.support_24);
+					donate.setText(R.string.donate_24);
+					about.setText(R.string.about_24);
+					list_auto_refresh.setText(R.string.list_auto_refresh_24);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_24);
+					force_auto_install.setText(R.string.force_auto_install_24);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_24);
+					theme.setText(R.string.show_themes_24);
+					apk_location.setText(R.string.apk_location_24);
+					apk_location_info.setText(R.string.apk_location_desc_24);
+					clear_directory_folders.setText(R.string.clear_directory_folders_24);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_24);
+					reset_settings.setText(R.string.reset_settings_24);
+					sub_title.setText(R.string.about_sub_24);
+					developer_manager.setText(R.string.xmanager_dev_24);
+					developer_spotify.setText(R.string.spotify_mod_devs_24);
+					support_team.setText(R.string.telegram_support_team_24);
+					mod_testers_1.setText(R.string.manager_testers_24);
+					mod_testers_2.setText(R.string.manager_hosting_24);
+					mobilism_team.setText(R.string.mobilism_team_24);
+					forum_team.setText(R.string.forum_team_24);
+					manager_team.setText(R.string.xspotify_team_24);
+					contributors_1.setText(R.string.contributors_24);
+					download_selected.setText(R.string.download_selected_24);
+					download_ready.setText(R.string.download_ready_24);
+					download_ready_desc.setText(R.string.download_ready_desc_24);
+					downloading_file.setText(R.string.downloading_file_24);
+					download_success.setText(R.string.download_success_24);
+					new_update.setText(R.string.new_update_24);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_24);
+					continue_1.setText(R.string.continue_1_24);
+					cancel.setText(R.string.cancel_24);
+					fixer.setText(R.string.fixer_24);
+					download.setText(R.string.download_24);
+					later.setText(R.string.later_24);
+					install_now.setText(R.string.install_now_24);
+					install_update.setText(R.string.install_update_24);
+					go_back.setText(R.string.go_back_24);
+					download_update.setText(R.string.download_update_24);
+					not_now.setText(R.string.not_now_24);
+					show_support.setText(R.string.show_support_24);
+					show_support_desc.setText(R.string.show_support_desc_24);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_24);
+					settings_title.setText(R.string.settings_title_24);
+					about_title.setText(R.string.about_title_24);
+					maintenance.setText(R.string.maintenance_24);
+					maintenance_desc.setText(R.string.maintenance_desc_24);
+					thanks.setText(R.string.thanks_24);
+					language.setText(R.string.language_24);
+					website.setText(R.string.website_24);
+					discord.setText(R.string.discord_24);
+					reddit.setText(R.string.reddit_24);
+					faq.setText(R.string.faq_24);
+					cloned_version.setText(R.string.cloned_version_24);
+					cloned_version_info.setText(R.string.cloned_version_desc_24);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_24);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_24);
+					installation_failed.setText(R.string.installation_failed_24);
+					installation_failed_desc.setText(R.string.installation_failed_desc_24);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_24);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_24);
+					existing_patched.setText(R.string.existing_patched_24);
+					existing_patched_desc.setText(R.string.existing_patched_desc_24);
+					close.setText(R.string.close_24);
+					cloned.setText(R.string.cloned_24);
+					ream.setText(R.string.ream_24);
+					install.setText(R.string.install_24);
+					uninstall.setText(R.string.uninstall_24);
+					ignore.setText(R.string.ignore_24);
+					delete.setText(R.string.delete_24);
+					uninstall_patched.setText(R.string.uninstall_patched_24);
+					open_settings.setText(R.string.open_settings_24);
+					open_patched.setText(R.string.open_patched_24);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 25) {
 					LANGUAGE.edit().putString("LANGUAGE", "25").commit();
-					    title_1.setText(R.string.spotify_regular_25);
-						title_2.setText(R.string.spotify_amoled_25);
-						sub_text_installed.setText(R.string.installed_25);
-						sub_text_1.setText(R.string.latest_25);
-						sub_text_3.setText(R.string.latest_25);
-						version_switch_1.setText(R.string.versions_25);
-						version_switch_2.setText(R.string.versions_25);
-						changelogs.setText(R.string.changelogs_25);
-						title_sub.setText(R.string.manager_tools_25);
-						device_cpu.setText(R.string.device_cpu_25);
-						source.setText(R.string.source_25);
-						support.setText(R.string.support_25);
-						donate.setText(R.string.donate_25);
-						about.setText(R.string.about_25);
-						list_auto_refresh.setText(R.string.list_auto_refresh_25);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_25);
-						force_auto_install.setText(R.string.force_auto_install_25);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_25);
-						theme.setText(R.string.show_themes_25);
-						apk_location.setText(R.string.apk_location_25);
-						apk_location_info.setText(R.string.apk_location_desc_25);
-						clear_directory_folders.setText(R.string.clear_directory_folders_25);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_25);
-						reset_settings.setText(R.string.reset_settings_25);
-						sub_title.setText(R.string.about_sub_25);
-						developer_manager.setText(R.string.xmanager_dev_25);
-						developer_spotify.setText(R.string.spotify_mod_devs_25);
-						support_team.setText(R.string.telegram_support_team_25);
-						mod_testers_1.setText(R.string.manager_testers_25);
-						mod_testers_2.setText(R.string.manager_hosting_25);
-						mobilism_team.setText(R.string.mobilism_team_25);
-						forum_team.setText(R.string.forum_team_25);
-						manager_team.setText(R.string.xspotify_team_25);
-						contributors_1.setText(R.string.contributors_25);
-						download_selected.setText(R.string.download_selected_25);
-						download_ready.setText(R.string.download_ready_25);
-						download_ready_desc.setText(R.string.download_ready_desc_25);
-						downloading_file.setText(R.string.downloading_file_25);
-						download_success.setText(R.string.download_success_25);
-						new_update.setText(R.string.new_update_25);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_25);
-						continue_1.setText(R.string.continue_1_25);
-						cancel.setText(R.string.cancel_25);
-					    fixer.setText(R.string.fixer_25);
-						download.setText(R.string.download_25);
-						later.setText(R.string.later_25);
-						install_now.setText(R.string.install_now_25);
-						install_update.setText(R.string.install_update_25);
-						go_back.setText(R.string.go_back_25);
-						download_update.setText(R.string.download_update_25);
-						not_now.setText(R.string.not_now_25);
-						show_support.setText(R.string.show_support_25);
-						show_support_desc.setText(R.string.show_support_desc_25);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_25);
-						settings_title.setText(R.string.settings_title_25);
-						about_title.setText(R.string.about_title_25);
-						maintenance.setText(R.string.maintenance_25);
-						maintenance_desc.setText(R.string.maintenance_desc_25);
-						thanks.setText(R.string.thanks_25);
-						language.setText(R.string.language_25);
-						website.setText(R.string.website_25);
-						discord.setText(R.string.discord_25);
-						reddit.setText(R.string.reddit_25);
-						faq.setText(R.string.faq_25);
-						cloned_version.setText(R.string.cloned_version_25);
-						cloned_version_info.setText(R.string.cloned_version_desc_25);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_25);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_25);
-					    installation_failed.setText(R.string.installation_failed_25);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_25);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_25);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_25);
-					    existing_patched.setText(R.string.existing_patched_25);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_25);
-					    close.setText(R.string.close_25);
-					    cloned.setText(R.string.cloned_25);
-					    ream.setText(R.string.ream_25);
-					    install.setText(R.string.install_25);
-					    uninstall.setText(R.string.uninstall_25);
-					    ignore.setText(R.string.ignore_25);
-					    delete.setText(R.string.delete_25);
-					    uninstall_patched.setText(R.string.uninstall_patched_25);
-					    open_settings.setText(R.string.open_settings_25);
-					    open_patched.setText(R.string.open_patched_25);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_25);
+					title_2.setText(R.string.spotify_amoled_25);
+					sub_text_installed.setText(R.string.installed_25);
+					sub_text_1.setText(R.string.latest_25);
+					sub_text_2.setText(R.string.latest_25);
+					sub_text_3.setText(R.string.latest_25);
+					version_switch_1.setText(R.string.versions_25);
+					version_switch_2.setText(R.string.versions_25);
+					version_switch_3.setText(R.string.versions_25);
+					changelogs.setText(R.string.changelogs_25);
+					title_sub.setText(R.string.manager_tools_25);
+					device_cpu.setText(R.string.device_cpu_25);
+					source.setText(R.string.source_25);
+					support.setText(R.string.support_25);
+					donate.setText(R.string.donate_25);
+					about.setText(R.string.about_25);
+					list_auto_refresh.setText(R.string.list_auto_refresh_25);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_25);
+					force_auto_install.setText(R.string.force_auto_install_25);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_25);
+					theme.setText(R.string.show_themes_25);
+					apk_location.setText(R.string.apk_location_25);
+					apk_location_info.setText(R.string.apk_location_desc_25);
+					clear_directory_folders.setText(R.string.clear_directory_folders_25);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_25);
+					reset_settings.setText(R.string.reset_settings_25);
+					sub_title.setText(R.string.about_sub_25);
+					developer_manager.setText(R.string.xmanager_dev_25);
+					developer_spotify.setText(R.string.spotify_mod_devs_25);
+					support_team.setText(R.string.telegram_support_team_25);
+					mod_testers_1.setText(R.string.manager_testers_25);
+					mod_testers_2.setText(R.string.manager_hosting_25);
+					mobilism_team.setText(R.string.mobilism_team_25);
+					forum_team.setText(R.string.forum_team_25);
+					manager_team.setText(R.string.xspotify_team_25);
+					contributors_1.setText(R.string.contributors_25);
+					download_selected.setText(R.string.download_selected_25);
+					download_ready.setText(R.string.download_ready_25);
+					download_ready_desc.setText(R.string.download_ready_desc_25);
+					downloading_file.setText(R.string.downloading_file_25);
+					download_success.setText(R.string.download_success_25);
+					new_update.setText(R.string.new_update_25);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_25);
+					continue_1.setText(R.string.continue_1_25);
+					cancel.setText(R.string.cancel_25);
+					fixer.setText(R.string.fixer_25);
+					download.setText(R.string.download_25);
+					later.setText(R.string.later_25);
+					install_now.setText(R.string.install_now_25);
+					install_update.setText(R.string.install_update_25);
+					go_back.setText(R.string.go_back_25);
+					download_update.setText(R.string.download_update_25);
+					not_now.setText(R.string.not_now_25);
+					show_support.setText(R.string.show_support_25);
+					show_support_desc.setText(R.string.show_support_desc_25);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_25);
+					settings_title.setText(R.string.settings_title_25);
+					about_title.setText(R.string.about_title_25);
+					maintenance.setText(R.string.maintenance_25);
+					maintenance_desc.setText(R.string.maintenance_desc_25);
+					thanks.setText(R.string.thanks_25);
+					language.setText(R.string.language_25);
+					website.setText(R.string.website_25);
+					discord.setText(R.string.discord_25);
+					reddit.setText(R.string.reddit_25);
+					faq.setText(R.string.faq_25);
+					cloned_version.setText(R.string.cloned_version_25);
+					cloned_version_info.setText(R.string.cloned_version_desc_25);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_25);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_25);
+					installation_failed.setText(R.string.installation_failed_25);
+					installation_failed_desc.setText(R.string.installation_failed_desc_25);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_25);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_25);
+					existing_patched.setText(R.string.existing_patched_25);
+					existing_patched_desc.setText(R.string.existing_patched_desc_25);
+					close.setText(R.string.close_25);
+					cloned.setText(R.string.cloned_25);
+					ream.setText(R.string.ream_25);
+					install.setText(R.string.install_25);
+					uninstall.setText(R.string.uninstall_25);
+					ignore.setText(R.string.ignore_25);
+					delete.setText(R.string.delete_25);
+					uninstall_patched.setText(R.string.uninstall_patched_25);
+					open_settings.setText(R.string.open_settings_25);
+					open_patched.setText(R.string.open_patched_25);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 26) {
 					LANGUAGE.edit().putString("LANGUAGE", "26").commit();
-					    title_1.setText(R.string.spotify_regular_26);
-						title_2.setText(R.string.spotify_amoled_26);
-						sub_text_installed.setText(R.string.installed_26);
-						sub_text_1.setText(R.string.latest_26);
-						sub_text_3.setText(R.string.latest_26);
-						version_switch_1.setText(R.string.versions_26);
-						version_switch_2.setText(R.string.versions_26);
-						changelogs.setText(R.string.changelogs_26);
-						title_sub.setText(R.string.manager_tools_26);
-						device_cpu.setText(R.string.device_cpu_26);
-						source.setText(R.string.source_26);
-						support.setText(R.string.support_26);
-						donate.setText(R.string.donate_26);
-						about.setText(R.string.about_26);
-						list_auto_refresh.setText(R.string.list_auto_refresh_26);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_26);
-						force_auto_install.setText(R.string.force_auto_install_26);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_26);
-						theme.setText(R.string.show_themes_26);
-						apk_location.setText(R.string.apk_location_26);
-						apk_location_info.setText(R.string.apk_location_desc_26);
-						clear_directory_folders.setText(R.string.clear_directory_folders_26);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_26);
-						reset_settings.setText(R.string.reset_settings_26);
-						sub_title.setText(R.string.about_sub_26);
-						developer_manager.setText(R.string.xmanager_dev_26);
-						developer_spotify.setText(R.string.spotify_mod_devs_26);
-						support_team.setText(R.string.telegram_support_team_26);
-						mod_testers_1.setText(R.string.manager_testers_26);
-						mod_testers_2.setText(R.string.manager_hosting_26);
-						mobilism_team.setText(R.string.mobilism_team_26);
-						forum_team.setText(R.string.forum_team_26);
-						manager_team.setText(R.string.xspotify_team_26);
-						contributors_1.setText(R.string.contributors_26);
-						download_selected.setText(R.string.download_selected_26);
-						download_ready.setText(R.string.download_ready_26);
-						download_ready_desc.setText(R.string.download_ready_desc_26);
-						downloading_file.setText(R.string.downloading_file_26);
-						download_success.setText(R.string.download_success_26);
-						new_update.setText(R.string.new_update_26);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_26);
-						continue_1.setText(R.string.continue_1_26);
-						cancel.setText(R.string.cancel_26);
-					    fixer.setText(R.string.fixer_26);
-						download.setText(R.string.download_26);
-						later.setText(R.string.later_26);
-						install_now.setText(R.string.install_now_26);
-						install_update.setText(R.string.install_update_26);
-						go_back.setText(R.string.go_back_26);
-						download_update.setText(R.string.download_update_26);
-						not_now.setText(R.string.not_now_26);
-						show_support.setText(R.string.show_support_26);
-						show_support_desc.setText(R.string.show_support_desc_26);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_26);
-						settings_title.setText(R.string.settings_title_26);
-						about_title.setText(R.string.about_title_26);
-						maintenance.setText(R.string.maintenance_26);
-						maintenance_desc.setText(R.string.maintenance_desc_26);
-						thanks.setText(R.string.thanks_26);
-						language.setText(R.string.language_26);
-						website.setText(R.string.website_26);
-						discord.setText(R.string.discord_26);
-						reddit.setText(R.string.reddit_26);
-						faq.setText(R.string.faq_26);
-						cloned_version.setText(R.string.cloned_version_26);
-						cloned_version_info.setText(R.string.cloned_version_desc_26);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_26);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_26);
-					    installation_failed.setText(R.string.installation_failed_26);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_26);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_26);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_26);
-					    existing_patched.setText(R.string.existing_patched_26);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_26);
-					    close.setText(R.string.close_26);
-					    cloned.setText(R.string.cloned_26);
-					    ream.setText(R.string.ream_26);
-					    install.setText(R.string.install_26);
-					    uninstall.setText(R.string.uninstall_26);
-					    ignore.setText(R.string.ignore_26);
-					    delete.setText(R.string.delete_26);
-					    uninstall_patched.setText(R.string.uninstall_patched_26);
-					    open_settings.setText(R.string.open_settings_26);
-					    open_patched.setText(R.string.open_patched_26);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_26);
+					title_2.setText(R.string.spotify_amoled_26);
+					sub_text_installed.setText(R.string.installed_26);
+					sub_text_1.setText(R.string.latest_26);
+					sub_text_2.setText(R.string.latest_26);
+					sub_text_3.setText(R.string.latest_26);
+					version_switch_1.setText(R.string.versions_26);
+					version_switch_2.setText(R.string.versions_26);
+					version_switch_3.setText(R.string.versions_26);
+					changelogs.setText(R.string.changelogs_26);
+					title_sub.setText(R.string.manager_tools_26);
+					device_cpu.setText(R.string.device_cpu_26);
+					source.setText(R.string.source_26);
+					support.setText(R.string.support_26);
+					donate.setText(R.string.donate_26);
+					about.setText(R.string.about_26);
+					list_auto_refresh.setText(R.string.list_auto_refresh_26);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_26);
+					force_auto_install.setText(R.string.force_auto_install_26);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_26);
+					theme.setText(R.string.show_themes_26);
+					apk_location.setText(R.string.apk_location_26);
+					apk_location_info.setText(R.string.apk_location_desc_26);
+					clear_directory_folders.setText(R.string.clear_directory_folders_26);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_26);
+					reset_settings.setText(R.string.reset_settings_26);
+					sub_title.setText(R.string.about_sub_26);
+					developer_manager.setText(R.string.xmanager_dev_26);
+					developer_spotify.setText(R.string.spotify_mod_devs_26);
+					support_team.setText(R.string.telegram_support_team_26);
+					mod_testers_1.setText(R.string.manager_testers_26);
+					mod_testers_2.setText(R.string.manager_hosting_26);
+					mobilism_team.setText(R.string.mobilism_team_26);
+					forum_team.setText(R.string.forum_team_26);
+					manager_team.setText(R.string.xspotify_team_26);
+					contributors_1.setText(R.string.contributors_26);
+					download_selected.setText(R.string.download_selected_26);
+					download_ready.setText(R.string.download_ready_26);
+					download_ready_desc.setText(R.string.download_ready_desc_26);
+					downloading_file.setText(R.string.downloading_file_26);
+					download_success.setText(R.string.download_success_26);
+					new_update.setText(R.string.new_update_26);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_26);
+					continue_1.setText(R.string.continue_1_26);
+					cancel.setText(R.string.cancel_26);
+					fixer.setText(R.string.fixer_26);
+					download.setText(R.string.download_26);
+					later.setText(R.string.later_26);
+					install_now.setText(R.string.install_now_26);
+					install_update.setText(R.string.install_update_26);
+					go_back.setText(R.string.go_back_26);
+					download_update.setText(R.string.download_update_26);
+					not_now.setText(R.string.not_now_26);
+					show_support.setText(R.string.show_support_26);
+					show_support_desc.setText(R.string.show_support_desc_26);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_26);
+					settings_title.setText(R.string.settings_title_26);
+					about_title.setText(R.string.about_title_26);
+					maintenance.setText(R.string.maintenance_26);
+					maintenance_desc.setText(R.string.maintenance_desc_26);
+					thanks.setText(R.string.thanks_26);
+					language.setText(R.string.language_26);
+					website.setText(R.string.website_26);
+					discord.setText(R.string.discord_26);
+					reddit.setText(R.string.reddit_26);
+					faq.setText(R.string.faq_26);
+					cloned_version.setText(R.string.cloned_version_26);
+					cloned_version_info.setText(R.string.cloned_version_desc_26);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_26);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_26);
+					installation_failed.setText(R.string.installation_failed_26);
+					installation_failed_desc.setText(R.string.installation_failed_desc_26);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_26);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_26);
+					existing_patched.setText(R.string.existing_patched_26);
+					existing_patched_desc.setText(R.string.existing_patched_desc_26);
+					close.setText(R.string.close_26);
+					cloned.setText(R.string.cloned_26);
+					ream.setText(R.string.ream_26);
+					install.setText(R.string.install_26);
+					uninstall.setText(R.string.uninstall_26);
+					ignore.setText(R.string.ignore_26);
+					delete.setText(R.string.delete_26);
+					uninstall_patched.setText(R.string.uninstall_patched_26);
+					open_settings.setText(R.string.open_settings_26);
+					open_patched.setText(R.string.open_patched_26);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 27) {
 					LANGUAGE.edit().putString("LANGUAGE", "27").commit();
-					    title_1.setText(R.string.spotify_regular_27);
-						title_2.setText(R.string.spotify_amoled_27);
-						sub_text_installed.setText(R.string.installed_27);
-						sub_text_1.setText(R.string.latest_27);
-						sub_text_3.setText(R.string.latest_27);
-						version_switch_1.setText(R.string.versions_27);
-						version_switch_2.setText(R.string.versions_27);
-						changelogs.setText(R.string.changelogs_27);
-						title_sub.setText(R.string.manager_tools_27);
-						device_cpu.setText(R.string.device_cpu_27);
-						source.setText(R.string.source_27);
-						support.setText(R.string.support_27);
-						donate.setText(R.string.donate_27);
-						about.setText(R.string.about_27);
-						list_auto_refresh.setText(R.string.list_auto_refresh_27);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_27);
-						force_auto_install.setText(R.string.force_auto_install_27);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_27);
-						theme.setText(R.string.show_themes_27);
-						apk_location.setText(R.string.apk_location_27);
-						apk_location_info.setText(R.string.apk_location_desc_27);
-						clear_directory_folders.setText(R.string.clear_directory_folders_27);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_27);
-						reset_settings.setText(R.string.reset_settings_27);
-						sub_title.setText(R.string.about_sub_27);
-						developer_manager.setText(R.string.xmanager_dev_27);
-						developer_spotify.setText(R.string.spotify_mod_devs_27);
-						support_team.setText(R.string.telegram_support_team_27);
-						mod_testers_1.setText(R.string.manager_testers_27);
-						mod_testers_2.setText(R.string.manager_hosting_27);
-						mobilism_team.setText(R.string.mobilism_team_27);
-						forum_team.setText(R.string.forum_team_27);
-						manager_team.setText(R.string.xspotify_team_27);
-						contributors_1.setText(R.string.contributors_27);
-						download_selected.setText(R.string.download_selected_27);
-						download_ready.setText(R.string.download_ready_27);
-						download_ready_desc.setText(R.string.download_ready_desc_27);
-						downloading_file.setText(R.string.downloading_file_27);
-						download_success.setText(R.string.download_success_27);
-						new_update.setText(R.string.new_update_27);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_27);
-						continue_1.setText(R.string.continue_1_27);
-						cancel.setText(R.string.cancel_27);
-					    fixer.setText(R.string.fixer_27);
-						download.setText(R.string.download_27);
-						later.setText(R.string.later_27);
-						install_now.setText(R.string.install_now_27);
-						install_update.setText(R.string.install_update_27);
-						go_back.setText(R.string.go_back_27);
-						download_update.setText(R.string.download_update_27);
-						not_now.setText(R.string.not_now_27);
-						show_support.setText(R.string.show_support_27);
-						show_support_desc.setText(R.string.show_support_desc_27);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_27);
-						settings_title.setText(R.string.settings_title_27);
-						about_title.setText(R.string.about_title_27);
-						maintenance.setText(R.string.maintenance_27);
-						maintenance_desc.setText(R.string.maintenance_desc_27);
-						thanks.setText(R.string.thanks_27);
-						language.setText(R.string.language_27);
-						website.setText(R.string.website_27);
-						discord.setText(R.string.discord_27);
-						reddit.setText(R.string.reddit_27);
-						faq.setText(R.string.faq_27);
-						cloned_version.setText(R.string.cloned_version_27);
-						cloned_version_info.setText(R.string.cloned_version_desc_27);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_27);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_27);
-					    installation_failed.setText(R.string.installation_failed_27);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_27);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_27);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_27);
-					    existing_patched.setText(R.string.existing_patched_27);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_27);
-					    close.setText(R.string.close_27);
-					    cloned.setText(R.string.cloned_27);
-					    ream.setText(R.string.ream_27);
-					    install.setText(R.string.install_27);
-					    uninstall.setText(R.string.uninstall_27);
-					    ignore.setText(R.string.ignore_27);
-					    delete.setText(R.string.delete_27);
-					    uninstall_patched.setText(R.string.uninstall_patched_27);
-					    open_settings.setText(R.string.open_settings_27);
-					    open_patched.setText(R.string.open_patched_27);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_27);
+					title_2.setText(R.string.spotify_amoled_27);
+					sub_text_installed.setText(R.string.installed_27);
+					sub_text_1.setText(R.string.latest_27);
+					sub_text_2.setText(R.string.latest_27);
+					sub_text_3.setText(R.string.latest_27);
+					version_switch_1.setText(R.string.versions_27);
+					version_switch_2.setText(R.string.versions_27);
+					version_switch_3.setText(R.string.versions_27);
+					changelogs.setText(R.string.changelogs_27);
+					title_sub.setText(R.string.manager_tools_27);
+					device_cpu.setText(R.string.device_cpu_27);
+					source.setText(R.string.source_27);
+					support.setText(R.string.support_27);
+					donate.setText(R.string.donate_27);
+					about.setText(R.string.about_27);
+					list_auto_refresh.setText(R.string.list_auto_refresh_27);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_27);
+					force_auto_install.setText(R.string.force_auto_install_27);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_27);
+					theme.setText(R.string.show_themes_27);
+					apk_location.setText(R.string.apk_location_27);
+					apk_location_info.setText(R.string.apk_location_desc_27);
+					clear_directory_folders.setText(R.string.clear_directory_folders_27);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_27);
+					reset_settings.setText(R.string.reset_settings_27);
+					sub_title.setText(R.string.about_sub_27);
+					developer_manager.setText(R.string.xmanager_dev_27);
+					developer_spotify.setText(R.string.spotify_mod_devs_27);
+					support_team.setText(R.string.telegram_support_team_27);
+					mod_testers_1.setText(R.string.manager_testers_27);
+					mod_testers_2.setText(R.string.manager_hosting_27);
+					mobilism_team.setText(R.string.mobilism_team_27);
+					forum_team.setText(R.string.forum_team_27);
+					manager_team.setText(R.string.xspotify_team_27);
+					contributors_1.setText(R.string.contributors_27);
+					download_selected.setText(R.string.download_selected_27);
+					download_ready.setText(R.string.download_ready_27);
+					download_ready_desc.setText(R.string.download_ready_desc_27);
+					downloading_file.setText(R.string.downloading_file_27);
+					download_success.setText(R.string.download_success_27);
+					new_update.setText(R.string.new_update_27);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_27);
+					continue_1.setText(R.string.continue_1_27);
+					cancel.setText(R.string.cancel_27);
+					fixer.setText(R.string.fixer_27);
+					download.setText(R.string.download_27);
+					later.setText(R.string.later_27);
+					install_now.setText(R.string.install_now_27);
+					install_update.setText(R.string.install_update_27);
+					go_back.setText(R.string.go_back_27);
+					download_update.setText(R.string.download_update_27);
+					not_now.setText(R.string.not_now_27);
+					show_support.setText(R.string.show_support_27);
+					show_support_desc.setText(R.string.show_support_desc_27);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_27);
+					settings_title.setText(R.string.settings_title_27);
+					about_title.setText(R.string.about_title_27);
+					maintenance.setText(R.string.maintenance_27);
+					maintenance_desc.setText(R.string.maintenance_desc_27);
+					thanks.setText(R.string.thanks_27);
+					language.setText(R.string.language_27);
+					website.setText(R.string.website_27);
+					discord.setText(R.string.discord_27);
+					reddit.setText(R.string.reddit_27);
+					faq.setText(R.string.faq_27);
+					cloned_version.setText(R.string.cloned_version_27);
+					cloned_version_info.setText(R.string.cloned_version_desc_27);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_27);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_27);
+					installation_failed.setText(R.string.installation_failed_27);
+					installation_failed_desc.setText(R.string.installation_failed_desc_27);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_27);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_27);
+					existing_patched.setText(R.string.existing_patched_27);
+					existing_patched_desc.setText(R.string.existing_patched_desc_27);
+					close.setText(R.string.close_27);
+					cloned.setText(R.string.cloned_27);
+					ream.setText(R.string.ream_27);
+					install.setText(R.string.install_27);
+					uninstall.setText(R.string.uninstall_27);
+					ignore.setText(R.string.ignore_27);
+					delete.setText(R.string.delete_27);
+					uninstall_patched.setText(R.string.uninstall_patched_27);
+					open_settings.setText(R.string.open_settings_27);
+					open_patched.setText(R.string.open_patched_27);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
 				if (_position == 28) {
 					LANGUAGE.edit().putString("LANGUAGE", "28").commit();
-					    title_1.setText(R.string.spotify_regular_28);
-						title_2.setText(R.string.spotify_amoled_28);
-						sub_text_installed.setText(R.string.installed_28);
-						sub_text_1.setText(R.string.latest_28);
-						sub_text_3.setText(R.string.latest_28);
-						version_switch_1.setText(R.string.versions_28);
-						version_switch_2.setText(R.string.versions_28);
-						changelogs.setText(R.string.changelogs_28);
-						title_sub.setText(R.string.manager_tools_28);
-						device_cpu.setText(R.string.device_cpu_28);
-						source.setText(R.string.source_28);
-						support.setText(R.string.support_28);
-						donate.setText(R.string.donate_28);
-						about.setText(R.string.about_28);
-						list_auto_refresh.setText(R.string.list_auto_refresh_28);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_28);
-						force_auto_install.setText(R.string.force_auto_install_28);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_28);
-						theme.setText(R.string.show_themes_28);
-						apk_location.setText(R.string.apk_location_28);
-						apk_location_info.setText(R.string.apk_location_desc_28);
-						clear_directory_folders.setText(R.string.clear_directory_folders_28);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_28);
-						reset_settings.setText(R.string.reset_settings_28);
-						sub_title.setText(R.string.about_sub_28);
-						developer_manager.setText(R.string.xmanager_dev_28);
-						developer_spotify.setText(R.string.spotify_mod_devs_28);
-						support_team.setText(R.string.telegram_support_team_28);
-						mod_testers_1.setText(R.string.manager_testers_28);
-						mod_testers_2.setText(R.string.manager_hosting_28);
-						mobilism_team.setText(R.string.mobilism_team_28);
-						forum_team.setText(R.string.forum_team_28);
-						manager_team.setText(R.string.xspotify_team_28);
-						contributors_1.setText(R.string.contributors_28);
-						download_selected.setText(R.string.download_selected_28);
-						download_ready.setText(R.string.download_ready_28);
-						download_ready_desc.setText(R.string.download_ready_desc_28);
-						downloading_file.setText(R.string.downloading_file_28);
-						download_success.setText(R.string.download_success_28);
-						new_update.setText(R.string.new_update_28);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_28);
-						continue_1.setText(R.string.continue_1_28);
-						cancel.setText(R.string.cancel_28);
-					    fixer.setText(R.string.fixer_28);
-						download.setText(R.string.download_28);
-						later.setText(R.string.later_28);
-						install_now.setText(R.string.install_now_28);
-						install_update.setText(R.string.install_update_28);
-						go_back.setText(R.string.go_back_28);
-						download_update.setText(R.string.download_update_28);
-						not_now.setText(R.string.not_now_28);
-						show_support.setText(R.string.show_support_28);
-						show_support_desc.setText(R.string.show_support_desc_28);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_28);
-						settings_title.setText(R.string.settings_title_28);
-						about_title.setText(R.string.about_title_28);
-						maintenance.setText(R.string.maintenance_28);
-						maintenance_desc.setText(R.string.maintenance_desc_28);
-						thanks.setText(R.string.thanks_28);
-						language.setText(R.string.language_28);
-						website.setText(R.string.website_28);
-						discord.setText(R.string.discord_28);
-						reddit.setText(R.string.reddit_28);
-						faq.setText(R.string.faq_28);
-						cloned_version.setText(R.string.cloned_version_28);
-						cloned_version_info.setText(R.string.cloned_version_desc_28);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_28);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_28);
-					    installation_failed.setText(R.string.installation_failed_28);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_28);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_28);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_28);
-					    existing_patched.setText(R.string.existing_patched_28);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_28);
-					    close.setText(R.string.close_28);
-					    cloned.setText(R.string.cloned_28);
-					    ream.setText(R.string.ream_28);
-					    install.setText(R.string.install_28);
-					    uninstall.setText(R.string.uninstall_28);
-					    ignore.setText(R.string.ignore_28);
-					    delete.setText(R.string.delete_28);
-					    uninstall_patched.setText(R.string.uninstall_patched_28);
-					    open_settings.setText(R.string.open_settings_28);
-					    open_patched.setText(R.string.open_patched_28);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_28);
+					title_2.setText(R.string.spotify_amoled_28);
+					sub_text_installed.setText(R.string.installed_28);
+					sub_text_1.setText(R.string.latest_28);
+					sub_text_2.setText(R.string.latest_28);
+					sub_text_3.setText(R.string.latest_28);
+					version_switch_1.setText(R.string.versions_28);
+					version_switch_2.setText(R.string.versions_28);
+					version_switch_3.setText(R.string.versions_28);
+					changelogs.setText(R.string.changelogs_28);
+					title_sub.setText(R.string.manager_tools_28);
+					device_cpu.setText(R.string.device_cpu_28);
+					source.setText(R.string.source_28);
+					support.setText(R.string.support_28);
+					donate.setText(R.string.donate_28);
+					about.setText(R.string.about_28);
+					list_auto_refresh.setText(R.string.list_auto_refresh_28);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_28);
+					force_auto_install.setText(R.string.force_auto_install_28);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_28);
+					theme.setText(R.string.show_themes_28);
+					apk_location.setText(R.string.apk_location_28);
+					apk_location_info.setText(R.string.apk_location_desc_28);
+					clear_directory_folders.setText(R.string.clear_directory_folders_28);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_28);
+					reset_settings.setText(R.string.reset_settings_28);
+					sub_title.setText(R.string.about_sub_28);
+					developer_manager.setText(R.string.xmanager_dev_28);
+					developer_spotify.setText(R.string.spotify_mod_devs_28);
+					support_team.setText(R.string.telegram_support_team_28);
+					mod_testers_1.setText(R.string.manager_testers_28);
+					mod_testers_2.setText(R.string.manager_hosting_28);
+					mobilism_team.setText(R.string.mobilism_team_28);
+					forum_team.setText(R.string.forum_team_28);
+					manager_team.setText(R.string.xspotify_team_28);
+					contributors_1.setText(R.string.contributors_28);
+					download_selected.setText(R.string.download_selected_28);
+					download_ready.setText(R.string.download_ready_28);
+					download_ready_desc.setText(R.string.download_ready_desc_28);
+					downloading_file.setText(R.string.downloading_file_28);
+					download_success.setText(R.string.download_success_28);
+					new_update.setText(R.string.new_update_28);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_28);
+					continue_1.setText(R.string.continue_1_28);
+					cancel.setText(R.string.cancel_28);
+					fixer.setText(R.string.fixer_28);
+					download.setText(R.string.download_28);
+					later.setText(R.string.later_28);
+					install_now.setText(R.string.install_now_28);
+					install_update.setText(R.string.install_update_28);
+					go_back.setText(R.string.go_back_28);
+					download_update.setText(R.string.download_update_28);
+					not_now.setText(R.string.not_now_28);
+					show_support.setText(R.string.show_support_28);
+					show_support_desc.setText(R.string.show_support_desc_28);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_28);
+					settings_title.setText(R.string.settings_title_28);
+					about_title.setText(R.string.about_title_28);
+					maintenance.setText(R.string.maintenance_28);
+					maintenance_desc.setText(R.string.maintenance_desc_28);
+					thanks.setText(R.string.thanks_28);
+					language.setText(R.string.language_28);
+					website.setText(R.string.website_28);
+					discord.setText(R.string.discord_28);
+					reddit.setText(R.string.reddit_28);
+					faq.setText(R.string.faq_28);
+					cloned_version.setText(R.string.cloned_version_28);
+					cloned_version_info.setText(R.string.cloned_version_desc_28);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_28);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_28);
+					installation_failed.setText(R.string.installation_failed_28);
+					installation_failed_desc.setText(R.string.installation_failed_desc_28);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_28);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_28);
+					existing_patched.setText(R.string.existing_patched_28);
+					existing_patched_desc.setText(R.string.existing_patched_desc_28);
+					close.setText(R.string.close_28);
+					cloned.setText(R.string.cloned_28);
+					ream.setText(R.string.ream_28);
+					install.setText(R.string.install_28);
+					uninstall.setText(R.string.uninstall_28);
+					ignore.setText(R.string.ignore_28);
+					delete.setText(R.string.delete_28);
+					uninstall_patched.setText(R.string.uninstall_patched_28);
+					open_settings.setText(R.string.open_settings_28);
+					open_patched.setText(R.string.open_patched_28);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					COUNTER = 1;
 				}
@@ -4469,9 +4571,6 @@ public class MainActivity extends AppCompatActivity {
 		box_reset_settings.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				version_switch_01.setChecked(false);
-				version_switch_02.setChecked(false);
-				changelogs_switch.setChecked(false);
 				cloned_version_switch.setChecked(false);
 				list_auto_refresh_switch.setChecked(false);
 				force_auto_install_switch.setChecked(false);
@@ -4638,13 +4737,16 @@ public class MainActivity extends AppCompatActivity {
 					}
 					version_oc_01.setImageResource(R.drawable.open);
 					version_oc_02.setImageResource(R.drawable.close);
+					version_oc_03.setImageResource(R.drawable.close);
 					changelogs_oc.setImageResource(R.drawable.close);
 					list_menu_2.setVisibility(View.GONE);
 					list_menu_4.setVisibility(View.GONE);
+					list_menu_5.setVisibility(View.GONE);
 					list_changelogs.setVisibility(View.GONE);
 					CLICKER_1 = 0;
 					CLICKER_2 = 1;
 					CLICKER_3 = 1;
+					CLICKER_4 = 1;
 				}
 				else {
 					if (CLICKER_1 == 0) {
@@ -4682,13 +4784,16 @@ public class MainActivity extends AppCompatActivity {
 					}
 					version_oc_01.setImageResource(R.drawable.close);
 					version_oc_02.setImageResource(R.drawable.open);
+					version_oc_03.setImageResource(R.drawable.close);
 					changelogs_oc.setImageResource(R.drawable.close);
 					list_menu_1.setVisibility(View.GONE);
 					list_menu_3.setVisibility(View.GONE);
+					list_menu_5.setVisibility(View.GONE);
 					list_changelogs.setVisibility(View.GONE);
 					CLICKER_1 = 1;
 					CLICKER_2 = 0;
 					CLICKER_3 = 1;
+					CLICKER_4 = 1;
 				}
 				else {
 					if (CLICKER_2 == 0) {
@@ -4706,29 +4811,68 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 		
-		main_box_6.setOnClickListener(new View.OnClickListener() {
+		main_box_3.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
 				if (CLICKER_3 == 1) {
 					version_oc_01.setImageResource(R.drawable.close);
 					version_oc_02.setImageResource(R.drawable.close);
+					version_oc_03.setImageResource(R.drawable.open);
+					changelogs_oc.setImageResource(R.drawable.close);
+					list_menu_1.setVisibility(View.GONE);
+					list_menu_2.setVisibility(View.GONE);
+					list_menu_3.setVisibility(View.GONE);
+					list_menu_4.setVisibility(View.GONE);
+					list_menu_5.setVisibility(View.VISIBLE);
+					list_changelogs.setVisibility(View.GONE);
+					list_menu_5.setAdapter(new List_menu_5Adapter(lite));
+					((BaseAdapter)list_menu_5.getAdapter()).notifyDataSetChanged();
+					CLICKER_1 = 1;
+					CLICKER_2 = 1;
+					CLICKER_3 = 0;
+					CLICKER_4 = 1;
+				}
+				else {
+					if (CLICKER_3 == 0) {
+						version_oc_03.setImageResource(R.drawable.close);
+						list_menu_5.setVisibility(View.GONE);
+						CLICKER_3 = 1;
+					}
+				}
+				Animation animation;
+				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+				animation.setDuration(500); version_oc_03.startAnimation(animation);
+				animation = null;
+				_Tap_Animation(main_box_3);
+			}
+		});
+		
+		main_box_6.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				if (CLICKER_4 == 1) {
+					version_oc_01.setImageResource(R.drawable.close);
+					version_oc_02.setImageResource(R.drawable.close);
+					version_oc_03.setImageResource(R.drawable.close);
 					changelogs_oc.setImageResource(R.drawable.open);
 					list_menu_1.setVisibility(View.GONE);
 					list_menu_2.setVisibility(View.GONE);
 					list_menu_3.setVisibility(View.GONE);
 					list_menu_4.setVisibility(View.GONE);
+					list_menu_5.setVisibility(View.GONE);
 					list_changelogs.setVisibility(View.VISIBLE);
 					list_changelogs.setAdapter(new List_changelogsAdapter(mod_changelogs));
 					((BaseAdapter)list_changelogs.getAdapter()).notifyDataSetChanged();
 					CLICKER_1 = 1;
 					CLICKER_2 = 1;
-					CLICKER_3 = 0;
+					CLICKER_3 = 1;
+					CLICKER_4 = 0;
 				}
 				else {
-					if (CLICKER_3 == 0) {
+					if (CLICKER_4 == 0) {
 						changelogs_oc.setImageResource(R.drawable.close);
 						list_changelogs.setVisibility(View.GONE);
-						CLICKER_3 = 1;
+						CLICKER_4 = 1;
 					}
 				}
 				Animation animation;
@@ -6131,6 +6275,347 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 		
+		list_menu_5.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
+				final int _position = _param3;
+				try {
+					if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Lite Mod (Official).apk")) {
+						final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+						
+						String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
+						String TitleColor = "1DB954";
+						
+						File_Exist.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+						String Message = existing_patched_desc.getText().toString();
+						String MessageColor = "FFFFFF";
+						
+						File_Exist.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+						File_Exist.setPositiveButton(install.getText().toString(), new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface File_Exist, int p) {
+								AlertDialog.setCancelable(true);
+								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Lite Mod (Official).apk")) {
+									_Extension_6();
+								}
+								                }
+							            });
+						File_Exist.setNegativeButton(delete.getText().toString(), new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface File_Exist, int p) {
+								
+								AlertDialog.setCancelable(true);
+								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Lite Mod (Official).apk");
+								                }
+							            });
+						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface File_Exist, int p) {
+								AlertDialog.setCancelable(true);
+								final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+								
+								String Title = "<b>".concat(download_ready_0.concat("</b>"));
+								String TitleColor = "1DB954";
+								
+								Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+								if (_position < 2) {
+									if ((_position % 2) == 0) {
+										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(lite.get((int)(lite.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)))))));
+										String MessageColor = "FFFFFF";
+										
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+									}
+									else {
+										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(lite.get((int)(lite.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)))))));
+										String MessageColor = "FFFFFF";
+										
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+									}
+								}
+								else {
+									if ((_position % 2) == 1) {
+										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(lite.get((int)(lite.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)))))));
+										String MessageColor = "FFFFFF";
+										
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+									}
+									else {
+										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(lite.get((int)(lite.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)))))));
+										String MessageColor = "FFFFFF";
+										
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+									}
+								}
+								Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
+									
+									                @Override
+									                public void onClick(DialogInterface Selected_Patched, int p) {
+										try {
+											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+												AlertDialog.setCancelable(true);
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													_Download_Install_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												}
+												else {
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														_Download_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													}
+												}
+												_File_Remover();
+											}
+											else {
+												if (mRewardedAd != null) {
+													  Activity activityContext = MainActivity.this;
+													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+														    @Override
+														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+															       AlertDialog.setCancelable(true);
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																_Download_Install_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															}
+															else {
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																	_Download_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+																}
+															}
+															_File_Remover();
+															      int rewardAmount = rewardItem.getAmount();
+															      String rewardType = rewardItem.getType();
+															    }
+														  });
+												} else {
+													AlertDialog.setCancelable(true);
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+														_Download_Install_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													}
+													else {
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+															_Download_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														}
+													}
+													_File_Remover();
+												}
+											}
+										}
+										catch(Exception e) {
+										}
+										                }
+									            });
+								Selected_Patched.setNegativeButton(copy_url_0, new DialogInterface.OnClickListener(){
+									
+									                @Override
+									                public void onClick(DialogInterface Selected_Patched, int p) {
+										
+										try {
+											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+												AlertDialog.setCancelable(true);
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+											}
+											else {
+												if (mRewardedAd != null) {
+													  Activity activityContext = MainActivity.this;
+													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+														    @Override
+														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+															       AlertDialog.setCancelable(true);
+															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+															      int rewardAmount = rewardItem.getAmount();
+															      String rewardType = rewardItem.getType();
+															    }
+														  });
+												} else {
+													AlertDialog.setCancelable(true);
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+												}
+											}
+										}
+										catch(Exception e) {
+										}
+										                }
+									            });
+								 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
+									
+									                @Override
+									                public void onClick(DialogInterface Selected_Patched, int p) {
+										AlertDialog.setCancelable(true);
+										                }
+									            });
+								AlertDialog = Selected_Patched.create();
+								AlertDialog.setCancelable(false);
+								AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+								AlertDialog.show();
+								DELETE = 1;
+								                }
+							            });
+						AlertDialog = File_Exist.create();
+						AlertDialog.setCancelable(false);
+						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+						AlertDialog.show();
+					}
+					else {
+						final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+						
+						String Title = "<b>".concat(download_ready_0.concat("</b>"));
+						String TitleColor = "1DB954";
+						
+						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+						if (_position < 2) {
+							if ((_position % 2) == 0) {
+								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(lite.get((int)(lite.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)))))));
+								String MessageColor = "FFFFFF";
+								
+								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+							}
+							else {
+								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(lite.get((int)(lite.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)))))));
+								String MessageColor = "FFFFFF";
+								
+								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+							}
+						}
+						else {
+							if ((_position % 2) == 1) {
+								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(lite.get((int)(lite.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)))))));
+								String MessageColor = "FFFFFF";
+								
+								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+							}
+							else {
+								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(lite.get((int)(lite.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)))))));
+								String MessageColor = "FFFFFF";
+								
+								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+							}
+						}
+						Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface Selected_Patched, int p) {
+								try {
+									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+										AlertDialog.setCancelable(true);
+										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+											_Download_Install_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+										}
+										else {
+											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+												_Download_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+											}
+										}
+										_File_Remover();
+									}
+									else {
+										if (mRewardedAd != null) {
+											  Activity activityContext = MainActivity.this;
+											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+												    @Override
+												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+													       AlertDialog.setCancelable(true);
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+														_Download_Install_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													}
+													else {
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+															_Download_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														}
+													}
+													_File_Remover();
+													      int rewardAmount = rewardItem.getAmount();
+													      String rewardType = rewardItem.getType();
+													    }
+												  });
+										} else {
+											AlertDialog.setCancelable(true);
+											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+												_Download_Install_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+											}
+											else {
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+													_Download_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												}
+											}
+											_File_Remover();
+										}
+									}
+								}
+								catch(Exception e) {
+								}
+								                }
+							            });
+						Selected_Patched.setNegativeButton(copy_url_0, new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface Selected_Patched, int p) {
+								
+								try {
+									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+										AlertDialog.setCancelable(true);
+										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+									}
+									else {
+										if (mRewardedAd != null) {
+											  Activity activityContext = MainActivity.this;
+											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+												    @Override
+												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+													       AlertDialog.setCancelable(true);
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+													      int rewardAmount = rewardItem.getAmount();
+													      String rewardType = rewardItem.getType();
+													    }
+												  });
+										} else {
+											AlertDialog.setCancelable(true);
+											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+											com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+										}
+									}
+								}
+								catch(Exception e) {
+								}
+								                }
+							            });
+						 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
+							
+							                @Override
+							                public void onClick(DialogInterface Selected_Patched, int p) {
+								AlertDialog.setCancelable(true);
+								                }
+							            });
+						AlertDialog = Selected_Patched.create();
+						AlertDialog.setCancelable(false);
+						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+						AlertDialog.show();
+						DELETE = 1;
+					}
+					hidden_download.setText(lite.get((int)(lite.size() - 1) - _position).get("Link").toString());
+				}
+				catch(Exception e) {
+				}
+			}
+		});
+		
 		box_uninstall.setOnLongClickListener(new View.OnLongClickListener() {
 			@Override
 			public boolean onLongClick(View _view) {
@@ -6269,9 +6754,10 @@ public class MainActivity extends AppCompatActivity {
 							}
 						};
 						_timer.schedule(Timer, (int)(2000));
-						if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.music/") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.musix/")) {
+						if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.music/") || (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.musix/") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.lite/"))) {
 							FileUtil.deleteFile("/storage/emulated/0/Android/data/com.spotify.music/");
 							FileUtil.deleteFile("/storage/emulated/0/Android/data/com.spotify.musix/");
+							FileUtil.deleteFile("/storage/emulated/0/Android/data/com.spotify.lite/");
 							SketchwareUtil.showMessage(getApplicationContext(), "Successfully deleted");
 						}
 						else {
@@ -6588,46 +7074,119 @@ public class MainActivity extends AppCompatActivity {
 								runOnUiThread(new Runnable() {
 									@Override
 									public void run() {
-										if (Installed_Checker.equals("true") && Installed_Checker_Cloned.equals("true")) {
+										if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("true") && Installed_Checker_Lite.equals("true"))) {
 											sub_installed.setVisibility(View.VISIBLE);
-											sub_separator.setVisibility(View.VISIBLE);
+											sub_separator_1.setVisibility(View.VISIBLE);
 											sub_installed_c.setVisibility(View.VISIBLE);
+											sub_separator_2.setVisibility(View.VISIBLE);
+											sub_installed_l.setVisibility(View.VISIBLE);
 											sub_installed.setTextColor(0xFFFFFFFF);
-											sub_separator.setTextColor(0xFF1DB954);
+											sub_separator_1.setTextColor(0xFF1DB954);
 											sub_installed_c.setTextColor(0xFFBDBDBD);
+											sub_separator_2.setTextColor(0xFF1DB954);
+											sub_installed_l.setTextColor(0xFF78909C);
 										}
 										else {
-											if (Installed_Checker.equals("false") && Installed_Checker_Cloned.equals("false")) {
+											if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("false") && Installed_Checker_Lite.equals("false"))) {
 												sub_installed.setVisibility(View.VISIBLE);
-												sub_separator.setVisibility(View.GONE);
+												sub_separator_1.setVisibility(View.GONE);
 												sub_installed_c.setVisibility(View.GONE);
+												sub_separator_2.setVisibility(View.GONE);
+												sub_installed_l.setVisibility(View.GONE);
 												sub_installed.setTextColor(0xFFFFFFFF);
-												sub_separator.setTextColor(0xFF1DB954);
+												sub_separator_1.setTextColor(0xFF1DB954);
 												sub_installed_c.setTextColor(0xFFBDBDBD);
+												sub_separator_2.setTextColor(0xFF1DB954);
+												sub_installed_l.setTextColor(0xFF78909C);
 											}
 											else {
-												if (Installed_Checker.equals("true") && Installed_Checker_Cloned.equals("false")) {
+												if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("false") && Installed_Checker_Lite.equals("false"))) {
 													sub_installed.setVisibility(View.VISIBLE);
-													sub_separator.setVisibility(View.GONE);
+													sub_separator_1.setVisibility(View.GONE);
 													sub_installed_c.setVisibility(View.GONE);
+													sub_separator_2.setVisibility(View.GONE);
+													sub_installed_l.setVisibility(View.GONE);
 													sub_installed.setTextColor(0xFFFFFFFF);
-													sub_separator.setTextColor(0xFF1DB954);
+													sub_separator_1.setTextColor(0xFF1DB954);
 													sub_installed_c.setTextColor(0xFFBDBDBD);
+													sub_separator_2.setTextColor(0xFF1DB954);
+													sub_installed_l.setTextColor(0xFF78909C);
 												}
 												else {
-													if (Installed_Checker.equals("false") && Installed_Checker_Cloned.equals("true")) {
+													if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("true") && Installed_Checker_Lite.equals("false"))) {
 														sub_installed.setVisibility(View.GONE);
-														sub_separator.setVisibility(View.GONE);
+														sub_separator_1.setVisibility(View.GONE);
 														sub_installed_c.setVisibility(View.VISIBLE);
+														sub_separator_2.setVisibility(View.GONE);
+														sub_installed_l.setVisibility(View.GONE);
 														sub_installed.setTextColor(0xFFFFFFFF);
-														sub_separator.setTextColor(0xFF1DB954);
+														sub_separator_1.setTextColor(0xFF1DB954);
 														sub_installed_c.setTextColor(0xFFBDBDBD);
+														sub_separator_2.setTextColor(0xFF1DB954);
+														sub_installed_l.setTextColor(0xFF78909C);
+													}
+													else {
+														if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("false") && Installed_Checker_Lite.equals("true"))) {
+															sub_installed.setVisibility(View.GONE);
+															sub_separator_1.setVisibility(View.GONE);
+															sub_installed_c.setVisibility(View.GONE);
+															sub_separator_2.setVisibility(View.GONE);
+															sub_installed_l.setVisibility(View.VISIBLE);
+															sub_installed.setTextColor(0xFFFFFFFF);
+															sub_separator_1.setTextColor(0xFF1DB954);
+															sub_installed_c.setTextColor(0xFFBDBDBD);
+															sub_separator_2.setTextColor(0xFF1DB954);
+															sub_installed_l.setTextColor(0xFF78909C);
+														}
+														else {
+															if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("true") && Installed_Checker_Lite.equals("false"))) {
+																sub_installed.setVisibility(View.VISIBLE);
+																sub_separator_1.setVisibility(View.VISIBLE);
+																sub_installed_c.setVisibility(View.VISIBLE);
+																sub_separator_2.setVisibility(View.GONE);
+																sub_installed_l.setVisibility(View.GONE);
+																sub_installed.setTextColor(0xFFFFFFFF);
+																sub_separator_1.setTextColor(0xFF1DB954);
+																sub_installed_c.setTextColor(0xFFBDBDBD);
+																sub_separator_2.setTextColor(0xFF1DB954);
+																sub_installed_l.setTextColor(0xFF78909C);
+															}
+															else {
+																if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("false") && Installed_Checker_Lite.equals("true"))) {
+																	sub_installed.setVisibility(View.VISIBLE);
+																	sub_separator_1.setVisibility(View.GONE);
+																	sub_installed_c.setVisibility(View.GONE);
+																	sub_separator_2.setVisibility(View.VISIBLE);
+																	sub_installed_l.setVisibility(View.VISIBLE);
+																	sub_installed.setTextColor(0xFFFFFFFF);
+																	sub_separator_1.setTextColor(0xFF1DB954);
+																	sub_installed_c.setTextColor(0xFFBDBDBD);
+																	sub_separator_2.setTextColor(0xFF1DB954);
+																	sub_installed_l.setTextColor(0xFF78909C);
+																}
+																else {
+																	if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("true") && Installed_Checker_Lite.equals("true"))) {
+																		sub_installed.setVisibility(View.GONE);
+																		sub_separator_1.setVisibility(View.GONE);
+																		sub_installed_c.setVisibility(View.VISIBLE);
+																		sub_separator_2.setVisibility(View.VISIBLE);
+																		sub_installed_l.setVisibility(View.VISIBLE);
+																		sub_installed.setTextColor(0xFFFFFFFF);
+																		sub_separator_1.setTextColor(0xFF1DB954);
+																		sub_installed_c.setTextColor(0xFFBDBDBD);
+																		sub_separator_2.setTextColor(0xFF1DB954);
+																		sub_installed_l.setTextColor(0xFF78909C);
+																	}
+																}
+															}
+														}
 													}
 												}
 											}
 										}
 										sub_installed.setText("N/A");
 										sub_installed_c.setText("N/A");
+										sub_installed_l.setText("N/A");
 										cpu.setText("N/A");
 										String uri = "com.spotify.music";
 										android.content.pm.PackageManager pm = getPackageManager();
@@ -6657,6 +7216,21 @@ public class MainActivity extends AppCompatActivity {
 										catch (Exception e) {
 												sub_installed_c.setText("N/A");
 												Installed_Checker_Cloned = "false";
+										}
+										
+										String uri_l = "com.spotify.lite";
+										android.content.pm.PackageManager pm_l = getPackageManager();
+										
+										try {
+												android.content.pm.PackageInfo pInfo = pm_l.getPackageInfo(uri_l, android.content.pm.PackageManager.GET_ACTIVITIES);
+												String version_l = pInfo.versionName;
+												sub_installed_l.setText(version_l);
+												Installed_Checker_Lite = "true";
+										}
+										
+										catch (Exception e) {
+												sub_installed_l.setText("N/A");
+												Installed_Checker_Lite = "false";
 										}
 										
 										String app = "com.xc3fff0e.xmanager";
@@ -6789,8 +7363,8 @@ public class MainActivity extends AppCompatActivity {
 																														public void run() {
 																																try {
 																																		prog.dismiss();
-																		                                                                _Reminder();
-																		                                                                _Browser(hidden_download.getText().toString());
+																																		_Reminder();
+																																		_Browser(hidden_download.getText().toString());
 																																} catch (Exception e) {
 																																}
 																														}
@@ -7246,204 +7820,208 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	public static class Drawables {
-		public static android.graphics.drawable.Drawable getSelectableDrawableFor(int color) {
-				if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-						android.graphics.drawable.StateListDrawable stateListDrawable = new android.graphics.drawable.StateListDrawable();
-						stateListDrawable.addState(
-						new int[]{android.R.attr.state_pressed},
-						new android.graphics.drawable.ColorDrawable(Color.parseColor("#ffffff"))
-						);
-						stateListDrawable.addState(
-						new int[]{android.R.attr.state_focused},
-						new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"))
-						);
-						stateListDrawable.addState(
-						new int[]{},
-						new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"))
-						);
-						return stateListDrawable;
-				} else {
-						android.content.res.ColorStateList pressedColor = android.content.res.ColorStateList.valueOf(color);
-						android.graphics.drawable.ColorDrawable defaultColor = new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"));
-						
-						android.graphics.drawable.Drawable rippleColor = getRippleColor(color);
-						return new android.graphics.drawable.RippleDrawable(
-						pressedColor,
-						defaultColor,
-						rippleColor
-						);
-				}
-		}
-		
-		private static android.graphics.drawable.Drawable getRippleColor(int color) {
-				float[] outerRadii = new float[8];
-				Arrays.fill(outerRadii, 0);
-				android.graphics.drawable.shapes.RoundRectShape r = new android.graphics.drawable.shapes.RoundRectShape(outerRadii, null, null);
-				
-				android.graphics.drawable.ShapeDrawable shapeDrawable = new 
-				android.graphics.drawable.ShapeDrawable(r);
-				shapeDrawable.getPaint().setColor(color);
-				return shapeDrawable;
-		}
-		
-		private static int lightenOrDarken(int color, double fraction) {
-				if (canLighten(color, fraction)) {
-						return lighten(color, fraction);
-				} else {
-						return darken(color, fraction);
-				}
-		}
-		
-		private static int lighten(int color, double fraction) {
-				int red = Color.red(color);
-				int green = Color.green(color);
-				int blue = Color.blue(color);
-				red = lightenColor(red, fraction);
-				green = lightenColor(green, fraction);
-				blue = lightenColor(blue, fraction);
-				int alpha = Color.alpha(color);
-				return Color.argb(alpha, red, green, blue);
-		}
-		
-		private static int darken(int color, double fraction) {
-				int red = Color.red(color);
-				int green = Color.green(color);
-				int blue = Color.blue(color);
-				red = darkenColor(red, fraction);
-				green = darkenColor(green, fraction);
-				blue = darkenColor(blue, fraction);
-				int alpha = Color.alpha(color);
-				
-				return Color.argb(alpha, red, green, blue);
-		}
-		
-		private static boolean canLighten(int color, double fraction) {
-				int red = Color.red(color);
-				int green = Color.green(color);
-				int blue = Color.blue(color);
-				return canLightenComponent(red, fraction)
-				&& canLightenComponent(green, fraction)
-				&& canLightenComponent(blue, fraction);
-		}
-		
-		private static boolean canLightenComponent(int colorComponent, double fraction) {
-				int red = Color.red(colorComponent);
-				int green = Color.green(colorComponent);
-				int blue = Color.blue(colorComponent);
-				return red + (red * fraction) < 255
-				&& green + (green * fraction) < 255
-				&& blue + (blue * fraction) < 255;
-		}
-		
-		private static int darkenColor(int color, double fraction) {
-				return (int) Math.max(color - (color * fraction), 0);
-		}
-		
-		private static int lightenColor(int color, double fraction) {
-				return (int) Math.min(color + (color * fraction), 255);
-		}
+			public static android.graphics.drawable.Drawable getSelectableDrawableFor(int color) {
+					if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+							android.graphics.drawable.StateListDrawable stateListDrawable = new android.graphics.drawable.StateListDrawable();
+							stateListDrawable.addState(
+							new int[]{android.R.attr.state_pressed},
+							new android.graphics.drawable.ColorDrawable(Color.parseColor("#ffffff"))
+							);
+							stateListDrawable.addState(
+							new int[]{android.R.attr.state_focused},
+							new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"))
+							);
+							stateListDrawable.addState(
+							new int[]{},
+							new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"))
+							);
+							return stateListDrawable;
+					} else {
+							android.content.res.ColorStateList pressedColor = android.content.res.ColorStateList.valueOf(color);
+							android.graphics.drawable.ColorDrawable defaultColor = new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"));
+							
+							android.graphics.drawable.Drawable rippleColor = getRippleColor(color);
+							return new android.graphics.drawable.RippleDrawable(
+							pressedColor,
+							defaultColor,
+							rippleColor
+							);
+					}
+			}
+			
+			private static android.graphics.drawable.Drawable getRippleColor(int color) {
+					float[] outerRadii = new float[8];
+					Arrays.fill(outerRadii, 0);
+					android.graphics.drawable.shapes.RoundRectShape r = new android.graphics.drawable.shapes.RoundRectShape(outerRadii, null, null);
+					
+					android.graphics.drawable.ShapeDrawable shapeDrawable = new 
+					android.graphics.drawable.ShapeDrawable(r);
+					shapeDrawable.getPaint().setColor(color);
+					return shapeDrawable;
+			}
+			
+			private static int lightenOrDarken(int color, double fraction) {
+					if (canLighten(color, fraction)) {
+							return lighten(color, fraction);
+					} else {
+							return darken(color, fraction);
+					}
+			}
+			
+			private static int lighten(int color, double fraction) {
+					int red = Color.red(color);
+					int green = Color.green(color);
+					int blue = Color.blue(color);
+					red = lightenColor(red, fraction);
+					green = lightenColor(green, fraction);
+					blue = lightenColor(blue, fraction);
+					int alpha = Color.alpha(color);
+					return Color.argb(alpha, red, green, blue);
+			}
+			
+			private static int darken(int color, double fraction) {
+					int red = Color.red(color);
+					int green = Color.green(color);
+					int blue = Color.blue(color);
+					red = darkenColor(red, fraction);
+					green = darkenColor(green, fraction);
+					blue = darkenColor(blue, fraction);
+					int alpha = Color.alpha(color);
+					
+					return Color.argb(alpha, red, green, blue);
+			}
+			
+			private static boolean canLighten(int color, double fraction) {
+					int red = Color.red(color);
+					int green = Color.green(color);
+					int blue = Color.blue(color);
+					return canLightenComponent(red, fraction)
+					&& canLightenComponent(green, fraction)
+					&& canLightenComponent(blue, fraction);
+			}
+			
+			private static boolean canLightenComponent(int colorComponent, double fraction) {
+					int red = Color.red(colorComponent);
+					int green = Color.green(colorComponent);
+					int blue = Color.blue(colorComponent);
+					return red + (red * fraction) < 255
+					&& green + (green * fraction) < 255
+					&& blue + (blue * fraction) < 255;
+			}
+			
+			private static int darkenColor(int color, double fraction) {
+					return (int) Math.max(color - (color * fraction), 0);
+			}
+			
+			private static int lightenColor(int color, double fraction) {
+					return (int) Math.min(color + (color * fraction), 255);
+			}
 	}
 	public static class CircleDrawables {
-		public static android.graphics.drawable.Drawable getSelectableDrawableFor(int color) {
-				if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-						android.graphics.drawable.StateListDrawable stateListDrawable = new android.graphics.drawable.StateListDrawable();
-						stateListDrawable.addState(
-						new int[]{android.R.attr.state_pressed},
-						new android.graphics.drawable.ColorDrawable(Color.parseColor("#ffffff"))
-						);
-						stateListDrawable.addState(
-						new int[]{android.R.attr.state_focused},
-						new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"))
-						);
-						stateListDrawable.addState(
-						new int[]{},
-						new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"))
-						);
-						return stateListDrawable;
-				} else {
-						android.content.res.ColorStateList pressedColor = android.content.res.ColorStateList.valueOf(color);
-						android.graphics.drawable.ColorDrawable defaultColor = new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"));
-						
-						android.graphics.drawable.Drawable rippleColor = getRippleColor(color);
-						return new android.graphics.drawable.RippleDrawable(
-						pressedColor,
-						defaultColor,
-						rippleColor
-						);
-				}
-		}
-		
-		private static android.graphics.drawable.Drawable getRippleColor(int color) {
-				float[] outerRadii = new float[180];
-				Arrays.fill(outerRadii, 80);
-				android.graphics.drawable.shapes.RoundRectShape r = new android.graphics.drawable.shapes.RoundRectShape(outerRadii, null, null);
-				
-				android.graphics.drawable.ShapeDrawable shapeDrawable = new 
-				android.graphics.drawable.ShapeDrawable(r);
-				shapeDrawable.getPaint().setColor(color);
-				return shapeDrawable;
-		}
-		
-		private static int lightenOrDarken(int color, double fraction) {
-				if (canLighten(color, fraction)) {
-						return lighten(color, fraction);
-				} else {
-						return darken(color, fraction);
-				}
-		}
-		
-		private static int lighten(int color, double fraction) {
-				int red = Color.red(color);
-				int green = Color.green(color);
-				int blue = Color.blue(color);
-				red = lightenColor(red, fraction);
-				green = lightenColor(green, fraction);
-				blue = lightenColor(blue, fraction);
-				int alpha = Color.alpha(color);
-				return Color.argb(alpha, red, green, blue);
-		}
-		
-		private static int darken(int color, double fraction) {
-				int red = Color.red(color);
-				int green = Color.green(color);
-				int blue = Color.blue(color);
-				red = darkenColor(red, fraction);
-				green = darkenColor(green, fraction);
-				blue = darkenColor(blue, fraction);
-				int alpha = Color.alpha(color);
-				
-				return Color.argb(alpha, red, green, blue);
-		}
-		
-		private static boolean canLighten(int color, double fraction) {
-				int red = Color.red(color);
-				int green = Color.green(color);
-				int blue = Color.blue(color);
-				return canLightenComponent(red, fraction)
-				&& canLightenComponent(green, fraction)
-				&& canLightenComponent(blue, fraction);
-		}
-		
-		private static boolean canLightenComponent(int colorComponent, double fraction) {
-				int red = Color.red(colorComponent);
-				int green = Color.green(colorComponent);
-				int blue = Color.blue(colorComponent);
-				return red + (red * fraction) < 255
-				&& green + (green * fraction) < 255
-				&& blue + (blue * fraction) < 255;
-		}
-		
-		private static int darkenColor(int color, double fraction) {
-				return (int) Math.max(color - (color * fraction), 0);
-		}
-		
-		private static int lightenColor(int color, double fraction) {
-				return (int) Math.min(color + (color * fraction), 255);
-		}
+			public static android.graphics.drawable.Drawable getSelectableDrawableFor(int color) {
+					if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+							android.graphics.drawable.StateListDrawable stateListDrawable = new android.graphics.drawable.StateListDrawable();
+							stateListDrawable.addState(
+							new int[]{android.R.attr.state_pressed},
+							new android.graphics.drawable.ColorDrawable(Color.parseColor("#ffffff"))
+							);
+							stateListDrawable.addState(
+							new int[]{android.R.attr.state_focused},
+							new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"))
+							);
+							stateListDrawable.addState(
+							new int[]{},
+							new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"))
+							);
+							return stateListDrawable;
+					} else {
+							android.content.res.ColorStateList pressedColor = android.content.res.ColorStateList.valueOf(color);
+							android.graphics.drawable.ColorDrawable defaultColor = new android.graphics.drawable.ColorDrawable(Color.parseColor("#00ffffff"));
+							
+							android.graphics.drawable.Drawable rippleColor = getRippleColor(color);
+							return new android.graphics.drawable.RippleDrawable(
+							pressedColor,
+							defaultColor,
+							rippleColor
+							);
+					}
+			}
+			
+			private static android.graphics.drawable.Drawable getRippleColor(int color) {
+					float[] outerRadii = new float[180];
+					Arrays.fill(outerRadii, 80);
+					android.graphics.drawable.shapes.RoundRectShape r = new android.graphics.drawable.shapes.RoundRectShape(outerRadii, null, null);
+					
+					android.graphics.drawable.ShapeDrawable shapeDrawable = new 
+					android.graphics.drawable.ShapeDrawable(r);
+					shapeDrawable.getPaint().setColor(color);
+					return shapeDrawable;
+			}
+			
+			private static int lightenOrDarken(int color, double fraction) {
+					if (canLighten(color, fraction)) {
+							return lighten(color, fraction);
+					} else {
+							return darken(color, fraction);
+					}
+			}
+			
+			private static int lighten(int color, double fraction) {
+					int red = Color.red(color);
+					int green = Color.green(color);
+					int blue = Color.blue(color);
+					red = lightenColor(red, fraction);
+					green = lightenColor(green, fraction);
+					blue = lightenColor(blue, fraction);
+					int alpha = Color.alpha(color);
+					return Color.argb(alpha, red, green, blue);
+			}
+			
+			private static int darken(int color, double fraction) {
+					int red = Color.red(color);
+					int green = Color.green(color);
+					int blue = Color.blue(color);
+					red = darkenColor(red, fraction);
+					green = darkenColor(green, fraction);
+					blue = darkenColor(blue, fraction);
+					int alpha = Color.alpha(color);
+					
+					return Color.argb(alpha, red, green, blue);
+			}
+			
+			private static boolean canLighten(int color, double fraction) {
+					int red = Color.red(color);
+					int green = Color.green(color);
+					int blue = Color.blue(color);
+					return canLightenComponent(red, fraction)
+					&& canLightenComponent(green, fraction)
+					&& canLightenComponent(blue, fraction);
+			}
+			
+			private static boolean canLightenComponent(int colorComponent, double fraction) {
+					int red = Color.red(colorComponent);
+					int green = Color.green(colorComponent);
+					int blue = Color.blue(colorComponent);
+					return red + (red * fraction) < 255
+					&& green + (green * fraction) < 255
+					&& blue + (blue * fraction) < 255;
+			}
+			
+			private static int darkenColor(int color, double fraction) {
+					return (int) Math.max(color - (color * fraction), 0);
+			}
+			
+			private static int lightenColor(int color, double fraction) {
+					return (int) Math.min(color + (color * fraction), 255);
+			}
 	}
 	
 	public void drawableclass() {
-		
+			
+			
+			
+			
+			
 	}
 	
 	
@@ -7458,40 +8036,44 @@ public class MainActivity extends AppCompatActivity {
 		b = null;
 		Animation c;
 		c = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		c.setDuration(400); main_box_6.startAnimation(c);
+		c.setDuration(400); main_box_3.startAnimation(c);
 		c = null;
 		Animation d;
 		d = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		d.setDuration(500); box_sub_header.startAnimation(d);
+		d.setDuration(500); main_box_6.startAnimation(d);
 		d = null;
 		Animation e;
 		e = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		e.setDuration(600); main_box_4.startAnimation(e);
+		e.setDuration(600); box_sub_header.startAnimation(e);
 		e = null;
 		Animation f;
 		f = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		f.setDuration(700); main_box_15.startAnimation(f);
+		f.setDuration(700); main_box_4.startAnimation(f);
 		f = null;
 		Animation g;
 		g = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		g.setDuration(300); title_header.startAnimation(g);
+		g.setDuration(800); main_box_15.startAnimation(g);
 		g = null;
 		Animation h;
 		h = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		h.setDuration(400); title_header_beta.startAnimation(h);
+		h.setDuration(300); title_header.startAnimation(h);
 		h = null;
 		Animation i;
 		i = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		i.setDuration(500); title_header_separator.startAnimation(i);
+		i.setDuration(400); title_header_beta.startAnimation(i);
 		i = null;
 		Animation j;
 		j = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		j.setDuration(600); box_switch.startAnimation(j);
+		j.setDuration(500); title_header_separator.startAnimation(j);
 		j = null;
 		Animation k;
 		k = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		k.setDuration(700); box_update.startAnimation(k);
+		k.setDuration(600); box_switch.startAnimation(k);
 		k = null;
+		Animation l;
+		l = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		l.setDuration(700); box_update.startAnimation(l);
+		l = null;
 	}
 	
 	
@@ -7619,6 +8201,7 @@ public class MainActivity extends AppCompatActivity {
 									list_menu_2.setVisibility(View.GONE);
 									list_menu_3.setVisibility(View.VISIBLE);
 									list_menu_4.setVisibility(View.GONE);
+									list_menu_5.setVisibility(View.GONE);
 									list_changelogs.setVisibility(View.GONE);
 									list_menu_1.setAdapter(new List_menu_1Adapter(regular));
 									list_menu_3.setAdapter(new List_menu_3Adapter(regular_cloned));
@@ -7631,6 +8214,7 @@ public class MainActivity extends AppCompatActivity {
 										list_menu_2.setVisibility(View.GONE);
 										list_menu_3.setVisibility(View.GONE);
 										list_menu_4.setVisibility(View.GONE);
+										list_menu_5.setVisibility(View.GONE);
 										list_changelogs.setVisibility(View.GONE);
 										list_menu_1.setAdapter(new List_menu_1Adapter(regular));
 										list_menu_3.setAdapter(new List_menu_3Adapter(regular_cloned));
@@ -7641,6 +8225,7 @@ public class MainActivity extends AppCompatActivity {
 								main_refresh_layout.setRefreshing(true);
 								version_oc_01.setImageResource(R.drawable.open);
 								version_oc_02.setImageResource(R.drawable.close);
+								version_oc_03.setImageResource(R.drawable.close);
 								changelogs_oc.setImageResource(R.drawable.close);
 								main_body.setAlpha((float)(0.50d));
 								Timer = new TimerTask() {
@@ -7654,6 +8239,7 @@ public class MainActivity extends AppCompatActivity {
 													list_menu_2.setVisibility(View.GONE);
 													list_menu_3.setVisibility(View.GONE);
 													list_menu_4.setVisibility(View.VISIBLE);
+													list_menu_5.setVisibility(View.GONE);
 													list_changelogs.setVisibility(View.GONE);
 													list_menu_2.setAdapter(new List_menu_2Adapter(amoled));
 													list_menu_4.setAdapter(new List_menu_4Adapter(amoled_cloned));
@@ -7666,6 +8252,7 @@ public class MainActivity extends AppCompatActivity {
 														list_menu_2.setVisibility(View.VISIBLE);
 														list_menu_3.setVisibility(View.GONE);
 														list_menu_4.setVisibility(View.GONE);
+														list_menu_5.setVisibility(View.GONE);
 														list_changelogs.setVisibility(View.GONE);
 														list_menu_2.setAdapter(new List_menu_2Adapter(amoled));
 														list_menu_4.setAdapter(new List_menu_4Adapter(amoled_cloned));
@@ -7676,6 +8263,7 @@ public class MainActivity extends AppCompatActivity {
 												main_refresh_layout.setRefreshing(true);
 												version_oc_01.setImageResource(R.drawable.close);
 												version_oc_02.setImageResource(R.drawable.open);
+												version_oc_03.setImageResource(R.drawable.close);
 												changelogs_oc.setImageResource(R.drawable.close);
 												main_body.setAlpha((float)(0.50d));
 												Timer = new TimerTask() {
@@ -7689,12 +8277,14 @@ public class MainActivity extends AppCompatActivity {
 																list_menu_2.setVisibility(View.GONE);
 																list_menu_3.setVisibility(View.GONE);
 																list_menu_4.setVisibility(View.GONE);
-																list_changelogs.setVisibility(View.VISIBLE);
+																list_menu_5.setVisibility(View.VISIBLE);
+																list_changelogs.setVisibility(View.GONE);
 																version_oc_01.setImageResource(R.drawable.close);
 																version_oc_02.setImageResource(R.drawable.close);
-																changelogs_oc.setImageResource(R.drawable.open);
-																list_changelogs.setAdapter(new List_changelogsAdapter(mod_changelogs));
-																((BaseAdapter)list_changelogs.getAdapter()).notifyDataSetChanged();
+																version_oc_03.setImageResource(R.drawable.open);
+																changelogs_oc.setImageResource(R.drawable.close);
+																list_menu_5.setAdapter(new List_menu_5Adapter(lite));
+																((BaseAdapter)list_menu_5.getAdapter()).notifyDataSetChanged();
 																main_body.setAlpha((float)(0.50d));
 																Timer = new TimerTask() {
 																	@Override
@@ -7702,19 +8292,46 @@ public class MainActivity extends AppCompatActivity {
 																		runOnUiThread(new Runnable() {
 																			@Override
 																			public void run() {
-																				main_refresh_layout.setRefreshing(false);
+																				main_refresh_layout.setRefreshing(true);
 																				list_menu_1.setVisibility(View.GONE);
 																				list_menu_2.setVisibility(View.GONE);
 																				list_menu_3.setVisibility(View.GONE);
 																				list_menu_4.setVisibility(View.GONE);
-																				list_changelogs.setVisibility(View.GONE);
+																				list_menu_5.setVisibility(View.GONE);
+																				list_changelogs.setVisibility(View.VISIBLE);
 																				version_oc_01.setImageResource(R.drawable.close);
 																				version_oc_02.setImageResource(R.drawable.close);
-																				changelogs_oc.setImageResource(R.drawable.close);
-																				main_body.setAlpha((float)(1.00d));
-																				String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
-																				
-																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Data List Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																				version_oc_03.setImageResource(R.drawable.close);
+																				changelogs_oc.setImageResource(R.drawable.open);
+																				list_changelogs.setAdapter(new List_changelogsAdapter(mod_changelogs));
+																				((BaseAdapter)list_changelogs.getAdapter()).notifyDataSetChanged();
+																				main_body.setAlpha((float)(0.50d));
+																				Timer = new TimerTask() {
+																					@Override
+																					public void run() {
+																						runOnUiThread(new Runnable() {
+																							@Override
+																							public void run() {
+																								main_refresh_layout.setRefreshing(false);
+																								list_menu_1.setVisibility(View.GONE);
+																								list_menu_2.setVisibility(View.GONE);
+																								list_menu_3.setVisibility(View.GONE);
+																								list_menu_4.setVisibility(View.GONE);
+																								list_menu_5.setVisibility(View.GONE);
+																								list_changelogs.setVisibility(View.GONE);
+																								version_oc_01.setImageResource(R.drawable.close);
+																								version_oc_02.setImageResource(R.drawable.close);
+																								version_oc_03.setImageResource(R.drawable.close);
+																								changelogs_oc.setImageResource(R.drawable.close);
+																								main_body.setAlpha((float)(1.00d));
+																								String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
+																								
+																								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Data List Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																							}
+																						});
+																					}
+																				};
+																				_timer.schedule(Timer, (int)(700));
 																			}
 																		});
 																	}
@@ -7854,7 +8471,7 @@ public class MainActivity extends AppCompatActivity {
 																														public void run() {
 																																try {
 																																		prog.dismiss();
-																		                                                                _Reminder();
+																																		_Reminder();
 																																		_Browser(hidden_download.getText().toString());
 																																} catch (Exception e) {
 																																}
@@ -7886,9 +8503,6 @@ public class MainActivity extends AppCompatActivity {
 																																		@Override
 																																		public void run() {
 																																				prog.dismiss();
-																																				version_switch_01.setChecked(false);
-																																				version_switch_02.setChecked(false);
-																																				changelogs_switch.setChecked(false);
 																																				if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
 																																						if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
 																																								StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
@@ -8134,9 +8748,6 @@ public class MainActivity extends AppCompatActivity {
 																												catch(Exception e) {
 																												}
 																												prog.dismiss();
-																												version_switch_01.setChecked(false);
-																												version_switch_02.setChecked(false);
-																												changelogs_switch.setChecked(false);
 																												StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
 																												if(android.os.Build.VERSION.SDK_INT >= 29){
 																														try {
@@ -8200,3220 +8811,3278 @@ public class MainActivity extends AppCompatActivity {
 	
 	public void _Language_UI() {
 		if (LANGUAGE.getString("LANGUAGE", "").equals("0")) {
-			    title_1.setText(R.string.spotify_regular);
-				title_2.setText(R.string.spotify_amoled);
-				sub_text_installed.setText(R.string.installed);
-				sub_text_1.setText(R.string.latest);
-				sub_text_3.setText(R.string.latest);
-				version_switch_1.setText(R.string.versions);
-				version_switch_2.setText(R.string.versions);
-				changelogs.setText(R.string.changelogs);
-				title_sub.setText(R.string.manager_tools);
-				device_cpu.setText(R.string.device_cpu);
-				source.setText(R.string.source);
-				support.setText(R.string.support);
-				donate.setText(R.string.donate);
-				about.setText(R.string.about);
-				list_auto_refresh.setText(R.string.list_auto_refresh);
-				list_auto_refresh_info.setText(R.string.list_auto_refresh_desc);
-				force_auto_install.setText(R.string.force_auto_install);
-				force_auto_install_info.setText(R.string.force_auto_install_desc);
-				theme.setText(R.string.show_themes);
-				apk_location.setText(R.string.apk_location);
-				apk_location_info.setText(R.string.apk_location_desc);
-				clear_directory_folders.setText(R.string.clear_directory_folders);
-				clear_directory_folders_info.setText(R.string.clear_directory_folders_desc);
-				reset_settings.setText(R.string.reset_settings);
-				sub_title.setText(R.string.about_sub);
-				developer_manager.setText(R.string.xmanager_dev);
-				developer_spotify.setText(R.string.spotify_mod_devs);
-				support_team.setText(R.string.telegram_support_team);
-				mod_testers_1.setText(R.string.manager_testers);
-				mod_testers_2.setText(R.string.manager_hosting);
-				mobilism_team.setText(R.string.mobilism_team);
-				forum_team.setText(R.string.forum_team);
-				manager_team.setText(R.string.xspotify_team);
-				contributors_1.setText(R.string.contributors);
-				download_selected.setText(R.string.download_selected);
-				download_ready.setText(R.string.download_ready);
-				download_ready_desc.setText(R.string.download_ready_desc);
-				downloading_file.setText(R.string.downloading_file);
-				download_success.setText(R.string.download_success);
-				new_update.setText(R.string.new_update);
-				download_selected_0 = download_selected.getText().toString();
-				download_ready_0 = download_ready.getText().toString();
-				download_ready_desc_0 = download_ready_desc.getText().toString();
-				downloading_file_0 = downloading_file.getText().toString();
-				download_success_0 = download_success.getText().toString();
-				copy_url.setText(R.string.copy_url);
-				continue_1.setText(R.string.continue_1);
-				cancel.setText(R.string.cancel);
-			    fixer.setText(R.string.fixer);
-				download.setText(R.string.download);
-				later.setText(R.string.later);
-				install_now.setText(R.string.install_now);
-				install_update.setText(R.string.install_update);
-				go_back.setText(R.string.go_back_01);
-				download_update.setText(R.string.download_update);
-				not_now.setText(R.string.not_now);
-				show_support.setText(R.string.show_support);
-				show_support_desc.setText(R.string.show_support_desc);
-				copy_url_0 = copy_url.getText().toString();
-				download_0 = download.getText().toString();
-				continue_0 = continue_1.getText().toString();
-				cancel_0 = cancel.getText().toString();
-			    fixer_0 = fixer.getText().toString();
-				later_0 = later.getText().toString();
-				install_now_0 = install_now.getText().toString();
-				go_back_0 = go_back.getText().toString();
-				install_update_0 = install_update.getText().toString();
-				main_title.setText(R.string.main_title);
-				settings_title.setText(R.string.settings_title);
-				about_title.setText(R.string.about_title);
-				maintenance.setText(R.string.maintenance);
-				maintenance_desc.setText(R.string.maintenance_desc);
-				thanks.setText(R.string.thanks);
-				language.setText(R.string.language);
-				website.setText(R.string.website);
-				discord.setText(R.string.discord);
-				reddit.setText(R.string.reddit);
-				faq.setText(R.string.faq);
-				cloned_version.setText(R.string.cloned_version);
-				cloned_version_info.setText(R.string.cloned_version_desc);
-			    disable_reward_ad.setText(R.string.disable_rewarded_ads);
-			    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc);
-			    installation_failed.setText(R.string.installation_failed);
-			    installation_failed_desc.setText(R.string.installation_failed_desc);
-			    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc);
-			    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc);
-			    existing_patched.setText(R.string.existing_patched);
-			    existing_patched_desc.setText(R.string.existing_patched_desc);
-			    close.setText(R.string.close);
-			    cloned.setText(R.string.cloned);
-			    ream.setText(R.string.ream);
-			    install.setText(R.string.install);
-			    uninstall.setText(R.string.uninstall);
-			    ignore.setText(R.string.ignore);
-			    delete.setText(R.string.delete);
-			    uninstall_patched.setText(R.string.uninstall_patched);
-			    open_settings.setText(R.string.open_settings);
-			    open_patched.setText(R.string.open_patched);
-				installation_failed_0 = installation_failed.getText().toString();
-			    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-			    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-			    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-			    existing_patched_0 = existing_patched.getText().toString();
-			    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-			    close_0 = close.getText().toString();
-			    uninstall_0 = uninstall.getText().toString();
+			title_1.setText(R.string.spotify_regular);
+			title_2.setText(R.string.spotify_amoled);
+			sub_text_installed.setText(R.string.installed);
+			sub_text_1.setText(R.string.latest);
+			sub_text_2.setText(R.string.latest);
+			sub_text_3.setText(R.string.latest);
+			version_switch_1.setText(R.string.versions);
+			version_switch_2.setText(R.string.versions);
+			version_switch_3.setText(R.string.versions);
+			changelogs.setText(R.string.changelogs);
+			title_sub.setText(R.string.manager_tools);
+			device_cpu.setText(R.string.device_cpu);
+			source.setText(R.string.source);
+			support.setText(R.string.support);
+			donate.setText(R.string.donate);
+			about.setText(R.string.about);
+			list_auto_refresh.setText(R.string.list_auto_refresh);
+			list_auto_refresh_info.setText(R.string.list_auto_refresh_desc);
+			force_auto_install.setText(R.string.force_auto_install);
+			force_auto_install_info.setText(R.string.force_auto_install_desc);
+			theme.setText(R.string.show_themes);
+			apk_location.setText(R.string.apk_location);
+			apk_location_info.setText(R.string.apk_location_desc);
+			clear_directory_folders.setText(R.string.clear_directory_folders);
+			clear_directory_folders_info.setText(R.string.clear_directory_folders_desc);
+			reset_settings.setText(R.string.reset_settings);
+			sub_title.setText(R.string.about_sub);
+			developer_manager.setText(R.string.xmanager_dev);
+			developer_spotify.setText(R.string.spotify_mod_devs);
+			support_team.setText(R.string.telegram_support_team);
+			mod_testers_1.setText(R.string.manager_testers);
+			mod_testers_2.setText(R.string.manager_hosting);
+			mobilism_team.setText(R.string.mobilism_team);
+			forum_team.setText(R.string.forum_team);
+			manager_team.setText(R.string.xspotify_team);
+			contributors_1.setText(R.string.contributors);
+			download_selected.setText(R.string.download_selected);
+			download_ready.setText(R.string.download_ready);
+			download_ready_desc.setText(R.string.download_ready_desc);
+			downloading_file.setText(R.string.downloading_file);
+			download_success.setText(R.string.download_success);
+			new_update.setText(R.string.new_update);
+			download_selected_0 = download_selected.getText().toString();
+			download_ready_0 = download_ready.getText().toString();
+			download_ready_desc_0 = download_ready_desc.getText().toString();
+			downloading_file_0 = downloading_file.getText().toString();
+			download_success_0 = download_success.getText().toString();
+			copy_url.setText(R.string.copy_url);
+			continue_1.setText(R.string.continue_1);
+			cancel.setText(R.string.cancel);
+			fixer.setText(R.string.fixer);
+			download.setText(R.string.download);
+			later.setText(R.string.later);
+			install_now.setText(R.string.install_now);
+			install_update.setText(R.string.install_update);
+			go_back.setText(R.string.go_back_01);
+			download_update.setText(R.string.download_update);
+			not_now.setText(R.string.not_now);
+			show_support.setText(R.string.show_support);
+			show_support_desc.setText(R.string.show_support_desc);
+			copy_url_0 = copy_url.getText().toString();
+			download_0 = download.getText().toString();
+			continue_0 = continue_1.getText().toString();
+			cancel_0 = cancel.getText().toString();
+			fixer_0 = fixer.getText().toString();
+			later_0 = later.getText().toString();
+			install_now_0 = install_now.getText().toString();
+			go_back_0 = go_back.getText().toString();
+			install_update_0 = install_update.getText().toString();
+			main_title.setText(R.string.main_title);
+			settings_title.setText(R.string.settings_title);
+			about_title.setText(R.string.about_title);
+			maintenance.setText(R.string.maintenance);
+			maintenance_desc.setText(R.string.maintenance_desc);
+			thanks.setText(R.string.thanks);
+			language.setText(R.string.language);
+			website.setText(R.string.website);
+			discord.setText(R.string.discord);
+			reddit.setText(R.string.reddit);
+			faq.setText(R.string.faq);
+			cloned_version.setText(R.string.cloned_version);
+			cloned_version_info.setText(R.string.cloned_version_desc);
+			disable_reward_ad.setText(R.string.disable_rewarded_ads);
+			disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc);
+			installation_failed.setText(R.string.installation_failed);
+			installation_failed_desc.setText(R.string.installation_failed_desc);
+			installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc);
+			installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc);
+			existing_patched.setText(R.string.existing_patched);
+			existing_patched_desc.setText(R.string.existing_patched_desc);
+			close.setText(R.string.close);
+			cloned.setText(R.string.cloned);
+			ream.setText(R.string.ream);
+			install.setText(R.string.install);
+			uninstall.setText(R.string.uninstall);
+			ignore.setText(R.string.ignore);
+			delete.setText(R.string.delete);
+			uninstall_patched.setText(R.string.uninstall_patched);
+			open_settings.setText(R.string.open_settings);
+			open_patched.setText(R.string.open_patched);
+			installation_failed_0 = installation_failed.getText().toString();
+			installation_failed_desc_0 = installation_failed_desc.getText().toString();
+			installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+			installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+			existing_patched_0 = existing_patched.getText().toString();
+			existing_patched_desc_0 = existing_patched_desc.getText().toString();
+			close_0 = close.getText().toString();
+			uninstall_0 = uninstall.getText().toString();
 			
 			select_language.setSelection((int)(0));
 		}
 		else {
 			if (LANGUAGE.getString("LANGUAGE", "").equals("1")) {
-				    title_1.setText(R.string.spotify_regular_01);
-					title_2.setText(R.string.spotify_amoled_01);
-					sub_text_installed.setText(R.string.installed_01);
-					sub_text_1.setText(R.string.latest_01);
-					sub_text_3.setText(R.string.latest_01);
-					version_switch_1.setText(R.string.versions_01);
-					version_switch_2.setText(R.string.versions_01);
-					changelogs.setText(R.string.changelogs_01);
-					title_sub.setText(R.string.manager_tools_01);
-					device_cpu.setText(R.string.device_cpu_01);
-					source.setText(R.string.source_01);
-					support.setText(R.string.support_01);
-					donate.setText(R.string.donate_01);
-					about.setText(R.string.about_01);
-					list_auto_refresh.setText(R.string.list_auto_refresh_01);
-					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_01);
-					force_auto_install.setText(R.string.force_auto_install_01);
-					force_auto_install_info.setText(R.string.force_auto_install_desc_01);
-					theme.setText(R.string.show_themes_01);
-					apk_location.setText(R.string.apk_location_01);
-					apk_location_info.setText(R.string.apk_location_desc_01);
-					clear_directory_folders.setText(R.string.clear_directory_folders_01);
-					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_01);
-					reset_settings.setText(R.string.reset_settings_01);
-					sub_title.setText(R.string.about_sub_01);
-					developer_manager.setText(R.string.xmanager_dev_01);
-					developer_spotify.setText(R.string.spotify_mod_devs_01);
-					support_team.setText(R.string.telegram_support_team_01);
-					mod_testers_1.setText(R.string.manager_testers_01);
-					mod_testers_2.setText(R.string.manager_hosting_01);
-					mobilism_team.setText(R.string.mobilism_team_01);
-					forum_team.setText(R.string.forum_team_01);
-					manager_team.setText(R.string.xspotify_team_01);
-					contributors_1.setText(R.string.contributors_01);
-					download_selected.setText(R.string.download_selected_01);
-					download_ready.setText(R.string.download_ready_01);
-					download_ready_desc.setText(R.string.download_ready_desc_01);
-					downloading_file.setText(R.string.downloading_file_01);
-					download_success.setText(R.string.download_success_01);
-					new_update.setText(R.string.new_update_01);
-					download_selected_0 = download_selected.getText().toString();
-					download_ready_0 = download_ready.getText().toString();
-					download_ready_desc_0 = download_ready_desc.getText().toString();
-					downloading_file_0 = downloading_file.getText().toString();
-					download_success_0 = download_success.getText().toString();
-					copy_url.setText(R.string.copy_url_01);
-					continue_1.setText(R.string.continue_1_01);
-					cancel.setText(R.string.cancel_01);
-				    fixer.setText(R.string.fixer_01);
-					download.setText(R.string.download_01);
-					later.setText(R.string.later_01);
-					install_now.setText(R.string.install_now_01);
-					install_update.setText(R.string.install_update_01);
-					go_back.setText(R.string.go_back_01);
-					download_update.setText(R.string.download_update_01);
-					not_now.setText(R.string.not_now_01);
-					show_support.setText(R.string.show_support_01);
-					show_support_desc.setText(R.string.show_support_desc_01);
-					copy_url_0 = copy_url.getText().toString();
-					download_0 = download.getText().toString();
-					continue_0 = continue_1.getText().toString();
-					cancel_0 = cancel.getText().toString();
-				    fixer_0 = fixer.getText().toString();
-					later_0 = later.getText().toString();
-					install_now_0 = install_now.getText().toString();
-					go_back_0 = go_back.getText().toString();
-					install_update_0 = install_update.getText().toString();
-					main_title.setText(R.string.main_title_01);
-					settings_title.setText(R.string.settings_title_01);
-					about_title.setText(R.string.about_title_01);
-					maintenance.setText(R.string.maintenance_01);
-					maintenance_desc.setText(R.string.maintenance_desc_01);
-					thanks.setText(R.string.thanks_01);
-					language.setText(R.string.language_01);
-					website.setText(R.string.website_01);
-					discord.setText(R.string.discord_01);
-					reddit.setText(R.string.reddit_01);
-					faq.setText(R.string.faq_01);
-					cloned_version.setText(R.string.cloned_version_01);
-					cloned_version_info.setText(R.string.cloned_version_desc_01);
-				    disable_reward_ad.setText(R.string.disable_rewarded_ads_01);
-				    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_01);
-				    installation_failed.setText(R.string.installation_failed_01);
-				    installation_failed_desc.setText(R.string.installation_failed_desc_01);
-				    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_01);
-				    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_01);
-				    existing_patched.setText(R.string.existing_patched_01);
-				    existing_patched_desc.setText(R.string.existing_patched_desc_01);
-				    close.setText(R.string.close_01);
-				    cloned.setText(R.string.cloned_01);
-				    ream.setText(R.string.ream_01);
-				    install.setText(R.string.install_01);
-				    uninstall.setText(R.string.uninstall_01);
-				    ignore.setText(R.string.ignore_01);
-				    delete.setText(R.string.delete_01);
-				    uninstall_patched.setText(R.string.uninstall_patched_01);
-				    open_settings.setText(R.string.open_settings_01);
-				    open_patched.setText(R.string.open_patched_01);
-					installation_failed_0 = installation_failed.getText().toString();
-				    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-				    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-				    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-				    existing_patched_0 = existing_patched.getText().toString();
-				    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-				    close_0 = close.getText().toString();
-				    uninstall_0 = uninstall.getText().toString();
+				title_1.setText(R.string.spotify_regular_01);
+				title_2.setText(R.string.spotify_amoled_01);
+				sub_text_installed.setText(R.string.installed_01);
+				sub_text_1.setText(R.string.latest_01);
+				sub_text_2.setText(R.string.latest_01);
+				sub_text_3.setText(R.string.latest_01);
+				version_switch_1.setText(R.string.versions_01);
+				version_switch_2.setText(R.string.versions_01);
+				version_switch_3.setText(R.string.versions_01);
+				changelogs.setText(R.string.changelogs_01);
+				title_sub.setText(R.string.manager_tools_01);
+				device_cpu.setText(R.string.device_cpu_01);
+				source.setText(R.string.source_01);
+				support.setText(R.string.support_01);
+				donate.setText(R.string.donate_01);
+				about.setText(R.string.about_01);
+				list_auto_refresh.setText(R.string.list_auto_refresh_01);
+				list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_01);
+				force_auto_install.setText(R.string.force_auto_install_01);
+				force_auto_install_info.setText(R.string.force_auto_install_desc_01);
+				theme.setText(R.string.show_themes_01);
+				apk_location.setText(R.string.apk_location_01);
+				apk_location_info.setText(R.string.apk_location_desc_01);
+				clear_directory_folders.setText(R.string.clear_directory_folders_01);
+				clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_01);
+				reset_settings.setText(R.string.reset_settings_01);
+				sub_title.setText(R.string.about_sub_01);
+				developer_manager.setText(R.string.xmanager_dev_01);
+				developer_spotify.setText(R.string.spotify_mod_devs_01);
+				support_team.setText(R.string.telegram_support_team_01);
+				mod_testers_1.setText(R.string.manager_testers_01);
+				mod_testers_2.setText(R.string.manager_hosting_01);
+				mobilism_team.setText(R.string.mobilism_team_01);
+				forum_team.setText(R.string.forum_team_01);
+				manager_team.setText(R.string.xspotify_team_01);
+				contributors_1.setText(R.string.contributors_01);
+				download_selected.setText(R.string.download_selected_01);
+				download_ready.setText(R.string.download_ready_01);
+				download_ready_desc.setText(R.string.download_ready_desc_01);
+				downloading_file.setText(R.string.downloading_file_01);
+				download_success.setText(R.string.download_success_01);
+				new_update.setText(R.string.new_update_01);
+				download_selected_0 = download_selected.getText().toString();
+				download_ready_0 = download_ready.getText().toString();
+				download_ready_desc_0 = download_ready_desc.getText().toString();
+				downloading_file_0 = downloading_file.getText().toString();
+				download_success_0 = download_success.getText().toString();
+				copy_url.setText(R.string.copy_url_01);
+				continue_1.setText(R.string.continue_1_01);
+				cancel.setText(R.string.cancel_01);
+				fixer.setText(R.string.fixer_01);
+				download.setText(R.string.download_01);
+				later.setText(R.string.later_01);
+				install_now.setText(R.string.install_now_01);
+				install_update.setText(R.string.install_update_01);
+				go_back.setText(R.string.go_back_01);
+				download_update.setText(R.string.download_update_01);
+				not_now.setText(R.string.not_now_01);
+				show_support.setText(R.string.show_support_01);
+				show_support_desc.setText(R.string.show_support_desc_01);
+				copy_url_0 = copy_url.getText().toString();
+				download_0 = download.getText().toString();
+				continue_0 = continue_1.getText().toString();
+				cancel_0 = cancel.getText().toString();
+				fixer_0 = fixer.getText().toString();
+				later_0 = later.getText().toString();
+				install_now_0 = install_now.getText().toString();
+				go_back_0 = go_back.getText().toString();
+				install_update_0 = install_update.getText().toString();
+				main_title.setText(R.string.main_title_01);
+				settings_title.setText(R.string.settings_title_01);
+				about_title.setText(R.string.about_title_01);
+				maintenance.setText(R.string.maintenance_01);
+				maintenance_desc.setText(R.string.maintenance_desc_01);
+				thanks.setText(R.string.thanks_01);
+				language.setText(R.string.language_01);
+				website.setText(R.string.website_01);
+				discord.setText(R.string.discord_01);
+				reddit.setText(R.string.reddit_01);
+				faq.setText(R.string.faq_01);
+				cloned_version.setText(R.string.cloned_version_01);
+				cloned_version_info.setText(R.string.cloned_version_desc_01);
+				disable_reward_ad.setText(R.string.disable_rewarded_ads_01);
+				disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_01);
+				installation_failed.setText(R.string.installation_failed_01);
+				installation_failed_desc.setText(R.string.installation_failed_desc_01);
+				installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_01);
+				installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_01);
+				existing_patched.setText(R.string.existing_patched_01);
+				existing_patched_desc.setText(R.string.existing_patched_desc_01);
+				close.setText(R.string.close_01);
+				cloned.setText(R.string.cloned_01);
+				ream.setText(R.string.ream_01);
+				install.setText(R.string.install_01);
+				uninstall.setText(R.string.uninstall_01);
+				ignore.setText(R.string.ignore_01);
+				delete.setText(R.string.delete_01);
+				uninstall_patched.setText(R.string.uninstall_patched_01);
+				open_settings.setText(R.string.open_settings_01);
+				open_patched.setText(R.string.open_patched_01);
+				installation_failed_0 = installation_failed.getText().toString();
+				installation_failed_desc_0 = installation_failed_desc.getText().toString();
+				installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+				installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+				existing_patched_0 = existing_patched.getText().toString();
+				existing_patched_desc_0 = existing_patched_desc.getText().toString();
+				close_0 = close.getText().toString();
+				uninstall_0 = uninstall.getText().toString();
 				
 				select_language.setSelection((int)(1));
 			}
 			else {
 				if (LANGUAGE.getString("LANGUAGE", "").equals("2")) {
-					    title_1.setText(R.string.spotify_regular_02);
-						title_2.setText(R.string.spotify_amoled_02);
-						sub_text_installed.setText(R.string.installed_02);
-						sub_text_1.setText(R.string.latest_02);
-						sub_text_3.setText(R.string.latest_02);
-						version_switch_1.setText(R.string.versions_02);
-						version_switch_2.setText(R.string.versions_02);
-						changelogs.setText(R.string.changelogs_02);
-						title_sub.setText(R.string.manager_tools_02);
-						device_cpu.setText(R.string.device_cpu_02);
-						source.setText(R.string.source_02);
-						support.setText(R.string.support_02);
-						donate.setText(R.string.donate_02);
-						about.setText(R.string.about_02);
-						list_auto_refresh.setText(R.string.list_auto_refresh_02);
-						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_02);
-						force_auto_install.setText(R.string.force_auto_install_02);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_02);
-						theme.setText(R.string.show_themes_02);
-						apk_location.setText(R.string.apk_location_02);
-						apk_location_info.setText(R.string.apk_location_desc_02);
-						clear_directory_folders.setText(R.string.clear_directory_folders_02);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_02);
-						reset_settings.setText(R.string.reset_settings_02);
-						sub_title.setText(R.string.about_sub_02);
-						developer_manager.setText(R.string.xmanager_dev_02);
-						developer_spotify.setText(R.string.spotify_mod_devs_02);
-						support_team.setText(R.string.telegram_support_team_02);
-						mod_testers_1.setText(R.string.manager_testers_02);
-						mod_testers_2.setText(R.string.manager_hosting_02);
-						mobilism_team.setText(R.string.mobilism_team_02);
-						forum_team.setText(R.string.forum_team_02);
-						manager_team.setText(R.string.xspotify_team_02);
-						contributors_1.setText(R.string.contributors_02);
-						download_selected.setText(R.string.download_selected_02);
-						download_ready.setText(R.string.download_ready_02);
-						download_ready_desc.setText(R.string.download_ready_desc_02);
-						downloading_file.setText(R.string.downloading_file_02);
-						download_success.setText(R.string.download_success_02);
-						new_update.setText(R.string.new_update_02);
-						download_selected_0 = download_selected.getText().toString();
-						download_ready_0 = download_ready.getText().toString();
-						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						copy_url.setText(R.string.copy_url_02);
-						continue_1.setText(R.string.continue_1_02);
-						cancel.setText(R.string.cancel_02);
-					    fixer.setText(R.string.fixer_02);
-						download.setText(R.string.download_02);
-						later.setText(R.string.later_02);
-						install_now.setText(R.string.install_now_02);
-						install_update.setText(R.string.install_update_02);
-						go_back.setText(R.string.go_back_02);
-						download_update.setText(R.string.download_update_02);
-						not_now.setText(R.string.not_now_02);
-						show_support.setText(R.string.show_support_02);
-						show_support_desc.setText(R.string.show_support_desc_02);
-						copy_url_0 = copy_url.getText().toString();
-						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
-						cancel_0 = cancel.getText().toString();
-					    fixer_0 = fixer.getText().toString();
-						later_0 = later.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						main_title.setText(R.string.main_title_02);
-						settings_title.setText(R.string.settings_title_02);
-						about_title.setText(R.string.about_title_02);
-						maintenance.setText(R.string.maintenance_02);
-						maintenance_desc.setText(R.string.maintenance_desc_02);
-						thanks.setText(R.string.thanks_02);
-						language.setText(R.string.language_02);
-						website.setText(R.string.website_02);
-						discord.setText(R.string.discord_02);
-						reddit.setText(R.string.reddit_02);
-						faq.setText(R.string.faq_02);
-						cloned_version.setText(R.string.cloned_version_02);
-						cloned_version_info.setText(R.string.cloned_version_desc_02);
-					    disable_reward_ad.setText(R.string.disable_rewarded_ads_02);
-					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_02);
-					    installation_failed.setText(R.string.installation_failed_02);
-					    installation_failed_desc.setText(R.string.installation_failed_desc_02);
-					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_02);
-					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_02);
-					    existing_patched.setText(R.string.existing_patched_02);
-					    existing_patched_desc.setText(R.string.existing_patched_desc_02);
-					    close.setText(R.string.close_02);
-					    cloned.setText(R.string.cloned_02);
-					    ream.setText(R.string.ream_02);
-					    install.setText(R.string.install_02);
-					    uninstall.setText(R.string.uninstall_02);
-					    ignore.setText(R.string.ignore_02);
-					    delete.setText(R.string.delete_02);
-					    uninstall_patched.setText(R.string.uninstall_patched_02);
-					    open_settings.setText(R.string.open_settings_02);
-					    open_patched.setText(R.string.open_patched_02);
-						installation_failed_0 = installation_failed.getText().toString();
-					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-					    existing_patched_0 = existing_patched.getText().toString();
-					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					    close_0 = close.getText().toString();
-					    uninstall_0 = uninstall.getText().toString();
+					title_1.setText(R.string.spotify_regular_02);
+					title_2.setText(R.string.spotify_amoled_02);
+					sub_text_installed.setText(R.string.installed_02);
+					sub_text_1.setText(R.string.latest_02);
+					sub_text_2.setText(R.string.latest_02);
+					sub_text_3.setText(R.string.latest_02);
+					version_switch_1.setText(R.string.versions_02);
+					version_switch_2.setText(R.string.versions_02);
+					version_switch_3.setText(R.string.versions_02);
+					changelogs.setText(R.string.changelogs_02);
+					title_sub.setText(R.string.manager_tools_02);
+					device_cpu.setText(R.string.device_cpu_02);
+					source.setText(R.string.source_02);
+					support.setText(R.string.support_02);
+					donate.setText(R.string.donate_02);
+					about.setText(R.string.about_02);
+					list_auto_refresh.setText(R.string.list_auto_refresh_02);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_02);
+					force_auto_install.setText(R.string.force_auto_install_02);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_02);
+					theme.setText(R.string.show_themes_02);
+					apk_location.setText(R.string.apk_location_02);
+					apk_location_info.setText(R.string.apk_location_desc_02);
+					clear_directory_folders.setText(R.string.clear_directory_folders_02);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_02);
+					reset_settings.setText(R.string.reset_settings_02);
+					sub_title.setText(R.string.about_sub_02);
+					developer_manager.setText(R.string.xmanager_dev_02);
+					developer_spotify.setText(R.string.spotify_mod_devs_02);
+					support_team.setText(R.string.telegram_support_team_02);
+					mod_testers_1.setText(R.string.manager_testers_02);
+					mod_testers_2.setText(R.string.manager_hosting_02);
+					mobilism_team.setText(R.string.mobilism_team_02);
+					forum_team.setText(R.string.forum_team_02);
+					manager_team.setText(R.string.xspotify_team_02);
+					contributors_1.setText(R.string.contributors_02);
+					download_selected.setText(R.string.download_selected_02);
+					download_ready.setText(R.string.download_ready_02);
+					download_ready_desc.setText(R.string.download_ready_desc_02);
+					downloading_file.setText(R.string.downloading_file_02);
+					download_success.setText(R.string.download_success_02);
+					new_update.setText(R.string.new_update_02);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_02);
+					continue_1.setText(R.string.continue_1_02);
+					cancel.setText(R.string.cancel_02);
+					fixer.setText(R.string.fixer_02);
+					download.setText(R.string.download_02);
+					later.setText(R.string.later_02);
+					install_now.setText(R.string.install_now_02);
+					install_update.setText(R.string.install_update_02);
+					go_back.setText(R.string.go_back_02);
+					download_update.setText(R.string.download_update_02);
+					not_now.setText(R.string.not_now_02);
+					show_support.setText(R.string.show_support_02);
+					show_support_desc.setText(R.string.show_support_desc_02);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_02);
+					settings_title.setText(R.string.settings_title_02);
+					about_title.setText(R.string.about_title_02);
+					maintenance.setText(R.string.maintenance_02);
+					maintenance_desc.setText(R.string.maintenance_desc_02);
+					thanks.setText(R.string.thanks_02);
+					language.setText(R.string.language_02);
+					website.setText(R.string.website_02);
+					discord.setText(R.string.discord_02);
+					reddit.setText(R.string.reddit_02);
+					faq.setText(R.string.faq_02);
+					cloned_version.setText(R.string.cloned_version_02);
+					cloned_version_info.setText(R.string.cloned_version_desc_02);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_02);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_02);
+					installation_failed.setText(R.string.installation_failed_02);
+					installation_failed_desc.setText(R.string.installation_failed_desc_02);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_02);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_02);
+					existing_patched.setText(R.string.existing_patched_02);
+					existing_patched_desc.setText(R.string.existing_patched_desc_02);
+					close.setText(R.string.close_02);
+					cloned.setText(R.string.cloned_02);
+					ream.setText(R.string.ream_02);
+					install.setText(R.string.install_02);
+					uninstall.setText(R.string.uninstall_02);
+					ignore.setText(R.string.ignore_02);
+					delete.setText(R.string.delete_02);
+					uninstall_patched.setText(R.string.uninstall_patched_02);
+					open_settings.setText(R.string.open_settings_02);
+					open_patched.setText(R.string.open_patched_02);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
 					
 					select_language.setSelection((int)(2));
 				}
 				else {
 					if (LANGUAGE.getString("LANGUAGE", "").equals("3")) {
-						    title_1.setText(R.string.spotify_regular_03);
-							title_2.setText(R.string.spotify_amoled_03);
-							sub_text_installed.setText(R.string.installed_03);
-							sub_text_1.setText(R.string.latest_03);
-							sub_text_3.setText(R.string.latest_03);
-							version_switch_1.setText(R.string.versions_03);
-							version_switch_2.setText(R.string.versions_03);
-							changelogs.setText(R.string.changelogs_03);
-							title_sub.setText(R.string.manager_tools_03);
-							device_cpu.setText(R.string.device_cpu_03);
-							source.setText(R.string.source_03);
-							support.setText(R.string.support_03);
-							donate.setText(R.string.donate_03);
-							about.setText(R.string.about_03);
-							list_auto_refresh.setText(R.string.list_auto_refresh_03);
-							list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_03);
-							force_auto_install.setText(R.string.force_auto_install_03);
-							force_auto_install_info.setText(R.string.force_auto_install_desc_03);
-							theme.setText(R.string.show_themes_03);
-							apk_location.setText(R.string.apk_location_03);
-							apk_location_info.setText(R.string.apk_location_desc_03);
-							clear_directory_folders.setText(R.string.clear_directory_folders_03);
-							clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_03);
-							reset_settings.setText(R.string.reset_settings_03);
-							sub_title.setText(R.string.about_sub_03);
-							developer_manager.setText(R.string.xmanager_dev_03);
-							developer_spotify.setText(R.string.spotify_mod_devs_03);
-							support_team.setText(R.string.telegram_support_team_03);
-							mod_testers_1.setText(R.string.manager_testers_03);
-							mod_testers_2.setText(R.string.manager_hosting_03);
-							mobilism_team.setText(R.string.mobilism_team_03);
-							forum_team.setText(R.string.forum_team_03);
-							manager_team.setText(R.string.xspotify_team_03);
-							contributors_1.setText(R.string.contributors_03);
-							download_selected.setText(R.string.download_selected_03);
-							download_ready.setText(R.string.download_ready_03);
-							download_ready_desc.setText(R.string.download_ready_desc_03);
-							downloading_file.setText(R.string.downloading_file_03);
-							download_success.setText(R.string.download_success_03);
-							new_update.setText(R.string.new_update_03);
-							download_selected_0 = download_selected.getText().toString();
-							download_ready_0 = download_ready.getText().toString();
-							download_ready_desc_0 = download_ready_desc.getText().toString();
-							downloading_file_0 = downloading_file.getText().toString();
-							download_success_0 = download_success.getText().toString();
-							copy_url.setText(R.string.copy_url_03);
-							continue_1.setText(R.string.continue_1_03);
-							cancel.setText(R.string.cancel_03);
-						    fixer.setText(R.string.fixer_03);
-							download.setText(R.string.download_03);
-							later.setText(R.string.later_03);
-							install_now.setText(R.string.install_now_03);
-							install_update.setText(R.string.install_update_03);
-							go_back.setText(R.string.go_back_03);
-							download_update.setText(R.string.download_update_03);
-							not_now.setText(R.string.not_now_03);
-							show_support.setText(R.string.show_support_03);
-							show_support_desc.setText(R.string.show_support_desc_03);
-							copy_url_0 = copy_url.getText().toString();
-							download_0 = download.getText().toString();
-							continue_0 = continue_1.getText().toString();
-							cancel_0 = cancel.getText().toString();
-						    fixer_0 = fixer.getText().toString();
-							later_0 = later.getText().toString();
-							install_now_0 = install_now.getText().toString();
-							go_back_0 = go_back.getText().toString();
-							install_update_0 = install_update.getText().toString();
-							main_title.setText(R.string.main_title_03);
-							settings_title.setText(R.string.settings_title_03);
-							about_title.setText(R.string.about_title_03);
-							maintenance.setText(R.string.maintenance_03);
-							maintenance_desc.setText(R.string.maintenance_desc_03);
-							thanks.setText(R.string.thanks_03);
-							language.setText(R.string.language_03);
-							website.setText(R.string.website_03);
-							discord.setText(R.string.discord_03);
-							reddit.setText(R.string.reddit_03);
-							faq.setText(R.string.faq_03);
-							cloned_version.setText(R.string.cloned_version_03);
-							cloned_version_info.setText(R.string.cloned_version_desc_03);
-						    disable_reward_ad.setText(R.string.disable_rewarded_ads_03);
-						    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_03);
-						    installation_failed.setText(R.string.installation_failed_03);
-						    installation_failed_desc.setText(R.string.installation_failed_desc_03);
-						    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_03);
-						    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_03);
-						    existing_patched.setText(R.string.existing_patched_03);
-						    existing_patched_desc.setText(R.string.existing_patched_desc_03);
-						    close.setText(R.string.close_03);
-						    cloned.setText(R.string.cloned_03);
-						    ream.setText(R.string.ream_03);
-						    install.setText(R.string.install_03);
-						    uninstall.setText(R.string.uninstall_03);
-						    ignore.setText(R.string.ignore_03);
-						    delete.setText(R.string.delete_03);
-						    uninstall_patched.setText(R.string.uninstall_patched_03);
-						    open_settings.setText(R.string.open_settings_03);
-						    open_patched.setText(R.string.open_patched_03);
-							installation_failed_0 = installation_failed.getText().toString();
-						    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-						    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-						    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-						    existing_patched_0 = existing_patched.getText().toString();
-						    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-						    close_0 = close.getText().toString();
-						    uninstall_0 = uninstall.getText().toString();
+						title_1.setText(R.string.spotify_regular_03);
+						title_2.setText(R.string.spotify_amoled_03);
+						sub_text_installed.setText(R.string.installed_03);
+						sub_text_1.setText(R.string.latest_03);
+						sub_text_2.setText(R.string.latest_03);
+						sub_text_3.setText(R.string.latest_03);
+						version_switch_1.setText(R.string.versions_03);
+						version_switch_2.setText(R.string.versions_03);
+						version_switch_3.setText(R.string.versions_03);
+						changelogs.setText(R.string.changelogs_03);
+						title_sub.setText(R.string.manager_tools_03);
+						device_cpu.setText(R.string.device_cpu_03);
+						source.setText(R.string.source_03);
+						support.setText(R.string.support_03);
+						donate.setText(R.string.donate_03);
+						about.setText(R.string.about_03);
+						list_auto_refresh.setText(R.string.list_auto_refresh_03);
+						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_03);
+						force_auto_install.setText(R.string.force_auto_install_03);
+						force_auto_install_info.setText(R.string.force_auto_install_desc_03);
+						theme.setText(R.string.show_themes_03);
+						apk_location.setText(R.string.apk_location_03);
+						apk_location_info.setText(R.string.apk_location_desc_03);
+						clear_directory_folders.setText(R.string.clear_directory_folders_03);
+						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_03);
+						reset_settings.setText(R.string.reset_settings_03);
+						sub_title.setText(R.string.about_sub_03);
+						developer_manager.setText(R.string.xmanager_dev_03);
+						developer_spotify.setText(R.string.spotify_mod_devs_03);
+						support_team.setText(R.string.telegram_support_team_03);
+						mod_testers_1.setText(R.string.manager_testers_03);
+						mod_testers_2.setText(R.string.manager_hosting_03);
+						mobilism_team.setText(R.string.mobilism_team_03);
+						forum_team.setText(R.string.forum_team_03);
+						manager_team.setText(R.string.xspotify_team_03);
+						contributors_1.setText(R.string.contributors_03);
+						download_selected.setText(R.string.download_selected_03);
+						download_ready.setText(R.string.download_ready_03);
+						download_ready_desc.setText(R.string.download_ready_desc_03);
+						downloading_file.setText(R.string.downloading_file_03);
+						download_success.setText(R.string.download_success_03);
+						new_update.setText(R.string.new_update_03);
+						download_selected_0 = download_selected.getText().toString();
+						download_ready_0 = download_ready.getText().toString();
+						download_ready_desc_0 = download_ready_desc.getText().toString();
+						downloading_file_0 = downloading_file.getText().toString();
+						download_success_0 = download_success.getText().toString();
+						copy_url.setText(R.string.copy_url_03);
+						continue_1.setText(R.string.continue_1_03);
+						cancel.setText(R.string.cancel_03);
+						fixer.setText(R.string.fixer_03);
+						download.setText(R.string.download_03);
+						later.setText(R.string.later_03);
+						install_now.setText(R.string.install_now_03);
+						install_update.setText(R.string.install_update_03);
+						go_back.setText(R.string.go_back_03);
+						download_update.setText(R.string.download_update_03);
+						not_now.setText(R.string.not_now_03);
+						show_support.setText(R.string.show_support_03);
+						show_support_desc.setText(R.string.show_support_desc_03);
+						copy_url_0 = copy_url.getText().toString();
+						download_0 = download.getText().toString();
+						continue_0 = continue_1.getText().toString();
+						cancel_0 = cancel.getText().toString();
+						fixer_0 = fixer.getText().toString();
+						later_0 = later.getText().toString();
+						install_now_0 = install_now.getText().toString();
+						go_back_0 = go_back.getText().toString();
+						install_update_0 = install_update.getText().toString();
+						main_title.setText(R.string.main_title_03);
+						settings_title.setText(R.string.settings_title_03);
+						about_title.setText(R.string.about_title_03);
+						maintenance.setText(R.string.maintenance_03);
+						maintenance_desc.setText(R.string.maintenance_desc_03);
+						thanks.setText(R.string.thanks_03);
+						language.setText(R.string.language_03);
+						website.setText(R.string.website_03);
+						discord.setText(R.string.discord_03);
+						reddit.setText(R.string.reddit_03);
+						faq.setText(R.string.faq_03);
+						cloned_version.setText(R.string.cloned_version_03);
+						cloned_version_info.setText(R.string.cloned_version_desc_03);
+						disable_reward_ad.setText(R.string.disable_rewarded_ads_03);
+						disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_03);
+						installation_failed.setText(R.string.installation_failed_03);
+						installation_failed_desc.setText(R.string.installation_failed_desc_03);
+						installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_03);
+						installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_03);
+						existing_patched.setText(R.string.existing_patched_03);
+						existing_patched_desc.setText(R.string.existing_patched_desc_03);
+						close.setText(R.string.close_03);
+						cloned.setText(R.string.cloned_03);
+						ream.setText(R.string.ream_03);
+						install.setText(R.string.install_03);
+						uninstall.setText(R.string.uninstall_03);
+						ignore.setText(R.string.ignore_03);
+						delete.setText(R.string.delete_03);
+						uninstall_patched.setText(R.string.uninstall_patched_03);
+						open_settings.setText(R.string.open_settings_03);
+						open_patched.setText(R.string.open_patched_03);
+						installation_failed_0 = installation_failed.getText().toString();
+						installation_failed_desc_0 = installation_failed_desc.getText().toString();
+						installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+						installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+						existing_patched_0 = existing_patched.getText().toString();
+						existing_patched_desc_0 = existing_patched_desc.getText().toString();
+						close_0 = close.getText().toString();
+						uninstall_0 = uninstall.getText().toString();
 						
 						select_language.setSelection((int)(3));
 					}
 					else {
 						if (LANGUAGE.getString("LANGUAGE", "").equals("4")) {
-							    title_1.setText(R.string.spotify_regular_04);
-								title_2.setText(R.string.spotify_amoled_04);
-								sub_text_installed.setText(R.string.installed_04);
-								sub_text_1.setText(R.string.latest_04);
-								sub_text_3.setText(R.string.latest_04);
-								version_switch_1.setText(R.string.versions_04);
-								version_switch_2.setText(R.string.versions_04);
-								changelogs.setText(R.string.changelogs_04);
-								title_sub.setText(R.string.manager_tools_04);
-								device_cpu.setText(R.string.device_cpu_04);
-								source.setText(R.string.source_04);
-								support.setText(R.string.support_04);
-								donate.setText(R.string.donate_04);
-								about.setText(R.string.about_04);
-								list_auto_refresh.setText(R.string.list_auto_refresh_04);
-								list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_04);
-								force_auto_install.setText(R.string.force_auto_install_04);
-								force_auto_install_info.setText(R.string.force_auto_install_desc_04);
-								theme.setText(R.string.show_themes_04);
-								apk_location.setText(R.string.apk_location_04);
-								apk_location_info.setText(R.string.apk_location_desc_04);
-								clear_directory_folders.setText(R.string.clear_directory_folders_04);
-								clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_04);
-								reset_settings.setText(R.string.reset_settings_04);
-								sub_title.setText(R.string.about_sub_04);
-								developer_manager.setText(R.string.xmanager_dev_04);
-								developer_spotify.setText(R.string.spotify_mod_devs_04);
-								support_team.setText(R.string.telegram_support_team_04);
-								mod_testers_1.setText(R.string.manager_testers_04);
-								mod_testers_2.setText(R.string.manager_hosting_04);
-								mobilism_team.setText(R.string.mobilism_team_04);
-								forum_team.setText(R.string.forum_team_04);
-								manager_team.setText(R.string.xspotify_team_04);
-								contributors_1.setText(R.string.contributors_04);
-								download_selected.setText(R.string.download_selected_04);
-								download_ready.setText(R.string.download_ready_04);
-								download_ready_desc.setText(R.string.download_ready_desc_04);
-								downloading_file.setText(R.string.downloading_file_04);
-								download_success.setText(R.string.download_success_04);
-								new_update.setText(R.string.new_update_04);
-								download_selected_0 = download_selected.getText().toString();
-								download_ready_0 = download_ready.getText().toString();
-								download_ready_desc_0 = download_ready_desc.getText().toString();
-								downloading_file_0 = downloading_file.getText().toString();
-								download_success_0 = download_success.getText().toString();
-								copy_url.setText(R.string.copy_url_04);
-								continue_1.setText(R.string.continue_1_04);
-								cancel.setText(R.string.cancel_04);
-							    fixer.setText(R.string.fixer_04);
-								download.setText(R.string.download_04);
-								later.setText(R.string.later_04);
-								install_now.setText(R.string.install_now_04);
-								install_update.setText(R.string.install_update_04);
-								go_back.setText(R.string.go_back_04);
-								download_update.setText(R.string.download_update_04);
-								not_now.setText(R.string.not_now_04);
-								show_support.setText(R.string.show_support_04);
-								show_support_desc.setText(R.string.show_support_desc_04);
-								copy_url_0 = copy_url.getText().toString();
-								download_0 = download.getText().toString();
-								continue_0 = continue_1.getText().toString();
-								cancel_0 = cancel.getText().toString();
-							    fixer_0 = fixer.getText().toString();
-								later_0 = later.getText().toString();
-								install_now_0 = install_now.getText().toString();
-								go_back_0 = go_back.getText().toString();
-								install_update_0 = install_update.getText().toString();
-								main_title.setText(R.string.main_title_04);
-								settings_title.setText(R.string.settings_title_04);
-								about_title.setText(R.string.about_title_04);
-								maintenance.setText(R.string.maintenance_04);
-								maintenance_desc.setText(R.string.maintenance_desc_04);
-								thanks.setText(R.string.thanks_04);
-								language.setText(R.string.language_04);
-								website.setText(R.string.website_04);
-								discord.setText(R.string.discord_04);
-								reddit.setText(R.string.reddit_04);
-								faq.setText(R.string.faq_04);
-								cloned_version.setText(R.string.cloned_version_04);
-								cloned_version_info.setText(R.string.cloned_version_desc_04);
-							    disable_reward_ad.setText(R.string.disable_rewarded_ads_04);
-							    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_04);
-							    installation_failed.setText(R.string.installation_failed_04);
-							    installation_failed_desc.setText(R.string.installation_failed_desc_04);
-							    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_04);
-							    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_04);
-							    existing_patched.setText(R.string.existing_patched_04);
-							    existing_patched_desc.setText(R.string.existing_patched_desc_04);
-							    close.setText(R.string.close_04);
-							    cloned.setText(R.string.cloned_04);
-							    ream.setText(R.string.ream_04);
-							    install.setText(R.string.install_04);
-							    uninstall.setText(R.string.uninstall_04);
-							    ignore.setText(R.string.ignore_04);
-							    delete.setText(R.string.delete_04);
-							    uninstall_patched.setText(R.string.uninstall_patched_04);
-							    open_settings.setText(R.string.open_settings_04);
-							    open_patched.setText(R.string.open_patched_04);
-								installation_failed_0 = installation_failed.getText().toString();
-							    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-							    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-							    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-							    existing_patched_0 = existing_patched.getText().toString();
-							    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-							    close_0 = close.getText().toString();
-							    uninstall_0 = uninstall.getText().toString();
+							title_1.setText(R.string.spotify_regular_04);
+							title_2.setText(R.string.spotify_amoled_04);
+							sub_text_installed.setText(R.string.installed_04);
+							sub_text_1.setText(R.string.latest_04);
+							sub_text_2.setText(R.string.latest_04);
+							sub_text_3.setText(R.string.latest_04);
+							version_switch_1.setText(R.string.versions_04);
+							version_switch_2.setText(R.string.versions_04);
+							version_switch_3.setText(R.string.versions_04);
+							changelogs.setText(R.string.changelogs_04);
+							title_sub.setText(R.string.manager_tools_04);
+							device_cpu.setText(R.string.device_cpu_04);
+							source.setText(R.string.source_04);
+							support.setText(R.string.support_04);
+							donate.setText(R.string.donate_04);
+							about.setText(R.string.about_04);
+							list_auto_refresh.setText(R.string.list_auto_refresh_04);
+							list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_04);
+							force_auto_install.setText(R.string.force_auto_install_04);
+							force_auto_install_info.setText(R.string.force_auto_install_desc_04);
+							theme.setText(R.string.show_themes_04);
+							apk_location.setText(R.string.apk_location_04);
+							apk_location_info.setText(R.string.apk_location_desc_04);
+							clear_directory_folders.setText(R.string.clear_directory_folders_04);
+							clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_04);
+							reset_settings.setText(R.string.reset_settings_04);
+							sub_title.setText(R.string.about_sub_04);
+							developer_manager.setText(R.string.xmanager_dev_04);
+							developer_spotify.setText(R.string.spotify_mod_devs_04);
+							support_team.setText(R.string.telegram_support_team_04);
+							mod_testers_1.setText(R.string.manager_testers_04);
+							mod_testers_2.setText(R.string.manager_hosting_04);
+							mobilism_team.setText(R.string.mobilism_team_04);
+							forum_team.setText(R.string.forum_team_04);
+							manager_team.setText(R.string.xspotify_team_04);
+							contributors_1.setText(R.string.contributors_04);
+							download_selected.setText(R.string.download_selected_04);
+							download_ready.setText(R.string.download_ready_04);
+							download_ready_desc.setText(R.string.download_ready_desc_04);
+							downloading_file.setText(R.string.downloading_file_04);
+							download_success.setText(R.string.download_success_04);
+							new_update.setText(R.string.new_update_04);
+							download_selected_0 = download_selected.getText().toString();
+							download_ready_0 = download_ready.getText().toString();
+							download_ready_desc_0 = download_ready_desc.getText().toString();
+							downloading_file_0 = downloading_file.getText().toString();
+							download_success_0 = download_success.getText().toString();
+							copy_url.setText(R.string.copy_url_04);
+							continue_1.setText(R.string.continue_1_04);
+							cancel.setText(R.string.cancel_04);
+							fixer.setText(R.string.fixer_04);
+							download.setText(R.string.download_04);
+							later.setText(R.string.later_04);
+							install_now.setText(R.string.install_now_04);
+							install_update.setText(R.string.install_update_04);
+							go_back.setText(R.string.go_back_04);
+							download_update.setText(R.string.download_update_04);
+							not_now.setText(R.string.not_now_04);
+							show_support.setText(R.string.show_support_04);
+							show_support_desc.setText(R.string.show_support_desc_04);
+							copy_url_0 = copy_url.getText().toString();
+							download_0 = download.getText().toString();
+							continue_0 = continue_1.getText().toString();
+							cancel_0 = cancel.getText().toString();
+							fixer_0 = fixer.getText().toString();
+							later_0 = later.getText().toString();
+							install_now_0 = install_now.getText().toString();
+							go_back_0 = go_back.getText().toString();
+							install_update_0 = install_update.getText().toString();
+							main_title.setText(R.string.main_title_04);
+							settings_title.setText(R.string.settings_title_04);
+							about_title.setText(R.string.about_title_04);
+							maintenance.setText(R.string.maintenance_04);
+							maintenance_desc.setText(R.string.maintenance_desc_04);
+							thanks.setText(R.string.thanks_04);
+							language.setText(R.string.language_04);
+							website.setText(R.string.website_04);
+							discord.setText(R.string.discord_04);
+							reddit.setText(R.string.reddit_04);
+							faq.setText(R.string.faq_04);
+							cloned_version.setText(R.string.cloned_version_04);
+							cloned_version_info.setText(R.string.cloned_version_desc_04);
+							disable_reward_ad.setText(R.string.disable_rewarded_ads_04);
+							disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_04);
+							installation_failed.setText(R.string.installation_failed_04);
+							installation_failed_desc.setText(R.string.installation_failed_desc_04);
+							installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_04);
+							installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_04);
+							existing_patched.setText(R.string.existing_patched_04);
+							existing_patched_desc.setText(R.string.existing_patched_desc_04);
+							close.setText(R.string.close_04);
+							cloned.setText(R.string.cloned_04);
+							ream.setText(R.string.ream_04);
+							install.setText(R.string.install_04);
+							uninstall.setText(R.string.uninstall_04);
+							ignore.setText(R.string.ignore_04);
+							delete.setText(R.string.delete_04);
+							uninstall_patched.setText(R.string.uninstall_patched_04);
+							open_settings.setText(R.string.open_settings_04);
+							open_patched.setText(R.string.open_patched_04);
+							installation_failed_0 = installation_failed.getText().toString();
+							installation_failed_desc_0 = installation_failed_desc.getText().toString();
+							installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+							installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+							existing_patched_0 = existing_patched.getText().toString();
+							existing_patched_desc_0 = existing_patched_desc.getText().toString();
+							close_0 = close.getText().toString();
+							uninstall_0 = uninstall.getText().toString();
 							
 							select_language.setSelection((int)(4));
 						}
 						else {
 							if (LANGUAGE.getString("LANGUAGE", "").equals("5")) {
-								    title_1.setText(R.string.spotify_regular_05);
-									title_2.setText(R.string.spotify_amoled_05);
-									sub_text_installed.setText(R.string.installed_05);
-									sub_text_1.setText(R.string.latest_05);
-									sub_text_3.setText(R.string.latest_05);
-									version_switch_1.setText(R.string.versions_05);
-									version_switch_2.setText(R.string.versions_05);
-									changelogs.setText(R.string.changelogs_05);
-									title_sub.setText(R.string.manager_tools_05);
-									device_cpu.setText(R.string.device_cpu_05);
-									source.setText(R.string.source_05);
-									support.setText(R.string.support_05);
-									donate.setText(R.string.donate_05);
-									about.setText(R.string.about_05);
-									list_auto_refresh.setText(R.string.list_auto_refresh_05);
-									list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_05);
-									force_auto_install.setText(R.string.force_auto_install_05);
-									force_auto_install_info.setText(R.string.force_auto_install_desc_05);
-									theme.setText(R.string.show_themes_05);
-									apk_location.setText(R.string.apk_location_05);
-									apk_location_info.setText(R.string.apk_location_desc_05);
-									clear_directory_folders.setText(R.string.clear_directory_folders_05);
-									clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_05);
-									reset_settings.setText(R.string.reset_settings_05);
-									sub_title.setText(R.string.about_sub_05);
-									developer_manager.setText(R.string.xmanager_dev_05);
-									developer_spotify.setText(R.string.spotify_mod_devs_05);
-									support_team.setText(R.string.telegram_support_team_05);
-									mod_testers_1.setText(R.string.manager_testers_05);
-									mod_testers_2.setText(R.string.manager_hosting_05);
-									mobilism_team.setText(R.string.mobilism_team_05);
-									forum_team.setText(R.string.forum_team_05);
-									manager_team.setText(R.string.xspotify_team_05);
-									contributors_1.setText(R.string.contributors_05);
-									download_selected.setText(R.string.download_selected_05);
-									download_ready.setText(R.string.download_ready_05);
-									download_ready_desc.setText(R.string.download_ready_desc_05);
-									downloading_file.setText(R.string.downloading_file_05);
-									download_success.setText(R.string.download_success_05);
-									new_update.setText(R.string.new_update_05);
-									download_selected_0 = download_selected.getText().toString();
-									download_ready_0 = download_ready.getText().toString();
-									download_ready_desc_0 = download_ready_desc.getText().toString();
-									downloading_file_0 = downloading_file.getText().toString();
-									download_success_0 = download_success.getText().toString();
-									copy_url.setText(R.string.copy_url_05);
-									continue_1.setText(R.string.continue_1_05);
-									cancel.setText(R.string.cancel_05);
-								    fixer.setText(R.string.fixer_05);
-									download.setText(R.string.download_05);
-									later.setText(R.string.later_05);
-									install_now.setText(R.string.install_now_05);
-									install_update.setText(R.string.install_update_05);
-									go_back.setText(R.string.go_back_05);
-									download_update.setText(R.string.download_update_05);
-									not_now.setText(R.string.not_now_05);
-									show_support.setText(R.string.show_support_05);
-									show_support_desc.setText(R.string.show_support_desc_05);
-									copy_url_0 = copy_url.getText().toString();
-									download_0 = download.getText().toString();
-									continue_0 = continue_1.getText().toString();
-									cancel_0 = cancel.getText().toString();
-								    fixer_0 = fixer.getText().toString();
-									later_0 = later.getText().toString();
-									install_now_0 = install_now.getText().toString();
-									go_back_0 = go_back.getText().toString();
-									install_update_0 = install_update.getText().toString();
-									main_title.setText(R.string.main_title_05);
-									settings_title.setText(R.string.settings_title_05);
-									about_title.setText(R.string.about_title_05);
-									maintenance.setText(R.string.maintenance_05);
-									maintenance_desc.setText(R.string.maintenance_desc_05);
-									thanks.setText(R.string.thanks_05);
-									language.setText(R.string.language_05);
-									website.setText(R.string.website_05);
-									discord.setText(R.string.discord_05);
-									reddit.setText(R.string.reddit_05);
-									faq.setText(R.string.faq_05);
-									cloned_version.setText(R.string.cloned_version_05);
-									cloned_version_info.setText(R.string.cloned_version_desc_05);
-								    disable_reward_ad.setText(R.string.disable_rewarded_ads_05);
-								    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_05);
-								    installation_failed.setText(R.string.installation_failed_05);
-								    installation_failed_desc.setText(R.string.installation_failed_desc_05);
-								    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_05);
-								    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_05);
-								    existing_patched.setText(R.string.existing_patched_05);
-								    existing_patched_desc.setText(R.string.existing_patched_desc_05);
-								    close.setText(R.string.close_05);
-								    cloned.setText(R.string.cloned_05);
-								    ream.setText(R.string.ream_05);
-								    install.setText(R.string.install_05);
-								    uninstall.setText(R.string.uninstall_05);
-								    ignore.setText(R.string.ignore_05);
-								    delete.setText(R.string.delete_05);
-								    uninstall_patched.setText(R.string.uninstall_patched_05);
-								    open_settings.setText(R.string.open_settings_05);
-								    open_patched.setText(R.string.open_patched_05);
-									installation_failed_0 = installation_failed.getText().toString();
-								    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-								    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-								    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-								    existing_patched_0 = existing_patched.getText().toString();
-								    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-								    close_0 = close.getText().toString();
-								    uninstall_0 = uninstall.getText().toString();
+								title_1.setText(R.string.spotify_regular_05);
+								title_2.setText(R.string.spotify_amoled_05);
+								sub_text_installed.setText(R.string.installed_05);
+								sub_text_1.setText(R.string.latest_05);
+								sub_text_2.setText(R.string.latest_05);
+								sub_text_3.setText(R.string.latest_05);
+								version_switch_1.setText(R.string.versions_05);
+								version_switch_2.setText(R.string.versions_05);
+								version_switch_3.setText(R.string.versions_05);
+								changelogs.setText(R.string.changelogs_05);
+								title_sub.setText(R.string.manager_tools_05);
+								device_cpu.setText(R.string.device_cpu_05);
+								source.setText(R.string.source_05);
+								support.setText(R.string.support_05);
+								donate.setText(R.string.donate_05);
+								about.setText(R.string.about_05);
+								list_auto_refresh.setText(R.string.list_auto_refresh_05);
+								list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_05);
+								force_auto_install.setText(R.string.force_auto_install_05);
+								force_auto_install_info.setText(R.string.force_auto_install_desc_05);
+								theme.setText(R.string.show_themes_05);
+								apk_location.setText(R.string.apk_location_05);
+								apk_location_info.setText(R.string.apk_location_desc_05);
+								clear_directory_folders.setText(R.string.clear_directory_folders_05);
+								clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_05);
+								reset_settings.setText(R.string.reset_settings_05);
+								sub_title.setText(R.string.about_sub_05);
+								developer_manager.setText(R.string.xmanager_dev_05);
+								developer_spotify.setText(R.string.spotify_mod_devs_05);
+								support_team.setText(R.string.telegram_support_team_05);
+								mod_testers_1.setText(R.string.manager_testers_05);
+								mod_testers_2.setText(R.string.manager_hosting_05);
+								mobilism_team.setText(R.string.mobilism_team_05);
+								forum_team.setText(R.string.forum_team_05);
+								manager_team.setText(R.string.xspotify_team_05);
+								contributors_1.setText(R.string.contributors_05);
+								download_selected.setText(R.string.download_selected_05);
+								download_ready.setText(R.string.download_ready_05);
+								download_ready_desc.setText(R.string.download_ready_desc_05);
+								downloading_file.setText(R.string.downloading_file_05);
+								download_success.setText(R.string.download_success_05);
+								new_update.setText(R.string.new_update_05);
+								download_selected_0 = download_selected.getText().toString();
+								download_ready_0 = download_ready.getText().toString();
+								download_ready_desc_0 = download_ready_desc.getText().toString();
+								downloading_file_0 = downloading_file.getText().toString();
+								download_success_0 = download_success.getText().toString();
+								copy_url.setText(R.string.copy_url_05);
+								continue_1.setText(R.string.continue_1_05);
+								cancel.setText(R.string.cancel_05);
+								fixer.setText(R.string.fixer_05);
+								download.setText(R.string.download_05);
+								later.setText(R.string.later_05);
+								install_now.setText(R.string.install_now_05);
+								install_update.setText(R.string.install_update_05);
+								go_back.setText(R.string.go_back_05);
+								download_update.setText(R.string.download_update_05);
+								not_now.setText(R.string.not_now_05);
+								show_support.setText(R.string.show_support_05);
+								show_support_desc.setText(R.string.show_support_desc_05);
+								copy_url_0 = copy_url.getText().toString();
+								download_0 = download.getText().toString();
+								continue_0 = continue_1.getText().toString();
+								cancel_0 = cancel.getText().toString();
+								fixer_0 = fixer.getText().toString();
+								later_0 = later.getText().toString();
+								install_now_0 = install_now.getText().toString();
+								go_back_0 = go_back.getText().toString();
+								install_update_0 = install_update.getText().toString();
+								main_title.setText(R.string.main_title_05);
+								settings_title.setText(R.string.settings_title_05);
+								about_title.setText(R.string.about_title_05);
+								maintenance.setText(R.string.maintenance_05);
+								maintenance_desc.setText(R.string.maintenance_desc_05);
+								thanks.setText(R.string.thanks_05);
+								language.setText(R.string.language_05);
+								website.setText(R.string.website_05);
+								discord.setText(R.string.discord_05);
+								reddit.setText(R.string.reddit_05);
+								faq.setText(R.string.faq_05);
+								cloned_version.setText(R.string.cloned_version_05);
+								cloned_version_info.setText(R.string.cloned_version_desc_05);
+								disable_reward_ad.setText(R.string.disable_rewarded_ads_05);
+								disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_05);
+								installation_failed.setText(R.string.installation_failed_05);
+								installation_failed_desc.setText(R.string.installation_failed_desc_05);
+								installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_05);
+								installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_05);
+								existing_patched.setText(R.string.existing_patched_05);
+								existing_patched_desc.setText(R.string.existing_patched_desc_05);
+								close.setText(R.string.close_05);
+								cloned.setText(R.string.cloned_05);
+								ream.setText(R.string.ream_05);
+								install.setText(R.string.install_05);
+								uninstall.setText(R.string.uninstall_05);
+								ignore.setText(R.string.ignore_05);
+								delete.setText(R.string.delete_05);
+								uninstall_patched.setText(R.string.uninstall_patched_05);
+								open_settings.setText(R.string.open_settings_05);
+								open_patched.setText(R.string.open_patched_05);
+								installation_failed_0 = installation_failed.getText().toString();
+								installation_failed_desc_0 = installation_failed_desc.getText().toString();
+								installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+								installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+								existing_patched_0 = existing_patched.getText().toString();
+								existing_patched_desc_0 = existing_patched_desc.getText().toString();
+								close_0 = close.getText().toString();
+								uninstall_0 = uninstall.getText().toString();
 								
 								select_language.setSelection((int)(5));
 							}
 							else {
 								if (LANGUAGE.getString("LANGUAGE", "").equals("6")) {
-									    title_1.setText(R.string.spotify_regular_06);
-										title_2.setText(R.string.spotify_amoled_06);
-										sub_text_installed.setText(R.string.installed_06);
-										sub_text_1.setText(R.string.latest_06);
-										sub_text_3.setText(R.string.latest_06);
-										version_switch_1.setText(R.string.versions_06);
-										version_switch_2.setText(R.string.versions_06);
-										changelogs.setText(R.string.changelogs_06);
-										title_sub.setText(R.string.manager_tools_06);
-										device_cpu.setText(R.string.device_cpu_06);
-										source.setText(R.string.source_06);
-										support.setText(R.string.support_06);
-										donate.setText(R.string.donate_06);
-										about.setText(R.string.about_06);
-										list_auto_refresh.setText(R.string.list_auto_refresh_06);
-										list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_06);
-										force_auto_install.setText(R.string.force_auto_install_06);
-										force_auto_install_info.setText(R.string.force_auto_install_desc_06);
-										theme.setText(R.string.show_themes_06);
-										apk_location.setText(R.string.apk_location_06);
-										apk_location_info.setText(R.string.apk_location_desc_06);
-										clear_directory_folders.setText(R.string.clear_directory_folders_06);
-										clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_06);
-										reset_settings.setText(R.string.reset_settings_06);
-										sub_title.setText(R.string.about_sub_06);
-										developer_manager.setText(R.string.xmanager_dev_06);
-										developer_spotify.setText(R.string.spotify_mod_devs_06);
-										support_team.setText(R.string.telegram_support_team_06);
-										mod_testers_1.setText(R.string.manager_testers_06);
-										mod_testers_2.setText(R.string.manager_hosting_06);
-										mobilism_team.setText(R.string.mobilism_team_06);
-										forum_team.setText(R.string.forum_team_06);
-										manager_team.setText(R.string.xspotify_team_06);
-										contributors_1.setText(R.string.contributors_06);
-										download_selected.setText(R.string.download_selected_06);
-										download_ready.setText(R.string.download_ready_06);
-										download_ready_desc.setText(R.string.download_ready_desc_06);
-										downloading_file.setText(R.string.downloading_file_06);
-										download_success.setText(R.string.download_success_06);
-										new_update.setText(R.string.new_update_06);
-										download_selected_0 = download_selected.getText().toString();
-										download_ready_0 = download_ready.getText().toString();
-										download_ready_desc_0 = download_ready_desc.getText().toString();
-										downloading_file_0 = downloading_file.getText().toString();
-										download_success_0 = download_success.getText().toString();
-										copy_url.setText(R.string.copy_url_06);
-										continue_1.setText(R.string.continue_1_06);
-										cancel.setText(R.string.cancel_06);
-									    fixer.setText(R.string.fixer_06);
-										download.setText(R.string.download_06);
-										later.setText(R.string.later_06);
-										install_now.setText(R.string.install_now_06);
-										install_update.setText(R.string.install_update_06);
-										go_back.setText(R.string.go_back_06);
-										download_update.setText(R.string.download_update_06);
-										not_now.setText(R.string.not_now_06);
-										show_support.setText(R.string.show_support_06);
-										show_support_desc.setText(R.string.show_support_desc_06);
-										copy_url_0 = copy_url.getText().toString();
-										download_0 = download.getText().toString();
-										continue_0 = continue_1.getText().toString();
-										cancel_0 = cancel.getText().toString();
-									    fixer_0 = fixer.getText().toString();
-										later_0 = later.getText().toString();
-										install_now_0 = install_now.getText().toString();
-										go_back_0 = go_back.getText().toString();
-										install_update_0 = install_update.getText().toString();
-										main_title.setText(R.string.main_title_06);
-										settings_title.setText(R.string.settings_title_06);
-										about_title.setText(R.string.about_title_06);
-										maintenance.setText(R.string.maintenance_06);
-										maintenance_desc.setText(R.string.maintenance_desc_06);
-										thanks.setText(R.string.thanks_06);
-										language.setText(R.string.language_06);
-										website.setText(R.string.website_06);
-										discord.setText(R.string.discord_06);
-										reddit.setText(R.string.reddit_06);
-										faq.setText(R.string.faq_06);
-										cloned_version.setText(R.string.cloned_version_06);
-										cloned_version_info.setText(R.string.cloned_version_desc_06);
-									    disable_reward_ad.setText(R.string.disable_rewarded_ads_06);
-									    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_06);
-									    installation_failed.setText(R.string.installation_failed_06);
-									    installation_failed_desc.setText(R.string.installation_failed_desc_06);
-									    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_06);
-									    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_06);
-									    existing_patched.setText(R.string.existing_patched_06);
-									    existing_patched_desc.setText(R.string.existing_patched_desc_06);
-									    close.setText(R.string.close_06);
-									    cloned.setText(R.string.cloned_06);
-									    ream.setText(R.string.ream_06);
-									    install.setText(R.string.install_06);
-									    uninstall.setText(R.string.uninstall_06);
-									    ignore.setText(R.string.ignore_06);
-									    delete.setText(R.string.delete_06);
-									    uninstall_patched.setText(R.string.uninstall_patched_06);
-									    open_settings.setText(R.string.open_settings_06);
-									    open_patched.setText(R.string.open_patched_06);
-										installation_failed_0 = installation_failed.getText().toString();
-									    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-									    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-									    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-									    existing_patched_0 = existing_patched.getText().toString();
-									    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-									    close_0 = close.getText().toString();
-									    uninstall_0 = uninstall.getText().toString();
+									title_1.setText(R.string.spotify_regular_06);
+									title_2.setText(R.string.spotify_amoled_06);
+									sub_text_installed.setText(R.string.installed_06);
+									sub_text_1.setText(R.string.latest_06);
+									sub_text_2.setText(R.string.latest_06);
+									sub_text_3.setText(R.string.latest_06);
+									version_switch_1.setText(R.string.versions_06);
+									version_switch_2.setText(R.string.versions_06);
+									version_switch_3.setText(R.string.versions_06);
+									changelogs.setText(R.string.changelogs_06);
+									title_sub.setText(R.string.manager_tools_06);
+									device_cpu.setText(R.string.device_cpu_06);
+									source.setText(R.string.source_06);
+									support.setText(R.string.support_06);
+									donate.setText(R.string.donate_06);
+									about.setText(R.string.about_06);
+									list_auto_refresh.setText(R.string.list_auto_refresh_06);
+									list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_06);
+									force_auto_install.setText(R.string.force_auto_install_06);
+									force_auto_install_info.setText(R.string.force_auto_install_desc_06);
+									theme.setText(R.string.show_themes_06);
+									apk_location.setText(R.string.apk_location_06);
+									apk_location_info.setText(R.string.apk_location_desc_06);
+									clear_directory_folders.setText(R.string.clear_directory_folders_06);
+									clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_06);
+									reset_settings.setText(R.string.reset_settings_06);
+									sub_title.setText(R.string.about_sub_06);
+									developer_manager.setText(R.string.xmanager_dev_06);
+									developer_spotify.setText(R.string.spotify_mod_devs_06);
+									support_team.setText(R.string.telegram_support_team_06);
+									mod_testers_1.setText(R.string.manager_testers_06);
+									mod_testers_2.setText(R.string.manager_hosting_06);
+									mobilism_team.setText(R.string.mobilism_team_06);
+									forum_team.setText(R.string.forum_team_06);
+									manager_team.setText(R.string.xspotify_team_06);
+									contributors_1.setText(R.string.contributors_06);
+									download_selected.setText(R.string.download_selected_06);
+									download_ready.setText(R.string.download_ready_06);
+									download_ready_desc.setText(R.string.download_ready_desc_06);
+									downloading_file.setText(R.string.downloading_file_06);
+									download_success.setText(R.string.download_success_06);
+									new_update.setText(R.string.new_update_06);
+									download_selected_0 = download_selected.getText().toString();
+									download_ready_0 = download_ready.getText().toString();
+									download_ready_desc_0 = download_ready_desc.getText().toString();
+									downloading_file_0 = downloading_file.getText().toString();
+									download_success_0 = download_success.getText().toString();
+									copy_url.setText(R.string.copy_url_06);
+									continue_1.setText(R.string.continue_1_06);
+									cancel.setText(R.string.cancel_06);
+									fixer.setText(R.string.fixer_06);
+									download.setText(R.string.download_06);
+									later.setText(R.string.later_06);
+									install_now.setText(R.string.install_now_06);
+									install_update.setText(R.string.install_update_06);
+									go_back.setText(R.string.go_back_06);
+									download_update.setText(R.string.download_update_06);
+									not_now.setText(R.string.not_now_06);
+									show_support.setText(R.string.show_support_06);
+									show_support_desc.setText(R.string.show_support_desc_06);
+									copy_url_0 = copy_url.getText().toString();
+									download_0 = download.getText().toString();
+									continue_0 = continue_1.getText().toString();
+									cancel_0 = cancel.getText().toString();
+									fixer_0 = fixer.getText().toString();
+									later_0 = later.getText().toString();
+									install_now_0 = install_now.getText().toString();
+									go_back_0 = go_back.getText().toString();
+									install_update_0 = install_update.getText().toString();
+									main_title.setText(R.string.main_title_06);
+									settings_title.setText(R.string.settings_title_06);
+									about_title.setText(R.string.about_title_06);
+									maintenance.setText(R.string.maintenance_06);
+									maintenance_desc.setText(R.string.maintenance_desc_06);
+									thanks.setText(R.string.thanks_06);
+									language.setText(R.string.language_06);
+									website.setText(R.string.website_06);
+									discord.setText(R.string.discord_06);
+									reddit.setText(R.string.reddit_06);
+									faq.setText(R.string.faq_06);
+									cloned_version.setText(R.string.cloned_version_06);
+									cloned_version_info.setText(R.string.cloned_version_desc_06);
+									disable_reward_ad.setText(R.string.disable_rewarded_ads_06);
+									disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_06);
+									installation_failed.setText(R.string.installation_failed_06);
+									installation_failed_desc.setText(R.string.installation_failed_desc_06);
+									installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_06);
+									installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_06);
+									existing_patched.setText(R.string.existing_patched_06);
+									existing_patched_desc.setText(R.string.existing_patched_desc_06);
+									close.setText(R.string.close_06);
+									cloned.setText(R.string.cloned_06);
+									ream.setText(R.string.ream_06);
+									install.setText(R.string.install_06);
+									uninstall.setText(R.string.uninstall_06);
+									ignore.setText(R.string.ignore_06);
+									delete.setText(R.string.delete_06);
+									uninstall_patched.setText(R.string.uninstall_patched_06);
+									open_settings.setText(R.string.open_settings_06);
+									open_patched.setText(R.string.open_patched_06);
+									installation_failed_0 = installation_failed.getText().toString();
+									installation_failed_desc_0 = installation_failed_desc.getText().toString();
+									installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+									installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+									existing_patched_0 = existing_patched.getText().toString();
+									existing_patched_desc_0 = existing_patched_desc.getText().toString();
+									close_0 = close.getText().toString();
+									uninstall_0 = uninstall.getText().toString();
 									
 									select_language.setSelection((int)(6));
 								}
 								else {
 									if (LANGUAGE.getString("LANGUAGE", "").equals("7")) {
-										    title_1.setText(R.string.spotify_regular_07);
-											title_2.setText(R.string.spotify_amoled_07);
-											sub_text_installed.setText(R.string.installed_07);
-											sub_text_1.setText(R.string.latest_07);
-											sub_text_3.setText(R.string.latest_07);
-											version_switch_1.setText(R.string.versions_07);
-											version_switch_2.setText(R.string.versions_07);
-											changelogs.setText(R.string.changelogs_07);
-											title_sub.setText(R.string.manager_tools_07);
-											device_cpu.setText(R.string.device_cpu_07);
-											source.setText(R.string.source_07);
-											support.setText(R.string.support_07);
-											donate.setText(R.string.donate_07);
-											about.setText(R.string.about_07);
-											list_auto_refresh.setText(R.string.list_auto_refresh_07);
-											list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_07);
-											force_auto_install.setText(R.string.force_auto_install_07);
-											force_auto_install_info.setText(R.string.force_auto_install_desc_07);
-											theme.setText(R.string.show_themes_07);
-											apk_location.setText(R.string.apk_location_07);
-											apk_location_info.setText(R.string.apk_location_desc_07);
-											clear_directory_folders.setText(R.string.clear_directory_folders_07);
-											clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_07);
-											reset_settings.setText(R.string.reset_settings_07);
-											sub_title.setText(R.string.about_sub_07);
-											developer_manager.setText(R.string.xmanager_dev_07);
-											developer_spotify.setText(R.string.spotify_mod_devs_07);
-											support_team.setText(R.string.telegram_support_team_07);
-											mod_testers_1.setText(R.string.manager_testers_07);
-											mod_testers_2.setText(R.string.manager_hosting_07);
-											mobilism_team.setText(R.string.mobilism_team_07);
-											forum_team.setText(R.string.forum_team_07);
-											manager_team.setText(R.string.xspotify_team_07);
-											contributors_1.setText(R.string.contributors_07);
-											download_selected.setText(R.string.download_selected_07);
-											download_ready.setText(R.string.download_ready_07);
-											download_ready_desc.setText(R.string.download_ready_desc_07);
-											downloading_file.setText(R.string.downloading_file_07);
-											download_success.setText(R.string.download_success_07);
-											new_update.setText(R.string.new_update_07);
-											download_selected_0 = download_selected.getText().toString();
-											download_ready_0 = download_ready.getText().toString();
-											download_ready_desc_0 = download_ready_desc.getText().toString();
-											downloading_file_0 = downloading_file.getText().toString();
-											download_success_0 = download_success.getText().toString();
-											copy_url.setText(R.string.copy_url_07);
-											continue_1.setText(R.string.continue_1_07);
-											cancel.setText(R.string.cancel_07);
-										    fixer.setText(R.string.fixer_07);
-											download.setText(R.string.download_07);
-											later.setText(R.string.later_07);
-											install_now.setText(R.string.install_now_07);
-											install_update.setText(R.string.install_update_07);
-											go_back.setText(R.string.go_back_07);
-											download_update.setText(R.string.download_update_07);
-											not_now.setText(R.string.not_now_07);
-											show_support.setText(R.string.show_support_07);
-											show_support_desc.setText(R.string.show_support_desc_07);
-											copy_url_0 = copy_url.getText().toString();
-											download_0 = download.getText().toString();
-											continue_0 = continue_1.getText().toString();
-											cancel_0 = cancel.getText().toString();
-										    fixer_0 = fixer.getText().toString();
-											later_0 = later.getText().toString();
-											install_now_0 = install_now.getText().toString();
-											go_back_0 = go_back.getText().toString();
-											install_update_0 = install_update.getText().toString();
-											main_title.setText(R.string.main_title_07);
-											settings_title.setText(R.string.settings_title_07);
-											about_title.setText(R.string.about_title_07);
-											maintenance.setText(R.string.maintenance_07);
-											maintenance_desc.setText(R.string.maintenance_desc_07);
-											thanks.setText(R.string.thanks_07);
-											language.setText(R.string.language_07);
-											website.setText(R.string.website_07);
-											discord.setText(R.string.discord_07);
-											reddit.setText(R.string.reddit_07);
-											faq.setText(R.string.faq_07);
-											cloned_version.setText(R.string.cloned_version_07);
-											cloned_version_info.setText(R.string.cloned_version_desc_07);
-										    disable_reward_ad.setText(R.string.disable_rewarded_ads_07);
-										    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_07);
-										    installation_failed.setText(R.string.installation_failed_07);
-										    installation_failed_desc.setText(R.string.installation_failed_desc_07);
-										    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_07);
-										    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_07);
-										    existing_patched.setText(R.string.existing_patched_07);
-										    existing_patched_desc.setText(R.string.existing_patched_desc_07);
-										    close.setText(R.string.close_07);
-										    cloned.setText(R.string.cloned_07);
-										    ream.setText(R.string.ream_07);
-										    install.setText(R.string.install_07);
-										    uninstall.setText(R.string.uninstall_07);
-										    ignore.setText(R.string.ignore_07);
-										    delete.setText(R.string.delete_07);
-										    uninstall_patched.setText(R.string.uninstall_patched_07);
-										    open_settings.setText(R.string.open_settings_07);
-										    open_patched.setText(R.string.open_patched_07);
-											installation_failed_0 = installation_failed.getText().toString();
-										    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-										    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-										    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-										    existing_patched_0 = existing_patched.getText().toString();
-										    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-										    close_0 = close.getText().toString();
-										    uninstall_0 = uninstall.getText().toString();
+										title_1.setText(R.string.spotify_regular_07);
+										title_2.setText(R.string.spotify_amoled_07);
+										sub_text_installed.setText(R.string.installed_07);
+										sub_text_1.setText(R.string.latest_07);
+										sub_text_2.setText(R.string.latest_07);
+										sub_text_3.setText(R.string.latest_07);
+										version_switch_1.setText(R.string.versions_07);
+										version_switch_2.setText(R.string.versions_07);
+										version_switch_3.setText(R.string.versions_07);
+										changelogs.setText(R.string.changelogs_07);
+										title_sub.setText(R.string.manager_tools_07);
+										device_cpu.setText(R.string.device_cpu_07);
+										source.setText(R.string.source_07);
+										support.setText(R.string.support_07);
+										donate.setText(R.string.donate_07);
+										about.setText(R.string.about_07);
+										list_auto_refresh.setText(R.string.list_auto_refresh_07);
+										list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_07);
+										force_auto_install.setText(R.string.force_auto_install_07);
+										force_auto_install_info.setText(R.string.force_auto_install_desc_07);
+										theme.setText(R.string.show_themes_07);
+										apk_location.setText(R.string.apk_location_07);
+										apk_location_info.setText(R.string.apk_location_desc_07);
+										clear_directory_folders.setText(R.string.clear_directory_folders_07);
+										clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_07);
+										reset_settings.setText(R.string.reset_settings_07);
+										sub_title.setText(R.string.about_sub_07);
+										developer_manager.setText(R.string.xmanager_dev_07);
+										developer_spotify.setText(R.string.spotify_mod_devs_07);
+										support_team.setText(R.string.telegram_support_team_07);
+										mod_testers_1.setText(R.string.manager_testers_07);
+										mod_testers_2.setText(R.string.manager_hosting_07);
+										mobilism_team.setText(R.string.mobilism_team_07);
+										forum_team.setText(R.string.forum_team_07);
+										manager_team.setText(R.string.xspotify_team_07);
+										contributors_1.setText(R.string.contributors_07);
+										download_selected.setText(R.string.download_selected_07);
+										download_ready.setText(R.string.download_ready_07);
+										download_ready_desc.setText(R.string.download_ready_desc_07);
+										downloading_file.setText(R.string.downloading_file_07);
+										download_success.setText(R.string.download_success_07);
+										new_update.setText(R.string.new_update_07);
+										download_selected_0 = download_selected.getText().toString();
+										download_ready_0 = download_ready.getText().toString();
+										download_ready_desc_0 = download_ready_desc.getText().toString();
+										downloading_file_0 = downloading_file.getText().toString();
+										download_success_0 = download_success.getText().toString();
+										copy_url.setText(R.string.copy_url_07);
+										continue_1.setText(R.string.continue_1_07);
+										cancel.setText(R.string.cancel_07);
+										fixer.setText(R.string.fixer_07);
+										download.setText(R.string.download_07);
+										later.setText(R.string.later_07);
+										install_now.setText(R.string.install_now_07);
+										install_update.setText(R.string.install_update_07);
+										go_back.setText(R.string.go_back_07);
+										download_update.setText(R.string.download_update_07);
+										not_now.setText(R.string.not_now_07);
+										show_support.setText(R.string.show_support_07);
+										show_support_desc.setText(R.string.show_support_desc_07);
+										copy_url_0 = copy_url.getText().toString();
+										download_0 = download.getText().toString();
+										continue_0 = continue_1.getText().toString();
+										cancel_0 = cancel.getText().toString();
+										fixer_0 = fixer.getText().toString();
+										later_0 = later.getText().toString();
+										install_now_0 = install_now.getText().toString();
+										go_back_0 = go_back.getText().toString();
+										install_update_0 = install_update.getText().toString();
+										main_title.setText(R.string.main_title_07);
+										settings_title.setText(R.string.settings_title_07);
+										about_title.setText(R.string.about_title_07);
+										maintenance.setText(R.string.maintenance_07);
+										maintenance_desc.setText(R.string.maintenance_desc_07);
+										thanks.setText(R.string.thanks_07);
+										language.setText(R.string.language_07);
+										website.setText(R.string.website_07);
+										discord.setText(R.string.discord_07);
+										reddit.setText(R.string.reddit_07);
+										faq.setText(R.string.faq_07);
+										cloned_version.setText(R.string.cloned_version_07);
+										cloned_version_info.setText(R.string.cloned_version_desc_07);
+										disable_reward_ad.setText(R.string.disable_rewarded_ads_07);
+										disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_07);
+										installation_failed.setText(R.string.installation_failed_07);
+										installation_failed_desc.setText(R.string.installation_failed_desc_07);
+										installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_07);
+										installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_07);
+										existing_patched.setText(R.string.existing_patched_07);
+										existing_patched_desc.setText(R.string.existing_patched_desc_07);
+										close.setText(R.string.close_07);
+										cloned.setText(R.string.cloned_07);
+										ream.setText(R.string.ream_07);
+										install.setText(R.string.install_07);
+										uninstall.setText(R.string.uninstall_07);
+										ignore.setText(R.string.ignore_07);
+										delete.setText(R.string.delete_07);
+										uninstall_patched.setText(R.string.uninstall_patched_07);
+										open_settings.setText(R.string.open_settings_07);
+										open_patched.setText(R.string.open_patched_07);
+										installation_failed_0 = installation_failed.getText().toString();
+										installation_failed_desc_0 = installation_failed_desc.getText().toString();
+										installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+										installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+										existing_patched_0 = existing_patched.getText().toString();
+										existing_patched_desc_0 = existing_patched_desc.getText().toString();
+										close_0 = close.getText().toString();
+										uninstall_0 = uninstall.getText().toString();
 										
 										select_language.setSelection((int)(7));
 									}
 									else {
 										if (LANGUAGE.getString("LANGUAGE", "").equals("8")) {
-											    title_1.setText(R.string.spotify_regular_08);
-												title_2.setText(R.string.spotify_amoled_08);
-												sub_text_installed.setText(R.string.installed_08);
-												sub_text_1.setText(R.string.latest_08);
-												sub_text_3.setText(R.string.latest_08);
-												version_switch_1.setText(R.string.versions_08);
-												version_switch_2.setText(R.string.versions_08);
-												changelogs.setText(R.string.changelogs_08);
-												title_sub.setText(R.string.manager_tools_08);
-												device_cpu.setText(R.string.device_cpu_08);
-												source.setText(R.string.source_08);
-												support.setText(R.string.support_08);
-												donate.setText(R.string.donate_08);
-												about.setText(R.string.about_08);
-												list_auto_refresh.setText(R.string.list_auto_refresh_08);
-												list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_08);
-												force_auto_install.setText(R.string.force_auto_install_08);
-												force_auto_install_info.setText(R.string.force_auto_install_desc_08);
-												theme.setText(R.string.show_themes_08);
-												apk_location.setText(R.string.apk_location_08);
-												apk_location_info.setText(R.string.apk_location_desc_08);
-												clear_directory_folders.setText(R.string.clear_directory_folders_08);
-												clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_08);
-												reset_settings.setText(R.string.reset_settings_08);
-												sub_title.setText(R.string.about_sub_08);
-												developer_manager.setText(R.string.xmanager_dev_08);
-												developer_spotify.setText(R.string.spotify_mod_devs_08);
-												support_team.setText(R.string.telegram_support_team_08);
-												mod_testers_1.setText(R.string.manager_testers_08);
-												mod_testers_2.setText(R.string.manager_hosting_08);
-												mobilism_team.setText(R.string.mobilism_team_08);
-												forum_team.setText(R.string.forum_team_08);
-												manager_team.setText(R.string.xspotify_team_08);
-												contributors_1.setText(R.string.contributors_08);
-												download_selected.setText(R.string.download_selected_08);
-												download_ready.setText(R.string.download_ready_08);
-												download_ready_desc.setText(R.string.download_ready_desc_08);
-												downloading_file.setText(R.string.downloading_file_08);
-												download_success.setText(R.string.download_success_08);
-												new_update.setText(R.string.new_update_08);
-												download_selected_0 = download_selected.getText().toString();
-												download_ready_0 = download_ready.getText().toString();
-												download_ready_desc_0 = download_ready_desc.getText().toString();
-												downloading_file_0 = downloading_file.getText().toString();
-												download_success_0 = download_success.getText().toString();
-												copy_url.setText(R.string.copy_url_08);
-												continue_1.setText(R.string.continue_1_08);
-												cancel.setText(R.string.cancel_08);
-											    fixer.setText(R.string.fixer_08);
-												download.setText(R.string.download_08);
-												later.setText(R.string.later_08);
-												install_now.setText(R.string.install_now_08);
-												install_update.setText(R.string.install_update_08);
-												go_back.setText(R.string.go_back_08);
-												download_update.setText(R.string.download_update_08);
-												not_now.setText(R.string.not_now_08);
-												show_support.setText(R.string.show_support_08);
-												show_support_desc.setText(R.string.show_support_desc_08);
-												copy_url_0 = copy_url.getText().toString();
-												download_0 = download.getText().toString();
-												continue_0 = continue_1.getText().toString();
-												cancel_0 = cancel.getText().toString();
-											    fixer_0 = fixer.getText().toString();
-												later_0 = later.getText().toString();
-												install_now_0 = install_now.getText().toString();
-												go_back_0 = go_back.getText().toString();
-												install_update_0 = install_update.getText().toString();
-												main_title.setText(R.string.main_title_08);
-												settings_title.setText(R.string.settings_title_08);
-												about_title.setText(R.string.about_title_08);
-												maintenance.setText(R.string.maintenance_08);
-												maintenance_desc.setText(R.string.maintenance_desc_08);
-												thanks.setText(R.string.thanks_08);
-												language.setText(R.string.language_08);
-												website.setText(R.string.website_08);
-												discord.setText(R.string.discord_08);
-												reddit.setText(R.string.reddit_08);
-												faq.setText(R.string.faq_08);
-												cloned_version.setText(R.string.cloned_version_08);
-												cloned_version_info.setText(R.string.cloned_version_desc_08);
-											    disable_reward_ad.setText(R.string.disable_rewarded_ads_08);
-											    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_08);
-											    installation_failed.setText(R.string.installation_failed_08);
-											    installation_failed_desc.setText(R.string.installation_failed_desc_08);
-											    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_08);
-											    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_08);
-											    existing_patched.setText(R.string.existing_patched_08);
-											    existing_patched_desc.setText(R.string.existing_patched_desc_08);
-											    close.setText(R.string.close_08);
-											    cloned.setText(R.string.cloned_08);
-											    ream.setText(R.string.ream_08);
-											    install.setText(R.string.install_08);
-											    uninstall.setText(R.string.uninstall_08);
-											    ignore.setText(R.string.ignore_08);
-											    delete.setText(R.string.delete_08);
-											    uninstall_patched.setText(R.string.uninstall_patched_08);
-											    open_settings.setText(R.string.open_settings_08);
-											    open_patched.setText(R.string.open_patched_08);
-												installation_failed_0 = installation_failed.getText().toString();
-											    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-											    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-											    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-											    existing_patched_0 = existing_patched.getText().toString();
-											    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-											    close_0 = close.getText().toString();
-											    uninstall_0 = uninstall.getText().toString();
+											title_1.setText(R.string.spotify_regular_08);
+											title_2.setText(R.string.spotify_amoled_08);
+											sub_text_installed.setText(R.string.installed_08);
+											sub_text_1.setText(R.string.latest_08);
+											sub_text_2.setText(R.string.latest_08);
+											sub_text_3.setText(R.string.latest_08);
+											version_switch_1.setText(R.string.versions_08);
+											version_switch_2.setText(R.string.versions_08);
+											version_switch_3.setText(R.string.versions_08);
+											changelogs.setText(R.string.changelogs_08);
+											title_sub.setText(R.string.manager_tools_08);
+											device_cpu.setText(R.string.device_cpu_08);
+											source.setText(R.string.source_08);
+											support.setText(R.string.support_08);
+											donate.setText(R.string.donate_08);
+											about.setText(R.string.about_08);
+											list_auto_refresh.setText(R.string.list_auto_refresh_08);
+											list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_08);
+											force_auto_install.setText(R.string.force_auto_install_08);
+											force_auto_install_info.setText(R.string.force_auto_install_desc_08);
+											theme.setText(R.string.show_themes_08);
+											apk_location.setText(R.string.apk_location_08);
+											apk_location_info.setText(R.string.apk_location_desc_08);
+											clear_directory_folders.setText(R.string.clear_directory_folders_08);
+											clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_08);
+											reset_settings.setText(R.string.reset_settings_08);
+											sub_title.setText(R.string.about_sub_08);
+											developer_manager.setText(R.string.xmanager_dev_08);
+											developer_spotify.setText(R.string.spotify_mod_devs_08);
+											support_team.setText(R.string.telegram_support_team_08);
+											mod_testers_1.setText(R.string.manager_testers_08);
+											mod_testers_2.setText(R.string.manager_hosting_08);
+											mobilism_team.setText(R.string.mobilism_team_08);
+											forum_team.setText(R.string.forum_team_08);
+											manager_team.setText(R.string.xspotify_team_08);
+											contributors_1.setText(R.string.contributors_08);
+											download_selected.setText(R.string.download_selected_08);
+											download_ready.setText(R.string.download_ready_08);
+											download_ready_desc.setText(R.string.download_ready_desc_08);
+											downloading_file.setText(R.string.downloading_file_08);
+											download_success.setText(R.string.download_success_08);
+											new_update.setText(R.string.new_update_08);
+											download_selected_0 = download_selected.getText().toString();
+											download_ready_0 = download_ready.getText().toString();
+											download_ready_desc_0 = download_ready_desc.getText().toString();
+											downloading_file_0 = downloading_file.getText().toString();
+											download_success_0 = download_success.getText().toString();
+											copy_url.setText(R.string.copy_url_08);
+											continue_1.setText(R.string.continue_1_08);
+											cancel.setText(R.string.cancel_08);
+											fixer.setText(R.string.fixer_08);
+											download.setText(R.string.download_08);
+											later.setText(R.string.later_08);
+											install_now.setText(R.string.install_now_08);
+											install_update.setText(R.string.install_update_08);
+											go_back.setText(R.string.go_back_08);
+											download_update.setText(R.string.download_update_08);
+											not_now.setText(R.string.not_now_08);
+											show_support.setText(R.string.show_support_08);
+											show_support_desc.setText(R.string.show_support_desc_08);
+											copy_url_0 = copy_url.getText().toString();
+											download_0 = download.getText().toString();
+											continue_0 = continue_1.getText().toString();
+											cancel_0 = cancel.getText().toString();
+											fixer_0 = fixer.getText().toString();
+											later_0 = later.getText().toString();
+											install_now_0 = install_now.getText().toString();
+											go_back_0 = go_back.getText().toString();
+											install_update_0 = install_update.getText().toString();
+											main_title.setText(R.string.main_title_08);
+											settings_title.setText(R.string.settings_title_08);
+											about_title.setText(R.string.about_title_08);
+											maintenance.setText(R.string.maintenance_08);
+											maintenance_desc.setText(R.string.maintenance_desc_08);
+											thanks.setText(R.string.thanks_08);
+											language.setText(R.string.language_08);
+											website.setText(R.string.website_08);
+											discord.setText(R.string.discord_08);
+											reddit.setText(R.string.reddit_08);
+											faq.setText(R.string.faq_08);
+											cloned_version.setText(R.string.cloned_version_08);
+											cloned_version_info.setText(R.string.cloned_version_desc_08);
+											disable_reward_ad.setText(R.string.disable_rewarded_ads_08);
+											disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_08);
+											installation_failed.setText(R.string.installation_failed_08);
+											installation_failed_desc.setText(R.string.installation_failed_desc_08);
+											installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_08);
+											installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_08);
+											existing_patched.setText(R.string.existing_patched_08);
+											existing_patched_desc.setText(R.string.existing_patched_desc_08);
+											close.setText(R.string.close_08);
+											cloned.setText(R.string.cloned_08);
+											ream.setText(R.string.ream_08);
+											install.setText(R.string.install_08);
+											uninstall.setText(R.string.uninstall_08);
+											ignore.setText(R.string.ignore_08);
+											delete.setText(R.string.delete_08);
+											uninstall_patched.setText(R.string.uninstall_patched_08);
+											open_settings.setText(R.string.open_settings_08);
+											open_patched.setText(R.string.open_patched_08);
+											installation_failed_0 = installation_failed.getText().toString();
+											installation_failed_desc_0 = installation_failed_desc.getText().toString();
+											installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+											installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+											existing_patched_0 = existing_patched.getText().toString();
+											existing_patched_desc_0 = existing_patched_desc.getText().toString();
+											close_0 = close.getText().toString();
+											uninstall_0 = uninstall.getText().toString();
 											
 											select_language.setSelection((int)(8));
 										}
 										else {
 											if (LANGUAGE.getString("LANGUAGE", "").equals("9")) {
-												    title_1.setText(R.string.spotify_regular_09);
-													title_2.setText(R.string.spotify_amoled_09);
-													sub_text_installed.setText(R.string.installed_09);
-													sub_text_1.setText(R.string.latest_09);
-													sub_text_3.setText(R.string.latest_09);
-													version_switch_1.setText(R.string.versions_09);
-													version_switch_2.setText(R.string.versions_09);
-													changelogs.setText(R.string.changelogs_09);
-													title_sub.setText(R.string.manager_tools_09);
-													device_cpu.setText(R.string.device_cpu_09);
-													source.setText(R.string.source_09);
-													support.setText(R.string.support_09);
-													donate.setText(R.string.donate_09);
-													about.setText(R.string.about_09);
-													list_auto_refresh.setText(R.string.list_auto_refresh_09);
-													list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_09);
-													force_auto_install.setText(R.string.force_auto_install_09);
-													force_auto_install_info.setText(R.string.force_auto_install_desc_09);
-													theme.setText(R.string.show_themes_09);
-													apk_location.setText(R.string.apk_location_09);
-													apk_location_info.setText(R.string.apk_location_desc_09);
-													clear_directory_folders.setText(R.string.clear_directory_folders_09);
-													clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_09);
-													reset_settings.setText(R.string.reset_settings_09);
-													sub_title.setText(R.string.about_sub_09);
-													developer_manager.setText(R.string.xmanager_dev_09);
-													developer_spotify.setText(R.string.spotify_mod_devs_09);
-													support_team.setText(R.string.telegram_support_team_09);
-													mod_testers_1.setText(R.string.manager_testers_09);
-													mod_testers_2.setText(R.string.manager_hosting_09);
-													mobilism_team.setText(R.string.mobilism_team_09);
-													forum_team.setText(R.string.forum_team_09);
-													manager_team.setText(R.string.xspotify_team_09);
-													contributors_1.setText(R.string.contributors_09);
-													download_selected.setText(R.string.download_selected_09);
-													download_ready.setText(R.string.download_ready_09);
-													download_ready_desc.setText(R.string.download_ready_desc_09);
-													downloading_file.setText(R.string.downloading_file_09);
-													download_success.setText(R.string.download_success_09);
-													new_update.setText(R.string.new_update_09);
-													download_selected_0 = download_selected.getText().toString();
-													download_ready_0 = download_ready.getText().toString();
-													download_ready_desc_0 = download_ready_desc.getText().toString();
-													downloading_file_0 = downloading_file.getText().toString();
-													download_success_0 = download_success.getText().toString();
-													copy_url.setText(R.string.copy_url_09);
-													continue_1.setText(R.string.continue_1_09);
-													cancel.setText(R.string.cancel_09);
-												    fixer.setText(R.string.fixer_09);
-													download.setText(R.string.download_09);
-													later.setText(R.string.later_09);
-													install_now.setText(R.string.install_now_09);
-													install_update.setText(R.string.install_update_09);
-													go_back.setText(R.string.go_back_09);
-													download_update.setText(R.string.download_update_09);
-													not_now.setText(R.string.not_now_09);
-													show_support.setText(R.string.show_support_09);
-													show_support_desc.setText(R.string.show_support_desc_09);
-													copy_url_0 = copy_url.getText().toString();
-													download_0 = download.getText().toString();
-													continue_0 = continue_1.getText().toString();
-													cancel_0 = cancel.getText().toString();
-												    fixer_0 = fixer.getText().toString();
-													later_0 = later.getText().toString();
-													install_now_0 = install_now.getText().toString();
-													go_back_0 = go_back.getText().toString();
-													install_update_0 = install_update.getText().toString();
-													main_title.setText(R.string.main_title_09);
-													settings_title.setText(R.string.settings_title_09);
-													about_title.setText(R.string.about_title_09);
-													maintenance.setText(R.string.maintenance_09);
-													maintenance_desc.setText(R.string.maintenance_desc_09);
-													thanks.setText(R.string.thanks_09);
-													language.setText(R.string.language_09);
-													website.setText(R.string.website_09);
-													discord.setText(R.string.discord_09);
-													reddit.setText(R.string.reddit_09);
-													faq.setText(R.string.faq_09);
-													cloned_version.setText(R.string.cloned_version_09);
-													cloned_version_info.setText(R.string.cloned_version_desc_09);
-												    disable_reward_ad.setText(R.string.disable_rewarded_ads_09);
-												    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_09);
-												    installation_failed.setText(R.string.installation_failed_09);
-												    installation_failed_desc.setText(R.string.installation_failed_desc_09);
-												    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_09);
-												    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_09);
-												    existing_patched.setText(R.string.existing_patched_09);
-												    existing_patched_desc.setText(R.string.existing_patched_desc_09);
-												    close.setText(R.string.close_09);
-												    cloned.setText(R.string.cloned_09);
-												    ream.setText(R.string.ream_09);
-												    install.setText(R.string.install_09);
-												    uninstall.setText(R.string.uninstall_09);
-												    ignore.setText(R.string.ignore_09);
-												    delete.setText(R.string.delete_09);
-												    uninstall_patched.setText(R.string.uninstall_patched_09);
-												    open_settings.setText(R.string.open_settings_09);
-												    open_patched.setText(R.string.open_patched_09);
-													installation_failed_0 = installation_failed.getText().toString();
-												    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-												    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-												    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-												    existing_patched_0 = existing_patched.getText().toString();
-												    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-												    close_0 = close.getText().toString();
-												    uninstall_0 = uninstall.getText().toString();
+												title_1.setText(R.string.spotify_regular_09);
+												title_2.setText(R.string.spotify_amoled_09);
+												sub_text_installed.setText(R.string.installed_09);
+												sub_text_1.setText(R.string.latest_09);
+												sub_text_2.setText(R.string.latest_09);
+												sub_text_3.setText(R.string.latest_09);
+												version_switch_1.setText(R.string.versions_09);
+												version_switch_2.setText(R.string.versions_09);
+												version_switch_3.setText(R.string.versions_09);
+												changelogs.setText(R.string.changelogs_09);
+												title_sub.setText(R.string.manager_tools_09);
+												device_cpu.setText(R.string.device_cpu_09);
+												source.setText(R.string.source_09);
+												support.setText(R.string.support_09);
+												donate.setText(R.string.donate_09);
+												about.setText(R.string.about_09);
+												list_auto_refresh.setText(R.string.list_auto_refresh_09);
+												list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_09);
+												force_auto_install.setText(R.string.force_auto_install_09);
+												force_auto_install_info.setText(R.string.force_auto_install_desc_09);
+												theme.setText(R.string.show_themes_09);
+												apk_location.setText(R.string.apk_location_09);
+												apk_location_info.setText(R.string.apk_location_desc_09);
+												clear_directory_folders.setText(R.string.clear_directory_folders_09);
+												clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_09);
+												reset_settings.setText(R.string.reset_settings_09);
+												sub_title.setText(R.string.about_sub_09);
+												developer_manager.setText(R.string.xmanager_dev_09);
+												developer_spotify.setText(R.string.spotify_mod_devs_09);
+												support_team.setText(R.string.telegram_support_team_09);
+												mod_testers_1.setText(R.string.manager_testers_09);
+												mod_testers_2.setText(R.string.manager_hosting_09);
+												mobilism_team.setText(R.string.mobilism_team_09);
+												forum_team.setText(R.string.forum_team_09);
+												manager_team.setText(R.string.xspotify_team_09);
+												contributors_1.setText(R.string.contributors_09);
+												download_selected.setText(R.string.download_selected_09);
+												download_ready.setText(R.string.download_ready_09);
+												download_ready_desc.setText(R.string.download_ready_desc_09);
+												downloading_file.setText(R.string.downloading_file_09);
+												download_success.setText(R.string.download_success_09);
+												new_update.setText(R.string.new_update_09);
+												download_selected_0 = download_selected.getText().toString();
+												download_ready_0 = download_ready.getText().toString();
+												download_ready_desc_0 = download_ready_desc.getText().toString();
+												downloading_file_0 = downloading_file.getText().toString();
+												download_success_0 = download_success.getText().toString();
+												copy_url.setText(R.string.copy_url_09);
+												continue_1.setText(R.string.continue_1_09);
+												cancel.setText(R.string.cancel_09);
+												fixer.setText(R.string.fixer_09);
+												download.setText(R.string.download_09);
+												later.setText(R.string.later_09);
+												install_now.setText(R.string.install_now_09);
+												install_update.setText(R.string.install_update_09);
+												go_back.setText(R.string.go_back_09);
+												download_update.setText(R.string.download_update_09);
+												not_now.setText(R.string.not_now_09);
+												show_support.setText(R.string.show_support_09);
+												show_support_desc.setText(R.string.show_support_desc_09);
+												copy_url_0 = copy_url.getText().toString();
+												download_0 = download.getText().toString();
+												continue_0 = continue_1.getText().toString();
+												cancel_0 = cancel.getText().toString();
+												fixer_0 = fixer.getText().toString();
+												later_0 = later.getText().toString();
+												install_now_0 = install_now.getText().toString();
+												go_back_0 = go_back.getText().toString();
+												install_update_0 = install_update.getText().toString();
+												main_title.setText(R.string.main_title_09);
+												settings_title.setText(R.string.settings_title_09);
+												about_title.setText(R.string.about_title_09);
+												maintenance.setText(R.string.maintenance_09);
+												maintenance_desc.setText(R.string.maintenance_desc_09);
+												thanks.setText(R.string.thanks_09);
+												language.setText(R.string.language_09);
+												website.setText(R.string.website_09);
+												discord.setText(R.string.discord_09);
+												reddit.setText(R.string.reddit_09);
+												faq.setText(R.string.faq_09);
+												cloned_version.setText(R.string.cloned_version_09);
+												cloned_version_info.setText(R.string.cloned_version_desc_09);
+												disable_reward_ad.setText(R.string.disable_rewarded_ads_09);
+												disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_09);
+												installation_failed.setText(R.string.installation_failed_09);
+												installation_failed_desc.setText(R.string.installation_failed_desc_09);
+												installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_09);
+												installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_09);
+												existing_patched.setText(R.string.existing_patched_09);
+												existing_patched_desc.setText(R.string.existing_patched_desc_09);
+												close.setText(R.string.close_09);
+												cloned.setText(R.string.cloned_09);
+												ream.setText(R.string.ream_09);
+												install.setText(R.string.install_09);
+												uninstall.setText(R.string.uninstall_09);
+												ignore.setText(R.string.ignore_09);
+												delete.setText(R.string.delete_09);
+												uninstall_patched.setText(R.string.uninstall_patched_09);
+												open_settings.setText(R.string.open_settings_09);
+												open_patched.setText(R.string.open_patched_09);
+												installation_failed_0 = installation_failed.getText().toString();
+												installation_failed_desc_0 = installation_failed_desc.getText().toString();
+												installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+												installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+												existing_patched_0 = existing_patched.getText().toString();
+												existing_patched_desc_0 = existing_patched_desc.getText().toString();
+												close_0 = close.getText().toString();
+												uninstall_0 = uninstall.getText().toString();
 												
 												select_language.setSelection((int)(9));
 											}
 											else {
 												if (LANGUAGE.getString("LANGUAGE", "").equals("10")) {
-													    title_1.setText(R.string.spotify_regular_10);
-														title_2.setText(R.string.spotify_amoled_10);
-														sub_text_installed.setText(R.string.installed_10);
-														sub_text_1.setText(R.string.latest_10);
-														sub_text_3.setText(R.string.latest_10);
-														version_switch_1.setText(R.string.versions_10);
-														version_switch_2.setText(R.string.versions_10);
-														changelogs.setText(R.string.changelogs_10);
-														title_sub.setText(R.string.manager_tools_10);
-														device_cpu.setText(R.string.device_cpu_10);
-														source.setText(R.string.source_10);
-														support.setText(R.string.support_10);
-														donate.setText(R.string.donate_10);
-														about.setText(R.string.about_10);
-														list_auto_refresh.setText(R.string.list_auto_refresh_10);
-														list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_10);
-														force_auto_install.setText(R.string.force_auto_install_10);
-														force_auto_install_info.setText(R.string.force_auto_install_desc_10);
-														theme.setText(R.string.show_themes_10);
-														apk_location.setText(R.string.apk_location_10);
-														apk_location_info.setText(R.string.apk_location_desc_10);
-														clear_directory_folders.setText(R.string.clear_directory_folders_10);
-														clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_10);
-														reset_settings.setText(R.string.reset_settings_10);
-														sub_title.setText(R.string.about_sub_10);
-														developer_manager.setText(R.string.xmanager_dev_10);
-														developer_spotify.setText(R.string.spotify_mod_devs_10);
-														support_team.setText(R.string.telegram_support_team_10);
-														mod_testers_1.setText(R.string.manager_testers_10);
-														mod_testers_2.setText(R.string.manager_hosting_10);
-														mobilism_team.setText(R.string.mobilism_team_10);
-														forum_team.setText(R.string.forum_team_10);
-														manager_team.setText(R.string.xspotify_team_10);
-														contributors_1.setText(R.string.contributors_10);
-														download_selected.setText(R.string.download_selected_10);
-														download_ready.setText(R.string.download_ready_10);
-														download_ready_desc.setText(R.string.download_ready_desc_10);
-														downloading_file.setText(R.string.downloading_file_10);
-														download_success.setText(R.string.download_success_10);
-														new_update.setText(R.string.new_update_10);
-														download_selected_0 = download_selected.getText().toString();
-														download_ready_0 = download_ready.getText().toString();
-														download_ready_desc_0 = download_ready_desc.getText().toString();
-														downloading_file_0 = downloading_file.getText().toString();
-														download_success_0 = download_success.getText().toString();
-														copy_url.setText(R.string.copy_url_10);
-														continue_1.setText(R.string.continue_1_10);
-														cancel.setText(R.string.cancel_10);
-													    fixer.setText(R.string.fixer_10);
-														download.setText(R.string.download_10);
-														later.setText(R.string.later_10);
-														install_now.setText(R.string.install_now_10);
-														install_update.setText(R.string.install_update_10);
-														go_back.setText(R.string.go_back_10);
-														download_update.setText(R.string.download_update_10);
-														not_now.setText(R.string.not_now_10);
-														show_support.setText(R.string.show_support_10);
-														show_support_desc.setText(R.string.show_support_desc_10);
-														copy_url_0 = copy_url.getText().toString();
-														download_0 = download.getText().toString();
-														continue_0 = continue_1.getText().toString();
-														cancel_0 = cancel.getText().toString();
-													    fixer_0 = fixer.getText().toString();
-														later_0 = later.getText().toString();
-														install_now_0 = install_now.getText().toString();
-														go_back_0 = go_back.getText().toString();
-														install_update_0 = install_update.getText().toString();
-														main_title.setText(R.string.main_title_10);
-														settings_title.setText(R.string.settings_title_10);
-														about_title.setText(R.string.about_title_10);
-														maintenance.setText(R.string.maintenance_10);
-														maintenance_desc.setText(R.string.maintenance_desc_10);
-														thanks.setText(R.string.thanks_10);
-														language.setText(R.string.language_10);
-														website.setText(R.string.website_10);
-														discord.setText(R.string.discord_10);
-														reddit.setText(R.string.reddit_10);
-														faq.setText(R.string.faq_10);
-														cloned_version.setText(R.string.cloned_version_10);
-														cloned_version_info.setText(R.string.cloned_version_desc_10);
-													    disable_reward_ad.setText(R.string.disable_rewarded_ads_10);
-													    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_10);
-													    installation_failed.setText(R.string.installation_failed_10);
-													    installation_failed_desc.setText(R.string.installation_failed_desc_10);
-													    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_10);
-													    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_10);
-													    existing_patched.setText(R.string.existing_patched_10);
-													    existing_patched_desc.setText(R.string.existing_patched_desc_10);
-													    close.setText(R.string.close_10);
-													    cloned.setText(R.string.cloned_10);
-													    ream.setText(R.string.ream_10);
-													    install.setText(R.string.install_10);
-													    uninstall.setText(R.string.uninstall_10);
-													    ignore.setText(R.string.ignore_10);
-													    delete.setText(R.string.delete_10);
-													    uninstall_patched.setText(R.string.uninstall_patched_10);
-													    open_settings.setText(R.string.open_settings_10);
-													    open_patched.setText(R.string.open_patched_10);
-														installation_failed_0 = installation_failed.getText().toString();
-													    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-													    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-													    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-													    existing_patched_0 = existing_patched.getText().toString();
-													    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-													    close_0 = close.getText().toString();
-													    uninstall_0 = uninstall.getText().toString();
+													title_1.setText(R.string.spotify_regular_10);
+													title_2.setText(R.string.spotify_amoled_10);
+													sub_text_installed.setText(R.string.installed_10);
+													sub_text_1.setText(R.string.latest_10);
+													sub_text_2.setText(R.string.latest_10);
+													sub_text_3.setText(R.string.latest_10);
+													version_switch_1.setText(R.string.versions_10);
+													version_switch_2.setText(R.string.versions_10);
+													version_switch_3.setText(R.string.versions_10);
+													changelogs.setText(R.string.changelogs_10);
+													title_sub.setText(R.string.manager_tools_10);
+													device_cpu.setText(R.string.device_cpu_10);
+													source.setText(R.string.source_10);
+													support.setText(R.string.support_10);
+													donate.setText(R.string.donate_10);
+													about.setText(R.string.about_10);
+													list_auto_refresh.setText(R.string.list_auto_refresh_10);
+													list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_10);
+													force_auto_install.setText(R.string.force_auto_install_10);
+													force_auto_install_info.setText(R.string.force_auto_install_desc_10);
+													theme.setText(R.string.show_themes_10);
+													apk_location.setText(R.string.apk_location_10);
+													apk_location_info.setText(R.string.apk_location_desc_10);
+													clear_directory_folders.setText(R.string.clear_directory_folders_10);
+													clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_10);
+													reset_settings.setText(R.string.reset_settings_10);
+													sub_title.setText(R.string.about_sub_10);
+													developer_manager.setText(R.string.xmanager_dev_10);
+													developer_spotify.setText(R.string.spotify_mod_devs_10);
+													support_team.setText(R.string.telegram_support_team_10);
+													mod_testers_1.setText(R.string.manager_testers_10);
+													mod_testers_2.setText(R.string.manager_hosting_10);
+													mobilism_team.setText(R.string.mobilism_team_10);
+													forum_team.setText(R.string.forum_team_10);
+													manager_team.setText(R.string.xspotify_team_10);
+													contributors_1.setText(R.string.contributors_10);
+													download_selected.setText(R.string.download_selected_10);
+													download_ready.setText(R.string.download_ready_10);
+													download_ready_desc.setText(R.string.download_ready_desc_10);
+													downloading_file.setText(R.string.downloading_file_10);
+													download_success.setText(R.string.download_success_10);
+													new_update.setText(R.string.new_update_10);
+													download_selected_0 = download_selected.getText().toString();
+													download_ready_0 = download_ready.getText().toString();
+													download_ready_desc_0 = download_ready_desc.getText().toString();
+													downloading_file_0 = downloading_file.getText().toString();
+													download_success_0 = download_success.getText().toString();
+													copy_url.setText(R.string.copy_url_10);
+													continue_1.setText(R.string.continue_1_10);
+													cancel.setText(R.string.cancel_10);
+													fixer.setText(R.string.fixer_10);
+													download.setText(R.string.download_10);
+													later.setText(R.string.later_10);
+													install_now.setText(R.string.install_now_10);
+													install_update.setText(R.string.install_update_10);
+													go_back.setText(R.string.go_back_10);
+													download_update.setText(R.string.download_update_10);
+													not_now.setText(R.string.not_now_10);
+													show_support.setText(R.string.show_support_10);
+													show_support_desc.setText(R.string.show_support_desc_10);
+													copy_url_0 = copy_url.getText().toString();
+													download_0 = download.getText().toString();
+													continue_0 = continue_1.getText().toString();
+													cancel_0 = cancel.getText().toString();
+													fixer_0 = fixer.getText().toString();
+													later_0 = later.getText().toString();
+													install_now_0 = install_now.getText().toString();
+													go_back_0 = go_back.getText().toString();
+													install_update_0 = install_update.getText().toString();
+													main_title.setText(R.string.main_title_10);
+													settings_title.setText(R.string.settings_title_10);
+													about_title.setText(R.string.about_title_10);
+													maintenance.setText(R.string.maintenance_10);
+													maintenance_desc.setText(R.string.maintenance_desc_10);
+													thanks.setText(R.string.thanks_10);
+													language.setText(R.string.language_10);
+													website.setText(R.string.website_10);
+													discord.setText(R.string.discord_10);
+													reddit.setText(R.string.reddit_10);
+													faq.setText(R.string.faq_10);
+													cloned_version.setText(R.string.cloned_version_10);
+													cloned_version_info.setText(R.string.cloned_version_desc_10);
+													disable_reward_ad.setText(R.string.disable_rewarded_ads_10);
+													disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_10);
+													installation_failed.setText(R.string.installation_failed_10);
+													installation_failed_desc.setText(R.string.installation_failed_desc_10);
+													installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_10);
+													installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_10);
+													existing_patched.setText(R.string.existing_patched_10);
+													existing_patched_desc.setText(R.string.existing_patched_desc_10);
+													close.setText(R.string.close_10);
+													cloned.setText(R.string.cloned_10);
+													ream.setText(R.string.ream_10);
+													install.setText(R.string.install_10);
+													uninstall.setText(R.string.uninstall_10);
+													ignore.setText(R.string.ignore_10);
+													delete.setText(R.string.delete_10);
+													uninstall_patched.setText(R.string.uninstall_patched_10);
+													open_settings.setText(R.string.open_settings_10);
+													open_patched.setText(R.string.open_patched_10);
+													installation_failed_0 = installation_failed.getText().toString();
+													installation_failed_desc_0 = installation_failed_desc.getText().toString();
+													installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+													installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+													existing_patched_0 = existing_patched.getText().toString();
+													existing_patched_desc_0 = existing_patched_desc.getText().toString();
+													close_0 = close.getText().toString();
+													uninstall_0 = uninstall.getText().toString();
 													
 													select_language.setSelection((int)(10));
 												}
 												else {
 													if (LANGUAGE.getString("LANGUAGE", "").equals("11")) {
-														    title_1.setText(R.string.spotify_regular_11);
-															title_2.setText(R.string.spotify_amoled_11);
-															sub_text_installed.setText(R.string.installed_11);
-															sub_text_1.setText(R.string.latest_11);
-															sub_text_3.setText(R.string.latest_11);
-															version_switch_1.setText(R.string.versions_11);
-															version_switch_2.setText(R.string.versions_11);
-															changelogs.setText(R.string.changelogs_11);
-															title_sub.setText(R.string.manager_tools_11);
-															device_cpu.setText(R.string.device_cpu_11);
-															source.setText(R.string.source_11);
-															support.setText(R.string.support_11);
-															donate.setText(R.string.donate_11);
-															about.setText(R.string.about_11);
-															list_auto_refresh.setText(R.string.list_auto_refresh_11);
-															list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_11);
-															force_auto_install.setText(R.string.force_auto_install_11);
-															force_auto_install_info.setText(R.string.force_auto_install_desc_11);
-															theme.setText(R.string.show_themes_11);
-															apk_location.setText(R.string.apk_location_11);
-															apk_location_info.setText(R.string.apk_location_desc_11);
-															clear_directory_folders.setText(R.string.clear_directory_folders_11);
-															clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_11);
-															reset_settings.setText(R.string.reset_settings_11);
-															sub_title.setText(R.string.about_sub_11);
-															developer_manager.setText(R.string.xmanager_dev_11);
-															developer_spotify.setText(R.string.spotify_mod_devs_11);
-															support_team.setText(R.string.telegram_support_team_11);
-															mod_testers_1.setText(R.string.manager_testers_11);
-															mod_testers_2.setText(R.string.manager_hosting_11);
-															mobilism_team.setText(R.string.mobilism_team_11);
-															forum_team.setText(R.string.forum_team_11);
-															manager_team.setText(R.string.xspotify_team_11);
-															contributors_1.setText(R.string.contributors_11);
-															download_selected.setText(R.string.download_selected_11);
-															download_ready.setText(R.string.download_ready_11);
-															download_ready_desc.setText(R.string.download_ready_desc_11);
-															downloading_file.setText(R.string.downloading_file_11);
-															download_success.setText(R.string.download_success_11);
-															new_update.setText(R.string.new_update_11);
-															download_selected_0 = download_selected.getText().toString();
-															download_ready_0 = download_ready.getText().toString();
-															download_ready_desc_0 = download_ready_desc.getText().toString();
-															downloading_file_0 = downloading_file.getText().toString();
-															download_success_0 = download_success.getText().toString();
-															copy_url.setText(R.string.copy_url_11);
-															continue_1.setText(R.string.continue_1_11);
-															cancel.setText(R.string.cancel_11);
-														    fixer.setText(R.string.fixer_11);
-															download.setText(R.string.download_11);
-															later.setText(R.string.later_11);
-															install_now.setText(R.string.install_now_11);
-															install_update.setText(R.string.install_update_11);
-															go_back.setText(R.string.go_back_11);
-															download_update.setText(R.string.download_update_11);
-															not_now.setText(R.string.not_now_11);
-															show_support.setText(R.string.show_support_11);
-															show_support_desc.setText(R.string.show_support_desc_11);
-															copy_url_0 = copy_url.getText().toString();
-															download_0 = download.getText().toString();
-															continue_0 = continue_1.getText().toString();
-															cancel_0 = cancel.getText().toString();
-														    fixer_0 = fixer.getText().toString();
-															later_0 = later.getText().toString();
-															install_now_0 = install_now.getText().toString();
-															go_back_0 = go_back.getText().toString();
-															install_update_0 = install_update.getText().toString();
-															main_title.setText(R.string.main_title_11);
-															settings_title.setText(R.string.settings_title_11);
-															about_title.setText(R.string.about_title_11);
-															maintenance.setText(R.string.maintenance_11);
-															maintenance_desc.setText(R.string.maintenance_desc_11);
-															thanks.setText(R.string.thanks_11);
-															language.setText(R.string.language_11);
-															website.setText(R.string.website_11);
-															discord.setText(R.string.discord_11);
-															reddit.setText(R.string.reddit_11);
-															faq.setText(R.string.faq_11);
-															cloned_version.setText(R.string.cloned_version_11);
-															cloned_version_info.setText(R.string.cloned_version_desc_11);
-														    disable_reward_ad.setText(R.string.disable_rewarded_ads_11);
-														    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_11);
-														    installation_failed.setText(R.string.installation_failed_11);
-														    installation_failed_desc.setText(R.string.installation_failed_desc_11);
-														    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_11);
-														    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_11);
-														    existing_patched.setText(R.string.existing_patched_11);
-														    existing_patched_desc.setText(R.string.existing_patched_desc_11);
-														    close.setText(R.string.close_11);
-														    cloned.setText(R.string.cloned_11);
-														    ream.setText(R.string.ream_11);
-														    install.setText(R.string.install_11);
-														    uninstall.setText(R.string.uninstall_11);
-														    ignore.setText(R.string.ignore_11);
-														    delete.setText(R.string.delete_11);
-														    uninstall_patched.setText(R.string.uninstall_patched_11);
-														    open_settings.setText(R.string.open_settings_11);
-														    open_patched.setText(R.string.open_patched_11);
-															installation_failed_0 = installation_failed.getText().toString();
-														    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-														    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-														    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-														    existing_patched_0 = existing_patched.getText().toString();
-														    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-														    close_0 = close.getText().toString();
-														    uninstall_0 = uninstall.getText().toString();
+														title_1.setText(R.string.spotify_regular_11);
+														title_2.setText(R.string.spotify_amoled_11);
+														sub_text_installed.setText(R.string.installed_11);
+														sub_text_1.setText(R.string.latest_11);
+														sub_text_2.setText(R.string.latest_11);
+														sub_text_3.setText(R.string.latest_11);
+														version_switch_1.setText(R.string.versions_11);
+														version_switch_2.setText(R.string.versions_11);
+														version_switch_3.setText(R.string.versions_11);
+														changelogs.setText(R.string.changelogs_11);
+														title_sub.setText(R.string.manager_tools_11);
+														device_cpu.setText(R.string.device_cpu_11);
+														source.setText(R.string.source_11);
+														support.setText(R.string.support_11);
+														donate.setText(R.string.donate_11);
+														about.setText(R.string.about_11);
+														list_auto_refresh.setText(R.string.list_auto_refresh_11);
+														list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_11);
+														force_auto_install.setText(R.string.force_auto_install_11);
+														force_auto_install_info.setText(R.string.force_auto_install_desc_11);
+														theme.setText(R.string.show_themes_11);
+														apk_location.setText(R.string.apk_location_11);
+														apk_location_info.setText(R.string.apk_location_desc_11);
+														clear_directory_folders.setText(R.string.clear_directory_folders_11);
+														clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_11);
+														reset_settings.setText(R.string.reset_settings_11);
+														sub_title.setText(R.string.about_sub_11);
+														developer_manager.setText(R.string.xmanager_dev_11);
+														developer_spotify.setText(R.string.spotify_mod_devs_11);
+														support_team.setText(R.string.telegram_support_team_11);
+														mod_testers_1.setText(R.string.manager_testers_11);
+														mod_testers_2.setText(R.string.manager_hosting_11);
+														mobilism_team.setText(R.string.mobilism_team_11);
+														forum_team.setText(R.string.forum_team_11);
+														manager_team.setText(R.string.xspotify_team_11);
+														contributors_1.setText(R.string.contributors_11);
+														download_selected.setText(R.string.download_selected_11);
+														download_ready.setText(R.string.download_ready_11);
+														download_ready_desc.setText(R.string.download_ready_desc_11);
+														downloading_file.setText(R.string.downloading_file_11);
+														download_success.setText(R.string.download_success_11);
+														new_update.setText(R.string.new_update_11);
+														download_selected_0 = download_selected.getText().toString();
+														download_ready_0 = download_ready.getText().toString();
+														download_ready_desc_0 = download_ready_desc.getText().toString();
+														downloading_file_0 = downloading_file.getText().toString();
+														download_success_0 = download_success.getText().toString();
+														copy_url.setText(R.string.copy_url_11);
+														continue_1.setText(R.string.continue_1_11);
+														cancel.setText(R.string.cancel_11);
+														fixer.setText(R.string.fixer_11);
+														download.setText(R.string.download_11);
+														later.setText(R.string.later_11);
+														install_now.setText(R.string.install_now_11);
+														install_update.setText(R.string.install_update_11);
+														go_back.setText(R.string.go_back_11);
+														download_update.setText(R.string.download_update_11);
+														not_now.setText(R.string.not_now_11);
+														show_support.setText(R.string.show_support_11);
+														show_support_desc.setText(R.string.show_support_desc_11);
+														copy_url_0 = copy_url.getText().toString();
+														download_0 = download.getText().toString();
+														continue_0 = continue_1.getText().toString();
+														cancel_0 = cancel.getText().toString();
+														fixer_0 = fixer.getText().toString();
+														later_0 = later.getText().toString();
+														install_now_0 = install_now.getText().toString();
+														go_back_0 = go_back.getText().toString();
+														install_update_0 = install_update.getText().toString();
+														main_title.setText(R.string.main_title_11);
+														settings_title.setText(R.string.settings_title_11);
+														about_title.setText(R.string.about_title_11);
+														maintenance.setText(R.string.maintenance_11);
+														maintenance_desc.setText(R.string.maintenance_desc_11);
+														thanks.setText(R.string.thanks_11);
+														language.setText(R.string.language_11);
+														website.setText(R.string.website_11);
+														discord.setText(R.string.discord_11);
+														reddit.setText(R.string.reddit_11);
+														faq.setText(R.string.faq_11);
+														cloned_version.setText(R.string.cloned_version_11);
+														cloned_version_info.setText(R.string.cloned_version_desc_11);
+														disable_reward_ad.setText(R.string.disable_rewarded_ads_11);
+														disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_11);
+														installation_failed.setText(R.string.installation_failed_11);
+														installation_failed_desc.setText(R.string.installation_failed_desc_11);
+														installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_11);
+														installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_11);
+														existing_patched.setText(R.string.existing_patched_11);
+														existing_patched_desc.setText(R.string.existing_patched_desc_11);
+														close.setText(R.string.close_11);
+														cloned.setText(R.string.cloned_11);
+														ream.setText(R.string.ream_11);
+														install.setText(R.string.install_11);
+														uninstall.setText(R.string.uninstall_11);
+														ignore.setText(R.string.ignore_11);
+														delete.setText(R.string.delete_11);
+														uninstall_patched.setText(R.string.uninstall_patched_11);
+														open_settings.setText(R.string.open_settings_11);
+														open_patched.setText(R.string.open_patched_11);
+														installation_failed_0 = installation_failed.getText().toString();
+														installation_failed_desc_0 = installation_failed_desc.getText().toString();
+														installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+														installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+														existing_patched_0 = existing_patched.getText().toString();
+														existing_patched_desc_0 = existing_patched_desc.getText().toString();
+														close_0 = close.getText().toString();
+														uninstall_0 = uninstall.getText().toString();
 														
 														select_language.setSelection((int)(11));
 													}
 													else {
 														if (LANGUAGE.getString("LANGUAGE", "").equals("12")) {
-															    title_1.setText(R.string.spotify_regular_12);
-																title_2.setText(R.string.spotify_amoled_12);
-																sub_text_installed.setText(R.string.installed_12);
-																sub_text_1.setText(R.string.latest_12);
-																sub_text_3.setText(R.string.latest_12);
-																version_switch_1.setText(R.string.versions_12);
-																version_switch_2.setText(R.string.versions_12);
-																changelogs.setText(R.string.changelogs_12);
-																title_sub.setText(R.string.manager_tools_12);
-																device_cpu.setText(R.string.device_cpu_12);
-																source.setText(R.string.source_12);
-																support.setText(R.string.support_12);
-																donate.setText(R.string.donate_12);
-																about.setText(R.string.about_12);
-																list_auto_refresh.setText(R.string.list_auto_refresh_12);
-																list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_12);
-																force_auto_install.setText(R.string.force_auto_install_12);
-																force_auto_install_info.setText(R.string.force_auto_install_desc_12);
-																theme.setText(R.string.show_themes_12);
-																apk_location.setText(R.string.apk_location_12);
-																apk_location_info.setText(R.string.apk_location_desc_12);
-																clear_directory_folders.setText(R.string.clear_directory_folders_12);
-																clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_12);
-																reset_settings.setText(R.string.reset_settings_12);
-																sub_title.setText(R.string.about_sub_12);
-																developer_manager.setText(R.string.xmanager_dev_12);
-																developer_spotify.setText(R.string.spotify_mod_devs_12);
-																support_team.setText(R.string.telegram_support_team_12);
-																mod_testers_1.setText(R.string.manager_testers_12);
-																mod_testers_2.setText(R.string.manager_hosting_12);
-																mobilism_team.setText(R.string.mobilism_team_12);
-																forum_team.setText(R.string.forum_team_12);
-																manager_team.setText(R.string.xspotify_team_12);
-																contributors_1.setText(R.string.contributors_12);
-																download_selected.setText(R.string.download_selected_12);
-																download_ready.setText(R.string.download_ready_12);
-																download_ready_desc.setText(R.string.download_ready_desc_12);
-																downloading_file.setText(R.string.downloading_file_12);
-																download_success.setText(R.string.download_success_12);
-																new_update.setText(R.string.new_update_12);
-																download_selected_0 = download_selected.getText().toString();
-																download_ready_0 = download_ready.getText().toString();
-																download_ready_desc_0 = download_ready_desc.getText().toString();
-																downloading_file_0 = downloading_file.getText().toString();
-																download_success_0 = download_success.getText().toString();
-																copy_url.setText(R.string.copy_url_12);
-																continue_1.setText(R.string.continue_1_12);
-																cancel.setText(R.string.cancel_12);
-															    fixer.setText(R.string.fixer_12);
-																download.setText(R.string.download_12);
-																later.setText(R.string.later_12);
-																install_now.setText(R.string.install_now_12);
-																install_update.setText(R.string.install_update_12);
-																go_back.setText(R.string.go_back_12);
-																download_update.setText(R.string.download_update_12);
-																not_now.setText(R.string.not_now_12);
-																show_support.setText(R.string.show_support_12);
-																show_support_desc.setText(R.string.show_support_desc_12);
-																copy_url_0 = copy_url.getText().toString();
-																download_0 = download.getText().toString();
-																continue_0 = continue_1.getText().toString();
-																cancel_0 = cancel.getText().toString();
-															    fixer_0 = fixer.getText().toString();
-																later_0 = later.getText().toString();
-																install_now_0 = install_now.getText().toString();
-																go_back_0 = go_back.getText().toString();
-																install_update_0 = install_update.getText().toString();
-																main_title.setText(R.string.main_title_12);
-																settings_title.setText(R.string.settings_title_12);
-																about_title.setText(R.string.about_title_12);
-																maintenance.setText(R.string.maintenance_12);
-																maintenance_desc.setText(R.string.maintenance_desc_12);
-																thanks.setText(R.string.thanks_12);
-																language.setText(R.string.language_12);
-																website.setText(R.string.website_12);
-																discord.setText(R.string.discord_12);
-																reddit.setText(R.string.reddit_12);
-																faq.setText(R.string.faq_12);
-																cloned_version.setText(R.string.cloned_version_12);
-																cloned_version_info.setText(R.string.cloned_version_desc_12);
-															    disable_reward_ad.setText(R.string.disable_rewarded_ads_12);
-															    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_12);
-															    installation_failed.setText(R.string.installation_failed_12);
-															    installation_failed_desc.setText(R.string.installation_failed_desc_12);
-															    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_12);
-															    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_12);
-															    existing_patched.setText(R.string.existing_patched_12);
-															    existing_patched_desc.setText(R.string.existing_patched_desc_12);
-															    close.setText(R.string.close_12);
-															    cloned.setText(R.string.cloned_12);
-															    ream.setText(R.string.ream_12);
-															    install.setText(R.string.install_12);
-															    uninstall.setText(R.string.uninstall_12);
-															    ignore.setText(R.string.ignore_12);
-															    delete.setText(R.string.delete_12);
-															    uninstall_patched.setText(R.string.uninstall_patched_12);
-															    open_settings.setText(R.string.open_settings_12);
-															    open_patched.setText(R.string.open_patched_12);
-																installation_failed_0 = installation_failed.getText().toString();
-															    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-															    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-															    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-															    existing_patched_0 = existing_patched.getText().toString();
-															    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-															    close_0 = close.getText().toString();
-															    uninstall_0 = uninstall.getText().toString();
+															title_1.setText(R.string.spotify_regular_12);
+															title_2.setText(R.string.spotify_amoled_12);
+															sub_text_installed.setText(R.string.installed_12);
+															sub_text_1.setText(R.string.latest_12);
+															sub_text_2.setText(R.string.latest_12);
+															sub_text_3.setText(R.string.latest_12);
+															version_switch_1.setText(R.string.versions_12);
+															version_switch_2.setText(R.string.versions_12);
+															version_switch_3.setText(R.string.versions_12);
+															changelogs.setText(R.string.changelogs_12);
+															title_sub.setText(R.string.manager_tools_12);
+															device_cpu.setText(R.string.device_cpu_12);
+															source.setText(R.string.source_12);
+															support.setText(R.string.support_12);
+															donate.setText(R.string.donate_12);
+															about.setText(R.string.about_12);
+															list_auto_refresh.setText(R.string.list_auto_refresh_12);
+															list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_12);
+															force_auto_install.setText(R.string.force_auto_install_12);
+															force_auto_install_info.setText(R.string.force_auto_install_desc_12);
+															theme.setText(R.string.show_themes_12);
+															apk_location.setText(R.string.apk_location_12);
+															apk_location_info.setText(R.string.apk_location_desc_12);
+															clear_directory_folders.setText(R.string.clear_directory_folders_12);
+															clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_12);
+															reset_settings.setText(R.string.reset_settings_12);
+															sub_title.setText(R.string.about_sub_12);
+															developer_manager.setText(R.string.xmanager_dev_12);
+															developer_spotify.setText(R.string.spotify_mod_devs_12);
+															support_team.setText(R.string.telegram_support_team_12);
+															mod_testers_1.setText(R.string.manager_testers_12);
+															mod_testers_2.setText(R.string.manager_hosting_12);
+															mobilism_team.setText(R.string.mobilism_team_12);
+															forum_team.setText(R.string.forum_team_12);
+															manager_team.setText(R.string.xspotify_team_12);
+															contributors_1.setText(R.string.contributors_12);
+															download_selected.setText(R.string.download_selected_12);
+															download_ready.setText(R.string.download_ready_12);
+															download_ready_desc.setText(R.string.download_ready_desc_12);
+															downloading_file.setText(R.string.downloading_file_12);
+															download_success.setText(R.string.download_success_12);
+															new_update.setText(R.string.new_update_12);
+															download_selected_0 = download_selected.getText().toString();
+															download_ready_0 = download_ready.getText().toString();
+															download_ready_desc_0 = download_ready_desc.getText().toString();
+															downloading_file_0 = downloading_file.getText().toString();
+															download_success_0 = download_success.getText().toString();
+															copy_url.setText(R.string.copy_url_12);
+															continue_1.setText(R.string.continue_1_12);
+															cancel.setText(R.string.cancel_12);
+															fixer.setText(R.string.fixer_12);
+															download.setText(R.string.download_12);
+															later.setText(R.string.later_12);
+															install_now.setText(R.string.install_now_12);
+															install_update.setText(R.string.install_update_12);
+															go_back.setText(R.string.go_back_12);
+															download_update.setText(R.string.download_update_12);
+															not_now.setText(R.string.not_now_12);
+															show_support.setText(R.string.show_support_12);
+															show_support_desc.setText(R.string.show_support_desc_12);
+															copy_url_0 = copy_url.getText().toString();
+															download_0 = download.getText().toString();
+															continue_0 = continue_1.getText().toString();
+															cancel_0 = cancel.getText().toString();
+															fixer_0 = fixer.getText().toString();
+															later_0 = later.getText().toString();
+															install_now_0 = install_now.getText().toString();
+															go_back_0 = go_back.getText().toString();
+															install_update_0 = install_update.getText().toString();
+															main_title.setText(R.string.main_title_12);
+															settings_title.setText(R.string.settings_title_12);
+															about_title.setText(R.string.about_title_12);
+															maintenance.setText(R.string.maintenance_12);
+															maintenance_desc.setText(R.string.maintenance_desc_12);
+															thanks.setText(R.string.thanks_12);
+															language.setText(R.string.language_12);
+															website.setText(R.string.website_12);
+															discord.setText(R.string.discord_12);
+															reddit.setText(R.string.reddit_12);
+															faq.setText(R.string.faq_12);
+															cloned_version.setText(R.string.cloned_version_12);
+															cloned_version_info.setText(R.string.cloned_version_desc_12);
+															disable_reward_ad.setText(R.string.disable_rewarded_ads_12);
+															disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_12);
+															installation_failed.setText(R.string.installation_failed_12);
+															installation_failed_desc.setText(R.string.installation_failed_desc_12);
+															installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_12);
+															installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_12);
+															existing_patched.setText(R.string.existing_patched_12);
+															existing_patched_desc.setText(R.string.existing_patched_desc_12);
+															close.setText(R.string.close_12);
+															cloned.setText(R.string.cloned_12);
+															ream.setText(R.string.ream_12);
+															install.setText(R.string.install_12);
+															uninstall.setText(R.string.uninstall_12);
+															ignore.setText(R.string.ignore_12);
+															delete.setText(R.string.delete_12);
+															uninstall_patched.setText(R.string.uninstall_patched_12);
+															open_settings.setText(R.string.open_settings_12);
+															open_patched.setText(R.string.open_patched_12);
+															installation_failed_0 = installation_failed.getText().toString();
+															installation_failed_desc_0 = installation_failed_desc.getText().toString();
+															installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+															installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+															existing_patched_0 = existing_patched.getText().toString();
+															existing_patched_desc_0 = existing_patched_desc.getText().toString();
+															close_0 = close.getText().toString();
+															uninstall_0 = uninstall.getText().toString();
 															
 															select_language.setSelection((int)(12));
 														}
 														else {
 															if (LANGUAGE.getString("LANGUAGE", "").equals("13")) {
-																    title_1.setText(R.string.spotify_regular_13);
-																	title_2.setText(R.string.spotify_amoled_13);
-																	sub_text_installed.setText(R.string.installed_13);
-																	sub_text_1.setText(R.string.latest_13);
-																	sub_text_3.setText(R.string.latest_13);
-																	version_switch_1.setText(R.string.versions_13);
-																	version_switch_2.setText(R.string.versions_13);
-																	changelogs.setText(R.string.changelogs_13);
-																	title_sub.setText(R.string.manager_tools_13);
-																	device_cpu.setText(R.string.device_cpu_13);
-																	source.setText(R.string.source_13);
-																	support.setText(R.string.support_13);
-																	donate.setText(R.string.donate_13);
-																	about.setText(R.string.about_13);
-																	list_auto_refresh.setText(R.string.list_auto_refresh_13);
-																	list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_13);
-																	force_auto_install.setText(R.string.force_auto_install_13);
-																	force_auto_install_info.setText(R.string.force_auto_install_desc_13);
-																	theme.setText(R.string.show_themes_13);
-																	apk_location.setText(R.string.apk_location_13);
-																	apk_location_info.setText(R.string.apk_location_desc_13);
-																	clear_directory_folders.setText(R.string.clear_directory_folders_13);
-																	clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_13);
-																	reset_settings.setText(R.string.reset_settings_13);
-																	sub_title.setText(R.string.about_sub_13);
-																	developer_manager.setText(R.string.xmanager_dev_13);
-																	developer_spotify.setText(R.string.spotify_mod_devs_13);
-																	support_team.setText(R.string.telegram_support_team_13);
-																	mod_testers_1.setText(R.string.manager_testers_13);
-																	mod_testers_2.setText(R.string.manager_hosting_13);
-																	mobilism_team.setText(R.string.mobilism_team_13);
-																	forum_team.setText(R.string.forum_team_13);
-																	manager_team.setText(R.string.xspotify_team_13);
-																	contributors_1.setText(R.string.contributors_13);
-																	download_selected.setText(R.string.download_selected_13);
-																	download_ready.setText(R.string.download_ready_13);
-																	download_ready_desc.setText(R.string.download_ready_desc_13);
-																	downloading_file.setText(R.string.downloading_file_13);
-																	download_success.setText(R.string.download_success_13);
-																	new_update.setText(R.string.new_update_13);
-																	download_selected_0 = download_selected.getText().toString();
-																	download_ready_0 = download_ready.getText().toString();
-																	download_ready_desc_0 = download_ready_desc.getText().toString();
-																	downloading_file_0 = downloading_file.getText().toString();
-																	download_success_0 = download_success.getText().toString();
-																	copy_url.setText(R.string.copy_url_13);
-																	continue_1.setText(R.string.continue_1_13);
-																	cancel.setText(R.string.cancel_13);
-																    fixer.setText(R.string.fixer_13);
-																	download.setText(R.string.download_13);
-																	later.setText(R.string.later_13);
-																	install_now.setText(R.string.install_now_13);
-																	install_update.setText(R.string.install_update_13);
-																	go_back.setText(R.string.go_back_13);
-																	download_update.setText(R.string.download_update_13);
-																	not_now.setText(R.string.not_now_13);
-																	show_support.setText(R.string.show_support_13);
-																	show_support_desc.setText(R.string.show_support_desc_13);
-																	copy_url_0 = copy_url.getText().toString();
-																	download_0 = download.getText().toString();
-																	continue_0 = continue_1.getText().toString();
-																	cancel_0 = cancel.getText().toString();
-																    fixer_0 = fixer.getText().toString();
-																	later_0 = later.getText().toString();
-																	install_now_0 = install_now.getText().toString();
-																	go_back_0 = go_back.getText().toString();
-																	install_update_0 = install_update.getText().toString();
-																	main_title.setText(R.string.main_title_13);
-																	settings_title.setText(R.string.settings_title_13);
-																	about_title.setText(R.string.about_title_13);
-																	maintenance.setText(R.string.maintenance_13);
-																	maintenance_desc.setText(R.string.maintenance_desc_13);
-																	thanks.setText(R.string.thanks_13);
-																	language.setText(R.string.language_13);
-																	website.setText(R.string.website_13);
-																	discord.setText(R.string.discord_13);
-																	reddit.setText(R.string.reddit_13);
-																	faq.setText(R.string.faq_13);
-																	cloned_version.setText(R.string.cloned_version_13);
-																	cloned_version_info.setText(R.string.cloned_version_desc_13);
-																    disable_reward_ad.setText(R.string.disable_rewarded_ads_13);
-																    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_13);
-																    installation_failed.setText(R.string.installation_failed_13);
-																    installation_failed_desc.setText(R.string.installation_failed_desc_13);
-																    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_13);
-																    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_13);
-																    existing_patched.setText(R.string.existing_patched_13);
-																    existing_patched_desc.setText(R.string.existing_patched_desc_13);
-																    close.setText(R.string.close_13);
-																    cloned.setText(R.string.cloned_13);
-																    ream.setText(R.string.ream_13);
-																    install.setText(R.string.install_13);
-																    uninstall.setText(R.string.uninstall_13);
-																    ignore.setText(R.string.ignore_13);
-																    delete.setText(R.string.delete_13);
-																    uninstall_patched.setText(R.string.uninstall_patched_13);
-																    open_settings.setText(R.string.open_settings_13);
-																    open_patched.setText(R.string.open_patched_13);
-																	installation_failed_0 = installation_failed.getText().toString();
-																    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-																    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-																    existing_patched_0 = existing_patched.getText().toString();
-																    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																    close_0 = close.getText().toString();
-																    uninstall_0 = uninstall.getText().toString();
+																title_1.setText(R.string.spotify_regular_13);
+																title_2.setText(R.string.spotify_amoled_13);
+																sub_text_installed.setText(R.string.installed_13);
+																sub_text_1.setText(R.string.latest_13);
+																sub_text_2.setText(R.string.latest_13);
+																sub_text_3.setText(R.string.latest_13);
+																version_switch_1.setText(R.string.versions_13);
+																version_switch_2.setText(R.string.versions_13);
+																version_switch_3.setText(R.string.versions_13);
+																changelogs.setText(R.string.changelogs_13);
+																title_sub.setText(R.string.manager_tools_13);
+																device_cpu.setText(R.string.device_cpu_13);
+																source.setText(R.string.source_13);
+																support.setText(R.string.support_13);
+																donate.setText(R.string.donate_13);
+																about.setText(R.string.about_13);
+																list_auto_refresh.setText(R.string.list_auto_refresh_13);
+																list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_13);
+																force_auto_install.setText(R.string.force_auto_install_13);
+																force_auto_install_info.setText(R.string.force_auto_install_desc_13);
+																theme.setText(R.string.show_themes_13);
+																apk_location.setText(R.string.apk_location_13);
+																apk_location_info.setText(R.string.apk_location_desc_13);
+																clear_directory_folders.setText(R.string.clear_directory_folders_13);
+																clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_13);
+																reset_settings.setText(R.string.reset_settings_13);
+																sub_title.setText(R.string.about_sub_13);
+																developer_manager.setText(R.string.xmanager_dev_13);
+																developer_spotify.setText(R.string.spotify_mod_devs_13);
+																support_team.setText(R.string.telegram_support_team_13);
+																mod_testers_1.setText(R.string.manager_testers_13);
+																mod_testers_2.setText(R.string.manager_hosting_13);
+																mobilism_team.setText(R.string.mobilism_team_13);
+																forum_team.setText(R.string.forum_team_13);
+																manager_team.setText(R.string.xspotify_team_13);
+																contributors_1.setText(R.string.contributors_13);
+																download_selected.setText(R.string.download_selected_13);
+																download_ready.setText(R.string.download_ready_13);
+																download_ready_desc.setText(R.string.download_ready_desc_13);
+																downloading_file.setText(R.string.downloading_file_13);
+																download_success.setText(R.string.download_success_13);
+																new_update.setText(R.string.new_update_13);
+																download_selected_0 = download_selected.getText().toString();
+																download_ready_0 = download_ready.getText().toString();
+																download_ready_desc_0 = download_ready_desc.getText().toString();
+																downloading_file_0 = downloading_file.getText().toString();
+																download_success_0 = download_success.getText().toString();
+																copy_url.setText(R.string.copy_url_13);
+																continue_1.setText(R.string.continue_1_13);
+																cancel.setText(R.string.cancel_13);
+																fixer.setText(R.string.fixer_13);
+																download.setText(R.string.download_13);
+																later.setText(R.string.later_13);
+																install_now.setText(R.string.install_now_13);
+																install_update.setText(R.string.install_update_13);
+																go_back.setText(R.string.go_back_13);
+																download_update.setText(R.string.download_update_13);
+																not_now.setText(R.string.not_now_13);
+																show_support.setText(R.string.show_support_13);
+																show_support_desc.setText(R.string.show_support_desc_13);
+																copy_url_0 = copy_url.getText().toString();
+																download_0 = download.getText().toString();
+																continue_0 = continue_1.getText().toString();
+																cancel_0 = cancel.getText().toString();
+																fixer_0 = fixer.getText().toString();
+																later_0 = later.getText().toString();
+																install_now_0 = install_now.getText().toString();
+																go_back_0 = go_back.getText().toString();
+																install_update_0 = install_update.getText().toString();
+																main_title.setText(R.string.main_title_13);
+																settings_title.setText(R.string.settings_title_13);
+																about_title.setText(R.string.about_title_13);
+																maintenance.setText(R.string.maintenance_13);
+																maintenance_desc.setText(R.string.maintenance_desc_13);
+																thanks.setText(R.string.thanks_13);
+																language.setText(R.string.language_13);
+																website.setText(R.string.website_13);
+																discord.setText(R.string.discord_13);
+																reddit.setText(R.string.reddit_13);
+																faq.setText(R.string.faq_13);
+																cloned_version.setText(R.string.cloned_version_13);
+																cloned_version_info.setText(R.string.cloned_version_desc_13);
+																disable_reward_ad.setText(R.string.disable_rewarded_ads_13);
+																disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_13);
+																installation_failed.setText(R.string.installation_failed_13);
+																installation_failed_desc.setText(R.string.installation_failed_desc_13);
+																installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_13);
+																installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_13);
+																existing_patched.setText(R.string.existing_patched_13);
+																existing_patched_desc.setText(R.string.existing_patched_desc_13);
+																close.setText(R.string.close_13);
+																cloned.setText(R.string.cloned_13);
+																ream.setText(R.string.ream_13);
+																install.setText(R.string.install_13);
+																uninstall.setText(R.string.uninstall_13);
+																ignore.setText(R.string.ignore_13);
+																delete.setText(R.string.delete_13);
+																uninstall_patched.setText(R.string.uninstall_patched_13);
+																open_settings.setText(R.string.open_settings_13);
+																open_patched.setText(R.string.open_patched_13);
+																installation_failed_0 = installation_failed.getText().toString();
+																installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																existing_patched_0 = existing_patched.getText().toString();
+																existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																close_0 = close.getText().toString();
+																uninstall_0 = uninstall.getText().toString();
 																
 																select_language.setSelection((int)(13));
 															}
 															else {
 																if (LANGUAGE.getString("LANGUAGE", "").equals("14")) {
-																	    title_1.setText(R.string.spotify_regular_14);
-																		title_2.setText(R.string.spotify_amoled_14);
-																		sub_text_installed.setText(R.string.installed_14);
-																		sub_text_1.setText(R.string.latest_14);
-																		sub_text_3.setText(R.string.latest_14);
-																		version_switch_1.setText(R.string.versions_14);
-																		version_switch_2.setText(R.string.versions_14);
-																		changelogs.setText(R.string.changelogs_14);
-																		title_sub.setText(R.string.manager_tools_14);
-																		device_cpu.setText(R.string.device_cpu_14);
-																		source.setText(R.string.source_14);
-																		support.setText(R.string.support_14);
-																		donate.setText(R.string.donate_14);
-																		about.setText(R.string.about_14);
-																		list_auto_refresh.setText(R.string.list_auto_refresh_14);
-																		list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_14);
-																		force_auto_install.setText(R.string.force_auto_install_14);
-																		force_auto_install_info.setText(R.string.force_auto_install_desc_14);
-																		theme.setText(R.string.show_themes_14);
-																		apk_location.setText(R.string.apk_location_14);
-																		apk_location_info.setText(R.string.apk_location_desc_14);
-																		clear_directory_folders.setText(R.string.clear_directory_folders_14);
-																		clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_14);
-																		reset_settings.setText(R.string.reset_settings_14);
-																		sub_title.setText(R.string.about_sub_14);
-																		developer_manager.setText(R.string.xmanager_dev_14);
-																		developer_spotify.setText(R.string.spotify_mod_devs_14);
-																		support_team.setText(R.string.telegram_support_team_14);
-																		mod_testers_1.setText(R.string.manager_testers_14);
-																		mod_testers_2.setText(R.string.manager_hosting_14);
-																		mobilism_team.setText(R.string.mobilism_team_14);
-																		forum_team.setText(R.string.forum_team_14);
-																		manager_team.setText(R.string.xspotify_team_14);
-																		contributors_1.setText(R.string.contributors_14);
-																		download_selected.setText(R.string.download_selected_14);
-																		download_ready.setText(R.string.download_ready_14);
-																		download_ready_desc.setText(R.string.download_ready_desc_14);
-																		downloading_file.setText(R.string.downloading_file_14);
-																		download_success.setText(R.string.download_success_14);
-																		new_update.setText(R.string.new_update_14);
-																		download_selected_0 = download_selected.getText().toString();
-																		download_ready_0 = download_ready.getText().toString();
-																		download_ready_desc_0 = download_ready_desc.getText().toString();
-																		downloading_file_0 = downloading_file.getText().toString();
-																		download_success_0 = download_success.getText().toString();
-																		copy_url.setText(R.string.copy_url_14);
-																		continue_1.setText(R.string.continue_1_14);
-																		cancel.setText(R.string.cancel_14);
-																	    fixer.setText(R.string.fixer_14);
-																		download.setText(R.string.download_14);
-																		later.setText(R.string.later_14);
-																		install_now.setText(R.string.install_now_14);
-																		install_update.setText(R.string.install_update_14);
-																		go_back.setText(R.string.go_back_14);
-																		download_update.setText(R.string.download_update_14);
-																		not_now.setText(R.string.not_now_14);
-																		show_support.setText(R.string.show_support_14);
-																		show_support_desc.setText(R.string.show_support_desc_14);
-																		copy_url_0 = copy_url.getText().toString();
-																		download_0 = download.getText().toString();
-																		continue_0 = continue_1.getText().toString();
-																		cancel_0 = cancel.getText().toString();
-																	    fixer_0 = fixer.getText().toString();
-																		later_0 = later.getText().toString();
-																		install_now_0 = install_now.getText().toString();
-																		go_back_0 = go_back.getText().toString();
-																		install_update_0 = install_update.getText().toString();
-																		main_title.setText(R.string.main_title_14);
-																		settings_title.setText(R.string.settings_title_14);
-																		about_title.setText(R.string.about_title_14);
-																		maintenance.setText(R.string.maintenance_14);
-																		maintenance_desc.setText(R.string.maintenance_desc_14);
-																		thanks.setText(R.string.thanks_14);
-																		language.setText(R.string.language_14);
-																		website.setText(R.string.website_14);
-																		discord.setText(R.string.discord_14);
-																		reddit.setText(R.string.reddit_14);
-																		faq.setText(R.string.faq_14);
-																		cloned_version.setText(R.string.cloned_version_14);
-																		cloned_version_info.setText(R.string.cloned_version_desc_14);
-																	    disable_reward_ad.setText(R.string.disable_rewarded_ads_14);
-																	    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_14);
-																	    installation_failed.setText(R.string.installation_failed_14);
-																	    installation_failed_desc.setText(R.string.installation_failed_desc_14);
-																	    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_14);
-																	    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_14);
-																	    existing_patched.setText(R.string.existing_patched_14);
-																	    existing_patched_desc.setText(R.string.existing_patched_desc_14);
-																	    close.setText(R.string.close_14);
-																	    cloned.setText(R.string.cloned_14);
-																	    ream.setText(R.string.ream_14);
-																	    install.setText(R.string.install_14);
-																	    uninstall.setText(R.string.uninstall_14);
-																	    ignore.setText(R.string.ignore_14);
-																	    delete.setText(R.string.delete_14);
-																	    uninstall_patched.setText(R.string.uninstall_patched_14);
-																	    open_settings.setText(R.string.open_settings_14);
-																	    open_patched.setText(R.string.open_patched_14);
-																		installation_failed_0 = installation_failed.getText().toString();
-																	    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																	    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-																	    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-																	    existing_patched_0 = existing_patched.getText().toString();
-																	    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																	    close_0 = close.getText().toString();
-																	    uninstall_0 = uninstall.getText().toString();
+																	title_1.setText(R.string.spotify_regular_14);
+																	title_2.setText(R.string.spotify_amoled_14);
+																	sub_text_installed.setText(R.string.installed_14);
+																	sub_text_1.setText(R.string.latest_14);
+																	sub_text_2.setText(R.string.latest_14);
+																	sub_text_3.setText(R.string.latest_14);
+																	version_switch_1.setText(R.string.versions_14);
+																	version_switch_2.setText(R.string.versions_14);
+																	version_switch_3.setText(R.string.versions_14);
+																	changelogs.setText(R.string.changelogs_14);
+																	title_sub.setText(R.string.manager_tools_14);
+																	device_cpu.setText(R.string.device_cpu_14);
+																	source.setText(R.string.source_14);
+																	support.setText(R.string.support_14);
+																	donate.setText(R.string.donate_14);
+																	about.setText(R.string.about_14);
+																	list_auto_refresh.setText(R.string.list_auto_refresh_14);
+																	list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_14);
+																	force_auto_install.setText(R.string.force_auto_install_14);
+																	force_auto_install_info.setText(R.string.force_auto_install_desc_14);
+																	theme.setText(R.string.show_themes_14);
+																	apk_location.setText(R.string.apk_location_14);
+																	apk_location_info.setText(R.string.apk_location_desc_14);
+																	clear_directory_folders.setText(R.string.clear_directory_folders_14);
+																	clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_14);
+																	reset_settings.setText(R.string.reset_settings_14);
+																	sub_title.setText(R.string.about_sub_14);
+																	developer_manager.setText(R.string.xmanager_dev_14);
+																	developer_spotify.setText(R.string.spotify_mod_devs_14);
+																	support_team.setText(R.string.telegram_support_team_14);
+																	mod_testers_1.setText(R.string.manager_testers_14);
+																	mod_testers_2.setText(R.string.manager_hosting_14);
+																	mobilism_team.setText(R.string.mobilism_team_14);
+																	forum_team.setText(R.string.forum_team_14);
+																	manager_team.setText(R.string.xspotify_team_14);
+																	contributors_1.setText(R.string.contributors_14);
+																	download_selected.setText(R.string.download_selected_14);
+																	download_ready.setText(R.string.download_ready_14);
+																	download_ready_desc.setText(R.string.download_ready_desc_14);
+																	downloading_file.setText(R.string.downloading_file_14);
+																	download_success.setText(R.string.download_success_14);
+																	new_update.setText(R.string.new_update_14);
+																	download_selected_0 = download_selected.getText().toString();
+																	download_ready_0 = download_ready.getText().toString();
+																	download_ready_desc_0 = download_ready_desc.getText().toString();
+																	downloading_file_0 = downloading_file.getText().toString();
+																	download_success_0 = download_success.getText().toString();
+																	copy_url.setText(R.string.copy_url_14);
+																	continue_1.setText(R.string.continue_1_14);
+																	cancel.setText(R.string.cancel_14);
+																	fixer.setText(R.string.fixer_14);
+																	download.setText(R.string.download_14);
+																	later.setText(R.string.later_14);
+																	install_now.setText(R.string.install_now_14);
+																	install_update.setText(R.string.install_update_14);
+																	go_back.setText(R.string.go_back_14);
+																	download_update.setText(R.string.download_update_14);
+																	not_now.setText(R.string.not_now_14);
+																	show_support.setText(R.string.show_support_14);
+																	show_support_desc.setText(R.string.show_support_desc_14);
+																	copy_url_0 = copy_url.getText().toString();
+																	download_0 = download.getText().toString();
+																	continue_0 = continue_1.getText().toString();
+																	cancel_0 = cancel.getText().toString();
+																	fixer_0 = fixer.getText().toString();
+																	later_0 = later.getText().toString();
+																	install_now_0 = install_now.getText().toString();
+																	go_back_0 = go_back.getText().toString();
+																	install_update_0 = install_update.getText().toString();
+																	main_title.setText(R.string.main_title_14);
+																	settings_title.setText(R.string.settings_title_14);
+																	about_title.setText(R.string.about_title_14);
+																	maintenance.setText(R.string.maintenance_14);
+																	maintenance_desc.setText(R.string.maintenance_desc_14);
+																	thanks.setText(R.string.thanks_14);
+																	language.setText(R.string.language_14);
+																	website.setText(R.string.website_14);
+																	discord.setText(R.string.discord_14);
+																	reddit.setText(R.string.reddit_14);
+																	faq.setText(R.string.faq_14);
+																	cloned_version.setText(R.string.cloned_version_14);
+																	cloned_version_info.setText(R.string.cloned_version_desc_14);
+																	disable_reward_ad.setText(R.string.disable_rewarded_ads_14);
+																	disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_14);
+																	installation_failed.setText(R.string.installation_failed_14);
+																	installation_failed_desc.setText(R.string.installation_failed_desc_14);
+																	installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_14);
+																	installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_14);
+																	existing_patched.setText(R.string.existing_patched_14);
+																	existing_patched_desc.setText(R.string.existing_patched_desc_14);
+																	close.setText(R.string.close_14);
+																	cloned.setText(R.string.cloned_14);
+																	ream.setText(R.string.ream_14);
+																	install.setText(R.string.install_14);
+																	uninstall.setText(R.string.uninstall_14);
+																	ignore.setText(R.string.ignore_14);
+																	delete.setText(R.string.delete_14);
+																	uninstall_patched.setText(R.string.uninstall_patched_14);
+																	open_settings.setText(R.string.open_settings_14);
+																	open_patched.setText(R.string.open_patched_14);
+																	installation_failed_0 = installation_failed.getText().toString();
+																	installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																	installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																	installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																	existing_patched_0 = existing_patched.getText().toString();
+																	existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																	close_0 = close.getText().toString();
+																	uninstall_0 = uninstall.getText().toString();
 																	
 																	select_language.setSelection((int)(14));
 																}
 																else {
 																	if (LANGUAGE.getString("LANGUAGE", "").equals("15")) {
-																		    title_1.setText(R.string.spotify_regular_15);
-																			title_2.setText(R.string.spotify_amoled_15);
-																			sub_text_installed.setText(R.string.installed_15);
-																			sub_text_1.setText(R.string.latest_15);
-																			sub_text_3.setText(R.string.latest_15);
-																			version_switch_1.setText(R.string.versions_15);
-																			version_switch_2.setText(R.string.versions_15);
-																			changelogs.setText(R.string.changelogs_15);
-																			title_sub.setText(R.string.manager_tools_15);
-																			device_cpu.setText(R.string.device_cpu_15);
-																			source.setText(R.string.source_15);
-																			support.setText(R.string.support_15);
-																			donate.setText(R.string.donate_15);
-																			about.setText(R.string.about_15);
-																			list_auto_refresh.setText(R.string.list_auto_refresh_15);
-																			list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_15);
-																			force_auto_install.setText(R.string.force_auto_install_15);
-																			force_auto_install_info.setText(R.string.force_auto_install_desc_15);
-																			theme.setText(R.string.show_themes_15);
-																			apk_location.setText(R.string.apk_location_15);
-																			apk_location_info.setText(R.string.apk_location_desc_15);
-																			clear_directory_folders.setText(R.string.clear_directory_folders_15);
-																			clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_15);
-																			reset_settings.setText(R.string.reset_settings_15);
-																			sub_title.setText(R.string.about_sub_15);
-																			developer_manager.setText(R.string.xmanager_dev_15);
-																			developer_spotify.setText(R.string.spotify_mod_devs_15);
-																			support_team.setText(R.string.telegram_support_team_15);
-																			mod_testers_1.setText(R.string.manager_testers_15);
-																			mod_testers_2.setText(R.string.manager_hosting_15);
-																			mobilism_team.setText(R.string.mobilism_team_15);
-																			forum_team.setText(R.string.forum_team_15);
-																			manager_team.setText(R.string.xspotify_team_15);
-																			contributors_1.setText(R.string.contributors_15);
-																			download_selected.setText(R.string.download_selected_15);
-																			download_ready.setText(R.string.download_ready_15);
-																			download_ready_desc.setText(R.string.download_ready_desc_15);
-																			downloading_file.setText(R.string.downloading_file_15);
-																			download_success.setText(R.string.download_success_15);
-																			new_update.setText(R.string.new_update_15);
-																			download_selected_0 = download_selected.getText().toString();
-																			download_ready_0 = download_ready.getText().toString();
-																			download_ready_desc_0 = download_ready_desc.getText().toString();
-																			downloading_file_0 = downloading_file.getText().toString();
-																			download_success_0 = download_success.getText().toString();
-																			copy_url.setText(R.string.copy_url_15);
-																			continue_1.setText(R.string.continue_1_15);
-																			cancel.setText(R.string.cancel_15);
-																		    fixer.setText(R.string.fixer_15);
-																			download.setText(R.string.download_15);
-																			later.setText(R.string.later_15);
-																			install_now.setText(R.string.install_now_15);
-																			install_update.setText(R.string.install_update_15);
-																			go_back.setText(R.string.go_back_15);
-																			download_update.setText(R.string.download_update_15);
-																			not_now.setText(R.string.not_now_15);
-																			show_support.setText(R.string.show_support_15);
-																			show_support_desc.setText(R.string.show_support_desc_15);
-																			copy_url_0 = copy_url.getText().toString();
-																			download_0 = download.getText().toString();
-																			continue_0 = continue_1.getText().toString();
-																			cancel_0 = cancel.getText().toString();
-																		    fixer_0 = fixer.getText().toString();
-																			later_0 = later.getText().toString();
-																			install_now_0 = install_now.getText().toString();
-																			go_back_0 = go_back.getText().toString();
-																			install_update_0 = install_update.getText().toString();
-																			main_title.setText(R.string.main_title_15);
-																			settings_title.setText(R.string.settings_title_15);
-																			about_title.setText(R.string.about_title_15);
-																			maintenance.setText(R.string.maintenance_15);
-																			maintenance_desc.setText(R.string.maintenance_desc_15);
-																			thanks.setText(R.string.thanks_15);
-																			language.setText(R.string.language_15);
-																			website.setText(R.string.website_15);
-																			discord.setText(R.string.discord_15);
-																			reddit.setText(R.string.reddit_15);
-																			faq.setText(R.string.faq_15);
-																			cloned_version.setText(R.string.cloned_version_15);
-																			cloned_version_info.setText(R.string.cloned_version_desc_15);
-																		    disable_reward_ad.setText(R.string.disable_rewarded_ads_15);
-																		    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_15);
-																		    installation_failed.setText(R.string.installation_failed_15);
-																		    installation_failed_desc.setText(R.string.installation_failed_desc_15);
-																		    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_15);
-																		    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_15);
-																		    existing_patched.setText(R.string.existing_patched_15);
-																		    existing_patched_desc.setText(R.string.existing_patched_desc_15);
-																		    close.setText(R.string.close_15);
-																		    cloned.setText(R.string.cloned_15);
-																		    ream.setText(R.string.ream_15);
-																		    install.setText(R.string.install_15);
-																		    uninstall.setText(R.string.uninstall_15);
-																		    ignore.setText(R.string.ignore_15);
-																		    delete.setText(R.string.delete_15);
-																		    uninstall_patched.setText(R.string.uninstall_patched_15);
-																		    open_settings.setText(R.string.open_settings_15);
-																		    open_patched.setText(R.string.open_patched_15);
-																			installation_failed_0 = installation_failed.getText().toString();
-																		    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																		    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-																		    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-																		    existing_patched_0 = existing_patched.getText().toString();
-																		    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																		    close_0 = close.getText().toString();
-																		    uninstall_0 = uninstall.getText().toString();
+																		title_1.setText(R.string.spotify_regular_15);
+																		title_2.setText(R.string.spotify_amoled_15);
+																		sub_text_installed.setText(R.string.installed_15);
+																		sub_text_1.setText(R.string.latest_15);
+																		sub_text_2.setText(R.string.latest_15);
+																		sub_text_3.setText(R.string.latest_15);
+																		version_switch_1.setText(R.string.versions_15);
+																		version_switch_2.setText(R.string.versions_15);
+																		version_switch_3.setText(R.string.versions_15);
+																		changelogs.setText(R.string.changelogs_15);
+																		title_sub.setText(R.string.manager_tools_15);
+																		device_cpu.setText(R.string.device_cpu_15);
+																		source.setText(R.string.source_15);
+																		support.setText(R.string.support_15);
+																		donate.setText(R.string.donate_15);
+																		about.setText(R.string.about_15);
+																		list_auto_refresh.setText(R.string.list_auto_refresh_15);
+																		list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_15);
+																		force_auto_install.setText(R.string.force_auto_install_15);
+																		force_auto_install_info.setText(R.string.force_auto_install_desc_15);
+																		theme.setText(R.string.show_themes_15);
+																		apk_location.setText(R.string.apk_location_15);
+																		apk_location_info.setText(R.string.apk_location_desc_15);
+																		clear_directory_folders.setText(R.string.clear_directory_folders_15);
+																		clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_15);
+																		reset_settings.setText(R.string.reset_settings_15);
+																		sub_title.setText(R.string.about_sub_15);
+																		developer_manager.setText(R.string.xmanager_dev_15);
+																		developer_spotify.setText(R.string.spotify_mod_devs_15);
+																		support_team.setText(R.string.telegram_support_team_15);
+																		mod_testers_1.setText(R.string.manager_testers_15);
+																		mod_testers_2.setText(R.string.manager_hosting_15);
+																		mobilism_team.setText(R.string.mobilism_team_15);
+																		forum_team.setText(R.string.forum_team_15);
+																		manager_team.setText(R.string.xspotify_team_15);
+																		contributors_1.setText(R.string.contributors_15);
+																		download_selected.setText(R.string.download_selected_15);
+																		download_ready.setText(R.string.download_ready_15);
+																		download_ready_desc.setText(R.string.download_ready_desc_15);
+																		downloading_file.setText(R.string.downloading_file_15);
+																		download_success.setText(R.string.download_success_15);
+																		new_update.setText(R.string.new_update_15);
+																		download_selected_0 = download_selected.getText().toString();
+																		download_ready_0 = download_ready.getText().toString();
+																		download_ready_desc_0 = download_ready_desc.getText().toString();
+																		downloading_file_0 = downloading_file.getText().toString();
+																		download_success_0 = download_success.getText().toString();
+																		copy_url.setText(R.string.copy_url_15);
+																		continue_1.setText(R.string.continue_1_15);
+																		cancel.setText(R.string.cancel_15);
+																		fixer.setText(R.string.fixer_15);
+																		download.setText(R.string.download_15);
+																		later.setText(R.string.later_15);
+																		install_now.setText(R.string.install_now_15);
+																		install_update.setText(R.string.install_update_15);
+																		go_back.setText(R.string.go_back_15);
+																		download_update.setText(R.string.download_update_15);
+																		not_now.setText(R.string.not_now_15);
+																		show_support.setText(R.string.show_support_15);
+																		show_support_desc.setText(R.string.show_support_desc_15);
+																		copy_url_0 = copy_url.getText().toString();
+																		download_0 = download.getText().toString();
+																		continue_0 = continue_1.getText().toString();
+																		cancel_0 = cancel.getText().toString();
+																		fixer_0 = fixer.getText().toString();
+																		later_0 = later.getText().toString();
+																		install_now_0 = install_now.getText().toString();
+																		go_back_0 = go_back.getText().toString();
+																		install_update_0 = install_update.getText().toString();
+																		main_title.setText(R.string.main_title_15);
+																		settings_title.setText(R.string.settings_title_15);
+																		about_title.setText(R.string.about_title_15);
+																		maintenance.setText(R.string.maintenance_15);
+																		maintenance_desc.setText(R.string.maintenance_desc_15);
+																		thanks.setText(R.string.thanks_15);
+																		language.setText(R.string.language_15);
+																		website.setText(R.string.website_15);
+																		discord.setText(R.string.discord_15);
+																		reddit.setText(R.string.reddit_15);
+																		faq.setText(R.string.faq_15);
+																		cloned_version.setText(R.string.cloned_version_15);
+																		cloned_version_info.setText(R.string.cloned_version_desc_15);
+																		disable_reward_ad.setText(R.string.disable_rewarded_ads_15);
+																		disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_15);
+																		installation_failed.setText(R.string.installation_failed_15);
+																		installation_failed_desc.setText(R.string.installation_failed_desc_15);
+																		installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_15);
+																		installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_15);
+																		existing_patched.setText(R.string.existing_patched_15);
+																		existing_patched_desc.setText(R.string.existing_patched_desc_15);
+																		close.setText(R.string.close_15);
+																		cloned.setText(R.string.cloned_15);
+																		ream.setText(R.string.ream_15);
+																		install.setText(R.string.install_15);
+																		uninstall.setText(R.string.uninstall_15);
+																		ignore.setText(R.string.ignore_15);
+																		delete.setText(R.string.delete_15);
+																		uninstall_patched.setText(R.string.uninstall_patched_15);
+																		open_settings.setText(R.string.open_settings_15);
+																		open_patched.setText(R.string.open_patched_15);
+																		installation_failed_0 = installation_failed.getText().toString();
+																		installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																		installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																		installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																		existing_patched_0 = existing_patched.getText().toString();
+																		existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																		close_0 = close.getText().toString();
+																		uninstall_0 = uninstall.getText().toString();
 																		
 																		select_language.setSelection((int)(15));
 																	}
 																	else {
 																		if (LANGUAGE.getString("LANGUAGE", "").equals("16")) {
-																			    title_1.setText(R.string.spotify_regular_16);
-																				title_2.setText(R.string.spotify_amoled_16);
-																				sub_text_installed.setText(R.string.installed_16);
-																				sub_text_1.setText(R.string.latest_16);
-																				sub_text_3.setText(R.string.latest_16);
-																				version_switch_1.setText(R.string.versions_16);
-																				version_switch_2.setText(R.string.versions_16);
-																				changelogs.setText(R.string.changelogs_16);
-																				title_sub.setText(R.string.manager_tools_16);
-																				device_cpu.setText(R.string.device_cpu_16);
-																				source.setText(R.string.source_16);
-																				support.setText(R.string.support_16);
-																				donate.setText(R.string.donate_16);
-																				about.setText(R.string.about_16);
-																				list_auto_refresh.setText(R.string.list_auto_refresh_16);
-																				list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_16);
-																				force_auto_install.setText(R.string.force_auto_install_16);
-																				force_auto_install_info.setText(R.string.force_auto_install_desc_16);
-																				theme.setText(R.string.show_themes_16);
-																				apk_location.setText(R.string.apk_location_16);
-																				apk_location_info.setText(R.string.apk_location_desc_16);
-																				clear_directory_folders.setText(R.string.clear_directory_folders_16);
-																				clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_16);
-																				reset_settings.setText(R.string.reset_settings_16);
-																				sub_title.setText(R.string.about_sub_16);
-																				developer_manager.setText(R.string.xmanager_dev_16);
-																				developer_spotify.setText(R.string.spotify_mod_devs_16);
-																				support_team.setText(R.string.telegram_support_team_16);
-																				mod_testers_1.setText(R.string.manager_testers_16);
-																				mod_testers_2.setText(R.string.manager_hosting_16);
-																				mobilism_team.setText(R.string.mobilism_team_16);
-																				forum_team.setText(R.string.forum_team_16);
-																				manager_team.setText(R.string.xspotify_team_16);
-																				contributors_1.setText(R.string.contributors_16);
-																				download_selected.setText(R.string.download_selected_16);
-																				download_ready.setText(R.string.download_ready_16);
-																				download_ready_desc.setText(R.string.download_ready_desc_16);
-																				downloading_file.setText(R.string.downloading_file_16);
-																				download_success.setText(R.string.download_success_16);
-																				new_update.setText(R.string.new_update_16);
-																				download_selected_0 = download_selected.getText().toString();
-																				download_ready_0 = download_ready.getText().toString();
-																				download_ready_desc_0 = download_ready_desc.getText().toString();
-																				downloading_file_0 = downloading_file.getText().toString();
-																				download_success_0 = download_success.getText().toString();
-																				copy_url.setText(R.string.copy_url_16);
-																				continue_1.setText(R.string.continue_1_16);
-																				cancel.setText(R.string.cancel_16);
-																			    fixer.setText(R.string.fixer_16);
-																				download.setText(R.string.download_16);
-																				later.setText(R.string.later_16);
-																				install_now.setText(R.string.install_now_16);
-																				install_update.setText(R.string.install_update_16);
-																				go_back.setText(R.string.go_back_16);
-																				download_update.setText(R.string.download_update_16);
-																				not_now.setText(R.string.not_now_16);
-																				show_support.setText(R.string.show_support_16);
-																				show_support_desc.setText(R.string.show_support_desc_16);
-																				copy_url_0 = copy_url.getText().toString();
-																				download_0 = download.getText().toString();
-																				continue_0 = continue_1.getText().toString();
-																				cancel_0 = cancel.getText().toString();
-																			    fixer_0 = fixer.getText().toString();
-																				later_0 = later.getText().toString();
-																				install_now_0 = install_now.getText().toString();
-																				go_back_0 = go_back.getText().toString();
-																				install_update_0 = install_update.getText().toString();
-																				main_title.setText(R.string.main_title_16);
-																				settings_title.setText(R.string.settings_title_16);
-																				about_title.setText(R.string.about_title_16);
-																				maintenance.setText(R.string.maintenance_16);
-																				maintenance_desc.setText(R.string.maintenance_desc_16);
-																				thanks.setText(R.string.thanks_16);
-																				language.setText(R.string.language_16);
-																				website.setText(R.string.website_16);
-																				discord.setText(R.string.discord_16);
-																				reddit.setText(R.string.reddit_16);
-																				faq.setText(R.string.faq_16);
-																				cloned_version.setText(R.string.cloned_version_16);
-																				cloned_version_info.setText(R.string.cloned_version_desc_16);
-																			    disable_reward_ad.setText(R.string.disable_rewarded_ads_16);
-																			    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_16);
-																			    installation_failed.setText(R.string.installation_failed_16);
-																			    installation_failed_desc.setText(R.string.installation_failed_desc_16);
-																			    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_16);
-																			    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_16);
-																			    existing_patched.setText(R.string.existing_patched_16);
-																			    existing_patched_desc.setText(R.string.existing_patched_desc_16);
-																			    close.setText(R.string.close_16);
-																			    cloned.setText(R.string.cloned_16);
-																			    ream.setText(R.string.ream_16);
-																			    install.setText(R.string.install_16);
-																			    uninstall.setText(R.string.uninstall_16);
-																			    ignore.setText(R.string.ignore_16);
-																			    delete.setText(R.string.delete_16);
-																			    uninstall_patched.setText(R.string.uninstall_patched_16);
-																			    open_settings.setText(R.string.open_settings_16);
-																			    open_patched.setText(R.string.open_patched_16);
-																				installation_failed_0 = installation_failed.getText().toString();
-																			    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																			    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-																			    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-																			    existing_patched_0 = existing_patched.getText().toString();
-																			    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																			    close_0 = close.getText().toString();
-																			    uninstall_0 = uninstall.getText().toString();
+																			title_1.setText(R.string.spotify_regular_16);
+																			title_2.setText(R.string.spotify_amoled_16);
+																			sub_text_installed.setText(R.string.installed_16);
+																			sub_text_1.setText(R.string.latest_16);
+																			sub_text_2.setText(R.string.latest_16);
+																			sub_text_3.setText(R.string.latest_16);
+																			version_switch_1.setText(R.string.versions_16);
+																			version_switch_2.setText(R.string.versions_16);
+																			version_switch_3.setText(R.string.versions_16);
+																			changelogs.setText(R.string.changelogs_16);
+																			title_sub.setText(R.string.manager_tools_16);
+																			device_cpu.setText(R.string.device_cpu_16);
+																			source.setText(R.string.source_16);
+																			support.setText(R.string.support_16);
+																			donate.setText(R.string.donate_16);
+																			about.setText(R.string.about_16);
+																			list_auto_refresh.setText(R.string.list_auto_refresh_16);
+																			list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_16);
+																			force_auto_install.setText(R.string.force_auto_install_16);
+																			force_auto_install_info.setText(R.string.force_auto_install_desc_16);
+																			theme.setText(R.string.show_themes_16);
+																			apk_location.setText(R.string.apk_location_16);
+																			apk_location_info.setText(R.string.apk_location_desc_16);
+																			clear_directory_folders.setText(R.string.clear_directory_folders_16);
+																			clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_16);
+																			reset_settings.setText(R.string.reset_settings_16);
+																			sub_title.setText(R.string.about_sub_16);
+																			developer_manager.setText(R.string.xmanager_dev_16);
+																			developer_spotify.setText(R.string.spotify_mod_devs_16);
+																			support_team.setText(R.string.telegram_support_team_16);
+																			mod_testers_1.setText(R.string.manager_testers_16);
+																			mod_testers_2.setText(R.string.manager_hosting_16);
+																			mobilism_team.setText(R.string.mobilism_team_16);
+																			forum_team.setText(R.string.forum_team_16);
+																			manager_team.setText(R.string.xspotify_team_16);
+																			contributors_1.setText(R.string.contributors_16);
+																			download_selected.setText(R.string.download_selected_16);
+																			download_ready.setText(R.string.download_ready_16);
+																			download_ready_desc.setText(R.string.download_ready_desc_16);
+																			downloading_file.setText(R.string.downloading_file_16);
+																			download_success.setText(R.string.download_success_16);
+																			new_update.setText(R.string.new_update_16);
+																			download_selected_0 = download_selected.getText().toString();
+																			download_ready_0 = download_ready.getText().toString();
+																			download_ready_desc_0 = download_ready_desc.getText().toString();
+																			downloading_file_0 = downloading_file.getText().toString();
+																			download_success_0 = download_success.getText().toString();
+																			copy_url.setText(R.string.copy_url_16);
+																			continue_1.setText(R.string.continue_1_16);
+																			cancel.setText(R.string.cancel_16);
+																			fixer.setText(R.string.fixer_16);
+																			download.setText(R.string.download_16);
+																			later.setText(R.string.later_16);
+																			install_now.setText(R.string.install_now_16);
+																			install_update.setText(R.string.install_update_16);
+																			go_back.setText(R.string.go_back_16);
+																			download_update.setText(R.string.download_update_16);
+																			not_now.setText(R.string.not_now_16);
+																			show_support.setText(R.string.show_support_16);
+																			show_support_desc.setText(R.string.show_support_desc_16);
+																			copy_url_0 = copy_url.getText().toString();
+																			download_0 = download.getText().toString();
+																			continue_0 = continue_1.getText().toString();
+																			cancel_0 = cancel.getText().toString();
+																			fixer_0 = fixer.getText().toString();
+																			later_0 = later.getText().toString();
+																			install_now_0 = install_now.getText().toString();
+																			go_back_0 = go_back.getText().toString();
+																			install_update_0 = install_update.getText().toString();
+																			main_title.setText(R.string.main_title_16);
+																			settings_title.setText(R.string.settings_title_16);
+																			about_title.setText(R.string.about_title_16);
+																			maintenance.setText(R.string.maintenance_16);
+																			maintenance_desc.setText(R.string.maintenance_desc_16);
+																			thanks.setText(R.string.thanks_16);
+																			language.setText(R.string.language_16);
+																			website.setText(R.string.website_16);
+																			discord.setText(R.string.discord_16);
+																			reddit.setText(R.string.reddit_16);
+																			faq.setText(R.string.faq_16);
+																			cloned_version.setText(R.string.cloned_version_16);
+																			cloned_version_info.setText(R.string.cloned_version_desc_16);
+																			disable_reward_ad.setText(R.string.disable_rewarded_ads_16);
+																			disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_16);
+																			installation_failed.setText(R.string.installation_failed_16);
+																			installation_failed_desc.setText(R.string.installation_failed_desc_16);
+																			installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_16);
+																			installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_16);
+																			existing_patched.setText(R.string.existing_patched_16);
+																			existing_patched_desc.setText(R.string.existing_patched_desc_16);
+																			close.setText(R.string.close_16);
+																			cloned.setText(R.string.cloned_16);
+																			ream.setText(R.string.ream_16);
+																			install.setText(R.string.install_16);
+																			uninstall.setText(R.string.uninstall_16);
+																			ignore.setText(R.string.ignore_16);
+																			delete.setText(R.string.delete_16);
+																			uninstall_patched.setText(R.string.uninstall_patched_16);
+																			open_settings.setText(R.string.open_settings_16);
+																			open_patched.setText(R.string.open_patched_16);
+																			installation_failed_0 = installation_failed.getText().toString();
+																			installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																			installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																			installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																			existing_patched_0 = existing_patched.getText().toString();
+																			existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																			close_0 = close.getText().toString();
+																			uninstall_0 = uninstall.getText().toString();
 																			
 																			select_language.setSelection((int)(16));
 																		}
 																		else {
 																			if (LANGUAGE.getString("LANGUAGE", "").equals("17")) {
-																				    title_1.setText(R.string.spotify_regular_17);
-																					title_2.setText(R.string.spotify_amoled_17);
-																					sub_text_installed.setText(R.string.installed_17);
-																					sub_text_1.setText(R.string.latest_17);
-																					sub_text_3.setText(R.string.latest_17);
-																					version_switch_1.setText(R.string.versions_17);
-																					version_switch_2.setText(R.string.versions_17);
-																					changelogs.setText(R.string.changelogs_17);
-																					title_sub.setText(R.string.manager_tools_17);
-																					device_cpu.setText(R.string.device_cpu_17);
-																					source.setText(R.string.source_17);
-																					support.setText(R.string.support_17);
-																					donate.setText(R.string.donate_17);
-																					about.setText(R.string.about_17);
-																					list_auto_refresh.setText(R.string.list_auto_refresh_17);
-																					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_17);
-																					force_auto_install.setText(R.string.force_auto_install_17);
-																					force_auto_install_info.setText(R.string.force_auto_install_desc_17);
-																					theme.setText(R.string.show_themes_17);
-																					apk_location.setText(R.string.apk_location_17);
-																					apk_location_info.setText(R.string.apk_location_desc_17);
-																					clear_directory_folders.setText(R.string.clear_directory_folders_17);
-																					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_17);
-																					reset_settings.setText(R.string.reset_settings_17);
-																					sub_title.setText(R.string.about_sub_17);
-																					developer_manager.setText(R.string.xmanager_dev_17);
-																					developer_spotify.setText(R.string.spotify_mod_devs_17);
-																					support_team.setText(R.string.telegram_support_team_17);
-																					mod_testers_1.setText(R.string.manager_testers_17);
-																					mod_testers_2.setText(R.string.manager_hosting_17);
-																					mobilism_team.setText(R.string.mobilism_team_17);
-																					forum_team.setText(R.string.forum_team_17);
-																					manager_team.setText(R.string.xspotify_team_17);
-																					contributors_1.setText(R.string.contributors_17);
-																					download_selected.setText(R.string.download_selected_17);
-																					download_ready.setText(R.string.download_ready_17);
-																					download_ready_desc.setText(R.string.download_ready_desc_17);
-																					downloading_file.setText(R.string.downloading_file_17);
-																					download_success.setText(R.string.download_success_17);
-																					new_update.setText(R.string.new_update_17);
-																					download_selected_0 = download_selected.getText().toString();
-																					download_ready_0 = download_ready.getText().toString();
-																					download_ready_desc_0 = download_ready_desc.getText().toString();
-																					downloading_file_0 = downloading_file.getText().toString();
-																					download_success_0 = download_success.getText().toString();
-																					copy_url.setText(R.string.copy_url_17);
-																					continue_1.setText(R.string.continue_1_17);
-																					cancel.setText(R.string.cancel_17);
-																				    fixer.setText(R.string.fixer_17);
-																					download.setText(R.string.download_17);
-																					later.setText(R.string.later_17);
-																					install_now.setText(R.string.install_now_17);
-																					install_update.setText(R.string.install_update_17);
-																					go_back.setText(R.string.go_back_17);
-																					download_update.setText(R.string.download_update_17);
-																					not_now.setText(R.string.not_now_17);
-																					show_support.setText(R.string.show_support_17);
-																					show_support_desc.setText(R.string.show_support_desc_17);
-																					copy_url_0 = copy_url.getText().toString();
-																					download_0 = download.getText().toString();
-																					continue_0 = continue_1.getText().toString();
-																					cancel_0 = cancel.getText().toString();
-																				    fixer_0 = fixer.getText().toString();
-																					later_0 = later.getText().toString();
-																					install_now_0 = install_now.getText().toString();
-																					go_back_0 = go_back.getText().toString();
-																					install_update_0 = install_update.getText().toString();
-																					main_title.setText(R.string.main_title_17);
-																					settings_title.setText(R.string.settings_title_17);
-																					about_title.setText(R.string.about_title_17);
-																					maintenance.setText(R.string.maintenance_17);
-																					maintenance_desc.setText(R.string.maintenance_desc_17);
-																					thanks.setText(R.string.thanks_17);
-																					language.setText(R.string.language_17);
-																					website.setText(R.string.website_17);
-																					discord.setText(R.string.discord_17);
-																					reddit.setText(R.string.reddit_17);
-																					faq.setText(R.string.faq_17);
-																					cloned_version.setText(R.string.cloned_version_17);
-																					cloned_version_info.setText(R.string.cloned_version_desc_17);
-																				    disable_reward_ad.setText(R.string.disable_rewarded_ads_17);
-																				    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_17);
-																				    installation_failed.setText(R.string.installation_failed_17);
-																				    installation_failed_desc.setText(R.string.installation_failed_desc_17);
-																				    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_17);
-																				    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_17);
-																				    existing_patched.setText(R.string.existing_patched_17);
-																				    existing_patched_desc.setText(R.string.existing_patched_desc_17);
-																				    close.setText(R.string.close_17);
-																				    cloned.setText(R.string.cloned_17);
-																				    ream.setText(R.string.ream_17);
-																				    install.setText(R.string.install_17);
-																				    uninstall.setText(R.string.uninstall_17);
-																				    ignore.setText(R.string.ignore_17);
-																				    delete.setText(R.string.delete_17);
-																				    uninstall_patched.setText(R.string.uninstall_patched_17);
-																				    open_settings.setText(R.string.open_settings_17);
-																				    open_patched.setText(R.string.open_patched_17);
-																					installation_failed_0 = installation_failed.getText().toString();
-																				    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																				    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-																				    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-																				    existing_patched_0 = existing_patched.getText().toString();
-																				    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																				    close_0 = close.getText().toString();
-																				    uninstall_0 = uninstall.getText().toString();
+																				title_1.setText(R.string.spotify_regular_17);
+																				title_2.setText(R.string.spotify_amoled_17);
+																				sub_text_installed.setText(R.string.installed_17);
+																				sub_text_1.setText(R.string.latest_17);
+																				sub_text_2.setText(R.string.latest_17);
+																				sub_text_3.setText(R.string.latest_17);
+																				version_switch_1.setText(R.string.versions_17);
+																				version_switch_2.setText(R.string.versions_17);
+																				version_switch_3.setText(R.string.versions_17);
+																				changelogs.setText(R.string.changelogs_17);
+																				title_sub.setText(R.string.manager_tools_17);
+																				device_cpu.setText(R.string.device_cpu_17);
+																				source.setText(R.string.source_17);
+																				support.setText(R.string.support_17);
+																				donate.setText(R.string.donate_17);
+																				about.setText(R.string.about_17);
+																				list_auto_refresh.setText(R.string.list_auto_refresh_17);
+																				list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_17);
+																				force_auto_install.setText(R.string.force_auto_install_17);
+																				force_auto_install_info.setText(R.string.force_auto_install_desc_17);
+																				theme.setText(R.string.show_themes_17);
+																				apk_location.setText(R.string.apk_location_17);
+																				apk_location_info.setText(R.string.apk_location_desc_17);
+																				clear_directory_folders.setText(R.string.clear_directory_folders_17);
+																				clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_17);
+																				reset_settings.setText(R.string.reset_settings_17);
+																				sub_title.setText(R.string.about_sub_17);
+																				developer_manager.setText(R.string.xmanager_dev_17);
+																				developer_spotify.setText(R.string.spotify_mod_devs_17);
+																				support_team.setText(R.string.telegram_support_team_17);
+																				mod_testers_1.setText(R.string.manager_testers_17);
+																				mod_testers_2.setText(R.string.manager_hosting_17);
+																				mobilism_team.setText(R.string.mobilism_team_17);
+																				forum_team.setText(R.string.forum_team_17);
+																				manager_team.setText(R.string.xspotify_team_17);
+																				contributors_1.setText(R.string.contributors_17);
+																				download_selected.setText(R.string.download_selected_17);
+																				download_ready.setText(R.string.download_ready_17);
+																				download_ready_desc.setText(R.string.download_ready_desc_17);
+																				downloading_file.setText(R.string.downloading_file_17);
+																				download_success.setText(R.string.download_success_17);
+																				new_update.setText(R.string.new_update_17);
+																				download_selected_0 = download_selected.getText().toString();
+																				download_ready_0 = download_ready.getText().toString();
+																				download_ready_desc_0 = download_ready_desc.getText().toString();
+																				downloading_file_0 = downloading_file.getText().toString();
+																				download_success_0 = download_success.getText().toString();
+																				copy_url.setText(R.string.copy_url_17);
+																				continue_1.setText(R.string.continue_1_17);
+																				cancel.setText(R.string.cancel_17);
+																				fixer.setText(R.string.fixer_17);
+																				download.setText(R.string.download_17);
+																				later.setText(R.string.later_17);
+																				install_now.setText(R.string.install_now_17);
+																				install_update.setText(R.string.install_update_17);
+																				go_back.setText(R.string.go_back_17);
+																				download_update.setText(R.string.download_update_17);
+																				not_now.setText(R.string.not_now_17);
+																				show_support.setText(R.string.show_support_17);
+																				show_support_desc.setText(R.string.show_support_desc_17);
+																				copy_url_0 = copy_url.getText().toString();
+																				download_0 = download.getText().toString();
+																				continue_0 = continue_1.getText().toString();
+																				cancel_0 = cancel.getText().toString();
+																				fixer_0 = fixer.getText().toString();
+																				later_0 = later.getText().toString();
+																				install_now_0 = install_now.getText().toString();
+																				go_back_0 = go_back.getText().toString();
+																				install_update_0 = install_update.getText().toString();
+																				main_title.setText(R.string.main_title_17);
+																				settings_title.setText(R.string.settings_title_17);
+																				about_title.setText(R.string.about_title_17);
+																				maintenance.setText(R.string.maintenance_17);
+																				maintenance_desc.setText(R.string.maintenance_desc_17);
+																				thanks.setText(R.string.thanks_17);
+																				language.setText(R.string.language_17);
+																				website.setText(R.string.website_17);
+																				discord.setText(R.string.discord_17);
+																				reddit.setText(R.string.reddit_17);
+																				faq.setText(R.string.faq_17);
+																				cloned_version.setText(R.string.cloned_version_17);
+																				cloned_version_info.setText(R.string.cloned_version_desc_17);
+																				disable_reward_ad.setText(R.string.disable_rewarded_ads_17);
+																				disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_17);
+																				installation_failed.setText(R.string.installation_failed_17);
+																				installation_failed_desc.setText(R.string.installation_failed_desc_17);
+																				installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_17);
+																				installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_17);
+																				existing_patched.setText(R.string.existing_patched_17);
+																				existing_patched_desc.setText(R.string.existing_patched_desc_17);
+																				close.setText(R.string.close_17);
+																				cloned.setText(R.string.cloned_17);
+																				ream.setText(R.string.ream_17);
+																				install.setText(R.string.install_17);
+																				uninstall.setText(R.string.uninstall_17);
+																				ignore.setText(R.string.ignore_17);
+																				delete.setText(R.string.delete_17);
+																				uninstall_patched.setText(R.string.uninstall_patched_17);
+																				open_settings.setText(R.string.open_settings_17);
+																				open_patched.setText(R.string.open_patched_17);
+																				installation_failed_0 = installation_failed.getText().toString();
+																				installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																				installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																				installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																				existing_patched_0 = existing_patched.getText().toString();
+																				existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																				close_0 = close.getText().toString();
+																				uninstall_0 = uninstall.getText().toString();
 																				
 																				select_language.setSelection((int)(17));
 																			}
 																			else {
 																				if (LANGUAGE.getString("LANGUAGE", "").equals("18")) {
-																					    title_1.setText(R.string.spotify_regular_18);
-																						title_2.setText(R.string.spotify_amoled_18);
-																						sub_text_installed.setText(R.string.installed_18);
-																						sub_text_1.setText(R.string.latest_18);
-																						sub_text_3.setText(R.string.latest_18);
-																						version_switch_1.setText(R.string.versions_18);
-																						version_switch_2.setText(R.string.versions_18);
-																						changelogs.setText(R.string.changelogs_18);
-																						title_sub.setText(R.string.manager_tools_18);
-																						device_cpu.setText(R.string.device_cpu_18);
-																						source.setText(R.string.source_18);
-																						support.setText(R.string.support_18);
-																						donate.setText(R.string.donate_18);
-																						about.setText(R.string.about_18);
-																						list_auto_refresh.setText(R.string.list_auto_refresh_18);
-																						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_18);
-																						force_auto_install.setText(R.string.force_auto_install_18);
-																						force_auto_install_info.setText(R.string.force_auto_install_desc_18);
-																						theme.setText(R.string.show_themes_18);
-																						apk_location.setText(R.string.apk_location_18);
-																						apk_location_info.setText(R.string.apk_location_desc_18);
-																						clear_directory_folders.setText(R.string.clear_directory_folders_18);
-																						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_18);
-																						reset_settings.setText(R.string.reset_settings_18);
-																						sub_title.setText(R.string.about_sub_18);
-																						developer_manager.setText(R.string.xmanager_dev_18);
-																						developer_spotify.setText(R.string.spotify_mod_devs_18);
-																						support_team.setText(R.string.telegram_support_team_18);
-																						mod_testers_1.setText(R.string.manager_testers_18);
-																						mod_testers_2.setText(R.string.manager_hosting_18);
-																						mobilism_team.setText(R.string.mobilism_team_18);
-																						forum_team.setText(R.string.forum_team_18);
-																						manager_team.setText(R.string.xspotify_team_18);
-																						contributors_1.setText(R.string.contributors_18);
-																						download_selected.setText(R.string.download_selected_18);
-																						download_ready.setText(R.string.download_ready_18);
-																						download_ready_desc.setText(R.string.download_ready_desc_18);
-																						downloading_file.setText(R.string.downloading_file_18);
-																						download_success.setText(R.string.download_success_18);
-																						new_update.setText(R.string.new_update_18);
-																						download_selected_0 = download_selected.getText().toString();
-																						download_ready_0 = download_ready.getText().toString();
-																						download_ready_desc_0 = download_ready_desc.getText().toString();
-																						downloading_file_0 = downloading_file.getText().toString();
-																						download_success_0 = download_success.getText().toString();
-																						copy_url.setText(R.string.copy_url_18);
-																						continue_1.setText(R.string.continue_1_18);
-																						cancel.setText(R.string.cancel_18);
-																					    fixer.setText(R.string.fixer_18);
-																						download.setText(R.string.download_18);
-																						later.setText(R.string.later_18);
-																						install_now.setText(R.string.install_now_18);
-																						install_update.setText(R.string.install_update_18);
-																						go_back.setText(R.string.go_back_18);
-																						download_update.setText(R.string.download_update_18);
-																						not_now.setText(R.string.not_now_18);
-																						show_support.setText(R.string.show_support_18);
-																						show_support_desc.setText(R.string.show_support_desc_18);
-																						copy_url_0 = copy_url.getText().toString();
-																						download_0 = download.getText().toString();
-																						continue_0 = continue_1.getText().toString();
-																						cancel_0 = cancel.getText().toString();
-																					    fixer_0 = fixer.getText().toString();
-																						later_0 = later.getText().toString();
-																						install_now_0 = install_now.getText().toString();
-																						go_back_0 = go_back.getText().toString();
-																						install_update_0 = install_update.getText().toString();
-																						main_title.setText(R.string.main_title_18);
-																						settings_title.setText(R.string.settings_title_18);
-																						about_title.setText(R.string.about_title_18);
-																						maintenance.setText(R.string.maintenance_18);
-																						maintenance_desc.setText(R.string.maintenance_desc_18);
-																						thanks.setText(R.string.thanks_18);
-																						language.setText(R.string.language_18);
-																						website.setText(R.string.website_18);
-																						discord.setText(R.string.discord_18);
-																						reddit.setText(R.string.reddit_18);
-																						faq.setText(R.string.faq_18);
-																						cloned_version.setText(R.string.cloned_version_18);
-																						cloned_version_info.setText(R.string.cloned_version_desc_18);
-																					    disable_reward_ad.setText(R.string.disable_rewarded_ads_18);
-																					    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_18);
-																					    installation_failed.setText(R.string.installation_failed_18);
-																					    installation_failed_desc.setText(R.string.installation_failed_desc_18);
-																					    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_18);
-																					    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_18);
-																					    existing_patched.setText(R.string.existing_patched_18);
-																					    existing_patched_desc.setText(R.string.existing_patched_desc_18);
-																					    close.setText(R.string.close_18);
-																					    cloned.setText(R.string.cloned_18);
-																					    ream.setText(R.string.ream_18);
-																					    install.setText(R.string.install_18);
-																					    uninstall.setText(R.string.uninstall_18);
-																					    ignore.setText(R.string.ignore_18);
-																					    delete.setText(R.string.delete_18);
-																					    uninstall_patched.setText(R.string.uninstall_patched_18);
-																					    open_settings.setText(R.string.open_settings_18);
-																					    open_patched.setText(R.string.open_patched_18);
-																						installation_failed_0 = installation_failed.getText().toString();
-																					    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																					    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-																					    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-																					    existing_patched_0 = existing_patched.getText().toString();
-																					    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																					    close_0 = close.getText().toString();
-																					    uninstall_0 = uninstall.getText().toString();
+																					title_1.setText(R.string.spotify_regular_18);
+																					title_2.setText(R.string.spotify_amoled_18);
+																					sub_text_installed.setText(R.string.installed_18);
+																					sub_text_1.setText(R.string.latest_18);
+																					sub_text_2.setText(R.string.latest_18);
+																					sub_text_3.setText(R.string.latest_18);
+																					version_switch_1.setText(R.string.versions_18);
+																					version_switch_2.setText(R.string.versions_18);
+																					version_switch_3.setText(R.string.versions_18);
+																					changelogs.setText(R.string.changelogs_18);
+																					title_sub.setText(R.string.manager_tools_18);
+																					device_cpu.setText(R.string.device_cpu_18);
+																					source.setText(R.string.source_18);
+																					support.setText(R.string.support_18);
+																					donate.setText(R.string.donate_18);
+																					about.setText(R.string.about_18);
+																					list_auto_refresh.setText(R.string.list_auto_refresh_18);
+																					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_18);
+																					force_auto_install.setText(R.string.force_auto_install_18);
+																					force_auto_install_info.setText(R.string.force_auto_install_desc_18);
+																					theme.setText(R.string.show_themes_18);
+																					apk_location.setText(R.string.apk_location_18);
+																					apk_location_info.setText(R.string.apk_location_desc_18);
+																					clear_directory_folders.setText(R.string.clear_directory_folders_18);
+																					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_18);
+																					reset_settings.setText(R.string.reset_settings_18);
+																					sub_title.setText(R.string.about_sub_18);
+																					developer_manager.setText(R.string.xmanager_dev_18);
+																					developer_spotify.setText(R.string.spotify_mod_devs_18);
+																					support_team.setText(R.string.telegram_support_team_18);
+																					mod_testers_1.setText(R.string.manager_testers_18);
+																					mod_testers_2.setText(R.string.manager_hosting_18);
+																					mobilism_team.setText(R.string.mobilism_team_18);
+																					forum_team.setText(R.string.forum_team_18);
+																					manager_team.setText(R.string.xspotify_team_18);
+																					contributors_1.setText(R.string.contributors_18);
+																					download_selected.setText(R.string.download_selected_18);
+																					download_ready.setText(R.string.download_ready_18);
+																					download_ready_desc.setText(R.string.download_ready_desc_18);
+																					downloading_file.setText(R.string.downloading_file_18);
+																					download_success.setText(R.string.download_success_18);
+																					new_update.setText(R.string.new_update_18);
+																					download_selected_0 = download_selected.getText().toString();
+																					download_ready_0 = download_ready.getText().toString();
+																					download_ready_desc_0 = download_ready_desc.getText().toString();
+																					downloading_file_0 = downloading_file.getText().toString();
+																					download_success_0 = download_success.getText().toString();
+																					copy_url.setText(R.string.copy_url_18);
+																					continue_1.setText(R.string.continue_1_18);
+																					cancel.setText(R.string.cancel_18);
+																					fixer.setText(R.string.fixer_18);
+																					download.setText(R.string.download_18);
+																					later.setText(R.string.later_18);
+																					install_now.setText(R.string.install_now_18);
+																					install_update.setText(R.string.install_update_18);
+																					go_back.setText(R.string.go_back_18);
+																					download_update.setText(R.string.download_update_18);
+																					not_now.setText(R.string.not_now_18);
+																					show_support.setText(R.string.show_support_18);
+																					show_support_desc.setText(R.string.show_support_desc_18);
+																					copy_url_0 = copy_url.getText().toString();
+																					download_0 = download.getText().toString();
+																					continue_0 = continue_1.getText().toString();
+																					cancel_0 = cancel.getText().toString();
+																					fixer_0 = fixer.getText().toString();
+																					later_0 = later.getText().toString();
+																					install_now_0 = install_now.getText().toString();
+																					go_back_0 = go_back.getText().toString();
+																					install_update_0 = install_update.getText().toString();
+																					main_title.setText(R.string.main_title_18);
+																					settings_title.setText(R.string.settings_title_18);
+																					about_title.setText(R.string.about_title_18);
+																					maintenance.setText(R.string.maintenance_18);
+																					maintenance_desc.setText(R.string.maintenance_desc_18);
+																					thanks.setText(R.string.thanks_18);
+																					language.setText(R.string.language_18);
+																					website.setText(R.string.website_18);
+																					discord.setText(R.string.discord_18);
+																					reddit.setText(R.string.reddit_18);
+																					faq.setText(R.string.faq_18);
+																					cloned_version.setText(R.string.cloned_version_18);
+																					cloned_version_info.setText(R.string.cloned_version_desc_18);
+																					disable_reward_ad.setText(R.string.disable_rewarded_ads_18);
+																					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_18);
+																					installation_failed.setText(R.string.installation_failed_18);
+																					installation_failed_desc.setText(R.string.installation_failed_desc_18);
+																					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_18);
+																					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_18);
+																					existing_patched.setText(R.string.existing_patched_18);
+																					existing_patched_desc.setText(R.string.existing_patched_desc_18);
+																					close.setText(R.string.close_18);
+																					cloned.setText(R.string.cloned_18);
+																					ream.setText(R.string.ream_18);
+																					install.setText(R.string.install_18);
+																					uninstall.setText(R.string.uninstall_18);
+																					ignore.setText(R.string.ignore_18);
+																					delete.setText(R.string.delete_18);
+																					uninstall_patched.setText(R.string.uninstall_patched_18);
+																					open_settings.setText(R.string.open_settings_18);
+																					open_patched.setText(R.string.open_patched_18);
+																					installation_failed_0 = installation_failed.getText().toString();
+																					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																					existing_patched_0 = existing_patched.getText().toString();
+																					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																					close_0 = close.getText().toString();
+																					uninstall_0 = uninstall.getText().toString();
 																					
 																					select_language.setSelection((int)(18));
 																				}
 																				else {
 																					if (LANGUAGE.getString("LANGUAGE", "").equals("19")) {
-																						    title_1.setText(R.string.spotify_regular_19);
-																							title_2.setText(R.string.spotify_amoled_19);
-																							sub_text_installed.setText(R.string.installed_19);
-																							sub_text_1.setText(R.string.latest_19);
-																							sub_text_3.setText(R.string.latest_19);
-																							version_switch_1.setText(R.string.versions_19);
-																							version_switch_2.setText(R.string.versions_19);
-																							changelogs.setText(R.string.changelogs_19);
-																							title_sub.setText(R.string.manager_tools_19);
-																							device_cpu.setText(R.string.device_cpu_19);
-																							source.setText(R.string.source_19);
-																							support.setText(R.string.support_19);
-																							donate.setText(R.string.donate_19);
-																							about.setText(R.string.about_19);
-																							list_auto_refresh.setText(R.string.list_auto_refresh_19);
-																							list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_19);
-																							force_auto_install.setText(R.string.force_auto_install_19);
-																							force_auto_install_info.setText(R.string.force_auto_install_desc_19);
-																							theme.setText(R.string.show_themes_19);
-																							apk_location.setText(R.string.apk_location_19);
-																							apk_location_info.setText(R.string.apk_location_desc_19);
-																							clear_directory_folders.setText(R.string.clear_directory_folders_19);
-																							clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_19);
-																							reset_settings.setText(R.string.reset_settings_19);
-																							sub_title.setText(R.string.about_sub_19);
-																							developer_manager.setText(R.string.xmanager_dev_19);
-																							developer_spotify.setText(R.string.spotify_mod_devs_19);
-																							support_team.setText(R.string.telegram_support_team_19);
-																							mod_testers_1.setText(R.string.manager_testers_19);
-																							mod_testers_2.setText(R.string.manager_hosting_19);
-																							mobilism_team.setText(R.string.mobilism_team_19);
-																							forum_team.setText(R.string.forum_team_19);
-																							manager_team.setText(R.string.xspotify_team_19);
-																							contributors_1.setText(R.string.contributors_19);
-																							download_selected.setText(R.string.download_selected_19);
-																							download_ready.setText(R.string.download_ready_19);
-																							download_ready_desc.setText(R.string.download_ready_desc_19);
-																							downloading_file.setText(R.string.downloading_file_19);
-																							download_success.setText(R.string.download_success_19);
-																							new_update.setText(R.string.new_update_19);
-																							download_selected_0 = download_selected.getText().toString();
-																							download_ready_0 = download_ready.getText().toString();
-																							download_ready_desc_0 = download_ready_desc.getText().toString();
-																							downloading_file_0 = downloading_file.getText().toString();
-																							download_success_0 = download_success.getText().toString();
-																							copy_url.setText(R.string.copy_url_19);
-																							continue_1.setText(R.string.continue_1_19);
-																							cancel.setText(R.string.cancel_19);
-																						    fixer.setText(R.string.fixer_19);
-																							download.setText(R.string.download_19);
-																							later.setText(R.string.later_19);
-																							install_now.setText(R.string.install_now_19);
-																							install_update.setText(R.string.install_update_19);
-																							go_back.setText(R.string.go_back_19);
-																							download_update.setText(R.string.download_update_19);
-																							not_now.setText(R.string.not_now_19);
-																							show_support.setText(R.string.show_support_19);
-																							show_support_desc.setText(R.string.show_support_desc_19);
-																							copy_url_0 = copy_url.getText().toString();
-																							download_0 = download.getText().toString();
-																							continue_0 = continue_1.getText().toString();
-																							cancel_0 = cancel.getText().toString();
-																						    fixer_0 = fixer.getText().toString();
-																							later_0 = later.getText().toString();
-																							install_now_0 = install_now.getText().toString();
-																							go_back_0 = go_back.getText().toString();
-																							install_update_0 = install_update.getText().toString();
-																							main_title.setText(R.string.main_title_19);
-																							settings_title.setText(R.string.settings_title_19);
-																							about_title.setText(R.string.about_title_19);
-																							maintenance.setText(R.string.maintenance_19);
-																							maintenance_desc.setText(R.string.maintenance_desc_19);
-																							thanks.setText(R.string.thanks_19);
-																							language.setText(R.string.language_19);
-																							website.setText(R.string.website_19);
-																							discord.setText(R.string.discord_19);
-																							reddit.setText(R.string.reddit_19);
-																							faq.setText(R.string.faq_19);
-																							cloned_version.setText(R.string.cloned_version_19);
-																							cloned_version_info.setText(R.string.cloned_version_desc_19);
-																						    disable_reward_ad.setText(R.string.disable_rewarded_ads_19);
-																						    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_19);
-																						    installation_failed.setText(R.string.installation_failed_19);
-																						    installation_failed_desc.setText(R.string.installation_failed_desc_19);
-																						    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_19);
-																						    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_19);
-																						    existing_patched.setText(R.string.existing_patched_19);
-																						    existing_patched_desc.setText(R.string.existing_patched_desc_19);
-																						    close.setText(R.string.close_19);
-																						    cloned.setText(R.string.cloned_19);
-																						    ream.setText(R.string.ream_19);
-																						    install.setText(R.string.install_19);
-																						    uninstall.setText(R.string.uninstall_19);
-																						    ignore.setText(R.string.ignore_19);
-																						    delete.setText(R.string.delete_19);
-																						    uninstall_patched.setText(R.string.uninstall_patched_19);
-																						    open_settings.setText(R.string.open_settings_19);
-																						    open_patched.setText(R.string.open_patched_19);
-																							installation_failed_0 = installation_failed.getText().toString();
-																						    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																						    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-																						    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-																						    existing_patched_0 = existing_patched.getText().toString();
-																						    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																						    close_0 = close.getText().toString();
-																						    uninstall_0 = uninstall.getText().toString();
+																						title_1.setText(R.string.spotify_regular_19);
+																						title_2.setText(R.string.spotify_amoled_19);
+																						sub_text_installed.setText(R.string.installed_19);
+																						sub_text_1.setText(R.string.latest_19);
+																						sub_text_2.setText(R.string.latest_19);
+																						sub_text_3.setText(R.string.latest_19);
+																						version_switch_1.setText(R.string.versions_19);
+																						version_switch_2.setText(R.string.versions_19);
+																						version_switch_3.setText(R.string.versions_19);
+																						changelogs.setText(R.string.changelogs_19);
+																						title_sub.setText(R.string.manager_tools_19);
+																						device_cpu.setText(R.string.device_cpu_19);
+																						source.setText(R.string.source_19);
+																						support.setText(R.string.support_19);
+																						donate.setText(R.string.donate_19);
+																						about.setText(R.string.about_19);
+																						list_auto_refresh.setText(R.string.list_auto_refresh_19);
+																						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_19);
+																						force_auto_install.setText(R.string.force_auto_install_19);
+																						force_auto_install_info.setText(R.string.force_auto_install_desc_19);
+																						theme.setText(R.string.show_themes_19);
+																						apk_location.setText(R.string.apk_location_19);
+																						apk_location_info.setText(R.string.apk_location_desc_19);
+																						clear_directory_folders.setText(R.string.clear_directory_folders_19);
+																						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_19);
+																						reset_settings.setText(R.string.reset_settings_19);
+																						sub_title.setText(R.string.about_sub_19);
+																						developer_manager.setText(R.string.xmanager_dev_19);
+																						developer_spotify.setText(R.string.spotify_mod_devs_19);
+																						support_team.setText(R.string.telegram_support_team_19);
+																						mod_testers_1.setText(R.string.manager_testers_19);
+																						mod_testers_2.setText(R.string.manager_hosting_19);
+																						mobilism_team.setText(R.string.mobilism_team_19);
+																						forum_team.setText(R.string.forum_team_19);
+																						manager_team.setText(R.string.xspotify_team_19);
+																						contributors_1.setText(R.string.contributors_19);
+																						download_selected.setText(R.string.download_selected_19);
+																						download_ready.setText(R.string.download_ready_19);
+																						download_ready_desc.setText(R.string.download_ready_desc_19);
+																						downloading_file.setText(R.string.downloading_file_19);
+																						download_success.setText(R.string.download_success_19);
+																						new_update.setText(R.string.new_update_19);
+																						download_selected_0 = download_selected.getText().toString();
+																						download_ready_0 = download_ready.getText().toString();
+																						download_ready_desc_0 = download_ready_desc.getText().toString();
+																						downloading_file_0 = downloading_file.getText().toString();
+																						download_success_0 = download_success.getText().toString();
+																						copy_url.setText(R.string.copy_url_19);
+																						continue_1.setText(R.string.continue_1_19);
+																						cancel.setText(R.string.cancel_19);
+																						fixer.setText(R.string.fixer_19);
+																						download.setText(R.string.download_19);
+																						later.setText(R.string.later_19);
+																						install_now.setText(R.string.install_now_19);
+																						install_update.setText(R.string.install_update_19);
+																						go_back.setText(R.string.go_back_19);
+																						download_update.setText(R.string.download_update_19);
+																						not_now.setText(R.string.not_now_19);
+																						show_support.setText(R.string.show_support_19);
+																						show_support_desc.setText(R.string.show_support_desc_19);
+																						copy_url_0 = copy_url.getText().toString();
+																						download_0 = download.getText().toString();
+																						continue_0 = continue_1.getText().toString();
+																						cancel_0 = cancel.getText().toString();
+																						fixer_0 = fixer.getText().toString();
+																						later_0 = later.getText().toString();
+																						install_now_0 = install_now.getText().toString();
+																						go_back_0 = go_back.getText().toString();
+																						install_update_0 = install_update.getText().toString();
+																						main_title.setText(R.string.main_title_19);
+																						settings_title.setText(R.string.settings_title_19);
+																						about_title.setText(R.string.about_title_19);
+																						maintenance.setText(R.string.maintenance_19);
+																						maintenance_desc.setText(R.string.maintenance_desc_19);
+																						thanks.setText(R.string.thanks_19);
+																						language.setText(R.string.language_19);
+																						website.setText(R.string.website_19);
+																						discord.setText(R.string.discord_19);
+																						reddit.setText(R.string.reddit_19);
+																						faq.setText(R.string.faq_19);
+																						cloned_version.setText(R.string.cloned_version_19);
+																						cloned_version_info.setText(R.string.cloned_version_desc_19);
+																						disable_reward_ad.setText(R.string.disable_rewarded_ads_19);
+																						disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_19);
+																						installation_failed.setText(R.string.installation_failed_19);
+																						installation_failed_desc.setText(R.string.installation_failed_desc_19);
+																						installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_19);
+																						installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_19);
+																						existing_patched.setText(R.string.existing_patched_19);
+																						existing_patched_desc.setText(R.string.existing_patched_desc_19);
+																						close.setText(R.string.close_19);
+																						cloned.setText(R.string.cloned_19);
+																						ream.setText(R.string.ream_19);
+																						install.setText(R.string.install_19);
+																						uninstall.setText(R.string.uninstall_19);
+																						ignore.setText(R.string.ignore_19);
+																						delete.setText(R.string.delete_19);
+																						uninstall_patched.setText(R.string.uninstall_patched_19);
+																						open_settings.setText(R.string.open_settings_19);
+																						open_patched.setText(R.string.open_patched_19);
+																						installation_failed_0 = installation_failed.getText().toString();
+																						installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																						installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																						installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																						existing_patched_0 = existing_patched.getText().toString();
+																						existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																						close_0 = close.getText().toString();
+																						uninstall_0 = uninstall.getText().toString();
 																						
 																						select_language.setSelection((int)(19));
 																					}
 																					else {
 																						if (LANGUAGE.getString("LANGUAGE", "").equals("20")) {
-																							    title_1.setText(R.string.spotify_regular_20);
-																								title_2.setText(R.string.spotify_amoled_20);
-																								sub_text_installed.setText(R.string.installed_20);
-																								sub_text_1.setText(R.string.latest_20);
-																								sub_text_3.setText(R.string.latest_20);
-																								version_switch_1.setText(R.string.versions_20);
-																								version_switch_2.setText(R.string.versions_20);
-																								changelogs.setText(R.string.changelogs_20);
-																								title_sub.setText(R.string.manager_tools_20);
-																								device_cpu.setText(R.string.device_cpu_20);
-																								source.setText(R.string.source_20);
-																								support.setText(R.string.support_20);
-																								donate.setText(R.string.donate_20);
-																								about.setText(R.string.about_20);
-																								list_auto_refresh.setText(R.string.list_auto_refresh_20);
-																								list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_20);
-																								force_auto_install.setText(R.string.force_auto_install_20);
-																								force_auto_install_info.setText(R.string.force_auto_install_desc_20);
-																								theme.setText(R.string.show_themes_20);
-																								apk_location.setText(R.string.apk_location_20);
-																								apk_location_info.setText(R.string.apk_location_desc_20);
-																								clear_directory_folders.setText(R.string.clear_directory_folders_20);
-																								clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_20);
-																								reset_settings.setText(R.string.reset_settings_20);
-																								sub_title.setText(R.string.about_sub_20);
-																								developer_manager.setText(R.string.xmanager_dev_20);
-																								developer_spotify.setText(R.string.spotify_mod_devs_20);
-																								support_team.setText(R.string.telegram_support_team_20);
-																								mod_testers_1.setText(R.string.manager_testers_20);
-																								mod_testers_2.setText(R.string.manager_hosting_20);
-																								mobilism_team.setText(R.string.mobilism_team_20);
-																								forum_team.setText(R.string.forum_team_20);
-																								manager_team.setText(R.string.xspotify_team_20);
-																								contributors_1.setText(R.string.contributors_20);
-																								download_selected.setText(R.string.download_selected_20);
-																								download_ready.setText(R.string.download_ready_20);
-																								download_ready_desc.setText(R.string.download_ready_desc_20);
-																								downloading_file.setText(R.string.downloading_file_20);
-																								download_success.setText(R.string.download_success_20);
-																								new_update.setText(R.string.new_update_20);
-																								download_selected_0 = download_selected.getText().toString();
-																								download_ready_0 = download_ready.getText().toString();
-																								download_ready_desc_0 = download_ready_desc.getText().toString();
-																								downloading_file_0 = downloading_file.getText().toString();
-																								download_success_0 = download_success.getText().toString();
-																								copy_url.setText(R.string.copy_url_20);
-																								continue_1.setText(R.string.continue_1_20);
-																								cancel.setText(R.string.cancel_20);
-																							    fixer.setText(R.string.fixer_20);
-																								download.setText(R.string.download_20);
-																								later.setText(R.string.later_20);
-																								install_now.setText(R.string.install_now_20);
-																								install_update.setText(R.string.install_update_20);
-																								go_back.setText(R.string.go_back_20);
-																								download_update.setText(R.string.download_update_20);
-																								not_now.setText(R.string.not_now_20);
-																								show_support.setText(R.string.show_support_20);
-																								show_support_desc.setText(R.string.show_support_desc_20);
-																								copy_url_0 = copy_url.getText().toString();
-																								download_0 = download.getText().toString();
-																								continue_0 = continue_1.getText().toString();
-																								cancel_0 = cancel.getText().toString();
-																							    fixer_0 = fixer.getText().toString();
-																								later_0 = later.getText().toString();
-																								install_now_0 = install_now.getText().toString();
-																								go_back_0 = go_back.getText().toString();
-																								install_update_0 = install_update.getText().toString();
-																								main_title.setText(R.string.main_title_20);
-																								settings_title.setText(R.string.settings_title_20);
-																								about_title.setText(R.string.about_title_20);
-																								maintenance.setText(R.string.maintenance_20);
-																								maintenance_desc.setText(R.string.maintenance_desc_20);
-																								thanks.setText(R.string.thanks_20);
-																								language.setText(R.string.language_20);
-																								website.setText(R.string.website_20);
-																								discord.setText(R.string.discord_20);
-																								reddit.setText(R.string.reddit_20);
-																								faq.setText(R.string.faq_20);
-																								cloned_version.setText(R.string.cloned_version_20);
-																								cloned_version_info.setText(R.string.cloned_version_desc_20);
-																							    disable_reward_ad.setText(R.string.disable_rewarded_ads_20);
-																							    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_20);
-																							    installation_failed.setText(R.string.installation_failed_20);
-																							    installation_failed_desc.setText(R.string.installation_failed_desc_20);
-																							    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_20);
-																							    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_20);
-																							    existing_patched.setText(R.string.existing_patched_20);
-																							    existing_patched_desc.setText(R.string.existing_patched_desc_20);
-																							    close.setText(R.string.close_20);
-																							    cloned.setText(R.string.cloned_20);
-																							    ream.setText(R.string.ream_20);
-																							    install.setText(R.string.install_20);
-																							    uninstall.setText(R.string.uninstall_20);
-																							    ignore.setText(R.string.ignore_20);
-																							    delete.setText(R.string.delete_20);
-																							    uninstall_patched.setText(R.string.uninstall_patched_20);
-																							    open_settings.setText(R.string.open_settings_20);
-																							    open_patched.setText(R.string.open_patched_20);
-																								installation_failed_0 = installation_failed.getText().toString();
-																							    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																							    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-																							    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-																							    existing_patched_0 = existing_patched.getText().toString();
-																							    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																							    close_0 = close.getText().toString();
-																							    uninstall_0 = uninstall.getText().toString();
+																							title_1.setText(R.string.spotify_regular_20);
+																							title_2.setText(R.string.spotify_amoled_20);
+																							sub_text_installed.setText(R.string.installed_20);
+																							sub_text_1.setText(R.string.latest_20);
+																							sub_text_2.setText(R.string.latest_20);
+																							sub_text_3.setText(R.string.latest_20);
+																							version_switch_1.setText(R.string.versions_20);
+																							version_switch_2.setText(R.string.versions_20);
+																							version_switch_3.setText(R.string.versions_20);
+																							changelogs.setText(R.string.changelogs_20);
+																							title_sub.setText(R.string.manager_tools_20);
+																							device_cpu.setText(R.string.device_cpu_20);
+																							source.setText(R.string.source_20);
+																							support.setText(R.string.support_20);
+																							donate.setText(R.string.donate_20);
+																							about.setText(R.string.about_20);
+																							list_auto_refresh.setText(R.string.list_auto_refresh_20);
+																							list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_20);
+																							force_auto_install.setText(R.string.force_auto_install_20);
+																							force_auto_install_info.setText(R.string.force_auto_install_desc_20);
+																							theme.setText(R.string.show_themes_20);
+																							apk_location.setText(R.string.apk_location_20);
+																							apk_location_info.setText(R.string.apk_location_desc_20);
+																							clear_directory_folders.setText(R.string.clear_directory_folders_20);
+																							clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_20);
+																							reset_settings.setText(R.string.reset_settings_20);
+																							sub_title.setText(R.string.about_sub_20);
+																							developer_manager.setText(R.string.xmanager_dev_20);
+																							developer_spotify.setText(R.string.spotify_mod_devs_20);
+																							support_team.setText(R.string.telegram_support_team_20);
+																							mod_testers_1.setText(R.string.manager_testers_20);
+																							mod_testers_2.setText(R.string.manager_hosting_20);
+																							mobilism_team.setText(R.string.mobilism_team_20);
+																							forum_team.setText(R.string.forum_team_20);
+																							manager_team.setText(R.string.xspotify_team_20);
+																							contributors_1.setText(R.string.contributors_20);
+																							download_selected.setText(R.string.download_selected_20);
+																							download_ready.setText(R.string.download_ready_20);
+																							download_ready_desc.setText(R.string.download_ready_desc_20);
+																							downloading_file.setText(R.string.downloading_file_20);
+																							download_success.setText(R.string.download_success_20);
+																							new_update.setText(R.string.new_update_20);
+																							download_selected_0 = download_selected.getText().toString();
+																							download_ready_0 = download_ready.getText().toString();
+																							download_ready_desc_0 = download_ready_desc.getText().toString();
+																							downloading_file_0 = downloading_file.getText().toString();
+																							download_success_0 = download_success.getText().toString();
+																							copy_url.setText(R.string.copy_url_20);
+																							continue_1.setText(R.string.continue_1_20);
+																							cancel.setText(R.string.cancel_20);
+																							fixer.setText(R.string.fixer_20);
+																							download.setText(R.string.download_20);
+																							later.setText(R.string.later_20);
+																							install_now.setText(R.string.install_now_20);
+																							install_update.setText(R.string.install_update_20);
+																							go_back.setText(R.string.go_back_20);
+																							download_update.setText(R.string.download_update_20);
+																							not_now.setText(R.string.not_now_20);
+																							show_support.setText(R.string.show_support_20);
+																							show_support_desc.setText(R.string.show_support_desc_20);
+																							copy_url_0 = copy_url.getText().toString();
+																							download_0 = download.getText().toString();
+																							continue_0 = continue_1.getText().toString();
+																							cancel_0 = cancel.getText().toString();
+																							fixer_0 = fixer.getText().toString();
+																							later_0 = later.getText().toString();
+																							install_now_0 = install_now.getText().toString();
+																							go_back_0 = go_back.getText().toString();
+																							install_update_0 = install_update.getText().toString();
+																							main_title.setText(R.string.main_title_20);
+																							settings_title.setText(R.string.settings_title_20);
+																							about_title.setText(R.string.about_title_20);
+																							maintenance.setText(R.string.maintenance_20);
+																							maintenance_desc.setText(R.string.maintenance_desc_20);
+																							thanks.setText(R.string.thanks_20);
+																							language.setText(R.string.language_20);
+																							website.setText(R.string.website_20);
+																							discord.setText(R.string.discord_20);
+																							reddit.setText(R.string.reddit_20);
+																							faq.setText(R.string.faq_20);
+																							cloned_version.setText(R.string.cloned_version_20);
+																							cloned_version_info.setText(R.string.cloned_version_desc_20);
+																							disable_reward_ad.setText(R.string.disable_rewarded_ads_20);
+																							disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_20);
+																							installation_failed.setText(R.string.installation_failed_20);
+																							installation_failed_desc.setText(R.string.installation_failed_desc_20);
+																							installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_20);
+																							installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_20);
+																							existing_patched.setText(R.string.existing_patched_20);
+																							existing_patched_desc.setText(R.string.existing_patched_desc_20);
+																							close.setText(R.string.close_20);
+																							cloned.setText(R.string.cloned_20);
+																							ream.setText(R.string.ream_20);
+																							install.setText(R.string.install_20);
+																							uninstall.setText(R.string.uninstall_20);
+																							ignore.setText(R.string.ignore_20);
+																							delete.setText(R.string.delete_20);
+																							uninstall_patched.setText(R.string.uninstall_patched_20);
+																							open_settings.setText(R.string.open_settings_20);
+																							open_patched.setText(R.string.open_patched_20);
+																							installation_failed_0 = installation_failed.getText().toString();
+																							installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																							installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																							installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																							existing_patched_0 = existing_patched.getText().toString();
+																							existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																							close_0 = close.getText().toString();
+																							uninstall_0 = uninstall.getText().toString();
 																							
 																							select_language.setSelection((int)(20));
 																						}
 																						else {
 																							if (LANGUAGE.getString("LANGUAGE", "").equals("21")) {
-																								    title_1.setText(R.string.spotify_regular_21);
-																									title_2.setText(R.string.spotify_amoled_21);
-																									sub_text_installed.setText(R.string.installed_21);
-																									sub_text_1.setText(R.string.latest_21);
-																									sub_text_3.setText(R.string.latest_21);
-																									version_switch_1.setText(R.string.versions_21);
-																									version_switch_2.setText(R.string.versions_21);
-																									changelogs.setText(R.string.changelogs_21);
-																									title_sub.setText(R.string.manager_tools_21);
-																									device_cpu.setText(R.string.device_cpu_21);
-																									source.setText(R.string.source_21);
-																									support.setText(R.string.support_21);
-																									donate.setText(R.string.donate_21);
-																									about.setText(R.string.about_21);
-																									list_auto_refresh.setText(R.string.list_auto_refresh_21);
-																									list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_21);
-																									force_auto_install.setText(R.string.force_auto_install_21);
-																									force_auto_install_info.setText(R.string.force_auto_install_desc_21);
-																									theme.setText(R.string.show_themes_21);
-																									apk_location.setText(R.string.apk_location_21);
-																									apk_location_info.setText(R.string.apk_location_desc_21);
-																									clear_directory_folders.setText(R.string.clear_directory_folders_21);
-																									clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_21);
-																									reset_settings.setText(R.string.reset_settings_21);
-																									sub_title.setText(R.string.about_sub_21);
-																									developer_manager.setText(R.string.xmanager_dev_21);
-																									developer_spotify.setText(R.string.spotify_mod_devs_21);
-																									support_team.setText(R.string.telegram_support_team_21);
-																									mod_testers_1.setText(R.string.manager_testers_21);
-																									mod_testers_2.setText(R.string.manager_hosting_21);
-																									mobilism_team.setText(R.string.mobilism_team_21);
-																									forum_team.setText(R.string.forum_team_21);
-																									manager_team.setText(R.string.xspotify_team_21);
-																									contributors_1.setText(R.string.contributors_21);
-																									download_selected.setText(R.string.download_selected_21);
-																									download_ready.setText(R.string.download_ready_21);
-																									download_ready_desc.setText(R.string.download_ready_desc_21);
-																									downloading_file.setText(R.string.downloading_file_21);
-																									download_success.setText(R.string.download_success_21);
-																									new_update.setText(R.string.new_update_21);
-																									download_selected_0 = download_selected.getText().toString();
-																									download_ready_0 = download_ready.getText().toString();
-																									download_ready_desc_0 = download_ready_desc.getText().toString();
-																									downloading_file_0 = downloading_file.getText().toString();
-																									download_success_0 = download_success.getText().toString();
-																									copy_url.setText(R.string.copy_url_21);
-																									continue_1.setText(R.string.continue_1_21);
-																									cancel.setText(R.string.cancel_21);
-																								    fixer.setText(R.string.fixer_21);
-																									download.setText(R.string.download_21);
-																									later.setText(R.string.later_21);
-																									install_now.setText(R.string.install_now_21);
-																									install_update.setText(R.string.install_update_21);
-																									go_back.setText(R.string.go_back_21);
-																									download_update.setText(R.string.download_update_21);
-																									not_now.setText(R.string.not_now_21);
-																									show_support.setText(R.string.show_support_21);
-																									show_support_desc.setText(R.string.show_support_desc_21);
-																									copy_url_0 = copy_url.getText().toString();
-																									download_0 = download.getText().toString();
-																									continue_0 = continue_1.getText().toString();
-																									cancel_0 = cancel.getText().toString();
-																								    fixer_0 = fixer.getText().toString();
-																									later_0 = later.getText().toString();
-																									install_now_0 = install_now.getText().toString();
-																									go_back_0 = go_back.getText().toString();
-																									install_update_0 = install_update.getText().toString();
-																									main_title.setText(R.string.main_title_21);
-																									settings_title.setText(R.string.settings_title_21);
-																									about_title.setText(R.string.about_title_21);
-																									maintenance.setText(R.string.maintenance_21);
-																									maintenance_desc.setText(R.string.maintenance_desc_21);
-																									thanks.setText(R.string.thanks_21);
-																									language.setText(R.string.language_21);
-																									website.setText(R.string.website_21);
-																									discord.setText(R.string.discord_21);
-																									reddit.setText(R.string.reddit_21);
-																									faq.setText(R.string.faq_21);
-																									cloned_version.setText(R.string.cloned_version_21);
-																									cloned_version_info.setText(R.string.cloned_version_desc_21);
-																								    disable_reward_ad.setText(R.string.disable_rewarded_ads_21);
-																								    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_21);
-																								    installation_failed.setText(R.string.installation_failed_21);
-																								    installation_failed_desc.setText(R.string.installation_failed_desc_21);
-																								    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_21);
-																								    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_21);
-																								    existing_patched.setText(R.string.existing_patched_21);
-																								    existing_patched_desc.setText(R.string.existing_patched_desc_21);
-																								    close.setText(R.string.close_21);
-																								    cloned.setText(R.string.cloned_21);
-																								    ream.setText(R.string.ream_21);
-																								    install.setText(R.string.install_21);
-																								    uninstall.setText(R.string.uninstall_21);
-																								    ignore.setText(R.string.ignore_21);
-																								    delete.setText(R.string.delete_21);
-																								    uninstall_patched.setText(R.string.uninstall_patched_21);
-																								    open_settings.setText(R.string.open_settings_21);
-																								    open_patched.setText(R.string.open_patched_21);
-																									installation_failed_0 = installation_failed.getText().toString();
-																								    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																								    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-																								    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-																								    existing_patched_0 = existing_patched.getText().toString();
-																								    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																								    close_0 = close.getText().toString();
-																								    uninstall_0 = uninstall.getText().toString();
+																								title_1.setText(R.string.spotify_regular_21);
+																								title_2.setText(R.string.spotify_amoled_21);
+																								sub_text_installed.setText(R.string.installed_21);
+																								sub_text_1.setText(R.string.latest_21);
+																								sub_text_2.setText(R.string.latest_21);
+																								sub_text_3.setText(R.string.latest_21);
+																								version_switch_1.setText(R.string.versions_21);
+																								version_switch_2.setText(R.string.versions_21);
+																								version_switch_3.setText(R.string.versions_21);
+																								changelogs.setText(R.string.changelogs_21);
+																								title_sub.setText(R.string.manager_tools_21);
+																								device_cpu.setText(R.string.device_cpu_21);
+																								source.setText(R.string.source_21);
+																								support.setText(R.string.support_21);
+																								donate.setText(R.string.donate_21);
+																								about.setText(R.string.about_21);
+																								list_auto_refresh.setText(R.string.list_auto_refresh_21);
+																								list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_21);
+																								force_auto_install.setText(R.string.force_auto_install_21);
+																								force_auto_install_info.setText(R.string.force_auto_install_desc_21);
+																								theme.setText(R.string.show_themes_21);
+																								apk_location.setText(R.string.apk_location_21);
+																								apk_location_info.setText(R.string.apk_location_desc_21);
+																								clear_directory_folders.setText(R.string.clear_directory_folders_21);
+																								clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_21);
+																								reset_settings.setText(R.string.reset_settings_21);
+																								sub_title.setText(R.string.about_sub_21);
+																								developer_manager.setText(R.string.xmanager_dev_21);
+																								developer_spotify.setText(R.string.spotify_mod_devs_21);
+																								support_team.setText(R.string.telegram_support_team_21);
+																								mod_testers_1.setText(R.string.manager_testers_21);
+																								mod_testers_2.setText(R.string.manager_hosting_21);
+																								mobilism_team.setText(R.string.mobilism_team_21);
+																								forum_team.setText(R.string.forum_team_21);
+																								manager_team.setText(R.string.xspotify_team_21);
+																								contributors_1.setText(R.string.contributors_21);
+																								download_selected.setText(R.string.download_selected_21);
+																								download_ready.setText(R.string.download_ready_21);
+																								download_ready_desc.setText(R.string.download_ready_desc_21);
+																								downloading_file.setText(R.string.downloading_file_21);
+																								download_success.setText(R.string.download_success_21);
+																								new_update.setText(R.string.new_update_21);
+																								download_selected_0 = download_selected.getText().toString();
+																								download_ready_0 = download_ready.getText().toString();
+																								download_ready_desc_0 = download_ready_desc.getText().toString();
+																								downloading_file_0 = downloading_file.getText().toString();
+																								download_success_0 = download_success.getText().toString();
+																								copy_url.setText(R.string.copy_url_21);
+																								continue_1.setText(R.string.continue_1_21);
+																								cancel.setText(R.string.cancel_21);
+																								fixer.setText(R.string.fixer_21);
+																								download.setText(R.string.download_21);
+																								later.setText(R.string.later_21);
+																								install_now.setText(R.string.install_now_21);
+																								install_update.setText(R.string.install_update_21);
+																								go_back.setText(R.string.go_back_21);
+																								download_update.setText(R.string.download_update_21);
+																								not_now.setText(R.string.not_now_21);
+																								show_support.setText(R.string.show_support_21);
+																								show_support_desc.setText(R.string.show_support_desc_21);
+																								copy_url_0 = copy_url.getText().toString();
+																								download_0 = download.getText().toString();
+																								continue_0 = continue_1.getText().toString();
+																								cancel_0 = cancel.getText().toString();
+																								fixer_0 = fixer.getText().toString();
+																								later_0 = later.getText().toString();
+																								install_now_0 = install_now.getText().toString();
+																								go_back_0 = go_back.getText().toString();
+																								install_update_0 = install_update.getText().toString();
+																								main_title.setText(R.string.main_title_21);
+																								settings_title.setText(R.string.settings_title_21);
+																								about_title.setText(R.string.about_title_21);
+																								maintenance.setText(R.string.maintenance_21);
+																								maintenance_desc.setText(R.string.maintenance_desc_21);
+																								thanks.setText(R.string.thanks_21);
+																								language.setText(R.string.language_21);
+																								website.setText(R.string.website_21);
+																								discord.setText(R.string.discord_21);
+																								reddit.setText(R.string.reddit_21);
+																								faq.setText(R.string.faq_21);
+																								cloned_version.setText(R.string.cloned_version_21);
+																								cloned_version_info.setText(R.string.cloned_version_desc_21);
+																								disable_reward_ad.setText(R.string.disable_rewarded_ads_21);
+																								disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_21);
+																								installation_failed.setText(R.string.installation_failed_21);
+																								installation_failed_desc.setText(R.string.installation_failed_desc_21);
+																								installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_21);
+																								installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_21);
+																								existing_patched.setText(R.string.existing_patched_21);
+																								existing_patched_desc.setText(R.string.existing_patched_desc_21);
+																								close.setText(R.string.close_21);
+																								cloned.setText(R.string.cloned_21);
+																								ream.setText(R.string.ream_21);
+																								install.setText(R.string.install_21);
+																								uninstall.setText(R.string.uninstall_21);
+																								ignore.setText(R.string.ignore_21);
+																								delete.setText(R.string.delete_21);
+																								uninstall_patched.setText(R.string.uninstall_patched_21);
+																								open_settings.setText(R.string.open_settings_21);
+																								open_patched.setText(R.string.open_patched_21);
+																								installation_failed_0 = installation_failed.getText().toString();
+																								installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																								installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																								installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																								existing_patched_0 = existing_patched.getText().toString();
+																								existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																								close_0 = close.getText().toString();
+																								uninstall_0 = uninstall.getText().toString();
 																								
 																								select_language.setSelection((int)(21));
 																							}
 																							else {
 																								if (LANGUAGE.getString("LANGUAGE", "").equals("22")) {
-																									    title_1.setText(R.string.spotify_regular_22);
-																										title_2.setText(R.string.spotify_amoled_22);
-																										sub_text_installed.setText(R.string.installed_22);
-																										sub_text_1.setText(R.string.latest_22);
-																										sub_text_3.setText(R.string.latest_22);
-																										version_switch_1.setText(R.string.versions_22);
-																										version_switch_2.setText(R.string.versions_22);
-																										changelogs.setText(R.string.changelogs_22);
-																										title_sub.setText(R.string.manager_tools_22);
-																										device_cpu.setText(R.string.device_cpu_22);
-																										source.setText(R.string.source_22);
-																										support.setText(R.string.support_22);
-																										donate.setText(R.string.donate_22);
-																										about.setText(R.string.about_22);
-																										list_auto_refresh.setText(R.string.list_auto_refresh_22);
-																										list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_22);
-																										force_auto_install.setText(R.string.force_auto_install_22);
-																										force_auto_install_info.setText(R.string.force_auto_install_desc_22);
-																										theme.setText(R.string.show_themes_22);
-																										apk_location.setText(R.string.apk_location_22);
-																										apk_location_info.setText(R.string.apk_location_desc_22);
-																										clear_directory_folders.setText(R.string.clear_directory_folders_22);
-																										clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_22);
-																										reset_settings.setText(R.string.reset_settings_22);
-																										sub_title.setText(R.string.about_sub_22);
-																										developer_manager.setText(R.string.xmanager_dev_22);
-																										developer_spotify.setText(R.string.spotify_mod_devs_22);
-																										support_team.setText(R.string.telegram_support_team_22);
-																										mod_testers_1.setText(R.string.manager_testers_22);
-																										mod_testers_2.setText(R.string.manager_hosting_22);
-																										mobilism_team.setText(R.string.mobilism_team_22);
-																										forum_team.setText(R.string.forum_team_22);
-																										manager_team.setText(R.string.xspotify_team_22);
-																										contributors_1.setText(R.string.contributors_22);
-																										download_selected.setText(R.string.download_selected_22);
-																										download_ready.setText(R.string.download_ready_22);
-																										download_ready_desc.setText(R.string.download_ready_desc_22);
-																										downloading_file.setText(R.string.downloading_file_22);
-																										download_success.setText(R.string.download_success_22);
-																										new_update.setText(R.string.new_update_22);
-																										download_selected_0 = download_selected.getText().toString();
-																										download_ready_0 = download_ready.getText().toString();
-																										download_ready_desc_0 = download_ready_desc.getText().toString();
-																										downloading_file_0 = downloading_file.getText().toString();
-																										download_success_0 = download_success.getText().toString();
-																										copy_url.setText(R.string.copy_url_22);
-																										continue_1.setText(R.string.continue_1_22);
-																										cancel.setText(R.string.cancel_22);
-																									    fixer.setText(R.string.fixer_22);
-																										download.setText(R.string.download_22);
-																										later.setText(R.string.later_22);
-																										install_now.setText(R.string.install_now_22);
-																										install_update.setText(R.string.install_update_22);
-																										go_back.setText(R.string.go_back_22);
-																										download_update.setText(R.string.download_update_22);
-																										not_now.setText(R.string.not_now_22);
-																										show_support.setText(R.string.show_support_22);
-																										show_support_desc.setText(R.string.show_support_desc_22);
-																										copy_url_0 = copy_url.getText().toString();
-																										download_0 = download.getText().toString();
-																										continue_0 = continue_1.getText().toString();
-																										cancel_0 = cancel.getText().toString();
-																									    fixer_0 = fixer.getText().toString();
-																										later_0 = later.getText().toString();
-																										install_now_0 = install_now.getText().toString();
-																										go_back_0 = go_back.getText().toString();
-																										install_update_0 = install_update.getText().toString();
-																										main_title.setText(R.string.main_title_22);
-																										settings_title.setText(R.string.settings_title_22);
-																										about_title.setText(R.string.about_title_22);
-																										maintenance.setText(R.string.maintenance_22);
-																										maintenance_desc.setText(R.string.maintenance_desc_22);
-																										thanks.setText(R.string.thanks_22);
-																										language.setText(R.string.language_22);
-																										website.setText(R.string.website_22);
-																										discord.setText(R.string.discord_22);
-																										reddit.setText(R.string.reddit_22);
-																										faq.setText(R.string.faq_22);
-																										cloned_version.setText(R.string.cloned_version_22);
-																										cloned_version_info.setText(R.string.cloned_version_desc_22);
-																									    disable_reward_ad.setText(R.string.disable_rewarded_ads_22);
-																									    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_22);
-																									    installation_failed.setText(R.string.installation_failed_22);
-																									    installation_failed_desc.setText(R.string.installation_failed_desc_22);
-																									    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_22);
-																									    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_22);
-																									    existing_patched.setText(R.string.existing_patched_22);
-																									    existing_patched_desc.setText(R.string.existing_patched_desc_22);
-																									    close.setText(R.string.close_22);
-																									    cloned.setText(R.string.cloned_22);
-																									    ream.setText(R.string.ream_22);
-																									    install.setText(R.string.install_22);
-																									    uninstall.setText(R.string.uninstall_22);
-																									    ignore.setText(R.string.ignore_22);
-																									    delete.setText(R.string.delete_22);
-																									    uninstall_patched.setText(R.string.uninstall_patched_22);
-																									    open_settings.setText(R.string.open_settings_22);
-																									    open_patched.setText(R.string.open_patched_22);
-																										installation_failed_0 = installation_failed.getText().toString();
-																									    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																									    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-																									    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-																									    existing_patched_0 = existing_patched.getText().toString();
-																									    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																									    close_0 = close.getText().toString();
-																									    uninstall_0 = uninstall.getText().toString();
+																									title_1.setText(R.string.spotify_regular_22);
+																									title_2.setText(R.string.spotify_amoled_22);
+																									sub_text_installed.setText(R.string.installed_22);
+																									sub_text_1.setText(R.string.latest_22);
+																									sub_text_2.setText(R.string.latest_22);
+																									sub_text_3.setText(R.string.latest_22);
+																									version_switch_1.setText(R.string.versions_22);
+																									version_switch_2.setText(R.string.versions_22);
+																									version_switch_3.setText(R.string.versions_22);
+																									changelogs.setText(R.string.changelogs_22);
+																									title_sub.setText(R.string.manager_tools_22);
+																									device_cpu.setText(R.string.device_cpu_22);
+																									source.setText(R.string.source_22);
+																									support.setText(R.string.support_22);
+																									donate.setText(R.string.donate_22);
+																									about.setText(R.string.about_22);
+																									list_auto_refresh.setText(R.string.list_auto_refresh_22);
+																									list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_22);
+																									force_auto_install.setText(R.string.force_auto_install_22);
+																									force_auto_install_info.setText(R.string.force_auto_install_desc_22);
+																									theme.setText(R.string.show_themes_22);
+																									apk_location.setText(R.string.apk_location_22);
+																									apk_location_info.setText(R.string.apk_location_desc_22);
+																									clear_directory_folders.setText(R.string.clear_directory_folders_22);
+																									clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_22);
+																									reset_settings.setText(R.string.reset_settings_22);
+																									sub_title.setText(R.string.about_sub_22);
+																									developer_manager.setText(R.string.xmanager_dev_22);
+																									developer_spotify.setText(R.string.spotify_mod_devs_22);
+																									support_team.setText(R.string.telegram_support_team_22);
+																									mod_testers_1.setText(R.string.manager_testers_22);
+																									mod_testers_2.setText(R.string.manager_hosting_22);
+																									mobilism_team.setText(R.string.mobilism_team_22);
+																									forum_team.setText(R.string.forum_team_22);
+																									manager_team.setText(R.string.xspotify_team_22);
+																									contributors_1.setText(R.string.contributors_22);
+																									download_selected.setText(R.string.download_selected_22);
+																									download_ready.setText(R.string.download_ready_22);
+																									download_ready_desc.setText(R.string.download_ready_desc_22);
+																									downloading_file.setText(R.string.downloading_file_22);
+																									download_success.setText(R.string.download_success_22);
+																									new_update.setText(R.string.new_update_22);
+																									download_selected_0 = download_selected.getText().toString();
+																									download_ready_0 = download_ready.getText().toString();
+																									download_ready_desc_0 = download_ready_desc.getText().toString();
+																									downloading_file_0 = downloading_file.getText().toString();
+																									download_success_0 = download_success.getText().toString();
+																									copy_url.setText(R.string.copy_url_22);
+																									continue_1.setText(R.string.continue_1_22);
+																									cancel.setText(R.string.cancel_22);
+																									fixer.setText(R.string.fixer_22);
+																									download.setText(R.string.download_22);
+																									later.setText(R.string.later_22);
+																									install_now.setText(R.string.install_now_22);
+																									install_update.setText(R.string.install_update_22);
+																									go_back.setText(R.string.go_back_22);
+																									download_update.setText(R.string.download_update_22);
+																									not_now.setText(R.string.not_now_22);
+																									show_support.setText(R.string.show_support_22);
+																									show_support_desc.setText(R.string.show_support_desc_22);
+																									copy_url_0 = copy_url.getText().toString();
+																									download_0 = download.getText().toString();
+																									continue_0 = continue_1.getText().toString();
+																									cancel_0 = cancel.getText().toString();
+																									fixer_0 = fixer.getText().toString();
+																									later_0 = later.getText().toString();
+																									install_now_0 = install_now.getText().toString();
+																									go_back_0 = go_back.getText().toString();
+																									install_update_0 = install_update.getText().toString();
+																									main_title.setText(R.string.main_title_22);
+																									settings_title.setText(R.string.settings_title_22);
+																									about_title.setText(R.string.about_title_22);
+																									maintenance.setText(R.string.maintenance_22);
+																									maintenance_desc.setText(R.string.maintenance_desc_22);
+																									thanks.setText(R.string.thanks_22);
+																									language.setText(R.string.language_22);
+																									website.setText(R.string.website_22);
+																									discord.setText(R.string.discord_22);
+																									reddit.setText(R.string.reddit_22);
+																									faq.setText(R.string.faq_22);
+																									cloned_version.setText(R.string.cloned_version_22);
+																									cloned_version_info.setText(R.string.cloned_version_desc_22);
+																									disable_reward_ad.setText(R.string.disable_rewarded_ads_22);
+																									disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_22);
+																									installation_failed.setText(R.string.installation_failed_22);
+																									installation_failed_desc.setText(R.string.installation_failed_desc_22);
+																									installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_22);
+																									installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_22);
+																									existing_patched.setText(R.string.existing_patched_22);
+																									existing_patched_desc.setText(R.string.existing_patched_desc_22);
+																									close.setText(R.string.close_22);
+																									cloned.setText(R.string.cloned_22);
+																									ream.setText(R.string.ream_22);
+																									install.setText(R.string.install_22);
+																									uninstall.setText(R.string.uninstall_22);
+																									ignore.setText(R.string.ignore_22);
+																									delete.setText(R.string.delete_22);
+																									uninstall_patched.setText(R.string.uninstall_patched_22);
+																									open_settings.setText(R.string.open_settings_22);
+																									open_patched.setText(R.string.open_patched_22);
+																									installation_failed_0 = installation_failed.getText().toString();
+																									installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																									installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																									installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																									existing_patched_0 = existing_patched.getText().toString();
+																									existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																									close_0 = close.getText().toString();
+																									uninstall_0 = uninstall.getText().toString();
 																									
 																									select_language.setSelection((int)(22));
 																								}
 																								else {
 																									if (LANGUAGE.getString("LANGUAGE", "").equals("23")) {
-																										    title_1.setText(R.string.spotify_regular_23);
-																											title_2.setText(R.string.spotify_amoled_23);
-																											sub_text_installed.setText(R.string.installed_23);
-																											sub_text_1.setText(R.string.latest_23);
-																											sub_text_3.setText(R.string.latest_23);
-																											version_switch_1.setText(R.string.versions_23);
-																											version_switch_2.setText(R.string.versions_23);
-																											changelogs.setText(R.string.changelogs_23);
-																											title_sub.setText(R.string.manager_tools_23);
-																											device_cpu.setText(R.string.device_cpu_23);
-																											source.setText(R.string.source_23);
-																											support.setText(R.string.support_23);
-																											donate.setText(R.string.donate_23);
-																											about.setText(R.string.about_23);
-																											list_auto_refresh.setText(R.string.list_auto_refresh_23);
-																											list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_23);
-																											force_auto_install.setText(R.string.force_auto_install_23);
-																											force_auto_install_info.setText(R.string.force_auto_install_desc_23);
-																											theme.setText(R.string.show_themes_23);
-																											apk_location.setText(R.string.apk_location_23);
-																											apk_location_info.setText(R.string.apk_location_desc_23);
-																											clear_directory_folders.setText(R.string.clear_directory_folders_23);
-																											clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_23);
-																											reset_settings.setText(R.string.reset_settings_23);
-																											sub_title.setText(R.string.about_sub_23);
-																											developer_manager.setText(R.string.xmanager_dev_23);
-																											developer_spotify.setText(R.string.spotify_mod_devs_23);
-																											support_team.setText(R.string.telegram_support_team_23);
-																											mod_testers_1.setText(R.string.manager_testers_23);
-																											mod_testers_2.setText(R.string.manager_hosting_23);
-																											mobilism_team.setText(R.string.mobilism_team_23);
-																											forum_team.setText(R.string.forum_team_23);
-																											manager_team.setText(R.string.xspotify_team_23);
-																											contributors_1.setText(R.string.contributors_23);
-																											download_selected.setText(R.string.download_selected_23);
-																											download_ready.setText(R.string.download_ready_23);
-																											download_ready_desc.setText(R.string.download_ready_desc_23);
-																											downloading_file.setText(R.string.downloading_file_23);
-																											download_success.setText(R.string.download_success_23);
-																											new_update.setText(R.string.new_update_23);
-																											download_selected_0 = download_selected.getText().toString();
-																											download_ready_0 = download_ready.getText().toString();
-																											download_ready_desc_0 = download_ready_desc.getText().toString();
-																											downloading_file_0 = downloading_file.getText().toString();
-																											download_success_0 = download_success.getText().toString();
-																											copy_url.setText(R.string.copy_url_23);
-																											continue_1.setText(R.string.continue_1_23);
-																											cancel.setText(R.string.cancel_23);
-																										    fixer.setText(R.string.fixer_23);
-																											download.setText(R.string.download_23);
-																											later.setText(R.string.later_23);
-																											install_now.setText(R.string.install_now_23);
-																											install_update.setText(R.string.install_update_23);
-																											go_back.setText(R.string.go_back_23);
-																											download_update.setText(R.string.download_update_23);
-																											not_now.setText(R.string.not_now_23);
-																											show_support.setText(R.string.show_support_23);
-																											show_support_desc.setText(R.string.show_support_desc_23);
-																											copy_url_0 = copy_url.getText().toString();
-																											download_0 = download.getText().toString();
-																											continue_0 = continue_1.getText().toString();
-																											cancel_0 = cancel.getText().toString();
-																										    fixer_0 = fixer.getText().toString();
-																											later_0 = later.getText().toString();
-																											install_now_0 = install_now.getText().toString();
-																											go_back_0 = go_back.getText().toString();
-																											install_update_0 = install_update.getText().toString();
-																											main_title.setText(R.string.main_title_23);
-																											settings_title.setText(R.string.settings_title_23);
-																											about_title.setText(R.string.about_title_23);
-																											maintenance.setText(R.string.maintenance_23);
-																											maintenance_desc.setText(R.string.maintenance_desc_23);
-																											thanks.setText(R.string.thanks_23);
-																											language.setText(R.string.language_23);
-																											website.setText(R.string.website_23);
-																											discord.setText(R.string.discord_23);
-																											reddit.setText(R.string.reddit_23);
-																											faq.setText(R.string.faq_23);
-																											cloned_version.setText(R.string.cloned_version_23);
-																											cloned_version_info.setText(R.string.cloned_version_desc_23);
-																										    disable_reward_ad.setText(R.string.disable_rewarded_ads_23);
-																										    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_23);
-																										    installation_failed.setText(R.string.installation_failed_23);
-																										    installation_failed_desc.setText(R.string.installation_failed_desc_23);
-																										    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_23);
-																										    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_23);
-																										    existing_patched.setText(R.string.existing_patched_23);
-																										    existing_patched_desc.setText(R.string.existing_patched_desc_23);
-																										    close.setText(R.string.close_23);
-																										    cloned.setText(R.string.cloned_23);
-																										    ream.setText(R.string.ream_23);
-																										    install.setText(R.string.install_23);
-																										    uninstall.setText(R.string.uninstall_23);
-																										    ignore.setText(R.string.ignore_23);
-																										    delete.setText(R.string.delete_23);
-																										    uninstall_patched.setText(R.string.uninstall_patched_23);
-																										    open_settings.setText(R.string.open_settings_23);
-																										    open_patched.setText(R.string.open_patched_23);
-																											installation_failed_0 = installation_failed.getText().toString();
-																										    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																										    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-																										    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-																										    existing_patched_0 = existing_patched.getText().toString();
-																										    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																										    close_0 = close.getText().toString();
-																										    uninstall_0 = uninstall.getText().toString();
+																										title_1.setText(R.string.spotify_regular_23);
+																										title_2.setText(R.string.spotify_amoled_23);
+																										sub_text_installed.setText(R.string.installed_23);
+																										sub_text_1.setText(R.string.latest_23);
+																										sub_text_2.setText(R.string.latest_23);
+																										sub_text_3.setText(R.string.latest_23);
+																										version_switch_1.setText(R.string.versions_23);
+																										version_switch_2.setText(R.string.versions_23);
+																										version_switch_3.setText(R.string.versions_23);
+																										changelogs.setText(R.string.changelogs_23);
+																										title_sub.setText(R.string.manager_tools_23);
+																										device_cpu.setText(R.string.device_cpu_23);
+																										source.setText(R.string.source_23);
+																										support.setText(R.string.support_23);
+																										donate.setText(R.string.donate_23);
+																										about.setText(R.string.about_23);
+																										list_auto_refresh.setText(R.string.list_auto_refresh_23);
+																										list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_23);
+																										force_auto_install.setText(R.string.force_auto_install_23);
+																										force_auto_install_info.setText(R.string.force_auto_install_desc_23);
+																										theme.setText(R.string.show_themes_23);
+																										apk_location.setText(R.string.apk_location_23);
+																										apk_location_info.setText(R.string.apk_location_desc_23);
+																										clear_directory_folders.setText(R.string.clear_directory_folders_23);
+																										clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_23);
+																										reset_settings.setText(R.string.reset_settings_23);
+																										sub_title.setText(R.string.about_sub_23);
+																										developer_manager.setText(R.string.xmanager_dev_23);
+																										developer_spotify.setText(R.string.spotify_mod_devs_23);
+																										support_team.setText(R.string.telegram_support_team_23);
+																										mod_testers_1.setText(R.string.manager_testers_23);
+																										mod_testers_2.setText(R.string.manager_hosting_23);
+																										mobilism_team.setText(R.string.mobilism_team_23);
+																										forum_team.setText(R.string.forum_team_23);
+																										manager_team.setText(R.string.xspotify_team_23);
+																										contributors_1.setText(R.string.contributors_23);
+																										download_selected.setText(R.string.download_selected_23);
+																										download_ready.setText(R.string.download_ready_23);
+																										download_ready_desc.setText(R.string.download_ready_desc_23);
+																										downloading_file.setText(R.string.downloading_file_23);
+																										download_success.setText(R.string.download_success_23);
+																										new_update.setText(R.string.new_update_23);
+																										download_selected_0 = download_selected.getText().toString();
+																										download_ready_0 = download_ready.getText().toString();
+																										download_ready_desc_0 = download_ready_desc.getText().toString();
+																										downloading_file_0 = downloading_file.getText().toString();
+																										download_success_0 = download_success.getText().toString();
+																										copy_url.setText(R.string.copy_url_23);
+																										continue_1.setText(R.string.continue_1_23);
+																										cancel.setText(R.string.cancel_23);
+																										fixer.setText(R.string.fixer_23);
+																										download.setText(R.string.download_23);
+																										later.setText(R.string.later_23);
+																										install_now.setText(R.string.install_now_23);
+																										install_update.setText(R.string.install_update_23);
+																										go_back.setText(R.string.go_back_23);
+																										download_update.setText(R.string.download_update_23);
+																										not_now.setText(R.string.not_now_23);
+																										show_support.setText(R.string.show_support_23);
+																										show_support_desc.setText(R.string.show_support_desc_23);
+																										copy_url_0 = copy_url.getText().toString();
+																										download_0 = download.getText().toString();
+																										continue_0 = continue_1.getText().toString();
+																										cancel_0 = cancel.getText().toString();
+																										fixer_0 = fixer.getText().toString();
+																										later_0 = later.getText().toString();
+																										install_now_0 = install_now.getText().toString();
+																										go_back_0 = go_back.getText().toString();
+																										install_update_0 = install_update.getText().toString();
+																										main_title.setText(R.string.main_title_23);
+																										settings_title.setText(R.string.settings_title_23);
+																										about_title.setText(R.string.about_title_23);
+																										maintenance.setText(R.string.maintenance_23);
+																										maintenance_desc.setText(R.string.maintenance_desc_23);
+																										thanks.setText(R.string.thanks_23);
+																										language.setText(R.string.language_23);
+																										website.setText(R.string.website_23);
+																										discord.setText(R.string.discord_23);
+																										reddit.setText(R.string.reddit_23);
+																										faq.setText(R.string.faq_23);
+																										cloned_version.setText(R.string.cloned_version_23);
+																										cloned_version_info.setText(R.string.cloned_version_desc_23);
+																										disable_reward_ad.setText(R.string.disable_rewarded_ads_23);
+																										disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_23);
+																										installation_failed.setText(R.string.installation_failed_23);
+																										installation_failed_desc.setText(R.string.installation_failed_desc_23);
+																										installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_23);
+																										installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_23);
+																										existing_patched.setText(R.string.existing_patched_23);
+																										existing_patched_desc.setText(R.string.existing_patched_desc_23);
+																										close.setText(R.string.close_23);
+																										cloned.setText(R.string.cloned_23);
+																										ream.setText(R.string.ream_23);
+																										install.setText(R.string.install_23);
+																										uninstall.setText(R.string.uninstall_23);
+																										ignore.setText(R.string.ignore_23);
+																										delete.setText(R.string.delete_23);
+																										uninstall_patched.setText(R.string.uninstall_patched_23);
+																										open_settings.setText(R.string.open_settings_23);
+																										open_patched.setText(R.string.open_patched_23);
+																										installation_failed_0 = installation_failed.getText().toString();
+																										installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																										installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																										installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																										existing_patched_0 = existing_patched.getText().toString();
+																										existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																										close_0 = close.getText().toString();
+																										uninstall_0 = uninstall.getText().toString();
 																										
 																										select_language.setSelection((int)(23));
 																									}
 																									else {
 																										if (LANGUAGE.getString("LANGUAGE", "").equals("24")) {
-																											    title_1.setText(R.string.spotify_regular_24);
-																												title_2.setText(R.string.spotify_amoled_24);
-																												sub_text_installed.setText(R.string.installed_24);
-																												sub_text_1.setText(R.string.latest_24);
-																												sub_text_3.setText(R.string.latest_24);
-																												version_switch_1.setText(R.string.versions_24);
-																												version_switch_2.setText(R.string.versions_24);
-																												changelogs.setText(R.string.changelogs_24);
-																												title_sub.setText(R.string.manager_tools_24);
-																												device_cpu.setText(R.string.device_cpu_24);
-																												source.setText(R.string.source_24);
-																												support.setText(R.string.support_24);
-																												donate.setText(R.string.donate_24);
-																												about.setText(R.string.about_24);
-																												list_auto_refresh.setText(R.string.list_auto_refresh_24);
-																												list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_24);
-																												force_auto_install.setText(R.string.force_auto_install_24);
-																												force_auto_install_info.setText(R.string.force_auto_install_desc_24);
-																												theme.setText(R.string.show_themes_24);
-																												apk_location.setText(R.string.apk_location_24);
-																												apk_location_info.setText(R.string.apk_location_desc_24);
-																												clear_directory_folders.setText(R.string.clear_directory_folders_24);
-																												clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_24);
-																												reset_settings.setText(R.string.reset_settings_24);
-																												sub_title.setText(R.string.about_sub_24);
-																												developer_manager.setText(R.string.xmanager_dev_24);
-																												developer_spotify.setText(R.string.spotify_mod_devs_24);
-																												support_team.setText(R.string.telegram_support_team_24);
-																												mod_testers_1.setText(R.string.manager_testers_24);
-																												mod_testers_2.setText(R.string.manager_hosting_24);
-																												mobilism_team.setText(R.string.mobilism_team_24);
-																												forum_team.setText(R.string.forum_team_24);
-																												manager_team.setText(R.string.xspotify_team_24);
-																												contributors_1.setText(R.string.contributors_24);
-																												download_selected.setText(R.string.download_selected_24);
-																												download_ready.setText(R.string.download_ready_24);
-																												download_ready_desc.setText(R.string.download_ready_desc_24);
-																												downloading_file.setText(R.string.downloading_file_24);
-																												download_success.setText(R.string.download_success_24);
-																												new_update.setText(R.string.new_update_24);
-																												download_selected_0 = download_selected.getText().toString();
-																												download_ready_0 = download_ready.getText().toString();
-																												download_ready_desc_0 = download_ready_desc.getText().toString();
-																												downloading_file_0 = downloading_file.getText().toString();
-																												download_success_0 = download_success.getText().toString();
-																												copy_url.setText(R.string.copy_url_24);
-																												continue_1.setText(R.string.continue_1_24);
-																												cancel.setText(R.string.cancel_24);
-																											    fixer.setText(R.string.fixer_24);
-																												download.setText(R.string.download_24);
-																												later.setText(R.string.later_24);
-																												install_now.setText(R.string.install_now_24);
-																												install_update.setText(R.string.install_update_24);
-																												go_back.setText(R.string.go_back_24);
-																												download_update.setText(R.string.download_update_24);
-																												not_now.setText(R.string.not_now_24);
-																												show_support.setText(R.string.show_support_24);
-																												show_support_desc.setText(R.string.show_support_desc_24);
-																												copy_url_0 = copy_url.getText().toString();
-																												download_0 = download.getText().toString();
-																												continue_0 = continue_1.getText().toString();
-																												cancel_0 = cancel.getText().toString();
-																											    fixer_0 = fixer.getText().toString();
-																												later_0 = later.getText().toString();
-																												install_now_0 = install_now.getText().toString();
-																												go_back_0 = go_back.getText().toString();
-																												install_update_0 = install_update.getText().toString();
-																												main_title.setText(R.string.main_title_24);
-																												settings_title.setText(R.string.settings_title_24);
-																												about_title.setText(R.string.about_title_24);
-																												maintenance.setText(R.string.maintenance_24);
-																												maintenance_desc.setText(R.string.maintenance_desc_24);
-																												thanks.setText(R.string.thanks_24);
-																												language.setText(R.string.language_24);
-																												website.setText(R.string.website_24);
-																												discord.setText(R.string.discord_24);
-																												reddit.setText(R.string.reddit_24);
-																												faq.setText(R.string.faq_24);
-																												cloned_version.setText(R.string.cloned_version_24);
-																												cloned_version_info.setText(R.string.cloned_version_desc_24);
-																											    disable_reward_ad.setText(R.string.disable_rewarded_ads_24);
-																											    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_24);
-																											    installation_failed.setText(R.string.installation_failed_24);
-																											    installation_failed_desc.setText(R.string.installation_failed_desc_24);
-																											    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_24);
-																											    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_24);
-																											    existing_patched.setText(R.string.existing_patched_24);
-																											    existing_patched_desc.setText(R.string.existing_patched_desc_24);
-																											    close.setText(R.string.close_24);
-																											    cloned.setText(R.string.cloned_24);
-																											    ream.setText(R.string.ream_24);
-																											    install.setText(R.string.install_24);
-																											    uninstall.setText(R.string.uninstall_24);
-																											    ignore.setText(R.string.ignore_24);
-																											    delete.setText(R.string.delete_24);
-																											    uninstall_patched.setText(R.string.uninstall_patched_24);
-																											    open_settings.setText(R.string.open_settings_24);
-																											    open_patched.setText(R.string.open_patched_24);
-																												installation_failed_0 = installation_failed.getText().toString();
-																											    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																											    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-																											    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-																											    existing_patched_0 = existing_patched.getText().toString();
-																											    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																											    close_0 = close.getText().toString();
-																											    uninstall_0 = uninstall.getText().toString();
+																											title_1.setText(R.string.spotify_regular_24);
+																											title_2.setText(R.string.spotify_amoled_24);
+																											sub_text_installed.setText(R.string.installed_24);
+																											sub_text_1.setText(R.string.latest_24);
+																											sub_text_2.setText(R.string.latest_24);
+																											sub_text_3.setText(R.string.latest_24);
+																											version_switch_1.setText(R.string.versions_24);
+																											version_switch_2.setText(R.string.versions_24);
+																											version_switch_3.setText(R.string.versions_24);
+																											changelogs.setText(R.string.changelogs_24);
+																											title_sub.setText(R.string.manager_tools_24);
+																											device_cpu.setText(R.string.device_cpu_24);
+																											source.setText(R.string.source_24);
+																											support.setText(R.string.support_24);
+																											donate.setText(R.string.donate_24);
+																											about.setText(R.string.about_24);
+																											list_auto_refresh.setText(R.string.list_auto_refresh_24);
+																											list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_24);
+																											force_auto_install.setText(R.string.force_auto_install_24);
+																											force_auto_install_info.setText(R.string.force_auto_install_desc_24);
+																											theme.setText(R.string.show_themes_24);
+																											apk_location.setText(R.string.apk_location_24);
+																											apk_location_info.setText(R.string.apk_location_desc_24);
+																											clear_directory_folders.setText(R.string.clear_directory_folders_24);
+																											clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_24);
+																											reset_settings.setText(R.string.reset_settings_24);
+																											sub_title.setText(R.string.about_sub_24);
+																											developer_manager.setText(R.string.xmanager_dev_24);
+																											developer_spotify.setText(R.string.spotify_mod_devs_24);
+																											support_team.setText(R.string.telegram_support_team_24);
+																											mod_testers_1.setText(R.string.manager_testers_24);
+																											mod_testers_2.setText(R.string.manager_hosting_24);
+																											mobilism_team.setText(R.string.mobilism_team_24);
+																											forum_team.setText(R.string.forum_team_24);
+																											manager_team.setText(R.string.xspotify_team_24);
+																											contributors_1.setText(R.string.contributors_24);
+																											download_selected.setText(R.string.download_selected_24);
+																											download_ready.setText(R.string.download_ready_24);
+																											download_ready_desc.setText(R.string.download_ready_desc_24);
+																											downloading_file.setText(R.string.downloading_file_24);
+																											download_success.setText(R.string.download_success_24);
+																											new_update.setText(R.string.new_update_24);
+																											download_selected_0 = download_selected.getText().toString();
+																											download_ready_0 = download_ready.getText().toString();
+																											download_ready_desc_0 = download_ready_desc.getText().toString();
+																											downloading_file_0 = downloading_file.getText().toString();
+																											download_success_0 = download_success.getText().toString();
+																											copy_url.setText(R.string.copy_url_24);
+																											continue_1.setText(R.string.continue_1_24);
+																											cancel.setText(R.string.cancel_24);
+																											fixer.setText(R.string.fixer_24);
+																											download.setText(R.string.download_24);
+																											later.setText(R.string.later_24);
+																											install_now.setText(R.string.install_now_24);
+																											install_update.setText(R.string.install_update_24);
+																											go_back.setText(R.string.go_back_24);
+																											download_update.setText(R.string.download_update_24);
+																											not_now.setText(R.string.not_now_24);
+																											show_support.setText(R.string.show_support_24);
+																											show_support_desc.setText(R.string.show_support_desc_24);
+																											copy_url_0 = copy_url.getText().toString();
+																											download_0 = download.getText().toString();
+																											continue_0 = continue_1.getText().toString();
+																											cancel_0 = cancel.getText().toString();
+																											fixer_0 = fixer.getText().toString();
+																											later_0 = later.getText().toString();
+																											install_now_0 = install_now.getText().toString();
+																											go_back_0 = go_back.getText().toString();
+																											install_update_0 = install_update.getText().toString();
+																											main_title.setText(R.string.main_title_24);
+																											settings_title.setText(R.string.settings_title_24);
+																											about_title.setText(R.string.about_title_24);
+																											maintenance.setText(R.string.maintenance_24);
+																											maintenance_desc.setText(R.string.maintenance_desc_24);
+																											thanks.setText(R.string.thanks_24);
+																											language.setText(R.string.language_24);
+																											website.setText(R.string.website_24);
+																											discord.setText(R.string.discord_24);
+																											reddit.setText(R.string.reddit_24);
+																											faq.setText(R.string.faq_24);
+																											cloned_version.setText(R.string.cloned_version_24);
+																											cloned_version_info.setText(R.string.cloned_version_desc_24);
+																											disable_reward_ad.setText(R.string.disable_rewarded_ads_24);
+																											disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_24);
+																											installation_failed.setText(R.string.installation_failed_24);
+																											installation_failed_desc.setText(R.string.installation_failed_desc_24);
+																											installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_24);
+																											installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_24);
+																											existing_patched.setText(R.string.existing_patched_24);
+																											existing_patched_desc.setText(R.string.existing_patched_desc_24);
+																											close.setText(R.string.close_24);
+																											cloned.setText(R.string.cloned_24);
+																											ream.setText(R.string.ream_24);
+																											install.setText(R.string.install_24);
+																											uninstall.setText(R.string.uninstall_24);
+																											ignore.setText(R.string.ignore_24);
+																											delete.setText(R.string.delete_24);
+																											uninstall_patched.setText(R.string.uninstall_patched_24);
+																											open_settings.setText(R.string.open_settings_24);
+																											open_patched.setText(R.string.open_patched_24);
+																											installation_failed_0 = installation_failed.getText().toString();
+																											installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																											installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																											installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																											existing_patched_0 = existing_patched.getText().toString();
+																											existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																											close_0 = close.getText().toString();
+																											uninstall_0 = uninstall.getText().toString();
 																											
 																											select_language.setSelection((int)(24));
 																										}
 																										else {
 																											if (LANGUAGE.getString("LANGUAGE", "").equals("25")) {
-																												    title_1.setText(R.string.spotify_regular_25);
-																													title_2.setText(R.string.spotify_amoled_25);
-																													sub_text_installed.setText(R.string.installed_25);
-																													sub_text_1.setText(R.string.latest_25);
-																													sub_text_3.setText(R.string.latest_25);
-																													version_switch_1.setText(R.string.versions_25);
-																													version_switch_2.setText(R.string.versions_25);
-																													changelogs.setText(R.string.changelogs_25);
-																													title_sub.setText(R.string.manager_tools_25);
-																													device_cpu.setText(R.string.device_cpu_25);
-																													source.setText(R.string.source_25);
-																													support.setText(R.string.support_25);
-																													donate.setText(R.string.donate_25);
-																													about.setText(R.string.about_25);
-																													list_auto_refresh.setText(R.string.list_auto_refresh_25);
-																													list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_25);
-																													force_auto_install.setText(R.string.force_auto_install_25);
-																													force_auto_install_info.setText(R.string.force_auto_install_desc_25);
-																													theme.setText(R.string.show_themes_25);
-																													apk_location.setText(R.string.apk_location_25);
-																													apk_location_info.setText(R.string.apk_location_desc_25);
-																													clear_directory_folders.setText(R.string.clear_directory_folders_25);
-																													clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_25);
-																													reset_settings.setText(R.string.reset_settings_25);
-																													sub_title.setText(R.string.about_sub_25);
-																													developer_manager.setText(R.string.xmanager_dev_25);
-																													developer_spotify.setText(R.string.spotify_mod_devs_25);
-																													support_team.setText(R.string.telegram_support_team_25);
-																													mod_testers_1.setText(R.string.manager_testers_25);
-																													mod_testers_2.setText(R.string.manager_hosting_25);
-																													mobilism_team.setText(R.string.mobilism_team_25);
-																													forum_team.setText(R.string.forum_team_25);
-																													manager_team.setText(R.string.xspotify_team_25);
-																													contributors_1.setText(R.string.contributors_25);
-																													download_selected.setText(R.string.download_selected_25);
-																													download_ready.setText(R.string.download_ready_25);
-																													download_ready_desc.setText(R.string.download_ready_desc_25);
-																													downloading_file.setText(R.string.downloading_file_25);
-																													download_success.setText(R.string.download_success_25);
-																													new_update.setText(R.string.new_update_25);
-																													download_selected_0 = download_selected.getText().toString();
-																													download_ready_0 = download_ready.getText().toString();
-																													download_ready_desc_0 = download_ready_desc.getText().toString();
-																													downloading_file_0 = downloading_file.getText().toString();
-																													download_success_0 = download_success.getText().toString();
-																													copy_url.setText(R.string.copy_url_25);
-																													continue_1.setText(R.string.continue_1_25);
-																													cancel.setText(R.string.cancel_25);
-																												    fixer.setText(R.string.fixer_25);
-																													download.setText(R.string.download_25);
-																													later.setText(R.string.later_25);
-																													install_now.setText(R.string.install_now_25);
-																													install_update.setText(R.string.install_update_25);
-																													go_back.setText(R.string.go_back_25);
-																													download_update.setText(R.string.download_update_25);
-																													not_now.setText(R.string.not_now_25);
-																													show_support.setText(R.string.show_support_25);
-																													show_support_desc.setText(R.string.show_support_desc_25);
-																													copy_url_0 = copy_url.getText().toString();
-																													download_0 = download.getText().toString();
-																													continue_0 = continue_1.getText().toString();
-																													cancel_0 = cancel.getText().toString();
-																												    fixer_0 = fixer.getText().toString();
-																													later_0 = later.getText().toString();
-																													install_now_0 = install_now.getText().toString();
-																													go_back_0 = go_back.getText().toString();
-																													install_update_0 = install_update.getText().toString();
-																													main_title.setText(R.string.main_title_25);
-																													settings_title.setText(R.string.settings_title_25);
-																													about_title.setText(R.string.about_title_25);
-																													maintenance.setText(R.string.maintenance_25);
-																													maintenance_desc.setText(R.string.maintenance_desc_25);
-																													thanks.setText(R.string.thanks_25);
-																													language.setText(R.string.language_25);
-																													website.setText(R.string.website_25);
-																													discord.setText(R.string.discord_25);
-																													reddit.setText(R.string.reddit_25);
-																													faq.setText(R.string.faq_25);
-																													cloned_version.setText(R.string.cloned_version_25);
-																													cloned_version_info.setText(R.string.cloned_version_desc_25);
-																												    disable_reward_ad.setText(R.string.disable_rewarded_ads_25);
-																												    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_25);
-																												    installation_failed.setText(R.string.installation_failed_25);
-																												    installation_failed_desc.setText(R.string.installation_failed_desc_25);
-																												    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_25);
-																												    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_25);
-																												    existing_patched.setText(R.string.existing_patched_25);
-																												    existing_patched_desc.setText(R.string.existing_patched_desc_25);
-																												    close.setText(R.string.close_25);
-																												    cloned.setText(R.string.cloned_25);
-																												    ream.setText(R.string.ream_25);
-																												    install.setText(R.string.install_25);
-																												    uninstall.setText(R.string.uninstall_25);
-																												    ignore.setText(R.string.ignore_25);
-																												    delete.setText(R.string.delete_25);
-																												    uninstall_patched.setText(R.string.uninstall_patched_25);
-																												    open_settings.setText(R.string.open_settings_25);
-																												    open_patched.setText(R.string.open_patched_25);
-																													installation_failed_0 = installation_failed.getText().toString();
-																												    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																												    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-																												    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-																												    existing_patched_0 = existing_patched.getText().toString();
-																												    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																												    close_0 = close.getText().toString();
-																												    uninstall_0 = uninstall.getText().toString();
+																												title_1.setText(R.string.spotify_regular_25);
+																												title_2.setText(R.string.spotify_amoled_25);
+																												sub_text_installed.setText(R.string.installed_25);
+																												sub_text_1.setText(R.string.latest_25);
+																												sub_text_2.setText(R.string.latest_25);
+																												sub_text_3.setText(R.string.latest_25);
+																												version_switch_1.setText(R.string.versions_25);
+																												version_switch_2.setText(R.string.versions_25);
+																												version_switch_3.setText(R.string.versions_25);
+																												changelogs.setText(R.string.changelogs_25);
+																												title_sub.setText(R.string.manager_tools_25);
+																												device_cpu.setText(R.string.device_cpu_25);
+																												source.setText(R.string.source_25);
+																												support.setText(R.string.support_25);
+																												donate.setText(R.string.donate_25);
+																												about.setText(R.string.about_25);
+																												list_auto_refresh.setText(R.string.list_auto_refresh_25);
+																												list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_25);
+																												force_auto_install.setText(R.string.force_auto_install_25);
+																												force_auto_install_info.setText(R.string.force_auto_install_desc_25);
+																												theme.setText(R.string.show_themes_25);
+																												apk_location.setText(R.string.apk_location_25);
+																												apk_location_info.setText(R.string.apk_location_desc_25);
+																												clear_directory_folders.setText(R.string.clear_directory_folders_25);
+																												clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_25);
+																												reset_settings.setText(R.string.reset_settings_25);
+																												sub_title.setText(R.string.about_sub_25);
+																												developer_manager.setText(R.string.xmanager_dev_25);
+																												developer_spotify.setText(R.string.spotify_mod_devs_25);
+																												support_team.setText(R.string.telegram_support_team_25);
+																												mod_testers_1.setText(R.string.manager_testers_25);
+																												mod_testers_2.setText(R.string.manager_hosting_25);
+																												mobilism_team.setText(R.string.mobilism_team_25);
+																												forum_team.setText(R.string.forum_team_25);
+																												manager_team.setText(R.string.xspotify_team_25);
+																												contributors_1.setText(R.string.contributors_25);
+																												download_selected.setText(R.string.download_selected_25);
+																												download_ready.setText(R.string.download_ready_25);
+																												download_ready_desc.setText(R.string.download_ready_desc_25);
+																												downloading_file.setText(R.string.downloading_file_25);
+																												download_success.setText(R.string.download_success_25);
+																												new_update.setText(R.string.new_update_25);
+																												download_selected_0 = download_selected.getText().toString();
+																												download_ready_0 = download_ready.getText().toString();
+																												download_ready_desc_0 = download_ready_desc.getText().toString();
+																												downloading_file_0 = downloading_file.getText().toString();
+																												download_success_0 = download_success.getText().toString();
+																												copy_url.setText(R.string.copy_url_25);
+																												continue_1.setText(R.string.continue_1_25);
+																												cancel.setText(R.string.cancel_25);
+																												fixer.setText(R.string.fixer_25);
+																												download.setText(R.string.download_25);
+																												later.setText(R.string.later_25);
+																												install_now.setText(R.string.install_now_25);
+																												install_update.setText(R.string.install_update_25);
+																												go_back.setText(R.string.go_back_25);
+																												download_update.setText(R.string.download_update_25);
+																												not_now.setText(R.string.not_now_25);
+																												show_support.setText(R.string.show_support_25);
+																												show_support_desc.setText(R.string.show_support_desc_25);
+																												copy_url_0 = copy_url.getText().toString();
+																												download_0 = download.getText().toString();
+																												continue_0 = continue_1.getText().toString();
+																												cancel_0 = cancel.getText().toString();
+																												fixer_0 = fixer.getText().toString();
+																												later_0 = later.getText().toString();
+																												install_now_0 = install_now.getText().toString();
+																												go_back_0 = go_back.getText().toString();
+																												install_update_0 = install_update.getText().toString();
+																												main_title.setText(R.string.main_title_25);
+																												settings_title.setText(R.string.settings_title_25);
+																												about_title.setText(R.string.about_title_25);
+																												maintenance.setText(R.string.maintenance_25);
+																												maintenance_desc.setText(R.string.maintenance_desc_25);
+																												thanks.setText(R.string.thanks_25);
+																												language.setText(R.string.language_25);
+																												website.setText(R.string.website_25);
+																												discord.setText(R.string.discord_25);
+																												reddit.setText(R.string.reddit_25);
+																												faq.setText(R.string.faq_25);
+																												cloned_version.setText(R.string.cloned_version_25);
+																												cloned_version_info.setText(R.string.cloned_version_desc_25);
+																												disable_reward_ad.setText(R.string.disable_rewarded_ads_25);
+																												disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_25);
+																												installation_failed.setText(R.string.installation_failed_25);
+																												installation_failed_desc.setText(R.string.installation_failed_desc_25);
+																												installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_25);
+																												installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_25);
+																												existing_patched.setText(R.string.existing_patched_25);
+																												existing_patched_desc.setText(R.string.existing_patched_desc_25);
+																												close.setText(R.string.close_25);
+																												cloned.setText(R.string.cloned_25);
+																												ream.setText(R.string.ream_25);
+																												install.setText(R.string.install_25);
+																												uninstall.setText(R.string.uninstall_25);
+																												ignore.setText(R.string.ignore_25);
+																												delete.setText(R.string.delete_25);
+																												uninstall_patched.setText(R.string.uninstall_patched_25);
+																												open_settings.setText(R.string.open_settings_25);
+																												open_patched.setText(R.string.open_patched_25);
+																												installation_failed_0 = installation_failed.getText().toString();
+																												installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																												installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																												installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																												existing_patched_0 = existing_patched.getText().toString();
+																												existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																												close_0 = close.getText().toString();
+																												uninstall_0 = uninstall.getText().toString();
 																												
 																												select_language.setSelection((int)(25));
 																											}
 																											else {
 																												if (LANGUAGE.getString("LANGUAGE", "").equals("26")) {
-																													    title_1.setText(R.string.spotify_regular_26);
-																														title_2.setText(R.string.spotify_amoled_26);
-																														sub_text_installed.setText(R.string.installed_26);
-																														sub_text_1.setText(R.string.latest_26);
-																														sub_text_3.setText(R.string.latest_26);
-																														version_switch_1.setText(R.string.versions_26);
-																														version_switch_2.setText(R.string.versions_26);
-																														changelogs.setText(R.string.changelogs_26);
-																														title_sub.setText(R.string.manager_tools_26);
-																														device_cpu.setText(R.string.device_cpu_26);
-																														source.setText(R.string.source_26);
-																														support.setText(R.string.support_26);
-																														donate.setText(R.string.donate_26);
-																														about.setText(R.string.about_26);
-																														list_auto_refresh.setText(R.string.list_auto_refresh_26);
-																														list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_26);
-																														force_auto_install.setText(R.string.force_auto_install_26);
-																														force_auto_install_info.setText(R.string.force_auto_install_desc_26);
-																														theme.setText(R.string.show_themes_26);
-																														apk_location.setText(R.string.apk_location_26);
-																														apk_location_info.setText(R.string.apk_location_desc_26);
-																														clear_directory_folders.setText(R.string.clear_directory_folders_26);
-																														clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_26);
-																														reset_settings.setText(R.string.reset_settings_26);
-																														sub_title.setText(R.string.about_sub_26);
-																														developer_manager.setText(R.string.xmanager_dev_26);
-																														developer_spotify.setText(R.string.spotify_mod_devs_26);
-																														support_team.setText(R.string.telegram_support_team_26);
-																														mod_testers_1.setText(R.string.manager_testers_26);
-																														mod_testers_2.setText(R.string.manager_hosting_26);
-																														mobilism_team.setText(R.string.mobilism_team_26);
-																														forum_team.setText(R.string.forum_team_26);
-																														manager_team.setText(R.string.xspotify_team_26);
-																														contributors_1.setText(R.string.contributors_26);
-																														download_selected.setText(R.string.download_selected_26);
-																														download_ready.setText(R.string.download_ready_26);
-																														download_ready_desc.setText(R.string.download_ready_desc_26);
-																														downloading_file.setText(R.string.downloading_file_26);
-																														download_success.setText(R.string.download_success_26);
-																														new_update.setText(R.string.new_update_26);
-																														download_selected_0 = download_selected.getText().toString();
-																														download_ready_0 = download_ready.getText().toString();
-																														download_ready_desc_0 = download_ready_desc.getText().toString();
-																														downloading_file_0 = downloading_file.getText().toString();
-																														download_success_0 = download_success.getText().toString();
-																														copy_url.setText(R.string.copy_url_26);
-																														continue_1.setText(R.string.continue_1_26);
-																														cancel.setText(R.string.cancel_26);
-																													    fixer.setText(R.string.fixer_26);
-																														download.setText(R.string.download_26);
-																														later.setText(R.string.later_26);
-																														install_now.setText(R.string.install_now_26);
-																														install_update.setText(R.string.install_update_26);
-																														go_back.setText(R.string.go_back_26);
-																														download_update.setText(R.string.download_update_26);
-																														not_now.setText(R.string.not_now_26);
-																														show_support.setText(R.string.show_support_26);
-																														show_support_desc.setText(R.string.show_support_desc_26);
-																														copy_url_0 = copy_url.getText().toString();
-																														download_0 = download.getText().toString();
-																														continue_0 = continue_1.getText().toString();
-																														cancel_0 = cancel.getText().toString();
-																													    fixer_0 = fixer.getText().toString();
-																														later_0 = later.getText().toString();
-																														install_now_0 = install_now.getText().toString();
-																														go_back_0 = go_back.getText().toString();
-																														install_update_0 = install_update.getText().toString();
-																														main_title.setText(R.string.main_title_26);
-																														settings_title.setText(R.string.settings_title_26);
-																														about_title.setText(R.string.about_title_26);
-																														maintenance.setText(R.string.maintenance_26);
-																														maintenance_desc.setText(R.string.maintenance_desc_26);
-																														thanks.setText(R.string.thanks_26);
-																														language.setText(R.string.language_26);
-																														website.setText(R.string.website_26);
-																														discord.setText(R.string.discord_26);
-																														reddit.setText(R.string.reddit_26);
-																														faq.setText(R.string.faq_26);
-																														cloned_version.setText(R.string.cloned_version_26);
-																														cloned_version_info.setText(R.string.cloned_version_desc_26);
-																													    disable_reward_ad.setText(R.string.disable_rewarded_ads_26);
-																													    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_26);
-																													    installation_failed.setText(R.string.installation_failed_26);
-																													    installation_failed_desc.setText(R.string.installation_failed_desc_26);
-																													    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_26);
-																													    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_26);
-																													    existing_patched.setText(R.string.existing_patched_26);
-																													    existing_patched_desc.setText(R.string.existing_patched_desc_26);
-																													    close.setText(R.string.close_26);
-																													    cloned.setText(R.string.cloned_26);
-																													    ream.setText(R.string.ream_26);
-																													    install.setText(R.string.install_26);
-																													    uninstall.setText(R.string.uninstall_26);
-																													    ignore.setText(R.string.ignore_26);
-																													    delete.setText(R.string.delete_26);
-																													    uninstall_patched.setText(R.string.uninstall_patched_26);
-																													    open_settings.setText(R.string.open_settings_26);
-																													    open_patched.setText(R.string.open_patched_26);
-																														installation_failed_0 = installation_failed.getText().toString();
-																													    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																													    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-																													    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-																													    existing_patched_0 = existing_patched.getText().toString();
-																													    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																													    close_0 = close.getText().toString();
-																													    uninstall_0 = uninstall.getText().toString();
+																													title_1.setText(R.string.spotify_regular_26);
+																													title_2.setText(R.string.spotify_amoled_26);
+																													sub_text_installed.setText(R.string.installed_26);
+																													sub_text_1.setText(R.string.latest_26);
+																													sub_text_2.setText(R.string.latest_26);
+																													sub_text_3.setText(R.string.latest_26);
+																													version_switch_1.setText(R.string.versions_26);
+																													version_switch_2.setText(R.string.versions_26);
+																													version_switch_3.setText(R.string.versions_26);
+																													changelogs.setText(R.string.changelogs_26);
+																													title_sub.setText(R.string.manager_tools_26);
+																													device_cpu.setText(R.string.device_cpu_26);
+																													source.setText(R.string.source_26);
+																													support.setText(R.string.support_26);
+																													donate.setText(R.string.donate_26);
+																													about.setText(R.string.about_26);
+																													list_auto_refresh.setText(R.string.list_auto_refresh_26);
+																													list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_26);
+																													force_auto_install.setText(R.string.force_auto_install_26);
+																													force_auto_install_info.setText(R.string.force_auto_install_desc_26);
+																													theme.setText(R.string.show_themes_26);
+																													apk_location.setText(R.string.apk_location_26);
+																													apk_location_info.setText(R.string.apk_location_desc_26);
+																													clear_directory_folders.setText(R.string.clear_directory_folders_26);
+																													clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_26);
+																													reset_settings.setText(R.string.reset_settings_26);
+																													sub_title.setText(R.string.about_sub_26);
+																													developer_manager.setText(R.string.xmanager_dev_26);
+																													developer_spotify.setText(R.string.spotify_mod_devs_26);
+																													support_team.setText(R.string.telegram_support_team_26);
+																													mod_testers_1.setText(R.string.manager_testers_26);
+																													mod_testers_2.setText(R.string.manager_hosting_26);
+																													mobilism_team.setText(R.string.mobilism_team_26);
+																													forum_team.setText(R.string.forum_team_26);
+																													manager_team.setText(R.string.xspotify_team_26);
+																													contributors_1.setText(R.string.contributors_26);
+																													download_selected.setText(R.string.download_selected_26);
+																													download_ready.setText(R.string.download_ready_26);
+																													download_ready_desc.setText(R.string.download_ready_desc_26);
+																													downloading_file.setText(R.string.downloading_file_26);
+																													download_success.setText(R.string.download_success_26);
+																													new_update.setText(R.string.new_update_26);
+																													download_selected_0 = download_selected.getText().toString();
+																													download_ready_0 = download_ready.getText().toString();
+																													download_ready_desc_0 = download_ready_desc.getText().toString();
+																													downloading_file_0 = downloading_file.getText().toString();
+																													download_success_0 = download_success.getText().toString();
+																													copy_url.setText(R.string.copy_url_26);
+																													continue_1.setText(R.string.continue_1_26);
+																													cancel.setText(R.string.cancel_26);
+																													fixer.setText(R.string.fixer_26);
+																													download.setText(R.string.download_26);
+																													later.setText(R.string.later_26);
+																													install_now.setText(R.string.install_now_26);
+																													install_update.setText(R.string.install_update_26);
+																													go_back.setText(R.string.go_back_26);
+																													download_update.setText(R.string.download_update_26);
+																													not_now.setText(R.string.not_now_26);
+																													show_support.setText(R.string.show_support_26);
+																													show_support_desc.setText(R.string.show_support_desc_26);
+																													copy_url_0 = copy_url.getText().toString();
+																													download_0 = download.getText().toString();
+																													continue_0 = continue_1.getText().toString();
+																													cancel_0 = cancel.getText().toString();
+																													fixer_0 = fixer.getText().toString();
+																													later_0 = later.getText().toString();
+																													install_now_0 = install_now.getText().toString();
+																													go_back_0 = go_back.getText().toString();
+																													install_update_0 = install_update.getText().toString();
+																													main_title.setText(R.string.main_title_26);
+																													settings_title.setText(R.string.settings_title_26);
+																													about_title.setText(R.string.about_title_26);
+																													maintenance.setText(R.string.maintenance_26);
+																													maintenance_desc.setText(R.string.maintenance_desc_26);
+																													thanks.setText(R.string.thanks_26);
+																													language.setText(R.string.language_26);
+																													website.setText(R.string.website_26);
+																													discord.setText(R.string.discord_26);
+																													reddit.setText(R.string.reddit_26);
+																													faq.setText(R.string.faq_26);
+																													cloned_version.setText(R.string.cloned_version_26);
+																													cloned_version_info.setText(R.string.cloned_version_desc_26);
+																													disable_reward_ad.setText(R.string.disable_rewarded_ads_26);
+																													disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_26);
+																													installation_failed.setText(R.string.installation_failed_26);
+																													installation_failed_desc.setText(R.string.installation_failed_desc_26);
+																													installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_26);
+																													installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_26);
+																													existing_patched.setText(R.string.existing_patched_26);
+																													existing_patched_desc.setText(R.string.existing_patched_desc_26);
+																													close.setText(R.string.close_26);
+																													cloned.setText(R.string.cloned_26);
+																													ream.setText(R.string.ream_26);
+																													install.setText(R.string.install_26);
+																													uninstall.setText(R.string.uninstall_26);
+																													ignore.setText(R.string.ignore_26);
+																													delete.setText(R.string.delete_26);
+																													uninstall_patched.setText(R.string.uninstall_patched_26);
+																													open_settings.setText(R.string.open_settings_26);
+																													open_patched.setText(R.string.open_patched_26);
+																													installation_failed_0 = installation_failed.getText().toString();
+																													installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																													installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																													installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																													existing_patched_0 = existing_patched.getText().toString();
+																													existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																													close_0 = close.getText().toString();
+																													uninstall_0 = uninstall.getText().toString();
 																													
 																													select_language.setSelection((int)(26));
 																												}
 																												else {
 																													if (LANGUAGE.getString("LANGUAGE", "").equals("27")) {
-																														    title_1.setText(R.string.spotify_regular_27);
-																															title_2.setText(R.string.spotify_amoled_27);
-																															sub_text_installed.setText(R.string.installed_27);
-																															sub_text_1.setText(R.string.latest_27);
-																															sub_text_3.setText(R.string.latest_27);
-																															version_switch_1.setText(R.string.versions_27);
-																															version_switch_2.setText(R.string.versions_27);
-																															changelogs.setText(R.string.changelogs_27);
-																															title_sub.setText(R.string.manager_tools_27);
-																															device_cpu.setText(R.string.device_cpu_27);
-																															source.setText(R.string.source_27);
-																															support.setText(R.string.support_27);
-																															donate.setText(R.string.donate_27);
-																															about.setText(R.string.about_27);
-																															list_auto_refresh.setText(R.string.list_auto_refresh_27);
-																															list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_27);
-																															force_auto_install.setText(R.string.force_auto_install_27);
-																															force_auto_install_info.setText(R.string.force_auto_install_desc_27);
-																															theme.setText(R.string.show_themes_27);
-																															apk_location.setText(R.string.apk_location_27);
-																															apk_location_info.setText(R.string.apk_location_desc_27);
-																															clear_directory_folders.setText(R.string.clear_directory_folders_27);
-																															clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_27);
-																															reset_settings.setText(R.string.reset_settings_27);
-																															sub_title.setText(R.string.about_sub_27);
-																															developer_manager.setText(R.string.xmanager_dev_27);
-																															developer_spotify.setText(R.string.spotify_mod_devs_27);
-																															support_team.setText(R.string.telegram_support_team_27);
-																															mod_testers_1.setText(R.string.manager_testers_27);
-																															mod_testers_2.setText(R.string.manager_hosting_27);
-																															mobilism_team.setText(R.string.mobilism_team_27);
-																															forum_team.setText(R.string.forum_team_27);
-																															manager_team.setText(R.string.xspotify_team_27);
-																															contributors_1.setText(R.string.contributors_27);
-																															download_selected.setText(R.string.download_selected_27);
-																															download_ready.setText(R.string.download_ready_27);
-																															download_ready_desc.setText(R.string.download_ready_desc_27);
-																															downloading_file.setText(R.string.downloading_file_27);
-																															download_success.setText(R.string.download_success_27);
-																															new_update.setText(R.string.new_update_27);
-																															download_selected_0 = download_selected.getText().toString();
-																															download_ready_0 = download_ready.getText().toString();
-																															download_ready_desc_0 = download_ready_desc.getText().toString();
-																															downloading_file_0 = downloading_file.getText().toString();
-																															download_success_0 = download_success.getText().toString();
-																															copy_url.setText(R.string.copy_url_27);
-																															continue_1.setText(R.string.continue_1_27);
-																															cancel.setText(R.string.cancel_27);
-																														    fixer.setText(R.string.fixer_27);
-																															download.setText(R.string.download_27);
-																															later.setText(R.string.later_27);
-																															install_now.setText(R.string.install_now_27);
-																															install_update.setText(R.string.install_update_27);
-																															go_back.setText(R.string.go_back_27);
-																															download_update.setText(R.string.download_update_27);
-																															not_now.setText(R.string.not_now_27);
-																															show_support.setText(R.string.show_support_27);
-																															show_support_desc.setText(R.string.show_support_desc_27);
-																															copy_url_0 = copy_url.getText().toString();
-																															download_0 = download.getText().toString();
-																															continue_0 = continue_1.getText().toString();
-																															cancel_0 = cancel.getText().toString();
-																														    fixer_0 = fixer.getText().toString();
-																															later_0 = later.getText().toString();
-																															install_now_0 = install_now.getText().toString();
-																															go_back_0 = go_back.getText().toString();
-																															install_update_0 = install_update.getText().toString();
-																															main_title.setText(R.string.main_title_27);
-																															settings_title.setText(R.string.settings_title_27);
-																															about_title.setText(R.string.about_title_27);
-																															maintenance.setText(R.string.maintenance_27);
-																															maintenance_desc.setText(R.string.maintenance_desc_27);
-																															thanks.setText(R.string.thanks_27);
-																															language.setText(R.string.language_27);
-																															website.setText(R.string.website_27);
-																															discord.setText(R.string.discord_27);
-																															reddit.setText(R.string.reddit_27);
-																															faq.setText(R.string.faq_27);
-																															cloned_version.setText(R.string.cloned_version_27);
-																															cloned_version_info.setText(R.string.cloned_version_desc_27);
-																														    disable_reward_ad.setText(R.string.disable_rewarded_ads_27);
-																														    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_27);
-																														    installation_failed.setText(R.string.installation_failed_27);
-																														    installation_failed_desc.setText(R.string.installation_failed_desc_27);
-																														    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_27);
-																														    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_27);
-																														    existing_patched.setText(R.string.existing_patched_27);
-																														    existing_patched_desc.setText(R.string.existing_patched_desc_27);
-																														    close.setText(R.string.close_27);
-																														    cloned.setText(R.string.cloned_27);
-																														    ream.setText(R.string.ream_27);
-																														    install.setText(R.string.install_27);
-																														    uninstall.setText(R.string.uninstall_27);
-																														    ignore.setText(R.string.ignore_27);
-																														    delete.setText(R.string.delete_27);
-																														    uninstall_patched.setText(R.string.uninstall_patched_27);
-																														    open_settings.setText(R.string.open_settings_27);
-																														    open_patched.setText(R.string.open_patched_27);
-																															installation_failed_0 = installation_failed.getText().toString();
-																														    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																														    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-																														    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-																														    existing_patched_0 = existing_patched.getText().toString();
-																														    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																														    close_0 = close.getText().toString();
-																														    uninstall_0 = uninstall.getText().toString();
+																														title_1.setText(R.string.spotify_regular_27);
+																														title_2.setText(R.string.spotify_amoled_27);
+																														sub_text_installed.setText(R.string.installed_27);
+																														sub_text_1.setText(R.string.latest_27);
+																														sub_text_2.setText(R.string.latest_27);
+																														sub_text_3.setText(R.string.latest_27);
+																														version_switch_1.setText(R.string.versions_27);
+																														version_switch_2.setText(R.string.versions_27);
+																														version_switch_3.setText(R.string.versions_27);
+																														changelogs.setText(R.string.changelogs_27);
+																														title_sub.setText(R.string.manager_tools_27);
+																														device_cpu.setText(R.string.device_cpu_27);
+																														source.setText(R.string.source_27);
+																														support.setText(R.string.support_27);
+																														donate.setText(R.string.donate_27);
+																														about.setText(R.string.about_27);
+																														list_auto_refresh.setText(R.string.list_auto_refresh_27);
+																														list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_27);
+																														force_auto_install.setText(R.string.force_auto_install_27);
+																														force_auto_install_info.setText(R.string.force_auto_install_desc_27);
+																														theme.setText(R.string.show_themes_27);
+																														apk_location.setText(R.string.apk_location_27);
+																														apk_location_info.setText(R.string.apk_location_desc_27);
+																														clear_directory_folders.setText(R.string.clear_directory_folders_27);
+																														clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_27);
+																														reset_settings.setText(R.string.reset_settings_27);
+																														sub_title.setText(R.string.about_sub_27);
+																														developer_manager.setText(R.string.xmanager_dev_27);
+																														developer_spotify.setText(R.string.spotify_mod_devs_27);
+																														support_team.setText(R.string.telegram_support_team_27);
+																														mod_testers_1.setText(R.string.manager_testers_27);
+																														mod_testers_2.setText(R.string.manager_hosting_27);
+																														mobilism_team.setText(R.string.mobilism_team_27);
+																														forum_team.setText(R.string.forum_team_27);
+																														manager_team.setText(R.string.xspotify_team_27);
+																														contributors_1.setText(R.string.contributors_27);
+																														download_selected.setText(R.string.download_selected_27);
+																														download_ready.setText(R.string.download_ready_27);
+																														download_ready_desc.setText(R.string.download_ready_desc_27);
+																														downloading_file.setText(R.string.downloading_file_27);
+																														download_success.setText(R.string.download_success_27);
+																														new_update.setText(R.string.new_update_27);
+																														download_selected_0 = download_selected.getText().toString();
+																														download_ready_0 = download_ready.getText().toString();
+																														download_ready_desc_0 = download_ready_desc.getText().toString();
+																														downloading_file_0 = downloading_file.getText().toString();
+																														download_success_0 = download_success.getText().toString();
+																														copy_url.setText(R.string.copy_url_27);
+																														continue_1.setText(R.string.continue_1_27);
+																														cancel.setText(R.string.cancel_27);
+																														fixer.setText(R.string.fixer_27);
+																														download.setText(R.string.download_27);
+																														later.setText(R.string.later_27);
+																														install_now.setText(R.string.install_now_27);
+																														install_update.setText(R.string.install_update_27);
+																														go_back.setText(R.string.go_back_27);
+																														download_update.setText(R.string.download_update_27);
+																														not_now.setText(R.string.not_now_27);
+																														show_support.setText(R.string.show_support_27);
+																														show_support_desc.setText(R.string.show_support_desc_27);
+																														copy_url_0 = copy_url.getText().toString();
+																														download_0 = download.getText().toString();
+																														continue_0 = continue_1.getText().toString();
+																														cancel_0 = cancel.getText().toString();
+																														fixer_0 = fixer.getText().toString();
+																														later_0 = later.getText().toString();
+																														install_now_0 = install_now.getText().toString();
+																														go_back_0 = go_back.getText().toString();
+																														install_update_0 = install_update.getText().toString();
+																														main_title.setText(R.string.main_title_27);
+																														settings_title.setText(R.string.settings_title_27);
+																														about_title.setText(R.string.about_title_27);
+																														maintenance.setText(R.string.maintenance_27);
+																														maintenance_desc.setText(R.string.maintenance_desc_27);
+																														thanks.setText(R.string.thanks_27);
+																														language.setText(R.string.language_27);
+																														website.setText(R.string.website_27);
+																														discord.setText(R.string.discord_27);
+																														reddit.setText(R.string.reddit_27);
+																														faq.setText(R.string.faq_27);
+																														cloned_version.setText(R.string.cloned_version_27);
+																														cloned_version_info.setText(R.string.cloned_version_desc_27);
+																														disable_reward_ad.setText(R.string.disable_rewarded_ads_27);
+																														disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_27);
+																														installation_failed.setText(R.string.installation_failed_27);
+																														installation_failed_desc.setText(R.string.installation_failed_desc_27);
+																														installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_27);
+																														installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_27);
+																														existing_patched.setText(R.string.existing_patched_27);
+																														existing_patched_desc.setText(R.string.existing_patched_desc_27);
+																														close.setText(R.string.close_27);
+																														cloned.setText(R.string.cloned_27);
+																														ream.setText(R.string.ream_27);
+																														install.setText(R.string.install_27);
+																														uninstall.setText(R.string.uninstall_27);
+																														ignore.setText(R.string.ignore_27);
+																														delete.setText(R.string.delete_27);
+																														uninstall_patched.setText(R.string.uninstall_patched_27);
+																														open_settings.setText(R.string.open_settings_27);
+																														open_patched.setText(R.string.open_patched_27);
+																														installation_failed_0 = installation_failed.getText().toString();
+																														installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																														installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																														installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																														existing_patched_0 = existing_patched.getText().toString();
+																														existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																														close_0 = close.getText().toString();
+																														uninstall_0 = uninstall.getText().toString();
 																														
 																														select_language.setSelection((int)(27));
 																													}
 																													else {
 																														if (LANGUAGE.getString("LANGUAGE", "").equals("28")) {
-																															    title_1.setText(R.string.spotify_regular_28);
-																																title_2.setText(R.string.spotify_amoled_28);
-																																sub_text_installed.setText(R.string.installed_28);
-																																sub_text_1.setText(R.string.latest_28);
-																																sub_text_3.setText(R.string.latest_28);
-																																version_switch_1.setText(R.string.versions_28);
-																																version_switch_2.setText(R.string.versions_28);
-																																changelogs.setText(R.string.changelogs_28);
-																																title_sub.setText(R.string.manager_tools_28);
-																																device_cpu.setText(R.string.device_cpu_28);
-																																source.setText(R.string.source_28);
-																																support.setText(R.string.support_28);
-																																donate.setText(R.string.donate_28);
-																																about.setText(R.string.about_28);
-																																list_auto_refresh.setText(R.string.list_auto_refresh_28);
-																																list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_28);
-																																force_auto_install.setText(R.string.force_auto_install_28);
-																																force_auto_install_info.setText(R.string.force_auto_install_desc_28);
-																																theme.setText(R.string.show_themes_28);
-																																apk_location.setText(R.string.apk_location_28);
-																																apk_location_info.setText(R.string.apk_location_desc_28);
-																																clear_directory_folders.setText(R.string.clear_directory_folders_28);
-																																clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_28);
-																																reset_settings.setText(R.string.reset_settings_28);
-																																sub_title.setText(R.string.about_sub_28);
-																																developer_manager.setText(R.string.xmanager_dev_28);
-																																developer_spotify.setText(R.string.spotify_mod_devs_28);
-																																support_team.setText(R.string.telegram_support_team_28);
-																																mod_testers_1.setText(R.string.manager_testers_28);
-																																mod_testers_2.setText(R.string.manager_hosting_28);
-																																mobilism_team.setText(R.string.mobilism_team_28);
-																																forum_team.setText(R.string.forum_team_28);
-																																manager_team.setText(R.string.xspotify_team_28);
-																																contributors_1.setText(R.string.contributors_28);
-																																download_selected.setText(R.string.download_selected_28);
-																																download_ready.setText(R.string.download_ready_28);
-																																download_ready_desc.setText(R.string.download_ready_desc_28);
-																																downloading_file.setText(R.string.downloading_file_28);
-																																download_success.setText(R.string.download_success_28);
-																																new_update.setText(R.string.new_update_28);
-																																download_selected_0 = download_selected.getText().toString();
-																																download_ready_0 = download_ready.getText().toString();
-																																download_ready_desc_0 = download_ready_desc.getText().toString();
-																																downloading_file_0 = downloading_file.getText().toString();
-																																download_success_0 = download_success.getText().toString();
-																																copy_url.setText(R.string.copy_url_28);
-																																continue_1.setText(R.string.continue_1_28);
-																																cancel.setText(R.string.cancel_28);
-																															    fixer.setText(R.string.fixer_28);
-																																download.setText(R.string.download_28);
-																																later.setText(R.string.later_28);
-																																install_now.setText(R.string.install_now_28);
-																																install_update.setText(R.string.install_update_28);
-																																go_back.setText(R.string.go_back_28);
-																																download_update.setText(R.string.download_update_28);
-																																not_now.setText(R.string.not_now_28);
-																																show_support.setText(R.string.show_support_28);
-																																show_support_desc.setText(R.string.show_support_desc_28);
-																																copy_url_0 = copy_url.getText().toString();
-																																download_0 = download.getText().toString();
-																																continue_0 = continue_1.getText().toString();
-																																cancel_0 = cancel.getText().toString();
-																															    fixer_0 = fixer.getText().toString();
-																																later_0 = later.getText().toString();
-																																install_now_0 = install_now.getText().toString();
-																																go_back_0 = go_back.getText().toString();
-																																install_update_0 = install_update.getText().toString();
-																																main_title.setText(R.string.main_title_28);
-																																settings_title.setText(R.string.settings_title_28);
-																																about_title.setText(R.string.about_title_28);
-																																maintenance.setText(R.string.maintenance_28);
-																																maintenance_desc.setText(R.string.maintenance_desc_28);
-																																thanks.setText(R.string.thanks_28);
-																																language.setText(R.string.language_28);
-																																website.setText(R.string.website_28);
-																																discord.setText(R.string.discord_28);
-																																reddit.setText(R.string.reddit_28);
-																																faq.setText(R.string.faq_28);
-																																cloned_version.setText(R.string.cloned_version_28);
-																																cloned_version_info.setText(R.string.cloned_version_desc_28);
-																															    disable_reward_ad.setText(R.string.disable_rewarded_ads_28);
-																															    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_28);
-																															    installation_failed.setText(R.string.installation_failed_28);
-																															    installation_failed_desc.setText(R.string.installation_failed_desc_28);
-																															    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_28);
-																															    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_28);
-																															    existing_patched.setText(R.string.existing_patched_28);
-																															    existing_patched_desc.setText(R.string.existing_patched_desc_28);
-																															    close.setText(R.string.close_28);
-																															    cloned.setText(R.string.cloned_28);
-																															    ream.setText(R.string.ream_28);
-																															    install.setText(R.string.install_28);
-																															    uninstall.setText(R.string.uninstall_28);
-																															    ignore.setText(R.string.ignore_28);
-																															    delete.setText(R.string.delete_28);
-																															    uninstall_patched.setText(R.string.uninstall_patched_28);
-																															    open_settings.setText(R.string.open_settings_28);
-																															    open_patched.setText(R.string.open_patched_28);
-																																installation_failed_0 = installation_failed.getText().toString();
-																															    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																															    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-																															    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-																															    existing_patched_0 = existing_patched.getText().toString();
-																															    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																															    close_0 = close.getText().toString();
-																															    uninstall_0 = uninstall.getText().toString();
+																															title_1.setText(R.string.spotify_regular_28);
+																															title_2.setText(R.string.spotify_amoled_28);
+																															sub_text_installed.setText(R.string.installed_28);
+																															sub_text_1.setText(R.string.latest_28);
+																															sub_text_2.setText(R.string.latest_28);
+																															sub_text_3.setText(R.string.latest_28);
+																															version_switch_1.setText(R.string.versions_28);
+																															version_switch_2.setText(R.string.versions_28);
+																															version_switch_3.setText(R.string.versions_28);
+																															changelogs.setText(R.string.changelogs_28);
+																															title_sub.setText(R.string.manager_tools_28);
+																															device_cpu.setText(R.string.device_cpu_28);
+																															source.setText(R.string.source_28);
+																															support.setText(R.string.support_28);
+																															donate.setText(R.string.donate_28);
+																															about.setText(R.string.about_28);
+																															list_auto_refresh.setText(R.string.list_auto_refresh_28);
+																															list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_28);
+																															force_auto_install.setText(R.string.force_auto_install_28);
+																															force_auto_install_info.setText(R.string.force_auto_install_desc_28);
+																															theme.setText(R.string.show_themes_28);
+																															apk_location.setText(R.string.apk_location_28);
+																															apk_location_info.setText(R.string.apk_location_desc_28);
+																															clear_directory_folders.setText(R.string.clear_directory_folders_28);
+																															clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_28);
+																															reset_settings.setText(R.string.reset_settings_28);
+																															sub_title.setText(R.string.about_sub_28);
+																															developer_manager.setText(R.string.xmanager_dev_28);
+																															developer_spotify.setText(R.string.spotify_mod_devs_28);
+																															support_team.setText(R.string.telegram_support_team_28);
+																															mod_testers_1.setText(R.string.manager_testers_28);
+																															mod_testers_2.setText(R.string.manager_hosting_28);
+																															mobilism_team.setText(R.string.mobilism_team_28);
+																															forum_team.setText(R.string.forum_team_28);
+																															manager_team.setText(R.string.xspotify_team_28);
+																															contributors_1.setText(R.string.contributors_28);
+																															download_selected.setText(R.string.download_selected_28);
+																															download_ready.setText(R.string.download_ready_28);
+																															download_ready_desc.setText(R.string.download_ready_desc_28);
+																															downloading_file.setText(R.string.downloading_file_28);
+																															download_success.setText(R.string.download_success_28);
+																															new_update.setText(R.string.new_update_28);
+																															download_selected_0 = download_selected.getText().toString();
+																															download_ready_0 = download_ready.getText().toString();
+																															download_ready_desc_0 = download_ready_desc.getText().toString();
+																															downloading_file_0 = downloading_file.getText().toString();
+																															download_success_0 = download_success.getText().toString();
+																															copy_url.setText(R.string.copy_url_28);
+																															continue_1.setText(R.string.continue_1_28);
+																															cancel.setText(R.string.cancel_28);
+																															fixer.setText(R.string.fixer_28);
+																															download.setText(R.string.download_28);
+																															later.setText(R.string.later_28);
+																															install_now.setText(R.string.install_now_28);
+																															install_update.setText(R.string.install_update_28);
+																															go_back.setText(R.string.go_back_28);
+																															download_update.setText(R.string.download_update_28);
+																															not_now.setText(R.string.not_now_28);
+																															show_support.setText(R.string.show_support_28);
+																															show_support_desc.setText(R.string.show_support_desc_28);
+																															copy_url_0 = copy_url.getText().toString();
+																															download_0 = download.getText().toString();
+																															continue_0 = continue_1.getText().toString();
+																															cancel_0 = cancel.getText().toString();
+																															fixer_0 = fixer.getText().toString();
+																															later_0 = later.getText().toString();
+																															install_now_0 = install_now.getText().toString();
+																															go_back_0 = go_back.getText().toString();
+																															install_update_0 = install_update.getText().toString();
+																															main_title.setText(R.string.main_title_28);
+																															settings_title.setText(R.string.settings_title_28);
+																															about_title.setText(R.string.about_title_28);
+																															maintenance.setText(R.string.maintenance_28);
+																															maintenance_desc.setText(R.string.maintenance_desc_28);
+																															thanks.setText(R.string.thanks_28);
+																															language.setText(R.string.language_28);
+																															website.setText(R.string.website_28);
+																															discord.setText(R.string.discord_28);
+																															reddit.setText(R.string.reddit_28);
+																															faq.setText(R.string.faq_28);
+																															cloned_version.setText(R.string.cloned_version_28);
+																															cloned_version_info.setText(R.string.cloned_version_desc_28);
+																															disable_reward_ad.setText(R.string.disable_rewarded_ads_28);
+																															disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_28);
+																															installation_failed.setText(R.string.installation_failed_28);
+																															installation_failed_desc.setText(R.string.installation_failed_desc_28);
+																															installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_28);
+																															installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_28);
+																															existing_patched.setText(R.string.existing_patched_28);
+																															existing_patched_desc.setText(R.string.existing_patched_desc_28);
+																															close.setText(R.string.close_28);
+																															cloned.setText(R.string.cloned_28);
+																															ream.setText(R.string.ream_28);
+																															install.setText(R.string.install_28);
+																															uninstall.setText(R.string.uninstall_28);
+																															ignore.setText(R.string.ignore_28);
+																															delete.setText(R.string.delete_28);
+																															uninstall_patched.setText(R.string.uninstall_patched_28);
+																															open_settings.setText(R.string.open_settings_28);
+																															open_patched.setText(R.string.open_patched_28);
+																															installation_failed_0 = installation_failed.getText().toString();
+																															installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																															installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																															installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																															existing_patched_0 = existing_patched.getText().toString();
+																															existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																															close_0 = close.getText().toString();
+																															uninstall_0 = uninstall.getText().toString();
 																															
 																															select_language.setSelection((int)(28));
 																														}
@@ -11540,9 +12209,11 @@ public class MainActivity extends AppCompatActivity {
 		title_2.setText(R.string.spotify_amoled);
 		sub_text_installed.setText(R.string.installed);
 		sub_text_1.setText(R.string.latest);
+		sub_text_2.setText(R.string.latest);
 		sub_text_3.setText(R.string.latest);
 		version_switch_1.setText(R.string.versions);
 		version_switch_2.setText(R.string.versions);
+		version_switch_3.setText(R.string.versions);
 		changelogs.setText(R.string.changelogs);
 		title_sub.setText(R.string.manager_tools);
 		device_cpu.setText(R.string.device_cpu);
@@ -11645,17 +12316,20 @@ public class MainActivity extends AppCompatActivity {
 		customTabsIntent.launchUrl(getCurrentContext(this), Uri.parse(_String_Text));
 		
 	} public Context getCurrentContext(Context c) {
-		return c;
-		
+			return c;
+			
 	} public Context getCurrentContext(Fragment c) {
-		return c.getActivity();
-		
+			return c.getActivity();
+			
 	} public Context getCurrentContext(DialogFragment c) {
-		return c.getActivity();
-		
+			return c.getActivity();
+			
 	}
 	
 	{
+			
+			
+			
 	}
 	
 	
@@ -11682,6 +12356,7 @@ public class MainActivity extends AppCompatActivity {
 										animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
 										animation.setDuration(500); title_header_beta.startAnimation(animation);
 										animation = null;
+										
 										title_header_beta.setText("NEW FEATURES");
 									}
 								});
@@ -11739,20 +12414,24 @@ public class MainActivity extends AppCompatActivity {
 		b = null;
 		Animation c;
 		c = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		c.setDuration(400); main_box_6.startAnimation(c);
+		c.setDuration(400); main_box_3.startAnimation(c);
 		c = null;
 		Animation d;
 		d = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		d.setDuration(500); box_sub_header.startAnimation(d);
+		d.setDuration(500); main_box_6.startAnimation(d);
 		d = null;
 		Animation e;
 		e = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		e.setDuration(600); main_box_4.startAnimation(e);
+		e.setDuration(600); box_sub_header.startAnimation(e);
 		e = null;
 		Animation f;
 		f = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		f.setDuration(700); main_box_15.startAnimation(f);
+		f.setDuration(700); main_box_4.startAnimation(f);
 		f = null;
+		Animation g;
+		g = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		g.setDuration(800); main_box_15.startAnimation(g);
+		g = null;
 	}
 	
 	
@@ -11761,6 +12440,7 @@ public class MainActivity extends AppCompatActivity {
 		list_menu_2.setOnScrollListener(new AbsListView.OnScrollListener() { @Override public void onScrollStateChanged(AbsListView view, int scrollState) { } @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) { int topRowVerticalPosition = (list_menu_2 == null || list_menu_2.getChildCount() == 0) ? 0 : list_menu_2.getChildAt(0).getTop(); main_refresh_layout.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0); } });
 		list_menu_3.setOnScrollListener(new AbsListView.OnScrollListener() { @Override public void onScrollStateChanged(AbsListView view, int scrollState) { } @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) { int topRowVerticalPosition = (list_menu_3 == null || list_menu_3.getChildCount() == 0) ? 0 : list_menu_3.getChildAt(0).getTop(); main_refresh_layout.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0); } });
 		list_menu_4.setOnScrollListener(new AbsListView.OnScrollListener() { @Override public void onScrollStateChanged(AbsListView view, int scrollState) { } @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) { int topRowVerticalPosition = (list_menu_4 == null || list_menu_4.getChildCount() == 0) ? 0 : list_menu_4.getChildAt(0).getTop(); main_refresh_layout.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0); } });
+		list_menu_5.setOnScrollListener(new AbsListView.OnScrollListener() { @Override public void onScrollStateChanged(AbsListView view, int scrollState) { } @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) { int topRowVerticalPosition = (list_menu_5 == null || list_menu_5.getChildCount() == 0) ? 0 : list_menu_5.getChildAt(0).getTop(); main_refresh_layout.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0); } });
 		list_changelogs.setOnScrollListener(new AbsListView.OnScrollListener() { @Override public void onScrollStateChanged(AbsListView view, int scrollState) { } @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) { int topRowVerticalPosition = (list_changelogs == null || list_changelogs.getChildCount() == 0) ? 0 : list_changelogs.getChildAt(0).getTop(); main_refresh_layout.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0); } });
 	}
 	
@@ -11805,161 +12485,162 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 	public void requestReadExternalStorage() {
-		ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1000);
+			ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1000);
 	}
 	@Override
 	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-		if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-				if (SDK_INT >= Build.VERSION_CODES.R) {
-						_External_Storage();
-				}else{
-						try {
-								final AlertDialog.Builder Permission_v1 = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-								AlertDialog = Permission_v1.create();
-								AlertDialog.dismiss();
-								SketchwareUtil.showMessage(getApplicationContext(), "Permission Granted");
-						} catch (Exception e) {	
-						}
-				}
-		} else {
-				final AlertDialog.Builder Permission_v2 = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-				String Message = "Since you did not allow the storage permission, you will need to manually enable it.";
-				String MessageColor = "FFFFFF";
-				Permission_v2.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-				Permission_v2.setPositiveButton("Open Settings", new DialogInterface.OnClickListener(){
-						@Override
-						public void onClick(DialogInterface Permission_v2, int p) {
-								AlertDialog.setCancelable(true);
-								if (SDK_INT >= Build.VERSION_CODES.R) {
-										try {
-												Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-												intent.addCategory("android.intent.category.DEFAULT");
-												intent.setData(Uri.parse(String.format("package:%s",getApplicationContext().getPackageName())));
-												startActivityForResult(intent, 1000);
-										} catch (Exception e) {
-												Intent intent = new Intent();
-												intent.setAction(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-												startActivityForResult(intent, 1000);
-										}
-								}
-								if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-										final AlertDialog.Builder Permission_v1 = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-										AlertDialog = Permission_v1.create();
-										AlertDialog.dismiss();
-								}else{
-										final AlertDialog.Builder Permission_v1 = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-										String Title = "<b>".concat("PERMISSION REQUIRED".concat("</b>"));
-										String TitleColor = "FF5722";
-										Permission_v1.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-										String Message = "xManager needs the storage permission to utilize the APK Location feature and to save the downloaded patched within that folder.";
-										String MessageColor = "FFFFFF";
-										Permission_v1.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										Permission_v1.setPositiveButton("Understood", new DialogInterface.OnClickListener(){
-												@Override
-												public void onClick(DialogInterface Permission_v1, int p) {
-														AlertDialog.setCancelable(true);
-														requestReadExternalStorage();
-												}
-										});
-										AlertDialog = Permission_v1.create();
-										AlertDialog.setCancelable(false);
-										AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-										AlertDialog.show();
-								}
-						}
-				});
-				try {
-						AlertDialog = Permission_v2.create();
-						AlertDialog.setCancelable(false);
-						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-						AlertDialog.show();
-						SketchwareUtil.showMessage(getApplicationContext(), "Permission Denied");
-				} catch (Exception e) {
-				}
-		}
-		
+			super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+					if (SDK_INT >= Build.VERSION_CODES.R) {
+							_External_Storage();
+					}else{
+							try {
+									final AlertDialog.Builder Permission_v1 = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+									AlertDialog = Permission_v1.create();
+									AlertDialog.dismiss();
+									SketchwareUtil.showMessage(getApplicationContext(), "Permission Granted");
+							} catch (Exception e) {	
+							}
+					}
+			} else {
+					final AlertDialog.Builder Permission_v2 = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+					String Message = "Since you did not allow the storage permission, you will need to manually enable it.";
+					String MessageColor = "FFFFFF";
+					Permission_v2.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+					Permission_v2.setPositiveButton("Open Settings", new DialogInterface.OnClickListener(){
+							@Override
+							public void onClick(DialogInterface Permission_v2, int p) {
+									AlertDialog.setCancelable(true);
+									if (SDK_INT >= Build.VERSION_CODES.R) {
+											try {
+													Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+													intent.addCategory("android.intent.category.DEFAULT");
+													intent.setData(Uri.parse(String.format("package:%s",getApplicationContext().getPackageName())));
+													startActivityForResult(intent, 1000);
+											} catch (Exception e) {
+													Intent intent = new Intent();
+													intent.setAction(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+													startActivityForResult(intent, 1000);
+											}
+									}
+									if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+											final AlertDialog.Builder Permission_v1 = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+											AlertDialog = Permission_v1.create();
+											AlertDialog.dismiss();
+									}else{
+											final AlertDialog.Builder Permission_v1 = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+											String Title = "<b>".concat("PERMISSION REQUIRED".concat("</b>"));
+											String TitleColor = "FF5722";
+											Permission_v1.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+											String Message = "xManager needs the storage permission to utilize the APK Location feature and to save the downloaded patched within that folder.";
+											String MessageColor = "FFFFFF";
+											Permission_v1.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+											Permission_v1.setPositiveButton("Understood", new DialogInterface.OnClickListener(){
+													@Override
+													public void onClick(DialogInterface Permission_v1, int p) {
+															AlertDialog.setCancelable(true);
+															requestReadExternalStorage();
+													}
+											});
+											AlertDialog = Permission_v1.create();
+											AlertDialog.setCancelable(false);
+											AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+											AlertDialog.show();
+									}
+							}
+					});
+					try {
+							AlertDialog = Permission_v2.create();
+							AlertDialog.setCancelable(false);
+							AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+							AlertDialog.show();
+							SketchwareUtil.showMessage(getApplicationContext(), "Permission Denied");
+					} catch (Exception e) {
+					}
+			}
+			
+			
 	}
 	
 	
 	public void _Signature_Checker() {
 	}
 	public String getISignature(Context context) {
-		try {
-				android.content.pm.PackageInfo packageInfo = context.getPackageManager().getPackageInfo("com.spotify.music", PackageManager.GET_SIGNATURES);
-				for (android.content.pm.Signature signature : packageInfo.signatures) {
-						String i_sha1 = geti_SHA1_(signature.toByteArray());
-						return i_sha1;
-				}
-		} catch (android.content.pm.PackageManager.NameNotFoundException e) {
-		}
-		return "";
+			try {
+					android.content.pm.PackageInfo packageInfo = context.getPackageManager().getPackageInfo("com.spotify.music", PackageManager.GET_SIGNATURES);
+					for (android.content.pm.Signature signature : packageInfo.signatures) {
+							String i_sha1 = geti_SHA1_(signature.toByteArray());
+							return i_sha1;
+					}
+			} catch (android.content.pm.PackageManager.NameNotFoundException e) {
+			}
+			return "";
 	}
 	
 	public String geti_SHA1_(byte[] sig) {
-		try {
-				java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA1");
-				digest.update(sig);
-				byte[] hashtext = digest.digest();
-				return i_bytes_To_Hex_(hashtext);
-		} catch (java.security.NoSuchAlgorithmException e) {
-		}
-		return "";
+			try {
+					java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA1");
+					digest.update(sig);
+					byte[] hashtext = digest.digest();
+					return i_bytes_To_Hex_(hashtext);
+			} catch (java.security.NoSuchAlgorithmException e) {
+			}
+			return "";
 	}
 	
 	public String i_bytes_To_Hex_(byte[] bytes) {
-		final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
-				'9', 'A', 'B', 'C', 'D', 'E', 'F' };
-		char[] hexChars = new char[bytes.length * 2];
-		int v;
-		for (int j = 0; j < bytes.length; j++) {
-				v = bytes[j] & 0xFF;
-				hexChars[j * 2] = hexArray[v >>> 4];
-				hexChars[j * 2 + 1] = hexArray[v & 0x0F];
-		}
-		return new String(hexChars);
+			final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
+					'9', 'A', 'B', 'C', 'D', 'E', 'F' };
+			char[] hexChars = new char[bytes.length * 2];
+			int v;
+			for (int j = 0; j < bytes.length; j++) {
+					v = bytes[j] & 0xFF;
+					hexChars[j * 2] = hexArray[v >>> 4];
+					hexChars[j * 2 + 1] = hexArray[v & 0x0F];
+			}
+			return new String(hexChars);
 	}
 	{
-		
-		
+			
+			
 	}
 	public String getDSignature(Context context) {
-		try {
-				android.content.pm.PackageInfo packageArchiveInfo = context.getPackageManager().getPackageArchiveInfo(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"), PackageManager.GET_SIGNATURES);
-				for (android.content.pm.Signature signature : packageArchiveInfo.signatures) {
-						String d_sha1 = getd_SHA1_(signature.toByteArray());
-						return d_sha1;
-				}
-		} catch (Exception e) {
-		}
-		return "";
+			try {
+					android.content.pm.PackageInfo packageArchiveInfo = context.getPackageManager().getPackageArchiveInfo(apk_path_location.getText().toString().concat("Spotify Mod (Official).apk"), PackageManager.GET_SIGNATURES);
+					for (android.content.pm.Signature signature : packageArchiveInfo.signatures) {
+							String d_sha1 = getd_SHA1_(signature.toByteArray());
+							return d_sha1;
+					}
+			} catch (Exception e) {
+			}
+			return "";
 	}
 	
 	public String getd_SHA1_(byte[] sig) {
-		try {
-				java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA1");
-				digest.update(sig);
-				byte[] hashtext = digest.digest();
-				return d_bytes_To_Hex_(hashtext);
-		} catch (java.security.NoSuchAlgorithmException e) {
-		}
-		return "";
+			try {
+					java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA1");
+					digest.update(sig);
+					byte[] hashtext = digest.digest();
+					return d_bytes_To_Hex_(hashtext);
+			} catch (java.security.NoSuchAlgorithmException e) {
+			}
+			return "";
 	}
 	
 	public String d_bytes_To_Hex_(byte[] bytes) {
-		final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
-				'9', 'A', 'B', 'C', 'D', 'E', 'F' };
-		char[] hexChars = new char[bytes.length * 2];
-		int v;
-		for (int j = 0; j < bytes.length; j++) {
-				v = bytes[j] & 0xFF;
-				hexChars[j * 2] = hexArray[v >>> 4];
-				hexChars[j * 2 + 1] = hexArray[v & 0x0F];
-		}
-		return new String(hexChars);
+			final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
+					'9', 'A', 'B', 'C', 'D', 'E', 'F' };
+			char[] hexChars = new char[bytes.length * 2];
+			int v;
+			for (int j = 0; j < bytes.length; j++) {
+					v = bytes[j] & 0xFF;
+					hexChars[j * 2] = hexArray[v >>> 4];
+					hexChars[j * 2 + 1] = hexArray[v & 0x0F];
+			}
+			return new String(hexChars);
 	}
 	{
-		
+			
 	}
 	
 	
@@ -12064,7 +12745,7 @@ public class MainActivity extends AppCompatActivity {
 																														public void run() {
 																																try {
 																																		prog.dismiss();
-																		                                                                _Reminder();
+																																		_Reminder();
 																																		_Browser(hidden_download.getText().toString());
 																																} catch (Exception e) {
 																																}
@@ -12217,7 +12898,7 @@ public class MainActivity extends AppCompatActivity {
 																														public void run() {
 																																try {
 																																		prog.dismiss();
-																		                                                                _Reminder();
+																																		_Reminder();
 																																		_Browser(hidden_download.getText().toString());
 																																} catch (Exception e) {
 																																}
@@ -12249,9 +12930,6 @@ public class MainActivity extends AppCompatActivity {
 																																		@Override
 																																		public void run() {
 																																				prog.dismiss();
-																																				version_switch_01.setChecked(false);
-																																				version_switch_02.setChecked(false);
-																																				changelogs_switch.setChecked(false);
 																																				if ((Installed_Version_Cloned < Downloaded_Version_Cloned) || ((Downloaded_Version_Cloned > Installed_Version_Cloned) || ((Installed_Version_Cloned == Downloaded_Version_Cloned) || Installed_Checker_Cloned.equals("false")))) {
 																																						if (getICSignature(getApplicationContext()).equals(getDCSignature(getApplicationContext())) || Installed_Checker_Cloned.equals("false")) {
 																																								StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
@@ -12374,80 +13052,80 @@ public class MainActivity extends AppCompatActivity {
 	public void _Signature_Checker_Cloned() {
 	}
 	public String getICSignature(Context context) {
-		try {
-				android.content.pm.PackageInfo packageInfo = context.getPackageManager().getPackageInfo("com.spotify.musix", PackageManager.GET_SIGNATURES);
-				for (android.content.pm.Signature signature : packageInfo.signatures) {
-						String ic_sha1 = getic_SHA1_(signature.toByteArray());
-						return ic_sha1;
-				}
-		} catch(android.content.pm.PackageManager.NameNotFoundException e) {
-		}
-		return "";
+			try {
+					android.content.pm.PackageInfo packageInfo = context.getPackageManager().getPackageInfo("com.spotify.musix", PackageManager.GET_SIGNATURES);
+					for (android.content.pm.Signature signature : packageInfo.signatures) {
+							String ic_sha1 = getic_SHA1_(signature.toByteArray());
+							return ic_sha1;
+					}
+			} catch(android.content.pm.PackageManager.NameNotFoundException e) {
+			}
+			return "";
 	}
 	
 	public String getic_SHA1_(byte[] sig) {
-		try {
-				java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA1");
-				digest.update(sig);
-				byte[] hashtext = digest.digest();
-				return ic_bytes_To_Hex_(hashtext);
-		} catch(java.security.NoSuchAlgorithmException e) {}
-		return "";
+			try {
+					java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA1");
+					digest.update(sig);
+					byte[] hashtext = digest.digest();
+					return ic_bytes_To_Hex_(hashtext);
+			} catch(java.security.NoSuchAlgorithmException e) {}
+			return "";
 	}
 	
 	public String ic_bytes_To_Hex_(byte[] bytes) {
-		final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
-				'9', 'A', 'B', 'C', 'D', 'E', 'F' };
-		char[] hexChars = new char[bytes.length * 2];
-		int v;
-		for (int j = 0; j < bytes.length; j++) {
-				v = bytes[j] & 0xFF;
-				hexChars[j * 2] = hexArray[v >>> 4];
-				hexChars[j * 2 + 1] = hexArray[v & 0x0F];
-		}
-		return new String(hexChars);
+			final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
+					'9', 'A', 'B', 'C', 'D', 'E', 'F' };
+			char[] hexChars = new char[bytes.length * 2];
+			int v;
+			for (int j = 0; j < bytes.length; j++) {
+					v = bytes[j] & 0xFF;
+					hexChars[j * 2] = hexArray[v >>> 4];
+					hexChars[j * 2 + 1] = hexArray[v & 0x0F];
+			}
+			return new String(hexChars);
 	}
 	{
-		
-		
+			
+			
 	}
 	public String getDCSignature(Context context) {
-		try {
-				android.content.pm.PackageInfo packageArchiveInfo = context.getPackageManager().getPackageArchiveInfo(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"), PackageManager.GET_SIGNATURES);
-				for (android.content.pm.Signature signature : packageArchiveInfo.signatures) {
-						
-						String dc_sha1 = getdc_SHA1_(signature.toByteArray());
-						return dc_sha1;
-				}
-		} catch(Exception e) {
-		}
-		return "";
+			try {
+					android.content.pm.PackageInfo packageArchiveInfo = context.getPackageManager().getPackageArchiveInfo(apk_path_location.getText().toString().concat("Spotify Mod (Official) [Cloned].apk"), PackageManager.GET_SIGNATURES);
+					for (android.content.pm.Signature signature : packageArchiveInfo.signatures) {
+							
+							String dc_sha1 = getdc_SHA1_(signature.toByteArray());
+							return dc_sha1;
+					}
+			} catch(Exception e) {
+			}
+			return "";
 	}
 	
 	public String getdc_SHA1_(byte[] sig) {
-		try {
-				java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA1");
-				digest.update(sig);
-				byte[] hashtext = digest.digest();
-				return dc_bytes_To_Hex_(hashtext);
-		} catch(java.security.NoSuchAlgorithmException e) {}
-		return "";
+			try {
+					java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA1");
+					digest.update(sig);
+					byte[] hashtext = digest.digest();
+					return dc_bytes_To_Hex_(hashtext);
+			} catch(java.security.NoSuchAlgorithmException e) {}
+			return "";
 	}
 	
 	public String dc_bytes_To_Hex_(byte[] bytes) {
-		final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
-				'9', 'A', 'B', 'C', 'D', 'E', 'F' };
-		char[] hexChars = new char[bytes.length * 2];
-		int v;
-		for (int j = 0; j < bytes.length; j++) {
-				v = bytes[j] & 0xFF;
-				hexChars[j * 2] = hexArray[v >>> 4];
-				hexChars[j * 2 + 1] = hexArray[v & 0x0F];
-		}
-		return new String(hexChars);
+			final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
+					'9', 'A', 'B', 'C', 'D', 'E', 'F' };
+			char[] hexChars = new char[bytes.length * 2];
+			int v;
+			for (int j = 0; j < bytes.length; j++) {
+					v = bytes[j] & 0xFF;
+					hexChars[j * 2] = hexArray[v >>> 4];
+					hexChars[j * 2 + 1] = hexArray[v & 0x0F];
+			}
+			return new String(hexChars);
 	}
 	{
-		
+			
 	}
 	
 	
@@ -12489,6 +13167,25 @@ public class MainActivity extends AppCompatActivity {
 		}
 		catch (Exception e) {
 				Downloaded_Version_Cloned = Installed_Version_Cloned;
+		}
+		
+		String uri_lite = "com.spotify.lite";
+		android.content.pm.PackageManager pm_lite = getPackageManager();
+		
+		try {
+				android.content.pm.PackageInfo Installed_Lite = pm_lite.getPackageInfo(uri_lite, android.content.pm.PackageManager.GET_ACTIVITIES);
+				Installed_Version_Lite = Installed_Lite.versionCode;
+		}
+		catch (Exception e) {
+		}
+		
+		
+		try {
+				android.content.pm.PackageInfo Downloaded_Lite = this.getPackageManager().getPackageArchiveInfo(apk_path_location.getText().toString().concat("Spotify Lite Mod (Official).apk"), PackageManager.GET_ACTIVITIES);
+				Downloaded_Version_Lite = Downloaded_Lite.versionCode;
+		}
+		catch (Exception e) {
+				Downloaded_Version_Lite = Installed_Version_Lite;
 		}
 		
 	}
@@ -12637,8 +13334,9 @@ public class MainActivity extends AppCompatActivity {
 		try {
 			Connection.startRequestNetwork(RequestNetworkController.GET, "https://xmanagerapp.com/api/public.json", "A", _Connection_request_listener);
 		} catch (Exception e) {
-			com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "No API Response. Try Again.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "No API Response. Try Again.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 		}
+		
 	}
 	
 	
@@ -12654,16 +13352,19 @@ public class MainActivity extends AppCompatActivity {
 							Amoled = (new Gson()).toJson(Datas.get("Amoled"), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							Regular_Cloned = (new Gson()).toJson(Datas.get("Regular_Cloned"), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							Amoled_Cloned = (new Gson()).toJson(Datas.get("Amoled_Cloned"), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
+							Lite = (new Gson()).toJson(Datas.get("Lite"), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							Mod_Changelogs = (new Gson()).toJson(Datas.get("Mod_Changelogs"), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							regular = new Gson().fromJson(Regular, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							amoled = new Gson().fromJson(Amoled, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							regular_cloned = new Gson().fromJson(Regular_Cloned, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							amoled_cloned = new Gson().fromJson(Amoled_Cloned, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
+							lite = new Gson().fromJson(Lite, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							mod_changelogs = new Gson().fromJson(Mod_Changelogs, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							sub_1.setText(Datas.get("Regular_Latest").toString());
 							sub_3.setText(Datas.get("Amoled_Latest").toString());
 							sub_5.setText(Datas.get("RC_Latest").toString());
 							sub_7.setText(Datas.get("ABC_Latest").toString());
+							sub_9.setText(Datas.get("Lite_Latest").toString());
 							donators.setText(Datas.get("Supporters").toString());
 							hidden_update.setText(Datas.get("Update").toString());
 							app_changelogs.setText(Datas.get("App_Changelogs").toString());
@@ -12674,18 +13375,21 @@ public class MainActivity extends AppCompatActivity {
 							list_menu_2.setAdapter(new List_menu_2Adapter(amoled));
 							list_menu_3.setAdapter(new List_menu_3Adapter(regular_cloned));
 							list_menu_4.setAdapter(new List_menu_4Adapter(amoled_cloned));
+							list_menu_5.setAdapter(new List_menu_5Adapter(lite));
 							list_changelogs.setAdapter(new List_changelogsAdapter(mod_changelogs));
 							((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
 							((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
 							((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
 							((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+							((BaseAdapter)list_menu_5.getAdapter()).notifyDataSetChanged();
 							((BaseAdapter)list_changelogs.getAdapter()).notifyDataSetChanged();
 							if (ON_SCREEN.getString("INITIALIZATION", "").equals("DONE")) {
 								_Updater();
 							}
 						} catch (Exception e) {
-							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "No API Response. Try Again.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "No API Response. Try Again.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 						}
+						
 					}
 				});
 			}
@@ -12699,16 +13403,23 @@ public class MainActivity extends AppCompatActivity {
 		title_sub.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		title_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_5.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_text_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_installed.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_separator.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_installed_c.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_text_installed.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_5.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_7.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_9.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_text_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_text_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_text_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		version_switch_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		version_switch_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		version_switch_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_installed.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_separator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_installed_c.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_separator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		sub_installed_l.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_text_installed.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_sub.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		device_cpu.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -12721,8 +13432,6 @@ public class MainActivity extends AppCompatActivity {
 		discord.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		reddit.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		faq.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		version_switch_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		version_switch_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		theme.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_about.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		developer_manager.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -12757,8 +13466,9 @@ public class MainActivity extends AppCompatActivity {
 		force_auto_install_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		clear_directory_folders_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		language.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		regular_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 2);
-		amoled_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 2);
+		regular_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+		amoled_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+		lite_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
 		title_header_beta.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_header_separator.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		cloned_version.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -12768,6 +13478,7 @@ public class MainActivity extends AppCompatActivity {
 		box_sub_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		main_box_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_8.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
@@ -12806,6 +13517,7 @@ public class MainActivity extends AppCompatActivity {
 		list_menu_2.setVisibility(View.GONE);
 		list_menu_3.setVisibility(View.GONE);
 		list_menu_4.setVisibility(View.GONE);
+		list_menu_5.setVisibility(View.GONE);
 		list_changelogs.setVisibility(View.GONE);
 		if (!ON_SCREEN.getString("INITIALIZATION", "").equals("DONE")) {
 			try {
@@ -13003,6 +13715,7 @@ public class MainActivity extends AppCompatActivity {
 										list_menu_2.setVisibility(View.GONE);
 										list_menu_3.setVisibility(View.VISIBLE);
 										list_menu_4.setVisibility(View.GONE);
+										list_menu_5.setVisibility(View.GONE);
 										list_changelogs.setVisibility(View.GONE);
 										list_menu_1.setAdapter(new List_menu_1Adapter(regular));
 										list_menu_3.setAdapter(new List_menu_3Adapter(regular_cloned));
@@ -13015,6 +13728,7 @@ public class MainActivity extends AppCompatActivity {
 											list_menu_2.setVisibility(View.GONE);
 											list_menu_3.setVisibility(View.GONE);
 											list_menu_4.setVisibility(View.GONE);
+											list_menu_5.setVisibility(View.GONE);
 											list_changelogs.setVisibility(View.GONE);
 											list_menu_1.setAdapter(new List_menu_1Adapter(regular));
 											list_menu_3.setAdapter(new List_menu_3Adapter(regular_cloned));
@@ -13024,6 +13738,7 @@ public class MainActivity extends AppCompatActivity {
 									}
 									version_oc_01.setImageResource(R.drawable.open);
 									version_oc_02.setImageResource(R.drawable.close);
+									version_oc_03.setImageResource(R.drawable.close);
 									changelogs_oc.setImageResource(R.drawable.close);
 									Timer = new TimerTask() {
 										@Override
@@ -13036,6 +13751,7 @@ public class MainActivity extends AppCompatActivity {
 														list_menu_2.setVisibility(View.GONE);
 														list_menu_3.setVisibility(View.GONE);
 														list_menu_4.setVisibility(View.VISIBLE);
+														list_menu_5.setVisibility(View.GONE);
 														list_changelogs.setVisibility(View.GONE);
 														list_menu_2.setAdapter(new List_menu_2Adapter(amoled));
 														list_menu_4.setAdapter(new List_menu_4Adapter(amoled_cloned));
@@ -13048,6 +13764,7 @@ public class MainActivity extends AppCompatActivity {
 															list_menu_2.setVisibility(View.VISIBLE);
 															list_menu_3.setVisibility(View.GONE);
 															list_menu_4.setVisibility(View.GONE);
+															list_menu_5.setVisibility(View.GONE);
 															list_changelogs.setVisibility(View.GONE);
 															list_menu_2.setAdapter(new List_menu_2Adapter(amoled));
 															list_menu_4.setAdapter(new List_menu_4Adapter(amoled_cloned));
@@ -13057,6 +13774,7 @@ public class MainActivity extends AppCompatActivity {
 													}
 													version_oc_01.setImageResource(R.drawable.close);
 													version_oc_02.setImageResource(R.drawable.open);
+													version_oc_03.setImageResource(R.drawable.close);
 													changelogs_oc.setImageResource(R.drawable.close);
 													Timer = new TimerTask() {
 														@Override
@@ -13068,31 +13786,58 @@ public class MainActivity extends AppCompatActivity {
 																	list_menu_2.setVisibility(View.GONE);
 																	list_menu_3.setVisibility(View.GONE);
 																	list_menu_4.setVisibility(View.GONE);
-																	list_changelogs.setVisibility(View.VISIBLE);
+																	list_menu_5.setVisibility(View.VISIBLE);
+																	list_changelogs.setVisibility(View.GONE);
 																	version_oc_01.setImageResource(R.drawable.close);
 																	version_oc_02.setImageResource(R.drawable.close);
-																	changelogs_oc.setImageResource(R.drawable.open);
-																	list_changelogs.setAdapter(new List_changelogsAdapter(mod_changelogs));
-																	((BaseAdapter)list_changelogs.getAdapter()).notifyDataSetChanged();
+																	version_oc_03.setImageResource(R.drawable.open);
+																	changelogs_oc.setImageResource(R.drawable.close);
+																	list_menu_5.setAdapter(new List_menu_5Adapter(lite));
+																	((BaseAdapter)list_menu_5.getAdapter()).notifyDataSetChanged();
 																	Timer = new TimerTask() {
 																		@Override
 																		public void run() {
 																			runOnUiThread(new Runnable() {
 																				@Override
 																				public void run() {
-																					main_refresh_layout.setRefreshing(false);
 																					list_menu_1.setVisibility(View.GONE);
 																					list_menu_2.setVisibility(View.GONE);
 																					list_menu_3.setVisibility(View.GONE);
 																					list_menu_4.setVisibility(View.GONE);
-																					list_changelogs.setVisibility(View.GONE);
+																					list_menu_5.setVisibility(View.GONE);
+																					list_changelogs.setVisibility(View.VISIBLE);
 																					version_oc_01.setImageResource(R.drawable.close);
 																					version_oc_02.setImageResource(R.drawable.close);
-																					changelogs_oc.setImageResource(R.drawable.close);
-																					main_body.setAlpha((float)(1.0d));
-																					String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
-																					
-																					com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Data List Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																					version_oc_03.setImageResource(R.drawable.close);
+																					changelogs_oc.setImageResource(R.drawable.open);
+																					list_changelogs.setAdapter(new List_changelogsAdapter(mod_changelogs));
+																					((BaseAdapter)list_changelogs.getAdapter()).notifyDataSetChanged();
+																					Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																							runOnUiThread(new Runnable() {
+																								@Override
+																								public void run() {
+																									main_refresh_layout.setRefreshing(false);
+																									list_menu_1.setVisibility(View.GONE);
+																									list_menu_2.setVisibility(View.GONE);
+																									list_menu_3.setVisibility(View.GONE);
+																									list_menu_4.setVisibility(View.GONE);
+																									list_menu_5.setVisibility(View.GONE);
+																									list_changelogs.setVisibility(View.GONE);
+																									version_oc_01.setImageResource(R.drawable.close);
+																									version_oc_02.setImageResource(R.drawable.close);
+																									version_oc_03.setImageResource(R.drawable.close);
+																									changelogs_oc.setImageResource(R.drawable.close);
+																									main_body.setAlpha((float)(1.0d));
+																									String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
+																									
+																									com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Data List Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																								}
+																							});
+																						}
+																					};
+																					_timer.schedule(Timer, (int)(700));
 																				}
 																			});
 																		}
@@ -13122,18 +13867,18 @@ public class MainActivity extends AppCompatActivity {
 				}
 			}
 		});
-		apk_path_location.setText(APK_PATH.getString("PATH", ""));
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-			CharSequence name = "Null";
-			String description = "Null";
-			int importance = NotificationManager.IMPORTANCE_MAX;
-			NotificationChannel channel = new NotificationChannel("id 1", name, importance);
-			channel.setDescription(description);
-			
-			NotificationManager notificationManager = getSystemService(NotificationManager.class);
-			notificationManager.createNotificationChannel(channel);
-			
+				CharSequence name = "Null";
+				String description = "Null";
+				int importance = NotificationManager.IMPORTANCE_MAX;
+				NotificationChannel channel = new NotificationChannel("id 1", name, importance);
+				channel.setDescription(description);
+				
+				NotificationManager notificationManager = getSystemService(NotificationManager.class);
+				notificationManager.createNotificationChannel(channel);
 		}
+		
+		apk_path_location.setText(APK_PATH.getString("PATH", ""));
 		Timer = new TimerTask() {
 			@Override
 			public void run() {
@@ -13237,6 +13982,7 @@ public class MainActivity extends AppCompatActivity {
 		CLICKER_1 = 1;
 		CLICKER_2 = 1;
 		CLICKER_3 = 1;
+		CLICKER_4 = 1;
 	}
 	
 	
@@ -13249,9 +13995,6 @@ public class MainActivity extends AppCompatActivity {
 				@Override
 				public void onClick(DialogInterface Success_Download, int p) {
 						AlertDialog.setCancelable(true);
-						version_switch_01.setChecked(false);
-						version_switch_02.setChecked(false);
-						changelogs_switch.setChecked(false);
 						if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
 								if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
 										StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
@@ -13261,7 +14004,7 @@ public class MainActivity extends AppCompatActivity {
 														intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
-								                        _Reminder();
+														_Reminder();
 												}
 												catch(Exception e) {
 												}
@@ -13270,7 +14013,7 @@ public class MainActivity extends AppCompatActivity {
 														Intent intent = new Intent(Intent.ACTION_VIEW);
 														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Mod (Official).apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
-								                        _Reminder();
+														_Reminder();
 												}
 												catch(Exception e) {
 												}
@@ -13370,9 +14113,6 @@ public class MainActivity extends AppCompatActivity {
 				@Override
 				public void onClick(DialogInterface Success_Download, int p) {
 						AlertDialog.setCancelable(true);
-						version_switch_01.setChecked(false);
-						version_switch_02.setChecked(false);
-						changelogs_switch.setChecked(false);
 						if ((Installed_Version_Cloned < Downloaded_Version_Cloned) || ((Downloaded_Version_Cloned > Installed_Version_Cloned) || ((Installed_Version_Cloned == Downloaded_Version_Cloned) || Installed_Checker_Cloned.equals("false")))) {
 								if (getICSignature(getApplicationContext()).equals(getDCSignature(getApplicationContext())) || Installed_Checker_Cloned.equals("false")) {
 										StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
@@ -13491,9 +14231,6 @@ public class MainActivity extends AppCompatActivity {
 				@Override
 				public void onClick(DialogInterface Success_Download, int p) {
 						AlertDialog.setCancelable(true);
-						version_switch_01.setChecked(false);
-						version_switch_02.setChecked(false);
-						changelogs_switch.setChecked(false);
 						StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
 						if(android.os.Build.VERSION.SDK_INT >= 29){
 								try {
@@ -13783,22 +14520,725 @@ public class MainActivity extends AppCompatActivity {
 	
 	public void _Reminder() {
 		try {
-			val contentText = "After installing and logging-in, make sure to reopen or force close the Spotify app to enable the mod features."
-
-			androidx.core.app.NotificationCompat.Builder builder = new androidx.core.app.NotificationCompat.Builder(MainActivity.this, "id 1")
-			.setSmallIcon(R.drawable.icon_notification)
-			.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
-			.setContentTitle("IMPORTANT REMINDER")
-			.setContentText(contentText)
-			.setPriority(androidx.core.app.NotificationCompat.PRIORITY_MAX)
-					.setStyle(NotificationCompat.BigTextStyle().bigText(contentText))
-			.setAutoCancel(true);
-			
-			androidx.core.app.NotificationManagerCompat notificationManager = androidx.core.app.NotificationManagerCompat.from(MainActivity.this);
-			notificationManager.notify(1, builder.build());
+				final String App = "xManager";
+				final String Read = "READ ME";
+				final String contentTitle = "IMPORTANT NOTE";
+				final String contentMessage = "After installing and logging-in, make sure to reopen or force close the Spotify app to enable the mod features.";
+				
+				final Notification.Builder builder = new Notification.Builder(MainActivity.this, "id 1");
+				builder.setStyle(new Notification.BigTextStyle(builder)
+				.bigText(contentMessage)
+				.setBigContentTitle(contentTitle)
+				.setSummaryText(Read))
+				.setContentTitle(contentTitle)
+				.setContentText(contentMessage)
+				.setSmallIcon(R.drawable.icon_notification)	;
+				
+				final NotificationManager push = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+				push.notify(1, builder.build());
 		}
 		catch(Exception e) {
 		}
+		
+	}
+	
+	
+	public void _Signature_Checker_Lite() {
+	}
+	public String getILSignature(Context context) {
+			try {
+					android.content.pm.PackageInfo packageInfo = context.getPackageManager().getPackageInfo("com.spotify.lite", PackageManager.GET_SIGNATURES);
+					for (android.content.pm.Signature signature : packageInfo.signatures) {
+							String il_sha1 = geti_SHA1_(signature.toByteArray());
+							return il_sha1;
+					}
+			} catch (android.content.pm.PackageManager.NameNotFoundException e) {
+			}
+			return "";
+	}
+	
+	public String getil_SHA1_(byte[] sig) {
+			try {
+					java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA1");
+					digest.update(sig);
+					byte[] hashtext = digest.digest();
+					return il_bytes_To_Hex_(hashtext);
+			} catch (java.security.NoSuchAlgorithmException e) {
+			}
+			return "";
+	}
+	
+	public String il_bytes_To_Hex_(byte[] bytes) {
+			final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
+					'9', 'A', 'B', 'C', 'D', 'E', 'F' };
+			char[] hexChars = new char[bytes.length * 2];
+			int v;
+			for (int j = 0; j < bytes.length; j++) {
+					v = bytes[j] & 0xFF;
+					hexChars[j * 2] = hexArray[v >>> 4];
+					hexChars[j * 2 + 1] = hexArray[v & 0x0F];
+			}
+			return new String(hexChars);
+	}
+	{
+			
+			
+	}
+	public String getDLSignature(Context context) {
+			try {
+					android.content.pm.PackageInfo packageArchiveInfo = context.getPackageManager().getPackageArchiveInfo(apk_path_location.getText().toString().concat("Spotify Lite Mod (Official).apk"), PackageManager.GET_SIGNATURES);
+					for (android.content.pm.Signature signature : packageArchiveInfo.signatures) {
+							String dl_sha1 = getd_SHA1_(signature.toByteArray());
+							return dl_sha1;
+					}
+			} catch (Exception e) {
+			}
+			return "";
+	}
+	
+	public String getdl_SHA1_(byte[] sig) {
+			try {
+					java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA1");
+					digest.update(sig);
+					byte[] hashtext = digest.digest();
+					return dl_bytes_To_Hex_(hashtext);
+			} catch (java.security.NoSuchAlgorithmException e) {
+			}
+			return "";
+	}
+	
+	public String dl_bytes_To_Hex_(byte[] bytes) {
+			final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
+					'9', 'A', 'B', 'C', 'D', 'E', 'F' };
+			char[] hexChars = new char[bytes.length * 2];
+			int v;
+			for (int j = 0; j < bytes.length; j++) {
+					v = bytes[j] & 0xFF;
+					hexChars[j * 2] = hexArray[v >>> 4];
+					hexChars[j * 2 + 1] = hexArray[v & 0x0F];
+			}
+			return new String(hexChars);
+	}
+	{
+			
+	}
+	
+	
+	public void _Download_Lite(final String _url, final String _path) {
+		android.net.ConnectivityManager connMgr = (android.net.ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+		android.net.NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+		if (networkInfo != null && networkInfo.isConnected()) {
+				final String urlDownload = _url;
+				DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
+				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
+				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
+				request.setMimeType("application/vnd.android.package-archive");
+				request.allowScanningByMediaScanner();
+				request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "Spotify Lite Mod (Official).apk");
+				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+				final long downloadId = manager.enqueue(request);
+				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
+				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+				Thread progress = new Thread() {
+						@Override
+						public void run() {
+								boolean downloading = true;
+								while (downloading) {
+										DownloadManager.Query q = new DownloadManager.Query();
+										q.setFilterById(downloadId);
+										android.database.Cursor cursor = manager.query(q);
+										if (cursor != null) { 
+												if (cursor.moveToFirst()) {
+														int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
+														int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
+														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
+																downloading = false;
+														}
+														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
+																runOnUiThread(new Runnable() {
+																		public void run() {
+																				SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
+																				_File_Remover();
+																		}
+																});
+																try {
+																		prog.cancel();
+																		break;
+																} catch (Exception e) {
+																}
+														}				
+														final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
+														final int dl_max = (int) (100);
+														final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
+														final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
+														String file_min = String.format("%.2f", file_front);
+														String file_fix = String.format("%.2f", file_end);
+														String file_max = file_fix.replace("-", "");
+														runOnUiThread(new Runnable() {
+																@Override
+																public void run() {
+																		if (!MainActivity.this.isFinishing()) {
+																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																				String TitleColor = "1DB954";
+																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																				prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																				prog.setCancelable(false);
+																				prog.setProgress(dl_progress);
+																				prog.setMax(dl_max);
+																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
+																						@Override
+																						public void onClick(DialogInterface dialog, int which) {
+																								prog.setCancelable(true);
+																								manager.remove(downloadId);
+																								_File_Remover();
+																								Timer = new TimerTask() {
+																										@Override
+																										public void run() {
+																												runOnUiThread(new Runnable() {
+																														@Override
+																														public void run() {
+																																try {
+																																		prog.dismiss();
+																																} catch (Exception e) {
+																																}
+																														}
+																												});
+																										}
+																								};
+																								_timer.schedule(Timer, (int)(0));
+																						}
+																				});
+																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, fixer_0, new DialogInterface.OnClickListener() {
+																						@Override
+																						public void onClick(DialogInterface dialog, int which) {
+																								prog.setCancelable(true);
+																								manager.remove(downloadId);
+																								_File_Remover();
+																								Timer = new TimerTask() {
+																										@Override
+																										public void run() {
+																												runOnUiThread(new Runnable() {
+																														@Override
+																														public void run() {
+																																try {
+																																		prog.dismiss();
+																																		_Reminder();
+																																		_Browser(hidden_download.getText().toString());
+																																} catch (Exception e) {
+																																}
+																														}
+																												});
+																										}
+																								};
+																								_timer.schedule(Timer, (int)(0));
+																						}
+																				});
+																				prog.show();
+																		}
+																}
+														});
+														if (bytes_downloaded == bytes_total) {
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {	
+																								try {
+																										FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Lite Mod (Official).apk", apk_path_location.getText().toString().concat("Spotify Lite Mod (Official).apk"));
+																								}
+																								catch(Exception e) {
+																								}
+																								if (!MainActivity.this.isFinishing()) {
+																										_Extension_7();
+																										prog.dismiss();
+																								}
+																								prog.dismiss();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(1500));
+														}
+												}
+												cursor.close();
+										}
+								}
+						}
+				};
+				progress.start();
+		} else {
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+		}
+		
+	}
+	
+	
+	public void _Download_Install_Lite(final String _url, final String _path) {
+		android.net.ConnectivityManager connMgr = (android.net.ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+		android.net.NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+		if (networkInfo != null && networkInfo.isConnected()) {
+				final String urlDownload = _url;
+				DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
+				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
+				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
+				request.setMimeType("application/vnd.android.package-archive");
+				request.allowScanningByMediaScanner();
+				request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "Spotify Lite Mod (Official).apk");
+				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+				final long downloadId = manager.enqueue(request);
+				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
+				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+				Thread progress = new Thread() {
+						@Override
+						public void run() {
+								boolean downloading = true;
+								while (downloading) {
+										DownloadManager.Query q = new DownloadManager.Query();
+										q.setFilterById(downloadId);
+										android.database.Cursor cursor = manager.query(q);
+										if (cursor != null) { 
+												if (cursor.moveToFirst()) {
+														int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
+														int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
+														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
+																downloading = false;
+														}
+														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
+																runOnUiThread(new Runnable() {
+																		public void run() {
+																				SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
+																				_File_Remover();
+																		}
+																});
+																try {
+																		prog.cancel();
+																		break;
+																} catch (Exception e) {
+																}
+														}				
+														final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
+														final int dl_max = (int) (100);
+														final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
+														final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
+														String file_min = String.format("%.2f", file_front);
+														String file_fix = String.format("%.2f", file_end);
+														String file_max = file_fix.replace("-", "");
+														runOnUiThread(new Runnable() {
+																@Override
+																public void run() {
+																		if (!MainActivity.this.isFinishing()) {
+																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																				String TitleColor = "1DB954";
+																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																				prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																				prog.setCancelable(false);
+																				prog.setProgress(dl_progress);
+																				prog.setMax(dl_max);
+																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
+																						@Override
+																						public void onClick(DialogInterface dialog, int which) {
+																								prog.setCancelable(true);
+																								manager.remove(downloadId);
+																								_File_Remover();
+																								Timer = new TimerTask() {
+																										@Override
+																										public void run() {
+																												runOnUiThread(new Runnable() {
+																														@Override
+																														public void run() {
+																																try {
+																																		prog.dismiss();
+																																} catch (Exception e) {
+																																}
+																														}
+																												});
+																										}
+																								};
+																								_timer.schedule(Timer, (int)(0));
+																						}
+																				});
+																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, fixer_0, new DialogInterface.OnClickListener() {
+																						@Override
+																						public void onClick(DialogInterface dialog, int which) {
+																								prog.setCancelable(true);
+																								manager.remove(downloadId);
+																								_File_Remover();
+																								Timer = new TimerTask() {
+																										@Override
+																										public void run() {
+																												runOnUiThread(new Runnable() {
+																														@Override
+																														public void run() {
+																																try {
+																																		prog.dismiss();
+																																		_Reminder();
+																																		_Browser(hidden_download.getText().toString());
+																																} catch (Exception e) {
+																																}
+																														}
+																												});
+																										}
+																								};
+																								_timer.schedule(Timer, (int)(0));
+																						}
+																				});
+																				prog.show();
+																		}
+																		if (bytes_downloaded == bytes_total) {
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {	
+																												try {
+																														FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Lite Mod (Official).apk", apk_path_location.getText().toString().concat("Spotify Lite Mod (Official).apk"));
+																												}
+																												catch(Exception e) {
+																												}
+																												Timer = new TimerTask() {
+																														@Override
+																														public void run() {
+																																runOnUiThread(new Runnable() {
+																																		@Override
+																																		public void run() {
+																																				prog.dismiss();
+																																				if ((Installed_Version_Lite < Downloaded_Version_Lite) || ((Downloaded_Version_Lite > Installed_Version_Lite) || ((Installed_Version_Lite == Downloaded_Version_Lite) || Installed_Checker_Lite.equals("false")))) {
+																																						if (getILSignature(getApplicationContext()).equals(getDLSignature(getApplicationContext())) || Installed_Checker_Lite.equals("false")) {
+																																								StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+																																								if(android.os.Build.VERSION.SDK_INT >= 29){
+																																										try {
+																																												Intent intent = new Intent(Intent.ACTION_VIEW);
+																																												intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																																												intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Lite Mod (Official).apk")), "application/vnd.android.package-archive");
+																																												startActivity(intent);
+																																												_Reminder();
+																																										}
+																																										catch(Exception e) {
+																																										}
+																																								} else {
+																																										try {
+																																												Intent intent = new Intent(Intent.ACTION_VIEW);
+																																												intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Lite Mod (Official).apk")), "application/vnd.android.package-archive");
+																																												startActivity(intent);
+																																												_Reminder();
+																																										}
+																																										catch(Exception e) {
+																																										}
+																																								} 
+																																						} else {
+																																								if (!MainActivity.this.isFinishing()) {
+																																										final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																																										String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+																																										String TitleColor = "1DB954";
+																																										Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																										String Message = installation_failed_ream_desc_0.replace("\n", "<br/>");
+																																										String MessageColor = "FFFFFF";
+																																										Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+																																										Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+																																												@Override
+																																												public void onClick(DialogInterface Signature_Check, int p) {
+																																														AlertDialog.setCancelable(true);
+																																														try {
+																																																Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
+																																																startActivity(intent);
+																																														}
+																																														catch(Exception e) {
+																																														}
+																																												}
+																																										});
+																																										Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+																																												@Override
+																																												public void onClick(DialogInterface Signature_Check, int p) {
+																																														AlertDialog.setCancelable(true);
+																																												}
+																																										});
+																																										AlertDialog = Signature_Check.create();
+																																										AlertDialog.setCancelable(false);
+																																										AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																																										AlertDialog.show();
+																																								}
+																																						}	
+																																				}
+																																				else {
+																																						if (Downloaded_Version_Lite < Installed_Version_Lite) {
+																																								if (!MainActivity.this.isFinishing()) {
+																																										final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																																										String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+																																										String TitleColor = "1DB954";
+																																										Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																										String Message = installation_failed_desc_0.replace("\n", "<br/>");
+																																										String MessageColor = "FFFFFF";
+																																										Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+																																										Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+																																												@Override
+																																												public void onClick(DialogInterface Downgrade_Check, int p) {
+																																														AlertDialog.setCancelable(true);
+																																														try {
+																																																Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
+																																																startActivity(intent);
+																																														}
+																																														catch(Exception e) {
+																																														}
+																																												}
+																																										});
+																																										Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+																																												@Override
+																																												public void onClick(DialogInterface Downgrade_Check, int p) {
+																																														AlertDialog.setCancelable(true);
+																																												}
+																																										});
+																																										AlertDialog = Downgrade_Check.create();
+																																										AlertDialog.setCancelable(false);
+																																										AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																																										AlertDialog.show();
+																																								}
+																																						}
+																																				}
+																																		}
+																																});
+																														}
+																												};
+																												_timer.schedule(Timer, (int)(100));
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(1500));
+																		}
+																}
+														});
+												}
+												cursor.close();
+										}
+								}
+						}
+				};
+				progress.start();
+		} else {
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+		}
+		
+	}
+	
+	
+	public void _Extension_6() {
+		if ((Installed_Version_Lite < Downloaded_Version_Lite) || ((Downloaded_Version_Lite > Installed_Version_Lite) || ((Installed_Version_Lite == Downloaded_Version_Lite) || Installed_Checker_Lite.equals("false")))) {
+				if (getILSignature(getApplicationContext()).equals(getDLSignature(getApplicationContext())) || Installed_Checker_Lite.equals("false")) {
+						StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+						if(android.os.Build.VERSION.SDK_INT >= 29){
+								try {
+										Intent intent = new Intent(Intent.ACTION_VIEW);
+										intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Lite Mod (Official).apk")), "application/vnd.android.package-archive");
+										startActivity(intent);
+										_Reminder();
+								}
+								catch(Exception e) {
+										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+								}
+						} else {
+								try {
+										Intent intent = new Intent(Intent.ACTION_VIEW);
+										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Lite Mod (Official).apk")), "application/vnd.android.package-archive");
+										startActivity(intent);
+										_Reminder();
+								}
+								catch(Exception e) {
+										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
+								}
+						} 
+				} else {
+						final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+						String TitleColor = "1DB954";
+						Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+						String Message = installation_failed_cloned_desc_0.replace("\n", "<br/>");
+						String MessageColor = "FFFFFF";
+						Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+						Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+								@Override
+								public void onClick(DialogInterface Signature_Check, int p) {
+										AlertDialog.setCancelable(true);
+										try {
+												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
+												startActivity(intent);
+										}
+										catch(Exception e) {
+										}
+								}
+						});
+						Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+								@Override
+								public void onClick(DialogInterface Signature_Check, int p) {
+										AlertDialog.setCancelable(true);
+								}
+						});
+						AlertDialog = Signature_Check.create();
+						AlertDialog.setCancelable(false);
+						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+						AlertDialog.show();
+				}	
+		}
+		else {
+				if (Downloaded_Version_Lite < Installed_Version_Lite) {
+						final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+						String TitleColor = "1DB954";
+						Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+						String Message = installation_failed_desc_0.replace("\n", "<br/>");
+						String MessageColor = "FFFFFF";
+						Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+						Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+								@Override
+								public void onClick(DialogInterface Downgrade_Check, int p) {
+										AlertDialog.setCancelable(true);
+										try {
+												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
+												startActivity(intent);
+										}
+										catch(Exception e) {
+										}
+								}
+						});
+						Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+								@Override
+								public void onClick(DialogInterface Downgrade_Check, int p) {
+										AlertDialog.setCancelable(true);
+								}
+						});
+						AlertDialog = Downgrade_Check.create();
+						AlertDialog.setCancelable(false);
+						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+						AlertDialog.show();
+				}
+		}
+		
+	}
+	
+	
+	public void _Extension_7() {
+		final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Other_Dialog);
+		String Title = "<b>".concat(download_success_0.concat("</b>"));
+		String TitleColor = "1DB954";
+		Success_Download.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+		Success_Download.setPositiveButton(install_now_0, new DialogInterface.OnClickListener(){
+				@Override
+				public void onClick(DialogInterface Success_Download, int p) {
+						AlertDialog.setCancelable(true);
+						if ((Installed_Version_Lite < Downloaded_Version_Lite) || ((Downloaded_Version_Lite > Installed_Version_Lite) || ((Installed_Version_Lite == Downloaded_Version_Lite) || Installed_Checker_Lite.equals("false")))) {
+								if (getILSignature(getApplicationContext()).equals(getDLSignature(getApplicationContext())) || Installed_Checker_Lite.equals("false")) {
+										StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+										if(android.os.Build.VERSION.SDK_INT >= 29){
+												try {
+														Intent intent = new Intent(Intent.ACTION_VIEW);
+														intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Lite Mod (Official).apk")), "application/vnd.android.package-archive");
+														startActivity(intent);
+														_Reminder();
+												}
+												catch(Exception e) {
+												}
+										} else {
+												try {
+														Intent intent = new Intent(Intent.ACTION_VIEW);
+														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Lite Mod (Official).apk")), "application/vnd.android.package-archive");
+														startActivity(intent);
+														_Reminder();
+												}
+												catch(Exception e) {
+												}
+										} 
+								} else {
+										if (!MainActivity.this.isFinishing()) {
+												final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+												String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+												String TitleColor = "1DB954";
+												Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+												String Message = installation_failed_cloned_desc_0.replace("\n", "<br/>");
+												String MessageColor = "FFFFFF";
+												Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+												Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+														@Override
+														public void onClick(DialogInterface Signature_Check, int p) {
+																AlertDialog.setCancelable(true);
+																try {
+																		Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
+																		startActivity(intent);
+																}
+																catch(Exception e) {
+																}
+														}
+												});
+												Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+														@Override
+														public void onClick(DialogInterface Signature_Check, int p) {
+																AlertDialog.setCancelable(true);
+														}
+												});
+												AlertDialog = Signature_Check.create();
+												AlertDialog.setCancelable(false);
+												AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+												AlertDialog.show();
+										}
+								}	
+						}
+						else {
+								if (!MainActivity.this.isFinishing()) {
+										if (Downloaded_Version_Lite < Installed_Version_Lite) {
+												final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+												String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+												String TitleColor = "1DB954";
+												Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+												String Message = installation_failed_desc_0.replace("\n", "<br/>");
+												String MessageColor = "FFFFFF";
+												Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+												Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+														@Override
+														public void onClick(DialogInterface Downgrade_Check, int p) {
+																AlertDialog.setCancelable(true);
+																try {
+																		Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
+																		startActivity(intent);
+																}
+																catch(Exception e) {
+																}
+														}
+												});
+												Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+														@Override
+														public void onClick(DialogInterface Downgrade_Check, int p) {
+																AlertDialog.setCancelable(true);
+														}
+												});
+												AlertDialog = Downgrade_Check.create();
+												AlertDialog.setCancelable(false);
+												AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+												AlertDialog.show();
+										}
+								}
+						}
+				}
+		});
+		Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener(){
+				@Override
+				public void onClick(DialogInterface Success_Download, int p) {
+						AlertDialog.setCancelable(true);
+						_Reminder();
+				}
+		});
+		AlertDialog = Success_Download.create();
+		AlertDialog.setCancelable(false);
+		AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+		AlertDialog.show();
+		
 	}
 	
 	public class List_menu_1Adapter extends BaseAdapter {
@@ -14033,6 +15473,68 @@ public class MainActivity extends AppCompatActivity {
 				Animation animation;
 				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
 				animation.setDuration(500); box_cloned.startAnimation(animation);
+				animation = null;
+				if (_position < 2) {
+					sub.setTextColor(0xFFFF1744);
+					sub.setText("[LATEST]");
+				}
+				else {
+					sub.setTextColor(0xFFBDBDBD);
+					sub.setText("[OLDER]");
+				}
+			} catch (Exception e) {
+			}
+			
+			return _view;
+		}
+	}
+	
+	public class List_menu_5Adapter extends BaseAdapter {
+		
+		ArrayList<HashMap<String, Object>> _data;
+		
+		public List_menu_5Adapter(ArrayList<HashMap<String, Object>> _arr) {
+			_data = _arr;
+		}
+		
+		@Override
+		public int getCount() {
+			return _data.size();
+		}
+		
+		@Override
+		public HashMap<String, Object> getItem(int _index) {
+			return _data.get(_index);
+		}
+		
+		@Override
+		public long getItemId(int _index) {
+			return _index;
+		}
+		
+		@Override
+		public View getView(final int _position, View _v, ViewGroup _container) {
+			LayoutInflater _inflater = getLayoutInflater();
+			View _view = _v;
+			if (_view == null) {
+				_view = _inflater.inflate(R.layout.list_menu_5, null);
+			}
+			
+			final LinearLayout box_lite = _view.findViewById(R.id.box_lite);
+			final TextView link = _view.findViewById(R.id.link);
+			final ImageView icon = _view.findViewById(R.id.icon);
+			final TextView sub = _view.findViewById(R.id.sub);
+			final TextView title = _view.findViewById(R.id.title);
+			
+			try {
+				title.setVisibility(View.VISIBLE);
+				link.setVisibility(View.GONE);
+				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+				title.setText(lite.get((int)(lite.size() - 1) - _position).get("Title").toString());
+				link.setText(lite.get((int)(lite.size() - 1) - _position).get("Link").toString());
+				Animation animation;
+				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+				animation.setDuration(500); box_lite.startAnimation(animation);
 				animation = null;
 				if (_position < 2) {
 					sub.setTextColor(0xFFFF1744);
