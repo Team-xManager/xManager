@@ -2776,7 +2776,7 @@
     <string    name="download_ready_desc_30"	translatable="true">Preuzimanje ove pečovane APK datoteke prepisaće prethodnu datoteku koja se nalazi u spoljnom direktorijumu.</string>
     <string    name="downloading_file_30"	translatable="true">PREUZIMANjE DATOTEKE...</string>
     <string    name="download_success_30"	translatable="true">USPEŠNO PREUZETO</string>
-    <string    name="new_update_"30	translatable="true">NOVO AŽURIRANjE MENADžERA</string>
+    <string    name="new_update_"30"	translatable="true">NOVO AŽURIRANjE MENADžERA</string>
 	
     <string    name="continue_1_30"	translatable="true">NASTAVITE</string>
     <string    name="cancel_30"	translatable="true">OTKAŽITE</string>
