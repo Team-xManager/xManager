@@ -2729,4 +2729,98 @@
     <string    name="uninstall_patched_28"    translatable="true">ДЕИНСТАЛИРАНЕ НА КОРИГИРАНОТО</string>
     <string    name="open_settings_28"    translatable="true">НАСТРОЙКИ</string>
     <string    name="open_patched_28"    translatable="true">ОТВАРЯНЕ НА КОРИГИРАНОТО</string>
+
+    <!--SERBIAN (LATIN) LANGUAGE-->
+    <string    name="app_name_30"	translatable="true">xManager</string>
+    <string    name="spotify_regular_30"	translatable="true">SPOTIFY (OBIČAN)</string>
+    <string    name="spotify_amoled_30"	translatable="true">SPOTIFY (AMOLED)</string>
+    <string    name="installed_30"	translatable="true">INSTALIRANA</string>
+    <string    name="latest_30"	translatable="true">POSLEDNjA</string>
+    <string    name="versions_30"	translatable="true">VERSIONS  </string>
+    <string    name="changelogs_30"	translatable="true">EVIDENCIJA PROMENA</string>
+    <string    name="manager_tools_30"	translatable="true">ALATKE</string>
+    <string    name="device_cpu_30"	translatable="true">CPU/ARCH</string>
+    <string    name="source_30"	translatable="true">IZVOR</string>
+    <string    name="support_30"	translatable="true">TELEGRAM</string>
+    <string    name="donate_30"	translatable="true">DONIRAJ</string>
+    <string    name="discord_30"	translatable="true">DISCORD</string>
+    <string    name="about_30"	translatable="true">O NAMA</string>
+    <string    name="main_title_30"	translatable="true">xManager</string>
+    <string    name="settings_title_30"	translatable="true">Podešavanja</string>
+    <string    name="about_title_30"	translatable="true">O nama</string>
+	
+    <string    name="list_auto_refresh_30"	translatable="true">AUTOMATSKO OSVEŽAVANjE LISTE</string>
+    <string    name="list_auto_refresh_desc_30" 	translatable="true">Ako ovo omogućite, lista će se automatski osvežiti svaki put kada pokrenete aplikaciju.\n\nMožete ručno da osvežite listu prevlačenjem glavnog ekrana nadole.</string>
+    <string    name="force_auto_install_30"	translatable="true">FORSIRAJTE AUTOMATSKU INSTALACIJU</string>
+    <string    name="force_auto_install_desc_30"	translatable="true">Ako ovo omogućite, pečovana aplikacija će se automatski instalirati i ažurirati nakon preuzimanja.</string>
+    <string    name="show_themes_30"	translatable="true">TEME</string>
+    <string    name="apk_location_30"	translatable="true">APK LOKACIJA</string>
+    <string    name="apk_location_desc_30"	translatable="true">Direktorijum u koji želite da sačuvate kopiju preuzete datoteke. Ako ne znate kako da konfigurišete ovu funkciju, ostavite ovo kako jeste.\n\nNAPOMENA: Ova funkcija ne podržava spoljnu memoriju (SD karticu) zbog pristupačnosti, dozvola i ograničenja skladištenja.</string>
+    <string    name="clear_directory_folders_30"	translatable="true">OČISTITE DIREKTORIJUM</string>
+    <string    name="clear_directory_folders_desc_30"	translatable="true">Dodirnite da biste izbrisali direktorijum. Ovo uključuje preuzete datoteke i ažuriranja.</string>
+    <string    name="reset_settings_30"	translatable="true">RESETUJTE PODEŠAVANjA</string>
+	
+    <string    name="about_sub_30"	translatable="true">Bez reklama | Nove funkcije | Sloboda</string>
+    <string    name="xmanager_dev_30"	translatable="true">Programeri xManager</string>
+    <string    name="spotify_mod_devs_30"	translatable="true">Programeri Spotify moda</string>
+    <string    name="telegram_support_team_30"	translatable="true">Telegram | Discord | Reddit tim za podršku</string>
+    <string    name="manager_testers_30"	translatable="true">Mod i menadžer testeri</string>
+    <string    name="manager_hosting_30"	translatable="true">Baza podataka menadžera i hosting</string>
+    <string    name="mobilism_team_30"	translatable="true">Mobilism tim</string>
+    <string    name="forum_team_30"	translatable="true">FORUM.APK-RELEASE.NET tim</string>
+    <string    name="xspotify_team_30"	translatable="true">xSpotify Manager (stari menadžer)</string>
+    <string    name="contributors_30"	translatable="true">HVALA SVIM SARADNICIMA! ❤️</string>
+	
+    <string    name="download_selected_30"	translatable="true">Izabrali ste ovu pečovanu verziju. Da li želite da nastavite?</string>
+    <string    name="download_ready_30"	translatable="true">INFORMACIJE O MODU</string>
+    <string    name="download_ready_desc_30"	translatable="true">Preuzimanje ove pečovane APK datoteke prepisaće prethodnu datoteku koja se nalazi u spoljnom direktorijumu.</string>
+    <string    name="downloading_file_30"	translatable="true">PREUZIMANjE DATOTEKE...</string>
+    <string    name="download_success_30"	translatable="true">USPEŠNO PREUZETO</string>
+    <string    name="new_update_"30	translatable="true">NOVO AŽURIRANjE MENADžERA</string>
+	
+    <string    name="continue_1_30"	translatable="true">NASTAVITE</string>
+    <string    name="cancel_30"	translatable="true">OTKAŽITE</string>
+    <string    name="download_30"	translatable="true">PREUZMITE</string>
+    <string    name="later_30"	translatable="true">KASNIJE</string>
+    <string    name="install_now_30"	translatable="true">INSTALIRAJTE SADA</string>
+    <string    name="install_update_30"	translatable="true">INSTALIRAJTE AŽURIRANjE</string>
+    <string    name="go_back_30"	translatable="true">NAZAD</string>
+    <string    name="download_update_30"	translatable="true">PREUZMITE AŽURIRANjE</string>
+    <string    name="not_now_30"	translatable="true">NE SADA</string>
+    <string    name="copy_url_30"	translatable="true">KOPIRAJTE URL</string>
+    <string    name="fixer_30"	translatable="true">POPRAVLjAČ</string>
+	
+    <string    name="show_support_30"	translatable="true">POKAŽITE VAŠU PODRŠKU</string>
+    <string    name="show_support_desc_30"	translatable="true">Mi smo neprofitni, nekorporativni i nekompromitovani tim. Ljudi poput Vas podstiču nas da napravimo aplikaciju kako bismo stvari učinili mnogo lakšim, posebno od preuzimanja do instaliranja.\n\nUlažemo sve naše vreme i sve napore kako bi stvari bile ispravne i savršene. Daćemo sve od sebe da podržavamo ovu aplikaciju koliko god možemo.\n\nSvaki iznos će pomoći i biti veoma cenjen!</string>
+	
+    <string    name="maintenance_30"	translatable="true">ODRŽAVANjE</string>
+    <string    name="maintenance_desc_30"	translatable="true">xManager trenutno nije dostupan. Molimo Vas da kasnije proverite aplikaciju!</string>
+    <string    name="thanks_30"	translatable="true">HVALA!</string>
+    <string    name="language_30"	translatable="true">JEZIK</string>
+    <string    name="website_30"	translatable="true">VEB-SAJT</string>
+    <string    name="reddit_30"	translatable="true">REDDIT</string>
+    <string    name="faq_30"	translatable="true">PITANjA</string>
+	
+    <string    name="cloned_version_30"	translatable="true">KLONIRANA VERZIJA (BETA VERZIJA)</string>
+    <string    name="cloned_version_desc_30"	translatable="true">Ako ovo omogućite, moći ćete da preuzmete i instalirate kloniranu verziju pečovane aplikacije.\n\nOvo će, takođe, rešiti većinu grešaka ili problema pri instalaciji, posebno ako imate unapred instaliranu Spotify aplikaciju.</string>
+    <string    name="disable_rewarded_ads_30"	translatable="true">ONEMOGUĆITE REKLAME S NAGRADOM</string>
+    <string    name="disable_rewarded_ads_desc_30"	translatable="true">Znamo da većina nas ne voli reklame, ali, u našem slučaju, to nam značajno pomaže da finansiramo našu bazu podataka, hosting linkova, ažuriranja, više pečeva i dnevnih potreba.\n\nOvo je najjednostavniji način da nas podržite, bez doniranja ili trošenja novca.</string>
+	
+    <string    name="installation_failed_30"	translatable="true">INSTALACIJA NIJE USPELA</string>
+    <string    name="installation_failed_desc_30"	translatable="true">Razlog: Pokušali ste da instalirate verziju moda nižu od one koja je trenutno instalirana.\n\nRešenja:\nA. Izaberite verziju, jednaku ili veću.\nB. Deinstalirajte trenutnu verziju, a zatim snizite.\n\nAko se problem nastavi, proverite često postavljena pitanja.</string>
+    <string    name="installation_failed_ream_desc_30"	translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManagera ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljena pitanja.</string>
+    <string    name="installation_failed_cloned_desc_30"	translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManagera ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljena pitanja.</string>
+    <string    name="existing_patched_30"	translatable="true">POSTOJEĆI MOD</string>
+    <string    name="existing_patched_desc_30"	translatable="true">Postojeća pečovana APK datoteka pronađena je u jednom od direktorijuma. Koju akciju biste želeli da uradite?</string>
+	
+    <string    name="close_30"	translatable="true">ZATVORITE</string>
+    <string    name="cloned_30"	translatable="true">KLONIRAJTE</string>
+    <string    name="ream_30"	translatable="true">RE/AM</string>
+    <string    name="install_30"	translatable="true">INSTALIRAJTE</string>
+    <string    name="uninstall_30"	translatable="true">DEINSTALIRAJTE</string>
+    <string    name="ignore_30"	translatable="true">IGNORIŠITE</string>
+    <string    name="delete_30"	translatable="true">IZBRIŠITE</string>
+    <string    name="uninstall_patched_30"	translatable="true">DEINSTALIRAJTE MOD</string>
+    <string    name="open_settings_30"	translatable="true">OTVORITE PODEŠAVANjA</string>
+    <string    name="open_patched_30"	translatable="true">OTVORITE MOD</string>
 </resources>
