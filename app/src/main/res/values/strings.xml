@@ -2787,7 +2787,7 @@
     <string    name="go_back_29"	translatable="true">НАЗАД</string>
     <string    name="download_update_29"	translatable="true">ПРЕУЗМИТЕ АЖУРИРАЊЕ</string>
     <string    name="not_now_29"	translatable="true">НЕ САДА</string>
-    <string    name="copy_url_29"	translatable="true">КОПИРАЈ URL</string>
+    <string    name="copy_url_29"	translatable="true">КОПИРАЈТЕ URL</string>
     <string    name="fixer_29"	translatable="true">ПОПРАВЉАЧ</string>
 	
     <string    name="show_support_29"	translatable="true">ПОКАЖИТЕ ВАШУ ПОДРШКУ</string>
