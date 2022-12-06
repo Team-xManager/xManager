@@ -2736,13 +2736,13 @@
     <string    name="spotify_amoled_30"	translatable="true">SPOTIFY (AMOLED)</string>
     <string    name="installed_30"	translatable="true">INSTALIRANA</string>
     <string    name="latest_30"	translatable="true">POSLEDNjA</string>
-    <string    name="versions_30"	translatable="true">VERSIONS  </string>
+    <string    name="versions_30"	translatable="true">VERZIJE  </string>
     <string    name="changelogs_30"	translatable="true">EVIDENCIJA PROMENA</string>
     <string    name="manager_tools_30"	translatable="true">ALATKE</string>
     <string    name="device_cpu_30"	translatable="true">CPU/ARCH</string>
     <string    name="source_30"	translatable="true">IZVOR</string>
     <string    name="support_30"	translatable="true">TELEGRAM</string>
-    <string    name="donate_30"	translatable="true">DONIRAJ</string>
+    <string    name="donate_30"	translatable="true">DONIRAJTE</string>
     <string    name="discord_30"	translatable="true">DISCORD</string>
     <string    name="about_30"	translatable="true">O NAMA</string>
     <string    name="main_title_30"	translatable="true">xManager</string>
