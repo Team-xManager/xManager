@@ -92,7 +92,25 @@
 		android:background="#171717"
 		android:orientation="vertical">
 		<TextView
-			android:id="@+id/hidden_download"
+			android:id="@+id/hidden_download_1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="N/A"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/hidden_download_2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="TextView"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/hidden_patched"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:padding="8dp"
@@ -940,7 +958,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginRight="3dp"
-						android:text="APK LOCATION:"
+						android:text="APK LOCATION"
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#1DB954" />
@@ -1402,10 +1420,10 @@
 						android:id="@+id/manager_donators"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="SUPPORTERS/DONATORS"
+						android:text="Supporters and Donors"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#00BCD4" />
+						android:textColor="#FF1744" />
 					<TextView
 						android:id="@+id/donators"
 						android:layout_width="wrap_content"
@@ -1430,7 +1448,7 @@
 						android:text="Arabic Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_13"
 						android:layout_width="wrap_content"
@@ -1447,7 +1465,7 @@
 						android:text="Bengali Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_1"
 						android:layout_width="wrap_content"
@@ -1464,7 +1482,7 @@
 						android:text="Chinese (Simplified) Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_2"
 						android:layout_width="wrap_content"
@@ -1481,7 +1499,7 @@
 						android:text="French Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_3"
 						android:layout_width="wrap_content"
@@ -1498,7 +1516,7 @@
 						android:text="Greek Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_4"
 						android:layout_width="wrap_content"
@@ -1515,7 +1533,7 @@
 						android:text="Indonesian Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_5"
 						android:layout_width="wrap_content"
@@ -1532,7 +1550,7 @@
 						android:text="Italian Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_6"
 						android:layout_width="wrap_content"
@@ -1549,7 +1567,7 @@
 						android:text="Portuguese (Brazil) Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_7"
 						android:layout_width="wrap_content"
@@ -1566,7 +1584,7 @@
 						android:text="Portuguese (Portugal) Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_8"
 						android:layout_width="wrap_content"
@@ -1583,7 +1601,7 @@
 						android:text="Romanian Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_15"
 						android:layout_width="wrap_content"
@@ -1600,7 +1618,7 @@
 						android:text="Russian Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_9"
 						android:layout_width="wrap_content"
@@ -1617,7 +1635,7 @@
 						android:text="Slovenian Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_14"
 						android:layout_width="wrap_content"
@@ -1634,7 +1652,7 @@
 						android:text="Spanish (Spain) Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_10"
 						android:layout_width="wrap_content"
@@ -1651,7 +1669,7 @@
 						android:text="Turkish Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_12"
 						android:layout_width="wrap_content"
@@ -1668,7 +1686,7 @@
 						android:text="Ukrainian Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_11"
 						android:layout_width="wrap_content"
@@ -1685,7 +1703,7 @@
 						android:text="Korean Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_16"
 						android:layout_width="wrap_content"
@@ -1702,7 +1720,7 @@
 						android:text="Dutch Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_17"
 						android:layout_width="wrap_content"
@@ -1719,7 +1737,7 @@
 						android:text="Vietnamese Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_18"
 						android:layout_width="wrap_content"
@@ -1736,7 +1754,7 @@
 						android:text="German Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_19"
 						android:layout_width="wrap_content"
@@ -1753,7 +1771,7 @@
 						android:text="Persian Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_20"
 						android:layout_width="wrap_content"
@@ -1770,7 +1788,7 @@
 						android:text="Hebrew Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_21"
 						android:layout_width="wrap_content"
@@ -1787,7 +1805,7 @@
 						android:text="Polish Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_22"
 						android:layout_width="wrap_content"
@@ -1804,7 +1822,7 @@
 						android:text="English Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_23"
 						android:layout_width="wrap_content"
@@ -1821,7 +1839,7 @@
 						android:text="Slovak Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_24"
 						android:layout_width="wrap_content"
@@ -1838,7 +1856,7 @@
 						android:text="Swedish Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_25"
 						android:layout_width="wrap_content"
@@ -1855,7 +1873,7 @@
 						android:text="Finnish Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_26"
 						android:layout_width="wrap_content"
@@ -1872,7 +1890,7 @@
 						android:text="Czech Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_27"
 						android:layout_width="wrap_content"
@@ -1889,7 +1907,7 @@
 						android:text="Chinese (Traditional) Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_28"
 						android:layout_width="wrap_content"
@@ -1906,12 +1924,46 @@
 						android:text="Bulgarian Translation"
 						android:textSize="14sp"
 						android:textStyle="bold"
-						android:textColor="#FFEB3B" />
+						android:textColor="#2962FF" />
 					<TextView
 						android:id="@+id/translator_29"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
 						android:text="meorro | martinov83"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+					<TextView
+						android:id="@+id/manager_lang_30"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Serbian (Cyrillic) Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#2962FF" />
+					<TextView
+						android:id="@+id/translator_30"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:paddingBottom="5dp"
+						android:text="nexiRS"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+					<TextView
+						android:id="@+id/manager_lang_31"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Serbian (Latin) Translation"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#2962FF" />
+					<TextView
+						android:id="@+id/translator_31"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="nexiRS"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
