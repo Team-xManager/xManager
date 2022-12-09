@@ -53,6 +53,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.material.*;
+import com.google.firebase.FirebaseApp;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.wuyr.rippleanimation.*;
@@ -67,8 +69,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.regex.*;
 import org.json.*;
-import androidx.core.widget.NestedScrollView;
 import static android.os.Build.VERSION.SDK_INT;
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.widget.NestedScrollView;
 import androidx.core.content.ContextCompat;
 import androidx.core.app.ActivityCompat;
 import androidx.annotation.NonNull;
@@ -167,7 +170,9 @@ public class MainActivity extends AppCompatActivity {
 	private LinearLayout box_update;
 	private ImageView icon_switch;
 	private ImageView icon_update;
-	private TextView hidden_download;
+	private TextView hidden_download_1;
+	private TextView hidden_download_2;
+	private TextView hidden_patched;
 	private TextView installation_failed;
 	private TextView existing_patched;
 	private TextView close;
@@ -368,6 +373,10 @@ public class MainActivity extends AppCompatActivity {
 	private TextView translator_28;
 	private TextView manager_lang_29;
 	private TextView translator_29;
+	private TextView manager_lang_30;
+	private TextView translator_30;
+	private TextView manager_lang_31;
+	private TextView translator_31;
 	private ScrollView main_scroll_body;
 	private LinearLayout main_body;
 	private LinearLayout main_box_1;
@@ -501,7 +510,7 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.main);
 		initialize(_savedInstanceState);
-		
+		FirebaseApp.initializeApp(this);
 		MobileAds.initialize(this);
 		
 		initializeLogic();
@@ -521,7 +530,9 @@ public class MainActivity extends AppCompatActivity {
 		box_update = findViewById(R.id.box_update);
 		icon_switch = findViewById(R.id.icon_switch);
 		icon_update = findViewById(R.id.icon_update);
-		hidden_download = findViewById(R.id.hidden_download);
+		hidden_download_1 = findViewById(R.id.hidden_download_1);
+		hidden_download_2 = findViewById(R.id.hidden_download_2);
+		hidden_patched = findViewById(R.id.hidden_patched);
 		installation_failed = findViewById(R.id.installation_failed);
 		existing_patched = findViewById(R.id.existing_patched);
 		close = findViewById(R.id.close);
@@ -722,6 +733,10 @@ public class MainActivity extends AppCompatActivity {
 		translator_28 = findViewById(R.id.translator_28);
 		manager_lang_29 = findViewById(R.id.manager_lang_29);
 		translator_29 = findViewById(R.id.translator_29);
+		manager_lang_30 = findViewById(R.id.manager_lang_30);
+		translator_30 = findViewById(R.id.translator_30);
+		manager_lang_31 = findViewById(R.id.manager_lang_31);
+		translator_31 = findViewById(R.id.translator_31);
 		main_scroll_body = findViewById(R.id.main_scroll_body);
 		main_body = findViewById(R.id.main_body);
 		main_box_1 = findViewById(R.id.main_box_1);
@@ -4541,6 +4556,232 @@ public class MainActivity extends AppCompatActivity {
 					
 					COUNTER = 1;
 				}
+				if (_position == 29) {
+					LANGUAGE.edit().putString("LANGUAGE", "29").commit();
+					title_1.setText(R.string.spotify_regular_29);
+					title_2.setText(R.string.spotify_amoled_29);
+					sub_text_installed.setText(R.string.installed_29);
+					sub_text_1.setText(R.string.latest_29);
+					sub_text_2.setText(R.string.latest_29);
+					sub_text_3.setText(R.string.latest_29);
+					version_switch_1.setText(R.string.versions_29);
+					version_switch_2.setText(R.string.versions_29);
+					version_switch_3.setText(R.string.versions_29);
+					changelogs.setText(R.string.changelogs_29);
+					title_sub.setText(R.string.manager_tools_29);
+					device_cpu.setText(R.string.device_cpu_29);
+					source.setText(R.string.source_29);
+					support.setText(R.string.support_29);
+					donate.setText(R.string.donate_29);
+					about.setText(R.string.about_29);
+					list_auto_refresh.setText(R.string.list_auto_refresh_29);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_29);
+					force_auto_install.setText(R.string.force_auto_install_29);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_29);
+					theme.setText(R.string.show_themes_29);
+					apk_location.setText(R.string.apk_location_29);
+					apk_location_info.setText(R.string.apk_location_desc_29);
+					clear_directory_folders.setText(R.string.clear_directory_folders_29);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_29);
+					reset_settings.setText(R.string.reset_settings_29);
+					sub_title.setText(R.string.about_sub_29);
+					developer_manager.setText(R.string.xmanager_dev_29);
+					developer_spotify.setText(R.string.spotify_mod_devs_29);
+					support_team.setText(R.string.telegram_support_team_29);
+					mod_testers_1.setText(R.string.manager_testers_29);
+					mod_testers_2.setText(R.string.manager_hosting_29);
+					mobilism_team.setText(R.string.mobilism_team_29);
+					forum_team.setText(R.string.forum_team_29);
+					manager_team.setText(R.string.xspotify_team_29);
+					contributors_1.setText(R.string.contributors_29);
+					download_selected.setText(R.string.download_selected_29);
+					download_ready.setText(R.string.download_ready_29);
+					download_ready_desc.setText(R.string.download_ready_desc_29);
+					downloading_file.setText(R.string.downloading_file_29);
+					download_success.setText(R.string.download_success_29);
+					new_update.setText(R.string.new_update_29);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_29);
+					continue_1.setText(R.string.continue_1_29);
+					cancel.setText(R.string.cancel_29);
+					fixer.setText(R.string.fixer_29);
+					download.setText(R.string.download_29);
+					later.setText(R.string.later_29);
+					install_now.setText(R.string.install_now_29);
+					install_update.setText(R.string.install_update_29);
+					go_back.setText(R.string.go_back_29);
+					download_update.setText(R.string.download_update_29);
+					not_now.setText(R.string.not_now_29);
+					show_support.setText(R.string.show_support_29);
+					show_support_desc.setText(R.string.show_support_desc_29);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_29);
+					settings_title.setText(R.string.settings_title_29);
+					about_title.setText(R.string.about_title_29);
+					maintenance.setText(R.string.maintenance_29);
+					maintenance_desc.setText(R.string.maintenance_desc_29);
+					thanks.setText(R.string.thanks_29);
+					language.setText(R.string.language_29);
+					website.setText(R.string.website_29);
+					discord.setText(R.string.discord_29);
+					reddit.setText(R.string.reddit_29);
+					faq.setText(R.string.faq_29);
+					cloned_version.setText(R.string.cloned_version_29);
+					cloned_version_info.setText(R.string.cloned_version_desc_29);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_29);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_29);
+					installation_failed.setText(R.string.installation_failed_29);
+					installation_failed_desc.setText(R.string.installation_failed_desc_29);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_29);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_29);
+					existing_patched.setText(R.string.existing_patched_29);
+					existing_patched_desc.setText(R.string.existing_patched_desc_29);
+					close.setText(R.string.close_29);
+					cloned.setText(R.string.cloned_29);
+					ream.setText(R.string.ream_29);
+					install.setText(R.string.install_29);
+					uninstall.setText(R.string.uninstall_29);
+					ignore.setText(R.string.ignore_29);
+					delete.setText(R.string.delete_29);
+					uninstall_patched.setText(R.string.uninstall_patched_29);
+					open_settings.setText(R.string.open_settings_29);
+					open_patched.setText(R.string.open_patched_29);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
+					
+					COUNTER = 1;
+				}
+				if (_position == 30) {
+					LANGUAGE.edit().putString("LANGUAGE", "30").commit();
+					title_1.setText(R.string.spotify_regular_30);
+					title_2.setText(R.string.spotify_amoled_30);
+					sub_text_installed.setText(R.string.installed_30);
+					sub_text_1.setText(R.string.latest_30);
+					sub_text_2.setText(R.string.latest_30);
+					sub_text_3.setText(R.string.latest_30);
+					version_switch_1.setText(R.string.versions_30);
+					version_switch_2.setText(R.string.versions_30);
+					version_switch_3.setText(R.string.versions_30);
+					changelogs.setText(R.string.changelogs_30);
+					title_sub.setText(R.string.manager_tools_30);
+					device_cpu.setText(R.string.device_cpu_30);
+					source.setText(R.string.source_30);
+					support.setText(R.string.support_30);
+					donate.setText(R.string.donate_30);
+					about.setText(R.string.about_30);
+					list_auto_refresh.setText(R.string.list_auto_refresh_30);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_30);
+					force_auto_install.setText(R.string.force_auto_install_30);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_30);
+					theme.setText(R.string.show_themes_30);
+					apk_location.setText(R.string.apk_location_30);
+					apk_location_info.setText(R.string.apk_location_desc_30);
+					clear_directory_folders.setText(R.string.clear_directory_folders_30);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_30);
+					reset_settings.setText(R.string.reset_settings_30);
+					sub_title.setText(R.string.about_sub_30);
+					developer_manager.setText(R.string.xmanager_dev_30);
+					developer_spotify.setText(R.string.spotify_mod_devs_30);
+					support_team.setText(R.string.telegram_support_team_30);
+					mod_testers_1.setText(R.string.manager_testers_30);
+					mod_testers_2.setText(R.string.manager_hosting_30);
+					mobilism_team.setText(R.string.mobilism_team_30);
+					forum_team.setText(R.string.forum_team_30);
+					manager_team.setText(R.string.xspotify_team_30);
+					contributors_1.setText(R.string.contributors_30);
+					download_selected.setText(R.string.download_selected_30);
+					download_ready.setText(R.string.download_ready_30);
+					download_ready_desc.setText(R.string.download_ready_desc_30);
+					downloading_file.setText(R.string.downloading_file_30);
+					download_success.setText(R.string.download_success_30);
+					new_update.setText(R.string.new_update_30);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_30);
+					continue_1.setText(R.string.continue_1_30);
+					cancel.setText(R.string.cancel_30);
+					fixer.setText(R.string.fixer_30);
+					download.setText(R.string.download_30);
+					later.setText(R.string.later_30);
+					install_now.setText(R.string.install_now_30);
+					install_update.setText(R.string.install_update_30);
+					go_back.setText(R.string.go_back_30);
+					download_update.setText(R.string.download_update_30);
+					not_now.setText(R.string.not_now_30);
+					show_support.setText(R.string.show_support_30);
+					show_support_desc.setText(R.string.show_support_desc_30);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_30);
+					settings_title.setText(R.string.settings_title_30);
+					about_title.setText(R.string.about_title_30);
+					maintenance.setText(R.string.maintenance_30);
+					maintenance_desc.setText(R.string.maintenance_desc_30);
+					thanks.setText(R.string.thanks_30);
+					language.setText(R.string.language_30);
+					website.setText(R.string.website_30);
+					discord.setText(R.string.discord_30);
+					reddit.setText(R.string.reddit_30);
+					faq.setText(R.string.faq_30);
+					cloned_version.setText(R.string.cloned_version_30);
+					cloned_version_info.setText(R.string.cloned_version_desc_30);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_30);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_30);
+					installation_failed.setText(R.string.installation_failed_30);
+					installation_failed_desc.setText(R.string.installation_failed_desc_30);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_30);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_30);
+					existing_patched.setText(R.string.existing_patched_30);
+					existing_patched_desc.setText(R.string.existing_patched_desc_30);
+					close.setText(R.string.close_30);
+					cloned.setText(R.string.cloned_30);
+					ream.setText(R.string.ream_30);
+					install.setText(R.string.install_30);
+					uninstall.setText(R.string.uninstall_30);
+					ignore.setText(R.string.ignore_30);
+					delete.setText(R.string.delete_30);
+					uninstall_patched.setText(R.string.uninstall_patched_30);
+					open_settings.setText(R.string.open_settings_30);
+					open_patched.setText(R.string.open_patched_30);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
+					
+					COUNTER = 1;
+				}
 			}
 			
 			@Override
@@ -4972,13 +5213,21 @@ public class MainActivity extends AppCompatActivity {
 											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-													_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+													else {
+														_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
 												}
 												else {
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
 													}
 												}
 												_File_Remover();
@@ -4991,13 +5240,21 @@ public class MainActivity extends AppCompatActivity {
 														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 															       AlertDialog.setCancelable(true);
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+																else {
+																	_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
 															}
 															else {
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																	else {
+																		_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
 																}
 															}
 															_File_Remover();
@@ -5008,13 +5265,21 @@ public class MainActivity extends AppCompatActivity {
 												} else {
 													AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
 														}
 													}
 													_File_Remover();
@@ -5033,7 +5298,7 @@ public class MainActivity extends AppCompatActivity {
 										try {
 											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 											}
 											else {
@@ -5043,7 +5308,7 @@ public class MainActivity extends AppCompatActivity {
 														    @Override
 														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 															       AlertDialog.setCancelable(true);
-															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 															com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 															      int rewardAmount = rewardItem.getAmount();
 															      String rewardType = rewardItem.getType();
@@ -5051,7 +5316,7 @@ public class MainActivity extends AppCompatActivity {
 														  });
 												} else {
 													AlertDialog.setCancelable(true);
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 												}
 											}
@@ -5122,13 +5387,21 @@ public class MainActivity extends AppCompatActivity {
 									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 										AlertDialog.setCancelable(true);
 										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-											_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+												_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											}
+											else {
+												_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											}
 										}
 										else {
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-												_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
+												else {
+													_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
 											}
 										}
 										_File_Remover();
@@ -5141,13 +5414,21 @@ public class MainActivity extends AppCompatActivity {
 												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 													       AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
 														}
 													}
 													_File_Remover();
@@ -5158,13 +5439,21 @@ public class MainActivity extends AppCompatActivity {
 										} else {
 											AlertDialog.setCancelable(true);
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-												_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
+												else {
+													_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
 											}
 											else {
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-													_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+													else {
+														_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
 												}
 											}
 											_File_Remover();
@@ -5183,7 +5472,7 @@ public class MainActivity extends AppCompatActivity {
 								try {
 									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 										AlertDialog.setCancelable(true);
-										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 									}
 									else {
@@ -5193,7 +5482,7 @@ public class MainActivity extends AppCompatActivity {
 												    @Override
 												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 													       AlertDialog.setCancelable(true);
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 													      int rewardAmount = rewardItem.getAmount();
 													      String rewardType = rewardItem.getType();
@@ -5201,7 +5490,7 @@ public class MainActivity extends AppCompatActivity {
 												  });
 										} else {
 											AlertDialog.setCancelable(true);
-											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 											com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 										}
 									}
@@ -5223,7 +5512,9 @@ public class MainActivity extends AppCompatActivity {
 						AlertDialog.show();
 						DELETE = 1;
 					}
-					hidden_download.setText(regular.get((int)(regular.size() - 1) - _position).get("Link").toString());
+					hidden_patched.setText(regular.get((int)(regular.size() - 1) - _position).get("Title").toString());
+					hidden_download_1.setText(regular.get((int)(regular.size() - 1) - _position).get("Link").toString());
+					hidden_download_2.setText(regular.get((int)(regular.size() - 1) - _position).get("Mirror").toString());
 				}
 				catch(Exception e) {
 				}
@@ -5319,13 +5610,21 @@ public class MainActivity extends AppCompatActivity {
 											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-													_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+													else {
+														_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
 												}
 												else {
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
 													}
 												}
 												_File_Remover();
@@ -5338,13 +5637,21 @@ public class MainActivity extends AppCompatActivity {
 														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 															       AlertDialog.setCancelable(true);
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+																else {
+																	_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
 															}
 															else {
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																	else {
+																		_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
 																}
 															}
 															_File_Remover();
@@ -5355,13 +5662,21 @@ public class MainActivity extends AppCompatActivity {
 												} else {
 													AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
 														}
 													}
 													_File_Remover();
@@ -5380,7 +5695,7 @@ public class MainActivity extends AppCompatActivity {
 										try {
 											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 											}
 											else {
@@ -5390,7 +5705,7 @@ public class MainActivity extends AppCompatActivity {
 														    @Override
 														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 															       AlertDialog.setCancelable(true);
-															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 															com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 															      int rewardAmount = rewardItem.getAmount();
 															      String rewardType = rewardItem.getType();
@@ -5398,7 +5713,7 @@ public class MainActivity extends AppCompatActivity {
 														  });
 												} else {
 													AlertDialog.setCancelable(true);
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 												}
 											}
@@ -5469,13 +5784,21 @@ public class MainActivity extends AppCompatActivity {
 									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 										AlertDialog.setCancelable(true);
 										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-											_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+												_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											}
+											else {
+												_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											}
 										}
 										else {
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-												_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
+												else {
+													_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
 											}
 										}
 										_File_Remover();
@@ -5488,13 +5811,21 @@ public class MainActivity extends AppCompatActivity {
 												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 													       AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
 														}
 													}
 													_File_Remover();
@@ -5505,13 +5836,21 @@ public class MainActivity extends AppCompatActivity {
 										} else {
 											AlertDialog.setCancelable(true);
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-												_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
+												else {
+													_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
 											}
 											else {
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-													_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+													else {
+														_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
 												}
 											}
 											_File_Remover();
@@ -5530,7 +5869,7 @@ public class MainActivity extends AppCompatActivity {
 								try {
 									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 										AlertDialog.setCancelable(true);
-										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 									}
 									else {
@@ -5540,7 +5879,7 @@ public class MainActivity extends AppCompatActivity {
 												    @Override
 												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 													       AlertDialog.setCancelable(true);
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 													      int rewardAmount = rewardItem.getAmount();
 													      String rewardType = rewardItem.getType();
@@ -5548,7 +5887,7 @@ public class MainActivity extends AppCompatActivity {
 												  });
 										} else {
 											AlertDialog.setCancelable(true);
-											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 											com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 										}
 									}
@@ -5570,7 +5909,9 @@ public class MainActivity extends AppCompatActivity {
 						AlertDialog.show();
 						DELETE = 1;
 					}
-					hidden_download.setText(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString());
+					hidden_patched.setText(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString());
+					hidden_download_1.setText(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString());
+					hidden_download_2.setText(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Mirror").toString());
 				}
 				catch(Exception e) {
 				}
@@ -5666,13 +6007,21 @@ public class MainActivity extends AppCompatActivity {
 											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-													_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+													else {
+														_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
 												}
 												else {
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
 													}
 												}
 												_File_Remover();
@@ -5685,13 +6034,21 @@ public class MainActivity extends AppCompatActivity {
 														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 															       AlertDialog.setCancelable(true);
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+																else {
+																	_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
 															}
 															else {
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																	else {
+																		_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
 																}
 															}
 															_File_Remover();
@@ -5702,13 +6059,21 @@ public class MainActivity extends AppCompatActivity {
 												} else {
 													AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
 														}
 													}
 													_File_Remover();
@@ -5727,7 +6092,7 @@ public class MainActivity extends AppCompatActivity {
 										try {
 											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 											}
 											else {
@@ -5737,7 +6102,7 @@ public class MainActivity extends AppCompatActivity {
 														    @Override
 														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 															       AlertDialog.setCancelable(true);
-															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 															com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 															      int rewardAmount = rewardItem.getAmount();
 															      String rewardType = rewardItem.getType();
@@ -5745,7 +6110,7 @@ public class MainActivity extends AppCompatActivity {
 														  });
 												} else {
 													AlertDialog.setCancelable(true);
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 												}
 											}
@@ -5816,13 +6181,21 @@ public class MainActivity extends AppCompatActivity {
 									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 										AlertDialog.setCancelable(true);
 										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-											_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+												_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											}
+											else {
+												_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											}
 										}
 										else {
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-												_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
+												else {
+													_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
 											}
 										}
 										_File_Remover();
@@ -5835,13 +6208,21 @@ public class MainActivity extends AppCompatActivity {
 												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 													       AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
 														}
 													}
 													_File_Remover();
@@ -5852,13 +6233,21 @@ public class MainActivity extends AppCompatActivity {
 										} else {
 											AlertDialog.setCancelable(true);
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-												_Download_Install(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
+												else {
+													_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
 											}
 											else {
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-													_Download(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+													else {
+														_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
 												}
 											}
 											_File_Remover();
@@ -5877,7 +6266,7 @@ public class MainActivity extends AppCompatActivity {
 								try {
 									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 										AlertDialog.setCancelable(true);
-										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 									}
 									else {
@@ -5887,7 +6276,7 @@ public class MainActivity extends AppCompatActivity {
 												    @Override
 												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 													       AlertDialog.setCancelable(true);
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 													      int rewardAmount = rewardItem.getAmount();
 													      String rewardType = rewardItem.getType();
@@ -5895,7 +6284,7 @@ public class MainActivity extends AppCompatActivity {
 												  });
 										} else {
 											AlertDialog.setCancelable(true);
-											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 											com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 										}
 									}
@@ -5917,7 +6306,9 @@ public class MainActivity extends AppCompatActivity {
 						AlertDialog.show();
 						DELETE = 1;
 					}
-					hidden_download.setText(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString());
+					hidden_patched.setText(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString());
+					hidden_download_1.setText(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString());
+					hidden_download_2.setText(amoled.get((int)(amoled.size() - 1) - _position).get("Mirror").toString());
 				}
 				catch(Exception e) {
 				}
@@ -6013,13 +6404,21 @@ public class MainActivity extends AppCompatActivity {
 											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-													_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+													else {
+														_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
 												}
 												else {
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
 													}
 												}
 												_File_Remover();
@@ -6032,13 +6431,21 @@ public class MainActivity extends AppCompatActivity {
 														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 															       AlertDialog.setCancelable(true);
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+																else {
+																	_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
 															}
 															else {
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																	else {
+																		_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
 																}
 															}
 															_File_Remover();
@@ -6049,13 +6456,21 @@ public class MainActivity extends AppCompatActivity {
 												} else {
 													AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
 														}
 													}
 													_File_Remover();
@@ -6074,7 +6489,7 @@ public class MainActivity extends AppCompatActivity {
 										try {
 											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 											}
 											else {
@@ -6084,7 +6499,7 @@ public class MainActivity extends AppCompatActivity {
 														    @Override
 														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 															       AlertDialog.setCancelable(true);
-															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 															com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 															      int rewardAmount = rewardItem.getAmount();
 															      String rewardType = rewardItem.getType();
@@ -6092,7 +6507,7 @@ public class MainActivity extends AppCompatActivity {
 														  });
 												} else {
 													AlertDialog.setCancelable(true);
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 												}
 											}
@@ -6165,13 +6580,21 @@ public class MainActivity extends AppCompatActivity {
 									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 										AlertDialog.setCancelable(true);
 										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-											_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+												_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											}
+											else {
+												_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											}
 										}
 										else {
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-												_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
+												else {
+													_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
 											}
 										}
 										_File_Remover();
@@ -6184,13 +6607,21 @@ public class MainActivity extends AppCompatActivity {
 												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 													       AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
 														}
 													}
 													_File_Remover();
@@ -6201,13 +6632,21 @@ public class MainActivity extends AppCompatActivity {
 										} else {
 											AlertDialog.setCancelable(true);
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-												_Download_Install_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
+												else {
+													_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
 											}
 											else {
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-													_Download_Cloned(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+													else {
+														_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
 												}
 											}
 											_File_Remover();
@@ -6226,7 +6665,7 @@ public class MainActivity extends AppCompatActivity {
 								try {
 									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 										AlertDialog.setCancelable(true);
-										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 									}
 									else {
@@ -6236,7 +6675,7 @@ public class MainActivity extends AppCompatActivity {
 												    @Override
 												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 													       AlertDialog.setCancelable(true);
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 													      int rewardAmount = rewardItem.getAmount();
 													      String rewardType = rewardItem.getType();
@@ -6244,7 +6683,7 @@ public class MainActivity extends AppCompatActivity {
 												  });
 										} else {
 											AlertDialog.setCancelable(true);
-											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 											com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 										}
 									}
@@ -6268,7 +6707,9 @@ public class MainActivity extends AppCompatActivity {
 						FileUtil.makeDir("/storage/emulated/0/xManager/Update");
 						DELETE = 1;
 					}
-					hidden_download.setText(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString());
+					hidden_patched.setText(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString());
+					hidden_download_1.setText(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString());
+					hidden_download_2.setText(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Mirror").toString());
 				}
 				catch(Exception e) {
 				}
@@ -6358,13 +6799,21 @@ public class MainActivity extends AppCompatActivity {
 											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-													_Download_Install_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+													else {
+														_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
 												}
 												else {
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														_Download_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
 													}
 												}
 												_File_Remover();
@@ -6377,13 +6826,21 @@ public class MainActivity extends AppCompatActivity {
 														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 															       AlertDialog.setCancelable(true);
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																_Download_Install_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+																else {
+																	_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
 															}
 															else {
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	_Download_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																	else {
+																		_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
 																}
 															}
 															_File_Remover();
@@ -6394,13 +6851,21 @@ public class MainActivity extends AppCompatActivity {
 												} else {
 													AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														_Download_Install_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															_Download_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
 														}
 													}
 													_File_Remover();
@@ -6419,7 +6884,7 @@ public class MainActivity extends AppCompatActivity {
 										try {
 											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 											}
 											else {
@@ -6429,7 +6894,7 @@ public class MainActivity extends AppCompatActivity {
 														    @Override
 														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 															       AlertDialog.setCancelable(true);
-															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 															com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 															      int rewardAmount = rewardItem.getAmount();
 															      String rewardType = rewardItem.getType();
@@ -6437,7 +6902,7 @@ public class MainActivity extends AppCompatActivity {
 														  });
 												} else {
 													AlertDialog.setCancelable(true);
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 												}
 											}
@@ -6508,13 +6973,21 @@ public class MainActivity extends AppCompatActivity {
 									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 										AlertDialog.setCancelable(true);
 										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-											_Download_Install_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+												_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											}
+											else {
+												_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+											}
 										}
 										else {
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-												_Download_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
+												else {
+													_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
 											}
 										}
 										_File_Remover();
@@ -6527,13 +7000,21 @@ public class MainActivity extends AppCompatActivity {
 												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 													       AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														_Download_Install_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															_Download_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
 														}
 													}
 													_File_Remover();
@@ -6544,13 +7025,21 @@ public class MainActivity extends AppCompatActivity {
 										} else {
 											AlertDialog.setCancelable(true);
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-												_Download_Install_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
+												else {
+													_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												}
 											}
 											else {
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-													_Download_Lite(hidden_download.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+													else {
+														_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
 												}
 											}
 											_File_Remover();
@@ -6569,7 +7058,7 @@ public class MainActivity extends AppCompatActivity {
 								try {
 									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 										AlertDialog.setCancelable(true);
-										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+										((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 									}
 									else {
@@ -6579,7 +7068,7 @@ public class MainActivity extends AppCompatActivity {
 												    @Override
 												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
 													       AlertDialog.setCancelable(true);
-													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+													((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 													      int rewardAmount = rewardItem.getAmount();
 													      String rewardType = rewardItem.getType();
@@ -6587,7 +7076,7 @@ public class MainActivity extends AppCompatActivity {
 												  });
 										} else {
 											AlertDialog.setCancelable(true);
-											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download.getText().toString()));
+											((ClipboardManager) getSystemService(getApplicationContext().CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("clipboard", hidden_download_2.getText().toString()));
 											com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Copied Successfully", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 										}
 									}
@@ -6609,7 +7098,9 @@ public class MainActivity extends AppCompatActivity {
 						AlertDialog.show();
 						DELETE = 1;
 					}
-					hidden_download.setText(lite.get((int)(lite.size() - 1) - _position).get("Link").toString());
+					hidden_patched.setText(lite.get((int)(lite.size() - 1) - _position).get("Title").toString());
+					hidden_download_1.setText(lite.get((int)(lite.size() - 1) - _position).get("Link").toString());
+					hidden_download_2.setText(lite.get((int)(lite.size() - 1) - _position).get("Mirror").toString());
 				}
 				catch(Exception e) {
 				}
@@ -6619,7 +7110,7 @@ public class MainActivity extends AppCompatActivity {
 		box_uninstall.setOnLongClickListener(new View.OnLongClickListener() {
 			@Override
 			public boolean onLongClick(View _view) {
-				SketchwareUtil.showMessage(getApplicationContext(), "Uninstall patched");
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Uninstall Patched", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 				return true;
 			}
 		});
@@ -6675,7 +7166,7 @@ public class MainActivity extends AppCompatActivity {
 		box_settings.setOnLongClickListener(new View.OnLongClickListener() {
 			@Override
 			public boolean onLongClick(View _view) {
-				SketchwareUtil.showMessage(getApplicationContext(), "Open patched's app settings");
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Open Patched's App Settings", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 				return true;
 			}
 		});
@@ -6731,7 +7222,7 @@ public class MainActivity extends AppCompatActivity {
 		box_cache.setOnLongClickListener(new View.OnLongClickListener() {
 			@Override
 			public boolean onLongClick(View _view) {
-				SketchwareUtil.showMessage(getApplicationContext(), "Clear offline cached datas");
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Clear Offline Cached Datas", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 				return true;
 			}
 		});
@@ -6754,15 +7245,22 @@ public class MainActivity extends AppCompatActivity {
 							}
 						};
 						_timer.schedule(Timer, (int)(2000));
-						if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.music/") || (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.musix/") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.lite/"))) {
-							FileUtil.deleteFile("/storage/emulated/0/Android/data/com.spotify.music/");
-							FileUtil.deleteFile("/storage/emulated/0/Android/data/com.spotify.musix/");
-							FileUtil.deleteFile("/storage/emulated/0/Android/data/com.spotify.lite/");
-							SketchwareUtil.showMessage(getApplicationContext(), "Successfully deleted");
+						if (Build.VERSION.SDK_INT <= 30) {
+								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.music/") || (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.musix/") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.lite/"))) {
+										FileUtil.deleteFile("/storage/emulated/0/Android/data/com.spotify.music/");
+										FileUtil.deleteFile("/storage/emulated/0/Android/data/com.spotify.musix/");
+										FileUtil.deleteFile("/storage/emulated/0/Android/data/com.spotify.lite/");
+										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Successfully Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+								}
+								else {
+										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Directory Files Are Empty", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+								}
+						} else {
+								if (Build.VERSION.SDK_INT >= 31) {
+										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "This feature does not support Android 12 and above", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+								}
 						}
-						else {
-							SketchwareUtil.showMessage(getApplicationContext(), "Directory files are empty");
-						}
+						
 					}
 					_Tap_Animation(box_cache);
 				}
@@ -6774,7 +7272,7 @@ public class MainActivity extends AppCompatActivity {
 		box_open.setOnLongClickListener(new View.OnLongClickListener() {
 			@Override
 			public boolean onLongClick(View _view) {
-				SketchwareUtil.showMessage(getApplicationContext(), "Launch patched app");
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Launch Patched App", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 				return true;
 			}
 		});
@@ -6851,7 +7349,7 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View _view) {
 				try {
-					_Browser("https://t.me/SpotifyModSupport");
+					_Browser("https://t.me/xManagerSupport");
 					_Tap_Animation(box_support);
 				}
 				catch(Exception e) {
@@ -7049,7 +7547,7 @@ public class MainActivity extends AppCompatActivity {
 					}
 				};
 				_timer.schedule(Timer, (int)(3000));
-				SketchwareUtil.showMessage(getApplicationContext(), "Press back again to exit");
+				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Press back again to exit", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 			}
 			else {
 				finishAndRemoveTask();
@@ -7295,7 +7793,7 @@ public class MainActivity extends AppCompatActivity {
 														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
 																runOnUiThread(new Runnable() {
 																		public void run() {
-																				SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
+																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																				_File_Remover();
 																		}
 																});
@@ -7315,6 +7813,14 @@ public class MainActivity extends AppCompatActivity {
 														runOnUiThread(new Runnable() {
 																@Override
 																public void run() {
+																		ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																		finalize.setDuration(2000);
+																		finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																				public void onAnimationUpdate(ValueAnimator animation) {
+																						prog.setProgress((int) animation.getAnimatedValue());
+																				}
+																		});
+																		finalize.start();
 																		if (!MainActivity.this.isFinishing()) {
 																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
@@ -7364,7 +7870,14 @@ public class MainActivity extends AppCompatActivity {
 																																try {
 																																		prog.dismiss();
 																																		_Reminder();
-																																		_Browser(hidden_download.getText().toString());
+																																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																																				_Browser(hidden_download_1.getText().toString());
+																																		}
+																																		else {
+																																				if (1 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																																						_Browser(hidden_download_2.getText().toString());
+																																				}
+																																		}
 																																} catch (Exception e) {
 																																}
 																														}
@@ -7379,6 +7892,110 @@ public class MainActivity extends AppCompatActivity {
 																}
 														});
 														if (bytes_downloaded == bytes_total) {
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												prog.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																												String TitleColor = "1DB954";
+																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																												prog.setProgressNumberFormat("PREPARING...");
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												prog.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																												prog.setProgressNumberFormat("VERIFYING FILE...");
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(3500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												prog.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																												prog.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(4500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												prog.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																												prog.setProgressNumberFormat("FINALIZING...");
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(5500));
 																Timer = new TimerTask() {
 																		@Override
 																		public void run() {
@@ -7399,7 +8016,7 @@ public class MainActivity extends AppCompatActivity {
 																				});
 																		}
 																};
-																_timer.schedule(Timer, (int)(1500));
+																_timer.schedule(Timer, (int)(6500));
 														}
 												}
 												cursor.close();
@@ -7689,7 +8306,7 @@ public class MainActivity extends AppCompatActivity {
 														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
 																runOnUiThread(new Runnable() {
 																		public void run() {
-																				SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
+																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																				_File_Remover();
 																		}
 																});
@@ -7709,6 +8326,14 @@ public class MainActivity extends AppCompatActivity {
 														runOnUiThread(new Runnable() {
 																@Override
 																public void run() {
+																		ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																		finalize.setDuration(2000);
+																		finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																				public void onAnimationUpdate(ValueAnimator animation) {
+																						prog.setProgress((int) animation.getAnimatedValue());
+																				}
+																		});
+																		finalize.start();
 																		if (!MainActivity.this.isFinishing()) {
 																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
@@ -7777,6 +8402,110 @@ public class MainActivity extends AppCompatActivity {
 																		public void run() {
 																				runOnUiThread(new Runnable() {
 																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												prog.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																												String TitleColor = "1DB954";
+																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																												prog.setProgressNumberFormat("PREPARING...");
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												prog.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
+																												String TitleColor = "1DB954";
+																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																												prog.setProgressNumberFormat("VERIFYING FILE...");
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(3500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												prog.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
+																												String TitleColor = "1DB954";
+																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																												prog.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(4500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												prog.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
+																												String TitleColor = "1DB954";
+																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																												prog.setProgressNumberFormat("FINALIZING...");
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(5500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
 																						public void run() {	
 																								if (!MainActivity.this.isFinishing()) {
 																										_Extension_3();
@@ -7787,7 +8516,7 @@ public class MainActivity extends AppCompatActivity {
 																				});
 																		}
 																};
-																_timer.schedule(Timer, (int)(1500));
+																_timer.schedule(Timer, (int)(6500));
 														}
 												}
 												cursor.close();
@@ -7821,7 +8550,7 @@ public class MainActivity extends AppCompatActivity {
 	
 	public static class Drawables {
 			public static android.graphics.drawable.Drawable getSelectableDrawableFor(int color) {
-					if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+					if (Build.VERSION.SDK_INT < 21) {
 							android.graphics.drawable.StateListDrawable stateListDrawable = new android.graphics.drawable.StateListDrawable();
 							stateListDrawable.addState(
 							new int[]{android.R.attr.state_pressed},
@@ -7919,7 +8648,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 	public static class CircleDrawables {
 			public static android.graphics.drawable.Drawable getSelectableDrawableFor(int color) {
-					if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+					if (Build.VERSION.SDK_INT < 21) {
 							android.graphics.drawable.StateListDrawable stateListDrawable = new android.graphics.drawable.StateListDrawable();
 							stateListDrawable.addState(
 							new int[]{android.R.attr.state_pressed},
@@ -8403,7 +9132,7 @@ public class MainActivity extends AppCompatActivity {
 														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
 																runOnUiThread(new Runnable() {
 																		public void run() {
-																				SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
+																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																				_File_Remover();
 																		}
 																});
@@ -8423,6 +9152,14 @@ public class MainActivity extends AppCompatActivity {
 														runOnUiThread(new Runnable() {
 																@Override
 																public void run() {
+																		ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																		finalize.setDuration(2000);
+																		finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																				public void onAnimationUpdate(ValueAnimator animation) {
+																						prog.setProgress((int) animation.getAnimatedValue());
+																				}
+																		});
+																		finalize.start();
 																		if (!MainActivity.this.isFinishing()) {
 																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
@@ -8472,7 +9209,14 @@ public class MainActivity extends AppCompatActivity {
 																																try {
 																																		prog.dismiss();
 																																		_Reminder();
-																																		_Browser(hidden_download.getText().toString());
+																																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																																				_Browser(hidden_download_1.getText().toString());
+																																		}
+																																		else {
+																																				if (1 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																																						_Browser(hidden_download_2.getText().toString());
+																																				}
+																																		}
 																																} catch (Exception e) {
 																																}
 																														}
@@ -8485,6 +9229,110 @@ public class MainActivity extends AppCompatActivity {
 																				prog.show();
 																		}
 																		if (bytes_downloaded == bytes_total) {
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {
+																												ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																												finalize.setDuration(1800);
+																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																														public void onAnimationUpdate(ValueAnimator animation) {
+																																prog.setProgress((int) animation.getAnimatedValue());
+																																String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																																String TitleColor = "1DB954";
+																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																																prog.setProgressNumberFormat("PREPARING...");
+																														}
+																												});
+																												finalize.start();
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(500));
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {
+																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																												finalize.setDuration(1800);
+																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																														public void onAnimationUpdate(ValueAnimator animation) {
+																																prog.setProgress((int) animation.getAnimatedValue());
+																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																																String TitleColor = "1DB954";
+																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																																prog.setProgressNumberFormat("VERIFYING FILE...");
+																														}
+																												});
+																												finalize.start();
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(3500));
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {
+																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																												finalize.setDuration(1800);
+																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																														public void onAnimationUpdate(ValueAnimator animation) {
+																																prog.setProgress((int) animation.getAnimatedValue());
+																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																																String TitleColor = "1DB954";
+																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																																prog.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																														}
+																												});
+																												finalize.start();
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(4500));
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {
+																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																												finalize.setDuration(1800);
+																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																														public void onAnimationUpdate(ValueAnimator animation) {
+																																prog.setProgress((int) animation.getAnimatedValue());
+																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																																String TitleColor = "1DB954";
+																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																																prog.setProgressNumberFormat("FINALIZING...");
+																														}
+																												});
+																												finalize.start();
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(5500));
 																				Timer = new TimerTask() {
 																						@Override
 																						public void run() {
@@ -8604,7 +9452,7 @@ public class MainActivity extends AppCompatActivity {
 																								});
 																						}
 																				};
-																				_timer.schedule(Timer, (int)(1500));
+																				_timer.schedule(Timer, (int)(6500));
 																		}
 																}
 														});
@@ -8655,7 +9503,7 @@ public class MainActivity extends AppCompatActivity {
 														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
 																runOnUiThread(new Runnable() {
 																		public void run() {
-																				SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
+																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																				_File_Remover();
 																		}
 																});
@@ -8675,6 +9523,14 @@ public class MainActivity extends AppCompatActivity {
 														runOnUiThread(new Runnable() {
 																@Override
 																public void run() {
+																		ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																		finalize.setDuration(2000);
+																		finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																				public void onAnimationUpdate(ValueAnimator animation) {
+																						prog.setProgress((int) animation.getAnimatedValue());
+																				}
+																		});
+																		finalize.start();
 																		if (!MainActivity.this.isFinishing()) {
 																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
@@ -8742,6 +9598,110 @@ public class MainActivity extends AppCompatActivity {
 																								runOnUiThread(new Runnable() {
 																										@Override
 																										public void run() {
+																												ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																												finalize.setDuration(1800);
+																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																														public void onAnimationUpdate(ValueAnimator animation) {
+																																prog.setProgress((int) animation.getAnimatedValue());
+																																String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																																String TitleColor = "1DB954";
+																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																																prog.setProgressNumberFormat("PREPARING...");
+																														}
+																												});
+																												finalize.start();
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(500));
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {
+																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																												finalize.setDuration(1800);
+																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																														public void onAnimationUpdate(ValueAnimator animation) {
+																																prog.setProgress((int) animation.getAnimatedValue());
+																																String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
+																																String TitleColor = "1DB954";
+																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																																prog.setProgressNumberFormat("VERIFYING FILE...");
+																														}
+																												});
+																												finalize.start();
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(3500));
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {
+																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																												finalize.setDuration(1800);
+																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																														public void onAnimationUpdate(ValueAnimator animation) {
+																																prog.setProgress((int) animation.getAnimatedValue());
+																																String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
+																																String TitleColor = "1DB954";
+																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																																prog.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																														}
+																												});
+																												finalize.start();
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(4500));
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {
+																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																												finalize.setDuration(1800);
+																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																														public void onAnimationUpdate(ValueAnimator animation) {
+																																prog.setProgress((int) animation.getAnimatedValue());
+																																String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
+																																String TitleColor = "1DB954";
+																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																																prog.setProgressNumberFormat("FINALIZING...");
+																														}
+																												});
+																												finalize.start();
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(5500));
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {
 																												try {
 																														prog.dismiss();
 																												}
@@ -8771,7 +9731,7 @@ public class MainActivity extends AppCompatActivity {
 																								});
 																						}
 																				};
-																				_timer.schedule(Timer, (int)(1500));
+																				_timer.schedule(Timer, (int)(6500));
 																		}
 																}
 														});
@@ -12086,6 +13046,234 @@ public class MainActivity extends AppCompatActivity {
 																															
 																															select_language.setSelection((int)(28));
 																														}
+																														else {
+																															if (LANGUAGE.getString("LANGUAGE", "").equals("29")) {
+																																title_1.setText(R.string.spotify_regular_29);
+																																title_2.setText(R.string.spotify_amoled_29);
+																																sub_text_installed.setText(R.string.installed_29);
+																																sub_text_1.setText(R.string.latest_29);
+																																sub_text_2.setText(R.string.latest_29);
+																																sub_text_3.setText(R.string.latest_29);
+																																version_switch_1.setText(R.string.versions_29);
+																																version_switch_2.setText(R.string.versions_29);
+																																version_switch_3.setText(R.string.versions_29);
+																																changelogs.setText(R.string.changelogs_29);
+																																title_sub.setText(R.string.manager_tools_29);
+																																device_cpu.setText(R.string.device_cpu_29);
+																																source.setText(R.string.source_29);
+																																support.setText(R.string.support_29);
+																																donate.setText(R.string.donate_29);
+																																about.setText(R.string.about_29);
+																																list_auto_refresh.setText(R.string.list_auto_refresh_29);
+																																list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_29);
+																																force_auto_install.setText(R.string.force_auto_install_29);
+																																force_auto_install_info.setText(R.string.force_auto_install_desc_29);
+																																theme.setText(R.string.show_themes_29);
+																																apk_location.setText(R.string.apk_location_29);
+																																apk_location_info.setText(R.string.apk_location_desc_29);
+																																clear_directory_folders.setText(R.string.clear_directory_folders_29);
+																																clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_29);
+																																reset_settings.setText(R.string.reset_settings_29);
+																																sub_title.setText(R.string.about_sub_29);
+																																developer_manager.setText(R.string.xmanager_dev_29);
+																																developer_spotify.setText(R.string.spotify_mod_devs_29);
+																																support_team.setText(R.string.telegram_support_team_29);
+																																mod_testers_1.setText(R.string.manager_testers_29);
+																																mod_testers_2.setText(R.string.manager_hosting_29);
+																																mobilism_team.setText(R.string.mobilism_team_29);
+																																forum_team.setText(R.string.forum_team_29);
+																																manager_team.setText(R.string.xspotify_team_29);
+																																contributors_1.setText(R.string.contributors_29);
+																																download_selected.setText(R.string.download_selected_29);
+																																download_ready.setText(R.string.download_ready_29);
+																																download_ready_desc.setText(R.string.download_ready_desc_29);
+																																downloading_file.setText(R.string.downloading_file_29);
+																																download_success.setText(R.string.download_success_29);
+																																new_update.setText(R.string.new_update_29);
+																																download_selected_0 = download_selected.getText().toString();
+																																download_ready_0 = download_ready.getText().toString();
+																																download_ready_desc_0 = download_ready_desc.getText().toString();
+																																downloading_file_0 = downloading_file.getText().toString();
+																																download_success_0 = download_success.getText().toString();
+																																copy_url.setText(R.string.copy_url_29);
+																																continue_1.setText(R.string.continue_1_29);
+																																cancel.setText(R.string.cancel_29);
+																																fixer.setText(R.string.fixer_29);
+																																download.setText(R.string.download_29);
+																																later.setText(R.string.later_29);
+																																install_now.setText(R.string.install_now_29);
+																																install_update.setText(R.string.install_update_29);
+																																go_back.setText(R.string.go_back_29);
+																																download_update.setText(R.string.download_update_29);
+																																not_now.setText(R.string.not_now_29);
+																																show_support.setText(R.string.show_support_29);
+																																show_support_desc.setText(R.string.show_support_desc_29);
+																																copy_url_0 = copy_url.getText().toString();
+																																download_0 = download.getText().toString();
+																																continue_0 = continue_1.getText().toString();
+																																cancel_0 = cancel.getText().toString();
+																																fixer_0 = fixer.getText().toString();
+																																later_0 = later.getText().toString();
+																																install_now_0 = install_now.getText().toString();
+																																go_back_0 = go_back.getText().toString();
+																																install_update_0 = install_update.getText().toString();
+																																main_title.setText(R.string.main_title_29);
+																																settings_title.setText(R.string.settings_title_29);
+																																about_title.setText(R.string.about_title_29);
+																																maintenance.setText(R.string.maintenance_29);
+																																maintenance_desc.setText(R.string.maintenance_desc_29);
+																																thanks.setText(R.string.thanks_29);
+																																language.setText(R.string.language_29);
+																																website.setText(R.string.website_29);
+																																discord.setText(R.string.discord_29);
+																																reddit.setText(R.string.reddit_29);
+																																faq.setText(R.string.faq_29);
+																																cloned_version.setText(R.string.cloned_version_29);
+																																cloned_version_info.setText(R.string.cloned_version_desc_29);
+																																disable_reward_ad.setText(R.string.disable_rewarded_ads_29);
+																																disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_29);
+																																installation_failed.setText(R.string.installation_failed_29);
+																																installation_failed_desc.setText(R.string.installation_failed_desc_29);
+																																installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_29);
+																																installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_29);
+																																existing_patched.setText(R.string.existing_patched_29);
+																																existing_patched_desc.setText(R.string.existing_patched_desc_29);
+																																close.setText(R.string.close_29);
+																																cloned.setText(R.string.cloned_29);
+																																ream.setText(R.string.ream_29);
+																																install.setText(R.string.install_29);
+																																uninstall.setText(R.string.uninstall_29);
+																																ignore.setText(R.string.ignore_29);
+																																delete.setText(R.string.delete_29);
+																																uninstall_patched.setText(R.string.uninstall_patched_29);
+																																open_settings.setText(R.string.open_settings_29);
+																																open_patched.setText(R.string.open_patched_29);
+																																installation_failed_0 = installation_failed.getText().toString();
+																																installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																																installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																																installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																																existing_patched_0 = existing_patched.getText().toString();
+																																existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																																close_0 = close.getText().toString();
+																																uninstall_0 = uninstall.getText().toString();
+																																
+																																select_language.setSelection((int)(29));
+																															}
+																															else {
+																																if (LANGUAGE.getString("LANGUAGE", "").equals("30")) {
+																																	title_1.setText(R.string.spotify_regular_30);
+																																	title_2.setText(R.string.spotify_amoled_30);
+																																	sub_text_installed.setText(R.string.installed_30);
+																																	sub_text_1.setText(R.string.latest_30);
+																																	sub_text_2.setText(R.string.latest_30);
+																																	sub_text_3.setText(R.string.latest_30);
+																																	version_switch_1.setText(R.string.versions_30);
+																																	version_switch_2.setText(R.string.versions_30);
+																																	version_switch_3.setText(R.string.versions_30);
+																																	changelogs.setText(R.string.changelogs_30);
+																																	title_sub.setText(R.string.manager_tools_30);
+																																	device_cpu.setText(R.string.device_cpu_30);
+																																	source.setText(R.string.source_30);
+																																	support.setText(R.string.support_30);
+																																	donate.setText(R.string.donate_30);
+																																	about.setText(R.string.about_30);
+																																	list_auto_refresh.setText(R.string.list_auto_refresh_30);
+																																	list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_30);
+																																	force_auto_install.setText(R.string.force_auto_install_30);
+																																	force_auto_install_info.setText(R.string.force_auto_install_desc_30);
+																																	theme.setText(R.string.show_themes_30);
+																																	apk_location.setText(R.string.apk_location_30);
+																																	apk_location_info.setText(R.string.apk_location_desc_30);
+																																	clear_directory_folders.setText(R.string.clear_directory_folders_30);
+																																	clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_30);
+																																	reset_settings.setText(R.string.reset_settings_30);
+																																	sub_title.setText(R.string.about_sub_30);
+																																	developer_manager.setText(R.string.xmanager_dev_30);
+																																	developer_spotify.setText(R.string.spotify_mod_devs_30);
+																																	support_team.setText(R.string.telegram_support_team_30);
+																																	mod_testers_1.setText(R.string.manager_testers_30);
+																																	mod_testers_2.setText(R.string.manager_hosting_30);
+																																	mobilism_team.setText(R.string.mobilism_team_30);
+																																	forum_team.setText(R.string.forum_team_30);
+																																	manager_team.setText(R.string.xspotify_team_30);
+																																	contributors_1.setText(R.string.contributors_30);
+																																	download_selected.setText(R.string.download_selected_30);
+																																	download_ready.setText(R.string.download_ready_30);
+																																	download_ready_desc.setText(R.string.download_ready_desc_30);
+																																	downloading_file.setText(R.string.downloading_file_30);
+																																	download_success.setText(R.string.download_success_30);
+																																	new_update.setText(R.string.new_update_30);
+																																	download_selected_0 = download_selected.getText().toString();
+																																	download_ready_0 = download_ready.getText().toString();
+																																	download_ready_desc_0 = download_ready_desc.getText().toString();
+																																	downloading_file_0 = downloading_file.getText().toString();
+																																	download_success_0 = download_success.getText().toString();
+																																	copy_url.setText(R.string.copy_url_30);
+																																	continue_1.setText(R.string.continue_1_30);
+																																	cancel.setText(R.string.cancel_30);
+																																	fixer.setText(R.string.fixer_30);
+																																	download.setText(R.string.download_30);
+																																	later.setText(R.string.later_30);
+																																	install_now.setText(R.string.install_now_30);
+																																	install_update.setText(R.string.install_update_30);
+																																	go_back.setText(R.string.go_back_30);
+																																	download_update.setText(R.string.download_update_30);
+																																	not_now.setText(R.string.not_now_30);
+																																	show_support.setText(R.string.show_support_30);
+																																	show_support_desc.setText(R.string.show_support_desc_30);
+																																	copy_url_0 = copy_url.getText().toString();
+																																	download_0 = download.getText().toString();
+																																	continue_0 = continue_1.getText().toString();
+																																	cancel_0 = cancel.getText().toString();
+																																	fixer_0 = fixer.getText().toString();
+																																	later_0 = later.getText().toString();
+																																	install_now_0 = install_now.getText().toString();
+																																	go_back_0 = go_back.getText().toString();
+																																	install_update_0 = install_update.getText().toString();
+																																	main_title.setText(R.string.main_title_30);
+																																	settings_title.setText(R.string.settings_title_30);
+																																	about_title.setText(R.string.about_title_30);
+																																	maintenance.setText(R.string.maintenance_30);
+																																	maintenance_desc.setText(R.string.maintenance_desc_30);
+																																	thanks.setText(R.string.thanks_30);
+																																	language.setText(R.string.language_30);
+																																	website.setText(R.string.website_30);
+																																	discord.setText(R.string.discord_30);
+																																	reddit.setText(R.string.reddit_30);
+																																	faq.setText(R.string.faq_30);
+																																	cloned_version.setText(R.string.cloned_version_30);
+																																	cloned_version_info.setText(R.string.cloned_version_desc_30);
+																																	disable_reward_ad.setText(R.string.disable_rewarded_ads_30);
+																																	disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_30);
+																																	installation_failed.setText(R.string.installation_failed_30);
+																																	installation_failed_desc.setText(R.string.installation_failed_desc_30);
+																																	installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_30);
+																																	installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_30);
+																																	existing_patched.setText(R.string.existing_patched_30);
+																																	existing_patched_desc.setText(R.string.existing_patched_desc_30);
+																																	close.setText(R.string.close_30);
+																																	cloned.setText(R.string.cloned_30);
+																																	ream.setText(R.string.ream_30);
+																																	install.setText(R.string.install_30);
+																																	uninstall.setText(R.string.uninstall_30);
+																																	ignore.setText(R.string.ignore_30);
+																																	delete.setText(R.string.delete_30);
+																																	uninstall_patched.setText(R.string.uninstall_patched_30);
+																																	open_settings.setText(R.string.open_settings_30);
+																																	open_patched.setText(R.string.open_patched_30);
+																																	installation_failed_0 = installation_failed.getText().toString();
+																																	installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																																	installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																																	installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																																	existing_patched_0 = existing_patched.getText().toString();
+																																	existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																																	close_0 = close.getText().toString();
+																																	uninstall_0 = uninstall.getText().toString();
+																																	
+																																	select_language.setSelection((int)(30));
+																																}
+																															}
+																														}
 																													}
 																												}
 																											}
@@ -12147,6 +13335,8 @@ public class MainActivity extends AppCompatActivity {
 		Language.add("Czech");
 		Language.add("Chinese (Traditional)");
 		Language.add("Bulgarian");
+		Language.add("Serbian (Cyrillic)");
+		Language.add("Serbian (Latin)");
 		select_language.setAdapter(new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, Language));
 		((ArrayAdapter)select_language.getAdapter()).notifyDataSetChanged();
 		select_language.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, Language) {
@@ -12464,7 +13654,7 @@ public class MainActivity extends AppCompatActivity {
 				String Message = "xManager needs the storage permission to utilize the APK Location feature and to save the downloaded patched within that folder.";
 				String MessageColor = "FFFFFF";
 				Permission_v1.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-				Permission_v1.setPositiveButton("Understood", new DialogInterface.OnClickListener(){
+				Permission_v1.setPositiveButton("OKAY", new DialogInterface.OnClickListener(){
 						@Override
 						public void onClick(DialogInterface Permission_v1, int p) {
 								AlertDialog.setCancelable(true);
@@ -12498,7 +13688,7 @@ public class MainActivity extends AppCompatActivity {
 									final AlertDialog.Builder Permission_v1 = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
 									AlertDialog = Permission_v1.create();
 									AlertDialog.dismiss();
-									SketchwareUtil.showMessage(getApplicationContext(), "Permission Granted");
+									com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Permission Granted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 							} catch (Exception e) {	
 							}
 					}
@@ -12507,7 +13697,7 @@ public class MainActivity extends AppCompatActivity {
 					String Message = "Since you did not allow the storage permission, you will need to manually enable it.";
 					String MessageColor = "FFFFFF";
 					Permission_v2.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-					Permission_v2.setPositiveButton("Open Settings", new DialogInterface.OnClickListener(){
+					Permission_v2.setPositiveButton("SETTINGS", new DialogInterface.OnClickListener(){
 							@Override
 							public void onClick(DialogInterface Permission_v2, int p) {
 									AlertDialog.setCancelable(true);
@@ -12535,7 +13725,7 @@ public class MainActivity extends AppCompatActivity {
 											String Message = "xManager needs the storage permission to utilize the APK Location feature and to save the downloaded patched within that folder.";
 											String MessageColor = "FFFFFF";
 											Permission_v1.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-											Permission_v1.setPositiveButton("Understood", new DialogInterface.OnClickListener(){
+											Permission_v1.setPositiveButton("OKAY", new DialogInterface.OnClickListener(){
 													@Override
 													public void onClick(DialogInterface Permission_v1, int p) {
 															AlertDialog.setCancelable(true);
@@ -12554,10 +13744,19 @@ public class MainActivity extends AppCompatActivity {
 							AlertDialog.setCancelable(false);
 							AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
 							AlertDialog.show();
-							SketchwareUtil.showMessage(getApplicationContext(), "Permission Denied");
+							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Permission Denied", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 					} catch (Exception e) {
 					}
 			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			
 	}
@@ -12677,7 +13876,7 @@ public class MainActivity extends AppCompatActivity {
 														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
 																runOnUiThread(new Runnable() {
 																		public void run() {
-																				SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
+																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																				_File_Remover();
 																		}
 																});
@@ -12697,6 +13896,14 @@ public class MainActivity extends AppCompatActivity {
 														runOnUiThread(new Runnable() {
 																@Override
 																public void run() {
+																		ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																		finalize.setDuration(2000);
+																		finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																				public void onAnimationUpdate(ValueAnimator animation) {
+																						prog.setProgress((int) animation.getAnimatedValue());
+																				}
+																		});
+																		finalize.start();
 																		if (!MainActivity.this.isFinishing()) {
 																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
@@ -12746,7 +13953,14 @@ public class MainActivity extends AppCompatActivity {
 																																try {
 																																		prog.dismiss();
 																																		_Reminder();
-																																		_Browser(hidden_download.getText().toString());
+																																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																																				_Browser(hidden_download_1.getText().toString());
+																																		}
+																																		else {
+																																				if (1 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																																						_Browser(hidden_download_2.getText().toString());
+																																				}
+																																		}
 																																} catch (Exception e) {
 																																}
 																														}
@@ -12761,6 +13975,110 @@ public class MainActivity extends AppCompatActivity {
 																}
 														});
 														if (bytes_downloaded == bytes_total) {
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												prog.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																												String TitleColor = "1DB954";
+																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																												prog.setProgressNumberFormat("PREPARING...");
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												prog.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																												prog.setProgressNumberFormat("VERIFYING FILE...");
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(3500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												prog.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																												prog.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(4500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												prog.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																												prog.setProgressNumberFormat("FINALIZING...");
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(5500));
 																Timer = new TimerTask() {
 																		@Override
 																		public void run() {
@@ -12781,7 +14099,7 @@ public class MainActivity extends AppCompatActivity {
 																				});
 																		}
 																};
-																_timer.schedule(Timer, (int)(1500));
+																_timer.schedule(Timer, (int)(6500));
 														}
 												}
 												cursor.close();
@@ -12830,7 +14148,7 @@ public class MainActivity extends AppCompatActivity {
 														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
 																runOnUiThread(new Runnable() {
 																		public void run() {
-																				SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
+																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																				_File_Remover();
 																		}
 																});
@@ -12850,6 +14168,14 @@ public class MainActivity extends AppCompatActivity {
 														runOnUiThread(new Runnable() {
 																@Override
 																public void run() {
+																		ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																		finalize.setDuration(2000);
+																		finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																				public void onAnimationUpdate(ValueAnimator animation) {
+																						prog.setProgress((int) animation.getAnimatedValue());
+																				}
+																		});
+																		finalize.start();
 																		if (!MainActivity.this.isFinishing()) {
 																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
@@ -12899,7 +14225,14 @@ public class MainActivity extends AppCompatActivity {
 																																try {
 																																		prog.dismiss();
 																																		_Reminder();
-																																		_Browser(hidden_download.getText().toString());
+																																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																																				_Browser(hidden_download_1.getText().toString());
+																																		}
+																																		else {
+																																				if (1 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																																						_Browser(hidden_download_2.getText().toString());
+																																				}
+																																		}
 																																} catch (Exception e) {
 																																}
 																														}
@@ -12912,6 +14245,110 @@ public class MainActivity extends AppCompatActivity {
 																				prog.show();
 																		}
 																		if (bytes_downloaded == bytes_total) {
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {
+																												ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																												finalize.setDuration(1800);
+																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																														public void onAnimationUpdate(ValueAnimator animation) {
+																																prog.setProgress((int) animation.getAnimatedValue());
+																																String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																																String TitleColor = "1DB954";
+																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																																prog.setProgressNumberFormat("PREPARING...");
+																														}
+																												});
+																												finalize.start();
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(500));
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {
+																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																												finalize.setDuration(1800);
+																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																														public void onAnimationUpdate(ValueAnimator animation) {
+																																prog.setProgress((int) animation.getAnimatedValue());
+																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																																String TitleColor = "1DB954";
+																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																																prog.setProgressNumberFormat("VERIFYING FILE...");
+																														}
+																												});
+																												finalize.start();
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(3500));
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {
+																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																												finalize.setDuration(1800);
+																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																														public void onAnimationUpdate(ValueAnimator animation) {
+																																prog.setProgress((int) animation.getAnimatedValue());
+																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																																String TitleColor = "1DB954";
+																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																																prog.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																														}
+																												});
+																												finalize.start();
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(4500));
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {
+																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																												finalize.setDuration(1800);
+																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																														public void onAnimationUpdate(ValueAnimator animation) {
+																																prog.setProgress((int) animation.getAnimatedValue());
+																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																																String TitleColor = "1DB954";
+																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																																prog.setProgressNumberFormat("FINALIZING...");
+																														}
+																												});
+																												finalize.start();
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(5500));
 																				Timer = new TimerTask() {
 																						@Override
 																						public void run() {
@@ -13031,7 +14468,7 @@ public class MainActivity extends AppCompatActivity {
 																								});
 																						}
 																				};
-																				_timer.schedule(Timer, (int)(1500));
+																				_timer.schedule(Timer, (int)(6500));
 																		}
 																}
 														});
@@ -14486,6 +15923,8 @@ public class MainActivity extends AppCompatActivity {
 		manager_lang_27.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_28.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_29.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_30.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_31.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -14515,29 +15954,36 @@ public class MainActivity extends AppCompatActivity {
 		translator_27.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_28.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_29.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_30.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_31.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 	}
 	
 	
 	public void _Reminder() {
-		try {
-				final String App = "xManager";
-				final String Read = "READ ME";
-				final String contentTitle = "IMPORTANT NOTE";
-				final String contentMessage = "After installing and logging-in, make sure to reopen or force close the Spotify app to enable the mod features.";
-				
-				final Notification.Builder builder = new Notification.Builder(MainActivity.this, "id 1");
-				builder.setStyle(new Notification.BigTextStyle(builder)
-				.bigText(contentMessage)
-				.setBigContentTitle(contentTitle)
-				.setSummaryText(Read))
-				.setContentTitle(contentTitle)
-				.setContentText(contentMessage)
-				.setSmallIcon(R.drawable.icon_notification)	;
-				
-				final NotificationManager push = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-				push.notify(1, builder.build());
-		}
-		catch(Exception e) {
+		if (Build.VERSION.SDK_INT >= 21) {
+				try {
+						final String App = "xManager";
+						final String contentTitle = "IMPORTANT NOTE";
+						final String contentMessage = "After installing and logging-in, make sure to reopen or force close the Spotify app to enable the mod features.";
+						
+						androidx.core.app.NotificationCompat.Builder builder = new androidx.core.app.NotificationCompat.Builder(MainActivity.this, "id 1");
+						builder.setStyle(new androidx.core.app.NotificationCompat.BigTextStyle(builder).bigText(contentMessage)
+						.setBigContentTitle(contentTitle))
+						.setContentTitle(contentTitle)
+						.setContentText(contentMessage)
+						.setSmallIcon(R.drawable.icon_notification)
+						.setAutoCancel(true);
+						
+						final NotificationManager push = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+						builder.build().flags |= Notification.FLAG_AUTO_CANCEL;
+						push.notify(1, builder.build());
+				}
+				catch(Exception e) {
+				}
+		} else {
+				if (Build.VERSION.SDK_INT <= 20) {
+						com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "IMPORTANT NOTE: After installing and logging-in, make sure to reopen or force close the Spotify app to enable the mod features.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+				}
 		}
 		
 	}
@@ -14657,7 +16103,7 @@ public class MainActivity extends AppCompatActivity {
 														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
 																runOnUiThread(new Runnable() {
 																		public void run() {
-																				SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
+																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																				_File_Remover();
 																		}
 																});
@@ -14677,6 +16123,14 @@ public class MainActivity extends AppCompatActivity {
 														runOnUiThread(new Runnable() {
 																@Override
 																public void run() {
+																		ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																		finalize.setDuration(2000);
+																		finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																				public void onAnimationUpdate(ValueAnimator animation) {
+																						prog.setProgress((int) animation.getAnimatedValue());
+																				}
+																		});
+																		finalize.start();
 																		if (!MainActivity.this.isFinishing()) {
 																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
@@ -14726,7 +16180,14 @@ public class MainActivity extends AppCompatActivity {
 																																try {
 																																		prog.dismiss();
 																																		_Reminder();
-																																		_Browser(hidden_download.getText().toString());
+																																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																																				_Browser(hidden_download_1.getText().toString());
+																																		}
+																																		else {
+																																				if (1 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																																						_Browser(hidden_download_2.getText().toString());
+																																				}
+																																		}
 																																} catch (Exception e) {
 																																}
 																														}
@@ -14741,6 +16202,110 @@ public class MainActivity extends AppCompatActivity {
 																}
 														});
 														if (bytes_downloaded == bytes_total) {
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												prog.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																												String TitleColor = "1DB954";
+																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																												prog.setProgressNumberFormat("PREPARING...");
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												prog.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																												prog.setProgressNumberFormat("VERIFYING FILE...");
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(3500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												prog.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																												prog.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(4500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												prog.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																												prog.setProgressNumberFormat("FINALIZING...");
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(5500));
 																Timer = new TimerTask() {
 																		@Override
 																		public void run() {
@@ -14761,7 +16326,7 @@ public class MainActivity extends AppCompatActivity {
 																				});
 																		}
 																};
-																_timer.schedule(Timer, (int)(1500));
+																_timer.schedule(Timer, (int)(6500));
 														}
 												}
 												cursor.close();
@@ -14810,7 +16375,7 @@ public class MainActivity extends AppCompatActivity {
 														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
 																runOnUiThread(new Runnable() {
 																		public void run() {
-																				SketchwareUtil.showMessage(getApplicationContext(), "The file or link is currently unavailable. Please try again later.");
+																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																				_File_Remover();
 																		}
 																});
@@ -14830,6 +16395,14 @@ public class MainActivity extends AppCompatActivity {
 														runOnUiThread(new Runnable() {
 																@Override
 																public void run() {
+																		ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																		finalize.setDuration(2000);
+																		finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																				public void onAnimationUpdate(ValueAnimator animation) {
+																						prog.setProgress((int) animation.getAnimatedValue());
+																				}
+																		});
+																		finalize.start();
 																		if (!MainActivity.this.isFinishing()) {
 																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
@@ -14879,7 +16452,14 @@ public class MainActivity extends AppCompatActivity {
 																																try {
 																																		prog.dismiss();
 																																		_Reminder();
-																																		_Browser(hidden_download.getText().toString());
+																																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																																				_Browser(hidden_download_1.getText().toString());
+																																		}
+																																		else {
+																																				if (1 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																																						_Browser(hidden_download_2.getText().toString());
+																																				}
+																																		}
 																																} catch (Exception e) {
 																																}
 																														}
@@ -14892,6 +16472,110 @@ public class MainActivity extends AppCompatActivity {
 																				prog.show();
 																		}
 																		if (bytes_downloaded == bytes_total) {
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {
+																												ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																												finalize.setDuration(1800);
+																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																														public void onAnimationUpdate(ValueAnimator animation) {
+																																prog.setProgress((int) animation.getAnimatedValue());
+																																String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																																String TitleColor = "1DB954";
+																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																																prog.setProgressNumberFormat("PREPARING...");
+																														}
+																												});
+																												finalize.start();
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(500));
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {
+																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																												finalize.setDuration(1800);
+																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																														public void onAnimationUpdate(ValueAnimator animation) {
+																																prog.setProgress((int) animation.getAnimatedValue());
+																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																																String TitleColor = "1DB954";
+																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																																prog.setProgressNumberFormat("VERIFYING FILE...");
+																														}
+																												});
+																												finalize.start();
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(3500));
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {
+																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																												finalize.setDuration(1800);
+																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																														public void onAnimationUpdate(ValueAnimator animation) {
+																																prog.setProgress((int) animation.getAnimatedValue());
+																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																																String TitleColor = "1DB954";
+																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																																prog.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																														}
+																												});
+																												finalize.start();
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(4500));
+																				Timer = new TimerTask() {
+																						@Override
+																						public void run() {
+																								runOnUiThread(new Runnable() {
+																										@Override
+																										public void run() {
+																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																												finalize.setDuration(1800);
+																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																														public void onAnimationUpdate(ValueAnimator animation) {
+																																prog.setProgress((int) animation.getAnimatedValue());
+																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																																String TitleColor = "1DB954";
+																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
+																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
+																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
+																																prog.setProgressNumberFormat("FINALIZING...");
+																														}
+																												});
+																												finalize.start();
+																										}
+																								});
+																						}
+																				};
+																				_timer.schedule(Timer, (int)(5500));
 																				Timer = new TimerTask() {
 																						@Override
 																						public void run() {
@@ -15011,7 +16695,7 @@ public class MainActivity extends AppCompatActivity {
 																								});
 																						}
 																				};
-																				_timer.schedule(Timer, (int)(1500));
+																				_timer.schedule(Timer, (int)(6500));
 																		}
 																}
 														});
@@ -15274,20 +16958,16 @@ public class MainActivity extends AppCompatActivity {
 			
 			final LinearLayout box = _view.findViewById(R.id.box);
 			final TextView link = _view.findViewById(R.id.link);
+			final TextView mirror = _view.findViewById(R.id.mirror);
 			final ImageView icon = _view.findViewById(R.id.icon);
 			final TextView sub = _view.findViewById(R.id.sub);
 			final TextView title = _view.findViewById(R.id.title);
 			
 			try {
+				sub.setVisibility(View.VISIBLE);
 				title.setVisibility(View.VISIBLE);
 				link.setVisibility(View.GONE);
-				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-				title.setText(regular.get((int)(regular.size() - 1) - _position).get("Title").toString());
-				link.setText(regular.get((int)(regular.size() - 1) - _position).get("Link").toString());
-				Animation animation;
-				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
-				animation.setDuration(500); box.startAnimation(animation);
-				animation = null;
+				mirror.setVisibility(View.GONE);
 				if (_position < 2) {
 					sub.setTextColor(0xFFFF1744);
 					sub.setText("[LATEST]");
@@ -15296,6 +16976,14 @@ public class MainActivity extends AppCompatActivity {
 					sub.setTextColor(0xFFBDBDBD);
 					sub.setText("[OLDER]");
 				}
+				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+				title.setText(regular.get((int)(regular.size() - 1) - _position).get("Title").toString());
+				link.setText(regular.get((int)(regular.size() - 1) - _position).get("Link").toString());
+				mirror.setText(regular.get((int)(regular.size() - 1) - _position).get("Mirror").toString());
+				Animation animation;
+				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+				animation.setDuration(500); box.startAnimation(animation);
+				animation = null;
 			} catch (Exception e) {
 			}
 			
@@ -15334,22 +17022,18 @@ public class MainActivity extends AppCompatActivity {
 				_view = _inflater.inflate(R.layout.list_menu_3, null);
 			}
 			
-			final LinearLayout box_cloned = _view.findViewById(R.id.box_cloned);
+			final LinearLayout box = _view.findViewById(R.id.box);
 			final TextView link = _view.findViewById(R.id.link);
+			final TextView mirror = _view.findViewById(R.id.mirror);
 			final ImageView icon = _view.findViewById(R.id.icon);
 			final TextView sub = _view.findViewById(R.id.sub);
 			final TextView title = _view.findViewById(R.id.title);
 			
 			try {
+				sub.setVisibility(View.VISIBLE);
 				title.setVisibility(View.VISIBLE);
 				link.setVisibility(View.GONE);
-				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-				title.setText(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString());
-				link.setText(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString());
-				Animation animation;
-				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
-				animation.setDuration(500); box_cloned.startAnimation(animation);
-				animation = null;
+				mirror.setVisibility(View.GONE);
 				if (_position < 2) {
 					sub.setTextColor(0xFFFF1744);
 					sub.setText("[LATEST]");
@@ -15358,6 +17042,14 @@ public class MainActivity extends AppCompatActivity {
 					sub.setTextColor(0xFFBDBDBD);
 					sub.setText("[OLDER]");
 				}
+				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+				title.setText(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString());
+				link.setText(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Link").toString());
+				mirror.setText(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Mirror").toString());
+				Animation animation;
+				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+				animation.setDuration(500); box.startAnimation(animation);
+				animation = null;
 			} catch (Exception e) {
 			}
 			
@@ -15398,20 +17090,16 @@ public class MainActivity extends AppCompatActivity {
 			
 			final LinearLayout box = _view.findViewById(R.id.box);
 			final TextView link = _view.findViewById(R.id.link);
+			final TextView mirror = _view.findViewById(R.id.mirror);
 			final ImageView icon = _view.findViewById(R.id.icon);
 			final TextView sub = _view.findViewById(R.id.sub);
 			final TextView title = _view.findViewById(R.id.title);
 			
 			try {
+				sub.setVisibility(View.VISIBLE);
 				title.setVisibility(View.VISIBLE);
 				link.setVisibility(View.GONE);
-				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-				title.setText(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString());
-				link.setText(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString());
-				Animation animation;
-				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
-				animation.setDuration(500); box.startAnimation(animation);
-				animation = null;
+				mirror.setVisibility(View.GONE);
 				if (_position < 2) {
 					sub.setTextColor(0xFFFF1744);
 					sub.setText("[LATEST]");
@@ -15420,6 +17108,14 @@ public class MainActivity extends AppCompatActivity {
 					sub.setTextColor(0xFFBDBDBD);
 					sub.setText("[OLDER]");
 				}
+				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+				title.setText(amoled.get((int)(amoled.size() - 1) - _position).get("Title").toString());
+				link.setText(amoled.get((int)(amoled.size() - 1) - _position).get("Link").toString());
+				mirror.setText(amoled.get((int)(amoled.size() - 1) - _position).get("Mirror").toString());
+				Animation animation;
+				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+				animation.setDuration(500); box.startAnimation(animation);
+				animation = null;
 			} catch (Exception e) {
 			}
 			
@@ -15458,22 +17154,18 @@ public class MainActivity extends AppCompatActivity {
 				_view = _inflater.inflate(R.layout.list_menu_4, null);
 			}
 			
-			final LinearLayout box_cloned = _view.findViewById(R.id.box_cloned);
+			final LinearLayout box = _view.findViewById(R.id.box);
 			final TextView link = _view.findViewById(R.id.link);
+			final TextView mirror = _view.findViewById(R.id.mirror);
 			final ImageView icon = _view.findViewById(R.id.icon);
 			final TextView sub = _view.findViewById(R.id.sub);
 			final TextView title = _view.findViewById(R.id.title);
 			
 			try {
+				sub.setVisibility(View.VISIBLE);
 				title.setVisibility(View.VISIBLE);
 				link.setVisibility(View.GONE);
-				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-				title.setText(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString());
-				link.setText(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString());
-				Animation animation;
-				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
-				animation.setDuration(500); box_cloned.startAnimation(animation);
-				animation = null;
+				mirror.setVisibility(View.GONE);
 				if (_position < 2) {
 					sub.setTextColor(0xFFFF1744);
 					sub.setText("[LATEST]");
@@ -15482,6 +17174,14 @@ public class MainActivity extends AppCompatActivity {
 					sub.setTextColor(0xFFBDBDBD);
 					sub.setText("[OLDER]");
 				}
+				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+				title.setText(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString());
+				link.setText(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Link").toString());
+				mirror.setText(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Mirror").toString());
+				Animation animation;
+				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+				animation.setDuration(500); box.startAnimation(animation);
+				animation = null;
 			} catch (Exception e) {
 			}
 			
@@ -15520,22 +17220,18 @@ public class MainActivity extends AppCompatActivity {
 				_view = _inflater.inflate(R.layout.list_menu_5, null);
 			}
 			
-			final LinearLayout box_lite = _view.findViewById(R.id.box_lite);
+			final LinearLayout box = _view.findViewById(R.id.box);
 			final TextView link = _view.findViewById(R.id.link);
+			final TextView mirror = _view.findViewById(R.id.mirror);
 			final ImageView icon = _view.findViewById(R.id.icon);
 			final TextView sub = _view.findViewById(R.id.sub);
 			final TextView title = _view.findViewById(R.id.title);
 			
 			try {
+				sub.setVisibility(View.VISIBLE);
 				title.setVisibility(View.VISIBLE);
 				link.setVisibility(View.GONE);
-				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-				title.setText(lite.get((int)(lite.size() - 1) - _position).get("Title").toString());
-				link.setText(lite.get((int)(lite.size() - 1) - _position).get("Link").toString());
-				Animation animation;
-				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
-				animation.setDuration(500); box_lite.startAnimation(animation);
-				animation = null;
+				mirror.setVisibility(View.GONE);
 				if (_position < 2) {
 					sub.setTextColor(0xFFFF1744);
 					sub.setText("[LATEST]");
@@ -15544,6 +17240,14 @@ public class MainActivity extends AppCompatActivity {
 					sub.setTextColor(0xFFBDBDBD);
 					sub.setText("[OLDER]");
 				}
+				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+				title.setText(lite.get((int)(lite.size() - 1) - _position).get("Title").toString());
+				link.setText(lite.get((int)(lite.size() - 1) - _position).get("Link").toString());
+				mirror.setText(lite.get((int)(lite.size() - 1) - _position).get("Mirror").toString());
+				Animation animation;
+				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
+				animation.setDuration(500); box.startAnimation(animation);
+				animation = null;
 			} catch (Exception e) {
 			}
 			
