@@ -6,7 +6,7 @@
 	android:layout_height="match_parent"
 	android:orientation="vertical">
 	<LinearLayout
-		android:id="@+id/box_cloned"
+		android:id="@+id/box"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:padding="10dp"
@@ -42,6 +42,14 @@
 	</LinearLayout>
 	<TextView
 		android:id="@+id/link"
+		android:focusable="false"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:padding="8dp"
+		android:textSize="12sp"
+		android:textColor="#000000" />
+	<TextView
+		android:id="@+id/mirror"
 		android:focusable="false"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
