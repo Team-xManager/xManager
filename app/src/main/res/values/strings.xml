@@ -94,7 +94,7 @@
     <string    name="open_settings"	translatable="true">OPEN SETTINGS</string>
     <string    name="open_patched"	translatable="true">OPEN PATCHED</string>
 	
-    <!--BENGALI LANGUAGE-->
+	<!--BENGALI LANGUAGE-->
     <string    name="app_name_01"	translatable="true">xManager</string>
     <string    name="spotify_regular_01"	translatable="true">SPOTIFY  (স্বাভাবিক)</string>
     <string    name="spotify_amoled_01"	translatable="true">SPOTIFY (আমোলেড)</string>
@@ -188,7 +188,7 @@
     <string    name="open_settings_01"	translatable="true">ওপেন সেটিংস</string>
     <string    name="open_patched_01"	translatable="true">প্যাচড খুলুন</string>
 	
-    <!--CHINESE (SIMPLIFIED) LANGUAGE-->
+	<!--CHINESE (SIMPLIFIED) LANGUAGE-->
     <string    name="app_name_02"	translatable="true">xManager</string>
     <string    name="spotify_regular_02"	translatable="true">SPOTIFY (默认背景)</string>
     <string    name="spotify_amoled_02"	translatable="true">SPOTIFY (纯黑背景)</string>
@@ -282,7 +282,7 @@
     <string    name="open_settings_02"	translatable="true">打开设置</string>
     <string    name="open_patched_02"	translatable="true">打开修改版</string>
 	
-    <!--FRENCH LANGUAGE-->
+	<!--FRENCH LANGUAGE-->
     <string    name="app_name_03"    translatable="true">xManager</string>
     <string    name="spotify_regular_03"    translatable="true">SPOTIFY (CLASSIQUE)</string>
     <string    name="spotify_amoled_03"    translatable="true">SPOTIFY (AMOLED)</string>
@@ -376,7 +376,7 @@
     <string    name="open_settings_03"    translatable="true">OUVRIR LES PARAMÈTRES</string>
     <string    name="open_patched_03"    translatable="true">OUVRIR VERSION MODIFIÉE</string>
     
-    <!--GREEK LANGUAGE-->
+	<!--GREEK LANGUAGE-->
     <string    name="app_name_04"	translatable="true">xManager</string>
     <string    name="spotify_regular_04"	translatable="true">SPOTIFY (ΚΑΝΟΝΙΚΟ)</string>
     <string    name="spotify_amoled_04"	translatable="true">SPOTIFY (AMOLED)</string>
@@ -470,7 +470,7 @@
     <string    name="open_settings_04"	translatable="true">ΆΝΟΙΓΜΑ ΡΥΘΜΊΣΕΩΝ</string>
     <string    name="open_patched_04"	translatable="true">ΆΝΟΙΓΜΑ PATCHED</string>
 	
-    <!--INDONESIAN LANGUAGE-->
+	<!--INDONESIAN LANGUAGE-->
     <string    name="app_name_05"	translatable="true">xManager</string>
     <string    name="spotify_regular_05"	translatable="true">SPOTIFY (REGULAR)</string>
     <string    name="spotify_amoled_05"	translatable="true">SPOTIFY (AMOLED)</string>
@@ -564,7 +564,7 @@
     <string    name="open_settings_05"	translatable="true">BUKA PENGATURAN</string>
     <string    name="open_patched_05"	translatable="true">OPEN PATCHED</string>
 	
-    <!--ITALIAN LANGUAGE-->
+	<!--ITALIAN LANGUAGE-->
     <string    name="app_name_06"	translatable="true">xManager</string>
     <string    name="spotify_regular_06"	translatable="true">SPOTIFY (NORMALE)</string>
     <string    name="spotify_amoled_06"	translatable="true">SPOTIFY (AMOLED)</string>
@@ -658,7 +658,7 @@
     <string    name="open_settings_06"	translatable="true">APRI IMPOSTAZIONI</string>
     <string    name="open_patched_06"	translatable="true">APRI PATCH</string>
 	
-    <!--POLISH LANGUAGE-->
+	<!--POLISH LANGUAGE-->
     <string    name="app_name_07"	translatable="true">xManager</string>
     <string    name="spotify_regular_07"	translatable="true">SPOTIFY (NORMALNY)</string>
     <string    name="spotify_amoled_07"	translatable="true">SPOTIFY (AMOLED)</string>
@@ -752,7 +752,7 @@
     <string    name="open_settings_07"	translatable="true">OTWÓRZ USTAWIENIA</string>
     <string    name="open_patched_07"	translatable="true">OTWÓRZ MODYFIKACJĘ</string>
 	
-    <!--PORTUGUESE (BRAZIL) LANGUAGE-->
+	<!--PORTUGUESE (BRAZIL) LANGUAGE-->
     <string    name="app_name_08"	translatable="true">xManager</string>
     <string    name="spotify_regular_08"	translatable="true">SPOTIFY (REGULAR)</string>
     <string    name="spotify_amoled_08"	translatable="true">SPOTIFY (AMOLED)</string>
@@ -846,7 +846,7 @@
     <string    name="open_settings_08"	translatable="true">ABRIR CONFIGURAÇÕES</string>
     <string    name="open_patched_08"	translatable="true">ABERTO CORRIGIDO</string>
 	
-    <!--PORTUGUESE (PORTUGAL) LANGUAGE-->
+	<!--PORTUGUESE (PORTUGAL) LANGUAGE-->
     <string    name="app_name_09"	translatable="true">xManager</string>
     <string    name="spotify_regular_09"	translatable="true">SPOTIFY (NORMAL)</string>
     <string    name="spotify_amoled_09"	translatable="true">SPOTIFY (MODO ESCURO)</string>
@@ -940,7 +940,7 @@
     <string    name="open_settings_09"	translatable="true">ABRIR CONFIGURAÇÕES</string>
     <string    name="open_patched_09"	translatable="true">ABERTO CORRIGIDO</string>
 	
-    <!--RUSSIAN LANGUAGE-->
+	<!--RUSSIAN LANGUAGE-->
     <string    name="app_name_10"	translatable="true">xManager</string>
     <string    name="spotify_regular_10"	translatable="true">SPOTIFY (ОБЫЧНЫЙ)</string>
     <string    name="spotify_amoled_10"	translatable="true">SPOTIFY (AMOLED)</string>
@@ -1034,7 +1034,7 @@
     <string    name="open_settings_10"	translatable="true">ОТКPОЙТЕ НАСТPОЙКИ</string>
     <string    name="open_patched_10"	translatable="true">ОТКPЫТЫЙ ЗАЛАТАННЫЙ</string>
 	
-    <!--SPANISH LANGUAGE-->
+	<!--SPANISH LANGUAGE-->
     <string    name="app_name_11"	translatable="true">xManager</string>
     <string    name="spotify_regular_11"	translatable="true">SPOTIFY (NORMAL)</string>
     <string    name="spotify_amoled_11"	translatable="true">SPOTIFY (AMOLED)</string>
@@ -1128,7 +1128,7 @@
     <string    name="open_settings_11"	translatable="true">AJUSTES DE SPOTIFY</string>
     <string    name="open_patched_11"	translatable="true">AJUSTES DEL MOD</string>
 	
-    <!--UKRAINIAN LANGUAGE-->
+	<!--UKRAINIAN LANGUAGE-->
     <string    name="app_name_12"	translatable="true">xManager</string>
     <string    name="spotify_regular_12"	translatable="true">SPOTIFY (ЗВИЧАЙНИЙ)</string>
     <string    name="spotify_amoled_12"	translatable="true">SPOTIFY (AMOLED)</string>
@@ -1316,7 +1316,7 @@
     <string    name="open_settings_13"	translatable="true">AYARLARI AÇ</string>
     <string    name="open_patched_13"	translatable="true">AÇIK YAMALI</string>
 	
-    <!--ARABIC LANGUAGE-->
+	<!--ARABIC LANGUAGE-->
     <string    name="app_name_14"	translatable="true">xManager</string>
     <string    name="spotify_regular_14"	translatable="true">SPOTIFY (العادي)</string>
     <string    name="spotify_amoled_14"	translatable="true">SPOTIFY (اموليد)</string>
@@ -1410,7 +1410,7 @@
     <string    name="open_settings_14"	translatable="true">افتح الإعدادات</string>
     <string    name="open_patched_14"	translatable="true">فتح مصححة</string>
 	
-    <!--SLOVENIAN LANGUAGE-->
+	<!--SLOVENIAN LANGUAGE-->
     <string    name="app_name_15"	translatable="true">xManager</string>
     <string    name="spotify_regular_15"	translatable="true">SPOTIFY (REGULAR)</string>
     <string    name="spotify_amoled_15"	translatable="true">SPOTIFY (AMOLED)</string>
@@ -1692,7 +1692,7 @@
     <string    name="open_settings_17"	translatable="true">설정 열기</string>
     <string    name="open_patched_17"	translatable="true">패치 열기</string>
 	
-    <!--DUTCH LANGUAGE-->
+	<!--DUTCH LANGUAGE-->
     <string    name="app_name_18"	translatable="true">xManager</string>
     <string    name="spotify_regular_18"	translatable="true">SPOTIFY (NORMAAL)</string>
     <string    name="spotify_amoled_18"	translatable="true">SPOTIFY (AMOLED)</string>
@@ -1786,7 +1786,7 @@
     <string    name="open_settings_18"	translatable="true">INSTELLINGEN OPENEN</string>
     <string    name="open_patched_18"	translatable="true">OPEN GEPATCHED</string>
 	
-    <!--VIETNAMESE LANGUAGE-->
+	<!--VIETNAMESE LANGUAGE-->
     <string    name="app_name_19"	translatable="true">xManager</string>
     <string    name="spotify_regular_19"	translatable="true">SPOTIFY (BẢN THƯỜNG)</string>
     <string    name="spotify_amoled_19"	translatable="true">SPOTIFY (AMOLED)</string>
@@ -1880,7 +1880,7 @@
     <string    name="open_settings_19"	translatable="true">MỞ CÁC THIẾT LẬP</string>
     <string    name="open_patched_19"	translatable="true">MỞ BẢN VÁ</string>
 	
-    <!--GERMAN LANGUAGE-->
+	<!--GERMAN LANGUAGE-->
     <string    name="app_name_20"	translatable="true">xManager</string>
     <string    name="spotify_regular_20"	translatable="true">SPOTIFY (REGULÄR)</string>
     <string    name="spotify_amoled_20"	translatable="true">SPOTIFY (AMOLED)</string>
@@ -1974,7 +1974,7 @@
     <string    name="open_settings_20"	translatable="true">EINSTELLUNGEN ÖFFNEN</string>
     <string    name="open_patched_20"	translatable="true">OFFEN GEPATCHT</string>
 	
-    <!--PERSIAN LANGUAGE-->
+	<!--PERSIAN LANGUAGE-->
     <string    name="app_name_21"	translatable="true">xManager</string>
     <string    name="spotify_regular_21"	translatable="true">SPOTIFY (عادی)</string>
     <string    name="spotify_amoled_21"	translatable="true">SPOTIFY (آمولد)</string>
@@ -2068,7 +2068,7 @@
     <string    name="open_settings_21"	translatable="true">تنظیمات را باز کنید</string>
     <string    name="open_patched_21"	translatable="true">باز کردن وصله</string>
 	
-    <!--HEBREW LANGUAGE-->
+	<!--HEBREW LANGUAGE-->
     <string    name="app_name_22"	translatable="true">xManager</string>
     <string    name="spotify_regular_22"	translatable="true">SPOTIFY (REGULAR)</string>
     <string    name="spotify_amoled_22"	translatable="true">SPOTIFY (AMOLED)</string>
@@ -2756,7 +2756,7 @@
     <string    name="show_themes_29"	translatable="true">ТЕМЕ</string>
     <string    name="apk_location_29"	translatable="true">APK ЛОКАЦИЈА</string>
     <string    name="apk_location_desc_29"	translatable="true">Директоријум у који желите да сачувате копију преузете датотеке. Ако не знате како да конфигуришете ову функцију, оставите ово како јесте.\n\nНАПОМЕНА: Ова функција не подржава спољну меморију (СД картицу) због приступачности, дозвола и ограничења складиштења.</string>
-    <string    name="clear_directory_folders_29"	translatable="true">ОЧИСТИТЕ ДИРЕКТОРИЈУМ<\string>
+    <string    name="clear_directory_folders_29"	translatable="true">ОЧИСТИТЕ ДИРЕКТОРИЈУМ</string>
     <string    name="clear_directory_folders_desc_29"	translatable="true">Додирните да бисте избрисали директоријум. Ово укључује преузете датотеке и ажурирања.</string>
     <string    name="reset_settings_29"	translatable="true">РЕСЕТУЈТЕ ПОДЕШАВАЊА</string>
 	
@@ -2870,7 +2870,7 @@
     <string    name="download_ready_desc_30"	translatable="true">Preuzimanje ove pečovane APK datoteke prepisaće prethodnu datoteku koja se nalazi u spoljnom direktorijumu.</string>
     <string    name="downloading_file_30"	translatable="true">PREUZIMANjE DATOTEKE...</string>
     <string    name="download_success_30"	translatable="true">USPEŠNO PREUZETO</string>
-    <string    name="new_update_"30"	translatable="true">NOVO AŽURIRANjE MENADžERA</string>
+    <string    name="new_update_30"	translatable="true">NOVO AŽURIRANjE MENADžERA</string>
 	
     <string    name="continue_1_30"	translatable="true">NASTAVITE</string>
     <string    name="cancel_30"	translatable="true">OTKAŽITE</string>
