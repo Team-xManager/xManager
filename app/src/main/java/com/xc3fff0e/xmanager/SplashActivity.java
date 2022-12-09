@@ -29,6 +29,8 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.material.*;
+import com.google.firebase.FirebaseApp;
 import com.wuyr.rippleanimation.*;
 import java.io.*;
 import java.text.*;
@@ -54,7 +56,7 @@ public class SplashActivity extends AppCompatActivity {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.splash);
 		initialize(_savedInstanceState);
-		
+		FirebaseApp.initializeApp(this);
 		MobileAds.initialize(this);
 		
 		initializeLogic();
@@ -118,10 +120,8 @@ public class SplashActivity extends AppCompatActivity {
 											title_splash.setTextSize((int)20);
 										}
 										else {
-											if (9 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-												title_splash.setText("Spotify but on steroids");
-												title_splash.setTextSize((int)20);
-											}
+											title_splash.setText("Spotify but on steroids");
+											title_splash.setTextSize((int)20);
 										}
 									}
 								}
@@ -160,7 +160,7 @@ public class SplashActivity extends AppCompatActivity {
 	
 	@Override
 	public void onBackPressed() {
-		SketchwareUtil.showMessage(getApplicationContext(), "Can't Go Back");
+		com.google.android.material.snackbar.Snackbar.make(main_body, "Can't Go Back", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 	}
 	public void _Dark_Navigation() {
 		if (Build.VERSION.SDK_INT >= 21) {
