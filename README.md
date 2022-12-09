@@ -174,6 +174,12 @@ cracky5322 | TragicLifeHu
 **Bulgarian Translation**  
 meorro | martinov83  
 
+**Serbian (Cyrillic) Translation**  
+nexiRS  
+
+**Serbian (Latin) Translation**  
+nexiRS  
+
 # Contributors  
 
 Sherlock Holmes  
