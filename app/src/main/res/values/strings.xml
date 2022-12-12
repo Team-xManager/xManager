@@ -18,7 +18,7 @@
     <string    name="main_title"	translatable="true">xManager</string>
     <string    name="settings_title"	translatable="true">Settings</string>
     <string    name="about_title"	translatable="true">About</string>
-	
+
     <string    name="list_auto_refresh"	translatable="true">LIST AUTO-REFRESH</string>
     <string    name="list_auto_refresh_desc"	translatable="true">Enabling this will automatically refresh the list everytime you launch the application.\n\nYou can manually refresh the list by dragging the main screen downward.</string>
     <string    name="force_auto_install"	translatable="true">FORCE AUTO-INSTALL</string>
@@ -29,7 +29,7 @@
     <string    name="clear_directory_folders"	translatable="true">CLEAR DIRECTORY FOLDER</string>
     <string    name="clear_directory_folders_desc"	translatable="true">Tap to delete the directory folder. This includes the downloaded files and updates.</string>
     <string    name="reset_settings"	translatable="true">RESET SETTINGS</string>
-	
+
     <string    name="about_sub"	translatable="true">Ad-Free | New Features | Freedom</string>
     <string    name="xmanager_dev"	translatable="true">xManager Developer</string>
     <string    name="spotify_mod_devs"	translatable="true">Spotify Patched Developers</string>
@@ -40,14 +40,14 @@
     <string    name="forum_team"	translatable="true">FORUM.APK-RELEASE.NET Team</string>
     <string    name="xspotify_team"	translatable="true">xSpotify Manager (Old Manager)</string>
     <string    name="contributors"	translatable="true">THANKS TO ALL CONTRIBUTORS! ❤️</string>
-	
+
     <string    name="download_selected"	translatable="true">You selected this patched version. Do you want to continue?</string>
     <string    name="download_ready"	translatable="true">PATCHED INFORMATION</string>
     <string    name="download_ready_desc"	translatable="true">Downloading this patched apk will overwrite the previous file located at the external directory.</string>
     <string    name="downloading_file"	translatable="true">DOWNLOADING FILE...</string>
     <string    name="download_success"	translatable="true">SUCCESSFULLY DOWNLOADED</string>
     <string    name="new_update"	translatable="true">NEW MANAGER UPDATE</string>
-	
+
     <string    name="continue_1"	translatable="true">CONTINUE</string>
     <string    name="cancel"	translatable="true">CANCEL</string>
     <string    name="download"	translatable="true">DOWNLOAD</string>
@@ -59,10 +59,10 @@
     <string    name="not_now"	translatable="true">NOT NOW</string>
     <string    name="copy_url"	translatable="true">COPY URL</string>
     <string    name="fixer"	translatable="true">FIXER</string>
-	
+
     <string    name="show_support"	translatable="true">SHOW YOUR SUPPORT</string>
     <string    name="show_support_desc"	translatable="true">We are a non-profit, non-corporate and non-compromised team. People like you encourage us to create an app to make things much easier especially from downloading to installing.\n\nWe are pouring all of our time and best efforts just to make things right and perfect. We will do our best to support this app as long as we could.\n\nAny amount will help and be very much appreciated!</string>
-	
+
     <string    name="maintenance"	translatable="true">MAINTENANCE</string>
     <string    name="maintenance_desc"	translatable="true">xManager is currently unavailable. Kindly check the application later.</string>
     <string    name="thanks"	translatable="true">THANKS!</string>
@@ -70,19 +70,19 @@
     <string    name="website"	translatable="true">WEBSITE</string>
     <string    name="reddit"	translatable="true">REDDIT</string>
     <string    name="faq"	translatable="true">FAQ</string>
-	
+
     <string    name="cloned_version"	translatable="true">CLONED VERSION (BETA)</string>
     <string    name="cloned_version_desc"	translatable="true">Enabling this allow you to download and install the cloned version of the patched application.\n\nThis will also resolve most of the installation errors or problems, especially if you have a pre-installed Spotify application.</string>
     <string    name="disable_rewarded_ads"	translatable="true">DISABLE REWARDED ADS</string>
     <string    name="disable_rewarded_ads_desc"	translatable="true">We know that most of us do not like ads but in our case, this significantly help us to fund our database, hosting links, updates, more patches, and daily needs.\n\nThis is the simplest way to support us without donating or spending anything.</string>
-	
+
     <string    name="installation_failed"	translatable="true">INSTALLATION FAILED</string>
     <string    name="installation_failed_desc"	translatable="true">Reason: You attempted to install a mod version lower than what is currently installed.\n\nSolutions:\nA. Select a version equal to or greater than.\nB. Uninstall the current version, then downgrade.\n\nIf the issue persists, check the FAQ.</string>
     <string    name="installation_failed_ream_desc"	translatable="true">Reason: The current Spotify installed on this device did not come directly from xManager or from our team.\n\nSolution: Uninstall the current version of the application, restart xManager and try again. If the issue persists, check the FAQ.</string>
     <string    name="installation_failed_cloned_desc"	translatable="true">Reason: The current cloned installed on this device did not come directly from xManager or from our team.\n\nSolution: Uninstall the current version of the application, restart xManager and try again. If the issue persists, check the FAQ.</string>
     <string    name="existing_patched"	translatable="true">EXISTING PATCHED</string>
     <string    name="existing_patched_desc"	translatable="true">An existing patched apk found in one of the directory. What action would you like to do?</string>
-	
+
     <string    name="close"	translatable="true">CLOSE</string>
     <string    name="cloned"	translatable="true">CLONED</string>
     <string    name="ream"	translatable="true">RE/AM</string>
@@ -93,7 +93,7 @@
     <string    name="uninstall_patched"	translatable="true">UNINSTALL PATCHED</string>
     <string    name="open_settings"	translatable="true">OPEN SETTINGS</string>
     <string    name="open_patched"	translatable="true">OPEN PATCHED</string>
-	
+
 	<!--BENGALI LANGUAGE-->
     <string    name="app_name_01"	translatable="true">xManager</string>
     <string    name="spotify_regular_01"	translatable="true">SPOTIFY  (স্বাভাবিক)</string>
@@ -112,7 +112,7 @@
     <string    name="main_title_01"	translatable="true">xManager</string>
     <string    name="settings_title_01"	translatable="true">সেটিংস</string>
     <string    name="about_title_01"	translatable="true">টাইটেল সম্পর্কে দেখুন</string>
-	
+
     <string    name="list_auto_refresh_01"	translatable="true">স্বয়ংক্রিয়ভাবে তালিকাভুক্ত করুন</string>
     <string    name="list_auto_refresh_desc_01"	translatable="true">এটি চালু করা হলে আপনি অ্যাপ্লিকেশনটি প্রতিবার চালু করার সাথে সাথে তালিকাটিকে স্বয়ংক্রিয়ভাবে রিফ্রেশ হবে। আপনি মূল পেজটি নীচের দিকে টেনে এনে ম্যানুয়ালি তালিকাটি রিফ্রেশ করতে পারেন।</string>
     <string    name="force_auto_install_01"	translatable="true">স্বয়ং-ইনস্টল করুন</string>
@@ -123,7 +123,7 @@
     <string    name="clear_directory_folders_01"	translatable="true">ডিরেক্টরি ফোল্ডার পরিষ্কার করুন</string>
     <string    name="clear_directory_folders_desc_01"	translatable="true">ডাউনলোড করা অ্যাপস এবং আপডেটগুলি সহ সমস্ত ডিরেক্টরি ফোল্ডার মুছুন।</string>
     <string    name="reset_settings_01"	translatable="true">সেটিংস রিসেট করুন</string>
-	
+
     <string    name="about_sub_01"	translatable="true">No Ads | New Features | Freedom</string>
     <string    name="xmanager_dev_01"	translatable="true">xManager ডেভ</string>
     <string    name="spotify_mod_devs_01"	translatable="true">Spotify Mod ডেভ</string>
@@ -134,14 +134,14 @@
     <string    name="forum_team_01"	translatable="true">FORUM.APK-RELEASE.NET টিম</string>
     <string    name="xspotify_team_01"	translatable="true">xSpotify Manager (Old Manager)</string>
     <string    name="contributors_01"	translatable="true">সমস্ত অবদানকারীদের ধন্যবাদ! ❤️</string>
-	
+
     <string    name="download_selected_01"	translatable="true">আপনি এই পরিবর্তিত সংস্করণটি নির্বাচন করেছেন। আপনি কি ডাউনলোড করতে চান?</string>
     <string    name="download_ready_01"	translatable="true">প্যাচ তথ্য</string>
     <string    name="download_ready_desc_01"	translatable="true">এই পরিবর্তিত apk ডাউনলোড করা অ্যাপ্লিকেশন ফাইল ডিরেক্টরিতে অবস্থিত পূর্ববর্তী ফাইলটি ওভাররাইট করবে।</string>
     <string    name="downloading_file_01"	translatable="true">ফাইল ডাউনলোড হচ্ছে ...</string>
     <string    name="download_success_01"	translatable="true">সফলভাবে ডাউনলোড হয়েছে</string>
     <string    name="new_update_01"	translatable="true">নতুন MANAGER আপডেট</string>
-	
+
     <string    name="continue_1_01"	translatable="true">চালিয়ে যান</string>
     <string    name="cancel_01"	translatable="true">বাদদিন</string>
     <string    name="download_01"	translatable="true">ডাউনলোড করুন</string>
@@ -153,10 +153,10 @@
     <string    name="not_now_01"	translatable="true">এখন না</string>
     <string    name="copy_url_01"	translatable="true">কপি URL</string>
     <string    name="fixer_01"	translatable="true">ফিক্সার</string>
-	
+
     <string    name="show_support_01"	translatable="true">আপনার সাপর্ট টি পাঠান</string>
     <string    name="show_support_desc_01"	translatable="true">আমরা একটি অলাভজনক ও অ-কর্পোরেট দল।আমরা যতক্ষণ পারছি এই অ্যাপ্লিকেশনটিকে উপডেট রাখার জন্য যথাসাধ্য চেষ্টা করব।</string>
-	
+
     <string    name="maintenance_01"	translatable="true">রক্ষণাবেক্ষণ</string>
     <string    name="maintenance_desc_01"	translatable="true">এক্স ম্যানেজার এখনই অনুপলব্ধ। দয়া করে পরে আবেদনটি পরীক্ষা করুন।</string>
     <string    name="thanks_01"	translatable="true">ধন্যবাদ!</string>
@@ -164,12 +164,12 @@
     <string    name="website_01"	translatable="true">ওয়েবসাইট</string>
     <string    name="reddit_01"	translatable="true">REDDIT</string>
     <string    name="faq_01"	translatable="true">যে কোন প্রশ্নের জন্য</string>
-	
+
     <string    name="cloned_version_01"	translatable="true">ক্লোনড সংস্করণ (বিটা)</string>
     <string    name="cloned_version_desc_01"	translatable="true">এটি সক্রিয় করা আপনাকে প্যাচড অ্যাপ্লিকেশনটির ক্লোন করা সংস্করণটি ডাউনলোড এবং ইনস্টল করার অনুমতি দেয়আপনি একটি প্রাক ইনস্টল স্পটিফাই অ্যাপ্লিকেশন আছে, বিশেষ করে যদি এই ইনস্টলেশন ত্রুটি বা সমস্যার অধিকাংশ সমাধান হবে.</string>
     <string    name="disable_rewarded_ads_01"	translatable="true">পুরস্কৃত বিজ্ঞাপনগুলি অক্ষম করুন</string>
     <string    name="disable_rewarded_ads_desc_01"	translatable="true">আমরা আমাদের অধিকাংশ বিজ্ঞাপন পছন্দ করেন না জানি কিন্তু আমাদের ক্ষেত্রে, এই উল্লেখযোগ্যভাবে আমাদের ডাটাবেস তহবিল আমাদের সাহায্য, হোস্টিং লিঙ্ক, আপডেট, আরো প্যাচ, এবং দৈনন্দিন চাহিদা.এই দান বা কিছু খরচ ছাড়া আমাদের সমর্থন সহজ উপায়.</string>
-	
+
     <string    name="installation_failed_01"	translatable="true">ইনস্টলেশন ব্যর্থ হয়েছে</string>
     <string    name="installation_failed_desc_01"	translatable="true">কারণ: আপনি বর্তমানে ইনস্টল করা হয় কি কম একটি গেলিক সংস্করণ ইনস্টল করার চেষ্টা.সমাধান: একটি সংস্করণ সমান বা তার চেয়ে অনেক বেশী নির্বাচন করুন.বর্তমান সংস্করণ আনইনস্টল, তারপর ডাউনগ্রেড.সমস্যা জিদ, অনবরত জিজ্ঞাসিত প্রশ্ন চেক.</string>
     <string    name="installation_failed_ream_desc_01"	translatable="true">কারণ: এই ডিভাইসে ইনস্টল করা বর্তমান স্পটিফাই সরাসরি এক্সম্যানেজার বা আমাদের দল থেকে আসে নিসমাধান: অ্যাপ্লিকেশনটির বর্তমান সংস্করণ আনইনস্টল করুন, এক্সম্যানেজার পুনরায় চালু করুন এবং আবার চেষ্টা করুন সমস্যা জিদ যদি, অনবরত জিজ্ঞাসিত প্রশ্ন চেক.</string>
@@ -187,7 +187,7 @@
     <string    name="uninstall_patched_01"	translatable="true">প্যাচড আনইনস্টল করুন</string>
     <string    name="open_settings_01"	translatable="true">ওপেন সেটিংস</string>
     <string    name="open_patched_01"	translatable="true">প্যাচড খুলুন</string>
-	
+
 	<!--CHINESE (SIMPLIFIED) LANGUAGE-->
     <string    name="app_name_02"	translatable="true">xManager</string>
     <string    name="spotify_regular_02"	translatable="true">SPOTIFY (默认背景)</string>
@@ -206,7 +206,7 @@
     <string    name="main_title_02"	translatable="true">xManager</string>
     <string    name="settings_title_02"	translatable="true">设置</string>
     <string    name="about_title_02"	translatable="true">关于</string>
-	
+
     <string    name="list_auto_refresh_02"	translatable="true">自动刷新</string>
     <string    name="list_auto_refresh_desc_02"	translatable="true">激活此功能将在您每次启动应用程序时自动刷新列表,您也可以通过向下拖动主屏幕来手动刷新列表.</string>
     <string    name="force_auto_install_02"	translatable="true">自动安装</string>
@@ -217,7 +217,7 @@
     <string    name="clear_directory_folders_02"	translatable="true">清除文件</string>
     <string    name="clear_directory_folders_desc_02"	translatable="true">点击下方 清除 按钮将清除本应用产生的所有文件</string>
     <string    name="reset_settings_02"	translatable="true">重置设置</string>
-	
+
     <string    name="about_sub_02"	translatable="true">无广告|新功能|全免费</string>
     <string    name="xmanager_dev_02"	translatable="true">xManager 开发团队</string>
     <string    name="spotify_mod_devs_02"	translatable="true">Spotify 修改团队</string>
@@ -228,14 +228,14 @@
     <string    name="forum_team_02"	translatable="true">FORUM.APK-RELEASE.NET 团队</string>
     <string    name="xspotify_team_02"	translatable="true">xSpotify Manager (旧版贡献者)</string>
     <string    name="contributors_02"	translatable="true">❤感谢所有参与人员❤️</string>
-	
+
     <string    name="download_selected_02"	translatable="true">版本已选定，是否继续？</string>
     <string    name="download_ready_02"	translatable="true">补丁信息</string>
     <string    name="download_ready_desc_02"	translatable="true">继续将覆盖历史下载</string>
     <string    name="downloading_file_02"	translatable="true">正在下载</string>
     <string    name="download_success_02"	translatable="true">下载完成</string>
     <string    name="new_update_02" translatable="true">发现新版管理器</string>
-	
+
     <string    name="continue_1_02"	translatable="true">继续</string>
     <string    name="cancel_02"	translatable="true">取消</string>
     <string    name="download_02"	translatable="true">下载</string>
@@ -247,7 +247,7 @@
     <string    name="not_now_02"	translatable="true">稍后</string>
     <string    name="copy_url_02"	translatable="true">复制链接</string>
     <string    name="fixer_02"	translatable="true">固定器</string>
-	
+
     <string    name="show_support_02"	translatable="true">支持我们</string>
     <string    name="show_support_desc_02"	translatable="true">我们是一个非盈利和不妥协的团队.\n无论金额大小都对我们有帮助,十分感谢.</string>
 
@@ -258,12 +258,12 @@
     <string    name="website_02"	translatable="true">网站</string>
     <string    name="reddit_02" translatable="true">REDDIT</string>
     <string    name="faq_02"	translatable="true">常见问题</string>
-	
+
     <string    name="cloned_version_02"	translatable="true">克隆版本(测试版)</string>
     <string    name="cloned_version_desc_02"	translatable="true">激活此选项可让您下载并安装已修改的克隆版本.\n\n这也将解决大多数安装问题,特别是当您已经安装spotify应用程序.</string>
     <string    name="disable_rewarded_ads_02"	translatable="true">禁用广告</string>
     <string    name="disable_rewarded_ads_desc_02"	translatable="true">大多数人不喜欢广告,但对于我们而言,这能在很大程度上为我们的数据库,托管链接,更新,更多补丁和日常需求提供资金.\n\n这是支持我们的最简单的方法,无需您捐赠或花销.</string>
-	
+
     <string    name="installation_failed_02"	translatable="true">安装失败</string>
     <string    name="installation_failed_desc_02"	translatable="true">原因:您尝试安装低于当前安装的mod版本.\n\n解决方案:\nA. 选择等于或大于的版本.\nB. 卸载当前版本,然后降级.\n\n如果问题仍然存在,请查看常见问题解答.</string>
     <string    name="installation_failed_ream_desc_02"	translatable="true">原因:此设备上安装的当前Spotify不是直接来自xManager或来自我们的团队.\n\n解决方法:卸载当前版本的应用程序,重新启动xManager并重试. 如果问题仍然存在,请查看常见问题解答.</string>
@@ -281,7 +281,7 @@
     <string    name="uninstall_patched_02"	translatable="true">卸载补丁</string>
     <string    name="open_settings_02"	translatable="true">打开设置</string>
     <string    name="open_patched_02"	translatable="true">打开修改版</string>
-	
+
 	<!--FRENCH LANGUAGE-->
     <string    name="app_name_03"    translatable="true">xManager</string>
     <string    name="spotify_regular_03"    translatable="true">SPOTIFY (CLASSIQUE)</string>
@@ -311,7 +311,7 @@
     <string    name="clear_directory_folders_03"    translatable="true">ÉFFACER LE CONTENU DU DOSSIER</string>
     <string    name="clear_directory_folders_desc_03"    translatable="true">Appuyez pour supprimer tout le contenu du répertoire. Celà inclus les fichiers APK et les mises à jour téléchargées.</string>
     <string    name="reset_settings_03"    translatable="true">RÉINITIALISER LES RÉGLAGES</string>
-	
+
     <string    name="about_sub_03"    translatable="true">Sans Pubs | Nouvelles Fonctions | Liberté</string>
     <string    name="xmanager_dev_03"    translatable="true">Développeur de xManager</string>
     <string    name="spotify_mod_devs_03"    translatable="true">Développeurs du Patch Spotify</string>
@@ -322,14 +322,14 @@
     <string    name="forum_team_03"    translatable="true">Équipe FORUM.APK-RELEASE.NET</string>
     <string    name="xspotify_team_03"    translatable="true">Gestionnaires xSpotify (ancien manager)</string>
     <string    name="contributors_03"    translatable="true">MERCI À TOUS LES CONTRIBUTEURS! ❤️</string>
-	
+
     <string    name="download_selected_03"    translatable="true">Vous avez sélectionné cette version modifiée. Voulez-vous continuer ?</string>
     <string    name="download_ready_03"    translatable="true">INFORMATIONS SUR LES CORRECTIFS</string>
     <string    name="download_ready_desc_03"    translatable="true">Le téléchargement de cet APK modifié écrasera le fichier précédent situé dans le répertoire des fichiers externes de l\’application.</string>
     <string    name="downloading_file_03"	translatable="true">TÉLÉCHARGEMENT DU FICHIER...</string>
     <string    name="download_success_03"	translatable="true">TÉLÉCHARGEMENT RÉUSSI</string>
     <string    name="new_update_03"	translatable="true">NOUVELLE MISE À JOUR DU GESTIONNAIRE</string>
-	
+
     <string    name="continue_1_03"	translatable="true">CONTINUER</string>
     <string    name="cancel_03"	translatable="true">ANNULER</string>
     <string    name="download_03"	translatable="true">TÉLÉCHARGER</string>
@@ -341,10 +341,10 @@
     <string    name="not_now_03"	translatable="true">PAS MAINTENANT</string>
     <string    name="copy_url_03"	translatable="true">COPIER URL</string>
     <string    name="fixer_03" translatable="true">RÉPARATEUR</string>
-	
+
     <string    name="show_support_03"    translatable="true">MANIFESTER VOTRE SOUTIEN</string>
     <string    name="show_support_desc_03"    translatable="true">Nous sommes une équipe à but non lucratif, non sociétaire et non compromis. Les gens comme vous nous encouragent à créer une application pour rendre les choses beaucoup plus faciles, notamment du téléchargement à l\’installation. Nous passons tout notre temps et nos meilleurs efforts pour rendre les choses correctes et parfaites. Nous ferons de notre mieux pour soutenir cette application aussi longtemps que possible. Tout montant aidera et sera très apprécié!</string>
-    
+
     <string    name="maintenance_03"	translatable="true">MAINTENANCE</string>
     <string    name="maintenance_desc_03" translatable="true">xManager est actuellement indisponible. Veuillez vérifier l\’application plus tard.</string>
     <string    name="thanks_03"	translatable="true">MERCI!</string>
@@ -352,19 +352,19 @@
     <string    name="website_03" translatable="true">SITE INTERNET</string>
     <string    name="reddit_03"	translatable="true">REDDIT</string>
     <string    name="faq_03"	translatable="true">FAQ</string>
-	
+
     <string    name="cloned_version_03"    translatable="true">VERSION CLONÉE (BÉTA)</string>
     <string    name="cloned_version_desc_03"    translatable="true">L\’activation de cette option vous permet de télécharger et d\’installer la version clonée de l\’application corrigée.\n\nCelà résoudra également la plupart des erreurs ou problèmes d\’installation, en particulier si vous avez une application Spotify préinstallée.</string>
     <string    name="disable_rewarded_ads_03"    translatable="true">DÉSACTIVER LES PUBS RÉCOMPENSÉES</string>
     <string    name="disable_rewarded_ads_desc_03"    translatable="true">Nous savons que la plupart d\’entre nous n\’aiment pas les publicités mais dans notre cas, cela nous aide considérablement à financer notre base de données, nos liens d\’hébergement, nos mises à jour, plus de correctifs ainsi que nos besoins quotidiens.\n\nC\’est le moyen le plus simple de nous soutenir sans faire de don ni de dépenser quoi que ce soit.</string>
-    
+
     <string    name="installation_failed_03"    translatable="true">ÉCHEC DE L\’INSTALLATION</string>
     <string    name="installation_failed_desc_03"    translatable="true">Raison: Vous avez tenté d\’installer une version modifiée inférieure à celle actuellement installée.\n\nSolutions:\nA. Sélectionnez une version égale ou supérieure à.\nB. Désinstallez la version actuelle, puis rétrogradez.\n\nSi le problème persiste, consultez la FAQ.</string>
     <string    name="installation_failed_ream_desc_03"    translatable="true">Raison: Le Spotify installé sur cet appareil ne provenait pas directement de xManager ou de notre équipe.\n\nSolution: Désinstallez la version actuelle de l\’application, redémarrez xManager et réessayez. Si le problème persiste, consultez la FAQ.</string>
     <string    name="installation_failed_cloned_desc_03"    translatable="true">Raison: La version clonée actuellement installée sur ce périphérique ne provenait pas directement de xManager ou de notre équipe.\n\nSolution: Désinstallez la version actuelle de l\’application, redémarrez xManager et réessayez. Si le problème persiste, consultez la FAQ.</string>
     <string    name="existing_patched_03"    translatable="true">ÉXISTANTE MODIFIÉE</string>
     <string    name="existing_patched_desc_03"    translatable="true">Un fichier patché existant a été trouvé dans l\’un des répertoires. Que voulez-vous faire?</string>
-    
+
     <string    name="close_03"    translatable="true">FERMER</string>
     <string    name="cloned_03"    translatable="true">CLONER</string>
     <string    name="ream_03"    translatable="true">RE/AM</string>
@@ -375,7 +375,7 @@
     <string    name="uninstall_patched_03"    translatable="true">DÉSINSTALLER VERSION MODIFIÉE</string>
     <string    name="open_settings_03"    translatable="true">OUVRIR LES PARAMÈTRES</string>
     <string    name="open_patched_03"    translatable="true">OUVRIR VERSION MODIFIÉE</string>
-    
+
 	<!--GREEK LANGUAGE-->
     <string    name="app_name_04"	translatable="true">xManager</string>
     <string    name="spotify_regular_04"	translatable="true">SPOTIFY (ΚΑΝΟΝΙΚΟ)</string>
@@ -405,7 +405,7 @@
     <string    name="clear_directory_folders_04"	translatable="true">ΕΚΚΑΘΑΡΣΗ ΦΑΚΕΛΩΝ ΤΟΠΟΘΕΣΙΑΣ</string>
     <string    name="clear_directory_folders_desc_04"	translatable="true">Πατήστε για να διαγράψετε όλους τους φακέλους τοποθεσίας συμπεριλαμβανομένων των ληφθέντων apk και των ενημερώσεων.</string>
     <string    name="reset_settings_04"	translatable="true">ΕΠΑΝΑΦΟΡΑ ΡΥΘΜΙΣΕΩΝ</string>
-	
+
     <string    name="about_sub_04"	translatable="true">Χωρίς Διαφημίσεις | Νέες Δυνατότητες | Ελευθερία</string>
     <string    name="xmanager_dev_04"	translatable="true">Προγραμματιστής xManager</string>
     <string    name="spotify_mod_devs_04"	translatable="true">Προγραμματιστές Τροποποιημένου Spotify</string>
@@ -416,14 +416,14 @@
     <string    name="forum_team_04"	translatable="true">Ομάδα FORUM.APK-RELEASE.NET</string>
     <string    name="xspotify_team_04"	translatable="true">xSpotify Manager (Παλιός Manager)</string>
     <string    name="contributors_04"	translatable="true">ΕΥΧΑΡΙΣΤΟΥΜΕ ΟΛΟΥΣ ΠΟΥ ΣΥΝΕΙΣΦΕΡΑΝΕ! ❤️</string>
-	
+
     <string    name="download_selected_04"	translatable="true">Επιλέξατε αυτή την τροποποιημένη έκδοση. Θέλετε να συνεχίσετε;</string>
     <string    name="download_ready_04"	translatable="true">ΠΛΗPΟΦΟΡΊΕΣ PATCH</string>
     <string    name="download_ready_desc_04"	translatable="true">Με την λήψη αυτού του τροποποιημένου apk, θα αντικατασταθεί το προηγούμενο αρχείο που βρισκόταν στην εξωτερική τοποθεσία αρχείων της εφαρμογής.</string>
     <string    name="downloading_file_04"	translatable="true">ΓΙΝΕΤΑΙ ΛΗΨΗ ΑΡΧΕΙΟΥ...</string>
     <string    name="download_success_04"	translatable="true">ΕΠΙΤΥΧΗΣ ΛΗΨΗ</string>
     <string    name="new_update_04"	translatable="true">ΝΕΑ ΕΝΗΜΕΡΩΣΗ MANAGER</string>
-	
+
     <string    name="continue_1_04"	translatable="true">ΣΥΝΕΧΕΙΑ</string>
     <string    name="cancel_04"	translatable="true">ΑΚΥΡΩΣΗ</string>
     <string    name="download_04"	translatable="true">ΛΗΨΗ</string>
@@ -435,10 +435,10 @@
     <string    name="not_now_04"	translatable="true">ΟΧΙ ΤΩΡΑ</string>
     <string    name="copy_url_04"	translatable="true">ΑΝΤΙΓΡΑΦΗ URL</string>
     <string    name="fixer_04"	translatable="true">FIXER</string>
-	
+
     <string    name="show_support_04"	translatable="true">ΔΕΙΞΤΕ ΤΗΝ ΥΠΟΣΤΗΡΙΞΗ ΣΑΣ</string>
     <string    name="show_support_desc_04"	translatable="true">Είμαστε μια μη κερδοσκοπικη, μη εταιρική, μη συμβιβασμενή ομάδα. Άνθρωποι σαν εσάς μας ενθαρρύνουν να δημιουργήσουμε μια εφαρμογή που κάνει τα πράγματα ευκολότερα κυρίως από την λήψη στην εγκατάσταση.\n\nΞοδεύουμε όλο το χρόνο μας και τις καλύτερες προσπάθειες μόνο απλά για να κάνουμε τα πράγματα σωστά και τέλεια. Θα κάνουμε το καλύτερο δυνατόν για να υποστηρίξουμε αυτήν την εφαρμογή όσο περισσότερο μπορούμε.\n\nΟποιοδήποτε ποσό θα βοηθήσει και θα εκτιμηθεί ιδιαίτερα!</string>
-	
+
     <string    name="maintenance_04"	translatable="true">ΣΥΝΤΗΡΗΣΗ</string>
     <string    name="maintenance_desc_04"	translatable="true">Το xManager δεν είναι διαθέσιμο αυτήν τη στιγμή. Ελέγξτε την εφαρμογή αργότερα.</string>
     <string    name="thanks_04"	translatable="true">ΕΥΧΑΡΙΣΤΩ!</string>
@@ -446,12 +446,12 @@
     <string    name="website_04"	translatable="true">ΙΣΤΟΣΕΛΊΔΑ</string>
     <string    name="reddit_04"	translatable="true">REDDIT</string>
     <string    name="faq_04"	translatable="true">ΣΥΧΝΈΣ ΕPΩΤΉΣΕΙΣ</string>
-	
+
     <string    name="cloned_version_04"	translatable="true">ΚΛΩΝΟΠΟΙΗΜΈΝΗ ΈΚΔΟΣΗ (BETA)</string>
     <string    name="cloned_version_desc_04"	translatable="true">Ενεργοποιώντας αυτό σας επιτρέπει να κατεβάσετε και να εγκαταστήσετε την κλωνοποιημένη έκδοση της εφαρμογής patched.\n\nαυτό θα επιλύσει επίσης τα περισσότερα από τα σφάλματα εγκατάστασης ή τα προβλήματα, ειδικά εάν έχετε μια προεγκατεστημένη εφαρμογή spotify.</string>
     <string    name="disable_rewarded_ads_04"	translatable="true">ΑΠΕΝΕΡΓΟΠΟΊΗΣΗ ΑΝΤΑΜΕΊΒΟΝΤΑΙ ΔΙΑΦΗΜΊΣΕΙΣ</string>
     <string    name="disable_rewarded_ads_desc_04"	translatable="true">Γνωρίζουμε ότι οι περισσότεροι από εμάς δεν αρέσουν οι διαφημίσεις, αλλά στην περίπτωσή μας, αυτό μας βοηθά σημαντικά να χρηματοδοτήσουμε τη βάση δεδομένων μας, να φιλοξενήσουμε συνδέσμους, ενημερώσεις, περισσότερα μπαλώματα και καθημερινές ανάγκες.\n\nαυτός είναι ο απλούστερος τρόπος για να μας υποστηρίξετε χωρίς να δωρίσετε ή να ξοδέψετε τίποτα.</string>
-	
+
     <string    name="installation_failed_04"	translatable="true">Η ΕΓΚΑΤΆΣΤΑΣΗ ΑΠΈΤΥΧΕ</string>
     <string    name="installation_failed_desc_04"	translatable="true">Λόγος: προσπαθήσατε να εγκαταστήσετε μια έκδοση mod χαμηλότερη από αυτή που είναι εγκατεστημένη αυτήν τη στιγμή.\n\n λύσεις:\nA. Επιλέξτε μια έκδοση ίση ή μεγαλύτερη από.\nB. Καταργήστε την εγκατάσταση της τρέχουσας έκδοσης και, στη συνέχεια, υποβαθμίστε.\n\nΕάν το ζήτημα παραμένει, ελέγξτε τις Συχνές Ερωτήσεις.</string>
     <string    name="installation_failed_ream_desc_04"	translatable="true">Λόγος: το τρέχον Spotify που εγκαταστάθηκε σε αυτήν τη συσκευή δεν προήλθε απευθείας από το xManager ή από την ομάδα μας.\n\nλύση: Καταργήστε την εγκατάσταση της τρέχουσας έκδοσης της εφαρμογής, κάντε επανεκκίνηση του xManager και δοκιμάστε ξανά. Εάν το ζήτημα παραμένει, ελέγξτε τις Συχνές Ερωτήσεις.</string>
@@ -469,7 +469,7 @@
     <string    name="uninstall_patched_04"	translatable="true">ΑΠΕΓΚΑΤΆΣΤΑΣΗ PATCHED</string>
     <string    name="open_settings_04"	translatable="true">ΆΝΟΙΓΜΑ ΡΥΘΜΊΣΕΩΝ</string>
     <string    name="open_patched_04"	translatable="true">ΆΝΟΙΓΜΑ PATCHED</string>
-	
+
 	<!--INDONESIAN LANGUAGE-->
     <string    name="app_name_05"	translatable="true">xManager</string>
     <string    name="spotify_regular_05"	translatable="true">SPOTIFY (REGULAR)</string>
@@ -499,7 +499,7 @@
     <string    name="clear_directory_folders_05"	translatable="true">HAPUS FOLDER DIREKTORI</string>
     <string    name="clear_directory_folders_desc_05"	translatable="true">Tekan untuk menghapus semua direktori folder, termasuk apk dan pembaruan yang diunduh.</string>
     <string    name="reset_settings_05"	translatable="true">RESET PENGATURAN</string>
-	
+
     <string    name="about_sub_05"	translatable="true">No Ads | New Features | Freedom</string>
     <string    name="xmanager_dev_05"	translatable="true">xManager Developer</string>
     <string    name="spotify_mod_devs_05"	translatable="true">Spotify Mod Developers</string>
@@ -510,14 +510,14 @@
     <string    name="forum_team_05"	translatable="true">FORUM.APK-RELEASE.NET Team</string>
     <string    name="xspotify_team_05"	translatable="true">xSpotify Manager (Old Manager)</string>
     <string    name="contributors_05"	translatable="true">TERIMAKASIH UNTUK SEMUA KONTRIBUTOR! ❤️</string>
-	
+
     <string    name="download_selected_05"	translatable="true">Kamu telah memilih versi yang dimodifikasi ini. Apakah ingin melanjutkan?</string>
     <string    name="download_ready_05"	translatable="true">INFORMASI PATCH</string>
     <string    name="download_ready_desc_05"	translatable="true">Mengunduh apk yang ini akan menimpa file sebelumnya yang terletak di direktori.</string>
     <string    name="downloading_file_05"	translatable="true">MENGUNDUH FILE...</string>
     <string    name="download_success_05"	translatable="true">SUKSES MENGUNDUH</string>
     <string    name="new_update_05"	translatable="true">UPDATE MANAGER BARU</string>
-	
+
     <string    name="continue_1_05"	translatable="true">LANJUT</string>
     <string    name="cancel_05"	translatable="true">BATALKAN</string>
     <string    name="download_05"	translatable="true">UNDUH</string>
@@ -529,10 +529,10 @@
     <string    name="not_now_05"	translatable="true">TIDAK SEKARANG</string>
     <string    name="copy_url_05"	translatable="true">SALIN URL</string>
     <string    name="fixer_05"	translatable="true">FIXER</string>
-	
+
     <string    name="show_support_05"	translatable="true">TUNJUKKAN DUKUNGANMU!</string>
     <string    name="show_support_desc_05"	translatable="true">Hai, kami semua adalah tim yang nonprofit, non-korporat, dan non-kompromi. Kamu tahu? Orang-orang seperti Kalianlah yang tetap mendorong kami untuk membuat aplikasi yang kiranya dapat memudahkan segalanya dari mengunduh hingga menginstal.\n\nKami mencurahkan semua waktu dan tetap terus mengupayakan yang kami bisa hanya untuk membuat segalanya menjadi lebih baik dan sempurna. Tapi tenang, kami akan tetap melakukan yang terbaik untuk tetap mendukung aplikasi ini selama kami bisa.\n\nBerapa pun jumlahnya akan sangat membantu dan sangat kami hargai!</string>
-	
+
     <string    name="maintenance_05"	translatable="true">PEMELIHARAAN</string>
     <string    name="maintenance_desc_05"	translatable="true">xManager saat ini tidak tersedia sekarang. Mohon periksa aplikasinya nanti.</string>
     <string    name="thanks_05"	translatable="true">TERIMA KASIH!</string>
@@ -540,12 +540,12 @@
     <string    name="website_05"	translatable="true">SITUS WEB</string>
     <string    name="reddit_05"	translatable="true">REDDIT</string>
     <string    name="faq_05"	translatable="true">PERTANYAAN</string>
-	
+
     <string    name="cloned_version_05"	translatable="true">VERSI KLONING (BETA)</string>
     <string    name="cloned_version_desc_05"	translatable="true">Mengaktifkan ini memungkinkan Anda untuk mengunduh dan menginstal versi kloning dari aplikasi yang ditambal.\n\nIni juga akan menyelesaikan sebagian besar kesalahan atau masalah instalasi terutama jika Anda memiliki aplikasi spotify yang sudah diinstal sebelumnya.</string>
     <string    name="disable_rewarded_ads_05"	translatable="true">NONAKTIFKAN IKLAN BERHADIAH</string>
     <string    name="disable_rewarded_ads_desc_05"	translatable="true">Kita tahu bahwa kebanyakan dari kita tidak menyukai iklan tetapi dalam kasus kami, ini secara signifikan membantu kita untuk mendanai database kami, Hosting Link, Update, Patch lebih, dan kebutuhan sehari-hari.\n\nIni adalah cara paling sederhana untuk mendukung kami tanpa menyumbang atau menghabiskan apa pun.</string>
-	
+
     <string    name="installation_failed_05"	translatable="true">INSTALASI GAGAL</string>
     <string    name="installation_failed_desc_05"	translatable="true">Alasan: Anda mencoba menginstal versi mod lebih rendah dari yang saat ini diinstal.\n\nsolusi: \nA. Pilih versi yang sama dengan atau lebih besar dari.\nB. Uninstall versi saat ini, kemudian downgrade.\n\n jika masalah tetap ada, periksa FAQ.</string>
     <string    name="installation_failed_ream_desc_05"	translatable="true">Alasan: Spotify saat ini yang diinstal pada perangkat ini tidak datang langsung dari xManager atau dari tim kami.\n\n solusi: Hapus instalan versi aplikasi saat ini, mulai ulang xManager dan coba lagi. Jika masalah tetap ada, periksa FAQ.</string>
@@ -563,7 +563,7 @@
     <string    name="uninstall_patched_05"	translatable="true">COPOT PEMASANGAN DITAMBAL</string>
     <string    name="open_settings_05"	translatable="true">BUKA PENGATURAN</string>
     <string    name="open_patched_05"	translatable="true">OPEN PATCHED</string>
-	
+
 	<!--ITALIAN LANGUAGE-->
     <string    name="app_name_06"	translatable="true">xManager</string>
     <string    name="spotify_regular_06"	translatable="true">SPOTIFY (NORMALE)</string>
@@ -593,7 +593,7 @@
     <string    name="clear_directory_folders_06"	translatable="true">PULIZIA DELLE CARTELLE</string>
     <string    name="clear_directory_folders_desc_06"	translatable="true">Tocca per eleminare tutte le cartelle inclusi i file scaricati e gli aggiornamenti.</string>
     <string    name="reset_settings_06"	translatable="true">RIPRISTINA IMPOSTAZIONI</string>
-	
+
     <string    name="about_sub_06"	translatable="true">Niente Annunci | Nuove Funzionalità | Libertà</string>
     <string    name="xmanager_dev_06"	translatable="true">Sviluppatore di xManager</string>
     <string    name="spotify_mod_devs_06" translatable="true">Sviluppatori della Patch di Spotify</string>
@@ -604,14 +604,14 @@
     <string    name="forum_team_06"	translatable="true">Team di FORUM.APK-RELEASE.NET</string>
     <string    name="xspotify_team_06"	translatable="true">xSpotify Manager (Vecchio Manager)</string>
     <string    name="contributors_06"	translatable="true">GRAZIE A TUTTI I COLLABORATORI! ❤️</string>
-	
+
     <string    name="download_selected_06"	translatable="true">Hai selezionato questa versione patchata. Vuoi continuare?</string>
     <string    name="download_ready_06"	translatable="true">INFORMAZIONI SULLE PATCH</string>
     <string    name="download_ready_desc_06"	translatable="true">Scaricando questo apk patchato sovrascriverai il file precedentemente situato nella cartella contenente i file esterni dell\'applicazione.</string>
     <string    name="downloading_file_06"	translatable="true">SCARICANDO FILE...</string>
     <string    name="download_success_06"	translatable="true">SCARICATO CON SUCCESSO</string>
     <string    name="new_update_06"	translatable="true">NUOVO AGGIORNAMENTO DEL MANAGER</string>
-	
+
     <string    name="continue_1_06"	translatable="true">CONTINUA</string>
     <string    name="cancel_06"	translatable="true">ANNULLA</string>
     <string    name="download_06"	translatable="true">SCARICA</string>
@@ -623,10 +623,10 @@
     <string    name="not_now_06"	translatable="true">NON ORA</string>
     <string    name="copy_url_06" translatable="true">COPIA URL</string>
     <string    name="fixer_06"	translatable="true">FIXER</string>
-	
+
     <string    name="show_support_06"	translatable="true">MOSTRA IL TUO SOSTEGNO</string>
     <string    name="show_support_desc_06" translatable="true">Siamo un team senza scopo di lucro, non aziendale e senza compromessi. Le persone come te ci incoraggiano a creare un\'app per rendere tutto molto più semplice soprattutto dal download all\'installazione.\n\nStiamo dedicando tutto il nostro tempo e i nostri migliori sforzi solo per rendere le cose corrette e perfette. Faremo del nostro meglio per supportare questa app il più a lungo possibile.\n\nQualsiasi importo aiuterà e sarà molto gradito!</string>
-	
+
     <string    name="maintenance_06"	translatable="true">MANUTENZIONE</string>
     <string    name="maintenance_desc_06" translatable="true">xManager non è attualmente disponibile. Si prega di controllare l\'applicazione in un secondo momento.</string>
     <string    name="thanks_06"	translatable="true">GRAZIE!</string>
@@ -634,12 +634,12 @@
     <string    name="website_06"	translatable="true">SITO</string>
     <string    name="reddit_06"	translatable="true">REDDIT</string>
     <string    name="faq_06"	translatable="true">DOMANDE FREQUENTI</string>
-	
+
     <string    name="cloned_version_06"	translatable="true">VERSIONE CLONATA (BETA)</string>
     <string    name="cloned_version_desc_06" translatable="true">Attivando questo ti permette di scaricare e installare la versione clonata dell\'applicazione patchata.\n\nQuesto risolverà anche la maggior parte degli errori di installazione o problemi, soprattutto se si dispone di un\'applicazione Spotify preinstallata.</string>
     <string    name="disable_rewarded_ads_06"	translatable="true">DISABILITA GLI ANNUNCI PREMIATI</string>
     <string    name="disable_rewarded_ads_desc_06" translatable="true">Sappiamo che alla maggior parte di noi non piacciono gli annunci, ma nel nostro caso, questo ci aiuta in modo significativo a finanziare il nostro database, l\'hosting dei link, gli aggiornamenti, più patch, e le esigenze quotidiane.\n\nQuesto è il modo più semplice per sostenerci senza donare o spendere nulla.</string>
-	
+
     <string    name="installation_failed_06"	translatable="true">INSTALLAZIONE NON RIUSCITA</string>
     <string    name="installation_failed_desc_06"	translatable="true">Motivo: Hai tentato di installare una versione della patch inferiore a quella attualmente installata.\n\nSoluzioni:\nA. Selezionare una versione uguale o successiva.\nB. Disinstallare la versione corrente, quindi eseguire il downgrade.\n\nSe il problema persiste, controlla le FAQ.</string>
     <string    name="installation_failed_ream_desc_06"	translatable="true">Motivo: l\'attuale Spotify installato su questo dispositivo non proveniva direttamente da xManager o dal nostro team.\n\n Soluzione: Disinstallare la versione corrente dell\'applicazione, riavviare xManager e riprovare. Se il problema persiste, controlla le FAQ.</string>
@@ -657,7 +657,7 @@
     <string    name="uninstall_patched_06"	translatable="true">DISINSTALLA PATCH</string>
     <string    name="open_settings_06"	translatable="true">APRI IMPOSTAZIONI</string>
     <string    name="open_patched_06"	translatable="true">APRI PATCH</string>
-	
+
 	<!--POLISH LANGUAGE-->
     <string    name="app_name_07"	translatable="true">xManager</string>
     <string    name="spotify_regular_07"	translatable="true">SPOTIFY (NORMALNY)</string>
@@ -676,7 +676,7 @@
     <string    name="main_title_07"	translatable="true">xManager</string>
     <string    name="settings_title_07"	translatable="true">Ustawienia</string>
     <string    name="about_title_07"	translatable="true">O nas</string>
-	
+
     <string    name="list_auto_refresh_07"	translatable="true">AUTO ODŚWIEŻANIE LISTY</string>
     <string    name="list_auto_refresh_desc_07"	translatable="true">Aktywacja tej opcji spowoduje automatyczne odświeżenie listy przy każdym uruchomieniu aplikacji.\n\nMożesz ręcznie odświeżyć listę przeciągając główny ekran w dół.</string>
     <string    name="force_auto_install_07"	translatable="true">WYMUŚ AUTOINSTALACJĘ</string>
@@ -687,7 +687,7 @@
     <string    name="clear_directory_folders_07"	translatable="true">WYCZYŚĆ FOLDERY KATALOGU</string>
     <string    name="clear_directory_folders_desc_07"	translatable="true">Kliknij aby usunąć wszystkie foldery aplikacji, w tym pobrane pliki APK i ich aktualizacje.</string>
     <string    name="reset_settings_07"	translatable="true">RESETUJ USTAWIENIA</string>
-	
+
     <string    name="about_sub_07"	translatable="true">Bez Reklam | Nowe Funkcje | Wolność</string>
     <string    name="xmanager_dev_07"	translatable="true">Deweloper xManagera</string>
     <string    name="spotify_mod_devs_07"	translatable="true">Deweloperzy Moda Spotify</string>
@@ -698,14 +698,14 @@
     <string    name="forum_team_07"	translatable="true">Wsparcie z FORUM.APK-RELEASE.NET</string>
     <string    name="xspotify_team_07"	translatable="true">xSpotify Manager (Stary Menadżer)</string>
     <string    name="contributors_07"	translatable="true">DZIĘKI DLA WSZYSTKICH WSPIERAJĄCYCH! ❤️</string>
-	
+
     <string    name="download_selected_07"	translatable="true">Wybrałeś tę zmodyfikowaną wersję. Czy chcesz kontynuować?</string>
     <string    name="download_ready_07"	translatable="true">INFORMACJE O ŁATACH</string>
     <string    name="download_ready_desc_07"	translatable="true">Pobranie tego zmodyfikowanego pliku APK spowoduje nadpisanie poprzedniego pliku znajdującego się w katalogu pobierania aplikacji.</string>
     <string    name="downloading_file_07"	translatable="true">POBIERAM PLIK...</string>
     <string    name="download_success_07"	translatable="true">ZAKOŃCZONO POBIERANIE</string>
     <string    name="new_update_07"	translatable="true">NOWA AKTUALIZACJA MENDAŻERA</string>
-	
+
     <string    name="continue_1_07"	translatable="true">KONTYNUUJ</string>
     <string    name="cancel_07"	translatable="true">ANULUJ</string>
     <string    name="download_07"	translatable="true">POBIERZ</string>
@@ -717,10 +717,10 @@
     <string    name="not_now_07"	translatable="true">NIE TERAZ</string>
     <string    name="copy_url_07"	translatable="true">KOPIUJ LINK</string>
     <string    name="fixer_07"	translatable="true">FIXER</string>
-	
+
     <string    name="show_support_07"	translatable="true">OKAŻ SWOJE WSPARCIE</string>
     <string    name="show_support_desc_07"	translatable="true">Jesteśmy zespołem non-profit, niekorporacyjnym i bezkompromisowym. Osoby takie jak Ty zachęcają nas do stworzenia aplikacji, która znacznie ułatwi pracę, zwłaszcza od pobrania do zainstalowania aplikacji.\n\nPoświęcamy cały nasz czas i wysiłek, aby wszystko było doskonałe. Dołożymy wszelkich starań, aby wspierać tę aplikację tak długo, jak to możliwe.\n\nKażda kwota nam pomoże i zostanie naprawdę doceniona!</string>
-	
+
     <string    name="maintenance_07"	translatable="true">KONSERWACJA</string>
     <string    name="maintenance_desc_07"	translatable="true">xManager jest obecnie niedostępny. Proszę, sprawdź aplikację później.</string>
     <string    name="thanks_07"	translatable="true">DZIĘKUJEMY!</string>
@@ -728,12 +728,12 @@
     <string    name="website_07"	translatable="true">STRONA</string>
     <string    name="reddit_07"	translatable="true">REDDIT</string>
     <string    name="faq_07"	translatable="true">FAQ</string>
-	
+
     <string    name="cloned_version_07"	translatable="true">WERSJA KLONA (BETA)</string>
     <string    name="cloned_version_desc_07"	translatable="true">Aktywacja umożliwi pobieranie i instalację sklonowanej wersji zmodowanej aplikacji.\n\nRozwiązuje to większość błędów i problemów związanych z instalacją, zwłaszcza jeśli posiadasz już aplikację zainstalowaną jako systemową.</string>
     <string    name="disable_rewarded_ads_07"	translatable="true">WYŁĄCZ NAGRADZANE REKLAMY</string>
     <string    name="disable_rewarded_ads_desc_07"	translatable="true">Wiemy, że większość z nas nie lubi reklam, ale w naszym przypadku znacznie pomagają nam one finansować naszą bazę danych, linki hostingowe, aktualizacje, więcej łatek i codzienne potrzeby.\n\nTo najprostszy sposób by nas wesprzeć bez darowizn i wydawania pieniędzy.</string>
-	
+
     <string    name="installation_failed_07"	translatable="true">INSTALACJA NIE POWIODŁA SIĘ</string>
     <string    name="installation_failed_desc_07"	translatable="true">Powód: Próbowałeś zainstalować starszą wersję modyfikacji niż obecnie zainstalowana.\n\nRozwiązania: \nA. Wybierz wersję taką samą lub nowszą.\nB. Odinstaluj bieżącą wersję, a następnie zanistaluj którą chcesz.\n\nJeśli problem nadal występuje, sprawdź FAQ.</string>
     <string    name="installation_failed_ream_desc_07"	translatable="true">Powód: Obecny Spotify zainstalowany na tym urządzeniu nie pochodzi bezpośrednio z xManager ani z naszego zespołu.\n\nrozwiązanie: Odinstaluj bieżącą wersję aplikacji, uruchom ponownie xManager i spróbuj ponownie. Jeśli problem nadal występuje, sprawdź FAQ.</string>
@@ -751,7 +751,7 @@
     <string    name="uninstall_patched_07"	translatable="true">ODINSTALUJ MODYFIKACJĘ</string>
     <string    name="open_settings_07"	translatable="true">OTWÓRZ USTAWIENIA</string>
     <string    name="open_patched_07"	translatable="true">OTWÓRZ MODYFIKACJĘ</string>
-	
+
 	<!--PORTUGUESE (BRAZIL) LANGUAGE-->
     <string    name="app_name_08"	translatable="true">xManager</string>
     <string    name="spotify_regular_08"	translatable="true">SPOTIFY (REGULAR)</string>
@@ -770,7 +770,7 @@
     <string    name="main_title_08"	translatable="true">xManager</string>
     <string    name="settings_title_08"	translatable="true">Definições</string>
     <string    name="about_title_08"	translatable="true">Sobre</string>
-	
+
     <string    name="list_auto_refresh_08"	translatable="true">LISTAR AUTO-ATUALIZAÇÃO</string>
     <string    name="list_auto_refresh_desc_08"	translatable="true">Ativar isso atualizará automaticamente a lista sempre que iniciar o aplicativo. \n Você pode atualizar manualmente a lista arrastando a tela principal para baixo.</string>
     <string    name="force_auto_install_08"	translatable="true">FORÇAR AUTO-INSTALAÇÃO</string>
@@ -781,7 +781,7 @@
     <string    name="clear_directory_folders_08"	translatable="true">LIMPAR PASTAS DE DIRETÓRIO</string>
     <string    name="clear_directory_folders_desc_08"	translatable="true">Toque para excluir todas as pastas de diretório, incluindo os arquivos baixados e atualizações.</string>
     <string    name="reset_settings_08"	translatable="true">REDEFINIR AS CONFIGURAÇÕES</string>
-	
+
     <string    name="about_sub_08"	translatable="true">Livre de anúncios | Novos recursos | Liberdade</string>
     <string    name="xmanager_dev_08"	translatable="true">Desenvolvedor xManager</string>
     <string    name="spotify_mod_devs_08"	translatable="true">Desenvolvedores do Mod Spotify</string>
@@ -792,14 +792,14 @@
     <string    name="forum_team_08"	translatable="true">Equipe FORUM.APK-RELEASE.NET</string>
     <string    name="xspotify_team_08"	translatable="true">xSpotify Manager (antigo manager)</string>
     <string    name="contributors_08"	translatable="true">OBRIGADO A TODOS OS CONTRIBUIDORES! ❤️</string>
-	
+
     <string    name="download_selected_08"	translatable="true">Você selecionou esta versão corrigida. Você quer continuar?</string>
     <string    name="download_ready_08"	translatable="true">INFORMAÇÃO DO PATCH</string>
     <string    name="download_ready_desc_08"	translatable="true">Baixar este apk corrigido sobrescreverá o arquivo anterior localizado no diretório de arquivo externo do aplicativo.</string>
     <string    name="downloading_file_08"	translatable="true">BAIXANDO ARQUIVO...</string>
     <string    name="download_success_08"	translatable="true">BAIXADO COM SUCESSO</string>
     <string    name="new_update_08"	translatable="true">NOVA ATUALIZAÇÃO DO MANAGER</string>
-	
+
     <string    name="continue_1_08"	translatable="true">PROSSEGUIR</string>
     <string    name="cancel_08"	translatable="true">CANCELAR</string>
     <string    name="download_08"	translatable="true">BAIXAR</string>
@@ -811,10 +811,10 @@
     <string    name="not_now_08"	translatable="true">AGORA NÃO</string>
     <string    name="copy_url_08"	translatable="true">COPIAR URL</string>
     <string    name="fixer_08"	translatable="true">FIXADOR</string>
-	
+
     <string    name="show_support_08"	translatable="true">MOSTRE SEU APOIO</string>
     <string    name="show_support_desc_08"	translatable="true">Somos uma equipe sem fins lucrativos, não corporativa e não comprometida. Pessoas como você nos incentivam a criar um aplicativo para tornar as coisas muito mais fáceis, especialmente do download à instalação.\n\nEstamos dedicando todo o nosso tempo e melhores esforços apenas para tornar as coisas certas e perfeitas. Faremos o nosso melhor para oferecer suporte a este aplicativo enquanto pudermos.\n\nQualquer valor ajudará e será muito apreciado!</string>
-	
+
     <string    name="maintenance_08"	translatable="true">MANUTENÇÃO</string>
     <string    name="maintenance_desc_08"	translatable="true">O xManager não está disponível no momento. Por favor, verifique o aplicativo mais tarde.</string>
     <string    name="thanks_08"	translatable="true">OBRIGADO!</string>
@@ -822,12 +822,12 @@
     <string    name="website_08"	translatable="true">SITE</string>
     <string    name="reddit_08"	translatable="true">REDDIT</string>
     <string    name="faq_08"	translatable="true">PERGUNTA</string>
-	
+
     <string    name="cloned_version_08"	translatable="true">VERSÃO CLONADA (BETA)</string>
     <string    name="cloned_version_desc_08"	translatable="true">Ativando isso, você pode baixar e instalar a versão clonada do aplicativo Corrigido.\n\nisso também resolverá a maioria dos erros ou problemas de instalação, especialmente se você tiver um aplicativo spotify pré-instalado.</string>
     <string    name="disable_rewarded_ads_08"	translatable="true">DESATIVAR ANÚNCIOS RECOMPENSADOS</string>
     <string    name="disable_rewarded_ads_desc_08"	translatable="true">Sabemos que a maioria de nós não gosta de anúncios, mas no nosso caso, isso nos ajuda significativamente a financiar nosso banco de dados, links de hospedagem, atualizações, mais patches e necessidades diárias.\n\nesta é a maneira mais simples de nos apoiar sem doar ou gastar nada.</string>
-	
+
     <string    name="installation_failed_08"	translatable="true">FALHA NA INSTALAÇÃO</string>
     <string    name="installation_failed_desc_08"	translatable="true">Razão: você tentou instalar uma versão mod menor do que o que está instalado atualmente.\n\n soluções: \nA. Selecione uma versão igual ou maior que.\nB. desinstale a versão atual e faça o downgrade.\n\nSe o problema persistir, verifique o FAQ.</string>
     <string    name="installation_failed_ream_desc_08"	translatable="true">Motivo: o Spotify atual instalado neste dispositivo não veio diretamente do xManager ou de nossa equipe.\n\nsolução: desinstale a versão atual do aplicativo, reinicie o xManager e tente novamente. Se o problema persistir, verifique o FAQ.</string>
@@ -845,7 +845,7 @@
     <string    name="uninstall_patched_08"	translatable="true">DESINSTALAR CORRIGIDO</string>
     <string    name="open_settings_08"	translatable="true">ABRIR CONFIGURAÇÕES</string>
     <string    name="open_patched_08"	translatable="true">ABERTO CORRIGIDO</string>
-	
+
 	<!--PORTUGUESE (PORTUGAL) LANGUAGE-->
     <string    name="app_name_09"	translatable="true">xManager</string>
     <string    name="spotify_regular_09"	translatable="true">SPOTIFY (NORMAL)</string>
@@ -864,7 +864,7 @@
     <string    name="main_title_09"	translatable="true">xManager</string>
     <string    name="settings_title_09"	translatable="true">Definições</string>
     <string    name="about_title_09"	translatable="true">Sobre</string>
-	
+
     <string    name="list_auto_refresh_09"	translatable="true">AUTO-REFRESCAR A LISTA</string>
     <string    name="list_auto_refresh_desc_09"	translatable="true">Ativar isto irá automaticamente refrescar a lista a cada vez que abrires a aplicação.\n\nPodes manualmente refrescar a lista ao arrastar o ecrã principal para baixo.</string>
     <string    name="force_auto_install_09"	translatable="true">FORÇAR AUTO-INSTALAR</string>
@@ -875,7 +875,7 @@
     <string    name="clear_directory_folders_09"	translatable="true">LIMPAR AS PASTAS DO DIRETÓRIO</string>
     <string    name="clear_directory_folders_desc_09"	translatable="true">Toca para apagar todas as pastas do diretório incluindo as apks transferidas e atualizações.</string>
     <string    name="reset_settings_09"	translatable="true">REINICIAR DEFINIÇÕES</string>
-	
+
     <string    name="about_sub_09"	translatable="true">Sem Anúncios | Novas Funcionalidades | Liberdade</string>
     <string    name="xmanager_dev_09"	translatable="true">Desenvolvedor do xManager</string>
     <string    name="spotify_mod_devs_09"	translatable="true">Desenvolvedores do Mod do Spotify</string>
@@ -886,14 +886,14 @@
     <string    name="forum_team_09"	translatable="true">Equipa do FORUM.APK-RELEASE.NET</string>
     <string    name="xspotify_team_09"	translatable="true">xSpotify Manager (Antigo Manager)</string>
     <string    name="contributors_09"	translatable="true">OBRIGADO A TODOS OS CONTRIBUIDORES! ❤️</string>
-	
+
     <string    name="download_selected_09"	translatable="true">Selecionaste esta versão modificada. Queres continuar?</string>
     <string    name="download_ready_09"	translatable="true">INFORMAÇÃO DO PATCH</string>
     <string    name="download_ready_desc_09"	translatable="true">Transferir esta apk modificada irá substituir o ficheiro anterior localizado no directório de ficheiros externos da aplicação.</string>
     <string    name="downloading_file_09"	translatable="true">A FAZER TRANSFERÊNCIA DO FICHEIRO...</string>
     <string    name="download_success_09"	translatable="true">TRANSFERÊNCIA FEITA COM SUCESSO</string>
     <string    name="new_update_09"	translatable="true">NOVA ATUALIZAÇÃO DO MANAGER</string>
-	
+
     <string    name="continue_1_09"	translatable="true">CONTINUAR</string>
     <string    name="cancel_09"	translatable="true">CANCELAR</string>
     <string    name="download_09"	translatable="true">TRANSFERIR</string>
@@ -905,10 +905,10 @@
     <string    name="not_now_09"	translatable="true">AGORA NÃO</string>
     <string    name="copy_url_09"	translatable="true">COPIAR URL</string>
     <string    name="fixer_09"	translatable="true">FIXADOR</string>
-	
+
     <string    name="show_support_09"	translatable="true">MOSTRA O TEU SUPORTE</string>
     <string    name="show_support_desc_09"	translatable="true">Somos uma equipa sem fins lucrativos, não empresarial e não comprometida. Pessoas como tu encorajam-nos a criar uma aplicação para tornar as coisas muito mais fáceis especialmente desde a transferência até à instalação.\n\nEstamos a dedicar todo o nosso tempo e melhores esforços apenas para fazer as coisas direitas e perfeitas. Faremos o nosso melhor para suportar esta aplicação o máximo de tempo possível.\n\nQualquer quantia ajudará e será muito apreciada!</string>
-	
+
     <string    name="maintenance_09"	translatable="true">MANUTENÇÃO</string>
     <string    name="maintenance_desc_09"	translatable="true">O xManager está indisponível neste momento. Por favor abre a aplicação mais tarde.</string>
     <string    name="thanks_09"	translatable="true">OBRIGADO!</string>
@@ -916,12 +916,12 @@
     <string    name="website_09"	translatable="true">SITE</string>
     <string    name="reddit_09"	translatable="true">REDDIT</string>
     <string    name="faq_09"	translatable="true">PERGUNTA</string>
-	
+
     <string    name="cloned_version_09"	translatable="true">VERSÃO CLONADA (BETA)</string>
     <string    name="cloned_version_desc_09"	translatable="true">Ativando isso, você pode baixar e instalar a versão clonada do aplicativo Corrigido.\n\nisso também resolverá a maioria dos erros ou problemas de instalação, especialmente se você tiver um aplicativo spotify pré-instalado.</string>
     <string    name="disable_rewarded_ads_09"	translatable="true">DESATIVAR ANÚNCIOS RECOMPENSADOS</string>
     <string    name="disable_rewarded_ads_desc_09"	translatable="true">Sabemos que a maioria de nós não gosta de anúncios, mas no nosso caso, isso nos ajuda significativamente a financiar nosso banco de dados, links de hospedagem, atualizações, mais patches e necessidades diárias.\n\nesta é a maneira mais simples de nos apoiar sem doar ou gastar nada.</string>
-	
+
     <string    name="installation_failed_09"	translatable="true">FALHA NA INSTALAÇÃO</string>
     <string    name="installation_failed_desc_09"	translatable="true">Razão: você tentou instalar uma versão mod menor do que o que está instalado atualmente.\n\n soluções: \nA. Selecione uma versão igual ou maior que.\nB. desinstale a versão atual e faça o downgrade.\n\nSe o problema persistir, verifique o FAQ.</string>
     <string    name="installation_failed_ream_desc_09"	translatable="true">Motivo: o Spotify atual instalado neste dispositivo não veio diretamente do xManager ou de nossa equipe.\n\nsolução: desinstale a versão atual do aplicativo, reinicie o xManager e tente novamente. Se o problema persistir, verifique o FAQ.</string>
@@ -939,7 +939,7 @@
     <string    name="uninstall_patched_09"	translatable="true">DESINSTALAR CORRIGIDO</string>
     <string    name="open_settings_09"	translatable="true">ABRIR CONFIGURAÇÕES</string>
     <string    name="open_patched_09"	translatable="true">ABERTO CORRIGIDO</string>
-	
+
 	<!--RUSSIAN LANGUAGE-->
     <string    name="app_name_10"	translatable="true">xManager</string>
     <string    name="spotify_regular_10"	translatable="true">SPOTIFY (ОБЫЧНЫЙ)</string>
@@ -958,7 +958,7 @@
     <string    name="main_title_10"	translatable="true">xManager</string>
     <string    name="settings_title_10"	translatable="true">Настройки</string>
     <string    name="about_title_10"	translatable="true">О нас</string>
-	
+
     <string    name="list_auto_refresh_10"	translatable="true">АВТООБНОВЛЕНИЕ СПИСКА</string>
     <string    name="list_auto_refresh_desc_10"	translatable="true">При активация этого параметра список будет автоматически обновляться при каждом запуске приложения.\n\nВы можете обновить список вручную, потянув вниз на главном экране.</string>
     <string    name="force_auto_install_10"	translatable="true">ПPИНУДИТЕЛЬНАЯ АВТОУСТАНОВКА</string>
@@ -969,7 +969,7 @@
     <string    name="clear_directory_folders_10"	translatable="true">ОЧИСТИТЬ ПАПКИ КАТАЛОГА</string>
     <string    name="clear_directory_folders_desc_10"	translatable="true">Нажмите, чтобы удалить все папки каталога приложения, включая загруженные файлы и обновления.</string>
     <string    name="reset_settings_10"	translatable="true">СБPОСИТЬ НАСТPОЙКИ</string>
-	
+
     <string    name="about_sub_10"	translatable="true">Без рекламы | Новые функции | Свободный доступ</string>
     <string    name="xmanager_dev_10"	translatable="true">Pазработчик xManager</string>
     <string    name="spotify_mod_devs_10"	translatable="true">Pазработчики мода Spotify</string>
@@ -980,14 +980,14 @@
     <string    name="forum_team_10"	translatable="true">Команда FORUM.APK-RELEASE.NET</string>
     <string    name="xspotify_team_10"	translatable="true">xSpotify Manager (устаревший менеджер)</string>
     <string    name="contributors_10"	translatable="true">СПАСИБО ВСЕМ УЧАСТНИКАМ! ❤</string>
-	
+
     <string    name="download_selected_10"	translatable="true">Вы выбрали данную модифицированную версию. Хотите продолжить?</string>
     <string    name="download_ready_10"	translatable="true">ИНФОPМАЦИЯ ОБ ИСПPАВЛЕНИИ</string>
     <string    name="download_ready_desc_10"	translatable="true">При загрузке этого измененного apk файла будет перезаписан предыдущий файл, расположенный во внешнем каталоге файлов приложения.</string>
     <string    name="downloading_file_10"	translatable="true">ЗАГPУЗКА ФАЙЛА...</string>
     <string    name="download_success_10"	translatable="true">УСПЕШНО ЗАГPУЖЕНО</string>
     <string    name="new_update_10"	translatable="true">ОБНОВЛЕНИЕ МЕНЕДЖЕPА</string>
-	
+
     <string    name="continue_1_10"	translatable="true">ПPОДОЛЖИТЬ</string>
     <string    name="cancel_10"	translatable="true">ОТМЕНА</string>
     <string    name="download_10"	translatable="true">ЗАГPУЗИТЬ</string>
@@ -999,10 +999,10 @@
     <string    name="not_now_10"	translatable="true">НЕ СЕЙЧАС</string>
     <string    name="copy_url_10"	translatable="true">КОПИPОВАТЬ URL</string>
     <string    name="fixer_10"	translatable="true">ФИКСАТОР</string>
-	
+
     <string    name="show_support_10"	translatable="true">ПОКАЖИТЕ ВАШУ ПОДДЕPЖКУ</string>
     <string    name="show_support_desc_10"	translatable="true">Мы - некоммерческая, некорпоративная и бескомпромиссная команда. Такие люди, как Вы, призывают нас создавать приложение, которое упростит Ваши действия, начиная от загрузки и заканчивая установкой.\n\nМы тратим всё свое время и все усилия на то, чтобы все было правильно и идеально. Мы сделаем все возможное, чтобы поддерживать это приложение, сколько сможем.\n\nЛюбая сумма поможет, и мы будем очень признательны!</string>
-	
+
     <string    name="maintenance_10"	translatable="true">ТЕХОБСЛУЖИВАНИЕ</string>
     <string    name="maintenance_desc_10"	translatable="true">xManager в данный момент недоступен. Пожалуйста, проверьте приложение позже.</string>
     <string    name="thanks_10"	translatable="true">СПАСИБО!</string>
@@ -1010,12 +1010,12 @@
     <string    name="website_10"	translatable="true">САЙТ</string>
     <string    name="reddit_10"	translatable="true">PЕДДИТ</string>
     <string    name="faq_10"	translatable="true">ВОПPОСЫ</string>
-	
+
     <string    name="cloned_version_10"	translatable="true">КЛОНИPОВАННАЯ ВЕPСИЯ (БЕТА-ВЕPСИЯ)</string>
     <string    name="cloned_version_desc_10"	translatable="true">Активация этого позволит вам загрузить и установить клонированную версию исправленного приложения.\n\nЭто также устранит большинство ошибок или проблем при установке, особенно если у вас предварительно установлено приложение spotify.</string>
     <string    name="disable_rewarded_ads_10"	translatable="true">ОТКЛЮЧИТЬ PЕКЛАМУ С ВОЗНАГPАЖДЕНИЕМ</string>
     <string    name="disable_rewarded_ads_desc_10"	translatable="true">Мы знаем, что большинству из нас не нравится реклама, но в нашем случае это значительно помогает нам финансировать нашу базу данных, размещать ссылки, обновления, дополнительные исправления и ежедневные потребности.\n\nЭто самый простой способ поддержать нас, не жертвуя и не тратя ничего.</string>
-	
+
     <string    name="installation_failed_10"	translatable="true">СБОЙ УСТАНОВКИ</string>
     <string    name="installation_failed_desc_10"	translatable="true">Причина: Вы пытались установить версию мода ниже установленной в данный момент.\n\n Pешения:\nA. Выберите версию, равную или большую.\nB. Удалите текущую версию, затем понизьте рейтинг.\n\nЕсли проблема не устранена, ознакомьтесь с часто задаваемыми вопросами.</string>
     <string    name="installation_failed_ream_desc_10"	translatable="true">Причина: Текущий Spotify, установленный на этом устройстве, не был получен непосредственно от xManager или от нашей команды.\n\nPешение: Удалите текущую версию приложения, перезапустите xManager и повторите попытку. Если проблема не устранена, ознакомьтесь с часто задаваемыми вопросами.</string>
@@ -1033,7 +1033,7 @@
     <string    name="uninstall_patched_10"	translatable="true">УДАЛЕНИЕ ИСПPАВЛЕННЫХ</string>
     <string    name="open_settings_10"	translatable="true">ОТКPОЙТЕ НАСТPОЙКИ</string>
     <string    name="open_patched_10"	translatable="true">ОТКPЫТЫЙ ЗАЛАТАННЫЙ</string>
-	
+
 	<!--SPANISH LANGUAGE-->
     <string    name="app_name_11"	translatable="true">xManager</string>
     <string    name="spotify_regular_11"	translatable="true">SPOTIFY (NORMAL)</string>
@@ -1063,7 +1063,7 @@
     <string    name="clear_directory_folders_11"	translatable="true">VACIAR LA CARPETA DE DESCARGAS</string>
     <string    name="clear_directory_folders_desc_11"	translatable="true">Pulse para eliminar la carpeta de descargas, incluyendo los archivos y actualizaciones descargadas.</string>
     <string    name="reset_settings_11"	translatable="true">RESTABLECER AJUSTES</string>
-	
+
     <string    name="about_sub_11"	translatable="true">Sin anuncios | Nuevas funciones | Libertad</string>
     <string    name="xmanager_dev_11"	translatable="true">Desarrollador de xManager</string>
     <string    name="spotify_mod_devs_11"	translatable="true">Desarrolladores del mod de Spotify</string>
@@ -1074,14 +1074,14 @@
     <string    name="forum_team_11"	translatable="true">Equipo de FORUM.APK-RELEASE.NET</string>
     <string    name="xspotify_team_11"	translatable="true">Gestor de xSpotify (antiguo gestor)</string>
     <string    name="contributors_11"	translatable="true">¡GRACIAS A TODOS LOS COLABORADORES! ❤️</string>
-	
+
     <string    name="download_selected_11"	translatable="true">Ha seleccionado esta versión modificada. ¿Desea continuar?</string>
     <string    name="download_ready_11"	translatable="true">INFORMACIÓN DEL PARCHE</string>
     <string    name="download_ready_desc_11"	translatable="true">La descarga de este APK modificado sobrescribirá el archivo anterior ubicado en la carpeta externa de archivos descargados.</string>
     <string    name="downloading_file_11"	translatable="true">DESCARGANDO ARCHIVO...</string>
     <string    name="download_success_11"	translatable="true">DESCARGADO CON ÉXITO</string>
     <string    name="new_update_11"	translatable="true">NUEVA ACTUALIZACIÓN DEL GESTOR</string>
-	
+
     <string    name="continue_1_11"	translatable="true">CONTINUAR</string>
     <string    name="cancel_11"	translatable="true">CANCELAR</string>
     <string    name="download_11"	translatable="true">DESCARGAR</string>
@@ -1093,10 +1093,10 @@
     <string    name="not_now_11"	translatable="true">AHORA NO</string>
     <string    name="copy_url_11"	translatable="true">COPIAR URL</string>
     <string    name="fixer_11"	translatable="true">FORZAR DESCARGA</string>
-	
+
     <string    name="show_support_11"	translatable="true">DEMUESTRE SU APOYO</string>
     <string    name="show_support_desc_11"	translatable="true">Somos un equipo no corporativo y sin fines de lucro. Las personas como usted nos animan a crear una aplicación para facilitar las cosas, especialmente desde la descarga hasta la instalación del mod.\n\nEstamos invirtiendo todo nuestro tiempo y esfuerzos para hacer las cosas bien. Haremos todo lo posible para continuar desarrollando esta aplicación tanto como podamos.\n\nEstaremos muy agradecidos con tu donación, cualquier monto nos ayudará!</string>
-	
+
     <string    name="maintenance_11"	translatable="true">MANTENIMIENTO</string>
     <string    name="maintenance_desc_11"	translatable="true">xManager no está disponible en este momento. Por favor, revise la aplicación más tarde.</string>
     <string    name="thanks_11"	translatable="true">¡GRACIAS!</string>
@@ -1104,12 +1104,12 @@
     <string    name="website_11"	translatable="true">SITIO WEB</string>
     <string    name="reddit_11"	translatable="true">REDDIT</string>
     <string    name="faq_11"	translatable="true">PREGUNTAS FRECUENTES</string>
-	
+
     <string    name="cloned_version_11"	translatable="true">VERSIÓN CLONADA (BETA)</string>
     <string    name="cloned_version_desc_11"	translatable="true">Al activar esta opción, puede descargar e instalar la versión clonada de la aplicación modificada.\n\nEsto también resolverá la mayoría de los errores o problemas de instalación, especialmente si tiene una aplicación de Spotify preinstalada.</string>
     <string    name="disable_rewarded_ads_11"	translatable="true">DESHABILITAR ANUNCIOS CON RECOMPENSAS</string>
     <string    name="disable_rewarded_ads_desc_11"	translatable="true">Sabemos que a la mayoría de nosotros no nos gustan los anuncios, pero en nuestro caso, esto nos ayuda enormemente a financiar nuestra base de datos, enlaces de alojamiento, actualizaciones, parches y necesidades diarias.\n\nEsta es la forma más sencilla de apoyarnos sin donar ni gastar nada.</string>
-	
+
     <string    name="installation_failed_11"	translatable="true">INSTALACIÓN FALLIDA</string>
     <string    name="installation_failed_desc_11"	translatable="true">Motivo: Intentó instalar una versión del mod inferior a la que ya está instalada.\n\nSoluciones:\nA. Seleccione una versión igual o superior.\nB. Desinstale la versión actual y, a continuación, instale la versión inferior.\n\nSi el problema persiste, consulte las preguntas frecuentes.</string>
     <string    name="installation_failed_ream_desc_11"	translatable="true">Motivo: El Spotify instalado en este dispositivo no provenía directamente de xManager ni de nuestro equipo.\n\nSolución: Desinstale la versión actual de la aplicación, reinicie xManager e inténtelo de nuevo. Si el problema persiste, consulte las preguntas frecuentes.</string>
@@ -1127,7 +1127,7 @@
     <string    name="uninstall_patched_11"	translatable="true">¿DESINSTALAR MOD?</string>
     <string    name="open_settings_11"	translatable="true">AJUSTES DE SPOTIFY</string>
     <string    name="open_patched_11"	translatable="true">AJUSTES DEL MOD</string>
-	
+
 	<!--UKRAINIAN LANGUAGE-->
     <string    name="app_name_12"	translatable="true">xManager</string>
     <string    name="spotify_regular_12"	translatable="true">SPOTIFY (ЗВИЧАЙНИЙ)</string>
@@ -1146,7 +1146,7 @@
     <string    name="main_title_12"	translatable="true">xManager</string>
     <string    name="settings_title_12"	translatable="true">Налаштування</string>
     <string    name="about_title_12"	translatable="true">Про нас</string>
-	
+
     <string    name="list_auto_refresh_12"	translatable="true">АВТО-ОНОВЛЕННЯ СПИСКУ</string>
     <string    name="list_auto_refresh_desc_12"	translatable="true">Активація цього параметра автоматично оновлюватиме список кожного разу, коли ви запускаєте програму.\n\n Список можна оновити вручну, перетягнувши головний екран вниз.</string>
     <string    name="force_auto_install_12"	translatable="true">АВТОМАТИЧНЕ ВСТАНОВЛЕННЯ</string>
@@ -1157,7 +1157,7 @@
     <string    name="clear_directory_folders_12"	translatable="true">ОЧИСТИТИ ПАПКИ КАТАЛОГУ</string>
     <string    name="clear_directory_folders_desc_12"	translatable="true">Натисніть, щоб видалити всі папки каталогу, включаючи завантажені файли .apk та оновлення.</string>
     <string    name="reset_settings_12"	translatable="true">СКИНУТИ НАЛАШТУВАННЯ</string>
-	
+
     <string    name="about_sub_12"	translatable="true">Без реклами | Нові функції | Свобода</string>
     <string    name="xmanager_dev_12"	translatable="true">Pозробник xManager</string>
     <string    name="spotify_mod_devs_12"	translatable="true">Pозробники Spotify Mod</string>
@@ -1168,14 +1168,14 @@
     <string    name="forum_team_12"	translatable="true">Команда FORUM.APK-RELEASE.NET</string>
     <string    name="xspotify_team_12"	translatable="true">xSpotify Manager (Старий менеджер)</string>
     <string    name="contributors_12"	translatable="true">ДЯКУЄМО ВСІМ УЧАСНИКАМ! ❤️</string>
-	
+
     <string    name="download_selected_12"	translatable="true">Ви обрали цю версію модифікації. Продовжити?</string>
     <string    name="download_ready_12"	translatable="true">ІНФОPМАЦІЯ ПPО ВИПPАВЛЕННЯ</string>
     <string    name="download_ready_desc_12"	translatable="true">Завантаження цього apk модифікації замінить попередній файл, розташований у зовнішньому каталозі файлів програми.</string>
     <string    name="downloading_file_12"	translatable="true">ЗАВАНТАЖЕННЯ ФАЙЛУ...</string>
     <string    name="download_success_12"	translatable="true">УСПІШНО ЗАВАНТАЖЕНО</string>
     <string    name="new_update_12"	translatable="true">НОВЕ ОНОВЛЕННЯ МЕНЕДЖЕPА</string>
-	
+
     <string    name="continue_1_12"	translatable="true">ПPОДОВЖИТИ</string>
     <string    name="cancel_12"	translatable="true">СКАСУВАТИ</string>
     <string    name="download_12"	translatable="true">ЗАВАНТАЖИТИ</string>
@@ -1187,10 +1187,10 @@
     <string    name="not_now_12"	translatable="true">НЕ ЗАPАЗ</string>
     <string    name="copy_url_12"	translatable="true">КОПІЮВАТИ ПОСИЛАННЯ</string>
     <string    name="fixer_12"	translatable="true">ФІКСАТОР</string>
-	
+
     <string    name="show_support_12"	translatable="true">ПОКАЖІТЬ ВАШУ ПІДТPИМКУ</string>
     <string    name="show_support_desc_12"	translatable="true">Ми є некомерційною, некорпоративною та безкомпромісною командою. Такі, як ви, заохочують нас створити додаток, щоб значно полегшити роботу, особливо від завантаження до встановлення.\n\nМи витрачаємо весь свій час і всі зусилля лише на те, щоб зробити все правильно і досконало. Ми зробимо все можливе, щоб підтримувати цю програму, доки це можливо.\n\nБудь-яка сума допоможе і буде дуже вдячна!</string>
-	
+
     <string    name="maintenance_12"	translatable="true">ТЕХОБСЛУГОВУВАННЯ</string>
     <string    name="maintenance_desc_12"	translatable="true">xManager наразі недоступний. Будь ласка, перевірте додаток пізніше.</string>
     <string    name="thanks_12"	translatable="true">ДЯКУЄМО!</string>
@@ -1198,12 +1198,12 @@
     <string    name="website_12"	translatable="true">САЙТ</string>
     <string    name="reddit_12"	translatable="true">PЕДДИТ</string>
     <string    name="faq_12"	translatable="true">ПИТАННЯ</string>
-	
+
     <string    name="cloned_version_12"	translatable="true">КЛОНОВАНА ВЕPСІЯ (БЕТА-ВЕPСІЯ)</string>
     <string    name="cloned_version_desc_12"	translatable="true">Активація цього дозволить вам завантажити та встановити клоновану версію виправленого додатка.\n\nце також усуне більшість помилок або проблем при установці, особливо якщо у вас попередньо встановлено додаток spotify.</string>
     <string    name="disable_rewarded_ads_12"	translatable="true">ВІДКЛЮЧИТИ PЕКЛАМУ З ВИНАГОPОДОЮ</string>
     <string    name="disable_rewarded_ads_desc_12"	translatable="true">Ми знаємо, що більшості з нас не подобається реклама, але в нашому випадку це значно допомагає нам поповнювати нашу базу даних, розміщувати посилання, оновлення, додаткові виправлення і щоденні потреби.\n\nце найпростіший спосіб підтримати нас, нічого не жертвуючи і не витрачаючи.</string>
-	
+
     <string    name="installation_failed_12"	translatable="true">ЗБІЙ УСТАНОВКИ</string>
     <string    name="installation_failed_desc_12"	translatable="true">Причина: ви намагалися встановити версію мода нижче встановленої в даний момент.\n\nрішення:\nA. Виберіть версію, рівну або більшу, ніж.\nB. Видаліть поточну версію, потім понизьте рейтинг.\n\nЯкщо проблема не вирішена, перегляньте поширені запитання.</string>
     <string    name="installation_failed_ream_desc_12"	translatable="true">Причина: поточний Spotify, встановлений на цьому пристрої, не був отриманий безпосередньо від xManager або від нашої команди.\n\nрішення: видаліть поточну версію програми, перезапустіть xManager і повторіть спробу. Якщо проблема не вирішена, перегляньте поширені запитання.</string>
@@ -1221,7 +1221,7 @@
     <string    name="uninstall_patched_12"	translatable="true">ВИДАЛЕННЯ ВИПPАВЛЕНИХ</string>
     <string    name="open_settings_12"	translatable="true">ВІДКPИЙТЕ НАЛАШТУВАННЯ</string>
     <string    name="open_patched_12"	translatable="true">ВІДКPИТИЙ ЗАЛАТАНИЙ</string>
-	
+
     <!--TURKISH LANGUAGE-->
     <string    name="app_name_13"	translatable="true">xManager</string>
     <string    name="spotify_regular_13"	translatable="true">SPOTIFY (DÜZENLİ)</string>
@@ -1240,7 +1240,7 @@
     <string    name="main_title_13"	translatable="true">xManager</string>
     <string    name="settings_title_13"	translatable="true">Ayarlar</string>
     <string    name="about_title_13"	translatable="true">Hakkında</string>
-	
+
     <string    name="list_auto_refresh_13"	translatable="true">LİSTE OTOMATİK YENİLEME</string>
     <string    name="list_auto_refresh_desc_13"	translatable="true">Bu ayarı etkinleştirmek, uygulamayı her başlattığınızda listeyi otomatik olarak yenileyecektir.\n\nAna ekranı aşağı doğru sürükleyerek listeyi manuel olarak yenileyebilirsiniz.</string>
     <string    name="force_auto_install_13"	translatable="true">OTOMATİK YÜKLEMEYİ ZORLA</string>
@@ -1251,7 +1251,7 @@
     <string    name="clear_directory_folders_13"	translatable="true">TEMİZLE DİZİN KLASÖRLERİ</string>
     <string    name="clear_directory_folders_desc_13"	translatable="true">İndirilen dosyalar ve güncellemeler dahil tüm dizin klasörlerini silmek için dokunun.</string>
     <string    name="reset_settings_13"	translatable="true">AYARLARI SIFIRLA</string>
-	
+
     <string    name="about_sub_13"	translatable="true">Reklamsız | Yeni Özellikler | Özgürlük | Ücretsiz</string>
     <string    name="xmanager_dev_13"	translatable="true">xManager Geliştiricisi</string>
     <string    name="spotify_mod_devs_13"	translatable="true">Spotify Mod Geliştiricileri</string>
@@ -1262,14 +1262,14 @@
     <string    name="forum_team_13"	translatable="true">FORUM.APK-RELEASE.NET Ekibi</string>
     <string    name="xspotify_team_13"	translatable="true">xSpotify Yöneticisi (Eski Yönetici)</string>
     <string    name="contributors_13"	translatable="true">TÜM KATILIMCILARA TEŞEKKÜRLER! ❤️</string>
-	
+
     <string    name="download_selected_13"	translatable="true">Bu yamalı sürümü seçtiniz. Devam etmek istiyor musun?</string>
     <string    name="download_ready_13"	translatable="true">YAMA BİLGİLERİ</string>
     <string    name="download_ready_desc_13"	translatable="true">Bu yamalı apk\'yı indirmek, uygulamanın harici dosya dizininde bulunan önceki dosyanın üzerine yazacaktır.</string>
     <string    name="downloading_file_13"	translatable="true">DOSYA İNDİRİLİYOR...</string>
     <string    name="download_success_13"	translatable="true">BAŞARIYLA İNDİRİLDİ</string>
     <string    name="new_update_13"	translatable="true">YENİ YÖNETİCİ GÜNCELLEMESİ</string>
-	
+
     <string    name="continue_1_13"	translatable="true">DEVAM ET</string>
     <string    name="cancel_13"	translatable="true">İPTAL ET</string>
     <string    name="download_13"	translatable="true">İNDİRME</string>
@@ -1281,10 +1281,10 @@
     <string    name="not_now_13"	translatable="true">ŞİMDİ DEĞİL</string>
     <string    name="copy_url_13"	translatable="true">URL\'Yİ KOPYALA</string>
     <string    name="fixer_13"	translatable="true">İŞ BİTİRİCİ</string>
-	
+
     <string    name="show_support_13"	translatable="true">DESTEĞİNİZİ GÖSTERİN</string>
     <string    name="show_support_desc_13"	translatable="true">Kar amacı gütmeyen, kurumsal olmayan ve ödün vermeyen bir ekibiz. Sizin gibi insanlar, özellikle indirmeden yüklemeye kadar işleri çok daha kolay hale getirmek için bir uygulama oluşturmaya bizi teşvik ediyor.\n\nKar amacı gütmeyen, kurumsal olmayan ve ödün vermeyen bir ekibiz. Sizin gibi insanlar, özellikle indirmeden yüklemeye kadar işleri çok daha kolay hale getirmek için bir uygulama oluşturmaya bizi teşvik ediyor.\n\nHepsini akıtıyoruz Herhangi bir miktar yardımcı olacak ve çok takdir edilecektir!</string>
-	
+
     <string    name="maintenance_13"	translatable="true">BAKIM</string>
     <string    name="maintenance_desc_13"	translatable="true">xManager şu anda kullanılamıyor. Lütfen uygulamayı daha sonra kontrol edin.</string>
     <string    name="thanks_13"	translatable="true">TEŞEKKÜRLER!</string>
@@ -1292,12 +1292,12 @@
     <string    name="website_13"	translatable="true">İNTERNET SİTESİ</string>
     <string    name="reddit_13"	translatable="true">REDDIT</string>
     <string    name="faq_13"	translatable="true">SIK SORULAN SORU</string>
-	
+
     <string    name="cloned_version_13"	translatable="true">KLONLANMIŞ SÜRÜM (BETA)</string>
     <string    name="cloned_version_desc_13"	translatable="true">Bunu etkinleştirmek, yamalı uygulamanın klonlanmış sürümünü indirmenize ve yüklemenize izin verir.\n\nBu, özellikle önceden yüklenmiş bir spotify uygulamanız varsa, yükleme hatalarının veya sorunlarının çoğunu da çözecektir.</string>
     <string    name="disable_rewarded_ads_13"	translatable="true">ÖDÜLLENDİRİLEN REKLAMLARI DEVRE DIŞI BIRAK</string>
     <string    name="disable_rewarded_ads_desc_13"	translatable="true">Çoğumuzun reklamları sevmediğini biliyoruz, ancak bizim durumumuzda bu, veritabanımızı finanse etmemize, bağlantılar, güncellemeler, daha fazla düzeltme eki ve günlük ihtiyaçlar barındırmamıza önemli ölçüde yardımcı oluyor.\n\nBu, hiçbir şey bağışlamadan veya harcamadan bizi desteklemenin en kolay yoludur.</string>
-	
+
     <string    name="installation_failed_13"	translatable="true">YÜKLEME BAŞARISIZ OLDU</string>
     <string    name="installation_failed_desc_13"	translatable="true">Nedeni: Şu anda yüklü olandan daha düşük bir mod sürümü yüklemeye çalıştınız.\n\nÇözümler\nA. Eşit veya daha büyük bir sürüm seçin.\nB. Geçerli sürümü kaldırın, sonra düşürün.\n\n Sorun devam ederse, SSS bölümüne bakın.</string>
     <string    name="installation_failed_ream_desc_13"	translatable="true">Sebep: Bu cihazda yüklü olan mevcut Spotify doğrudan Xmanager\'dan veya ekibimizden gelmedi.\n\nÇözüm: Uygulamanın geçerli sürümünü kaldırın, Xmanager\'ı yeniden başlatın ve yeniden deneyin. Sorun devam ederse, SSS bölümüne bakın.</string>
@@ -1315,7 +1315,7 @@
     <string    name="uninstall_patched_13"	translatable="true">YAMALI KALDIR</string>
     <string    name="open_settings_13"	translatable="true">AYARLARI AÇ</string>
     <string    name="open_patched_13"	translatable="true">AÇIK YAMALI</string>
-	
+
 	<!--ARABIC LANGUAGE-->
     <string    name="app_name_14"	translatable="true">xManager</string>
     <string    name="spotify_regular_14"	translatable="true">SPOTIFY (العادي)</string>
@@ -1334,7 +1334,7 @@
     <string    name="main_title_14"	translatable="true">xManager</string>
     <string    name="settings_title_14"	translatable="true">الاعدادات</string>
     <string    name="about_title_14"	translatable="true">حول</string>
-	
+
     <string    name="list_auto_refresh_14"	translatable="true">التحديث التلقائي للقائمة</string>
     <string    name="list_auto_refresh_desc_14"	translatable="true">سيؤدي تفعيل هذا الخيار إلى تحديث القائمة تلقائياً كل مرة تشغل فيها التطبيق \n\nتستطيع يدوياً تحديث القائمة عن طريق السحب للأسفل في الشاشة الرئيسية</string>
     <string    name="force_auto_install_14"	translatable="true">فرض التثبيت التلقائي</string>
@@ -1345,7 +1345,7 @@
     <string    name="clear_directory_folders_14"	translatable="true">مسح مجلدات التطبيق</string>
     <string    name="clear_directory_folders_desc_14"	translatable="true">اضغط هنا لحذف جميع المجلدات بما في ذلك التطبيقات والتحديثات التي تم تنزيلها.</string>
     <string    name="reset_settings_14"	translatable="true">اعادة ضبط الاعدادات</string>
-	
+
     <string    name="about_sub_14"	translatable="true">بلا اعلانات | مميزات جديدة | بكل حرية</string>
     <string    name="xmanager_dev_14"	translatable="true">مطور xManager</string>
     <string    name="spotify_mod_devs_14"	translatable="true">مطوري تطبيق Spotify المعدل</string>
@@ -1356,14 +1356,14 @@
     <string    name="forum_team_14"	translatable="true">فريق FORUM.APK-RELEASE.NET</string>
     <string    name="xspotify_team_14"	translatable="true">xSpotify Manager (النسخة القديمة)</string>
     <string    name="contributors_14"	translatable="true">شكراً لجميع المساهمين! ❤️</string>
-	
+
     <string    name="download_selected_14"	translatable="true">لقد حددت هذه النسخة المعدلة. هل تريد الاستمرار؟</string>
     <string    name="download_ready_14"	translatable="true">معلومات التصحيح</string>
     <string    name="download_ready_desc_14"	translatable="true">سيؤدي تنزيل ملف apk المعدل هذا إلى استبدال الملف السابق الموجود في مسار الملف الخارجي للتطبيق.</string>
     <string    name="downloading_file_14"	translatable="true">جاري تحميل الملف..</string>
     <string    name="download_success_14"	translatable="true">تم التحميل بنجاح</string>
     <string    name="new_update_14"	translatable="true">يوجد تحديث جديد</string>
-	
+
     <string    name="continue_1_14"	translatable="true">استمرار</string>
     <string    name="cancel_14"	translatable="true">إلغاء</string>
     <string    name="download_14"	translatable="true">تحميل</string>
@@ -1375,10 +1375,10 @@
     <string    name="not_now_14"	translatable="true">ليس الآن</string>
     <string    name="copy_url_14"	translatable="true">نسخ الرابط</string>
     <string    name="fixer_14"	translatable="true">المثبت</string>
-	
+
     <string    name="show_support_14"	translatable="true">أظهر دعمك</string>
     <string    name="show_support_desc_14"	translatable="true">نحن فريق غير هادف للربح وغير مؤسسي وغير معرض للخطر. يشجعنا أشخاص مثلك على إنشاء تطبيق لجعل الأمور أسهل كثيرًا خاصة من التنزيل إلى التثبيت.\n\nنحن نبذل قصارى جهدنا ونبذل قصارى جهدنا فقط لجعل الأمور في نصابها الصحيح ومحاولة الوصول للكمال. سنبذل قصارى جهدنا لدعم هذا التطبيق قدر استطاعتنا.\n\nأي مبلغ سيساعد وسيكون موضع تقدير كبير!</string>
-	
+
     <string    name="maintenance_14"	translatable="true">يوجد صيانة</string>
     <string    name="maintenance_desc_14"	translatable="true">تطبيق xManager غير متوفر حاليًا. يرجى التحقق من التطبيق في وقت لاحق.</string>
     <string    name="thanks_14"	translatable="true">شكراً</string>
@@ -1386,12 +1386,12 @@
     <string    name="website_14"	translatable="true">الموقع الالكتروني</string>
     <string    name="reddit_14"	translatable="true">ريديت</string>
     <string    name="faq_14"	translatable="true">الأسئلة الشائعة</string>
-	
+
     <string    name="cloned_version_14"	translatable="true">نسخة مستنسخة (بيتا)</string>
     <string    name="cloned_version_desc_14"	translatable="true">تفعيل هذا يسمح لك بتحميل وتثبيت النسخة المستنسخة من التطبيق مصححة.وهذا أيضا حل معظم أخطاء التثبيت أو مشاكل خاصة إذا كان لديك تطبيق سبوتيفي مثبتة مسبقا.</string>
     <string    name="disable_rewarded_ads_14"	translatable="true">تعطيل الإعلانات بمكافأة</string>
     <string    name="disable_rewarded_ads_desc_14"	translatable="true">نحن نعلم أن معظمنا لا يحب الإعلانات ولكن في حالتنا ، يساعدنا هذا بشكل كبير في تمويل قاعدة البيانات الخاصة بنا وروابط الاستضافة والتحديثات والمزيد من التصحيحات والاحتياجات اليومية.هذا هو أبسط طريقة لدعمنا دون التبرع أو إنفاق أي شيء.</string>
-	
+
     <string    name="installation_failed_14"	translatable="true">فشل التثبيت</string>
     <string    name="installation_failed_desc_14"	translatable="true">السبب: حاولت تثبيت إصدار وزارة الدفاع أقل مما هو مثبت حاليا.الحلول: أ. حدد إصدارا مساويا أو أكبر من.ب. إلغاء تثبيت الإصدار الحالي ، ثم تقليله.إذا استمرت المشكلة ، تحقق من الأسئلة الشائعة.</string>
     <string    name="installation_failed_ream_desc_14"	translatable="true">السبب: سبوتيفي الحالية المثبتة على هذا الجهاز لم يأت مباشرة من زماناجر أو من فريقنا.الحل: إلغاء تثبيت الإصدار الحالي من التطبيق ، إعادة تشغيل زماناجر وحاول مرة أخرى. إذا استمرت المشكلة ، تحقق من الأسئلة الشائعة.</string>
@@ -1409,7 +1409,7 @@
     <string    name="uninstall_patched_14"	translatable="true">إلغاء تثبيت مصححة</string>
     <string    name="open_settings_14"	translatable="true">افتح الإعدادات</string>
     <string    name="open_patched_14"	translatable="true">فتح مصححة</string>
-	
+
 	<!--SLOVENIAN LANGUAGE-->
     <string    name="app_name_15"	translatable="true">xManager</string>
     <string    name="spotify_regular_15"	translatable="true">SPOTIFY (REGULAR)</string>
@@ -1428,7 +1428,7 @@
     <string    name="main_title_15"	translatable="true">xManager</string>
     <string    name="settings_title_15"	translatable="true">Nastavitve</string>
     <string    name="about_title_15"	translatable="true">O nas</string>
-	
+
     <string    name="list_auto_refresh_15"	translatable="true">SAMODEJNA OSVEŽITEV SEZNAMA</string>
     <string    name="list_auto_refresh_desc_15"	translatable="true">Aktiviranje tega bo samodejno osvežilo seznam vsaki\u010d, ko zaženete aplikacijo.\n\nSeznam lahko ro\u010dno posodobite tako, da povle\u010dete glavni zaslon navzdol.</string>
     <string    name="force_auto_install_15"	translatable="true">PRISILNA SAMODEJNA NAMESTITEV</string>
@@ -1439,7 +1439,7 @@
     <string    name="clear_directory_folders_15"	translatable="true">IZBRIŠITE MESTA DATOTEK</string>
     <string    name="clear_directory_folders_desc_15"	translatable="true">Tapnite, da izbrišete vsa mesta datotek, vklju\u010dno s prenesenimi apk in posodobitvami.</string>
     <string    name="reset_settings_15"	translatable="true">PONASTAVITE NASTAVITVE</string>
-	
+
     <string    name="about_sub_15"	translatable="true">Brez Oglasov | Nove Funkcije | Svoboda</string>
     <string    name="xmanager_dev_15"	translatable="true">xManager Razvijalec</string>
     <string    name="spotify_mod_devs_15"	translatable="true">Spotify Mod Razvijalci</string>
@@ -1450,14 +1450,14 @@
     <string    name="forum_team_15"	translatable="true">FORUM.APK-RELEASE.NET Team</string>
     <string    name="xspotify_team_15"	translatable="true">xSpotify Manager (Stari Manager)</string>
     <string    name="contributors_15"	translatable="true">HVALA VSEM SODELUJO\u010cIM! ❤️</string>
-	
+
     <string    name="download_selected_15"	translatable="true">Izbrali ste to spremenjeno verzijo. Ali želite nadaljevati?</string>
     <string    name="download_ready_15" translatable="true">INFORMACIJE O DATOTEKI</string>
     <string    name="download_ready_desc_15"	translatable="true">Prenos te spremenjene apk bo zamenjal prejšnjo datoteko, ki se nahaja v zunanjem mestu datotek aplikacije.</string>
     <string    name="downloading_file_15"	translatable="true">PRENAŠANJE DATOTEKE...</string>
     <string    name="download_success_15"	translatable="true">USPEŠNO PRENESENO</string>
     <string    name="new_update_15"	translatable="true">NOVA POSODOBITEV MANAGER-JA</string>
-	
+
     <string    name="continue_1_15"	translatable="true">NADALJUJ</string>
     <string    name="cancel_15"	translatable="true">PREKLI\u010cI</string>
     <string    name="download_15"	translatable="true">PRENESI</string>
@@ -1469,10 +1469,10 @@
     <string    name="not_now_15"	translatable="true">NE ZDAJ</string>
     <string    name="copy_url_15"	translatable="true">KOPIRAJ URL</string>
     <string    name="fixer_15"	translatable="true">FIKSIR</string>
-	
+
     <string    name="show_support_15"	translatable="true">POKAŽITE SVOJO PODPORO</string>
     <string    name="show_support_desc_15" translatable="true">Smo neprofitna in nevladna organizacija. Ljudje, kot ste vi, nas spodbujate, da ustvarjamo aplikacijo, ki bo olajšala stvari, zlasti od prenosa do namestitve. \n\nVes svoj čas in največ truda vlagamo v to, da bi bile stvari pravilne in popolne. Potrudili se bomo, da bomo to aplikacijo posodabljali, dokler bomo lahko.\n\nVsak znesek pomaga in bo zelo cenjen!</string>
-	
+
     <string    name="maintenance_15"	translatable="true">VZDRŽEVANJE</string>
     <string    name="maintenance_desc_15"	translatable="true">xManager trenutno ni na voljo. Prosimo, preverite stanje aplikacije kasneje.</string>
     <string    name="thanks_15"	translatable="true">HVALA!</string>
@@ -1480,12 +1480,12 @@
     <string    name="website_15"	translatable="true">SPLETNA STRAN</string>
     <string    name="reddit_15"	translatable="true">REDDIT</string>
     <string    name="faq_15" translatable="true">POGOSTA VPRAŠANJA</string>
-	
+
     <string    name="cloned_version_15"	translatable="true">KLONIRANA RAZLI\u010cICA (BETA)</string>
     <string    name="cloned_version_desc_15"	translatable="true">Aktiviranje tega vam bo omogočilo prenos in namestitev klonirane različice spremenjene aplikacije.\n\nTo bo odpravilo tudi večino namestitvenih napak ali težav, še posebej, če imate že vnaprej nameščeno aplikacijo Spotify.</string>
     <string    name="disable_rewarded_ads_15"	translatable="true">ONEMOGO\u010cI NAGRAJENE OGLASE</string>
     <string    name="disable_rewarded_ads_desc_15"	translatable="true">Zavedamo se, da vas večina ne mara oglasov, vendar nam to bistveno pomaga pri financiranju naše baze podatkov, gostovanju povezav, posodobitvah in dnevnih potrebah.\n\nJe najbolj preprost način, da nas podprete zastonj in brez donacij.</string>
-	
+
     <string    name="installation_failed_15"	translatable="true">NAMESTITEV NI USPELA</string>
     <string    name="installation_failed_desc_15"	translatable="true">Razlog: Poskušali ste namestiti različico, ki je nižja od trenutno nameščene.\n\nRešitve:\nA. Izberite različico, ki je enaka ali večja od trenutne.\nB. Odstranite trenutno nameščeno različico in namestite nižjo različico.\n\nČe se težava nadaljuje, preverite Pogosta vprašanja.</string>
     <string    name="installation_failed_ream_desc_15" translatable="true">Razlog: Različica Spotify, ki je trenutno nameščena na tej napravi ni prišla neposredno iz strani naše xManager ekipe.\n\nRešitev: Odstranite trenutno različico aplikacije, znova zaženite xManager in poskusite znova. Če se težava nadaljuje, preverite rubriko "Pogosta vprašanja"".</string>
@@ -1503,7 +1503,7 @@
     <string    name="uninstall_patched_15" translatable="true">ODSTRANITE APLIKACIJO</string>
     <string    name="open_settings_15"	translatable="true">ODPRITE NASTAVITVE</string>
     <string    name="open_patched_15" translatable="true">ODPRITE APLIKACIJO</string>
-	
+
     <!--ROMANIAN LANGUAGE-->
     <string    name="app_name_16"	translatable="true">xManager</string>
     <string    name="spotify_regular_16"	translatable="true">SPOTIFY (OBIȘNUITĂ)</string>
@@ -1586,7 +1586,7 @@
     <string    name="installation_failed_cloned_desc_16"	translatable="true">Reason: Versiunea curentă a clonei de pe dispozitiv nu a fost creată de echipa noastră.\n\nSoluție: Dezinstalează versiunea curentă a aplicației, restartează xManager și încearcă din nou. Dacă problema persistă, verifică secția Întrebări Frecvente.</string>
     <string    name="existing_patched_16"	translatable="true">APK EXISTENT</string>
     <string    name="existing_patched_desc_16"	translatable="true">Un apk existent a fost găsit la locație. Ce acțiune ai dori să întreprinzi?</string>
-	
+
     <string    name="close_16"	translatable="true">ÎNCHIDE</string>
     <string    name="cloned_16"	translatable="true">CLONĂ</string>
     <string    name="ream_16"	translatable="true">OB/AM</string>
@@ -1597,7 +1597,7 @@
     <string    name="uninstall_patched_16"	translatable="true">DEZINSTALEAZĂ VERSIUNEA MODIFICATĂ</string>
     <string    name="open_settings_16"	translatable="true">DESCHIDE SETĂRI</string>
     <string    name="open_patched_16"	translatable="true">DESCHIDE VERSIUNEA MODIFICATĂ</string>
-		
+
     <!--KOREAN LANGUAGE-->
     <string    name="app_name_17"    translatable="true">xManager</string>
     <string    name="spotify_regular_17"    translatable="true">SPOTIFY (일반)</string>
@@ -1668,12 +1668,12 @@
     <string    name="website_17"    translatable="true">웹사이트</string>
     <string    name="reddit_17"    translatable="true">레딧</string>
     <string    name="faq_17"    translatable="true">자주 질문</string>
-	
+
     <string    name="cloned_version_17"    translatable="true">복제된 버전(베타)</string>
     <string    name="cloned_version_desc_17"    translatable="true">이 기능을 활성화하면 패치된 앱의 \'복제된 버전\'을 다운로드하여 설치할 수 있습니다. 앱의 설치 과정 중에 발생하는 대부분의 오류를 해결합니다. 특히 기본 Spotify 앱이 설치되어 있는 경우 도움이 될 수 있습니다.</string>
     <string    name="disable_rewarded_ads_17"    translatable="true">광고 사용 중지</string>
     <string    name="disable_rewarded_ads_desc_17"    translatable="true">우리는 여러분이 광고를 좋아하지 않는다는 것을 알고 있지만, 저희에게 광고는 데이터베이스 운영, 호스팅, 업데이트, 더 많은 패치 및 일일 요구 사항에 자금을 지원하는 데 크게 도움이 됩니다. 이는 아무것도 지출하지 않고 저희 팀을 지원하는 가장 간단한 방법입니다.</string>
-	
+
     <string    name="installation_failed_17"    translatable="true">설치 실패</string>
     <string    name="installation_failed_desc_17"    translatable="true">이유: 현재 설치된 것보다 낮은 버전의 앱을 설치하려고 했습니다. 현재버전보다 높은 버전을 선택하시거나, 현재 버전을 제거한 다음 다운그레이드하십시오. 문제가 지속되면 자주 묻는 질문을 확인하세요.</string>
     <string    name="installation_failed_ream_desc_17"    translatable="true">이유: 이 장치에 설치된 Spotify는 xManager에서 만든 앱이 아닙니다. 현재 버전의 앱을 제거한 뒤 xManager를 다시 시작하고 다시 시도하십시오. 문제가 지속되면 자주 묻는 질문을 확인하세요.</string>
@@ -1691,7 +1691,7 @@
     <string    name="uninstall_patched_17"	translatable="true">패치 제거</string>
     <string    name="open_settings_17"	translatable="true">설정 열기</string>
     <string    name="open_patched_17"	translatable="true">패치 열기</string>
-	
+
 	<!--DUTCH LANGUAGE-->
     <string    name="app_name_18"	translatable="true">xManager</string>
     <string    name="spotify_regular_18"	translatable="true">SPOTIFY (NORMAAL)</string>
@@ -1762,12 +1762,12 @@
     <string    name="website_18"	translatable="true">WEBSITE</string>
     <string    name="reddit_18"	translatable="true">REDDIT</string>
     <string    name="faq_18"	translatable="true">VEELGESTELDE VRAGEN</string>
-	
+
     <string    name="cloned_version_18"	translatable="true">GEKLOONDE VERSIE (BETA)</string>
     <string    name="cloned_version_desc_18"	translatable="true">Door dit te activeren kunt u de gekloonde versie van de gepatchte applicatie downloaden en installeren.\n\nDit zal ook de meeste installatiefouten of problemen oplossen, vooral als je een vooraf geïnstalleerde spotify applicatie hebt.</string>
     <string    name="disable_rewarded_ads_18"	translatable="true">REWARD ADS UITSCHAKELEN</string>
     <string    name="disable_rewarded_ads_desc_18"	translatable="true">We weten dat de meesten van ons niet graag advertenties, maar in ons geval, dit aanzienlijk helpen ons om onze database te financieren, hosting links, updates, meer patches, en dagelijkse behoeften.\n\nDit is de eenvoudigste manier om ons te ondersteunen zonder iets te doneren of uit te geven.</string>
-	
+
     <string    name="installation_failed_18"	translatable="true">INSTALLATIE MISLUKT</string>
     <string    name="installation_failed_desc_18"	translatable="true">Reden: u hebt geprobeerd om een mod-versie lager dan wat momenteel is geïnstalleerd installeren.\n\noplossingen:\nA. Selecteer een versie gelijk aan of groter dan.\nB. Verwijder de huidige versie en downgrade.\n\nIf het probleem blijft bestaan, controleer de FAQ.</string>
     <string    name="installation_failed_ream_desc_18"	translatable="true">Reden: de huidige Spotify geïnstalleerd op dit apparaat kwam niet rechtstreeks van xManager of van ons team.\n\noplossing: verwijder de huidige versie van de applicatie, herstart xManager en probeer het opnieuw. Als het probleem blijft bestaan, controleer dan de FAQ.</string>
@@ -1785,7 +1785,7 @@
     <string    name="uninstall_patched_18"	translatable="true">GEPATCHED VERWIJDEREN</string>
     <string    name="open_settings_18"	translatable="true">INSTELLINGEN OPENEN</string>
     <string    name="open_patched_18"	translatable="true">OPEN GEPATCHED</string>
-	
+
 	<!--VIETNAMESE LANGUAGE-->
     <string    name="app_name_19"	translatable="true">xManager</string>
     <string    name="spotify_regular_19"	translatable="true">SPOTIFY (BẢN THƯỜNG)</string>
@@ -1856,12 +1856,12 @@
     <string    name="website_19"	translatable="true">TRANG WEB</string>
     <string    name="reddit_19"	translatable="true">REDDIT</string>
     <string    name="faq_19"	translatable="true">FAQ</string>
-	
+
     <string    name="cloned_version_19"	translatable="true">NHÂN BẢN (BETA)</string>
     <string    name="cloned_version_desc_19"	translatable="true">Kích hoạt tính năng này cho phép bạn tải xuống và cài đặt phiên bản nhân bản của ứng dụng đã vá.\n\nĐiều này cũng sẽ giải quyết hầu hết các lỗi hoặc sự cố cài đặt, đặc biệt nếu bạn đã cài đặt sẵn ứng dụng Spotify.</string>
     <string    name="disable_rewarded_ads_19"	translatable="true">TẮT QUẢNG CÁO CÓ THƯỞNG</string>
     <string    name="disable_rewarded_ads_desc_19"	translatable="true">Chúng tôi biết rằng hầu hết chúng tôi không thích quảng cáo nhưng trong trường hợp của chúng tôi, điều này giúp chúng tôi đáng kể tài trợ cho cơ sở dữ liệu, liên kết lưu trữ, cập nhật, các bản vá khác và nhu cầu hàng ngày.\n\nĐây là cách đơn giản nhất để hỗ trợ chúng tôi mà không cần đóng góp hoặc chi tiêu bất cứ thứ gì.</string>
-	
+
     <string    name="installation_failed_19"	translatable="true">CÀI ĐẶT THẤT BẠI</string>
     <string    name="installation_failed_desc_19"	translatable="true">Lý do: Bạn đã cố cài đặt phiên bản mod thấp hơn phiên bản hiện đang được cài đặt.\n\nGiải pháp:\nA. Hãy chọn phiên bản bằng hoặc lớn hơn.\nB. Gỡ cài đặt phiên bản hiện tại, sau đó hạ cấp.\n\nNếu sự cố tiếp diễn, hãy kiểm tra câu hỏi thường gặp (FAQ).</string>
     <string    name="installation_failed_ream_desc_19"	translatable="true">Lý do: Spotify hiện tại được cài đặt trên thiết bị này không đến trực tiếp từ xManager hoặc từ nhóm của chúng tôi.\n\nGiải pháp: Gỡ cài đặt phiên bản hiện tại của ứng dụng, khởi động lại xManager và thử lại. Nếu sự cố vẫn tiếp diễn, hãy kiểm tra câu hỏi thường gặp (FAQ).</string>
@@ -1879,7 +1879,7 @@
     <string    name="uninstall_patched_19"	translatable="true">GỠ BỎ BẢN VÁ</string>
     <string    name="open_settings_19"	translatable="true">MỞ CÁC THIẾT LẬP</string>
     <string    name="open_patched_19"	translatable="true">MỞ BẢN VÁ</string>
-	
+
 	<!--GERMAN LANGUAGE-->
     <string    name="app_name_20"	translatable="true">xManager</string>
     <string    name="spotify_regular_20"	translatable="true">SPOTIFY (REGULÄR)</string>
@@ -1950,12 +1950,12 @@
     <string    name="website_20"	translatable="true">WEBSITE</string>
     <string    name="reddit_20"	translatable="true">REDDIT</string>
     <string    name="faq_20"	translatable="true">FAQ</string>
-	
+
     <string    name="cloned_version_20"	translatable="true">GEKLONTE VERSION (BETA)</string>
     <string    name="cloned_version_desc_20"	translatable="true">Wenn Sie dies aktivieren, können Sie die geklonte Version der gepatchten Anwendung herunterladen und installieren.\n\nDies wird auch die meisten Installationsfehler oder Probleme beheben, insbesondere wenn Sie eine vorinstallierte Spotify-Anwendung haben.</string>
     <string    name="disable_rewarded_ads_20"	translatable="true">DEAKTIVIEREN SIE BELOHNTE ANZEIGEN</string>
     <string    name="disable_rewarded_ads_desc_20"	translatable="true">Wir wissen, dass die meisten von uns keine Anzeigen mögen, aber in unserem Fall hilft uns dies erheblich, unsere Datenbank, Hosting-Links, Updates, weitere Patches und den täglichen Bedarf zu finanzieren.\n\nDies ist der einfachste Weg, uns zu unterstützen, ohne zu spenden oder etwas auszugeben.</string>
-	
+
     <string    name="installation_failed_20"	translatable="true">INSTALLATION FEHLGESCHLAGEN</string>
     <string    name="installation_failed_desc_20"	translatable="true">Grund: Sie haben versucht, eine Mod-Version zu installieren, die niedriger ist als die derzeit installierte.\n\nLösungen:\nA. Wählen Sie eine Version gleich oder größer als.\nB. Deinstallieren Sie die aktuelle Version und führen Sie ein Downgrade durch.\n\nWenn das Problem weiterhin besteht, lesen Sie die FAQ.</string>
     <string    name="installation_failed_ream_desc_20"	translatable="true">Grund: Das auf diesem Gerät installierte Spotify kam nicht direkt von xManager oder von unserem Team.\n\nLösung: Deinstallieren Sie die aktuelle Version der Anwendung, starten Sie xManager neu und versuchen Sie es erneut. Wenn das Problem weiterhin besteht, lesen Sie die FAQ.</string>
@@ -1973,7 +1973,7 @@
     <string    name="uninstall_patched_20"	translatable="true">DEINSTALLIEREN GEPATCHT</string>
     <string    name="open_settings_20"	translatable="true">EINSTELLUNGEN ÖFFNEN</string>
     <string    name="open_patched_20"	translatable="true">OFFEN GEPATCHT</string>
-	
+
 	<!--PERSIAN LANGUAGE-->
     <string    name="app_name_21"	translatable="true">xManager</string>
     <string    name="spotify_regular_21"	translatable="true">SPOTIFY (عادی)</string>
@@ -2044,12 +2044,12 @@
     <string    name="website_21"	translatable="true">وبسایت</string>
     <string    name="reddit_21"	translatable="true">ردیت</string>
     <string    name="faq_21"	translatable="true">پرسش های متداول</string>
-	
+
     <string    name="cloned_version_21"	translatable="true">نسخه کلون شده (بتا)</string>
     <string    name="cloned_version_desc_21"	translatable="true">فعال سازی این به شما امکان می دهد نسخه کلون شده برنامه وصله شده را بارگیری و نصب کنید.این نیز بسیاری از خطاهای نصب و راه اندازی و یا مشکلات به خصوص اگر شما یک برنامه از پیش نصب شده اسپاتیفای حل و فصل.</string>
     <string    name="disable_rewarded_ads_21"	translatable="true">تبلیغات پاداش را غیرفعال کنید</string>
     <string    name="disable_rewarded_ads_desc_21"	translatable="true">ما می دانیم که بسیاری از ما تبلیغات را دوست ندارد اما در مورد ما, این به طور قابل توجهی کمک به ما برای تامین مالی پایگاه داده ما, لینک های میزبانی, به روز رسانی, تکه های بیشتر, و نیازهای روزانه.این ساده ترین راه برای حمایت از ما بدون اهدای یا صرف هر چیزی است.</string>
-	
+
     <string    name="installation_failed_21"	translatable="true">خرابی در نصب</string>
     <string    name="installation_failed_desc_21"	translatable="true">دلیل: شما اقدام به نصب یک نسخه وزارت دفاع پایین تر از چیزی است که در حال حاضر نصب شده است.نسخه ای برابر یا بزرگتر را انتخاب کنید.نسخه فعلی را حذف و سپس تنزل دهید.اگر این موضوع ادامه, بررسی پرسش و پاسخ.</string>
     <string    name="installation_failed_ream_desc_21"	translatable="true">دلیل: اسپاتیفای فعلی نصب شده بر روی این دستگاه مستقیما از طرف مدیر یا تیم ما تهیه نشده است.راه حل: نسخه فعلی برنامه را حذف کنید, مدیر برنامه را مجددا راه اندازی کنید و دوباره امتحان کنید. اگر این موضوع ادامه, بررسی پرسش و پاسخ.</string>
@@ -2067,7 +2067,7 @@
     <string    name="uninstall_patched_21"	translatable="true">حذف وصله</string>
     <string    name="open_settings_21"	translatable="true">تنظیمات را باز کنید</string>
     <string    name="open_patched_21"	translatable="true">باز کردن وصله</string>
-	
+
 	<!--HEBREW LANGUAGE-->
     <string    name="app_name_22"	translatable="true">xManager</string>
     <string    name="spotify_regular_22"	translatable="true">SPOTIFY (REGULAR)</string>
@@ -2161,7 +2161,7 @@
     <string    name="uninstall_patched_22"	translatable="true">הסר התקנת הקובץ</string>
     <string    name="open_settings_22"	translatable="true">פתח הגדרות</string>
     <string    name="open_patched_22"	translatable="true">פתח קובץ</string>
-    
+
     <!--SLOVAK LANGUAGE-->
     <string    name="app_name_23"	translatable="true">xManager</string>
     <string    name="spotify_regular_23"	translatable="true">SPOTIFY (BEŽNÝ)</string>
@@ -2259,7 +2259,7 @@
     <string    name="uninstall_patched_23"	translatable="true">ODINŠTALOVAŤ ZAPLÁTANÉ</string>
     <string    name="open_settings_23"	translatable="true">OTVORIŤ NASTAVENIA</string>
     <string    name="open_patched_23"	translatable="true">OTVORIŤ ZAPLÁTANÉ</string>
-    
+
     <!--SWEDISH LANGUAGE-->
     <string    name="app_name_24"	translatable="true">xManager</string>
     <string    name="spotify_regular_24"	translatable="true">SPOTIFY (VANLIG)</string>
@@ -2278,7 +2278,7 @@
     <string    name="main_title_24"	translatable="true">xManager</string>
     <string    name="settings_title_24"	translatable="true">Inställningar</string>
     <string    name="about_title_24"	translatable="true">Om oss</string>
-	
+
     <string    name="list_auto_refresh_24"	translatable="true">AUTO-UPPDATERING AV LISTA</string>
     <string    name="list_auto_refresh_desc_24"	translatable="true">Om du aktiverar detta uppdateras listan automatiskt varje gång du startar applikationen.\n\nDu kan uppdatera listan manuellt genom att dra huvudsidan nedåt.</string>
     <string    name="force_auto_install_24"	translatable="true">TVINGA AUTO-INSTALLERING</string>
@@ -2289,7 +2289,7 @@
     <string    name="clear_directory_folders_24"	translatable="true">TÖM KATALOGMAPPAR</string>
     <string    name="clear_directory_folders_desc_24"	translatable="true">Tryck för att ta bort alla katalogmappar inklusive de nedladdade filerna och uppdateringarna.</string>
     <string    name="reset_settings_24"	translatable="true">ÅTERSTÄLL INSTÄLLNINGARNA</string>
-	
+
     <string    name="about_sub_24"	translatable="true">Reklamfritt | Nya funktioner | Frihet</string>
     <string    name="xmanager_dev_24"	translatable="true">Utvecklare av xManager</string>
     <string    name="spotify_mod_devs_24"	translatable="true">Utvecklare av Spotify Patched</string>
@@ -2300,14 +2300,14 @@
     <string    name="forum_team_24"	translatable="true">FORUM.APK-RELEASE.NET-teamet</string>
     <string    name="xspotify_team_24"	translatable="true">xSpotify Manager (Gamla Managern)</string>
     <string    name="contributors_24"	translatable="true">TACK TILL ALLA BIDRAGSGIVARE! ❤️</string>
-	
+
     <string    name="download_selected_24"	translatable="true">Du har valt denna patchade version. Vill du fortsätta?</string>
     <string    name="download_ready_24"	translatable="true">PATCHAD INFORMATION</string>
     <string    name="download_ready_desc_24"	translatable="true">Nedladdning av denna patchade apk kommer att skriva över föregående fil i den externa katalogen.</string>
     <string    name="downloading_file_24"	translatable="true">LADDAR NER FIL...</string>
     <string    name="download_success_24"	translatable="true">NEDLADDNING SLUTFÖRD</string>
     <string    name="new_update_24"	translatable="true">NY MANAGER-UPPDATERING</string>
-	
+
     <string    name="continue_1_24"	translatable="true">FORTSÄTT</string>
     <string    name="cancel_24"	translatable="true">AVBRYT</string>
     <string    name="download_24"	translatable="true">LADDA NER</string>
@@ -2319,10 +2319,10 @@
     <string    name="not_now_24"	translatable="true">INTE NU</string>
     <string    name="copy_url_24"	translatable="true">KOPIERA URL</string>
     <string    name="fixer_24"	translatable="true">FIXARE</string>
-	
+
     <string    name="show_support_24"	translatable="true">VISA DITT STÖD</string>
     <string    name="show_support_desc_24"	translatable="true">Vi är ett ideellt, icke-företags- och kompromisslöst team. Människor som du uppmuntrar oss att skapa en app för att göra saker mycket enklare, särskilt från nedladdning till installation.\n\nVi lägger all vår tid och vårt bästa för att göra saker rätt och perfekt. Vi kommer att göra vårt bästa för att stödja den här appen så länge vi kan.\n\nAll hjälp kommer att uppskatas mycket!</string>
-	
+
     <string    name="maintenance_24"	translatable="true">UNDERHÅLL</string>
     <string    name="maintenance_desc_24"	translatable="true">xManager är för närvarande inte tillgänglig. Vänligen kontrollera applikationen senare.</string>
     <string    name="thanks_24"	translatable="true">TACK!</string>
@@ -2330,19 +2330,19 @@
     <string    name="website_24"	translatable="true">WEBBPLATS</string>
     <string    name="reddit_24"	translatable="true">REDDIT</string>
     <string    name="faq_24"	translatable="true">FAQ</string>
-	
+
     <string    name="cloned_version_24"	translatable="true">KLONAD VERSION (BETA)</string>
     <string    name="cloned_version_desc_24"	translatable="true">Genom att aktivera detta kan du ladda ner och installera den klonade versionen av den patchade applikationen.\n\nDetta kommer också att lösa de flesta installationsfel eller problem, särskilt om du har en förinstallerad Spotify-applikation.</string>
     <string    name="disable_rewarded_ads_24"	translatable="true">INAKTIVERA BELÖNADE ANNONSER</string>
     <string    name="disable_rewarded_ads_desc_24"	translatable="true">Vi vet att de flesta av oss inte gillar annonser, men i vårt fall hjälper detta oss avsevärt att finansiera vår databas, hostinglänkar, uppdateringar, fler patchar och daglig drift.\n\nDetta är det enklaste sättet att stödja oss utan att donera eller spendera något.</string>
-	
+
     <string    name="installation_failed_24"	translatable="true">INSTALLATIONEN MISSLYCKADES</string>
     <string    name="installation_failed_desc_24"	translatable="true">Anledning: Du försökte installera en modversion som är lägre än den som för närvarande är installerad.\n\nLösningar:\nA. Välj en version lika med eller större än.\nB. Avinstallera den aktuella versionen och nedgradera sedan.\n\nOm problemet kvarstår, kontrollera FAQ.</string>
     <string    name="installation_failed_ream_desc_24"	translatable="true">Orsak: Den aktuella Spotify installerad på den här enheten kom inte direkt från xManager eller från vårt team.\n\nLösning: Avinstallera den aktuella versionen av applikationen, starta om xManager och försök igen. Om problemet kvarstår, kontrollera FAQ.</string>
     <string    name="installation_failed_cloned_desc_24"	translatable="true">Orsak: Den nuvarande klonade installerade på den här enheten kom inte direkt från xManager eller från vårt team.\n\nLösning: Avinstallera den aktuella versionen av applikationen, starta om xManager och försök igen. Om problemet kvarstår, kontrollera FAQ.</string>
     <string    name="existing_patched_24"	translatable="true">EXISTERANDE PATCHAD</string>
     <string    name="existing_patched_desc_24"	translatable="true">En befintlig patchad apk hittades i en av katalogerna. Vilken åtgärd skulle du vilja göra?</string>
-	
+
     <string    name="close_24"	translatable="true">STÄNG</string>
     <string    name="cloned_24"	translatable="true">KLONAD</string>
     <string    name="ream_24"	translatable="true">VA/AM</string>
@@ -2353,7 +2353,7 @@
     <string    name="uninstall_patched_24"	translatable="true">AVINSTALLERA PATCHAD</string>
     <string    name="open_settings_24"	translatable="true">ÖPPNA INSTÄLLNINGAR</string>
     <string    name="open_patched_24"	translatable="true">ÖPPNA PATCHAD</string>
-    
+
     <!--FINNISH LANGUAGE-->
     <string    name="app_name_25"    translatable="true">xManager</string>
     <string    name="spotify_regular_25"    translatable="true">SPOTIFY (TAVALLINEN)</string>
@@ -2372,7 +2372,7 @@
     <string    name="main_title_25"	translatable="true">xManager</string>
     <string    name="settings_title_25"	translatable="true">Asetukset</string>
     <string    name="about_title_25"	translatable="true">Tietoja</string>
-	
+
     <string    name="list_auto_refresh_25"	translatable="true">LISTAN AUTOMAATTINEN PÄIVITYS</string>
     <string    name="list_auto_refresh_desc_25"	translatable="true">Tämän aktivointi automaattisesti päivittää listan joka kerta, kun avaat sovelluksen.\n\nVoit myös päivittää listan manuaalisesti raahaamalla päänäkymän alaspäin.</string>
     <string    name="force_auto_install_25"	translatable="true">PAKOTA AUTOMAATTINEN ASENTAMINEN</string>
@@ -2383,7 +2383,7 @@
     <string    name="clear_directory_folders_25"	translatable="true">PUHDISTA LUETTELON KANSIOT</string>
     <string    name="clear_directory_folders_desc_25"	translatable="true">Napauta poistaaksesi kaikki asennetut tiedostot ja päivitykset.</string>
     <string    name="reset_settings_25"	translatable="true">PALAUTA OLETUSASETUKSET</string>
-	
+
     <string    name="about_sub_25"	translatable="true">Ei mainoksia | Uusia ominaisuuksia | Vapaus</string>
     <string    name="xmanager_dev_25"	translatable="true">xManager Ohjelmoija</string>
     <string    name="spotify_mod_devs_25" translatable="true">Spotify korjaustiedosto ohjelmoija</string>
@@ -2394,14 +2394,14 @@
     <string    name="forum_team_25"	translatable="true">FORUM.APK-RELEASE.NET Tiimi</string>
     <string    name="xspotify_team_25"	translatable="true">xSpotify Manager (Vanha Manager)</string>
     <string    name="contributors_25"	translatable="true">KIITOKSET KAIKILLE AVUSATAJILLE! ❤️</string>
-	
+
     <string    name="download_selected_25"    translatable="true">Valitsit tämän korjaustiedoston version. Haluatko jatkaa?</string>
     <string    name="download_ready_25"    translatable="true">KORJAUSTIEDOSTO TIETOJA</string>
     <string    name="download_ready_desc_25"    translatable="true">Tämän korjaustiedosto apk:n lataaminen asentuu entisen tiedoston päälle, joka löytyy ulkoisesta kansiosta.</string>
     <string    name="downloading_file_25"	translatable="true">LADATAAN TIEDOSTOA...</string>
     <string    name="download_success_25"	translatable="true">LATAUS ONNISTUI</string>
     <string    name="new_update_25"	translatable="true">UUSI MANAGER PÄIVITYS</string>
-	
+
     <string    name="continue_1_25"	translatable="true">JATKA</string>
     <string    name="cancel_25"	translatable="true">PERUUTA</string>
     <string    name="download_25"	translatable="true">LATAA</string>
@@ -2413,10 +2413,10 @@
     <string    name="not_now_25"	translatable="true">EI NYT</string>
     <string    name="copy_url_25"	translatable="true">KOPIOI URL</string>
     <string    name="fixer_25"	translatable="true">KIINNITYSAINE</string>
-	
+
     <string    name="show_support_25"	translatable="true">NÄYTÄ TUKESI</string>
     <string    name="show_support_desc_25"	translatable="true">Me olemme voittoa tavoittelematon, ei yritys ja tinkimätön tiimi. Kaltaisesi ihmiset kannustavat meitä luomaan sovelluksen, joka tekee asioista paljon helpompaa, etenkin lataamisesta asennukseen.\n\nKäytämme kaiken aikamme ja parhaamme tehdäksemme asiat oikein ja täydellisinä. Teemme parhaamme tukeaksemme tätä sovellusta niin kauan kuin voimme.\n\nMikä tahansa summa auttaa ja sitä arvostetaan suuresti!</string>
-	
+
     <string    name="maintenance_25"	translatable="true">HUOLTOKATKO</string>
     <string    name="maintenance_desc_25"	translatable="true">xManager ei ole tällä hetkellä saatavilla. Ole hyvä, ja tarkista sovellus myöhemmin.</string>
     <string    name="thanks_25"	translatable="true">KIITOS!</string>
@@ -2424,19 +2424,19 @@
     <string    name="website_25" translatable="true">VERKKOSIVU</string>
     <string    name="reddit_25"	translatable="true">REDDIT</string>
     <string    name="faq_25"	translatable="true">UKK</string>
-	
+
     <string    name="cloned_version_25"	translatable="true">KLOONATTU VERSIO (BETA)</string>
     <string    name="cloned_version_desc_25"	translatable="true">Tämän aktivoinnin avulla voit ladata ja asentaa korjatun sovelluksen kloonatun version.\n\nTämä myös ratkaisee useimmat asennusvirheet tai -ongelmat, varsinkin jos sinulla on esiasennettu Spotify-sovellus.</string>
     <string    name="disable_rewarded_ads_25"	translatable="true">POISTA PALKITUT MAINOKSET KÄYTÖSTÄ.</string>
     <string    name="disable_rewarded_ads_desc_25"	translatable="true">Tiedämme, että useimmat meistä eivät pidä mainoksista, mutta meidän tapauksessamme tämä auttaa meitä merkittävästi rahoittamaan tietokantaamme, isännöintilinkkejä, päivityksiä, lisää korjauksia ja päivittäisiä tarpeita.\n\nTämä on yksinkertaisin tapa tukea meitä lahjoittamatta tai kuluttamatta mitään.</string>
-	
+
     <string    name="installation_failed_25"	translatable="true">ASENNUS EPÄONNISTUI</string>
     <string    name="installation_failed_desc_25"	translatable="true">Syy: Yritit asentaa mod-version, joka on vanhempi kuin tällä hetkellä asennettuna.\n\nRatkaisut:\nA. Valitse versio, joka on yhtä suuri tai suurempi kuin.\nB. Poista nykyisen version asennus ja alenna sitten.\n\nJos ongelma jatkuu, tarkista usein kysytyt kysymykset.</string>
     <string    name="installation_failed_ream_desc_25"	translatable="true">Syy: Tälle laitteelle asennettu nykyinen Spotify ei tullut suoraan xManagerista tai tiimiltään.\n\nRatkaisu: Poista sovelluksen nykyinen versio, käynnistä xManager uudelleen ja yritä uudelleen. Jos ongelma jatkuu, tarkista usein kysytyt kysymykset.</string>
     <string    name="installation_failed_cloned_desc_25"	translatable="true">Syy: Tälle laitteelle asennettu nykyinen kloonattu versio ei tullut suoraan xManagerista tai tiimiltään.\n\nRatkaisu: Poista sovelluksen nykyinen versio, käynnistä xManager uudelleen ja yritä uudelleen. Jos ongelma jatkuu, tarkista usein kysytyt kysymykset.</string>
     <string    name="existing_patched_25" translatable="true">OLEMASSA OLEVA KORJAUSTIEDOSTO</string>
     <string    name="existing_patched_desc_25"	translatable="true">Yhdestä hakemistosta löytyi olemassa oleva korjattu apk. Millaisen toimenpiteen haluaisit tehdä?</string>
-	
+
     <string    name="close_25"	translatable="true">SULJE</string>
     <string    name="cloned_25"	translatable="true">KLOONATTU</string>
     <string    name="ream_25"	translatable="true">RE/AM</string>
@@ -2447,7 +2447,7 @@
     <string    name="uninstall_patched_25"    translatable="true">POISTA KORJAUSTIEDOSTO</string>
     <string    name="open_settings_25"    translatable="true">AVAA ASETUKSET</string>
     <string    name="open_patched_25"    translatable="true">AVAA KORJAUSTIEDOSTO</string>
-    
+
     <!--CZECH LANGUAGE-->
     <string    name="app_name_26"    translatable="true">xManager</string>
     <string    name="spotify_regular_26"    translatable="true">SPOTIFY (BĚŽNÝ)</string>
@@ -2466,7 +2466,7 @@
     <string    name="main_title_26"    translatable="true">xManager</string>
     <string    name="settings_title_26"    translatable="true">Nastavení</string>
     <string    name="about_title_26"    translatable="true">O</string>
-    
+
     <string    name="list_auto_refresh_26"    translatable="true">AUTOMATICKÉ OBNOVENÍ SEZNAMU</string>
     <string    name="list_auto_refresh_desc_26"    translatable="true">Po aktivaci se po každém spuštení aplikace obnoví seznam.\n\nSeznam můžete také manuálně obnovit potažením obrazovky dolů.</string>
     <string    name="force_auto_install_26"    translatable="true">VYNUCENÍ AUTOMATICKÉ INSTALACE</string>
@@ -2477,7 +2477,7 @@
     <string    name="clear_directory_folders_26"    translatable="true">PROMAZAT SLOŽKU ADRESÁŘE</string>
     <string    name="clear_directory_folders_desc_26"    translatable="true">Stiskněte pro smazání složky adresáře. To zahrnuje stažené soubory a aktualizace.</string>
     <string    name="reset_settings_26"    translatable="true">DEFAULTNÍ NASTAVENÍ</string>
-    
+
     <string    name="about_sub_26"    translatable="true">Bez reklam | Nové funkce | Svoboda</string>
     <string    name="xmanager_dev_26"    translatable="true">xManager vývojář</string>
     <string    name="spotify_mod_devs_26"    translatable="true">Vývojář upraveného Spotify</string>
@@ -2488,14 +2488,14 @@
     <string    name="forum_team_26"    translatable="true">Tým z FORUM.APK-RELEASE.NET</string>
     <string    name="xspotify_team_26"    translatable="true">xSpotify Manager (Starý manažer)</string>
     <string    name="contributors_26"    translatable="true">DĚKUJEME VŠEM PŘISPĚVATELŮM! ❤️</string>
-    
+
     <string    name="download_selected_26"    translatable="true">Vybrali jste si tuto upravenou verzi. Opravdu chcete pokračovat?</string>
     <string    name="download_ready_26"    translatable="true">INFORMACE K UPRAVENÉ APLIKACI</string>
     <string    name="download_ready_desc_26"    translatable="true">Stažení upravené aplikace přepíše předchozí soubor umístěný v externím adresáři.</string>
     <string    name="downloading_file_26"    translatable="true">STAHOVÁNÍ SOUBORU...</string>
     <string    name="download_success_26"    translatable="true">STAŽENO ÚSPĚŠNĚ</string>
     <string    name="new_update_26"    translatable="true">NOVÁ AKTUALIZACE MANAŽERA</string>
-    
+
     <string    name="continue_1_26"    translatable="true">POKRAČOVAT</string>
     <string    name="cancel_26"    translatable="true">ZRUŠIT</string>
     <string    name="download_26"    translatable="true">STÁHNOUT</string>
@@ -2507,10 +2507,10 @@
     <string    name="not_now_26"    translatable="true">POZDĚJI</string>
     <string    name="copy_url_26"    translatable="true">KOPÍROVAT ODKAZ</string>
     <string    name="fixer_26"    translatable="true">FIXER</string>
-    
+
     <string    name="show_support_26"    translatable="true">PŘEDVEĎTE NÁM VAŠI PODPORU</string>
     <string    name="show_support_desc_26"    translatable="true">Jsme neziskoví, nejsme korporát a nekompromitovaný tým. Lidi jako vy nás posouvají ve vývoji aplikace, která věci mnohem zjednoduší, hlavně už od stažení až po instalaci.\n\nVkládáme veškerý náš čas a maximální úsilí, aby bylo vše správně a dokonalé. Pokusíme se podporovat tuto aplikaci tak dlouho, jak to jen bude možné.\n\nJakákoliv peněžní částka nám pomůže a budeme si jí opravdu velmi vážit!</string>
-    
+
     <string    name="maintenance_26"    translatable="true">ÚDRŽBA</string>
     <string    name="maintenance_desc_26"    translatable="true">xManager je momentálně nedostupný. Prosíme o kontrolu aplikace později.</string>
     <string    name="thanks_26"    translatable="true">DĚKUJEME!</string>
@@ -2518,19 +2518,19 @@
     <string    name="website_26"    translatable="true">WEB</string>
     <string    name="reddit_26"    translatable="true">REDDIT</string>
     <string    name="faq_26"    translatable="true">FAQ</string>
-    
+
     <string    name="cloned_version_26"    translatable="true">KLONOVANÁ VERZE (BETA)</string>
     <string    name="cloned_version_desc_26"    translatable="true">Po aktivaci si budete moci stáhnout naklonovanou upravenou aplikaci.\n\nTohle vyřeší většinu problémů s instalací, hlavně pokud je aplikace předinstalována v telefonu.</string>
     <string    name="disable_rewarded_ads_26"    translatable="true">ZAKÁZAT PODPORUJÍCÍ REKLAMY</string>
     <string    name="disable_rewarded_ads_desc_26"    translatable="true">Víme, že většina z nás nemá ráda reklamy, ale v našem případě nám výrazě pomáhají k financování naší databáze, hostingu, aktualizací, více úprav a denní potřeby.\n\nTohle je nejjednodušší možnost podpory bez posílání vlastních peněz.</string>
-    
+
     <string    name="installation_failed_26"    translatable="true">INSTALACE SELHALA</string>
     <string    name="installation_failed_desc_26"    translatable="true">Důvod: Pokusili jste se nainstalovat upravenou verzi, která je starší, než momentálně nainstalovaná.\n\nŘešení:\nA. Vyberte verzi stejnou nebo vyšší, než .\nB. Odinstalujte aktuální verzi, poté nainstalujte tu starší.\n\nPokud problém bude přetrvávat, tak zkontrolujte "FAQ".</string>
     <string    name="installation_failed_ream_desc_26"    translatable="true">Důvod: Momentálně nainstalovaná nepochází od našeho xManager týmu.\n\Řešení: Odinstalujte momentální verzi, restartujte xManager a zkuste to znovu. Pokud bude problém přetrvávat, zkontrolujte "FAQ".</string>
     <string    name="installation_failed_cloned_desc_26"    translatable="true">Důvod: Momentálně nainstalovaná klonovaná aplikace na tomto zařízení nepochází přímo od xManager týmu.\n\Řešení: Odinstalujte momentální verzi, restartujte xManager a zkuste to znovu. Pokud bude problém přetrvávat, zkontrolujte "FAQ".</string>
     <string    name="existing_patched_26"    translatable="true">EXISTUJÍCÍ UPRAVENÁ APLIKACE</string>
     <string    name="existing_patched_desc_26"    translatable="true">Již existuje upravený apk soubor v jednom z adresářů. Jak si přejete pokračovat?</string>
-    
+
     <string    name="close_26"    translatable="true">ZAVŘÍT</string>
     <string    name="cloned_26"    translatable="true">KLONOVANÁ</string>
     <string    name="ream_26"    translatable="true">RE/AM</string>
@@ -2541,7 +2541,7 @@
     <string    name="uninstall_patched_26"    translatable="true">ODINSTALOVAT UPRAVENOU APLIKACI</string>
     <string    name="open_settings_26"    translatable="true">OTEVŘÍT NASTAVENÍ</string>
     <string    name="open_patched_26"    translatable="true">OTEVŘÍT UPRAVENOU APLIKACI</string>
-    
+
     <!--CHINESE (TRADITIONAL) LANGUAGE-->
     <string    name="app_name_27"    translatable="true">xManager</string>
     <string    name="spotify_regular_27"    translatable="true">SPOTIFY (預設背景)</string>
@@ -2635,7 +2635,7 @@
     <string    name="uninstall_patched_27"    translatable="true">解除安裝修補程式</string>
     <string    name="open_settings_27"    translatable="true">開啟設定</string>
     <string    name="open_patched_27"    translatable="true">開啟修改版本</string>
-    
+
     <!--BULGARIAN LANGUAGE-->
     <string    name="app_name_28"    translatable="true">xManager</string>
     <string    name="spotify_regular_28"    translatable="true">SPOTIFY (НОРМАЛЕН)</string>
@@ -2729,7 +2729,7 @@
     <string    name="uninstall_patched_28"    translatable="true">ДЕИНСТАЛИРАНЕ НА КОРИГИРАНОТО</string>
     <string    name="open_settings_28"    translatable="true">НАСТРОЙКИ</string>
     <string    name="open_patched_28"    translatable="true">ОТВАРЯНЕ НА КОРИГИРАНОТО</string>
-    
+
     <!--SERBIAN (CYRILLIC) LANGUAGE-->
     <string    name="app_name_29"	translatable="true">xManager</string>
     <string    name="spotify_regular_29"	translatable="true">SPOTIFY (ОБИЧАН)</string>
@@ -2748,7 +2748,7 @@
     <string    name="main_title_29"	translatable="true">xManager</string>
     <string    name="settings_title_29"	translatable="true">Подешавања</string>
     <string    name="about_title_29"	translatable="true">О нама</string>
-	
+
     <string    name="list_auto_refresh_29"	translatable="true">АУТОМАТСКО ОСВЕЖАВАЊЕ ЛИСТЕ</string>
     <string    name="list_auto_refresh_desc_29" 	translatable="true">Ако ово омогућите, листа ће се аутоматски освежити сваки пут када покренете апликацију.\n\nМожете ручно да освежите листу превлачењем главног екрана надоле.</string>
     <string    name="force_auto_install_29"	translatable="true">ФОРСИРАЈТЕ АУТОМАТСКУ ИНСТАЛАЦИЈУ</string>
@@ -2759,7 +2759,7 @@
     <string    name="clear_directory_folders_29"	translatable="true">ОЧИСТИТЕ ДИРЕКТОРИЈУМ</string>
     <string    name="clear_directory_folders_desc_29"	translatable="true">Додирните да бисте избрисали директоријум. Ово укључује преузете датотеке и ажурирања.</string>
     <string    name="reset_settings_29"	translatable="true">РЕСЕТУЈТЕ ПОДЕШАВАЊА</string>
-	
+
     <string    name="about_sub_29"	translatable="true">Без реклама | Нове функције | Слобода</string>
     <string    name="xmanager_dev_29"	translatable="true">Програмери xManager</string>
     <string    name="spotify_mod_devs_29"	translatable="true">Програмери Spotify мода</string>
@@ -2770,14 +2770,14 @@
     <string    name="forum_team_29"	translatable="true">FORUM.APK-RELEASE.NET тим</string>
     <string    name="xspotify_team_29"	translatable="true">xSpotify Manager (стари менаџер)</string>
     <string    name="contributors_29"	translatable="true">ХВАЛА СВИМ САРАДНИЦИМА! ❤️</string>
-	
+
     <string    name="download_selected_29"	translatable="true">Изабрали сте ову печовану верзију. Да ли желите да наставите?</string>
     <string    name="download_ready_29"	translatable="true">ИНФОРМАЦИЈЕ О МОДУ</string>
     <string    name="download_ready_desc_29"	translatable="true">Преузимање ове печоване APK датотеке преписаће претходну датотеку која се налази у спољном директоријуму.</string>
     <string    name="downloading_file_29"	translatable="true">ПРЕУЗИМАЊЕ ДАТОТЕКЕ...</string>
     <string    name="download_success_29"	translatable="true">УСПЕШНО ПРЕУЗЕТО</string>
     <string    name="new_update_29"	translatable="true">НОВО АЖУРИРАЊЕ МЕНАЏЕРА</string>
-	
+
     <string    name="continue_1_29"	translatable="true">НАСТАВИТЕ</string>
     <string    name="cancel_29"	translatable="true">ОТКАЖИТЕ</string>
     <string    name="download_29"	translatable="true">ПРЕУЗМИТЕ</string>
@@ -2789,10 +2789,10 @@
     <string    name="not_now_29"	translatable="true">НЕ САДА</string>
     <string    name="copy_url_29"	translatable="true">КОПИРАЈТЕ URL</string>
     <string    name="fixer_29"	translatable="true">ПОПРАВЉАЧ</string>
-	
+
     <string    name="show_support_29"	translatable="true">ПОКАЖИТЕ ВАШУ ПОДРШКУ</string>
     <string    name="show_support_desc_29"	translatable="true">Ми смо непрофитни, некорпоративни и некомпромитовани тим. Људи попут Вас подстичу нас да направимо апликацију како бисмо ствари учинили много лакшим, посебно од преузимања до инсталирања.\n\nУлажемо све наше време и све напоре како би ствари биле исправне и савршене. Даћемо све од себе да подржавамо ову апликацију колико год можемо.\n\nСваки износ ће помоћи и бити веома цењен!</string>
-	
+
     <string    name="maintenance_29"	translatable="true">ОДРЖАВАЊЕ</string>
     <string    name="maintenance_desc_29"	translatable="true">xManager тренутно није доступан. Молимо Вас да касније проверите апликацију!</string>
     <string    name="thanks_29"	translatable="true">ХВАЛА!</string>
@@ -2800,19 +2800,19 @@
     <string    name="website_29"	translatable="true">ВЕБ-САЈТ</string>
     <string    name="reddit_29"	translatable="true">REDDIT</string>
     <string    name="faq_29"	translatable="true">ПИТАЊА</string>
-	
+
     <string    name="cloned_version_29"	translatable="true">КЛОНИРАНА ВЕРЗИЈА (БЕТА ВЕРЗИЈА)</string>
     <string    name="cloned_version_desc_29"	translatable="true">Ако ово омогућите, моћи ћете да преузмете и инсталирате клонирану верзију печоване апликације.\n\nОво ће, такође, решити већину грешака или проблема при инсталацији, посебно ако имате унапред инсталирану Spotify апликацију.</string>
     <string    name="disable_rewarded_ads_29"	translatable="true">ОНЕМОГУЋИТЕ РЕКЛАМЕ С НАГРАДОМ</string>
     <string    name="disable_rewarded_ads_desc_29"	translatable="true">Знамо да већина нас не воли рекламе, али, у нашем случају, то нам значајно помаже да финансирамо нашу базу података, хостинг линкова, ажурирања, више печева и дневних потреба.\n\nОво је најједноставнији начин да нас подржите, без донирања или трошења новца.</string>
-	
+
     <string    name="installation_failed_29"	translatable="true">ИНСТАЛАЦИЈА НИЈЕ УСПЕЛА</string>
     <string    name="installation_failed_desc_29"	translatable="true">Разлог: Покушали сте да инсталирате верзију мода нижу од оне која је тренутно инсталирана.\n\nРешења:\nA. Изаберите верзију, исту или већу.\nB. Деинсталирајте тренутну верзију, а затим снизите.\n\nАко се проблем настави, проверите често постављена питања.</string>
     <string    name="installation_failed_ream_desc_29"	translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManagerа или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављена питања.</string>
     <string    name="installation_failed_cloned_desc_29"	translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManagerа или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављена питања.</string>
     <string    name="existing_patched_29"	translatable="true">ПОСТОЈЕЋИ МОД</string>
     <string    name="existing_patched_desc_29"	translatable="true">Постојећа печована APK датотека пронађена је у једном од директоријума. Коју акцију бисте желели да урадите?</string>
-	
+
     <string    name="close_29"	translatable="true">ЗАТВОРИТЕ</string>
     <string    name="cloned_29"	translatable="true">КЛОНИРАЈТЕ</string>
     <string    name="ream_29"	translatable="true">RE/AM</string>
@@ -2823,7 +2823,7 @@
     <string    name="uninstall_patched_29"	translatable="true">ДЕИНСТАЛИРАЈТЕ МОД</string>
     <string    name="open_settings_29"	translatable="true">ОТВОРИТЕ ПОДЕШАВАЊА</string>
     <string    name="open_patched_29"	translatable="true">ОТВОРИТЕ МОД</string>
-    
+
     <!--SERBIAN (LATIN) LANGUAGE-->
     <string    name="app_name_30"	translatable="true">xManager</string>
     <string    name="spotify_regular_30"	translatable="true">SPOTIFY (OBIČAN)</string>
@@ -2842,7 +2842,7 @@
     <string    name="main_title_30"	translatable="true">xManager</string>
     <string    name="settings_title_30"	translatable="true">Podešavanja</string>
     <string    name="about_title_30"	translatable="true">O nama</string>
-	
+
     <string    name="list_auto_refresh_30"	translatable="true">AUTOMATSKO OSVEŽAVANjE LISTE</string>
     <string    name="list_auto_refresh_desc_30" 	translatable="true">Ako ovo omogućite, lista će se automatski osvežiti svaki put kada pokrenete aplikaciju.\n\nMožete ručno da osvežite listu prevlačenjem glavnog ekrana nadole.</string>
     <string    name="force_auto_install_30"	translatable="true">FORSIRAJTE AUTOMATSKU INSTALACIJU</string>
@@ -2853,7 +2853,7 @@
     <string    name="clear_directory_folders_30"	translatable="true">OČISTITE DIREKTORIJUM</string>
     <string    name="clear_directory_folders_desc_30"	translatable="true">Dodirnite da biste izbrisali direktorijum. Ovo uključuje preuzete datoteke i ažuriranja.</string>
     <string    name="reset_settings_30"	translatable="true">RESETUJTE PODEŠAVANjA</string>
-	
+
     <string    name="about_sub_30"	translatable="true">Bez reklama | Nove funkcije | Sloboda</string>
     <string    name="xmanager_dev_30"	translatable="true">Programeri xManager</string>
     <string    name="spotify_mod_devs_30"	translatable="true">Programeri Spotify moda</string>
@@ -2864,14 +2864,14 @@
     <string    name="forum_team_30"	translatable="true">FORUM.APK-RELEASE.NET tim</string>
     <string    name="xspotify_team_30"	translatable="true">xSpotify Manager (stari menadžer)</string>
     <string    name="contributors_30"	translatable="true">HVALA SVIM SARADNICIMA! ❤️</string>
-	
+
     <string    name="download_selected_30"	translatable="true">Izabrali ste ovu pečovanu verziju. Da li želite da nastavite?</string>
     <string    name="download_ready_30"	translatable="true">INFORMACIJE O MODU</string>
     <string    name="download_ready_desc_30"	translatable="true">Preuzimanje ove pečovane APK datoteke prepisaće prethodnu datoteku koja se nalazi u spoljnom direktorijumu.</string>
     <string    name="downloading_file_30"	translatable="true">PREUZIMANjE DATOTEKE...</string>
     <string    name="download_success_30"	translatable="true">USPEŠNO PREUZETO</string>
     <string    name="new_update_30"	translatable="true">NOVO AŽURIRANjE MENADžERA</string>
-	
+
     <string    name="continue_1_30"	translatable="true">NASTAVITE</string>
     <string    name="cancel_30"	translatable="true">OTKAŽITE</string>
     <string    name="download_30"	translatable="true">PREUZMITE</string>
@@ -2883,10 +2883,10 @@
     <string    name="not_now_30"	translatable="true">NE SADA</string>
     <string    name="copy_url_30"	translatable="true">KOPIRAJTE URL</string>
     <string    name="fixer_30"	translatable="true">POPRAVLjAČ</string>
-	
+
     <string    name="show_support_30"	translatable="true">POKAŽITE VAŠU PODRŠKU</string>
     <string    name="show_support_desc_30"	translatable="true">Mi smo neprofitni, nekorporativni i nekompromitovani tim. Ljudi poput Vas podstiču nas da napravimo aplikaciju kako bismo stvari učinili mnogo lakšim, posebno od preuzimanja do instaliranja.\n\nUlažemo sve naše vreme i sve napore kako bi stvari bile ispravne i savršene. Daćemo sve od sebe da podržavamo ovu aplikaciju koliko god možemo.\n\nSvaki iznos će pomoći i biti veoma cenjen!</string>
-	
+
     <string    name="maintenance_30"	translatable="true">ODRŽAVANjE</string>
     <string    name="maintenance_desc_30"	translatable="true">xManager trenutno nije dostupan. Molimo Vas da kasnije proverite aplikaciju!</string>
     <string    name="thanks_30"	translatable="true">HVALA!</string>
@@ -2894,19 +2894,19 @@
     <string    name="website_30"	translatable="true">VEB-SAJT</string>
     <string    name="reddit_30"	translatable="true">REDDIT</string>
     <string    name="faq_30"	translatable="true">PITANjA</string>
-	
+
     <string    name="cloned_version_30"	translatable="true">KLONIRANA VERZIJA (BETA VERZIJA)</string>
     <string    name="cloned_version_desc_30"	translatable="true">Ako ovo omogućite, moći ćete da preuzmete i instalirate kloniranu verziju pečovane aplikacije.\n\nOvo će, takođe, rešiti većinu grešaka ili problema pri instalaciji, posebno ako imate unapred instaliranu Spotify aplikaciju.</string>
     <string    name="disable_rewarded_ads_30"	translatable="true">ONEMOGUĆITE REKLAME S NAGRADOM</string>
     <string    name="disable_rewarded_ads_desc_30"	translatable="true">Znamo da većina nas ne voli reklame, ali, u našem slučaju, to nam značajno pomaže da finansiramo našu bazu podataka, hosting linkova, ažuriranja, više pečeva i dnevnih potreba.\n\nOvo je najjednostavniji način da nas podržite, bez doniranja ili trošenja novca.</string>
-	
+
     <string    name="installation_failed_30"	translatable="true">INSTALACIJA NIJE USPELA</string>
     <string    name="installation_failed_desc_30"	translatable="true">Razlog: Pokušali ste da instalirate verziju moda nižu od one koja je trenutno instalirana.\n\nRešenja:\nA. Izaberite verziju, jednaku ili veću.\nB. Deinstalirajte trenutnu verziju, a zatim snizite.\n\nAko se problem nastavi, proverite često postavljena pitanja.</string>
     <string    name="installation_failed_ream_desc_30"	translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManagera ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljena pitanja.</string>
     <string    name="installation_failed_cloned_desc_30"	translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManagera ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljena pitanja.</string>
     <string    name="existing_patched_30"	translatable="true">POSTOJEĆI MOD</string>
     <string    name="existing_patched_desc_30"	translatable="true">Postojeća pečovana APK datoteka pronađena je u jednom od direktorijuma. Koju akciju biste želeli da uradite?</string>
-	
+
     <string    name="close_30"	translatable="true">ZATVORITE</string>
     <string    name="cloned_30"	translatable="true">KLONIRAJTE</string>
     <string    name="ream_30"	translatable="true">RE/AM</string>
@@ -2917,4 +2917,98 @@
     <string    name="uninstall_patched_30"	translatable="true">DEINSTALIRAJTE MOD</string>
     <string    name="open_settings_30"	translatable="true">OTVORITE PODEŠAVANjA</string>
     <string    name="open_patched_30"	translatable="true">OTVORITE MOD</string>
+
+	<!--CATALAN LANGUAGE-->
+    <string    name="app_name_31"	translatable="true">xManager</string>
+    <string    name="spotify_regular_31"	translatable="true">SPOTIFY (NORMAL)</string>
+    <string    name="spotify_amoled_31"	translatable="true">SPOTIFY (AMOLED)</string>
+    <string    name="installed_31"	translatable="true">INSTAL·LAT</string>
+    <string    name="latest_31"	translatable="true">ÚLTIM</string>
+    <string    name="versions_31"	translatable="true">VERSIONS</string>
+    <string    name="changelogs_31"	translatable="true">REGISTRE DE CANVIS</string>
+    <string    name="manager_tools_31"	translatable="true">EINES DEL GESTOR</string>
+    <string    name="device_cpu_31"	translatable="true">CPU/ARQ</string>
+    <string    name="source_31"	translatable="true">FONT</string>
+    <string    name="discord_31"	translatable="true">DISCORD</string>
+    <string    name="support_31"	translatable="true">TELEGRAM</string>
+    <string    name="donate_31"	translatable="true">DONAR</string>
+    <string    name="about_31"	translatable="true">SOBRE</string>
+    <string    name="main_title_31"	translatable="true">xManager</string>
+    <string    name="settings_title_31"	translatable="true">Paràmetres</string>
+    <string    name="about_title_31"	translatable="true">Sobre</string>
+
+    <string    name="list_auto_refresh_31"	translatable="true">ACTUALITZACIÓ AUTOMÀTICA DE LA LLISTA</string>
+    <string    name="list_auto_refresh_desc_31"	translatable="true">En activar aquesta opció, la llista s'actualitzarà automàticament cada cop que s'iniciï l'aplicació.\n\nPots actualitzar la llista manualment arrossegant la pantalla principal cap avall.</string>
+    <string    name="force_auto_install_31"	translatable="true">FORÇAR L'AUTOINSTAL·LACIÓ</string>
+    <string    name="force_auto_install_desc_31"	translatable="true">En activar aquesta opció, s'instal·larà automàticament l'aplicació modificada i l'actualització un cop descarregades.</string>
+    <string    name="show_themes_31"	translatable="true">TEMES</string>
+    <string    name="apk_location_31"	translatable="true">UBICACIÓ DE L'APK</string>
+    <string    name="apk_location_desc_31"	translatable="true">Carpeta on desitja desar els arxius descarregats. Si no sap com configurar aquesta funció, deixi-la com està.\n\nNOTA: Aquesta funció no és compatible amb l'emmagatzematge extern (targetes SD) a causa de limitacions d'emmagatzematge, accessibilitat i permisos.</string>
+    <string    name="clear_directory_folders_31"	translatable="true">BUIDAR LA CARPETA DE DESCÀRREGUES</string>
+    <string    name="clear_directory_folders_desc_31"	translatable="true">Premi per a eliminar la carpeta de descàrregues, incloent-hi els arxius i actualitzacions descarregades.</string>
+    <string    name="reset_settings_31"	translatable="true">RESTABLIR PARÀMETRES</string>
+
+    <string    name="about_sub_31"	translatable="true">Sense anuncis | Noves funcionis | Llibertat</string>
+    <string    name="xmanager_dev_31"	translatable="true">Desenvolupador de xManager</string>
+    <string    name="spotify_mod_devs_31"	translatable="true">Desenvolupadors del mod de Spotify</string>
+    <string    name="telegram_support_team_31"	translatable="true">Equip de suport de Discord, Reddit i Telegram</string>
+    <string    name="manager_testers_31"	translatable="true">Testers del mod/gestor</string>
+    <string    name="manager_hosting_31"	translatable="true">Base de dades i allotjament del gestor</string>
+    <string    name="mobilism_team_31"	translatable="true">Equip de Mobilism</string>
+    <string    name="forum_team_31"	translatable="true">Equip de FORUM.APK-RELEASE.NET</string>
+    <string    name="xspotify_team_31"	translatable="true">Gestor de xSpotify (antic gestor)</string>
+    <string    name="contributors_31"	translatable="true">GRÀCIES A TOTS ELS COL·LABORADORS! ❤️</string>
+
+    <string    name="download_selected_31"	translatable="true">Ha seleccionat aquesta versió modificada. Desitja continuar?</string>
+    <string    name="download_ready_31"	translatable="true">INFORMACIÓ DEL PEGAT</string>
+    <string    name="download_ready_desc_31"	translatable="true">La descàrrega d'aquest APK modificat sobreescriurà l'arxiu anterior situat en la carpeta externa d'arxius descarregats.</string>
+    <string    name="downloading_file_31"	translatable="true">DESCARREGANT ARXIU...</string>
+    <string    name="download_success_31"	translatable="true">DESCARREGAT AMB ÈXIT</string>
+    <string    name="new_update_31"	translatable="true">NOVA ACTUALITZACIÓ DEL GESTOR</string>
+
+    <string    name="continue_1_31"	translatable="true">CONTINUAR</string>
+    <string    name="cancel_31"	translatable="true">CANCEL·LAR</string>
+    <string    name="download_31"	translatable="true">DESCARREGAR</string>
+    <string    name="later_31"	translatable="true">MÉS TARD</string>
+    <string    name="install_now_31"	translatable="true">INSTAL·LAR ARA</string>
+    <string    name="install_update_31"	translatable="true">INSTAL·LAR ACTUALITZACIÓ</string>
+    <string    name="go_back_31"	translatable="true">TORNAR</string>
+    <string    name="download_update_31"	translatable="true">DESCARREGAR ACTUALITZACIÓ</string>
+    <string    name="not_now_31"	translatable="true">ARA NO</string>
+    <string    name="copy_url_31"	translatable="true">COPIAR URL</string>
+    <string    name="fixer_31"	translatable="true">FORÇAR DESCÀRREGA</string>
+
+    <string    name="show_support_31"	translatable="true">DEMOSTRI EL SEU SUPORT</string>
+    <string    name="show_support_desc_31"	translatable="true">Som un equip no corporatiu i sense ànim de lucre. Les persones com vostè ens animen a crear una aplicació per a facilitar les coses, especialment des de la descàrrega fins a la instal·lació del mod.\n\nEstem invertint tot el nostre temps i esforços per fer les coses bé. Farem tot el possible per continuar desenvolupant aquesta aplicació tant com puguem.</string>
+
+    <string    name="maintenance_31"	translatable="true">MANTENIMIENT</string>
+    <string    name="maintenance_desc_31"	translatable="true">xManager no està disponible en aquest moment. Si us plau, revisi l'aplicació més tard.</string>
+    <string    name="thanks_31"	translatable="true">GRÀCIES!</string>
+    <string    name="language_31"	translatable="true">IDIOMA</string>
+    <string    name="website_31"	translatable="true">LLOC WEB</string>
+    <string    name="reddit_31"	translatable="true">REDDIT</string>
+    <string    name="faq_31"	translatable="true">PREGUNTES FREQÜENTS</string>
+
+    <string    name="cloned_version_31"	translatable="true">VERSIÓ CLONADA (BETA)</string>
+    <string    name="cloned_version_desc_31"	translatable="true">En activar aquesta opció, pot descarregar i instal·lar la versió clonada de l'aplicació modificada.\n\nAixò també resoldrà la majoria dels errors o problemes d'instal·lació, especialment si té una aplicació de Spotify preinstal·lada.</string>
+    <string    name="disable_rewarded_ads_31"	translatable="true">DESHABILITAR ANUNCIS AMB RECOMPENSES</string>
+    <string    name="disable_rewarded_ads_desc_31"	translatable="true">Sabem que a la majoria de nosaltres no ens agraden els anuncis, però en el nostre cas, això ens ajuda enormement a finançar la nostra base de dades, enllaços d'allotjament, actualitzacions, pegats i necessitats diàries.\n\nAquesta és la forma més senzilla de donar-nos suport sense donar ni gastar res.</string>
+
+    <string    name="installation_failed_31"	translatable="true">INSTAL·LACIÓ FALLIDA</string>
+    <string    name="installation_failed_desc_31"	translatable="true">Motiu: Has intentat instal·lar una versió del mod inferior a la que ja està instal·lada.\n\nSolucions:\nA. Seleccioni una versió igual o superior.\nB. Desinstal·li la versió actual i, a continuació, instal·li la versió inferior.\n\nSi el problema persisteix, consulti les preguntes freqüents.</string>
+    <string    name="installation_failed_ream_desc_31"	translatable="true">Motiu: El Spotify instal·lat en aquest dispositiu no provenia directament de xManager ni del nostre equip.\n\nSolució: Desinstal·li la versió actual de l'aplicació, reiniciï xManager i intenti-ho de nou. Si el problema persisteix, consulti les preguntes freqüents.</string>
+    <string    name="installation_failed_cloned_desc_31"	translatable="true">Motiu: L'aplicació clonada instal·lada en aquest dispositiu no provenia directament de xManager ni del nostre equip.\n\nSolució: Desinstal·li la versió actual de l'aplicació, reiniciï xManager i intenti-ho de nou. Si el problema persisteix, consulti les preguntes freqüents.</string>
+    <string    name="existing_patched_31"	translatable="true">PEGAT TROBAT</string>
+    <string    name="existing_patched_desc_31"	translatable="true">S'ha trobat un APK pegat en la carpeta de descàrregues. Què desitja fer?</string>
+
+    <string    name="close_31"	translatable="true">TANCAR</string>
+    <string    name="cloned_31"	translatable="true">CLONAR</string>
+    <string    name="ream_31"	translatable="true">SI/INFO</string>
+    <string    name="install_31"	translatable="true">INSTAL·LAR</string>
+    <string    name="uninstall_31"	translatable="true">DESINSTAL·LAR</string>
+    <string    name="ignore_31"	translatable="true">IGNORAR</string>
+    <string    name="delete_31"	translatable="true">ELIMINAR</string>
+    <string    name="uninstall_patched_31"	translatable="true">DESINSTAL·LAR MOD?</string>
+    <string    name="open_settings_31"	translatable="true">PARAMÈTRES DE SPOTIFY</string>
+    <string    name="open_patched_31"	translatable="true">PARAMÈTRES DEL MOD</string>
 </resources>
