@@ -2917,4 +2917,98 @@
     <string    name="uninstall_patched_30"	translatable="true">DEINSTALIRAJTE MOD</string>
     <string    name="open_settings_30"	translatable="true">OTVORITE PODEŠAVANjA</string>
     <string    name="open_patched_30"	translatable="true">OTVORITE MOD</string>
+
+    <!--LATVIAN LANGUAGE-->
+    <string    name="app_name_31"	translatable="true">xManager</string>
+    <string    name="spotify_regular_31"	translatable="true">SPOTIFY (REGULĀRAIS)</string>
+    <string    name="spotify_amoled_31"	translatable="true">SPOTIFY (TUMŠĀKA)</string>
+    <string    name="installed_31"	translatable="true">INSTALĒTS</string>
+    <string    name="latest_31"	translatable="true">JAUNĀKAIS</string>
+    <string    name="versions_31"	translatable="true">VERSIJAS  </string>
+    <string    name="changelogs_31"	translatable="true">IZMAIŅAS</string>
+    <string    name="manager_tools_31"	translatable="true">PĀRVALDNIEKA RĪKI</string>
+    <string    name="device_cpu_31"	translatable="true">CPU/ARCH</string>
+    <string    name="source_31"	translatable="true">AVOTS</string>
+    <string    name="support_31"	translatable="true">TELEGRAM</string>
+    <string    name="donate_31"	translatable="true">ATBALSTS</string>
+    <string    name="discord_31"	translatable="true">DISCORD</string>
+    <string    name="about_31"	translatable="true">PAR</string>
+    <string    name="main_title_31"	translatable="true">xManager</string>
+    <string    name="settings_title_31"	translatable="true">Iestatījumi</string>
+    <string    name="about_title_31"	translatable="true">Par</string>
+	
+    <string    name="list_auto_refresh_31"	translatable="true">SARAKSTA AUTOMĀTISKA ATJAUNOŠANA</string>
+    <string    name="list_auto_refresh_desc_31"	translatable="true">Aktivizējot šito, saraksts tiks automātiski atjaunots ikreiz, kad palaižat programmu. Varat manuāli atjaunināt sarakstu, velkot galveno ekrānu uz leju.\n\nJūs varat manuāli atjaunināt sarakstu, velkot galveno ekrānu uz leju.</string>
+    <string    name="force_auto_install_31"	translatable="true">PIESPIEDU AUTOMĀTISKĀ INSTALĒŠANA</string>
+    <string    name="force_auto_install_desc_31"	translatable="true">Ieslēdzot šo, automātiski tiks instalēta labotā lietojumprogramma un atjauninājums pēc tā lejupielādes.</string>
+    <string    name="show_themes_31"	translatable="true">VIZUĀLĀS TĒMAS</string>
+    <string    name="apk_location_31"	translatable="true">APK ATRAŠANA VIETA</string>
+    <string    name="apk_location_desc_31"	translatable="true">Atrašanās Vieta, kurā vēlaties saglabāt lejupielādētā faila kopiju. Ja nezināt, kā konfigurēt šo funkciju, atstājiet to tādu, kāda tā ir.\n\nPIEZĪME: Šī funkcija neatbalsta ārējo atmiņu (SD karti) pieejamības, atļauju un glabāšanas ierobežojumu dēļ.</string>
+    <string    name="clear_directory_folders_31"	translatable="true">DZĒST ATRAŠANAS VIETU</string>
+    <string    name="clear_directory_folders_desc_31"	translatable="true">Uzpiežiet uz ekrānu, lai dzēstu direktoriju mapi. Tas ietver lejupielādētos failus un atjauninājumus.</string>
+    <string    name="reset_settings_31"	translatable="true">ATIESTĀTĪT IESTĀTIJUMUS</string>
+	
+    <string    name="about_sub_31"	translatable="true">Reklāmu-Brīvs | Jaunas Funkcijas | Brīvība</string>
+    <string    name="xmanager_dev_31"	translatable="true">xManager Programmētajs</string>
+    <string    name="spotify_mod_devs_31"	translatable="true">Spotify Patched Programmētaji</string>
+    <string    name="telegram_support_team_31"	translatable="true">Telegram | Discord | Reddit Pabalstu Komanda</string>
+    <string    name="manager_testers_31"	translatable="true">Patched and Manager Testētāji</string>
+    <string    name="manager_hosting_31"	translatable="true">Manager Datubāze un Hostings</string>
+    <string    name="mobilism_team_31"	translatable="true">Mobilitātes komandam</string>
+    <string    name="forum_team_31"	translatable="true">FORUM.APK-RELEASE.NET Komanda</string>
+    <string    name="xspotify_team_31"	translatable="true">xSpotify Manager (Vecais Menedžers)</string>
+    <string    name="contributors_31"	translatable="true">PALDIES VISIEM DALĪBNIEKIEM! ❤️</string>
+	
+    <string    name="download_selected_31"	translatable="true">Jūs izvēlējāties šo laboto versiju. Vai vēlaties turpināt?</string>
+    <string    name="download_ready_31"	translatable="true">LABOTU VERSIJU INFORMĀCIJA</string>
+    <string    name="download_ready_desc_31"	translatable="true">Lejupielādējot šo laboto apk, tiks pārrakstīts iepriekšējais fails, kas atrodas ārējā direktorijā.</string>
+    <string    name="downloading_file_31"	translatable="true">LEJUPIELĀDĒJU FAILU...</string>
+    <string    name="download_success_31"	translatable="true">VEIKSMĪGI LEJUPIELĀDĒTS</string>
+    <string    name="new_update_31"	translatable="true">JAUNĀ MENEDŽARA ATJAUNINĀJUMS</string>
+	
+    <string    name="continue_1_31"	translatable="true">TURPINĀT</string>
+    <string    name="cancel_31"	translatable="true">ATCELT</string>
+    <string    name="download_31"	translatable="true">LEJUPIELĀDĒT</string>
+    <string    name="later_31"	translatable="true">VĒLĀK</string>
+    <string    name="install_now_31"	translatable="true">INSTALĒT TAGAD</string>
+    <string    name="install_update_31"	translatable="true">INSTALĒT ATJAUNINĀJUMU</string>
+    <string    name="go_back_31"	translatable="true">IET ATPAKAĻ</string>
+    <string    name="download_update_31"	translatable="true">LEJUPIELĀDĒT ATJAUNINĀJUMU</string>
+    <string    name="not_now_31"	translatable="true">NE TAGAD</string>
+    <string    name="copy_url_31"	translatable="true">KOPĒT LINKU</string>
+    <string    name="fixer_31"	translatable="true">FIKSĒTĀJS</string>
+	
+    <string    name="show_support_31"	translatable="true">PARĀDIET SAVU ATBALSTU</string>
+    <string    name="show_support_desc_31"	translatable="true">Mēs esam bezpeļņas, nekorporatīva un bezkompromisa komanda. Tādi cilvēki kā jūs mudina mūs izveidot lietotni, lai padarītu lietas daudz vieglāk, jo īpaši no lejupielādes līdz instalēšanai.\n\nMēs ielejam visu savu laiku un labākos centienus, lai padarītu lietas pareizas un perfektas. Mēs darīsim visu iespējamo, lai atbalstītu šo lietotni tik ilgi, cik vien mēs varētu.\n\nKatra summa palīdzēs un būs ļoti novertēts!</string>
+	
+    <string    name="maintenance_31"	translatable="true">UZTURĒŠANA</string>
+    <string    name="maintenance_desc_31"	translatable="true">xManager pašlaik nav pieejama. Lūdzu, pārbaudiet aplikāciju vēlāk.</string>
+    <string    name="thanks_31"	translatable="true">PALDIES!</string>
+    <string    name="language_31"	translatable="true">VALODA</string>
+    <string    name="website_31"	translatable="true">TĪMEKĻU VIETNE</string>
+    <string    name="reddit_31"	translatable="true">REDDIT</string>
+    <string    name="faq_31"	translatable="true">BUJ</string>
+	
+    <string    name="cloned_version_31"	translatable="true">KLONĒTA VERSIJA (BETA)</string>
+    <string    name="cloned_version_desc_31"	translatable="true">Ieslēdzot šito ļauj lejupielādēt un instalēt ielāgotās lietojumprogrammas klonēto versiju. \n\nTas arī atrisinās lielāko daļu instalēšanas kļūdu vai problēmu, īpaši, ja jums ir iepriekš instalēta Spotify lietojumprogramma.</string>
+    <string    name="disable_rewarded_ads_31"	translatable="true">IZSLĒGT ATALGOTĀS REKLĀMAS</string>
+    <string    name="disable_rewarded_ads_desc_31"	translatable="true">Mēs zinām, ka lielākajai daļai no mums nepatīk reklāmas, bet mūsu gadījumā tas ievērojami palīdz mums finansēt mūsu datu bāzi, hostinga saites, atjauninājumus, vairāk ielāpus un ikdienas vajadzības.\n\nŠis ir vienkāršākais veids, kā mūs atbalstīt, neveicot ziedojumus un netērējot.</string>
+	
+    <string    name="installation_failed_31"	translatable="true">INSTALĒŠANA NEIZDEVĀS</string>
+    <string    name="installation_failed_desc_31"	translatable="true">Iemesls: Jūs mēģinājāt instalēt moda versiju, kas ir zemāka par pašlaik instalēto. \n\nRisinājumi:\nA. Izvēlieties versiju, kas ir vienāda ar vai lielāka par.\nB. Atinstalējiet pašreizējo versiju un pēc tam pazeminiet to uz zemāku līmeni.\n\nJa problēma saglabājas, skatiet BUJ.</string>
+    <string    name="installation_failed_ream_desc_31"	translatable="true">Iemesls: \n\nRisinājums: Šajā ierīcē instalētais pašreizējais Spotify nav saņemts tieši no xManager vai no mūsu komandas: Atinstalējiet pašreizējo lietojumprogrammas versiju, restartējiet xManager un mēģiniet vēlreiz. Ja problēma saglabājas, skatiet BUJ.</string>
+    <string    name="installation_failed_cloned_desc_31"	translatable="true">Iemesls: \n\nRisinājums: Pašreizējais klonētais, kas instalēts šajā ierīcē, nav nācis tieši no xManager vai no mūsu komandas: Atinstalējiet pašreizējo lietojumprogrammas versiju, restartējiet xManager un mēģiniet vēlreiz. Ja problēma saglabājas, skatiet BUJ.</string>
+    <string    name="existing_patched_31"	translatable="true">EŠOŠAIS IZLABOTS</string>
+    <string    name="existing_patched_desc_31"	translatable="true">Vienā no direktorijām ir atrasts esošais ielāgotais apk. Kādu darbību vēlaties veikt?</string>
+	
+    <string    name="close_31"	translatable="true">AIZVERT</string>
+    <string    name="cloned_31"	translatable="true">KLONĒTS</string>
+    <string    name="ream_31"	translatable="true">RE/AM</string>
+    <string    name="install_31"	translatable="true">INSTALĒT</string>
+    <string    name="uninstall_31"	translatable="true">UNINSTALLĒT</string>
+    <string    name="ignore_31"	translatable="true">IGNORĒT</string>
+    <string    name="delete_31"	translatable="true">IZDZĒST</string>
+    <string    name="uninstall_patched_31"	translatable="true">IZDZĒST LABOTO</string>
+    <string    name="open_settings_31"	translatable="true">ATVERT IESTATIJUMUS</string>
+    <string    name="open_patched_31"	translatable="true">ATVERT IZLABOTO</string>
 </resources>
