@@ -43,7 +43,7 @@ All links are available publicly. IF, you know what it means then you know what 
 
 # About The Project
 
-The successor from our previous manager app called **"xSpotify Manager"** that was released way back 2020 developed by xC3FFF0E and with the help of Sherlock Holmes.
+The successor from our previous manager app that was released way back 2020 developed by xC3FFF0E and with the help of Sherlock Holmes.
 
 We decided to create an app where people can easily manage and install all versions of the spotify app from their devices.  
 
@@ -53,7 +53,7 @@ Our aim is to make a simple yet useful manager app for everyone's convenience. O
 Legacy databases are now officially shutdown. Update to the latest version of xManager (v3.2) to continue using the app.  
 
 **More Info:**  
-> These are the databases used by "xSpotify Manager" up until xManager v1-v3.1. Those databases are very old and deprecated at the same time. That is why we decided to take them down.  
+> These are the databases used by our old manager up until xManager v1-v3.1. Those databases are very old and deprecated at the same time. That is why we decided to take them down.  
 
 # FOR CONTRIBUTORS (01/18/22)  
 **CODE CHANGE:** Pull request should be done on the **"Developer"** branch.  
@@ -199,7 +199,7 @@ aha
 cooldude69  
 Tunelover  
 
-# xSpotify Manager Contributors (Old Manager)  
+# Old Manager Contributors  
 
 cryiotic (Manager Icon)  
 farish278 (Manager Icon)  
