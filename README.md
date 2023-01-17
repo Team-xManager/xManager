@@ -45,7 +45,7 @@ All links are available publicly. IF, you know what it means then you know what 
 
 The successor from our previous manager app that was released way back 2020 developed by xC3FFF0E and with the help of Sherlock Holmes.
 
-We decided to create an app where people can easily manage and install all versions of the spotify app from their devices.  
+We decided to create an app where people can easily manage and install all versions of the music streaming app from their devices.  
 
 Our aim is to make a simple yet useful manager app for everyone's convenience. On this second version of the manager app, we added a couple of features such as the ability to uninstall, open the app's settings directly, clear the offline cached datas and launch the app. We hope that all users find these newly added features very useful.
 
