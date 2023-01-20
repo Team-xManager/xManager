@@ -1,6 +1,9 @@
 <p align="center">
   <img width="800" src="https://bit.ly/3wC1Xsp">
 </p>
+
+### <p align="center">AD-FREE | NEW FEATURES | FREEDOM</p>
+
 <p align="center">
   <img src="https://img.shields.io/badge/Sketchware%20Build-Passing-brightgreen.svg?style=for-the-badge">
   <img src="https://img.shields.io/github/v/tag/xManager-v2/xManager-Spotify?label=LATEST%20VERSION&style=for-the-badge">
