@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="800" src="https://camo.githubusercontent.com/128a9b81108bff2616661ca38a827864757ec0def0286dfaa88737c40fbae91b/68747470733a2f2f692e6962622e636f2f7847576e6d5a7a2f782d4d616e616765722d42616e6e65722d416e696d617465642e676966">
+  <img width="800" src="https://i.ibb.co/qNHkL1P/output-onlinegiftools-2.gif">
 </p>
 <p align="center">
   <img src="https://img.shields.io/badge/Sketchware%20Build-Passing-brightgreen.svg?style=for-the-badge">
