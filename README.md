@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="800" src="https://bit.ly/3wC1Xsp">
+  <img width="800" src="https://camo.githubusercontent.com/9608990fb2c43a21652b6c61692418b7bc89f5e90b4961bdb6442583d01abb70/68747470733a2f2f6269742e6c792f33774331587370">
 </p>
 
 ### <p align="center">AD-FREE | NEW FEATURES | FREEDOM</p>
