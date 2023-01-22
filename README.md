@@ -1,8 +1,9 @@
-# xManager (Spotify)
 <p align="center">
-  <img width="800" src="https://camo.githubusercontent.com/128a9b81108bff2616661ca38a827864757ec0def0286dfaa88737c40fbae91b/68747470733a2f2f692e6962622e636f2f7847576e6d5a7a2f782d4d616e616765722d42616e6e65722d416e696d617465642e676966">
-  <img width="800" src="https://user-images.githubusercontent.com/78732474/157926338-709d56c3-0f6b-4c00-a6b2-e391773d67c2.png">
+  <img width="800" src="https://camo.githubusercontent.com/9608990fb2c43a21652b6c61692418b7bc89f5e90b4961bdb6442583d01abb70/68747470733a2f2f6269742e6c792f33774331587370">
 </p>
+
+### <p align="center">AD-FREE | NEW FEATURES | FREEDOM</p>
+
 <p align="center">
   <img src="https://img.shields.io/badge/Sketchware%20Build-Passing-brightgreen.svg?style=for-the-badge">
   <img src="https://img.shields.io/github/v/tag/xManager-v2/xManager-Spotify?label=LATEST%20VERSION&style=for-the-badge">
@@ -23,7 +24,7 @@
   <img src="https://img.shields.io/uptimerobot/ratio/7/m791526898-1d21879566baeaad34b26ac3?label=API UPTIME&style=for-the-badge">
 </p>
 
-### [<p align="center">🎉Check out our Roadmaps, Changelogs and Milestones here!🎉</p>](https://github.com/xManager-v2/xManager-Spotify/wiki/xManager-(Spotify)-Roadmaps,-Changelogs-and-Milestones)  
+### [<p align="center">🎉Check out our Roadmaps, Changelogs and Milestones here!🎉</p>](https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones)  
 
 ### [<p align="center">🛠VirusTotal Result: Click Here🛠</p>](https://www.virustotal.com/gui/file/b24685ac8c4d506a8f8094c21e6c3bdc57111011f6c061d481716b372a8d5f7b/detection)
 
@@ -45,9 +46,9 @@ All links are available publicly. IF, you know what it means then you know what 
 
 # About The Project
 
-The successor from our previous manager app called **"xSpotify Manager"** that was released way back 2020 developed by xC3FFF0E and with the help of Sherlock Holmes.
+The successor from our previous manager app that was released way back 2020 developed by xC3FFF0E and with the help of Sherlock Holmes.
 
-We decided to create an app where people can easily manage and install all versions of the spotify app from their devices.  
+We decided to create an app where people can easily manage and install all versions of the music streaming app from their devices.  
 
 Our aim is to make a simple yet useful manager app for everyone's convenience. On this second version of the manager app, we added a couple of features such as the ability to uninstall, open the app's settings directly, clear the offline cached datas and launch the app. We hope that all users find these newly added features very useful.
 
@@ -55,7 +56,7 @@ Our aim is to make a simple yet useful manager app for everyone's convenience. O
 Legacy databases are now officially shutdown. Update to the latest version of xManager (v3.2) to continue using the app.  
 
 **More Info:**  
-> These are the databases used by "xSpotify Manager" up until xManager v1-v3.1. Those databases are very old and deprecated at the same time. That is why we decided to take them down.  
+> These are the databases used by our old manager up until xManager v1-v3.1. Those databases are very old and deprecated at the same time. That is why we decided to take them down.  
 
 # FOR CONTRIBUTORS (01/18/22)  
 **CODE CHANGE:** Pull request should be done on the **"Developer"** branch.  
@@ -201,7 +202,7 @@ aha
 cooldude69  
 Tunelover  
 
-# xSpotify Manager Contributors (Old Manager)  
+# Old Manager Contributors  
 
 cryiotic (Manager Icon)  
 farish278 (Manager Icon)  
