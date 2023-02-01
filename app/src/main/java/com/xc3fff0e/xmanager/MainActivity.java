@@ -8,7 +8,6 @@ import android.app.Activity;
 import android.content.*;
 import android.content.ClipData;
 import android.content.ClipboardManager;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.*;
@@ -17,7 +16,6 @@ import android.graphics.Typeface;
 import android.graphics.drawable.*;
 import android.media.*;
 import android.net.*;
-import android.net.Uri;
 import android.os.*;
 import android.text.*;
 import android.text.Editable;
@@ -53,7 +51,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.material.*;
 import com.google.firebase.FirebaseApp;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -177,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
 	private TextView existing_patched;
 	private TextView close;
 	private TextView fixer;
-	private TextView ream;
+	private TextView spap;
 	private TextView uninstall_patched;
 	private TextView open_settings;
 	private TextView uninstall;
@@ -289,32 +286,26 @@ public class MainActivity extends AppCompatActivity {
 	private LinearLayout box_about_5;
 	private LinearLayout box_about_6;
 	private LinearLayout box_about_7;
-	private TextView contributors_1;
+	private TextView contributors;
 	private LinearLayout box_icon_close;
 	private ImageView icon_close;
 	private TextView title_about;
 	private TextView local_version;
 	private TextView sub_title;
-	private TextView developer_manager;
+	private TextView xmanager_dev;
 	private TextView developer_1;
-	private TextView developer_spotify;
+	private TextView patched_devs;
 	private TextView developer_2;
 	private TextView support_team;
 	private TextView support_1;
-	private TextView mod_testers_1;
+	private TextView manager_testers;
 	private TextView testers_1;
-	private TextView mod_testers_2;
-	private TextView testers_2;
+	private TextView manager_hosting;
+	private TextView hosting_1;
 	private TextView mobilism_team;
 	private TextView mobilism_1;
 	private TextView forum_team;
 	private TextView forum_1;
-	private TextView manager_team;
-	private TextView manager_1;
-	private LinearLayout box_about_4_sub_1;
-	private TextView manager_donators;
-	private TextView donators;
-	private LinearLayout about_separator;
 	private TextView manager_lang_13;
 	private TextView translator_13;
 	private TextView manager_lang_1;
@@ -377,6 +368,14 @@ public class MainActivity extends AppCompatActivity {
 	private TextView translator_30;
 	private TextView manager_lang_31;
 	private TextView translator_31;
+	private TextView manager_lang_32;
+	private TextView translator_32;
+	private TextView manager_lang_33;
+	private TextView translator_33;
+	private TextView manager_lang_34;
+	private TextView translator_34;
+	private TextView manager_donors;
+	private TextView donors_1;
 	private ScrollView main_scroll_body;
 	private LinearLayout main_body;
 	private LinearLayout main_box_1;
@@ -502,7 +501,6 @@ public class MainActivity extends AppCompatActivity {
 	private SharedPreferences LANGUAGE;
 	private SharedPreferences CLONED_VERSION;
 	private SharedPreferences DISABLE_REWARD_AD;
-	private Intent External_Storage_Manager = new Intent();
 	private SharedPreferences AD_UNIT;
 	
 	@Override
@@ -537,7 +535,7 @@ public class MainActivity extends AppCompatActivity {
 		existing_patched = findViewById(R.id.existing_patched);
 		close = findViewById(R.id.close);
 		fixer = findViewById(R.id.fixer);
-		ream = findViewById(R.id.ream);
+		spap = findViewById(R.id.spap);
 		uninstall_patched = findViewById(R.id.uninstall_patched);
 		open_settings = findViewById(R.id.open_settings);
 		uninstall = findViewById(R.id.uninstall);
@@ -649,32 +647,26 @@ public class MainActivity extends AppCompatActivity {
 		box_about_5 = findViewById(R.id.box_about_5);
 		box_about_6 = findViewById(R.id.box_about_6);
 		box_about_7 = findViewById(R.id.box_about_7);
-		contributors_1 = findViewById(R.id.contributors_1);
+		contributors = findViewById(R.id.contributors);
 		box_icon_close = findViewById(R.id.box_icon_close);
 		icon_close = findViewById(R.id.icon_close);
 		title_about = findViewById(R.id.title_about);
 		local_version = findViewById(R.id.local_version);
 		sub_title = findViewById(R.id.sub_title);
-		developer_manager = findViewById(R.id.developer_manager);
+		xmanager_dev = findViewById(R.id.xmanager_dev);
 		developer_1 = findViewById(R.id.developer_1);
-		developer_spotify = findViewById(R.id.developer_spotify);
+		patched_devs = findViewById(R.id.patched_devs);
 		developer_2 = findViewById(R.id.developer_2);
 		support_team = findViewById(R.id.support_team);
 		support_1 = findViewById(R.id.support_1);
-		mod_testers_1 = findViewById(R.id.mod_testers_1);
+		manager_testers = findViewById(R.id.manager_testers);
 		testers_1 = findViewById(R.id.testers_1);
-		mod_testers_2 = findViewById(R.id.mod_testers_2);
-		testers_2 = findViewById(R.id.testers_2);
+		manager_hosting = findViewById(R.id.manager_hosting);
+		hosting_1 = findViewById(R.id.hosting_1);
 		mobilism_team = findViewById(R.id.mobilism_team);
 		mobilism_1 = findViewById(R.id.mobilism_1);
 		forum_team = findViewById(R.id.forum_team);
 		forum_1 = findViewById(R.id.forum_1);
-		manager_team = findViewById(R.id.manager_team);
-		manager_1 = findViewById(R.id.manager_1);
-		box_about_4_sub_1 = findViewById(R.id.box_about_4_sub_1);
-		manager_donators = findViewById(R.id.manager_donators);
-		donators = findViewById(R.id.donators);
-		about_separator = findViewById(R.id.about_separator);
 		manager_lang_13 = findViewById(R.id.manager_lang_13);
 		translator_13 = findViewById(R.id.translator_13);
 		manager_lang_1 = findViewById(R.id.manager_lang_1);
@@ -737,6 +729,14 @@ public class MainActivity extends AppCompatActivity {
 		translator_30 = findViewById(R.id.translator_30);
 		manager_lang_31 = findViewById(R.id.manager_lang_31);
 		translator_31 = findViewById(R.id.translator_31);
+		manager_lang_32 = findViewById(R.id.manager_lang_32);
+		translator_32 = findViewById(R.id.translator_32);
+		manager_lang_33 = findViewById(R.id.manager_lang_33);
+		translator_33 = findViewById(R.id.translator_33);
+		manager_lang_34 = findViewById(R.id.manager_lang_34);
+		translator_34 = findViewById(R.id.translator_34);
+		manager_donors = findViewById(R.id.manager_donors);
+		donors_1 = findViewById(R.id.donors_1);
 		main_scroll_body = findViewById(R.id.main_scroll_body);
 		main_body = findViewById(R.id.main_body);
 		main_box_1 = findViewById(R.id.main_box_1);
@@ -875,7 +875,6 @@ public class MainActivity extends AppCompatActivity {
 				title_header_separator.setTextColor(Color.TRANSPARENT);
 				_Tap_Animation(box_switch);
 				CLOSER_2 = 1;
-				_External_Storage();
 				_Animation_1();
 			}
 		});
@@ -1281,8 +1280,6 @@ public class MainActivity extends AppCompatActivity {
 				final int _position = _param3;
 				if (_position == 0) {
 					LANGUAGE.edit().putString("LANGUAGE", "0").commit();
-					title_1.setText(R.string.spotify_regular);
-					title_2.setText(R.string.spotify_amoled);
 					sub_text_installed.setText(R.string.installed);
 					sub_text_1.setText(R.string.latest);
 					sub_text_2.setText(R.string.latest);
@@ -1308,15 +1305,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc);
 					reset_settings.setText(R.string.reset_settings);
 					sub_title.setText(R.string.about_sub);
-					developer_manager.setText(R.string.xmanager_dev);
-					developer_spotify.setText(R.string.spotify_mod_devs);
-					support_team.setText(R.string.telegram_support_team);
-					mod_testers_1.setText(R.string.manager_testers);
-					mod_testers_2.setText(R.string.manager_hosting);
+					xmanager_dev.setText(R.string.xmanager_dev);
+					patched_devs.setText(R.string.patched_devs);
+					support_team.setText(R.string.support_team);
+					manager_testers.setText(R.string.manager_testers);
+					manager_hosting.setText(R.string.manager_hosting);
 					mobilism_team.setText(R.string.mobilism_team);
 					forum_team.setText(R.string.forum_team);
-					manager_team.setText(R.string.xspotify_team);
-					contributors_1.setText(R.string.contributors);
+					contributors.setText(R.string.contributors);
 					download_selected.setText(R.string.download_selected);
 					download_ready.setText(R.string.download_ready);
 					download_ready_desc.setText(R.string.download_ready_desc);
@@ -1373,7 +1369,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc);
 					close.setText(R.string.close);
 					cloned.setText(R.string.cloned);
-					ream.setText(R.string.ream);
+					spap.setText(R.string.spap);
 					install.setText(R.string.install);
 					uninstall.setText(R.string.uninstall);
 					ignore.setText(R.string.ignore);
@@ -1394,8 +1390,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 1) {
 					LANGUAGE.edit().putString("LANGUAGE", "1").commit();
-					title_1.setText(R.string.spotify_regular_01);
-					title_2.setText(R.string.spotify_amoled_01);
 					sub_text_installed.setText(R.string.installed_01);
 					sub_text_1.setText(R.string.latest_01);
 					sub_text_2.setText(R.string.latest_01);
@@ -1421,15 +1415,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_01);
 					reset_settings.setText(R.string.reset_settings_01);
 					sub_title.setText(R.string.about_sub_01);
-					developer_manager.setText(R.string.xmanager_dev_01);
-					developer_spotify.setText(R.string.spotify_mod_devs_01);
-					support_team.setText(R.string.telegram_support_team_01);
-					mod_testers_1.setText(R.string.manager_testers_01);
-					mod_testers_2.setText(R.string.manager_hosting_01);
+					xmanager_dev.setText(R.string.xmanager_dev_01);
+					patched_devs.setText(R.string.patched_devs_01);
+					support_team.setText(R.string.support_team_01);
+					manager_testers.setText(R.string.manager_testers_01);
+					manager_hosting.setText(R.string.manager_hosting_01);
 					mobilism_team.setText(R.string.mobilism_team_01);
 					forum_team.setText(R.string.forum_team_01);
-					manager_team.setText(R.string.xspotify_team_01);
-					contributors_1.setText(R.string.contributors_01);
+					contributors.setText(R.string.contributors_01);
 					download_selected.setText(R.string.download_selected_01);
 					download_ready.setText(R.string.download_ready_01);
 					download_ready_desc.setText(R.string.download_ready_desc_01);
@@ -1486,7 +1479,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_01);
 					close.setText(R.string.close_01);
 					cloned.setText(R.string.cloned_01);
-					ream.setText(R.string.ream_01);
+					spap.setText(R.string.spap_01);
 					install.setText(R.string.install_01);
 					uninstall.setText(R.string.uninstall_01);
 					ignore.setText(R.string.ignore_01);
@@ -1507,8 +1500,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 2) {
 					LANGUAGE.edit().putString("LANGUAGE", "2").commit();
-					title_1.setText(R.string.spotify_regular_02);
-					title_2.setText(R.string.spotify_amoled_02);
 					sub_text_installed.setText(R.string.installed_02);
 					sub_text_1.setText(R.string.latest_02);
 					sub_text_2.setText(R.string.latest_02);
@@ -1534,15 +1525,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_02);
 					reset_settings.setText(R.string.reset_settings_02);
 					sub_title.setText(R.string.about_sub_02);
-					developer_manager.setText(R.string.xmanager_dev_02);
-					developer_spotify.setText(R.string.spotify_mod_devs_02);
-					support_team.setText(R.string.telegram_support_team_02);
-					mod_testers_1.setText(R.string.manager_testers_02);
-					mod_testers_2.setText(R.string.manager_hosting_02);
+					xmanager_dev.setText(R.string.xmanager_dev_02);
+					patched_devs.setText(R.string.patched_devs_02);
+					support_team.setText(R.string.support_team_02);
+					manager_testers.setText(R.string.manager_testers_02);
+					manager_hosting.setText(R.string.manager_hosting_02);
 					mobilism_team.setText(R.string.mobilism_team_02);
 					forum_team.setText(R.string.forum_team_02);
-					manager_team.setText(R.string.xspotify_team_02);
-					contributors_1.setText(R.string.contributors_02);
+					contributors.setText(R.string.contributors_02);
 					download_selected.setText(R.string.download_selected_02);
 					download_ready.setText(R.string.download_ready_02);
 					download_ready_desc.setText(R.string.download_ready_desc_02);
@@ -1599,7 +1589,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_02);
 					close.setText(R.string.close_02);
 					cloned.setText(R.string.cloned_02);
-					ream.setText(R.string.ream_02);
+					spap.setText(R.string.spap_02);
 					install.setText(R.string.install_02);
 					uninstall.setText(R.string.uninstall_02);
 					ignore.setText(R.string.ignore_02);
@@ -1620,8 +1610,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 3) {
 					LANGUAGE.edit().putString("LANGUAGE", "3").commit();
-					title_1.setText(R.string.spotify_regular_03);
-					title_2.setText(R.string.spotify_amoled_03);
 					sub_text_installed.setText(R.string.installed_03);
 					sub_text_1.setText(R.string.latest_03);
 					sub_text_2.setText(R.string.latest_03);
@@ -1647,15 +1635,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_03);
 					reset_settings.setText(R.string.reset_settings_03);
 					sub_title.setText(R.string.about_sub_03);
-					developer_manager.setText(R.string.xmanager_dev_03);
-					developer_spotify.setText(R.string.spotify_mod_devs_03);
-					support_team.setText(R.string.telegram_support_team_03);
-					mod_testers_1.setText(R.string.manager_testers_03);
-					mod_testers_2.setText(R.string.manager_hosting_03);
+					xmanager_dev.setText(R.string.xmanager_dev_03);
+					patched_devs.setText(R.string.patched_devs_03);
+					support_team.setText(R.string.support_team_03);
+					manager_testers.setText(R.string.manager_testers_03);
+					manager_hosting.setText(R.string.manager_hosting_03);
 					mobilism_team.setText(R.string.mobilism_team_03);
 					forum_team.setText(R.string.forum_team_03);
-					manager_team.setText(R.string.xspotify_team_03);
-					contributors_1.setText(R.string.contributors_03);
+					contributors.setText(R.string.contributors_03);
 					download_selected.setText(R.string.download_selected_03);
 					download_ready.setText(R.string.download_ready_03);
 					download_ready_desc.setText(R.string.download_ready_desc_03);
@@ -1712,7 +1699,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_03);
 					close.setText(R.string.close_03);
 					cloned.setText(R.string.cloned_03);
-					ream.setText(R.string.ream_03);
+					spap.setText(R.string.spap_03);
 					install.setText(R.string.install_03);
 					uninstall.setText(R.string.uninstall_03);
 					ignore.setText(R.string.ignore_03);
@@ -1733,8 +1720,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 4) {
 					LANGUAGE.edit().putString("LANGUAGE", "4").commit();
-					title_1.setText(R.string.spotify_regular_04);
-					title_2.setText(R.string.spotify_amoled_04);
 					sub_text_installed.setText(R.string.installed_04);
 					sub_text_1.setText(R.string.latest_04);
 					sub_text_2.setText(R.string.latest_04);
@@ -1760,15 +1745,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_04);
 					reset_settings.setText(R.string.reset_settings_04);
 					sub_title.setText(R.string.about_sub_04);
-					developer_manager.setText(R.string.xmanager_dev_04);
-					developer_spotify.setText(R.string.spotify_mod_devs_04);
-					support_team.setText(R.string.telegram_support_team_04);
-					mod_testers_1.setText(R.string.manager_testers_04);
-					mod_testers_2.setText(R.string.manager_hosting_04);
+					xmanager_dev.setText(R.string.xmanager_dev_04);
+					patched_devs.setText(R.string.patched_devs_04);
+					support_team.setText(R.string.support_team_04);
+					manager_testers.setText(R.string.manager_testers_04);
+					manager_hosting.setText(R.string.manager_hosting_04);
 					mobilism_team.setText(R.string.mobilism_team_04);
 					forum_team.setText(R.string.forum_team_04);
-					manager_team.setText(R.string.xspotify_team_04);
-					contributors_1.setText(R.string.contributors_04);
+					contributors.setText(R.string.contributors_04);
 					download_selected.setText(R.string.download_selected_04);
 					download_ready.setText(R.string.download_ready_04);
 					download_ready_desc.setText(R.string.download_ready_desc_04);
@@ -1825,7 +1809,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_04);
 					close.setText(R.string.close_04);
 					cloned.setText(R.string.cloned_04);
-					ream.setText(R.string.ream_04);
+					spap.setText(R.string.spap_04);
 					install.setText(R.string.install_04);
 					uninstall.setText(R.string.uninstall_04);
 					ignore.setText(R.string.ignore_04);
@@ -1846,8 +1830,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 5) {
 					LANGUAGE.edit().putString("LANGUAGE", "5").commit();
-					title_1.setText(R.string.spotify_regular_05);
-					title_2.setText(R.string.spotify_amoled_05);
 					sub_text_installed.setText(R.string.installed_05);
 					sub_text_1.setText(R.string.latest_05);
 					sub_text_2.setText(R.string.latest_05);
@@ -1873,15 +1855,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_05);
 					reset_settings.setText(R.string.reset_settings_05);
 					sub_title.setText(R.string.about_sub_05);
-					developer_manager.setText(R.string.xmanager_dev_05);
-					developer_spotify.setText(R.string.spotify_mod_devs_05);
-					support_team.setText(R.string.telegram_support_team_05);
-					mod_testers_1.setText(R.string.manager_testers_05);
-					mod_testers_2.setText(R.string.manager_hosting_05);
+					xmanager_dev.setText(R.string.xmanager_dev_05);
+					patched_devs.setText(R.string.patched_devs_05);
+					support_team.setText(R.string.support_team_05);
+					manager_testers.setText(R.string.manager_testers_05);
+					manager_hosting.setText(R.string.manager_hosting_05);
 					mobilism_team.setText(R.string.mobilism_team_05);
 					forum_team.setText(R.string.forum_team_05);
-					manager_team.setText(R.string.xspotify_team_05);
-					contributors_1.setText(R.string.contributors_05);
+					contributors.setText(R.string.contributors_05);
 					download_selected.setText(R.string.download_selected_05);
 					download_ready.setText(R.string.download_ready_05);
 					download_ready_desc.setText(R.string.download_ready_desc_05);
@@ -1938,7 +1919,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_05);
 					close.setText(R.string.close_05);
 					cloned.setText(R.string.cloned_05);
-					ream.setText(R.string.ream_05);
+					spap.setText(R.string.spap_05);
 					install.setText(R.string.install_05);
 					uninstall.setText(R.string.uninstall_05);
 					ignore.setText(R.string.ignore_05);
@@ -1959,8 +1940,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 6) {
 					LANGUAGE.edit().putString("LANGUAGE", "6").commit();
-					title_1.setText(R.string.spotify_regular_06);
-					title_2.setText(R.string.spotify_amoled_06);
 					sub_text_installed.setText(R.string.installed_06);
 					sub_text_1.setText(R.string.latest_06);
 					sub_text_2.setText(R.string.latest_06);
@@ -1986,15 +1965,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_06);
 					reset_settings.setText(R.string.reset_settings_06);
 					sub_title.setText(R.string.about_sub_06);
-					developer_manager.setText(R.string.xmanager_dev_06);
-					developer_spotify.setText(R.string.spotify_mod_devs_06);
-					support_team.setText(R.string.telegram_support_team_06);
-					mod_testers_1.setText(R.string.manager_testers_06);
-					mod_testers_2.setText(R.string.manager_hosting_06);
+					xmanager_dev.setText(R.string.xmanager_dev_06);
+					patched_devs.setText(R.string.patched_devs_06);
+					support_team.setText(R.string.support_team_06);
+					manager_testers.setText(R.string.manager_testers_06);
+					manager_hosting.setText(R.string.manager_hosting_06);
 					mobilism_team.setText(R.string.mobilism_team_06);
 					forum_team.setText(R.string.forum_team_06);
-					manager_team.setText(R.string.xspotify_team_06);
-					contributors_1.setText(R.string.contributors_06);
+					contributors.setText(R.string.contributors_06);
 					download_selected.setText(R.string.download_selected_06);
 					download_ready.setText(R.string.download_ready_06);
 					download_ready_desc.setText(R.string.download_ready_desc_06);
@@ -2051,7 +2029,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_06);
 					close.setText(R.string.close_06);
 					cloned.setText(R.string.cloned_06);
-					ream.setText(R.string.ream_06);
+					spap.setText(R.string.spap_06);
 					install.setText(R.string.install_06);
 					uninstall.setText(R.string.uninstall_06);
 					ignore.setText(R.string.ignore_06);
@@ -2072,8 +2050,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 7) {
 					LANGUAGE.edit().putString("LANGUAGE", "7").commit();
-					title_1.setText(R.string.spotify_regular_07);
-					title_2.setText(R.string.spotify_amoled_07);
 					sub_text_installed.setText(R.string.installed_07);
 					sub_text_1.setText(R.string.latest_07);
 					sub_text_2.setText(R.string.latest_07);
@@ -2099,15 +2075,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_07);
 					reset_settings.setText(R.string.reset_settings_07);
 					sub_title.setText(R.string.about_sub_07);
-					developer_manager.setText(R.string.xmanager_dev_07);
-					developer_spotify.setText(R.string.spotify_mod_devs_07);
-					support_team.setText(R.string.telegram_support_team_07);
-					mod_testers_1.setText(R.string.manager_testers_07);
-					mod_testers_2.setText(R.string.manager_hosting_07);
+					xmanager_dev.setText(R.string.xmanager_dev_07);
+					patched_devs.setText(R.string.patched_devs_07);
+					support_team.setText(R.string.support_team_07);
+					manager_testers.setText(R.string.manager_testers_07);
+					manager_hosting.setText(R.string.manager_hosting_07);
 					mobilism_team.setText(R.string.mobilism_team_07);
 					forum_team.setText(R.string.forum_team_07);
-					manager_team.setText(R.string.xspotify_team_07);
-					contributors_1.setText(R.string.contributors_07);
+					contributors.setText(R.string.contributors_07);
 					download_selected.setText(R.string.download_selected_07);
 					download_ready.setText(R.string.download_ready_07);
 					download_ready_desc.setText(R.string.download_ready_desc_07);
@@ -2164,7 +2139,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_07);
 					close.setText(R.string.close_07);
 					cloned.setText(R.string.cloned_07);
-					ream.setText(R.string.ream_07);
+					spap.setText(R.string.spap_07);
 					install.setText(R.string.install_07);
 					uninstall.setText(R.string.uninstall_07);
 					ignore.setText(R.string.ignore_07);
@@ -2185,8 +2160,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 8) {
 					LANGUAGE.edit().putString("LANGUAGE", "8").commit();
-					title_1.setText(R.string.spotify_regular_08);
-					title_2.setText(R.string.spotify_amoled_08);
 					sub_text_installed.setText(R.string.installed_08);
 					sub_text_1.setText(R.string.latest_08);
 					sub_text_2.setText(R.string.latest_08);
@@ -2212,15 +2185,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_08);
 					reset_settings.setText(R.string.reset_settings_08);
 					sub_title.setText(R.string.about_sub_08);
-					developer_manager.setText(R.string.xmanager_dev_08);
-					developer_spotify.setText(R.string.spotify_mod_devs_08);
-					support_team.setText(R.string.telegram_support_team_08);
-					mod_testers_1.setText(R.string.manager_testers_08);
-					mod_testers_2.setText(R.string.manager_hosting_08);
+					xmanager_dev.setText(R.string.xmanager_dev_08);
+					patched_devs.setText(R.string.patched_devs_08);
+					support_team.setText(R.string.support_team_08);
+					manager_testers.setText(R.string.manager_testers_08);
+					manager_hosting.setText(R.string.manager_hosting_08);
 					mobilism_team.setText(R.string.mobilism_team_08);
 					forum_team.setText(R.string.forum_team_08);
-					manager_team.setText(R.string.xspotify_team_08);
-					contributors_1.setText(R.string.contributors_08);
+					contributors.setText(R.string.contributors_08);
 					download_selected.setText(R.string.download_selected_08);
 					download_ready.setText(R.string.download_ready_08);
 					download_ready_desc.setText(R.string.download_ready_desc_08);
@@ -2277,7 +2249,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_08);
 					close.setText(R.string.close_08);
 					cloned.setText(R.string.cloned_08);
-					ream.setText(R.string.ream_08);
+					spap.setText(R.string.spap_08);
 					install.setText(R.string.install_08);
 					uninstall.setText(R.string.uninstall_08);
 					ignore.setText(R.string.ignore_08);
@@ -2298,8 +2270,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 9) {
 					LANGUAGE.edit().putString("LANGUAGE", "9").commit();
-					title_1.setText(R.string.spotify_regular_09);
-					title_2.setText(R.string.spotify_amoled_09);
 					sub_text_installed.setText(R.string.installed_09);
 					sub_text_1.setText(R.string.latest_09);
 					sub_text_2.setText(R.string.latest_09);
@@ -2325,15 +2295,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_09);
 					reset_settings.setText(R.string.reset_settings_09);
 					sub_title.setText(R.string.about_sub_09);
-					developer_manager.setText(R.string.xmanager_dev_09);
-					developer_spotify.setText(R.string.spotify_mod_devs_09);
-					support_team.setText(R.string.telegram_support_team_09);
-					mod_testers_1.setText(R.string.manager_testers_09);
-					mod_testers_2.setText(R.string.manager_hosting_09);
+					xmanager_dev.setText(R.string.xmanager_dev_09);
+					patched_devs.setText(R.string.patched_devs_09);
+					support_team.setText(R.string.support_team_09);
+					manager_testers.setText(R.string.manager_testers_09);
+					manager_hosting.setText(R.string.manager_hosting_09);
 					mobilism_team.setText(R.string.mobilism_team_09);
 					forum_team.setText(R.string.forum_team_09);
-					manager_team.setText(R.string.xspotify_team_09);
-					contributors_1.setText(R.string.contributors_09);
+					contributors.setText(R.string.contributors_09);
 					download_selected.setText(R.string.download_selected_09);
 					download_ready.setText(R.string.download_ready_09);
 					download_ready_desc.setText(R.string.download_ready_desc_09);
@@ -2390,7 +2359,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_09);
 					close.setText(R.string.close_09);
 					cloned.setText(R.string.cloned_09);
-					ream.setText(R.string.ream_09);
+					spap.setText(R.string.spap_09);
 					install.setText(R.string.install_09);
 					uninstall.setText(R.string.uninstall_09);
 					ignore.setText(R.string.ignore_09);
@@ -2411,8 +2380,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 10) {
 					LANGUAGE.edit().putString("LANGUAGE", "10").commit();
-					title_1.setText(R.string.spotify_regular_10);
-					title_2.setText(R.string.spotify_amoled_10);
 					sub_text_installed.setText(R.string.installed_10);
 					sub_text_1.setText(R.string.latest_10);
 					sub_text_2.setText(R.string.latest_10);
@@ -2438,15 +2405,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_10);
 					reset_settings.setText(R.string.reset_settings_10);
 					sub_title.setText(R.string.about_sub_10);
-					developer_manager.setText(R.string.xmanager_dev_10);
-					developer_spotify.setText(R.string.spotify_mod_devs_10);
-					support_team.setText(R.string.telegram_support_team_10);
-					mod_testers_1.setText(R.string.manager_testers_10);
-					mod_testers_2.setText(R.string.manager_hosting_10);
+					xmanager_dev.setText(R.string.xmanager_dev_10);
+					patched_devs.setText(R.string.patched_devs_10);
+					support_team.setText(R.string.support_team_10);
+					manager_testers.setText(R.string.manager_testers_10);
+					manager_hosting.setText(R.string.manager_hosting_10);
 					mobilism_team.setText(R.string.mobilism_team_10);
 					forum_team.setText(R.string.forum_team_10);
-					manager_team.setText(R.string.xspotify_team_10);
-					contributors_1.setText(R.string.contributors_10);
+					contributors.setText(R.string.contributors_10);
 					download_selected.setText(R.string.download_selected_10);
 					download_ready.setText(R.string.download_ready_10);
 					download_ready_desc.setText(R.string.download_ready_desc_10);
@@ -2503,7 +2469,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_10);
 					close.setText(R.string.close_10);
 					cloned.setText(R.string.cloned_10);
-					ream.setText(R.string.ream_10);
+					spap.setText(R.string.spap_10);
 					install.setText(R.string.install_10);
 					uninstall.setText(R.string.uninstall_10);
 					ignore.setText(R.string.ignore_10);
@@ -2524,8 +2490,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 11) {
 					LANGUAGE.edit().putString("LANGUAGE", "11").commit();
-					title_1.setText(R.string.spotify_regular_11);
-					title_2.setText(R.string.spotify_amoled_11);
 					sub_text_installed.setText(R.string.installed_11);
 					sub_text_1.setText(R.string.latest_11);
 					sub_text_2.setText(R.string.latest_11);
@@ -2551,15 +2515,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_11);
 					reset_settings.setText(R.string.reset_settings_11);
 					sub_title.setText(R.string.about_sub_11);
-					developer_manager.setText(R.string.xmanager_dev_11);
-					developer_spotify.setText(R.string.spotify_mod_devs_11);
-					support_team.setText(R.string.telegram_support_team_11);
-					mod_testers_1.setText(R.string.manager_testers_11);
-					mod_testers_2.setText(R.string.manager_hosting_11);
+					xmanager_dev.setText(R.string.xmanager_dev_11);
+					patched_devs.setText(R.string.patched_devs_11);
+					support_team.setText(R.string.support_team_11);
+					manager_testers.setText(R.string.manager_testers_11);
+					manager_hosting.setText(R.string.manager_hosting_11);
 					mobilism_team.setText(R.string.mobilism_team_11);
 					forum_team.setText(R.string.forum_team_11);
-					manager_team.setText(R.string.xspotify_team_11);
-					contributors_1.setText(R.string.contributors_11);
+					contributors.setText(R.string.contributors_11);
 					download_selected.setText(R.string.download_selected_11);
 					download_ready.setText(R.string.download_ready_11);
 					download_ready_desc.setText(R.string.download_ready_desc_11);
@@ -2616,7 +2579,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_11);
 					close.setText(R.string.close_11);
 					cloned.setText(R.string.cloned_11);
-					ream.setText(R.string.ream_11);
+					spap.setText(R.string.spap_11);
 					install.setText(R.string.install_11);
 					uninstall.setText(R.string.uninstall_11);
 					ignore.setText(R.string.ignore_11);
@@ -2637,8 +2600,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 12) {
 					LANGUAGE.edit().putString("LANGUAGE", "12").commit();
-					title_1.setText(R.string.spotify_regular_12);
-					title_2.setText(R.string.spotify_amoled_12);
 					sub_text_installed.setText(R.string.installed_12);
 					sub_text_1.setText(R.string.latest_12);
 					sub_text_2.setText(R.string.latest_12);
@@ -2664,15 +2625,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_12);
 					reset_settings.setText(R.string.reset_settings_12);
 					sub_title.setText(R.string.about_sub_12);
-					developer_manager.setText(R.string.xmanager_dev_12);
-					developer_spotify.setText(R.string.spotify_mod_devs_12);
-					support_team.setText(R.string.telegram_support_team_12);
-					mod_testers_1.setText(R.string.manager_testers_12);
-					mod_testers_2.setText(R.string.manager_hosting_12);
+					xmanager_dev.setText(R.string.xmanager_dev_12);
+					patched_devs.setText(R.string.patched_devs_12);
+					support_team.setText(R.string.support_team_12);
+					manager_testers.setText(R.string.manager_testers_12);
+					manager_hosting.setText(R.string.manager_hosting_12);
 					mobilism_team.setText(R.string.mobilism_team_12);
 					forum_team.setText(R.string.forum_team_12);
-					manager_team.setText(R.string.xspotify_team_12);
-					contributors_1.setText(R.string.contributors_12);
+					contributors.setText(R.string.contributors_12);
 					download_selected.setText(R.string.download_selected_12);
 					download_ready.setText(R.string.download_ready_12);
 					download_ready_desc.setText(R.string.download_ready_desc_12);
@@ -2729,7 +2689,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_12);
 					close.setText(R.string.close_12);
 					cloned.setText(R.string.cloned_12);
-					ream.setText(R.string.ream_12);
+					spap.setText(R.string.spap_12);
 					install.setText(R.string.install_12);
 					uninstall.setText(R.string.uninstall_12);
 					ignore.setText(R.string.ignore_12);
@@ -2750,8 +2710,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 13) {
 					LANGUAGE.edit().putString("LANGUAGE", "13").commit();
-					title_1.setText(R.string.spotify_regular_13);
-					title_2.setText(R.string.spotify_amoled_13);
 					sub_text_installed.setText(R.string.installed_13);
 					sub_text_1.setText(R.string.latest_13);
 					sub_text_2.setText(R.string.latest_13);
@@ -2777,15 +2735,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_13);
 					reset_settings.setText(R.string.reset_settings_13);
 					sub_title.setText(R.string.about_sub_13);
-					developer_manager.setText(R.string.xmanager_dev_13);
-					developer_spotify.setText(R.string.spotify_mod_devs_13);
-					support_team.setText(R.string.telegram_support_team_13);
-					mod_testers_1.setText(R.string.manager_testers_13);
-					mod_testers_2.setText(R.string.manager_hosting_13);
+					xmanager_dev.setText(R.string.xmanager_dev_13);
+					patched_devs.setText(R.string.patched_devs_13);
+					support_team.setText(R.string.support_team_13);
+					manager_testers.setText(R.string.manager_testers_13);
+					manager_hosting.setText(R.string.manager_hosting_13);
 					mobilism_team.setText(R.string.mobilism_team_13);
 					forum_team.setText(R.string.forum_team_13);
-					manager_team.setText(R.string.xspotify_team_13);
-					contributors_1.setText(R.string.contributors_13);
+					contributors.setText(R.string.contributors_13);
 					download_selected.setText(R.string.download_selected_13);
 					download_ready.setText(R.string.download_ready_13);
 					download_ready_desc.setText(R.string.download_ready_desc_13);
@@ -2842,7 +2799,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_13);
 					close.setText(R.string.close_13);
 					cloned.setText(R.string.cloned_13);
-					ream.setText(R.string.ream_13);
+					spap.setText(R.string.spap_13);
 					install.setText(R.string.install_13);
 					uninstall.setText(R.string.uninstall_13);
 					ignore.setText(R.string.ignore_13);
@@ -2863,8 +2820,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 14) {
 					LANGUAGE.edit().putString("LANGUAGE", "14").commit();
-					title_1.setText(R.string.spotify_regular_14);
-					title_2.setText(R.string.spotify_amoled_14);
 					sub_text_installed.setText(R.string.installed_14);
 					sub_text_1.setText(R.string.latest_14);
 					sub_text_2.setText(R.string.latest_14);
@@ -2890,15 +2845,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_14);
 					reset_settings.setText(R.string.reset_settings_14);
 					sub_title.setText(R.string.about_sub_14);
-					developer_manager.setText(R.string.xmanager_dev_14);
-					developer_spotify.setText(R.string.spotify_mod_devs_14);
-					support_team.setText(R.string.telegram_support_team_14);
-					mod_testers_1.setText(R.string.manager_testers_14);
-					mod_testers_2.setText(R.string.manager_hosting_14);
+					xmanager_dev.setText(R.string.xmanager_dev_14);
+					patched_devs.setText(R.string.patched_devs_14);
+					support_team.setText(R.string.support_team_14);
+					manager_testers.setText(R.string.manager_testers_14);
+					manager_hosting.setText(R.string.manager_hosting_14);
 					mobilism_team.setText(R.string.mobilism_team_14);
 					forum_team.setText(R.string.forum_team_14);
-					manager_team.setText(R.string.xspotify_team_14);
-					contributors_1.setText(R.string.contributors_14);
+					contributors.setText(R.string.contributors_14);
 					download_selected.setText(R.string.download_selected_14);
 					download_ready.setText(R.string.download_ready_14);
 					download_ready_desc.setText(R.string.download_ready_desc_14);
@@ -2955,7 +2909,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_14);
 					close.setText(R.string.close_14);
 					cloned.setText(R.string.cloned_14);
-					ream.setText(R.string.ream_14);
+					spap.setText(R.string.spap_14);
 					install.setText(R.string.install_14);
 					uninstall.setText(R.string.uninstall_14);
 					ignore.setText(R.string.ignore_14);
@@ -2976,8 +2930,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 15) {
 					LANGUAGE.edit().putString("LANGUAGE", "15").commit();
-					title_1.setText(R.string.spotify_regular_15);
-					title_2.setText(R.string.spotify_amoled_15);
 					sub_text_installed.setText(R.string.installed_15);
 					sub_text_1.setText(R.string.latest_15);
 					sub_text_2.setText(R.string.latest_15);
@@ -3003,15 +2955,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_15);
 					reset_settings.setText(R.string.reset_settings_15);
 					sub_title.setText(R.string.about_sub_15);
-					developer_manager.setText(R.string.xmanager_dev_15);
-					developer_spotify.setText(R.string.spotify_mod_devs_15);
-					support_team.setText(R.string.telegram_support_team_15);
-					mod_testers_1.setText(R.string.manager_testers_15);
-					mod_testers_2.setText(R.string.manager_hosting_15);
+					xmanager_dev.setText(R.string.xmanager_dev_15);
+					patched_devs.setText(R.string.patched_devs_15);
+					support_team.setText(R.string.support_team_15);
+					manager_testers.setText(R.string.manager_testers_15);
+					manager_hosting.setText(R.string.manager_hosting_15);
 					mobilism_team.setText(R.string.mobilism_team_15);
 					forum_team.setText(R.string.forum_team_15);
-					manager_team.setText(R.string.xspotify_team_15);
-					contributors_1.setText(R.string.contributors_15);
+					contributors.setText(R.string.contributors_15);
 					download_selected.setText(R.string.download_selected_15);
 					download_ready.setText(R.string.download_ready_15);
 					download_ready_desc.setText(R.string.download_ready_desc_15);
@@ -3068,7 +3019,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_15);
 					close.setText(R.string.close_15);
 					cloned.setText(R.string.cloned_15);
-					ream.setText(R.string.ream_15);
+					spap.setText(R.string.spap_15);
 					install.setText(R.string.install_15);
 					uninstall.setText(R.string.uninstall_15);
 					ignore.setText(R.string.ignore_15);
@@ -3089,8 +3040,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 16) {
 					LANGUAGE.edit().putString("LANGUAGE", "16").commit();
-					title_1.setText(R.string.spotify_regular_16);
-					title_2.setText(R.string.spotify_amoled_16);
 					sub_text_installed.setText(R.string.installed_16);
 					sub_text_1.setText(R.string.latest_16);
 					sub_text_2.setText(R.string.latest_16);
@@ -3116,15 +3065,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_16);
 					reset_settings.setText(R.string.reset_settings_16);
 					sub_title.setText(R.string.about_sub_16);
-					developer_manager.setText(R.string.xmanager_dev_16);
-					developer_spotify.setText(R.string.spotify_mod_devs_16);
-					support_team.setText(R.string.telegram_support_team_16);
-					mod_testers_1.setText(R.string.manager_testers_16);
-					mod_testers_2.setText(R.string.manager_hosting_16);
+					xmanager_dev.setText(R.string.xmanager_dev_16);
+					patched_devs.setText(R.string.patched_devs_16);
+					support_team.setText(R.string.support_team_16);
+					manager_testers.setText(R.string.manager_testers_16);
+					manager_hosting.setText(R.string.manager_hosting_16);
 					mobilism_team.setText(R.string.mobilism_team_16);
 					forum_team.setText(R.string.forum_team_16);
-					manager_team.setText(R.string.xspotify_team_16);
-					contributors_1.setText(R.string.contributors_16);
+					contributors.setText(R.string.contributors_16);
 					download_selected.setText(R.string.download_selected_16);
 					download_ready.setText(R.string.download_ready_16);
 					download_ready_desc.setText(R.string.download_ready_desc_16);
@@ -3181,7 +3129,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_16);
 					close.setText(R.string.close_16);
 					cloned.setText(R.string.cloned_16);
-					ream.setText(R.string.ream_16);
+					spap.setText(R.string.spap_16);
 					install.setText(R.string.install_16);
 					uninstall.setText(R.string.uninstall_16);
 					ignore.setText(R.string.ignore_16);
@@ -3202,8 +3150,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 17) {
 					LANGUAGE.edit().putString("LANGUAGE", "17").commit();
-					title_1.setText(R.string.spotify_regular_17);
-					title_2.setText(R.string.spotify_amoled_17);
 					sub_text_installed.setText(R.string.installed_17);
 					sub_text_1.setText(R.string.latest_17);
 					sub_text_2.setText(R.string.latest_17);
@@ -3229,15 +3175,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_17);
 					reset_settings.setText(R.string.reset_settings_17);
 					sub_title.setText(R.string.about_sub_17);
-					developer_manager.setText(R.string.xmanager_dev_17);
-					developer_spotify.setText(R.string.spotify_mod_devs_17);
-					support_team.setText(R.string.telegram_support_team_17);
-					mod_testers_1.setText(R.string.manager_testers_17);
-					mod_testers_2.setText(R.string.manager_hosting_17);
+					xmanager_dev.setText(R.string.xmanager_dev_17);
+					patched_devs.setText(R.string.patched_devs_17);
+					support_team.setText(R.string.support_team_17);
+					manager_testers.setText(R.string.manager_testers_17);
+					manager_hosting.setText(R.string.manager_hosting_17);
 					mobilism_team.setText(R.string.mobilism_team_17);
 					forum_team.setText(R.string.forum_team_17);
-					manager_team.setText(R.string.xspotify_team_17);
-					contributors_1.setText(R.string.contributors_17);
+					contributors.setText(R.string.contributors_17);
 					download_selected.setText(R.string.download_selected_17);
 					download_ready.setText(R.string.download_ready_17);
 					download_ready_desc.setText(R.string.download_ready_desc_17);
@@ -3294,7 +3239,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_17);
 					close.setText(R.string.close_17);
 					cloned.setText(R.string.cloned_17);
-					ream.setText(R.string.ream_17);
+					spap.setText(R.string.spap_17);
 					install.setText(R.string.install_17);
 					uninstall.setText(R.string.uninstall_17);
 					ignore.setText(R.string.ignore_17);
@@ -3315,8 +3260,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 18) {
 					LANGUAGE.edit().putString("LANGUAGE", "18").commit();
-					title_1.setText(R.string.spotify_regular_18);
-					title_2.setText(R.string.spotify_amoled_18);
 					sub_text_installed.setText(R.string.installed_18);
 					sub_text_1.setText(R.string.latest_18);
 					sub_text_2.setText(R.string.latest_18);
@@ -3342,15 +3285,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_18);
 					reset_settings.setText(R.string.reset_settings_18);
 					sub_title.setText(R.string.about_sub_18);
-					developer_manager.setText(R.string.xmanager_dev_18);
-					developer_spotify.setText(R.string.spotify_mod_devs_18);
-					support_team.setText(R.string.telegram_support_team_18);
-					mod_testers_1.setText(R.string.manager_testers_18);
-					mod_testers_2.setText(R.string.manager_hosting_18);
+					xmanager_dev.setText(R.string.xmanager_dev_18);
+					patched_devs.setText(R.string.patched_devs_18);
+					support_team.setText(R.string.support_team_18);
+					manager_testers.setText(R.string.manager_testers_18);
+					manager_hosting.setText(R.string.manager_hosting_18);
 					mobilism_team.setText(R.string.mobilism_team_18);
 					forum_team.setText(R.string.forum_team_18);
-					manager_team.setText(R.string.xspotify_team_18);
-					contributors_1.setText(R.string.contributors_18);
+					contributors.setText(R.string.contributors_18);
 					download_selected.setText(R.string.download_selected_18);
 					download_ready.setText(R.string.download_ready_18);
 					download_ready_desc.setText(R.string.download_ready_desc_18);
@@ -3407,7 +3349,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_18);
 					close.setText(R.string.close_18);
 					cloned.setText(R.string.cloned_18);
-					ream.setText(R.string.ream_18);
+					spap.setText(R.string.spap_18);
 					install.setText(R.string.install_18);
 					uninstall.setText(R.string.uninstall_18);
 					ignore.setText(R.string.ignore_18);
@@ -3428,8 +3370,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 19) {
 					LANGUAGE.edit().putString("LANGUAGE", "19").commit();
-					title_1.setText(R.string.spotify_regular_19);
-					title_2.setText(R.string.spotify_amoled_19);
 					sub_text_installed.setText(R.string.installed_19);
 					sub_text_1.setText(R.string.latest_19);
 					sub_text_2.setText(R.string.latest_19);
@@ -3455,15 +3395,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_19);
 					reset_settings.setText(R.string.reset_settings_19);
 					sub_title.setText(R.string.about_sub_19);
-					developer_manager.setText(R.string.xmanager_dev_19);
-					developer_spotify.setText(R.string.spotify_mod_devs_19);
-					support_team.setText(R.string.telegram_support_team_19);
-					mod_testers_1.setText(R.string.manager_testers_19);
-					mod_testers_2.setText(R.string.manager_hosting_19);
+					xmanager_dev.setText(R.string.xmanager_dev_19);
+					patched_devs.setText(R.string.patched_devs_19);
+					support_team.setText(R.string.support_team_19);
+					manager_testers.setText(R.string.manager_testers_19);
+					manager_hosting.setText(R.string.manager_hosting_19);
 					mobilism_team.setText(R.string.mobilism_team_19);
 					forum_team.setText(R.string.forum_team_19);
-					manager_team.setText(R.string.xspotify_team_19);
-					contributors_1.setText(R.string.contributors_19);
+					contributors.setText(R.string.contributors_19);
 					download_selected.setText(R.string.download_selected_19);
 					download_ready.setText(R.string.download_ready_19);
 					download_ready_desc.setText(R.string.download_ready_desc_19);
@@ -3520,7 +3459,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_19);
 					close.setText(R.string.close_19);
 					cloned.setText(R.string.cloned_19);
-					ream.setText(R.string.ream_19);
+					spap.setText(R.string.spap_19);
 					install.setText(R.string.install_19);
 					uninstall.setText(R.string.uninstall_19);
 					ignore.setText(R.string.ignore_19);
@@ -3541,8 +3480,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 20) {
 					LANGUAGE.edit().putString("LANGUAGE", "20").commit();
-					title_1.setText(R.string.spotify_regular_20);
-					title_2.setText(R.string.spotify_amoled_20);
 					sub_text_installed.setText(R.string.installed_20);
 					sub_text_1.setText(R.string.latest_20);
 					sub_text_2.setText(R.string.latest_20);
@@ -3568,15 +3505,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_20);
 					reset_settings.setText(R.string.reset_settings_20);
 					sub_title.setText(R.string.about_sub_20);
-					developer_manager.setText(R.string.xmanager_dev_20);
-					developer_spotify.setText(R.string.spotify_mod_devs_20);
-					support_team.setText(R.string.telegram_support_team_20);
-					mod_testers_1.setText(R.string.manager_testers_20);
-					mod_testers_2.setText(R.string.manager_hosting_20);
+					xmanager_dev.setText(R.string.xmanager_dev_20);
+					patched_devs.setText(R.string.patched_devs_20);
+					support_team.setText(R.string.support_team_20);
+					manager_testers.setText(R.string.manager_testers_20);
+					manager_hosting.setText(R.string.manager_hosting_20);
 					mobilism_team.setText(R.string.mobilism_team_20);
 					forum_team.setText(R.string.forum_team_20);
-					manager_team.setText(R.string.xspotify_team_20);
-					contributors_1.setText(R.string.contributors_20);
+					contributors.setText(R.string.contributors_20);
 					download_selected.setText(R.string.download_selected_20);
 					download_ready.setText(R.string.download_ready_20);
 					download_ready_desc.setText(R.string.download_ready_desc_20);
@@ -3633,7 +3569,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_20);
 					close.setText(R.string.close_20);
 					cloned.setText(R.string.cloned_20);
-					ream.setText(R.string.ream_20);
+					spap.setText(R.string.spap_20);
 					install.setText(R.string.install_20);
 					uninstall.setText(R.string.uninstall_20);
 					ignore.setText(R.string.ignore_20);
@@ -3654,8 +3590,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 21) {
 					LANGUAGE.edit().putString("LANGUAGE", "21").commit();
-					title_1.setText(R.string.spotify_regular_21);
-					title_2.setText(R.string.spotify_amoled_21);
 					sub_text_installed.setText(R.string.installed_21);
 					sub_text_1.setText(R.string.latest_21);
 					sub_text_2.setText(R.string.latest_21);
@@ -3681,15 +3615,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_21);
 					reset_settings.setText(R.string.reset_settings_21);
 					sub_title.setText(R.string.about_sub_21);
-					developer_manager.setText(R.string.xmanager_dev_21);
-					developer_spotify.setText(R.string.spotify_mod_devs_21);
-					support_team.setText(R.string.telegram_support_team_21);
-					mod_testers_1.setText(R.string.manager_testers_21);
-					mod_testers_2.setText(R.string.manager_hosting_21);
+					xmanager_dev.setText(R.string.xmanager_dev_21);
+					patched_devs.setText(R.string.patched_devs_21);
+					support_team.setText(R.string.support_team_21);
+					manager_testers.setText(R.string.manager_testers_21);
+					manager_hosting.setText(R.string.manager_hosting_21);
 					mobilism_team.setText(R.string.mobilism_team_21);
 					forum_team.setText(R.string.forum_team_21);
-					manager_team.setText(R.string.xspotify_team_21);
-					contributors_1.setText(R.string.contributors_21);
+					contributors.setText(R.string.contributors_21);
 					download_selected.setText(R.string.download_selected_21);
 					download_ready.setText(R.string.download_ready_21);
 					download_ready_desc.setText(R.string.download_ready_desc_21);
@@ -3746,7 +3679,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_21);
 					close.setText(R.string.close_21);
 					cloned.setText(R.string.cloned_21);
-					ream.setText(R.string.ream_21);
+					spap.setText(R.string.spap_21);
 					install.setText(R.string.install_21);
 					uninstall.setText(R.string.uninstall_21);
 					ignore.setText(R.string.ignore_21);
@@ -3767,8 +3700,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 22) {
 					LANGUAGE.edit().putString("LANGUAGE", "22").commit();
-					title_1.setText(R.string.spotify_regular_22);
-					title_2.setText(R.string.spotify_amoled_22);
 					sub_text_installed.setText(R.string.installed_22);
 					sub_text_1.setText(R.string.latest_22);
 					sub_text_2.setText(R.string.latest_22);
@@ -3794,15 +3725,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_22);
 					reset_settings.setText(R.string.reset_settings_22);
 					sub_title.setText(R.string.about_sub_22);
-					developer_manager.setText(R.string.xmanager_dev_22);
-					developer_spotify.setText(R.string.spotify_mod_devs_22);
-					support_team.setText(R.string.telegram_support_team_22);
-					mod_testers_1.setText(R.string.manager_testers_22);
-					mod_testers_2.setText(R.string.manager_hosting_22);
+					xmanager_dev.setText(R.string.xmanager_dev_22);
+					patched_devs.setText(R.string.patched_devs_22);
+					support_team.setText(R.string.support_team_22);
+					manager_testers.setText(R.string.manager_testers_22);
+					manager_hosting.setText(R.string.manager_hosting_22);
 					mobilism_team.setText(R.string.mobilism_team_22);
 					forum_team.setText(R.string.forum_team_22);
-					manager_team.setText(R.string.xspotify_team_22);
-					contributors_1.setText(R.string.contributors_22);
+					contributors.setText(R.string.contributors_22);
 					download_selected.setText(R.string.download_selected_22);
 					download_ready.setText(R.string.download_ready_22);
 					download_ready_desc.setText(R.string.download_ready_desc_22);
@@ -3859,7 +3789,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_22);
 					close.setText(R.string.close_22);
 					cloned.setText(R.string.cloned_22);
-					ream.setText(R.string.ream_22);
+					spap.setText(R.string.spap_22);
 					install.setText(R.string.install_22);
 					uninstall.setText(R.string.uninstall_22);
 					ignore.setText(R.string.ignore_22);
@@ -3880,8 +3810,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 23) {
 					LANGUAGE.edit().putString("LANGUAGE", "23").commit();
-					title_1.setText(R.string.spotify_regular_23);
-					title_2.setText(R.string.spotify_amoled_23);
 					sub_text_installed.setText(R.string.installed_23);
 					sub_text_1.setText(R.string.latest_23);
 					sub_text_2.setText(R.string.latest_23);
@@ -3907,15 +3835,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_23);
 					reset_settings.setText(R.string.reset_settings_23);
 					sub_title.setText(R.string.about_sub_23);
-					developer_manager.setText(R.string.xmanager_dev_23);
-					developer_spotify.setText(R.string.spotify_mod_devs_23);
-					support_team.setText(R.string.telegram_support_team_23);
-					mod_testers_1.setText(R.string.manager_testers_23);
-					mod_testers_2.setText(R.string.manager_hosting_23);
+					xmanager_dev.setText(R.string.xmanager_dev_23);
+					patched_devs.setText(R.string.patched_devs_23);
+					support_team.setText(R.string.support_team_23);
+					manager_testers.setText(R.string.manager_testers_23);
+					manager_hosting.setText(R.string.manager_hosting_23);
 					mobilism_team.setText(R.string.mobilism_team_23);
 					forum_team.setText(R.string.forum_team_23);
-					manager_team.setText(R.string.xspotify_team_23);
-					contributors_1.setText(R.string.contributors_23);
+					contributors.setText(R.string.contributors_23);
 					download_selected.setText(R.string.download_selected_23);
 					download_ready.setText(R.string.download_ready_23);
 					download_ready_desc.setText(R.string.download_ready_desc_23);
@@ -3972,7 +3899,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_23);
 					close.setText(R.string.close_23);
 					cloned.setText(R.string.cloned_23);
-					ream.setText(R.string.ream_23);
+					spap.setText(R.string.spap_23);
 					install.setText(R.string.install_23);
 					uninstall.setText(R.string.uninstall_23);
 					ignore.setText(R.string.ignore_23);
@@ -3993,8 +3920,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 24) {
 					LANGUAGE.edit().putString("LANGUAGE", "24").commit();
-					title_1.setText(R.string.spotify_regular_24);
-					title_2.setText(R.string.spotify_amoled_24);
 					sub_text_installed.setText(R.string.installed_24);
 					sub_text_1.setText(R.string.latest_24);
 					sub_text_2.setText(R.string.latest_24);
@@ -4020,15 +3945,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_24);
 					reset_settings.setText(R.string.reset_settings_24);
 					sub_title.setText(R.string.about_sub_24);
-					developer_manager.setText(R.string.xmanager_dev_24);
-					developer_spotify.setText(R.string.spotify_mod_devs_24);
-					support_team.setText(R.string.telegram_support_team_24);
-					mod_testers_1.setText(R.string.manager_testers_24);
-					mod_testers_2.setText(R.string.manager_hosting_24);
+					xmanager_dev.setText(R.string.xmanager_dev_24);
+					patched_devs.setText(R.string.patched_devs_24);
+					support_team.setText(R.string.support_team_24);
+					manager_testers.setText(R.string.manager_testers_24);
+					manager_hosting.setText(R.string.manager_hosting_24);
 					mobilism_team.setText(R.string.mobilism_team_24);
 					forum_team.setText(R.string.forum_team_24);
-					manager_team.setText(R.string.xspotify_team_24);
-					contributors_1.setText(R.string.contributors_24);
+					contributors.setText(R.string.contributors_24);
 					download_selected.setText(R.string.download_selected_24);
 					download_ready.setText(R.string.download_ready_24);
 					download_ready_desc.setText(R.string.download_ready_desc_24);
@@ -4085,7 +4009,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_24);
 					close.setText(R.string.close_24);
 					cloned.setText(R.string.cloned_24);
-					ream.setText(R.string.ream_24);
+					spap.setText(R.string.spap_24);
 					install.setText(R.string.install_24);
 					uninstall.setText(R.string.uninstall_24);
 					ignore.setText(R.string.ignore_24);
@@ -4106,8 +4030,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 25) {
 					LANGUAGE.edit().putString("LANGUAGE", "25").commit();
-					title_1.setText(R.string.spotify_regular_25);
-					title_2.setText(R.string.spotify_amoled_25);
 					sub_text_installed.setText(R.string.installed_25);
 					sub_text_1.setText(R.string.latest_25);
 					sub_text_2.setText(R.string.latest_25);
@@ -4133,15 +4055,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_25);
 					reset_settings.setText(R.string.reset_settings_25);
 					sub_title.setText(R.string.about_sub_25);
-					developer_manager.setText(R.string.xmanager_dev_25);
-					developer_spotify.setText(R.string.spotify_mod_devs_25);
-					support_team.setText(R.string.telegram_support_team_25);
-					mod_testers_1.setText(R.string.manager_testers_25);
-					mod_testers_2.setText(R.string.manager_hosting_25);
+					xmanager_dev.setText(R.string.xmanager_dev_25);
+					patched_devs.setText(R.string.patched_devs_25);
+					support_team.setText(R.string.support_team_25);
+					manager_testers.setText(R.string.manager_testers_25);
+					manager_hosting.setText(R.string.manager_hosting_25);
 					mobilism_team.setText(R.string.mobilism_team_25);
 					forum_team.setText(R.string.forum_team_25);
-					manager_team.setText(R.string.xspotify_team_25);
-					contributors_1.setText(R.string.contributors_25);
+					contributors.setText(R.string.contributors_25);
 					download_selected.setText(R.string.download_selected_25);
 					download_ready.setText(R.string.download_ready_25);
 					download_ready_desc.setText(R.string.download_ready_desc_25);
@@ -4198,7 +4119,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_25);
 					close.setText(R.string.close_25);
 					cloned.setText(R.string.cloned_25);
-					ream.setText(R.string.ream_25);
+					spap.setText(R.string.spap_25);
 					install.setText(R.string.install_25);
 					uninstall.setText(R.string.uninstall_25);
 					ignore.setText(R.string.ignore_25);
@@ -4219,8 +4140,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 26) {
 					LANGUAGE.edit().putString("LANGUAGE", "26").commit();
-					title_1.setText(R.string.spotify_regular_26);
-					title_2.setText(R.string.spotify_amoled_26);
 					sub_text_installed.setText(R.string.installed_26);
 					sub_text_1.setText(R.string.latest_26);
 					sub_text_2.setText(R.string.latest_26);
@@ -4246,15 +4165,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_26);
 					reset_settings.setText(R.string.reset_settings_26);
 					sub_title.setText(R.string.about_sub_26);
-					developer_manager.setText(R.string.xmanager_dev_26);
-					developer_spotify.setText(R.string.spotify_mod_devs_26);
-					support_team.setText(R.string.telegram_support_team_26);
-					mod_testers_1.setText(R.string.manager_testers_26);
-					mod_testers_2.setText(R.string.manager_hosting_26);
+					xmanager_dev.setText(R.string.xmanager_dev_26);
+					patched_devs.setText(R.string.patched_devs_26);
+					support_team.setText(R.string.support_team_26);
+					manager_testers.setText(R.string.manager_testers_26);
+					manager_hosting.setText(R.string.manager_hosting_26);
 					mobilism_team.setText(R.string.mobilism_team_26);
 					forum_team.setText(R.string.forum_team_26);
-					manager_team.setText(R.string.xspotify_team_26);
-					contributors_1.setText(R.string.contributors_26);
+					contributors.setText(R.string.contributors_26);
 					download_selected.setText(R.string.download_selected_26);
 					download_ready.setText(R.string.download_ready_26);
 					download_ready_desc.setText(R.string.download_ready_desc_26);
@@ -4311,7 +4229,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_26);
 					close.setText(R.string.close_26);
 					cloned.setText(R.string.cloned_26);
-					ream.setText(R.string.ream_26);
+					spap.setText(R.string.spap_26);
 					install.setText(R.string.install_26);
 					uninstall.setText(R.string.uninstall_26);
 					ignore.setText(R.string.ignore_26);
@@ -4332,8 +4250,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 27) {
 					LANGUAGE.edit().putString("LANGUAGE", "27").commit();
-					title_1.setText(R.string.spotify_regular_27);
-					title_2.setText(R.string.spotify_amoled_27);
 					sub_text_installed.setText(R.string.installed_27);
 					sub_text_1.setText(R.string.latest_27);
 					sub_text_2.setText(R.string.latest_27);
@@ -4359,15 +4275,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_27);
 					reset_settings.setText(R.string.reset_settings_27);
 					sub_title.setText(R.string.about_sub_27);
-					developer_manager.setText(R.string.xmanager_dev_27);
-					developer_spotify.setText(R.string.spotify_mod_devs_27);
-					support_team.setText(R.string.telegram_support_team_27);
-					mod_testers_1.setText(R.string.manager_testers_27);
-					mod_testers_2.setText(R.string.manager_hosting_27);
+					xmanager_dev.setText(R.string.xmanager_dev_27);
+					patched_devs.setText(R.string.patched_devs_27);
+					support_team.setText(R.string.support_team_27);
+					manager_testers.setText(R.string.manager_testers_27);
+					manager_hosting.setText(R.string.manager_hosting_27);
 					mobilism_team.setText(R.string.mobilism_team_27);
 					forum_team.setText(R.string.forum_team_27);
-					manager_team.setText(R.string.xspotify_team_27);
-					contributors_1.setText(R.string.contributors_27);
+					contributors.setText(R.string.contributors_27);
 					download_selected.setText(R.string.download_selected_27);
 					download_ready.setText(R.string.download_ready_27);
 					download_ready_desc.setText(R.string.download_ready_desc_27);
@@ -4424,7 +4339,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_27);
 					close.setText(R.string.close_27);
 					cloned.setText(R.string.cloned_27);
-					ream.setText(R.string.ream_27);
+					spap.setText(R.string.spap_27);
 					install.setText(R.string.install_27);
 					uninstall.setText(R.string.uninstall_27);
 					ignore.setText(R.string.ignore_27);
@@ -4445,8 +4360,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 28) {
 					LANGUAGE.edit().putString("LANGUAGE", "28").commit();
-					title_1.setText(R.string.spotify_regular_28);
-					title_2.setText(R.string.spotify_amoled_28);
 					sub_text_installed.setText(R.string.installed_28);
 					sub_text_1.setText(R.string.latest_28);
 					sub_text_2.setText(R.string.latest_28);
@@ -4472,15 +4385,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_28);
 					reset_settings.setText(R.string.reset_settings_28);
 					sub_title.setText(R.string.about_sub_28);
-					developer_manager.setText(R.string.xmanager_dev_28);
-					developer_spotify.setText(R.string.spotify_mod_devs_28);
-					support_team.setText(R.string.telegram_support_team_28);
-					mod_testers_1.setText(R.string.manager_testers_28);
-					mod_testers_2.setText(R.string.manager_hosting_28);
+					xmanager_dev.setText(R.string.xmanager_dev_28);
+					patched_devs.setText(R.string.patched_devs_28);
+					support_team.setText(R.string.support_team_28);
+					manager_testers.setText(R.string.manager_testers_28);
+					manager_hosting.setText(R.string.manager_hosting_28);
 					mobilism_team.setText(R.string.mobilism_team_28);
 					forum_team.setText(R.string.forum_team_28);
-					manager_team.setText(R.string.xspotify_team_28);
-					contributors_1.setText(R.string.contributors_28);
+					contributors.setText(R.string.contributors_28);
 					download_selected.setText(R.string.download_selected_28);
 					download_ready.setText(R.string.download_ready_28);
 					download_ready_desc.setText(R.string.download_ready_desc_28);
@@ -4537,7 +4449,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_28);
 					close.setText(R.string.close_28);
 					cloned.setText(R.string.cloned_28);
-					ream.setText(R.string.ream_28);
+					spap.setText(R.string.spap_28);
 					install.setText(R.string.install_28);
 					uninstall.setText(R.string.uninstall_28);
 					ignore.setText(R.string.ignore_28);
@@ -4558,8 +4470,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 29) {
 					LANGUAGE.edit().putString("LANGUAGE", "29").commit();
-					title_1.setText(R.string.spotify_regular_29);
-					title_2.setText(R.string.spotify_amoled_29);
 					sub_text_installed.setText(R.string.installed_29);
 					sub_text_1.setText(R.string.latest_29);
 					sub_text_2.setText(R.string.latest_29);
@@ -4585,15 +4495,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_29);
 					reset_settings.setText(R.string.reset_settings_29);
 					sub_title.setText(R.string.about_sub_29);
-					developer_manager.setText(R.string.xmanager_dev_29);
-					developer_spotify.setText(R.string.spotify_mod_devs_29);
-					support_team.setText(R.string.telegram_support_team_29);
-					mod_testers_1.setText(R.string.manager_testers_29);
-					mod_testers_2.setText(R.string.manager_hosting_29);
+					xmanager_dev.setText(R.string.xmanager_dev_29);
+					patched_devs.setText(R.string.patched_devs_29);
+					support_team.setText(R.string.support_team_29);
+					manager_testers.setText(R.string.manager_testers_29);
+					manager_hosting.setText(R.string.manager_hosting_29);
 					mobilism_team.setText(R.string.mobilism_team_29);
 					forum_team.setText(R.string.forum_team_29);
-					manager_team.setText(R.string.xspotify_team_29);
-					contributors_1.setText(R.string.contributors_29);
+					contributors.setText(R.string.contributors_29);
 					download_selected.setText(R.string.download_selected_29);
 					download_ready.setText(R.string.download_ready_29);
 					download_ready_desc.setText(R.string.download_ready_desc_29);
@@ -4650,7 +4559,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_29);
 					close.setText(R.string.close_29);
 					cloned.setText(R.string.cloned_29);
-					ream.setText(R.string.ream_29);
+					spap.setText(R.string.spap_29);
 					install.setText(R.string.install_29);
 					uninstall.setText(R.string.uninstall_29);
 					ignore.setText(R.string.ignore_29);
@@ -4671,8 +4580,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				if (_position == 30) {
 					LANGUAGE.edit().putString("LANGUAGE", "30").commit();
-					title_1.setText(R.string.spotify_regular_30);
-					title_2.setText(R.string.spotify_amoled_30);
 					sub_text_installed.setText(R.string.installed_30);
 					sub_text_1.setText(R.string.latest_30);
 					sub_text_2.setText(R.string.latest_30);
@@ -4698,15 +4605,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_30);
 					reset_settings.setText(R.string.reset_settings_30);
 					sub_title.setText(R.string.about_sub_30);
-					developer_manager.setText(R.string.xmanager_dev_30);
-					developer_spotify.setText(R.string.spotify_mod_devs_30);
-					support_team.setText(R.string.telegram_support_team_30);
-					mod_testers_1.setText(R.string.manager_testers_30);
-					mod_testers_2.setText(R.string.manager_hosting_30);
+					xmanager_dev.setText(R.string.xmanager_dev_30);
+					patched_devs.setText(R.string.patched_devs_30);
+					support_team.setText(R.string.support_team_30);
+					manager_testers.setText(R.string.manager_testers_30);
+					manager_hosting.setText(R.string.manager_hosting_30);
 					mobilism_team.setText(R.string.mobilism_team_30);
 					forum_team.setText(R.string.forum_team_30);
-					manager_team.setText(R.string.xspotify_team_30);
-					contributors_1.setText(R.string.contributors_30);
+					contributors.setText(R.string.contributors_30);
 					download_selected.setText(R.string.download_selected_30);
 					download_ready.setText(R.string.download_ready_30);
 					download_ready_desc.setText(R.string.download_ready_desc_30);
@@ -4763,7 +4669,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_30);
 					close.setText(R.string.close_30);
 					cloned.setText(R.string.cloned_30);
-					ream.setText(R.string.ream_30);
+					spap.setText(R.string.spap_30);
 					install.setText(R.string.install_30);
 					uninstall.setText(R.string.uninstall_30);
 					ignore.setText(R.string.ignore_30);
@@ -4771,6 +4677,336 @@ public class MainActivity extends AppCompatActivity {
 					uninstall_patched.setText(R.string.uninstall_patched_30);
 					open_settings.setText(R.string.open_settings_30);
 					open_patched.setText(R.string.open_patched_30);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
+					
+					COUNTER = 1;
+				}
+				if (_position == 31) {
+					LANGUAGE.edit().putString("LANGUAGE", "31").commit();
+					sub_text_installed.setText(R.string.installed_31);
+					sub_text_1.setText(R.string.latest_31);
+					sub_text_2.setText(R.string.latest_31);
+					sub_text_3.setText(R.string.latest_31);
+					version_switch_1.setText(R.string.versions_31);
+					version_switch_2.setText(R.string.versions_31);
+					version_switch_3.setText(R.string.versions_31);
+					changelogs.setText(R.string.changelogs_31);
+					title_sub.setText(R.string.manager_tools_31);
+					device_cpu.setText(R.string.device_cpu_31);
+					source.setText(R.string.source_31);
+					support.setText(R.string.support_31);
+					donate.setText(R.string.donate_31);
+					about.setText(R.string.about_31);
+					list_auto_refresh.setText(R.string.list_auto_refresh_31);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_31);
+					force_auto_install.setText(R.string.force_auto_install_31);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_31);
+					theme.setText(R.string.show_themes_31);
+					apk_location.setText(R.string.apk_location_31);
+					apk_location_info.setText(R.string.apk_location_desc_31);
+					clear_directory_folders.setText(R.string.clear_directory_folders_31);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_31);
+					reset_settings.setText(R.string.reset_settings_31);
+					sub_title.setText(R.string.about_sub_31);
+					xmanager_dev.setText(R.string.xmanager_dev_31);
+					patched_devs.setText(R.string.patched_devs_31);
+					support_team.setText(R.string.support_team_31);
+					manager_testers.setText(R.string.manager_testers_31);
+					manager_hosting.setText(R.string.manager_hosting_31);
+					mobilism_team.setText(R.string.mobilism_team_31);
+					forum_team.setText(R.string.forum_team_31);
+					contributors.setText(R.string.contributors_31);
+					download_selected.setText(R.string.download_selected_31);
+					download_ready.setText(R.string.download_ready_31);
+					download_ready_desc.setText(R.string.download_ready_desc_31);
+					downloading_file.setText(R.string.downloading_file_31);
+					download_success.setText(R.string.download_success_31);
+					new_update.setText(R.string.new_update_31);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_31);
+					continue_1.setText(R.string.continue_1_31);
+					cancel.setText(R.string.cancel_31);
+					fixer.setText(R.string.fixer_31);
+					download.setText(R.string.download_31);
+					later.setText(R.string.later_31);
+					install_now.setText(R.string.install_now_31);
+					install_update.setText(R.string.install_update_31);
+					go_back.setText(R.string.go_back_31);
+					download_update.setText(R.string.download_update_31);
+					not_now.setText(R.string.not_now_31);
+					show_support.setText(R.string.show_support_31);
+					show_support_desc.setText(R.string.show_support_desc_31);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_31);
+					settings_title.setText(R.string.settings_title_31);
+					about_title.setText(R.string.about_title_31);
+					maintenance.setText(R.string.maintenance_31);
+					maintenance_desc.setText(R.string.maintenance_desc_31);
+					thanks.setText(R.string.thanks_31);
+					language.setText(R.string.language_31);
+					website.setText(R.string.website_31);
+					discord.setText(R.string.discord_31);
+					reddit.setText(R.string.reddit_31);
+					faq.setText(R.string.faq_31);
+					cloned_version.setText(R.string.cloned_version_31);
+					cloned_version_info.setText(R.string.cloned_version_desc_31);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_31);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_31);
+					installation_failed.setText(R.string.installation_failed_31);
+					installation_failed_desc.setText(R.string.installation_failed_desc_31);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_31);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_31);
+					existing_patched.setText(R.string.existing_patched_31);
+					existing_patched_desc.setText(R.string.existing_patched_desc_31);
+					close.setText(R.string.close_31);
+					cloned.setText(R.string.cloned_31);
+					spap.setText(R.string.spap_31);
+					install.setText(R.string.install_31);
+					uninstall.setText(R.string.uninstall_31);
+					ignore.setText(R.string.ignore_31);
+					delete.setText(R.string.delete_31);
+					uninstall_patched.setText(R.string.uninstall_patched_31);
+					open_settings.setText(R.string.open_settings_31);
+					open_patched.setText(R.string.open_patched_31);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
+					
+					COUNTER = 1;
+				}
+				if (_position == 32) {
+					LANGUAGE.edit().putString("LANGUAGE", "32").commit();
+					sub_text_installed.setText(R.string.installed_32);
+					sub_text_1.setText(R.string.latest_32);
+					sub_text_2.setText(R.string.latest_32);
+					sub_text_3.setText(R.string.latest_32);
+					version_switch_1.setText(R.string.versions_32);
+					version_switch_2.setText(R.string.versions_32);
+					version_switch_3.setText(R.string.versions_32);
+					changelogs.setText(R.string.changelogs_32);
+					title_sub.setText(R.string.manager_tools_32);
+					device_cpu.setText(R.string.device_cpu_32);
+					source.setText(R.string.source_32);
+					support.setText(R.string.support_32);
+					donate.setText(R.string.donate_32);
+					about.setText(R.string.about_32);
+					list_auto_refresh.setText(R.string.list_auto_refresh_32);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_32);
+					force_auto_install.setText(R.string.force_auto_install_32);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_32);
+					theme.setText(R.string.show_themes_32);
+					apk_location.setText(R.string.apk_location_32);
+					apk_location_info.setText(R.string.apk_location_desc_32);
+					clear_directory_folders.setText(R.string.clear_directory_folders_32);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_32);
+					reset_settings.setText(R.string.reset_settings_32);
+					sub_title.setText(R.string.about_sub_32);
+					xmanager_dev.setText(R.string.xmanager_dev_32);
+					patched_devs.setText(R.string.patched_devs_32);
+					support_team.setText(R.string.support_team_32);
+					manager_testers.setText(R.string.manager_testers_32);
+					manager_hosting.setText(R.string.manager_hosting_32);
+					mobilism_team.setText(R.string.mobilism_team_32);
+					forum_team.setText(R.string.forum_team_32);
+					contributors.setText(R.string.contributors_32);
+					download_selected.setText(R.string.download_selected_32);
+					download_ready.setText(R.string.download_ready_32);
+					download_ready_desc.setText(R.string.download_ready_desc_32);
+					downloading_file.setText(R.string.downloading_file_32);
+					download_success.setText(R.string.download_success_32);
+					new_update.setText(R.string.new_update_32);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_32);
+					continue_1.setText(R.string.continue_1_32);
+					cancel.setText(R.string.cancel_32);
+					fixer.setText(R.string.fixer_32);
+					download.setText(R.string.download_32);
+					later.setText(R.string.later_32);
+					install_now.setText(R.string.install_now_32);
+					install_update.setText(R.string.install_update_32);
+					go_back.setText(R.string.go_back_32);
+					download_update.setText(R.string.download_update_32);
+					not_now.setText(R.string.not_now_32);
+					show_support.setText(R.string.show_support_32);
+					show_support_desc.setText(R.string.show_support_desc_32);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_32);
+					settings_title.setText(R.string.settings_title_32);
+					about_title.setText(R.string.about_title_32);
+					maintenance.setText(R.string.maintenance_32);
+					maintenance_desc.setText(R.string.maintenance_desc_32);
+					thanks.setText(R.string.thanks_32);
+					language.setText(R.string.language_32);
+					website.setText(R.string.website_32);
+					discord.setText(R.string.discord_32);
+					reddit.setText(R.string.reddit_32);
+					faq.setText(R.string.faq_32);
+					cloned_version.setText(R.string.cloned_version_32);
+					cloned_version_info.setText(R.string.cloned_version_desc_32);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_32);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_32);
+					installation_failed.setText(R.string.installation_failed_32);
+					installation_failed_desc.setText(R.string.installation_failed_desc_32);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_32);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_32);
+					existing_patched.setText(R.string.existing_patched_32);
+					existing_patched_desc.setText(R.string.existing_patched_desc_32);
+					close.setText(R.string.close_32);
+					cloned.setText(R.string.cloned_32);
+					spap.setText(R.string.spap_32);
+					install.setText(R.string.install_32);
+					uninstall.setText(R.string.uninstall_32);
+					ignore.setText(R.string.ignore_32);
+					delete.setText(R.string.delete_32);
+					uninstall_patched.setText(R.string.uninstall_patched_32);
+					open_settings.setText(R.string.open_settings_32);
+					open_patched.setText(R.string.open_patched_32);
+					installation_failed_0 = installation_failed.getText().toString();
+					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+					existing_patched_0 = existing_patched.getText().toString();
+					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+					close_0 = close.getText().toString();
+					uninstall_0 = uninstall.getText().toString();
+					
+					COUNTER = 1;
+				}
+				if (_position == 33) {
+					LANGUAGE.edit().putString("LANGUAGE", "33").commit();
+					sub_text_installed.setText(R.string.installed_33);
+					sub_text_1.setText(R.string.latest_33);
+					sub_text_2.setText(R.string.latest_33);
+					sub_text_3.setText(R.string.latest_33);
+					version_switch_1.setText(R.string.versions_33);
+					version_switch_2.setText(R.string.versions_33);
+					version_switch_3.setText(R.string.versions_33);
+					changelogs.setText(R.string.changelogs_33);
+					title_sub.setText(R.string.manager_tools_33);
+					device_cpu.setText(R.string.device_cpu_33);
+					source.setText(R.string.source_33);
+					support.setText(R.string.support_33);
+					donate.setText(R.string.donate_33);
+					about.setText(R.string.about_33);
+					list_auto_refresh.setText(R.string.list_auto_refresh_33);
+					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_33);
+					force_auto_install.setText(R.string.force_auto_install_33);
+					force_auto_install_info.setText(R.string.force_auto_install_desc_33);
+					theme.setText(R.string.show_themes_33);
+					apk_location.setText(R.string.apk_location_33);
+					apk_location_info.setText(R.string.apk_location_desc_33);
+					clear_directory_folders.setText(R.string.clear_directory_folders_33);
+					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_33);
+					reset_settings.setText(R.string.reset_settings_33);
+					sub_title.setText(R.string.about_sub_33);
+					xmanager_dev.setText(R.string.xmanager_dev_33);
+					patched_devs.setText(R.string.patched_devs_33);
+					support_team.setText(R.string.support_team_33);
+					manager_testers.setText(R.string.manager_testers_33);
+					manager_hosting.setText(R.string.manager_hosting_33);
+					mobilism_team.setText(R.string.mobilism_team_33);
+					forum_team.setText(R.string.forum_team_33);
+					contributors.setText(R.string.contributors_33);
+					download_selected.setText(R.string.download_selected_33);
+					download_ready.setText(R.string.download_ready_33);
+					download_ready_desc.setText(R.string.download_ready_desc_33);
+					downloading_file.setText(R.string.downloading_file_33);
+					download_success.setText(R.string.download_success_33);
+					new_update.setText(R.string.new_update_33);
+					download_selected_0 = download_selected.getText().toString();
+					download_ready_0 = download_ready.getText().toString();
+					download_ready_desc_0 = download_ready_desc.getText().toString();
+					downloading_file_0 = downloading_file.getText().toString();
+					download_success_0 = download_success.getText().toString();
+					copy_url.setText(R.string.copy_url_33);
+					continue_1.setText(R.string.continue_1_33);
+					cancel.setText(R.string.cancel_33);
+					fixer.setText(R.string.fixer_33);
+					download.setText(R.string.download_33);
+					later.setText(R.string.later_33);
+					install_now.setText(R.string.install_now_33);
+					install_update.setText(R.string.install_update_33);
+					go_back.setText(R.string.go_back_33);
+					download_update.setText(R.string.download_update_33);
+					not_now.setText(R.string.not_now_33);
+					show_support.setText(R.string.show_support_33);
+					show_support_desc.setText(R.string.show_support_desc_33);
+					copy_url_0 = copy_url.getText().toString();
+					download_0 = download.getText().toString();
+					continue_0 = continue_1.getText().toString();
+					cancel_0 = cancel.getText().toString();
+					fixer_0 = fixer.getText().toString();
+					later_0 = later.getText().toString();
+					install_now_0 = install_now.getText().toString();
+					go_back_0 = go_back.getText().toString();
+					install_update_0 = install_update.getText().toString();
+					main_title.setText(R.string.main_title_33);
+					settings_title.setText(R.string.settings_title_33);
+					about_title.setText(R.string.about_title_33);
+					maintenance.setText(R.string.maintenance_33);
+					maintenance_desc.setText(R.string.maintenance_desc_33);
+					thanks.setText(R.string.thanks_33);
+					language.setText(R.string.language_33);
+					website.setText(R.string.website_33);
+					discord.setText(R.string.discord_33);
+					reddit.setText(R.string.reddit_33);
+					faq.setText(R.string.faq_33);
+					cloned_version.setText(R.string.cloned_version_33);
+					cloned_version_info.setText(R.string.cloned_version_desc_33);
+					disable_reward_ad.setText(R.string.disable_rewarded_ads_33);
+					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_33);
+					installation_failed.setText(R.string.installation_failed_33);
+					installation_failed_desc.setText(R.string.installation_failed_desc_33);
+					installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_33);
+					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_33);
+					existing_patched.setText(R.string.existing_patched_33);
+					existing_patched_desc.setText(R.string.existing_patched_desc_33);
+					close.setText(R.string.close_33);
+					cloned.setText(R.string.cloned_33);
+					spap.setText(R.string.spap_33);
+					install.setText(R.string.install_33);
+					uninstall.setText(R.string.uninstall_33);
+					ignore.setText(R.string.ignore_33);
+					delete.setText(R.string.delete_33);
+					uninstall_patched.setText(R.string.uninstall_patched_33);
+					open_settings.setText(R.string.open_settings_33);
+					open_patched.setText(R.string.open_patched_33);
 					installation_failed_0 = installation_failed.getText().toString();
 					installation_failed_desc_0 = installation_failed_desc.getText().toString();
 					installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
@@ -4820,111 +5056,112 @@ public class MainActivity extends AppCompatActivity {
 				main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
 				main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
 				main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
-				    title_1.setText(R.string.spotify_regular);
-					title_2.setText(R.string.spotify_amoled);
-					sub_text_installed.setText(R.string.installed);
-					sub_text_1.setText(R.string.latest);
-					sub_text_3.setText(R.string.latest);
-					version_switch_1.setText(R.string.versions);
-					version_switch_2.setText(R.string.versions);
-					changelogs.setText(R.string.changelogs);
-					title_sub.setText(R.string.manager_tools);
-					device_cpu.setText(R.string.device_cpu);
-					source.setText(R.string.source);
-					support.setText(R.string.support);
-					donate.setText(R.string.donate);
-					about.setText(R.string.about);
-					list_auto_refresh.setText(R.string.list_auto_refresh);
-					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc);
-					force_auto_install.setText(R.string.force_auto_install);
-					force_auto_install_info.setText(R.string.force_auto_install_desc);
-					theme.setText(R.string.show_themes);
-					apk_location.setText(R.string.apk_location);
-					apk_location_info.setText(R.string.apk_location_desc);
-					clear_directory_folders.setText(R.string.clear_directory_folders);
-					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc);
-					reset_settings.setText(R.string.reset_settings);
-					sub_title.setText(R.string.about_sub);
-					developer_manager.setText(R.string.xmanager_dev);
-					developer_spotify.setText(R.string.spotify_mod_devs);
-					support_team.setText(R.string.telegram_support_team);
-					mod_testers_1.setText(R.string.manager_testers);
-					mod_testers_2.setText(R.string.manager_hosting);
-					mobilism_team.setText(R.string.mobilism_team);
-					forum_team.setText(R.string.forum_team);
-					manager_team.setText(R.string.xspotify_team);
-					contributors_1.setText(R.string.contributors);
-					download_selected.setText(R.string.download_selected);
-					download_ready.setText(R.string.download_ready);
-					download_ready_desc.setText(R.string.download_ready_desc);
-					downloading_file.setText(R.string.downloading_file);
-					download_success.setText(R.string.download_success);
-					new_update.setText(R.string.new_update);
-					download_selected_0 = download_selected.getText().toString();
-					download_ready_0 = download_ready.getText().toString();
-					download_ready_desc_0 = download_ready_desc.getText().toString();
-					downloading_file_0 = downloading_file.getText().toString();
-					download_success_0 = download_success.getText().toString();
-					copy_url.setText(R.string.copy_url);
-					continue_1.setText(R.string.continue_1);
-					cancel.setText(R.string.cancel);
-					download.setText(R.string.download);
-					later.setText(R.string.later);
-					install_now.setText(R.string.install_now);
-					install_update.setText(R.string.install_update);
-					go_back.setText(R.string.go_back_01);
-					download_update.setText(R.string.download_update);
-					not_now.setText(R.string.not_now);
-					show_support.setText(R.string.show_support);
-					show_support_desc.setText(R.string.show_support_desc);
-					copy_url_0 = copy_url.getText().toString();
-					download_0 = download.getText().toString();
-					continue_0 = continue_1.getText().toString();
-					cancel_0 = cancel.getText().toString();
-					later_0 = later.getText().toString();
-					install_now_0 = install_now.getText().toString();
-					go_back_0 = go_back.getText().toString();
-					install_update_0 = install_update.getText().toString();
-					main_title.setText(R.string.main_title);
-					settings_title.setText(R.string.settings_title);
-					about_title.setText(R.string.about_title);
-					maintenance.setText(R.string.maintenance);
-					maintenance_desc.setText(R.string.maintenance_desc);
-					thanks.setText(R.string.thanks);
-					language.setText(R.string.language);
-					website.setText(R.string.website);
-					discord.setText(R.string.discord);
-					reddit.setText(R.string.reddit);
-					faq.setText(R.string.faq);
-					cloned_version.setText(R.string.cloned_version);
-					cloned_version_info.setText(R.string.cloned_version_desc);
-				    disable_reward_ad.setText(R.string.disable_rewarded_ads);
-				    disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc);
-				    installation_failed.setText(R.string.installation_failed);
-				    installation_failed_desc.setText(R.string.installation_failed_desc);
-				    installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc);
-				    installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc);
-				    existing_patched.setText(R.string.existing_patched);
-				    existing_patched_desc.setText(R.string.existing_patched_desc);
-				    close.setText(R.string.close);
-				    cloned.setText(R.string.cloned);
-				    ream.setText(R.string.ream);
-				    install.setText(R.string.install);
-				    uninstall.setText(R.string.uninstall);
-				    ignore.setText(R.string.ignore);
-				    delete.setText(R.string.delete);
-				    uninstall_patched.setText(R.string.uninstall_patched);
-				    open_settings.setText(R.string.open_settings);
-				    open_patched.setText(R.string.open_patched);
-					installation_failed_0 = installation_failed.getText().toString();
-				    installation_failed_desc_0 = installation_failed_desc.getText().toString();
-				    installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
-				    installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
-				    existing_patched_0 = existing_patched.getText().toString();
-				    existing_patched_desc_0 = existing_patched_desc.getText().toString();
-				    close_0 = close.getText().toString();
-				    uninstall_0 = uninstall.getText().toString();
-
+				sub_text_installed.setText(R.string.installed);
+				sub_text_1.setText(R.string.latest);
+				sub_text_2.setText(R.string.latest);
+				sub_text_3.setText(R.string.latest);
+				version_switch_1.setText(R.string.versions);
+				version_switch_2.setText(R.string.versions);
+				version_switch_3.setText(R.string.versions);
+				changelogs.setText(R.string.changelogs);
+				title_sub.setText(R.string.manager_tools);
+				device_cpu.setText(R.string.device_cpu);
+				source.setText(R.string.source);
+				support.setText(R.string.support);
+				donate.setText(R.string.donate);
+				about.setText(R.string.about);
+				list_auto_refresh.setText(R.string.list_auto_refresh);
+				list_auto_refresh_info.setText(R.string.list_auto_refresh_desc);
+				force_auto_install.setText(R.string.force_auto_install);
+				force_auto_install_info.setText(R.string.force_auto_install_desc);
+				theme.setText(R.string.show_themes);
+				apk_location.setText(R.string.apk_location);
+				apk_location_info.setText(R.string.apk_location_desc);
+				clear_directory_folders.setText(R.string.clear_directory_folders);
+				clear_directory_folders_info.setText(R.string.clear_directory_folders_desc);
+				reset_settings.setText(R.string.reset_settings);
+				sub_title.setText(R.string.about_sub);
+				xmanager_dev.setText(R.string.xmanager_dev);
+				patched_devs.setText(R.string.patched_devs);
+				support_team.setText(R.string.support_team);
+				manager_testers.setText(R.string.manager_testers);
+				manager_hosting.setText(R.string.manager_hosting);
+				mobilism_team.setText(R.string.mobilism_team);
+				forum_team.setText(R.string.forum_team);
+				contributors.setText(R.string.contributors);
+				download_selected.setText(R.string.download_selected);
+				download_ready.setText(R.string.download_ready);
+				download_ready_desc.setText(R.string.download_ready_desc);
+				downloading_file.setText(R.string.downloading_file);
+				download_success.setText(R.string.download_success);
+				new_update.setText(R.string.new_update);
+				download_selected_0 = download_selected.getText().toString();
+				download_ready_0 = download_ready.getText().toString();
+				download_ready_desc_0 = download_ready_desc.getText().toString();
+				downloading_file_0 = downloading_file.getText().toString();
+				download_success_0 = download_success.getText().toString();
+				copy_url.setText(R.string.copy_url);
+				continue_1.setText(R.string.continue_1);
+				cancel.setText(R.string.cancel);
+				fixer.setText(R.string.fixer);
+				download.setText(R.string.download);
+				later.setText(R.string.later);
+				install_now.setText(R.string.install_now);
+				install_update.setText(R.string.install_update);
+				go_back.setText(R.string.go_back);
+				download_update.setText(R.string.download_update);
+				not_now.setText(R.string.not_now);
+				show_support.setText(R.string.show_support);
+				show_support_desc.setText(R.string.show_support_desc);
+				copy_url_0 = copy_url.getText().toString();
+				download_0 = download.getText().toString();
+				continue_0 = continue_1.getText().toString();
+				cancel_0 = cancel.getText().toString();
+				fixer_0 = fixer.getText().toString();
+				later_0 = later.getText().toString();
+				install_now_0 = install_now.getText().toString();
+				go_back_0 = go_back.getText().toString();
+				install_update_0 = install_update.getText().toString();
+				main_title.setText(R.string.main_title);
+				settings_title.setText(R.string.settings_title);
+				about_title.setText(R.string.about_title);
+				maintenance.setText(R.string.maintenance);
+				maintenance_desc.setText(R.string.maintenance_desc);
+				thanks.setText(R.string.thanks);
+				language.setText(R.string.language);
+				website.setText(R.string.website);
+				discord.setText(R.string.discord);
+				reddit.setText(R.string.reddit);
+				faq.setText(R.string.faq);
+				cloned_version.setText(R.string.cloned_version);
+				cloned_version_info.setText(R.string.cloned_version_desc);
+				disable_reward_ad.setText(R.string.disable_rewarded_ads);
+				disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc);
+				installation_failed.setText(R.string.installation_failed);
+				installation_failed_desc.setText(R.string.installation_failed_desc);
+				installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc);
+				installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc);
+				existing_patched.setText(R.string.existing_patched);
+				existing_patched_desc.setText(R.string.existing_patched_desc);
+				close.setText(R.string.close);
+				cloned.setText(R.string.cloned);
+				spap.setText(R.string.spap);
+				install.setText(R.string.install);
+				uninstall.setText(R.string.uninstall);
+				ignore.setText(R.string.ignore);
+				delete.setText(R.string.delete);
+				uninstall_patched.setText(R.string.uninstall_patched);
+				open_settings.setText(R.string.open_settings);
+				open_patched.setText(R.string.open_patched);
+				installation_failed_0 = installation_failed.getText().toString();
+				installation_failed_desc_0 = installation_failed_desc.getText().toString();
+				installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+				installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+				existing_patched_0 = existing_patched.getText().toString();
+				existing_patched_desc_0 = existing_patched_desc.getText().toString();
+				close_0 = close.getText().toString();
+				uninstall_0 = uninstall.getText().toString();
+				
 				select_language.setSelection((int)(0));
 				select_theme.setSelection((int)(0));
 				if (COUNTER == 1) {
@@ -5179,13 +5416,13 @@ public class MainActivity extends AppCompatActivity {
 								Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 								if (_position < 2) {
 									if ((_position % 2) == 0) {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 									else {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -5193,13 +5430,13 @@ public class MainActivity extends AppCompatActivity {
 								}
 								else {
 									if ((_position % 2) == 1) {
-										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 									else {
-										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -5353,13 +5590,13 @@ public class MainActivity extends AppCompatActivity {
 						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 						if (_position < 2) {
 							if ((_position % 2) == 0) {
-								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
+								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 							else {
-								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
+								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -5367,13 +5604,13 @@ public class MainActivity extends AppCompatActivity {
 						}
 						else {
 							if ((_position % 2) == 1) {
-								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
+								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 							else {
-								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR<br/><br/>").concat(download_ready_desc_0)))))));
+								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular.get((int)(regular.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -5576,13 +5813,13 @@ public class MainActivity extends AppCompatActivity {
 								Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 								if (_position < 2) {
 									if ((_position % 2) == 0) {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 									else {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -5590,13 +5827,13 @@ public class MainActivity extends AppCompatActivity {
 								}
 								else {
 									if ((_position % 2) == 1) {
-										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 									else {
-										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -5750,13 +5987,13 @@ public class MainActivity extends AppCompatActivity {
 						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 						if (_position < 2) {
 							if ((_position % 2) == 0) {
-								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 							else {
-								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -5764,13 +6001,13 @@ public class MainActivity extends AppCompatActivity {
 						}
 						else {
 							if ((_position % 2) == 1) {
-								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 							else {
-								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("REGULAR (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(regular_cloned.get((int)(regular_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -6370,13 +6607,13 @@ public class MainActivity extends AppCompatActivity {
 								Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 								if (_position < 2) {
 									if ((_position % 2) == 0) {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 									else {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -6384,13 +6621,13 @@ public class MainActivity extends AppCompatActivity {
 								}
 								else {
 									if ((_position % 2) == 1) {
-										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 									else {
-										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)))))));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -6546,13 +6783,13 @@ public class MainActivity extends AppCompatActivity {
 						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 						if (_position < 2) {
 							if ((_position % 2) == 0) {
-								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 							else {
-								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -6560,13 +6797,13 @@ public class MainActivity extends AppCompatActivity {
 						}
 						else {
 							if ((_position % 2) == 1) {
-								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARM64-V8A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 							else {
-								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED (CLONED)<br/><br/>").concat(download_ready_desc_0)))))));
+								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned.get((int)(amoled_cloned.size() - 1) - _position).get("Title").toString().replace("(ARMEABI-V7A)", "").replace("(ARM64-V8A)", "").concat("<br/><b>CPU/ARCH: </b>".concat("ARMEABI-V7A".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)))))));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -7125,7 +7362,7 @@ public class MainActivity extends AppCompatActivity {
 					String TitleColor = "1DB954";
 					
 					Uninstall.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-					Uninstall.setPositiveButton(ream.getText().toString(), new DialogInterface.OnClickListener(){
+					Uninstall.setPositiveButton(spap.getText().toString(), new DialogInterface.OnClickListener(){
 						
 						                @Override
 						                public void onClick(DialogInterface Uninstall, int p) {
@@ -7181,7 +7418,7 @@ public class MainActivity extends AppCompatActivity {
 					String TitleColor = "1DB954";
 					
 					Settings.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-					Settings.setPositiveButton(ream.getText().toString(), new DialogInterface.OnClickListener(){
+					Settings.setPositiveButton(spap.getText().toString(), new DialogInterface.OnClickListener(){
 						
 						                @Override
 						                public void onClick(DialogInterface Settings, int p) {
@@ -7287,7 +7524,7 @@ public class MainActivity extends AppCompatActivity {
 					String TitleColor = "1DB954";
 					
 					Open.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-					Open.setPositiveButton(ream.getText().toString(), new DialogInterface.OnClickListener(){
+					Open.setPositiveButton(spap.getText().toString(), new DialogInterface.OnClickListener(){
 						
 						                @Override
 						                public void onClick(DialogInterface Open, int p) {
@@ -7448,7 +7685,7 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View _view) {
 				try {
-					_Browser("https://github.com/xManager-v2/xManager-Spotify");
+					_Browser("https://github.com/xManager-App/xManager");
 					_Tap_Animation(box_source);
 				}
 				catch(Exception e) {
@@ -7579,9 +7816,9 @@ public class MainActivity extends AppCompatActivity {
 											sub_separator_2.setVisibility(View.VISIBLE);
 											sub_installed_l.setVisibility(View.VISIBLE);
 											sub_installed.setTextColor(0xFFFFFFFF);
-											sub_separator_1.setTextColor(0xFF1DB954);
+											sub_separator_1.setTextColor(0xFF616161);
 											sub_installed_c.setTextColor(0xFFBDBDBD);
-											sub_separator_2.setTextColor(0xFF1DB954);
+											sub_separator_2.setTextColor(0xFF616161);
 											sub_installed_l.setTextColor(0xFF78909C);
 										}
 										else {
@@ -7592,9 +7829,9 @@ public class MainActivity extends AppCompatActivity {
 												sub_separator_2.setVisibility(View.GONE);
 												sub_installed_l.setVisibility(View.GONE);
 												sub_installed.setTextColor(0xFFFFFFFF);
-												sub_separator_1.setTextColor(0xFF1DB954);
+												sub_separator_1.setTextColor(0xFF616161);
 												sub_installed_c.setTextColor(0xFFBDBDBD);
-												sub_separator_2.setTextColor(0xFF1DB954);
+												sub_separator_2.setTextColor(0xFF616161);
 												sub_installed_l.setTextColor(0xFF78909C);
 											}
 											else {
@@ -7605,9 +7842,9 @@ public class MainActivity extends AppCompatActivity {
 													sub_separator_2.setVisibility(View.GONE);
 													sub_installed_l.setVisibility(View.GONE);
 													sub_installed.setTextColor(0xFFFFFFFF);
-													sub_separator_1.setTextColor(0xFF1DB954);
+													sub_separator_1.setTextColor(0xFF616161);
 													sub_installed_c.setTextColor(0xFFBDBDBD);
-													sub_separator_2.setTextColor(0xFF1DB954);
+													sub_separator_2.setTextColor(0xFF616161);
 													sub_installed_l.setTextColor(0xFF78909C);
 												}
 												else {
@@ -7618,9 +7855,9 @@ public class MainActivity extends AppCompatActivity {
 														sub_separator_2.setVisibility(View.GONE);
 														sub_installed_l.setVisibility(View.GONE);
 														sub_installed.setTextColor(0xFFFFFFFF);
-														sub_separator_1.setTextColor(0xFF1DB954);
+														sub_separator_1.setTextColor(0xFF616161);
 														sub_installed_c.setTextColor(0xFFBDBDBD);
-														sub_separator_2.setTextColor(0xFF1DB954);
+														sub_separator_2.setTextColor(0xFF616161);
 														sub_installed_l.setTextColor(0xFF78909C);
 													}
 													else {
@@ -7631,9 +7868,9 @@ public class MainActivity extends AppCompatActivity {
 															sub_separator_2.setVisibility(View.GONE);
 															sub_installed_l.setVisibility(View.VISIBLE);
 															sub_installed.setTextColor(0xFFFFFFFF);
-															sub_separator_1.setTextColor(0xFF1DB954);
+															sub_separator_1.setTextColor(0xFF616161);
 															sub_installed_c.setTextColor(0xFFBDBDBD);
-															sub_separator_2.setTextColor(0xFF1DB954);
+															sub_separator_2.setTextColor(0xFF616161);
 															sub_installed_l.setTextColor(0xFF78909C);
 														}
 														else {
@@ -7644,9 +7881,9 @@ public class MainActivity extends AppCompatActivity {
 																sub_separator_2.setVisibility(View.GONE);
 																sub_installed_l.setVisibility(View.GONE);
 																sub_installed.setTextColor(0xFFFFFFFF);
-																sub_separator_1.setTextColor(0xFF1DB954);
+																sub_separator_1.setTextColor(0xFF616161);
 																sub_installed_c.setTextColor(0xFFBDBDBD);
-																sub_separator_2.setTextColor(0xFF1DB954);
+																sub_separator_2.setTextColor(0xFF616161);
 																sub_installed_l.setTextColor(0xFF78909C);
 															}
 															else {
@@ -7657,9 +7894,9 @@ public class MainActivity extends AppCompatActivity {
 																	sub_separator_2.setVisibility(View.VISIBLE);
 																	sub_installed_l.setVisibility(View.VISIBLE);
 																	sub_installed.setTextColor(0xFFFFFFFF);
-																	sub_separator_1.setTextColor(0xFF1DB954);
+																	sub_separator_1.setTextColor(0xFF616161);
 																	sub_installed_c.setTextColor(0xFFBDBDBD);
-																	sub_separator_2.setTextColor(0xFF1DB954);
+																	sub_separator_2.setTextColor(0xFF616161);
 																	sub_installed_l.setTextColor(0xFF78909C);
 																}
 																else {
@@ -7670,9 +7907,9 @@ public class MainActivity extends AppCompatActivity {
 																		sub_separator_2.setVisibility(View.VISIBLE);
 																		sub_installed_l.setVisibility(View.VISIBLE);
 																		sub_installed.setTextColor(0xFFFFFFFF);
-																		sub_separator_1.setTextColor(0xFF1DB954);
+																		sub_separator_1.setTextColor(0xFF616161);
 																		sub_installed_c.setTextColor(0xFFBDBDBD);
-																		sub_separator_2.setTextColor(0xFF1DB954);
+																		sub_separator_2.setTextColor(0xFF616161);
 																		sub_installed_l.setTextColor(0xFF78909C);
 																	}
 																}
@@ -7770,7 +8007,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "Spotify Mod (Official).apk");
+				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "Spotify Mod (Official).apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -8252,7 +8489,7 @@ public class MainActivity extends AppCompatActivity {
 								AlertDialog.show();
 								_Maintenance();
 								try {
-									_Browser("https://t.me/SpotifyModSupport");
+									_Browser("https://t.me/xManagerSupport");
 								}
 								catch(Exception e) {
 								}
@@ -8283,7 +8520,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "/Update/xManager Update.apk");
+				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "/Update/xManager Update.apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -8901,7 +9138,7 @@ public class MainActivity extends AppCompatActivity {
 		k = null;
 		Animation l;
 		l = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		l.setDuration(1200); contributors_1.startAnimation(l);
+		l.setDuration(1200); contributors.startAnimation(l);
 		l = null;
 	}
 	
@@ -9109,7 +9346,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "Spotify Mod (Official).apk");
+				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "Spotify Mod (Official).apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -9480,7 +9717,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "/Update/xManager Update.apk");
+				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "/Update/xManager Update.apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -9771,8 +10008,6 @@ public class MainActivity extends AppCompatActivity {
 	
 	public void _Language_UI() {
 		if (LANGUAGE.getString("LANGUAGE", "").equals("0")) {
-			title_1.setText(R.string.spotify_regular);
-			title_2.setText(R.string.spotify_amoled);
 			sub_text_installed.setText(R.string.installed);
 			sub_text_1.setText(R.string.latest);
 			sub_text_2.setText(R.string.latest);
@@ -9798,15 +10033,14 @@ public class MainActivity extends AppCompatActivity {
 			clear_directory_folders_info.setText(R.string.clear_directory_folders_desc);
 			reset_settings.setText(R.string.reset_settings);
 			sub_title.setText(R.string.about_sub);
-			developer_manager.setText(R.string.xmanager_dev);
-			developer_spotify.setText(R.string.spotify_mod_devs);
-			support_team.setText(R.string.telegram_support_team);
-			mod_testers_1.setText(R.string.manager_testers);
-			mod_testers_2.setText(R.string.manager_hosting);
+			xmanager_dev.setText(R.string.xmanager_dev);
+			patched_devs.setText(R.string.patched_devs);
+			support_team.setText(R.string.support_team);
+			manager_testers.setText(R.string.manager_testers);
+			manager_hosting.setText(R.string.manager_hosting);
 			mobilism_team.setText(R.string.mobilism_team);
 			forum_team.setText(R.string.forum_team);
-			manager_team.setText(R.string.xspotify_team);
-			contributors_1.setText(R.string.contributors);
+			contributors.setText(R.string.contributors);
 			download_selected.setText(R.string.download_selected);
 			download_ready.setText(R.string.download_ready);
 			download_ready_desc.setText(R.string.download_ready_desc);
@@ -9826,7 +10060,7 @@ public class MainActivity extends AppCompatActivity {
 			later.setText(R.string.later);
 			install_now.setText(R.string.install_now);
 			install_update.setText(R.string.install_update);
-			go_back.setText(R.string.go_back_01);
+			go_back.setText(R.string.go_back);
 			download_update.setText(R.string.download_update);
 			not_now.setText(R.string.not_now);
 			show_support.setText(R.string.show_support);
@@ -9863,7 +10097,7 @@ public class MainActivity extends AppCompatActivity {
 			existing_patched_desc.setText(R.string.existing_patched_desc);
 			close.setText(R.string.close);
 			cloned.setText(R.string.cloned);
-			ream.setText(R.string.ream);
+			spap.setText(R.string.spap);
 			install.setText(R.string.install);
 			uninstall.setText(R.string.uninstall);
 			ignore.setText(R.string.ignore);
@@ -9884,8 +10118,6 @@ public class MainActivity extends AppCompatActivity {
 		}
 		else {
 			if (LANGUAGE.getString("LANGUAGE", "").equals("1")) {
-				title_1.setText(R.string.spotify_regular_01);
-				title_2.setText(R.string.spotify_amoled_01);
 				sub_text_installed.setText(R.string.installed_01);
 				sub_text_1.setText(R.string.latest_01);
 				sub_text_2.setText(R.string.latest_01);
@@ -9911,15 +10143,14 @@ public class MainActivity extends AppCompatActivity {
 				clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_01);
 				reset_settings.setText(R.string.reset_settings_01);
 				sub_title.setText(R.string.about_sub_01);
-				developer_manager.setText(R.string.xmanager_dev_01);
-				developer_spotify.setText(R.string.spotify_mod_devs_01);
-				support_team.setText(R.string.telegram_support_team_01);
-				mod_testers_1.setText(R.string.manager_testers_01);
-				mod_testers_2.setText(R.string.manager_hosting_01);
+				xmanager_dev.setText(R.string.xmanager_dev_01);
+				patched_devs.setText(R.string.patched_devs_01);
+				support_team.setText(R.string.support_team_01);
+				manager_testers.setText(R.string.manager_testers_01);
+				manager_hosting.setText(R.string.manager_hosting_01);
 				mobilism_team.setText(R.string.mobilism_team_01);
 				forum_team.setText(R.string.forum_team_01);
-				manager_team.setText(R.string.xspotify_team_01);
-				contributors_1.setText(R.string.contributors_01);
+				contributors.setText(R.string.contributors_01);
 				download_selected.setText(R.string.download_selected_01);
 				download_ready.setText(R.string.download_ready_01);
 				download_ready_desc.setText(R.string.download_ready_desc_01);
@@ -9976,7 +10207,7 @@ public class MainActivity extends AppCompatActivity {
 				existing_patched_desc.setText(R.string.existing_patched_desc_01);
 				close.setText(R.string.close_01);
 				cloned.setText(R.string.cloned_01);
-				ream.setText(R.string.ream_01);
+				spap.setText(R.string.spap_01);
 				install.setText(R.string.install_01);
 				uninstall.setText(R.string.uninstall_01);
 				ignore.setText(R.string.ignore_01);
@@ -9997,8 +10228,6 @@ public class MainActivity extends AppCompatActivity {
 			}
 			else {
 				if (LANGUAGE.getString("LANGUAGE", "").equals("2")) {
-					title_1.setText(R.string.spotify_regular_02);
-					title_2.setText(R.string.spotify_amoled_02);
 					sub_text_installed.setText(R.string.installed_02);
 					sub_text_1.setText(R.string.latest_02);
 					sub_text_2.setText(R.string.latest_02);
@@ -10024,15 +10253,14 @@ public class MainActivity extends AppCompatActivity {
 					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_02);
 					reset_settings.setText(R.string.reset_settings_02);
 					sub_title.setText(R.string.about_sub_02);
-					developer_manager.setText(R.string.xmanager_dev_02);
-					developer_spotify.setText(R.string.spotify_mod_devs_02);
-					support_team.setText(R.string.telegram_support_team_02);
-					mod_testers_1.setText(R.string.manager_testers_02);
-					mod_testers_2.setText(R.string.manager_hosting_02);
+					xmanager_dev.setText(R.string.xmanager_dev_02);
+					patched_devs.setText(R.string.patched_devs_02);
+					support_team.setText(R.string.support_team_02);
+					manager_testers.setText(R.string.manager_testers_02);
+					manager_hosting.setText(R.string.manager_hosting_02);
 					mobilism_team.setText(R.string.mobilism_team_02);
 					forum_team.setText(R.string.forum_team_02);
-					manager_team.setText(R.string.xspotify_team_02);
-					contributors_1.setText(R.string.contributors_02);
+					contributors.setText(R.string.contributors_02);
 					download_selected.setText(R.string.download_selected_02);
 					download_ready.setText(R.string.download_ready_02);
 					download_ready_desc.setText(R.string.download_ready_desc_02);
@@ -10089,7 +10317,7 @@ public class MainActivity extends AppCompatActivity {
 					existing_patched_desc.setText(R.string.existing_patched_desc_02);
 					close.setText(R.string.close_02);
 					cloned.setText(R.string.cloned_02);
-					ream.setText(R.string.ream_02);
+					spap.setText(R.string.spap_02);
 					install.setText(R.string.install_02);
 					uninstall.setText(R.string.uninstall_02);
 					ignore.setText(R.string.ignore_02);
@@ -10110,8 +10338,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				else {
 					if (LANGUAGE.getString("LANGUAGE", "").equals("3")) {
-						title_1.setText(R.string.spotify_regular_03);
-						title_2.setText(R.string.spotify_amoled_03);
 						sub_text_installed.setText(R.string.installed_03);
 						sub_text_1.setText(R.string.latest_03);
 						sub_text_2.setText(R.string.latest_03);
@@ -10137,15 +10363,14 @@ public class MainActivity extends AppCompatActivity {
 						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_03);
 						reset_settings.setText(R.string.reset_settings_03);
 						sub_title.setText(R.string.about_sub_03);
-						developer_manager.setText(R.string.xmanager_dev_03);
-						developer_spotify.setText(R.string.spotify_mod_devs_03);
-						support_team.setText(R.string.telegram_support_team_03);
-						mod_testers_1.setText(R.string.manager_testers_03);
-						mod_testers_2.setText(R.string.manager_hosting_03);
+						xmanager_dev.setText(R.string.xmanager_dev_03);
+						patched_devs.setText(R.string.patched_devs_03);
+						support_team.setText(R.string.support_team_03);
+						manager_testers.setText(R.string.manager_testers_03);
+						manager_hosting.setText(R.string.manager_hosting_03);
 						mobilism_team.setText(R.string.mobilism_team_03);
 						forum_team.setText(R.string.forum_team_03);
-						manager_team.setText(R.string.xspotify_team_03);
-						contributors_1.setText(R.string.contributors_03);
+						contributors.setText(R.string.contributors_03);
 						download_selected.setText(R.string.download_selected_03);
 						download_ready.setText(R.string.download_ready_03);
 						download_ready_desc.setText(R.string.download_ready_desc_03);
@@ -10202,7 +10427,7 @@ public class MainActivity extends AppCompatActivity {
 						existing_patched_desc.setText(R.string.existing_patched_desc_03);
 						close.setText(R.string.close_03);
 						cloned.setText(R.string.cloned_03);
-						ream.setText(R.string.ream_03);
+						spap.setText(R.string.spap_03);
 						install.setText(R.string.install_03);
 						uninstall.setText(R.string.uninstall_03);
 						ignore.setText(R.string.ignore_03);
@@ -10223,8 +10448,6 @@ public class MainActivity extends AppCompatActivity {
 					}
 					else {
 						if (LANGUAGE.getString("LANGUAGE", "").equals("4")) {
-							title_1.setText(R.string.spotify_regular_04);
-							title_2.setText(R.string.spotify_amoled_04);
 							sub_text_installed.setText(R.string.installed_04);
 							sub_text_1.setText(R.string.latest_04);
 							sub_text_2.setText(R.string.latest_04);
@@ -10250,15 +10473,14 @@ public class MainActivity extends AppCompatActivity {
 							clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_04);
 							reset_settings.setText(R.string.reset_settings_04);
 							sub_title.setText(R.string.about_sub_04);
-							developer_manager.setText(R.string.xmanager_dev_04);
-							developer_spotify.setText(R.string.spotify_mod_devs_04);
-							support_team.setText(R.string.telegram_support_team_04);
-							mod_testers_1.setText(R.string.manager_testers_04);
-							mod_testers_2.setText(R.string.manager_hosting_04);
+							xmanager_dev.setText(R.string.xmanager_dev_04);
+							patched_devs.setText(R.string.patched_devs_04);
+							support_team.setText(R.string.support_team_04);
+							manager_testers.setText(R.string.manager_testers_04);
+							manager_hosting.setText(R.string.manager_hosting_04);
 							mobilism_team.setText(R.string.mobilism_team_04);
 							forum_team.setText(R.string.forum_team_04);
-							manager_team.setText(R.string.xspotify_team_04);
-							contributors_1.setText(R.string.contributors_04);
+							contributors.setText(R.string.contributors_04);
 							download_selected.setText(R.string.download_selected_04);
 							download_ready.setText(R.string.download_ready_04);
 							download_ready_desc.setText(R.string.download_ready_desc_04);
@@ -10315,7 +10537,7 @@ public class MainActivity extends AppCompatActivity {
 							existing_patched_desc.setText(R.string.existing_patched_desc_04);
 							close.setText(R.string.close_04);
 							cloned.setText(R.string.cloned_04);
-							ream.setText(R.string.ream_04);
+							spap.setText(R.string.spap_04);
 							install.setText(R.string.install_04);
 							uninstall.setText(R.string.uninstall_04);
 							ignore.setText(R.string.ignore_04);
@@ -10336,8 +10558,6 @@ public class MainActivity extends AppCompatActivity {
 						}
 						else {
 							if (LANGUAGE.getString("LANGUAGE", "").equals("5")) {
-								title_1.setText(R.string.spotify_regular_05);
-								title_2.setText(R.string.spotify_amoled_05);
 								sub_text_installed.setText(R.string.installed_05);
 								sub_text_1.setText(R.string.latest_05);
 								sub_text_2.setText(R.string.latest_05);
@@ -10363,15 +10583,14 @@ public class MainActivity extends AppCompatActivity {
 								clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_05);
 								reset_settings.setText(R.string.reset_settings_05);
 								sub_title.setText(R.string.about_sub_05);
-								developer_manager.setText(R.string.xmanager_dev_05);
-								developer_spotify.setText(R.string.spotify_mod_devs_05);
-								support_team.setText(R.string.telegram_support_team_05);
-								mod_testers_1.setText(R.string.manager_testers_05);
-								mod_testers_2.setText(R.string.manager_hosting_05);
+								xmanager_dev.setText(R.string.xmanager_dev_05);
+								patched_devs.setText(R.string.patched_devs_05);
+								support_team.setText(R.string.support_team_05);
+								manager_testers.setText(R.string.manager_testers_05);
+								manager_hosting.setText(R.string.manager_hosting_05);
 								mobilism_team.setText(R.string.mobilism_team_05);
 								forum_team.setText(R.string.forum_team_05);
-								manager_team.setText(R.string.xspotify_team_05);
-								contributors_1.setText(R.string.contributors_05);
+								contributors.setText(R.string.contributors_05);
 								download_selected.setText(R.string.download_selected_05);
 								download_ready.setText(R.string.download_ready_05);
 								download_ready_desc.setText(R.string.download_ready_desc_05);
@@ -10428,7 +10647,7 @@ public class MainActivity extends AppCompatActivity {
 								existing_patched_desc.setText(R.string.existing_patched_desc_05);
 								close.setText(R.string.close_05);
 								cloned.setText(R.string.cloned_05);
-								ream.setText(R.string.ream_05);
+								spap.setText(R.string.spap_05);
 								install.setText(R.string.install_05);
 								uninstall.setText(R.string.uninstall_05);
 								ignore.setText(R.string.ignore_05);
@@ -10449,8 +10668,6 @@ public class MainActivity extends AppCompatActivity {
 							}
 							else {
 								if (LANGUAGE.getString("LANGUAGE", "").equals("6")) {
-									title_1.setText(R.string.spotify_regular_06);
-									title_2.setText(R.string.spotify_amoled_06);
 									sub_text_installed.setText(R.string.installed_06);
 									sub_text_1.setText(R.string.latest_06);
 									sub_text_2.setText(R.string.latest_06);
@@ -10476,15 +10693,14 @@ public class MainActivity extends AppCompatActivity {
 									clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_06);
 									reset_settings.setText(R.string.reset_settings_06);
 									sub_title.setText(R.string.about_sub_06);
-									developer_manager.setText(R.string.xmanager_dev_06);
-									developer_spotify.setText(R.string.spotify_mod_devs_06);
-									support_team.setText(R.string.telegram_support_team_06);
-									mod_testers_1.setText(R.string.manager_testers_06);
-									mod_testers_2.setText(R.string.manager_hosting_06);
+									xmanager_dev.setText(R.string.xmanager_dev_06);
+									patched_devs.setText(R.string.patched_devs_06);
+									support_team.setText(R.string.support_team_06);
+									manager_testers.setText(R.string.manager_testers_06);
+									manager_hosting.setText(R.string.manager_hosting_06);
 									mobilism_team.setText(R.string.mobilism_team_06);
 									forum_team.setText(R.string.forum_team_06);
-									manager_team.setText(R.string.xspotify_team_06);
-									contributors_1.setText(R.string.contributors_06);
+									contributors.setText(R.string.contributors_06);
 									download_selected.setText(R.string.download_selected_06);
 									download_ready.setText(R.string.download_ready_06);
 									download_ready_desc.setText(R.string.download_ready_desc_06);
@@ -10541,7 +10757,7 @@ public class MainActivity extends AppCompatActivity {
 									existing_patched_desc.setText(R.string.existing_patched_desc_06);
 									close.setText(R.string.close_06);
 									cloned.setText(R.string.cloned_06);
-									ream.setText(R.string.ream_06);
+									spap.setText(R.string.spap_06);
 									install.setText(R.string.install_06);
 									uninstall.setText(R.string.uninstall_06);
 									ignore.setText(R.string.ignore_06);
@@ -10562,8 +10778,6 @@ public class MainActivity extends AppCompatActivity {
 								}
 								else {
 									if (LANGUAGE.getString("LANGUAGE", "").equals("7")) {
-										title_1.setText(R.string.spotify_regular_07);
-										title_2.setText(R.string.spotify_amoled_07);
 										sub_text_installed.setText(R.string.installed_07);
 										sub_text_1.setText(R.string.latest_07);
 										sub_text_2.setText(R.string.latest_07);
@@ -10589,15 +10803,14 @@ public class MainActivity extends AppCompatActivity {
 										clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_07);
 										reset_settings.setText(R.string.reset_settings_07);
 										sub_title.setText(R.string.about_sub_07);
-										developer_manager.setText(R.string.xmanager_dev_07);
-										developer_spotify.setText(R.string.spotify_mod_devs_07);
-										support_team.setText(R.string.telegram_support_team_07);
-										mod_testers_1.setText(R.string.manager_testers_07);
-										mod_testers_2.setText(R.string.manager_hosting_07);
+										xmanager_dev.setText(R.string.xmanager_dev_07);
+										patched_devs.setText(R.string.patched_devs_07);
+										support_team.setText(R.string.support_team_07);
+										manager_testers.setText(R.string.manager_testers_07);
+										manager_hosting.setText(R.string.manager_hosting_07);
 										mobilism_team.setText(R.string.mobilism_team_07);
 										forum_team.setText(R.string.forum_team_07);
-										manager_team.setText(R.string.xspotify_team_07);
-										contributors_1.setText(R.string.contributors_07);
+										contributors.setText(R.string.contributors_07);
 										download_selected.setText(R.string.download_selected_07);
 										download_ready.setText(R.string.download_ready_07);
 										download_ready_desc.setText(R.string.download_ready_desc_07);
@@ -10654,7 +10867,7 @@ public class MainActivity extends AppCompatActivity {
 										existing_patched_desc.setText(R.string.existing_patched_desc_07);
 										close.setText(R.string.close_07);
 										cloned.setText(R.string.cloned_07);
-										ream.setText(R.string.ream_07);
+										spap.setText(R.string.spap_07);
 										install.setText(R.string.install_07);
 										uninstall.setText(R.string.uninstall_07);
 										ignore.setText(R.string.ignore_07);
@@ -10675,8 +10888,6 @@ public class MainActivity extends AppCompatActivity {
 									}
 									else {
 										if (LANGUAGE.getString("LANGUAGE", "").equals("8")) {
-											title_1.setText(R.string.spotify_regular_08);
-											title_2.setText(R.string.spotify_amoled_08);
 											sub_text_installed.setText(R.string.installed_08);
 											sub_text_1.setText(R.string.latest_08);
 											sub_text_2.setText(R.string.latest_08);
@@ -10702,15 +10913,14 @@ public class MainActivity extends AppCompatActivity {
 											clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_08);
 											reset_settings.setText(R.string.reset_settings_08);
 											sub_title.setText(R.string.about_sub_08);
-											developer_manager.setText(R.string.xmanager_dev_08);
-											developer_spotify.setText(R.string.spotify_mod_devs_08);
-											support_team.setText(R.string.telegram_support_team_08);
-											mod_testers_1.setText(R.string.manager_testers_08);
-											mod_testers_2.setText(R.string.manager_hosting_08);
+											xmanager_dev.setText(R.string.xmanager_dev_08);
+											patched_devs.setText(R.string.patched_devs_08);
+											support_team.setText(R.string.support_team_08);
+											manager_testers.setText(R.string.manager_testers_08);
+											manager_hosting.setText(R.string.manager_hosting_08);
 											mobilism_team.setText(R.string.mobilism_team_08);
 											forum_team.setText(R.string.forum_team_08);
-											manager_team.setText(R.string.xspotify_team_08);
-											contributors_1.setText(R.string.contributors_08);
+											contributors.setText(R.string.contributors_08);
 											download_selected.setText(R.string.download_selected_08);
 											download_ready.setText(R.string.download_ready_08);
 											download_ready_desc.setText(R.string.download_ready_desc_08);
@@ -10767,7 +10977,7 @@ public class MainActivity extends AppCompatActivity {
 											existing_patched_desc.setText(R.string.existing_patched_desc_08);
 											close.setText(R.string.close_08);
 											cloned.setText(R.string.cloned_08);
-											ream.setText(R.string.ream_08);
+											spap.setText(R.string.spap_08);
 											install.setText(R.string.install_08);
 											uninstall.setText(R.string.uninstall_08);
 											ignore.setText(R.string.ignore_08);
@@ -10788,8 +10998,6 @@ public class MainActivity extends AppCompatActivity {
 										}
 										else {
 											if (LANGUAGE.getString("LANGUAGE", "").equals("9")) {
-												title_1.setText(R.string.spotify_regular_09);
-												title_2.setText(R.string.spotify_amoled_09);
 												sub_text_installed.setText(R.string.installed_09);
 												sub_text_1.setText(R.string.latest_09);
 												sub_text_2.setText(R.string.latest_09);
@@ -10815,15 +11023,14 @@ public class MainActivity extends AppCompatActivity {
 												clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_09);
 												reset_settings.setText(R.string.reset_settings_09);
 												sub_title.setText(R.string.about_sub_09);
-												developer_manager.setText(R.string.xmanager_dev_09);
-												developer_spotify.setText(R.string.spotify_mod_devs_09);
-												support_team.setText(R.string.telegram_support_team_09);
-												mod_testers_1.setText(R.string.manager_testers_09);
-												mod_testers_2.setText(R.string.manager_hosting_09);
+												xmanager_dev.setText(R.string.xmanager_dev_09);
+												patched_devs.setText(R.string.patched_devs_09);
+												support_team.setText(R.string.support_team_09);
+												manager_testers.setText(R.string.manager_testers_09);
+												manager_hosting.setText(R.string.manager_hosting_09);
 												mobilism_team.setText(R.string.mobilism_team_09);
 												forum_team.setText(R.string.forum_team_09);
-												manager_team.setText(R.string.xspotify_team_09);
-												contributors_1.setText(R.string.contributors_09);
+												contributors.setText(R.string.contributors_09);
 												download_selected.setText(R.string.download_selected_09);
 												download_ready.setText(R.string.download_ready_09);
 												download_ready_desc.setText(R.string.download_ready_desc_09);
@@ -10880,7 +11087,7 @@ public class MainActivity extends AppCompatActivity {
 												existing_patched_desc.setText(R.string.existing_patched_desc_09);
 												close.setText(R.string.close_09);
 												cloned.setText(R.string.cloned_09);
-												ream.setText(R.string.ream_09);
+												spap.setText(R.string.spap_09);
 												install.setText(R.string.install_09);
 												uninstall.setText(R.string.uninstall_09);
 												ignore.setText(R.string.ignore_09);
@@ -10901,8 +11108,6 @@ public class MainActivity extends AppCompatActivity {
 											}
 											else {
 												if (LANGUAGE.getString("LANGUAGE", "").equals("10")) {
-													title_1.setText(R.string.spotify_regular_10);
-													title_2.setText(R.string.spotify_amoled_10);
 													sub_text_installed.setText(R.string.installed_10);
 													sub_text_1.setText(R.string.latest_10);
 													sub_text_2.setText(R.string.latest_10);
@@ -10928,15 +11133,14 @@ public class MainActivity extends AppCompatActivity {
 													clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_10);
 													reset_settings.setText(R.string.reset_settings_10);
 													sub_title.setText(R.string.about_sub_10);
-													developer_manager.setText(R.string.xmanager_dev_10);
-													developer_spotify.setText(R.string.spotify_mod_devs_10);
-													support_team.setText(R.string.telegram_support_team_10);
-													mod_testers_1.setText(R.string.manager_testers_10);
-													mod_testers_2.setText(R.string.manager_hosting_10);
+													xmanager_dev.setText(R.string.xmanager_dev_10);
+													patched_devs.setText(R.string.patched_devs_10);
+													support_team.setText(R.string.support_team_10);
+													manager_testers.setText(R.string.manager_testers_10);
+													manager_hosting.setText(R.string.manager_hosting_10);
 													mobilism_team.setText(R.string.mobilism_team_10);
 													forum_team.setText(R.string.forum_team_10);
-													manager_team.setText(R.string.xspotify_team_10);
-													contributors_1.setText(R.string.contributors_10);
+													contributors.setText(R.string.contributors_10);
 													download_selected.setText(R.string.download_selected_10);
 													download_ready.setText(R.string.download_ready_10);
 													download_ready_desc.setText(R.string.download_ready_desc_10);
@@ -10993,7 +11197,7 @@ public class MainActivity extends AppCompatActivity {
 													existing_patched_desc.setText(R.string.existing_patched_desc_10);
 													close.setText(R.string.close_10);
 													cloned.setText(R.string.cloned_10);
-													ream.setText(R.string.ream_10);
+													spap.setText(R.string.spap_10);
 													install.setText(R.string.install_10);
 													uninstall.setText(R.string.uninstall_10);
 													ignore.setText(R.string.ignore_10);
@@ -11014,8 +11218,6 @@ public class MainActivity extends AppCompatActivity {
 												}
 												else {
 													if (LANGUAGE.getString("LANGUAGE", "").equals("11")) {
-														title_1.setText(R.string.spotify_regular_11);
-														title_2.setText(R.string.spotify_amoled_11);
 														sub_text_installed.setText(R.string.installed_11);
 														sub_text_1.setText(R.string.latest_11);
 														sub_text_2.setText(R.string.latest_11);
@@ -11041,15 +11243,14 @@ public class MainActivity extends AppCompatActivity {
 														clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_11);
 														reset_settings.setText(R.string.reset_settings_11);
 														sub_title.setText(R.string.about_sub_11);
-														developer_manager.setText(R.string.xmanager_dev_11);
-														developer_spotify.setText(R.string.spotify_mod_devs_11);
-														support_team.setText(R.string.telegram_support_team_11);
-														mod_testers_1.setText(R.string.manager_testers_11);
-														mod_testers_2.setText(R.string.manager_hosting_11);
+														xmanager_dev.setText(R.string.xmanager_dev_11);
+														patched_devs.setText(R.string.patched_devs_11);
+														support_team.setText(R.string.support_team_11);
+														manager_testers.setText(R.string.manager_testers_11);
+														manager_hosting.setText(R.string.manager_hosting_11);
 														mobilism_team.setText(R.string.mobilism_team_11);
 														forum_team.setText(R.string.forum_team_11);
-														manager_team.setText(R.string.xspotify_team_11);
-														contributors_1.setText(R.string.contributors_11);
+														contributors.setText(R.string.contributors_11);
 														download_selected.setText(R.string.download_selected_11);
 														download_ready.setText(R.string.download_ready_11);
 														download_ready_desc.setText(R.string.download_ready_desc_11);
@@ -11106,7 +11307,7 @@ public class MainActivity extends AppCompatActivity {
 														existing_patched_desc.setText(R.string.existing_patched_desc_11);
 														close.setText(R.string.close_11);
 														cloned.setText(R.string.cloned_11);
-														ream.setText(R.string.ream_11);
+														spap.setText(R.string.spap_11);
 														install.setText(R.string.install_11);
 														uninstall.setText(R.string.uninstall_11);
 														ignore.setText(R.string.ignore_11);
@@ -11127,8 +11328,6 @@ public class MainActivity extends AppCompatActivity {
 													}
 													else {
 														if (LANGUAGE.getString("LANGUAGE", "").equals("12")) {
-															title_1.setText(R.string.spotify_regular_12);
-															title_2.setText(R.string.spotify_amoled_12);
 															sub_text_installed.setText(R.string.installed_12);
 															sub_text_1.setText(R.string.latest_12);
 															sub_text_2.setText(R.string.latest_12);
@@ -11154,15 +11353,14 @@ public class MainActivity extends AppCompatActivity {
 															clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_12);
 															reset_settings.setText(R.string.reset_settings_12);
 															sub_title.setText(R.string.about_sub_12);
-															developer_manager.setText(R.string.xmanager_dev_12);
-															developer_spotify.setText(R.string.spotify_mod_devs_12);
-															support_team.setText(R.string.telegram_support_team_12);
-															mod_testers_1.setText(R.string.manager_testers_12);
-															mod_testers_2.setText(R.string.manager_hosting_12);
+															xmanager_dev.setText(R.string.xmanager_dev_12);
+															patched_devs.setText(R.string.patched_devs_12);
+															support_team.setText(R.string.support_team_12);
+															manager_testers.setText(R.string.manager_testers_12);
+															manager_hosting.setText(R.string.manager_hosting_12);
 															mobilism_team.setText(R.string.mobilism_team_12);
 															forum_team.setText(R.string.forum_team_12);
-															manager_team.setText(R.string.xspotify_team_12);
-															contributors_1.setText(R.string.contributors_12);
+															contributors.setText(R.string.contributors_12);
 															download_selected.setText(R.string.download_selected_12);
 															download_ready.setText(R.string.download_ready_12);
 															download_ready_desc.setText(R.string.download_ready_desc_12);
@@ -11219,7 +11417,7 @@ public class MainActivity extends AppCompatActivity {
 															existing_patched_desc.setText(R.string.existing_patched_desc_12);
 															close.setText(R.string.close_12);
 															cloned.setText(R.string.cloned_12);
-															ream.setText(R.string.ream_12);
+															spap.setText(R.string.spap_12);
 															install.setText(R.string.install_12);
 															uninstall.setText(R.string.uninstall_12);
 															ignore.setText(R.string.ignore_12);
@@ -11240,8 +11438,6 @@ public class MainActivity extends AppCompatActivity {
 														}
 														else {
 															if (LANGUAGE.getString("LANGUAGE", "").equals("13")) {
-																title_1.setText(R.string.spotify_regular_13);
-																title_2.setText(R.string.spotify_amoled_13);
 																sub_text_installed.setText(R.string.installed_13);
 																sub_text_1.setText(R.string.latest_13);
 																sub_text_2.setText(R.string.latest_13);
@@ -11267,15 +11463,14 @@ public class MainActivity extends AppCompatActivity {
 																clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_13);
 																reset_settings.setText(R.string.reset_settings_13);
 																sub_title.setText(R.string.about_sub_13);
-																developer_manager.setText(R.string.xmanager_dev_13);
-																developer_spotify.setText(R.string.spotify_mod_devs_13);
-																support_team.setText(R.string.telegram_support_team_13);
-																mod_testers_1.setText(R.string.manager_testers_13);
-																mod_testers_2.setText(R.string.manager_hosting_13);
+																xmanager_dev.setText(R.string.xmanager_dev_13);
+																patched_devs.setText(R.string.patched_devs_13);
+																support_team.setText(R.string.support_team_13);
+																manager_testers.setText(R.string.manager_testers_13);
+																manager_hosting.setText(R.string.manager_hosting_13);
 																mobilism_team.setText(R.string.mobilism_team_13);
 																forum_team.setText(R.string.forum_team_13);
-																manager_team.setText(R.string.xspotify_team_13);
-																contributors_1.setText(R.string.contributors_13);
+																contributors.setText(R.string.contributors_13);
 																download_selected.setText(R.string.download_selected_13);
 																download_ready.setText(R.string.download_ready_13);
 																download_ready_desc.setText(R.string.download_ready_desc_13);
@@ -11332,7 +11527,7 @@ public class MainActivity extends AppCompatActivity {
 																existing_patched_desc.setText(R.string.existing_patched_desc_13);
 																close.setText(R.string.close_13);
 																cloned.setText(R.string.cloned_13);
-																ream.setText(R.string.ream_13);
+																spap.setText(R.string.spap_13);
 																install.setText(R.string.install_13);
 																uninstall.setText(R.string.uninstall_13);
 																ignore.setText(R.string.ignore_13);
@@ -11353,8 +11548,6 @@ public class MainActivity extends AppCompatActivity {
 															}
 															else {
 																if (LANGUAGE.getString("LANGUAGE", "").equals("14")) {
-																	title_1.setText(R.string.spotify_regular_14);
-																	title_2.setText(R.string.spotify_amoled_14);
 																	sub_text_installed.setText(R.string.installed_14);
 																	sub_text_1.setText(R.string.latest_14);
 																	sub_text_2.setText(R.string.latest_14);
@@ -11380,15 +11573,14 @@ public class MainActivity extends AppCompatActivity {
 																	clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_14);
 																	reset_settings.setText(R.string.reset_settings_14);
 																	sub_title.setText(R.string.about_sub_14);
-																	developer_manager.setText(R.string.xmanager_dev_14);
-																	developer_spotify.setText(R.string.spotify_mod_devs_14);
-																	support_team.setText(R.string.telegram_support_team_14);
-																	mod_testers_1.setText(R.string.manager_testers_14);
-																	mod_testers_2.setText(R.string.manager_hosting_14);
+																	xmanager_dev.setText(R.string.xmanager_dev_14);
+																	patched_devs.setText(R.string.patched_devs_14);
+																	support_team.setText(R.string.support_team_14);
+																	manager_testers.setText(R.string.manager_testers_14);
+																	manager_hosting.setText(R.string.manager_hosting_14);
 																	mobilism_team.setText(R.string.mobilism_team_14);
 																	forum_team.setText(R.string.forum_team_14);
-																	manager_team.setText(R.string.xspotify_team_14);
-																	contributors_1.setText(R.string.contributors_14);
+																	contributors.setText(R.string.contributors_14);
 																	download_selected.setText(R.string.download_selected_14);
 																	download_ready.setText(R.string.download_ready_14);
 																	download_ready_desc.setText(R.string.download_ready_desc_14);
@@ -11445,7 +11637,7 @@ public class MainActivity extends AppCompatActivity {
 																	existing_patched_desc.setText(R.string.existing_patched_desc_14);
 																	close.setText(R.string.close_14);
 																	cloned.setText(R.string.cloned_14);
-																	ream.setText(R.string.ream_14);
+																	spap.setText(R.string.spap_14);
 																	install.setText(R.string.install_14);
 																	uninstall.setText(R.string.uninstall_14);
 																	ignore.setText(R.string.ignore_14);
@@ -11466,8 +11658,6 @@ public class MainActivity extends AppCompatActivity {
 																}
 																else {
 																	if (LANGUAGE.getString("LANGUAGE", "").equals("15")) {
-																		title_1.setText(R.string.spotify_regular_15);
-																		title_2.setText(R.string.spotify_amoled_15);
 																		sub_text_installed.setText(R.string.installed_15);
 																		sub_text_1.setText(R.string.latest_15);
 																		sub_text_2.setText(R.string.latest_15);
@@ -11493,15 +11683,14 @@ public class MainActivity extends AppCompatActivity {
 																		clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_15);
 																		reset_settings.setText(R.string.reset_settings_15);
 																		sub_title.setText(R.string.about_sub_15);
-																		developer_manager.setText(R.string.xmanager_dev_15);
-																		developer_spotify.setText(R.string.spotify_mod_devs_15);
-																		support_team.setText(R.string.telegram_support_team_15);
-																		mod_testers_1.setText(R.string.manager_testers_15);
-																		mod_testers_2.setText(R.string.manager_hosting_15);
+																		xmanager_dev.setText(R.string.xmanager_dev_15);
+																		patched_devs.setText(R.string.patched_devs_15);
+																		support_team.setText(R.string.support_team_15);
+																		manager_testers.setText(R.string.manager_testers_15);
+																		manager_hosting.setText(R.string.manager_hosting_15);
 																		mobilism_team.setText(R.string.mobilism_team_15);
 																		forum_team.setText(R.string.forum_team_15);
-																		manager_team.setText(R.string.xspotify_team_15);
-																		contributors_1.setText(R.string.contributors_15);
+																		contributors.setText(R.string.contributors_15);
 																		download_selected.setText(R.string.download_selected_15);
 																		download_ready.setText(R.string.download_ready_15);
 																		download_ready_desc.setText(R.string.download_ready_desc_15);
@@ -11558,7 +11747,7 @@ public class MainActivity extends AppCompatActivity {
 																		existing_patched_desc.setText(R.string.existing_patched_desc_15);
 																		close.setText(R.string.close_15);
 																		cloned.setText(R.string.cloned_15);
-																		ream.setText(R.string.ream_15);
+																		spap.setText(R.string.spap_15);
 																		install.setText(R.string.install_15);
 																		uninstall.setText(R.string.uninstall_15);
 																		ignore.setText(R.string.ignore_15);
@@ -11579,8 +11768,6 @@ public class MainActivity extends AppCompatActivity {
 																	}
 																	else {
 																		if (LANGUAGE.getString("LANGUAGE", "").equals("16")) {
-																			title_1.setText(R.string.spotify_regular_16);
-																			title_2.setText(R.string.spotify_amoled_16);
 																			sub_text_installed.setText(R.string.installed_16);
 																			sub_text_1.setText(R.string.latest_16);
 																			sub_text_2.setText(R.string.latest_16);
@@ -11606,15 +11793,14 @@ public class MainActivity extends AppCompatActivity {
 																			clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_16);
 																			reset_settings.setText(R.string.reset_settings_16);
 																			sub_title.setText(R.string.about_sub_16);
-																			developer_manager.setText(R.string.xmanager_dev_16);
-																			developer_spotify.setText(R.string.spotify_mod_devs_16);
-																			support_team.setText(R.string.telegram_support_team_16);
-																			mod_testers_1.setText(R.string.manager_testers_16);
-																			mod_testers_2.setText(R.string.manager_hosting_16);
+																			xmanager_dev.setText(R.string.xmanager_dev_16);
+																			patched_devs.setText(R.string.patched_devs_16);
+																			support_team.setText(R.string.support_team_16);
+																			manager_testers.setText(R.string.manager_testers_16);
+																			manager_hosting.setText(R.string.manager_hosting_16);
 																			mobilism_team.setText(R.string.mobilism_team_16);
 																			forum_team.setText(R.string.forum_team_16);
-																			manager_team.setText(R.string.xspotify_team_16);
-																			contributors_1.setText(R.string.contributors_16);
+																			contributors.setText(R.string.contributors_16);
 																			download_selected.setText(R.string.download_selected_16);
 																			download_ready.setText(R.string.download_ready_16);
 																			download_ready_desc.setText(R.string.download_ready_desc_16);
@@ -11671,7 +11857,7 @@ public class MainActivity extends AppCompatActivity {
 																			existing_patched_desc.setText(R.string.existing_patched_desc_16);
 																			close.setText(R.string.close_16);
 																			cloned.setText(R.string.cloned_16);
-																			ream.setText(R.string.ream_16);
+																			spap.setText(R.string.spap_16);
 																			install.setText(R.string.install_16);
 																			uninstall.setText(R.string.uninstall_16);
 																			ignore.setText(R.string.ignore_16);
@@ -11692,8 +11878,6 @@ public class MainActivity extends AppCompatActivity {
 																		}
 																		else {
 																			if (LANGUAGE.getString("LANGUAGE", "").equals("17")) {
-																				title_1.setText(R.string.spotify_regular_17);
-																				title_2.setText(R.string.spotify_amoled_17);
 																				sub_text_installed.setText(R.string.installed_17);
 																				sub_text_1.setText(R.string.latest_17);
 																				sub_text_2.setText(R.string.latest_17);
@@ -11719,15 +11903,14 @@ public class MainActivity extends AppCompatActivity {
 																				clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_17);
 																				reset_settings.setText(R.string.reset_settings_17);
 																				sub_title.setText(R.string.about_sub_17);
-																				developer_manager.setText(R.string.xmanager_dev_17);
-																				developer_spotify.setText(R.string.spotify_mod_devs_17);
-																				support_team.setText(R.string.telegram_support_team_17);
-																				mod_testers_1.setText(R.string.manager_testers_17);
-																				mod_testers_2.setText(R.string.manager_hosting_17);
+																				xmanager_dev.setText(R.string.xmanager_dev_17);
+																				patched_devs.setText(R.string.patched_devs_17);
+																				support_team.setText(R.string.support_team_17);
+																				manager_testers.setText(R.string.manager_testers_17);
+																				manager_hosting.setText(R.string.manager_hosting_17);
 																				mobilism_team.setText(R.string.mobilism_team_17);
 																				forum_team.setText(R.string.forum_team_17);
-																				manager_team.setText(R.string.xspotify_team_17);
-																				contributors_1.setText(R.string.contributors_17);
+																				contributors.setText(R.string.contributors_17);
 																				download_selected.setText(R.string.download_selected_17);
 																				download_ready.setText(R.string.download_ready_17);
 																				download_ready_desc.setText(R.string.download_ready_desc_17);
@@ -11784,7 +11967,7 @@ public class MainActivity extends AppCompatActivity {
 																				existing_patched_desc.setText(R.string.existing_patched_desc_17);
 																				close.setText(R.string.close_17);
 																				cloned.setText(R.string.cloned_17);
-																				ream.setText(R.string.ream_17);
+																				spap.setText(R.string.spap_17);
 																				install.setText(R.string.install_17);
 																				uninstall.setText(R.string.uninstall_17);
 																				ignore.setText(R.string.ignore_17);
@@ -11805,8 +11988,6 @@ public class MainActivity extends AppCompatActivity {
 																			}
 																			else {
 																				if (LANGUAGE.getString("LANGUAGE", "").equals("18")) {
-																					title_1.setText(R.string.spotify_regular_18);
-																					title_2.setText(R.string.spotify_amoled_18);
 																					sub_text_installed.setText(R.string.installed_18);
 																					sub_text_1.setText(R.string.latest_18);
 																					sub_text_2.setText(R.string.latest_18);
@@ -11832,15 +12013,14 @@ public class MainActivity extends AppCompatActivity {
 																					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_18);
 																					reset_settings.setText(R.string.reset_settings_18);
 																					sub_title.setText(R.string.about_sub_18);
-																					developer_manager.setText(R.string.xmanager_dev_18);
-																					developer_spotify.setText(R.string.spotify_mod_devs_18);
-																					support_team.setText(R.string.telegram_support_team_18);
-																					mod_testers_1.setText(R.string.manager_testers_18);
-																					mod_testers_2.setText(R.string.manager_hosting_18);
+																					xmanager_dev.setText(R.string.xmanager_dev_18);
+																					patched_devs.setText(R.string.patched_devs_18);
+																					support_team.setText(R.string.support_team_18);
+																					manager_testers.setText(R.string.manager_testers_18);
+																					manager_hosting.setText(R.string.manager_hosting_18);
 																					mobilism_team.setText(R.string.mobilism_team_18);
 																					forum_team.setText(R.string.forum_team_18);
-																					manager_team.setText(R.string.xspotify_team_18);
-																					contributors_1.setText(R.string.contributors_18);
+																					contributors.setText(R.string.contributors_18);
 																					download_selected.setText(R.string.download_selected_18);
 																					download_ready.setText(R.string.download_ready_18);
 																					download_ready_desc.setText(R.string.download_ready_desc_18);
@@ -11897,7 +12077,7 @@ public class MainActivity extends AppCompatActivity {
 																					existing_patched_desc.setText(R.string.existing_patched_desc_18);
 																					close.setText(R.string.close_18);
 																					cloned.setText(R.string.cloned_18);
-																					ream.setText(R.string.ream_18);
+																					spap.setText(R.string.spap_18);
 																					install.setText(R.string.install_18);
 																					uninstall.setText(R.string.uninstall_18);
 																					ignore.setText(R.string.ignore_18);
@@ -11918,8 +12098,6 @@ public class MainActivity extends AppCompatActivity {
 																				}
 																				else {
 																					if (LANGUAGE.getString("LANGUAGE", "").equals("19")) {
-																						title_1.setText(R.string.spotify_regular_19);
-																						title_2.setText(R.string.spotify_amoled_19);
 																						sub_text_installed.setText(R.string.installed_19);
 																						sub_text_1.setText(R.string.latest_19);
 																						sub_text_2.setText(R.string.latest_19);
@@ -11945,15 +12123,14 @@ public class MainActivity extends AppCompatActivity {
 																						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_19);
 																						reset_settings.setText(R.string.reset_settings_19);
 																						sub_title.setText(R.string.about_sub_19);
-																						developer_manager.setText(R.string.xmanager_dev_19);
-																						developer_spotify.setText(R.string.spotify_mod_devs_19);
-																						support_team.setText(R.string.telegram_support_team_19);
-																						mod_testers_1.setText(R.string.manager_testers_19);
-																						mod_testers_2.setText(R.string.manager_hosting_19);
+																						xmanager_dev.setText(R.string.xmanager_dev_19);
+																						patched_devs.setText(R.string.patched_devs_19);
+																						support_team.setText(R.string.support_team_19);
+																						manager_testers.setText(R.string.manager_testers_19);
+																						manager_hosting.setText(R.string.manager_hosting_19);
 																						mobilism_team.setText(R.string.mobilism_team_19);
 																						forum_team.setText(R.string.forum_team_19);
-																						manager_team.setText(R.string.xspotify_team_19);
-																						contributors_1.setText(R.string.contributors_19);
+																						contributors.setText(R.string.contributors_19);
 																						download_selected.setText(R.string.download_selected_19);
 																						download_ready.setText(R.string.download_ready_19);
 																						download_ready_desc.setText(R.string.download_ready_desc_19);
@@ -12010,7 +12187,7 @@ public class MainActivity extends AppCompatActivity {
 																						existing_patched_desc.setText(R.string.existing_patched_desc_19);
 																						close.setText(R.string.close_19);
 																						cloned.setText(R.string.cloned_19);
-																						ream.setText(R.string.ream_19);
+																						spap.setText(R.string.spap_19);
 																						install.setText(R.string.install_19);
 																						uninstall.setText(R.string.uninstall_19);
 																						ignore.setText(R.string.ignore_19);
@@ -12031,8 +12208,6 @@ public class MainActivity extends AppCompatActivity {
 																					}
 																					else {
 																						if (LANGUAGE.getString("LANGUAGE", "").equals("20")) {
-																							title_1.setText(R.string.spotify_regular_20);
-																							title_2.setText(R.string.spotify_amoled_20);
 																							sub_text_installed.setText(R.string.installed_20);
 																							sub_text_1.setText(R.string.latest_20);
 																							sub_text_2.setText(R.string.latest_20);
@@ -12058,15 +12233,14 @@ public class MainActivity extends AppCompatActivity {
 																							clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_20);
 																							reset_settings.setText(R.string.reset_settings_20);
 																							sub_title.setText(R.string.about_sub_20);
-																							developer_manager.setText(R.string.xmanager_dev_20);
-																							developer_spotify.setText(R.string.spotify_mod_devs_20);
-																							support_team.setText(R.string.telegram_support_team_20);
-																							mod_testers_1.setText(R.string.manager_testers_20);
-																							mod_testers_2.setText(R.string.manager_hosting_20);
+																							xmanager_dev.setText(R.string.xmanager_dev_20);
+																							patched_devs.setText(R.string.patched_devs_20);
+																							support_team.setText(R.string.support_team_20);
+																							manager_testers.setText(R.string.manager_testers_20);
+																							manager_hosting.setText(R.string.manager_hosting_20);
 																							mobilism_team.setText(R.string.mobilism_team_20);
 																							forum_team.setText(R.string.forum_team_20);
-																							manager_team.setText(R.string.xspotify_team_20);
-																							contributors_1.setText(R.string.contributors_20);
+																							contributors.setText(R.string.contributors_20);
 																							download_selected.setText(R.string.download_selected_20);
 																							download_ready.setText(R.string.download_ready_20);
 																							download_ready_desc.setText(R.string.download_ready_desc_20);
@@ -12123,7 +12297,7 @@ public class MainActivity extends AppCompatActivity {
 																							existing_patched_desc.setText(R.string.existing_patched_desc_20);
 																							close.setText(R.string.close_20);
 																							cloned.setText(R.string.cloned_20);
-																							ream.setText(R.string.ream_20);
+																							spap.setText(R.string.spap_20);
 																							install.setText(R.string.install_20);
 																							uninstall.setText(R.string.uninstall_20);
 																							ignore.setText(R.string.ignore_20);
@@ -12144,8 +12318,6 @@ public class MainActivity extends AppCompatActivity {
 																						}
 																						else {
 																							if (LANGUAGE.getString("LANGUAGE", "").equals("21")) {
-																								title_1.setText(R.string.spotify_regular_21);
-																								title_2.setText(R.string.spotify_amoled_21);
 																								sub_text_installed.setText(R.string.installed_21);
 																								sub_text_1.setText(R.string.latest_21);
 																								sub_text_2.setText(R.string.latest_21);
@@ -12171,15 +12343,14 @@ public class MainActivity extends AppCompatActivity {
 																								clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_21);
 																								reset_settings.setText(R.string.reset_settings_21);
 																								sub_title.setText(R.string.about_sub_21);
-																								developer_manager.setText(R.string.xmanager_dev_21);
-																								developer_spotify.setText(R.string.spotify_mod_devs_21);
-																								support_team.setText(R.string.telegram_support_team_21);
-																								mod_testers_1.setText(R.string.manager_testers_21);
-																								mod_testers_2.setText(R.string.manager_hosting_21);
+																								xmanager_dev.setText(R.string.xmanager_dev_21);
+																								patched_devs.setText(R.string.patched_devs_21);
+																								support_team.setText(R.string.support_team_21);
+																								manager_testers.setText(R.string.manager_testers_21);
+																								manager_hosting.setText(R.string.manager_hosting_21);
 																								mobilism_team.setText(R.string.mobilism_team_21);
 																								forum_team.setText(R.string.forum_team_21);
-																								manager_team.setText(R.string.xspotify_team_21);
-																								contributors_1.setText(R.string.contributors_21);
+																								contributors.setText(R.string.contributors_21);
 																								download_selected.setText(R.string.download_selected_21);
 																								download_ready.setText(R.string.download_ready_21);
 																								download_ready_desc.setText(R.string.download_ready_desc_21);
@@ -12236,7 +12407,7 @@ public class MainActivity extends AppCompatActivity {
 																								existing_patched_desc.setText(R.string.existing_patched_desc_21);
 																								close.setText(R.string.close_21);
 																								cloned.setText(R.string.cloned_21);
-																								ream.setText(R.string.ream_21);
+																								spap.setText(R.string.spap_21);
 																								install.setText(R.string.install_21);
 																								uninstall.setText(R.string.uninstall_21);
 																								ignore.setText(R.string.ignore_21);
@@ -12257,8 +12428,6 @@ public class MainActivity extends AppCompatActivity {
 																							}
 																							else {
 																								if (LANGUAGE.getString("LANGUAGE", "").equals("22")) {
-																									title_1.setText(R.string.spotify_regular_22);
-																									title_2.setText(R.string.spotify_amoled_22);
 																									sub_text_installed.setText(R.string.installed_22);
 																									sub_text_1.setText(R.string.latest_22);
 																									sub_text_2.setText(R.string.latest_22);
@@ -12284,15 +12453,14 @@ public class MainActivity extends AppCompatActivity {
 																									clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_22);
 																									reset_settings.setText(R.string.reset_settings_22);
 																									sub_title.setText(R.string.about_sub_22);
-																									developer_manager.setText(R.string.xmanager_dev_22);
-																									developer_spotify.setText(R.string.spotify_mod_devs_22);
-																									support_team.setText(R.string.telegram_support_team_22);
-																									mod_testers_1.setText(R.string.manager_testers_22);
-																									mod_testers_2.setText(R.string.manager_hosting_22);
+																									xmanager_dev.setText(R.string.xmanager_dev_22);
+																									patched_devs.setText(R.string.patched_devs_22);
+																									support_team.setText(R.string.support_team_22);
+																									manager_testers.setText(R.string.manager_testers_22);
+																									manager_hosting.setText(R.string.manager_hosting_22);
 																									mobilism_team.setText(R.string.mobilism_team_22);
 																									forum_team.setText(R.string.forum_team_22);
-																									manager_team.setText(R.string.xspotify_team_22);
-																									contributors_1.setText(R.string.contributors_22);
+																									contributors.setText(R.string.contributors_22);
 																									download_selected.setText(R.string.download_selected_22);
 																									download_ready.setText(R.string.download_ready_22);
 																									download_ready_desc.setText(R.string.download_ready_desc_22);
@@ -12349,7 +12517,7 @@ public class MainActivity extends AppCompatActivity {
 																									existing_patched_desc.setText(R.string.existing_patched_desc_22);
 																									close.setText(R.string.close_22);
 																									cloned.setText(R.string.cloned_22);
-																									ream.setText(R.string.ream_22);
+																									spap.setText(R.string.spap_22);
 																									install.setText(R.string.install_22);
 																									uninstall.setText(R.string.uninstall_22);
 																									ignore.setText(R.string.ignore_22);
@@ -12370,8 +12538,6 @@ public class MainActivity extends AppCompatActivity {
 																								}
 																								else {
 																									if (LANGUAGE.getString("LANGUAGE", "").equals("23")) {
-																										title_1.setText(R.string.spotify_regular_23);
-																										title_2.setText(R.string.spotify_amoled_23);
 																										sub_text_installed.setText(R.string.installed_23);
 																										sub_text_1.setText(R.string.latest_23);
 																										sub_text_2.setText(R.string.latest_23);
@@ -12397,15 +12563,14 @@ public class MainActivity extends AppCompatActivity {
 																										clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_23);
 																										reset_settings.setText(R.string.reset_settings_23);
 																										sub_title.setText(R.string.about_sub_23);
-																										developer_manager.setText(R.string.xmanager_dev_23);
-																										developer_spotify.setText(R.string.spotify_mod_devs_23);
-																										support_team.setText(R.string.telegram_support_team_23);
-																										mod_testers_1.setText(R.string.manager_testers_23);
-																										mod_testers_2.setText(R.string.manager_hosting_23);
+																										xmanager_dev.setText(R.string.xmanager_dev_23);
+																										patched_devs.setText(R.string.patched_devs_23);
+																										support_team.setText(R.string.support_team_23);
+																										manager_testers.setText(R.string.manager_testers_23);
+																										manager_hosting.setText(R.string.manager_hosting_23);
 																										mobilism_team.setText(R.string.mobilism_team_23);
 																										forum_team.setText(R.string.forum_team_23);
-																										manager_team.setText(R.string.xspotify_team_23);
-																										contributors_1.setText(R.string.contributors_23);
+																										contributors.setText(R.string.contributors_23);
 																										download_selected.setText(R.string.download_selected_23);
 																										download_ready.setText(R.string.download_ready_23);
 																										download_ready_desc.setText(R.string.download_ready_desc_23);
@@ -12462,7 +12627,7 @@ public class MainActivity extends AppCompatActivity {
 																										existing_patched_desc.setText(R.string.existing_patched_desc_23);
 																										close.setText(R.string.close_23);
 																										cloned.setText(R.string.cloned_23);
-																										ream.setText(R.string.ream_23);
+																										spap.setText(R.string.spap_23);
 																										install.setText(R.string.install_23);
 																										uninstall.setText(R.string.uninstall_23);
 																										ignore.setText(R.string.ignore_23);
@@ -12483,8 +12648,6 @@ public class MainActivity extends AppCompatActivity {
 																									}
 																									else {
 																										if (LANGUAGE.getString("LANGUAGE", "").equals("24")) {
-																											title_1.setText(R.string.spotify_regular_24);
-																											title_2.setText(R.string.spotify_amoled_24);
 																											sub_text_installed.setText(R.string.installed_24);
 																											sub_text_1.setText(R.string.latest_24);
 																											sub_text_2.setText(R.string.latest_24);
@@ -12510,15 +12673,14 @@ public class MainActivity extends AppCompatActivity {
 																											clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_24);
 																											reset_settings.setText(R.string.reset_settings_24);
 																											sub_title.setText(R.string.about_sub_24);
-																											developer_manager.setText(R.string.xmanager_dev_24);
-																											developer_spotify.setText(R.string.spotify_mod_devs_24);
-																											support_team.setText(R.string.telegram_support_team_24);
-																											mod_testers_1.setText(R.string.manager_testers_24);
-																											mod_testers_2.setText(R.string.manager_hosting_24);
+																											xmanager_dev.setText(R.string.xmanager_dev_24);
+																											patched_devs.setText(R.string.patched_devs_24);
+																											support_team.setText(R.string.support_team_24);
+																											manager_testers.setText(R.string.manager_testers_24);
+																											manager_hosting.setText(R.string.manager_hosting_24);
 																											mobilism_team.setText(R.string.mobilism_team_24);
 																											forum_team.setText(R.string.forum_team_24);
-																											manager_team.setText(R.string.xspotify_team_24);
-																											contributors_1.setText(R.string.contributors_24);
+																											contributors.setText(R.string.contributors_24);
 																											download_selected.setText(R.string.download_selected_24);
 																											download_ready.setText(R.string.download_ready_24);
 																											download_ready_desc.setText(R.string.download_ready_desc_24);
@@ -12575,7 +12737,7 @@ public class MainActivity extends AppCompatActivity {
 																											existing_patched_desc.setText(R.string.existing_patched_desc_24);
 																											close.setText(R.string.close_24);
 																											cloned.setText(R.string.cloned_24);
-																											ream.setText(R.string.ream_24);
+																											spap.setText(R.string.spap_24);
 																											install.setText(R.string.install_24);
 																											uninstall.setText(R.string.uninstall_24);
 																											ignore.setText(R.string.ignore_24);
@@ -12596,8 +12758,6 @@ public class MainActivity extends AppCompatActivity {
 																										}
 																										else {
 																											if (LANGUAGE.getString("LANGUAGE", "").equals("25")) {
-																												title_1.setText(R.string.spotify_regular_25);
-																												title_2.setText(R.string.spotify_amoled_25);
 																												sub_text_installed.setText(R.string.installed_25);
 																												sub_text_1.setText(R.string.latest_25);
 																												sub_text_2.setText(R.string.latest_25);
@@ -12623,15 +12783,14 @@ public class MainActivity extends AppCompatActivity {
 																												clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_25);
 																												reset_settings.setText(R.string.reset_settings_25);
 																												sub_title.setText(R.string.about_sub_25);
-																												developer_manager.setText(R.string.xmanager_dev_25);
-																												developer_spotify.setText(R.string.spotify_mod_devs_25);
-																												support_team.setText(R.string.telegram_support_team_25);
-																												mod_testers_1.setText(R.string.manager_testers_25);
-																												mod_testers_2.setText(R.string.manager_hosting_25);
+																												xmanager_dev.setText(R.string.xmanager_dev_25);
+																												patched_devs.setText(R.string.patched_devs_25);
+																												support_team.setText(R.string.support_team_25);
+																												manager_testers.setText(R.string.manager_testers_25);
+																												manager_hosting.setText(R.string.manager_hosting_25);
 																												mobilism_team.setText(R.string.mobilism_team_25);
 																												forum_team.setText(R.string.forum_team_25);
-																												manager_team.setText(R.string.xspotify_team_25);
-																												contributors_1.setText(R.string.contributors_25);
+																												contributors.setText(R.string.contributors_25);
 																												download_selected.setText(R.string.download_selected_25);
 																												download_ready.setText(R.string.download_ready_25);
 																												download_ready_desc.setText(R.string.download_ready_desc_25);
@@ -12688,7 +12847,7 @@ public class MainActivity extends AppCompatActivity {
 																												existing_patched_desc.setText(R.string.existing_patched_desc_25);
 																												close.setText(R.string.close_25);
 																												cloned.setText(R.string.cloned_25);
-																												ream.setText(R.string.ream_25);
+																												spap.setText(R.string.spap_25);
 																												install.setText(R.string.install_25);
 																												uninstall.setText(R.string.uninstall_25);
 																												ignore.setText(R.string.ignore_25);
@@ -12709,8 +12868,6 @@ public class MainActivity extends AppCompatActivity {
 																											}
 																											else {
 																												if (LANGUAGE.getString("LANGUAGE", "").equals("26")) {
-																													title_1.setText(R.string.spotify_regular_26);
-																													title_2.setText(R.string.spotify_amoled_26);
 																													sub_text_installed.setText(R.string.installed_26);
 																													sub_text_1.setText(R.string.latest_26);
 																													sub_text_2.setText(R.string.latest_26);
@@ -12736,15 +12893,14 @@ public class MainActivity extends AppCompatActivity {
 																													clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_26);
 																													reset_settings.setText(R.string.reset_settings_26);
 																													sub_title.setText(R.string.about_sub_26);
-																													developer_manager.setText(R.string.xmanager_dev_26);
-																													developer_spotify.setText(R.string.spotify_mod_devs_26);
-																													support_team.setText(R.string.telegram_support_team_26);
-																													mod_testers_1.setText(R.string.manager_testers_26);
-																													mod_testers_2.setText(R.string.manager_hosting_26);
+																													xmanager_dev.setText(R.string.xmanager_dev_26);
+																													patched_devs.setText(R.string.patched_devs_26);
+																													support_team.setText(R.string.support_team_26);
+																													manager_testers.setText(R.string.manager_testers_26);
+																													manager_hosting.setText(R.string.manager_hosting_26);
 																													mobilism_team.setText(R.string.mobilism_team_26);
 																													forum_team.setText(R.string.forum_team_26);
-																													manager_team.setText(R.string.xspotify_team_26);
-																													contributors_1.setText(R.string.contributors_26);
+																													contributors.setText(R.string.contributors_26);
 																													download_selected.setText(R.string.download_selected_26);
 																													download_ready.setText(R.string.download_ready_26);
 																													download_ready_desc.setText(R.string.download_ready_desc_26);
@@ -12801,7 +12957,7 @@ public class MainActivity extends AppCompatActivity {
 																													existing_patched_desc.setText(R.string.existing_patched_desc_26);
 																													close.setText(R.string.close_26);
 																													cloned.setText(R.string.cloned_26);
-																													ream.setText(R.string.ream_26);
+																													spap.setText(R.string.spap_26);
 																													install.setText(R.string.install_26);
 																													uninstall.setText(R.string.uninstall_26);
 																													ignore.setText(R.string.ignore_26);
@@ -12822,8 +12978,6 @@ public class MainActivity extends AppCompatActivity {
 																												}
 																												else {
 																													if (LANGUAGE.getString("LANGUAGE", "").equals("27")) {
-																														title_1.setText(R.string.spotify_regular_27);
-																														title_2.setText(R.string.spotify_amoled_27);
 																														sub_text_installed.setText(R.string.installed_27);
 																														sub_text_1.setText(R.string.latest_27);
 																														sub_text_2.setText(R.string.latest_27);
@@ -12849,15 +13003,14 @@ public class MainActivity extends AppCompatActivity {
 																														clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_27);
 																														reset_settings.setText(R.string.reset_settings_27);
 																														sub_title.setText(R.string.about_sub_27);
-																														developer_manager.setText(R.string.xmanager_dev_27);
-																														developer_spotify.setText(R.string.spotify_mod_devs_27);
-																														support_team.setText(R.string.telegram_support_team_27);
-																														mod_testers_1.setText(R.string.manager_testers_27);
-																														mod_testers_2.setText(R.string.manager_hosting_27);
+																														xmanager_dev.setText(R.string.xmanager_dev_27);
+																														patched_devs.setText(R.string.patched_devs_27);
+																														support_team.setText(R.string.support_team_27);
+																														manager_testers.setText(R.string.manager_testers_27);
+																														manager_hosting.setText(R.string.manager_hosting_27);
 																														mobilism_team.setText(R.string.mobilism_team_27);
 																														forum_team.setText(R.string.forum_team_27);
-																														manager_team.setText(R.string.xspotify_team_27);
-																														contributors_1.setText(R.string.contributors_27);
+																														contributors.setText(R.string.contributors_27);
 																														download_selected.setText(R.string.download_selected_27);
 																														download_ready.setText(R.string.download_ready_27);
 																														download_ready_desc.setText(R.string.download_ready_desc_27);
@@ -12914,7 +13067,7 @@ public class MainActivity extends AppCompatActivity {
 																														existing_patched_desc.setText(R.string.existing_patched_desc_27);
 																														close.setText(R.string.close_27);
 																														cloned.setText(R.string.cloned_27);
-																														ream.setText(R.string.ream_27);
+																														spap.setText(R.string.spap_27);
 																														install.setText(R.string.install_27);
 																														uninstall.setText(R.string.uninstall_27);
 																														ignore.setText(R.string.ignore_27);
@@ -12935,8 +13088,6 @@ public class MainActivity extends AppCompatActivity {
 																													}
 																													else {
 																														if (LANGUAGE.getString("LANGUAGE", "").equals("28")) {
-																															title_1.setText(R.string.spotify_regular_28);
-																															title_2.setText(R.string.spotify_amoled_28);
 																															sub_text_installed.setText(R.string.installed_28);
 																															sub_text_1.setText(R.string.latest_28);
 																															sub_text_2.setText(R.string.latest_28);
@@ -12962,15 +13113,14 @@ public class MainActivity extends AppCompatActivity {
 																															clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_28);
 																															reset_settings.setText(R.string.reset_settings_28);
 																															sub_title.setText(R.string.about_sub_28);
-																															developer_manager.setText(R.string.xmanager_dev_28);
-																															developer_spotify.setText(R.string.spotify_mod_devs_28);
-																															support_team.setText(R.string.telegram_support_team_28);
-																															mod_testers_1.setText(R.string.manager_testers_28);
-																															mod_testers_2.setText(R.string.manager_hosting_28);
+																															xmanager_dev.setText(R.string.xmanager_dev_28);
+																															patched_devs.setText(R.string.patched_devs_28);
+																															support_team.setText(R.string.support_team_28);
+																															manager_testers.setText(R.string.manager_testers_28);
+																															manager_hosting.setText(R.string.manager_hosting_28);
 																															mobilism_team.setText(R.string.mobilism_team_28);
 																															forum_team.setText(R.string.forum_team_28);
-																															manager_team.setText(R.string.xspotify_team_28);
-																															contributors_1.setText(R.string.contributors_28);
+																															contributors.setText(R.string.contributors_28);
 																															download_selected.setText(R.string.download_selected_28);
 																															download_ready.setText(R.string.download_ready_28);
 																															download_ready_desc.setText(R.string.download_ready_desc_28);
@@ -13027,7 +13177,7 @@ public class MainActivity extends AppCompatActivity {
 																															existing_patched_desc.setText(R.string.existing_patched_desc_28);
 																															close.setText(R.string.close_28);
 																															cloned.setText(R.string.cloned_28);
-																															ream.setText(R.string.ream_28);
+																															spap.setText(R.string.spap_28);
 																															install.setText(R.string.install_28);
 																															uninstall.setText(R.string.uninstall_28);
 																															ignore.setText(R.string.ignore_28);
@@ -13048,8 +13198,6 @@ public class MainActivity extends AppCompatActivity {
 																														}
 																														else {
 																															if (LANGUAGE.getString("LANGUAGE", "").equals("29")) {
-																																title_1.setText(R.string.spotify_regular_29);
-																																title_2.setText(R.string.spotify_amoled_29);
 																																sub_text_installed.setText(R.string.installed_29);
 																																sub_text_1.setText(R.string.latest_29);
 																																sub_text_2.setText(R.string.latest_29);
@@ -13075,15 +13223,14 @@ public class MainActivity extends AppCompatActivity {
 																																clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_29);
 																																reset_settings.setText(R.string.reset_settings_29);
 																																sub_title.setText(R.string.about_sub_29);
-																																developer_manager.setText(R.string.xmanager_dev_29);
-																																developer_spotify.setText(R.string.spotify_mod_devs_29);
-																																support_team.setText(R.string.telegram_support_team_29);
-																																mod_testers_1.setText(R.string.manager_testers_29);
-																																mod_testers_2.setText(R.string.manager_hosting_29);
+																																xmanager_dev.setText(R.string.xmanager_dev_29);
+																																patched_devs.setText(R.string.patched_devs_29);
+																																support_team.setText(R.string.support_team_29);
+																																manager_testers.setText(R.string.manager_testers_29);
+																																manager_hosting.setText(R.string.manager_hosting_29);
 																																mobilism_team.setText(R.string.mobilism_team_29);
 																																forum_team.setText(R.string.forum_team_29);
-																																manager_team.setText(R.string.xspotify_team_29);
-																																contributors_1.setText(R.string.contributors_29);
+																																contributors.setText(R.string.contributors_29);
 																																download_selected.setText(R.string.download_selected_29);
 																																download_ready.setText(R.string.download_ready_29);
 																																download_ready_desc.setText(R.string.download_ready_desc_29);
@@ -13140,7 +13287,7 @@ public class MainActivity extends AppCompatActivity {
 																																existing_patched_desc.setText(R.string.existing_patched_desc_29);
 																																close.setText(R.string.close_29);
 																																cloned.setText(R.string.cloned_29);
-																																ream.setText(R.string.ream_29);
+																																spap.setText(R.string.spap_29);
 																																install.setText(R.string.install_29);
 																																uninstall.setText(R.string.uninstall_29);
 																																ignore.setText(R.string.ignore_29);
@@ -13161,8 +13308,6 @@ public class MainActivity extends AppCompatActivity {
 																															}
 																															else {
 																																if (LANGUAGE.getString("LANGUAGE", "").equals("30")) {
-																																	title_1.setText(R.string.spotify_regular_30);
-																																	title_2.setText(R.string.spotify_amoled_30);
 																																	sub_text_installed.setText(R.string.installed_30);
 																																	sub_text_1.setText(R.string.latest_30);
 																																	sub_text_2.setText(R.string.latest_30);
@@ -13188,15 +13333,14 @@ public class MainActivity extends AppCompatActivity {
 																																	clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_30);
 																																	reset_settings.setText(R.string.reset_settings_30);
 																																	sub_title.setText(R.string.about_sub_30);
-																																	developer_manager.setText(R.string.xmanager_dev_30);
-																																	developer_spotify.setText(R.string.spotify_mod_devs_30);
-																																	support_team.setText(R.string.telegram_support_team_30);
-																																	mod_testers_1.setText(R.string.manager_testers_30);
-																																	mod_testers_2.setText(R.string.manager_hosting_30);
+																																	xmanager_dev.setText(R.string.xmanager_dev_30);
+																																	patched_devs.setText(R.string.patched_devs_30);
+																																	support_team.setText(R.string.support_team_30);
+																																	manager_testers.setText(R.string.manager_testers_30);
+																																	manager_hosting.setText(R.string.manager_hosting_30);
 																																	mobilism_team.setText(R.string.mobilism_team_30);
 																																	forum_team.setText(R.string.forum_team_30);
-																																	manager_team.setText(R.string.xspotify_team_30);
-																																	contributors_1.setText(R.string.contributors_30);
+																																	contributors.setText(R.string.contributors_30);
 																																	download_selected.setText(R.string.download_selected_30);
 																																	download_ready.setText(R.string.download_ready_30);
 																																	download_ready_desc.setText(R.string.download_ready_desc_30);
@@ -13253,7 +13397,7 @@ public class MainActivity extends AppCompatActivity {
 																																	existing_patched_desc.setText(R.string.existing_patched_desc_30);
 																																	close.setText(R.string.close_30);
 																																	cloned.setText(R.string.cloned_30);
-																																	ream.setText(R.string.ream_30);
+																																	spap.setText(R.string.spap_30);
 																																	install.setText(R.string.install_30);
 																																	uninstall.setText(R.string.uninstall_30);
 																																	ignore.setText(R.string.ignore_30);
@@ -13271,6 +13415,339 @@ public class MainActivity extends AppCompatActivity {
 																																	uninstall_0 = uninstall.getText().toString();
 																																	
 																																	select_language.setSelection((int)(30));
+																																}
+																																else {
+																																	if (LANGUAGE.getString("LANGUAGE", "").equals("31")) {
+																																		sub_text_installed.setText(R.string.installed_31);
+																																		sub_text_1.setText(R.string.latest_31);
+																																		sub_text_2.setText(R.string.latest_31);
+																																		sub_text_3.setText(R.string.latest_31);
+																																		version_switch_1.setText(R.string.versions_31);
+																																		version_switch_2.setText(R.string.versions_31);
+																																		version_switch_3.setText(R.string.versions_31);
+																																		changelogs.setText(R.string.changelogs_31);
+																																		title_sub.setText(R.string.manager_tools_31);
+																																		device_cpu.setText(R.string.device_cpu_31);
+																																		source.setText(R.string.source_31);
+																																		support.setText(R.string.support_31);
+																																		donate.setText(R.string.donate_31);
+																																		about.setText(R.string.about_31);
+																																		list_auto_refresh.setText(R.string.list_auto_refresh_31);
+																																		list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_31);
+																																		force_auto_install.setText(R.string.force_auto_install_31);
+																																		force_auto_install_info.setText(R.string.force_auto_install_desc_31);
+																																		theme.setText(R.string.show_themes_31);
+																																		apk_location.setText(R.string.apk_location_31);
+																																		apk_location_info.setText(R.string.apk_location_desc_31);
+																																		clear_directory_folders.setText(R.string.clear_directory_folders_31);
+																																		clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_31);
+																																		reset_settings.setText(R.string.reset_settings_31);
+																																		sub_title.setText(R.string.about_sub_31);
+																																		xmanager_dev.setText(R.string.xmanager_dev_31);
+																																		patched_devs.setText(R.string.patched_devs_31);
+																																		support_team.setText(R.string.support_team_31);
+																																		manager_testers.setText(R.string.manager_testers_31);
+																																		manager_hosting.setText(R.string.manager_hosting_31);
+																																		mobilism_team.setText(R.string.mobilism_team_31);
+																																		forum_team.setText(R.string.forum_team_31);
+																																		contributors.setText(R.string.contributors_31);
+																																		download_selected.setText(R.string.download_selected_31);
+																																		download_ready.setText(R.string.download_ready_31);
+																																		download_ready_desc.setText(R.string.download_ready_desc_31);
+																																		downloading_file.setText(R.string.downloading_file_31);
+																																		download_success.setText(R.string.download_success_31);
+																																		new_update.setText(R.string.new_update_31);
+																																		download_selected_0 = download_selected.getText().toString();
+																																		download_ready_0 = download_ready.getText().toString();
+																																		download_ready_desc_0 = download_ready_desc.getText().toString();
+																																		downloading_file_0 = downloading_file.getText().toString();
+																																		download_success_0 = download_success.getText().toString();
+																																		copy_url.setText(R.string.copy_url_31);
+																																		continue_1.setText(R.string.continue_1_31);
+																																		cancel.setText(R.string.cancel_31);
+																																		fixer.setText(R.string.fixer_31);
+																																		download.setText(R.string.download_31);
+																																		later.setText(R.string.later_31);
+																																		install_now.setText(R.string.install_now_31);
+																																		install_update.setText(R.string.install_update_31);
+																																		go_back.setText(R.string.go_back_31);
+																																		download_update.setText(R.string.download_update_31);
+																																		not_now.setText(R.string.not_now_31);
+																																		show_support.setText(R.string.show_support_31);
+																																		show_support_desc.setText(R.string.show_support_desc_31);
+																																		copy_url_0 = copy_url.getText().toString();
+																																		download_0 = download.getText().toString();
+																																		continue_0 = continue_1.getText().toString();
+																																		cancel_0 = cancel.getText().toString();
+																																		fixer_0 = fixer.getText().toString();
+																																		later_0 = later.getText().toString();
+																																		install_now_0 = install_now.getText().toString();
+																																		go_back_0 = go_back.getText().toString();
+																																		install_update_0 = install_update.getText().toString();
+																																		main_title.setText(R.string.main_title_31);
+																																		settings_title.setText(R.string.settings_title_31);
+																																		about_title.setText(R.string.about_title_31);
+																																		maintenance.setText(R.string.maintenance_31);
+																																		maintenance_desc.setText(R.string.maintenance_desc_31);
+																																		thanks.setText(R.string.thanks_31);
+																																		language.setText(R.string.language_31);
+																																		website.setText(R.string.website_31);
+																																		discord.setText(R.string.discord_31);
+																																		reddit.setText(R.string.reddit_31);
+																																		faq.setText(R.string.faq_31);
+																																		cloned_version.setText(R.string.cloned_version_31);
+																																		cloned_version_info.setText(R.string.cloned_version_desc_31);
+																																		disable_reward_ad.setText(R.string.disable_rewarded_ads_31);
+																																		disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_31);
+																																		installation_failed.setText(R.string.installation_failed_31);
+																																		installation_failed_desc.setText(R.string.installation_failed_desc_31);
+																																		installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_31);
+																																		installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_31);
+																																		existing_patched.setText(R.string.existing_patched_31);
+																																		existing_patched_desc.setText(R.string.existing_patched_desc_31);
+																																		close.setText(R.string.close_31);
+																																		cloned.setText(R.string.cloned_31);
+																																		spap.setText(R.string.spap_31);
+																																		install.setText(R.string.install_31);
+																																		uninstall.setText(R.string.uninstall_31);
+																																		ignore.setText(R.string.ignore_31);
+																																		delete.setText(R.string.delete_31);
+																																		uninstall_patched.setText(R.string.uninstall_patched_31);
+																																		open_settings.setText(R.string.open_settings_31);
+																																		open_patched.setText(R.string.open_patched_31);
+																																		installation_failed_0 = installation_failed.getText().toString();
+																																		installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																																		installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																																		installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																																		existing_patched_0 = existing_patched.getText().toString();
+																																		existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																																		close_0 = close.getText().toString();
+																																		uninstall_0 = uninstall.getText().toString();
+																																		
+																																		select_language.setSelection((int)(31));
+																																	}
+																																	else {
+																																		if (LANGUAGE.getString("LANGUAGE", "").equals("32")) {
+																																			sub_text_installed.setText(R.string.installed_32);
+																																			sub_text_1.setText(R.string.latest_32);
+																																			sub_text_2.setText(R.string.latest_32);
+																																			sub_text_3.setText(R.string.latest_32);
+																																			version_switch_1.setText(R.string.versions_32);
+																																			version_switch_2.setText(R.string.versions_32);
+																																			version_switch_3.setText(R.string.versions_32);
+																																			changelogs.setText(R.string.changelogs_32);
+																																			title_sub.setText(R.string.manager_tools_32);
+																																			device_cpu.setText(R.string.device_cpu_32);
+																																			source.setText(R.string.source_32);
+																																			support.setText(R.string.support_32);
+																																			donate.setText(R.string.donate_32);
+																																			about.setText(R.string.about_32);
+																																			list_auto_refresh.setText(R.string.list_auto_refresh_32);
+																																			list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_32);
+																																			force_auto_install.setText(R.string.force_auto_install_32);
+																																			force_auto_install_info.setText(R.string.force_auto_install_desc_32);
+																																			theme.setText(R.string.show_themes_32);
+																																			apk_location.setText(R.string.apk_location_32);
+																																			apk_location_info.setText(R.string.apk_location_desc_32);
+																																			clear_directory_folders.setText(R.string.clear_directory_folders_32);
+																																			clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_32);
+																																			reset_settings.setText(R.string.reset_settings_32);
+																																			sub_title.setText(R.string.about_sub_32);
+																																			xmanager_dev.setText(R.string.xmanager_dev_32);
+																																			patched_devs.setText(R.string.patched_devs_32);
+																																			support_team.setText(R.string.support_team_32);
+																																			manager_testers.setText(R.string.manager_testers_32);
+																																			manager_hosting.setText(R.string.manager_hosting_32);
+																																			mobilism_team.setText(R.string.mobilism_team_32);
+																																			forum_team.setText(R.string.forum_team_32);
+																																			contributors.setText(R.string.contributors_32);
+																																			download_selected.setText(R.string.download_selected_32);
+																																			download_ready.setText(R.string.download_ready_32);
+																																			download_ready_desc.setText(R.string.download_ready_desc_32);
+																																			downloading_file.setText(R.string.downloading_file_32);
+																																			download_success.setText(R.string.download_success_32);
+																																			new_update.setText(R.string.new_update_32);
+																																			download_selected_0 = download_selected.getText().toString();
+																																			download_ready_0 = download_ready.getText().toString();
+																																			download_ready_desc_0 = download_ready_desc.getText().toString();
+																																			downloading_file_0 = downloading_file.getText().toString();
+																																			download_success_0 = download_success.getText().toString();
+																																			copy_url.setText(R.string.copy_url_32);
+																																			continue_1.setText(R.string.continue_1_32);
+																																			cancel.setText(R.string.cancel_32);
+																																			fixer.setText(R.string.fixer_32);
+																																			download.setText(R.string.download_32);
+																																			later.setText(R.string.later_32);
+																																			install_now.setText(R.string.install_now_32);
+																																			install_update.setText(R.string.install_update_32);
+																																			go_back.setText(R.string.go_back_32);
+																																			download_update.setText(R.string.download_update_32);
+																																			not_now.setText(R.string.not_now_32);
+																																			show_support.setText(R.string.show_support_32);
+																																			show_support_desc.setText(R.string.show_support_desc_32);
+																																			copy_url_0 = copy_url.getText().toString();
+																																			download_0 = download.getText().toString();
+																																			continue_0 = continue_1.getText().toString();
+																																			cancel_0 = cancel.getText().toString();
+																																			fixer_0 = fixer.getText().toString();
+																																			later_0 = later.getText().toString();
+																																			install_now_0 = install_now.getText().toString();
+																																			go_back_0 = go_back.getText().toString();
+																																			install_update_0 = install_update.getText().toString();
+																																			main_title.setText(R.string.main_title_32);
+																																			settings_title.setText(R.string.settings_title_32);
+																																			about_title.setText(R.string.about_title_32);
+																																			maintenance.setText(R.string.maintenance_32);
+																																			maintenance_desc.setText(R.string.maintenance_desc_32);
+																																			thanks.setText(R.string.thanks_32);
+																																			language.setText(R.string.language_32);
+																																			website.setText(R.string.website_32);
+																																			discord.setText(R.string.discord_32);
+																																			reddit.setText(R.string.reddit_32);
+																																			faq.setText(R.string.faq_32);
+																																			cloned_version.setText(R.string.cloned_version_32);
+																																			cloned_version_info.setText(R.string.cloned_version_desc_32);
+																																			disable_reward_ad.setText(R.string.disable_rewarded_ads_32);
+																																			disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_32);
+																																			installation_failed.setText(R.string.installation_failed_32);
+																																			installation_failed_desc.setText(R.string.installation_failed_desc_32);
+																																			installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_32);
+																																			installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_32);
+																																			existing_patched.setText(R.string.existing_patched_32);
+																																			existing_patched_desc.setText(R.string.existing_patched_desc_32);
+																																			close.setText(R.string.close_32);
+																																			cloned.setText(R.string.cloned_32);
+																																			spap.setText(R.string.spap_32);
+																																			install.setText(R.string.install_32);
+																																			uninstall.setText(R.string.uninstall_32);
+																																			ignore.setText(R.string.ignore_32);
+																																			delete.setText(R.string.delete_32);
+																																			uninstall_patched.setText(R.string.uninstall_patched_32);
+																																			open_settings.setText(R.string.open_settings_32);
+																																			open_patched.setText(R.string.open_patched_32);
+																																			installation_failed_0 = installation_failed.getText().toString();
+																																			installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																																			installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																																			installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																																			existing_patched_0 = existing_patched.getText().toString();
+																																			existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																																			close_0 = close.getText().toString();
+																																			uninstall_0 = uninstall.getText().toString();
+																																			
+																																			select_language.setSelection((int)(32));
+																																		}
+																																		else {
+																																			if (LANGUAGE.getString("LANGUAGE", "").equals("33")) {
+																																				sub_text_installed.setText(R.string.installed_33);
+																																				sub_text_1.setText(R.string.latest_33);
+																																				sub_text_2.setText(R.string.latest_33);
+																																				sub_text_3.setText(R.string.latest_33);
+																																				version_switch_1.setText(R.string.versions_33);
+																																				version_switch_2.setText(R.string.versions_33);
+																																				version_switch_3.setText(R.string.versions_33);
+																																				changelogs.setText(R.string.changelogs_33);
+																																				title_sub.setText(R.string.manager_tools_33);
+																																				device_cpu.setText(R.string.device_cpu_33);
+																																				source.setText(R.string.source_33);
+																																				support.setText(R.string.support_33);
+																																				donate.setText(R.string.donate_33);
+																																				about.setText(R.string.about_33);
+																																				list_auto_refresh.setText(R.string.list_auto_refresh_33);
+																																				list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_33);
+																																				force_auto_install.setText(R.string.force_auto_install_33);
+																																				force_auto_install_info.setText(R.string.force_auto_install_desc_33);
+																																				theme.setText(R.string.show_themes_33);
+																																				apk_location.setText(R.string.apk_location_33);
+																																				apk_location_info.setText(R.string.apk_location_desc_33);
+																																				clear_directory_folders.setText(R.string.clear_directory_folders_33);
+																																				clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_33);
+																																				reset_settings.setText(R.string.reset_settings_33);
+																																				sub_title.setText(R.string.about_sub_33);
+																																				xmanager_dev.setText(R.string.xmanager_dev_33);
+																																				patched_devs.setText(R.string.patched_devs_33);
+																																				support_team.setText(R.string.support_team_33);
+																																				manager_testers.setText(R.string.manager_testers_33);
+																																				manager_hosting.setText(R.string.manager_hosting_33);
+																																				mobilism_team.setText(R.string.mobilism_team_33);
+																																				forum_team.setText(R.string.forum_team_33);
+																																				contributors.setText(R.string.contributors_33);
+																																				download_selected.setText(R.string.download_selected_33);
+																																				download_ready.setText(R.string.download_ready_33);
+																																				download_ready_desc.setText(R.string.download_ready_desc_33);
+																																				downloading_file.setText(R.string.downloading_file_33);
+																																				download_success.setText(R.string.download_success_33);
+																																				new_update.setText(R.string.new_update_33);
+																																				download_selected_0 = download_selected.getText().toString();
+																																				download_ready_0 = download_ready.getText().toString();
+																																				download_ready_desc_0 = download_ready_desc.getText().toString();
+																																				downloading_file_0 = downloading_file.getText().toString();
+																																				download_success_0 = download_success.getText().toString();
+																																				copy_url.setText(R.string.copy_url_33);
+																																				continue_1.setText(R.string.continue_1_33);
+																																				cancel.setText(R.string.cancel_33);
+																																				fixer.setText(R.string.fixer_33);
+																																				download.setText(R.string.download_33);
+																																				later.setText(R.string.later_33);
+																																				install_now.setText(R.string.install_now_33);
+																																				install_update.setText(R.string.install_update_33);
+																																				go_back.setText(R.string.go_back_33);
+																																				download_update.setText(R.string.download_update_33);
+																																				not_now.setText(R.string.not_now_33);
+																																				show_support.setText(R.string.show_support_33);
+																																				show_support_desc.setText(R.string.show_support_desc_33);
+																																				copy_url_0 = copy_url.getText().toString();
+																																				download_0 = download.getText().toString();
+																																				continue_0 = continue_1.getText().toString();
+																																				cancel_0 = cancel.getText().toString();
+																																				fixer_0 = fixer.getText().toString();
+																																				later_0 = later.getText().toString();
+																																				install_now_0 = install_now.getText().toString();
+																																				go_back_0 = go_back.getText().toString();
+																																				install_update_0 = install_update.getText().toString();
+																																				main_title.setText(R.string.main_title_33);
+																																				settings_title.setText(R.string.settings_title_33);
+																																				about_title.setText(R.string.about_title_33);
+																																				maintenance.setText(R.string.maintenance_33);
+																																				maintenance_desc.setText(R.string.maintenance_desc_33);
+																																				thanks.setText(R.string.thanks_33);
+																																				language.setText(R.string.language_33);
+																																				website.setText(R.string.website_33);
+																																				discord.setText(R.string.discord_33);
+																																				reddit.setText(R.string.reddit_33);
+																																				faq.setText(R.string.faq_33);
+																																				cloned_version.setText(R.string.cloned_version_33);
+																																				cloned_version_info.setText(R.string.cloned_version_desc_33);
+																																				disable_reward_ad.setText(R.string.disable_rewarded_ads_33);
+																																				disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_33);
+																																				installation_failed.setText(R.string.installation_failed_33);
+																																				installation_failed_desc.setText(R.string.installation_failed_desc_33);
+																																				installation_failed_ream_desc.setText(R.string.installation_failed_ream_desc_33);
+																																				installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_33);
+																																				existing_patched.setText(R.string.existing_patched_33);
+																																				existing_patched_desc.setText(R.string.existing_patched_desc_33);
+																																				close.setText(R.string.close_33);
+																																				cloned.setText(R.string.cloned_33);
+																																				spap.setText(R.string.spap_33);
+																																				install.setText(R.string.install_33);
+																																				uninstall.setText(R.string.uninstall_33);
+																																				ignore.setText(R.string.ignore_33);
+																																				delete.setText(R.string.delete_33);
+																																				uninstall_patched.setText(R.string.uninstall_patched_33);
+																																				open_settings.setText(R.string.open_settings_33);
+																																				open_patched.setText(R.string.open_patched_33);
+																																				installation_failed_0 = installation_failed.getText().toString();
+																																				installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																																				installation_failed_ream_desc_0 = installation_failed_ream_desc.getText().toString();
+																																				installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																																				existing_patched_0 = existing_patched.getText().toString();
+																																				existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																																				close_0 = close.getText().toString();
+																																				uninstall_0 = uninstall.getText().toString();
+																																				
+																																				select_language.setSelection((int)(33));
+																																			}
+																																		}
+																																	}
 																																}
 																															}
 																														}
@@ -13337,6 +13814,9 @@ public class MainActivity extends AppCompatActivity {
 		Language.add("Bulgarian");
 		Language.add("Serbian (Cyrillic)");
 		Language.add("Serbian (Latin)");
+		Language.add("Catalan");
+		Language.add("Latvian");
+		Language.add("German");
 		select_language.setAdapter(new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, Language));
 		((ArrayAdapter)select_language.getAdapter()).notifyDataSetChanged();
 		select_language.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, Language) {
@@ -13395,8 +13875,6 @@ public class MainActivity extends AppCompatActivity {
 	
 	
 	public void _Language_Fixer() {
-		title_1.setText(R.string.spotify_regular);
-		title_2.setText(R.string.spotify_amoled);
 		sub_text_installed.setText(R.string.installed);
 		sub_text_1.setText(R.string.latest);
 		sub_text_2.setText(R.string.latest);
@@ -13427,15 +13905,14 @@ public class MainActivity extends AppCompatActivity {
 		disable_reward_ad.setText(R.string.disable_rewarded_ads);
 		disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc);
 		sub_title.setText(R.string.about_sub);
-		developer_manager.setText(R.string.xmanager_dev);
-		developer_spotify.setText(R.string.spotify_mod_devs);
-		support_team.setText(R.string.telegram_support_team);
-		mod_testers_1.setText(R.string.manager_testers);
-		mod_testers_2.setText(R.string.manager_hosting);
+		xmanager_dev.setText(R.string.xmanager_dev);
+		patched_devs.setText(R.string.patched_devs);
+		support_team.setText(R.string.support_team);
+		manager_testers.setText(R.string.manager_testers);
+		manager_hosting.setText(R.string.manager_hosting);
 		mobilism_team.setText(R.string.mobilism_team);
 		forum_team.setText(R.string.forum_team);
-		manager_team.setText(R.string.xspotify_team);
-		contributors_1.setText(R.string.contributors);
+		contributors.setText(R.string.contributors);
 		download_selected.setText(R.string.download_selected);
 		download_ready.setText(R.string.download_ready);
 		download_ready_desc.setText(R.string.download_ready_desc);
@@ -13479,7 +13956,7 @@ public class MainActivity extends AppCompatActivity {
 		uninstall_0 = uninstall.getText().toString();
 		close.setText(R.string.close);
 		cloned.setText(R.string.cloned);
-		ream.setText(R.string.ream);
+		spap.setText(R.string.spap);
 		install.setText(R.string.install);
 		uninstall.setText(R.string.uninstall);
 		ignore.setText(R.string.ignore);
@@ -13644,124 +14121,6 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	public void _Storage_Permission() {
-		if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED
-		|| ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
-				final AlertDialog.Builder Permission_v1 = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-				String Title = "<b>".concat("PERMISSION REQUIRED".concat("</b>"));
-				String TitleColor = "FF5722";
-				Permission_v1.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-				String Message = "xManager needs the storage permission to utilize the APK Location feature and to save the downloaded patched within that folder.";
-				String MessageColor = "FFFFFF";
-				Permission_v1.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-				Permission_v1.setPositiveButton("OKAY", new DialogInterface.OnClickListener(){
-						@Override
-						public void onClick(DialogInterface Permission_v1, int p) {
-								AlertDialog.setCancelable(true);
-								try {
-										requestReadExternalStorage();
-								} catch (Exception e) {		
-								}
-						}
-				});
-				AlertDialog = Permission_v1.create();
-				AlertDialog.setCancelable(false);
-				AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-				AlertDialog.show();
-		}else{
-				final AlertDialog.Builder Permission_v1 = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-				AlertDialog = Permission_v1.create();
-				AlertDialog.dismiss();
-		}
-	}
-	public void requestReadExternalStorage() {
-			ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1000);
-	}
-	@Override
-	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-			super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-					if (SDK_INT >= Build.VERSION_CODES.R) {
-							_External_Storage();
-					}else{
-							try {
-									final AlertDialog.Builder Permission_v1 = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-									AlertDialog = Permission_v1.create();
-									AlertDialog.dismiss();
-									com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Permission Granted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-							} catch (Exception e) {	
-							}
-					}
-			} else {
-					final AlertDialog.Builder Permission_v2 = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-					String Message = "Since you did not allow the storage permission, you will need to manually enable it.";
-					String MessageColor = "FFFFFF";
-					Permission_v2.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-					Permission_v2.setPositiveButton("SETTINGS", new DialogInterface.OnClickListener(){
-							@Override
-							public void onClick(DialogInterface Permission_v2, int p) {
-									AlertDialog.setCancelable(true);
-									if (SDK_INT >= Build.VERSION_CODES.R) {
-											try {
-													Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-													intent.addCategory("android.intent.category.DEFAULT");
-													intent.setData(Uri.parse(String.format("package:%s",getApplicationContext().getPackageName())));
-													startActivityForResult(intent, 1000);
-											} catch (Exception e) {
-													Intent intent = new Intent();
-													intent.setAction(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-													startActivityForResult(intent, 1000);
-											}
-									}
-									if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-											final AlertDialog.Builder Permission_v1 = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-											AlertDialog = Permission_v1.create();
-											AlertDialog.dismiss();
-									}else{
-											final AlertDialog.Builder Permission_v1 = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-											String Title = "<b>".concat("PERMISSION REQUIRED".concat("</b>"));
-											String TitleColor = "FF5722";
-											Permission_v1.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-											String Message = "xManager needs the storage permission to utilize the APK Location feature and to save the downloaded patched within that folder.";
-											String MessageColor = "FFFFFF";
-											Permission_v1.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-											Permission_v1.setPositiveButton("OKAY", new DialogInterface.OnClickListener(){
-													@Override
-													public void onClick(DialogInterface Permission_v1, int p) {
-															AlertDialog.setCancelable(true);
-															requestReadExternalStorage();
-													}
-											});
-											AlertDialog = Permission_v1.create();
-											AlertDialog.setCancelable(false);
-											AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-											AlertDialog.show();
-									}
-							}
-					});
-					try {
-							AlertDialog = Permission_v2.create();
-							AlertDialog.setCancelable(false);
-							AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-							AlertDialog.show();
-							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Permission Denied", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-					} catch (Exception e) {
-					}
-			}
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-	}
-	
-	
 	public void _Signature_Checker() {
 	}
 	public String getISignature(Context context) {
@@ -13853,7 +14212,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "Spotify Mod (Official) [Cloned].apk");
+				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "Spotify Mod (Official) [Cloned].apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -14125,7 +14484,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "Spotify Mod (Official) [Cloned].apk");
+				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "Spotify Mod (Official) [Cloned].apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -14628,44 +14987,6 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	public void _External_Storage() {
-		if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
-		|| ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-				if (SDK_INT >= Build.VERSION_CODES.R) {
-						if (!Environment.isExternalStorageManager()) {
-								final AlertDialog.Builder External_Storage = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-								String Title = "<b>".concat("STORAGE ACCESS".concat("</b>"));
-								String TitleColor = "FFEB3B";
-								External_Storage.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-								String Message = "Due to Android 11 (API 30) enhanced storage restriction or scoped storage, xManager requires you to allow \"Manage External Storage\" permission.".replace("\n", "<br/>");
-								String MessageColor = "FFFFFF";
-								External_Storage.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-								External_Storage.setPositiveButton("SETUP", new DialogInterface.OnClickListener(){
-										@Override
-										public void onClick(DialogInterface External_Storage, int p) {
-												AlertDialog.setCancelable(true);
-												try {
-														External_Storage_Manager.setAction(android.provider.Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-														startActivity(External_Storage_Manager);
-												} catch (Exception e) {
-												}
-										}
-								});
-								AlertDialog = External_Storage.create();
-								AlertDialog.setCancelable(false);
-								AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-								AlertDialog.show();
-						} else {
-								final AlertDialog.Builder External_Storage = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-								AlertDialog = External_Storage.create();
-								AlertDialog.dismiss();
-						}
-				}
-		}
-		
-	}
-	
-	
 	public void _Maintenance() {
 		try {
 			final AlertDialog.Builder Update_Unauthorized = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
@@ -14695,7 +15016,7 @@ public class MainActivity extends AppCompatActivity {
 					AlertDialog.show();
 					_Maintenance();
 					try {
-						_Browser("https://t.me/SpotifyModSupport");
+						_Browser("https://t.me/xManagerSupport");
 					}
 					catch(Exception e) {
 					}
@@ -14802,7 +15123,7 @@ public class MainActivity extends AppCompatActivity {
 							sub_5.setText(Datas.get("RC_Latest").toString());
 							sub_7.setText(Datas.get("ABC_Latest").toString());
 							sub_9.setText(Datas.get("Lite_Latest").toString());
-							donators.setText(Datas.get("Supporters").toString());
+							donors_1.setText(Datas.get("Supporters").toString());
 							hidden_update.setText(Datas.get("Update").toString());
 							app_changelogs.setText(Datas.get("App_Changelogs").toString());
 							Current_Version = Double.parseDouble(local_version.getText().toString());
@@ -14871,25 +15192,23 @@ public class MainActivity extends AppCompatActivity {
 		faq.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		theme.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_about.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		developer_manager.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		developer_spotify.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		xmanager_dev.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		patched_devs.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		support_team.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		mod_testers_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		mod_testers_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_testers.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_hosting.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		mobilism_team.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		forum_team.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_team.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		developer_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		developer_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		support_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		testers_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		testers_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		hosting_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		mobilism_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		forum_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		contributors_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_donators.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		donators.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		contributors.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_donors.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		donors_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		changelogs.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		local_version.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -15128,8 +15447,7 @@ public class MainActivity extends AppCompatActivity {
 				icon_update.setAlpha((float)(1.0d));
 				icon_switch.setAlpha((float)(1.0d));
 				main_body.setAlpha((float)(0.50d));
-				_Storage_Permission();
-				_External_Storage();
+				_Permission();
 				_API_Token();
 				_Updater();
 			}
@@ -15925,6 +16243,9 @@ public class MainActivity extends AppCompatActivity {
 		manager_lang_29.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_30.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_31.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_32.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_33.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_34.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -15956,6 +16277,9 @@ public class MainActivity extends AppCompatActivity {
 		translator_29.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_30.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_31.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_32.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_33.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_34.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 	}
 	
 	
@@ -16080,7 +16404,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "Spotify Lite Mod (Official).apk");
+				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "Spotify Lite Mod (Official).apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -16352,7 +16676,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(this,Environment.DIRECTORY_DOWNLOADS, "Spotify Lite Mod (Official).apk");
+				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "Spotify Lite Mod (Official).apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -16719,9 +17043,9 @@ public class MainActivity extends AppCompatActivity {
 						StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
 						if(android.os.Build.VERSION.SDK_INT >= 29){
 								try {
-										Intent intent = new Intent(Intent.ACTION_VIEW);
-										intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+										Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
 										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Lite Mod (Official).apk")), "application/vnd.android.package-archive");
+						                intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 										startActivity(intent);
 										_Reminder();
 								}
@@ -16730,7 +17054,7 @@ public class MainActivity extends AppCompatActivity {
 								}
 						} else {
 								try {
-										Intent intent = new Intent(Intent.ACTION_VIEW);
+										Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
 										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Lite Mod (Official).apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
 										_Reminder();
@@ -16822,9 +17146,9 @@ public class MainActivity extends AppCompatActivity {
 										StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
 										if(android.os.Build.VERSION.SDK_INT >= 29){
 												try {
-														Intent intent = new Intent(Intent.ACTION_VIEW);
-														intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+														Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
 														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Lite Mod (Official).apk")), "application/vnd.android.package-archive");
+														intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 														startActivity(intent);
 														_Reminder();
 												}
@@ -16832,7 +17156,7 @@ public class MainActivity extends AppCompatActivity {
 												}
 										} else {
 												try {
-														Intent intent = new Intent(Intent.ACTION_VIEW);
+														Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
 														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Spotify Lite Mod (Official).apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
 														_Reminder();
@@ -16919,6 +17243,121 @@ public class MainActivity extends AppCompatActivity {
 				}
 		});
 		AlertDialog = Success_Download.create();
+		AlertDialog.setCancelable(false);
+		AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+		AlertDialog.show();
+		
+	}
+	
+	
+	public void _Permission() {
+		if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED
+		|| ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+				_Storage_Permission();
+		}
+	}
+	
+	public void requestReadExternalStorage() {
+			ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1000);
+	}
+	
+	@Override
+	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+			super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+					try {
+							_Installation_Permission();
+							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Permission Granted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+					} catch (Exception e) {	
+					}
+			} else {
+					final AlertDialog.Builder Storage_Failed = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+					String Message = "Storage permission not granted. You need to manually enable it.";
+					String MessageColor = "FFFFFF";
+					Storage_Failed.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+					Storage_Failed.setPositiveButton("SETUP", new DialogInterface.OnClickListener(){
+							@Override
+							public void onClick(DialogInterface Storage_Failed, int p) {
+									AlertDialog.setCancelable(true);
+									if (SDK_INT >= Build.VERSION_CODES.R) {
+											try {
+													Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+													intent.addCategory("android.intent.category.DEFAULT");
+													intent.setData(Uri.parse(String.format("package:%s",getApplicationContext().getPackageName())));
+													startActivityForResult(intent, 1000);
+											} catch (Exception e) {
+													Intent intent = new Intent();
+													intent.setAction(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+													startActivityForResult(intent, 1000);
+											}
+									}
+									if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+											final AlertDialog.Builder Storage = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+											AlertDialog = Storage.create();
+											AlertDialog.dismiss();
+									}else{
+											_Permission();
+									}
+							}
+					});
+					try {
+							AlertDialog = Storage_Failed.create();
+							AlertDialog.setCancelable(false);
+							AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+							AlertDialog.show();
+							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Permission Denied", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+					} catch (Exception e) {
+					}
+			}
+			
+	}
+	
+	
+	public void _Storage_Permission() {
+		final AlertDialog.Builder Storage = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+		String Title = "<b>".concat("STORAGE PERMISSION".concat("</b>"));
+		String TitleColor = "1DB954";
+		Storage.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+		String Message = "xManager needs this permission to utilize the APK Location feature and to save the downloaded patched within that folder.";
+		String MessageColor = "FFFFFF";
+		Storage.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+		Storage.setPositiveButton("SETUP", new DialogInterface.OnClickListener(){
+				@Override
+				public void onClick(DialogInterface Storage, int p) {
+						AlertDialog.setCancelable(true);
+						try {
+								requestReadExternalStorage();
+						} catch (Exception e) {
+						}
+				}
+		});
+		AlertDialog = Storage.create();
+		AlertDialog.setCancelable(false);
+		AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+		AlertDialog.show();
+		
+	}
+	
+	
+	public void _Installation_Permission() {
+		final AlertDialog.Builder Installation = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+		String Title = "<b>".concat("INSTALLATION PERMISSION".concat("</b>"));
+		String TitleColor = "1DB954";
+		Installation.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+		String Message = "xManager needs this permission to install the downloaded patched.";
+		String MessageColor = "FFFFFF";
+		Installation.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+		Installation.setPositiveButton("SETUP", new DialogInterface.OnClickListener(){
+				@Override
+				public void onClick(DialogInterface Installation, int p) {
+						AlertDialog.setCancelable(true);
+						try {
+								startActivity(new Intent(android.provider.Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, Uri.parse("package:com.xc3fff0e.xmanager")));
+						} catch (Exception e) {		
+						}
+				}
+		});
+		AlertDialog = Installation.create();
 		AlertDialog.setCancelable(false);
 		AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
 		AlertDialog.show();
