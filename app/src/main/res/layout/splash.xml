@@ -26,10 +26,12 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:padding="8dp"
+			android:gravity="center_horizontal|center_vertical"
 			android:text="xManager"
 			android:textSize="25sp"
 			android:textStyle="bold"
 			android:textColor="#FFFFFF"
-			android:translationY="-50.0dp" />
+			android:translationY="-50.0dp"
+			android:layout_gravity="center_horizontal|center_vertical" />
 	</LinearLayout>
 </LinearLayout>
