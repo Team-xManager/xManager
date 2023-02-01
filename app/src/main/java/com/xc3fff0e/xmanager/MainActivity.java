@@ -1336,7 +1336,7 @@ public class MainActivity extends AppCompatActivity {
 					later.setText(R.string.later);
 					install_now.setText(R.string.install_now);
 					install_update.setText(R.string.install_update);
-					go_back.setText(R.string.go_back_01);
+					go_back.setText(R.string.go_back);
 					download_update.setText(R.string.download_update);
 					not_now.setText(R.string.not_now);
 					show_support.setText(R.string.show_support);
