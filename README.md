@@ -26,7 +26,7 @@
 
 ### [<p align="center">🎉Check out our Roadmaps, Changelogs and Milestones here!🎉</p>](https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones)  
 
-### [<p align="center">🛠VirusTotal Result: Click Here🛠</p>](https://www.virustotal.com/gui/file/b24685ac8c4d506a8f8094c21e6c3bdc57111011f6c061d481716b372a8d5f7b/detection)
+### [<p align="center">🛠VirusTotal Result: Click Here🛠</p>](https://www.virustotal.com/gui/file/471b5a7761636258bc9d54d535f1033bf1fc2e0e996fb1bc808571760449bbc0/detection)
 
 # Main Features
 
@@ -85,6 +85,26 @@ xC3FFF0E
 
 jetfire  
 Wu Tang Clam  
+
+# Contributors  
+
+RishavG  
+meech  
+jetfire  
+Sherlock Holmes  
+Wu Tang Clam  
+Zach  
+aha  
+100RABH  
+juznem  
+Light Yagami  
+Tunelover (Mobilism Team)  
+jar3cki (Manager Tester)  
+cryiotic3 (Manager Icon)  
+farish278 (Manager Icon)  
+zankyr (Notification Fixed)  
+Arian04 (Duplicate Attributes)  
+roosphx (Login Fixed)  
 
 # Manager Translators
 
@@ -181,33 +201,11 @@ nexiRS
 **Serbian (Latin) Translation**  
 nexiRS  
 
-# Contributors  
+**Catalan Translation**  
+tomaquet18  
 
-Sherlock Holmes  
-jetfire  
-meech  
-cooldude69  
-zankyr  
+**Latvian Translation**  
+ClientSiderz  
 
-# Testers  
-
-RishavG  
-meech  
-jetfire  
-Sherlock Holmes  
-Wu Tang Clam  
-Zach  
-aha  
-100RABH  
-cooldude69  
-Tunelover  
-
-# Old Manager Contributors  
-
-cryiotic (Manager Icon)  
-farish278 (Manager Icon)  
-roosphx  
-Sherlock Holmes  
-jetfire  
-100RABH  
-Light Yagami  
+**German Translation**  
+4NDROM3DA  
