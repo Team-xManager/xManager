@@ -29,7 +29,6 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.material.*;
 import com.google.firebase.FirebaseApp;
 import com.wuyr.rippleanimation.*;
 import java.io.*;
@@ -75,56 +74,38 @@ public class SplashActivity extends AppCompatActivity {
 			w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(0xFF171717);
 		}
 		title_splash.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_glitch.ttf"), 1);
-		if (0 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
+		if (0 == SketchwareUtil.getRandom((int)(0), (int)(6))) {
 			title_splash.setText("xManager");
 			title_splash.setTextSize((int)25);
 		}
 		else {
-			if (1 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
+			if (1 == SketchwareUtil.getRandom((int)(0), (int)(6))) {
 				title_splash.setText("Made with Love");
 				title_splash.setTextSize((int)25);
 			}
 			else {
-				if (2 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-					title_splash.setText("Freedom");
+				if (2 == SketchwareUtil.getRandom((int)(0), (int)(6))) {
+					title_splash.setText("It's A Movement");
 					title_splash.setTextSize((int)25);
 				}
 				else {
-					if (3 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-						title_splash.setText("Superior");
+					if (3 == SketchwareUtil.getRandom((int)(0), (int)(6))) {
+						title_splash.setText("We Are Resistance");
 						title_splash.setTextSize((int)25);
 					}
 					else {
-						if (4 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-							title_splash.setText("Superlative");
+						if (4 == SketchwareUtil.getRandom((int)(0), (int)(6))) {
+							title_splash.setText("Bravo Six, Going Dark");
 							title_splash.setTextSize((int)25);
 						}
 						else {
-							if (5 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-								title_splash.setText("Never Go Back");
-								title_splash.setTextSize((int)25);
+							if (5 == SketchwareUtil.getRandom((int)(0), (int)(6))) {
+								title_splash.setText("Freedom For Everyone");
+								title_splash.setTextSize((int)20);
 							}
 							else {
-								if (6 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-									title_splash.setText("Saving Your $10");
-									title_splash.setTextSize((int)25);
-								}
-								else {
-									if (7 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-										title_splash.setText("It's A Movement");
-										title_splash.setTextSize((int)25);
-									}
-									else {
-										if (8 == SketchwareUtil.getRandom((int)(0), (int)(9))) {
-											title_splash.setText("We Are Resistance");
-											title_splash.setTextSize((int)20);
-										}
-										else {
-											title_splash.setText("Spotify but on steroids");
-											title_splash.setTextSize((int)20);
-										}
-									}
-								}
+								title_splash.setText("Don't Make Us Popular!");
+								title_splash.setTextSize((int)20);
 							}
 						}
 					}
