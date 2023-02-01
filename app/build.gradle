@@ -10,9 +10,9 @@ android {
 	defaultConfig {
 		applicationId "com.xc3fff0e.xmanager"
 		minSdkVersion 21
-		targetSdkVersion 31
+		targetSdkVersion 29
 		versionCode 210209
-		versionName "4.3"
+		versionName "4.4"
 	}
 	
 	buildTypes {
