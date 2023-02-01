@@ -155,11 +155,11 @@
 			android:textColor="#000000"
 			android:alpha="0.0" />
 		<TextView
-			android:id="@+id/ream"
+			android:id="@+id/spap"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:padding="8dp"
-			android:text="RE/AM"
+			android:text="SP/AP"
 			android:textSize="12sp"
 			android:textColor="#000000"
 			android:alpha="0.0" />
@@ -587,7 +587,7 @@
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:padding="8dp"
-							android:text="CLONED VERSION (BETA)"
+							android:text="CLONED VERSION"
 							android:textSize="12sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954" />
@@ -1169,7 +1169,7 @@
 				android:background="#424242"
 				android:orientation="vertical">
 				<TextView
-					android:id="@+id/developer_manager"
+					android:id="@+id/xmanager_dev"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:paddingLeft="8dp"
@@ -1191,13 +1191,13 @@
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
 				<TextView
-					android:id="@+id/developer_spotify"
+					android:id="@+id/patched_devs"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:paddingLeft="8dp"
 					android:paddingTop="8dp"
 					android:paddingRight="8dp"
-					android:text="Spotify Patched Developers"
+					android:text="Patched Developers"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#1DB954" />
@@ -1257,7 +1257,7 @@
 				android:background="#424242"
 				android:orientation="vertical">
 				<TextView
-					android:id="@+id/mod_testers_1"
+					android:id="@+id/manager_testers"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:paddingLeft="8dp"
@@ -1274,12 +1274,12 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
-					android:text="RishavG\nmeech\njetfire\nSherlock Holmes\nWu Tang Clam\nZach\naha\n100RABH\njuznem\nTunelover (Mobilism)\njar3cki (xManager Tester)\nzankyr (Notification Fixed)"
+					android:text="RishavG\nmeech\njetfire\nSherlock Holmes\nWu Tang Clam\nZach\naha\n100RABH\njuznem\nLight Yagami\nTunelover (Mobilism)\njar3cki (xManager Tester)\ncryiotic3 (Manager Icon)\nfarish278 (Manager Icon)\nzankyr (Notification Fixed)\nArian04 (Duplicate Attributes)\nroosphx (Facebook Login Fixed)"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
 				<TextView
-					android:id="@+id/mod_testers_2"
+					android:id="@+id/manager_hosting"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:paddingLeft="8dp"
@@ -1290,7 +1290,7 @@
 					android:textStyle="bold"
 					android:textColor="#1DB954" />
 				<TextView
-					android:id="@+id/testers_2"
+					android:id="@+id/hosting_1"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:paddingLeft="8dp"
@@ -1378,24 +1378,750 @@
 				android:background="#424242"
 				android:orientation="vertical">
 				<TextView
-					android:id="@+id/manager_team"
+					android:id="@+id/manager_lang_13"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:paddingLeft="8dp"
 					android:paddingTop="8dp"
 					android:paddingRight="8dp"
-					android:text="xSpotify Manager (Old Manager)"
+					android:text="Arabic Translation"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#1DB954" />
 				<TextView
-					android:id="@+id/manager_1"
+					android:id="@+id/translator_13"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="Yazan Kasem"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Bengali Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="0V3R5!9H7"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_2"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Chinese (Simplified) Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_2"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="Gent G | Softland99 | zelixdxin"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_3"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="French Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_3"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="The Punisher | Luxchar | xerta555 | GlThibault"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_4"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Greek Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_4"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="Walter's Cousin #CAF"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_5"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Indonesian Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_5"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="Mc. J | Deraidos"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_6"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Italian Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_6"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="Marco | gdonisi | albertopasqualetto"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_7"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Portuguese (Brazil) Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_7"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="Loui's™ | Zilberto Junior"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_8"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Portuguese (Portugal) Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_8"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="Androide323"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_15"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Romanian Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_15"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="NACH | f9branza | StephenTheMoldovan"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_9"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Russian Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_9"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="Pegioner"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_14"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Slovenian Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_14"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="MysticX"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_10"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Spanish (Spain) Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_10"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="PetFix | Snapdragon845GMS | Zkyclad"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_12"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Turkish Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_12"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="Berkay"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_11"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Ukrainian Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_11"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="NIKITA🇺🇦[beryllium] #PocoForEver"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_16"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Korean Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_16"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="Apious | Annyeong-One"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_17"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Dutch Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_17"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="Kevin"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_18"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Vietnamese Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_18"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="minhtamvn"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_19"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="German Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_19"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="smokedzn"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_20"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Persian Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_20"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="ohshahab"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_21"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Hebrew Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_21"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="GreenArmy18"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_22"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Polish Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_22"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="dearminder"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_23"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="English Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_23"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="Dyras"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_24"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Slovak Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_24"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="KaldonM"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_25"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Swedish Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_25"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="rexobo"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_26"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Finnish Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_26"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="AfraidOfTheBigBlack | lilko1ra | KasperiP"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_27"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Czech Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_27"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="rex2630"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_28"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Chinese (Traditional) Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_28"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="cracky5322 | TragicLifeHu"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_29"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Bulgarian Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_29"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="meorro | martinov83"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_30"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Serbian (Cyrillic) Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_30"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="nexiRS"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_31"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Serbian (Latin) Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_31"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="nexiRS"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_32"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Catalan Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_32"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="tomaquet18"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_33"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Latvian Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_33"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="5dp"
+					android:text="ClientSiderz"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_34"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="German Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_34"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
-					android:text="cryiotic3 (Manager Icon)\nfarish278 (Manager Icon)\nroosphx (Facebook Login Fixed)\nSherlock Holmes\njetfire\n100RABH\nLight Yagami"
+					android:text="4NDROM3DA"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -1410,567 +2136,31 @@
 				android:padding="8dp"
 				android:background="#424242"
 				android:orientation="vertical">
-				<LinearLayout
-					android:id="@+id/box_about_4_sub_1"
-					android:layout_width="match_parent"
+				<TextView
+					android:id="@+id/manager_donors"
+					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:padding="8dp"
-					android:orientation="vertical">
-					<TextView
-						android:id="@+id/manager_donators"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Supporters and Donors"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FF1744" />
-					<TextView
-						android:id="@+id/donators"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<LinearLayout
-						android:id="@+id/about_separator"
-						android:layout_width="match_parent"
-						android:layout_height="2dp"
-						android:layout_marginLeft="15dp"
-						android:layout_marginTop="10dp"
-						android:layout_marginRight="15dp"
-						android:layout_marginBottom="10dp"
-						android:background="#616161"
-						android:orientation="horizontal" />
-					<TextView
-						android:id="@+id/manager_lang_13"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Arabic Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_13"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="Yazan Kasem"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_1"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Bengali Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_1"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="0V3R5!9H7"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_2"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Chinese (Simplified) Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_2"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="Gent G | Softland99 | zelixdxin"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_3"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="French Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_3"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="The Punisher | Luxchar | xerta555 | GlThibault"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_4"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Greek Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_4"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="Walter's Cousin #CAF"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_5"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Indonesian Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_5"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="Mc. J | Deraidos"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_6"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Italian Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_6"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="Marco | gdonisi | albertopasqualetto"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_7"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Portuguese (Brazil) Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_7"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="Loui's™ | Zilberto Junior"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_8"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Portuguese (Portugal) Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_8"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="Androide323"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_15"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Romanian Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_15"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="NACH | f9branza | StephenTheMoldovan"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_9"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Russian Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_9"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="Pegioner"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_14"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Slovenian Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_14"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="MysticX"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_10"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Spanish (Spain) Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_10"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="PetFix | Snapdragon845GMS | Zkyclad"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_12"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Turkish Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_12"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="Berkay"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_11"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Ukrainian Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_11"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="NIKITA🇺🇦[beryllium] #PocoForEver"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_16"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Korean Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_16"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="Apious | Annyeong-One"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_17"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Dutch Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_17"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="Kevin"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_18"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Vietnamese Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_18"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="minhtamvn"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_19"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="German Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_19"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="smokedzn"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_20"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Persian Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_20"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="ohshahab"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_21"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Hebrew Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_21"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="GreenArmy18"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_22"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Polish Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_22"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="dearminder"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_23"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="English Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_23"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="Dyras"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_24"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Slovak Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_24"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="KaldonM"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_25"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Swedish Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_25"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="rexobo"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_26"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Finnish Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_26"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="AfraidOfTheBigBlack | lilko1ra | KasperiP"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_27"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Czech Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_27"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="rex2630"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_28"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Chinese (Traditional) Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_28"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="cracky5322 | TragicLifeHu"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_29"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Bulgarian Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_29"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="meorro | martinov83"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_30"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Serbian (Cyrillic) Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_30"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:paddingBottom="5dp"
-						android:text="nexiRS"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-					<TextView
-						android:id="@+id/manager_lang_31"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="Serbian (Latin) Translation"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#2962FF" />
-					<TextView
-						android:id="@+id/translator_31"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="nexiRS"
-						android:textSize="14sp"
-						android:textStyle="bold"
-						android:textColor="#FFFFFF" />
-				</LinearLayout>
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Supporters and Donors"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/donors_1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:text="&lt; list of donors &gt;"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
 			</LinearLayout>
 			<TextView
-				android:id="@+id/contributors_1"
+				android:id="@+id/contributors"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="10dp"
@@ -2027,7 +2217,7 @@
 							android:paddingRight="8dp"
 							android:paddingBottom="8dp"
 							android:gravity="left|center_vertical"
-							android:text="SPOTIFY (REGULAR)"
+							android:text="STOCK PATCHED"
 							android:textSize="12sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954"
@@ -2192,7 +2382,7 @@
 							android:paddingRight="8dp"
 							android:paddingBottom="8dp"
 							android:gravity="left|center_vertical"
-							android:text="SPOTIFY (AMOLED)"
+							android:text="AMOLED PATCHED"
 							android:textSize="12sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954"
@@ -2356,7 +2546,7 @@
 							android:paddingRight="8dp"
 							android:paddingBottom="8dp"
 							android:gravity="left|center_vertical"
-							android:text="SPOTIFY LITE"
+							android:text="LITE PATCHED"
 							android:textSize="12sp"
 							android:textStyle="bold"
 							android:textColor="#1DB954"
