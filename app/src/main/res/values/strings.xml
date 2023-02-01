@@ -3011,4 +3011,97 @@
     <string    name="uninstall_patched_31"	translatable="true">PATCH DEINSTALLIEREN</string>
     <string    name="open_settings_31"	translatable="true">EINSTELLUNGEN ÖFFNEN</string>
     <string    name="open_patched_31"	translatable="true">PATCH ÖFFNEN</string>
+    
+    <string    name="app_name_32"	translatable="true">xManager</string>
+    <string    name="spotify_regular_32"	translatable="true">SPOTIFY (NORMAL)</string>
+    <string    name="spotify_amoled_32"	translatable="true">SPOTIFY (AMOLED)</string>
+    <string    name="installed_32"	translatable="true">INSTAL·LAT</string>
+    <string    name="latest_32"	translatable="true">ÚLTIM</string>
+    <string    name="versions_32"	translatable="true">VERSIONS</string>
+    <string    name="changelogs_32"	translatable="true">REGISTRE DE CANVIS</string>
+    <string    name="manager_tools_32"	translatable="true">EINES DEL GESTOR</string>
+    <string    name="device_cpu_32"	translatable="true">CPU/ARQ</string>
+    <string    name="source_32"	translatable="true">FONT</string>
+    <string    name="discord_32"	translatable="true">DISCORD</string>
+    <string    name="support_32"	translatable="true">TELEGRAM</string>
+    <string    name="donate_32"	translatable="true">DONAR</string>
+    <string    name="about_32"	translatable="true">SOBRE</string>
+    <string    name="main_title_32"	translatable="true">xManager</string>
+    <string    name="settings_title_32"	translatable="true">Paràmetres</string>
+    <string    name="about_title_32"	translatable="true">Sobre</string>
+
+    <string    name="list_auto_refresh_32"	translatable="true">ACTUALITZACIÓ AUTOMÀTICA DE LA LLISTA</string>
+    <string    name="list_auto_refresh_desc_32"	translatable="true">En activar aquesta opció, la llista s'actualitzarà automàticament cada cop que s'iniciï l'aplicació.\n\nPots actualitzar la llista manualment arrossegant la pantalla principal cap avall.</string>
+    <string    name="force_auto_install_32"	translatable="true">FORÇAR L'AUTOINSTAL·LACIÓ</string>
+    <string    name="force_auto_install_desc_32"	translatable="true">En activar aquesta opció, s'instal·larà automàticament l'aplicació modificada i l'actualització un cop descarregades.</string>
+    <string    name="show_themes_32"	translatable="true">TEMES</string>
+    <string    name="apk_location_32"	translatable="true">UBICACIÓ DE L'APK</string>
+    <string    name="apk_location_desc_32"	translatable="true">Carpeta on desitja desar els arxius descarregats. Si no sap com configurar aquesta funció, deixi-la com està.\n\nNOTA: Aquesta funció no és compatible amb l'emmagatzematge extern (targetes SD) a causa de limitacions d'emmagatzematge, accessibilitat i permisos.</string>
+    <string    name="clear_directory_folders_32"	translatable="true">BUIDAR LA CARPETA DE DESCÀRREGUES</string>
+    <string    name="clear_directory_folders_desc_32"	translatable="true">Premi per a eliminar la carpeta de descàrregues, incloent-hi els arxius i actualitzacions descarregades.</string>
+    <string    name="reset_settings_32"	translatable="true">RESTABLIR PARÀMETRES</string>
+
+    <string    name="about_sub_32"	translatable="true">Sense anuncis | Noves funcionis | Llibertat</string>
+    <string    name="xmanager_dev_32"	translatable="true">Desenvolupador de xManager</string>
+    <string    name="spotify_mod_devs_32"	translatable="true">Desenvolupadors del mod de Spotify</string>
+    <string    name="telegram_support_team_32"	translatable="true">Equip de suport de Discord, Reddit i Telegram</string>
+    <string    name="manager_testers_32"	translatable="true">Testers del mod/gestor</string>
+    <string    name="manager_hosting_32"	translatable="true">Base de dades i allotjament del gestor</string>
+    <string    name="mobilism_team_32"	translatable="true">Equip de Mobilism</string>
+    <string    name="forum_team_32"	translatable="true">Equip de FORUM.APK-RELEASE.NET</string>
+    <string    name="xspotify_team_32"	translatable="true">Gestor de xSpotify (antic gestor)</string>
+    <string    name="contributors_32"	translatable="true">GRÀCIES A TOTS ELS COL·LABORADORS! ❤️</string>
+
+    <string    name="download_selected_32"	translatable="true">Ha seleccionat aquesta versió modificada. Desitja continuar?</string>
+    <string    name="download_ready_32"	translatable="true">INFORMACIÓ DEL PEGAT</string>
+    <string    name="download_ready_desc_32"	translatable="true">La descàrrega d'aquest APK modificat sobreescriurà l'arxiu anterior situat en la carpeta externa d'arxius descarregats.</string>
+    <string    name="downloading_file_32"	translatable="true">DESCARREGANT ARXIU...</string>
+    <string    name="download_success_32"	translatable="true">DESCARREGAT AMB ÈXIT</string>
+    <string    name="new_update_32"	translatable="true">NOVA ACTUALITZACIÓ DEL GESTOR</string>
+
+    <string    name="continue_1_32"	translatable="true">CONTINUAR</string>
+    <string    name="cancel_32"	translatable="true">CANCEL·LAR</string>
+    <string    name="download_32"	translatable="true">DESCARREGAR</string>
+    <string    name="later_32"	translatable="true">MÉS TARD</string>
+    <string    name="install_now_32"	translatable="true">INSTAL·LAR ARA</string>
+    <string    name="install_update_32"	translatable="true">INSTAL·LAR ACTUALITZACIÓ</string>
+    <string    name="go_back_32"	translatable="true">TORNAR</string>
+    <string    name="download_update_32"	translatable="true">DESCARREGAR ACTUALITZACIÓ</string>
+    <string    name="not_now_32"	translatable="true">ARA NO</string>
+    <string    name="copy_url_32"	translatable="true">COPIAR URL</string>
+    <string    name="fixer_32"	translatable="true">FORÇAR DESCÀRREGA</string>
+
+    <string    name="show_support_32"	translatable="true">DEMOSTRI EL SEU SUPORT</string>
+    <string    name="show_support_desc_32"	translatable="true">Som un equip no corporatiu i sense ànim de lucre. Les persones com vostè ens animen a crear una aplicació per a facilitar les coses, especialment des de la descàrrega fins a la instal·lació del mod.\n\nEstem invertint tot el nostre temps i esforços per fer les coses bé. Farem tot el possible per continuar desenvolupant aquesta aplicació tant com puguem.</string>
+
+    <string    name="maintenance_32"	translatable="true">MANTENIMIENT</string>
+    <string    name="maintenance_desc_32"	translatable="true">xManager no està disponible en aquest moment. Si us plau, revisi l'aplicació més tard.</string>
+    <string    name="thanks_32"	translatable="true">GRÀCIES!</string>
+    <string    name="language_32"	translatable="true">IDIOMA</string>
+    <string    name="website_32"	translatable="true">LLOC WEB</string>
+    <string    name="reddit_32"	translatable="true">REDDIT</string>
+    <string    name="faq_32"	translatable="true">PREGUNTES FREQÜENTS</string>
+
+    <string    name="cloned_version_32"	translatable="true">VERSIÓ CLONADA (BETA)</string>
+    <string    name="cloned_version_desc_32"	translatable="true">En activar aquesta opció, pot descarregar i instal·lar la versió clonada de l'aplicació modificada.\n\nAixò també resoldrà la majoria dels errors o problemes d'instal·lació, especialment si té una aplicació de Spotify preinstal·lada.</string>
+    <string    name="disable_rewarded_ads_32"	translatable="true">DESHABILITAR ANUNCIS AMB RECOMPENSES</string>
+    <string    name="disable_rewarded_ads_desc_32"	translatable="true">Sabem que a la majoria de nosaltres no ens agraden els anuncis, però en el nostre cas, això ens ajuda enormement a finançar la nostra base de dades, enllaços d'allotjament, actualitzacions, pegats i necessitats diàries.\n\nAquesta és la forma més senzilla de donar-nos suport sense donar ni gastar res.</string>
+
+    <string    name="installation_failed_32"	translatable="true">INSTAL·LACIÓ FALLIDA</string>
+    <string    name="installation_failed_desc_32"	translatable="true">Motiu: Has intentat instal·lar una versió del mod inferior a la que ja està instal·lada.\n\nSolucions:\nA. Seleccioni una versió igual o superior.\nB. Desinstal·li la versió actual i, a continuació, instal·li la versió inferior.\n\nSi el problema persisteix, consulti les preguntes freqüents.</string>
+    <string    name="installation_failed_ream_desc_32"	translatable="true">Motiu: El Spotify instal·lat en aquest dispositiu no provenia directament de xManager ni del nostre equip.\n\nSolució: Desinstal·li la versió actual de l'aplicació, reiniciï xManager i intenti-ho de nou. Si el problema persisteix, consulti les preguntes freqüents.</string>
+    <string    name="installation_failed_cloned_desc_32"	translatable="true">Motiu: L'aplicació clonada instal·lada en aquest dispositiu no provenia directament de xManager ni del nostre equip.\n\nSolució: Desinstal·li la versió actual de l'aplicació, reiniciï xManager i intenti-ho de nou. Si el problema persisteix, consulti les preguntes freqüents.</string>
+    <string    name="existing_patched_32"	translatable="true">PEGAT TROBAT</string>
+    <string    name="existing_patched_desc_32"	translatable="true">S'ha trobat un APK pegat en la carpeta de descàrregues. Què desitja fer?</string>
+
+    <string    name="close_32"	translatable="true">TANCAR</string>
+    <string    name="cloned_32"	translatable="true">CLONAR</string>
+    <string    name="ream_32"	translatable="true">SI/INFO</string>
+    <string    name="install_32"	translatable="true">INSTAL·LAR</string>
+    <string    name="uninstall_32"	translatable="true">DESINSTAL·LAR</string>
+    <string    name="ignore_32"	translatable="true">IGNORAR</string>
+    <string    name="delete_32"	translatable="true">ELIMINAR</string>
+    <string    name="uninstall_patched_32"	translatable="true">DESINSTAL·LAR MOD?</string>
+    <string    name="open_settings_32"	translatable="true">PARAMÈTRES DE SPOTIFY</string>
+    <string    name="open_patched_32"	translatable="true">PARAMÈTRES DEL MOD</string>
 </resources>
