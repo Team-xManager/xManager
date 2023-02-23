@@ -12,7 +12,8 @@
 
 ### <p align="center">DOWNLOAD MILESTONE</p>
 <p align="center">
-  <img src="https://img.shields.io/github/downloads/xManager-App/xManager/total?label=ORIGINS%20(ACTIVE)&style=for-the-badge">
+  <img src="https://img.shields.io/github/downloads/xManager-App/xManager/total?label=OMNIBUS%20(ACTIVE)&style=for-the-badge">
+  <img src="https://img.shields.io/badge/ORIGINS%20(SHUTDOWN)-1.1M-brightgreen.svg?style=for-the-badge">
   <img src="https://img.shields.io/badge/LEGACY%20(SHUTDOWN)-400K-brightgreen.svg?style=for-the-badge">
 </p>
 
@@ -51,6 +52,12 @@ The successor from our previous manager app that was released way back 2020 deve
 We decided to create an app where people can easily manage and install all versions of the music streaming app from their devices.  
 
 Our aim is to make a simple yet useful manager app for everyone's convenience. On this second version of the manager app, we added a couple of features such as the ability to uninstall, open the app's settings directly, clear the offline cached datas and launch the app. We hope that all users find these newly added features very useful.
+
+# Origins Databases Officially Shutdown (02/24/23)  
+Origins databases are now officially shutdown. Update to the latest version of xManager (v4.5) to continue using the app.  
+
+**More Info:**  
+> These are the databases used by our old manager up until xManager v3.4-v4.4.
 
 # Legacy Databases Officially Shutdown (04/01/22)  
 Legacy databases are now officially shutdown. Update to the latest version of xManager (v3.2) to continue using the app.  
