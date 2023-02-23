@@ -52,9 +52,24 @@
 			android:gravity="right|center_vertical"
 			android:orientation="horizontal">
 			<LinearLayout
+				android:id="@+id/box_experiment"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:orientation="horizontal">
+				<ImageView
+					android:id="@+id/icon_experiment"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:src="@drawable/icon_experiment"
+					android:scaleType="center"
+					android:alpha="0.0" />
+			</LinearLayout>
+			<LinearLayout
 				android:id="@+id/box_switch"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:layout_marginLeft="3dp"
 				android:padding="8dp"
 				android:gravity="center_horizontal|center_vertical"
 				android:orientation="horizontal">
@@ -70,7 +85,7 @@
 				android:id="@+id/box_update"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginLeft="5dp"
+				android:layout_marginLeft="3dp"
 				android:padding="8dp"
 				android:gravity="center_horizontal|center_vertical"
 				android:orientation="horizontal">
@@ -92,6 +107,15 @@
 		android:background="#171717"
 		android:orientation="vertical">
 		<TextView
+			android:id="@+id/experiment_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="TextView"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
 			android:id="@+id/hidden_download_1"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -102,6 +126,15 @@
 			android:alpha="0.0" />
 		<TextView
 			android:id="@+id/hidden_download_2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="TextView"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:alpha="0.0" />
+		<TextView
+			android:id="@+id/hidden_download_3"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:padding="8dp"
@@ -146,7 +179,7 @@
 			android:textColor="#000000"
 			android:alpha="0.0" />
 		<TextView
-			android:id="@+id/fixer"
+			android:id="@+id/mirror"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:padding="8dp"
@@ -254,7 +287,7 @@
 			android:textColor="#000000"
 			android:alpha="0.0" />
 		<TextView
-			android:id="@+id/installation_failed_ream_desc"
+			android:id="@+id/installation_failed_spap_desc"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:padding="8dp"
@@ -498,7 +531,7 @@
 			android:textColor="#000000"
 			android:alpha="0.0" />
 		<TextView
-			android:id="@+id/copy_url"
+			android:id="@+id/lite"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:padding="8dp"
@@ -529,11 +562,14 @@
 		android:id="@+id/main_scroll_settings"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:background="#000000">
+		android:paddingLeft="10dp"
+		android:paddingRight="10dp"
+		android:background="#000000"
+		android:scrollbars="none">
 		<LinearLayout
 			android:id="@+id/main_body_settings"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
+			android:layout_height="match_parent"
 			android:background="@android:color/transparent"
 			android:orientation="vertical">
 			<LinearLayout
@@ -626,6 +662,76 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:text="Enabling this allow you to download and install the cloned version of the patched application.\n\nThis will also resolve most of the installation errors or problems\nespecially if you have a pre-installed spotify application."
+						android:textSize="12sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/main_box_18"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="8dp"
+				android:layout_marginRight="10dp"
+				android:padding="10dp"
+				android:background="#212121"
+				android:orientation="vertical">
+				<LinearLayout
+					android:id="@+id/box_18_sub_1"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="right|center_vertical"
+					android:orientation="horizontal">
+					<LinearLayout
+						android:id="@+id/title_box_7"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/experiment_version"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="8dp"
+							android:text="EXPERIMENTAL VERSION"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#1DB954" />
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_experiment_version"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:gravity="right|center_vertical"
+						android:orientation="horizontal">
+						<Switch
+							android:id="@+id/experiment_version_switch"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginRight="8dp"
+							android:paddingLeft="5dp"
+							android:paddingRight="2dp"
+							android:textSize="12sp"
+							android:textColor="#000000"
+							android:track="@drawable/track"
+							android:thumb="@drawable/thumb" />
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/box_18_sub_2"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="5dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/experiment_version_info"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Enabling this allow you to download and install the experimental version of the patched application.\n\nThis includes alpha, beta and early access features that are not available in the stock patched. In addition, not guaranteed stable."
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1046,7 +1152,7 @@
 				android:gravity="center_horizontal|center_vertical"
 				android:orientation="horizontal">
 				<LinearLayout
-					android:id="@+id/box_reset_settings"
+					android:id="@+id/box_reset_preferences"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:paddingTop="10dp"
@@ -1055,12 +1161,12 @@
 					android:gravity="center_horizontal|center_vertical"
 					android:orientation="horizontal">
 					<TextView
-						android:id="@+id/reset_settings"
+						android:id="@+id/reset_preferences"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:paddingLeft="10dp"
 						android:paddingRight="10dp"
-						android:text="RESET SETTINGS"
+						android:text="RESET PREFERENCES"
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
@@ -1072,7 +1178,10 @@
 		android:id="@+id/main_scroll_about"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:background="#000000">
+		android:paddingLeft="10dp"
+		android:paddingRight="10dp"
+		android:background="#000000"
+		android:scrollbars="none">
 		<LinearLayout
 			android:id="@+id/main_body_about"
 			android:layout_width="match_parent"
@@ -1117,7 +1226,7 @@
 					android:id="@+id/title_about"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:paddingLeft="30dp"
+					android:paddingLeft="10dp"
 					android:gravity="center_horizontal|center_vertical"
 					android:text="xManager v"
 					android:textSize="18sp"
@@ -1128,13 +1237,21 @@
 					android:id="@+id/local_version"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:paddingRight="30dp"
 					android:gravity="center_horizontal|center_vertical"
 					android:text="N/A"
 					android:textSize="18sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF"
 					android:layout_gravity="center_horizontal|center_vertical" />
+				<TextView
+					android:id="@+id/local_info"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingRight="10dp"
+					android:text=" (Omnibus)"
+					android:textSize="18sp"
+					android:textStyle="bold"
+					android:textColor="#171717" />
 			</LinearLayout>
 			<LinearLayout
 				android:id="@+id/box_about_sub"
@@ -1274,7 +1391,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
-					android:text="RishavG\nmeech\njetfire\nSherlock Holmes\nWu Tang Clam\nZach\naha\n100RABH\njuznem\nLight Yagami\nTunelover (Mobilism)\njar3cki (xManager Tester)\ncryiotic3 (Manager Icon)\nfarish278 (Manager Icon)\nzankyr (Notification Fixed)\nArian04 (Duplicate Attributes)\nroosphx (Facebook Login Fixed)"
+					android:text="RishavG\nmeech\njetfire\nSherlock Holmes\nWu Tang Clam\nZach\naha\njar3cki\njuznem\nroosphx\n100RABH\nLight Yagami\nTunelover (Mobilism)\ncryiotic3 (Manager Icon)\nfarish278 (Manager Icon)\nzankyr (Notification Fixed)\nArian04 (Duplicate Attributes)"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -1329,7 +1446,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
-					android:text="Balatan (Uploader/Releaser)\nRishavG (Support)\nmeech\nTunelover"
+					android:text="Balatan\nRishavG\nmeech\nTunelover"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -2178,17 +2295,20 @@
 		android:id="@+id/main_refresh_layout"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
+		android:paddingLeft="10dp"
+		android:paddingRight="10dp"
 		android:background="#000000"
 		android:orientation="vertical">
 		<ScrollView
 			android:id="@+id/main_scroll_body"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:background="@android:color/transparent">
+			android:background="@android:color/transparent"
+			android:scrollbars="none">
 			<LinearLayout
 				android:id="@+id/main_body"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
+				android:layout_height="match_parent"
 				android:background="@android:color/transparent"
 				android:orientation="vertical">
 				<LinearLayout
@@ -2230,12 +2350,12 @@
 							android:orientation="horizontal"
 							android:layout_gravity="right|center_vertical">
 							<TextView
-								android:id="@+id/regular_info"
+								android:id="@+id/stock_info"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:paddingRight="8dp"
 								android:gravity="right|center_vertical"
-								android:text="Ad-free, unlimited skips, play on-demand and new features!"
+								android:text="Ad-free, unlimited skips and play on-demand"
 								android:textSize="12sp"
 								android:textColor="#FFFFFF"
 								android:layout_gravity="right|center_vertical" />
@@ -2279,7 +2399,7 @@
 								android:textColor="#FFFFFF"
 								android:layout_gravity="right|center_vertical" />
 							<TextView
-								android:id="@+id/sub_5"
+								android:id="@+id/sub_3"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:paddingLeft="3dp"
@@ -2292,12 +2412,36 @@
 								android:textStyle="bold"
 								android:textColor="#FFFFFF"
 								android:layout_gravity="right|center_vertical" />
+							<TextView
+								android:id="@+id/sub_5"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingLeft="3dp"
+								android:paddingTop="8dp"
+								android:paddingRight="8dp"
+								android:paddingBottom="8dp"
+								android:text="N/A"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:textColor="#FFFFFF" />
+							<TextView
+								android:id="@+id/sub_7"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingLeft="3dp"
+								android:paddingTop="8dp"
+								android:paddingRight="8dp"
+								android:paddingBottom="8dp"
+								android:text="N/A"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:textColor="#FFFFFF" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_separator_1"
 						android:layout_width="match_parent"
-						android:layout_height="2dp"
+						android:layout_height="3dp"
 						android:layout_marginLeft="15dp"
 						android:layout_marginRight="15dp"
 						android:background="#616161"
@@ -2310,7 +2454,7 @@
 						android:orientation="horizontal"
 						android:layout_gravity="right|center_vertical">
 						<TextView
-							android:id="@+id/version_switch_1"
+							android:id="@+id/versions_1"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:paddingLeft="10dp"
@@ -2347,6 +2491,7 @@
 						android:dividerHeight="2dp"
 						android:choiceMode="none"
 						android:nestedScrollingEnabled="true"
+						android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb"
 						android:divider="#171717" />
 					<ListView
 						android:id="@+id/list_menu_3"
@@ -2355,6 +2500,7 @@
 						android:dividerHeight="2dp"
 						android:choiceMode="none"
 						android:nestedScrollingEnabled="true"
+						android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb"
 						android:divider="#171717" />
 				</LinearLayout>
 				<LinearLayout
@@ -2400,7 +2546,7 @@
 								android:layout_height="wrap_content"
 								android:paddingRight="8dp"
 								android:gravity="right|center_vertical"
-								android:text="Same features but in amoled black theme!"
+								android:text="Same features but in amoled black theme"
 								android:textSize="12sp"
 								android:textColor="#FFFFFF"
 								android:layout_gravity="right|center_vertical" />
@@ -2429,7 +2575,7 @@
 							android:gravity="right|center_vertical"
 							android:orientation="horizontal">
 							<TextView
-								android:id="@+id/sub_3"
+								android:id="@+id/sub_2"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:paddingLeft="3dp"
@@ -2443,7 +2589,7 @@
 								android:textColor="#FFFFFF"
 								android:layout_gravity="right|center_vertical" />
 							<TextView
-								android:id="@+id/sub_7"
+								android:id="@+id/sub_4"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:paddingLeft="3dp"
@@ -2456,12 +2602,36 @@
 								android:textStyle="bold"
 								android:textColor="#FFFFFF"
 								android:layout_gravity="right|center_vertical" />
+							<TextView
+								android:id="@+id/sub_6"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingLeft="3dp"
+								android:paddingTop="8dp"
+								android:paddingRight="8dp"
+								android:paddingBottom="8dp"
+								android:text="N/A"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:textColor="#FFFFFF" />
+							<TextView
+								android:id="@+id/sub_8"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingLeft="3dp"
+								android:paddingTop="8dp"
+								android:paddingRight="8dp"
+								android:paddingBottom="8dp"
+								android:text="N/A"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:textColor="#FFFFFF" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
 						android:id="@+id/box_separator_2"
 						android:layout_width="match_parent"
-						android:layout_height="2dp"
+						android:layout_height="3dp"
 						android:layout_marginLeft="15dp"
 						android:layout_marginRight="15dp"
 						android:background="#616161"
@@ -2474,7 +2644,7 @@
 						android:orientation="horizontal"
 						android:layout_gravity="right|center_vertical">
 						<TextView
-							android:id="@+id/version_switch_2"
+							android:id="@+id/versions_2"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:paddingLeft="10dp"
@@ -2511,6 +2681,7 @@
 						android:dividerHeight="2dp"
 						android:choiceMode="none"
 						android:nestedScrollingEnabled="true"
+						android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb"
 						android:divider="#171717" />
 					<ListView
 						android:id="@+id/list_menu_4"
@@ -2519,6 +2690,7 @@
 						android:dividerHeight="2dp"
 						android:choiceMode="none"
 						android:nestedScrollingEnabled="true"
+						android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb"
 						android:divider="#171717" />
 				</LinearLayout>
 				<LinearLayout
@@ -2564,7 +2736,7 @@
 								android:layout_height="wrap_content"
 								android:paddingRight="8dp"
 								android:gravity="right|center_vertical"
-								android:text="Less is more. An ad-free, unlimited skips and play on-demand lightweight experience!"
+								android:text="An ad-free, unlimited skips and play on-demand lightweight experience"
 								android:textSize="12sp"
 								android:textColor="#FFFFFF"
 								android:layout_gravity="right|center_vertical" />
@@ -2611,7 +2783,7 @@
 					<LinearLayout
 						android:id="@+id/box_separator_5"
 						android:layout_width="match_parent"
-						android:layout_height="2dp"
+						android:layout_height="3dp"
 						android:layout_marginLeft="15dp"
 						android:layout_marginRight="15dp"
 						android:background="#616161"
@@ -2622,7 +2794,7 @@
 						android:layout_height="wrap_content"
 						android:orientation="horizontal">
 						<TextView
-							android:id="@+id/version_switch_3"
+							android:id="@+id/versions_3"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:paddingLeft="10dp"
@@ -2659,6 +2831,7 @@
 						android:dividerHeight="2dp"
 						android:choiceMode="none"
 						android:nestedScrollingEnabled="true"
+						android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb"
 						android:divider="#171717" />
 				</LinearLayout>
 				<LinearLayout
@@ -2716,7 +2889,7 @@
 					<LinearLayout
 						android:id="@+id/box_separator_3"
 						android:layout_width="match_parent"
-						android:layout_height="2dp"
+						android:layout_height="3dp"
 						android:layout_marginLeft="15dp"
 						android:layout_marginRight="15dp"
 						android:padding="8dp"
@@ -2770,7 +2943,7 @@
 								android:paddingBottom="8dp"
 								android:gravity="right|center_vertical"
 								android:text="|"
-								android:textSize="12sp"
+								android:textSize="14sp"
 								android:textStyle="bold"
 								android:textColor="#FFFFFF"
 								android:layout_gravity="right|center_vertical" />
@@ -2796,7 +2969,7 @@
 								android:paddingBottom="8dp"
 								android:gravity="right|center_vertical"
 								android:text="|"
-								android:textSize="12sp"
+								android:textSize="14sp"
 								android:textStyle="bold"
 								android:textColor="#FFFFFF"
 								android:layout_gravity="right|center_vertical" />
@@ -2817,7 +2990,7 @@
 					<LinearLayout
 						android:id="@+id/box_separator_4"
 						android:layout_width="match_parent"
-						android:layout_height="2dp"
+						android:layout_height="3dp"
 						android:layout_marginLeft="15dp"
 						android:layout_marginRight="15dp"
 						android:padding="8dp"
@@ -2865,11 +3038,12 @@
 						android:id="@+id/list_changelogs"
 						android:layout_width="match_parent"
 						android:layout_height="260dp"
-						android:dividerHeight="2dp"
+						android:dividerHeight="3dp"
 						android:choiceMode="none"
 						android:nestedScrollingEnabled="true"
 						android:listSelector="@android:color/transparent"
-						android:divider="@drawable/divider" />
+						android:divider="@drawable/divider"
+						android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb" />
 				</LinearLayout>
 				<LinearLayout
 					android:id="@+id/box_sub_header"
@@ -2880,7 +3054,8 @@
 					android:layout_marginRight="10dp"
 					android:padding="10dp"
 					android:background="#212121"
-					android:orientation="vertical">
+					android:orientation="vertical"
+					android:animateLayoutChanges="true">
 					<LinearLayout
 						android:id="@+id/box_sub_1"
 						android:layout_width="match_parent"
@@ -2980,7 +3155,8 @@
 					android:layout_marginLeft="10dp"
 					android:layout_marginTop="20dp"
 					android:layout_marginRight="10dp"
-					android:orientation="horizontal">
+					android:orientation="horizontal"
+					android:animateLayoutChanges="true">
 					<LinearLayout
 						android:id="@+id/box_support"
 						android:layout_width="100dp"
@@ -3111,7 +3287,8 @@
 					android:layout_marginTop="10dp"
 					android:layout_marginRight="10dp"
 					android:layout_marginBottom="70dp"
-					android:orientation="horizontal">
+					android:orientation="horizontal"
+					android:animateLayoutChanges="true">
 					<LinearLayout
 						android:id="@+id/box_discord"
 						android:layout_width="100dp"
