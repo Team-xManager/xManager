@@ -28,8 +28,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import com.bumptech.glide.Glide;
 import com.google.android.gms.ads.MobileAds;
-import com.google.firebase.FirebaseApp;
 import com.wuyr.rippleanimation.*;
 import java.io.*;
 import java.text.*;
@@ -55,7 +55,7 @@ public class SplashActivity extends AppCompatActivity {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.splash);
 		initialize(_savedInstanceState);
-		FirebaseApp.initializeApp(this);
+		
 		MobileAds.initialize(this);
 		
 		initializeLogic();
@@ -73,40 +73,35 @@ public class SplashActivity extends AppCompatActivity {
 			w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 			w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(0xFF171717);
 		}
+		Glide.with(getApplicationContext()).load(Uri.parse("file:///android_asset/splash.gif")).into(icon_splash);
 		title_splash.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_glitch.ttf"), 1);
-		if (0 == SketchwareUtil.getRandom((int)(0), (int)(6))) {
+		if (0 == SketchwareUtil.getRandom((int)(0), (int)(5))) {
 			title_splash.setText("xManager");
 			title_splash.setTextSize((int)25);
 		}
 		else {
-			if (1 == SketchwareUtil.getRandom((int)(0), (int)(6))) {
-				title_splash.setText("Made with Love");
+			if (1 == SketchwareUtil.getRandom((int)(0), (int)(5))) {
+				title_splash.setText("Exodus 20:15");
 				title_splash.setTextSize((int)25);
 			}
 			else {
-				if (2 == SketchwareUtil.getRandom((int)(0), (int)(6))) {
+				if (2 == SketchwareUtil.getRandom((int)(0), (int)(5))) {
 					title_splash.setText("It's A Movement");
 					title_splash.setTextSize((int)25);
 				}
 				else {
-					if (3 == SketchwareUtil.getRandom((int)(0), (int)(6))) {
+					if (3 == SketchwareUtil.getRandom((int)(0), (int)(5))) {
 						title_splash.setText("We Are Resistance");
 						title_splash.setTextSize((int)25);
 					}
 					else {
-						if (4 == SketchwareUtil.getRandom((int)(0), (int)(6))) {
-							title_splash.setText("Bravo Six, Going Dark");
-							title_splash.setTextSize((int)25);
+						if (4 == SketchwareUtil.getRandom((int)(0), (int)(5))) {
+							title_splash.setText("Freedom For Everyone");
+							title_splash.setTextSize((int)20);
 						}
 						else {
-							if (5 == SketchwareUtil.getRandom((int)(0), (int)(6))) {
-								title_splash.setText("Freedom For Everyone");
-								title_splash.setTextSize((int)20);
-							}
-							else {
-								title_splash.setText("Don't Make Us Popular!");
-								title_splash.setTextSize((int)20);
-							}
+							title_splash.setText("Don't Make Us Popular!");
+							title_splash.setTextSize((int)20);
 						}
 					}
 				}
@@ -123,19 +118,20 @@ public class SplashActivity extends AppCompatActivity {
 		animation_title = null;
 		
 		Timer = new TimerTask() {
-			@Override
-			public void run() {
-				runOnUiThread(new Runnable() {
-					@Override
-					public void run() {
-						Switch_Activity.setClass(getApplicationContext(), MainActivity.class);
-						startActivity(Switch_Activity);
-						finish();
-					}
-				});
-			}
-		};
-		_timer.schedule(Timer, (int)(1000));
+										@Override
+										public void run() {
+												runOnUiThread(new Runnable() {
+														@Override
+														public void run() {
+																Switch_Activity.setClass(getApplicationContext(), MainActivity.class);
+																startActivity(Switch_Activity);
+																finish();
+														}
+												});
+										}
+								};
+								_timer.schedule(Timer, (int)(1000));
+		
 		_Dark_Navigation();
 	}
 	
