@@ -17,10 +17,10 @@
 			android:id="@+id/icon_splash"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:src="@drawable/splash"
+			android:src="@drawable/default_image"
 			android:scaleType="center"
-			android:scaleX="0.75"
-			android:scaleY="0.75" />
+			android:scaleX="0.85"
+			android:scaleY="0.85" />
 		<TextView
 			android:id="@+id/title_splash"
 			android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
 			android:textSize="25sp"
 			android:textStyle="bold"
 			android:textColor="#FFFFFF"
-			android:translationY="-50.0dp"
+			android:translationY="-35.0dp"
 			android:layout_gravity="center_horizontal|center_vertical" />
 	</LinearLayout>
 </LinearLayout>
