@@ -26,7 +26,7 @@
 
 ### [<p align="center">🎉Check out our Roadmaps, Changelogs and Milestones here!🎉</p>](https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones)  
 
-### [<p align="center">🛠VirusTotal Result: Click Here🛠</p>](https://www.virustotal.com/gui/file/471b5a7761636258bc9d54d535f1033bf1fc2e0e996fb1bc808571760449bbc0/detection)
+### [<p align="center">🛠VirusTotal Result: Click Here🛠</p>](https://www.virustotal.com/gui/file/915b12ebc91e65d5c08c9af0fd6808e43e5ac486e11adc86f30281ea5eb5cd7b/detection)
 
 # Main Features
 
