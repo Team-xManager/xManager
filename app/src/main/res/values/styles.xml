@@ -1,5 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><resources>
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
     <style name="Theme_Origins" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -12,6 +16,7 @@
     </style>
     <style name="Theme_Origins.Splash" parent="Theme_Origins"/>
     <style name="Progress_Dialog" parent="Theme.Material3.Light.Dialog">
+        <item name="android:windowAnimationStyle">@style/Animations</item>
         <item name="android:buttonBarNegativeButtonStyle">@style/NegativeButtonProgress</item>
         <item name="android:buttonBarNeutralButtonStyle">@style/NeutralButtonProgress</item>
         <item name="android:windowTitleStyle">@style/Title_Origins</item>
@@ -23,6 +28,7 @@
         <item name="colorPrimary">#252525</item>
     </style>
     <style name="Intro_Dialog" parent="Theme.Material3.Light.Dialog">
+        <item name="android:windowAnimationStyle">@style/Animations</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -34,6 +40,7 @@
         <item name="android:textColor">#FFFFFF</item>
     </style>
     <style name="Alert_Dialog" parent="Theme.Material3.Light.Dialog">
+        <item name="android:windowAnimationStyle">@style/Animations</item>
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonOrigins</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonOrigins</item>
         <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonOrigins</item>
@@ -45,6 +52,7 @@
         <item name="colorPrimary">#252525</item>
     </style>
     <style name="Other_Dialog" parent="Theme.Material3.Light.Dialog">
+        <item name="android:windowAnimationStyle">@style/Animations</item>
         <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonOther</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonOther</item>
         <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonOther</item>
@@ -176,5 +184,9 @@
         <item name="android:fontFamily">@font/base_font</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">18sp</item>
+    </style>
+    <style name="Animations">
+        <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
     </style>
 </resources>
