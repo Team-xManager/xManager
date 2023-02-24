@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200" src="https://static.wixstatic.com/media/01dd63_390e7a690a1b4699b05a6978fa3f69a8~mv2.gif">
+  <img width="200" src="https://i.ibb.co/64bJncy/xmanger.gif">
 </p>
 
 ### <p align="center">AD-FREE | NEW FEATURES | FREEDOM</p>
