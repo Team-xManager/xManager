@@ -6,15 +6,15 @@
 
 <p align="center"> 
   <img src="https://img.shields.io/badge/Sketchware%20Build-Passing-brightgreen.svg?style=for-the-badge">
-  <img src="https://img.shields.io/github/v/tag/xManager-App/xManager?label=LATEST%20VERSION&style=for-the-badge">
   <img src="https://img.shields.io/github/release-date/xManager-App/xManager?label=UPDATED%20SINCE&style=for-the-badge">
+  <img src="https://img.shields.io/github/v/tag/xManager-App/xManager?label=LATEST%20VERSION&style=for-the-badge">
 </p>
 
 ### <p align="center">DOWNLOAD MILESTONE</p>
 <p align="center">
   <img src="https://img.shields.io/github/downloads/xManager-App/xManager/total?label=OMNIBUS%20(ACTIVE)&style=for-the-badge">
-  <img src="https://img.shields.io/badge/ORIGINS%20(SHUTDOWN)-1.1M-brightgreen.svg?style=for-the-badge">
-  <img src="https://img.shields.io/badge/LEGACY%20(SHUTDOWN)-400K-brightgreen.svg?style=for-the-badge">
+  <img src="https://img.shields.io/badge/ORIGINS%20(SHUTDOWN)-1.1M-red.svg?style=for-the-badge">
+  <img src="https://img.shields.io/badge/LEGACY%20(SHUTDOWN)-400K-red.svg?style=for-the-badge">
 </p>
 
 <p align="center">
