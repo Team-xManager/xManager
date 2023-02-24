@@ -1,10 +1,10 @@
 <p align="center">
-  <img width="800" src="https://camo.githubusercontent.com/9608990fb2c43a21652b6c61692418b7bc89f5e90b4961bdb6442583d01abb70/68747470733a2f2f6269742e6c792f33774331587370">
+  <img width="200" src="https://static.wixstatic.com/media/01dd63_390e7a690a1b4699b05a6978fa3f69a8~mv2.gif">
 </p>
 
 ### <p align="center">AD-FREE | NEW FEATURES | FREEDOM</p>
 
-<p align="center">
+<p align="center"> 
   <img src="https://img.shields.io/badge/Sketchware%20Build-Passing-brightgreen.svg?style=for-the-badge">
   <img src="https://img.shields.io/github/v/tag/xManager-App/xManager?label=LATEST%20VERSION&style=for-the-badge">
   <img src="https://img.shields.io/github/release-date/xManager-App/xManager?label=UPDATED%20SINCE&style=for-the-badge">
@@ -17,17 +17,10 @@
   <img src="https://img.shields.io/badge/LEGACY%20(SHUTDOWN)-400K-brightgreen.svg?style=for-the-badge">
 </p>
 
-### <p align="center">SERVER STATUS</p>
 <p align="center">
-  <img src="https://img.shields.io/uptimerobot/status/m791526898-1d21879566baeaad34b26ac3?label=WEBSITE STATUS&style=for-the-badge">
-  <img src="https://img.shields.io/uptimerobot/status/m791526898-1d21879566baeaad34b26ac3?label=API STATUS&style=for-the-badge">
-  <img src="https://img.shields.io/uptimerobot/ratio/7/m791526898-1d21879566baeaad34b26ac3?label=WEBSITE UPTIME&style=for-the-badge">
-  <img src="https://img.shields.io/uptimerobot/ratio/7/m791526898-1d21879566baeaad34b26ac3?label=API UPTIME&style=for-the-badge">
+  <a href="https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones"><img src="https://img.shields.io/badge/Roadmaps,%20Changelogs%20&%20Milestones-Click%20Here-white.svg?style=for-the-badge"/></a>
+<a href="https://www.virustotal.com/gui/file/915b12ebc91e65d5c08c9af0fd6808e43e5ac486e11adc86f30281ea5eb5cd7b/detection"><img src="https://img.shields.io/badge/VirusTotal-Click%20Here-white.svg?style=for-the-badge"/></a>
 </p>
-
-### [<p align="center">🎉Check out our Roadmaps, Changelogs and Milestones here!🎉</p>](https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones)  
-
-### [<p align="center">🛠VirusTotal Result: Click Here🛠</p>](https://www.virustotal.com/gui/file/915b12ebc91e65d5c08c9af0fd6808e43e5ac486e11adc86f30281ea5eb5cd7b/detection)
 
 # Main Features
 
