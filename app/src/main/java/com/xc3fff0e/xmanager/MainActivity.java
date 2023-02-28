@@ -49,6 +49,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
 import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.FirebaseApp;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.wuyr.rippleanimation.*;
@@ -296,7 +297,9 @@ public class MainActivity extends AppCompatActivity {
 	private LinearLayout box_10_sub_2;
 	private TextView clear_directory_folders;
 	private TextView clear_directory_folders_info;
+	private LinearLayout box_reboot;
 	private LinearLayout box_reset_preferences;
+	private TextView reboot;
 	private TextView reset_preferences;
 	private LinearLayout main_body_about;
 	private LinearLayout box_about_close;
@@ -314,7 +317,6 @@ public class MainActivity extends AppCompatActivity {
 	private ImageView icon_close;
 	private TextView title_about;
 	private TextView local_version;
-	private TextView local_info;
 	private TextView sub_title;
 	private TextView xmanager_dev;
 	private TextView developer_1;
@@ -413,8 +415,7 @@ public class MainActivity extends AppCompatActivity {
 	private LinearLayout box_2;
 	private LinearLayout box_separator_1;
 	private LinearLayout box_5;
-	private ListView list_menu_1;
-	private ListView list_menu_3;
+	private ListView list_items_1;
 	private TextView title_1;
 	private LinearLayout box_1_sub;
 	private TextView stock_info;
@@ -431,8 +432,7 @@ public class MainActivity extends AppCompatActivity {
 	private LinearLayout box_4;
 	private LinearLayout box_separator_2;
 	private LinearLayout box_6;
-	private ListView list_menu_2;
-	private ListView list_menu_4;
+	private ListView list_items_2;
 	private TextView title_2;
 	private LinearLayout box_2_sub;
 	private TextView amoled_info;
@@ -447,9 +447,9 @@ public class MainActivity extends AppCompatActivity {
 	private ImageView version_oc_02;
 	private LinearLayout box_7;
 	private LinearLayout box_8;
-	private LinearLayout box_separator_5;
+	private LinearLayout box_separator_3;
 	private LinearLayout box_9;
-	private ListView list_menu_5;
+	private ListView list_items_3;
 	private TextView title_3;
 	private LinearLayout box_3_sub;
 	private TextView lite_info;
@@ -459,15 +459,10 @@ public class MainActivity extends AppCompatActivity {
 	private TextView versions_3;
 	private LinearLayout box_sub_7;
 	private ImageView version_oc_03;
-	private LinearLayout box_6_sub_1;
-	private LinearLayout box_separator_3;
 	private LinearLayout box_6_sub_2;
 	private LinearLayout box_separator_4;
 	private LinearLayout box_6_sub_3;
-	private ListView list_changelogs;
-	private TextView device_cpu;
-	private LinearLayout box_cpu;
-	private TextView cpu;
+	private ListView list_items_4;
 	private TextView sub_text_installed;
 	private LinearLayout box_installed;
 	private TextView sub_installed;
@@ -536,7 +531,7 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.main);
 		initialize(_savedInstanceState);
-		
+		FirebaseApp.initializeApp(this);
 		MobileAds.initialize(this);
 		
 		initializeLogic();
@@ -674,7 +669,9 @@ public class MainActivity extends AppCompatActivity {
 		box_10_sub_2 = findViewById(R.id.box_10_sub_2);
 		clear_directory_folders = findViewById(R.id.clear_directory_folders);
 		clear_directory_folders_info = findViewById(R.id.clear_directory_folders_info);
+		box_reboot = findViewById(R.id.box_reboot);
 		box_reset_preferences = findViewById(R.id.box_reset_preferences);
+		reboot = findViewById(R.id.reboot);
 		reset_preferences = findViewById(R.id.reset_preferences);
 		main_body_about = findViewById(R.id.main_body_about);
 		box_about_close = findViewById(R.id.box_about_close);
@@ -692,7 +689,6 @@ public class MainActivity extends AppCompatActivity {
 		icon_close = findViewById(R.id.icon_close);
 		title_about = findViewById(R.id.title_about);
 		local_version = findViewById(R.id.local_version);
-		local_info = findViewById(R.id.local_info);
 		sub_title = findViewById(R.id.sub_title);
 		xmanager_dev = findViewById(R.id.xmanager_dev);
 		developer_1 = findViewById(R.id.developer_1);
@@ -791,8 +787,7 @@ public class MainActivity extends AppCompatActivity {
 		box_2 = findViewById(R.id.box_2);
 		box_separator_1 = findViewById(R.id.box_separator_1);
 		box_5 = findViewById(R.id.box_5);
-		list_menu_1 = findViewById(R.id.list_menu_1);
-		list_menu_3 = findViewById(R.id.list_menu_3);
+		list_items_1 = findViewById(R.id.list_items_1);
 		title_1 = findViewById(R.id.title_1);
 		box_1_sub = findViewById(R.id.box_1_sub);
 		stock_info = findViewById(R.id.stock_info);
@@ -809,8 +804,7 @@ public class MainActivity extends AppCompatActivity {
 		box_4 = findViewById(R.id.box_4);
 		box_separator_2 = findViewById(R.id.box_separator_2);
 		box_6 = findViewById(R.id.box_6);
-		list_menu_2 = findViewById(R.id.list_menu_2);
-		list_menu_4 = findViewById(R.id.list_menu_4);
+		list_items_2 = findViewById(R.id.list_items_2);
 		title_2 = findViewById(R.id.title_2);
 		box_2_sub = findViewById(R.id.box_2_sub);
 		amoled_info = findViewById(R.id.amoled_info);
@@ -825,9 +819,9 @@ public class MainActivity extends AppCompatActivity {
 		version_oc_02 = findViewById(R.id.version_oc_02);
 		box_7 = findViewById(R.id.box_7);
 		box_8 = findViewById(R.id.box_8);
-		box_separator_5 = findViewById(R.id.box_separator_5);
+		box_separator_3 = findViewById(R.id.box_separator_3);
 		box_9 = findViewById(R.id.box_9);
-		list_menu_5 = findViewById(R.id.list_menu_5);
+		list_items_3 = findViewById(R.id.list_items_3);
 		title_3 = findViewById(R.id.title_3);
 		box_3_sub = findViewById(R.id.box_3_sub);
 		lite_info = findViewById(R.id.lite_info);
@@ -837,15 +831,10 @@ public class MainActivity extends AppCompatActivity {
 		versions_3 = findViewById(R.id.versions_3);
 		box_sub_7 = findViewById(R.id.box_sub_7);
 		version_oc_03 = findViewById(R.id.version_oc_03);
-		box_6_sub_1 = findViewById(R.id.box_6_sub_1);
-		box_separator_3 = findViewById(R.id.box_separator_3);
 		box_6_sub_2 = findViewById(R.id.box_6_sub_2);
 		box_separator_4 = findViewById(R.id.box_separator_4);
 		box_6_sub_3 = findViewById(R.id.box_6_sub_3);
-		list_changelogs = findViewById(R.id.list_changelogs);
-		device_cpu = findViewById(R.id.device_cpu);
-		box_cpu = findViewById(R.id.box_cpu);
-		cpu = findViewById(R.id.cpu);
+		list_items_4 = findViewById(R.id.list_items_4);
 		sub_text_installed = findViewById(R.id.sub_text_installed);
 		box_installed = findViewById(R.id.box_installed);
 		sub_installed = findViewById(R.id.sub_installed);
@@ -1166,20 +1155,18 @@ public class MainActivity extends AppCompatActivity {
 					sub_6.setVisibility(View.GONE);
 					sub_7.setVisibility(View.GONE);
 					sub_8.setVisibility(View.GONE);
-					list_menu_1.setVisibility(View.GONE);
-					list_menu_2.setVisibility(View.GONE);
-					list_menu_3.setVisibility(View.GONE);
-					list_menu_4.setVisibility(View.GONE);
-					list_menu_5.setVisibility(View.GONE);
-					list_changelogs.setVisibility(View.GONE);
+					list_items_1.setVisibility(View.GONE);
+					list_items_2.setVisibility(View.GONE);
+					list_items_3.setVisibility(View.GONE);
+					list_items_4.setVisibility(View.GONE);
 					version_oc_01.setImageResource(R.drawable.close);
 					version_oc_02.setImageResource(R.drawable.close);
 					version_oc_03.setImageResource(R.drawable.close);
 					changelogs_oc.setImageResource(R.drawable.close);
-					list_menu_1.setAdapter(new List_menu_1Adapter(stock_patched));
-					list_menu_2.setAdapter(new List_menu_2Adapter(amoled_patched));
-					((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-					((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
+					list_items_1.setAdapter(new List_items_1Adapter(stock_patched));
+					list_items_2.setAdapter(new List_items_2Adapter(amoled_patched));
+					((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
+					((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 					CLICKER_1 = 1;
 					CLICKER_2 = 1;
 					CLICKER_3 = 1;
@@ -1202,20 +1189,18 @@ public class MainActivity extends AppCompatActivity {
 						sub_6.setVisibility(View.GONE);
 						sub_7.setVisibility(View.GONE);
 						sub_8.setVisibility(View.GONE);
-						list_menu_1.setVisibility(View.GONE);
-						list_menu_2.setVisibility(View.GONE);
-						list_menu_3.setVisibility(View.GONE);
-						list_menu_4.setVisibility(View.GONE);
-						list_menu_5.setVisibility(View.GONE);
-						list_changelogs.setVisibility(View.GONE);
+						list_items_1.setVisibility(View.GONE);
+						list_items_2.setVisibility(View.GONE);
+						list_items_3.setVisibility(View.GONE);
+						list_items_4.setVisibility(View.GONE);
 						version_oc_01.setImageResource(R.drawable.close);
 						version_oc_02.setImageResource(R.drawable.close);
 						version_oc_03.setImageResource(R.drawable.close);
 						changelogs_oc.setImageResource(R.drawable.close);
-						list_menu_3.setAdapter(new List_menu_3Adapter(stock_cloned_patched));
-						list_menu_4.setAdapter(new List_menu_4Adapter(amoled_cloned_patched));
-						((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
-						((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+						list_items_1.setAdapter(new List_items_1Adapter(stock_cloned_patched));
+						list_items_2.setAdapter(new List_items_2Adapter(amoled_cloned_patched));
+						((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
+						((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 						CLICKER_1 = 1;
 						CLICKER_2 = 1;
 						CLICKER_3 = 1;
@@ -1238,20 +1223,18 @@ public class MainActivity extends AppCompatActivity {
 							sub_6.setVisibility(View.VISIBLE);
 							sub_7.setVisibility(View.GONE);
 							sub_8.setVisibility(View.GONE);
-							list_menu_1.setVisibility(View.GONE);
-							list_menu_2.setVisibility(View.GONE);
-							list_menu_3.setVisibility(View.GONE);
-							list_menu_4.setVisibility(View.GONE);
-							list_menu_5.setVisibility(View.GONE);
-							list_changelogs.setVisibility(View.GONE);
+							list_items_1.setVisibility(View.GONE);
+							list_items_2.setVisibility(View.GONE);
+							list_items_3.setVisibility(View.GONE);
+							list_items_4.setVisibility(View.GONE);
 							version_oc_01.setImageResource(R.drawable.close);
 							version_oc_02.setImageResource(R.drawable.close);
 							version_oc_03.setImageResource(R.drawable.close);
 							changelogs_oc.setImageResource(R.drawable.close);
-							list_menu_1.setAdapter(new List_menu_1Adapter(stock_experimental_patched));
-							list_menu_2.setAdapter(new List_menu_2Adapter(amoled_experimental_patched));
-							((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-							((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
+							list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_patched));
+							list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_patched));
+							((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
+							((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 							CLICKER_1 = 1;
 							CLICKER_2 = 1;
 							CLICKER_3 = 1;
@@ -1274,20 +1257,18 @@ public class MainActivity extends AppCompatActivity {
 								sub_6.setVisibility(View.GONE);
 								sub_7.setVisibility(View.VISIBLE);
 								sub_8.setVisibility(View.VISIBLE);
-								list_menu_1.setVisibility(View.GONE);
-								list_menu_2.setVisibility(View.GONE);
-								list_menu_3.setVisibility(View.GONE);
-								list_menu_4.setVisibility(View.GONE);
-								list_menu_5.setVisibility(View.GONE);
-								list_changelogs.setVisibility(View.GONE);
+								list_items_1.setVisibility(View.GONE);
+								list_items_2.setVisibility(View.GONE);
+								list_items_3.setVisibility(View.GONE);
+								list_items_4.setVisibility(View.GONE);
 								version_oc_01.setImageResource(R.drawable.close);
 								version_oc_02.setImageResource(R.drawable.close);
 								version_oc_03.setImageResource(R.drawable.close);
 								changelogs_oc.setImageResource(R.drawable.close);
-								list_menu_3.setAdapter(new List_menu_3Adapter(stock_experimental_cloned_patched));
-								list_menu_4.setAdapter(new List_menu_4Adapter(amoled_experimental_cloned_patched));
-								((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
-								((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+								list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_cloned_patched));
+								list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_cloned_patched));
+								((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
+								((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 								CLICKER_1 = 1;
 								CLICKER_2 = 1;
 								CLICKER_3 = 1;
@@ -1320,20 +1301,18 @@ public class MainActivity extends AppCompatActivity {
 					sub_6.setVisibility(View.GONE);
 					sub_7.setVisibility(View.GONE);
 					sub_8.setVisibility(View.GONE);
-					list_menu_1.setVisibility(View.GONE);
-					list_menu_2.setVisibility(View.GONE);
-					list_menu_3.setVisibility(View.GONE);
-					list_menu_4.setVisibility(View.GONE);
-					list_menu_5.setVisibility(View.GONE);
-					list_changelogs.setVisibility(View.GONE);
+					list_items_1.setVisibility(View.GONE);
+					list_items_2.setVisibility(View.GONE);
+					list_items_3.setVisibility(View.GONE);
+					list_items_4.setVisibility(View.GONE);
 					version_oc_01.setImageResource(R.drawable.close);
 					version_oc_02.setImageResource(R.drawable.close);
 					version_oc_03.setImageResource(R.drawable.close);
 					changelogs_oc.setImageResource(R.drawable.close);
-					list_menu_1.setAdapter(new List_menu_1Adapter(stock_patched));
-					list_menu_2.setAdapter(new List_menu_2Adapter(amoled_patched));
-					((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-					((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
+					list_items_1.setAdapter(new List_items_1Adapter(stock_patched));
+					list_items_2.setAdapter(new List_items_2Adapter(amoled_patched));
+					((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
+					((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 					CLICKER_1 = 1;
 					CLICKER_2 = 1;
 					CLICKER_3 = 1;
@@ -1356,20 +1335,18 @@ public class MainActivity extends AppCompatActivity {
 						sub_6.setVisibility(View.GONE);
 						sub_7.setVisibility(View.GONE);
 						sub_8.setVisibility(View.GONE);
-						list_menu_1.setVisibility(View.GONE);
-						list_menu_2.setVisibility(View.GONE);
-						list_menu_3.setVisibility(View.GONE);
-						list_menu_4.setVisibility(View.GONE);
-						list_menu_5.setVisibility(View.GONE);
-						list_changelogs.setVisibility(View.GONE);
+						list_items_1.setVisibility(View.GONE);
+						list_items_2.setVisibility(View.GONE);
+						list_items_3.setVisibility(View.GONE);
+						list_items_4.setVisibility(View.GONE);
 						version_oc_01.setImageResource(R.drawable.close);
 						version_oc_02.setImageResource(R.drawable.close);
 						version_oc_03.setImageResource(R.drawable.close);
 						changelogs_oc.setImageResource(R.drawable.close);
-						list_menu_3.setAdapter(new List_menu_3Adapter(stock_cloned_patched));
-						list_menu_4.setAdapter(new List_menu_4Adapter(amoled_cloned_patched));
-						((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
-						((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+						list_items_1.setAdapter(new List_items_1Adapter(stock_cloned_patched));
+						list_items_2.setAdapter(new List_items_2Adapter(amoled_cloned_patched));
+						((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
+						((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 						CLICKER_1 = 1;
 						CLICKER_2 = 1;
 						CLICKER_3 = 1;
@@ -1392,20 +1369,18 @@ public class MainActivity extends AppCompatActivity {
 							sub_6.setVisibility(View.VISIBLE);
 							sub_7.setVisibility(View.GONE);
 							sub_8.setVisibility(View.GONE);
-							list_menu_1.setVisibility(View.GONE);
-							list_menu_2.setVisibility(View.GONE);
-							list_menu_3.setVisibility(View.GONE);
-							list_menu_4.setVisibility(View.GONE);
-							list_menu_5.setVisibility(View.GONE);
-							list_changelogs.setVisibility(View.GONE);
+							list_items_1.setVisibility(View.GONE);
+							list_items_2.setVisibility(View.GONE);
+							list_items_3.setVisibility(View.GONE);
+							list_items_4.setVisibility(View.GONE);
 							version_oc_01.setImageResource(R.drawable.close);
 							version_oc_02.setImageResource(R.drawable.close);
 							version_oc_03.setImageResource(R.drawable.close);
 							changelogs_oc.setImageResource(R.drawable.close);
-							list_menu_1.setAdapter(new List_menu_1Adapter(stock_experimental_patched));
-							list_menu_2.setAdapter(new List_menu_2Adapter(amoled_experimental_patched));
-							((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-							((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
+							list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_patched));
+							list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_patched));
+							((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
+							((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 							CLICKER_1 = 1;
 							CLICKER_2 = 1;
 							CLICKER_3 = 1;
@@ -1428,20 +1403,18 @@ public class MainActivity extends AppCompatActivity {
 								sub_6.setVisibility(View.GONE);
 								sub_7.setVisibility(View.VISIBLE);
 								sub_8.setVisibility(View.VISIBLE);
-								list_menu_1.setVisibility(View.GONE);
-								list_menu_2.setVisibility(View.GONE);
-								list_menu_3.setVisibility(View.GONE);
-								list_menu_4.setVisibility(View.GONE);
-								list_menu_5.setVisibility(View.GONE);
-								list_changelogs.setVisibility(View.GONE);
+								list_items_1.setVisibility(View.GONE);
+								list_items_2.setVisibility(View.GONE);
+								list_items_3.setVisibility(View.GONE);
+								list_items_4.setVisibility(View.GONE);
 								version_oc_01.setImageResource(R.drawable.close);
 								version_oc_02.setImageResource(R.drawable.close);
 								version_oc_03.setImageResource(R.drawable.close);
 								changelogs_oc.setImageResource(R.drawable.close);
-								list_menu_3.setAdapter(new List_menu_3Adapter(stock_experimental_cloned_patched));
-								list_menu_4.setAdapter(new List_menu_4Adapter(amoled_experimental_cloned_patched));
-								((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
-								((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+								list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_cloned_patched));
+								list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_cloned_patched));
+								((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
+								((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 								CLICKER_1 = 1;
 								CLICKER_2 = 1;
 								CLICKER_3 = 1;
@@ -1873,6 +1846,97 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 		
+		box_reboot.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				try {
+					box_header.setVisibility(View.GONE);
+					final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Intro_Dialog);
+					prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+					prog.setMax(100);
+					prog.setMessage("Refetching datas...");
+					prog.setIndeterminate(true);
+					prog.setCancelable(false);
+					if (!MainActivity.this.isFinishing()){
+							prog.show();
+					}
+					
+					Timer = new TimerTask() {
+						@Override
+						public void run() {
+							runOnUiThread(new Runnable() {
+								@Override
+								public void run() {
+									prog.dismiss();
+									final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Intro_Dialog);
+									prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+									prog.setMax(100);
+									prog.setMessage("Rebooting...");
+									prog.setIndeterminate(true);
+									prog.setCancelable(false);
+									prog.show();
+									if (!MainActivity.this.isFinishing()){
+											return;
+									}
+									
+									Timer = new TimerTask() {
+										@Override
+										public void run() {
+											runOnUiThread(new Runnable() {
+												@Override
+												public void run() {
+													box_header.setVisibility(View.VISIBLE);
+													prog.dismiss();
+												}
+											});
+										}
+									};
+									_timer.schedule(Timer, (int)(9000));
+								}
+							});
+						}
+					};
+					_timer.schedule(Timer, (int)(8000));
+					Timer = new TimerTask() {
+						@Override
+						public void run() {
+							runOnUiThread(new Runnable() {
+								@Override
+								public void run() {
+									try {
+										Intent intent = getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName() ); 
+										
+										intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+										intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+										startActivity(intent);
+									}
+									catch (Exception e) {
+									}
+								}
+							});
+						}
+					};
+					_timer.schedule(Timer, (int)(10000));
+					if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+						Window w =MainActivity.this.getWindow();
+						w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+						w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(0xFF171717);
+					}
+					main_body_optimization.setVisibility(View.VISIBLE);
+					main_scroll_settings.setVisibility(View.GONE);
+					main_scroll_about.setVisibility(View.GONE);
+					main_refresh_layout.setVisibility(View.GONE);
+					box_experiment.setVisibility(View.GONE);
+					box_switch.setVisibility(View.GONE);
+					box_update.setVisibility(View.GONE);
+					_Reboot();
+				}
+				catch(Exception e) {
+				}
+				_Tap_Animation(box_reboot);
+			}
+		});
+		
 		box_reset_preferences.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
@@ -1924,28 +1988,39 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View _view) {
 				if (CLICKER_1 == 1) {
-					if (!cloned_version_switch.isChecked()) {
-						list_menu_1.setVisibility(View.VISIBLE);
-						list_menu_3.setVisibility(View.GONE);
-						list_menu_1.setAdapter(new List_menu_1Adapter(stock_patched));
-						((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
+					if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
+						list_items_1.setVisibility(View.VISIBLE);
+						list_items_1.setAdapter(new List_items_1Adapter(stock_patched));
+						((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
 					}
 					else {
-						if (cloned_version_switch.isChecked()) {
-							list_menu_1.setVisibility(View.GONE);
-							list_menu_3.setVisibility(View.VISIBLE);
-							list_menu_3.setAdapter(new List_menu_3Adapter(stock_cloned_patched));
-							((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
+						if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
+							list_items_1.setVisibility(View.VISIBLE);
+							list_items_1.setAdapter(new List_items_1Adapter(stock_cloned_patched));
+							((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
+						}
+						else {
+							if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+								list_items_1.setVisibility(View.VISIBLE);
+								list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_patched));
+								((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
+							}
+							else {
+								if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+									list_items_1.setVisibility(View.VISIBLE);
+									list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_cloned_patched));
+									((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
+								}
+							}
 						}
 					}
 					version_oc_01.setImageResource(R.drawable.open);
 					version_oc_02.setImageResource(R.drawable.close);
 					version_oc_03.setImageResource(R.drawable.close);
 					changelogs_oc.setImageResource(R.drawable.close);
-					list_menu_2.setVisibility(View.GONE);
-					list_menu_4.setVisibility(View.GONE);
-					list_menu_5.setVisibility(View.GONE);
-					list_changelogs.setVisibility(View.GONE);
+					list_items_2.setVisibility(View.GONE);
+					list_items_3.setVisibility(View.GONE);
+					list_items_4.setVisibility(View.GONE);
 					CLICKER_1 = 0;
 					CLICKER_2 = 1;
 					CLICKER_3 = 1;
@@ -1954,8 +2029,7 @@ public class MainActivity extends AppCompatActivity {
 				else {
 					if (CLICKER_1 == 0) {
 						version_oc_01.setImageResource(R.drawable.close);
-						list_menu_1.setVisibility(View.GONE);
-						list_menu_3.setVisibility(View.GONE);
+						list_items_1.setVisibility(View.GONE);
 						CLICKER_1 = 1;
 					}
 				}
@@ -1970,28 +2044,39 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View _view) {
 				if (CLICKER_2 == 1) {
-					if (!cloned_version_switch.isChecked()) {
-						list_menu_2.setVisibility(View.VISIBLE);
-						list_menu_4.setVisibility(View.GONE);
-						list_menu_2.setAdapter(new List_menu_2Adapter(amoled_patched));
-						((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
+					if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
+						list_items_2.setVisibility(View.VISIBLE);
+						list_items_2.setAdapter(new List_items_2Adapter(amoled_patched));
+						((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 					}
 					else {
-						if (cloned_version_switch.isChecked()) {
-							list_menu_2.setVisibility(View.GONE);
-							list_menu_4.setVisibility(View.VISIBLE);
-							list_menu_4.setAdapter(new List_menu_4Adapter(amoled_cloned_patched));
-							((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+						if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
+							list_items_2.setVisibility(View.VISIBLE);
+							list_items_2.setAdapter(new List_items_2Adapter(amoled_cloned_patched));
+							((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
+						}
+						else {
+							if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+								list_items_2.setVisibility(View.VISIBLE);
+								list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_patched));
+								((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
+							}
+							else {
+								if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+									list_items_2.setVisibility(View.VISIBLE);
+									list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_cloned_patched));
+									((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
+								}
+							}
 						}
 					}
 					version_oc_01.setImageResource(R.drawable.close);
 					version_oc_02.setImageResource(R.drawable.open);
 					version_oc_03.setImageResource(R.drawable.close);
 					changelogs_oc.setImageResource(R.drawable.close);
-					list_menu_1.setVisibility(View.GONE);
-					list_menu_3.setVisibility(View.GONE);
-					list_menu_5.setVisibility(View.GONE);
-					list_changelogs.setVisibility(View.GONE);
+					list_items_1.setVisibility(View.GONE);
+					list_items_3.setVisibility(View.GONE);
+					list_items_4.setVisibility(View.GONE);
 					CLICKER_1 = 1;
 					CLICKER_2 = 0;
 					CLICKER_3 = 1;
@@ -2000,8 +2085,7 @@ public class MainActivity extends AppCompatActivity {
 				else {
 					if (CLICKER_2 == 0) {
 						version_oc_02.setImageResource(R.drawable.close);
-						list_menu_2.setVisibility(View.GONE);
-						list_menu_4.setVisibility(View.GONE);
+						list_items_2.setVisibility(View.GONE);
 						CLICKER_2 = 1;
 					}
 				}
@@ -2020,14 +2104,12 @@ public class MainActivity extends AppCompatActivity {
 					version_oc_02.setImageResource(R.drawable.close);
 					version_oc_03.setImageResource(R.drawable.open);
 					changelogs_oc.setImageResource(R.drawable.close);
-					list_menu_1.setVisibility(View.GONE);
-					list_menu_2.setVisibility(View.GONE);
-					list_menu_3.setVisibility(View.GONE);
-					list_menu_4.setVisibility(View.GONE);
-					list_menu_5.setVisibility(View.VISIBLE);
-					list_changelogs.setVisibility(View.GONE);
-					list_menu_5.setAdapter(new List_menu_5Adapter(lite_patched));
-					((BaseAdapter)list_menu_5.getAdapter()).notifyDataSetChanged();
+					list_items_1.setVisibility(View.GONE);
+					list_items_2.setVisibility(View.GONE);
+					list_items_3.setVisibility(View.VISIBLE);
+					list_items_4.setVisibility(View.GONE);
+					list_items_3.setAdapter(new List_items_3Adapter(lite_patched));
+					((BaseAdapter)list_items_3.getAdapter()).notifyDataSetChanged();
 					CLICKER_1 = 1;
 					CLICKER_2 = 1;
 					CLICKER_3 = 0;
@@ -2036,7 +2118,7 @@ public class MainActivity extends AppCompatActivity {
 				else {
 					if (CLICKER_3 == 0) {
 						version_oc_03.setImageResource(R.drawable.close);
-						list_menu_5.setVisibility(View.GONE);
+						list_items_3.setVisibility(View.GONE);
 						CLICKER_3 = 1;
 					}
 				}
@@ -2055,14 +2137,12 @@ public class MainActivity extends AppCompatActivity {
 					version_oc_02.setImageResource(R.drawable.close);
 					version_oc_03.setImageResource(R.drawable.close);
 					changelogs_oc.setImageResource(R.drawable.open);
-					list_menu_1.setVisibility(View.GONE);
-					list_menu_2.setVisibility(View.GONE);
-					list_menu_3.setVisibility(View.GONE);
-					list_menu_4.setVisibility(View.GONE);
-					list_menu_5.setVisibility(View.GONE);
-					list_changelogs.setVisibility(View.VISIBLE);
-					list_changelogs.setAdapter(new List_changelogsAdapter(patched_changelogs));
-					((BaseAdapter)list_changelogs.getAdapter()).notifyDataSetChanged();
+					list_items_1.setVisibility(View.GONE);
+					list_items_2.setVisibility(View.GONE);
+					list_items_3.setVisibility(View.GONE);
+					list_items_4.setVisibility(View.VISIBLE);
+					list_items_4.setAdapter(new List_items_4Adapter(patched_changelogs));
+					((BaseAdapter)list_items_4.getAdapter()).notifyDataSetChanged();
 					CLICKER_1 = 1;
 					CLICKER_2 = 1;
 					CLICKER_3 = 1;
@@ -2071,7 +2151,7 @@ public class MainActivity extends AppCompatActivity {
 				else {
 					if (CLICKER_4 == 0) {
 						changelogs_oc.setImageResource(R.drawable.close);
-						list_changelogs.setVisibility(View.GONE);
+						list_items_4.setVisibility(View.GONE);
 						CLICKER_4 = 1;
 					}
 				}
@@ -2082,7 +2162,7 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 		
-		list_menu_1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+		list_items_1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
 				final int _position = _param3;
@@ -2138,34 +2218,70 @@ public class MainActivity extends AppCompatActivity {
 								if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
 									if (_position < 1) {
 										if ((_position % 1) == 0) {
-											String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)))))));
+											String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
 											String MessageColor = "FFFFFF";
 											
 											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 										}
 									}
 									else {
-										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 								}
 								else {
-									if (SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
+									if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
 										if (_position < 1) {
 											if ((_position % 1) == 0) {
-												String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)))))));
+												String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
 												String MessageColor = "FFFFFF";
 												
 												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 											}
 										}
 										else {
-											String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)))))));
+											String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
 											String MessageColor = "FFFFFF";
 											
 											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										}
+									}
+									else {
+										if (SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
+											if (_position < 1) {
+												if ((_position % 1) == 0) {
+													String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
+													String MessageColor = "FFFFFF";
+													
+													Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+												}
+											}
+											else {
+												String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
+												String MessageColor = "FFFFFF";
+												
+												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+											}
+										}
+										else {
+											if (SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
+												if (_position < 1) {
+													if ((_position % 1) == 0) {
+														String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
+														String MessageColor = "FFFFFF";
+														
+														Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+													}
+												}
+												else {
+													String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
+													String MessageColor = "FFFFFF";
+													
+													Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+												}
+											}
 										}
 									}
 								}
@@ -2283,34 +2399,70 @@ public class MainActivity extends AppCompatActivity {
 						if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
 							if (_position < 1) {
 								if ((_position % 1) == 0) {
-									String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)))))));
+									String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
 									String MessageColor = "FFFFFF";
 									
 									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 								}
 							}
 							else {
-								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)))))));
+								String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 						}
 						else {
-							if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+							if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
 								if (_position < 1) {
 									if ((_position % 1) == 0) {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 								}
 								else {
-									String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)))))));
+									String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
 									String MessageColor = "FFFFFF";
 									
 									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+								}
+							}
+							else {
+								if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+									if (_position < 1) {
+										if ((_position % 1) == 0) {
+											String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
+											String MessageColor = "FFFFFF";
+											
+											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										}
+									}
+									else {
+										String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
+										String MessageColor = "FFFFFF";
+										
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+									}
+								}
+								else {
+									if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+										if (_position < 1) {
+											if ((_position % 1) == 0) {
+												String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
+												String MessageColor = "FFFFFF";
+												
+												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+											}
+										}
+										else {
+											String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
+											String MessageColor = "FFFFFF";
+											
+											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										}
+									}
 								}
 							}
 						}
@@ -2419,361 +2571,27 @@ public class MainActivity extends AppCompatActivity {
 						hidden_download_3.setText(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Mirror").toString());
 					}
 					else {
-						if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-							hidden_patched.setText(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString());
-							hidden_download_1.setText(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Link_1").toString());
-							hidden_download_2.setText(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Link_2").toString());
-							hidden_download_3.setText(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Mirror").toString());
-						}
-					}
-				}
-				catch(Exception e) {
-				}
-			}
-		});
-		
-		list_menu_3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
-				final int _position = _param3;
-				try {
-					if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")) {
-						final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-						
-						String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
-						String TitleColor = "1DB954";
-						
-						File_Exist.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-						String Message = existing_patched_desc.getText().toString();
-						String MessageColor = "FFFFFF";
-						
-						File_Exist.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-						File_Exist.setPositiveButton(install.getText().toString(), new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface File_Exist, int p) {
-								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk")) {
-									_Extension_4();
-								}
-								else {
-									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")) {
-										_Extension_5();
-									}
-								}
-								                }
-							            });
-						File_Exist.setNegativeButton(delete.getText().toString(), new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface File_Exist, int p) {
-								
-								AlertDialog.setCancelable(true);
-								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk");
-								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk");
-								                }
-							            });
-						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface File_Exist, int p) {
-								AlertDialog.setCancelable(true);
-								final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-								
-								String Title = "<b>".concat(download_ready_0.concat("</b>"));
-								String TitleColor = "1DB954";
-								
-								Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-								if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-									if (_position < 1) {
-										if ((_position % 1) == 0) {
-											String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-									}
-									else {
-										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)))))));
-										String MessageColor = "FFFFFF";
-										
-										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-									}
-								}
-								else {
-									if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-										if (_position < 1) {
-											if ((_position % 1) == 0) {
-												String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)))))));
-												String MessageColor = "FFFFFF";
-												
-												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-											}
-										}
-										else {
-											String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-									}
-								}
-								Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
-									
-									                @Override
-									                public void onClick(DialogInterface Selected_Patched, int p) {
-										try {
-											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-												AlertDialog.setCancelable(true);
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-													else {
-														_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-												}
-												else {
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-														else {
-															_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-												}
-												_File_Remover();
-											}
-											else {
-												if (mRewardedAd != null) {
-													  Activity activityContext = MainActivity.this;
-													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-														    @Override
-														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-															       AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-																else {
-																	_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																	else {
-																		_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																}
-															}
-															_File_Remover();
-															      int rewardAmount = rewardItem.getAmount();
-															      String rewardType = rewardItem.getType();
-															    }
-														  });
-												} else {
-													AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-														else {
-															_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-														}
-													}
-													_File_Remover();
-												}
-											}
-										}
-										catch(Exception e) {
-										}
-										                }
-									            });
-								 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
-									
-									                @Override
-									                public void onClick(DialogInterface Selected_Patched, int p) {
-										AlertDialog.setCancelable(true);
-										                }
-									            });
-								AlertDialog = Selected_Patched.create();
-								AlertDialog.setCancelable(false);
-								AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-								AlertDialog.show();
-								DELETE = 1;
-								                }
-							            });
-						AlertDialog = File_Exist.create();
-						AlertDialog.setCancelable(false);
-						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-						AlertDialog.show();
-					}
-					else {
-						final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-						
-						String Title = "<b>".concat(download_ready_0.concat("</b>"));
-						String TitleColor = "1DB954";
-						
-						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 						if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-							if (_position < 1) {
-								if ((_position % 1) == 0) {
-									String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)))))));
-									String MessageColor = "FFFFFF";
-									
-									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-								}
-							}
-							else {
-								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)))))));
-								String MessageColor = "FFFFFF";
-								
-								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-							}
+							hidden_patched.setText(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString());
+							hidden_download_1.setText(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Link_1").toString());
+							hidden_download_2.setText(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Link_2").toString());
+							hidden_download_3.setText(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Mirror").toString());
 						}
 						else {
-							if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-								if (_position < 1) {
-									if ((_position % 1) == 0) {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)))))));
-										String MessageColor = "FFFFFF";
-										
-										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-									}
-								}
-								else {
-									String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)))))));
-									String MessageColor = "FFFFFF";
-									
-									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+							if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+								hidden_patched.setText(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString());
+								hidden_download_1.setText(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Link_1").toString());
+								hidden_download_2.setText(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Link_2").toString());
+								hidden_download_3.setText(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Mirror").toString());
+							}
+							else {
+								if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+									hidden_patched.setText(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString());
+									hidden_download_1.setText(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Link_1").toString());
+									hidden_download_2.setText(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Link_2").toString());
+									hidden_download_3.setText(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Mirror").toString());
 								}
 							}
-						}
-						Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface Selected_Patched, int p) {
-								try {
-									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-										AlertDialog.setCancelable(true);
-										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-												_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-											}
-											else {
-												_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-											}
-										}
-										else {
-											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-												else {
-													_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-											}
-										}
-										_File_Remover();
-									}
-									else {
-										if (mRewardedAd != null) {
-											  Activity activityContext = MainActivity.this;
-											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-												    @Override
-												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-													       AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-														else {
-															_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-														}
-													}
-													_File_Remover();
-													      int rewardAmount = rewardItem.getAmount();
-													      String rewardType = rewardItem.getType();
-													    }
-												  });
-										} else {
-											AlertDialog.setCancelable(true);
-											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-												else {
-													_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-											}
-											else {
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-													else {
-														_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-												}
-											}
-											_File_Remover();
-										}
-									}
-								}
-								catch(Exception e) {
-								}
-								                }
-							            });
-						 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface Selected_Patched, int p) {
-								AlertDialog.setCancelable(true);
-								                }
-							            });
-						AlertDialog = Selected_Patched.create();
-						AlertDialog.setCancelable(false);
-						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-						AlertDialog.show();
-						DELETE = 1;
-					}
-					if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-						hidden_patched.setText(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString());
-						hidden_download_1.setText(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Link_1").toString());
-						hidden_download_2.setText(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Link_2").toString());
-						hidden_download_3.setText(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Mirror").toString());
-					}
-					else {
-						if (SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
-							hidden_patched.setText(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString());
-							hidden_download_1.setText(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Link_1").toString());
-							hidden_download_2.setText(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Link_2").toString());
-							hidden_download_3.setText(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Mirror").toString());
 						}
 					}
 				}
@@ -2782,7 +2600,7 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 		
-		list_menu_2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+		list_items_2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
 				final int _position = _param3;
@@ -2838,34 +2656,70 @@ public class MainActivity extends AppCompatActivity {
 								if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
 									if (_position < 1) {
 										if ((_position % 1) == 0) {
-											String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)))))));
+											String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
 											String MessageColor = "FFFFFF";
 											
 											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 										}
 									}
 									else {
-										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 								}
 								else {
-									if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+									if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
 										if (_position < 1) {
 											if ((_position % 1) == 0) {
-												String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)))))));
+												String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
 												String MessageColor = "FFFFFF";
 												
 												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 											}
 										}
 										else {
-											String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)))))));
+											String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
 											String MessageColor = "FFFFFF";
 											
 											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										}
+									}
+									else {
+										if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+											if (_position < 1) {
+												if ((_position % 1) == 0) {
+													String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
+													String MessageColor = "FFFFFF";
+													
+													Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+												}
+											}
+											else {
+												String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
+												String MessageColor = "FFFFFF";
+												
+												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+											}
+										}
+										else {
+											if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+												if (_position < 1) {
+													if ((_position % 1) == 0) {
+														String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
+														String MessageColor = "FFFFFF";
+														
+														Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+													}
+												}
+												else {
+													String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
+													String MessageColor = "FFFFFF";
+													
+													Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+												}
+											}
 										}
 									}
 								}
@@ -2983,34 +2837,70 @@ public class MainActivity extends AppCompatActivity {
 						if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
 							if (_position < 1) {
 								if ((_position % 1) == 0) {
-									String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)))))));
+									String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
 									String MessageColor = "FFFFFF";
 									
 									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 								}
 							}
 							else {
-								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)))))));
+								String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 						}
 						else {
-							if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+							if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
 								if (_position < 1) {
 									if ((_position % 1) == 0) {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 								}
 								else {
-									String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)))))));
+									String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
 									String MessageColor = "FFFFFF";
 									
 									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+								}
+							}
+							else {
+								if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+									if (_position < 1) {
+										if ((_position % 1) == 0) {
+											String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
+											String MessageColor = "FFFFFF";
+											
+											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										}
+									}
+									else {
+										String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
+										String MessageColor = "FFFFFF";
+										
+										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+									}
+								}
+								else {
+									if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+										if (_position < 1) {
+											if ((_position % 1) == 0) {
+												String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
+												String MessageColor = "FFFFFF";
+												
+												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+											}
+										}
+										else {
+											String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
+											String MessageColor = "FFFFFF";
+											
+											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										}
+									}
 								}
 							}
 						}
@@ -3119,365 +3009,27 @@ public class MainActivity extends AppCompatActivity {
 						hidden_download_3.setText(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Mirror").toString());
 					}
 					else {
-						if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-							hidden_patched.setText(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString());
-							hidden_download_1.setText(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Link_1").toString());
-							hidden_download_2.setText(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Link_2").toString());
-							hidden_download_3.setText(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Mirror").toString());
-						}
-					}
-				}
-				catch(Exception e) {
-				}
-			}
-		});
-		
-		list_menu_4.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
-				final int _position = _param3;
-				try {
-					if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")) {
-						final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-						
-						String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
-						String TitleColor = "1DB954";
-						
-						File_Exist.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-						String Message = existing_patched_desc.getText().toString();
-						String MessageColor = "FFFFFF";
-						
-						File_Exist.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-						File_Exist.setPositiveButton(install.getText().toString(), new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface File_Exist, int p) {
-								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk")) {
-									_Extension_4();
-								}
-								else {
-									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")) {
-										_Extension_5();
-									}
-								}
-								                }
-							            });
-						File_Exist.setNegativeButton(delete.getText().toString(), new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface File_Exist, int p) {
-								
-								AlertDialog.setCancelable(true);
-								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk");
-								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk");
-								                }
-							            });
-						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface File_Exist, int p) {
-								AlertDialog.setCancelable(true);
-								final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-								
-								String Title = "<b>".concat(download_ready_0.concat("</b>"));
-								String TitleColor = "1DB954";
-								
-								Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-								if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-									if (_position < 1) {
-										if ((_position % 1) == 0) {
-											String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-									}
-									else {
-										String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)))))));
-										String MessageColor = "FFFFFF";
-										
-										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-									}
-								}
-								else {
-									if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-										if (_position < 1) {
-											if ((_position % 1) == 0) {
-												String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)))))));
-												String MessageColor = "FFFFFF";
-												
-												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-											}
-										}
-										else {
-											String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)))))));
-											String MessageColor = "FFFFFF";
-											
-											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-									}
-								}
-								Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
-									
-									                @Override
-									                public void onClick(DialogInterface Selected_Patched, int p) {
-										try {
-											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-												AlertDialog.setCancelable(true);
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-													else {
-														_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-												}
-												else {
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-														else {
-															_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-												}
-												_File_Remover();
-											}
-											else {
-												if (mRewardedAd != null) {
-													  Activity activityContext = MainActivity.this;
-													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-														    @Override
-														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-															       AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-																else {
-																	_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																	else {
-																		_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																}
-															}
-															_File_Remover();
-															      int rewardAmount = rewardItem.getAmount();
-															      String rewardType = rewardItem.getType();
-															    }
-														  });
-												} else {
-													AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-														else {
-															_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-														}
-													}
-													_File_Remover();
-												}
-											}
-										}
-										catch(Exception e) {
-										}
-										                }
-									            });
-								 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
-									
-									                @Override
-									                public void onClick(DialogInterface Selected_Patched, int p) {
-										AlertDialog.setCancelable(true);
-										                }
-									            });
-								AlertDialog = Selected_Patched.create();
-								AlertDialog.setCancelable(false);
-								AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-								AlertDialog.show();
-								FileUtil.makeDir("/storage/emulated/0/xManager");
-								FileUtil.makeDir("/storage/emulated/0/xManager/Update");
-								DELETE = 1;
-								                }
-							            });
-						AlertDialog = File_Exist.create();
-						AlertDialog.setCancelable(false);
-						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-						AlertDialog.show();
-					}
-					else {
-						final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-						
-						String Title = "<b>".concat(download_ready_0.concat("</b>"));
-						String TitleColor = "1DB954";
-						
-						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 						if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-							if (_position < 1) {
-								if ((_position % 1) == 0) {
-									String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)))))));
-									String MessageColor = "FFFFFF";
-									
-									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-								}
-							}
-							else {
-								String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)))))));
-								String MessageColor = "FFFFFF";
-								
-								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-							}
+							hidden_patched.setText(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString());
+							hidden_download_1.setText(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Link_1").toString());
+							hidden_download_2.setText(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Link_2").toString());
+							hidden_download_3.setText(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Mirror").toString());
 						}
 						else {
-							if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-								if (_position < 1) {
-									if ((_position % 1) == 0) {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)))))));
-										String MessageColor = "FFFFFF";
-										
-										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-									}
-								}
-								else {
-									String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)))))));
-									String MessageColor = "FFFFFF";
-									
-									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+							if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+								hidden_patched.setText(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString());
+								hidden_download_1.setText(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Link_1").toString());
+								hidden_download_2.setText(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Link_2").toString());
+								hidden_download_3.setText(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Mirror").toString());
+							}
+							else {
+								if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+									hidden_patched.setText(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString());
+									hidden_download_1.setText(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Link_1").toString());
+									hidden_download_2.setText(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Link_2").toString());
+									hidden_download_3.setText(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Mirror").toString());
 								}
 							}
-						}
-						Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface Selected_Patched, int p) {
-								try {
-									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-										AlertDialog.setCancelable(true);
-										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-												_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-											}
-											else {
-												_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-											}
-										}
-										else {
-											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-												else {
-													_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-											}
-										}
-										_File_Remover();
-									}
-									else {
-										if (mRewardedAd != null) {
-											  Activity activityContext = MainActivity.this;
-											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-												    @Override
-												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-													       AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-														else {
-															_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-														}
-													}
-													_File_Remover();
-													      int rewardAmount = rewardItem.getAmount();
-													      String rewardType = rewardItem.getType();
-													    }
-												  });
-										} else {
-											AlertDialog.setCancelable(true);
-											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-												else {
-													_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-											}
-											else {
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-													else {
-														_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-												}
-											}
-											_File_Remover();
-										}
-									}
-								}
-								catch(Exception e) {
-								}
-								                }
-							            });
-						 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface Selected_Patched, int p) {
-								AlertDialog.setCancelable(true);
-								                }
-							            });
-						AlertDialog = Selected_Patched.create();
-						AlertDialog.setCancelable(false);
-						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-						AlertDialog.show();
-						FileUtil.makeDir("/storage/emulated/0/xManager");
-						FileUtil.makeDir("/storage/emulated/0/xManager/Update");
-						DELETE = 1;
-					}
-					if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-						hidden_patched.setText(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString());
-						hidden_download_1.setText(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Link_1").toString());
-						hidden_download_2.setText(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Link_2").toString());
-						hidden_download_3.setText(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Mirror").toString());
-					}
-					else {
-						if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-							hidden_patched.setText(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString());
-							hidden_download_1.setText(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Link_1").toString());
-							hidden_download_2.setText(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Link_2").toString());
-							hidden_download_3.setText(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Mirror").toString());
 						}
 					}
 				}
@@ -3486,7 +3038,7 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 		
-		list_menu_5.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+		list_items_3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
 				final int _position = _param3;
@@ -3535,14 +3087,14 @@ public class MainActivity extends AppCompatActivity {
 								Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 								if (_position < 1) {
 									if ((_position % 1) == 0) {
-										String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)))))));
+										String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 								}
 								else {
-									String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)))))));
+									String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)));
 									String MessageColor = "FFFFFF";
 									
 									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -3660,14 +3212,14 @@ public class MainActivity extends AppCompatActivity {
 						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 						if (_position < 1) {
 							if ((_position % 1) == 0) {
-								String Message = "<b>RELEASE: </b>".concat("LATEST VERSION".concat("<br/><b>VERSION: </b>".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)))))));
+								String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 						}
 						else {
-							String Message = "<b>RELEASE: </b>".concat("OLDER VERSION".concat("<br/><b>VERSION: </b>".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString().replace("(MERGED)", "").concat("<br/><b>CPU/ARCH: </b>".concat("MERGED".concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)))))));
+							String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)));
 							String MessageColor = "FFFFFF";
 							
 							Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -4191,23 +3743,25 @@ public class MainActivity extends AppCompatActivity {
 				final String _response = _param2;
 				final HashMap<String, Object> _responseHeaders = _param3;
 				Timer = new TimerTask() {
-												@Override
-												public void run() {
-														runOnUiThread(new Runnable() {
-																@Override
-																public void run() {
-																		try {
-																				Datas = new Gson().fromJson(_response, new TypeToken<HashMap<String, Object>>(){}.getType());
-																				_Backbone();
-																		} catch (Exception e) {
-																				_Backbone();
-																		}
-																		
-																}
-														});
+						@Override
+						public void run() {
+								runOnUiThread(new Runnable() {
+										@Override
+										public void run() {
+												try {
+														Datas = new Gson().fromJson(_response, new TypeToken<HashMap<String, Object>>(){}.getType());
+														_Backbone();
+												} catch (Exception e) {
+														_Backbone();
 												}
-										};
-										_timer.schedule(Timer, (int)(0));
+												
+										}
+								});
+						}
+				};
+				_timer.schedule(Timer, (int)(0));
+				
+			}
 			
 			@Override
 			public void onErrorResponse(String _param1, String _param2) {
@@ -4395,7 +3949,6 @@ public class MainActivity extends AppCompatActivity {
 										sub_installed.setText("N/A");
 										sub_installed_c.setText("N/A");
 										sub_installed_l.setText("N/A");
-										cpu.setText("N/A");
 										String uri = "com.spotify.music";
 										android.content.pm.PackageManager pm = getPackageManager();
 										
@@ -4454,9 +4007,6 @@ public class MainActivity extends AppCompatActivity {
 												SketchwareUtil.showMessage(getApplicationContext(), "Fatal Error");
 										}
 										
-										cpu.setText(Build.CPU_ABI);
-										
-										cpu.setText(cpu.getText().toString().toUpperCase());
 									}
 								});
 							}
@@ -5613,55 +5163,39 @@ public class MainActivity extends AppCompatActivity {
 							@Override
 							public void run() {
 								if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
-									list_menu_1.setVisibility(View.VISIBLE);
-									list_menu_2.setVisibility(View.GONE);
-									list_menu_3.setVisibility(View.GONE);
-									list_menu_4.setVisibility(View.GONE);
-									list_menu_5.setVisibility(View.GONE);
-									list_changelogs.setVisibility(View.GONE);
-									list_menu_1.setAdapter(new List_menu_1Adapter(stock_patched));
-									list_menu_3.setAdapter(new List_menu_3Adapter(stock_cloned_patched));
-									((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-									((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
+									list_items_1.setVisibility(View.VISIBLE);
+									list_items_2.setVisibility(View.GONE);
+									list_items_3.setVisibility(View.GONE);
+									list_items_4.setVisibility(View.GONE);
+									list_items_1.setAdapter(new List_items_1Adapter(stock_patched));
+									((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
 								}
 								else {
 									if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-										list_menu_1.setVisibility(View.GONE);
-										list_menu_2.setVisibility(View.GONE);
-										list_menu_3.setVisibility(View.VISIBLE);
-										list_menu_4.setVisibility(View.GONE);
-										list_menu_5.setVisibility(View.GONE);
-										list_changelogs.setVisibility(View.GONE);
-										list_menu_1.setAdapter(new List_menu_1Adapter(stock_patched));
-										list_menu_3.setAdapter(new List_menu_3Adapter(stock_cloned_patched));
-										((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-										((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
+										list_items_1.setVisibility(View.VISIBLE);
+										list_items_2.setVisibility(View.GONE);
+										list_items_3.setVisibility(View.GONE);
+										list_items_4.setVisibility(View.GONE);
+										list_items_1.setAdapter(new List_items_1Adapter(stock_cloned_patched));
+										((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
 									}
 									else {
 										if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-											list_menu_1.setVisibility(View.VISIBLE);
-											list_menu_2.setVisibility(View.GONE);
-											list_menu_3.setVisibility(View.GONE);
-											list_menu_4.setVisibility(View.GONE);
-											list_menu_5.setVisibility(View.GONE);
-											list_changelogs.setVisibility(View.GONE);
-											list_menu_1.setAdapter(new List_menu_1Adapter(stock_experimental_patched));
-											list_menu_3.setAdapter(new List_menu_3Adapter(stock_experimental_cloned_patched));
-											((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-											((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
+											list_items_1.setVisibility(View.VISIBLE);
+											list_items_2.setVisibility(View.GONE);
+											list_items_3.setVisibility(View.GONE);
+											list_items_4.setVisibility(View.GONE);
+											list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_patched));
+											((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
 										}
 										else {
 											if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-												list_menu_1.setVisibility(View.GONE);
-												list_menu_2.setVisibility(View.GONE);
-												list_menu_3.setVisibility(View.VISIBLE);
-												list_menu_4.setVisibility(View.GONE);
-												list_menu_5.setVisibility(View.GONE);
-												list_changelogs.setVisibility(View.GONE);
-												list_menu_1.setAdapter(new List_menu_1Adapter(stock_experimental_patched));
-												list_menu_3.setAdapter(new List_menu_3Adapter(stock_experimental_cloned_patched));
-												((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-												((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
+												list_items_1.setVisibility(View.VISIBLE);
+												list_items_2.setVisibility(View.GONE);
+												list_items_3.setVisibility(View.GONE);
+												list_items_4.setVisibility(View.GONE);
+												list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_cloned_patched));
+												((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
 											}
 										}
 									}
@@ -5670,12 +5204,10 @@ public class MainActivity extends AppCompatActivity {
 								animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
 								animation.setDuration(500); version_oc_01.startAnimation(animation);
 								animation = null;
-								main_refresh_layout.setRefreshing(true);
 								version_oc_01.setImageResource(R.drawable.open);
 								version_oc_02.setImageResource(R.drawable.close);
 								version_oc_03.setImageResource(R.drawable.close);
 								changelogs_oc.setImageResource(R.drawable.close);
-								main_body.setAlpha((float)(0.50d));
 								Timer = new TimerTask() {
 									@Override
 									public void run() {
@@ -5683,55 +5215,39 @@ public class MainActivity extends AppCompatActivity {
 											@Override
 											public void run() {
 												if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
-													list_menu_1.setVisibility(View.GONE);
-													list_menu_2.setVisibility(View.VISIBLE);
-													list_menu_3.setVisibility(View.GONE);
-													list_menu_4.setVisibility(View.GONE);
-													list_menu_5.setVisibility(View.GONE);
-													list_changelogs.setVisibility(View.GONE);
-													list_menu_2.setAdapter(new List_menu_2Adapter(amoled_patched));
-													list_menu_4.setAdapter(new List_menu_4Adapter(amoled_cloned_patched));
-													((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
-													((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+													list_items_1.setVisibility(View.GONE);
+													list_items_2.setVisibility(View.VISIBLE);
+													list_items_3.setVisibility(View.GONE);
+													list_items_4.setVisibility(View.GONE);
+													list_items_2.setAdapter(new List_items_2Adapter(amoled_patched));
+													((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 												}
 												else {
 													if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-														list_menu_1.setVisibility(View.GONE);
-														list_menu_2.setVisibility(View.GONE);
-														list_menu_3.setVisibility(View.GONE);
-														list_menu_4.setVisibility(View.VISIBLE);
-														list_menu_5.setVisibility(View.GONE);
-														list_changelogs.setVisibility(View.GONE);
-														list_menu_2.setAdapter(new List_menu_2Adapter(amoled_patched));
-														list_menu_4.setAdapter(new List_menu_4Adapter(amoled_cloned_patched));
-														((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
-														((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+														list_items_1.setVisibility(View.GONE);
+														list_items_2.setVisibility(View.VISIBLE);
+														list_items_3.setVisibility(View.GONE);
+														list_items_4.setVisibility(View.GONE);
+														list_items_2.setAdapter(new List_items_2Adapter(amoled_cloned_patched));
+														((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 													}
 													else {
 														if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-															list_menu_1.setVisibility(View.GONE);
-															list_menu_2.setVisibility(View.VISIBLE);
-															list_menu_3.setVisibility(View.GONE);
-															list_menu_4.setVisibility(View.GONE);
-															list_menu_5.setVisibility(View.GONE);
-															list_changelogs.setVisibility(View.GONE);
-															list_menu_2.setAdapter(new List_menu_2Adapter(amoled_experimental_patched));
-															list_menu_4.setAdapter(new List_menu_4Adapter(amoled_experimental_cloned_patched));
-															((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
-															((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+															list_items_1.setVisibility(View.GONE);
+															list_items_2.setVisibility(View.VISIBLE);
+															list_items_3.setVisibility(View.GONE);
+															list_items_4.setVisibility(View.GONE);
+															list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_patched));
+															((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 														}
 														else {
 															if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-																list_menu_1.setVisibility(View.GONE);
-																list_menu_2.setVisibility(View.GONE);
-																list_menu_3.setVisibility(View.GONE);
-																list_menu_4.setVisibility(View.VISIBLE);
-																list_menu_5.setVisibility(View.GONE);
-																list_changelogs.setVisibility(View.GONE);
-																list_menu_2.setAdapter(new List_menu_2Adapter(amoled_experimental_patched));
-																list_menu_4.setAdapter(new List_menu_4Adapter(amoled_experimental_cloned_patched));
-																((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
-																((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+																list_items_1.setVisibility(View.GONE);
+																list_items_2.setVisibility(View.VISIBLE);
+																list_items_3.setVisibility(View.GONE);
+																list_items_4.setVisibility(View.GONE);
+																list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_cloned_patched));
+																((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 															}
 														}
 													}
@@ -5740,12 +5256,10 @@ public class MainActivity extends AppCompatActivity {
 												animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
 												animation.setDuration(500); version_oc_02.startAnimation(animation);
 												animation = null;
-												main_refresh_layout.setRefreshing(true);
 												version_oc_01.setImageResource(R.drawable.close);
 												version_oc_02.setImageResource(R.drawable.open);
 												version_oc_03.setImageResource(R.drawable.close);
 												changelogs_oc.setImageResource(R.drawable.close);
-												main_body.setAlpha((float)(0.50d));
 												Timer = new TimerTask() {
 													@Override
 													public void run() {
@@ -5756,20 +5270,16 @@ public class MainActivity extends AppCompatActivity {
 																animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
 																animation.setDuration(500); version_oc_03.startAnimation(animation);
 																animation = null;
-																main_refresh_layout.setRefreshing(true);
-																list_menu_1.setVisibility(View.GONE);
-																list_menu_2.setVisibility(View.GONE);
-																list_menu_3.setVisibility(View.GONE);
-																list_menu_4.setVisibility(View.GONE);
-																list_menu_5.setVisibility(View.VISIBLE);
-																list_changelogs.setVisibility(View.GONE);
+																list_items_1.setVisibility(View.GONE);
+																list_items_2.setVisibility(View.GONE);
+																list_items_3.setVisibility(View.VISIBLE);
+																list_items_4.setVisibility(View.GONE);
 																version_oc_01.setImageResource(R.drawable.close);
 																version_oc_02.setImageResource(R.drawable.close);
 																version_oc_03.setImageResource(R.drawable.open);
 																changelogs_oc.setImageResource(R.drawable.close);
-																list_menu_5.setAdapter(new List_menu_5Adapter(lite_patched));
-																((BaseAdapter)list_menu_5.getAdapter()).notifyDataSetChanged();
-																main_body.setAlpha((float)(0.50d));
+																list_items_3.setAdapter(new List_items_3Adapter(lite_patched));
+																((BaseAdapter)list_items_3.getAdapter()).notifyDataSetChanged();
 																Timer = new TimerTask() {
 																	@Override
 																	public void run() {
@@ -5780,20 +5290,16 @@ public class MainActivity extends AppCompatActivity {
 																				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
 																				animation.setDuration(500); changelogs_oc.startAnimation(animation);
 																				animation = null;
-																				main_refresh_layout.setRefreshing(true);
-																				list_menu_1.setVisibility(View.GONE);
-																				list_menu_2.setVisibility(View.GONE);
-																				list_menu_3.setVisibility(View.GONE);
-																				list_menu_4.setVisibility(View.GONE);
-																				list_menu_5.setVisibility(View.GONE);
-																				list_changelogs.setVisibility(View.VISIBLE);
+																				list_items_1.setVisibility(View.GONE);
+																				list_items_2.setVisibility(View.GONE);
+																				list_items_3.setVisibility(View.GONE);
+																				list_items_4.setVisibility(View.VISIBLE);
 																				version_oc_01.setImageResource(R.drawable.close);
 																				version_oc_02.setImageResource(R.drawable.close);
 																				version_oc_03.setImageResource(R.drawable.close);
 																				changelogs_oc.setImageResource(R.drawable.open);
-																				list_changelogs.setAdapter(new List_changelogsAdapter(patched_changelogs));
-																				((BaseAdapter)list_changelogs.getAdapter()).notifyDataSetChanged();
-																				main_body.setAlpha((float)(0.50d));
+																				list_items_4.setAdapter(new List_items_4Adapter(patched_changelogs));
+																				((BaseAdapter)list_items_4.getAdapter()).notifyDataSetChanged();
 																				Timer = new TimerTask() {
 																					@Override
 																					public void run() {
@@ -5801,17 +5307,15 @@ public class MainActivity extends AppCompatActivity {
 																							@Override
 																							public void run() {
 																								main_refresh_layout.setRefreshing(false);
-																								list_menu_1.setVisibility(View.GONE);
-																								list_menu_2.setVisibility(View.GONE);
-																								list_menu_3.setVisibility(View.GONE);
-																								list_menu_4.setVisibility(View.GONE);
-																								list_menu_5.setVisibility(View.GONE);
-																								list_changelogs.setVisibility(View.GONE);
+																								list_items_1.setVisibility(View.GONE);
+																								list_items_2.setVisibility(View.GONE);
+																								list_items_3.setVisibility(View.GONE);
+																								list_items_4.setVisibility(View.GONE);
 																								version_oc_01.setImageResource(R.drawable.close);
 																								version_oc_02.setImageResource(R.drawable.close);
 																								version_oc_03.setImageResource(R.drawable.close);
 																								changelogs_oc.setImageResource(R.drawable.close);
-																								main_body.setAlpha((float)(1.00d));
+																								main_body.setAlpha((float)(1.0d));
 																								String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
 																								
 																								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Data List Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
@@ -6524,7 +6028,6 @@ public class MainActivity extends AppCompatActivity {
 			versions_2.setText(R.string.versions);
 			versions_3.setText(R.string.versions);
 			title_sub.setText(R.string.manager_tools);
-			device_cpu.setText(R.string.device_cpu);
 			source.setText(R.string.source);
 			support.setText(R.string.support);
 			donate.setText(R.string.donate);
@@ -6559,6 +6062,7 @@ public class MainActivity extends AppCompatActivity {
 			thanks.setText(R.string.thanks);
 			new_update.setText(R.string.new_update);
 			changelogs.setText(R.string.changelogs);
+			reboot.setText(R.string.reboot);
 			reset_preferences.setText(R.string.reset_preferences);
 			list_auto_refresh.setText(R.string.list_auto_refresh);
 			list_auto_refresh_info.setText(R.string.list_auto_refresh_desc);
@@ -6636,7 +6140,6 @@ public class MainActivity extends AppCompatActivity {
 				versions_2.setText(R.string.versions_01);
 				versions_3.setText(R.string.versions_01);
 				title_sub.setText(R.string.manager_tools_01);
-				device_cpu.setText(R.string.device_cpu_01);
 				source.setText(R.string.source_01);
 				support.setText(R.string.support_01);
 				donate.setText(R.string.donate_01);
@@ -6671,6 +6174,7 @@ public class MainActivity extends AppCompatActivity {
 				thanks.setText(R.string.thanks_01);
 				new_update.setText(R.string.new_update_01);
 				changelogs.setText(R.string.changelogs_01);
+				reboot.setText(R.string.reboot_01);
 				reset_preferences.setText(R.string.reset_preferences_01);
 				list_auto_refresh.setText(R.string.list_auto_refresh_01);
 				list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_01);
@@ -6748,7 +6252,6 @@ public class MainActivity extends AppCompatActivity {
 					versions_2.setText(R.string.versions_02);
 					versions_3.setText(R.string.versions_02);
 					title_sub.setText(R.string.manager_tools_02);
-					device_cpu.setText(R.string.device_cpu_02);
 					source.setText(R.string.source_02);
 					support.setText(R.string.support_02);
 					donate.setText(R.string.donate_02);
@@ -6783,6 +6286,7 @@ public class MainActivity extends AppCompatActivity {
 					thanks.setText(R.string.thanks_02);
 					new_update.setText(R.string.new_update_02);
 					changelogs.setText(R.string.changelogs_02);
+					reboot.setText(R.string.reboot_02);
 					reset_preferences.setText(R.string.reset_preferences_02);
 					list_auto_refresh.setText(R.string.list_auto_refresh_02);
 					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_02);
@@ -6860,7 +6364,6 @@ public class MainActivity extends AppCompatActivity {
 						versions_2.setText(R.string.versions_03);
 						versions_3.setText(R.string.versions_03);
 						title_sub.setText(R.string.manager_tools_03);
-						device_cpu.setText(R.string.device_cpu_03);
 						source.setText(R.string.source_03);
 						support.setText(R.string.support_03);
 						donate.setText(R.string.donate_03);
@@ -6895,6 +6398,7 @@ public class MainActivity extends AppCompatActivity {
 						thanks.setText(R.string.thanks_03);
 						new_update.setText(R.string.new_update_03);
 						changelogs.setText(R.string.changelogs_03);
+						reboot.setText(R.string.reboot_03);
 						reset_preferences.setText(R.string.reset_preferences_03);
 						list_auto_refresh.setText(R.string.list_auto_refresh_03);
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_03);
@@ -6972,7 +6476,6 @@ public class MainActivity extends AppCompatActivity {
 							versions_2.setText(R.string.versions_04);
 							versions_3.setText(R.string.versions_04);
 							title_sub.setText(R.string.manager_tools_04);
-							device_cpu.setText(R.string.device_cpu_04);
 							source.setText(R.string.source_04);
 							support.setText(R.string.support_04);
 							donate.setText(R.string.donate_04);
@@ -7007,6 +6510,7 @@ public class MainActivity extends AppCompatActivity {
 							thanks.setText(R.string.thanks_04);
 							new_update.setText(R.string.new_update_04);
 							changelogs.setText(R.string.changelogs_04);
+							reboot.setText(R.string.reboot_04);
 							reset_preferences.setText(R.string.reset_preferences_04);
 							list_auto_refresh.setText(R.string.list_auto_refresh_04);
 							list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_04);
@@ -7084,7 +6588,6 @@ public class MainActivity extends AppCompatActivity {
 								versions_2.setText(R.string.versions_05);
 								versions_3.setText(R.string.versions_05);
 								title_sub.setText(R.string.manager_tools_05);
-								device_cpu.setText(R.string.device_cpu_05);
 								source.setText(R.string.source_05);
 								support.setText(R.string.support_05);
 								donate.setText(R.string.donate_05);
@@ -7119,6 +6622,7 @@ public class MainActivity extends AppCompatActivity {
 								thanks.setText(R.string.thanks_05);
 								new_update.setText(R.string.new_update_05);
 								changelogs.setText(R.string.changelogs_05);
+								reboot.setText(R.string.reboot_05);
 								reset_preferences.setText(R.string.reset_preferences_05);
 								list_auto_refresh.setText(R.string.list_auto_refresh_05);
 								list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_05);
@@ -7196,7 +6700,6 @@ public class MainActivity extends AppCompatActivity {
 									versions_2.setText(R.string.versions_06);
 									versions_3.setText(R.string.versions_06);
 									title_sub.setText(R.string.manager_tools_06);
-									device_cpu.setText(R.string.device_cpu_06);
 									source.setText(R.string.source_06);
 									support.setText(R.string.support_06);
 									donate.setText(R.string.donate_06);
@@ -7231,6 +6734,7 @@ public class MainActivity extends AppCompatActivity {
 									thanks.setText(R.string.thanks_06);
 									new_update.setText(R.string.new_update_06);
 									changelogs.setText(R.string.changelogs_06);
+									reboot.setText(R.string.reboot_06);
 									reset_preferences.setText(R.string.reset_preferences_06);
 									list_auto_refresh.setText(R.string.list_auto_refresh_06);
 									list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_06);
@@ -7308,7 +6812,6 @@ public class MainActivity extends AppCompatActivity {
 										versions_2.setText(R.string.versions_07);
 										versions_3.setText(R.string.versions_07);
 										title_sub.setText(R.string.manager_tools_07);
-										device_cpu.setText(R.string.device_cpu_07);
 										source.setText(R.string.source_07);
 										support.setText(R.string.support_07);
 										donate.setText(R.string.donate_07);
@@ -7343,6 +6846,7 @@ public class MainActivity extends AppCompatActivity {
 										thanks.setText(R.string.thanks_07);
 										new_update.setText(R.string.new_update_07);
 										changelogs.setText(R.string.changelogs_07);
+										reboot.setText(R.string.reboot_07);
 										reset_preferences.setText(R.string.reset_preferences_07);
 										list_auto_refresh.setText(R.string.list_auto_refresh_07);
 										list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_07);
@@ -7420,7 +6924,6 @@ public class MainActivity extends AppCompatActivity {
 											versions_2.setText(R.string.versions_08);
 											versions_3.setText(R.string.versions_08);
 											title_sub.setText(R.string.manager_tools_08);
-											device_cpu.setText(R.string.device_cpu_08);
 											source.setText(R.string.source_08);
 											support.setText(R.string.support_08);
 											donate.setText(R.string.donate_08);
@@ -7455,6 +6958,7 @@ public class MainActivity extends AppCompatActivity {
 											thanks.setText(R.string.thanks_08);
 											new_update.setText(R.string.new_update_08);
 											changelogs.setText(R.string.changelogs_08);
+											reboot.setText(R.string.reboot_08);
 											reset_preferences.setText(R.string.reset_preferences_08);
 											list_auto_refresh.setText(R.string.list_auto_refresh_08);
 											list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_08);
@@ -7532,7 +7036,6 @@ public class MainActivity extends AppCompatActivity {
 												versions_2.setText(R.string.versions_09);
 												versions_3.setText(R.string.versions_09);
 												title_sub.setText(R.string.manager_tools_09);
-												device_cpu.setText(R.string.device_cpu_09);
 												source.setText(R.string.source_09);
 												support.setText(R.string.support_09);
 												donate.setText(R.string.donate_09);
@@ -7567,6 +7070,7 @@ public class MainActivity extends AppCompatActivity {
 												thanks.setText(R.string.thanks_09);
 												new_update.setText(R.string.new_update_09);
 												changelogs.setText(R.string.changelogs_09);
+												reboot.setText(R.string.reboot_09);
 												reset_preferences.setText(R.string.reset_preferences_09);
 												list_auto_refresh.setText(R.string.list_auto_refresh_09);
 												list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_09);
@@ -7644,7 +7148,6 @@ public class MainActivity extends AppCompatActivity {
 													versions_2.setText(R.string.versions_10);
 													versions_3.setText(R.string.versions_10);
 													title_sub.setText(R.string.manager_tools_10);
-													device_cpu.setText(R.string.device_cpu_10);
 													source.setText(R.string.source_10);
 													support.setText(R.string.support_10);
 													donate.setText(R.string.donate_10);
@@ -7679,6 +7182,7 @@ public class MainActivity extends AppCompatActivity {
 													thanks.setText(R.string.thanks_10);
 													new_update.setText(R.string.new_update_10);
 													changelogs.setText(R.string.changelogs_10);
+													reboot.setText(R.string.reboot_10);
 													reset_preferences.setText(R.string.reset_preferences_10);
 													list_auto_refresh.setText(R.string.list_auto_refresh_10);
 													list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_10);
@@ -7756,7 +7260,6 @@ public class MainActivity extends AppCompatActivity {
 														versions_2.setText(R.string.versions_11);
 														versions_3.setText(R.string.versions_11);
 														title_sub.setText(R.string.manager_tools_11);
-														device_cpu.setText(R.string.device_cpu_11);
 														source.setText(R.string.source_11);
 														support.setText(R.string.support_11);
 														donate.setText(R.string.donate_11);
@@ -7791,6 +7294,7 @@ public class MainActivity extends AppCompatActivity {
 														thanks.setText(R.string.thanks_11);
 														new_update.setText(R.string.new_update_11);
 														changelogs.setText(R.string.changelogs_11);
+														reboot.setText(R.string.reboot_11);
 														reset_preferences.setText(R.string.reset_preferences_11);
 														list_auto_refresh.setText(R.string.list_auto_refresh_11);
 														list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_11);
@@ -7868,7 +7372,6 @@ public class MainActivity extends AppCompatActivity {
 															versions_2.setText(R.string.versions_12);
 															versions_3.setText(R.string.versions_12);
 															title_sub.setText(R.string.manager_tools_12);
-															device_cpu.setText(R.string.device_cpu_12);
 															source.setText(R.string.source_12);
 															support.setText(R.string.support_12);
 															donate.setText(R.string.donate_12);
@@ -7903,6 +7406,7 @@ public class MainActivity extends AppCompatActivity {
 															thanks.setText(R.string.thanks_12);
 															new_update.setText(R.string.new_update_12);
 															changelogs.setText(R.string.changelogs_12);
+															reboot.setText(R.string.reboot_12);
 															reset_preferences.setText(R.string.reset_preferences_12);
 															list_auto_refresh.setText(R.string.list_auto_refresh_12);
 															list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_12);
@@ -7980,7 +7484,6 @@ public class MainActivity extends AppCompatActivity {
 																versions_2.setText(R.string.versions_13);
 																versions_3.setText(R.string.versions_13);
 																title_sub.setText(R.string.manager_tools_13);
-																device_cpu.setText(R.string.device_cpu_13);
 																source.setText(R.string.source_13);
 																support.setText(R.string.support_13);
 																donate.setText(R.string.donate_13);
@@ -8015,6 +7518,7 @@ public class MainActivity extends AppCompatActivity {
 																thanks.setText(R.string.thanks_13);
 																new_update.setText(R.string.new_update_13);
 																changelogs.setText(R.string.changelogs_13);
+																reboot.setText(R.string.reboot_13);
 																reset_preferences.setText(R.string.reset_preferences_13);
 																list_auto_refresh.setText(R.string.list_auto_refresh_13);
 																list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_13);
@@ -8092,7 +7596,6 @@ public class MainActivity extends AppCompatActivity {
 																	versions_2.setText(R.string.versions_14);
 																	versions_3.setText(R.string.versions_14);
 																	title_sub.setText(R.string.manager_tools_14);
-																	device_cpu.setText(R.string.device_cpu_14);
 																	source.setText(R.string.source_14);
 																	support.setText(R.string.support_14);
 																	donate.setText(R.string.donate_14);
@@ -8127,6 +7630,7 @@ public class MainActivity extends AppCompatActivity {
 																	thanks.setText(R.string.thanks_14);
 																	new_update.setText(R.string.new_update_14);
 																	changelogs.setText(R.string.changelogs_14);
+																	reboot.setText(R.string.reboot_14);
 																	reset_preferences.setText(R.string.reset_preferences_14);
 																	list_auto_refresh.setText(R.string.list_auto_refresh_14);
 																	list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_14);
@@ -8204,7 +7708,6 @@ public class MainActivity extends AppCompatActivity {
 																		versions_2.setText(R.string.versions_15);
 																		versions_3.setText(R.string.versions_15);
 																		title_sub.setText(R.string.manager_tools_15);
-																		device_cpu.setText(R.string.device_cpu_15);
 																		source.setText(R.string.source_15);
 																		support.setText(R.string.support_15);
 																		donate.setText(R.string.donate_15);
@@ -8239,6 +7742,7 @@ public class MainActivity extends AppCompatActivity {
 																		thanks.setText(R.string.thanks_15);
 																		new_update.setText(R.string.new_update_15);
 																		changelogs.setText(R.string.changelogs_15);
+																		reboot.setText(R.string.reboot_15);
 																		reset_preferences.setText(R.string.reset_preferences_15);
 																		list_auto_refresh.setText(R.string.list_auto_refresh_15);
 																		list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_15);
@@ -8316,7 +7820,6 @@ public class MainActivity extends AppCompatActivity {
 																			versions_2.setText(R.string.versions_16);
 																			versions_3.setText(R.string.versions_16);
 																			title_sub.setText(R.string.manager_tools_16);
-																			device_cpu.setText(R.string.device_cpu_16);
 																			source.setText(R.string.source_16);
 																			support.setText(R.string.support_16);
 																			donate.setText(R.string.donate_16);
@@ -8351,6 +7854,7 @@ public class MainActivity extends AppCompatActivity {
 																			thanks.setText(R.string.thanks_16);
 																			new_update.setText(R.string.new_update_16);
 																			changelogs.setText(R.string.changelogs_16);
+																			reboot.setText(R.string.reboot_16);
 																			reset_preferences.setText(R.string.reset_preferences_16);
 																			list_auto_refresh.setText(R.string.list_auto_refresh_16);
 																			list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_16);
@@ -8428,7 +7932,6 @@ public class MainActivity extends AppCompatActivity {
 																				versions_2.setText(R.string.versions_17);
 																				versions_3.setText(R.string.versions_17);
 																				title_sub.setText(R.string.manager_tools_17);
-																				device_cpu.setText(R.string.device_cpu_17);
 																				source.setText(R.string.source_17);
 																				support.setText(R.string.support_17);
 																				donate.setText(R.string.donate_17);
@@ -8463,6 +7966,7 @@ public class MainActivity extends AppCompatActivity {
 																				thanks.setText(R.string.thanks_17);
 																				new_update.setText(R.string.new_update_17);
 																				changelogs.setText(R.string.changelogs_17);
+																				reboot.setText(R.string.reboot_17);
 																				reset_preferences.setText(R.string.reset_preferences_17);
 																				list_auto_refresh.setText(R.string.list_auto_refresh_17);
 																				list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_17);
@@ -8540,7 +8044,6 @@ public class MainActivity extends AppCompatActivity {
 																					versions_2.setText(R.string.versions_18);
 																					versions_3.setText(R.string.versions_18);
 																					title_sub.setText(R.string.manager_tools_18);
-																					device_cpu.setText(R.string.device_cpu_18);
 																					source.setText(R.string.source_18);
 																					support.setText(R.string.support_18);
 																					donate.setText(R.string.donate_18);
@@ -8575,6 +8078,7 @@ public class MainActivity extends AppCompatActivity {
 																					thanks.setText(R.string.thanks_18);
 																					new_update.setText(R.string.new_update_18);
 																					changelogs.setText(R.string.changelogs_18);
+																					reboot.setText(R.string.reboot_18);
 																					reset_preferences.setText(R.string.reset_preferences_18);
 																					list_auto_refresh.setText(R.string.list_auto_refresh_18);
 																					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_18);
@@ -8652,7 +8156,6 @@ public class MainActivity extends AppCompatActivity {
 																						versions_2.setText(R.string.versions_19);
 																						versions_3.setText(R.string.versions_19);
 																						title_sub.setText(R.string.manager_tools_19);
-																						device_cpu.setText(R.string.device_cpu_19);
 																						source.setText(R.string.source_19);
 																						support.setText(R.string.support_19);
 																						donate.setText(R.string.donate_19);
@@ -8687,6 +8190,7 @@ public class MainActivity extends AppCompatActivity {
 																						thanks.setText(R.string.thanks_19);
 																						new_update.setText(R.string.new_update_19);
 																						changelogs.setText(R.string.changelogs_19);
+																						reboot.setText(R.string.reboot_19);
 																						reset_preferences.setText(R.string.reset_preferences_19);
 																						list_auto_refresh.setText(R.string.list_auto_refresh_19);
 																						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_19);
@@ -8764,7 +8268,6 @@ public class MainActivity extends AppCompatActivity {
 																							versions_2.setText(R.string.versions_20);
 																							versions_3.setText(R.string.versions_20);
 																							title_sub.setText(R.string.manager_tools_20);
-																							device_cpu.setText(R.string.device_cpu_20);
 																							source.setText(R.string.source_20);
 																							support.setText(R.string.support_20);
 																							donate.setText(R.string.donate_20);
@@ -8799,6 +8302,7 @@ public class MainActivity extends AppCompatActivity {
 																							thanks.setText(R.string.thanks_20);
 																							new_update.setText(R.string.new_update_20);
 																							changelogs.setText(R.string.changelogs_20);
+																							reboot.setText(R.string.reboot_20);
 																							reset_preferences.setText(R.string.reset_preferences_20);
 																							list_auto_refresh.setText(R.string.list_auto_refresh_20);
 																							list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_20);
@@ -8876,7 +8380,6 @@ public class MainActivity extends AppCompatActivity {
 																								versions_2.setText(R.string.versions_21);
 																								versions_3.setText(R.string.versions_21);
 																								title_sub.setText(R.string.manager_tools_21);
-																								device_cpu.setText(R.string.device_cpu_21);
 																								source.setText(R.string.source_21);
 																								support.setText(R.string.support_21);
 																								donate.setText(R.string.donate_21);
@@ -8911,6 +8414,7 @@ public class MainActivity extends AppCompatActivity {
 																								thanks.setText(R.string.thanks_21);
 																								new_update.setText(R.string.new_update_21);
 																								changelogs.setText(R.string.changelogs_21);
+																								reboot.setText(R.string.reboot_21);
 																								reset_preferences.setText(R.string.reset_preferences_21);
 																								list_auto_refresh.setText(R.string.list_auto_refresh_21);
 																								list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_21);
@@ -8988,7 +8492,6 @@ public class MainActivity extends AppCompatActivity {
 																									versions_2.setText(R.string.versions_22);
 																									versions_3.setText(R.string.versions_22);
 																									title_sub.setText(R.string.manager_tools_22);
-																									device_cpu.setText(R.string.device_cpu_22);
 																									source.setText(R.string.source_22);
 																									support.setText(R.string.support_22);
 																									donate.setText(R.string.donate_22);
@@ -9023,6 +8526,7 @@ public class MainActivity extends AppCompatActivity {
 																									thanks.setText(R.string.thanks_22);
 																									new_update.setText(R.string.new_update_22);
 																									changelogs.setText(R.string.changelogs_22);
+																									reboot.setText(R.string.reboot_22);
 																									reset_preferences.setText(R.string.reset_preferences_22);
 																									list_auto_refresh.setText(R.string.list_auto_refresh_22);
 																									list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_22);
@@ -9100,7 +8604,6 @@ public class MainActivity extends AppCompatActivity {
 																										versions_2.setText(R.string.versions_23);
 																										versions_3.setText(R.string.versions_23);
 																										title_sub.setText(R.string.manager_tools_23);
-																										device_cpu.setText(R.string.device_cpu_23);
 																										source.setText(R.string.source_23);
 																										support.setText(R.string.support_23);
 																										donate.setText(R.string.donate_23);
@@ -9135,6 +8638,7 @@ public class MainActivity extends AppCompatActivity {
 																										thanks.setText(R.string.thanks_23);
 																										new_update.setText(R.string.new_update_23);
 																										changelogs.setText(R.string.changelogs_23);
+																										reboot.setText(R.string.reboot_23);
 																										reset_preferences.setText(R.string.reset_preferences_23);
 																										list_auto_refresh.setText(R.string.list_auto_refresh_23);
 																										list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_23);
@@ -9212,7 +8716,6 @@ public class MainActivity extends AppCompatActivity {
 																											versions_2.setText(R.string.versions_24);
 																											versions_3.setText(R.string.versions_24);
 																											title_sub.setText(R.string.manager_tools_24);
-																											device_cpu.setText(R.string.device_cpu_24);
 																											source.setText(R.string.source_24);
 																											support.setText(R.string.support_24);
 																											donate.setText(R.string.donate_24);
@@ -9247,6 +8750,7 @@ public class MainActivity extends AppCompatActivity {
 																											thanks.setText(R.string.thanks_24);
 																											new_update.setText(R.string.new_update_24);
 																											changelogs.setText(R.string.changelogs_24);
+																											reboot.setText(R.string.reboot_24);
 																											reset_preferences.setText(R.string.reset_preferences_24);
 																											list_auto_refresh.setText(R.string.list_auto_refresh_24);
 																											list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_24);
@@ -9324,7 +8828,6 @@ public class MainActivity extends AppCompatActivity {
 																												versions_2.setText(R.string.versions_25);
 																												versions_3.setText(R.string.versions_25);
 																												title_sub.setText(R.string.manager_tools_25);
-																												device_cpu.setText(R.string.device_cpu_25);
 																												source.setText(R.string.source_25);
 																												support.setText(R.string.support_25);
 																												donate.setText(R.string.donate_25);
@@ -9359,6 +8862,7 @@ public class MainActivity extends AppCompatActivity {
 																												thanks.setText(R.string.thanks_25);
 																												new_update.setText(R.string.new_update_25);
 																												changelogs.setText(R.string.changelogs_25);
+																												reboot.setText(R.string.reboot_25);
 																												reset_preferences.setText(R.string.reset_preferences_25);
 																												list_auto_refresh.setText(R.string.list_auto_refresh_25);
 																												list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_25);
@@ -9436,7 +8940,6 @@ public class MainActivity extends AppCompatActivity {
 																													versions_2.setText(R.string.versions_26);
 																													versions_3.setText(R.string.versions_26);
 																													title_sub.setText(R.string.manager_tools_26);
-																													device_cpu.setText(R.string.device_cpu_26);
 																													source.setText(R.string.source_26);
 																													support.setText(R.string.support_26);
 																													donate.setText(R.string.donate_26);
@@ -9471,6 +8974,7 @@ public class MainActivity extends AppCompatActivity {
 																													thanks.setText(R.string.thanks_26);
 																													new_update.setText(R.string.new_update_26);
 																													changelogs.setText(R.string.changelogs_26);
+																													reboot.setText(R.string.reboot_26);
 																													reset_preferences.setText(R.string.reset_preferences_26);
 																													list_auto_refresh.setText(R.string.list_auto_refresh_26);
 																													list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_26);
@@ -9548,7 +9052,6 @@ public class MainActivity extends AppCompatActivity {
 																														versions_2.setText(R.string.versions_27);
 																														versions_3.setText(R.string.versions_27);
 																														title_sub.setText(R.string.manager_tools_27);
-																														device_cpu.setText(R.string.device_cpu_27);
 																														source.setText(R.string.source_27);
 																														support.setText(R.string.support_27);
 																														donate.setText(R.string.donate_27);
@@ -9583,6 +9086,7 @@ public class MainActivity extends AppCompatActivity {
 																														thanks.setText(R.string.thanks_27);
 																														new_update.setText(R.string.new_update_27);
 																														changelogs.setText(R.string.changelogs_27);
+																														reboot.setText(R.string.reboot_27);
 																														reset_preferences.setText(R.string.reset_preferences_27);
 																														list_auto_refresh.setText(R.string.list_auto_refresh_27);
 																														list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_27);
@@ -9660,7 +9164,6 @@ public class MainActivity extends AppCompatActivity {
 																															versions_2.setText(R.string.versions_28);
 																															versions_3.setText(R.string.versions_28);
 																															title_sub.setText(R.string.manager_tools_28);
-																															device_cpu.setText(R.string.device_cpu_28);
 																															source.setText(R.string.source_28);
 																															support.setText(R.string.support_28);
 																															donate.setText(R.string.donate_28);
@@ -9695,6 +9198,7 @@ public class MainActivity extends AppCompatActivity {
 																															thanks.setText(R.string.thanks_28);
 																															new_update.setText(R.string.new_update_28);
 																															changelogs.setText(R.string.changelogs_28);
+																															reboot.setText(R.string.reboot_28);
 																															reset_preferences.setText(R.string.reset_preferences_28);
 																															list_auto_refresh.setText(R.string.list_auto_refresh_28);
 																															list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_28);
@@ -9772,7 +9276,6 @@ public class MainActivity extends AppCompatActivity {
 																																versions_2.setText(R.string.versions_29);
 																																versions_3.setText(R.string.versions_29);
 																																title_sub.setText(R.string.manager_tools_29);
-																																device_cpu.setText(R.string.device_cpu_29);
 																																source.setText(R.string.source_29);
 																																support.setText(R.string.support_29);
 																																donate.setText(R.string.donate_29);
@@ -9807,6 +9310,7 @@ public class MainActivity extends AppCompatActivity {
 																																thanks.setText(R.string.thanks_29);
 																																new_update.setText(R.string.new_update_29);
 																																changelogs.setText(R.string.changelogs_29);
+																																reboot.setText(R.string.reboot_29);
 																																reset_preferences.setText(R.string.reset_preferences_29);
 																																list_auto_refresh.setText(R.string.list_auto_refresh_29);
 																																list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_29);
@@ -9884,7 +9388,6 @@ public class MainActivity extends AppCompatActivity {
 																																	versions_2.setText(R.string.versions_30);
 																																	versions_3.setText(R.string.versions_30);
 																																	title_sub.setText(R.string.manager_tools_30);
-																																	device_cpu.setText(R.string.device_cpu_30);
 																																	source.setText(R.string.source_30);
 																																	support.setText(R.string.support_30);
 																																	donate.setText(R.string.donate_30);
@@ -9919,6 +9422,7 @@ public class MainActivity extends AppCompatActivity {
 																																	thanks.setText(R.string.thanks_30);
 																																	new_update.setText(R.string.new_update_30);
 																																	changelogs.setText(R.string.changelogs_30);
+																																	reboot.setText(R.string.reboot_30);
 																																	reset_preferences.setText(R.string.reset_preferences_30);
 																																	list_auto_refresh.setText(R.string.list_auto_refresh_30);
 																																	list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_30);
@@ -9996,7 +9500,6 @@ public class MainActivity extends AppCompatActivity {
 																																		versions_2.setText(R.string.versions_31);
 																																		versions_3.setText(R.string.versions_31);
 																																		title_sub.setText(R.string.manager_tools_31);
-																																		device_cpu.setText(R.string.device_cpu_31);
 																																		source.setText(R.string.source_31);
 																																		support.setText(R.string.support_31);
 																																		donate.setText(R.string.donate_31);
@@ -10031,6 +9534,7 @@ public class MainActivity extends AppCompatActivity {
 																																		thanks.setText(R.string.thanks_31);
 																																		new_update.setText(R.string.new_update_31);
 																																		changelogs.setText(R.string.changelogs_31);
+																																		reboot.setText(R.string.reboot_31);
 																																		reset_preferences.setText(R.string.reset_preferences_31);
 																																		list_auto_refresh.setText(R.string.list_auto_refresh_31);
 																																		list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_31);
@@ -10108,7 +9612,6 @@ public class MainActivity extends AppCompatActivity {
 																																			versions_2.setText(R.string.versions_32);
 																																			versions_3.setText(R.string.versions_32);
 																																			title_sub.setText(R.string.manager_tools_32);
-																																			device_cpu.setText(R.string.device_cpu_32);
 																																			source.setText(R.string.source_32);
 																																			support.setText(R.string.support_32);
 																																			donate.setText(R.string.donate_32);
@@ -10143,6 +9646,7 @@ public class MainActivity extends AppCompatActivity {
 																																			thanks.setText(R.string.thanks_32);
 																																			new_update.setText(R.string.new_update_32);
 																																			changelogs.setText(R.string.changelogs_32);
+																																			reboot.setText(R.string.reboot_32);
 																																			reset_preferences.setText(R.string.reset_preferences_32);
 																																			list_auto_refresh.setText(R.string.list_auto_refresh_32);
 																																			list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_32);
@@ -10220,7 +9724,6 @@ public class MainActivity extends AppCompatActivity {
 																																				versions_2.setText(R.string.versions_33);
 																																				versions_3.setText(R.string.versions_33);
 																																				title_sub.setText(R.string.manager_tools_33);
-																																				device_cpu.setText(R.string.device_cpu_33);
 																																				source.setText(R.string.source_33);
 																																				support.setText(R.string.support_33);
 																																				donate.setText(R.string.donate_33);
@@ -10255,6 +9758,7 @@ public class MainActivity extends AppCompatActivity {
 																																				thanks.setText(R.string.thanks_33);
 																																				new_update.setText(R.string.new_update_33);
 																																				changelogs.setText(R.string.changelogs_33);
+																																				reboot.setText(R.string.reboot_33);
 																																				reset_preferences.setText(R.string.reset_preferences_33);
 																																				list_auto_refresh.setText(R.string.list_auto_refresh_33);
 																																				list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_33);
@@ -10459,7 +9963,6 @@ public class MainActivity extends AppCompatActivity {
 		versions_2.setText(R.string.versions);
 		versions_3.setText(R.string.versions);
 		title_sub.setText(R.string.manager_tools);
-		device_cpu.setText(R.string.device_cpu);
 		source.setText(R.string.source);
 		support.setText(R.string.support);
 		donate.setText(R.string.donate);
@@ -10494,6 +9997,7 @@ public class MainActivity extends AppCompatActivity {
 		thanks.setText(R.string.thanks);
 		new_update.setText(R.string.new_update);
 		changelogs.setText(R.string.changelogs);
+		reboot.setText(R.string.reboot);
 		reset_preferences.setText(R.string.reset_preferences);
 		list_auto_refresh.setText(R.string.list_auto_refresh);
 		list_auto_refresh_info.setText(R.string.list_auto_refresh_desc);
@@ -10683,12 +10187,42 @@ public class MainActivity extends AppCompatActivity {
 	
 	
 	public void _Scroll_Fixed() {
-		list_menu_1.setOnScrollListener(new AbsListView.OnScrollListener() { @Override public void onScrollStateChanged(AbsListView view, int scrollState) { } @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) { int topRowVerticalPosition = (list_menu_1 == null || list_menu_1.getChildCount() == 0) ? 0 : list_menu_1.getChildAt(0).getTop(); main_refresh_layout.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0); } });
-		list_menu_2.setOnScrollListener(new AbsListView.OnScrollListener() { @Override public void onScrollStateChanged(AbsListView view, int scrollState) { } @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) { int topRowVerticalPosition = (list_menu_2 == null || list_menu_2.getChildCount() == 0) ? 0 : list_menu_2.getChildAt(0).getTop(); main_refresh_layout.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0); } });
-		list_menu_3.setOnScrollListener(new AbsListView.OnScrollListener() { @Override public void onScrollStateChanged(AbsListView view, int scrollState) { } @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) { int topRowVerticalPosition = (list_menu_3 == null || list_menu_3.getChildCount() == 0) ? 0 : list_menu_3.getChildAt(0).getTop(); main_refresh_layout.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0); } });
-		list_menu_4.setOnScrollListener(new AbsListView.OnScrollListener() { @Override public void onScrollStateChanged(AbsListView view, int scrollState) { } @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) { int topRowVerticalPosition = (list_menu_4 == null || list_menu_4.getChildCount() == 0) ? 0 : list_menu_4.getChildAt(0).getTop(); main_refresh_layout.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0); } });
-		list_menu_5.setOnScrollListener(new AbsListView.OnScrollListener() { @Override public void onScrollStateChanged(AbsListView view, int scrollState) { } @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) { int topRowVerticalPosition = (list_menu_5 == null || list_menu_5.getChildCount() == 0) ? 0 : list_menu_5.getChildAt(0).getTop(); main_refresh_layout.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0); } });
-		list_changelogs.setOnScrollListener(new AbsListView.OnScrollListener() { @Override public void onScrollStateChanged(AbsListView view, int scrollState) { } @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) { int topRowVerticalPosition = (list_changelogs == null || list_changelogs.getChildCount() == 0) ? 0 : list_changelogs.getChildAt(0).getTop(); main_refresh_layout.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0); } });
+		list_items_1.setOnScrollListener(new AbsListView.OnScrollListener() {
+				@Override public void onScrollStateChanged(AbsListView view, int scrollState) { 
+				}
+				@Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+						int topRowVerticalPosition = (list_items_1 == null || list_items_1.getChildCount() == 0) ? 0 : list_items_1.getChildAt(0).getTop();
+						main_refresh_layout.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0);
+				}
+		});
+		
+		list_items_2.setOnScrollListener(new AbsListView.OnScrollListener() {
+				@Override public void onScrollStateChanged(AbsListView view, int scrollState) { 
+				}
+				@Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+						int topRowVerticalPosition = (list_items_2 == null || list_items_2.getChildCount() == 0) ? 0 : list_items_2.getChildAt(0).getTop();
+						main_refresh_layout.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0);
+				}
+		});
+		
+		list_items_3.setOnScrollListener(new AbsListView.OnScrollListener() {
+				@Override public void onScrollStateChanged(AbsListView view, int scrollState) { 
+				}
+				@Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+						int topRowVerticalPosition = (list_items_3 == null || list_items_3.getChildCount() == 0) ? 0 : list_items_3.getChildAt(0).getTop();
+						main_refresh_layout.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0);
+				}
+		});
+		
+		list_items_4.setOnScrollListener(new AbsListView.OnScrollListener() {
+				@Override public void onScrollStateChanged(AbsListView view, int scrollState) { 
+				}
+				@Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+						int topRowVerticalPosition = (list_items_4 == null || list_items_4.getChildCount() == 0) ? 0 : list_items_4.getChildAt(0).getTop();
+						main_refresh_layout.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0);
+				}
+		});
+		
 	}
 	
 	
@@ -11698,31 +11232,31 @@ public class MainActivity extends AppCompatActivity {
 							Latest_Version = Double.parseDouble(Datas.get("Server").toString());
 							AD_UNIT.edit().putString("ADS", Datas.get("Rewarded_Ads").toString()).commit();
 							if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-								list_menu_1.setAdapter(new List_menu_1Adapter(stock_patched));
-								list_menu_2.setAdapter(new List_menu_2Adapter(amoled_patched));
-								list_menu_3.setAdapter(new List_menu_3Adapter(stock_cloned_patched));
-								list_menu_4.setAdapter(new List_menu_4Adapter(amoled_cloned_patched));
-								((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-								((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
-								((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
-								((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+								list_items_1.setAdapter(new List_items_1Adapter(stock_patched));
+								list_items_2.setAdapter(new List_items_2Adapter(amoled_patched));
+								
+								
+								((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
+								((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
+								
+								
 							}
 							else {
 								if (SWITCH_VERSION.getString("SWITCH", "").equals("C") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-									list_menu_1.setAdapter(new List_menu_1Adapter(stock_experimental_patched));
-									list_menu_2.setAdapter(new List_menu_2Adapter(amoled_experimental_patched));
-									list_menu_3.setAdapter(new List_menu_3Adapter(stock_experimental_cloned_patched));
-									list_menu_4.setAdapter(new List_menu_4Adapter(amoled_experimental_cloned_patched));
-									((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-									((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
-									((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
-									((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+									list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_patched));
+									list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_patched));
+									
+									
+									((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
+									((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
+									
+									
 								}
 							}
-							list_menu_5.setAdapter(new List_menu_5Adapter(lite_patched));
-							list_changelogs.setAdapter(new List_changelogsAdapter(patched_changelogs));
-							((BaseAdapter)list_menu_5.getAdapter()).notifyDataSetChanged();
-							((BaseAdapter)list_changelogs.getAdapter()).notifyDataSetChanged();
+							list_items_3.setAdapter(new List_items_3Adapter(lite_patched));
+							list_items_4.setAdapter(new List_items_4Adapter(patched_changelogs));
+							((BaseAdapter)list_items_3.getAdapter()).notifyDataSetChanged();
+							((BaseAdapter)list_items_4.getAdapter()).notifyDataSetChanged();
 							if (ON_SCREEN.getString("INITIALIZATION", "").equals("DONE")) {
 								_Updater();
 							}
@@ -11772,8 +11306,6 @@ public class MainActivity extends AppCompatActivity {
 		sub_installed_l.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_text_installed.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_sub.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		device_cpu.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		cpu.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		support.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		donate.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		about.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -11785,7 +11317,6 @@ public class MainActivity extends AppCompatActivity {
 		theme.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_about.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		local_version.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		local_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		xmanager_dev.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		patched_devs.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		support_team.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -11809,6 +11340,7 @@ public class MainActivity extends AppCompatActivity {
 		list_auto_refresh_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		apk_location_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		apk_location.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		reboot.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		reset_preferences.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		clear_directory_folders.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		force_auto_install.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -11857,12 +11389,12 @@ public class MainActivity extends AppCompatActivity {
 		box_about_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_about_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_about_sub.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF2962FF));
+		box_reboot.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF424242));
 		box_reset_preferences.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF424242));
 		box_separator_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF616161));
 		box_separator_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF616161));
-		box_separator_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF616161));
 		box_separator_4.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF616161));
-		box_separator_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF616161));
+		box_separator_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF616161));
 		sub_1.setVisibility(View.GONE);
 		sub_2.setVisibility(View.GONE);
 		sub_3.setVisibility(View.GONE);
@@ -11871,12 +11403,10 @@ public class MainActivity extends AppCompatActivity {
 		sub_6.setVisibility(View.GONE);
 		sub_7.setVisibility(View.GONE);
 		sub_8.setVisibility(View.GONE);
-		list_menu_1.setVisibility(View.GONE);
-		list_menu_2.setVisibility(View.GONE);
-		list_menu_3.setVisibility(View.GONE);
-		list_menu_4.setVisibility(View.GONE);
-		list_menu_5.setVisibility(View.GONE);
-		list_changelogs.setVisibility(View.GONE);
+		list_items_1.setVisibility(View.GONE);
+		list_items_2.setVisibility(View.GONE);
+		list_items_3.setVisibility(View.GONE);
+		list_items_4.setVisibility(View.GONE);
 		if (!ON_SCREEN.getString("INITIALIZATION", "").equals("DONE")) {
 			try {
 				box_header.setVisibility(View.GONE);
@@ -11935,78 +11465,6 @@ public class MainActivity extends AppCompatActivity {
 						runOnUiThread(new Runnable() {
 							@Override
 							public void run() {
-								cloned_version_switch.setChecked(true);
-								Timer = new TimerTask() {
-									@Override
-									public void run() {
-										runOnUiThread(new Runnable() {
-											@Override
-											public void run() {
-												cloned_version_switch.setChecked(false);
-												Timer = new TimerTask() {
-													@Override
-													public void run() {
-														runOnUiThread(new Runnable() {
-															@Override
-															public void run() {
-																experiment_version_switch.setChecked(true);
-																Timer = new TimerTask() {
-																	@Override
-																	public void run() {
-																		runOnUiThread(new Runnable() {
-																			@Override
-																			public void run() {
-																				experiment_version_switch.setChecked(false);
-																				Timer = new TimerTask() {
-																					@Override
-																					public void run() {
-																						runOnUiThread(new Runnable() {
-																							@Override
-																							public void run() {
-																								force_auto_install_switch.setChecked(true);
-																								Timer = new TimerTask() {
-																									@Override
-																									public void run() {
-																										runOnUiThread(new Runnable() {
-																											@Override
-																											public void run() {
-																												force_auto_install_switch.setChecked(false);
-																											}
-																										});
-																									}
-																								};
-																								_timer.schedule(Timer, (int)(900));
-																							}
-																						});
-																					}
-																				};
-																				_timer.schedule(Timer, (int)(700));
-																			}
-																		});
-																	}
-																};
-																_timer.schedule(Timer, (int)(700));
-															}
-														});
-													}
-												};
-												_timer.schedule(Timer, (int)(500));
-											}
-										});
-									}
-								};
-								_timer.schedule(Timer, (int)(500));
-							}
-						});
-					}
-				};
-				_timer.schedule(Timer, (int)(300));
-				Timer = new TimerTask() {
-					@Override
-					public void run() {
-						runOnUiThread(new Runnable() {
-							@Override
-							public void run() {
 								ON_SCREEN.edit().putString("INITIALIZATION", "DONE").commit();
 								try {
 									Intent intent = getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName() ); 
@@ -12034,6 +11492,7 @@ public class MainActivity extends AppCompatActivity {
 				box_experiment.setVisibility(View.GONE);
 				box_switch.setVisibility(View.GONE);
 				box_update.setVisibility(View.GONE);
+				_Reboot();
 			}
 			catch(Exception e) {
 			}
@@ -12133,55 +11592,39 @@ public class MainActivity extends AppCompatActivity {
 								@Override
 								public void run() {
 									if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
-										list_menu_1.setVisibility(View.VISIBLE);
-										list_menu_2.setVisibility(View.GONE);
-										list_menu_3.setVisibility(View.GONE);
-										list_menu_4.setVisibility(View.GONE);
-										list_menu_5.setVisibility(View.GONE);
-										list_changelogs.setVisibility(View.GONE);
-										list_menu_1.setAdapter(new List_menu_1Adapter(stock_patched));
-										list_menu_3.setAdapter(new List_menu_3Adapter(stock_cloned_patched));
-										((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-										((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
+										list_items_1.setVisibility(View.VISIBLE);
+										list_items_2.setVisibility(View.GONE);
+										list_items_3.setVisibility(View.GONE);
+										list_items_4.setVisibility(View.GONE);
+										list_items_1.setAdapter(new List_items_1Adapter(stock_patched));
+										((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
 									}
 									else {
 										if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-											list_menu_1.setVisibility(View.GONE);
-											list_menu_2.setVisibility(View.GONE);
-											list_menu_3.setVisibility(View.VISIBLE);
-											list_menu_4.setVisibility(View.GONE);
-											list_menu_5.setVisibility(View.GONE);
-											list_changelogs.setVisibility(View.GONE);
-											list_menu_1.setAdapter(new List_menu_1Adapter(stock_patched));
-											list_menu_3.setAdapter(new List_menu_3Adapter(stock_cloned_patched));
-											((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-											((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
+											list_items_1.setVisibility(View.VISIBLE);
+											list_items_2.setVisibility(View.GONE);
+											list_items_3.setVisibility(View.GONE);
+											list_items_4.setVisibility(View.GONE);
+											list_items_1.setAdapter(new List_items_1Adapter(stock_cloned_patched));
+											((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
 										}
 										else {
 											if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-												list_menu_1.setVisibility(View.VISIBLE);
-												list_menu_2.setVisibility(View.GONE);
-												list_menu_3.setVisibility(View.GONE);
-												list_menu_4.setVisibility(View.GONE);
-												list_menu_5.setVisibility(View.GONE);
-												list_changelogs.setVisibility(View.GONE);
-												list_menu_1.setAdapter(new List_menu_1Adapter(stock_experimental_patched));
-												list_menu_3.setAdapter(new List_menu_3Adapter(stock_experimental_cloned_patched));
-												((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-												((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
+												list_items_1.setVisibility(View.VISIBLE);
+												list_items_2.setVisibility(View.GONE);
+												list_items_3.setVisibility(View.GONE);
+												list_items_4.setVisibility(View.GONE);
+												list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_patched));
+												((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
 											}
 											else {
 												if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-													list_menu_1.setVisibility(View.GONE);
-													list_menu_2.setVisibility(View.GONE);
-													list_menu_3.setVisibility(View.VISIBLE);
-													list_menu_4.setVisibility(View.GONE);
-													list_menu_5.setVisibility(View.GONE);
-													list_changelogs.setVisibility(View.GONE);
-													list_menu_1.setAdapter(new List_menu_1Adapter(stock_experimental_patched));
-													list_menu_3.setAdapter(new List_menu_3Adapter(stock_experimental_cloned_patched));
-													((BaseAdapter)list_menu_1.getAdapter()).notifyDataSetChanged();
-													((BaseAdapter)list_menu_3.getAdapter()).notifyDataSetChanged();
+													list_items_1.setVisibility(View.VISIBLE);
+													list_items_2.setVisibility(View.GONE);
+													list_items_3.setVisibility(View.GONE);
+													list_items_4.setVisibility(View.GONE);
+													list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_cloned_patched));
+													((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
 												}
 											}
 										}
@@ -12201,55 +11644,39 @@ public class MainActivity extends AppCompatActivity {
 												@Override
 												public void run() {
 													if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
-														list_menu_1.setVisibility(View.GONE);
-														list_menu_2.setVisibility(View.VISIBLE);
-														list_menu_3.setVisibility(View.GONE);
-														list_menu_4.setVisibility(View.GONE);
-														list_menu_5.setVisibility(View.GONE);
-														list_changelogs.setVisibility(View.GONE);
-														list_menu_2.setAdapter(new List_menu_2Adapter(amoled_patched));
-														list_menu_4.setAdapter(new List_menu_4Adapter(amoled_cloned_patched));
-														((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
-														((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+														list_items_1.setVisibility(View.GONE);
+														list_items_2.setVisibility(View.VISIBLE);
+														list_items_3.setVisibility(View.GONE);
+														list_items_4.setVisibility(View.GONE);
+														list_items_2.setAdapter(new List_items_2Adapter(amoled_patched));
+														((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 													}
 													else {
 														if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-															list_menu_1.setVisibility(View.GONE);
-															list_menu_2.setVisibility(View.GONE);
-															list_menu_3.setVisibility(View.GONE);
-															list_menu_4.setVisibility(View.VISIBLE);
-															list_menu_5.setVisibility(View.GONE);
-															list_changelogs.setVisibility(View.GONE);
-															list_menu_2.setAdapter(new List_menu_2Adapter(amoled_patched));
-															list_menu_4.setAdapter(new List_menu_4Adapter(amoled_cloned_patched));
-															((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
-															((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+															list_items_1.setVisibility(View.GONE);
+															list_items_2.setVisibility(View.VISIBLE);
+															list_items_3.setVisibility(View.GONE);
+															list_items_4.setVisibility(View.GONE);
+															list_items_2.setAdapter(new List_items_2Adapter(amoled_cloned_patched));
+															((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 														}
 														else {
 															if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-																list_menu_1.setVisibility(View.GONE);
-																list_menu_2.setVisibility(View.VISIBLE);
-																list_menu_3.setVisibility(View.GONE);
-																list_menu_4.setVisibility(View.GONE);
-																list_menu_5.setVisibility(View.GONE);
-																list_changelogs.setVisibility(View.GONE);
-																list_menu_2.setAdapter(new List_menu_2Adapter(amoled_experimental_patched));
-																list_menu_4.setAdapter(new List_menu_4Adapter(amoled_experimental_cloned_patched));
-																((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
-																((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+																list_items_1.setVisibility(View.GONE);
+																list_items_2.setVisibility(View.VISIBLE);
+																list_items_3.setVisibility(View.GONE);
+																list_items_4.setVisibility(View.GONE);
+																list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_patched));
+																((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 															}
 															else {
 																if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-																	list_menu_1.setVisibility(View.GONE);
-																	list_menu_2.setVisibility(View.GONE);
-																	list_menu_3.setVisibility(View.GONE);
-																	list_menu_4.setVisibility(View.VISIBLE);
-																	list_menu_5.setVisibility(View.GONE);
-																	list_changelogs.setVisibility(View.GONE);
-																	list_menu_2.setAdapter(new List_menu_2Adapter(amoled_experimental_patched));
-																	list_menu_4.setAdapter(new List_menu_4Adapter(amoled_experimental_cloned_patched));
-																	((BaseAdapter)list_menu_2.getAdapter()).notifyDataSetChanged();
-																	((BaseAdapter)list_menu_4.getAdapter()).notifyDataSetChanged();
+																	list_items_1.setVisibility(View.GONE);
+																	list_items_2.setVisibility(View.VISIBLE);
+																	list_items_3.setVisibility(View.GONE);
+																	list_items_4.setVisibility(View.GONE);
+																	list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_cloned_patched));
+																	((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 																}
 															}
 														}
@@ -12272,18 +11699,16 @@ public class MainActivity extends AppCompatActivity {
 																	animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
 																	animation.setDuration(500); version_oc_03.startAnimation(animation);
 																	animation = null;
-																	list_menu_1.setVisibility(View.GONE);
-																	list_menu_2.setVisibility(View.GONE);
-																	list_menu_3.setVisibility(View.GONE);
-																	list_menu_4.setVisibility(View.GONE);
-																	list_menu_5.setVisibility(View.VISIBLE);
-																	list_changelogs.setVisibility(View.GONE);
+																	list_items_1.setVisibility(View.GONE);
+																	list_items_2.setVisibility(View.GONE);
+																	list_items_3.setVisibility(View.VISIBLE);
+																	list_items_4.setVisibility(View.GONE);
 																	version_oc_01.setImageResource(R.drawable.close);
 																	version_oc_02.setImageResource(R.drawable.close);
 																	version_oc_03.setImageResource(R.drawable.open);
 																	changelogs_oc.setImageResource(R.drawable.close);
-																	list_menu_5.setAdapter(new List_menu_5Adapter(lite_patched));
-																	((BaseAdapter)list_menu_5.getAdapter()).notifyDataSetChanged();
+																	list_items_3.setAdapter(new List_items_3Adapter(lite_patched));
+																	((BaseAdapter)list_items_3.getAdapter()).notifyDataSetChanged();
 																	Timer = new TimerTask() {
 																		@Override
 																		public void run() {
@@ -12294,18 +11719,16 @@ public class MainActivity extends AppCompatActivity {
 																					animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
 																					animation.setDuration(500); changelogs_oc.startAnimation(animation);
 																					animation = null;
-																					list_menu_1.setVisibility(View.GONE);
-																					list_menu_2.setVisibility(View.GONE);
-																					list_menu_3.setVisibility(View.GONE);
-																					list_menu_4.setVisibility(View.GONE);
-																					list_menu_5.setVisibility(View.GONE);
-																					list_changelogs.setVisibility(View.VISIBLE);
+																					list_items_1.setVisibility(View.GONE);
+																					list_items_2.setVisibility(View.GONE);
+																					list_items_3.setVisibility(View.GONE);
+																					list_items_4.setVisibility(View.VISIBLE);
 																					version_oc_01.setImageResource(R.drawable.close);
 																					version_oc_02.setImageResource(R.drawable.close);
 																					version_oc_03.setImageResource(R.drawable.close);
 																					changelogs_oc.setImageResource(R.drawable.open);
-																					list_changelogs.setAdapter(new List_changelogsAdapter(patched_changelogs));
-																					((BaseAdapter)list_changelogs.getAdapter()).notifyDataSetChanged();
+																					list_items_4.setAdapter(new List_items_4Adapter(patched_changelogs));
+																					((BaseAdapter)list_items_4.getAdapter()).notifyDataSetChanged();
 																					Timer = new TimerTask() {
 																						@Override
 																						public void run() {
@@ -12313,12 +11736,10 @@ public class MainActivity extends AppCompatActivity {
 																								@Override
 																								public void run() {
 																									main_refresh_layout.setRefreshing(false);
-																									list_menu_1.setVisibility(View.GONE);
-																									list_menu_2.setVisibility(View.GONE);
-																									list_menu_3.setVisibility(View.GONE);
-																									list_menu_4.setVisibility(View.GONE);
-																									list_menu_5.setVisibility(View.GONE);
-																									list_changelogs.setVisibility(View.GONE);
+																									list_items_1.setVisibility(View.GONE);
+																									list_items_2.setVisibility(View.GONE);
+																									list_items_3.setVisibility(View.GONE);
+																									list_items_4.setVisibility(View.GONE);
 																									version_oc_01.setImageResource(R.drawable.close);
 																									version_oc_02.setImageResource(R.drawable.close);
 																									version_oc_03.setImageResource(R.drawable.close);
@@ -12351,7 +11772,7 @@ public class MainActivity extends AppCompatActivity {
 							});
 						}
 					};
-					_timer.schedule(Timer, (int)(300));
+					_timer.schedule(Timer, (int)(400));
 					com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Refreshing Data List...", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 					main_body.setAlpha((float)(0.50d));
 					_Animation_3();
@@ -14136,11 +13557,135 @@ public class MainActivity extends AppCompatActivity {
 		
 	}
 	
-	public class List_menu_1Adapter extends BaseAdapter {
+	
+	public void _Reboot() {
+		Timer = new TimerTask() {
+			@Override
+			public void run() {
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						cloned_version_switch.setChecked(true);
+						Timer = new TimerTask() {
+							@Override
+							public void run() {
+								runOnUiThread(new Runnable() {
+									@Override
+									public void run() {
+										cloned_version_switch.setChecked(false);
+										Timer = new TimerTask() {
+											@Override
+											public void run() {
+												runOnUiThread(new Runnable() {
+													@Override
+													public void run() {
+														experiment_version_switch.setChecked(true);
+														Timer = new TimerTask() {
+															@Override
+															public void run() {
+																runOnUiThread(new Runnable() {
+																	@Override
+																	public void run() {
+																		experiment_version_switch.setChecked(false);
+																		Timer = new TimerTask() {
+																			@Override
+																			public void run() {
+																				runOnUiThread(new Runnable() {
+																					@Override
+																					public void run() {
+																						list_auto_refresh_switch.setChecked(true);
+																						Timer = new TimerTask() {
+																							@Override
+																							public void run() {
+																								runOnUiThread(new Runnable() {
+																									@Override
+																									public void run() {
+																										list_auto_refresh_switch.setChecked(false);
+																										Timer = new TimerTask() {
+																											@Override
+																											public void run() {
+																												runOnUiThread(new Runnable() {
+																													@Override
+																													public void run() {
+																														force_auto_install_switch.setChecked(true);
+																														Timer = new TimerTask() {
+																															@Override
+																															public void run() {
+																																runOnUiThread(new Runnable() {
+																																	@Override
+																																	public void run() {
+																																		force_auto_install_switch.setChecked(false);
+																																		Timer = new TimerTask() {
+																																			@Override
+																																			public void run() {
+																																				runOnUiThread(new Runnable() {
+																																					@Override
+																																					public void run() {
+																																						disable_reward_ad_switch.setChecked(true);
+																																						Timer = new TimerTask() {
+																																							@Override
+																																							public void run() {
+																																								runOnUiThread(new Runnable() {
+																																									@Override
+																																									public void run() {
+																																										disable_reward_ad_switch.setChecked(false);
+																																									}
+																																								});
+																																							}
+																																						};
+																																						_timer.schedule(Timer, (int)(950));
+																																					}
+																																				});
+																																			}
+																																		};
+																																		_timer.schedule(Timer, (int)(750));
+																																	}
+																																});
+																															}
+																														};
+																														_timer.schedule(Timer, (int)(900));
+																													}
+																												});
+																											}
+																										};
+																										_timer.schedule(Timer, (int)(700));
+																									}
+																								});
+																							}
+																						};
+																						_timer.schedule(Timer, (int)(850));
+																					}
+																				});
+																			}
+																		};
+																		_timer.schedule(Timer, (int)(650));
+																	}
+																});
+															}
+														};
+														_timer.schedule(Timer, (int)(800));
+													}
+												});
+											}
+										};
+										_timer.schedule(Timer, (int)(600));
+									}
+								});
+							}
+						};
+						_timer.schedule(Timer, (int)(750));
+					}
+				});
+			}
+		};
+		_timer.schedule(Timer, (int)(550));
+	}
+	
+	public class List_items_1Adapter extends BaseAdapter {
 		
 		ArrayList<HashMap<String, Object>> _data;
 		
-		public List_menu_1Adapter(ArrayList<HashMap<String, Object>> _arr) {
+		public List_items_1Adapter(ArrayList<HashMap<String, Object>> _arr) {
 			_data = _arr;
 		}
 		
@@ -14164,7 +13709,7 @@ public class MainActivity extends AppCompatActivity {
 			LayoutInflater _inflater = getLayoutInflater();
 			View _view = _v;
 			if (_view == null) {
-				_view = _inflater.inflate(R.layout.list_menu_1, null);
+				_view = _inflater.inflate(R.layout.list_versions, null);
 			}
 			
 			final LinearLayout box = _view.findViewById(R.id.box);
@@ -14172,26 +13717,44 @@ public class MainActivity extends AppCompatActivity {
 			final TextView mirror = _view.findViewById(R.id.mirror);
 			final ImageView icon = _view.findViewById(R.id.icon);
 			final TextView sub = _view.findViewById(R.id.sub);
+			final TextView sub_separator = _view.findViewById(R.id.sub_separator);
 			final TextView title = _view.findViewById(R.id.title);
 			
 			try {
 				sub.setVisibility(View.VISIBLE);
+				sub_separator.setVisibility(View.VISIBLE);
 				title.setVisibility(View.VISIBLE);
 				if (_position < 1) {
 					sub.setTextColor(0xFFFF1744);
-					sub.setText("[LATEST]");
+					sub.setText("LATEST RELEASE");
+					sub_separator.setTextColor(0xFF616161);
+					sub_separator.setText("|");
 				}
 				else {
 					sub.setTextColor(0xFFBDBDBD);
-					sub.setText("[OLDER]");
+					sub.setText("OLDER RELEASE");
+					sub_separator.setTextColor(0xFF616161);
+					sub_separator.setText("|");
 				}
+				sub.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+				sub_separator.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 				if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
 					title.setText(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString());
 				}
 				else {
-					if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-						title.setText(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString());
+					if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
+						title.setText(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString());
+					}
+					else {
+						if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+							title.setText(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString());
+						}
+						else {
+							if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+								title.setText(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString());
+							}
+						}
 					}
 				}
 				Animation animation;
@@ -14205,11 +13768,11 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 	
-	public class List_menu_3Adapter extends BaseAdapter {
+	public class List_items_2Adapter extends BaseAdapter {
 		
 		ArrayList<HashMap<String, Object>> _data;
 		
-		public List_menu_3Adapter(ArrayList<HashMap<String, Object>> _arr) {
+		public List_items_2Adapter(ArrayList<HashMap<String, Object>> _arr) {
 			_data = _arr;
 		}
 		
@@ -14233,7 +13796,7 @@ public class MainActivity extends AppCompatActivity {
 			LayoutInflater _inflater = getLayoutInflater();
 			View _view = _v;
 			if (_view == null) {
-				_view = _inflater.inflate(R.layout.list_menu_3, null);
+				_view = _inflater.inflate(R.layout.list_versions, null);
 			}
 			
 			final LinearLayout box = _view.findViewById(R.id.box);
@@ -14241,95 +13804,44 @@ public class MainActivity extends AppCompatActivity {
 			final TextView mirror = _view.findViewById(R.id.mirror);
 			final ImageView icon = _view.findViewById(R.id.icon);
 			final TextView sub = _view.findViewById(R.id.sub);
+			final TextView sub_separator = _view.findViewById(R.id.sub_separator);
 			final TextView title = _view.findViewById(R.id.title);
 			
 			try {
 				sub.setVisibility(View.VISIBLE);
+				sub_separator.setVisibility(View.VISIBLE);
 				title.setVisibility(View.VISIBLE);
 				if (_position < 1) {
 					sub.setTextColor(0xFFFF1744);
-					sub.setText("[LATEST]");
+					sub.setText("LATEST RELEASE");
+					sub_separator.setTextColor(0xFF616161);
+					sub_separator.setText("|");
 				}
 				else {
 					sub.setTextColor(0xFFBDBDBD);
-					sub.setText("[OLDER]");
+					sub.setText("OLDER RELEASE");
+					sub_separator.setTextColor(0xFF616161);
+					sub_separator.setText("|");
 				}
-				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-				if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-					title.setText(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString());
-				}
-				else {
-					if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-						title.setText(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString());
-					}
-				}
-				Animation animation;
-				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
-				animation.setDuration(500); box.startAnimation(animation);
-				animation = null;
-			} catch (Exception e) {
-			}
-			
-			return _view;
-		}
-	}
-	
-	public class List_menu_2Adapter extends BaseAdapter {
-		
-		ArrayList<HashMap<String, Object>> _data;
-		
-		public List_menu_2Adapter(ArrayList<HashMap<String, Object>> _arr) {
-			_data = _arr;
-		}
-		
-		@Override
-		public int getCount() {
-			return _data.size();
-		}
-		
-		@Override
-		public HashMap<String, Object> getItem(int _index) {
-			return _data.get(_index);
-		}
-		
-		@Override
-		public long getItemId(int _index) {
-			return _index;
-		}
-		
-		@Override
-		public View getView(final int _position, View _v, ViewGroup _container) {
-			LayoutInflater _inflater = getLayoutInflater();
-			View _view = _v;
-			if (_view == null) {
-				_view = _inflater.inflate(R.layout.list_menu_2, null);
-			}
-			
-			final LinearLayout box = _view.findViewById(R.id.box);
-			final TextView link = _view.findViewById(R.id.link);
-			final TextView mirror = _view.findViewById(R.id.mirror);
-			final ImageView icon = _view.findViewById(R.id.icon);
-			final TextView sub = _view.findViewById(R.id.sub);
-			final TextView title = _view.findViewById(R.id.title);
-			
-			try {
-				sub.setVisibility(View.VISIBLE);
-				title.setVisibility(View.VISIBLE);
-				if (_position < 1) {
-					sub.setTextColor(0xFFFF1744);
-					sub.setText("[LATEST]");
-				}
-				else {
-					sub.setTextColor(0xFFBDBDBD);
-					sub.setText("[OLDER]");
-				}
+				sub.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+				sub_separator.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 				if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
 					title.setText(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString());
 				}
 				else {
-					if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-						title.setText(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString());
+					if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
+						title.setText(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString());
+					}
+					else {
+						if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+							title.setText(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString());
+						}
+						else {
+							if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+								title.setText(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString());
+							}
+						}
 					}
 				}
 				Animation animation;
@@ -14343,11 +13855,11 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 	
-	public class List_menu_4Adapter extends BaseAdapter {
+	public class List_items_3Adapter extends BaseAdapter {
 		
 		ArrayList<HashMap<String, Object>> _data;
 		
-		public List_menu_4Adapter(ArrayList<HashMap<String, Object>> _arr) {
+		public List_items_3Adapter(ArrayList<HashMap<String, Object>> _arr) {
 			_data = _arr;
 		}
 		
@@ -14371,7 +13883,7 @@ public class MainActivity extends AppCompatActivity {
 			LayoutInflater _inflater = getLayoutInflater();
 			View _view = _v;
 			if (_view == null) {
-				_view = _inflater.inflate(R.layout.list_menu_4, null);
+				_view = _inflater.inflate(R.layout.list_versions, null);
 			}
 			
 			final LinearLayout box = _view.findViewById(R.id.box);
@@ -14379,88 +13891,29 @@ public class MainActivity extends AppCompatActivity {
 			final TextView mirror = _view.findViewById(R.id.mirror);
 			final ImageView icon = _view.findViewById(R.id.icon);
 			final TextView sub = _view.findViewById(R.id.sub);
+			final TextView sub_separator = _view.findViewById(R.id.sub_separator);
 			final TextView title = _view.findViewById(R.id.title);
 			
 			try {
 				sub.setVisibility(View.VISIBLE);
+				sub_separator.setVisibility(View.VISIBLE);
 				title.setVisibility(View.VISIBLE);
+				link.setVisibility(View.GONE);
+				mirror.setVisibility(View.GONE);
 				if (_position < 1) {
 					sub.setTextColor(0xFFFF1744);
-					sub.setText("[LATEST]");
+					sub.setText("LATEST RELEASE");
+					sub_separator.setTextColor(0xFF616161);
+					sub_separator.setText("|");
 				}
 				else {
 					sub.setTextColor(0xFFBDBDBD);
-					sub.setText("[OLDER]");
+					sub.setText("OLDER RELEASE");
+					sub_separator.setTextColor(0xFF616161);
+					sub_separator.setText("|");
 				}
-				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-				if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-					title.setText(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString());
-				}
-				else {
-					if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-						title.setText(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString());
-					}
-				}
-				Animation animation;
-				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
-				animation.setDuration(500); box.startAnimation(animation);
-				animation = null;
-			} catch (Exception e) {
-			}
-			
-			return _view;
-		}
-	}
-	
-	public class List_menu_5Adapter extends BaseAdapter {
-		
-		ArrayList<HashMap<String, Object>> _data;
-		
-		public List_menu_5Adapter(ArrayList<HashMap<String, Object>> _arr) {
-			_data = _arr;
-		}
-		
-		@Override
-		public int getCount() {
-			return _data.size();
-		}
-		
-		@Override
-		public HashMap<String, Object> getItem(int _index) {
-			return _data.get(_index);
-		}
-		
-		@Override
-		public long getItemId(int _index) {
-			return _index;
-		}
-		
-		@Override
-		public View getView(final int _position, View _v, ViewGroup _container) {
-			LayoutInflater _inflater = getLayoutInflater();
-			View _view = _v;
-			if (_view == null) {
-				_view = _inflater.inflate(R.layout.list_menu_5, null);
-			}
-			
-			final LinearLayout box = _view.findViewById(R.id.box);
-			final TextView link = _view.findViewById(R.id.link);
-			final TextView mirror = _view.findViewById(R.id.mirror);
-			final ImageView icon = _view.findViewById(R.id.icon);
-			final TextView sub = _view.findViewById(R.id.sub);
-			final TextView title = _view.findViewById(R.id.title);
-			
-			try {
-				sub.setVisibility(View.VISIBLE);
-				title.setVisibility(View.VISIBLE);
-				if (_position < 1) {
-					sub.setTextColor(0xFFFF1744);
-					sub.setText("[LATEST]");
-				}
-				else {
-					sub.setTextColor(0xFFBDBDBD);
-					sub.setText("[OLDER]");
-				}
+				sub.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+				sub_separator.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 				title.setText(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString());
 				Animation animation;
@@ -14474,11 +13927,11 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 	
-	public class List_changelogsAdapter extends BaseAdapter {
+	public class List_items_4Adapter extends BaseAdapter {
 		
 		ArrayList<HashMap<String, Object>> _data;
 		
-		public List_changelogsAdapter(ArrayList<HashMap<String, Object>> _arr) {
+		public List_items_4Adapter(ArrayList<HashMap<String, Object>> _arr) {
 			_data = _arr;
 		}
 		
