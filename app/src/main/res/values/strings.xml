@@ -6,7 +6,6 @@
     <string name="versions" translatable="true">VERSIONS  </string>
     <string name="changelogs" translatable="true">CHANGELOGS</string>
     <string name="manager_tools" translatable="true">MANAGER TOOLS</string>
-    <string name="device_cpu" translatable="true">CPU/ARCH</string>
     <string name="source" translatable="true">SOURCE</string>
     <string name="support" translatable="true">TELEGRAM</string>
     <string name="donate" translatable="true">SUPPORT</string>
@@ -83,6 +82,7 @@
     <string name="uninstall_patched" translatable="true">UNINSTALL PATCHED</string>
     <string name="open_settings" translatable="true">OPEN SETTINGS</string>
     <string name="open_patched" translatable="true">OPEN PATCHED</string>
+    <string name="reboot" translatable="true">REFETCH AND REBOOT</string>
     
     <!--BENGALI LANGUAGE-->
     <string name="app_name_01" translatable="true">xManager</string>
@@ -91,7 +91,6 @@
     <string name="versions_01" translatable="true">সংস্করণ সমুহ   </string>
     <string name="changelogs_01" translatable="true">পরিবর্তন সমুহ</string>
     <string name="manager_tools_01" translatable="true">MANAGER টুলস</string>
-    <string name="device_cpu_01" translatable="true">CPU/ARCH</string>
     <string name="source_01" translatable="true">উৎস</string>
     <string name="support_01" translatable="true">আরো জানুন</string>
     <string name="donate_01" translatable="true">দান করুন</string>
@@ -168,6 +167,7 @@
     <string name="uninstall_patched_01" translatable="true">প্যাচড আনইনস্টল করুন</string>
     <string name="open_settings_01" translatable="true">ওপেন সেটিংস</string>
     <string name="open_patched_01" translatable="true">প্যাচড খুলুন</string>
+    <string name="reboot_01" translatable="true">রিফেচ এবং রিবুট করুন</string>
     
     <!--CHINESE (SIMPLIFIED) LANGUAGE-->
     <string name="app_name_02" translatable="true">xManager</string>
@@ -176,7 +176,6 @@
     <string name="versions_02" translatable="true">显示版本  </string>
     <string name="changelogs_02" translatable="true">更新日志</string>
     <string name="manager_tools_02" translatable="true">快捷工具</string>
-    <string name="device_cpu_02" translatable="true">CPU/ARCH 类型</string>
     <string name="source_02" translatable="true">源代码</string>
     <string name="discord_02" translatable="true">DISCORD</string>
     <string name="support_02" translatable="true">电报</string>
@@ -253,6 +252,7 @@
     <string name="uninstall_patched_02" translatable="true">卸载补丁</string>
     <string name="open_settings_02" translatable="true">打开设置</string>
     <string name="open_patched_02" translatable="true">打开修改版</string>
+    <string name="reboot_02" translatable="true">重新加载并重新启动</string>
     
     <!--FRENCH LANGUAGE-->
     <string name="app_name_03" translatable="true">xManager</string>
@@ -261,7 +261,6 @@
     <string name="versions_03" translatable="true">VERSIONS </string>
     <string name="changelogs_03" translatable="true">LISTE DES CHANGEMENTS</string>
     <string name="manager_tools_03" translatable="true">OUTILS DE xMANAGER</string>
-    <string name="device_cpu_03" translatable="true">CPU/ARCH</string>
     <string name="source_03" translatable="true">SOURCE</string>
     <string name="discord_03" translatable="true">DISCORD</string>
     <string name="support_03" translatable="true">TELEGRAM</string>
@@ -338,6 +337,7 @@
     <string name="uninstall_patched_03" translatable="true">DÉSINSTALLER VERSION MODIFIÉE</string>
     <string name="open_settings_03" translatable="true">OUVRIR LES PARAMÈTRES</string>
     <string name="open_patched_03" translatable="true">OUVRIR VERSION MODIFIÉE</string>
+    <string name="reboot_03" translatable="true">RÉCUPÉRATION ET REDÉMARRAGE</string>
     
     <!--GREEK LANGUAGE-->
     <string name="app_name_04" translatable="true">xManager</string>
@@ -346,7 +346,6 @@
     <string name="versions_04" translatable="true">ΕΚΔΟΣΕΙΣ  </string>
     <string name="changelogs_04" translatable="true">ΚΑΤΑΧΩΡΗΜΕΝΕΣ ΑΛΛΑΓΕΣ</string>
     <string name="manager_tools_04" translatable="true">ΕΡΓΑΛΕΙΑ MANAGER</string>
-    <string name="device_cpu_04" translatable="true">ΕΠΕΞΕΡΓΑΣΤΗΣ</string>
     <string name="source_04" translatable="true">ΠΗΓΗ</string>
     <string name="discord_04" translatable="true">ΔΙΧΌΝΟΙΑ</string>
     <string name="support_04" translatable="true">ΤΗΛΕΓΡΆΦΗΜΑ</string>
@@ -423,6 +422,7 @@
     <string name="uninstall_patched_04" translatable="true">ΑΠΕΓΚΑΤΆΣΤΑΣΗ PATCHED</string>
     <string name="open_settings_04" translatable="true">ΆΝΟΙΓΜΑ ΡΥΘΜΊΣΕΩΝ</string>
     <string name="open_patched_04" translatable="true">ΆΝΟΙΓΜΑ PATCHED</string>
+    <string name="reboot_04" translatable="true">ΕΠΑΝΑΤΟΠΟΘΕΤΉΣΤΕ ΚΑΙ ΕΠΑΝΕΚΚΙΝΉΣΤΕ</string>
     
     <!--INDONESIAN LANGUAGE-->
     <string name="app_name_05" translatable="true">xManager</string>
@@ -431,7 +431,6 @@
     <string name="versions_05" translatable="true">VERSI  </string>
     <string name="changelogs_05" translatable="true">INFORMASI PERUBAHAN</string>
     <string name="manager_tools_05" translatable="true">ALAT PENGELOLA</string>
-    <string name="device_cpu_05" translatable="true">CPU/ARCH</string>
     <string name="source_05" translatable="true">SUMBER</string>
     <string name="discord_05" translatable="true">PERSELISIHAN</string>
     <string name="support_05" translatable="true">TELEGRAM</string>
@@ -508,6 +507,7 @@
     <string name="uninstall_patched_05" translatable="true">COPOT PEMASANGAN DITAMBAL</string>
     <string name="open_settings_05" translatable="true">BUKA PENGATURAN</string>
     <string name="open_patched_05" translatable="true">OPEN PATCHED</string>
+    <string name="reboot_05" translatable="true">AMBIL KEMBALI DAN REBOOT</string>
     
     <!--ITALIAN LANGUAGE-->
     <string name="app_name_06" translatable="true">xManager</string>
@@ -516,7 +516,6 @@
     <string name="versions_06" translatable="true">VERSIONI  </string>
     <string name="changelogs_06" translatable="true">REGISTRO MODIFICHE</string>
     <string name="manager_tools_06" translatable="true">STRUMENTI DEL MANAGER</string>
-    <string name="device_cpu_06" translatable="true">CPU/ARCH</string>
     <string name="source_06" translatable="true">FONTE</string>
     <string name="discord_06" translatable="true">DISCORD</string>
     <string name="support_06" translatable="true">TELEGRAM</string>
@@ -593,6 +592,7 @@
     <string name="uninstall_patched_06" translatable="true">DISINSTALLA PATCH</string>
     <string name="open_settings_06" translatable="true">APRI IMPOSTAZIONI</string>
     <string name="open_patched_06" translatable="true">APRI PATCH</string>
+    <string name="reboot_06" translatable="true">REFETCH E REBOOT</string>
     
     <!--POLISH LANGUAGE-->
     <string name="app_name_07" translatable="true">xManager</string>
@@ -601,7 +601,6 @@
     <string name="versions_07" translatable="true">WERSJE  </string>
     <string name="changelogs_07" translatable="true">LISTA ZMIAN</string>
     <string name="manager_tools_07" translatable="true">NARZĘDZIA MENADŻERA</string>
-    <string name="device_cpu_07" translatable="true">CPU/ARCH</string>
     <string name="source_07" translatable="true">KOD ŹRÓDŁOWY</string>
     <string name="support_07" translatable="true">TELEGRAM</string>
     <string name="donate_07" translatable="true">DOTACJA</string>
@@ -678,6 +677,7 @@
     <string name="uninstall_patched_07" translatable="true">ODINSTALUJ MODYFIKACJĘ</string>
     <string name="open_settings_07" translatable="true">OTWÓRZ USTAWIENIA</string>
     <string name="open_patched_07" translatable="true">OTWÓRZ MODYFIKACJĘ</string>
+    <string name="reboot_07" translatable="true">REFETCH I REBOOT</string>
     
     <!--PORTUGUESE (BRAZIL) LANGUAGE-->
     <string name="app_name_08" translatable="true">xManager</string>
@@ -686,7 +686,6 @@
     <string name="versions_08" translatable="true">VERSÕES</string>
     <string name="changelogs_08" translatable="true">MUDANÇAS</string>
     <string name="manager_tools_08" translatable="true">FERRAMENTAS DE GESTÃO</string>
-    <string name="device_cpu_08" translatable="true">CPU/ARCH</string>
     <string name="source_08" translatable="true">FONTE</string>
     <string name="support_08" translatable="true">TELEGRAM</string>
     <string name="donate_08" translatable="true">DOAR</string>
@@ -763,6 +762,7 @@
     <string name="uninstall_patched_08" translatable="true">DESINSTALAR CORRIGIDO</string>
     <string name="open_settings_08" translatable="true">ABRIR CONFIGURAÇÕES</string>
     <string name="open_patched_08" translatable="true">ABERTO CORRIGIDO</string>
+    <string name="reboot_08" translatable="true">REFETCH E REBOOT</string>
     
     <!--PORTUGUESE (PORTUGAL) LANGUAGE-->
     <string name="app_name_09" translatable="true">xManager</string>
@@ -771,7 +771,6 @@
     <string name="versions_09" translatable="true">VERSÕES  </string>
     <string name="changelogs_09" translatable="true">NOTAS DA VERSÃO</string>
     <string name="manager_tools_09" translatable="true">FERRAMENTAS DO MANAGER</string>
-    <string name="device_cpu_09" translatable="true">CPU/ARCH</string>
     <string name="source_09" translatable="true">FONTE</string>
     <string name="discord_09" translatable="true">DISCORDIA</string>
     <string name="support_09" translatable="true">TELEGRAMA</string>
@@ -848,6 +847,7 @@
     <string name="uninstall_patched_09" translatable="true">DESINSTALAR CORRIGIDO</string>
     <string name="open_settings_09" translatable="true">ABRIR CONFIGURAÇÕES</string>
     <string name="open_patched_09" translatable="true">ABERTO CORRIGIDO</string>
+    <string name="reboot_09" translatable="true">RECUPERAR E REINICIAR</string>
     
     <!--RUSSIAN LANGUAGE-->
     <string name="app_name_10" translatable="true">xManager</string>
@@ -856,7 +856,6 @@
     <string name="versions_10" translatable="true">ВЕPСИИ</string>
     <string name="changelogs_10" translatable="true">ИЗМЕНЕНИЯ</string>
     <string name="manager_tools_10" translatable="true">ИНСТPУМЕНТЫ</string>
-    <string name="device_cpu_10" translatable="true">CPU/ARCH</string>
     <string name="source_10" translatable="true">ИСХОДНИКИ</string>
     <string name="support_10" translatable="true">TELEGRAM</string>
     <string name="donate_10" translatable="true">ДОНАТ</string>
@@ -933,6 +932,7 @@
     <string name="uninstall_patched_10" translatable="true">УДАЛЕНИЕ ИСПPАВЛЕННЫХ</string>
     <string name="open_settings_10" translatable="true">ОТКPОЙТЕ НАСТPОЙКИ</string>
     <string name="open_patched_10" translatable="true">ОТКPЫТЫЙ ЗАЛАТАННЫЙ</string>
+    <string name="reboot_10" translatable="true">ПОВТОРНАЯ ВЫБОРКА И ПЕРЕЗАГРУЗКА</string>
     
     <!--SPANISH LANGUAGE-->
     <string name="app_name_11" translatable="true">xManager</string>
@@ -941,7 +941,6 @@
     <string name="versions_11" translatable="true">VERSIONES</string>
     <string name="changelogs_11" translatable="true">REGISTRO DE CAMBIOS</string>
     <string name="manager_tools_11" translatable="true">HERRAMIENTAS DEL GESTOR</string>
-    <string name="device_cpu_11" translatable="true">CPU/ARQ</string>
     <string name="source_11" translatable="true">FUENTE</string>
     <string name="discord_11" translatable="true">DISCORD</string>
     <string name="support_11" translatable="true">TELEGRAM</string>
@@ -1018,6 +1017,7 @@
     <string name="uninstall_patched_11" translatable="true">¿DESINSTALAR MOD?</string>
     <string name="open_settings_11" translatable="true">AJUSTES DE SPOTIFY</string>
     <string name="open_patched_11" translatable="true">AJUSTES DEL MOD</string>
+    <string name="reboot_11" translatable="true">RECARGA Y REINICIO</string>
     
     <!--UKRAINIAN LANGUAGE-->
     <string name="app_name_12" translatable="true">xManager</string>
@@ -1026,7 +1026,6 @@
     <string name="versions_12" translatable="true">ВЕPСІЇ  </string>
     <string name="changelogs_12" translatable="true">СПИСОК ЗМІН</string>
     <string name="manager_tools_12" translatable="true">ІНСТPУМЕНТИ</string>
-    <string name="device_cpu_12" translatable="true">АPХІТЕКТУPА</string>
     <string name="source_12" translatable="true">КОД</string>
     <string name="support_12" translatable="true">TELEGRAM</string>
     <string name="donate_12" translatable="true">ПОЖЕPТВУВАТИ</string>
@@ -1103,6 +1102,7 @@
     <string name="uninstall_patched_12" translatable="true">ВИДАЛЕННЯ ВИПPАВЛЕНИХ</string>
     <string name="open_settings_12" translatable="true">ВІДКPИЙТЕ НАЛАШТУВАННЯ</string>
     <string name="open_patched_12" translatable="true">ВІДКPИТИЙ ЗАЛАТАНИЙ</string>
+    <string name="reboot_12" translatable="true">ПОВТОРНА ВИБІРКА ТА ПЕРЕЗАВАНТАЖЕННЯ</string>
     
     <!--TURKISH LANGUAGE-->
     <string name="app_name_13" translatable="true">xManager</string>
@@ -1111,7 +1111,6 @@
     <string name="versions_13" translatable="true">VERSİYONLAR  </string>
     <string name="changelogs_13" translatable="true">DEĞİŞİKLİKLER</string>
     <string name="manager_tools_13" translatable="true">YÖNETİCİ ARAÇLARI</string>
-    <string name="device_cpu_13" translatable="true">CPU/ARCH</string>
     <string name="source_13" translatable="true">KAYNAK</string>
     <string name="support_13" translatable="true">TELEGRAM</string>
     <string name="donate_13" translatable="true">BAĞIŞ</string>
@@ -1188,6 +1187,7 @@
     <string name="uninstall_patched_13" translatable="true">YAMALI KALDIR</string>
     <string name="open_settings_13" translatable="true">AYARLARI AÇ</string>
     <string name="open_patched_13" translatable="true">AÇIK YAMALI</string>
+    <string name="reboot_13" translatable="true">YENİDEN AL VE YENİDEN BAŞLAT</string>
     
     <!--ARABIC LANGUAGE-->
     <string name="app_name_14" translatable="true">xManager</string>
@@ -1196,7 +1196,6 @@
     <string name="versions_14" translatable="true">الاصدارات </string>
     <string name="changelogs_14" translatable="true">سجل التغييرات</string>
     <string name="manager_tools_14" translatable="true">أدوات المسؤول</string>
-    <string name="device_cpu_14" translatable="true">المعالج/المعمارية</string>
     <string name="source_14" translatable="true">المصدر</string>
     <string name="support_14" translatable="true">تلغرام</string>
     <string name="donate_14" translatable="true">تبرع</string>
@@ -1273,6 +1272,7 @@
     <string name="uninstall_patched_14" translatable="true">إلغاء تثبيت مصححة</string>
     <string name="open_settings_14" translatable="true">افتح الإعدادات</string>
     <string name="open_patched_14" translatable="true">فتح مصححة</string>
+    <string name="reboot_14" translatable="true">إعادة الجلب وإعادة التشغيل</string>
     
     <!--SLOVENIAN LANGUAGE-->
     <string name="app_name_15" translatable="true">xManager</string>
@@ -1281,7 +1281,6 @@
     <string name="versions_15" translatable="true">VERZIJE  </string>
     <string name="changelogs_15" translatable="true">DNEVNIK SPREMEMB</string>
     <string name="manager_tools_15" translatable="true">ORODJA ZA MANAGER</string>
-    <string name="device_cpu_15" translatable="true">PROCESOR</string>
     <string name="source_15" translatable="true">VIR</string>
     <string name="support_15" translatable="true">TELEGRAM</string>
     <string name="donate_15" translatable="true">DONIRAJTE</string>
@@ -1358,6 +1357,7 @@
     <string name="uninstall_patched_15" translatable="true">ODSTRANITE APLIKACIJO</string>
     <string name="open_settings_15" translatable="true">ODPRITE NASTAVITVE</string>
     <string name="open_patched_15" translatable="true">ODPRITE APLIKACIJO</string>
+    <string name="reboot_15" translatable="true">PONOVNO ZAŽENITE IN ZNOVA ZAŽENITE</string>
     
     <!--ROMANIAN LANGUAGE-->
     <string name="app_name_16" translatable="true">xManager</string>
@@ -1366,7 +1366,6 @@
     <string name="versions_16" translatable="true">VERSIUNI  </string>
     <string name="changelogs_16" translatable="true">JURNAL SCHIMBĂRI</string>
     <string name="manager_tools_16" translatable="true">UNELTE DE ADMINISTRARE</string>
-    <string name="device_cpu_16" translatable="true">PROCESOR/ARHITECTURĂ</string>
     <string name="source_16" translatable="true">SURSĂ</string>
     <string name="support_16" translatable="true">TELEGRAM</string>
     <string name="donate_16" translatable="true">SUSȚINE</string>
@@ -1443,6 +1442,7 @@
     <string name="uninstall_patched_16" translatable="true">DEZINSTALEAZĂ VERSIUNEA MODIFICATĂ</string>
     <string name="open_settings_16" translatable="true">DESCHIDE SETĂRI</string>
     <string name="open_patched_16" translatable="true">DESCHIDE VERSIUNEA MODIFICATĂ</string>
+    <string name="reboot_16" translatable="true">REFETCH ȘI REBOOT</string>
     
     <!--KOREAN LANGUAGE-->
     <string name="app_name_17" translatable="true">xManager</string>
@@ -1451,7 +1451,6 @@
     <string name="versions_17" translatable="true">버전  </string>
     <string name="changelogs_17" translatable="true">업데이트 내역</string>
     <string name="manager_tools_17" translatable="true">관리 도구</string>
-    <string name="device_cpu_17" translatable="true">CPU/ARCH</string>
     <string name="source_17" translatable="true">소스</string>
     <string name="support_17" translatable="true">텔레그램</string>
     <string name="donate_17" translatable="true">기부</string>
@@ -1528,6 +1527,7 @@
     <string name="uninstall_patched_17" translatable="true">패치 제거</string>
     <string name="open_settings_17" translatable="true">설정 열기</string>
     <string name="open_patched_17" translatable="true">패치 열기</string>
+    <string name="reboot_17" translatable="true">리페치 및 재부팅</string>
     
     <!--DUTCH LANGUAGE-->
     <string name="app_name_18" translatable="true">xManager</string>
@@ -1536,7 +1536,6 @@
     <string name="versions_18" translatable="true">VERSIES  </string>
     <string name="changelogs_18" translatable="true">WIJZINGENLOGBOEK</string>
     <string name="manager_tools_18" translatable="true">MANAGER HULPMIDDELEN</string>
-    <string name="device_cpu_18" translatable="true">CPU/ARCH</string>
     <string name="source_18" translatable="true">BRON</string>
     <string name="support_18" translatable="true">TELEGRAM</string>
     <string name="donate_18" translatable="true">DONEER</string>
@@ -1613,6 +1612,7 @@
     <string name="uninstall_patched_18" translatable="true">GEPATCHED VERWIJDEREN</string>
     <string name="open_settings_18" translatable="true">INSTELLINGEN OPENEN</string>
     <string name="open_patched_18" translatable="true">OPEN GEPATCHED</string>
+    <string name="reboot_18" translatable="true">REFETCH EN REBOOT</string>
     
     <!--VIETNAMESE LANGUAGE-->
     <string name="app_name_19" translatable="true">xManager</string>
@@ -1621,7 +1621,6 @@
     <string name="versions_19" translatable="true">PHIÊN BẢN</string>
     <string name="changelogs_19" translatable="true">CHANGELOGS</string>
     <string name="manager_tools_19" translatable="true">CÔNG CỤ QUẢN LÝ</string>
-    <string name="device_cpu_19" translatable="true">CPU/ARCH</string>
     <string name="source_19" translatable="true">MÃ NGUỒN</string>
     <string name="support_19" translatable="true">TELEGRAM</string>
     <string name="donate_19" translatable="true">QUYÊN TẶNG</string>
@@ -1698,6 +1697,7 @@
     <string name="uninstall_patched_19" translatable="true">GỠ BỎ BẢN VÁ</string>
     <string name="open_settings_19" translatable="true">MỞ CÁC THIẾT LẬP</string>
     <string name="open_patched_19" translatable="true">MỞ BẢN VÁ</string>
+    <string name="reboot_19" translatable="true">REFETCH VÀ KHỞI ĐỘNG LẠI</string>
     
     <!--GERMAN LANGUAGE-->
     <string name="app_name_20" translatable="true">xManager</string>
@@ -1706,7 +1706,6 @@
     <string name="versions_20" translatable="true">VERSIONEN  </string>
     <string name="changelogs_20" translatable="true">CHANGELOGS</string>
     <string name="manager_tools_20" translatable="true">MANAGER TOOLS</string>
-    <string name="device_cpu_20" translatable="true">CPU/ARCH</string>
     <string name="source_20" translatable="true">QUELLE</string>
     <string name="support_20" translatable="true">TELEGRAM</string>
     <string name="donate_20" translatable="true">SPENDEN</string>
@@ -1783,6 +1782,7 @@
     <string name="uninstall_patched_20" translatable="true">DEINSTALLIEREN GEPATCHT</string>
     <string name="open_settings_20" translatable="true">EINSTELLUNGEN ÖFFNEN</string>
     <string name="open_patched_20" translatable="true">OFFEN GEPATCHT</string>
+    <string name="reboot_20" translatable="true">ERNEUTES ABRUFEN UND NEUSTARTEN</string>
     
     <!--PERSIAN LANGUAGE-->
     <string name="app_name_21" translatable="true">xManager</string>
@@ -1791,7 +1791,6 @@
     <string name="versions_21" translatable="true">نسخه ها  </string>
     <string name="changelogs_21" translatable="true">تغییرات</string>
     <string name="manager_tools_21" translatable="true">ابزار</string>
-    <string name="device_cpu_21" translatable="true">پردازنده/معماری</string>
     <string name="source_21" translatable="true">سورس</string>
     <string name="support_21" translatable="true">تلگرام</string>
     <string name="donate_21" translatable="true">حمایت</string>
@@ -1868,6 +1867,7 @@
     <string name="uninstall_patched_21" translatable="true">حذف وصله</string>
     <string name="open_settings_21" translatable="true">تنظیمات را باز کنید</string>
     <string name="open_patched_21" translatable="true">باز کردن وصله</string>
+    <string name="reboot_21" translatable="true">دوباره راه اندازی و راه اندازی مجدد</string>
     
     <!--HEBREW LANGUAGE-->
     <string name="app_name_22" translatable="true">xManager</string>
@@ -1876,7 +1876,6 @@
     <string name="versions_22" translatable="true">גרסאות  </string>
     <string name="changelogs_22" translatable="true">שינויים</string>
     <string name="manager_tools_22" translatable="true">כלי ניהול</string>
-    <string name="device_cpu_22" translatable="true">CPU/ARCH</string>
     <string name="source_22" translatable="true">קוד מקור</string>
     <string name="support_22" translatable="true">טלגרם</string>
     <string name="donate_22" translatable="true">תרומה</string>
@@ -1953,6 +1952,7 @@
     <string name="uninstall_patched_22" translatable="true">הסר התקנת הקובץ</string>
     <string name="open_settings_22" translatable="true">פתח הגדרות</string>
     <string name="open_patched_22" translatable="true">פתח קובץ</string>
+    <string name="reboot_22" translatable="true">מחדש ולאתחל מחדש</string>
     
     <!--SLOVAK LANGUAGE-->
     <string name="app_name_23" translatable="true">xManager</string>
@@ -1961,7 +1961,6 @@
     <string name="versions_23" translatable="true">VERZIE  </string>
     <string name="changelogs_23" translatable="true">ZOZNAM ZMIEN</string>
     <string name="manager_tools_23" translatable="true">NÁSTROJE MANAŽÉRA</string>
-    <string name="device_cpu_23" translatable="true">CPU/ARCH</string>
     <string name="source_23" translatable="true">ZDROJ</string>
     <string name="support_23" translatable="true">TELEGRAM</string>
     <string name="donate_23" translatable="true">PODPORIŤ</string>
@@ -2042,6 +2041,7 @@
     <string name="uninstall_patched_23" translatable="true">ODINŠTALOVAŤ ZAPLÁTANÉ</string>
     <string name="open_settings_23" translatable="true">OTVORIŤ NASTAVENIA</string>
     <string name="open_patched_23" translatable="true">OTVORIŤ ZAPLÁTANÉ</string>
+    <string name="reboot_23" translatable="true">REFETCH A REŠTART</string>
     
     <!--SWEDISH LANGUAGE-->
     <string name="app_name_24" translatable="true">xManager</string>
@@ -2050,7 +2050,6 @@
     <string name="versions_24" translatable="true">VERSIONER  </string>
     <string name="changelogs_24" translatable="true">ÄNDRINGSLOGGAR</string>
     <string name="manager_tools_24" translatable="true">MANAGER-VERKTYG</string>
-    <string name="device_cpu_24" translatable="true">CPU/ARCH</string>
     <string name="source_24" translatable="true">KÄLLA</string>
     <string name="support_24" translatable="true">TELEGRAM</string>
     <string name="donate_24" translatable="true">SUPPORT</string>
@@ -2127,6 +2126,7 @@
     <string name="uninstall_patched_24" translatable="true">AVINSTALLERA PATCHAD</string>
     <string name="open_settings_24" translatable="true">ÖPPNA INSTÄLLNINGAR</string>
     <string name="open_patched_24" translatable="true">ÖPPNA PATCHAD</string>
+    <string name="reboot_24" translatable="true">REFETCH OCH STARTA OM</string>
     
     <!--FINNISH LANGUAGE-->
     <string name="app_name_25" translatable="true">xManager</string>
@@ -2135,7 +2135,6 @@
     <string name="versions_25" translatable="true">VERSIOT  </string>
     <string name="changelogs_25" translatable="true">MUUTOSLOKI</string>
     <string name="manager_tools_25" translatable="true">HALLINNOINTITYÖKALUT</string>
-    <string name="device_cpu_25" translatable="true">CPU/ARCH</string>
     <string name="source_25" translatable="true">LÄHDE</string>
     <string name="support_25" translatable="true">TELEGRAM</string>
     <string name="donate_25" translatable="true">TUKI</string>
@@ -2212,6 +2211,7 @@
     <string name="uninstall_patched_25" translatable="true">POISTA KORJAUSTIEDOSTO</string>
     <string name="open_settings_25" translatable="true">AVAA ASETUKSET</string>
     <string name="open_patched_25" translatable="true">AVAA KORJAUSTIEDOSTO</string>
+    <string name="reboot_25" translatable="true">KÄYNNISTÄ JA KÄYNNISTÄ UUDELLEEN</string>
     
     <!--CZECH LANGUAGE-->
     <string name="app_name_26" translatable="true">xManager</string>
@@ -2220,7 +2220,6 @@
     <string name="versions_26" translatable="true">VERZE  </string>
     <string name="changelogs_26" translatable="true">SEZNAM ZMĚN</string>
     <string name="manager_tools_26" translatable="true">NÁSTROJE MANAŽERA</string>
-    <string name="device_cpu_26" translatable="true">CPU/ARCH</string>
     <string name="source_26" translatable="true">ZDROJ</string>
     <string name="support_26" translatable="true">TELEGRAM</string>
     <string name="donate_26" translatable="true">PODPOŘIT</string>
@@ -2297,6 +2296,7 @@
     <string name="uninstall_patched_26" translatable="true">ODINSTALOVAT UPRAVENOU APLIKACI</string>
     <string name="open_settings_26" translatable="true">OTEVŘÍT NASTAVENÍ</string>
     <string name="open_patched_26" translatable="true">OTEVŘÍT UPRAVENOU APLIKACI</string>
+    <string name="reboot_26" translatable="true">ZNOVU NAČÍST A RESTARTOVAT</string>
     
     <!--CHINESE (TRADITIONAL) LANGUAGE-->
     <string name="app_name_27" translatable="true">xManager</string>
@@ -2305,7 +2305,6 @@
     <string name="versions_27" translatable="true">所有版本  </string>
     <string name="changelogs_27" translatable="true">更新紀錄</string>
     <string name="manager_tools_27" translatable="true">快速工具</string>
-    <string name="device_cpu_27" translatable="true">CPU/ARCH 類型</string>
     <string name="source_27" translatable="true">原始碼</string>
     <string name="discord_27" translatable="true">Discord</string>
     <string name="support_27" translatable="true">Telegram</string>
@@ -2382,6 +2381,7 @@
     <string name="uninstall_patched_27" translatable="true">解除安裝修補程式</string>
     <string name="open_settings_27" translatable="true">開啟設定</string>
     <string name="open_patched_27" translatable="true">開啟修改版本</string>
+    <string name="reboot_27" translatable="true">重新加载并重新启动</string>
     
     <!--BULGARIAN LANGUAGE-->
     <string name="app_name_28" translatable="true">xManager</string>
@@ -2390,7 +2390,6 @@
     <string name="versions_28" translatable="true">ВЕРСИИ  </string>
     <string name="changelogs_28" translatable="true">СПИСЪК С ПРОМЕНИ</string>
     <string name="manager_tools_28" translatable="true">ИНСТРУМЕНТИ НА МЕНИДЖЪРА</string>
-    <string name="device_cpu_28" translatable="true">ПРОЦЕСОР/АРХИТЕКТУРА</string>
     <string name="source_28" translatable="true">КОД</string>
     <string name="support_28" translatable="true">TELEGRAM</string>
     <string name="donate_28" translatable="true">ПОДКРЕПА</string>
@@ -2467,6 +2466,7 @@
     <string name="uninstall_patched_28" translatable="true">ДЕИНСТАЛИРАНЕ НА КОРИГИРАНОТО</string>
     <string name="open_settings_28" translatable="true">НАСТРОЙКИ</string>
     <string name="open_patched_28" translatable="true">ОТВАРЯНЕ НА КОРИГИРАНОТО</string>
+    <string name="reboot_28" translatable="true">ПРЕЗАРЕЖДАНЕ И РЕСТАРТИРАНЕ</string>
     
     <!--SERBIAN (CYRILLIC) LANGUAGE-->
     <string name="app_name_29" translatable="true">xManager</string>
@@ -2475,7 +2475,6 @@
     <string name="versions_29" translatable="true">ВЕРЗИЈЕ  </string>
     <string name="changelogs_29" translatable="true">ЕВИДЕНЦИЈА ПРОМЕНА</string>
     <string name="manager_tools_29" translatable="true">АЛАТКЕ</string>
-    <string name="device_cpu_29" translatable="true">CPU/ARCH</string>
     <string name="source_29" translatable="true">ИЗВОР</string>
     <string name="support_29" translatable="true">TELEGRAM</string>
     <string name="donate_29" translatable="true">ДОНИРАЈТЕ</string>
@@ -2552,6 +2551,7 @@
     <string name="uninstall_patched_29" translatable="true">ДЕИНСТАЛИРАЈТЕ МОД</string>
     <string name="open_settings_29" translatable="true">ОТВОРИТЕ ПОДЕШАВАЊА</string>
     <string name="open_patched_29" translatable="true">ОТВОРИТЕ МОД</string>
+    <string name="reboot_29" translatable="true">ПОНОВНО УЗОРКОВАЊЕ</string>
     
     <!--SERBIAN (LATIN) LANGUAGE-->
     <string name="app_name_30" translatable="true">xManager</string>
@@ -2560,7 +2560,6 @@
     <string name="versions_30" translatable="true">VERZIJE  </string>
     <string name="changelogs_30" translatable="true">EVIDENCIJA PROMENA</string>
     <string name="manager_tools_30" translatable="true">ALATKE</string>
-    <string name="device_cpu_30" translatable="true">CPU/ARCH</string>
     <string name="source_30" translatable="true">IZVOR</string>
     <string name="support_30" translatable="true">TELEGRAM</string>
     <string name="donate_30" translatable="true">DONIRAJTE</string>
@@ -2637,6 +2636,7 @@
     <string name="uninstall_patched_30" translatable="true">DEINSTALIRAJTE MOD</string>
     <string name="open_settings_30" translatable="true">OTVORITE PODEŠAVANjA</string>
     <string name="open_patched_30" translatable="true">OTVORITE MOD</string>
+    <string name="reboot_30" translatable="true">PONOVNO UZORKOVANJE</string>
     
     <!--CATALAN LANGUAGE-->
     <string name="app_name_31" translatable="true">xManager</string>
@@ -2645,7 +2645,6 @@
     <string name="versions_31" translatable="true">VERSIONS</string>
     <string name="changelogs_31" translatable="true">REGISTRE DE CANVIS</string>
     <string name="manager_tools_31" translatable="true">EINES DEL GESTOR</string>
-    <string name="device_cpu_31" translatable="true">CPU/ARQ</string>
     <string name="source_31" translatable="true">FONT</string>
     <string name="discord_31" translatable="true">DISCORD</string>
     <string name="support_31" translatable="true">TELEGRAM</string>
@@ -2722,6 +2721,7 @@
     <string name="uninstall_patched_31" translatable="true">DESINSTAL·LAR MOD?</string>
     <string name="open_settings_31" translatable="true">PARAMÈTRES DE SPOTIFY</string>
     <string name="open_patched_31" translatable="true">PARAMÈTRES DEL MOD</string>
+    <string name="reboot_31" translatable="true">RECUPERA I REINICIA</string>
     
     <!--LATVIAN LANGUAGE-->
     <string name="app_name_32" translatable="true">xManager</string>
@@ -2730,7 +2730,6 @@
     <string name="versions_32" translatable="true">VERSIJAS  </string>
     <string name="changelogs_32" translatable="true">IZMAIŅAS</string>
     <string name="manager_tools_32" translatable="true">PĀRVALDNIEKA RĪKI</string>
-    <string name="device_cpu_32" translatable="true">CPU/ARCH</string>
     <string name="source_32" translatable="true">AVOTS</string>
     <string name="support_32" translatable="true">TELEGRAM</string>
     <string name="donate_32" translatable="true">ATBALSTS</string>
@@ -2807,6 +2806,7 @@
     <string name="uninstall_patched_32" translatable="true">IZDZĒST LABOTO</string>
     <string name="open_settings_32" translatable="true">ATVERT IESTATIJUMUS</string>
     <string name="open_patched_32" translatable="true">ATVERT IZLABOTO</string>
+    <string name="reboot_32" translatable="true">REFETCH UN REBOOT</string>
     
     <!--GERMAN LANGUAGE-->
     <string name="app_name_33" translatable="true">xManager</string>
@@ -2815,7 +2815,6 @@
     <string name="versions_33" translatable="true">VERSIONEN</string>
     <string name="changelogs_33" translatable="true">ÄNDERUNGEN</string>
     <string name="manager_tools_33" translatable="true">MANAGER WERKZEUGE</string>
-    <string name="device_cpu_33" translatable="true">CPU/ARCH</string>
     <string name="source_33" translatable="true">SOURCECODE</string>
     <string name="support_33" translatable="true">TELEGRAM</string>
     <string name="donate_33" translatable="true">UNTERSTÜTZEN</string>
@@ -2892,4 +2891,5 @@
     <string name="uninstall_patched_33" translatable="true">PATCH DEINSTALLIEREN</string>
     <string name="open_settings_33" translatable="true">EINSTELLUNGEN ÖFFNEN</string>
     <string name="open_patched_33" translatable="true">PATCH ÖFFNEN</string>
+    <string name="reboot_33" translatable="true">ERNEUTES ABRUFEN UND NEUSTARTEN</string>
 </resources>
