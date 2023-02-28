@@ -19,7 +19,7 @@
 
 <p align="center">
   <a href="https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones"><img src="https://img.shields.io/badge/Roadmaps,%20Changelogs%20&%20Milestones-Click%20Here-white.svg?style=for-the-badge"/></a>
-<a href="https://www.virustotal.com/gui/file/915b12ebc91e65d5c08c9af0fd6808e43e5ac486e11adc86f30281ea5eb5cd7b/detection"><img src="https://img.shields.io/badge/VirusTotal-Click%20Here-white.svg?style=for-the-badge"/></a>
+<a href="https://www.virustotal.com/gui/file/ef27dc536b0485d95cc52f08fb6f62957c8362fb5615b2eae43b99b97cf017db/detection"><img src="https://img.shields.io/badge/VirusTotal-Click%20Here-white.svg?style=for-the-badge"/></a>
 </p>
 
 # Main Features
