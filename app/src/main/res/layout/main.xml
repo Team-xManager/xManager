@@ -1152,13 +1152,33 @@
 				android:gravity="center_horizontal|center_vertical"
 				android:orientation="horizontal">
 				<LinearLayout
+					android:id="@+id/box_reboot"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginRight="10dp"
+					android:paddingTop="10dp"
+					android:paddingBottom="10dp"
+					android:background="#616161"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/reboot"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:paddingLeft="10dp"
+						android:paddingRight="10dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="REFETCH AND REBOOT"
+						android:textSize="12sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+				</LinearLayout>
+				<LinearLayout
 					android:id="@+id/box_reset_preferences"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:paddingTop="10dp"
 					android:paddingBottom="10dp"
 					android:background="#616161"
-					android:gravity="center_horizontal|center_vertical"
 					android:orientation="horizontal">
 					<TextView
 						android:id="@+id/reset_preferences"
@@ -1166,6 +1186,7 @@
 						android:layout_height="wrap_content"
 						android:paddingLeft="10dp"
 						android:paddingRight="10dp"
+						android:gravity="center_horizontal|center_vertical"
 						android:text="RESET PREFERENCES"
 						android:textSize="12sp"
 						android:textStyle="bold"
@@ -1226,7 +1247,7 @@
 					android:id="@+id/title_about"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:paddingLeft="10dp"
+					android:paddingLeft="30dp"
 					android:gravity="center_horizontal|center_vertical"
 					android:text="xManager v"
 					android:textSize="18sp"
@@ -1237,21 +1258,13 @@
 					android:id="@+id/local_version"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
+					android:paddingRight="30dp"
 					android:gravity="center_horizontal|center_vertical"
 					android:text="N/A"
 					android:textSize="18sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF"
 					android:layout_gravity="center_horizontal|center_vertical" />
-				<TextView
-					android:id="@+id/local_info"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingRight="10dp"
-					android:text=" (Omnibus)"
-					android:textSize="18sp"
-					android:textStyle="bold"
-					android:textColor="#171717" />
 			</LinearLayout>
 			<LinearLayout
 				android:id="@+id/box_about_sub"
@@ -2485,16 +2498,7 @@
 						</LinearLayout>
 					</LinearLayout>
 					<ListView
-						android:id="@+id/list_menu_1"
-						android:layout_width="match_parent"
-						android:layout_height="260dp"
-						android:dividerHeight="2dp"
-						android:choiceMode="none"
-						android:nestedScrollingEnabled="true"
-						android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb"
-						android:divider="#171717" />
-					<ListView
-						android:id="@+id/list_menu_3"
+						android:id="@+id/list_items_1"
 						android:layout_width="match_parent"
 						android:layout_height="260dp"
 						android:dividerHeight="2dp"
@@ -2675,16 +2679,7 @@
 						</LinearLayout>
 					</LinearLayout>
 					<ListView
-						android:id="@+id/list_menu_2"
-						android:layout_width="match_parent"
-						android:layout_height="260dp"
-						android:dividerHeight="2dp"
-						android:choiceMode="none"
-						android:nestedScrollingEnabled="true"
-						android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb"
-						android:divider="#171717" />
-					<ListView
-						android:id="@+id/list_menu_4"
+						android:id="@+id/list_items_2"
 						android:layout_width="match_parent"
 						android:layout_height="260dp"
 						android:dividerHeight="2dp"
@@ -2781,7 +2776,7 @@
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
-						android:id="@+id/box_separator_5"
+						android:id="@+id/box_separator_3"
 						android:layout_width="match_parent"
 						android:layout_height="3dp"
 						android:layout_marginLeft="15dp"
@@ -2825,7 +2820,7 @@
 						</LinearLayout>
 					</LinearLayout>
 					<ListView
-						android:id="@+id/list_menu_5"
+						android:id="@+id/list_items_3"
 						android:layout_width="match_parent"
 						android:layout_height="260dp"
 						android:dividerHeight="2dp"
@@ -2845,56 +2840,6 @@
 					android:background="#212121"
 					android:orientation="vertical"
 					android:animateLayoutChanges="true">
-					<LinearLayout
-						android:id="@+id/box_6_sub_1"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:orientation="horizontal">
-						<TextView
-							android:id="@+id/device_cpu"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:paddingLeft="10dp"
-							android:paddingTop="8dp"
-							android:paddingRight="8dp"
-							android:paddingBottom="8dp"
-							android:gravity="center_horizontal|center_vertical"
-							android:text="CPU/ARCH"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:textColor="#1DB954"
-							android:layout_gravity="center_horizontal|center_vertical" />
-						<LinearLayout
-							android:id="@+id/box_cpu"
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:gravity="right|center_vertical"
-							android:orientation="horizontal">
-							<TextView
-								android:id="@+id/cpu"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:paddingLeft="8dp"
-								android:paddingTop="8dp"
-								android:paddingRight="10dp"
-								android:paddingBottom="8dp"
-								android:gravity="right|center_vertical"
-								android:text="N/A"
-								android:textSize="12sp"
-								android:textStyle="bold"
-								android:textColor="#FFFFFF"
-								android:layout_gravity="right|center_vertical" />
-						</LinearLayout>
-					</LinearLayout>
-					<LinearLayout
-						android:id="@+id/box_separator_3"
-						android:layout_width="match_parent"
-						android:layout_height="3dp"
-						android:layout_marginLeft="15dp"
-						android:layout_marginRight="15dp"
-						android:padding="8dp"
-						android:background="#616161"
-						android:orientation="horizontal" />
 					<LinearLayout
 						android:id="@+id/box_6_sub_2"
 						android:layout_width="match_parent"
@@ -3013,7 +2958,7 @@
 							android:text="CHANGELOGS"
 							android:textSize="12sp"
 							android:textStyle="bold"
-							android:textColor="#1DB954"
+							android:textColor="#FFFFFF"
 							android:layout_gravity="center_horizontal|center_vertical" />
 						<LinearLayout
 							android:id="@+id/box_changelogs"
@@ -3035,7 +2980,7 @@
 						</LinearLayout>
 					</LinearLayout>
 					<ListView
-						android:id="@+id/list_changelogs"
+						android:id="@+id/list_items_4"
 						android:layout_width="match_parent"
 						android:layout_height="260dp"
 						android:dividerHeight="3dp"
