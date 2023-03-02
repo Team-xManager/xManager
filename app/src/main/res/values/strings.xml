@@ -2542,7 +2542,7 @@
     <string name="existing_patched_29" translatable="true">ПОСТОЈЕЋИ МОД</string>
     <string name="existing_patched_desc_29" translatable="true">Постојећи печовани APK фајл пронађен је у једном од директоријума. Коју акцију бисте желели да урадитe?</string>
     <string name="close_29" translatable="true">ЗАТВОРИТЕ</string>
-    <string name="cloned_29" translatable="true">КЛОНИРАНО</string>
+    <string name="cloned_29" translatable="true">КЛОНИРАН</string>
     <string name="spap_29" translatable="true">SP/AP</string>
     <string name="install_29" translatable="true">ИНСТАЛИРАЈТЕ</string>
     <string name="uninstall_29" translatable="true">ДЕИНСТАЛИРАЈТЕ</string>
