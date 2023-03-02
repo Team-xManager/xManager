@@ -2551,7 +2551,7 @@
     <string name="uninstall_patched_29" translatable="true">ДЕИНСТАЛИРАЈТЕ МОД</string>
     <string name="open_settings_29" translatable="true">ОТВОРИТЕ ПОДЕШАВАЊА</string>
     <string name="open_patched_29" translatable="true">ОТВОРИТЕ МОД</string>
-    <string name="reboot_29" translatable="tru">ПОНОВО ПРИКУПИТЕ ПОДАТКЕ И ПОНОВО ПОКРЕНИТЕ</string>
+    <string name="reboot_29" translatable="true">ПОНОВО ПРИКУПИТЕ ПОДАТКЕ И ПОНОВО ПОКРЕНИТЕ</string>
     
     <!--SERBIAN (LATIN) LANGUAGE-->
     <string name="app_name_30" translatable="true">xManager</string>
