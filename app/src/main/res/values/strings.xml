@@ -2627,7 +2627,7 @@
     <string name="existing_patched_30" translatable="true">POSTOJEĆI MOD</string>
     <string name="existing_patched_desc_30" translatable="true">Postojeći pečovani APK fajl pronađen je u jednom od direktorijuma. Koju akciju biste želeli da uradite?</string>
     <string name="close_30" translatable="true">ZATVORITE</string>
-    <string name="cloned_30" translatable="true">KLONIRANO</string>
+    <string name="cloned_30" translatable="true">KLONIRAN</string>
     <string name="spap_30" translatable="true">SP/AP</string>
     <string name="install_30" translatable="true">INSTALIRAJTE</string>
     <string name="uninstall_30" translatable="true">DEINSTALIRAJTE</string>
