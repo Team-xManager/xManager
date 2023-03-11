@@ -2471,7 +2471,7 @@
     <!--SERBIAN (CYRILLIC) LANGUAGE-->
     <string name="app_name_29" translatable="true">xManager</string>
     <string name="installed_29" translatable="true">ИНСТАЛИРАНА</string>
-    <string name="latest_29" translatable="true">ПОСЛЕДЊА</string>
+    <string name="latest_29" translatable="true">НАЈНОВИЈА</string>
     <string name="versions_29" translatable="true">ВЕРЗИЈЕ  </string>
     <string name="changelogs_29" translatable="true">ЕВИДЕНЦИЈА ПРОМЕНА</string>
     <string name="manager_tools_29" translatable="true">АЛАТКЕ</string>
@@ -2489,9 +2489,9 @@
     <string name="force_auto_install_desc_29" translatable="true">Ако ово омогућите, печована апликација ће се аутоматски инсталирати и ажурирати након преузимања.</string>
     <string name="show_themes_29" translatable="true">ТЕМЕ</string>
     <string name="apk_location_29" translatable="true">APK ЛОКАЦИЈА</string>
-    <string name="apk_location_desc_29" translatable="true">Директоријум у који желите да сачувате копију преузете датотеке. Ако не знате како да конфигуришете ову функцију, оставите ово како јесте.\n\nНАПОМЕНА: Ова функција не подржава спољну меморију (СД картицу) због приступачности, дозвола и ограничења складиштења.</string>
-    <string name="clear_directory_folders_29" translatable="true">ОЧИСТИТЕ ДИРЕКТОРИЈУМ</string>
-    <string name="clear_directory_folders_desc_29" translatable="true">Додирните да бисте избрисали директоријум. Ово укључује преузете датотеке и ажурирања.</string>
+    <string name="apk_location_desc_29" translatable="true">Директоријум у који желите да сачувате копију преузетог фајла. Ако не знате како да конфигуришете ову функцију, оставите ово како јесте.\n\nНАПОМЕНА: Ова функција не подржава спољну меморију (СД картицу) због приступачности, дозвола и ограничења складиштења.</string>
+    <string name="clear_directory_folders_29" translatable="true">ИЗБРИШИТЕ ДИРЕКТОРИЈУМ</string>
+    <string name="clear_directory_folders_desc_29" translatable="true">Додирните да бисте избрисали директоријум. Ово укључује преузете фајлове и ажурирања.</string>
     <string name="reset_preferences_29" translatable="true">РЕСЕТУЈТЕ ПОДЕШАВАЊА</string>
     <string name="about_sub_29" translatable="true">Без реклама | Нове функције | Слобода</string>
     <string name="xmanager_dev_29" translatable="true">Програмери xManager</string>
@@ -2504,8 +2504,8 @@
     <string name="contributors_29" translatable="true">ХВАЛА СВИМ САРАДНИЦИМА! ❤️</string>
     <string name="download_selected_29" translatable="true">Изабрали сте ову печовану верзију. Да ли желите да наставите?</string>
     <string name="download_ready_29" translatable="true">ИНФОРМАЦИЈЕ О МОДУ</string>
-    <string name="download_ready_desc_29" translatable="true">Преузимање ове печоване APK датотеке преписаће претходну датотеку која се налази у спољном директоријуму.</string>
-    <string name="downloading_file_29" translatable="true">ПРЕУЗИМАЊЕ ДАТОТЕКЕ...</string>
+    <string name="download_ready_desc_29" translatable="true">Преузимање овог печованог APK фајла преписаће претходни фајл који се налази у спољном директоријуму.</string>
+    <string name="downloading_file_29" translatable="true">ПРЕУЗИМАЊЕ ФАЈЛА...</string>
     <string name="download_success_29" translatable="true">УСПЕШНО ПРЕУЗЕТО</string>
     <string name="new_update_29" translatable="true">НОВО АЖУРИРАЊЕ МЕНАЏЕРА</string>
     <string name="continue_1_29" translatable="true">НАСТАВИТЕ</string>
@@ -2517,11 +2517,11 @@
     <string name="go_back_29" translatable="true">НАЗАД</string>
     <string name="download_update_29" translatable="true">ПРЕУЗМИТЕ АЖУРИРАЊЕ</string>
     <string name="not_now_29" translatable="true">НЕ САДА</string>
-    <string name="mirror_29" translatable="true">МИРРОР ЛИНК</string>
-    <string name="lite_29" translatable="true">ЛИТЕ</string>
-    <string name="experimental_title_29" translatable="true">Екпериментал</string>
-    <string name="experimental_version_29" translatable="true">ЕКПЕРИМЕНТАЛ ВЕРСИОН</string>
-    <string name="experimental_version_desc_29" translatable="true">омогућавање овог параметра омогућиће вам да преузмете и инсталирате експерименталну верзију исправљене апликације.\n\nто укључује алфа, бета и функције раног приступа које нису доступне у исправљеном облику. Поред тога, стабилност није загарантована.</string>
+    <string name="mirror_29" translatable="true">MIRROR ЛИНК</string>
+    <string name="lite_29" translatable="true">LITE</string>
+    <string name="experimental_title_29" translatable="true">Експериментално</string>
+    <string name="experimental_version_29" translatable="true">ЕКСПЕРИМЕНТАЛНА ВЕРЗИЈА</string>
+    <string name="experimental_version_desc_29" translatable="true">Ако ово омогућите, моћи ћете да преузмете и инсталирате експерименталну верзију печоване апликације.\n\nОво укључује алфа, бета и функције раног приступа, које нису доступне у основној печованој верзији. Поред тога, није загарантована стабилност апликације.</string>
     <string name="show_support_29" translatable="true">ПОКАЖИТЕ ВАШУ ПОДРШКУ</string>
     <string name="show_support_desc_29" translatable="true">Ми смо непрофитни, некорпоративни и некомпромитовани тим. Људи попут Вас подстичу нас да направимо апликацију како бисмо ствари учинили много лакшим, посебно од преузимања до инсталирања.\n\nУлажемо све наше време и све напоре како би ствари биле исправне и савршене. Даћемо све од себе да подржавамо ову апликацију колико год можемо.\n\nСваки износ ће помоћи и бити веома цењен!</string>
     <string name="maintenance_29" translatable="true">ОДРЖАВАЊЕ</string>
@@ -2540,9 +2540,9 @@
     <string name="installation_failed_spap_desc_29" translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManagerа или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављена питања.</string>
     <string name="installation_failed_cloned_desc_29" translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManagerа или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављена питања.</string>
     <string name="existing_patched_29" translatable="true">ПОСТОЈЕЋИ МОД</string>
-    <string name="existing_patched_desc_29" translatable="true">Постојећа печована APK датотека пронађена је у једном од директоријума. Коју акцију бисте желели да урадите?</string>
+    <string name="existing_patched_desc_29" translatable="true">Постојећи печовани APK фајл пронађен је у једном од директоријума. Коју акцију бисте желели да урадитe?</string>
     <string name="close_29" translatable="true">ЗАТВОРИТЕ</string>
-    <string name="cloned_29" translatable="true">КЛОНИРАЈТЕ</string>
+    <string name="cloned_29" translatable="true">КЛОНИРАН</string>
     <string name="spap_29" translatable="true">SP/AP</string>
     <string name="install_29" translatable="true">ИНСТАЛИРАЈТЕ</string>
     <string name="uninstall_29" translatable="true">ДЕИНСТАЛИРАЈТЕ</string>
@@ -2551,7 +2551,7 @@
     <string name="uninstall_patched_29" translatable="true">ДЕИНСТАЛИРАЈТЕ МОД</string>
     <string name="open_settings_29" translatable="true">ОТВОРИТЕ ПОДЕШАВАЊА</string>
     <string name="open_patched_29" translatable="true">ОТВОРИТЕ МОД</string>
-    <string name="reboot_29" translatable="true">ПОНОВНО УЗОРКОВАЊЕ</string>
+    <string name="reboot_29" translatable="true">ПОНОВО ПРИКУПИТЕ ПОДАТКЕ И ПОНОВО ПОКРЕНИТЕ</string>
     
     <!--SERBIAN (LATIN) LANGUAGE-->
     <string name="app_name_30" translatable="true">xManager</string>
