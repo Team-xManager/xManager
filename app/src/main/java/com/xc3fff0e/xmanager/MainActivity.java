@@ -418,7 +418,7 @@ public class MainActivity extends AppCompatActivity {
 	private ListView list_items_1;
 	private TextView title_1;
 	private LinearLayout box_1_sub;
-	private TextView stock_info;
+	private TextView patched_1;
 	private TextView sub_text_1;
 	private LinearLayout box_switch_1;
 	private TextView sub_1;
@@ -435,7 +435,7 @@ public class MainActivity extends AppCompatActivity {
 	private ListView list_items_2;
 	private TextView title_2;
 	private LinearLayout box_2_sub;
-	private TextView amoled_info;
+	private TextView patched_2;
 	private TextView sub_text_2;
 	private LinearLayout box_switch_2;
 	private TextView sub_2;
@@ -452,7 +452,7 @@ public class MainActivity extends AppCompatActivity {
 	private ListView list_items_3;
 	private TextView title_3;
 	private LinearLayout box_3_sub;
-	private TextView lite_info;
+	private TextView patched_3;
 	private TextView sub_text_3;
 	private LinearLayout box_switch_3;
 	private TextView sub_9;
@@ -510,7 +510,6 @@ public class MainActivity extends AppCompatActivity {
 	private ImageView icon_faq;
 	
 	private TimerTask Timer;
-	private SharedPreferences ON_SCREEN;
 	private SharedPreferences THEME;
 	private SharedPreferences DESC_X;
 	private RequestNetwork Connection;
@@ -525,6 +524,8 @@ public class MainActivity extends AppCompatActivity {
 	private SharedPreferences DISABLE_REWARD_AD;
 	private SharedPreferences AD_UNIT;
 	private SharedPreferences SWITCH_VERSION;
+	private SharedPreferences REFETCH;
+	private SharedPreferences INITIALIZATION;
 	
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
@@ -790,7 +791,7 @@ public class MainActivity extends AppCompatActivity {
 		list_items_1 = findViewById(R.id.list_items_1);
 		title_1 = findViewById(R.id.title_1);
 		box_1_sub = findViewById(R.id.box_1_sub);
-		stock_info = findViewById(R.id.stock_info);
+		patched_1 = findViewById(R.id.patched_1);
 		sub_text_1 = findViewById(R.id.sub_text_1);
 		box_switch_1 = findViewById(R.id.box_switch_1);
 		sub_1 = findViewById(R.id.sub_1);
@@ -807,7 +808,7 @@ public class MainActivity extends AppCompatActivity {
 		list_items_2 = findViewById(R.id.list_items_2);
 		title_2 = findViewById(R.id.title_2);
 		box_2_sub = findViewById(R.id.box_2_sub);
-		amoled_info = findViewById(R.id.amoled_info);
+		patched_2 = findViewById(R.id.patched_2);
 		sub_text_2 = findViewById(R.id.sub_text_2);
 		box_switch_2 = findViewById(R.id.box_switch_2);
 		sub_2 = findViewById(R.id.sub_2);
@@ -824,7 +825,7 @@ public class MainActivity extends AppCompatActivity {
 		list_items_3 = findViewById(R.id.list_items_3);
 		title_3 = findViewById(R.id.title_3);
 		box_3_sub = findViewById(R.id.box_3_sub);
-		lite_info = findViewById(R.id.lite_info);
+		patched_3 = findViewById(R.id.patched_3);
 		sub_text_3 = findViewById(R.id.sub_text_3);
 		box_switch_3 = findViewById(R.id.box_switch_3);
 		sub_9 = findViewById(R.id.sub_9);
@@ -880,7 +881,6 @@ public class MainActivity extends AppCompatActivity {
 		icon_website = findViewById(R.id.icon_website);
 		faq = findViewById(R.id.faq);
 		icon_faq = findViewById(R.id.icon_faq);
-		ON_SCREEN = getSharedPreferences("ON_SCREEN", Activity.MODE_PRIVATE);
 		THEME = getSharedPreferences("THEME", Activity.MODE_PRIVATE);
 		DESC_X = getSharedPreferences("DESC_X", Activity.MODE_PRIVATE);
 		Connection = new RequestNetwork(this);
@@ -892,6 +892,8 @@ public class MainActivity extends AppCompatActivity {
 		DISABLE_REWARD_AD = getSharedPreferences("DISABLE_REWARD_AD", Activity.MODE_PRIVATE);
 		AD_UNIT = getSharedPreferences("AD_UNIT", Activity.MODE_PRIVATE);
 		SWITCH_VERSION = getSharedPreferences("SWITCH_VERSION", Activity.MODE_PRIVATE);
+		REFETCH = getSharedPreferences("REFETCH", Activity.MODE_PRIVATE);
+		INITIALIZATION = getSharedPreferences("INITIALIZATION", Activity.MODE_PRIVATE);
 		
 		box_experiment.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -1141,12 +1143,14 @@ public class MainActivity extends AppCompatActivity {
 				final boolean _isChecked = _param2;
 				if (!_isChecked && !experiment_version_switch.isChecked()) {
 					SWITCH_VERSION.edit().putString("SWITCH", "A").commit();
-					stock_info.setText("Ad-free, unlimited skips and play on-demand");
-					amoled_info.setText("Same features but in amoled black theme");
-					stock_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-					amoled_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-					stock_info.setTextSize((int)12);
-					amoled_info.setTextSize((int)12);
+					title_1.setText("STOCK PATCHED");
+					title_2.setText("AMOLED PATCHED");
+					patched_1.setText("Ad-free, unlimited skips and play on-demand");
+					patched_2.setText("Same features but in amoled black theme");
+					patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+					patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+					patched_1.setTextSize((int)12);
+					patched_2.setTextSize((int)12);
 					sub_1.setVisibility(View.VISIBLE);
 					sub_2.setVisibility(View.VISIBLE);
 					sub_3.setVisibility(View.GONE);
@@ -1175,12 +1179,14 @@ public class MainActivity extends AppCompatActivity {
 				else {
 					if (_isChecked && !experiment_version_switch.isChecked()) {
 						SWITCH_VERSION.edit().putString("SWITCH", "B").commit();
-						stock_info.setText("A cloned version of the stock patched");
-						amoled_info.setText("A cloned version of the stock patched with amoled black theme");
-						stock_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-						amoled_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-						stock_info.setTextSize((int)12);
-						amoled_info.setTextSize((int)12);
+						title_1.setText("STOCK CLONED PATCHED");
+						title_2.setText("AMOLED CLONED PATCHED");
+						patched_1.setText("A cloned version of the stock patched");
+						patched_2.setText("A cloned version of the stock patched with amoled black theme");
+						patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+						patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+						patched_1.setTextSize((int)12);
+						patched_2.setTextSize((int)12);
 						sub_1.setVisibility(View.GONE);
 						sub_2.setVisibility(View.GONE);
 						sub_3.setVisibility(View.VISIBLE);
@@ -1209,12 +1215,14 @@ public class MainActivity extends AppCompatActivity {
 					else {
 						if (!_isChecked && experiment_version_switch.isChecked()) {
 							SWITCH_VERSION.edit().putString("SWITCH", "C").commit();
-							stock_info.setText("Experimental. New features. Unstable.");
-							amoled_info.setText("Same experimental features but in amoled black theme. Unstable.");
-							stock_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-							amoled_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-							stock_info.setTextSize((int)12);
-							amoled_info.setTextSize((int)12);
+							title_1.setText("STOCK EXP PATCHED");
+							title_2.setText("AMOLED EXP PATCHED");
+							patched_1.setText("Experimental. New features. Unstable.");
+							patched_2.setText("Same experimental features but in amoled black theme. Unstable.");
+							patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+							patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+							patched_1.setTextSize((int)12);
+							patched_2.setTextSize((int)12);
 							sub_1.setVisibility(View.GONE);
 							sub_2.setVisibility(View.GONE);
 							sub_3.setVisibility(View.GONE);
@@ -1243,12 +1251,14 @@ public class MainActivity extends AppCompatActivity {
 						else {
 							if (_isChecked && experiment_version_switch.isChecked()) {
 								SWITCH_VERSION.edit().putString("SWITCH", "D").commit();
-								stock_info.setText("Experimental cloned. Unstable.");
-								amoled_info.setText("Same experimental cloned features. Unstable.");
-								stock_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-								amoled_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-								stock_info.setTextSize((int)12);
-								amoled_info.setTextSize((int)12);
+								title_1.setText("SE CLONED PATCHED");
+								title_2.setText("AE CLONED PATCHED");
+								patched_1.setText("Experimental cloned. Unstable.");
+								patched_2.setText("Same experimental cloned features. Unstable.");
+								patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+								patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+								patched_1.setTextSize((int)12);
+								patched_2.setTextSize((int)12);
 								sub_1.setVisibility(View.GONE);
 								sub_2.setVisibility(View.GONE);
 								sub_3.setVisibility(View.GONE);
@@ -1287,12 +1297,14 @@ public class MainActivity extends AppCompatActivity {
 				final boolean _isChecked = _param2;
 				if (!_isChecked && !cloned_version_switch.isChecked()) {
 					SWITCH_VERSION.edit().putString("SWITCH", "A").commit();
-					stock_info.setText("Ad-free, unlimited skips and play on-demand");
-					amoled_info.setText("Same features but in amoled black theme");
-					stock_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-					amoled_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-					stock_info.setTextSize((int)12);
-					amoled_info.setTextSize((int)12);
+					title_1.setText("STOCK PATCHED");
+					title_2.setText("AMOLED PATCHED");
+					patched_1.setText("Ad-free, unlimited skips and play on-demand");
+					patched_2.setText("Same features but in amoled black theme");
+					patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+					patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+					patched_1.setTextSize((int)12);
+					patched_2.setTextSize((int)12);
 					sub_1.setVisibility(View.VISIBLE);
 					sub_2.setVisibility(View.VISIBLE);
 					sub_3.setVisibility(View.GONE);
@@ -1321,12 +1333,14 @@ public class MainActivity extends AppCompatActivity {
 				else {
 					if (!_isChecked && cloned_version_switch.isChecked()) {
 						SWITCH_VERSION.edit().putString("SWITCH", "B").commit();
-						stock_info.setText("A cloned version of the stock patched");
-						amoled_info.setText("A cloned version of the stock patched with amoled black theme");
-						stock_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-						amoled_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-						stock_info.setTextSize((int)12);
-						amoled_info.setTextSize((int)12);
+						title_1.setText("STOCK CLONED PATCHED");
+						title_2.setText("AMOLED CLONED PATCHED");
+						patched_1.setText("A cloned version of the stock patched");
+						patched_2.setText("A cloned version of the stock patched with amoled black theme");
+						patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+						patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+						patched_1.setTextSize((int)12);
+						patched_2.setTextSize((int)12);
 						sub_1.setVisibility(View.GONE);
 						sub_2.setVisibility(View.GONE);
 						sub_3.setVisibility(View.VISIBLE);
@@ -1355,12 +1369,14 @@ public class MainActivity extends AppCompatActivity {
 					else {
 						if (_isChecked && !cloned_version_switch.isChecked()) {
 							SWITCH_VERSION.edit().putString("SWITCH", "C").commit();
-							stock_info.setText("Experimental. New features. Unstable.");
-							amoled_info.setText("Same experimental features but in amoled black theme. Unstable.");
-							stock_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-							amoled_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-							stock_info.setTextSize((int)12);
-							amoled_info.setTextSize((int)12);
+							title_1.setText("STOCK EXP PATCHED");
+							title_2.setText("AMOLED EXP PATCHED");
+							patched_1.setText("Experimental. New features. Unstable.");
+							patched_2.setText("Same experimental features but in amoled black theme. Unstable.");
+							patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+							patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+							patched_1.setTextSize((int)12);
+							patched_2.setTextSize((int)12);
 							sub_1.setVisibility(View.GONE);
 							sub_2.setVisibility(View.GONE);
 							sub_3.setVisibility(View.GONE);
@@ -1389,12 +1405,14 @@ public class MainActivity extends AppCompatActivity {
 						else {
 							if (_isChecked && cloned_version_switch.isChecked()) {
 								SWITCH_VERSION.edit().putString("SWITCH", "D").commit();
-								stock_info.setText("Experimental cloned. Unstable.");
-								amoled_info.setText("Same experimental cloned features. Unstable.");
-								stock_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-								amoled_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-								stock_info.setTextSize((int)12);
-								amoled_info.setTextSize((int)12);
+								title_1.setText("SE CLONED PATCHED");
+								title_2.setText("AE CLONED PATCHED");
+								patched_1.setText("Experimental cloned. Unstable.");
+								patched_2.setText("Same experimental cloned features. Unstable.");
+								patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+								patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+								patched_1.setTextSize((int)12);
+								patched_2.setTextSize((int)12);
 								sub_1.setVisibility(View.GONE);
 								sub_2.setVisibility(View.GONE);
 								sub_3.setVisibility(View.GONE);
@@ -2290,59 +2308,8 @@ public class MainActivity extends AppCompatActivity {
 									                @Override
 									                public void onClick(DialogInterface Selected_Patched, int p) {
 										try {
-											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-												AlertDialog.setCancelable(true);
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-													else {
-														_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-												}
-												else {
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-														else {
-															_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-												}
-												_File_Remover();
-											}
-											else {
-												if (mRewardedAd != null) {
-													  Activity activityContext = MainActivity.this;
-													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-														    @Override
-														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-															       AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-																else {
-																	_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																	else {
-																		_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																}
-															}
-															_File_Remover();
-															      int rewardAmount = rewardItem.getAmount();
-															      String rewardType = rewardItem.getType();
-															    }
-														  });
-												} else {
+											if (SWITCH_VERSION.getString("SWITCH", "").contains("A") || SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
+												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 													AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
@@ -2363,6 +2330,138 @@ public class MainActivity extends AppCompatActivity {
 														}
 													}
 													_File_Remover();
+												}
+												else {
+													if (mRewardedAd != null) {
+														  Activity activityContext = MainActivity.this;
+														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+															    @Override
+															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																       AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																	else {
+																		_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																}
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																			_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		}
+																		else {
+																			_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		}
+																	}
+																}
+																_File_Remover();
+																      int rewardAmount = rewardItem.getAmount();
+																      String rewardType = rewardItem.getType();
+																    }
+															  });
+													} else {
+														AlertDialog.setCancelable(true);
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+														}
+														else {
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+																else {
+																	_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+															}
+														}
+														_File_Remover();
+													}
+												}
+											}
+											else {
+												if (SWITCH_VERSION.getString("SWITCH", "").contains("B") || SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
+													if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+														AlertDialog.setCancelable(true);
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+														}
+														else {
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+																else {
+																	_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+															}
+														}
+														_File_Remover();
+													}
+													else {
+														if (mRewardedAd != null) {
+															  Activity activityContext = MainActivity.this;
+															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																    @Override
+																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																	       AlertDialog.setCancelable(true);
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																			_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		}
+																		else {
+																			_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		}
+																	}
+																	else {
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																			if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																				_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																			}
+																			else {
+																				_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																			}
+																		}
+																	}
+																	_File_Remover();
+																	      int rewardAmount = rewardItem.getAmount();
+																	      String rewardType = rewardItem.getType();
+																	    }
+																  });
+														} else {
+															AlertDialog.setCancelable(true);
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+																else {
+																	_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+															}
+															else {
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																	else {
+																		_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																}
+															}
+															_File_Remover();
+														}
+													}
 												}
 											}
 										}
@@ -2471,59 +2570,8 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface Selected_Patched, int p) {
 								try {
-									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-										AlertDialog.setCancelable(true);
-										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-												_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-											}
-											else {
-												_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-											}
-										}
-										else {
-											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-												else {
-													_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-											}
-										}
-										_File_Remover();
-									}
-									else {
-										if (mRewardedAd != null) {
-											  Activity activityContext = MainActivity.this;
-											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-												    @Override
-												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-													       AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-														else {
-															_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-														}
-													}
-													_File_Remover();
-													      int rewardAmount = rewardItem.getAmount();
-													      String rewardType = rewardItem.getType();
-													    }
-												  });
-										} else {
+									if (SWITCH_VERSION.getString("SWITCH", "").contains("A") || SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
+										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 											AlertDialog.setCancelable(true);
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
@@ -2544,6 +2592,138 @@ public class MainActivity extends AppCompatActivity {
 												}
 											}
 											_File_Remover();
+										}
+										else {
+											if (mRewardedAd != null) {
+												  Activity activityContext = MainActivity.this;
+												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+													    @Override
+													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+														       AlertDialog.setCancelable(true);
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+														}
+														else {
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+																else {
+																	_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+															}
+														}
+														_File_Remover();
+														      int rewardAmount = rewardItem.getAmount();
+														      String rewardType = rewardItem.getType();
+														    }
+													  });
+											} else {
+												AlertDialog.setCancelable(true);
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+													else {
+														_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+												}
+												else {
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+													}
+												}
+												_File_Remover();
+											}
+										}
+									}
+									else {
+										if (SWITCH_VERSION.getString("SWITCH", "").contains("B") || SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
+											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+												AlertDialog.setCancelable(true);
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+													else {
+														_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+												}
+												else {
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+													}
+												}
+												_File_Remover();
+											}
+											else {
+												if (mRewardedAd != null) {
+													  Activity activityContext = MainActivity.this;
+													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+														    @Override
+														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+															       AlertDialog.setCancelable(true);
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+																else {
+																	_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+															}
+															else {
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																	else {
+																		_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																}
+															}
+															_File_Remover();
+															      int rewardAmount = rewardItem.getAmount();
+															      String rewardType = rewardItem.getType();
+															    }
+														  });
+												} else {
+													AlertDialog.setCancelable(true);
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+													}
+													else {
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+														}
+													}
+													_File_Remover();
+												}
+											}
 										}
 									}
 								}
@@ -2728,59 +2908,8 @@ public class MainActivity extends AppCompatActivity {
 									                @Override
 									                public void onClick(DialogInterface Selected_Patched, int p) {
 										try {
-											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-												AlertDialog.setCancelable(true);
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-													else {
-														_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-												}
-												else {
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-														else {
-															_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-												}
-												_File_Remover();
-											}
-											else {
-												if (mRewardedAd != null) {
-													  Activity activityContext = MainActivity.this;
-													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-														    @Override
-														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-															       AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-																else {
-																	_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																	else {
-																		_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																}
-															}
-															_File_Remover();
-															      int rewardAmount = rewardItem.getAmount();
-															      String rewardType = rewardItem.getType();
-															    }
-														  });
-												} else {
+											if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 													AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
@@ -2801,6 +2930,138 @@ public class MainActivity extends AppCompatActivity {
 														}
 													}
 													_File_Remover();
+												}
+												else {
+													if (mRewardedAd != null) {
+														  Activity activityContext = MainActivity.this;
+														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+															    @Override
+															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																       AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																	else {
+																		_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																}
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																			_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		}
+																		else {
+																			_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		}
+																	}
+																}
+																_File_Remover();
+																      int rewardAmount = rewardItem.getAmount();
+																      String rewardType = rewardItem.getType();
+																    }
+															  });
+													} else {
+														AlertDialog.setCancelable(true);
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+														}
+														else {
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+																else {
+																	_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+															}
+														}
+														_File_Remover();
+													}
+												}
+											}
+											else {
+												if (SWITCH_VERSION.getString("SWITCH", "").equals("B") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+													if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+														AlertDialog.setCancelable(true);
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+														}
+														else {
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+																else {
+																	_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+															}
+														}
+														_File_Remover();
+													}
+													else {
+														if (mRewardedAd != null) {
+															  Activity activityContext = MainActivity.this;
+															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																    @Override
+																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																	       AlertDialog.setCancelable(true);
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																			_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		}
+																		else {
+																			_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		}
+																	}
+																	else {
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																			if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																				_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																			}
+																			else {
+																				_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																			}
+																		}
+																	}
+																	_File_Remover();
+																	      int rewardAmount = rewardItem.getAmount();
+																	      String rewardType = rewardItem.getType();
+																	    }
+																  });
+														} else {
+															AlertDialog.setCancelable(true);
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+																else {
+																	_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+															}
+															else {
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																	else {
+																		_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																}
+															}
+															_File_Remover();
+														}
+													}
 												}
 											}
 										}
@@ -2909,59 +3170,8 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface Selected_Patched, int p) {
 								try {
-									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-										AlertDialog.setCancelable(true);
-										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-												_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-											}
-											else {
-												_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-											}
-										}
-										else {
-											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-												else {
-													_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-											}
-										}
-										_File_Remover();
-									}
-									else {
-										if (mRewardedAd != null) {
-											  Activity activityContext = MainActivity.this;
-											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-												    @Override
-												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-													       AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-														else {
-															_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-														}
-													}
-													_File_Remover();
-													      int rewardAmount = rewardItem.getAmount();
-													      String rewardType = rewardItem.getType();
-													    }
-												  });
-										} else {
+									if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 											AlertDialog.setCancelable(true);
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
@@ -2982,6 +3192,138 @@ public class MainActivity extends AppCompatActivity {
 												}
 											}
 											_File_Remover();
+										}
+										else {
+											if (mRewardedAd != null) {
+												  Activity activityContext = MainActivity.this;
+												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+													    @Override
+													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+														       AlertDialog.setCancelable(true);
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+														}
+														else {
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+																else {
+																	_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+															}
+														}
+														_File_Remover();
+														      int rewardAmount = rewardItem.getAmount();
+														      String rewardType = rewardItem.getType();
+														    }
+													  });
+											} else {
+												AlertDialog.setCancelable(true);
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+													else {
+														_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+												}
+												else {
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+													}
+												}
+												_File_Remover();
+											}
+										}
+									}
+									else {
+										if (SWITCH_VERSION.getString("SWITCH", "").equals("B") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+												AlertDialog.setCancelable(true);
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+													else {
+														_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													}
+												}
+												else {
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+													}
+												}
+												_File_Remover();
+											}
+											else {
+												if (mRewardedAd != null) {
+													  Activity activityContext = MainActivity.this;
+													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+														    @Override
+														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+															       AlertDialog.setCancelable(true);
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+																else {
+																	_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																}
+															}
+															else {
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																	else {
+																		_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	}
+																}
+															}
+															_File_Remover();
+															      int rewardAmount = rewardItem.getAmount();
+															      String rewardType = rewardItem.getType();
+															    }
+														  });
+												} else {
+													AlertDialog.setCancelable(true);
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+														else {
+															_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														}
+													}
+													else {
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+															else {
+																_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															}
+														}
+													}
+													_File_Remover();
+												}
+											}
 										}
 									}
 								}
@@ -4027,6 +4369,10 @@ public class MainActivity extends AppCompatActivity {
 				final String urlDownload = _url;
 				final DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
 				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
+				final String cookies = CookieManager.getInstance().getCookie(urlDownload);
+				final String userAgent = "USER_AGENT";
+				request.addRequestHeader("cookie", cookies);
+				request.addRequestHeader("User-Agent", userAgent);
 				request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
@@ -4526,6 +4872,10 @@ public class MainActivity extends AppCompatActivity {
 				final String urlDownload = _url;
 				final DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
 				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
+				final String cookies = CookieManager.getInstance().getCookie(urlDownload);
+				final String userAgent = "USER_AGENT";
+				request.addRequestHeader("cookie", cookies);
+				request.addRequestHeader("User-Agent", userAgent);
 				request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
@@ -5369,6 +5719,10 @@ public class MainActivity extends AppCompatActivity {
 				final String urlDownload = _url;
 				final DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
 				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
+				final String cookies = CookieManager.getInstance().getCookie(urlDownload);
+				final String userAgent = "USER_AGENT";
+				request.addRequestHeader("cookie", cookies);
+				request.addRequestHeader("User-Agent", userAgent);
 				request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
@@ -5727,6 +6081,10 @@ public class MainActivity extends AppCompatActivity {
 				final String urlDownload = _url;
 				final DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
 				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
+				final String cookies = CookieManager.getInstance().getCookie(urlDownload);
+				final String userAgent = "USER_AGENT";
+				request.addRequestHeader("cookie", cookies);
+				request.addRequestHeader("User-Agent", userAgent);
 				request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
@@ -10324,6 +10682,10 @@ public class MainActivity extends AppCompatActivity {
 				final String urlDownload = _url;
 				final DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
 				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
+				final String cookies = CookieManager.getInstance().getCookie(urlDownload);
+				final String userAgent = "USER_AGENT";
+				request.addRequestHeader("cookie", cookies);
+				request.addRequestHeader("User-Agent", userAgent);
 				request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
@@ -10583,6 +10945,10 @@ public class MainActivity extends AppCompatActivity {
 				final String urlDownload = _url;
 				final DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
 				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
+				final String cookies = CookieManager.getInstance().getCookie(urlDownload);
+				final String userAgent = "USER_AGENT";
+				request.addRequestHeader("cookie", cookies);
+				request.addRequestHeader("User-Agent", userAgent);
 				request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
@@ -11231,33 +11597,41 @@ public class MainActivity extends AppCompatActivity {
 							Current_Version = Double.parseDouble(local_version.getText().toString());
 							Latest_Version = Double.parseDouble(Datas.get("Server").toString());
 							AD_UNIT.edit().putString("ADS", Datas.get("Rewarded_Ads").toString()).commit();
-							if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
+							if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
 								list_items_1.setAdapter(new List_items_1Adapter(stock_patched));
 								list_items_2.setAdapter(new List_items_2Adapter(amoled_patched));
-								
-								
 								((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
 								((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
-								
-								
 							}
 							else {
-								if (SWITCH_VERSION.getString("SWITCH", "").equals("C") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-									list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_patched));
-									list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_patched));
-									
-									
+								if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
+									list_items_1.setAdapter(new List_items_1Adapter(stock_cloned_patched));
+									list_items_2.setAdapter(new List_items_2Adapter(amoled_cloned_patched));
 									((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
 									((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
-									
-									
+								}
+								else {
+									if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+										list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_patched));
+										list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_patched));
+										((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
+										((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
+									}
+									else {
+										if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+											list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_cloned_patched));
+											list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_cloned_patched));
+											((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
+											((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
+										}
+									}
 								}
 							}
 							list_items_3.setAdapter(new List_items_3Adapter(lite_patched));
 							list_items_4.setAdapter(new List_items_4Adapter(patched_changelogs));
 							((BaseAdapter)list_items_3.getAdapter()).notifyDataSetChanged();
 							((BaseAdapter)list_items_4.getAdapter()).notifyDataSetChanged();
-							if (ON_SCREEN.getString("INITIALIZATION", "").equals("DONE")) {
+							if (INITIALIZATION.getString("INITIALIZATION", "").equals("X")) {
 								_Updater();
 							}
 						} catch (Exception e) {
@@ -11347,9 +11721,9 @@ public class MainActivity extends AppCompatActivity {
 		force_auto_install_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		clear_directory_folders_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		language.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		stock_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-		amoled_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-		lite_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+		patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+		patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
+		patched_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
 		title_header_beta.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_header_separator.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		experiment_version.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -11407,7 +11781,7 @@ public class MainActivity extends AppCompatActivity {
 		list_items_2.setVisibility(View.GONE);
 		list_items_3.setVisibility(View.GONE);
 		list_items_4.setVisibility(View.GONE);
-		if (!ON_SCREEN.getString("INITIALIZATION", "").equals("DONE")) {
+		if (!INITIALIZATION.getString("INITIALIZATION", "").equals("X")) {
 			try {
 				box_header.setVisibility(View.GONE);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Intro_Dialog);
@@ -11453,19 +11827,19 @@ public class MainActivity extends AppCompatActivity {
 										});
 									}
 								};
-								_timer.schedule(Timer, (int)(9000));
+								_timer.schedule(Timer, (int)(2500));
 							}
 						});
 					}
 				};
-				_timer.schedule(Timer, (int)(8000));
+				_timer.schedule(Timer, (int)(2000));
 				Timer = new TimerTask() {
 					@Override
 					public void run() {
 						runOnUiThread(new Runnable() {
 							@Override
 							public void run() {
-								ON_SCREEN.edit().putString("INITIALIZATION", "DONE").commit();
+								INITIALIZATION.edit().putString("INITIALIZATION", "X").commit();
 								try {
 									Intent intent = getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName() ); 
 									
@@ -11479,7 +11853,7 @@ public class MainActivity extends AppCompatActivity {
 						});
 					}
 				};
-				_timer.schedule(Timer, (int)(10000));
+				_timer.schedule(Timer, (int)(3000));
 				if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
 					Window w =MainActivity.this.getWindow();
 					w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -11492,90 +11866,100 @@ public class MainActivity extends AppCompatActivity {
 				box_experiment.setVisibility(View.GONE);
 				box_switch.setVisibility(View.GONE);
 				box_update.setVisibility(View.GONE);
-				_Reboot();
 			}
 			catch(Exception e) {
 			}
 		}
 		else {
 			try {
-				if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
-					cloned_version_switch.setChecked(false);
-					experiment_version_switch.setChecked(false);
+				if (!REFETCH.getString("REFETCH", "").equals("X")) {
 					sub_1.setVisibility(View.VISIBLE);
 					sub_2.setVisibility(View.VISIBLE);
-					sub_3.setVisibility(View.GONE);
-					sub_4.setVisibility(View.GONE);
-					sub_5.setVisibility(View.GONE);
-					sub_6.setVisibility(View.GONE);
-					sub_7.setVisibility(View.GONE);
-					sub_8.setVisibility(View.GONE);
+					sub_9.setVisibility(View.VISIBLE);
+					sub_1.setText("N/A");
+					sub_2.setText("N/A");
+					sub_9.setText("N/A");
+					_Refetch();
 				}
 				else {
-					if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-						cloned_version_switch.setChecked(true);
+					if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
+						cloned_version_switch.setChecked(false);
 						experiment_version_switch.setChecked(false);
-						sub_1.setVisibility(View.GONE);
-						sub_2.setVisibility(View.GONE);
-						sub_3.setVisibility(View.VISIBLE);
-						sub_4.setVisibility(View.VISIBLE);
+						sub_1.setVisibility(View.VISIBLE);
+						sub_2.setVisibility(View.VISIBLE);
+						sub_3.setVisibility(View.GONE);
+						sub_4.setVisibility(View.GONE);
 						sub_5.setVisibility(View.GONE);
 						sub_6.setVisibility(View.GONE);
 						sub_7.setVisibility(View.GONE);
 						sub_8.setVisibility(View.GONE);
 					}
 					else {
-						if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-							cloned_version_switch.setChecked(false);
-							experiment_version_switch.setChecked(true);
+						if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
+							cloned_version_switch.setChecked(true);
+							experiment_version_switch.setChecked(false);
 							sub_1.setVisibility(View.GONE);
 							sub_2.setVisibility(View.GONE);
-							sub_3.setVisibility(View.GONE);
-							sub_4.setVisibility(View.GONE);
-							sub_5.setVisibility(View.VISIBLE);
-							sub_6.setVisibility(View.VISIBLE);
+							sub_3.setVisibility(View.VISIBLE);
+							sub_4.setVisibility(View.VISIBLE);
+							sub_5.setVisibility(View.GONE);
+							sub_6.setVisibility(View.GONE);
 							sub_7.setVisibility(View.GONE);
 							sub_8.setVisibility(View.GONE);
 						}
 						else {
-							if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-								cloned_version_switch.setChecked(true);
+							if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+								cloned_version_switch.setChecked(false);
 								experiment_version_switch.setChecked(true);
 								sub_1.setVisibility(View.GONE);
 								sub_2.setVisibility(View.GONE);
 								sub_3.setVisibility(View.GONE);
 								sub_4.setVisibility(View.GONE);
-								sub_5.setVisibility(View.GONE);
-								sub_6.setVisibility(View.GONE);
-								sub_7.setVisibility(View.VISIBLE);
-								sub_8.setVisibility(View.VISIBLE);
+								sub_5.setVisibility(View.VISIBLE);
+								sub_6.setVisibility(View.VISIBLE);
+								sub_7.setVisibility(View.GONE);
+								sub_8.setVisibility(View.GONE);
+							}
+							else {
+								if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+									cloned_version_switch.setChecked(true);
+									experiment_version_switch.setChecked(true);
+									sub_1.setVisibility(View.GONE);
+									sub_2.setVisibility(View.GONE);
+									sub_3.setVisibility(View.GONE);
+									sub_4.setVisibility(View.GONE);
+									sub_5.setVisibility(View.GONE);
+									sub_6.setVisibility(View.GONE);
+									sub_7.setVisibility(View.VISIBLE);
+									sub_8.setVisibility(View.VISIBLE);
+								}
 							}
 						}
 					}
+					if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+						Window w =MainActivity.this.getWindow();
+						w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+						w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(0xFF171717);
+					}
+					title_header.setTextColor(0xFF1DB954);
+					title_header_separator.setTextColor(0xFFFFFFFF);
+					title_header_beta.setTextColor(0xFFFFFFFF);
+					box_header.setBackgroundColor(0xFF171717);
+					main_body_optimization.setVisibility(View.GONE);
+					main_scroll_settings.setVisibility(View.GONE);
+					main_scroll_about.setVisibility(View.GONE);
+					main_refresh_layout.setVisibility(View.VISIBLE);
+					box_experiment.setVisibility(View.VISIBLE);
+					box_switch.setVisibility(View.VISIBLE);
+					box_update.setVisibility(View.VISIBLE);
+					icon_experiment.setAlpha((float)(1.0d));
+					icon_switch.setAlpha((float)(1.0d));
+					icon_update.setAlpha((float)(1.0d));
+					main_body.setAlpha((float)(0.50d));
+					_Permission();
+					_API_Token();
+					_Updater();
 				}
-				if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
-					Window w =MainActivity.this.getWindow();
-					w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-					w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(0xFF171717);
-				}
-				title_header.setTextColor(0xFF1DB954);
-				title_header_separator.setTextColor(0xFFFFFFFF);
-				title_header_beta.setTextColor(0xFFFFFFFF);
-				box_header.setBackgroundColor(0xFF171717);
-				main_body_optimization.setVisibility(View.GONE);
-				main_scroll_settings.setVisibility(View.GONE);
-				main_scroll_about.setVisibility(View.GONE);
-				main_refresh_layout.setVisibility(View.VISIBLE);
-				box_experiment.setVisibility(View.VISIBLE);
-				box_switch.setVisibility(View.VISIBLE);
-				box_update.setVisibility(View.VISIBLE);
-				icon_experiment.setAlpha((float)(1.0d));
-				icon_switch.setAlpha((float)(1.0d));
-				icon_update.setAlpha((float)(1.0d));
-				main_body.setAlpha((float)(0.50d));
-				_Permission();
-				_API_Token();
-				_Updater();
 			}
 			catch(Exception e) {
 			}
@@ -12563,6 +12947,10 @@ public class MainActivity extends AppCompatActivity {
 				final String urlDownload = _url;
 				final DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
 				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
+				final String cookies = CookieManager.getInstance().getCookie(urlDownload);
+				final String userAgent = "USER_AGENT";
+				request.addRequestHeader("cookie", cookies);
+				request.addRequestHeader("User-Agent", userAgent);
 				request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
@@ -12822,6 +13210,10 @@ public class MainActivity extends AppCompatActivity {
 				final String urlDownload = _url;
 				final DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
 				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
+				final String cookies = CookieManager.getInstance().getCookie(urlDownload);
+				final String userAgent = "USER_AGENT";
+				request.addRequestHeader("cookie", cookies);
+				request.addRequestHeader("User-Agent", userAgent);
 				request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
@@ -13679,6 +14071,56 @@ public class MainActivity extends AppCompatActivity {
 			}
 		};
 		_timer.schedule(Timer, (int)(550));
+	}
+	
+	
+	public void _Refetch() {
+		final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Intro_Dialog);
+		prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+		prog.setMax(100);
+		prog.setMessage("Checking cached datas...");
+		prog.setIndeterminate(true);
+		prog.setCancelable(false);
+		prog.show();
+		Timer = new TimerTask() {
+				@Override
+				public void run() {
+						runOnUiThread(new Runnable() {
+								@Override
+								public void run() {
+										try {
+												REFETCH.edit().putString("REFETCH", "X").commit();
+												box_reboot.performClick();
+												prog.dismiss();
+										}
+										catch(Exception e) {
+										}
+								}
+						});
+				}
+		};
+		_timer.schedule(Timer, (int)(3000));
+		if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+				Window w =MainActivity.this.getWindow();
+				w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+				w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(0xFF171717);
+		}
+		title_header.setTextColor(0xFF1DB954);
+		title_header_separator.setTextColor(0xFFFFFFFF);
+		title_header_beta.setTextColor(0xFFFFFFFF);
+		box_header.setBackgroundColor(0xFF171717);
+		main_body_optimization.setVisibility(View.GONE);
+		main_scroll_settings.setVisibility(View.GONE);
+		main_scroll_about.setVisibility(View.GONE);
+		main_refresh_layout.setVisibility(View.VISIBLE);
+		box_experiment.setVisibility(View.VISIBLE);
+		box_switch.setVisibility(View.VISIBLE);
+		box_update.setVisibility(View.VISIBLE);
+		icon_experiment.setAlpha((float)(1.0d));
+		icon_switch.setAlpha((float)(1.0d));
+		icon_update.setAlpha((float)(1.0d));
+		main_body.setAlpha((float)(0.50d));
+		
 	}
 	
 	public class List_items_1Adapter extends BaseAdapter {
