@@ -2339,8 +2339,7 @@
 						android:id="@+id/box_1"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:orientation="horizontal"
-						android:layout_weight="1">
+						android:orientation="horizontal">
 						<TextView
 							android:id="@+id/title_1"
 							android:layout_width="wrap_content"
@@ -2363,7 +2362,7 @@
 							android:orientation="horizontal"
 							android:layout_gravity="right|center_vertical">
 							<TextView
-								android:id="@+id/stock_info"
+								android:id="@+id/patched_1"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:paddingRight="8dp"
@@ -2545,7 +2544,7 @@
 							android:orientation="horizontal"
 							android:layout_gravity="right|center_vertical">
 							<TextView
-								android:id="@+id/amoled_info"
+								android:id="@+id/patched_2"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:paddingRight="8dp"
@@ -2726,7 +2725,7 @@
 							android:orientation="horizontal"
 							android:layout_gravity="right|center_vertical">
 							<TextView
-								android:id="@+id/lite_info"
+								android:id="@+id/patched_3"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:paddingRight="8dp"
