@@ -2556,7 +2556,7 @@
     <!--SERBIAN (LATIN) LANGUAGE-->
     <string name="app_name_30" translatable="true">xManager</string>
     <string name="installed_30" translatable="true">INSTALIRANA</string>
-    <string name="latest_30" translatable="true">POSLEDNjA</string>
+    <string name="latest_30" translatable="true">NAJNOVIJA</string>
     <string name="versions_30" translatable="true">VERZIJE  </string>
     <string name="changelogs_30" translatable="true">EVIDENCIJA PROMENA</string>
     <string name="manager_tools_30" translatable="true">ALATKE</string>
@@ -2574,9 +2574,9 @@
     <string name="force_auto_install_desc_30" translatable="true">Ako ovo omogućite, pečovana aplikacija će se automatski instalirati i ažurirati nakon preuzimanja.</string>
     <string name="show_themes_30" translatable="true">TEME</string>
     <string name="apk_location_30" translatable="true">APK LOKACIJA</string>
-    <string name="apk_location_desc_30" translatable="true">Direktorijum u koji želite da sačuvate kopiju preuzete datoteke. Ako ne znate kako da konfigurišete ovu funkciju, ostavite ovo kako jeste.\n\nNAPOMENA: Ova funkcija ne podržava spoljnu memoriju (SD karticu) zbog pristupačnosti, dozvola i ograničenja skladištenja.</string>
-    <string name="clear_directory_folders_30" translatable="true">OČISTITE DIREKTORIJUM</string>
-    <string name="clear_directory_folders_desc_30" translatable="true">Dodirnite da biste izbrisali direktorijum. Ovo uključuje preuzete datoteke i ažuriranja.</string>
+    <string name="apk_location_desc_30" translatable="true">Direktorijum u koji želite da sačuvate kopiju preuzetog fajla. Ako ne znate kako da konfigurišete ovu funkciju, ostavite ovo kako jeste.\n\nNAPOMENA: Ova funkcija ne podržava spoljnu memoriju (SD karticu) zbog pristupačnosti, dozvola i ograničenja skladištenja.</string>
+    <string name="clear_directory_folders_30" translatable="true">IZBRIŠITE DIREKTORIJUM</string>
+    <string name="clear_directory_folders_desc_30" translatable="true">Dodirnite da biste izbrisali direktorijum. Ovo uključuje preuzete fajlove i ažuriranja.</string>
     <string name="reset_preferences_30" translatable="true">RESETUJTE PODEŠAVANjA</string>
     <string name="about_sub_30" translatable="true">Bez reklama | Nove funkcije | Sloboda</string>
     <string name="xmanager_dev_30" translatable="true">Programeri xManager</string>
@@ -2589,8 +2589,8 @@
     <string name="contributors_30" translatable="true">HVALA SVIM SARADNICIMA! ❤️</string>
     <string name="download_selected_30" translatable="true">Izabrali ste ovu pečovanu verziju. Da li želite da nastavite?</string>
     <string name="download_ready_30" translatable="true">INFORMACIJE O MODU</string>
-    <string name="download_ready_desc_30" translatable="true">Preuzimanje ove pečovane APK datoteke prepisaće prethodnu datoteku koja se nalazi u spoljnom direktorijumu.</string>
-    <string name="downloading_file_30" translatable="true">PREUZIMANjE DATOTEKE...</string>
+    <string name="download_ready_desc_30" translatable="true">Preuzimanje ovog pečovanog APK fajla prepisaće prethodni fajl koji se nalazi u spoljnom direktorijumu.</string>
+    <string name="downloading_file_30" translatable="true">PREUZIMANjE FAJLA...</string>
     <string name="download_success_30" translatable="true">USPEŠNO PREUZETO</string>
     <string name="new_update_30" translatable="true">NOVO AŽURIRANjE MENADžERA</string>
     <string name="continue_1_30" translatable="true">NASTAVITE</string>
@@ -2604,9 +2604,9 @@
     <string name="not_now_30" translatable="true">NE SADA</string>
     <string name="mirror_30" translatable="true">MIRROR LINK</string>
     <string name="lite_30" translatable="true">LITE</string>
-    <string name="experimental_title_30" translatable="true">Ekperimental</string>
-    <string name="experimental_version_30" translatable="true">EKPERIMENTAL VERSION</string>
-    <string name="experimental_version_desc_30" translatable="true">omogućavanje ovog parametra omogućiće vam da preuzmete i instalirate experimentalnu verziju ispravljene aplikacije.\n\nto uključuje alfa, beta i funkcije ranog pristupa koje nisu dostupne u ispravljenom obliku. Pored toga, stabilnost nije zagarantovana.</string>
+    <string name="experimental_title_30" translatable="true">Eksperimentalno</string>
+    <string name="experimental_version_30" translatable="true">EKSPERIMENTALNA VERZIJA</string>
+    <string name="experimental_version_desc_30" translatable="true">Ako ovo omogućite, moći ćete da preuzmete i instalirate eksperimentalnu verziju pečovane aplikacije.\n\nOvo uključuje alfa, beta i funkcije ranog pristupa, koje nisu dostupne u osnovnoj pečovanoj verziji. Pored toga, nije zagarantovana stabilnost aplikacije.</string>
     <string name="show_support_30" translatable="true">POKAŽITE VAŠU PODRŠKU</string>
     <string name="show_support_desc_30" translatable="true">Mi smo neprofitni, nekorporativni i nekompromitovani tim. Ljudi poput Vas podstiču nas da napravimo aplikaciju kako bismo stvari učinili mnogo lakšim, posebno od preuzimanja do instaliranja.\n\nUlažemo sve naše vreme i sve napore kako bi stvari bile ispravne i savršene. Daćemo sve od sebe da podržavamo ovu aplikaciju koliko god možemo.\n\nSvaki iznos će pomoći i biti veoma cenjen!</string>
     <string name="maintenance_30" translatable="true">ODRŽAVANjE</string>
@@ -2625,9 +2625,9 @@
     <string name="installation_failed_spap_desc_30" translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManagera ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljena pitanja.</string>
     <string name="installation_failed_cloned_desc_30" translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManagera ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljena pitanja.</string>
     <string name="existing_patched_30" translatable="true">POSTOJEĆI MOD</string>
-    <string name="existing_patched_desc_30" translatable="true">Postojeća pečovana APK datoteka pronađena je u jednom od direktorijuma. Koju akciju biste želeli da uradite?</string>
+    <string name="existing_patched_desc_30" translatable="true">Postojeći pečovani APK fajl pronađen je u jednom od direktorijuma. Koju akciju biste želeli da uradite?</string>
     <string name="close_30" translatable="true">ZATVORITE</string>
-    <string name="cloned_30" translatable="true">KLONIRAJTE</string>
+    <string name="cloned_30" translatable="true">KLONIRAN</string>
     <string name="spap_30" translatable="true">SP/AP</string>
     <string name="install_30" translatable="true">INSTALIRAJTE</string>
     <string name="uninstall_30" translatable="true">DEINSTALIRAJTE</string>
@@ -2636,7 +2636,7 @@
     <string name="uninstall_patched_30" translatable="true">DEINSTALIRAJTE MOD</string>
     <string name="open_settings_30" translatable="true">OTVORITE PODEŠAVANjA</string>
     <string name="open_patched_30" translatable="true">OTVORITE MOD</string>
-    <string name="reboot_30" translatable="true">PONOVNO UZORKOVANJE</string>
+    <string name="reboot_30" translatable="true">PONOVO PRIKUPITE PODATKE I PONOVO POKRENITE</string>
     
     <!--CATALAN LANGUAGE-->
     <string name="app_name_31" translatable="true">xManager</string>
