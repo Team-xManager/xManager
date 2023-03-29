@@ -26,8 +26,8 @@
 
 | **Key Details** | **More Informations** |
   | :-------------: | ------------- |
-| **How It Works** | **Depending on what variant or version the user wants to install, the manager will directly fetch that selected url data. Once completed, the selected file can be installed. All links are available publicly.</br></br>IF, you know what it means then you know what it is.** |
-| **About The Project** | **The successor from our previous manager app that was released way back 2020 developed by xC3FFF0E and with the help of Sherlock Holmes.</br></br>We decided to create an app where people can easily manage and install all versions of the music streaming app from their devices.</br></br>Our aim is to make a simple yet useful manager app for everyone's convenience. On this second version of the manager app, we added a couple of features such as the ability to uninstall, open the app's settings directly, clear the offline cached datas and launch the app. We hope that all users find these newly added features very useful.** |
+| **How It Works** | Depending on what variant or version the user wants to install, the manager will directly fetch that selected url data. Once completed, the selected file can be installed. All links are available publicly.</br></br>IF, you know what it means then you know what it is. |
+| **About The Project** | The successor from our previous manager app that was released way back 2020 developed by xC3FFF0E and with the help of Sherlock Holmes.</br></br>We decided to create an app where people can easily manage and install all versions of the music streaming app from their devices.</br></br>Our aim is to make a simple yet useful manager app for everyone's convenience. On this second version of the manager app, we added a couple of features such as the ability to uninstall, open the app's settings directly, clear the offline cached datas and launch the app. We hope that all users find these newly added features very useful. |
 
 ---
 
@@ -105,3 +105,5 @@ We will support the app as long as we can. Internal improvements may not be guar
 | **Sinhala Translation** | Psycho649 |
 
 </div>
+
+### <p align="center">THANKS TO ALL CONTRIBUTORS! ❤️</p>
