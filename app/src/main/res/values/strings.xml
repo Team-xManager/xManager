@@ -43,7 +43,7 @@
     <string name="cancel" translatable="true">CANCEL</string>
     <string name="download" translatable="true">DOWNLOAD</string>
     <string name="later" translatable="true">LATER</string>
-    <string name="install_now" translatable="true">INSTALL NOW</string>
+    <string name="install_now" translatable="true">INSTALL PATCHED</string>
     <string name="install_update" translatable="true">INSTALL UPDATE</string>
     <string name="go_back" translatable="true">GO BACK</string>
     <string name="download_update" translatable="true">DOWNLOAD UPDATE</string>
@@ -2892,89 +2892,89 @@
     <string name="open_settings_33" translatable="true">EINSTELLUNGEN ÖFFNEN</string>
     <string name="open_patched_33" translatable="true">PATCH ÖFFNEN</string>
     <string name="reboot_33" translatable="true">ERNEUTES ABRUFEN UND NEUSTARTEN</string>
-
+    
     <!--SINHALA LANGUAGE-->
-    <string name="app_name" translatable="true">xManager</string>
-    <string name="installed" translatable="true">ස්ථාපිත කර ඇත</string>
-    <string name="latest" translatable="true">අලුත්ම</string>
-    <string name="versions" translatable="true">අනුවාදයන්</string>
-    <string name="changelogs" translatable="true">වෙනස් කිරීම්</string>
-    <string name="manager_tools" translatable="true">මෙවලම්</string>
-    <string name="source" translatable="true">මූලාශ්රය</string>
-    <string name="support" translatable="true">TELEGRAM</string>
-    <string name="donate" translatable="true">SUPPORT</string>
-    <string name="discord" translatable="true">DISCORD</string>
-    <string name="about" translatable="true">යෙදුම පිළිබඳ</string>
-    <string name="main_title" translatable="true">xManager</string>
-    <string name="settings_title" translatable="true">සැකසුම්</string>
-    <string name="about_title" translatable="true">මාතෘකාව පිළිබඳ</string>
-    <string name="list_auto_refresh" translatable="true">ලැයිස්තුව ස්වයංක්‍රීයව නැවුම් කිරීම</string>
-    <string name="list_auto_refresh_desc" translatable="true">මෙය සබල කිරීමෙන් ඔබ යෙදුම දියත් කරන සෑම විටම ලැයිස්තුව ස්වයංක්‍රීයව නැවුම් කරයි. ප්‍රධාන තිරය පහළට ඇදගෙන යාමෙන් ඔබට ලැයිස්තුව හස්තීයව නැවුම් කළ හැක.</string>
-    <string name="force_auto_install" translatable="true">බලහත්කාරයෙන් ස්වයංක්‍රීයව ස්ථාපනය කරන්න</string>
-    <string name="force_auto_install_desc" translatable="true">මෙය සබල කිරීමෙන් පැච් කළ යෙදුම ස්වයංක්‍රීයව ස්ථාපනය කර බාගත කළ පසු යාවත්කාලීන වේ.</string>
-    <string name="show_themes" translatable="true">තේමා</string>
-    <string name="apk_location" translatable="true">APK ස්ථානය</string>
-    <string name="apk_location_desc" translatable="true">ඔබට බාගත කළ ගොනුවේ පිටපත සුරැකීමට අවශ්‍ය ස්ථානය. ඔබ මෙම විශේෂාංගය වින්‍යාස කරන්නේ කෙසේදැයි නොදන්නේ නම්, මෙය එලෙසම තබන්න. සටහන: ප්‍රවේශ්‍යතාව, අවසර සහ ගබඩා සීමාවන් හේතුවෙන් මෙම විශේෂාංගය බාහිර ආචයනය (SD කාඩ්පත) සඳහා සහය නොදක්වයි.</string>
-    <string name="clear_directory_folders" translatable="true">ඩිරෙක්ටරි ෆෝල්ඩරය හිස් කරන්න</string>
-    <string name="clear_directory_folders_desc" translatable="true">ඩිරෙක්ටරි ෆෝල්ඩරය මකා දැමීමට තට්ටු කරන්න. බාගත කළ ගොනු සහ යාවත්කාලීන කිරීම් මෙයට ඇතුළත් වේ.</string>
-    <string name="reset_preferences" translatable="true">මනාප යළි පිහිටුවන්න</string>
-    <string name="about_sub" translatable="true">දැන්වීම්-රහිත අත්දැකීමක් | නව විශේෂාංග | නිදහස</string>
-    <string name="xmanager_dev" translatable="true">xManager සංවර්ධකයා</string>
-    <string name="patched_devs" translatable="true">පැච් සංවර්ධකවරු</string>
-    <string name="support_team" translatable="true">Telegram | Discord | Reddit සහාය කණ්ඩායම</string>
-    <string name="manager_testers" translatable="true">පැච් සහ කළමනාකරු පරීක්ෂකයින්</string>
-    <string name="manager_hosting" translatable="true">දත්ත සමුදාය සහ සත්කාරක කළමනාකරු</string>
-    <string name="mobilism_team" translatable="true">Mobilism කණ්ඩායම</string>
-    <string name="forum_team" translatable="true">FORUM.APK-RELEASE.NET කණ්ඩායම</string>
-    <string name="contributors" translatable="true">සියලුම දායකයින්ට ස්තූතියි! ❤️</string>
-    <string name="download_selected" translatable="true">ඔබ මෙම පැච් කළ අනුවාදය තෝරා ඇත. ඔබට ඉදිරියට යාමට අවශ්‍යද?</string>
-    <string name="download_ready" translatable="true">පැච් තොරතුරු</string>
-    <string name="download_ready_desc" translatable="true">මෙම පැච් කළ APK බාගැනීම බාහිර නාමාවලියෙහි ඇති පෙර ගොනුව ප්‍රතිස්ථාපනය කරනු ඇත.</string>
-    <string name="downloading_file" translatable="true">ගොනුව බාගත කරමින්...</string>
-    <string name="download_success" translatable="true">සාර්ථකව බාගත කර ඇත</string>
-    <string name="new_update" translatable="true">නව කළමනාකරු යාවත්කාලීන ලබා ගත හැකිය</string>
-    <string name="continue_1" translatable="true">ඉදිරියට යන්න</string>
-    <string name="cancel" translatable="true">අවලංගු කරන්න</string>
-    <string name="download" translatable="true">බාගත කරන්න</string>
-    <string name="later" translatable="true">පසුව</string>
-    <string name="install_now" translatable="true">දැන් ස්ථාපනය කරන්න</string>
-    <string name="install_update" translatable="true">යාවත්කාලීනය ස්ථාපනය කරන්න</string>
-    <string name="go_back" translatable="true">ආපසු යන්න</string>
-    <string name="download_update" translatable="true">යාවත්කාලීනය බාගත කරන්න</string>
-    <string name="not_now" translatable="true">දැන් නොවේ</string>
-    <string name="mirror" translatable="true">මිරර් සබැඳිය</string>
-    <string name="lite" translatable="true">LITE</string>
-    <string name="experimental_title" translatable="true">පර්යේෂණාත්මක</string>
-    <string name="experimental_version" translatable="true">පර්යේෂණාත්මක අනුවාදය</string>
-    <string name="experimental_version_desc" translatable="true">මෙය සබල කිරීමෙන් ඔබට පැච් කරන ලද යෙදුමේ පර්යේෂණාත්මක අනුවාදය බාගත කර ස්ථාපනය කිරීමට ඉඩ සලසයි. මෙයට ඇල්ෆා, බීටා සහ මුල් ප්‍රවේශ විශේෂාංග ඇතුළත් වන අතර ඒවා පැච් කළ කොටස්වල නොමැත. ඊට අමතරව, ස්ථාවර බව සහතික නොවේ.</string>
-    <string name="show_support" translatable="true">ඔබේ සහයෝගය පෙන්වන්න</string>
-    <string name="show_support_desc" translatable="true">අපි ලාභ නොලබන, ආයතනික නොවන සහ සම්මුති විරහිත කණ්ඩායමකි. ඔබ වැනි අය විශේෂයෙන් බාගැනීමේ සිට ස්ථාපනය කිරීම දක්වා දේවල් වඩාත් පහසු කිරීමට යෙදුමක් නිර්මාණය කිරීමට අපව දිරිමත් කරයි. දේවල් නිවැරදි හා පරිපූර්ණ කිරීමට පමණක් අපි අපගේ කාලය සහ හොඳම උත්සාහය වැය කරමු. අපට හැකි තාක් මෙම යෙදුමට සහය දැක්වීමට අපි අපගේ උපරිමය කරන්නෙමු. ඕනෑම මුදලක් උපකාර වන අතර ඉතා අගය කරනු ඇත!</string>
-    <string name="maintenance" translatable="true">නඩත්තු</string>
-    <string name="maintenance_desc" translatable="true">xManager දැනට ලබා ගත නොහැක. කරුණාකර පසුව යෙදුම පරීක්ෂා කරන්න.</string>
-    <string name="thanks" translatable="true">ස්තුතියි!</string>
-    <string name="language" translatable="true">භාෂාව</string>
-    <string name="website" translatable="true">වෙබ් අඩවිය</string>
-    <string name="reddit" translatable="true">REDDIT</string>
-    <string name="faq" translatable="true">නිති අසන පැණ</string>
-    <string name="cloned_version" translatable="true">ක්ලෝනඩ් අනුවාදය</string>
-    <string name="cloned_version_desc" translatable="true">මෙය සබල කිරීමෙන් ඔබට පැච් කරන ලද යෙදුමේ ක්ලෝන කළ අනුවාදය බාගත කර ස්ථාපනය කිරීමට ඉඩ සලසයි. මෙය බොහෝ ස්ථාපන දෝෂ හෝ ගැටළු නිරාකරණය කරනු ඇත, විශේෂයෙන් ඔබට පෙර-ස්ථාපිත Spotify යෙදුමක් තිබේ නම්.</string>
-    <string name="disable_rewarded_ads" translatable="true">DISABLE REWARDED ADS</string>
-    <string name="disable_rewarded_ads_desc" translatable="true">අපගෙන් බොහෝ දෙනෙක් දැන්වීම් වලට කැමති නැති බව අපි දනිමු, නමුත් අපගේ නඩුවේදී, මෙය අපගේ දත්ත සමුදාය, සත්කාරක සබැඳි, යාවත්කාලීන කිරීම්, තවත් පැච් සහ දෛනික අවශ්‍යතා සඳහා අරමුදල් සැපයීමට සැලකිය යුතු ලෙස උපකාරී වේ. පරිත්‍යාග කිරීම හෝ වියදම් කිරීමකින් තොරව අපට සහාය වීමට ඇති සරලම ක්‍රමය මෙයයි.</string>
-    <string name="installation_failed" translatable="true">ස්ථාපනය අසාර්ථක විය</string>
-    <string name="installation_failed_desc" translatable="true">හේතුව: ඔබ දැනට ස්ථාපනය කර ඇති ප්‍රමාණයට වඩා අඩු පැච් කළ අනුවාදයක් ස්ථාපනය කිරීමට උත්සාහ කර ඇත. විසඳුම්: A. ඊට සමාන හෝ වැඩි අනුවාදයක් තෝරන්න. B. වත්මන් අනුවාදය අස්ථාපනය කරන්න, පසුව පහත් කරන්න. ගැටලුව දිගටම පවතින්නේ නම්, නිතර අසන පැන පරීක්ෂා කරන්න.</string>
-    <string name="installation_failed_spap_desc" translatable="true">හේතුව: මෙම උපාංගයේ ස්ථාපනය කර ඇති ධාරාව xManager වෙතින් හෝ අපගේ කණ්ඩායමෙන් කෙලින්ම පැමිණියේ නැත. විසඳුම: යෙදුමේ වත්මන් අනුවාදය අස්ථාපනය කරන්න, xManager නැවත ආරම්භ කර නැවත උත්සාහ කරන්න. ගැටලුව දිගටම පවතින්නේ නම්, නිතර අසන පැන පරීක්ෂා කරන්න.</string>
-    <string name="installation_failed_cloned_desc" translatable="true">හේතුව: මෙම උපාංගයේ ස්ථාපනය කර ඇති ක්ලෝන කරන ලද ධාරාව සෘජුවම xManager වෙතින් හෝ අපගේ කණ්ඩායමෙන් පැමිණියේ නැත. විසඳුම: යෙදුමේ වත්මන් අනුවාදය අස්ථාපනය කරන්න, xManager නැවත ආරම්භ කර නැවත උත්සාහ කරන්න. ගැටලුව දිගටම පවතින්නේ නම්, නිතර අසන පැන පරීක්ෂා කරන්න.</string>
-    <string name="existing_patched" translatable="true">පවතින පැච්</string>
-    <string name="existing_patched_desc" translatable="true">එක් නාමාවලියක පවතින පැච් කළ apk එකක් හමු විය. ඔබ කිරීමට කැමති ක්‍රියාව කුමක්ද?</string>
-    <string name="close" translatable="true">වසා දමන්න</string>
-    <string name="cloned" translatable="true">ක්ලෝන</string>
-    <string name="spap" translatable="true">SP/AP</string>
-    <string name="install" translatable="true">ස්ථාපනය කරන්න</string>
-    <string name="uninstall" translatable="true">අස්ථාපනය කරන්න</string>
-    <string name="ignore" translatable="true">නොසලකා හරින්න</string>
-    <string name="delete" translatable="true">මකන්න</string>
-    <string name="uninstall_patched" translatable="true">පැච් අස්ථාපනය කරන්න</string>
-    <string name="open_settings" translatable="true">විවෘත සැකසුම්</string>
-    <string name="open_patched" translatable="true">සැකසීම් විවෘත කරන්න</string>
-    <string name="reboot" translatable="true">නැවත ලබාගෙන නැවත ආරම්භ කරන්න</string>
+    <string name="app_name_34" translatable="true">xManager</string>
+    <string name="installed_34" translatable="true">ස්ථාපිත කර ඇත</string>
+    <string name="latest_34" translatable="true">අලුත්ම</string>
+    <string name="versions_34" translatable="true">අනුවාදයන්</string>
+    <string name="changelogs_34" translatable="true">වෙනස් කිරීම්</string>
+    <string name="manager_tools_34" translatable="true">මෙවලම්</string>
+    <string name="source_34" translatable="true">මූලාශ්රය</string>
+    <string name="support_34" translatable="true">TELEGRAM</string>
+    <string name="donate_34" translatable="true">SUPPORT</string>
+    <string name="discord_34" translatable="true">DISCORD</string>
+    <string name="about_34" translatable="true">යෙදුම පිළිබඳ</string>
+    <string name="main_title_34" translatable="true">xManager</string>
+    <string name="settings_title_34" translatable="true">සැකසුම්</string>
+    <string name="about_title_34" translatable="true">මාතෘකාව පිළිබඳ</string>
+    <string name="list_auto_refresh_34" translatable="true">ලැයිස්තුව ස්වයංක්‍රීයව නැවුම් කිරීම</string>
+    <string name="list_auto_refresh_desc_34" translatable="true">මෙය සබල කිරීමෙන් ඔබ යෙදුම දියත් කරන සෑම විටම ලැයිස්තුව ස්වයංක්‍රීයව නැවුම් කරයි. ප්‍රධාන තිරය පහළට ඇදගෙන යාමෙන් ඔබට ලැයිස්තුව හස්තීයව නැවුම් කළ හැක.</string>
+    <string name="force_auto_install_34" translatable="true">බලහත්කාරයෙන් ස්වයංක්‍රීයව ස්ථාපනය කරන්න</string>
+    <string name="force_auto_install_desc_34" translatable="true">මෙය සබල කිරීමෙන් පැච් කළ යෙදුම ස්වයංක්‍රීයව ස්ථාපනය කර බාගත කළ පසු යාවත්කාලීන වේ.</string>
+    <string name="show_themes_34" translatable="true">තේමා</string>
+    <string name="apk_location_34" translatable="true">APK ස්ථානය</string>
+    <string name="apk_location_desc_34" translatable="true">ඔබට බාගත කළ ගොනුවේ පිටපත සුරැකීමට අවශ්‍ය ස්ථානය. ඔබ මෙම විශේෂාංගය වින්‍යාස කරන්නේ කෙසේදැයි නොදන්නේ නම්, මෙය එලෙසම තබන්න. සටහන: ප්‍රවේශ්‍යතාව, අවසර සහ ගබඩා සීමාවන් හේතුවෙන් මෙම විශේෂාංගය බාහිර ආචයනය (SD කාඩ්පත) සඳහා සහය නොදක්වයි.</string>
+    <string name="clear_directory_folders_34" translatable="true">ඩිරෙක්ටරි ෆෝල්ඩරය හිස් කරන්න</string>
+    <string name="clear_directory_folders_desc_34" translatable="true">ඩිරෙක්ටරි ෆෝල්ඩරය මකා දැමීමට තට්ටු කරන්න. බාගත කළ ගොනු සහ යාවත්කාලීන කිරීම් මෙයට ඇතුළත් වේ.</string>
+    <string name="reset_preferences_34" translatable="true">මනාප යළි පිහිටුවන්න</string>
+    <string name="about_sub_34" translatable="true">දැන්වීම්-රහිත අත්දැකීමක් | නව විශේෂාංග | නිදහස</string>
+    <string name="xmanager_dev_34" translatable="true">xManager සංවර්ධකයා</string>
+    <string name="patched_devs_34" translatable="true">පැච් සංවර්ධකවරු</string>
+    <string name="support_team_34" translatable="true">Telegram | Discord | Reddit සහාය කණ්ඩායම</string>
+    <string name="manager_testers_34" translatable="true">පැච් සහ කළමනාකරු පරීක්ෂකයින්</string>
+    <string name="manager_hosting_34" translatable="true">දත්ත සමුදාය සහ සත්කාරක කළමනාකරු</string>
+    <string name="mobilism_team_34" translatable="true">Mobilism කණ්ඩායම</string>
+    <string name="forum_team_34" translatable="true">FORUM.APK-RELEASE.NET කණ්ඩායම</string>
+    <string name="contributors_34" translatable="true">සියලුම දායකයින්ට ස්තූතියි! ❤️</string>
+    <string name="download_selected_34" translatable="true">ඔබ මෙම පැච් කළ අනුවාදය තෝරා ඇත. ඔබට ඉදිරියට යාමට අවශ්‍යද?</string>
+    <string name="download_ready_34" translatable="true">පැච් තොරතුරු</string>
+    <string name="download_ready_desc_34" translatable="true">මෙම පැච් කළ APK බාගැනීම බාහිර නාමාවලියෙහි ඇති පෙර ගොනුව ප්‍රතිස්ථාපනය කරනු ඇත.</string>
+    <string name="downloading_file_34" translatable="true">ගොනුව බාගත කරමින්...</string>
+    <string name="download_success_34" translatable="true">සාර්ථකව බාගත කර ඇත</string>
+    <string name="new_update_34" translatable="true">නව කළමනාකරු යාවත්කාලීන ලබා ගත හැකිය</string>
+    <string name="continue_1_34" translatable="true">ඉදිරියට යන්න</string>
+    <string name="cancel_34" translatable="true">අවලංගු කරන්න</string>
+    <string name="download_34" translatable="true">බාගත කරන්න</string>
+    <string name="later_34" translatable="true">පසුව</string>
+    <string name="install_now_34" translatable="true">දැන් ස්ථාපනය කරන්න</string>
+    <string name="install_update_34" translatable="true">යාවත්කාලීනය ස්ථාපනය කරන්න</string>
+    <string name="go_back_34" translatable="true">ආපසු යන්න</string>
+    <string name="download_update_34" translatable="true">යාවත්කාලීනය බාගත කරන්න</string>
+    <string name="not_now_34" translatable="true">දැන් නොවේ</string>
+    <string name="mirror_34" translatable="true">මිරර් සබැඳිය</string>
+    <string name="lite_34" translatable="true">LITE</string>
+    <string name="experimental_title_34" translatable="true">පර්යේෂණාත්මක</string>
+    <string name="experimental_version_34" translatable="true">පර්යේෂණාත්මක අනුවාදය</string>
+    <string name="experimental_version_desc_34" translatable="true">මෙය සබල කිරීමෙන් ඔබට පැච් කරන ලද යෙදුමේ පර්යේෂණාත්මක අනුවාදය බාගත කර ස්ථාපනය කිරීමට ඉඩ සලසයි. මෙයට ඇල්ෆා, බීටා සහ මුල් ප්‍රවේශ විශේෂාංග ඇතුළත් වන අතර ඒවා පැච් කළ කොටස්වල නොමැත. ඊට අමතරව, ස්ථාවර බව සහතික නොවේ.</string>
+    <string name="show_support_34" translatable="true">ඔබේ සහයෝගය පෙන්වන්න</string>
+    <string name="show_support_desc_34" translatable="true">අපි ලාභ නොලබන, ආයතනික නොවන සහ සම්මුති විරහිත කණ්ඩායමකි. ඔබ වැනි අය විශේෂයෙන් බාගැනීමේ සිට ස්ථාපනය කිරීම දක්වා දේවල් වඩාත් පහසු කිරීමට යෙදුමක් නිර්මාණය කිරීමට අපව දිරිමත් කරයි. දේවල් නිවැරදි හා පරිපූර්ණ කිරීමට පමණක් අපි අපගේ කාලය සහ හොඳම උත්සාහය වැය කරමු. අපට හැකි තාක් මෙම යෙදුමට සහය දැක්වීමට අපි අපගේ උපරිමය කරන්නෙමු. ඕනෑම මුදලක් උපකාර වන අතර ඉතා අගය කරනු ඇත!</string>
+    <string name="maintenance_34" translatable="true">නඩත්තු</string>
+    <string name="maintenance_desc_34" translatable="true">xManager දැනට ලබා ගත නොහැක. කරුණාකර පසුව යෙදුම පරීක්ෂා කරන්න.</string>
+    <string name="thanks_34" translatable="true">ස්තුතියි!</string>
+    <string name="language_34" translatable="true">භාෂාව</string>
+    <string name="website_34" translatable="true">වෙබ් අඩවිය</string>
+    <string name="reddit_34" translatable="true">REDDIT</string>
+    <string name="faq_34" translatable="true">නිති අසන පැණ</string>
+    <string name="cloned_version_34" translatable="true">ක්ලෝනඩ් අනුවාදය</string>
+    <string name="cloned_version_desc_34" translatable="true">මෙය සබල කිරීමෙන් ඔබට පැච් කරන ලද යෙදුමේ ක්ලෝන කළ අනුවාදය බාගත කර ස්ථාපනය කිරීමට ඉඩ සලසයි. මෙය බොහෝ ස්ථාපන දෝෂ හෝ ගැටළු නිරාකරණය කරනු ඇත, විශේෂයෙන් ඔබට පෙර-ස්ථාපිත Spotify යෙදුමක් තිබේ නම්.</string>
+    <string name="disable_rewarded_ads_34" translatable="true">DISABLE REWARDED ADS</string>
+    <string name="disable_rewarded_ads_desc_34" translatable="true">අපගෙන් බොහෝ දෙනෙක් දැන්වීම් වලට කැමති නැති බව අපි දනිමු, නමුත් අපගේ නඩුවේදී, මෙය අපගේ දත්ත සමුදාය, සත්කාරක සබැඳි, යාවත්කාලීන කිරීම්, තවත් පැච් සහ දෛනික අවශ්‍යතා සඳහා අරමුදල් සැපයීමට සැලකිය යුතු ලෙස උපකාරී වේ. පරිත්‍යාග කිරීම හෝ වියදම් කිරීමකින් තොරව අපට සහාය වීමට ඇති සරලම ක්‍රමය මෙයයි.</string>
+    <string name="installation_failed_34" translatable="true">ස්ථාපනය අසාර්ථක විය</string>
+    <string name="installation_failed_desc_34" translatable="true">හේතුව: ඔබ දැනට ස්ථාපනය කර ඇති ප්‍රමාණයට වඩා අඩු පැච් කළ අනුවාදයක් ස්ථාපනය කිරීමට උත්සාහ කර ඇත. විසඳුම්: A. ඊට සමාන හෝ වැඩි අනුවාදයක් තෝරන්න. B. වත්මන් අනුවාදය අස්ථාපනය කරන්න, පසුව පහත් කරන්න. ගැටලුව දිගටම පවතින්නේ නම්, නිතර අසන පැන පරීක්ෂා කරන්න.</string>
+    <string name="installation_failed_spap_desc_34" translatable="true">හේතුව: මෙම උපාංගයේ ස්ථාපනය කර ඇති ධාරාව xManager වෙතින් හෝ අපගේ කණ්ඩායමෙන් කෙලින්ම පැමිණියේ නැත. විසඳුම: යෙදුමේ වත්මන් අනුවාදය අස්ථාපනය කරන්න, xManager නැවත ආරම්භ කර නැවත උත්සාහ කරන්න. ගැටලුව දිගටම පවතින්නේ නම්, නිතර අසන පැන පරීක්ෂා කරන්න.</string>
+    <string name="installation_failed_cloned_desc_34" translatable="true">හේතුව: මෙම උපාංගයේ ස්ථාපනය කර ඇති ක්ලෝන කරන ලද ධාරාව සෘජුවම xManager වෙතින් හෝ අපගේ කණ්ඩායමෙන් පැමිණියේ නැත. විසඳුම: යෙදුමේ වත්මන් අනුවාදය අස්ථාපනය කරන්න, xManager නැවත ආරම්භ කර නැවත උත්සාහ කරන්න. ගැටලුව දිගටම පවතින්නේ නම්, නිතර අසන පැන පරීක්ෂා කරන්න.</string>
+    <string name="existing_patched_34" translatable="true">පවතින පැච්</string>
+    <string name="existing_patched_desc_34" translatable="true">එක් නාමාවලියක පවතින පැච් කළ apk එකක් හමු විය. ඔබ කිරීමට කැමති ක්‍රියාව කුමක්ද?</string>
+    <string name="close_34" translatable="true">වසා දමන්න</string>
+    <string name="cloned_34" translatable="true">ක්ලෝන</string>
+    <string name="spap_34" translatable="true">SP/AP</string>
+    <string name="install_34" translatable="true">ස්ථාපනය කරන්න</string>
+    <string name="uninstall_34" translatable="true">අස්ථාපනය කරන්න</string>
+    <string name="ignore_34" translatable="true">නොසලකා හරින්න</string>
+    <string name="delete_34" translatable="true">මකන්න</string>
+    <string name="uninstall_patched_34" translatable="true">පැච් අස්ථාපනය කරන්න</string>
+    <string name="open_settings_34" translatable="true">විවෘත සැකසුම්</string>
+    <string name="open_patched_34" translatable="true">සැකසීම් විවෘත කරන්න</string>
+    <string name="reboot_34" translatable="true">නැවත ලබාගෙන නැවත ආරම්භ කරන්න</string>
 </resources>
