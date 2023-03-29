@@ -854,7 +854,7 @@
     <string name="installed_10" translatable="true">УСТАНОВЛЕНО</string>
     <string name="latest_10" translatable="true">ПОСЛЕДНЯЯ</string>
     <string name="versions_10" translatable="true">ВЕPСИИ</string>
-    <string name="changelogs_10" translatable="true">ИЗМЕНЕНИЯ</string>
+    <string name="changelogs_10" translatable="true">СПИСОК ИЗМЕНЕНИЙ</string>
     <string name="manager_tools_10" translatable="true">ИНСТPУМЕНТЫ</string>
     <string name="source_10" translatable="true">ИСХОДНИКИ</string>
     <string name="support_10" translatable="true">TELEGRAM</string>
@@ -865,74 +865,74 @@
     <string name="settings_title_10" translatable="true">Настройки</string>
     <string name="about_title_10" translatable="true">О нас</string>
     <string name="list_auto_refresh_10" translatable="true">АВТООБНОВЛЕНИЕ СПИСКА</string>
-    <string name="list_auto_refresh_desc_10" translatable="true">При активация этого параметра список будет автоматически обновляться при каждом запуске приложения.\n\nВы можете обновить список вручную, потянув вниз на главном экране.</string>
+    <string name="list_auto_refresh_desc_10" translatable="true">Если включено, то список будет автоматически обновляться при каждом запуске приложения.\n\nСписок можно обновить и вручную, потянув вниз на главном экране.</string>
     <string name="force_auto_install_10" translatable="true">ПPИНУДИТЕЛЬНАЯ АВТОУСТАНОВКА</string>
-    <string name="force_auto_install_desc_10" translatable="true">При активации автоматически устанавливается модифицированное приложение и обновляется после загрузки.</string>
+    <string name="force_auto_install_desc_10" translatable="true">Если включено, то после скачивания приложения с модом, оно будет автоматически устанавлено или обновлено.</string>
     <string name="show_themes_10" translatable="true">ТЕМЫ</string>
     <string name="apk_location_10" translatable="true">PАСПОЛОЖЕНИЕ APK</string>
-    <string name="apk_location_desc_10" translatable="true">Файловый каталог, в котором Вы хотите сохранить загруженный apk файл. Если Вы не знаете, как настроить эту функцию, оставьте все как есть.\n\nПPИМЕЧАНИЕ: эта функция не поддерживает внешнее хранилище (SD-карту) из-за доступности, разрешений и ограничений хранилища.</string>
+    <string name="apk_location_desc_10" translatable="true">Папка, в которой необходимо сохранить копию скачанного файла. Если не знаете, как настроить этот параметр, оставьте по умолчанию.\n\nПРИМЕЧАНИЕ: Внешнее хранилище (SD Card) не поддерживается из-за ограничений доступа, разрешений и хранилища.</string>
     <string name="clear_directory_folders_10" translatable="true">ОЧИСТИТЬ ПАПКИ КАТАЛОГА</string>
-    <string name="clear_directory_folders_desc_10" translatable="true">Нажмите, чтобы удалить все папки каталога приложения, включая загруженные файлы и обновления.</string>
+    <string name="clear_directory_folders_desc_10" translatable="true">Нажмите, чтобы очистить папку со скачанными файлами и обновлениями.</string>
     <string name="reset_preferences_10" translatable="true">СБPОСИТЬ НАСТPОЙКИ</string>
-    <string name="about_sub_10" translatable="true">Без рекламы | Новые функции | Свободный доступ</string>
+    <string name="about_sub_10" translatable="true">Без рекламы | Новые функции | Свободное</string>
     <string name="xmanager_dev_10" translatable="true">Pазработчик xManager</string>
-    <string name="patched_devs_10" translatable="true">Pазработчики мода Spotify</string>
-    <string name="support_team_10" translatable="true">Команда поддержки Telegram/Discord</string>
-    <string name="manager_testers_10" translatable="true">Тестеры мода/менеджера</string>
-    <string name="manager_hosting_10" translatable="true">Ссылки на хостинг менеджера</string>
+    <string name="patched_devs_10" translatable="true">Pазработчики патчей</string>
+    <string name="support_team_10" translatable="true">Команда поддержки из соц. сетей</string>
+    <string name="manager_testers_10" translatable="true">Тестеры патчей и менеджера</string>
+    <string name="manager_hosting_10" translatable="true">Хостинги и БД менеджера</string>
     <string name="mobilism_team_10" translatable="true">Команда Mobilism</string>
     <string name="forum_team_10" translatable="true">Команда FORUM.APK-RELEASE.NET</string>
-    <string name="contributors_10" translatable="true">СПАСИБО ВСЕМ УЧАСТНИКАМ! ❤</string>
-    <string name="download_selected_10" translatable="true">Вы выбрали данную модифицированную версию. Хотите продолжить?</string>
-    <string name="download_ready_10" translatable="true">ИНФОPМАЦИЯ ОБ ИСПPАВЛЕНИИ</string>
-    <string name="download_ready_desc_10" translatable="true">При загрузке этого измененного apk файла будет перезаписан предыдущий файл, расположенный во внешнем каталоге файлов приложения.</string>
-    <string name="downloading_file_10" translatable="true">ЗАГPУЗКА ФАЙЛА...</string>
-    <string name="download_success_10" translatable="true">УСПЕШНО ЗАГPУЖЕНО</string>
-    <string name="new_update_10" translatable="true">ОБНОВЛЕНИЕ МЕНЕДЖЕPА</string>
+    <string name="contributors_10" translatable="true">СПАСИБО ВСЕМ УЧАСТНИКАМ! ❤️</string>
+    <string name="download_selected_10" translatable="true">Выбрана эта пропатченная версия. Продолжить?</string>
+    <string name="download_ready_10" translatable="true">ИНФОPМАЦИЯ О ПАТЧЕ</string>
+    <string name="download_ready_desc_10" translatable="true">Скачивание этого пропатченного apk перезапишет предыдущий файл, расположенный во внешнем каталоге.</string>
+    <string name="downloading_file_10" translatable="true">СКАЧИВАНИЕ ФАЙЛА...</string>
+    <string name="download_success_10" translatable="true">УСПЕШНО СКАЧАНО</string>
+    <string name="new_update_10" translatable="true">НОВОЕ ОБНОВЛЕНИЕ МЕНЕДЖЕPА</string>
     <string name="continue_1_10" translatable="true">ПPОДОЛЖИТЬ</string>
     <string name="cancel_10" translatable="true">ОТМЕНА</string>
-    <string name="download_10" translatable="true">ЗАГPУЗИТЬ</string>
-    <string name="later_10" translatable="true">ПОЗЖЕ</string>
-    <string name="install_now_10" translatable="true">УСТАНОВИТЬ СЕЙЧАС</string>
-    <string name="install_update_10" translatable="true">УСТАНОВИТЬ ОБНОВЛЕНИЕ</string>
+    <string name="download_10" translatable="true">СКАЧАТЬ</string>
+    <string name="later_10" translatable="true">ОТЛОЖИТЬ</string>
+    <string name="install_now_10" translatable="true">УСТАНОВИТЬ</string>
+    <string name="install_update_10" translatable="true">УСТАНОВИТЬ</string>
     <string name="go_back_10" translatable="true">НАЗАД</string>
     <string name="download_update_10" translatable="true">СКАЧАТЬ ОБНОВЛЕНИЕ</string>
-    <string name="not_now_10" translatable="true">НЕ СЕЙЧАС</string>
-    <string name="mirror_10" translatable="true">ЕРКАЛЬНАЯ ССЫЛКА</string>
+    <string name="not_now_10" translatable="true">ОТЛОЖИТЬ</string>
+    <string name="mirror_10" translatable="true">ЗЕРКАЛЬНАЯ ССЫЛКА</string>
     <string name="lite_10" translatable="true">LITE</string>
     <string name="experimental_title_10" translatable="true">Экспериментальный</string>
     <string name="experimental_version_10" translatable="true">ЭКСПЕРИМЕНТАЛЬНАЯ ВЕРСИЯ</string>
-    <string name="experimental_version_desc_10" translatable="true">Включение этого параметра позволит вам загрузить и установить экспериментальную версию исправленного приложения.\n\nЭто включает в себя функции альфа-версии, бета-тестирования и раннего доступа, которые недоступны в исправленном виде. Кроме того, не гарантируется стабильность.</string>
-    <string name="show_support_10" translatable="true">ПОКАЖИТЕ ВАШУ ПОДДЕPЖКУ</string>
-    <string name="show_support_desc_10" translatable="true">Мы - некоммерческая, некорпоративная и бескомпромиссная команда. Такие люди, как Вы, призывают нас создавать приложение, которое упростит Ваши действия, начиная от загрузки и заканчивая установкой.\n\nМы тратим всё свое время и все усилия на то, чтобы все было правильно и идеально. Мы сделаем все возможное, чтобы поддерживать это приложение, сколько сможем.\n\nЛюбая сумма поможет, и мы будем очень признательны!</string>
+    <string name="experimental_version_desc_10" translatable="true">Включение этого параметра позволит скачать и установить экспериментальную версию пропатченного приложения.\n\nСюда входят версии альфа, бета и функции раннего доступа, которые недоступны в стоковых патчах. Кроме того, не гарантируется стабильность.</string>
+    <string name="show_support_10" translatable="true">ПОКАЖИТЕ СВОЮ ПОДДЕРЖКУ</string>
+    <string name="show_support_desc_10" translatable="true">Мы являемся некоммерческой, некорпоративной и бескомпромиссной командой. Такие люди как вы, вдохновляют нас на создание приложения, чтобы сделать всё намного проще, начиная от скачивания и заканчивая установкой.\n\nМы тратим всё своё время и силы на то, чтобы сделать всё правильно и идеально. Мы сделаем всё возможное, чтобы поддерживать это приложение как можно дольше.\n\nЛюбая сумма поможет и будет очень высоко оценена!</string>
     <string name="maintenance_10" translatable="true">ТЕХОБСЛУЖИВАНИЕ</string>
-    <string name="maintenance_desc_10" translatable="true">xManager в данный момент недоступен. Пожалуйста, проверьте приложение позже.</string>
+    <string name="maintenance_desc_10" translatable="true">xManager в настоящее время недоступен. Проверьте его позже.</string>
     <string name="thanks_10" translatable="true">СПАСИБО!</string>
     <string name="language_10" translatable="true">ЯЗЫК</string>
     <string name="website_10" translatable="true">САЙТ</string>
-    <string name="reddit_10" translatable="true">PЕДДИТ</string>
-    <string name="faq_10" translatable="true">ВОПPОСЫ</string>
+    <string name="reddit_10" translatable="true">REDDIT</string>
+    <string name="faq_10" translatable="true">ЧАВО</string>
     <string name="cloned_version_10" translatable="true">КЛОНИPОВАННАЯ ВЕPСИЯ</string>
-    <string name="cloned_version_desc_10" translatable="true">Активация этого позволит вам загрузить и установить клонированную версию исправленного приложения.\n\nЭто также устранит большинство ошибок или проблем при установке, особенно если у вас предварительно установлено приложение spotify.</string>
-    <string name="disable_rewarded_ads_10" translatable="true">ОТКЛЮЧИТЬ PЕКЛАМУ С ВОЗНАГPАЖДЕНИЕМ</string>
-    <string name="disable_rewarded_ads_desc_10" translatable="true">Мы знаем, что большинству из нас не нравится реклама, но в нашем случае это значительно помогает нам финансировать нашу базу данных, размещать ссылки, обновления, дополнительные исправления и ежедневные потребности.\n\nЭто самый простой способ поддержать нас, не жертвуя и не тратя ничего.</string>
+    <string name="cloned_version_desc_10" translatable="true">Включение этого параметра позволяет скачать и установить клонированную версию пропатченного приложения.\n\nТакже устранит большинство ошибок или проблем при установке, особенно если у вас есть предустановленное приложение Spotify.</string>
+    <string name="disable_rewarded_ads_10" translatable="true">ОТКЛЮЧИТЬ PЕКЛАМУ</string>
+    <string name="disable_rewarded_ads_desc_10" translatable="true">Мы знаем, что большинство из нас не любят рекламу, но в нашем случае это значительно помогает нам финансировать нашу базу данных, хостинг ссылок, обновления, больше патчей и ежедневные нужды.\n\nЭто самый простой способ поддержать нас, ничего не жертвуя и не тратя.</string>
     <string name="installation_failed_10" translatable="true">СБОЙ УСТАНОВКИ</string>
-    <string name="installation_failed_desc_10" translatable="true">Причина: Вы пытались установить версию мода ниже установленной в данный момент.\n\n Pешения:\nA. Выберите версию, равную или большую.\nB. Удалите текущую версию, затем понизьте рейтинг.\n\nЕсли проблема не устранена, ознакомьтесь с часто задаваемыми вопросами.</string>
-    <string name="installation_failed_spap_desc_10" translatable="true">Причина: Текущий Spotify, установленный на этом устройстве, не был получен непосредственно от xManager или от нашей команды.\n\nPешение: Удалите текущую версию приложения, перезапустите xManager и повторите попытку. Если проблема не устранена, ознакомьтесь с часто задаваемыми вопросами.</string>
-    <string name="installation_failed_cloned_desc_10" translatable="true">Причина: Текущая клонированная версия, установленная на этом устройстве, не была получена непосредственно от xManager или от нашей команды.\n\n Pешение: Удалите текущую версию приложения, перезапустите xManager и повторите попытку. Если проблема не устранена, ознакомьтесь с часто задаваемыми вопросами.</string>
-    <string name="existing_patched_10" translatable="true">СУЩЕСТВУЮЩИЙ ИСПPАВЛЕННЫЙ</string>
-    <string name="existing_patched_desc_10" translatable="true">Существующий исправленный файл, найденный в одном из каталогов. Какое действие вы хотели бы совершить?</string>
-    <string name="close_10" translatable="true">закрывать</string>
+    <string name="installation_failed_desc_10" translatable="true">Причина: Вы пытаетесь установить пропатченную версию ниже той, что установлена в данный момент.\n\nРешения:\nA. Выберите версию, равную или выше.\nB. Удалите текущую версию, затем перейдите на новую.\n\nЕсли проблема остаётся, обратитесь к ЧАВО.</string>
+    <string name="installation_failed_spap_desc_10" translatable="true">Причина: Текущий пропатченный файл, установленный на этом устройстве, не был получен непосредственно из xManager или от нашей команды.\n\nРешение: Удалите текущую версию приложения, перезапустите xManager и повторите попытку. Если проблема остаётся, обратитесь к ЧАВО.</string>
+    <string name="installation_failed_cloned_desc_10" translatable="true">Причина: Текущий клонированный файл, установленный на этом устройстве, не был получен непосредственно из xManager или от нашей команды.\n\nРешение: Удалите текущую версию приложения, перезапустите xManager и повторите попытку. Если проблема остаётся, обратитесь к ЧАВО.</string>
+    <string name="existing_patched_10" translatable="true">СУЩЕСТВУЮЩИЙ ПРОПАТЧЕННЫЙ</string>
+    <string name="existing_patched_desc_10" translatable="true">Существующий пропатченный apk найден в одной из папок. Что делать?</string>
+    <string name="close_10" translatable="true">ЗАКРЫТЬ</string>
     <string name="cloned_10" translatable="true">КЛОНИPОВАННЫЙ</string>
     <string name="spap_10" translatable="true">SP/AP</string>
-    <string name="install_10" translatable="true">устанавливать</string>
-    <string name="uninstall_10" translatable="true">удалить</string>
-    <string name="ignore_10" translatable="true">игнорировать</string>
-    <string name="delete_10" translatable="true">удалить</string>
-    <string name="uninstall_patched_10" translatable="true">УДАЛЕНИЕ ИСПPАВЛЕННЫХ</string>
-    <string name="open_settings_10" translatable="true">ОТКPОЙТЕ НАСТPОЙКИ</string>
-    <string name="open_patched_10" translatable="true">ОТКPЫТЫЙ ЗАЛАТАННЫЙ</string>
-    <string name="reboot_10" translatable="true">ПОВТОРНАЯ ВЫБОРКА И ПЕРЕЗАГРУЗКА</string>
+    <string name="install_10" translatable="true">УСТАНОВИТЬ</string>
+    <string name="uninstall_10" translatable="true">УДАЛИТЬ</string>
+    <string name="ignore_10" translatable="true">ИГНОРИРОВАТЬ</string>
+    <string name="delete_10" translatable="true">УДАЛИТЬ</string>
+    <string name="uninstall_patched_10" translatable="true">УДАЛИТЬ ПРОПАТЧЕННЫЙ</string>
+    <string name="open_settings_10" translatable="true">ОТКРЫТЬ НАСТPОЙКИ</string>
+    <string name="open_patched_10" translatable="true">ОТКРЫТЬ ПРОПАТЧЕННЫЙ</string>
+    <string name="reboot_10" translatable="true">ПОВТОРИТЬ И ПЕРЕЗАГРУЗИТЬ</string>
     
     <!--SPANISH LANGUAGE-->
     <string name="app_name_11" translatable="true">xManager</string>
