@@ -2,7 +2,7 @@
   <img width="200" src="https://i.ibb.co/64bJncy/xmanger.gif">
 </p>
 
-## <p align="center">AD-FREE | NEW FEATURES | FREEDOM</p>
+### <p align="center">AD-FREE | NEW FEATURES | FREEDOM</p>
 
 <div align="center">
 
