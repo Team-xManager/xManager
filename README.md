@@ -18,7 +18,7 @@
 
 <p align="center">
   <a href="https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones"><img src="https://img.shields.io/badge/Roadmaps,%20Changelogs%20&%20Milestones-Click%20Here-white.svg?style=for-the-badge"/></a>
-<a href="https://www.virustotal.com/gui/file/69825a0e3b7704d08cd06742a537ce2b8cc43733c50ed8916e97cd29232f11ac/detection"><img src="https://img.shields.io/badge/VirusTotal-Click%20Here-white.svg?style=for-the-badge"/></a>
+<a href="https://www.virustotal.com/gui/file/80082a2907c548deeaa2d93790df5ecb3b7e8f8e64b4e8a7d95269d7e097ddc5/detection"><img src="https://img.shields.io/badge/VirusTotal-Click%20Here-white.svg?style=for-the-badge"/></a>
 </p>
 
 # Main Features
@@ -208,3 +208,6 @@ ClientSiderz
 
 **German Translation**  
 4NDROM3DA  
+
+**Sinhala Translation**  
+Psycho649  
