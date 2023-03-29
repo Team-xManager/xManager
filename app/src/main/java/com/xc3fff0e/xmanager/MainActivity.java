@@ -400,6 +400,8 @@ public class MainActivity extends AppCompatActivity {
 	private TextView translator_33;
 	private TextView manager_lang_34;
 	private TextView translator_34;
+	private TextView manager_lang_35;
+	private TextView translator_35;
 	private TextView manager_donors;
 	private TextView donors_1;
 	private ScrollView main_scroll_body;
@@ -773,6 +775,8 @@ public class MainActivity extends AppCompatActivity {
 		translator_33 = findViewById(R.id.translator_33);
 		manager_lang_34 = findViewById(R.id.manager_lang_34);
 		translator_34 = findViewById(R.id.translator_34);
+		manager_lang_35 = findViewById(R.id.manager_lang_35);
+		translator_35 = findViewById(R.id.translator_35);
 		manager_donors = findViewById(R.id.manager_donors);
 		donors_1 = findViewById(R.id.donors_1);
 		main_scroll_body = findViewById(R.id.main_scroll_body);
@@ -1803,6 +1807,13 @@ public class MainActivity extends AppCompatActivity {
 																																						LANGUAGE.edit().putString("LANGUAGE", "33").commit();
 																																						COUNTER = 1;
 																																						_Language_UI();
+																																					}
+																																					else {
+																																						if (_position == 34) {
+																																							LANGUAGE.edit().putString("LANGUAGE", "34").commit();
+																																							COUNTER = 1;
+																																							_Language_UI();
+																																						}
 																																					}
 																																				}
 																																			}
@@ -4381,7 +4392,9 @@ public class MainActivity extends AppCompatActivity {
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
+				final ProgressDialog check = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
 				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+				check.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 				Thread progress = new Thread() {
 						@Override
 						public void run() {
@@ -4415,23 +4428,27 @@ public class MainActivity extends AppCompatActivity {
 														runOnUiThread(new Runnable() {
 																@Override
 																public void run() {
-																		ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
-																		finalize.setDuration(2000);
-																		finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																				public void onAnimationUpdate(ValueAnimator animation) {
-																						prog.setProgress((int) animation.getAnimatedValue());
+																		final Handler handler = new Handler();
+																		handler.postDelayed(new Runnable() {
+																				@Override
+																				public void run() {
+																						if (prog.getProgress() < dl_progress) {
+																								prog.incrementProgressBy(1);
+																						}
 																				}
-																		});
-																		finalize.start();
+																		}, 10);
+																		ObjectAnimator animation = ObjectAnimator.ofInt(prog, "progress", prog.getProgress(), prog.getMax());
+																		animation.setDuration(1500);
+																		animation.setInterpolator(new DecelerateInterpolator());
+																		animation.start();
 																		if (!MainActivity.this.isFinishing()) {
 																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
 																				String TitleColor = "1DB954";
 																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																				prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																				prog.setProgressNumberFormat((hidden_patched.getText().toString()) + " | " + (file_max) + " MB");
 																				prog.setCancelable(false);
-																				prog.setProgress(dl_progress);
 																				prog.setMax(dl_max);
 																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
 																						@Override
@@ -4439,19 +4456,14 @@ public class MainActivity extends AppCompatActivity {
 																								prog.setCancelable(true);
 																								manager.remove(downloadId);
 																								_File_Remover();
-																								Timer = new TimerTask() {
+																								final Handler handler = new Handler();
+																								handler.postDelayed(new Runnable() {
 																										@Override
 																										public void run() {
-																												runOnUiThread(new Runnable() {
-																														@Override
-																														public void run() {
-																																prog.dismiss();
-																																com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																														}
-																												});
+																												prog.dismiss();
+																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																										}
-																								};
-																								_timer.schedule(Timer, (int)(0));
+																								}, 0);
 																						}
 																				});
 																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
@@ -4460,23 +4472,15 @@ public class MainActivity extends AppCompatActivity {
 																								prog.setCancelable(true);
 																								manager.remove(downloadId);
 																								_File_Remover();
-																								Timer = new TimerTask() {
+																								final Handler handler = new Handler();
+																								handler.postDelayed(new Runnable() {
 																										@Override
 																										public void run() {
-																												runOnUiThread(new Runnable() {
-																														@Override
-																														public void run() {
-																																try {
-																																		prog.dismiss();
-																																		_Reminder();
-																																		_Browser(hidden_download_3.getText().toString());
-																																} catch (Exception e) {
-																																}
-																														}
-																												});
+																												prog.dismiss();
+																												_Reminder();
+																												_Browser(hidden_download_3.getText().toString());
 																										}
-																								};
-																								_timer.schedule(Timer, (int)(0));
+																								}, 0);
 																						}
 																				});
 																				prog.show();
@@ -4490,44 +4494,46 @@ public class MainActivity extends AppCompatActivity {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
 																								finalize.setDuration(1800);
 																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 																										public void onAnimationUpdate(ValueAnimator animation) {
-																												prog.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
 																												String TitleColor = "1DB954";
-																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																												prog.setProgressNumberFormat("PREPARING...");
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("PREPARING...");
+																												check.setCancelable(false);
 																										}
 																								});
 																								finalize.start();
+																								prog.dismiss();
+																								check.show();
 																						}
 																				});
 																		}
 																};
-																_timer.schedule(Timer, (int)(500));
+																_timer.schedule(Timer, (int)(1500));
 																Timer = new TimerTask() {
 																		@Override
 																		public void run() {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
 																								finalize.setDuration(1800);
 																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 																										public void onAnimationUpdate(ValueAnimator animation) {
-																												prog.setProgress((int) animation.getAnimatedValue());
+																												check.setProgress((int) animation.getAnimatedValue());
 																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
 																												String TitleColor = "1DB954";
-																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																												prog.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setCancelable(false);
 																										}
 																								});
 																								finalize.start();
@@ -4542,18 +4548,18 @@ public class MainActivity extends AppCompatActivity {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
 																								finalize.setDuration(1800);
 																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 																										public void onAnimationUpdate(ValueAnimator animation) {
-																												prog.setProgress((int) animation.getAnimatedValue());
+																												check.setProgress((int) animation.getAnimatedValue());
 																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
 																												String TitleColor = "1DB954";
-																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																												prog.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setCancelable(false);
 																										}
 																								});
 																								finalize.start();
@@ -4568,18 +4574,18 @@ public class MainActivity extends AppCompatActivity {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
 																								finalize.setDuration(1800);
 																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 																										public void onAnimationUpdate(ValueAnimator animation) {
-																												prog.setProgress((int) animation.getAnimatedValue());
+																												check.setProgress((int) animation.getAnimatedValue());
 																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
 																												String TitleColor = "1DB954";
-																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																												prog.setProgressNumberFormat("FINALIZING...");
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("FINALIZING...");
+																												check.setCancelable(false);
 																										}
 																								});
 																								finalize.start();
@@ -4604,6 +4610,7 @@ public class MainActivity extends AppCompatActivity {
 																										prog.dismiss();
 																								}
 																								prog.dismiss();
+																								check.dismiss();
 																						}
 																				});
 																		}
@@ -4884,7 +4891,9 @@ public class MainActivity extends AppCompatActivity {
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
+				final ProgressDialog check = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
 				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+				check.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 				Thread progress = new Thread() {
 						@Override
 						public void run() {
@@ -4918,24 +4927,27 @@ public class MainActivity extends AppCompatActivity {
 														runOnUiThread(new Runnable() {
 																@Override
 																public void run() {
-																		ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
-																		finalize.setDuration(2000);
-																		finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																				public void onAnimationUpdate(ValueAnimator animation) {
-																						prog.setProgress((int) animation.getAnimatedValue());
+																		final Handler handler = new Handler();
+																		handler.postDelayed(new Runnable() {
+																				@Override
+																				public void run() {
+																						if (prog.getProgress() < dl_progress) {
+																								prog.incrementProgressBy(1);
+																						}
 																				}
-																		});
-																		finalize.start();
+																		}, 10);
+																		ObjectAnimator animation = ObjectAnimator.ofInt(prog, "progress", prog.getProgress(), prog.getMax());
+																		animation.setDuration(1500);
+																		animation.setInterpolator(new DecelerateInterpolator());
+																		animation.start();
 																		if (!MainActivity.this.isFinishing()) {
-																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
 																				String TitleColor = "1DB954";
 																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																				prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																				prog.setProgressNumberFormat((Datas.get("Server").toString()) + " | " + (file_max) + " MB");
 																				prog.setCancelable(false);
-																				prog.setProgress(dl_progress);
 																				prog.setMax(dl_max);
 																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
 																						@Override
@@ -4943,19 +4955,14 @@ public class MainActivity extends AppCompatActivity {
 																								prog.setCancelable(true);
 																								manager.remove(downloadId);
 																								_File_Remover();
-																								Timer = new TimerTask() {
+																								final Handler handler = new Handler();
+																								handler.postDelayed(new Runnable() {
 																										@Override
 																										public void run() {
-																												runOnUiThread(new Runnable() {
-																														@Override
-																														public void run() {
-																																prog.dismiss();
-																																com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																														}
-																												});
+																												prog.dismiss();
+																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																										}
-																								};
-																								_timer.schedule(Timer, (int)(0));
+																								}, 0);
 																						}
 																				});
 																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
@@ -4964,22 +4971,15 @@ public class MainActivity extends AppCompatActivity {
 																								prog.setCancelable(true);
 																								manager.remove(downloadId);
 																								_File_Remover();
-																								Timer = new TimerTask() {
+																								final Handler handler = new Handler();
+																								handler.postDelayed(new Runnable() {
 																										@Override
 																										public void run() {
-																												runOnUiThread(new Runnable() {
-																														@Override
-																														public void run() {
-																																try {
-																																		prog.dismiss();
-																																		_Browser(hidden_update.getText().toString());
-																																} catch (Exception e) {
-																																}
-																														}
-																												});
+																												prog.dismiss();
+																												_Reminder();
+																												_Browser(hidden_update.getText().toString());
 																										}
-																								};
-																								_timer.schedule(Timer, (int)(0));
+																								}, 0);
 																						}
 																				});
 																				prog.show();
@@ -4993,44 +4993,46 @@ public class MainActivity extends AppCompatActivity {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
 																								finalize.setDuration(1800);
 																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 																										public void onAnimationUpdate(ValueAnimator animation) {
-																												prog.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
 																												String TitleColor = "1DB954";
-																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																												prog.setProgressNumberFormat("PREPARING...");
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("PREPARING...");
+																												check.setCancelable(false);
 																										}
 																								});
 																								finalize.start();
+																								prog.dismiss();
+																								check.show();
 																						}
 																				});
 																		}
 																};
-																_timer.schedule(Timer, (int)(500));
+																_timer.schedule(Timer, (int)(1500));
 																Timer = new TimerTask() {
 																		@Override
 																		public void run() {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
 																								finalize.setDuration(1800);
 																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 																										public void onAnimationUpdate(ValueAnimator animation) {
-																												prog.setProgress((int) animation.getAnimatedValue());
+																												check.setProgress((int) animation.getAnimatedValue());
 																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
 																												String TitleColor = "1DB954";
-																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																												prog.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setCancelable(false);
 																										}
 																								});
 																								finalize.start();
@@ -5045,18 +5047,18 @@ public class MainActivity extends AppCompatActivity {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
 																								finalize.setDuration(1800);
 																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 																										public void onAnimationUpdate(ValueAnimator animation) {
-																												prog.setProgress((int) animation.getAnimatedValue());
+																												check.setProgress((int) animation.getAnimatedValue());
 																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
 																												String TitleColor = "1DB954";
-																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																												prog.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setCancelable(false);
 																										}
 																								});
 																								finalize.start();
@@ -5071,18 +5073,18 @@ public class MainActivity extends AppCompatActivity {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
 																								finalize.setDuration(1800);
 																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 																										public void onAnimationUpdate(ValueAnimator animation) {
-																												prog.setProgress((int) animation.getAnimatedValue());
+																												check.setProgress((int) animation.getAnimatedValue());
 																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
 																												String TitleColor = "1DB954";
-																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																												prog.setProgressNumberFormat("FINALIZING...");
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("FINALIZING...");
+																												check.setCancelable(false);
 																										}
 																								});
 																								finalize.start();
@@ -5096,12 +5098,13 @@ public class MainActivity extends AppCompatActivity {
 																		public void run() {
 																				runOnUiThread(new Runnable() {
 																						@Override
-																						public void run() {	
+																						public void run() {
 																								if (!MainActivity.this.isFinishing()) {
 																										_Extension_3();
 																										prog.dismiss();
 																								}
 																								prog.dismiss();
+																								check.dismiss();
 																						}
 																				});
 																		}
@@ -5731,7 +5734,9 @@ public class MainActivity extends AppCompatActivity {
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
+				final ProgressDialog check = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
 				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+				check.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 				Thread progress = new Thread() {
 						@Override
 						public void run() {
@@ -5765,24 +5770,27 @@ public class MainActivity extends AppCompatActivity {
 														runOnUiThread(new Runnable() {
 																@Override
 																public void run() {
-																		ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
-																		finalize.setDuration(2000);
-																		finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																				public void onAnimationUpdate(ValueAnimator animation) {
-																						prog.setProgress((int) animation.getAnimatedValue());
+																		final Handler handler = new Handler();
+																		handler.postDelayed(new Runnable() {
+																				@Override
+																				public void run() {
+																						if (prog.getProgress() < dl_progress) {
+																								prog.incrementProgressBy(1);
+																						}
 																				}
-																		});
-																		finalize.start();
+																		}, 10);
+																		ObjectAnimator animation = ObjectAnimator.ofInt(prog, "progress", prog.getProgress(), prog.getMax());
+																		animation.setDuration(1500);
+																		animation.setInterpolator(new DecelerateInterpolator());
+																		animation.start();
 																		if (!MainActivity.this.isFinishing()) {
-																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
 																				String TitleColor = "1DB954";
 																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																				prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																				prog.setProgressNumberFormat((hidden_patched.getText().toString()) + " | " + (file_max) + " MB");
 																				prog.setCancelable(false);
-																				prog.setProgress(dl_progress);
 																				prog.setMax(dl_max);
 																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
 																						@Override
@@ -5790,19 +5798,14 @@ public class MainActivity extends AppCompatActivity {
 																								prog.setCancelable(true);
 																								manager.remove(downloadId);
 																								_File_Remover();
-																								Timer = new TimerTask() {
+																								final Handler handler = new Handler();
+																								handler.postDelayed(new Runnable() {
 																										@Override
 																										public void run() {
-																												runOnUiThread(new Runnable() {
-																														@Override
-																														public void run() {
-																																prog.dismiss();
-																																com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																														}
-																												});
+																												prog.dismiss();
+																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																										}
-																								};
-																								_timer.schedule(Timer, (int)(0));
+																								}, 0);
 																						}
 																				});
 																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
@@ -5811,255 +5814,250 @@ public class MainActivity extends AppCompatActivity {
 																								prog.setCancelable(true);
 																								manager.remove(downloadId);
 																								_File_Remover();
+																								final Handler handler = new Handler();
+																								handler.postDelayed(new Runnable() {
+																										@Override
+																										public void run() {
+																												prog.dismiss();
+																												_Reminder();
+																												_Browser(hidden_download_3.getText().toString());
+																										}
+																								}, 0);
+																						}
+																				});
+																				prog.show();
+																		}
+																}
+														});
+														if (bytes_downloaded == bytes_total) {
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("PREPARING...");
+																												check.setCancelable(false);
+																										}
+																								});
+																								finalize.start();
+																								prog.dismiss();
+																								check.show();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(1500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setCancelable(false);
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(3500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setCancelable(false);
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(4500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("FINALIZING...");
+																												check.setCancelable(false);
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(5500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {	
+																								try {
+																										FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk", apk_path_location.getText().toString().concat("Patched (xManager).apk"));
+																								}
+																								catch(Exception e) {
+																								}
 																								Timer = new TimerTask() {
 																										@Override
 																										public void run() {
 																												runOnUiThread(new Runnable() {
 																														@Override
 																														public void run() {
-																																try {
-																																		prog.dismiss();
-																																		_Reminder();
-																																		_Browser(hidden_download_3.getText().toString());
-																																} catch (Exception e) {
+																																prog.dismiss();
+																																check.dismiss();
+																																if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
+																																		if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
+																																				StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+																																				if(android.os.Build.VERSION.SDK_INT >= 29){
+																																						try {
+																																								Intent intent = new Intent(Intent.ACTION_VIEW);
+																																								intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
+																																								startActivity(intent);
+																																								_Reminder();
+																																						}
+																																						catch(Exception e) {
+																																						}
+																																				} else {
+																																						try {
+																																								Intent intent = new Intent(Intent.ACTION_VIEW);
+																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
+																																								startActivity(intent);
+																																								_Reminder();
+																																						}
+																																						catch(Exception e) {
+																																						}
+																																				} 
+																																		} else {
+																																				if (!MainActivity.this.isFinishing()) {
+																																						final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																																						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+																																						String TitleColor = "1DB954";
+																																						Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																						String Message = installation_failed_spap_desc_0.replace("\n", "<br/>");
+																																						String MessageColor = "FFFFFF";
+																																						Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+																																						Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+																																								@Override
+																																								public void onClick(DialogInterface Signature_Check, int p) {
+																																										AlertDialog.setCancelable(true);
+																																										try {
+																																												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
+																																												startActivity(intent);
+																																										}
+																																										catch(Exception e) {
+																																										}
+																																								}
+																																						});
+																																						Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+																																								@Override
+																																								public void onClick(DialogInterface Signature_Check, int p) {
+																																										AlertDialog.setCancelable(true);
+																																								}
+																																						});
+																																						AlertDialog = Signature_Check.create();
+																																						AlertDialog.setCancelable(false);
+																																						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																																						AlertDialog.show();
+																																				}
+																																		}	
+																																}
+																																else {
+																																		if (Downloaded_Version < Installed_Version) {
+																																				if (!MainActivity.this.isFinishing()) {
+																																						final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																																						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+																																						String TitleColor = "1DB954";
+																																						Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																						String Message = installation_failed_desc_0.replace("\n", "<br/>");
+																																						String MessageColor = "FFFFFF";
+																																						Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+																																						Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+																																								@Override
+																																								public void onClick(DialogInterface Downgrade_Check, int p) {
+																																										AlertDialog.setCancelable(true);
+																																										try {
+																																												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
+																																												startActivity(intent);
+																																										}
+																																										catch(Exception e) {
+																																										}
+																																								}
+																																						});
+																																						Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+																																								@Override
+																																								public void onClick(DialogInterface Downgrade_Check, int p) {
+																																										AlertDialog.setCancelable(true);
+																																								}
+																																						});
+																																						AlertDialog = Downgrade_Check.create();
+																																						AlertDialog.setCancelable(false);
+																																						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																																						AlertDialog.show();
+																																				}
+																																		}
 																																}
 																														}
 																												});
 																										}
 																								};
-																								_timer.schedule(Timer, (int)(0));
+																								_timer.schedule(Timer, (int)(100));
 																						}
 																				});
-																				prog.show();
 																		}
-																		if (bytes_downloaded == bytes_total) {
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
-																												finalize.setDuration(1800);
-																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																														public void onAnimationUpdate(ValueAnimator animation) {
-																																prog.setProgress((int) animation.getAnimatedValue());
-																																String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																																String TitleColor = "1DB954";
-																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																																prog.setProgressNumberFormat("PREPARING...");
-																														}
-																												});
-																												finalize.start();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(500));
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
-																												finalize.setDuration(1800);
-																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																														public void onAnimationUpdate(ValueAnimator animation) {
-																																prog.setProgress((int) animation.getAnimatedValue());
-																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																																String TitleColor = "1DB954";
-																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																																prog.setProgressNumberFormat("VERIFYING FILE...");
-																														}
-																												});
-																												finalize.start();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(3500));
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
-																												finalize.setDuration(1800);
-																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																														public void onAnimationUpdate(ValueAnimator animation) {
-																																prog.setProgress((int) animation.getAnimatedValue());
-																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																																String TitleColor = "1DB954";
-																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																																prog.setProgressNumberFormat("VERIFYING SIGNATURE...");
-																														}
-																												});
-																												finalize.start();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(4500));
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
-																												finalize.setDuration(1800);
-																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																														public void onAnimationUpdate(ValueAnimator animation) {
-																																prog.setProgress((int) animation.getAnimatedValue());
-																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																																String TitleColor = "1DB954";
-																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																																prog.setProgressNumberFormat("FINALIZING...");
-																														}
-																												});
-																												finalize.start();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(5500));
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {	
-																												try {
-																														FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk", apk_path_location.getText().toString().concat("Patched (xManager).apk"));
-																												}
-																												catch(Exception e) {
-																												}
-																												Timer = new TimerTask() {
-																														@Override
-																														public void run() {
-																																runOnUiThread(new Runnable() {
-																																		@Override
-																																		public void run() {
-																																				prog.dismiss();
-																																				if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
-																																						if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
-																																								StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																																								if(android.os.Build.VERSION.SDK_INT >= 29){
-																																										try {
-																																												Intent intent = new Intent(Intent.ACTION_VIEW);
-																																												intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																																												intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
-																																												startActivity(intent);
-																																												_Reminder();
-																																										}
-																																										catch(Exception e) {
-																																										}
-																																								} else {
-																																										try {
-																																												Intent intent = new Intent(Intent.ACTION_VIEW);
-																																												intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
-																																												startActivity(intent);
-																																												_Reminder();
-																																										}
-																																										catch(Exception e) {
-																																										}
-																																								} 
-																																						} else {
-																																								if (!MainActivity.this.isFinishing()) {
-																																										final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																										String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																										String TitleColor = "1DB954";
-																																										Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																										String Message = installation_failed_spap_desc_0.replace("\n", "<br/>");
-																																										String MessageColor = "FFFFFF";
-																																										Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																										Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																												@Override
-																																												public void onClick(DialogInterface Signature_Check, int p) {
-																																														AlertDialog.setCancelable(true);
-																																														try {
-																																																Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
-																																																startActivity(intent);
-																																														}
-																																														catch(Exception e) {
-																																														}
-																																												}
-																																										});
-																																										Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																												@Override
-																																												public void onClick(DialogInterface Signature_Check, int p) {
-																																														AlertDialog.setCancelable(true);
-																																												}
-																																										});
-																																										AlertDialog = Signature_Check.create();
-																																										AlertDialog.setCancelable(false);
-																																										AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																										AlertDialog.show();
-																																								}
-																																						}	
-																																				}
-																																				else {
-																																						if (Downloaded_Version < Installed_Version) {
-																																								if (!MainActivity.this.isFinishing()) {
-																																										final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																										String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																										String TitleColor = "1DB954";
-																																										Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																										String Message = installation_failed_desc_0.replace("\n", "<br/>");
-																																										String MessageColor = "FFFFFF";
-																																										Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																										Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																												@Override
-																																												public void onClick(DialogInterface Downgrade_Check, int p) {
-																																														AlertDialog.setCancelable(true);
-																																														try {
-																																																Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
-																																																startActivity(intent);
-																																														}
-																																														catch(Exception e) {
-																																														}
-																																												}
-																																										});
-																																										Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																												@Override
-																																												public void onClick(DialogInterface Downgrade_Check, int p) {
-																																														AlertDialog.setCancelable(true);
-																																												}
-																																										});
-																																										AlertDialog = Downgrade_Check.create();
-																																										AlertDialog.setCancelable(false);
-																																										AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																										AlertDialog.show();
-																																								}
-																																						}
-																																				}
-																																		}
-																																});
-																														}
-																												};
-																												_timer.schedule(Timer, (int)(100));
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(6500));
-																		}
-																}
-														});
+																};
+																_timer.schedule(Timer, (int)(6500));
+														}
 												}
 												cursor.close();
 										}
@@ -6093,7 +6091,9 @@ public class MainActivity extends AppCompatActivity {
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
+				final ProgressDialog check = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
 				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+				check.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 				Thread progress = new Thread() {
 						@Override
 						public void run() {
@@ -6127,44 +6127,42 @@ public class MainActivity extends AppCompatActivity {
 														runOnUiThread(new Runnable() {
 																@Override
 																public void run() {
-																		ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
-																		finalize.setDuration(2000);
-																		finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																				public void onAnimationUpdate(ValueAnimator animation) {
-																						prog.setProgress((int) animation.getAnimatedValue());
+																		final Handler handler = new Handler();
+																		handler.postDelayed(new Runnable() {
+																				@Override
+																				public void run() {
+																						if (prog.getProgress() < dl_progress) {
+																								prog.incrementProgressBy(1);
+																						}
 																				}
-																		});
-																		finalize.start();
+																		}, 10);
+																		ObjectAnimator animation = ObjectAnimator.ofInt(prog, "progress", prog.getProgress(), prog.getMax());
+																		animation.setDuration(1500);
+																		animation.setInterpolator(new DecelerateInterpolator());
+																		animation.start();
 																		if (!MainActivity.this.isFinishing()) {
-																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
 																				String TitleColor = "1DB954";
 																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																				prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																				prog.setProgressNumberFormat((Datas.get("Server").toString()) + " | " + (file_max) + " MB");
 																				prog.setCancelable(false);
-																				prog.setProgress(dl_progress);
 																				prog.setMax(dl_max);
 																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
 																						@Override
 																						public void onClick(DialogInterface dialog, int which) {
 																								prog.setCancelable(true);
 																								manager.remove(downloadId);
-																								_Update_Remover();
-																								Timer = new TimerTask() {
+																								_File_Remover();
+																								final Handler handler = new Handler();
+																								handler.postDelayed(new Runnable() {
 																										@Override
 																										public void run() {
-																												runOnUiThread(new Runnable() {
-																														@Override
-																														public void run() {
-																																prog.dismiss();
-																																com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																														}
-																												});
+																												prog.dismiss();
+																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																										}
-																								};
-																								_timer.schedule(Timer, (int)(0));
+																								}, 0);
 																						}
 																				});
 																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
@@ -6173,170 +6171,166 @@ public class MainActivity extends AppCompatActivity {
 																								prog.setCancelable(true);
 																								manager.remove(downloadId);
 																								_File_Remover();
-																								Timer = new TimerTask() {
+																								final Handler handler = new Handler();
+																								handler.postDelayed(new Runnable() {
 																										@Override
 																										public void run() {
-																												runOnUiThread(new Runnable() {
-																														@Override
-																														public void run() {
-																																try {
-																																		prog.dismiss();
-																																		_Browser(hidden_update.getText().toString());
-																																} catch (Exception e) {
-																																}
-																														}
-																												});
+																												prog.dismiss();
+																												_Reminder();
+																												_Browser(hidden_update.getText().toString());
 																										}
-																								};
-																								_timer.schedule(Timer, (int)(0));
+																								}, 0);
 																						}
 																				});
 																				prog.show();
 																		}
-																		if (bytes_downloaded == bytes_total) {
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
-																												finalize.setDuration(1800);
-																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																														public void onAnimationUpdate(ValueAnimator animation) {
-																																prog.setProgress((int) animation.getAnimatedValue());
-																																String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																																String TitleColor = "1DB954";
-																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																																prog.setProgressNumberFormat("PREPARING...");
-																														}
-																												});
-																												finalize.start();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(500));
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
-																												finalize.setDuration(1800);
-																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																														public void onAnimationUpdate(ValueAnimator animation) {
-																																prog.setProgress((int) animation.getAnimatedValue());
-																																String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
-																																String TitleColor = "1DB954";
-																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																																prog.setProgressNumberFormat("VERIFYING FILE...");
-																														}
-																												});
-																												finalize.start();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(3500));
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
-																												finalize.setDuration(1800);
-																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																														public void onAnimationUpdate(ValueAnimator animation) {
-																																prog.setProgress((int) animation.getAnimatedValue());
-																																String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
-																																String TitleColor = "1DB954";
-																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																																prog.setProgressNumberFormat("VERIFYING SIGNATURE...");
-																														}
-																												});
-																												finalize.start();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(4500));
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
-																												finalize.setDuration(1800);
-																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																														public void onAnimationUpdate(ValueAnimator animation) {
-																																prog.setProgress((int) animation.getAnimatedValue());
-																																String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
-																																String TitleColor = "1DB954";
-																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																																prog.setProgressNumberFormat("FINALIZING...");
-																														}
-																												});
-																												finalize.start();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(5500));
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												try {
-																														prog.dismiss();
-																												}
-																												catch(Exception e) {
-																												}
-																												prog.dismiss();
-																												StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																												if(android.os.Build.VERSION.SDK_INT >= 29){
-																														try {
-																																Intent intent = new Intent(Intent.ACTION_VIEW);
-																																intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																																intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
-																																startActivity(intent);
-																														}
-																														catch(Exception e) {
-																														}
-																												} else {
-																														try {
-																																Intent intent = new Intent(Intent.ACTION_VIEW);
-																																intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
-																																startActivity(intent);
-																														}
-																														catch(Exception e) {
-																														}
-																												}
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(6500));
-																		}
 																}
 														});
+														if (bytes_downloaded == bytes_total) {
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
+																												String TitleColor = "1DB954";
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("PREPARING...");
+																												check.setCancelable(false);
+																										}
+																								});
+																								finalize.start();
+																								prog.dismiss();
+																								check.show();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(1500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
+																												String TitleColor = "1DB954";
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setCancelable(false);
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(3500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
+																												String TitleColor = "1DB954";
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setCancelable(false);
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(4500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
+																												String TitleColor = "1DB954";
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("FINALIZING...");
+																												check.setCancelable(false);
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(5500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								try {
+																										prog.dismiss();
+																										check.dismiss();
+																								}
+																								catch(Exception e) {
+																								}
+																								prog.dismiss();
+																								StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+																								if(android.os.Build.VERSION.SDK_INT >= 29){
+																										try {
+																												Intent intent = new Intent(Intent.ACTION_VIEW);
+																												intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																												intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
+																												startActivity(intent);
+																										}
+																										catch(Exception e) {
+																										}
+																								} else {
+																										try {
+																												Intent intent = new Intent(Intent.ACTION_VIEW);
+																												intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
+																												startActivity(intent);
+																										}
+																										catch(Exception e) {
+																										}
+																								}
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(6500));
+														}
 												}
 												cursor.close();
 										}
@@ -10179,6 +10173,119 @@ public class MainActivity extends AppCompatActivity {
 																																				installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																				select_language.setSelection((int)(33));
 																																			}
+																																			else {
+																																				if (LANGUAGE.getString("LANGUAGE", "").equals("34")) {
+																																					sub_text_installed.setText(R.string.installed_34);
+																																					main_title.setText(R.string.main_title_34);
+																																					about_title.setText(R.string.about_title_34);
+																																					settings_title.setText(R.string.settings_title_34);
+																																					experiment_title.setText(R.string.experimental_title_34);
+																																					sub_title.setText(R.string.about_sub_34);
+																																					sub_text_1.setText(R.string.latest_34);
+																																					sub_text_2.setText(R.string.latest_34);
+																																					sub_text_3.setText(R.string.latest_34);
+																																					versions_1.setText(R.string.versions_34);
+																																					versions_2.setText(R.string.versions_34);
+																																					versions_3.setText(R.string.versions_34);
+																																					title_sub.setText(R.string.manager_tools_34);
+																																					source.setText(R.string.source_34);
+																																					support.setText(R.string.support_34);
+																																					donate.setText(R.string.donate_34);
+																																					discord.setText(R.string.discord_34);
+																																					about.setText(R.string.about_34);
+																																					website.setText(R.string.website_34);
+																																					reddit.setText(R.string.reddit_34);
+																																					faq.setText(R.string.faq_34);
+																																					theme.setText(R.string.show_themes_34);
+																																					language.setText(R.string.language_34);
+																																					download_update.setText(R.string.download_update_34);
+																																					install_now.setText(R.string.install_now_34);
+																																					install_update.setText(R.string.install_update_34);
+																																					uninstall_patched.setText(R.string.uninstall_patched_34);
+																																					open_settings.setText(R.string.open_settings_34);
+																																					open_patched.setText(R.string.open_patched_34);
+																																					lite.setText(R.string.lite_34);
+																																					cloned.setText(R.string.cloned_34);
+																																					spap.setText(R.string.spap_34);
+																																					mirror.setText(R.string.mirror_34);
+																																					download.setText(R.string.download_34);
+																																					cancel.setText(R.string.cancel_34);
+																																					later.setText(R.string.later_34);
+																																					go_back.setText(R.string.go_back_34);
+																																					not_now.setText(R.string.not_now_34);
+																																					close.setText(R.string.close_34);
+																																					continue_1.setText(R.string.continue_1_34);
+																																					install.setText(R.string.install_34);
+																																					uninstall.setText(R.string.uninstall_34);
+																																					ignore.setText(R.string.ignore_34);
+																																					delete.setText(R.string.delete_34);
+																																					thanks.setText(R.string.thanks_34);
+																																					new_update.setText(R.string.new_update_34);
+																																					changelogs.setText(R.string.changelogs_34);
+																																					reboot.setText(R.string.reboot_34);
+																																					reset_preferences.setText(R.string.reset_preferences_34);
+																																					list_auto_refresh.setText(R.string.list_auto_refresh_34);
+																																					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_34);
+																																					force_auto_install.setText(R.string.force_auto_install_34);
+																																					force_auto_install_info.setText(R.string.force_auto_install_desc_34);
+																																					apk_location.setText(R.string.apk_location_34);
+																																					apk_location_info.setText(R.string.apk_location_desc_34);
+																																					clear_directory_folders.setText(R.string.clear_directory_folders_34);
+																																					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_34);
+																																					cloned_version.setText(R.string.cloned_version_34);
+																																					cloned_version_info.setText(R.string.cloned_version_desc_34);
+																																					experiment_version.setText(R.string.experimental_version_34);
+																																					experiment_version_info.setText(R.string.experimental_version_desc_34);
+																																					disable_reward_ad.setText(R.string.disable_rewarded_ads_34);
+																																					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_34);
+																																					show_support.setText(R.string.show_support_34);
+																																					show_support_desc.setText(R.string.show_support_desc_34);
+																																					maintenance.setText(R.string.maintenance_34);
+																																					maintenance_desc.setText(R.string.maintenance_desc_34);
+																																					xmanager_dev.setText(R.string.xmanager_dev_34);
+																																					patched_devs.setText(R.string.patched_devs_34);
+																																					support_team.setText(R.string.support_team_34);
+																																					manager_testers.setText(R.string.manager_testers_34);
+																																					manager_hosting.setText(R.string.manager_hosting_34);
+																																					mobilism_team.setText(R.string.mobilism_team_34);
+																																					forum_team.setText(R.string.forum_team_34);
+																																					contributors.setText(R.string.contributors_34);
+																																					download_selected.setText(R.string.download_selected_34);
+																																					download_ready.setText(R.string.download_ready_34);
+																																					download_ready_desc.setText(R.string.download_ready_desc_34);
+																																					downloading_file.setText(R.string.downloading_file_34);
+																																					download_success.setText(R.string.download_success_34);
+																																					installation_failed.setText(R.string.installation_failed_34);
+																																					installation_failed_desc.setText(R.string.installation_failed_desc_34);
+																																					installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_34);
+																																					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_34);
+																																					existing_patched.setText(R.string.existing_patched_34);
+																																					existing_patched_desc.setText(R.string.existing_patched_desc_34);
+																																					lite_0 = lite.getText().toString();
+																																					download_0 = download.getText().toString();
+																																					continue_0 = continue_1.getText().toString();
+																																					cancel_0 = cancel.getText().toString();
+																																					later_0 = later.getText().toString();
+																																					mirror_0 = mirror.getText().toString();
+																																					install_now_0 = install_now.getText().toString();
+																																					go_back_0 = go_back.getText().toString();
+																																					install_update_0 = install_update.getText().toString();
+																																					close_0 = close.getText().toString();
+																																					uninstall_0 = uninstall.getText().toString();
+																																					existing_patched_0 = existing_patched.getText().toString();
+																																					existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																																					download_selected_0 = download_selected.getText().toString();
+																																					download_ready_0 = download_ready.getText().toString();
+																																					download_ready_desc_0 = download_ready_desc.getText().toString();
+																																					downloading_file_0 = downloading_file.getText().toString();
+																																					download_success_0 = download_success.getText().toString();
+																																					installation_failed_0 = installation_failed.getText().toString();
+																																					installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																																					installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
+																																					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																																					select_language.setSelection((int)(34));
+																																				}
+																																			}
 																																		}
 																																	}
 																																}
@@ -10250,6 +10357,7 @@ public class MainActivity extends AppCompatActivity {
 		Language.add("Catalan");
 		Language.add("Latvian");
 		Language.add("German");
+		Language.add("Sinhala");
 		select_language.setAdapter(new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, Language));
 		((ArrayAdapter)select_language.getAdapter()).notifyDataSetChanged();
 		select_language.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, Language) {
@@ -10694,7 +10802,9 @@ public class MainActivity extends AppCompatActivity {
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
+				final ProgressDialog check = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
 				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+				check.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 				Thread progress = new Thread() {
 						@Override
 						public void run() {
@@ -10728,24 +10838,27 @@ public class MainActivity extends AppCompatActivity {
 														runOnUiThread(new Runnable() {
 																@Override
 																public void run() {
-																		ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
-																		finalize.setDuration(2000);
-																		finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																				public void onAnimationUpdate(ValueAnimator animation) {
-																						prog.setProgress((int) animation.getAnimatedValue());
+																		final Handler handler = new Handler();
+																		handler.postDelayed(new Runnable() {
+																				@Override
+																				public void run() {
+																						if (prog.getProgress() < dl_progress) {
+																								prog.incrementProgressBy(1);
+																						}
 																				}
-																		});
-																		finalize.start();
+																		}, 10);
+																		ObjectAnimator animation = ObjectAnimator.ofInt(prog, "progress", prog.getProgress(), prog.getMax());
+																		animation.setDuration(1500);
+																		animation.setInterpolator(new DecelerateInterpolator());
+																		animation.start();
 																		if (!MainActivity.this.isFinishing()) {
-																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
 																				String TitleColor = "1DB954";
 																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																				prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																				prog.setProgressNumberFormat((hidden_patched.getText().toString()) + " | " + (file_max) + " MB");
 																				prog.setCancelable(false);
-																				prog.setProgress(dl_progress);
 																				prog.setMax(dl_max);
 																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
 																						@Override
@@ -10753,19 +10866,14 @@ public class MainActivity extends AppCompatActivity {
 																								prog.setCancelable(true);
 																								manager.remove(downloadId);
 																								_File_Remover();
-																								Timer = new TimerTask() {
+																								final Handler handler = new Handler();
+																								handler.postDelayed(new Runnable() {
 																										@Override
 																										public void run() {
-																												runOnUiThread(new Runnable() {
-																														@Override
-																														public void run() {
-																																prog.dismiss();
-																																com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																														}
-																												});
+																												prog.dismiss();
+																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																										}
-																								};
-																								_timer.schedule(Timer, (int)(0));
+																								}, 0);
 																						}
 																				});
 																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
@@ -10774,23 +10882,15 @@ public class MainActivity extends AppCompatActivity {
 																								prog.setCancelable(true);
 																								manager.remove(downloadId);
 																								_File_Remover();
-																								Timer = new TimerTask() {
+																								final Handler handler = new Handler();
+																								handler.postDelayed(new Runnable() {
 																										@Override
 																										public void run() {
-																												runOnUiThread(new Runnable() {
-																														@Override
-																														public void run() {
-																																try {
-																																		prog.dismiss();
-																																		_Reminder();
-																																		_Browser(hidden_download_3.getText().toString());
-																																} catch (Exception e) {
-																																}
-																														}
-																												});
+																												prog.dismiss();
+																												_Reminder();
+																												_Browser(hidden_download_3.getText().toString());
 																										}
-																								};
-																								_timer.schedule(Timer, (int)(0));
+																								}, 0);
 																						}
 																				});
 																				prog.show();
@@ -10804,44 +10904,46 @@ public class MainActivity extends AppCompatActivity {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
 																								finalize.setDuration(1800);
 																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 																										public void onAnimationUpdate(ValueAnimator animation) {
-																												prog.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
 																												String TitleColor = "1DB954";
-																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																												prog.setProgressNumberFormat("PREPARING...");
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("PREPARING...");
+																												check.setCancelable(false);
 																										}
 																								});
 																								finalize.start();
+																								prog.dismiss();
+																								check.show();
 																						}
 																				});
 																		}
 																};
-																_timer.schedule(Timer, (int)(500));
+																_timer.schedule(Timer, (int)(1500));
 																Timer = new TimerTask() {
 																		@Override
 																		public void run() {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
 																								finalize.setDuration(1800);
 																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 																										public void onAnimationUpdate(ValueAnimator animation) {
-																												prog.setProgress((int) animation.getAnimatedValue());
+																												check.setProgress((int) animation.getAnimatedValue());
 																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
 																												String TitleColor = "1DB954";
-																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																												prog.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setCancelable(false);
 																										}
 																								});
 																								finalize.start();
@@ -10856,18 +10958,18 @@ public class MainActivity extends AppCompatActivity {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
 																								finalize.setDuration(1800);
 																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 																										public void onAnimationUpdate(ValueAnimator animation) {
-																												prog.setProgress((int) animation.getAnimatedValue());
+																												check.setProgress((int) animation.getAnimatedValue());
 																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
 																												String TitleColor = "1DB954";
-																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																												prog.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setCancelable(false);
 																										}
 																								});
 																								finalize.start();
@@ -10882,18 +10984,18 @@ public class MainActivity extends AppCompatActivity {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
 																								finalize.setDuration(1800);
 																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 																										public void onAnimationUpdate(ValueAnimator animation) {
-																												prog.setProgress((int) animation.getAnimatedValue());
+																												check.setProgress((int) animation.getAnimatedValue());
 																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
 																												String TitleColor = "1DB954";
-																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																												prog.setProgressNumberFormat("FINALIZING...");
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("FINALIZING...");
+																												check.setCancelable(false);
 																										}
 																								});
 																								finalize.start();
@@ -10918,6 +11020,7 @@ public class MainActivity extends AppCompatActivity {
 																										prog.dismiss();
 																								}
 																								prog.dismiss();
+																								check.dismiss();
 																						}
 																				});
 																		}
@@ -10957,7 +11060,9 @@ public class MainActivity extends AppCompatActivity {
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
+				final ProgressDialog check = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
 				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+				check.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 				Thread progress = new Thread() {
 						@Override
 						public void run() {
@@ -10991,24 +11096,27 @@ public class MainActivity extends AppCompatActivity {
 														runOnUiThread(new Runnable() {
 																@Override
 																public void run() {
-																		ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
-																		finalize.setDuration(2000);
-																		finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																				public void onAnimationUpdate(ValueAnimator animation) {
-																						prog.setProgress((int) animation.getAnimatedValue());
+																		final Handler handler = new Handler();
+																		handler.postDelayed(new Runnable() {
+																				@Override
+																				public void run() {
+																						if (prog.getProgress() < dl_progress) {
+																								prog.incrementProgressBy(1);
+																						}
 																				}
-																		});
-																		finalize.start();
+																		}, 10);
+																		ObjectAnimator animation = ObjectAnimator.ofInt(prog, "progress", prog.getProgress(), prog.getMax());
+																		animation.setDuration(1500);
+																		animation.setInterpolator(new DecelerateInterpolator());
+																		animation.start();
 																		if (!MainActivity.this.isFinishing()) {
-																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
 																				String TitleColor = "1DB954";
 																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																				prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																				prog.setProgressNumberFormat((hidden_patched.getText().toString()) + " | " + (file_max) + " MB");
 																				prog.setCancelable(false);
-																				prog.setProgress(dl_progress);
 																				prog.setMax(dl_max);
 																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
 																						@Override
@@ -11016,19 +11124,14 @@ public class MainActivity extends AppCompatActivity {
 																								prog.setCancelable(true);
 																								manager.remove(downloadId);
 																								_File_Remover();
-																								Timer = new TimerTask() {
+																								final Handler handler = new Handler();
+																								handler.postDelayed(new Runnable() {
 																										@Override
 																										public void run() {
-																												runOnUiThread(new Runnable() {
-																														@Override
-																														public void run() {
-																																prog.dismiss();
-																																com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																														}
-																												});
+																												prog.dismiss();
+																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																										}
-																								};
-																								_timer.schedule(Timer, (int)(0));
+																								}, 0);
 																						}
 																				});
 																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
@@ -11037,255 +11140,250 @@ public class MainActivity extends AppCompatActivity {
 																								prog.setCancelable(true);
 																								manager.remove(downloadId);
 																								_File_Remover();
+																								final Handler handler = new Handler();
+																								handler.postDelayed(new Runnable() {
+																										@Override
+																										public void run() {
+																												prog.dismiss();
+																												_Reminder();
+																												_Browser(hidden_download_3.getText().toString());
+																										}
+																								}, 0);
+																						}
+																				});
+																				prog.show();
+																		}
+																}
+														});
+														if (bytes_downloaded == bytes_total) {
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("PREPARING...");
+																												check.setCancelable(false);
+																										}
+																								});
+																								finalize.start();
+																								prog.dismiss();
+																								check.show();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(1500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setCancelable(false);
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(3500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setCancelable(false);
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(4500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("FINALIZING...");
+																												check.setCancelable(false);
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(5500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {	
+																								try {
+																										FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk", apk_path_location.getText().toString().concat("Patched Cloned (xManager).apk"));
+																								}
+																								catch(Exception e) {
+																								}
 																								Timer = new TimerTask() {
 																										@Override
 																										public void run() {
 																												runOnUiThread(new Runnable() {
 																														@Override
 																														public void run() {
-																																try {
-																																		prog.dismiss();
-																																		_Reminder();
-																																		_Browser(hidden_download_3.getText().toString());
-																																} catch (Exception e) {
+																																prog.dismiss();
+																																check.dismiss();
+																																if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
+																																		if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
+																																				StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+																																				if(android.os.Build.VERSION.SDK_INT >= 29){
+																																						try {
+																																								Intent intent = new Intent(Intent.ACTION_VIEW);
+																																								intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
+																																								startActivity(intent);
+																																								_Reminder();
+																																						}
+																																						catch(Exception e) {
+																																						}
+																																				} else {
+																																						try {
+																																								Intent intent = new Intent(Intent.ACTION_VIEW);
+																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
+																																								startActivity(intent);
+																																								_Reminder();
+																																						}
+																																						catch(Exception e) {
+																																						}
+																																				} 
+																																		} else {
+																																				if (!MainActivity.this.isFinishing()) {
+																																						final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																																						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+																																						String TitleColor = "1DB954";
+																																						Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																						String Message = installation_failed_spap_desc_0.replace("\n", "<br/>");
+																																						String MessageColor = "FFFFFF";
+																																						Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+																																						Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+																																								@Override
+																																								public void onClick(DialogInterface Signature_Check, int p) {
+																																										AlertDialog.setCancelable(true);
+																																										try {
+																																												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
+																																												startActivity(intent);
+																																										}
+																																										catch(Exception e) {
+																																										}
+																																								}
+																																						});
+																																						Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+																																								@Override
+																																								public void onClick(DialogInterface Signature_Check, int p) {
+																																										AlertDialog.setCancelable(true);
+																																								}
+																																						});
+																																						AlertDialog = Signature_Check.create();
+																																						AlertDialog.setCancelable(false);
+																																						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																																						AlertDialog.show();
+																																				}
+																																		}	
+																																}
+																																else {
+																																		if (Downloaded_Version < Installed_Version) {
+																																				if (!MainActivity.this.isFinishing()) {
+																																						final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																																						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+																																						String TitleColor = "1DB954";
+																																						Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																						String Message = installation_failed_desc_0.replace("\n", "<br/>");
+																																						String MessageColor = "FFFFFF";
+																																						Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+																																						Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+																																								@Override
+																																								public void onClick(DialogInterface Downgrade_Check, int p) {
+																																										AlertDialog.setCancelable(true);
+																																										try {
+																																												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
+																																												startActivity(intent);
+																																										}
+																																										catch(Exception e) {
+																																										}
+																																								}
+																																						});
+																																						Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+																																								@Override
+																																								public void onClick(DialogInterface Downgrade_Check, int p) {
+																																										AlertDialog.setCancelable(true);
+																																								}
+																																						});
+																																						AlertDialog = Downgrade_Check.create();
+																																						AlertDialog.setCancelable(false);
+																																						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																																						AlertDialog.show();
+																																				}
+																																		}
 																																}
 																														}
 																												});
 																										}
 																								};
-																								_timer.schedule(Timer, (int)(0));
+																								_timer.schedule(Timer, (int)(100));
 																						}
 																				});
-																				prog.show();
 																		}
-																		if (bytes_downloaded == bytes_total) {
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
-																												finalize.setDuration(1800);
-																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																														public void onAnimationUpdate(ValueAnimator animation) {
-																																prog.setProgress((int) animation.getAnimatedValue());
-																																String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																																String TitleColor = "1DB954";
-																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																																prog.setProgressNumberFormat("PREPARING...");
-																														}
-																												});
-																												finalize.start();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(500));
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
-																												finalize.setDuration(1800);
-																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																														public void onAnimationUpdate(ValueAnimator animation) {
-																																prog.setProgress((int) animation.getAnimatedValue());
-																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																																String TitleColor = "1DB954";
-																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																																prog.setProgressNumberFormat("VERIFYING FILE...");
-																														}
-																												});
-																												finalize.start();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(3500));
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
-																												finalize.setDuration(1800);
-																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																														public void onAnimationUpdate(ValueAnimator animation) {
-																																prog.setProgress((int) animation.getAnimatedValue());
-																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																																String TitleColor = "1DB954";
-																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																																prog.setProgressNumberFormat("VERIFYING SIGNATURE...");
-																														}
-																												});
-																												finalize.start();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(4500));
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
-																												finalize.setDuration(1800);
-																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																														public void onAnimationUpdate(ValueAnimator animation) {
-																																prog.setProgress((int) animation.getAnimatedValue());
-																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																																String TitleColor = "1DB954";
-																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																																prog.setProgressNumberFormat("FINALIZING...");
-																														}
-																												});
-																												finalize.start();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(5500));
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {	
-																												try {
-																														FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk", apk_path_location.getText().toString().concat("Patched Cloned (xManager).apk"));
-																												}
-																												catch(Exception e) {
-																												}
-																												Timer = new TimerTask() {
-																														@Override
-																														public void run() {
-																																runOnUiThread(new Runnable() {
-																																		@Override
-																																		public void run() {
-																																				prog.dismiss();
-																																				if ((Installed_Version_Cloned < Downloaded_Version_Cloned) || ((Downloaded_Version_Cloned > Installed_Version_Cloned) || ((Installed_Version_Cloned == Downloaded_Version_Cloned) || Installed_Checker_Cloned.equals("false")))) {
-																																						if (getICSignature(getApplicationContext()).equals(getDCSignature(getApplicationContext())) || Installed_Checker_Cloned.equals("false")) {
-																																								StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																																								if(android.os.Build.VERSION.SDK_INT >= 29){
-																																										try {
-																																												Intent intent = new Intent(Intent.ACTION_VIEW);
-																																												intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																																												intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
-																																												startActivity(intent);
-																																												_Reminder();
-																																										}
-																																										catch(Exception e) {
-																																										}
-																																								} else {
-																																										try {
-																																												Intent intent = new Intent(Intent.ACTION_VIEW);
-																																												intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
-																																												startActivity(intent);
-																																												_Reminder();
-																																										}
-																																										catch(Exception e) {
-																																										}
-																																								} 
-																																						} else {
-																																								if (!MainActivity.this.isFinishing()) {
-																																										final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																										String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																										String TitleColor = "1DB954";
-																																										Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																										String Message = installation_failed_cloned_desc_0.replace("\n", "<br/>");
-																																										String MessageColor = "FFFFFF";
-																																										Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																										Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																												@Override
-																																												public void onClick(DialogInterface Signature_Check, int p) {
-																																														AlertDialog.setCancelable(true);
-																																														try {
-																																																Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
-																																																startActivity(intent);
-																																														}
-																																														catch(Exception e) {
-																																														}
-																																												}
-																																										});
-																																										Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																												@Override
-																																												public void onClick(DialogInterface Signature_Check, int p) {
-																																														AlertDialog.setCancelable(true);
-																																												}
-																																										});
-																																										AlertDialog = Signature_Check.create();
-																																										AlertDialog.setCancelable(false);
-																																										AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																										AlertDialog.show();
-																																								}
-																																						}	
-																																				}
-																																				else {
-																																						if (Downloaded_Version_Cloned < Installed_Version_Cloned) {
-																																								if (!MainActivity.this.isFinishing()) {
-																																										final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																										String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																										String TitleColor = "1DB954";
-																																										Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																										String Message = installation_failed_desc_0.replace("\n", "<br/>");
-																																										String MessageColor = "FFFFFF";
-																																										Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																										Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																												@Override
-																																												public void onClick(DialogInterface Downgrade_Check, int p) {
-																																														AlertDialog.setCancelable(true);
-																																														try {
-																																																Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
-																																																startActivity(intent);
-																																														}
-																																														catch(Exception e) {
-																																														}
-																																												}
-																																										});
-																																										Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																												@Override
-																																												public void onClick(DialogInterface Downgrade_Check, int p) {
-																																														AlertDialog.setCancelable(true);
-																																												}
-																																										});
-																																										AlertDialog = Downgrade_Check.create();
-																																										AlertDialog.setCancelable(false);
-																																										AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																										AlertDialog.show();
-																																								}
-																																						}
-																																				}
-																																		}
-																																});
-																														}
-																												};
-																												_timer.schedule(Timer, (int)(100));
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(6500));
-																		}
-																}
-														});
+																};
+																_timer.schedule(Timer, (int)(6500));
+														}
 												}
 												cursor.close();
 										}
@@ -12791,6 +12889,7 @@ public class MainActivity extends AppCompatActivity {
 		manager_lang_32.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_33.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_34.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_35.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -12825,6 +12924,7 @@ public class MainActivity extends AppCompatActivity {
 		translator_32.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_33.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_34.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_35.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 	}
 	
 	
@@ -12959,7 +13059,9 @@ public class MainActivity extends AppCompatActivity {
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
+				final ProgressDialog check = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
 				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+				check.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 				Thread progress = new Thread() {
 						@Override
 						public void run() {
@@ -12993,24 +13095,27 @@ public class MainActivity extends AppCompatActivity {
 														runOnUiThread(new Runnable() {
 																@Override
 																public void run() {
-																		ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
-																		finalize.setDuration(2000);
-																		finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																				public void onAnimationUpdate(ValueAnimator animation) {
-																						prog.setProgress((int) animation.getAnimatedValue());
+																		final Handler handler = new Handler();
+																		handler.postDelayed(new Runnable() {
+																				@Override
+																				public void run() {
+																						if (prog.getProgress() < dl_progress) {
+																								prog.incrementProgressBy(1);
+																						}
 																				}
-																		});
-																		finalize.start();
+																		}, 10);
+																		ObjectAnimator animation = ObjectAnimator.ofInt(prog, "progress", prog.getProgress(), prog.getMax());
+																		animation.setDuration(1500);
+																		animation.setInterpolator(new DecelerateInterpolator());
+																		animation.start();
 																		if (!MainActivity.this.isFinishing()) {
-																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
 																				String TitleColor = "1DB954";
 																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																				prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																				prog.setProgressNumberFormat((hidden_patched.getText().toString()) + " | " + (file_max) + " MB");
 																				prog.setCancelable(false);
-																				prog.setProgress(dl_progress);
 																				prog.setMax(dl_max);
 																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
 																						@Override
@@ -13018,19 +13123,14 @@ public class MainActivity extends AppCompatActivity {
 																								prog.setCancelable(true);
 																								manager.remove(downloadId);
 																								_File_Remover();
-																								Timer = new TimerTask() {
+																								final Handler handler = new Handler();
+																								handler.postDelayed(new Runnable() {
 																										@Override
 																										public void run() {
-																												runOnUiThread(new Runnable() {
-																														@Override
-																														public void run() {
-																																prog.dismiss();
-																																com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																														}
-																												});
+																												prog.dismiss();
+																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																										}
-																								};
-																								_timer.schedule(Timer, (int)(0));
+																								}, 0);
 																						}
 																				});
 																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
@@ -13039,23 +13139,15 @@ public class MainActivity extends AppCompatActivity {
 																								prog.setCancelable(true);
 																								manager.remove(downloadId);
 																								_File_Remover();
-																								Timer = new TimerTask() {
+																								final Handler handler = new Handler();
+																								handler.postDelayed(new Runnable() {
 																										@Override
 																										public void run() {
-																												runOnUiThread(new Runnable() {
-																														@Override
-																														public void run() {
-																																try {
-																																		prog.dismiss();
-																																		_Reminder();
-																																		_Browser(hidden_download_3.getText().toString());
-																																} catch (Exception e) {
-																																}
-																														}
-																												});
+																												prog.dismiss();
+																												_Reminder();
+																												_Browser(hidden_download_3.getText().toString());
 																										}
-																								};
-																								_timer.schedule(Timer, (int)(0));
+																								}, 0);
 																						}
 																				});
 																				prog.show();
@@ -13069,44 +13161,46 @@ public class MainActivity extends AppCompatActivity {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
 																								finalize.setDuration(1800);
 																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 																										public void onAnimationUpdate(ValueAnimator animation) {
-																												prog.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(downloading_file_0.concat("</b>"));
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
 																												String TitleColor = "1DB954";
-																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																												prog.setProgressNumberFormat("PREPARING...");
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("PREPARING...");
+																												check.setCancelable(false);
 																										}
 																								});
 																								finalize.start();
+																								prog.dismiss();
+																								check.show();
 																						}
 																				});
 																		}
 																};
-																_timer.schedule(Timer, (int)(500));
+																_timer.schedule(Timer, (int)(1500));
 																Timer = new TimerTask() {
 																		@Override
 																		public void run() {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
 																								finalize.setDuration(1800);
 																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 																										public void onAnimationUpdate(ValueAnimator animation) {
-																												prog.setProgress((int) animation.getAnimatedValue());
+																												check.setProgress((int) animation.getAnimatedValue());
 																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
 																												String TitleColor = "1DB954";
-																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																												prog.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setCancelable(false);
 																										}
 																								});
 																								finalize.start();
@@ -13121,18 +13215,18 @@ public class MainActivity extends AppCompatActivity {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
 																								finalize.setDuration(1800);
 																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 																										public void onAnimationUpdate(ValueAnimator animation) {
-																												prog.setProgress((int) animation.getAnimatedValue());
+																												check.setProgress((int) animation.getAnimatedValue());
 																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
 																												String TitleColor = "1DB954";
-																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																												prog.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setCancelable(false);
 																										}
 																								});
 																								finalize.start();
@@ -13147,18 +13241,18 @@ public class MainActivity extends AppCompatActivity {
 																				runOnUiThread(new Runnable() {
 																						@Override
 																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
 																								finalize.setDuration(1800);
 																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 																										public void onAnimationUpdate(ValueAnimator animation) {
-																												prog.setProgress((int) animation.getAnimatedValue());
+																												check.setProgress((int) animation.getAnimatedValue());
 																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
 																												String TitleColor = "1DB954";
-																												prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																												prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																												prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																												prog.setProgressNumberFormat("FINALIZING...");
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("FINALIZING...");
+																												check.setCancelable(false);
 																										}
 																								});
 																								finalize.start();
@@ -13183,6 +13277,7 @@ public class MainActivity extends AppCompatActivity {
 																										prog.dismiss();
 																								}
 																								prog.dismiss();
+																								check.dismiss();
 																						}
 																				});
 																		}
@@ -13222,7 +13317,9 @@ public class MainActivity extends AppCompatActivity {
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
+				final ProgressDialog check = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
 				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
+				check.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 				Thread progress = new Thread() {
 						@Override
 						public void run() {
@@ -13256,24 +13353,27 @@ public class MainActivity extends AppCompatActivity {
 														runOnUiThread(new Runnable() {
 																@Override
 																public void run() {
-																		ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
-																		finalize.setDuration(2000);
-																		finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																				public void onAnimationUpdate(ValueAnimator animation) {
-																						prog.setProgress((int) animation.getAnimatedValue());
+																		final Handler handler = new Handler();
+																		handler.postDelayed(new Runnable() {
+																				@Override
+																				public void run() {
+																						if (prog.getProgress() < dl_progress) {
+																								prog.incrementProgressBy(1);
+																						}
 																				}
-																		});
-																		finalize.start();
+																		}, 10);
+																		ObjectAnimator animation = ObjectAnimator.ofInt(prog, "progress", prog.getProgress(), prog.getMax());
+																		animation.setDuration(1500);
+																		animation.setInterpolator(new DecelerateInterpolator());
+																		animation.start();
 																		if (!MainActivity.this.isFinishing()) {
-																				prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
 																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
 																				String TitleColor = "1DB954";
 																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																				prog.setProgressNumberFormat((file_min) + " MB" + " | " + (file_max) + " MB");
+																				prog.setProgressNumberFormat((hidden_patched.getText().toString()) + " | " + (file_max) + " MB");
 																				prog.setCancelable(false);
-																				prog.setProgress(dl_progress);
 																				prog.setMax(dl_max);
 																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
 																						@Override
@@ -13281,19 +13381,14 @@ public class MainActivity extends AppCompatActivity {
 																								prog.setCancelable(true);
 																								manager.remove(downloadId);
 																								_File_Remover();
-																								Timer = new TimerTask() {
+																								final Handler handler = new Handler();
+																								handler.postDelayed(new Runnable() {
 																										@Override
 																										public void run() {
-																												runOnUiThread(new Runnable() {
-																														@Override
-																														public void run() {
-																																prog.dismiss();
-																																com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																														}
-																												});
+																												prog.dismiss();
+																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																										}
-																								};
-																								_timer.schedule(Timer, (int)(0));
+																								}, 0);
 																						}
 																				});
 																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
@@ -13302,255 +13397,250 @@ public class MainActivity extends AppCompatActivity {
 																								prog.setCancelable(true);
 																								manager.remove(downloadId);
 																								_File_Remover();
+																								final Handler handler = new Handler();
+																								handler.postDelayed(new Runnable() {
+																										@Override
+																										public void run() {
+																												prog.dismiss();
+																												_Reminder();
+																												_Browser(hidden_download_3.getText().toString());
+																										}
+																								}, 0);
+																						}
+																				});
+																				prog.show();
+																		}
+																}
+														});
+														if (bytes_downloaded == bytes_total) {
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("PREPARING...");
+																												check.setCancelable(false);
+																										}
+																								});
+																								finalize.start();
+																								prog.dismiss();
+																								check.show();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(1500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setCancelable(false);
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(3500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setCancelable(false);
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(4500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {
+																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
+																								finalize.setDuration(1800);
+																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+																										public void onAnimationUpdate(ValueAnimator animation) {
+																												check.setProgress((int) animation.getAnimatedValue());
+																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
+																												String TitleColor = "1DB954";
+																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
+																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+																												check.setProgressNumberFormat("FINALIZING...");
+																												check.setCancelable(false);
+																										}
+																								});
+																								finalize.start();
+																						}
+																				});
+																		}
+																};
+																_timer.schedule(Timer, (int)(5500));
+																Timer = new TimerTask() {
+																		@Override
+																		public void run() {
+																				runOnUiThread(new Runnable() {
+																						@Override
+																						public void run() {	
+																								try {
+																										FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk", apk_path_location.getText().toString().concat("Patched Lite (xManager).apk"));
+																								}
+																								catch(Exception e) {
+																								}
 																								Timer = new TimerTask() {
 																										@Override
 																										public void run() {
 																												runOnUiThread(new Runnable() {
 																														@Override
 																														public void run() {
-																																try {
-																																		prog.dismiss();
-																																		_Reminder();
-																																		_Browser(hidden_download_3.getText().toString());
-																																} catch (Exception e) {
+																																prog.dismiss();
+																																check.dismiss();
+																																if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
+																																		if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
+																																				StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+																																				if(android.os.Build.VERSION.SDK_INT >= 29){
+																																						try {
+																																								Intent intent = new Intent(Intent.ACTION_VIEW);
+																																								intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
+																																								startActivity(intent);
+																																								_Reminder();
+																																						}
+																																						catch(Exception e) {
+																																						}
+																																				} else {
+																																						try {
+																																								Intent intent = new Intent(Intent.ACTION_VIEW);
+																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
+																																								startActivity(intent);
+																																								_Reminder();
+																																						}
+																																						catch(Exception e) {
+																																						}
+																																				} 
+																																		} else {
+																																				if (!MainActivity.this.isFinishing()) {
+																																						final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																																						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+																																						String TitleColor = "1DB954";
+																																						Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																						String Message = installation_failed_spap_desc_0.replace("\n", "<br/>");
+																																						String MessageColor = "FFFFFF";
+																																						Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+																																						Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+																																								@Override
+																																								public void onClick(DialogInterface Signature_Check, int p) {
+																																										AlertDialog.setCancelable(true);
+																																										try {
+																																												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
+																																												startActivity(intent);
+																																										}
+																																										catch(Exception e) {
+																																										}
+																																								}
+																																						});
+																																						Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+																																								@Override
+																																								public void onClick(DialogInterface Signature_Check, int p) {
+																																										AlertDialog.setCancelable(true);
+																																								}
+																																						});
+																																						AlertDialog = Signature_Check.create();
+																																						AlertDialog.setCancelable(false);
+																																						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																																						AlertDialog.show();
+																																				}
+																																		}	
+																																}
+																																else {
+																																		if (Downloaded_Version < Installed_Version) {
+																																				if (!MainActivity.this.isFinishing()) {
+																																						final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+																																						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
+																																						String TitleColor = "1DB954";
+																																						Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+																																						String Message = installation_failed_desc_0.replace("\n", "<br/>");
+																																						String MessageColor = "FFFFFF";
+																																						Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+																																						Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
+																																								@Override
+																																								public void onClick(DialogInterface Downgrade_Check, int p) {
+																																										AlertDialog.setCancelable(true);
+																																										try {
+																																												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
+																																												startActivity(intent);
+																																										}
+																																										catch(Exception e) {
+																																										}
+																																								}
+																																						});
+																																						Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
+																																								@Override
+																																								public void onClick(DialogInterface Downgrade_Check, int p) {
+																																										AlertDialog.setCancelable(true);
+																																								}
+																																						});
+																																						AlertDialog = Downgrade_Check.create();
+																																						AlertDialog.setCancelable(false);
+																																						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
+																																						AlertDialog.show();
+																																				}
+																																		}
 																																}
 																														}
 																												});
 																										}
 																								};
-																								_timer.schedule(Timer, (int)(0));
+																								_timer.schedule(Timer, (int)(100));
 																						}
 																				});
-																				prog.show();
 																		}
-																		if (bytes_downloaded == bytes_total) {
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												ValueAnimator finalize = ValueAnimator.ofInt(prog.getProgress(), prog.getMax());
-																												finalize.setDuration(1800);
-																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																														public void onAnimationUpdate(ValueAnimator animation) {
-																																prog.setProgress((int) animation.getAnimatedValue());
-																																String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																																String TitleColor = "1DB954";
-																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																																prog.setProgressNumberFormat("PREPARING...");
-																														}
-																												});
-																												finalize.start();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(500));
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
-																												finalize.setDuration(1800);
-																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																														public void onAnimationUpdate(ValueAnimator animation) {
-																																prog.setProgress((int) animation.getAnimatedValue());
-																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																																String TitleColor = "1DB954";
-																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																																prog.setProgressNumberFormat("VERIFYING FILE...");
-																														}
-																												});
-																												finalize.start();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(3500));
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
-																												finalize.setDuration(1800);
-																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																														public void onAnimationUpdate(ValueAnimator animation) {
-																																prog.setProgress((int) animation.getAnimatedValue());
-																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																																String TitleColor = "1DB954";
-																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																																prog.setProgressNumberFormat("VERIFYING SIGNATURE...");
-																														}
-																												});
-																												finalize.start();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(4500));
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {
-																												ValueAnimator finalize = ValueAnimator.ofInt(0, prog.getMax());
-																												finalize.setDuration(1800);
-																												finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																														public void onAnimationUpdate(ValueAnimator animation) {
-																																prog.setProgress((int) animation.getAnimatedValue());
-																																String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																																String TitleColor = "1DB954";
-																																prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																prog.getButton(ProgressDialog.BUTTON_NEGATIVE).setVisibility(View.GONE);
-																																prog.getButton(ProgressDialog.BUTTON_NEUTRAL).setVisibility(View.GONE);
-																																prog.getWindow().setLayout(850, ViewGroup.LayoutParams.WRAP_CONTENT);
-																																prog.setProgressNumberFormat("FINALIZING...");
-																														}
-																												});
-																												finalize.start();
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(5500));
-																				Timer = new TimerTask() {
-																						@Override
-																						public void run() {
-																								runOnUiThread(new Runnable() {
-																										@Override
-																										public void run() {	
-																												try {
-																														FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk", apk_path_location.getText().toString().concat("Patched Lite (xManager).apk"));
-																												}
-																												catch(Exception e) {
-																												}
-																												Timer = new TimerTask() {
-																														@Override
-																														public void run() {
-																																runOnUiThread(new Runnable() {
-																																		@Override
-																																		public void run() {
-																																				prog.dismiss();
-																																				if ((Installed_Version_Lite < Downloaded_Version_Lite) || ((Downloaded_Version_Lite > Installed_Version_Lite) || ((Installed_Version_Lite == Downloaded_Version_Lite) || Installed_Checker_Lite.equals("false")))) {
-																																						if (getILSignature(getApplicationContext()).equals(getDLSignature(getApplicationContext())) || Installed_Checker_Lite.equals("false")) {
-																																								StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																																								if(android.os.Build.VERSION.SDK_INT >= 29){
-																																										try {
-																																												Intent intent = new Intent(Intent.ACTION_VIEW);
-																																												intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																																												intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
-																																												startActivity(intent);
-																																												_Reminder();
-																																										}
-																																										catch(Exception e) {
-																																										}
-																																								} else {
-																																										try {
-																																												Intent intent = new Intent(Intent.ACTION_VIEW);
-																																												intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
-																																												startActivity(intent);
-																																												_Reminder();
-																																										}
-																																										catch(Exception e) {
-																																										}
-																																								} 
-																																						} else {
-																																								if (!MainActivity.this.isFinishing()) {
-																																										final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																										String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																										String TitleColor = "1DB954";
-																																										Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																										String Message = installation_failed_spap_desc_0.replace("\n", "<br/>");
-																																										String MessageColor = "FFFFFF";
-																																										Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																										Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																												@Override
-																																												public void onClick(DialogInterface Signature_Check, int p) {
-																																														AlertDialog.setCancelable(true);
-																																														try {
-																																																Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
-																																																startActivity(intent);
-																																														}
-																																														catch(Exception e) {
-																																														}
-																																												}
-																																										});
-																																										Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																												@Override
-																																												public void onClick(DialogInterface Signature_Check, int p) {
-																																														AlertDialog.setCancelable(true);
-																																												}
-																																										});
-																																										AlertDialog = Signature_Check.create();
-																																										AlertDialog.setCancelable(false);
-																																										AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																										AlertDialog.show();
-																																								}
-																																						}	
-																																				}
-																																				else {
-																																						if (Downloaded_Version_Lite < Installed_Version_Lite) {
-																																								if (!MainActivity.this.isFinishing()) {
-																																										final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																										String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																										String TitleColor = "1DB954";
-																																										Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																										String Message = installation_failed_desc_0.replace("\n", "<br/>");
-																																										String MessageColor = "FFFFFF";
-																																										Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																										Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																												@Override
-																																												public void onClick(DialogInterface Downgrade_Check, int p) {
-																																														AlertDialog.setCancelable(true);
-																																														try {
-																																																Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
-																																																startActivity(intent);
-																																														}
-																																														catch(Exception e) {
-																																														}
-																																												}
-																																										});
-																																										Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																												@Override
-																																												public void onClick(DialogInterface Downgrade_Check, int p) {
-																																														AlertDialog.setCancelable(true);
-																																												}
-																																										});
-																																										AlertDialog = Downgrade_Check.create();
-																																										AlertDialog.setCancelable(false);
-																																										AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																										AlertDialog.show();
-																																								}
-																																						}
-																																				}
-																																		}
-																																});
-																														}
-																												};
-																												_timer.schedule(Timer, (int)(100));
-																										}
-																								});
-																						}
-																				};
-																				_timer.schedule(Timer, (int)(6500));
-																		}
-																}
-														});
+																};
+																_timer.schedule(Timer, (int)(6500));
+														}
 												}
 												cursor.close();
 										}
