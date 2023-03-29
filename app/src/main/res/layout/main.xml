@@ -1338,7 +1338,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
-					android:text="xC3FFF0E\nMrDude (Retired)\nSherlock Holmes (Features &amp; Amoled)"
+					android:text="xC3FFF0E\nSherlock Holmes (Features &amp; Amoled)\njetfire (Extended Contribution, Android &amp; MacOS)\nRiu (OG, Retired)\nill420smoker (OG, Retired)\nMrDude (Retired)"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -2252,6 +2252,28 @@
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
 					android:text="4NDROM3DA"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_35"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Sinhala Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_35"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:text="Psycho649"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
