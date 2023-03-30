@@ -40,7 +40,7 @@
 
 
 | **For Contributors** | **More Informations** |
-| :-------------: | ------------- |
+| ------------- | ------------- |
 | **Code Change** | Pull request should be done on the **"Developer"** branch. |
 | **Translation Change/Update** | Pull request should be done on the **"Developer"** branch. The translations can be found at  `resource/values/strings.xml`. |
 | **Submit Translations** | Pull request should be done on the **"Developer"** branch. Please follow the `<--DEFAULT LANGUAGE-->` format that can be found at `resource/values/strings.xml`. |
