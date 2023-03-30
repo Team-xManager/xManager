@@ -14,7 +14,7 @@
 ---
   
 | **Key Features** | **Descriptions** |
-| :-------------: | :-------------: |
+| ------------- | ------------- |
 | **All in One Place** | Upgrade or Downgrade Anytime & Anywhere |
 | **Manager Tools** | Uninstall, Open Settings, Clean Cached Datas & Launch App |
 | **Experimentals** | Some A/B Features are Available to Use |
@@ -35,6 +35,9 @@
 | :-------------: | :-------------: | ------------- |
 | **Legacy** | 04/01/22 | Legacy databases are now officially shutdown. Update to the latest version of xManager (v3.2) to continue using the app. These are the databases used by our old manager up until xManager v1-v3.1.</br></br>Those databases are very old and deprecated at the same time. That is why we decided to take them down. |
 | **Origins** | 02/24/23 | Origins databases are now officially shutdown. Update to the latest version of xManager (v4.5) to continue using the app.</br></br>These are the databases used by our old manager up until xManager v3.4-v4.4. |
+
+---
+
 
 | **For Contributors** | **More Informations** |
 | :-------------: | ------------- |
