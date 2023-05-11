@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><resources>
-     <!--DEFAULT LANGUAGE-->
+    <!--DEFAULT LANGUAGE-->
     <string name="app_name" translatable="true">xManager</string>
     <string name="installed" translatable="true">INSTALLED</string>
     <string name="latest" translatable="true">LATEST</string>
@@ -35,8 +35,8 @@
     <string name="contributors" translatable="true">THANKS TO ALL CONTRIBUTORS! ❤️</string>
     <string name="download_selected" translatable="true">You selected this patched version. Do you want to continue?</string>
     <string name="download_ready" translatable="true">PATCHED INFORMATION</string>
-    <string name="download_ready_desc" translatable="true">Downloading this patched apk will overwrite the previous file located at the external directory.</string>
-    <string name="downloading_file" translatable="true">DOWNLOADING FILE...</string>
+    <string name="download_ready_desc" translatable="true">This patched will overwrite the previous file located at the external directory. Proceed with caution.</string>
+    <string name="downloading_file" translatable="true">DOWNLOADING FILE</string>
     <string name="download_success" translatable="true">SUCCESSFULLY DOWNLOADED</string>
     <string name="new_update" translatable="true">NEW MANAGER UPDATE</string>
     <string name="continue_1" translatable="true">CONTINUE</string>
@@ -56,7 +56,7 @@
     <string name="show_support" translatable="true">SHOW YOUR SUPPORT</string>
     <string name="show_support_desc" translatable="true">We are a non-profit, non-corporate and non-compromised team. People like you encourage us to create an app to make things much easier especially from downloading to installing.\n\nWe are pouring all of our time and best efforts just to make things right and perfect. We will do our best to support this app as long as we could.\n\nAny amount will help and be very much appreciated!</string>
     <string name="maintenance" translatable="true">MAINTENANCE</string>
-    <string name="maintenance_desc" translatable="true">xManager is currently unavailable. Kindly check the application later.</string>
+    <string name="maintenance_desc" translatable="true">xManager is currently unavailable. Please try again later.</string>
     <string name="thanks" translatable="true">THANKS!</string>
     <string name="language" translatable="true">LANGUAGE</string>
     <string name="website" translatable="true">WEBSITE</string>
@@ -71,7 +71,7 @@
     <string name="installation_failed_spap_desc" translatable="true">Reason: The current patched installed on this device did not come directly from xManager or from our team.\n\nSolution: Uninstall the current version of the application, restart xManager and try again. If the issue persists, check the FAQ.</string>
     <string name="installation_failed_cloned_desc" translatable="true">Reason: The current cloned installed on this device did not come directly from xManager or from our team.\n\nSolution: Uninstall the current version of the application, restart xManager and try again. If the issue persists, check the FAQ.</string>
     <string name="existing_patched" translatable="true">EXISTING PATCHED</string>
-    <string name="existing_patched_desc" translatable="true">An existing patched apk found in one of the directory. What action would you like to do?</string>
+    <string name="existing_patched_desc" translatable="true">An existing patched has been detected at the external directory. What action would you like to do?</string>
     <string name="close" translatable="true">CLOSE</string>
     <string name="cloned" translatable="true">CLONED</string>
     <string name="spap" translatable="true">SP/AP</string>
@@ -83,7 +83,7 @@
     <string name="open_settings" translatable="true">OPEN SETTINGS</string>
     <string name="open_patched" translatable="true">OPEN PATCHED</string>
     <string name="reboot" translatable="true">REFETCH AND REBOOT</string>
-
+    
     <!--BENGALI LANGUAGE-->
     <string name="app_name_01" translatable="true">xManager</string>
     <string name="installed_01" translatable="true">ইনস্টলড</string>
@@ -121,7 +121,7 @@
     <string name="download_selected_01" translatable="true">আপনি এই পরিবর্তিত সংস্করণটি নির্বাচন করেছেন। আপনি কি ডাউনলোড করতে চান?</string>
     <string name="download_ready_01" translatable="true">প্যাচ তথ্য</string>
     <string name="download_ready_desc_01" translatable="true">এই পরিবর্তিত apk ডাউনলোড করা অ্যাপ্লিকেশন ফাইল ডিরেক্টরিতে অবস্থিত পূর্ববর্তী ফাইলটি ওভাররাইট করবে।</string>
-    <string name="downloading_file_01" translatable="true">ফাইল ডাউনলোড হচ্ছে ...</string>
+    <string name="downloading_file_01" translatable="true">ফাইল ডাউনলোড হচ্ছে </string>
     <string name="download_success_01" translatable="true">সফলভাবে ডাউনলোড হয়েছে</string>
     <string name="new_update_01" translatable="true">নতুন MANAGER আপডেট</string>
     <string name="continue_1_01" translatable="true">চালিয়ে যান</string>
@@ -291,7 +291,7 @@
     <string name="download_selected_03" translatable="true">Vous avez sélectionné cette version modifiée. Voulez-vous continuer ?</string>
     <string name="download_ready_03" translatable="true">INFORMATIONS SUR LES CORRECTIFS</string>
     <string name="download_ready_desc_03" translatable="true">Le téléchargement de cet APK modifié écrasera le fichier précédent situé dans le répertoire des fichiers externes de l\’application.</string>
-    <string name="downloading_file_03" translatable="true">TÉLÉCHARGEMENT DU FICHIER...</string>
+    <string name="downloading_file_03" translatable="true">TÉLÉCHARGEMENT DU FICHIER</string>
     <string name="download_success_03" translatable="true">TÉLÉCHARGEMENT RÉUSSI</string>
     <string name="new_update_03" translatable="true">NOUVELLE MISE À JOUR DU GESTIONNAIRE</string>
     <string name="continue_1_03" translatable="true">CONTINUER</string>
@@ -376,7 +376,7 @@
     <string name="download_selected_04" translatable="true">Επιλέξατε αυτή την τροποποιημένη έκδοση. Θέλετε να συνεχίσετε;</string>
     <string name="download_ready_04" translatable="true">ΠΛΗPΟΦΟΡΊΕΣ PATCH</string>
     <string name="download_ready_desc_04" translatable="true">Με την λήψη αυτού του τροποποιημένου apk, θα αντικατασταθεί το προηγούμενο αρχείο που βρισκόταν στην εξωτερική τοποθεσία αρχείων της εφαρμογής.</string>
-    <string name="downloading_file_04" translatable="true">ΓΙΝΕΤΑΙ ΛΗΨΗ ΑΡΧΕΙΟΥ...</string>
+    <string name="downloading_file_04" translatable="true">ΓΙΝΕΤΑΙ ΛΗΨΗ ΑΡΧΕΙΟΥ</string>
     <string name="download_success_04" translatable="true">ΕΠΙΤΥΧΗΣ ΛΗΨΗ</string>
     <string name="new_update_04" translatable="true">ΝΕΑ ΕΝΗΜΕΡΩΣΗ MANAGER</string>
     <string name="continue_1_04" translatable="true">ΣΥΝΕΧΕΙΑ</string>
@@ -461,7 +461,7 @@
     <string name="download_selected_05" translatable="true">Kamu telah memilih versi yang dimodifikasi ini. Apakah ingin melanjutkan?</string>
     <string name="download_ready_05" translatable="true">INFORMASI PATCH</string>
     <string name="download_ready_desc_05" translatable="true">Mengunduh apk yang ini akan menimpa file sebelumnya yang terletak di direktori.</string>
-    <string name="downloading_file_05" translatable="true">MENGUNDUH FILE...</string>
+    <string name="downloading_file_05" translatable="true">MENGUNDUH FILE</string>
     <string name="download_success_05" translatable="true">SUKSES MENGUNDUH</string>
     <string name="new_update_05" translatable="true">UPDATE MANAGER BARU</string>
     <string name="continue_1_05" translatable="true">LANJUT</string>
@@ -546,7 +546,7 @@
     <string name="download_selected_06" translatable="true">Hai selezionato questa versione patchata. Vuoi continuare?</string>
     <string name="download_ready_06" translatable="true">INFORMAZIONI SULLE PATCH</string>
     <string name="download_ready_desc_06" translatable="true">Scaricando questo apk patchato sovrascriverai il file precedentemente situato nella cartella contenente i file esterni dell\'applicazione.</string>
-    <string name="downloading_file_06" translatable="true">SCARICANDO FILE...</string>
+    <string name="downloading_file_06" translatable="true">SCARICANDO FILE</string>
     <string name="download_success_06" translatable="true">SCARICATO CON SUCCESSO</string>
     <string name="new_update_06" translatable="true">NUOVO AGGIORNAMENTO DEL MANAGER</string>
     <string name="continue_1_06" translatable="true">CONTINUA</string>
@@ -631,7 +631,7 @@
     <string name="download_selected_07" translatable="true">Wybrałeś tę zmodyfikowaną wersję. Czy chcesz kontynuować?</string>
     <string name="download_ready_07" translatable="true">INFORMACJE O ŁATACH</string>
     <string name="download_ready_desc_07" translatable="true">Pobranie tego zmodyfikowanego pliku APK spowoduje nadpisanie poprzedniego pliku znajdującego się w katalogu pobierania aplikacji.</string>
-    <string name="downloading_file_07" translatable="true">POBIERAM PLIK...</string>
+    <string name="downloading_file_07" translatable="true">POBIERAM PLIK</string>
     <string name="download_success_07" translatable="true">ZAKOŃCZONO POBIERANIE</string>
     <string name="new_update_07" translatable="true">NOWA AKTUALIZACJA MENDAŻERA</string>
     <string name="continue_1_07" translatable="true">KONTYNUUJ</string>
@@ -716,7 +716,7 @@
     <string name="download_selected_08" translatable="true">Você selecionou esta versão corrigida. Você quer continuar?</string>
     <string name="download_ready_08" translatable="true">INFORMAÇÃO DO PATCH</string>
     <string name="download_ready_desc_08" translatable="true">Baixar este apk corrigido sobrescreverá o arquivo anterior localizado no diretório de arquivo externo do aplicativo.</string>
-    <string name="downloading_file_08" translatable="true">BAIXANDO ARQUIVO...</string>
+    <string name="downloading_file_08" translatable="true">BAIXANDO ARQUIVO</string>
     <string name="download_success_08" translatable="true">BAIXADO COM SUCESSO</string>
     <string name="new_update_08" translatable="true">NOVA ATUALIZAÇÃO DO MANAGER</string>
     <string name="continue_1_08" translatable="true">PROSSEGUIR</string>
@@ -801,7 +801,7 @@
     <string name="download_selected_09" translatable="true">Selecionaste esta versão modificada. Queres continuar?</string>
     <string name="download_ready_09" translatable="true">INFORMAÇÃO DO PATCH</string>
     <string name="download_ready_desc_09" translatable="true">Transferir esta apk modificada irá substituir o ficheiro anterior localizado no directório de ficheiros externos da aplicação.</string>
-    <string name="downloading_file_09" translatable="true">A FAZER TRANSFERÊNCIA DO FICHEIRO...</string>
+    <string name="downloading_file_09" translatable="true">A FAZER TRANSFERÊNCIA DO FICHEIRO</string>
     <string name="download_success_09" translatable="true">TRANSFERÊNCIA FEITA COM SUCESSO</string>
     <string name="new_update_09" translatable="true">NOVA ATUALIZAÇÃO DO MANAGER</string>
     <string name="continue_1_09" translatable="true">CONTINUAR</string>
@@ -886,7 +886,7 @@
     <string name="download_selected_10" translatable="true">Выбрана эта пропатченная версия. Продолжить?</string>
     <string name="download_ready_10" translatable="true">ИНФОPМАЦИЯ О ПАТЧЕ</string>
     <string name="download_ready_desc_10" translatable="true">Скачивание этого пропатченного apk перезапишет предыдущий файл, расположенный во внешнем каталоге.</string>
-    <string name="downloading_file_10" translatable="true">СКАЧИВАНИЕ ФАЙЛА...</string>
+    <string name="downloading_file_10" translatable="true">СКАЧИВАНИЕ ФАЙЛА</string>
     <string name="download_success_10" translatable="true">УСПЕШНО СКАЧАНО</string>
     <string name="new_update_10" translatable="true">НОВОЕ ОБНОВЛЕНИЕ МЕНЕДЖЕPА</string>
     <string name="continue_1_10" translatable="true">ПPОДОЛЖИТЬ</string>
@@ -971,7 +971,7 @@
     <string name="download_selected_11" translatable="true">Ha seleccionado esta versión modificada. ¿Desea continuar?</string>
     <string name="download_ready_11" translatable="true">INFORMACIÓN DEL PARCHE</string>
     <string name="download_ready_desc_11" translatable="true">La descarga de este APK modificado sobrescribirá el archivo anterior ubicado en la carpeta externa de archivos descargados.</string>
-    <string name="downloading_file_11" translatable="true">DESCARGANDO ARCHIVO...</string>
+    <string name="downloading_file_11" translatable="true">DESCARGANDO ARCHIVO</string>
     <string name="download_success_11" translatable="true">DESCARGADO CON ÉXITO</string>
     <string name="new_update_11" translatable="true">NUEVA ACTUALIZACIÓN DEL GESTOR</string>
     <string name="continue_1_11" translatable="true">CONTINUAR</string>
@@ -1056,7 +1056,7 @@
     <string name="download_selected_12" translatable="true">Ви обрали цю версію модифікації. Продовжити?</string>
     <string name="download_ready_12" translatable="true">ІНФОPМАЦІЯ ПPО ВИПPАВЛЕННЯ</string>
     <string name="download_ready_desc_12" translatable="true">Завантаження цього apk модифікації замінить попередній файл, розташований у зовнішньому каталозі файлів програми.</string>
-    <string name="downloading_file_12" translatable="true">ЗАВАНТАЖЕННЯ ФАЙЛУ...</string>
+    <string name="downloading_file_12" translatable="true">ЗАВАНТАЖЕННЯ ФАЙЛУ</string>
     <string name="download_success_12" translatable="true">УСПІШНО ЗАВАНТАЖЕНО</string>
     <string name="new_update_12" translatable="true">НОВЕ ОНОВЛЕННЯ МЕНЕДЖЕPА</string>
     <string name="continue_1_12" translatable="true">ПPОДОВЖИТИ</string>
@@ -1141,7 +1141,7 @@
     <string name="download_selected_13" translatable="true">Bu yamalı sürümü seçtiniz. Devam etmek istiyor musun?</string>
     <string name="download_ready_13" translatable="true">YAMA BİLGİLERİ</string>
     <string name="download_ready_desc_13" translatable="true">Bu yamalı apk\'yı indirmek, uygulamanın harici dosya dizininde bulunan önceki dosyanın üzerine yazacaktır.</string>
-    <string name="downloading_file_13" translatable="true">DOSYA İNDİRİLİYOR...</string>
+    <string name="downloading_file_13" translatable="true">DOSYA İNDİRİLİYOR</string>
     <string name="download_success_13" translatable="true">BAŞARIYLA İNDİRİLDİ</string>
     <string name="new_update_13" translatable="true">YENİ YÖNETİCİ GÜNCELLEMESİ</string>
     <string name="continue_1_13" translatable="true">DEVAM ET</string>
@@ -1311,7 +1311,7 @@
     <string name="download_selected_15" translatable="true">Izbrali ste to spremenjeno verzijo. Ali želite nadaljevati?</string>
     <string name="download_ready_15" translatable="true">INFORMACIJE O DATOTEKI</string>
     <string name="download_ready_desc_15" translatable="true">Prenos te spremenjene apk bo zamenjal prejšnjo datoteko, ki se nahaja v zunanjem mestu datotek aplikacije.</string>
-    <string name="downloading_file_15" translatable="true">PRENAŠANJE DATOTEKE...</string>
+    <string name="downloading_file_15" translatable="true">PRENAŠANJE DATOTEKE</string>
     <string name="download_success_15" translatable="true">USPEŠNO PRENESENO</string>
     <string name="new_update_15" translatable="true">NOVA POSODOBITEV MANAGER-JA</string>
     <string name="continue_1_15" translatable="true">NADALJUJ</string>
@@ -1396,7 +1396,7 @@
     <string name="download_selected_16" translatable="true">Ai selectată această versiune modificată. Dorești să continui?</string>
     <string name="download_ready_16" translatable="true">INFORMAȚIE DESPRE VERSIUNE</string>
     <string name="download_ready_desc_16" translatable="true">Descărcarea acestui apk modificat va înlocui fișierul anterior care e stocat la locație.</string>
-    <string name="downloading_file_16" translatable="true">FIȘIERUL SE DESCARCĂ...</string>
+    <string name="downloading_file_16" translatable="true">FIȘIERUL SE DESCARCĂ</string>
     <string name="download_success_16" translatable="true">DESCĂRCAT CU SUCCES</string>
     <string name="new_update_16" translatable="true">ACTUALIZARE NOUĂ PENTRU XMANAGER</string>
     <string name="continue_1_16" translatable="true">CONTINUĂ</string>
@@ -1481,7 +1481,7 @@
     <string name="download_selected_17" translatable="true">이 버전을 선택하셨습니다. 다운로드를 진행하시겠습니까?</string>
     <string name="download_ready_17" translatable="true">패치 정보</string>
     <string name="download_ready_desc_17" translatable="true">다운로드를 계속 진행할 경우, 원래의 파일이 덮어씌워지게 됩니다.</string>
-    <string name="downloading_file_17" translatable="true">파일 다운로드...</string>
+    <string name="downloading_file_17" translatable="true">파일 다운로드</string>
     <string name="download_success_17" translatable="true">다운로드 완료!</string>
     <string name="new_update_17" translatable="true">새 버전 업데이트</string>
     <string name="continue_1_17" translatable="true">계속</string>
@@ -1566,7 +1566,7 @@
     <string name="download_selected_18" translatable="true">Je hebt deze gepatchte versie geselecteert. Wil je verder gaan?</string>
     <string name="download_ready_18" translatable="true">PATCH-INFORMATIE</string>
     <string name="download_ready_desc_18" translatable="true">Deze gepatchte apk downloaden zal het vorige bestand in de externe applicatie bestandsmap overschrijven.</string>
-    <string name="downloading_file_18" translatable="true">BESTAND DOWNLOADEN...</string>
+    <string name="downloading_file_18" translatable="true">BESTAND DOWNLOADEN</string>
     <string name="download_success_18" translatable="true">SUCCESVOL GEDOWNLOAD</string>
     <string name="new_update_18" translatable="true">NIEUWE MANAGER UPDATE</string>
     <string name="continue_1_18" translatable="true">VERDERGAAN</string>
@@ -1651,7 +1651,7 @@
     <string name="download_selected_19" translatable="true">Bạn đã chọn bản vá này. Bạn có muốn tiếp tục?</string>
     <string name="download_ready_19" translatable="true">THÔNG TIN ĐÓNG GÓP</string>
     <string name="download_ready_desc_19" translatable="true">Tải xuống apk đã vá sẽ ghi đè lên tệp trước đó nằm ở thư mục tệp bên ngoài ứng dụng.</string>
-    <string name="downloading_file_19" translatable="true">ĐANG TẢI...</string>
+    <string name="downloading_file_19" translatable="true">ĐANG TẢI</string>
     <string name="download_success_19" translatable="true">ĐÃ TẢI XUỐNG THÀNH CÔNG</string>
     <string name="new_update_19" translatable="true">CẬP NHẬT MỚI</string>
     <string name="continue_1_19" translatable="true">TIẾP TỤC</string>
@@ -1736,7 +1736,7 @@
     <string name="download_selected_20" translatable="true">Du hast diese gepatchte Version ausgewählt. Möchtest Du fortfahren?</string>
     <string name="download_ready_20" translatable="true">GEPATCHTE DATEN</string>
     <string name="download_ready_desc_20" translatable="true">Das Herunterladen dieser gepatchten APK überschreibt die vorherige Datei, die sich im externen Dateiverzeichnis der Anwendung befindet.</string>
-    <string name="downloading_file_20" translatable="true">AM HERUNTERLADEN...</string>
+    <string name="downloading_file_20" translatable="true">AM HERUNTERLADEN</string>
     <string name="download_success_20" translatable="true">ERFOLGREICH HERUNTERGELADEN</string>
     <string name="new_update_20" translatable="true">NEUES MANAGER UPDATE</string>
     <string name="continue_1_20" translatable="true">FORTFAHREN</string>
@@ -1821,7 +1821,7 @@
     <string name="download_selected_21" translatable="true">شما این نسخه پچ شده را انتخاب کردید. آیا می خواهید ادامه دهید؟</string>
     <string name="download_ready_21" translatable="true">مشخصات پچ</string>
     <string name="download_ready_desc_21" translatable="true">این فایل، جایگزین فایل دریافت شده قبلی می شود</string>
-    <string name="downloading_file_21" translatable="true">در حال دریافت فایل...</string>
+    <string name="downloading_file_21" translatable="true">در حال دریافت فایل</string>
     <string name="download_success_21" translatable="true">دریافت با موفقیت انجام شد</string>
     <string name="new_update_21" translatable="true">بروزرسانی نرم افزار</string>
     <string name="continue_1_21" translatable="true">ادامه</string>
@@ -1906,7 +1906,7 @@
     <string name="download_selected_22" translatable="true">בחרת להוריד את גרסה זו. האם ברצנוך להמשיך?</string>
     <string name="download_ready_22" translatable="true">מידע על הקובץ</string>
     <string name="download_ready_desc_22" translatable="true">הורדת קובץ ההתקנה הזה תחליף את הקובץ הקודם שנמצא בספריית הקבציים החיצוניים של האפליקציה.</string>
-    <string name="downloading_file_22" translatable="true">מוריד קובץ...</string>
+    <string name="downloading_file_22" translatable="true">מוריד קובץ</string>
     <string name="download_success_22" translatable="true">הורד בהצלחה</string>
     <string name="new_update_22" translatable="true">קיים עדכון חדש</string>
     <string name="continue_1_22" translatable="true">המשך</string>
@@ -1953,92 +1953,7 @@
     <string name="open_settings_22" translatable="true">פתח הגדרות</string>
     <string name="open_patched_22" translatable="true">פתח קובץ</string>
     <string name="reboot_22" translatable="true">מחדש ולאתחל מחדש</string>
-
-    <!--HUNGARIAN LANGUAGE-->
-    <string name="app_name" translatable="true">xManager</string>
-    <string name="installed" translatable="true">TELEPÍTVE</string>
-    <string name="latest" translatable="true">LEGFRISSEBB VERZIÓ</string>
-    <string name="versions" translatable="true">VERZIÓK</string>
-    <string name="changelogs" translatable="true">VÁLTOZTATÁSI NAPLÓ</string>
-    <string name="manager_tools" translatable="true">MANAGER ESZKÖZÖK</string>
-    <string name="source" translatable="true">FORRÁS</string>
-    <string name="support" translatable="true">TELEGRAM</string>
-    <string name="donate" translatable="true">TÁMOGATÁS</string>
-    <string name="discord" translatable="true">DISCORD</string>
-    <string name="about" translatable="true">RÓLUNK</string>
-    <string name="main_title" translatable="true">xManager</string>
-    <string name="settings_title" translatable="true">Beállítások</string>
-    <string name="about_title" translatable="true">Rólunk</string>
-    <string name="list_auto_refresh" translatable="true">AUTOMATIKUS FRISSÍTÉS LISTÁZÁSA</string>
-    <string name="list_auto_refresh_desc" translatable="true">Ezt engedélyezve automatikusan frissíted a listát minden alkalommal, amikor megnyitod az alkalmazást.\n\nManuálisan is frissítheted, ha fentről lefelé húzod az alkalmazás főképernyőjét.</string>
-    <string name="force_auto_install" translatable="true">AUTOMATIKUS TELEPÍTÉS KÉNYSZERÍTÉSE</string>
-    <string name="force_auto_install_desc" translatable="true">Ezt engedélyezve automatikusan telepíted a patchelt alkalmazást a letöltését követően.</string>
-    <string name="show_themes" translatable="true">KINÉZET</string>
-    <string name="apk_location" translatable="true">APK HELYE</string>
-    <string name="apk_location_desc" translatable="true">Ez az a mappa, ahová mented a letöltött fájl másolatát. Ha nem tudod, mi ez a funkció és hogyan használd, nyugodtan hagyd úgy, ahogy van. \n\nMEGJEGYZÉS: Ez a funkció nem támogatja a külső tárhelyre (pl.: SD kártyára) való mentést a hozzáférési és egyéb engedélyek, valamint a tárhelyhozzáférési-korlátozások miatt. </string>
-    <string name="clear_directory_folders" translatable="true">A MAPPA ÉS A BENNE TALÁLHATÓ ADATOK TÖRLÉSE</string>
-    <string name="clear_directory_folders_desc" translatable="true">Érintsd meg a mappa törléséhez. Ez tartalmazza az alkalmazásra vonatkozó letöltési, valamint frissítési fájlokat is.</string>
-    <string name="reset_preferences" translatable="true">BEÁLLÍTÁSOK VISSZAÁLLÍTÁSA</string>
-    <string name="about_sub" translatable="true">Hirdetésmentes | Új funkciók | Szabadság</string>
-    <string name="xmanager_dev" translatable="true">xManager Fejlesztő</string>
-    <string name="patched_devs" translatable="true">A patchelt alkalmazás fejlesztői</string>
-    <string name="support_team" translatable="true">Telegram | Discord | Reddit Támogatás Csapat</string>
-    <string name="manager_testers" translatable="true">A patchelt app és a Manager tesztelői</string>
-    <string name="manager_hosting" translatable="true">Manager adatbázis és tárhely</string>
-    <string name="mobilism_team" translatable="true">Mobilism Csapat</string>
-    <string name="forum_team" translatable="true">FORUM.APK-RELEASE.NET Csapat</string>
-    <string name="contributors" translatable="true">KÖSZÖNET MINDEN KÖZREMŰKÖDŐNEK! ❤️</string>
-    <string name="download_selected" translatable="true">Ezt a patchelt verziót választottad ki. Szeretnéd folytatni?</string>
-    <string name="download_ready" translatable="true">INFORMÁCIÓ A PATCHELT APPRÓL</string>
-    <string name="download_ready_desc" translatable="true">Ezt a patchelt apk-t letöltve felülírod a letöltési mappában lévő fájlt.</string>
-    <string name="downloading_file" translatable="true">LETÖLTÉS FOLYAMATBAN...</string>
-    <string name="download_success" translatable="true">SIKERESEN LETÖLTVE!</string>
-    <string name="new_update" translatable="true">ÚJ FRISSÍTÉS ÉRHETŐ EL A MANAGERHEZ</string>
-    <string name="continue_1" translatable="true">FOLYTATÁS</string>
-    <string name="cancel" translatable="true">MÉGSE</string>
-    <string name="download" translatable="true">LETÖLTÉS</string>
-    <string name="later" translatable="true">KÉSŐBB</string>
-    <string name="install_now" translatable="true">A PATCHELT FÁJL TELEPÍTÉSE</string>
-    <string name="install_update" translatable="true">A FRISSÍTÉS TELEPÍTÉSE</string>
-    <string name="go_back" translatable="true">VISSZALÉPÉS</string>
-    <string name="download_update" translatable="true">FRISSÍTÉS LETÖLTÉSE</string>
-    <string name="not_now" translatable="true">NE MOST</string>
-    <string name="mirror" translatable="true">ALTERNATÍV LINK</string>
-    <string name="lite" translatable="true">LITE VERZIÓ</string>
-    <string name="experimental_title" translatable="true">Kísérleti</string>
-    <string name="experimental_version" translatable="true">KÍSÉRLETI VERZIÓ</string>
-    <string name="experimental_version_desc" translatable="true">Ezt engedélyezve lehetőséged nyílik az alkalmazás kísérleti verziójának letöltésére és telepítésére.\n\nEz magában foglalja az alfa, béta és korai hozzáférésű funkciókat is, amelyek nem elérhetőek az eredeti patchelt appban, és nem biztos, hogy stabilak.</string>
-    <string name="show_support" translatable="true">MUTASD KI A TÁMOGATÁSODAT</string>
-    <string name="show_support_desc" translatable="true">Mi egy non-profit, nem vállalati és kompromisszummentes csapat vagyunk. Az olyan emberek, mint Te, motiválnak minket arra, hogy sokkal könnyebbé varázsoljuk a dolgokat, főleg a letöltést és a telepítést.\n\nIdőnket nem kímélve, és legjobb tudásunkat felhasználva dolgozunk az alkalmazáson, hogy a szuper és tökéletes legyen, és mindent megteszünk azért, hogy addig fejlesszük és támogassuk az alkalmazást, amíg képesek vagyunk rá. Minden támogatás nagy segítség, és sokat jelent nekünk.</string>
-    <string name="maintenance" translatable="true">KARBANTARTÁS</string>
-    <string name="maintenance_desc" translatable="true">Az xManager jelenleg nem elérhető, kérlek nézz vissza később!</string>
-    <string name="thanks" translatable="true">KÖSZÖNÖM!</string>
-    <string name="language" translatable="true">NYELV</string>
-    <string name="website" translatable="true">WEBOLDAL</string>
-    <string name="reddit" translatable="true">REDDIT</string>
-    <string name="faq" translatable="true">FAQ</string>
-    <string name="cloned_version" translatable="true">KLÓNOZOTT VERZIÓ</string>
-    <string name="cloned_version_desc" translatable="true">Ezt engedélyezve lehetőséged nyílik az alkalmazás klónozott változatának letöltésére.\n\nEz megoldja a legtöbb telepítési hibát és problémát, főleg, ha az eszközödre előretelepített, gyári Spotify alkalmazással rendelkezel.</string>
-    <string name="disable_rewarded_ads" translatable="true">HIRDETÉSEK LETILTÁSA</string>
-    <string name="disable_rewarded_ads_desc" translatable="true">Senki sem szereti a hirdetéseket. Viszont, ha megengeded a hirdetések megjelenítését, segítesz nekünk az adatbázisok, weblinkek, frissítések, újabb verziók, valamint az egyéb felmerülő fejlesztési szükségletek költségeit fedezni, így anélkül támogathatsz minket, hogy pénzt kellene költened.</string>
-    <string name="installation_failed" translatable="true">SIKERTELEN TELEPÍTÉS</string>
-    <string name="installation_failed_desc" translatable="true">Oka: Az alkalmazás egy olyan verzióját próbáltad telepíteni, amely régebbi a jelenleg telepítettnél.\n\nA hiba elhárításának módja:\nA: Válassz egy, az eszközödre telepített verziónál frissebb, vagy azzal megegyező verziót.\nB: Távolítsd el a jelenlegi verziót, majd telepíts egy régebbit.\n\nHa a hiba továbbra is fennáll, látogasd meg a FAQ-t.</string>
-    <string name="installation_failed_spap_desc" translatable="true">Oka: A jelenleg telepített patchelt alkalmazás nem az xManager-től, vagy a csapatunktól származik.\n\nA hiba elhárításának módja: Távolítsd el az alkalmazás jelenlegi verzióját, indítsd újra az xManager-t, majd próbáld újra a telepítést. Ha a hiba továbbra is fennáll, látogasd meg a FAQ-t.</string>
-    <string name="installation_failed_cloned_desc" translatable="true">Oka: A jelenleg telepített, klónozott alkalmazás nem az xManager-től, vagy a csapatunktól származik.\n\nA hiba elhárításának módja: Távolítsd el az alkalmazás jelenlegi verzióját, indítsd újra az xManager-t, majd próbáld újra a telepítést. Ha a hiba továbbra is fennáll, látogasd meg a FAQ-t.</string>
-    <string name="existing_patched" translatable="true">PATCHELT TELEPÍTŐFÁJL MEGTALÁLVA</string>
-    <string name="existing_patched_desc" translatable="true">Egy meglévő apk-t találtunk a letöltési mappában. Mit szeretnél tenni?</string>
-    <string name="close" translatable="true">BEZÁRÁS</string>
-    <string name="cloned" translatable="true">KLÓNOZOTT</string>
-    <string name="spap" translatable="true">SP/AP</string>
-    <string name="install" translatable="true">TELEPÍTÉS</string>
-    <string name="uninstall" translatable="true">ELTÁVOLÍTÁS</string>
-    <string name="ignore" translatable="true">FIGYELMEN KÍVÜL HAGYÁS</string>
-    <string name="delete" translatable="true">TÖRLÉS</string>
-    <string name="uninstall_patched" translatable="true">A PATCHELT ALKALMAZÁS ELTÁVOLÍTÁSA</string>
-    <string name="open_settings" translatable="true">BEÁLLÍTÁSOK MEGNYITÁSA</string>
-    <string name="open_patched" translatable="true">A PATCHELT ALKALMAZÁS MEGNYITÁSA</string>
-    <string name="reboot" translatable="true">ÚJRAFETCHELÉS ÉS AZ ALKALMAZÁS ÚJRAINDÍTÁSA</string>
-        
+    
     <!--SLOVAK LANGUAGE-->
     <string name="app_name_23" translatable="true">xManager</string>
     <string name="installed_23" translatable="true">NAINŠTALOVANÉ</string>
@@ -2079,7 +1994,7 @@
     <string name="download_selected_23" translatable="true">Vybrali ste túto zaplátanú verziu. Chcete pokračovať?</string>
     <string name="download_ready_23" translatable="true">ZAPLÁTANÉ INFORMÁCIE</string>
     <string name="download_ready_desc_23" translatable="true">Stiahnutím tohto zaplátaného súboru APK sa prepíše predchádzajúci súbor umiestnený v externom adresári.</string>
-    <string name="downloading_file_23" translatable="true">SŤAHOVANIE SÚBORU...</string>
+    <string name="downloading_file_23" translatable="true">SŤAHOVANIE SÚBORU</string>
     <string name="download_success_23" translatable="true">ÚSPEŠNE STIAHNUTÉ</string>
     <string name="copy_url_desc_23" translatable="true">Vybrali ste túto zaplátanú verziu. Chcete skopírovať adresu URL?</string>
     <string name="new_update_23" translatable="true">NOVÁ AKTUALIZÁCIA MANAŽÉRA</string>
@@ -2165,7 +2080,7 @@
     <string name="download_selected_24" translatable="true">Du har valt denna patchade version. Vill du fortsätta?</string>
     <string name="download_ready_24" translatable="true">PATCHAD INFORMATION</string>
     <string name="download_ready_desc_24" translatable="true">Nedladdning av denna patchade apk kommer att skriva över föregående fil i den externa katalogen.</string>
-    <string name="downloading_file_24" translatable="true">LADDAR NER FIL...</string>
+    <string name="downloading_file_24" translatable="true">LADDAR NER FIL</string>
     <string name="download_success_24" translatable="true">NEDLADDNING SLUTFÖRD</string>
     <string name="new_update_24" translatable="true">NY MANAGER-UPPDATERING</string>
     <string name="continue_1_24" translatable="true">FORTSÄTT</string>
@@ -2250,7 +2165,7 @@
     <string name="download_selected_25" translatable="true">Valitsit tämän korjaustiedoston version. Haluatko jatkaa?</string>
     <string name="download_ready_25" translatable="true">KORJAUSTIEDOSTO TIETOJA</string>
     <string name="download_ready_desc_25" translatable="true">Tämän korjaustiedosto apk:n lataaminen asentuu entisen tiedoston päälle, joka löytyy ulkoisesta kansiosta.</string>
-    <string name="downloading_file_25" translatable="true">LADATAAN TIEDOSTOA...</string>
+    <string name="downloading_file_25" translatable="true">LADATAAN TIEDOSTOA</string>
     <string name="download_success_25" translatable="true">LATAUS ONNISTUI</string>
     <string name="new_update_25" translatable="true">UUSI MANAGER PÄIVITYS</string>
     <string name="continue_1_25" translatable="true">JATKA</string>
@@ -2335,7 +2250,7 @@
     <string name="download_selected_26" translatable="true">Vybrali jste si tuto upravenou verzi. Opravdu chcete pokračovat?</string>
     <string name="download_ready_26" translatable="true">INFORMACE K UPRAVENÉ APLIKACI</string>
     <string name="download_ready_desc_26" translatable="true">Stažení upravené aplikace přepíše předchozí soubor umístěný v externím adresáři.</string>
-    <string name="downloading_file_26" translatable="true">STAHOVÁNÍ SOUBORU...</string>
+    <string name="downloading_file_26" translatable="true">STAHOVÁNÍ SOUBORU</string>
     <string name="download_success_26" translatable="true">STAŽENO ÚSPĚŠNĚ</string>
     <string name="new_update_26" translatable="true">NOVÁ AKTUALIZACE MANAŽERA</string>
     <string name="continue_1_26" translatable="true">POKRAČOVAT</string>
@@ -2505,7 +2420,7 @@
     <string name="download_selected_28" translatable="true">Избрали сте тази коригирана версия. Искате ли да продължите?</string>
     <string name="download_ready_28" translatable="true">ИНФОРМАЦИЯ ЗА КРЪПКАТА</string>
     <string name="download_ready_desc_28" translatable="true">Изтеглянето на този коригиран APK ще презапише предишния файл, намиращ се във външната директория.</string>
-    <string name="downloading_file_28" translatable="true">ИЗТЕГЛЯНЕ НА ФАЙЛА...</string>
+    <string name="downloading_file_28" translatable="true">ИЗТЕГЛЯНЕ НА ФАЙЛА</string>
     <string name="download_success_28" translatable="true">УСПЕШНО ИЗТЕГЛЕН</string>
     <string name="new_update_28" translatable="true">НОВА АКТУАЛИЗАЦИЯ НА МЕНИДЖЪРА</string>
     <string name="continue_1_28" translatable="true">НАПРЕД</string>
@@ -2590,7 +2505,7 @@
     <string name="download_selected_29" translatable="true">Изабрали сте ову печовану верзију. Да ли желите да наставите?</string>
     <string name="download_ready_29" translatable="true">ИНФОРМАЦИЈЕ О МОДУ</string>
     <string name="download_ready_desc_29" translatable="true">Преузимање овог печованог APK фајла преписаће претходни фајл који се налази у спољном директоријуму.</string>
-    <string name="downloading_file_29" translatable="true">ПРЕУЗИМАЊЕ ФАЈЛА...</string>
+    <string name="downloading_file_29" translatable="true">ПРЕУЗИМАЊЕ ФАЈЛА</string>
     <string name="download_success_29" translatable="true">УСПЕШНО ПРЕУЗЕТО</string>
     <string name="new_update_29" translatable="true">НОВО АЖУРИРАЊЕ МЕНАЏЕРА</string>
     <string name="continue_1_29" translatable="true">НАСТАВИТЕ</string>
@@ -2675,7 +2590,7 @@
     <string name="download_selected_30" translatable="true">Izabrali ste ovu pečovanu verziju. Da li želite da nastavite?</string>
     <string name="download_ready_30" translatable="true">INFORMACIJE O MODU</string>
     <string name="download_ready_desc_30" translatable="true">Preuzimanje ovog pečovanog APK fajla prepisaće prethodni fajl koji se nalazi u spoljnom direktorijumu.</string>
-    <string name="downloading_file_30" translatable="true">PREUZIMANjE FAJLA...</string>
+    <string name="downloading_file_30" translatable="true">PREUZIMANjE FAJLA</string>
     <string name="download_success_30" translatable="true">USPEŠNO PREUZETO</string>
     <string name="new_update_30" translatable="true">NOVO AŽURIRANjE MENADžERA</string>
     <string name="continue_1_30" translatable="true">NASTAVITE</string>
@@ -2760,7 +2675,7 @@
     <string name="download_selected_31" translatable="true">Ha seleccionat aquesta versió modificada. Desitja continuar?</string>
     <string name="download_ready_31" translatable="true">INFORMACIÓ DEL PEGAT</string>
     <string name="download_ready_desc_31" translatable="true">La descàrrega d\'aquest APK modificat sobreescriurà l\'arxiu anterior situat en la carpeta externa d\'arxius descarregats.</string>
-    <string name="downloading_file_31" translatable="true">DESCARREGANT ARXIU...</string>
+    <string name="downloading_file_31" translatable="true">DESCARREGANT ARXIU</string>
     <string name="download_success_31" translatable="true">DESCARREGAT AMB ÈXIT</string>
     <string name="new_update_31" translatable="true">NOVA ACTUALITZACIÓ DEL GESTOR</string>
     <string name="continue_1_31" translatable="true">CONTINUAR</string>
@@ -2845,7 +2760,7 @@
     <string name="download_selected_32" translatable="true">Jūs izvēlējāties šo laboto versiju. Vai vēlaties turpināt?</string>
     <string name="download_ready_32" translatable="true">LABOTU VERSIJU INFORMĀCIJA</string>
     <string name="download_ready_desc_32" translatable="true">Lejupielādējot šo laboto apk, tiks pārrakstīts iepriekšējais fails, kas atrodas ārējā direktorijā.</string>
-    <string name="downloading_file_32" translatable="true">LEJUPIELĀDĒJU FAILU...</string>
+    <string name="downloading_file_32" translatable="true">LEJUPIELĀDĒJU FAILU</string>
     <string name="download_success_32" translatable="true">VEIKSMĪGI LEJUPIELĀDĒTS</string>
     <string name="new_update_32" translatable="true">JAUNĀ MENEDŽARA ATJAUNINĀJUMS</string>
     <string name="continue_1_32" translatable="true">TURPINĀT</string>
@@ -2930,7 +2845,7 @@
     <string name="download_selected_33" translatable="true">Sie haben diese gepatchte Version ausgewählt. Möchten sie fortfahren</string>
     <string name="download_ready_33" translatable="true">PATCH INFORMATIONEN</string>
     <string name="download_ready_desc_33" translatable="true">Durch das Herunterladen dieser gepatchten apk wird die vorherige Datei im externen Verzeichnis überschrieben.</string>
-    <string name="downloading_file_33" translatable="true">WIRD HERUNTERGELADEN...</string>
+    <string name="downloading_file_33" translatable="true">WIRD HERUNTERGELADEN</string>
     <string name="download_success_33" translatable="true">ERFOLGREICH HERUNTERGELADEN</string>
     <string name="new_update_33" translatable="true">NEUES MANAGER UPDATE</string>
     <string name="continue_1_33" translatable="true">VORTFAHREN</string>
@@ -3015,7 +2930,7 @@
     <string name="download_selected_34" translatable="true">ඔබ මෙම පැච් කළ අනුවාදය තෝරා ඇත. ඔබට ඉදිරියට යාමට අවශ්‍යද?</string>
     <string name="download_ready_34" translatable="true">පැච් තොරතුරු</string>
     <string name="download_ready_desc_34" translatable="true">මෙම පැච් කළ APK බාගැනීම බාහිර නාමාවලියෙහි ඇති පෙර ගොනුව ප්‍රතිස්ථාපනය කරනු ඇත.</string>
-    <string name="downloading_file_34" translatable="true">ගොනුව බාගත කරමින්...</string>
+    <string name="downloading_file_34" translatable="true">ගොනුව බාගත කරමින්</string>
     <string name="download_success_34" translatable="true">සාර්ථකව බාගත කර ඇත</string>
     <string name="new_update_34" translatable="true">නව කළමනාකරු යාවත්කාලීන ලබා ගත හැකිය</string>
     <string name="continue_1_34" translatable="true">ඉදිරියට යන්න</string>
@@ -3062,4 +2977,89 @@
     <string name="open_settings_34" translatable="true">විවෘත සැකසුම්</string>
     <string name="open_patched_34" translatable="true">සැකසීම් විවෘත කරන්න</string>
     <string name="reboot_34" translatable="true">නැවත ලබාගෙන නැවත ආරම්භ කරන්න</string>
+    
+    <!--HUNGARIAN LANGUAGE-->
+    <string name="app_name_35" translatable="true">xManager</string>
+    <string name="installed_35" translatable="true">TELEPÍTVE</string>
+    <string name="latest_35" translatable="true">LEGFRISSEBB VERZIÓ</string>
+    <string name="versions_35" translatable="true">VERZIÓK</string>
+    <string name="changelogs_35" translatable="true">VÁLTOZTATÁSI NAPLÓ</string>
+    <string name="manager_tools_35" translatable="true">MANAGER ESZKÖZÖK</string>
+    <string name="source_35" translatable="true">FORRÁS</string>
+    <string name="support_35" translatable="true">TELEGRAM</string>
+    <string name="donate_35" translatable="true">TÁMOGATÁS</string>
+    <string name="discord_35" translatable="true">DISCORD</string>
+    <string name="about_35" translatable="true">RÓLUNK</string>
+    <string name="main_title_35" translatable="true">xManager</string>
+    <string name="settings_title_35" translatable="true">Beállítások</string>
+    <string name="about_title_35" translatable="true">Rólunk</string>
+    <string name="list_auto_refresh_35" translatable="true">AUTOMATIKUS FRISSÍTÉS LISTÁZÁSA</string>
+    <string name="list_auto_refresh_desc_35" translatable="true">Ezt engedélyezve automatikusan frissíted a listát minden alkalommal, amikor megnyitod az alkalmazást.\n\nManuálisan is frissítheted, ha fentről lefelé húzod az alkalmazás főképernyőjét.</string>
+    <string name="force_auto_install_35" translatable="true">AUTOMATIKUS TELEPÍTÉS KÉNYSZERÍTÉSE</string>
+    <string name="force_auto_install_desc_35" translatable="true">Ezt engedélyezve automatikusan telepíted a patchelt alkalmazást a letöltését követően.</string>
+    <string name="show_themes_35" translatable="true">KINÉZET</string>
+    <string name="apk_location_35" translatable="true">APK HELYE</string>
+    <string name="apk_location_desc_35" translatable="true">Ez az a mappa, ahová mented a letöltött fájl másolatát. Ha nem tudod, mi ez a funkció és hogyan használd, nyugodtan hagyd úgy, ahogy van. \n\nMEGJEGYZÉS: Ez a funkció nem támogatja a külső tárhelyre (pl.: SD kártyára) való mentést a hozzáférési és egyéb engedélyek, valamint a tárhelyhozzáférési-korlátozások miatt. </string>
+    <string name="clear_directory_folders_35" translatable="true">A MAPPA ÉS A BENNE TALÁLHATÓ ADATOK TÖRLÉSE</string>
+    <string name="clear_directory_folders_desc_35" translatable="true">Érintsd meg a mappa törléséhez. Ez tartalmazza az alkalmazásra vonatkozó letöltési, valamint frissítési fájlokat is.</string>
+    <string name="reset_preferences_35" translatable="true">BEÁLLÍTÁSOK VISSZAÁLLÍTÁSA</string>
+    <string name="about_sub_35" translatable="true">Hirdetésmentes | Új funkciók | Szabadság</string>
+    <string name="xmanager_dev_35" translatable="true">xManager Fejlesztő</string>
+    <string name="patched_devs_35" translatable="true">A patchelt alkalmazás fejlesztői</string>
+    <string name="support_team_35" translatable="true">Telegram | Discord | Reddit Támogatás Csapat</string>
+    <string name="manager_testers_35" translatable="true">A patchelt app és a Manager tesztelői</string>
+    <string name="manager_hosting_35" translatable="true">Manager adatbázis és tárhely</string>
+    <string name="mobilism_team_35" translatable="true">Mobilism Csapat</string>
+    <string name="forum_team_35" translatable="true">FORUM.APK-RELEASE.NET Csapat</string>
+    <string name="contributors_35" translatable="true">KÖSZÖNET MINDEN KÖZREMŰKÖDŐNEK! ❤️</string>
+    <string name="download_selected_35" translatable="true">Ezt a patchelt verziót választottad ki. Szeretnéd folytatni?</string>
+    <string name="download_ready_35" translatable="true">INFORMÁCIÓ A PATCHELT APPRÓL</string>
+    <string name="download_ready_desc_35" translatable="true">Ezt a patchelt apk-t letöltve felülírod a letöltési mappában lévő fájlt.</string>
+    <string name="downloading_file_35" translatable="true">LETÖLTÉS FOLYAMATBAN</string>
+    <string name="download_success_35" translatable="true">SIKERESEN LETÖLTVE!</string>
+    <string name="new_update_35" translatable="true">ÚJ FRISSÍTÉS ÉRHETŐ EL A MANAGERHEZ</string>
+    <string name="continue_1_35" translatable="true">FOLYTATÁS</string>
+    <string name="cancel_35" translatable="true">MÉGSE</string>
+    <string name="download_35" translatable="true">LETÖLTÉS</string>
+    <string name="later_35" translatable="true">KÉSŐBB</string>
+    <string name="install_now_35" translatable="true">A PATCHELT FÁJL TELEPÍTÉSE</string>
+    <string name="install_update_35" translatable="true">A FRISSÍTÉS TELEPÍTÉSE</string>
+    <string name="go_back_35" translatable="true">VISSZALÉPÉS</string>
+    <string name="download_update_35" translatable="true">FRISSÍTÉS LETÖLTÉSE</string>
+    <string name="not_now_35" translatable="true">NE MOST</string>
+    <string name="mirror_35" translatable="true">ALTERNATÍV LINK</string>
+    <string name="lite_35" translatable="true">LITE VERZIÓ</string>
+    <string name="experimental_title_35" translatable="true">Kísérleti</string>
+    <string name="experimental_version_35" translatable="true">KÍSÉRLETI VERZIÓ</string>
+    <string name="experimental_version_desc_35" translatable="true">Ezt engedélyezve lehetőséged nyílik az alkalmazás kísérleti verziójának letöltésére és telepítésére.\n\nEz magában foglalja az alfa, béta és korai hozzáférésű funkciókat is, amelyek nem elérhetőek az eredeti patchelt appban, és nem biztos, hogy stabilak.</string>
+    <string name="show_support_35" translatable="true">MUTASD KI A TÁMOGATÁSODAT</string>
+    <string name="show_support_desc_35" translatable="true">Mi egy non-profit, nem vállalati és kompromisszummentes csapat vagyunk. Az olyan emberek, mint Te, motiválnak minket arra, hogy sokkal könnyebbé varázsoljuk a dolgokat, főleg a letöltést és a telepítést.\n\nIdőnket nem kímélve, és legjobb tudásunkat felhasználva dolgozunk az alkalmazáson, hogy a szuper és tökéletes legyen, és mindent megteszünk azért, hogy addig fejlesszük és támogassuk az alkalmazást, amíg képesek vagyunk rá. Minden támogatás nagy segítség, és sokat jelent nekünk.</string>
+    <string name="maintenance_35" translatable="true">KARBANTARTÁS</string>
+    <string name="maintenance_desc_35" translatable="true">Az xManager jelenleg nem elérhető, kérlek nézz vissza később!</string>
+    <string name="thanks_35" translatable="true">KÖSZÖNÖM!</string>
+    <string name="language_35" translatable="true">NYELV</string>
+    <string name="website_35" translatable="true">WEBOLDAL</string>
+    <string name="reddit_35" translatable="true">REDDIT</string>
+    <string name="faq_35" translatable="true">FAQ</string>
+    <string name="cloned_version_35" translatable="true">KLÓNOZOTT VERZIÓ</string>
+    <string name="cloned_version_desc_35" translatable="true">Ezt engedélyezve lehetőséged nyílik az alkalmazás klónozott változatának letöltésére.\n\nEz megoldja a legtöbb telepítési hibát és problémát, főleg, ha az eszközödre előretelepített, gyári Spotify alkalmazással rendelkezel.</string>
+    <string name="disable_rewarded_ads_35" translatable="true">HIRDETÉSEK LETILTÁSA</string>
+    <string name="disable_rewarded_ads_desc_35" translatable="true">Senki sem szereti a hirdetéseket. Viszont, ha megengeded a hirdetések megjelenítését, segítesz nekünk az adatbázisok, weblinkek, frissítések, újabb verziók, valamint az egyéb felmerülő fejlesztési szükségletek költségeit fedezni, így anélkül támogathatsz minket, hogy pénzt kellene költened.</string>
+    <string name="installation_failed_35" translatable="true">SIKERTELEN TELEPÍTÉS</string>
+    <string name="installation_failed_desc_35" translatable="true">Oka: Az alkalmazás egy olyan verzióját próbáltad telepíteni, amely régebbi a jelenleg telepítettnél.\n\nA hiba elhárításának módja:\nA: Válassz egy, az eszközödre telepített verziónál frissebb, vagy azzal megegyező verziót.\nB: Távolítsd el a jelenlegi verziót, majd telepíts egy régebbit.\n\nHa a hiba továbbra is fennáll, látogasd meg a FAQ-t.</string>
+    <string name="installation_failed_spap_desc_35" translatable="true">Oka: A jelenleg telepített patchelt alkalmazás nem az xManager-től, vagy a csapatunktól származik.\n\nA hiba elhárításának módja: Távolítsd el az alkalmazás jelenlegi verzióját, indítsd újra az xManager-t, majd próbáld újra a telepítést. Ha a hiba továbbra is fennáll, látogasd meg a FAQ-t.</string>
+    <string name="installation_failed_cloned_desc_35" translatable="true">Oka: A jelenleg telepített, klónozott alkalmazás nem az xManager-től, vagy a csapatunktól származik.\n\nA hiba elhárításának módja: Távolítsd el az alkalmazás jelenlegi verzióját, indítsd újra az xManager-t, majd próbáld újra a telepítést. Ha a hiba továbbra is fennáll, látogasd meg a FAQ-t.</string>
+    <string name="existing_patched_35" translatable="true">PATCHELT TELEPÍTŐFÁJL MEGTALÁLVA</string>
+    <string name="existing_patched_desc_35" translatable="true">Egy meglévő apk-t találtunk a letöltési mappában. Mit szeretnél tenni?</string>
+    <string name="close_35" translatable="true">BEZÁRÁS</string>
+    <string name="cloned_35" translatable="true">KLÓNOZOTT</string>
+    <string name="spap_35" translatable="true">SP/AP</string>
+    <string name="install_35" translatable="true">TELEPÍTÉS</string>
+    <string name="uninstall_35" translatable="true">ELTÁVOLÍTÁS</string>
+    <string name="ignore_35" translatable="true">FIGYELMEN KÍVÜL HAGYÁS</string>
+    <string name="delete_35" translatable="true">TÖRLÉS</string>
+    <string name="uninstall_patched_35" translatable="true">A PATCHELT ALKALMAZÁS ELTÁVOLÍTÁSA</string>
+    <string name="open_settings_35" translatable="true">BEÁLLÍTÁSOK MEGNYITÁSA</string>
+    <string name="open_patched_35" translatable="true">A PATCHELT ALKALMAZÁS MEGNYITÁSA</string>
+    <string name="reboot_35" translatable="true">ÚJRAFETCHELÉS ÉS AZ ALKALMAZÁS ÚJRAINDÍTÁSA</string>
 </resources>
