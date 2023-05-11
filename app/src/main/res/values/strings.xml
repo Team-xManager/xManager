@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><resources>
-    <!--DEFAULT LANGUAGE-->
+     <!--DEFAULT LANGUAGE-->
     <string name="app_name" translatable="true">xManager</string>
     <string name="installed" translatable="true">INSTALLED</string>
     <string name="latest" translatable="true">LATEST</string>
@@ -83,7 +83,7 @@
     <string name="open_settings" translatable="true">OPEN SETTINGS</string>
     <string name="open_patched" translatable="true">OPEN PATCHED</string>
     <string name="reboot" translatable="true">REFETCH AND REBOOT</string>
-    
+
     <!--BENGALI LANGUAGE-->
     <string name="app_name_01" translatable="true">xManager</string>
     <string name="installed_01" translatable="true">ইনস্টলড</string>
@@ -1953,7 +1953,92 @@
     <string name="open_settings_22" translatable="true">פתח הגדרות</string>
     <string name="open_patched_22" translatable="true">פתח קובץ</string>
     <string name="reboot_22" translatable="true">מחדש ולאתחל מחדש</string>
-    
+
+    <!--HUNGARIAN LANGUAGE-->
+    <string name="app_name" translatable="true">xManager</string>
+    <string name="installed" translatable="true">TELEPÍTVE</string>
+    <string name="latest" translatable="true">LEGFRISSEBB VERZIÓ</string>
+    <string name="versions" translatable="true">VERZIÓK</string>
+    <string name="changelogs" translatable="true">VÁLTOZTATÁSI NAPLÓ</string>
+    <string name="manager_tools" translatable="true">MANAGER ESZKÖZÖK</string>
+    <string name="source" translatable="true">FORRÁS</string>
+    <string name="support" translatable="true">TELEGRAM</string>
+    <string name="donate" translatable="true">TÁMOGATÁS</string>
+    <string name="discord" translatable="true">DISCORD</string>
+    <string name="about" translatable="true">RÓLUNK</string>
+    <string name="main_title" translatable="true">xManager</string>
+    <string name="settings_title" translatable="true">Beállítások</string>
+    <string name="about_title" translatable="true">Rólunk</string>
+    <string name="list_auto_refresh" translatable="true">AUTOMATIKUS FRISSÍTÉS LISTÁZÁSA</string>
+    <string name="list_auto_refresh_desc" translatable="true">Ezt engedélyezve automatikusan frissíted a listát minden alkalommal, amikor megnyitod az alkalmazást.\n\nManuálisan is frissítheted, ha fentről lefelé húzod az alkalmazás főképernyőjét.</string>
+    <string name="force_auto_install" translatable="true">AUTOMATIKUS TELEPÍTÉS KÉNYSZERÍTÉSE</string>
+    <string name="force_auto_install_desc" translatable="true">Ezt engedélyezve automatikusan telepíted a patchelt alkalmazást a letöltését követően.</string>
+    <string name="show_themes" translatable="true">KINÉZET</string>
+    <string name="apk_location" translatable="true">APK HELYE</string>
+    <string name="apk_location_desc" translatable="true">Ez az a mappa, ahová mented a letöltött fájl másolatát. Ha nem tudod, mi ez a funkció és hogyan használd, nyugodtan hagyd úgy, ahogy van. \n\nMEGJEGYZÉS: Ez a funkció nem támogatja a külső tárhelyre (pl.: SD kártyára) való mentést a hozzáférési és egyéb engedélyek, valamint a tárhelyhozzáférési-korlátozások miatt. </string>
+    <string name="clear_directory_folders" translatable="true">A MAPPA ÉS A BENNE TALÁLHATÓ ADATOK TÖRLÉSE</string>
+    <string name="clear_directory_folders_desc" translatable="true">Érintsd meg a mappa törléséhez. Ez tartalmazza az alkalmazásra vonatkozó letöltési, valamint frissítési fájlokat is.</string>
+    <string name="reset_preferences" translatable="true">BEÁLLÍTÁSOK VISSZAÁLLÍTÁSA</string>
+    <string name="about_sub" translatable="true">Hirdetésmentes | Új funkciók | Szabadság</string>
+    <string name="xmanager_dev" translatable="true">xManager Fejlesztő</string>
+    <string name="patched_devs" translatable="true">A patchelt alkalmazás fejlesztői</string>
+    <string name="support_team" translatable="true">Telegram | Discord | Reddit Támogatás Csapat</string>
+    <string name="manager_testers" translatable="true">A patchelt app és a Manager tesztelői</string>
+    <string name="manager_hosting" translatable="true">Manager adatbázis és tárhely</string>
+    <string name="mobilism_team" translatable="true">Mobilism Csapat</string>
+    <string name="forum_team" translatable="true">FORUM.APK-RELEASE.NET Csapat</string>
+    <string name="contributors" translatable="true">KÖSZÖNET MINDEN KÖZREMŰKÖDŐNEK! ❤️</string>
+    <string name="download_selected" translatable="true">Ezt a patchelt verziót választottad ki. Szeretnéd folytatni?</string>
+    <string name="download_ready" translatable="true">INFORMÁCIÓ A PATCHELT APPRÓL</string>
+    <string name="download_ready_desc" translatable="true">Ezt a patchelt apk-t letöltve felülírod a letöltési mappában lévő fájlt.</string>
+    <string name="downloading_file" translatable="true">LETÖLTÉS FOLYAMATBAN...</string>
+    <string name="download_success" translatable="true">SIKERESEN LETÖLTVE!</string>
+    <string name="new_update" translatable="true">ÚJ FRISSÍTÉS ÉRHETŐ EL A MANAGERHEZ</string>
+    <string name="continue_1" translatable="true">FOLYTATÁS</string>
+    <string name="cancel" translatable="true">MÉGSE</string>
+    <string name="download" translatable="true">LETÖLTÉS</string>
+    <string name="later" translatable="true">KÉSŐBB</string>
+    <string name="install_now" translatable="true">A PATCHELT FÁJL TELEPÍTÉSE</string>
+    <string name="install_update" translatable="true">A FRISSÍTÉS TELEPÍTÉSE</string>
+    <string name="go_back" translatable="true">VISSZALÉPÉS</string>
+    <string name="download_update" translatable="true">FRISSÍTÉS LETÖLTÉSE</string>
+    <string name="not_now" translatable="true">NE MOST</string>
+    <string name="mirror" translatable="true">ALTERNATÍV LINK</string>
+    <string name="lite" translatable="true">LITE VERZIÓ</string>
+    <string name="experimental_title" translatable="true">Kísérleti</string>
+    <string name="experimental_version" translatable="true">KÍSÉRLETI VERZIÓ</string>
+    <string name="experimental_version_desc" translatable="true">Ezt engedélyezve lehetőséged nyílik az alkalmazás kísérleti verziójának letöltésére és telepítésére.\n\nEz magában foglalja az alfa, béta és korai hozzáférésű funkciókat is, amelyek nem elérhetőek az eredeti patchelt appban, és nem biztos, hogy stabilak.</string>
+    <string name="show_support" translatable="true">MUTASD KI A TÁMOGATÁSODAT</string>
+    <string name="show_support_desc" translatable="true">Mi egy non-profit, nem vállalati és kompromisszummentes csapat vagyunk. Az olyan emberek, mint Te, motiválnak minket arra, hogy sokkal könnyebbé varázsoljuk a dolgokat, főleg a letöltést és a telepítést.\n\nIdőnket nem kímélve, és legjobb tudásunkat felhasználva dolgozunk az alkalmazáson, hogy a szuper és tökéletes legyen, és mindent megteszünk azért, hogy addig fejlesszük és támogassuk az alkalmazást, amíg képesek vagyunk rá. Minden támogatás nagy segítség, és sokat jelent nekünk.</string>
+    <string name="maintenance" translatable="true">KARBANTARTÁS</string>
+    <string name="maintenance_desc" translatable="true">Az xManager jelenleg nem elérhető, kérlek nézz vissza később!</string>
+    <string name="thanks" translatable="true">KÖSZÖNÖM!</string>
+    <string name="language" translatable="true">NYELV</string>
+    <string name="website" translatable="true">WEBOLDAL</string>
+    <string name="reddit" translatable="true">REDDIT</string>
+    <string name="faq" translatable="true">FAQ</string>
+    <string name="cloned_version" translatable="true">KLÓNOZOTT VERZIÓ</string>
+    <string name="cloned_version_desc" translatable="true">Ezt engedélyezve lehetőséged nyílik az alkalmazás klónozott változatának letöltésére.\n\nEz megoldja a legtöbb telepítési hibát és problémát, főleg, ha az eszközödre előretelepített, gyári Spotify alkalmazással rendelkezel.</string>
+    <string name="disable_rewarded_ads" translatable="true">HIRDETÉSEK LETILTÁSA</string>
+    <string name="disable_rewarded_ads_desc" translatable="true">Senki sem szereti a hirdetéseket. Viszont, ha megengeded a hirdetések megjelenítését, segítesz nekünk az adatbázisok, weblinkek, frissítések, újabb verziók, valamint az egyéb felmerülő fejlesztési szükségletek költségeit fedezni, így anélkül támogathatsz minket, hogy pénzt kellene költened.</string>
+    <string name="installation_failed" translatable="true">SIKERTELEN TELEPÍTÉS</string>
+    <string name="installation_failed_desc" translatable="true">Oka: Az alkalmazás egy olyan verzióját próbáltad telepíteni, amely régebbi a jelenleg telepítettnél.\n\nA hiba elhárításának módja:\nA: Válassz egy, az eszközödre telepített verziónál frissebb, vagy azzal megegyező verziót.\nB: Távolítsd el a jelenlegi verziót, majd telepíts egy régebbit.\n\nHa a hiba továbbra is fennáll, látogasd meg a FAQ-t.</string>
+    <string name="installation_failed_spap_desc" translatable="true">Oka: A jelenleg telepített patchelt alkalmazás nem az xManager-től, vagy a csapatunktól származik.\n\nA hiba elhárításának módja: Távolítsd el az alkalmazás jelenlegi verzióját, indítsd újra az xManager-t, majd próbáld újra a telepítést. Ha a hiba továbbra is fennáll, látogasd meg a FAQ-t.</string>
+    <string name="installation_failed_cloned_desc" translatable="true">Oka: A jelenleg telepített, klónozott alkalmazás nem az xManager-től, vagy a csapatunktól származik.\n\nA hiba elhárításának módja: Távolítsd el az alkalmazás jelenlegi verzióját, indítsd újra az xManager-t, majd próbáld újra a telepítést. Ha a hiba továbbra is fennáll, látogasd meg a FAQ-t.</string>
+    <string name="existing_patched" translatable="true">PATCHELT TELEPÍTŐFÁJL MEGTALÁLVA</string>
+    <string name="existing_patched_desc" translatable="true">Egy meglévő apk-t találtunk a letöltési mappában. Mit szeretnél tenni?</string>
+    <string name="close" translatable="true">BEZÁRÁS</string>
+    <string name="cloned" translatable="true">KLÓNOZOTT</string>
+    <string name="spap" translatable="true">SP/AP</string>
+    <string name="install" translatable="true">TELEPÍTÉS</string>
+    <string name="uninstall" translatable="true">ELTÁVOLÍTÁS</string>
+    <string name="ignore" translatable="true">FIGYELMEN KÍVÜL HAGYÁS</string>
+    <string name="delete" translatable="true">TÖRLÉS</string>
+    <string name="uninstall_patched" translatable="true">A PATCHELT ALKALMAZÁS ELTÁVOLÍTÁSA</string>
+    <string name="open_settings" translatable="true">BEÁLLÍTÁSOK MEGNYITÁSA</string>
+    <string name="open_patched" translatable="true">A PATCHELT ALKALMAZÁS MEGNYITÁSA</string>
+    <string name="reboot" translatable="true">ÚJRAFETCHELÉS ÉS AZ ALKALMAZÁS ÚJRAINDÍTÁSA</string>
+        
     <!--SLOVAK LANGUAGE-->
     <string name="app_name_23" translatable="true">xManager</string>
     <string name="installed_23" translatable="true">NAINŠTALOVANÉ</string>
