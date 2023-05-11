@@ -1745,7 +1745,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="5dp"
-					android:text="Pegioner"
+					android:text="Pegioner | vanja-san"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -2274,6 +2274,28 @@
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
 					android:text="Psycho649"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_36"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Hungarian Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_36"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:text="gurtnyi"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
