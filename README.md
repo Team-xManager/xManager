@@ -9,7 +9,7 @@
 | **Status** | <img src="https://img.shields.io/github/release-date/xManager-App/xManager?label=UPDATED%20SINCE&style=for-the-badge"></br><img src="https://img.shields.io/github/v/tag/xManager-App/xManager?label=LATEST%20VERSION&style=for-the-badge"> |
 | :-------------: | :-------------: |
 | **Download Milestone** | **<img src="https://img.shields.io/github/downloads/xManager-App/xManager/total?label=OMNIBUS%20(ACTIVE)&style=for-the-badge"></br><img src="https://img.shields.io/badge/ORIGINS%20(SHUTDOWN)-1.1M-red.svg?style=for-the-badge"></br><img src="https://img.shields.io/badge/LEGACY%20(SHUTDOWN)-400K-red.svg?style=for-the-badge">** |
-| **Miscellaneous** | **<a href="https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones"><img src="https://img.shields.io/badge/Roadmaps%20&%20Changelogs-Click%20Here-white.svg?style=for-the-badge"/></br><a href="https://www.virustotal.com/gui/file/80082a2907c548deeaa2d93790df5ecb3b7e8f8e64b4e8a7d95269d7e097ddc5/detection"><img src="https://img.shields.io/badge/VirusTotal-Click%20Here-white.svg?style=for-the-badge"/>** |
+| **Miscellaneous** | **<a href="https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones"><img src="https://img.shields.io/badge/Roadmaps%20&%20Changelogs-Click%20Here-white.svg?style=for-the-badge"/></br><a href="https://www.virustotal.com/gui/file/bd772703dd901df2eb01720efebde78e6b73c8974f6f2d36ca12af95ae73c281/detection"><img src="https://img.shields.io/badge/VirusTotal-Click%20Here-white.svg?style=for-the-badge"/>** |
 
 ---
   
@@ -81,7 +81,7 @@ We will support the app as long as we can. Internal improvements may not be guar
 | **Portuguese - Brazil Translation** | Loui's™ \| Zilberto Junior |
 | **Portuguese - Portugal Translation** | Androide323 |
 | **Romanian Translation** | NACH \| f9branza \| StephenTheMoldovan |
-| **Russian Translation** | Pegioner |
+| **Russian Translation** | Pegioner \| vanja-san |
 | **Slovenian Translation** | MysticX |
 | **Spanish - Spain Translation** | PetFix \| Snapdragon845GMS \| Zkyclad |
 | **Turkish Translation** | Berkay |
@@ -106,6 +106,7 @@ We will support the app as long as we can. Internal improvements may not be guar
 | **Latvian Translation** | ClientSiderz |
 | **German Translation** | 4NDROM3DA |
 | **Sinhala Translation** | Psycho649 |
+| **Hungarian Translation** | gurtnyi |
 
 </div>
 
