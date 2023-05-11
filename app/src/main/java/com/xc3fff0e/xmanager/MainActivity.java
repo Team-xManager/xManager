@@ -402,6 +402,8 @@ public class MainActivity extends AppCompatActivity {
 	private TextView translator_34;
 	private TextView manager_lang_35;
 	private TextView translator_35;
+	private TextView manager_lang_36;
+	private TextView translator_36;
 	private TextView manager_donors;
 	private TextView donors_1;
 	private ScrollView main_scroll_body;
@@ -777,6 +779,8 @@ public class MainActivity extends AppCompatActivity {
 		translator_34 = findViewById(R.id.translator_34);
 		manager_lang_35 = findViewById(R.id.manager_lang_35);
 		translator_35 = findViewById(R.id.translator_35);
+		manager_lang_36 = findViewById(R.id.manager_lang_36);
+		translator_36 = findViewById(R.id.translator_36);
 		manager_donors = findViewById(R.id.manager_donors);
 		donors_1 = findViewById(R.id.donors_1);
 		main_scroll_body = findViewById(R.id.main_scroll_body);
@@ -1814,6 +1818,13 @@ public class MainActivity extends AppCompatActivity {
 																																							COUNTER = 1;
 																																							_Language_UI();
 																																						}
+																																						else {
+																																							if (_position == 35) {
+																																								LANGUAGE.edit().putString("LANGUAGE", "35").commit();
+																																								COUNTER = 1;
+																																								_Language_UI();
+																																							}
+																																						}
 																																					}
 																																				}
 																																			}
@@ -2247,14 +2258,14 @@ public class MainActivity extends AppCompatActivity {
 								if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
 									if (_position < 1) {
 										if ((_position % 1) == 0) {
-											String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
+											String Message = "<b>VERSION: </b>".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
 											String MessageColor = "FFFFFF";
 											
 											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 										}
 									}
 									else {
-										String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
+										String Message = "<b>VERSION: </b>".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -2264,14 +2275,14 @@ public class MainActivity extends AppCompatActivity {
 									if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
 										if (_position < 1) {
 											if ((_position % 1) == 0) {
-												String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
+												String Message = "<b>VERSION: </b>".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
 												String MessageColor = "FFFFFF";
 												
 												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 											}
 										}
 										else {
-											String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
+											String Message = "<b>VERSION: </b>".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
 											String MessageColor = "FFFFFF";
 											
 											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -2281,14 +2292,14 @@ public class MainActivity extends AppCompatActivity {
 										if (SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
 											if (_position < 1) {
 												if ((_position % 1) == 0) {
-													String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
+													String Message = "<b>VERSION: </b>".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
 													String MessageColor = "FFFFFF";
 													
 													Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 												}
 											}
 											else {
-												String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
+												String Message = "<b>VERSION: </b>".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
 												String MessageColor = "FFFFFF";
 												
 												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -2298,14 +2309,14 @@ public class MainActivity extends AppCompatActivity {
 											if (SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
 												if (_position < 1) {
 													if ((_position % 1) == 0) {
-														String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
+														String Message = "<b>VERSION: </b>".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
 														String MessageColor = "FFFFFF";
 														
 														Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 													}
 												}
 												else {
-													String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
+													String Message = "<b>VERSION: </b>".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
 													String MessageColor = "FFFFFF";
 													
 													Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -2509,14 +2520,14 @@ public class MainActivity extends AppCompatActivity {
 						if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
 							if (_position < 1) {
 								if ((_position % 1) == 0) {
-									String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
+									String Message = "<b>VERSION: </b>".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
 									String MessageColor = "FFFFFF";
 									
 									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 								}
 							}
 							else {
-								String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
+								String Message = "<b>VERSION: </b>".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -2526,14 +2537,14 @@ public class MainActivity extends AppCompatActivity {
 							if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
 								if (_position < 1) {
 									if ((_position % 1) == 0) {
-										String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
+										String Message = "<b>VERSION: </b>".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 								}
 								else {
-									String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
+									String Message = "<b>VERSION: </b>".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
 									String MessageColor = "FFFFFF";
 									
 									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -2543,14 +2554,14 @@ public class MainActivity extends AppCompatActivity {
 								if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
 									if (_position < 1) {
 										if ((_position % 1) == 0) {
-											String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
+											String Message = "<b>VERSION: </b>".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
 											String MessageColor = "FFFFFF";
 											
 											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 										}
 									}
 									else {
-										String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
+										String Message = "<b>VERSION: </b>".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -2560,14 +2571,14 @@ public class MainActivity extends AppCompatActivity {
 									if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
 										if (_position < 1) {
 											if ((_position % 1) == 0) {
-												String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
+												String Message = "<b>VERSION: </b>".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
 												String MessageColor = "FFFFFF";
 												
 												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 											}
 										}
 										else {
-											String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
+											String Message = "<b>VERSION: </b>".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
 											String MessageColor = "FFFFFF";
 											
 											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -2847,14 +2858,14 @@ public class MainActivity extends AppCompatActivity {
 								if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
 									if (_position < 1) {
 										if ((_position % 1) == 0) {
-											String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
+											String Message = "<b>VERSION: </b>".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
 											String MessageColor = "FFFFFF";
 											
 											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 										}
 									}
 									else {
-										String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
+										String Message = "<b>VERSION: </b>".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -2864,14 +2875,14 @@ public class MainActivity extends AppCompatActivity {
 									if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
 										if (_position < 1) {
 											if ((_position % 1) == 0) {
-												String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
+												String Message = "<b>VERSION: </b>".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
 												String MessageColor = "FFFFFF";
 												
 												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 											}
 										}
 										else {
-											String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
+											String Message = "<b>VERSION: </b>".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
 											String MessageColor = "FFFFFF";
 											
 											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -2881,14 +2892,14 @@ public class MainActivity extends AppCompatActivity {
 										if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
 											if (_position < 1) {
 												if ((_position % 1) == 0) {
-													String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
+													String Message = "<b>VERSION: </b>".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
 													String MessageColor = "FFFFFF";
 													
 													Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 												}
 											}
 											else {
-												String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
+												String Message = "<b>VERSION: </b>".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
 												String MessageColor = "FFFFFF";
 												
 												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -2898,14 +2909,14 @@ public class MainActivity extends AppCompatActivity {
 											if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
 												if (_position < 1) {
 													if ((_position % 1) == 0) {
-														String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
+														String Message = "<b>VERSION: </b>".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
 														String MessageColor = "FFFFFF";
 														
 														Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 													}
 												}
 												else {
-													String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
+													String Message = "<b>VERSION: </b>".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
 													String MessageColor = "FFFFFF";
 													
 													Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -3109,14 +3120,14 @@ public class MainActivity extends AppCompatActivity {
 						if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
 							if (_position < 1) {
 								if ((_position % 1) == 0) {
-									String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
+									String Message = "<b>VERSION: </b>".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
 									String MessageColor = "FFFFFF";
 									
 									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 								}
 							}
 							else {
-								String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
+								String Message = "<b>VERSION: </b>".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -3126,14 +3137,14 @@ public class MainActivity extends AppCompatActivity {
 							if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
 								if (_position < 1) {
 									if ((_position % 1) == 0) {
-										String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
+										String Message = "<b>VERSION: </b>".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 								}
 								else {
-									String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
+									String Message = "<b>VERSION: </b>".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
 									String MessageColor = "FFFFFF";
 									
 									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -3143,14 +3154,14 @@ public class MainActivity extends AppCompatActivity {
 								if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
 									if (_position < 1) {
 										if ((_position % 1) == 0) {
-											String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
+											String Message = "<b>VERSION: </b>".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
 											String MessageColor = "FFFFFF";
 											
 											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 										}
 									}
 									else {
-										String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
+										String Message = "<b>VERSION: </b>".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -3160,14 +3171,14 @@ public class MainActivity extends AppCompatActivity {
 									if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
 										if (_position < 1) {
 											if ((_position % 1) == 0) {
-												String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
+												String Message = "<b>VERSION: </b>".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
 												String MessageColor = "FFFFFF";
 												
 												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 											}
 										}
 										else {
-											String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
+											String Message = "<b>VERSION: </b>".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
 											String MessageColor = "FFFFFF";
 											
 											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -3440,14 +3451,14 @@ public class MainActivity extends AppCompatActivity {
 								Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 								if (_position < 1) {
 									if ((_position % 1) == 0) {
-										String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)));
+										String Message = "<b>VERSION: </b>".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)));
 										String MessageColor = "FFFFFF";
 										
 										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 									}
 								}
 								else {
-									String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)));
+									String Message = "<b>VERSION: </b>".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)));
 									String MessageColor = "FFFFFF";
 									
 									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -3565,14 +3576,14 @@ public class MainActivity extends AppCompatActivity {
 						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 						if (_position < 1) {
 							if ((_position % 1) == 0) {
-								String Message = "<b>VERSION: </b>".concat("LATEST | ".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)));
+								String Message = "<b>VERSION: </b>".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)));
 								String MessageColor = "FFFFFF";
 								
 								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 							}
 						}
 						else {
-							String Message = "<b>VERSION: </b>".concat("OLDER | ".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString()).concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)));
+							String Message = "<b>VERSION: </b>".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)));
 							String MessageColor = "FFFFFF";
 							
 							Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
@@ -4477,8 +4488,12 @@ public class MainActivity extends AppCompatActivity {
 																										@Override
 																										public void run() {
 																												prog.dismiss();
-																												_Reminder();
-																												_Browser(hidden_download_3.getText().toString());
+																												try {
+																														_Reminder();
+																														_Browser(hidden_download_3.getText().toString());
+																												} catch (Exception e) {
+																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																												}
 																										}
 																								}, 0);
 																						}
@@ -4504,7 +4519,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("PREPARING...");
+																												check.setProgressNumberFormat("PREPARING");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -4532,7 +4547,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setProgressNumberFormat("VERIFYING PATCHED");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -4558,7 +4573,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setProgressNumberFormat("VERIFYING SIGNATURE");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -4584,7 +4599,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("FINALIZING...");
+																												check.setProgressNumberFormat("FINALIZING");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -4976,8 +4991,12 @@ public class MainActivity extends AppCompatActivity {
 																										@Override
 																										public void run() {
 																												prog.dismiss();
-																												_Reminder();
-																												_Browser(hidden_update.getText().toString());
+																												try {
+																														_Reminder();
+																														_Browser(hidden_update.getText().toString());
+																												} catch (Exception e) {
+																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																												}
 																										}
 																								}, 0);
 																						}
@@ -5003,7 +5022,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("PREPARING...");
+																												check.setProgressNumberFormat("PREPARING");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -5031,7 +5050,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setProgressNumberFormat("VERIFYING UPDATE");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -5057,7 +5076,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setProgressNumberFormat("VERIFYING SIGNATURE");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -5083,7 +5102,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("FINALIZING...");
+																												check.setProgressNumberFormat("FINALIZING");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -5819,8 +5838,12 @@ public class MainActivity extends AppCompatActivity {
 																										@Override
 																										public void run() {
 																												prog.dismiss();
-																												_Reminder();
-																												_Browser(hidden_download_3.getText().toString());
+																												try {
+																														_Reminder();
+																														_Browser(hidden_download_3.getText().toString());
+																												} catch (Exception e) {
+																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																												}
 																										}
 																								}, 0);
 																						}
@@ -5846,7 +5869,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("PREPARING...");
+																												check.setProgressNumberFormat("PREPARING");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -5874,7 +5897,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setProgressNumberFormat("VERIFYING PATCHED");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -5900,7 +5923,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setProgressNumberFormat("VERIFYING SIGNATURE");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -5926,7 +5949,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("FINALIZING...");
+																												check.setProgressNumberFormat("FINALIZING");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -6176,8 +6199,12 @@ public class MainActivity extends AppCompatActivity {
 																										@Override
 																										public void run() {
 																												prog.dismiss();
-																												_Reminder();
-																												_Browser(hidden_update.getText().toString());
+																												try {
+																														_Reminder();
+																														_Browser(hidden_update.getText().toString());
+																												} catch (Exception e) {
+																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																												}
 																										}
 																								}, 0);
 																						}
@@ -6203,7 +6230,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("PREPARING...");
+																												check.setProgressNumberFormat("PREPARING");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -6231,7 +6258,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setProgressNumberFormat("VERIFYING UPDATE");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -6257,7 +6284,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setProgressNumberFormat("VERIFYING SIGNATURE");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -6283,7 +6310,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("FINALIZING...");
+																												check.setProgressNumberFormat("FINALIZING");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -10285,6 +10312,119 @@ public class MainActivity extends AppCompatActivity {
 																																					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																					select_language.setSelection((int)(34));
 																																				}
+																																				else {
+																																					if (LANGUAGE.getString("LANGUAGE", "").equals("35")) {
+																																						sub_text_installed.setText(R.string.installed_35);
+																																						main_title.setText(R.string.main_title_35);
+																																						about_title.setText(R.string.about_title_35);
+																																						settings_title.setText(R.string.settings_title_35);
+																																						experiment_title.setText(R.string.experimental_title_35);
+																																						sub_title.setText(R.string.about_sub_35);
+																																						sub_text_1.setText(R.string.latest_35);
+																																						sub_text_2.setText(R.string.latest_35);
+																																						sub_text_3.setText(R.string.latest_35);
+																																						versions_1.setText(R.string.versions_35);
+																																						versions_2.setText(R.string.versions_35);
+																																						versions_3.setText(R.string.versions_35);
+																																						title_sub.setText(R.string.manager_tools_35);
+																																						source.setText(R.string.source_35);
+																																						support.setText(R.string.support_35);
+																																						donate.setText(R.string.donate_35);
+																																						discord.setText(R.string.discord_35);
+																																						about.setText(R.string.about_35);
+																																						website.setText(R.string.website_35);
+																																						reddit.setText(R.string.reddit_35);
+																																						faq.setText(R.string.faq_35);
+																																						theme.setText(R.string.show_themes_35);
+																																						language.setText(R.string.language_35);
+																																						download_update.setText(R.string.download_update_35);
+																																						install_now.setText(R.string.install_now_35);
+																																						install_update.setText(R.string.install_update_35);
+																																						uninstall_patched.setText(R.string.uninstall_patched_35);
+																																						open_settings.setText(R.string.open_settings_35);
+																																						open_patched.setText(R.string.open_patched_35);
+																																						lite.setText(R.string.lite_35);
+																																						cloned.setText(R.string.cloned_35);
+																																						spap.setText(R.string.spap_35);
+																																						mirror.setText(R.string.mirror_35);
+																																						download.setText(R.string.download_35);
+																																						cancel.setText(R.string.cancel_35);
+																																						later.setText(R.string.later_35);
+																																						go_back.setText(R.string.go_back_35);
+																																						not_now.setText(R.string.not_now_35);
+																																						close.setText(R.string.close_35);
+																																						continue_1.setText(R.string.continue_1_35);
+																																						install.setText(R.string.install_35);
+																																						uninstall.setText(R.string.uninstall_35);
+																																						ignore.setText(R.string.ignore_35);
+																																						delete.setText(R.string.delete_35);
+																																						thanks.setText(R.string.thanks_35);
+																																						new_update.setText(R.string.new_update_35);
+																																						changelogs.setText(R.string.changelogs_35);
+																																						reboot.setText(R.string.reboot_35);
+																																						reset_preferences.setText(R.string.reset_preferences_35);
+																																						list_auto_refresh.setText(R.string.list_auto_refresh_35);
+																																						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_35);
+																																						force_auto_install.setText(R.string.force_auto_install_35);
+																																						force_auto_install_info.setText(R.string.force_auto_install_desc_35);
+																																						apk_location.setText(R.string.apk_location_35);
+																																						apk_location_info.setText(R.string.apk_location_desc_35);
+																																						clear_directory_folders.setText(R.string.clear_directory_folders_35);
+																																						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_35);
+																																						cloned_version.setText(R.string.cloned_version_35);
+																																						cloned_version_info.setText(R.string.cloned_version_desc_35);
+																																						experiment_version.setText(R.string.experimental_version_35);
+																																						experiment_version_info.setText(R.string.experimental_version_desc_35);
+																																						disable_reward_ad.setText(R.string.disable_rewarded_ads_35);
+																																						disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_35);
+																																						show_support.setText(R.string.show_support_35);
+																																						show_support_desc.setText(R.string.show_support_desc_35);
+																																						maintenance.setText(R.string.maintenance_35);
+																																						maintenance_desc.setText(R.string.maintenance_desc_35);
+																																						xmanager_dev.setText(R.string.xmanager_dev_35);
+																																						patched_devs.setText(R.string.patched_devs_35);
+																																						support_team.setText(R.string.support_team_35);
+																																						manager_testers.setText(R.string.manager_testers_35);
+																																						manager_hosting.setText(R.string.manager_hosting_35);
+																																						mobilism_team.setText(R.string.mobilism_team_35);
+																																						forum_team.setText(R.string.forum_team_35);
+																																						contributors.setText(R.string.contributors_35);
+																																						download_selected.setText(R.string.download_selected_35);
+																																						download_ready.setText(R.string.download_ready_35);
+																																						download_ready_desc.setText(R.string.download_ready_desc_35);
+																																						downloading_file.setText(R.string.downloading_file_35);
+																																						download_success.setText(R.string.download_success_35);
+																																						installation_failed.setText(R.string.installation_failed_35);
+																																						installation_failed_desc.setText(R.string.installation_failed_desc_35);
+																																						installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_35);
+																																						installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_35);
+																																						existing_patched.setText(R.string.existing_patched_35);
+																																						existing_patched_desc.setText(R.string.existing_patched_desc_35);
+																																						lite_0 = lite.getText().toString();
+																																						download_0 = download.getText().toString();
+																																						continue_0 = continue_1.getText().toString();
+																																						cancel_0 = cancel.getText().toString();
+																																						later_0 = later.getText().toString();
+																																						mirror_0 = mirror.getText().toString();
+																																						install_now_0 = install_now.getText().toString();
+																																						go_back_0 = go_back.getText().toString();
+																																						install_update_0 = install_update.getText().toString();
+																																						close_0 = close.getText().toString();
+																																						uninstall_0 = uninstall.getText().toString();
+																																						existing_patched_0 = existing_patched.getText().toString();
+																																						existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																																						download_selected_0 = download_selected.getText().toString();
+																																						download_ready_0 = download_ready.getText().toString();
+																																						download_ready_desc_0 = download_ready_desc.getText().toString();
+																																						downloading_file_0 = downloading_file.getText().toString();
+																																						download_success_0 = download_success.getText().toString();
+																																						installation_failed_0 = installation_failed.getText().toString();
+																																						installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																																						installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
+																																						installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																																						select_language.setSelection((int)(35));
+																																					}
+																																				}
 																																			}
 																																		}
 																																	}
@@ -10358,6 +10498,7 @@ public class MainActivity extends AppCompatActivity {
 		Language.add("Latvian");
 		Language.add("German");
 		Language.add("Sinhala");
+		Language.add("Hungarian");
 		select_language.setAdapter(new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, Language));
 		((ArrayAdapter)select_language.getAdapter()).notifyDataSetChanged();
 		select_language.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, Language) {
@@ -10887,8 +11028,12 @@ public class MainActivity extends AppCompatActivity {
 																										@Override
 																										public void run() {
 																												prog.dismiss();
-																												_Reminder();
-																												_Browser(hidden_download_3.getText().toString());
+																												try {
+																														_Reminder();
+																														_Browser(hidden_download_3.getText().toString());
+																												} catch (Exception e) {
+																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																												}
 																										}
 																								}, 0);
 																						}
@@ -10914,7 +11059,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("PREPARING...");
+																												check.setProgressNumberFormat("PREPARING");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -10942,7 +11087,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setProgressNumberFormat("VERIFYING PATCHED");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -10968,7 +11113,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setProgressNumberFormat("VERIFYING SIGNATURE");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -10994,7 +11139,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("FINALIZING...");
+																												check.setProgressNumberFormat("FINALIZING");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -11145,8 +11290,12 @@ public class MainActivity extends AppCompatActivity {
 																										@Override
 																										public void run() {
 																												prog.dismiss();
-																												_Reminder();
-																												_Browser(hidden_download_3.getText().toString());
+																												try {
+																														_Reminder();
+																														_Browser(hidden_download_3.getText().toString());
+																												} catch (Exception e) {
+																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																												}
 																										}
 																								}, 0);
 																						}
@@ -11172,7 +11321,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("PREPARING...");
+																												check.setProgressNumberFormat("PREPARING");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -11200,7 +11349,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setProgressNumberFormat("VERIFYING PATCHED");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -11226,7 +11375,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setProgressNumberFormat("VERIFYING SIGNATURE");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -11252,7 +11401,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("FINALIZING...");
+																												check.setProgressNumberFormat("FINALIZING");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -12890,6 +13039,7 @@ public class MainActivity extends AppCompatActivity {
 		manager_lang_33.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_34.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_35.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_36.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -12925,6 +13075,7 @@ public class MainActivity extends AppCompatActivity {
 		translator_33.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_34.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_35.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_36.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 	}
 	
 	
@@ -12933,7 +13084,7 @@ public class MainActivity extends AppCompatActivity {
 				try {
 						final String App = "xManager";
 						final String contentTitle = "IMPORTANT NOTE";
-						final String contentMessage = "After installing and logging-in, make sure to reopen or force close the Spotify app to enable the mod features.";
+						final String contentMessage = "After installing and logging-in, make sure to reopen or force stop the app to enable the patched features.";
 						
 						androidx.core.app.NotificationCompat.Builder builder = new androidx.core.app.NotificationCompat.Builder(MainActivity.this, "id 1");
 						builder.setStyle(new androidx.core.app.NotificationCompat.BigTextStyle(builder).bigText(contentMessage)
@@ -12951,7 +13102,7 @@ public class MainActivity extends AppCompatActivity {
 				}
 		} else {
 				if (Build.VERSION.SDK_INT <= 20) {
-						com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "IMPORTANT NOTE: After installing and logging-in, make sure to reopen or force close the Spotify app to enable the mod features.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+						com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "IMPORTANT NOTE: After installing and logging-in, make sure to reopen or force stop the app to enable the patched features.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 				}
 		}
 		
@@ -13144,8 +13295,12 @@ public class MainActivity extends AppCompatActivity {
 																										@Override
 																										public void run() {
 																												prog.dismiss();
-																												_Reminder();
-																												_Browser(hidden_download_3.getText().toString());
+																												try {
+																														_Reminder();
+																														_Browser(hidden_download_3.getText().toString());
+																												} catch (Exception e) {
+																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																												}
 																										}
 																								}, 0);
 																						}
@@ -13171,7 +13326,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("PREPARING...");
+																												check.setProgressNumberFormat("PREPARING");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -13199,7 +13354,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setProgressNumberFormat("VERIFYING PATCHED");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -13225,7 +13380,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setProgressNumberFormat("VERIFYING SIGNATURE");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -13251,7 +13406,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("FINALIZING...");
+																												check.setProgressNumberFormat("FINALIZING");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -13402,8 +13557,12 @@ public class MainActivity extends AppCompatActivity {
 																										@Override
 																										public void run() {
 																												prog.dismiss();
-																												_Reminder();
-																												_Browser(hidden_download_3.getText().toString());
+																												try {
+																														_Reminder();
+																														_Browser(hidden_download_3.getText().toString());
+																												} catch (Exception e) {
+																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+																												}
 																										}
 																								}, 0);
 																						}
@@ -13429,7 +13588,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("PREPARING...");
+																												check.setProgressNumberFormat("PREPARING");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -13457,7 +13616,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING FILE...");
+																												check.setProgressNumberFormat("VERIFYING PATCHED");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -13483,7 +13642,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING SIGNATURE...");
+																												check.setProgressNumberFormat("VERIFYING SIGNATURE");
 																												check.setCancelable(false);
 																										}
 																								});
@@ -13509,7 +13668,7 @@ public class MainActivity extends AppCompatActivity {
 																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
 																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
 																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("FINALIZING...");
+																												check.setProgressNumberFormat("FINALIZING");
 																												check.setCancelable(false);
 																										}
 																								});
