@@ -10,7 +10,7 @@
 | :-------------: | :-------------: |
 | **Download Milestone** | **<img src="https://img.shields.io/github/downloads/xManager-App/xManager/total?label=OMNIBUS%20(ACTIVE)&style=for-the-badge"></br><img src="https://img.shields.io/badge/ORIGINS%20(SHUTDOWN)-1.1M-red.svg?style=for-the-badge"></br><img src="https://img.shields.io/badge/LEGACY%20(SHUTDOWN)-400K-red.svg?style=for-the-badge">** |
 | **Miscellaneous** | **<a href="https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones"><img src="https://img.shields.io/badge/Roadmaps%20&%20Changelogs-Click%20Here-white.svg?style=for-the-badge"/></br><a href="https://www.virustotal.com/gui/file/994ea1d7b7cea1ab7f9ffb18b24ea8f58cd9d511ac8c5dc967d47207c55fa891/detection"><img src="https://img.shields.io/badge/VirusTotal-Click%20Here-white.svg?style=for-the-badge"/>** |
-  | **Donation/Sponsor** | **<a href='https://ko-fi.com/xC3FFF0E' target='_blank'><img height='35' style='border:0px;height:46px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' />** |
+  | **Donation/Sponsor** | **[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I3I0IPJ3W)** |
 
 ---
   
