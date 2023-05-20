@@ -15,8 +15,8 @@
   
 | **Key Features** | **Descriptions** |
 | ------------- | ------------- |
-| **All in One Place** | Upgrade or Downgrade Anytime & Anywhere |
-| **Manager Tools** | Uninstall, Open Settings, Clean Cached Datas & Launch App |
+| **All-in-One Place** | Upgrade or Downgrade Anytime & Anywhere |
+| **Manager Tools** | Uninstall, Open Settings, Clean Cached Data & Launch App |
 | **Experimentals** | Some A/B Features are Available to Use |
 | **Friendly Interface** | Neat & Slick Minimalist UI |
 | **Less Storage** | Lightweight Manager |
@@ -27,14 +27,14 @@
 | **Key Details** | **More Informations** |
   | :-------------: | ------------- |
 | **How It Works** | Depending on what variant or version the user wants to install, the manager will directly fetch that selected url data. Once completed, the selected file can be installed. All links are available publicly.</br></br>IF, you know what it means then you know what it is. |
-| **About The Project** | The successor from our previous manager app that was released way back 2020 developed by xC3FFF0E and with the help of Sherlock Holmes.</br></br>We decided to create an app where people can easily manage and install all versions of the music streaming app from their devices.</br></br>Our aim is to make a simple yet useful manager app for everyone's convenience. On this second version of the manager app, we added a couple of features such as the ability to uninstall, open the app's settings directly, clear the offline cached datas and launch the app. We hope that all users find these newly added features very useful. |
+| **About The Project** | The successor from our previous manager app that was released way back in 2020 developed by xC3FFF0E and with the help of Sherlock Holmes.</br></br>We decided to create an app where people can easily manage and install all versions of the music streaming app from their devices.</br></br>We aim to make a simple yet useful manager app for everyone's convenience. On this second version of the manager app, we added a couple of features such as the ability to uninstall, open the app's settings directly, clear the offline cached data, and launch the app. We hope that all users find these newly added features very useful. |
 
 ---
 
 | **Databases** | **Shutdown Date** | **More Informations** |
 | :-------------: | :-------------: | ------------- |
-| **Legacy** | 04/01/22 | Legacy databases are now officially shutdown. Update to the latest version of xManager (v3.2) to continue using the app. These are the databases used by our old manager up until xManager v1-v3.1.</br></br>Those databases are very old and deprecated at the same time. That is why we decided to take them down. |
-| **Origins** | 02/24/23 | Origins databases are now officially shutdown. Update to the latest version of xManager (v4.5) to continue using the app.</br></br>These are the databases used by our old manager up until xManager v3.4-v4.4. |
+| **Legacy** | 04/01/22 | Legacy databases are now officially shut down. Update to the latest version of xManager (v3.2) to continue using the app. These are the databases used by our old manager up until xManager v1-v3.1.</br></br>These databases are very old and deprecated at the same time. That is why we decided to take them down. |
+| **Origins** | 02/24/23 | Origins databases are now officially shut down. Update to the latest version of xManager (v4.5) to continue using the app.</br></br>These are the databases used by our old manager up until xManager v3.4-v4.4. |
 
 ---
 
@@ -49,13 +49,12 @@
 
 | Important Notes |
 | ------------- |
-| xManager was created using [Sketchware Pro](https://github.com/Sketchware-Pro/Sketchware-Pro) for android.  
+| xManager was created using [Sketchware Pro](https://github.com/Sketchware-Pro/Sketchware-Pro) for Android.  
 xManager uses [Sketch2Any](https://play.google.com/store/apps/details?id=com.sketch2any) to convert the project to Android Studio.  
-xManager only uses Firebase Database as its API.  
-No trackers, no spywares, no keyloggers or any other malicious codes added in the source code. What you see in the source code is what's inside the build apk. You can extract the apk for yourself.  
+**No trackers, no spyware, no keyloggers, or any other malicious codes** are added to the source code. What you see in the source code is what's inside the build app. You can extract the app for yourself.  
 The source code that can be seen here is what's inside the exported zip file for Android Studio.  
-There are some instance of the source code that are unbuildable, some parts might be missing and such due to limitations.   
-Users might experience downtime and maintenance when using the manager app since we are manually changing the hosting links of each individual file from time to time. 
+There are some instances that the source code is unbuildable. Some parts might be missing and such due to limitations.   
+Users might experience downtime and maintenance when using the manager app since we are manually changing the hosting links of each file from time to time. 
 xManager is completely free and we do not get any commissions from it **(Rewarded Ads are optional and can be disabled in the settings)**.  
 We will support the app as long as we can. Internal improvements may not be guaranteed. |
 
