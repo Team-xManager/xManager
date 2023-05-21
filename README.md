@@ -10,7 +10,8 @@
 | :-------------: | :-------------: |
 | **Download Milestone** | **<img src="https://img.shields.io/github/downloads/xManager-App/xManager/total?label=OMNIBUS%20(ACTIVE)&style=for-the-badge"></br><img src="https://img.shields.io/badge/ORIGINS%20(SHUTDOWN)-1.1M-red.svg?style=for-the-badge"></br><img src="https://img.shields.io/badge/LEGACY%20(SHUTDOWN)-400K-red.svg?style=for-the-badge">** |
 | **Miscellaneous** | **<a href="https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones"><img src="https://img.shields.io/badge/Roadmaps%20&%20Changelogs-Click%20Here-white.svg?style=for-the-badge"/></br><a href="https://www.virustotal.com/gui/file/994ea1d7b7cea1ab7f9ffb18b24ea8f58cd9d511ac8c5dc967d47207c55fa891/detection"><img src="https://img.shields.io/badge/VirusTotal-Click%20Here-white.svg?style=for-the-badge"/>** |
-  | **Donation/Sponsor** | **[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I3I0IPJ3W)** |
+| **Trust Seal** | **<a href="https://monitor2025.sucuri.net/m/verify/?r=ccceaab79b44b4835a6a85d916bf5613b9c98436db"><img src="https://i.ibb.co/vLvdNCR/trustseal.gif"/>** |
+| **Donation/Sponsor** | **[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I3I0IPJ3W)** |
 
 ---
   
