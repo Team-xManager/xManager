@@ -12,7 +12,7 @@ android {
 		minSdkVersion 21
 		targetSdkVersion 29
 		versionCode 210209
-		versionName "4.9"
+		versionName "5.0"
 	}
 	
 	buildTypes {
