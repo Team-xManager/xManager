@@ -1295,7 +1295,7 @@
 				android:layout_marginLeft="10dp"
 				android:layout_marginTop="10dp"
 				android:layout_marginRight="10dp"
-				android:padding="8dp"
+				android:padding="7dp"
 				android:background="#424242"
 				android:orientation="vertical">
 				<TextView
@@ -1350,7 +1350,7 @@
 				android:layout_marginLeft="10dp"
 				android:layout_marginTop="10dp"
 				android:layout_marginRight="10dp"
-				android:padding="8dp"
+				android:padding="7dp"
 				android:background="#424242"
 				android:orientation="vertical">
 				<TextView
@@ -1371,7 +1371,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
-					android:text="jetfire\nmeech\nRishavG\nSherlock Holmes\njuznem\nCivaaBTW (Discord Helper)\nDominik (Discord Helper)\nmilindgoel15 (Reddit Moderator) [r/Vanced]\nstiles_stillinski (Reddit Moderator) [r/ApksApps]"
+					android:text="jetfire\nmeech\nRishavG\nSherlock Holmes\njuznem\nCivaaBTW (Discord Helper)\nDominik (Discord Helper)\nParadox (Discord Helper)\nmilindgoel15 (Reddit Moderator) [r/Vanced]\nstiles_stillinski (Reddit Moderator) [r/ApksApps]"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -1383,7 +1383,7 @@
 				android:layout_marginLeft="10dp"
 				android:layout_marginTop="10dp"
 				android:layout_marginRight="10dp"
-				android:padding="8dp"
+				android:padding="7dp"
 				android:background="#424242"
 				android:orientation="vertical">
 				<TextView
@@ -1438,7 +1438,7 @@
 				android:layout_marginLeft="10dp"
 				android:layout_marginTop="10dp"
 				android:layout_marginRight="10dp"
-				android:padding="8dp"
+				android:padding="7dp"
 				android:background="#424242"
 				android:orientation="vertical">
 				<TextView
@@ -1471,7 +1471,7 @@
 				android:layout_marginLeft="10dp"
 				android:layout_marginTop="10dp"
 				android:layout_marginRight="10dp"
-				android:padding="8dp"
+				android:padding="7dp"
 				android:background="#424242"
 				android:orientation="vertical">
 				<TextView
@@ -1504,7 +1504,7 @@
 				android:layout_marginLeft="10dp"
 				android:layout_marginTop="10dp"
 				android:layout_marginRight="10dp"
-				android:padding="8dp"
+				android:padding="7dp"
 				android:background="#424242"
 				android:orientation="vertical">
 				<TextView
@@ -1547,7 +1547,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="5dp"
-					android:text="0V3R5!9H7"
+					android:text="0V3R5!9H7 | ssabit"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -2307,7 +2307,7 @@
 				android:layout_marginLeft="10dp"
 				android:layout_marginTop="10dp"
 				android:layout_marginRight="10dp"
-				android:padding="8dp"
+				android:padding="7dp"
 				android:background="#424242"
 				android:orientation="vertical">
 				<TextView
@@ -2375,7 +2375,7 @@
 					android:layout_marginLeft="10dp"
 					android:layout_marginTop="20dp"
 					android:layout_marginRight="10dp"
-					android:padding="10dp"
+					android:padding="7dp"
 					android:background="#212121"
 					android:orientation="vertical"
 					android:animateLayoutChanges="true">
@@ -2557,7 +2557,7 @@
 					android:layout_marginLeft="10dp"
 					android:layout_marginTop="10dp"
 					android:layout_marginRight="10dp"
-					android:padding="10dp"
+					android:padding="7dp"
 					android:background="#212121"
 					android:orientation="vertical"
 					android:animateLayoutChanges="true">
@@ -2738,7 +2738,7 @@
 					android:layout_marginLeft="10dp"
 					android:layout_marginTop="10dp"
 					android:layout_marginRight="10dp"
-					android:padding="10dp"
+					android:padding="7dp"
 					android:background="#212121"
 					android:orientation="vertical"
 					android:animateLayoutChanges="true">
@@ -2873,13 +2873,246 @@
 						android:divider="#171717" />
 				</LinearLayout>
 				<LinearLayout
+					android:id="@+id/main_box_12"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="10dp"
+					android:layout_marginTop="20dp"
+					android:layout_marginRight="10dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:orientation="horizontal"
+					android:layout_gravity="center_horizontal|center_vertical"
+					android:animateLayoutChanges="true">
+					<LinearLayout
+						android:id="@+id/box_separator_6"
+						android:layout_width="wrap_content"
+						android:layout_height="5dp"
+						android:layout_marginLeft="20dp"
+						android:padding="8dp"
+						android:background="#424242"
+						android:orientation="horizontal"
+						android:layout_weight="1" />
+					<LinearLayout
+						android:id="@+id/box_sub_4"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:gravity="center_horizontal|center_vertical"
+						android:orientation="horizontal"
+						android:layout_gravity="center_horizontal|center_vertical"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/title_5"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="EXCLUSIVE PATCHED"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#FFFFFF" />
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_separator_7"
+						android:layout_width="wrap_content"
+						android:layout_height="5dp"
+						android:layout_marginRight="20dp"
+						android:padding="8dp"
+						android:background="#424242"
+						android:orientation="horizontal"
+						android:layout_weight="1" />
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/main_box_7"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="10dp"
+					android:layout_marginTop="10dp"
+					android:layout_marginRight="10dp"
+					android:padding="7dp"
+					android:background="#212121"
+					android:orientation="vertical"
+					android:animateLayoutChanges="true">
+					<LinearLayout
+						android:id="@+id/box_10"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/title_4"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:paddingLeft="10dp"
+							android:paddingTop="8dp"
+							android:paddingRight="8dp"
+							android:paddingBottom="8dp"
+							android:text="WAVE PATCHED"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#63F2F2" />
+						<LinearLayout
+							android:id="@+id/box_4_sub"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:gravity="right|center_vertical"
+							android:orientation="horizontal"
+							android:layout_gravity="right|center_vertical">
+							<TextView
+								android:id="@+id/patched_4"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingRight="8dp"
+								android:gravity="right|center_vertical"
+								android:text="Ad-free, unlimited skips, play on-demand and listen offline"
+								android:textSize="12sp"
+								android:textColor="#FFFFFF"
+								android:layout_gravity="right|center_vertical" />
+						</LinearLayout>
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_11"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/sub_text_4"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:paddingLeft="10dp"
+							android:paddingTop="8dp"
+							android:paddingBottom="8dp"
+							android:text="LATEST"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#BDBDBD" />
+						<LinearLayout
+							android:id="@+id/box_switch_4"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:gravity="right|center_vertical"
+							android:orientation="horizontal">
+							<TextView
+								android:id="@+id/sub_10"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingLeft="3dp"
+								android:paddingTop="8dp"
+								android:paddingRight="8dp"
+								android:paddingBottom="8dp"
+								android:gravity="right|center_vertical"
+								android:text="N/A"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:textColor="#FFFFFF"
+								android:layout_gravity="right|center_vertical" />
+						</LinearLayout>
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_separator_5"
+						android:layout_width="match_parent"
+						android:layout_height="3dp"
+						android:layout_marginLeft="15dp"
+						android:layout_marginRight="15dp"
+						android:padding="8dp"
+						android:background="#616161"
+						android:orientation="horizontal" />
+					<LinearLayout
+						android:id="@+id/box_12"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/versions_4"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:paddingLeft="10dp"
+							android:paddingTop="8dp"
+							android:paddingRight="8dp"
+							android:paddingBottom="8dp"
+							android:text="VERSIONS"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#FFFFFF" />
+						<LinearLayout
+							android:id="@+id/box_sub_8"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:gravity="right|center_vertical"
+							android:orientation="horizontal"
+							android:layout_gravity="right|center_vertical">
+							<ImageView
+								android:id="@+id/version_oc_04"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingLeft="8dp"
+								android:paddingTop="8dp"
+								android:paddingRight="10dp"
+								android:paddingBottom="8dp"
+								android:src="@drawable/close"
+								android:scaleType="center" />
+						</LinearLayout>
+					</LinearLayout>
+					<ListView
+						android:id="@+id/list_items_4"
+						android:layout_width="match_parent"
+						android:layout_height="260dp"
+						android:choiceMode="none"
+						android:nestedScrollingEnabled="true"
+						android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb"
+						android:divider="#171717" />
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/main_box_19"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="10dp"
+					android:layout_marginTop="20dp"
+					android:layout_marginRight="10dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:orientation="horizontal"
+					android:layout_gravity="center_horizontal|center_vertical"
+					android:animateLayoutChanges="true">
+					<LinearLayout
+						android:id="@+id/box_separator_8"
+						android:layout_width="wrap_content"
+						android:layout_height="5dp"
+						android:layout_marginLeft="20dp"
+						android:padding="8dp"
+						android:background="#424242"
+						android:orientation="horizontal"
+						android:layout_weight="1" />
+					<LinearLayout
+						android:id="@+id/box_sub_9"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:gravity="center_horizontal|center_vertical"
+						android:orientation="horizontal"
+						android:layout_gravity="center_horizontal|center_vertical"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/title_6"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="MISCELLANEOUS"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#FFFFFF" />
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_separator_9"
+						android:layout_width="wrap_content"
+						android:layout_height="5dp"
+						android:layout_marginRight="20dp"
+						android:padding="8dp"
+						android:background="#424242"
+						android:orientation="horizontal"
+						android:layout_weight="1" />
+				</LinearLayout>
+				<LinearLayout
 					android:id="@+id/main_box_6"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_marginLeft="10dp"
 					android:layout_marginTop="10dp"
 					android:layout_marginRight="10dp"
-					android:padding="10dp"
+					android:padding="7dp"
 					android:background="#212121"
 					android:orientation="vertical"
 					android:animateLayoutChanges="true">
@@ -2973,6 +3206,32 @@
 								android:textStyle="bold"
 								android:textColor="#FFFFFF"
 								android:layout_gravity="right|center_vertical" />
+							<TextView
+								android:id="@+id/sub_separator_3"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingLeft="3dp"
+								android:paddingTop="8dp"
+								android:paddingRight="3dp"
+								android:paddingBottom="8dp"
+								android:gravity="right|center_vertical"
+								android:text="|"
+								android:textSize="14sp"
+								android:textStyle="bold"
+								android:textColor="#FFFFFF"
+								android:layout_gravity="right|center_vertical" />
+							<TextView
+								android:id="@+id/sub_installed_w"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:paddingTop="8dp"
+								android:paddingBottom="8dp"
+								android:gravity="right|center_vertical"
+								android:text="N/A"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:textColor="#FFFFFF"
+								android:layout_gravity="right|center_vertical" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
@@ -3023,7 +3282,7 @@
 						</LinearLayout>
 					</LinearLayout>
 					<ListView
-						android:id="@+id/list_items_4"
+						android:id="@+id/list_items_5"
 						android:layout_width="match_parent"
 						android:layout_height="260dp"
 						android:dividerHeight="3dp"
@@ -3040,7 +3299,7 @@
 					android:layout_marginLeft="10dp"
 					android:layout_marginTop="10dp"
 					android:layout_marginRight="10dp"
-					android:padding="10dp"
+					android:padding="7dp"
 					android:background="#212121"
 					android:orientation="vertical"
 					android:animateLayoutChanges="true">
