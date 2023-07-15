@@ -9,7 +9,7 @@
 | **Status** | <img src="https://img.shields.io/github/release-date/xManager-App/xManager?label=UPDATED%20SINCE&style=for-the-badge"></br><img src="https://img.shields.io/github/v/tag/xManager-App/xManager?label=LATEST%20VERSION&style=for-the-badge"> |
 | :-------------: | :-------------: |
 | **Download Milestone** | **<img src="https://img.shields.io/github/downloads/xManager-App/xManager/total?label=OMNIBUS%20(ACTIVE)&style=for-the-badge"></br><img src="https://img.shields.io/badge/ORIGINS%20(SHUTDOWN)-1.1M-red.svg?style=for-the-badge"></br><img src="https://img.shields.io/badge/LEGACY%20(SHUTDOWN)-400K-red.svg?style=for-the-badge">** |
-| **Miscellaneous** | **<a href="https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones"><img src="https://img.shields.io/badge/Roadmaps%20&%20Changelogs-Click%20Here-white.svg?style=for-the-badge"/></br><a href="https://www.virustotal.com/gui/file/994ea1d7b7cea1ab7f9ffb18b24ea8f58cd9d511ac8c5dc967d47207c55fa891/detection"><img src="https://img.shields.io/badge/VirusTotal%20Analysis-Click%20Here-blue.svg?style=for-the-badge"/>** |
+| **Miscellaneous** | **<a href="https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones"><img src="https://img.shields.io/badge/Roadmaps%20&%20Changelogs-Click%20Here-white.svg?style=for-the-badge"/></br><a href="https://www.virustotal.com/gui/file/05ec45735db9d58d3991941cff56d25ba6ae26dd300b2c1250aca093e68843d1/detection"><img src="https://img.shields.io/badge/VirusTotal%20Analysis-Click%20Here-blue.svg?style=for-the-badge"/>** |
 | **Trust Seal** | **<a href="https://monitor2025.sucuri.net/m/verify/?r=ccceaab79b44b4835a6a85d916bf5613b9c98436db"><img src="https://i.ibb.co/vLvdNCR/trustseal.gif"/>** |
 | **Donation/Sponsor** | **[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I3I0IPJ3W)** |
 
@@ -73,7 +73,7 @@ We will support the app as long as we can. Internal improvements may not be guar
 | **Manager Translators** | **Names/Alias** |
 | ------------- | ------------- |
 | **Arabic Translation** | Yazan Kasem |
-| **Bengali Translation** | 0V3R5!9H7 |
+| **Bengali Translation** | 0V3R5!9H7 \| ssabit |
 | **Chinese - Simplified Translation** | Gent G \| Softland99 \| zelixdxin |
 | **French Translation** | The Punisher \| Luxchar \| xerta555 \| GlThibault |
 | **Greek Translation** | Walter's Cousin #CAF |
