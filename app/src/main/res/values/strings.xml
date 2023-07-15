@@ -86,88 +86,89 @@
     
     <!--BENGALI LANGUAGE-->
     <string name="app_name_01" translatable="true">xManager</string>
-    <string name="installed_01" translatable="true">ইনস্টলড</string>
+    <string name="installed_01" translatable="true">ইনস্টল করা হয়েছে</string>
     <string name="latest_01" translatable="true">সর্বশেষ</string>
-    <string name="versions_01" translatable="true">সংস্করণ সমুহ   </string>
+    <string name="versions_01" translatable="true">সংস্করণসমূহ   </string>
     <string name="changelogs_01" translatable="true">পরিবর্তন সমুহ</string>
-    <string name="manager_tools_01" translatable="true">MANAGER টুলস</string>
+    <string name="manager_tools_01" translatable="true">ম্যানেজার টুলস</string>
     <string name="source_01" translatable="true">উৎস</string>
-    <string name="support_01" translatable="true">আরো জানুন</string>
-    <string name="donate_01" translatable="true">দান করুন</string>
-    <string name="discord_01" translatable="true">ডিস্ক (ম)</string>
+    <string name="support_01" translatable="true">টেলিগ্রাম</string>
+    <string name="donate_01" translatable="true">সমর্থন করুন</string>
+    <string name="discord_01" translatable="true">ডিসকর্ড</string>
     <string name="about_01" translatable="true">আমাদের সম্পর্কে দেখুন</string>
     <string name="main_title_01" translatable="true">xManager</string>
     <string name="settings_title_01" translatable="true">সেটিংস</string>
     <string name="about_title_01" translatable="true">টাইটেল সম্পর্কে দেখুন</string>
     <string name="list_auto_refresh_01" translatable="true">স্বয়ংক্রিয়ভাবে তালিকাভুক্ত করুন</string>
-    <string name="list_auto_refresh_desc_01" translatable="true">এটি চালু করা হলে আপনি অ্যাপ্লিকেশনটি প্রতিবার চালু করার সাথে সাথে তালিকাটিকে স্বয়ংক্রিয়ভাবে রিফ্রেশ হবে। আপনি মূল পেজটি নীচের দিকে টেনে এনে ম্যানুয়ালি তালিকাটি রিফ্রেশ করতে পারেন।</string>
-    <string name="force_auto_install_01" translatable="true">স্বয়ং-ইনস্টল করুন</string>
-    <string name="force_auto_install_desc_01" translatable="true">এটি চালু থাকলে স্বয়ংক্রিয়ভাবে পরিবর্তিত অ্যাপ্লিকেশনটি ইনস্টল করাহবে এবং একবার ডাউনলোড হয়ে গেলে আপনাআপনি আপডেট হবে।</string>
-    <string name="show_themes_01" translatable="true">থিম গুল দেখুন</string>
-    <string name="apk_location_01" translatable="true">APK ফাইল লোকেশন</string>
-    <string name="apk_location_desc_01" translatable="true">ফাইল ডিরেক্টরি: যেখানে ডাউনলোড করা apk সংরক্ষণ করতে চান। কীভাবে এটা কনফিগার করতে হয় সেটা জানা না থাকলে এটি যেমন রয়েছে সেভাবেই রাখুন।</string>
+    <string name="list_auto_refresh_desc_01" translatable="true">এটি চালু করা হলে আপনি অ্যাপ্লিকেশনটি প্রতিবার চালু করার সাথে সাথে তালিকাটি স্বয়ংক্রিয়ভাবে রিফ্রেশ হবে। আপনি মূল পেজটি নীচের দিকে টেনে ধরে ম্যানুয়ালি তালিকাটি রিফ্রেশ করতে পারেন।</string>
+    <string name="force_auto_install_01" translatable="true">জোরপূর্বক স্বয়ংক্রিয় ইনস্টল করুন</string>
+    <string name="force_auto_install_desc_01" translatable="true">এটি চালু করলে স্বয়ংক্রিয়ভাবে প্যাচ করা অ্যাপ্লিকেশনটি ইনস্টল এবং আপডেট হবে।</string>
+    <string name="show_themes_01" translatable="true">থিমসমূহ দেখুন</string>
+    <string name="apk_location_01" translatable="true">APK ফাইলের অবস্থান </string>
+    <string name="apk_location_desc_01" translatable="true">আপনি ডাউনলোড করা ফাইল, কোথায় সংরক্ষণ করতে চান সেই ডিরেক্টরিটি সিলেক্ট করুন। যদি আপনি কীভাবে কনফিগার করতে হয় তা না জানেন, তবে এটি এভাবেই রাখুন।\n\nনোট: এই বৈশিষ্ট্যটি সহজলভ্যতা, অনুমতি এবং সংরক্ষণের সীমাবদ্ধতা জনিত কারণে, বাহ্যিক স্টোরেজ (এসডি কার্ড) সমর্থন করে না।</string>
     <string name="clear_directory_folders_01" translatable="true">ডিরেক্টরি ফোল্ডার পরিষ্কার করুন</string>
     <string name="clear_directory_folders_desc_01" translatable="true">ডাউনলোড করা অ্যাপস এবং আপডেটগুলি সহ সমস্ত ডিরেক্টরি ফোল্ডার মুছুন।</string>
     <string name="reset_preferences_01" translatable="true">সেটিংস রিসেট করুন</string>
-    <string name="about_sub_01" translatable="true">No Ads | New Features | Freedom</string>
-    <string name="xmanager_dev_01" translatable="true">xManager ডেভ</string>
-    <string name="patched_devs_01" translatable="true">Spotify Mod ডেভ</string>
-    <string name="support_team_01" translatable="true">টেলিগ্রাম সমর্থন দল</string>
-    <string name="manager_testers_01" translatable="true">Mod/Manager পরীক্ষকগণ</string>
-    <string name="manager_hosting_01" translatable="true">Manager Hosting লিংক গুল</string>
-    <string name="mobilism_team_01" translatable="true">Mobilism টিম</string>
-    <string name="forum_team_01" translatable="true">FORUM.APK-RELEASE.NET টিম</string>
-    <string name="contributors_01" translatable="true">সমস্ত অবদানকারীদের ধন্যবাদ! ❤️</string>
-    <string name="download_selected_01" translatable="true">আপনি এই পরিবর্তিত সংস্করণটি নির্বাচন করেছেন। আপনি কি ডাউনলোড করতে চান?</string>
+    <string name="about_sub_01" translatable="true">বিজ্ঞাপন মুক্ত | নতুন বৈশিষ্ট্য | স্বাধীনতা</string>
+    <string name="xmanager_dev_01" translatable="true">xManager ডেভেলপার</string>
+    <string name="patched_devs_01" translatable="true">Spotify Mod ডেভেলপার</string>
+    <string name="support_team_01" translatable="true">টেলিগ্রাম | ডিসকর্ড | রেডিট সমর্থন দল</string>
+    <string name="manager_testers_01" translatable="true">প্যাচড এবং ম্যানেজার পরীক্ষক</string>
+    <string name="manager_hosting_01" translatable="true">ম্যানেজার ডাটাবেস এবং হোস্টিং</string>
+    <string name="mobilism_team_01" translatable="true">Mobilism দল</string>
+    <string name="forum_team_01" translatable="true">FORUM.APK-RELEASE.NET দল</string>
+    <string name="contributors_01" translatable="true">সকল অবদানকারীদের ধন্যবাদ! ❤️</string>
+    <string name="download_selected_01" translatable="true">আপনি এই প্যাচ করা সংস্করণটি নির্বাচন করেছেন। আপনি কি চালিয়ে যেতে চান?</string>
     <string name="download_ready_01" translatable="true">প্যাচ তথ্য</string>
-    <string name="download_ready_desc_01" translatable="true">এই পরিবর্তিত apk ডাউনলোড করা অ্যাপ্লিকেশন ফাইল ডিরেক্টরিতে অবস্থিত পূর্ববর্তী ফাইলটি ওভাররাইট করবে।</string>
+    <string name="download_ready_desc_01" translatable="true">এই প্যাচ করা  Apk, ডিরেক্টরিতে অবস্থিত আগের ডাউনলোড করা অ্যাপ্লিকেশন ফাইলটিকে ওভাররাইট করবে।</string>
     <string name="downloading_file_01" translatable="true">ফাইল ডাউনলোড হচ্ছে </string>
     <string name="download_success_01" translatable="true">সফলভাবে ডাউনলোড হয়েছে</string>
-    <string name="new_update_01" translatable="true">নতুন MANAGER আপডেট</string>
+    <string name="new_update_01" translatable="true">নতুন ম্যানেজার আপডেট</string>
     <string name="continue_1_01" translatable="true">চালিয়ে যান</string>
-    <string name="cancel_01" translatable="true">বাদদিন</string>
+    <string name="cancel_01" translatable="true">বাতিল করুন</string>
     <string name="download_01" translatable="true">ডাউনলোড করুন</string>
     <string name="later_01" translatable="true">পরে</string>
-    <string name="install_now_01" translatable="true">এখন ইন্সটল করুন</string>
-    <string name="install_update_01" translatable="true">ইনস্টল আপডেট</string>
+    <string name="install_now_01" translatable="true">প্যাচ ইনস্টল করুন</string>
+    <string name="install_update_01" translatable="true">আপডেট ইনস্টল করুন</string>
     <string name="go_back_01" translatable="true">ফিরে যান</string>
-    <string name="download_update_01" translatable="true">ডাউনলোড আপডেট</string>
+    <string name="download_update_01" translatable="true">আপডেট ডাউনলোড করুন</string>
     <string name="not_now_01" translatable="true">এখন না</string>
     <string name="mirror_01" translatable="true">মিরর লিঙ্ক</string>
     <string name="lite_01" translatable="true">হালকা</string>
     <string name="experimental_title_01" translatable="true">পরীক্ষামূলক</string>
     <string name="experimental_version_01" translatable="true">পরীক্ষামূলক সংস্করণ</string>
-    <string name="experimental_version_desc_01" translatable="true"> এটি সক্ষম করা আপনাকে প্যাচড অ্যাপ্লিকেশনটির পরীক্ষামূলক সংস্করণটি ডাউনলোড এবং ইনস্টল করার অনুমতি দেয়.এর মধ্যে আলফা, বিটা এবং প্রারম্ভিক অ্যাক্সেসের বৈশিষ্ট্যগুলি অন্তর্ভুক্ত রয়েছে যা স্টক প্যাচডগুলিতে উপলব্ধ নয়৷ উপরন্তু, স্থিতিশীল নিশ্চিত না.</string>
-    <string name="show_support_01" translatable="true">আপনার সাপর্ট টি পাঠান</string>
-    <string name="show_support_desc_01" translatable="true">আমরা একটি অলাভজনক ও অ-কর্পোরেট দল।আমরা যতক্ষণ পারছি এই অ্যাপ্লিকেশনটিকে উপডেট রাখার জন্য যথাসাধ্য চেষ্টা করব।</string>
+    <string name="experimental_version_desc_01" translatable="true"> এটি সক্ষম করলে আপনি প্যাচ সংস্করণের পরীক্ষামূলক সংস্করণ ডাউনলোড এবং ইনস্টল করতে পারবেন।\n\nএটি আলফা, বেটা এবং প্রারম্ভিক অ্যাক্সেস বৈশিষ্ট্যগুলি সংযুক্ত করে, যা স্টক প্যাঁচে পাওয়া যায় না। উত্তম স্থিতিতেও নিশ্চিত নয়।</string>
+    <string name="show_support_01" translatable="true">আপনার সমর্থন দেখান</string>
+    <string name="show_support_desc_01" translatable="true">আমরা একটি অলাভজনক, অ-কর্পোরেট এবং অ-আপসহীন দল। আপনার মতো লোকেরা আমাদেরকে একটি অ্যাপ তৈরি করতে উত্সাহিত করে, বিশেষ করে ডাউনলোড করা থেকে ইনস্টল করা পর্যন্ত অনেক সহজ করে৷\n\nআমরা আমাদের সমস্ত সময় এবং সর্বোত্তম প্রচেষ্টা শুধু জিনিসগুলিকে সঠিক এবং নিখুঁত করার জন্য ব্যয় করছি৷ আমরা যতদিন পারি এই অ্যাপটিকে সমর্থন করার জন্য যথাসাধ্য চেষ্টা করব৷ \n\nযেকোনো পরিমাণ সাহায্য করা হলেও তা খুব মূল্যবান এবং অত্যন্ত প্রশংসিত হবে!</string>
     <string name="maintenance_01" translatable="true">রক্ষণাবেক্ষণ</string>
-    <string name="maintenance_desc_01" translatable="true">এক্স ম্যানেজার এখনই অনুপলব্ধ। দয়া করে পরে আবেদনটি পরীক্ষা করুন।</string>
+    <string name="maintenance_desc_01" translatable="true">xManager বর্তমানে অপ্রাপ্য। দয়া করে পরে আবার চেষ্টা করুন।</string>
     <string name="thanks_01" translatable="true">ধন্যবাদ!</string>
     <string name="language_01" translatable="true">ভাষা</string>
     <string name="website_01" translatable="true">ওয়েবসাইট</string>
-    <string name="reddit_01" translatable="true">REDDIT</string>
-    <string name="faq_01" translatable="true">যে কোন প্রশ্নের জন্য</string>
+    <string name="reddit_01" translatable="true">রেডিট</string>
+    <string name="faq_01" translatable="true">অনবরত জিজ্ঞাসিত প্রশ্ন</string>
     <string name="cloned_version_01" translatable="true">ক্লোনড সংস্করণ</string>
-    <string name="cloned_version_desc_01" translatable="true">এটি সক্রিয় করা আপনাকে প্যাচড অ্যাপ্লিকেশনটির ক্লোন করা সংস্করণটি ডাউনলোড এবং ইনস্টল করার অনুমতি দেয়আপনি একটি প্রাক ইনস্টল স্পটিফাই অ্যাপ্লিকেশন আছে, বিশেষ করে যদি এই ইনস্টলেশন ত্রুটি বা সমস্যার অধিকাংশ সমাধান হবে.</string>
+    <string name="cloned_version_desc_01" translatable="true">এটি চালু করলে,আপনি প্যাচড অ্যাপ্লিকেশনের ক্লোন সংস্করণ ডাউনলোড এবং ইনস্টল করার অনুমতি দিলেন\n\nএটি ইনস্টলেশনের ত্রুটি বা সমস্যাগুলির সমাধান করবে, বিশেষত যদি আপনার প্রি-ইনস্টলকৃত স্পটিফাই অ্যাপ্লিকেশন থাকে।</string>
     <string name="disable_rewarded_ads_01" translatable="true">পুরস্কৃত বিজ্ঞাপনগুলি অক্ষম করুন</string>
-    <string name="disable_rewarded_ads_desc_01" translatable="true">আমরা আমাদের অধিকাংশ বিজ্ঞাপন পছন্দ করেন না জানি কিন্তু আমাদের ক্ষেত্রে, এই উল্লেখযোগ্যভাবে আমাদের ডাটাবেস তহবিল আমাদের সাহায্য, হোস্টিং লিঙ্ক, আপডেট, আরো প্যাচ, এবং দৈনন্দিন চাহিদা.এই দান বা কিছু খরচ ছাড়া আমাদের সমর্থন সহজ উপায়.</string>
+    <string name="disable_rewarded_ads_desc_01" translatable="true">আমরা জানি যে অনেকেই বিজ্ঞাপন পছন্দ করেন না কিন্তু আমাদের ক্ষেত্রে, এটি আমাদের ডাটাবেস, হোস্টিং লিঙ্ক, আপডেট, আরও প্যাচ এবং প্রতিদিনের প্রয়োজনে অর্থায়নে উল্লেখযোগ্যভাবে সাহায্য করে।\n\nএটি অনুদান বা কোনও খরচ ছাড়াই আমাদের সমর্থন করতে সবচেয়ে সহজ উপায়।</string>
     <string name="installation_failed_01" translatable="true">ইনস্টলেশন ব্যর্থ হয়েছে</string>
-    <string name="installation_failed_desc_01" translatable="true">কারণ: আপনি বর্তমানে ইনস্টল করা হয় কি কম একটি গেলিক সংস্করণ ইনস্টল করার চেষ্টা.সমাধান: একটি সংস্করণ সমান বা তার চেয়ে অনেক বেশী নির্বাচন করুন.বর্তমান সংস্করণ আনইনস্টল, তারপর ডাউনগ্রেড.সমস্যা জিদ, অনবরত জিজ্ঞাসিত প্রশ্ন চেক.</string>
-    <string name="installation_failed_spap_desc_01" translatable="true">কারণ: এই ডিভাইসে ইনস্টল করা বর্তমান স্পটিফাই সরাসরি এক্সম্যানেজার বা আমাদের দল থেকে আসে নিসমাধান: অ্যাপ্লিকেশনটির বর্তমান সংস্করণ আনইনস্টল করুন, এক্সম্যানেজার পুনরায় চালু করুন এবং আবার চেষ্টা করুন সমস্যা জিদ যদি, অনবরত জিজ্ঞাসিত প্রশ্ন চেক.</string>
-    <string name="installation_failed_cloned_desc_01" translatable="true">কারণ: এই ডিভাইসে ইনস্টল করা বর্তমান ক্লোনড সরাসরি এক্সম্যানেজার থেকে বা আমাদের দল থেকে আসে নিসমাধান: অ্যাপ্লিকেশনটির বর্তমান সংস্করণ আনইনস্টল করুন, এক্সম্যানেজার পুনরায় চালু করুন এবং আবার চেষ্টা করুন সমস্যা জিদ যদি, অনবরত জিজ্ঞাসিত প্রশ্ন চেক.</string>
+    <string name="installation_failed_desc_01" translatable="true">কারণ: আপনি বর্তমানে যেটি ইনস্টল করা আছে, তার চেয়ে কম প্যাচ করা সংস্করণ ইনস্টল করার চেষ্টা করেছেন৷\n\nসমাধান:\nA. এর সমান বা বড় সংস্করণ নির্বাচন করুন।\nB. বর্তমান সংস্করণ আনইনস্টল করুন, তারপর ডাউনগ্রেড করুন।\n\nযদি সমস্যাটি থেকে যায়, অনবরত জিজ্ঞাসিত প্রশ্ন দেখুন।</string>
+    <string name="installation_failed_spap_desc_01" translatable="true">কারণ: এই ডিভাইসে ইনস্টল করা বর্তমান প্যাচ সরাসরি xManager বা আমাদের দলের কাছ থেকে আসেনি।\n\nসমাধান: অ্যাপ্লিকেশনটির বর্তমান সংস্করণ আনইনস্টল করুন, xManager পুনরায় চালু করুন এবং আবার চেষ্টা করুন। যদি সমস্যাটি থেকে যায়,তাহলে অনবরত জিজ্ঞাসিত প্রশ্ন দেখুন।</string>
+
+    <string name="installation_failed_cloned_desc_01" translatable="true">কারণ: এই ডিভাইসে ইনস্টল করা বর্তমান ক্লোন সরাসরি xManager বা আমাদের দলের কাছ থেকে আসেনি।\n\nসমাধান: অ্যাপ্লিকেশনটির বর্তমান সংস্করণ আনইনস্টল করুন, xManager পুনরায় চালু করুন এবং আবার চেষ্টা করুন। যদি সমস্যাটি থেকে যায়, তাহলে অনবরত জিজ্ঞাসিত প্রশ্ন দেখুন।</string>
     <string name="existing_patched_01" translatable="true">বিদ্যমান প্যাচড</string>
-    <string name="existing_patched_desc_01" translatable="true">ডিরেক্টরি এক পাওয়া একটি বিদ্যমান প্যাচ ফাইল. আপনি কোন পদক্ষেপ করতে চান?</string>
-    <string name="close_01" translatable="true">বন্ধ</string>
+    <string name="existing_patched_desc_01" translatable="true">বাহ্যিক ডিরেক্টরিতে একটি বিদ্যমান প্যাচ সনাক্ত করা হয়েছে। আপনি কি করতে চান?</string>
+    <string name="close_01" translatable="true">বন্ধ করুন</string>
     <string name="cloned_01" translatable="true">ক্লোনড</string>
-    <string name="spap_01" translatable="true">আরই / এএম</string>
+    <string name="spap_01" translatable="true">SP/AP</string>
     <string name="install_01" translatable="true">ইনস্টল করুন</string>
     <string name="uninstall_01" translatable="true">আনইনস্টল করুন</string>
     <string name="ignore_01" translatable="true">উপেক্ষা করা হবে</string>
     <string name="delete_01" translatable="true">মুছে ফেলুন</string>
     <string name="uninstall_patched_01" translatable="true">প্যাচড আনইনস্টল করুন</string>
-    <string name="open_settings_01" translatable="true">ওপেন সেটিংস</string>
+    <string name="open_settings_01" translatable="true">সেটিংস খুলুন</string>
     <string name="open_patched_01" translatable="true">প্যাচড খুলুন</string>
-    <string name="reboot_01" translatable="true">রিফেচ এবং রিবুট করুন</string>
+    <string name="reboot_01" translatable="true">পুনরায় লোড করুন এবং পুনরায় চালু করুন</string>
     
     <!--CHINESE (SIMPLIFIED) LANGUAGE-->
     <string name="app_name_02" translatable="true">xManager</string>
