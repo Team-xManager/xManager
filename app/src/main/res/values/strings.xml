@@ -3063,4 +3063,89 @@
     <string name="open_settings_35" translatable="true">BEÁLLÍTÁSOK MEGNYITÁSA</string>
     <string name="open_patched_35" translatable="true">A PATCHELT ALKALMAZÁS MEGNYITÁSA</string>
     <string name="reboot_35" translatable="true">ÚJRAFETCHELÉS ÉS AZ ALKALMAZÁS ÚJRAINDÍTÁSA</string>
+
+    <!--TAMIL LANGUAGE-->
+    <string name="app_name" translatable="true">xManager</string>
+    <string name="installed" translatable="true">நிறுவப்பட்டது</string>
+    <string name="latest" translatable="true">புதிதான</string>
+    <string name="versions" translatable="true">பதிப்புகள்</string>
+    <string name="changelogs" translatable="true">மாற்றப்பட்ட பதிவுகள்</string>
+    <string name="manager_tools" translatable="true">மேலாளர் கருவிகள்</string>
+    <string name="source" translatable="true">ஆதாரம்</string>
+    <string name="support" translatable="true">டெலிகிராம்</string>
+    <string name="donate" translatable="true">ஆதரவு</string>
+    <string name="discord" translatable="true">டிஸ்கார்ட்</string>
+    <string name="about" translatable="true">பற்றி</string>
+    <string name="main_title" translatable="true">xManager</string>
+    <string name="settings_title" translatable="true">அமைப்புகள்</string>
+    <string name="about_title" translatable="true">பற்றி</string>
+    <string name="list_auto_refresh" translatable="true">தானாக புதுப்பித்தல் பட்டியல்</string>
+    <string name="list_auto_refresh_desc" translatable="true">இதை இயக்குவது ஒவ்வொரு முறையும் நீங்கள் பயன்பாட்டைத் தொடங்கும் போது தானாகவே பட்டியலைப் புதுப்பிக்கும்.\n\nதிரையை கீழ்நோக்கி இழுப்பதன் மூலம் பட்டியலை புதுப்பிக்கலாம்.</string>
+    <string name="force_auto_install" translatable="true">கட்டாயமாக தானாக நிறுவவும்</string>
+    <string name="force_auto_install_desc" translatable="true">இதை இயக்கினால், பேட்ச் செய்யப்பட்ட ஆப்ஸ் தானாகவே நிறுவப்பட்டு, பதிவிறக்கம் செய்யப்பட்டவுடன் புதுப்பிக்கப்படும்.</string>
+    <string name="show_themes" translatable="true">தீம்கள்</string>
+    <string name="apk_location" translatable="true">APK இடம்</string>
+    <string name="apk_location_desc" translatable="true">பதிவிறக்கம் செய்யப்பட்ட கோப்பின் நகலை நீங்கள் சேமிக்க விரும்பும் அடைவு. இந்த அம்சத்தை எவ்வாறு கட்டமைப்பது என்று உங்களுக்குத் தெரியாவிட்டால், இதை அப்படியே விடவும்.\n\nகுறிப்பு: அணுகல்தன்மை, அனுமதிகள் மற்றும் சேமிப்பக வரம்புகள் காரணமாக இந்த அம்சம் வெளிப்புற சேமிப்பகத்தை (எஸ்டி கார்டு) ஆதரிக்காது.</string>
+    <string name="clear_directory_folders" translatable="true">கோப்புறையை அழிக்கவும்</string>
+    <string name="clear_directory_folders_desc" translatable="true">அடைவு கோப்புறையை நீக்க தட்டவும். பதிவிறக்கம் செய்யப்பட்ட கோப்புகள் மற்றும் புதுப்பிப்புகள் இதில் அடங்கும்.</string>
+    <string name="reset_preferences" translatable="true">விருப்பங்களை மீட்டமைக்கவும்</string>
+    <string name="about_sub" translatable="true">விளம்பரம் இல்லாத | புதிய அம்சங்கள் | சுதந்திரம்</string>
+    <string name="xmanager_dev" translatable="true">xManager டெவலப்பர்</string>
+    <string name="patched_devs" translatable="true">பேட்ச் டெவலப்பர்கள்</string>
+    <string name="support_team" translatable="true">தந்தி | கருத்து வேறுபாடு | ரெட்டிட் ஆதரவு குழு</string>
+    <string name="manager_testers" translatable="true">இணைக்கப்பட்ட மற்றும் மேலாளர் சோதனையாளர்கள்</string>
+    <string name="manager_hosting" translatable="true">மேலாளர் தரவுத்தளம் மற்றும் ஹோஸ்டிங்ஸ்</string>
+    <string name="mobilism_team" translatable="true">மொபிலிசம் குழு</string>
+    <string name="forum_team" translatable="true">FORUM.APK-RELEASE.NET குழு</string>
+    <string name="contributors" translatable="true">அனைத்து பங்களிப்பாளர்களுக்கும் நன்றி! ❤️</string>
+    <string name="download_selected" translatable="true">இந்த இணைக்கப்பட்ட பதிப்பைத் தேர்ந்தெடுத்துள்ளீர்கள். தொடர வேண்டுமா?</string>
+    <string name="download_ready" translatable="true">இணைக்கப்பட்ட தகவல்</string>
+    <string name="download_ready_desc" translatable="true">இந்த பேட்ச் ஆனது வெளிப்புற கோப்பகத்தில் உள்ள முந்தைய கோப்பை மேலெழுதும். எச்சரிக்கையுடன் தொடரவும்.</string>
+    <string name="downloading_file" translatable="true">கோப்பைப் பதிவிறக்குகிறது</string>
+    <string name="download_success" translatable="true">வெற்றிகரமாக பதிவிறக்கம் செய்யப்பட்டது</string>
+    <string name="new_update" translatable="true">புதிய மேலாளர் புதுப்பிப்பு</string>
+    <string name="continue_1" translatable="true">தொடரவும்</string>
+    <string name="cancel" translatable="true">ரத்துசெய்</string>
+    <string name="download" translatable="true">பதிவிறக்கம்</string>
+    <string name="later" translatable="true">பின்னர்</string>
+    <string name="install_now" translatable="true">பேட்ச் செய்யப்பட்டதை நிறுவவும்</string>
+    <string name="install_update" translatable="true">புதுப்பிப்பை நிறுவவும்</string>
+    <string name="go_back" translatable="true">பின்னே செல்</string>
+    <string name="download_update" translatable="true">புதுப்பிப்பைப் பதிவிறக்கவும்</string>
+    <string name="not_now" translatable="true">இப்போது இல்லை</string>
+    <string name="mirror" translatable="true">இதர இணைப்பு</string>
+    <string name="lite" translatable="true">லைட்</string>
+    <string name="experimental_title" translatable="true">பரிசோதனை</string>
+    <string name="experimental_version" translatable="true">பரிசோதனை பதிப்பு</string>
+    <string name="experimental_version_desc" translatable="true">இதை இயக்கினால், பேட்ச் செய்யப்பட்ட பயன்பாட்டின் சோதனைப் பதிப்பைப் பதிவிறக்கி நிறுவ முடியும்.\n\nஇதில் ஆல்பா, பீட்டா மற்றும் ஆரம்ப அணுகல் அம்சங்கள் உள்ளன, அவை பேட்ச் செய்யப்பட்ட ஸ்டாக்கில் இல்லை. கூடுதலாக, நிலையான உத்தரவாதம் இல்லை.</string>
+    <string name="show_support" translatable="true">உங்கள் ஆதரவைக் காட்டு</string>
+    <string name="show_support_desc" translatable="true">நாங்கள் ஒரு இலாப நோக்கற்ற, பெருநிறுவன மற்றும் சமரசம் செய்யாத அணி. உங்களைப் போன்றவர்கள், குறிப்பாகப் பதிவிறக்குவது முதல் நிறுவுவது வரை விஷயங்களை மிகவும் எளிதாக்குவதற்கு ஒரு பயன்பாட்டை உருவாக்குமாறு எங்களை ஊக்குவிக்கிறார்கள்.\n\nவிஷயங்களைச் சரியாகவும் சிறப்பாகவும் செய்ய எங்களின் முழு நேரத்தையும் சிறந்த முயற்சியையும் செலவிடுகிறோம். எங்களால் முடிந்தவரை இந்த ஆப்ஸை ஆதரிக்க எங்களால் முடிந்த அனைத்தையும் செய்வோம்.\n\nஎந்தத் தொகையும் உதவும் மற்றும் மிகவும் பாராட்டப்படும்!</string>
+    <string name="maintenance" translatable="true">பராமரிப்பு</string>
+    <string name="maintenance_desc" translatable="true">xManager தற்போது கிடைக்கவில்லை. பிறகு முயற்சிக்கவும்.</string>
+    <string name="thanks" translatable="true">நன்றி!</string>
+    <string name="language" translatable="true">மொழி</string>
+    <string name="website" translatable="true">இணையதளம்</string>
+    <string name="reddit" translatable="true">ரெட்டிட்</string>
+    <string name="faq" translatable="true">அடிக்கடி கேட்கப்படும் கேள்விகள்</string>
+    <string name="cloned_version" translatable="true">குளோன் செய்யப்பட்ட பதிப்பு</string>
+    <string name="cloned_version_desc" translatable="true">இதை இயக்கினால், பேட்ச் செய்யப்பட்ட பயன்பாட்டின் குளோன் செய்யப்பட்ட பதிப்பைப் பதிவிறக்கி நிறுவ முடியும்.\n\nஇது பெரும்பாலான நிறுவல் பிழைகள் அல்லது சிக்கல்களைத் தீர்க்கும், குறிப்பாக உங்களிடம் முன்பே நிறுவப்பட்ட Spotify பயன்பாடு இருந்தால்.</string>
+    <string name="disable_rewarded_ads" translatable="true">வெகுமதி அளிக்கப்பட்ட விளம்பரங்களை முடக்கு</string>
+    <string name="disable_rewarded_ads_desc" translatable="true">எங்களில் பெரும்பாலோர் விளம்பரங்களை விரும்புவதில்லை என்பதை நாங்கள் அறிவோம், ஆனால் எங்கள் விஷயத்தில், இது எங்கள் தரவுத்தளம், ஹோஸ்டிங் இணைப்புகள், புதுப்பிப்புகள், கூடுதல் பேட்ச்கள் மற்றும் அன்றாட தேவைகளுக்கு நிதியளிக்க கணிசமாக உதவுகிறது.\n\nஇது நன்கொடை அல்லது நன்கொடை இல்லாமல் எங்களுக்கு ஆதரவளிப்பதற்கான எளிய வழி. எதையும் செலவு.</string>
+    <string name="installation_failed" translatable="true">நிறுவல் தோல்வி அடைந்தது</string>
+    <string name="installation_failed_desc" translatable="true">காரணம்: தற்போது நிறுவப்பட்டுள்ளதை விட குறைவான பேட்ச் செய்யப்பட்ட பதிப்பை நிறுவ முயற்சித்தீர்கள்.\n\nதீர்வுகள்:\nA. சமமான அல்லது அதற்கும் அதிகமான பதிப்பைத் தேர்ந்தெடுக்கவும்.\nB. தற்போதைய பதிப்பை நிறுவல் நீக்கி, தரமிறக்கவும்.\n\nசிக்கல் தொடர்ந்தால், அடிக்கடி கேட்கப்படும் கேள்விகளைப் பார்க்கவும்.</string>
+    <string name="installation_failed_spap_desc" translatable="true">காரணம்: இந்தச் சாதனத்தில் நிறுவப்பட்ட தற்போதைய இணைப்பு xManager அல்லது எங்கள் குழுவிடமிருந்து நேரடியாக வரவில்லை.\n\nதீர்வு: பயன்பாட்டின் தற்போதைய பதிப்பை நிறுவல் நீக்கி, xManager ஐ மறுதொடக்கம் செய்து மீண்டும் முயற்சிக்கவும். சிக்கல் தொடர்ந்தால், அடிக்கடி கேட்கப்படும் கேள்விகளைப் பார்க்கவும்.</string>
+    <string name="installation_failed_cloned_desc" translatable="true">காரணம்: இந்தச் சாதனத்தில் நிறுவப்பட்ட தற்போதைய குளோனிங் நேரடியாக xManager இடமிருந்தோ அல்லது எங்கள் குழுவிலிருந்தோ வரவில்லை.\n\nதீர்வு: பயன்பாட்டின் தற்போதைய பதிப்பை நிறுவல் நீக்கி, xManager ஐ மறுதொடக்கம் செய்து மீண்டும் முயற்சிக்கவும். சிக்கல் தொடர்ந்தால், அடிக்கடி கேட்கப்படும் கேள்விகளைப் பார்க்கவும்.</string>
+    <string name="existing_patched" translatable="true">தற்போதுள்ள இணைப்பு</string>
+    <string name="existing_patched_desc" translatable="true">வெளிப்புற கோப்பகத்தில் ஏற்கனவே உள்ள இணைப்பு கண்டறியப்பட்டது. நீங்கள் என்ன செயலைச் செய்ய விரும்புகிறீர்கள்?</string>
+    <string name="close" translatable="true">மூடவும்</string>
+    <string name="cloned" translatable="true">குளோன் செய்யப்பட்டது</string>
+    <string name="spap" translatable="true">SP/AP</string>
+    <string name="install" translatable="true">நிறுவப்பட்ட</string>
+    <string name="uninstall" translatable="true">நிறுவல் நீக்கவும்</string>
+    <string name="ignore" translatable="true">புறக்கணி</string>
+    <string name="delete" translatable="true">அழி</string>
+    <string name="uninstall_patched" translatable="true">இணைப்பு நீக்கப்பட்டது</string>
+    <string name="open_settings" translatable="true">அமைப்புகளைத் திற</string>
+    <string name="open_patched" translatable="true">ஓபன் பேட்ச்</string>
+    <string name="reboot" translatable="true">மீட்டெடுத்து மீண்டும் துவக்கவும்</string>
 </resources>
