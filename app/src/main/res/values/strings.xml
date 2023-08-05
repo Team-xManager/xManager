@@ -3062,4 +3062,89 @@
     <string name="open_settings_35" translatable="true">BEÁLLÍTÁSOK MEGNYITÁSA</string>
     <string name="open_patched_35" translatable="true">A PATCHELT ALKALMAZÁS MEGNYITÁSA</string>
     <string name="reboot_35" translatable="true">ÚJRAFETCHELÉS ÉS AZ ALKALMAZÁS ÚJRAINDÍTÁSA</string>
+
+    <!--NEPALI LANGUAGE-->
+    <string name="app_name_36" translatable="true">xManager</string>
+    <string name="installed_36" translatable="true">स्थापना गरियो</string>
+    <string name="latest_36" translatable="true">नवीनतम</string>
+    <string name="versions_36" translatable="true">संस्करणहरू  </string>
+    <string name="changelogs_36" translatable="true">लगहरू परिवर्तन</string>
+    <string name="manager_tools_36" translatable="true">प्रबन्धक उपकरणहरू</string>
+    <string name="source_36" translatable="true">स्रोत</string>
+    <string name="support_36" translatable="true">टेलिग्राम</string>
+    <string name="donate_36" translatable="true">समर्थन</string>
+    <string name="discord_36" translatable="true">डिस्कोर्ड</string>
+    <string name="about_36" translatable="true">बारेमा</string>
+    <string name="main_title_36" translatable="true">xManager</string>
+    <string name="settings_title_36" translatable="true">सेटिङहरू</string>
+    <string name="about_title_36" translatable="true">बारेमा</string>
+    <string name="list_auto_refresh_36" translatable="true">सूची स्वत: ताजा गर्नुहोस्</string>
+    <string name="list_auto_refresh_desc_36" translatable="true">यसलाई सक्षम गर्नाले प्रत्येक पटक तपाईंले एप सुरु गर्दा सूची स्वतः ताजा हुनेछ।\n\nतपाईंले मुख्य स्क्रिनलाई तल तानेर म्यानुअल रूपमा सूची रिफ्रेस गर्न सक्नुहुन्छ।</string>
+    <string name="force_auto_install_36" translatable="true">बल स्वत: इन्स्टल गर्नुहोस्</string>
+    <string name="force_auto_install_desc_36" translatable="true">यसलाई सक्षम गर्नाले प्याच गरिएको एप्लिकेसन स्वतः इन्स्टल हुनेछ र डाउनलोड भएपछि अद्यावधिक हुनेछ।</string>
+    <string name="show_themes_36" translatable="true">थिमहरू</string>
+    <string name="apk_location_36" translatable="true">APK को स्थान</string>
+    <string name="apk_location_desc_36" translatable="true">डाइरेक्टरी जहाँ तपाईं डाउनलोड गरिएको फाइलको प्रतिलिपि बचत गर्न चाहनुहुन्छ। यदि तपाइँलाई यो सुविधा कसरी कन्फिगर गर्ने थाहा छैन भने, यो जस्तै छोड्नुहोस्।\n\nनोट: पहुँच, अनुमति र भण्डारण सीमितताहरूको कारणले गर्दा यो सुविधाले बाह्य भण्डारण (SD कार्ड) समर्थन गर्दैन।</string>
+    <string name="clear_directory_folders_36" translatable="true">डाइरेक्टरी फोल्डर खाली गर्नुहोस्</string>
+    <string name="clear_directory_folders_desc_36" translatable="true">डाइरेक्टरी फोल्डर मेटाउन ट्याप गर्नुहोस्। यसमा डाउनलोड गरिएका फाइलहरू र अद्यावधिकहरू समावेश छन्।</string>
+    <string name="reset_preferences_36" translatable="true">प्राथमिकताहरू रिसेट गर्नुहोस्</string>
+    <string name="about_sub_36" translatable="true">विज्ञापन-मुक्त | नयाँ सुविधाहरू | स्वतन्त्रता</string>
+    <string name="xmanager_dev_36" translatable="true">xManager विकासकर्ता</string>
+    <string name="patched_devs_36" translatable="true">प्याच गरेका विकासकर्ताहरू</string>
+    <string name="support_team_36" translatable="true">टेलिग्राम | डिस्कोर्ड | रेड्डित समर्थन टोली</string>
+    <string name="manager_testers_36" translatable="true">प्याच र प्रबन्धक परीक्षकहरू</string>
+    <string name="manager_hosting_36" translatable="true">प्रबन्धक डाटाबेस र होस्टिंग</string>
+    <string name="mobilism_team_36" translatable="true">Mobilism Team</string>
+    <string name="forum_team_36" translatable="true">FORUM.APK-RELEASE.NET टोली</string>
+    <string name="contributors_36" translatable="true">सबै योगदानकर्ताहरु लाई धन्यवाद! ❤️</string>
+    <string name="download_selected_36" translatable="true">तपाईंले यो प्याच गरिएको संस्करण चयन गर्नुभयो। के तपाइँ जारी राख्न चाहनुहुन्छ?</string>
+    <string name="download_ready_36" translatable="true">प्याच गरिएको जानकारी</string>
+    <string name="download_ready_desc_36" translatable="true">यो प्याचले बाह्य डाइरेक्टरीमा अवस्थित अघिल्लो फाइल अधिलेखन गर्नेछ। सावधानीपूर्वक अगाडि बढ्नुहोस्।</string>
+    <string name="downloading_file_36" translatable="true">फाइल डाउनलोड गरिँदै</string>
+    <string name="download_success_36" translatable="true">सफलतापूर्वक डाउनलोड गरियो</string>
+    <string name="new_update_36" translatable="true">नयाँ प्रबन्धक अद्यावधिक</string>
+    <string name="continue_1_36" translatable="true">जारी राख्नुहोस्</string>
+    <string name="cancel_36" translatable="true">रद्द गर्नुहोस्</string>
+    <string name="download_36" translatable="true">डाउनलोड गर्नुहोस्</string>
+    <string name="later_36" translatable="true">पछि</string>
+    <string name="install_now_36" translatable="true">प्याच गरिएको इन्स्टल गर्नुहोस्</string>
+    <string name="install_update_36" translatable="true">अद्यावधिक इन्स्टल गर्नुहोस्</string>
+    <string name="go_back_36" translatable="true">पछाडि जानुहोस्</string>
+    <string name="download_update_36" translatable="true">अपडेट डाउनलोड गर्नुहोस्</string>
+    <string name="not_now_36" translatable="true">अहिले होइन</string>
+    <string name="mirror_36" translatable="true">मिरर लिङ्क</string>
+    <string name="lite_36" translatable="true">लाइट</string>
+    <string name="experimental_title_36" translatable="true">प्रयोगात्मक</string>
+    <string name="experimental_version_36" translatable="true">प्रयोगात्मक संस्करण</string>
+    <string name="experimental_version_desc_36" translatable="true">यसलाई सक्षम गर्नाले तपाईंलाई प्याच गरिएको अनुप्रयोगको प्रयोगात्मक संस्करण डाउनलोड र इन्स्टल गर्न अनुमति दिन्छ।\n\nयसमा अल्फा, बिटा र प्रारम्भिक पहुँच सुविधाहरू समावेश छन् जुन स्टक प्याचमा उपलब्ध छैनन्। थप रूपमा, स्थिर ग्यारेन्टी छैन।</string>
+    <string name="show_support_36" translatable="true">आफ्नो समर्थन देखाउनुहोस्</string>
+    <string name="show_support_desc_36" translatable="true">हामी एक गैर-लाभकारी, गैर-कर्पोरेट र गैर-सम्झौता टोली हौं। तपाईं जस्ता मानिसहरूले हामीलाई विशेष गरी डाउनलोडदेखि इन्स्टल गर्नका लागि चीजहरू धेरै सजिलो बनाउनको लागि एउटा एप सिर्जना गर्न प्रोत्साहन दिन्छन्।\n\nहामी चीजहरू सही र सही बनाउनको लागि हाम्रो सबै समय र उत्तम प्रयासहरू खन्याइरहेका छौं। हामी सकेसम्म यो एपलाई समर्थन गर्न सक्दो प्रयास गर्नेछौं।\n\nकुनै पनि रकमले मद्दत गर्नेछ र धेरै सराहना गरिनेछ!</string>
+    <string name="maintenance_36" translatable="true">मर्मतसम्भार</string>
+    <string name="maintenance_desc_36" translatable="true">xManager हाल अनुपलब्ध छ। कृपया पछि पुन: प्रयास गर्नुहोस्।</string>
+    <string name="thanks_36" translatable="true">धन्यवाद!</string>
+    <string name="language_36" translatable="true">भाषा</string>
+    <string name="website_36" translatable="true">वेबसाइट</string>
+    <string name="reddit_36" translatable="true">रेड्डित</string>
+    <string name="faq_36" translatable="true">बारम्बार सोधिने प्रश्नहरू</string>
+    <string name="cloned_version_36" translatable="true">क्लोन गरिएको संस्करण</string>
+    <string name="cloned_version_desc_36" translatable="true">यसलाई सक्षम गर्नाले तपाईंलाई प्याच गरिएको एप्लिकेसनको क्लोन गरिएको संस्करण डाउनलोड र इन्स्टल गर्न अनुमति दिन्छ।\n\nयसले धेरैजसो इन्स्टल त्रुटि वा समस्याहरूलाई पनि समाधान गर्नेछ, विशेष गरी यदि तपाईंसँग पूर्व-स्थापित Spotify अनुप्रयोग छ भने।</string>
+    <string name="disable_rewarded_ads_36" translatable="true">पुरस्कृत विज्ञापनहरू असक्षम पार्नुहोस्</string>
+    <string name="disable_rewarded_ads_desc_36" translatable="true">हामीलाई थाहा छ कि हामी मध्ये धेरैले विज्ञापनहरू मन पराउँदैनन् तर हाम्रो अवस्थामा, यसले हामीलाई हाम्रो डाटाबेस, होस्टिङ लिङ्कहरू, अद्यावधिकहरू, थप प्याचहरू, र दैनिक आवश्यकताहरू पूरा गर्न मद्दत गर्छ।\n\nकुनै पनि दान वा खर्च नगरी हामीलाई सहयोग गर्ने यो सरल तरिका हो ।</string>
+    <string name="installation_failed_36" translatable="true">इन्स्टल असफल भयो</string>
+    <string name="installation_failed_desc_36" translatable="true">कारण: तपाईंले हाल स्थापित भएको भन्दा कम प्याच गरिएको संस्करण इन्स्टल गर्ने प्रयास गर्नुभयो।\n\nसमाधानहरू:\nA. भन्दा बराबर वा माथिको संस्करण चयन गर्नुहोस्।\nB. हालको संस्करणको इन्स्टल रद्द गर्नुहोस्, त्यसपछि डाउनग्रेड गर्नुहोस्।\n\nयदि समस्या रहिरह्यो भने, बारम्बार सोधिने प्रश्नहरू जाँच गर्नुहोस्।</string>
+    <string name="installation_failed_spap_desc_36" translatable="true">कारण: यस यन्त्रमा हालको प्याच गरिएको इन्स्टल सीधा xManager वा हाम्रो टोलीबाट आएको होइन।\n\nसमाधान: अनुप्रयोगको हालको संस्करणको इन्स्टल रद्द गर्नुहोस्, xManager पुन: सुरु गर्नुहोस् र फेरि प्रयास गर्नुहोस्। यदि समस्या रहिरह्यो भने, बारम्बार सोधिने प्रश्नहरू जाँच गर्नुहोस्।</string>
+    <string name="installation_failed_cloned_desc_36" translatable="true">कारण: यस यन्त्रमा हालको क्लोन गरिएको इन्स्टल सीधा xManager वा हाम्रो टोलीबाट आएको होइन।\n\nसमाधान: अनुप्रयोगको हालको संस्करणको इन्स्टल रद्द गर्नुहोस्, xManager पुनः सुरु गर्नुहोस् र फेरि प्रयास गर्नुहोस्। यदि समस्या रहिरह्यो भने, FAQ जाँच गर्नुहोस्।</string>
+    <string name="existing_patched_36" translatable="true">अवस्थित प्याच गरिएको</string>
+    <string name="existing_patched_desc_36" translatable="true">बाहिरी डाइरेक्टरीमा अवस्थित प्याच गरिएको पत्ता लगाइएको छ। तपाईं के कार्य गर्न चाहनुहुन्छ?</string>
+    <string name="close_36" translatable="true">बन्द गर्नुहोस्</string>
+    <string name="cloned_36" translatable="true">क्लोन गरिएको</string>
+    <string name="spap_36" translatable="true">SP/AP</string>
+    <string name="install_36" translatable="true">इन्स्टल गर्नुहोस्</string>
+    <string name="uninstall_36" translatable="true">अनइन्स्टल गर्नुहोस्</string>
+    <string name="ignore_36" translatable="true">बेवास्ता गर्नुहोस्</string>
+    <string name="delete_36" translatable="true">मेटाउन</string>
+    <string name="uninstall_patched_36" translatable="true">अनइन्स्टल प्याच गरियो</string>
+    <string name="open_settings_36" translatable="true">सेटिङ्हरू खोल्नुहोस्</string>
+    <string name="open_patched_36" translatable="true">प्याच गरिएको खोल्नुहोस्</string>
+    <string name="reboot_36" translatable="true">रिफिच र रिबुट गर्नुहोस्</string>
 </resources>
