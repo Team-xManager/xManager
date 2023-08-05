@@ -70,44 +70,45 @@ We will support the app as long as we can. Internal improvements may not be guar
 
 ---
 
-| **Manager Translators** | **Names/Alias** |
-| ------------- | ------------- |
-| **Arabic Translation** | Yazan Kasem |
-| **Bengali Translation** | 0V3R5!9H7 |
-| **Chinese - Simplified Translation** | Gent G \| Softland99 \| zelixdxin |
-| **French Translation** | The Punisher \| Luxchar \| xerta555 \| GlThibault |
-| **Greek Translation** | Walter's Cousin #CAF |
-| **Indonesian Translation** | Mc.J \| Deraidos |
-| **Italian Translation** | Marco \| gdonisi \| albertopasqualetto |
-| **Portuguese - Brazil Translation** | Loui's™ \| Zilberto Junior |
-| **Portuguese - Portugal Translation** | Androide323 |
-| **Romanian Translation** | NACH \| f9branza \| StephenTheMoldovan |
-| **Russian Translation** | Pegioner \| vanja-san |
-| **Slovenian Translation** | MysticX |
-| **Spanish - Spain Translation** | PetFix \| Snapdragon845GMS \| Zkyclad |
-| **Turkish Translation** | Berkay |
-| **Ukrainian Translation** | NIKITA🇺🇦[beryllium] #PocoForEver |
-| **Korean Translation** | Apious \| Annyeong-One |
-| **Dutch Translation** | Kevin |
-| **Vietnamese Translation** | minhtamvn |
-| **German Translation** | smokedzn |
-| **Persian Translation** | ohshahab |
-| **Hebrew Translation** | GreenArmy18 |
-| **Polish Translation** | dearminder |
-| **English Translation** | Dyras |
-| **Slovak Translation** | KaldonM |
-| **Swedish Translation** | rexobo |
-| **Finnish Translation** | AfraidOfTheBigBlack \| Lilko1ra \| KasperiP |
-| **Czech Translation** | rex2630 |
-| **Chinese (Traditional) Translation** | cracky5322 \| TragicLifeHu |
-| **Bulgarian Translation** | meorro \| martinov83 |
-| **Serbian (Cyrillic) Translation** | nexiRS |
-| **Serbian (Latin) Translation** | nexiRS |
-| **Catalan Translation** | tomaquet18 |
-| **Latvian Translation** | ClientSiderz |
-| **German Translation** | 4NDROM3DA |
-| **Sinhala Translation** | Psycho649 |
-| **Hungarian Translation** | gurtnyi |
+| **Manager Translators**               | **Names/Alias**                    |
+|---------------------------------------|------------------------------------|
+| **Arabic Translation**                | Yazan Kasem                        |
+| **Bengali Translation**               | 0V3R5!9H7                          |
+| **Chinese - Simplified Translation**  | Gent G \                           | Softland99 \| zelixdxin |
+| **French Translation**                | The Punisher \                     | Luxchar \| xerta555 \| GlThibault |
+| **Greek Translation**                 | Walter's Cousin #CAF               |
+| **Indonesian Translation**            | Mc.J \                             | Deraidos |
+| **Italian Translation**               | Marco \                            | gdonisi \| albertopasqualetto |
+| **Portuguese - Brazil Translation**   | Loui's™ \                          | Zilberto Junior |
+| **Portuguese - Portugal Translation** | Androide323                        |
+| **Romanian Translation**              | NACH \                             | f9branza \| StephenTheMoldovan |
+| **Russian Translation**               | Pegioner \                         | vanja-san |
+| **Slovenian Translation**             | MysticX                            |
+| **Spanish - Spain Translation**       | PetFix \                           | Snapdragon845GMS \| Zkyclad |
+| **Turkish Translation**               | Berkay                             |
+| **Ukrainian Translation**             | NIKITA🇺🇦[beryllium] #PocoForEver |
+| **Korean Translation**                | Apious \                           | Annyeong-One |
+| **Dutch Translation**                 | Kevin                              |
+| **Vietnamese Translation**            | minhtamvn                          |
+| **German Translation**                | smokedzn                           |
+| **Persian Translation**               | ohshahab                           |
+| **Hebrew Translation**                | GreenArmy18                        |
+| **Polish Translation**                | dearminder                         |
+| **English Translation**               | Dyras                              |
+| **Slovak Translation**                | KaldonM                            |
+| **Swedish Translation**               | rexobo                             |
+| **Finnish Translation**               | AfraidOfTheBigBlack \              | Lilko1ra \| KasperiP |
+| **Czech Translation**                 | rex2630                            |
+| **Chinese (Traditional) Translation** | cracky5322 \                       | TragicLifeHu |
+| **Bulgarian Translation**             | meorro \                           | martinov83 |
+| **Serbian (Cyrillic) Translation**    | nexiRS                             |
+| **Serbian (Latin) Translation**       | nexiRS                             |
+| **Catalan Translation**               | tomaquet18                         |
+| **Latvian Translation**               | ClientSiderz                       |
+| **German Translation**                | 4NDROM3DA                          |
+| **Sinhala Translation**               | Psycho649                          |
+| **Hungarian Translation**             | gurtnyi                            |
+| **Nepali Translation**                | iamkishansharma                    |
 
 </div>
 

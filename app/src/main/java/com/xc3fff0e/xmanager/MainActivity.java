@@ -404,6 +404,8 @@ public class MainActivity extends AppCompatActivity {
 	private TextView translator_35;
 	private TextView manager_lang_36;
 	private TextView translator_36;
+	private TextView manager_lang_37;
+	private TextView translator_37;
 	private TextView manager_donors;
 	private TextView donors_1;
 	private ScrollView main_scroll_body;
@@ -781,6 +783,8 @@ public class MainActivity extends AppCompatActivity {
 		translator_35 = findViewById(R.id.translator_35);
 		manager_lang_36 = findViewById(R.id.manager_lang_36);
 		translator_36 = findViewById(R.id.translator_36);
+		manager_lang_37 = findViewById(R.id.manager_lang_37);
+		translator_37 = findViewById(R.id.translator_37);
 		manager_donors = findViewById(R.id.manager_donors);
 		donors_1 = findViewById(R.id.donors_1);
 		main_scroll_body = findViewById(R.id.main_scroll_body);
@@ -1823,6 +1827,13 @@ public class MainActivity extends AppCompatActivity {
 																																								LANGUAGE.edit().putString("LANGUAGE", "35").commit();
 																																								COUNTER = 1;
 																																								_Language_UI();
+																																							}
+																																							else {
+																																								if (_position == 36) {
+																																									LANGUAGE.edit().putString("LANGUAGE", "36").commit();
+																																									COUNTER = 1;
+																																									_Language_UI();
+																																								}
 																																							}
 																																						}
 																																					}
@@ -10424,6 +10435,120 @@ public class MainActivity extends AppCompatActivity {
 																																						installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																						select_language.setSelection((int)(35));
 																																					}
+																																					else {
+//																																						// Nepali Language
+																																						if (LANGUAGE.getString("LANGUAGE", "").equals("36")) {
+																																							sub_text_installed.setText(R.string.installed_36);
+																																							main_title.setText(R.string.main_title_36);
+																																							about_title.setText(R.string.about_title_36);
+																																							settings_title.setText(R.string.settings_title_36);
+																																							experiment_title.setText(R.string.experimental_title_36);
+																																							sub_title.setText(R.string.about_sub_36);
+																																							sub_text_1.setText(R.string.latest_36);
+																																							sub_text_2.setText(R.string.latest_36);
+																																							sub_text_3.setText(R.string.latest_36);
+																																							versions_1.setText(R.string.versions_36);
+																																							versions_2.setText(R.string.versions_36);
+																																							versions_3.setText(R.string.versions_36);
+																																							title_sub.setText(R.string.manager_tools_36);
+																																							source.setText(R.string.source_36);
+																																							support.setText(R.string.support_36);
+																																							donate.setText(R.string.donate_36);
+																																							discord.setText(R.string.discord_36);
+																																							about.setText(R.string.about_36);
+																																							website.setText(R.string.website_36);
+																																							reddit.setText(R.string.reddit_36);
+																																							faq.setText(R.string.faq_36);
+																																							theme.setText(R.string.show_themes_36);
+																																							language.setText(R.string.language_36);
+																																							download_update.setText(R.string.download_update_36);
+																																							install_now.setText(R.string.install_now_36);
+																																							install_update.setText(R.string.install_update_36);
+																																							uninstall_patched.setText(R.string.uninstall_patched_36);
+																																							open_settings.setText(R.string.open_settings_36);
+																																							open_patched.setText(R.string.open_patched_36);
+																																							lite.setText(R.string.lite_36);
+																																							cloned.setText(R.string.cloned_36);
+																																							spap.setText(R.string.spap_36);
+																																							mirror.setText(R.string.mirror_36);
+																																							download.setText(R.string.download_36);
+																																							cancel.setText(R.string.cancel_36);
+																																							later.setText(R.string.later_36);
+																																							go_back.setText(R.string.go_back_36);
+																																							not_now.setText(R.string.not_now_36);
+																																							close.setText(R.string.close_36);
+																																							continue_1.setText(R.string.continue_1_36);
+																																							install.setText(R.string.install_36);
+																																							uninstall.setText(R.string.uninstall_36);
+																																							ignore.setText(R.string.ignore_36);
+																																							delete.setText(R.string.delete_36);
+																																							thanks.setText(R.string.thanks_36);
+																																							new_update.setText(R.string.new_update_36);
+																																							changelogs.setText(R.string.changelogs_36);
+																																							reboot.setText(R.string.reboot_36);
+																																							reset_preferences.setText(R.string.reset_preferences_36);
+																																							list_auto_refresh.setText(R.string.list_auto_refresh_36);
+																																							list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_36);
+																																							force_auto_install.setText(R.string.force_auto_install_36);
+																																							force_auto_install_info.setText(R.string.force_auto_install_desc_36);
+																																							apk_location.setText(R.string.apk_location_36);
+																																							apk_location_info.setText(R.string.apk_location_desc_36);
+																																							clear_directory_folders.setText(R.string.clear_directory_folders_36);
+																																							clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_36);
+																																							cloned_version.setText(R.string.cloned_version_36);
+																																							cloned_version_info.setText(R.string.cloned_version_desc_36);
+																																							experiment_version.setText(R.string.experimental_version_36);
+																																							experiment_version_info.setText(R.string.experimental_version_desc_36);
+																																							disable_reward_ad.setText(R.string.disable_rewarded_ads_36);
+																																							disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_36);
+																																							show_support.setText(R.string.show_support_36);
+																																							show_support_desc.setText(R.string.show_support_desc_36);
+																																							maintenance.setText(R.string.maintenance_36);
+																																							maintenance_desc.setText(R.string.maintenance_desc_36);
+																																							xmanager_dev.setText(R.string.xmanager_dev_36);
+																																							patched_devs.setText(R.string.patched_devs_36);
+																																							support_team.setText(R.string.support_team_36);
+																																							manager_testers.setText(R.string.manager_testers_36);
+																																							manager_hosting.setText(R.string.manager_hosting_36);
+																																							mobilism_team.setText(R.string.mobilism_team_36);
+																																							forum_team.setText(R.string.forum_team_36);
+																																							contributors.setText(R.string.contributors_36);
+																																							download_selected.setText(R.string.download_selected_36);
+																																							download_ready.setText(R.string.download_ready_36);
+																																							download_ready_desc.setText(R.string.download_ready_desc_36);
+																																							downloading_file.setText(R.string.downloading_file_36);
+																																							download_success.setText(R.string.download_success_36);
+																																							installation_failed.setText(R.string.installation_failed_36);
+																																							installation_failed_desc.setText(R.string.installation_failed_desc_36);
+																																							installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_36);
+																																							installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_36);
+																																							existing_patched.setText(R.string.existing_patched_36);
+																																							existing_patched_desc.setText(R.string.existing_patched_desc_36);
+																																							lite_0 = lite.getText().toString();
+																																							download_0 = download.getText().toString();
+																																							continue_0 = continue_1.getText().toString();
+																																							cancel_0 = cancel.getText().toString();
+																																							later_0 = later.getText().toString();
+																																							mirror_0 = mirror.getText().toString();
+																																							install_now_0 = install_now.getText().toString();
+																																							go_back_0 = go_back.getText().toString();
+																																							install_update_0 = install_update.getText().toString();
+																																							close_0 = close.getText().toString();
+																																							uninstall_0 = uninstall.getText().toString();
+																																							existing_patched_0 = existing_patched.getText().toString();
+																																							existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																																							download_selected_0 = download_selected.getText().toString();
+																																							download_ready_0 = download_ready.getText().toString();
+																																							download_ready_desc_0 = download_ready_desc.getText().toString();
+																																							downloading_file_0 = downloading_file.getText().toString();
+																																							download_success_0 = download_success.getText().toString();
+																																							installation_failed_0 = installation_failed.getText().toString();
+																																							installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																																							installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
+																																							installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																																							select_language.setSelection((int)(36));
+																																						}
+																																					}
 																																				}
 																																			}
 																																		}
@@ -13040,6 +13165,7 @@ public class MainActivity extends AppCompatActivity {
 		manager_lang_34.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_35.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_36.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_37.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -13076,6 +13202,7 @@ public class MainActivity extends AppCompatActivity {
 		translator_34.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_35.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_36.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_37.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 	}
 	
 	
