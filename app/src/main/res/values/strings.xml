@@ -154,7 +154,6 @@
     <string name="installation_failed_01" translatable="true">ইনস্টলেশন ব্যর্থ হয়েছে</string>
     <string name="installation_failed_desc_01" translatable="true">কারণ: আপনি বর্তমানে যেটি ইনস্টল করা আছে, তার চেয়ে কম প্যাচ করা সংস্করণ ইনস্টল করার চেষ্টা করেছেন৷\n\nসমাধান:\nA. এর সমান বা বড় সংস্করণ নির্বাচন করুন।\nB. বর্তমান সংস্করণ আনইনস্টল করুন, তারপর ডাউনগ্রেড করুন।\n\nযদি সমস্যাটি থেকে যায়, অনবরত জিজ্ঞাসিত প্রশ্ন দেখুন।</string>
     <string name="installation_failed_spap_desc_01" translatable="true">কারণ: এই ডিভাইসে ইনস্টল করা বর্তমান প্যাচ সরাসরি xManager বা আমাদের দলের কাছ থেকে আসেনি।\n\nসমাধান: অ্যাপ্লিকেশনটির বর্তমান সংস্করণ আনইনস্টল করুন, xManager পুনরায় চালু করুন এবং আবার চেষ্টা করুন। যদি সমস্যাটি থেকে যায়,তাহলে অনবরত জিজ্ঞাসিত প্রশ্ন দেখুন।</string>
-
     <string name="installation_failed_cloned_desc_01" translatable="true">কারণ: এই ডিভাইসে ইনস্টল করা বর্তমান ক্লোন সরাসরি xManager বা আমাদের দলের কাছ থেকে আসেনি।\n\nসমাধান: অ্যাপ্লিকেশনটির বর্তমান সংস্করণ আনইনস্টল করুন, xManager পুনরায় চালু করুন এবং আবার চেষ্টা করুন। যদি সমস্যাটি থেকে যায়, তাহলে অনবরত জিজ্ঞাসিত প্রশ্ন দেখুন।</string>
     <string name="existing_patched_01" translatable="true">বিদ্যমান প্যাচড</string>
     <string name="existing_patched_desc_01" translatable="true">বাহ্যিক ডিরেক্টরিতে একটি বিদ্যমান প্যাচ সনাক্ত করা হয়েছে। আপনি কি করতে চান?</string>
