@@ -2495,7 +2495,7 @@
     <string name="clear_directory_folders_desc_29" translatable="true">Додирните да бисте избрисали директоријум. Ово укључује преузете фајлове и ажурирања.</string>
     <string name="reset_preferences_29" translatable="true">РЕСЕТУЈ ПОДЕШАВАЊА</string>
     <string name="about_sub_29" translatable="true">Без реклама | Нове функције | Слобода</string>
-    <string name="xmanager_dev_29" translatable="true">Програмери xManager</string>
+    <string name="xmanager_dev_29" translatable="true">Програмери xManager-а</string>
     <string name="patched_devs_29" translatable="true">Програмери Spotify печа</string>
     <string name="support_team_29" translatable="true">Telegram | Discord | Reddit тим за подршку</string>
     <string name="manager_testers_29" translatable="true">Печ и менаџер тестери</string>
@@ -2538,10 +2538,10 @@
     <string name="disable_rewarded_ads_desc_29" translatable="true">Знамо да већина нас не воли рекламе, али, у нашем случају, то нам значајно помаже да финансирамо нашу базу података, хостинг веза, ажурирања, више печева и дневних потреба.\n\nОво је најједноставнији начин да нас подржите, без донирања или трошења новца.</string>
     <string name="installation_failed_29" translatable="true">ИНСТАЛАЦИЈА НИЈЕ УСПЕЛА</string>
     <string name="installation_failed_desc_29" translatable="true">Разлог: Покушали сте да инсталирате верзију мода нижу од оне која је тренутно инсталирана.\n\nРешења:\nA. Изаберите верзију, исту или већу.\nB. Деинсталирајте тренутну верзију, а затим снизите.\n\nАко се проблем настави, проверите често постављена питања.</string>
-    <string name="installation_failed_spap_desc_29" translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManagerа или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављена питања.</string>
-    <string name="installation_failed_cloned_desc_29" translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManagerа или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављена питања.</string>
+    <string name="installation_failed_spap_desc_29" translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManager-а или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављена питања.</string>
+    <string name="installation_failed_cloned_desc_29" translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManager-а или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављена питања.</string>
     <string name="existing_patched_29" translatable="true">ПОСТОЈЕЋИ ПЕЧ</string>
-    <string name="existing_patched_desc_29" translatable="true">Постојећи фајл је откривен у спољном директоријуму. Коју акцију бисте желели да урадите?</string>
+    <string name="existing_patched_desc_29" translatable="true">Постојећи фајл је откривен у спољном директоријуму. Коју радњу бисте желели да извршите?</string>
     <string name="close_29" translatable="true">ЗАТВОРИ</string>
     <string name="cloned_29" translatable="true">КЛОНИРАН</string>
     <string name="spap_29" translatable="true">SP/AP</string>
@@ -2580,7 +2580,7 @@
     <string name="clear_directory_folders_desc_30" translatable="true">Dodirnite da biste izbrisali direktorijum. Ovo uključuje preuzete fajlove i ažuriranja.</string>
     <string name="reset_preferences_30" translatable="true">RESETUJ PODEŠAVANjA</string>
     <string name="about_sub_30" translatable="true">Bez reklama | Nove funkcije | Sloboda</string>
-    <string name="xmanager_dev_30" translatable="true">Programeri xManager</string>
+    <string name="xmanager_dev_30" translatable="true">Programeri xManager-a</string>
     <string name="patched_devs_30" translatable="true">Programeri Spotify peča</string>
     <string name="support_team_30" translatable="true">Telegram | Discord | Reddit tim za podršku</string>
     <string name="manager_testers_30" translatable="true">Peč i menadžer testeri</string>
@@ -2611,7 +2611,7 @@
     <string name="show_support_30" translatable="true">POKAŽI SVOJU PODRŠKU</string>
     <string name="show_support_desc_30" translatable="true">Mi smo neprofitni, nekorporativni i nekompromitovani tim. Ljudi poput Vas podstiču nas da napravimo aplikaciju kako bismo stvari učinili mnogo lakšim, posebno od preuzimanja do instaliranja.\n\nUlažemo sve naše vreme i sve napore kako bi stvari bile ispravne i savršene. Daćemo sve od sebe da podržavamo ovu aplikaciju koliko god možemo.\n\nSvaki iznos će pomoći i biti veoma cenjen!</string>
     <string name="maintenance_30" translatable="true">ODRŽAVANjE</string>
-    <string name="maintenance_desc_30" translatable="true">xManager trenutno nije dostupan. Molimo Vas da kasnije proverite aplikaciju!</string>
+    <string name="maintenance_desc_30" translatable="true">xManager trenutno nije dostupan. Pokušajte ponovo kasnije.</string>
     <string name="thanks_30" translatable="true">HVALA!</string>
     <string name="language_30" translatable="true">JEZIK</string>
     <string name="website_30" translatable="true">VEB-SAJT</string>
@@ -2623,10 +2623,10 @@
     <string name="disable_rewarded_ads_desc_30" translatable="true">Znamo da većina nas ne voli reklame, ali, u našem slučaju, to nam značajno pomaže da finansiramo našu bazu podataka, hosting veza, ažuriranja, više pečeva i dnevnih potreba.\n\nOvo je najjednostavniji način da nas podržite, bez doniranja ili trošenja novca.</string>
     <string name="installation_failed_30" translatable="true">INSTALACIJA NIJE USPELA</string>
     <string name="installation_failed_desc_30" translatable="true">Razlog: Pokušali ste da instalirate verziju moda nižu od one koja je trenutno instalirana.\n\nRešenja:\nA. Izaberite verziju, jednaku ili veću.\nB. Deinstalirajte trenutnu verziju, a zatim snizite.\n\nAko se problem nastavi, proverite često postavljena pitanja.</string>
-    <string name="installation_failed_spap_desc_30" translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManagera ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljena pitanja.</string>
-    <string name="installation_failed_cloned_desc_30" translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManagera ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljena pitanja.</string>
+    <string name="installation_failed_spap_desc_30" translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManager-a ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljena pitanja.</string>
+    <string name="installation_failed_cloned_desc_30" translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManager-a ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljena pitanja.</string>
     <string name="existing_patched_30" translatable="true">POSTOJEĆI PEČ</string>
-    <string name="existing_patched_desc_30" translatable="true">Postojeći peč je otkriven u spoljnom direktorijumu. Koju akciju biste želeli da uradite?</string>
+    <string name="existing_patched_desc_30" translatable="true">Postojeći peč je otkriven u spoljnom direktorijumu. Koju radnju biste želeli da izvršite?</string>
     <string name="close_30" translatable="true">ZATVORI</string>
     <string name="cloned_30" translatable="true">KLONIRAN</string>
     <string name="spap_30" translatable="true">SP/AP</string>
