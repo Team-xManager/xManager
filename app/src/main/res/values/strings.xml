@@ -2490,7 +2490,7 @@
     <string name="force_auto_install_desc_29" translatable="true">Ако ово омогућите, печована апликација ће се аутоматски инсталирати и ажурирати након преузимања.</string>
     <string name="show_themes_29" translatable="true">ТЕМЕ</string>
     <string name="apk_location_29" translatable="true">APK ЛОКАЦИЈА</string>
-    <string name="apk_location_desc_29" translatable="true">Директоријум у који желите да сачувате копију преузетог фајла. Ако не знате како да конфигуришете ову функцију, оставите ово како јесте.\n\nНАПОМЕНА: Ова функција не подржава спољну меморију (СД картицу) због приступачности, дозвола и ограничења складиштења.</string>
+    <string name="apk_location_desc_29" translatable="true">Директоријум у који желите да сачувате копију преузетог фајла. Ако не знате како да конфигуришете ову функцију, оставите ово како јесте.\n\nНАПОМЕНА: Ова функција не подржава спољну меморију (SD/меморијску картицу) због приступачности, дозвола и ограничења складиштења.</string>
     <string name="clear_directory_folders_29" translatable="true">ИЗБРИШИ ДИРЕКТОРИЈУМ</string>
     <string name="clear_directory_folders_desc_29" translatable="true">Додирните да бисте избрисали директоријум. Ово укључује преузете фајлове и ажурирања.</string>
     <string name="reset_preferences_29" translatable="true">РЕСЕТУЈ ПОДЕШАВАЊА</string>
@@ -2575,7 +2575,7 @@
     <string name="force_auto_install_desc_30" translatable="true">Ako ovo omogućite, pečovana aplikacija će se automatski instalirati i ažurirati nakon preuzimanja.</string>
     <string name="show_themes_30" translatable="true">TEME</string>
     <string name="apk_location_30" translatable="true">APK LOKACIJA</string>
-    <string name="apk_location_desc_30" translatable="true">Direktorijum u koji želite da sačuvate kopiju preuzetog fajla. Ako ne znate kako da konfigurišete ovu funkciju, ostavite ovo kako jeste.\n\nNAPOMENA: Ova funkcija ne podržava spoljnu memoriju (SD karticu) zbog pristupačnosti, dozvola i ograničenja skladištenja.</string>
+    <string name="apk_location_desc_30" translatable="true">Direktorijum u koji želite da sačuvate kopiju preuzetog fajla. Ako ne znate kako da konfigurišete ovu funkciju, ostavite ovo kako jeste.\n\nNAPOMENA: Ova funkcija ne podržava spoljnu memoriju (SD/memorijsku karticu) zbog pristupačnosti, dozvola i ograničenja skladištenja.</string>
     <string name="clear_directory_folders_30" translatable="true">IZBRIŠI DIREKTORIJUM</string>
     <string name="clear_directory_folders_desc_30" translatable="true">Dodirnite da biste izbrisali direktorijum. Ovo uključuje preuzete fajlove i ažuriranja.</string>
     <string name="reset_preferences_30" translatable="true">RESETUJ PODEŠAVANjA</string>
