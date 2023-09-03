@@ -2523,7 +2523,7 @@
     <string name="experimental_title_29" translatable="true">Експериментално</string>
     <string name="experimental_version_29" translatable="true">ЕКСПЕРИМЕНТАЛНА ВЕРЗИЈА</string>
     <string name="experimental_version_desc_29" translatable="true">Ако ово омогућите, моћи ћете да преузмете и инсталирате експерименталну верзију печоване апликације.\n\nОво укључује алфа, бета и функције раног приступа, које нису доступне у основној печованој верзији. Поред тога, није загарантована стабилност апликације.</string>
-    <string name="show_support_29" translatable="true">ПОКАЖИ СВОЈУ ПОДРШКУ</string>
+    <string name="show_support_29" translatable="true">ПОКАЖИТЕ СВОЈУ ПОДРШКУ</string>
     <string name="show_support_desc_29" translatable="true">Ми смо непрофитни, некорпоративни и некомпромитовани тим. Људи попут Вас подстичу нас да направимо апликацију како бисмо ствари учинили много лакшим, посебно од преузимања до инсталирања.\n\nУлажемо све наше време и све напоре како би ствари биле исправне и савршене. Даћемо све од себе да подржавамо ову апликацију колико год можемо.\n\nСваки износ ће помоћи и бити веома цењен!</string>
     <string name="maintenance_29" translatable="true">ОДРЖАВАЊЕ</string>
     <string name="maintenance_desc_29" translatable="true">xManager тренутно није доступан. Покушајте поново касније.</string>
@@ -2608,7 +2608,7 @@
     <string name="experimental_title_30" translatable="true">Eksperimentalno</string>
     <string name="experimental_version_30" translatable="true">EKSPERIMENTALNA VERZIJA</string>
     <string name="experimental_version_desc_30" translatable="true">Ako ovo omogućite, moći ćete da preuzmete i instalirate eksperimentalnu verziju pečovane aplikacije.\n\nOvo uključuje alfa, beta i funkcije ranog pristupa, koje nisu dostupne u osnovnoj pečovanoj verziji. Pored toga, nije zagarantovana stabilnost aplikacije.</string>
-    <string name="show_support_30" translatable="true">POKAŽI SVOJU PODRŠKU</string>
+    <string name="show_support_30" translatable="true">POKAŽITE SVOJU PODRŠKU</string>
     <string name="show_support_desc_30" translatable="true">Mi smo neprofitni, nekorporativni i nekompromitovani tim. Ljudi poput Vas podstiču nas da napravimo aplikaciju kako bismo stvari učinili mnogo lakšim, posebno od preuzimanja do instaliranja.\n\nUlažemo sve naše vreme i sve napore kako bi stvari bile ispravne i savršene. Daćemo sve od sebe da podržavamo ovu aplikaciju koliko god možemo.\n\nSvaki iznos će pomoći i biti veoma cenjen!</string>
     <string name="maintenance_30" translatable="true">ODRŽAVANjE</string>
     <string name="maintenance_desc_30" translatable="true">xManager trenutno nije dostupan. Pokušajte ponovo kasnije.</string>
