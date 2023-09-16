@@ -2499,7 +2499,7 @@
     <string name="patched_devs_29" translatable="true">Програмери Spotify печа</string>
     <string name="support_team_29" translatable="true">Telegram | Discord | Reddit тим за подршку</string>
     <string name="manager_testers_29" translatable="true">Тестери печа и менаџера</string>
-    <string name="manager_hosting_29" translatable="true">База података менаџера и хостинг</string>
+    <string name="manager_hosting_29" translatable="true">База података и хостинг менаџера</string>
     <string name="mobilism_team_29" translatable="true">Mobilism тим</string>
     <string name="forum_team_29" translatable="true">FORUM.APK-RELEASE.NET тим</string>
     <string name="contributors_29" translatable="true">ХВАЛА СВИМ САРАДНИЦИМА! ❤️</string>
@@ -2519,7 +2519,7 @@
     <string name="download_update_29" translatable="true">ПРЕУЗМИ АЖУРИРАЊЕ</string>
     <string name="not_now_29" translatable="true">НЕ САДА</string>
     <string name="mirror_29" translatable="true">MIRROR ЛИНК</string>
-    <string name="lite_29" translatable="true">ЛАЈТ</string>
+    <string name="lite_29" translatable="true">LITE</string>
     <string name="experimental_title_29" translatable="true">Експериментално</string>
     <string name="experimental_version_29" translatable="true">ЕКСПЕРИМЕНТАЛНА ВЕРЗИЈА</string>
     <string name="experimental_version_desc_29" translatable="true">Ако ово омогућите, моћи ћете да преузмете и инсталирате експерименталну верзију печоване апликације.\n\nОво укључује алфа, бета и функције раног приступа, које нису доступне у основној печованој верзији. Поред тога, није загарантована стабилност апликације.</string>
@@ -2584,7 +2584,7 @@
     <string name="patched_devs_30" translatable="true">Programeri Spotify peča</string>
     <string name="support_team_30" translatable="true">Telegram | Discord | Reddit tim za podršku</string>
     <string name="manager_testers_30" translatable="true">Testeri peča i menadžera</string>
-    <string name="manager_hosting_30" translatable="true">Baza podataka menadžera i hosting</string>
+    <string name="manager_hosting_30" translatable="true">Baza podataka i hosting menadžera</string>
     <string name="mobilism_team_30" translatable="true">Mobilism tim</string>
     <string name="forum_team_30" translatable="true">FORUM.APK-RELEASE.NET tim</string>
     <string name="contributors_30" translatable="true">HVALA SVIM SARADNICIMA! ❤️</string>
