@@ -2489,16 +2489,16 @@
     <string name="force_auto_install_29" translatable="true">ФОРСИРАЈ АУТОМАТСКУ ИНСТАЛАЦИЈУ</string>
     <string name="force_auto_install_desc_29" translatable="true">Ако ово омогућите, печована апликација ће се аутоматски инсталирати и ажурирати након преузимања.</string>
     <string name="show_themes_29" translatable="true">ТЕМЕ</string>
-    <string name="apk_location_29" translatable="true">APK ЛОКАЦИЈА</string>
+    <string name="apk_location_29" translatable="true">ЛОКАЦИЈА APK-а</string>
     <string name="apk_location_desc_29" translatable="true">Директоријум у који желите да сачувате копију преузетог фајла. Ако не знате како да конфигуришете ову функцију, оставите ово како јесте.\n\nНАПОМЕНА: Ова функција не подржава спољну меморију (SD (меморијску) картицу) због приступачности, дозвола и ограничења складиштења.</string>
     <string name="clear_directory_folders_29" translatable="true">ИЗБРИШИ ДИРЕКТОРИЈУМ</string>
     <string name="clear_directory_folders_desc_29" translatable="true">Додирните да бисте избрисали директоријум. Ово укључује преузете фајлове и ажурирања.</string>
     <string name="reset_preferences_29" translatable="true">РЕСЕТУЈ ПОДЕШАВАЊА</string>
     <string name="about_sub_29" translatable="true">Без реклама | Нове функције | Слобода</string>
-    <string name="xmanager_dev_29" translatable="true">Програмери xManager-а</string>
+    <string name="xmanager_dev_29" translatable="true">Програмер xManager-а</string>
     <string name="patched_devs_29" translatable="true">Програмери Spotify печа</string>
     <string name="support_team_29" translatable="true">Telegram | Discord | Reddit тим за подршку</string>
-    <string name="manager_testers_29" translatable="true">Печ и менаџер тестери</string>
+    <string name="manager_testers_29" translatable="true">Тестери печа и менаџера</string>
     <string name="manager_hosting_29" translatable="true">База података менаџера и хостинг</string>
     <string name="mobilism_team_29" translatable="true">Mobilism тим</string>
     <string name="forum_team_29" translatable="true">FORUM.APK-RELEASE.NET тим</string>
@@ -2574,16 +2574,16 @@
     <string name="force_auto_install_30" translatable="true">FORSIRAJ AUTOMATSKU INSTALACIJU</string>
     <string name="force_auto_install_desc_30" translatable="true">Ako ovo omogućite, pečovana aplikacija će se automatski instalirati i ažurirati nakon preuzimanja.</string>
     <string name="show_themes_30" translatable="true">TEME</string>
-    <string name="apk_location_30" translatable="true">APK LOKACIJA</string>
+    <string name="apk_location_30" translatable="true">LOKACIJA APK-a</string>
     <string name="apk_location_desc_30" translatable="true">Direktorijum u koji želite da sačuvate kopiju preuzetog fajla. Ako ne znate kako da konfigurišete ovu funkciju, ostavite ovo kako jeste.\n\nNAPOMENA: Ova funkcija ne podržava spoljnu memoriju (SD (memorijsku) karticu) zbog pristupačnosti, dozvola i ograničenja skladištenja.</string>
     <string name="clear_directory_folders_30" translatable="true">IZBRIŠI DIREKTORIJUM</string>
     <string name="clear_directory_folders_desc_30" translatable="true">Dodirnite da biste izbrisali direktorijum. Ovo uključuje preuzete fajlove i ažuriranja.</string>
     <string name="reset_preferences_30" translatable="true">RESETUJ PODEŠAVANjA</string>
     <string name="about_sub_30" translatable="true">Bez reklama | Nove funkcije | Sloboda</string>
-    <string name="xmanager_dev_30" translatable="true">Programeri xManager-a</string>
+    <string name="xmanager_dev_30" translatable="true">Programer xManager-a</string>
     <string name="patched_devs_30" translatable="true">Programeri Spotify peča</string>
     <string name="support_team_30" translatable="true">Telegram | Discord | Reddit tim za podršku</string>
-    <string name="manager_testers_30" translatable="true">Peč i menadžer testeri</string>
+    <string name="manager_testers_30" translatable="true">Testeri peča i menadžera</string>
     <string name="manager_hosting_30" translatable="true">Baza podataka menadžera i hosting</string>
     <string name="mobilism_team_30" translatable="true">Mobilism tim</string>
     <string name="forum_team_30" translatable="true">FORUM.APK-RELEASE.NET tim</string>
@@ -2604,7 +2604,7 @@
     <string name="download_update_30" translatable="true">PREUZMI AŽURIRANjE</string>
     <string name="not_now_30" translatable="true">NE SADA</string>
     <string name="mirror_30" translatable="true">MIRROR LINK</string>
-    <string name="lite_30" translatable="true">LAJT</string>
+    <string name="lite_30" translatable="true">LITE</string>
     <string name="experimental_title_30" translatable="true">Eksperimentalno</string>
     <string name="experimental_version_30" translatable="true">EKSPERIMENTALNA VERZIJA</string>
     <string name="experimental_version_desc_30" translatable="true">Ako ovo omogućite, moći ćete da preuzmete i instalirate eksperimentalnu verziju pečovane aplikacije.\n\nOvo uključuje alfa, beta i funkcije ranog pristupa, koje nisu dostupne u osnovnoj pečovanoj verziji. Pored toga, nije zagarantovana stabilnost aplikacije.</string>
