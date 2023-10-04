@@ -2486,13 +2486,13 @@
     <string name="about_title_29" translatable="true">О нама</string>
     <string name="list_auto_refresh_29" translatable="true">АУТОМАТСКО ОСВЕЖАВАЊЕ ЛИСТЕ</string>
     <string name="list_auto_refresh_desc_29" translatable="true">Ако ово омогућите, листа ће се аутоматски освежити сваки пут када покренете апликацију.\n\nМожете ручно да освежите листу превлачењем главног екрана надоле.</string>
-    <string name="force_auto_install_29" translatable="true">ФОРСИРАЈ АУТОМАТСКУ ИНСТАЛАЦИЈУ</string>
+    <string name="force_auto_install_29" translatable="true">ПРИСИЛИ АУТОМАТСКУ ИНСТАЛАЦИЈУ</string>
     <string name="force_auto_install_desc_29" translatable="true">Ако ово омогућите, печована апликација ће се аутоматски инсталирати и ажурирати након преузимања.</string>
     <string name="show_themes_29" translatable="true">ТЕМЕ</string>
     <string name="apk_location_29" translatable="true">ЛОКАЦИЈА APK-а</string>
-    <string name="apk_location_desc_29" translatable="true">Директоријум у који желите да сачувате копију преузетог фајла. Ако не знате како да конфигуришете ову функцију, оставите ово како јесте.\n\nНАПОМЕНА: Ова функција не подржава спољну меморију (SD (меморијску) картицу) због приступачности, дозвола и ограничења складиштења.</string>
-    <string name="clear_directory_folders_29" translatable="true">ИЗБРИШИ ДИРЕКТОРИЈУМ</string>
-    <string name="clear_directory_folders_desc_29" translatable="true">Додирните да бисте избрисали директоријум. Ово укључује преузете фајлове и ажурирања.</string>
+    <string name="apk_location_desc_29" translatable="true">Фолдер у који желите да сачувате копију преузетог фајла. Ако не знате како да конфигуришете ову функцију, оставите ово како јесте.\n\nНАПОМЕНА: Ова функција не подржава спољну меморију (SD (меморијску) картицу) због приступачности, дозвола и ограничења складиштења.</string>
+    <string name="clear_directory_folders_29" translatable="true">ИЗБРИШИ ФОЛДЕР</string>
+    <string name="clear_directory_folders_desc_29" translatable="true">Додирните да бисте избрисали фолдер. Ово укључује преузете фајлове и ажурирања.</string>
     <string name="reset_preferences_29" translatable="true">РЕСЕТУЈ ПОДЕШАВАЊА</string>
     <string name="about_sub_29" translatable="true">Без реклама | Нове функције | Слобода</string>
     <string name="xmanager_dev_29" translatable="true">Програмер xManager-а</string>
@@ -2541,7 +2541,7 @@
     <string name="installation_failed_spap_desc_29" translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManager-а или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављана питања.</string>
     <string name="installation_failed_cloned_desc_29" translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManager-а или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављана питања.</string>
     <string name="existing_patched_29" translatable="true">ПОСТОЈЕЋИ ПЕЧ</string>
-    <string name="existing_patched_desc_29" translatable="true">Постојећи фајл је откривен у спољном директоријуму. Коју радњу бисте желели да извршите?</string>
+    <string name="existing_patched_desc_29" translatable="true">Постојећи фајл је откривен у спољном фолдеру. Коју радњу бисте желели да извршите?</string>
     <string name="close_29" translatable="true">ЗАТВОРИ</string>
     <string name="cloned_29" translatable="true">КЛОНИРАН</string>
     <string name="spap_29" translatable="true">SP/AP</string>
@@ -2571,13 +2571,13 @@
     <string name="about_title_30" translatable="true">O nama</string>
     <string name="list_auto_refresh_30" translatable="true">AUTOMATSKO OSVEŽAVANjE LISTE</string>
     <string name="list_auto_refresh_desc_30" translatable="true">Ako ovo omogućite, lista će se automatski osvežiti svaki put kada pokrenete aplikaciju.\n\nMožete ručno da osvežite listu prevlačenjem glavnog ekrana nadole.</string>
-    <string name="force_auto_install_30" translatable="true">FORSIRAJ AUTOMATSKU INSTALACIJU</string>
+    <string name="force_auto_install_30" translatable="true">PRISILI AUTOMATSKU INSTALACIJU</string>
     <string name="force_auto_install_desc_30" translatable="true">Ako ovo omogućite, pečovana aplikacija će se automatski instalirati i ažurirati nakon preuzimanja.</string>
     <string name="show_themes_30" translatable="true">TEME</string>
     <string name="apk_location_30" translatable="true">LOKACIJA APK-a</string>
-    <string name="apk_location_desc_30" translatable="true">Direktorijum u koji želite da sačuvate kopiju preuzetog fajla. Ako ne znate kako da konfigurišete ovu funkciju, ostavite ovo kako jeste.\n\nNAPOMENA: Ova funkcija ne podržava spoljnu memoriju (SD (memorijsku) karticu) zbog pristupačnosti, dozvola i ograničenja skladištenja.</string>
-    <string name="clear_directory_folders_30" translatable="true">IZBRIŠI DIREKTORIJUM</string>
-    <string name="clear_directory_folders_desc_30" translatable="true">Dodirnite da biste izbrisali direktorijum. Ovo uključuje preuzete fajlove i ažuriranja.</string>
+    <string name="apk_location_desc_30" translatable="true">Folder u koji želite da sačuvate kopiju preuzetog fajla. Ako ne znate kako da konfigurišete ovu funkciju, ostavite ovo kako jeste.\n\nNAPOMENA: Ova funkcija ne podržava spoljnu memoriju (SD (memorijsku) karticu) zbog pristupačnosti, dozvola i ograničenja skladištenja.</string>
+    <string name="clear_directory_folders_30" translatable="true">IZBRIŠI FOLDER</string>
+    <string name="clear_directory_folders_desc_30" translatable="true">Dodirnite da biste izbrisali folder. Ovo uključuje preuzete fajlove i ažuriranja.</string>
     <string name="reset_preferences_30" translatable="true">RESETUJ PODEŠAVANjA</string>
     <string name="about_sub_30" translatable="true">Bez reklama | Nove funkcije | Sloboda</string>
     <string name="xmanager_dev_30" translatable="true">Programer xManager-a</string>
@@ -2590,7 +2590,7 @@
     <string name="contributors_30" translatable="true">HVALA SVIM SARADNICIMA! ❤️</string>
     <string name="download_selected_30" translatable="true">Izabrali ste ovu pečovanu verziju. Želite li da nastavite?</string>
     <string name="download_ready_30" translatable="true">INFORMACIJE O PEČU</string>
-    <string name="download_ready_desc_30" translatable="true">Ovaj peč će zameniti prethodni fajl koji se nalazi u spoljnom direktorijumu. Nastavite s oprezom.</string>
+    <string name="download_ready_desc_30" translatable="true">Ovaj peč će zameniti prethodni fajl koji se nalazi u spoljnom folderu. Nastavite s oprezom.</string>
     <string name="downloading_file_30" translatable="true">PREUZIMANjE FAJLA</string>
     <string name="download_success_30" translatable="true">USPEŠNO PREUZETO</string>
     <string name="new_update_30" translatable="true">NOVO AŽURIRANjE MENADžERA</string>
@@ -2626,7 +2626,7 @@
     <string name="installation_failed_spap_desc_30" translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManager-a ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljana pitanja.</string>
     <string name="installation_failed_cloned_desc_30" translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManager-a ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljana pitanja.</string>
     <string name="existing_patched_30" translatable="true">POSTOJEĆI PEČ</string>
-    <string name="existing_patched_desc_30" translatable="true">Postojeći peč je otkriven u spoljnom direktorijumu. Koju radnju biste želeli da izvršite?</string>
+    <string name="existing_patched_desc_30" translatable="true">Postojeći peč je otkriven u spoljnom folderu. Koju radnju biste želeli da izvršite?</string>
     <string name="close_30" translatable="true">ZATVORI</string>
     <string name="cloned_30" translatable="true">KLONIRAN</string>
     <string name="spap_30" translatable="true">SP/AP</string>
