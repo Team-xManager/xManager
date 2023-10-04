@@ -2505,7 +2505,7 @@
     <string name="contributors_29" translatable="true">ХВАЛА СВИМ САРАДНИЦИМА! ❤️</string>
     <string name="download_selected_29" translatable="true">Изабрали сте ову печовану верзију. Желите ли да наставите?</string>
     <string name="download_ready_29" translatable="true">ИНФОРМАЦИЈЕ О ПЕЧУ</string>
-    <string name="download_ready_desc_29" translatable="true">Овај печ ће заменити претходни фајл који се налази у спољном директоријуму. Наставите с опрезом.</string>
+    <string name="download_ready_desc_29" translatable="true">Овај печ ће заменити претходни фајл који се налази у спољном фолдеру. Наставите с опрезом.</string>
     <string name="downloading_file_29" translatable="true">ПРЕУЗИМАЊЕ ФАЈЛА</string>
     <string name="download_success_29" translatable="true">УСПЕШНО ПРЕУЗЕТО</string>
     <string name="new_update_29" translatable="true">НОВО АЖУРИРАЊЕ МЕНАЏЕРА</string>
