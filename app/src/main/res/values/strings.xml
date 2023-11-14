@@ -553,9 +553,9 @@
     <string name="changelogs_06" translatable="true">REGISTRO MODIFICHE</string>
     <string name="manager_tools_06" translatable="true">STRUMENTI DEL MANAGER</string>
     <string name="source_06" translatable="true">FONTE</string>
-    <string name="discord_06" translatable="true">DISCORD</string>
     <string name="support_06" translatable="true">TELEGRAM</string>
     <string name="donate_06" translatable="true">DONA</string>
+    <string name="discord_06" translatable="true">DISCORD</string>
     <string name="about_06" translatable="true">INFO</string>
     <string name="main_title_06" translatable="true">xManager</string>
     <string name="settings_title_06" translatable="true">Impostazioni</string>
@@ -600,7 +600,7 @@
     <string name="experimental_version_06" translatable="true">VERSIONE SPERIMENTALE</string>
     <string name="experimental_version_desc_06" translatable="true">Abilitando questo permette di scaricare e installare la versione sperimentale dell\'applicazione patchata.\n\nquesto include alpha, beta e early accesss caratteristiche che non sono disponibili nel magazzino patchato. Inoltre, non garantito stabile.</string>
     <string name="show_support_06" translatable="true">MOSTRA IL TUO SOSTEGNO</string>
-    <string name="show_support_desc_06" translatable="true">Siamo un team senza scopo di lucro, non aziendale e senza compromessi. Le persone come te ci incoraggiano a creare un\'app per rendere tutto molto più semplice soprattutto dal download all\'installazione.\n\nStiamo dedicando tutto il nostro tempo e i nostri migliori sforzi solo per rendere le cose corrette e perfette. Faremo del nostro meglio per supportare questa app il più a lungo possibile.\n\nQualsiasi importo aiuterà e sarà molto gradito!</string>
+    <string name="show_support_desc_06" translatable="true">Siamo un team senza scopo di lucro, non un'azienda e non compromessa. Le persone come te ci incoraggiano a creare un\'app per rendere tutto molto più semplice soprattutto dal download all\'installazione.\n\nStiamo dedicando tutto il nostro tempo e i nostri migliori sforzi solo per rendere le cose corrette e perfette. Faremo del nostro meglio per supportare questa app il più a lungo possibile.\n\nQualsiasi importo aiuterà e sarà molto gradito!</string>
     <string name="maintenance_06" translatable="true">MANUTENZIONE</string>
     <string name="maintenance_desc_06" translatable="true">xManager non è attualmente disponibile. Si prega di controllare l\'applicazione in un secondo momento.</string>
     <string name="thanks_06" translatable="true">GRAZIE!</string>
@@ -610,20 +610,20 @@
     <string name="faq_06" translatable="true">DOMANDE FREQUENTI</string>
     <string name="cloned_version_06" translatable="true">VERSIONE CLONATA</string>
     <string name="cloned_version_desc_06" translatable="true">Attivando questo ti permette di scaricare e installare la versione clonata dell\'applicazione patchata.\n\nQuesto risolverà anche la maggior parte degli errori di installazione o problemi, soprattutto se si dispone di un\'applicazione Spotify preinstallata.</string>
-    <string name="disable_rewarded_ads_06" translatable="true">DISABILITA GLI ANNUNCI PREMIATI</string>
+    <string name="disable_rewarded_ads_06" translatable="true">DISABILITA GLI ANNUNCI PAGATI</string>
     <string name="disable_rewarded_ads_desc_06" translatable="true">Sappiamo che alla maggior parte di noi non piacciono gli annunci, ma nel nostro caso, questo ci aiuta in modo significativo a finanziare il nostro database, l\'hosting dei link, gli aggiornamenti, più patch, e le esigenze quotidiane.\n\nQuesto è il modo più semplice per sostenerci senza donare o spendere nulla.</string>
     <string name="installation_failed_06" translatable="true">INSTALLAZIONE NON RIUSCITA</string>
     <string name="installation_failed_desc_06" translatable="true">Motivo: Hai tentato di installare una versione della patch inferiore a quella attualmente installata.\n\nSoluzioni:\nA. Selezionare una versione uguale o successiva.\nB. Disinstallare la versione corrente, quindi eseguire il downgrade.\n\nSe il problema persiste, controlla le FAQ.</string>
-    <string name="installation_failed_spap_desc_06" translatable="true">Motivo: l\'attuale Spotify installato su questo dispositivo non proveniva direttamente da xManager o dal nostro team.\n\n Soluzione: Disinstallare la versione corrente dell\'applicazione, riavviare xManager e riprovare. Se il problema persiste, controlla le FAQ.</string>
+    <string name="installation_failed_spap_desc_06" translatable="true">Motivo: L\'attuale Spotify installato su questo dispositivo non proveniva direttamente da xManager o dal nostro team.\n\n Soluzione: Disinstallare la versione corrente dell\'applicazione, riavviare xManager e riprovare. Se il problema persiste, controlla le FAQ.</string>
     <string name="installation_failed_cloned_desc_06" translatable="true">Motivo: L\'attuale app clone installata su questo dispositivo non proviene direttamente da xManager o dal nostro team.\n\n Soluzione: Disinstallare la versione corrente dell\'applicazione, riavviare xManager e riprovare. Se il problema persiste, controlla le FAQ.</string>
     <string name="existing_patched_06" translatable="true">PATCH ESISTENTI</string>
     <string name="existing_patched_desc_06" translatable="true">Un file con patch esistente trovato in una delle directory. Cosa fare?</string>
 	<string name="disable_notification_06" translatable="true">DISABILITA NOTIFICA</string>
-    <string name="disable_notification_desc_06" translatable="true">Abilitando questo rimuoverà la notifica di promemoria dopo aver installato l\'applicazione patchata.</string>
-    <string name="hide_stock_patched_06" translatable="true">NASCONDERE MAGAZZINO PATCHATO</string>
-    <string name="hide_amoled_patched_06" translatable="true">NASCONDI AMOLED PATCHATO</string>
-    <string name="hide_lite_patched_06" translatable="true">NASCONDI LITE PATCHATO</string>
-    <string name="hide_wave_patched_06" translatable="true">NASCONDI ONDA PATCHATO</string>
+    <string name="disable_notification_desc_06" translatable="true">Abilitare questo rimuoverà la notifica di promemoria dopo aver installato l\'applicazione patchata.</string>
+    <string name="hide_stock_patched_06" translatable="true">NASCONDI PATCH STOCK</string>
+    <string name="hide_amoled_patched_06" translatable="true">NASCONDI PATCH AMOLED</string>
+    <string name="hide_lite_patched_06" translatable="true">NASCONDI PATCH LITE</string>
+    <string name="hide_wave_patched_06" translatable="true">NASCONDI PATCH WAVE</string>
     <string name="close_06" translatable="true">CHIUDI</string>
     <string name="cloned_06" translatable="true">CLONA</string>
     <string name="spap_06" translatable="true">SP/AP</string>
@@ -634,7 +634,7 @@
     <string name="uninstall_patched_06" translatable="true">DISINSTALLA PATCH</string>
     <string name="open_settings_06" translatable="true">APRI IMPOSTAZIONI</string>
     <string name="open_patched_06" translatable="true">APRI PATCH</string>
-    <string name="reboot_06" translatable="true">REFETCH E REBOOT</string>
+    <string name="reboot_06" translatable="true">RICARICA E RIAVVIA</string>
     
     <!--POLISH LANGUAGE-->
     <string name="app_name_07" translatable="true">xManager</string>
