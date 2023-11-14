@@ -76,34 +76,28 @@ public class SplashActivity extends AppCompatActivity {
 		}
 		Glide.with(getApplicationContext()).load(Uri.parse("file:///android_asset/splash.gif")).into(icon_splash);
 		title_splash.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_glitch.ttf"), 1);
-		if (0 == SketchwareUtil.getRandom((int)(0), (int)(5))) {
+		if (0 == SketchwareUtil.getRandom((int)(0), (int)(4))) {
 			title_splash.setText("xManager");
 			title_splash.setTextSize((int)25);
 		}
 		else {
-			if (1 == SketchwareUtil.getRandom((int)(0), (int)(5))) {
-				title_splash.setText("Exodus 20:15");
+			if (1 == SketchwareUtil.getRandom((int)(0), (int)(4))) {
+				title_splash.setText("It's A Movement");
 				title_splash.setTextSize((int)25);
 			}
 			else {
-				if (2 == SketchwareUtil.getRandom((int)(0), (int)(5))) {
-					title_splash.setText("It's A Movement");
+				if (2 == SketchwareUtil.getRandom((int)(0), (int)(4))) {
+					title_splash.setText("We Are Resistance");
 					title_splash.setTextSize((int)25);
 				}
 				else {
-					if (3 == SketchwareUtil.getRandom((int)(0), (int)(5))) {
-						title_splash.setText("We Are Resistance");
-						title_splash.setTextSize((int)25);
+					if (3 == SketchwareUtil.getRandom((int)(0), (int)(4))) {
+						title_splash.setText("Freedom For Everyone");
+						title_splash.setTextSize((int)20);
 					}
 					else {
-						if (4 == SketchwareUtil.getRandom((int)(0), (int)(5))) {
-							title_splash.setText("Freedom For Everyone");
-							title_splash.setTextSize((int)20);
-						}
-						else {
-							title_splash.setText("Don't Make Us Popular!");
-							title_splash.setTextSize((int)20);
-						}
+						title_splash.setText("Don't Make Us Popular!");
+						title_splash.setTextSize((int)20);
 					}
 				}
 			}
