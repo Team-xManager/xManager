@@ -3147,4 +3147,89 @@
     <string name="open_settings_36" translatable="true">அமைப்புகளைத் திற</string>
     <string name="open_patched_36" translatable="true">ஓபன் பேட்ச்</string>
     <string name="reboot_36" translatable="true">மீட்டெடுத்து மீண்டும் துவக்கவும்</string>
+    
+    <!--JAPANESE LANGUAGE-->
+    <string name="app_name_37" translatable="true">xManager</string>
+    <string name="installed_37" translatable="true">インストール済み</string>
+    <string name="latest_37" translatable="true">最新</string>
+    <string name="versions_37" translatable="true">バージョン</string>
+    <string name="changelogs_37" translatable="true">更新履歴</string>
+    <string name="manager_tools_37" translatable="true">管理ツール</string>
+    <string name="source_37" translatable="true">ソース</string>
+    <string name="support_37" translatable="true">Telegram</string>
+    <string name="donate_37" translatable="true">サポート</string>
+    <string name="discord_37" translatable="true">Discord</string>
+    <string name="about_37" translatable="true">情報</string>
+    <string name="main_title_37" translatable="true">xManager</string>
+    <string name="settings_title_37" translatable="true">設定</string>
+    <string name="about_title_37" translatable="true">アプリについて</string>
+    <string name="list_auto_refresh_37" translatable="true">リストの自動更新</string>
+    <string name="list_auto_refresh_desc_37" translatable="true">有効化する事でアプリを起動するたびにリストが自動更新されます。\n\nメイン画面の下方向にドラッグで手動でリストを更新できます。</string>
+    <string name="force_auto_install_37" translatable="true">強制自動インストール</string>
+    <string name="force_auto_install_desc_37" translatable="true">有効化する事で、ダウンロード後にパッチが適用されたアプリとアップデートが自動的にインストールされます。</string>
+    <string name="show_themes_37" translatable="true">テーマ</string>
+    <string name="apk_location_37" translatable="true">APKの場所</string>
+    <string name="apk_location_desc_37" translatable="true">ダウンロードしたファイルのコピーを保存するディレクトリになります。\n\n注意: この機能はユーザー補助、アクセス許可、ストレージ制限により外部ストレージ (SD カード) をサポートしていません。</string>
+    <string name="clear_directory_folders_37" translatable="true">ディレクトリフォルダをクリア</string>
+    <string name="clear_directory_folders_desc_37" translatable="true">タップでディレクトリフォルダを削除します。ディレクトリにはダウンロードをしたファイルやアップデートが含まれます。</string>
+    <string name="reset_preferences_37" translatable="true">設定をリセット</string>
+    <string name="about_sub_37" translatable="true">広告なし | 新機能 | 自由</string>
+    <string name="xmanager_dev_37" translatable="true">xManager Developer</string>
+    <string name="patched_devs_37" translatable="true">Patched Developers</string>
+    <string name="support_team_37" translatable="true">Telegram | Discord | Reddit サポートチーム</string>
+    <string name="manager_testers_37" translatable="true">パッチと xManager のテスター</string>
+    <string name="manager_hosting_37" translatable="true">xManager のデータベースとホスティング</string>
+    <string name="mobilism_team_37" translatable="true">Mobilism チーム</string>
+    <string name="forum_team_37" translatable="true">FORUM.APK-RELEASE.NET チーム</string>
+    <string name="contributors_37" translatable="true">すべての貢献者に感謝します! ❤️</string>
+    <string name="download_selected_37" translatable="true">このパッチが適用されたバージョンを選択しました。続行をしますか?</string>
+    <string name="download_ready_37" translatable="true">パッチ済みの情報</string>
+    <string name="download_ready_desc_37" translatable="true">このパッチは、外部ディレクトリ内にある以前のファイルを上書きします。注意してください。</string>
+    <string name="downloading_file_37" translatable="true">ファイルをダウンロード中です</string>
+    <string name="download_success_37" translatable="true">ダウンロードが完了しました</string>
+    <string name="new_update_37" translatable="true">xManager の更新</string>
+    <string name="continue_1_37" translatable="true">続行</string>
+    <string name="cancel_37" translatable="true">キャンセル</string>
+    <string name="download_37" translatable="true">ダウンロード</string>
+    <string name="later_37" translatable="true">後ほど</string>
+    <string name="install_now_37" translatable="true">パッチ済みをインストール</string>
+    <string name="install_update_37" translatable="true">アップデートをインストール</string>
+    <string name="go_back_37" translatable="true">戻る</string>
+    <string name="download_update_37" translatable="true">アップデートをダウンロード</string>
+    <string name="not_now_37" translatable="true">今はしない</string>
+    <string name="mirror_37" translatable="true">ミラーリンク</string>
+    <string name="lite_37" translatable="true">ライト</string>
+    <string name="experimental_title_37" translatable="true">試験的</string>
+    <string name="experimental_version_37" translatable="true">試験的なバージョン</string>
+    <string name="experimental_version_desc_37" translatable="true">有効化する事でパッチを適用したアプリの試験的なバージョンをダウンロードしてインストールする事ができます。\n\nこれにはアルファ版、ベータ版、早期アクセス版の機能が含まれます。また、安定性は保証しません。</string>
+    <string name="show_support_37" translatable="true">サポートへの表明</string>
+    <string name="show_support_desc_37" translatable="true">私たちは非営利、非企業、妥協をしないチームです。色々なユーザーにダウンロードやインストールの作業をはるかに簡単にするアプリの開発を行なっています。\n\n私たちは、物事を正しく完璧にするべく、すべての時間と最善の努力を注いでいます。私たちはできる限りこのアプリをサポートするために最善を尽くします。\n\n寄付の金額は問いません、ありがとうございます!</string>
+    <string name="maintenance_37" translatable="true">メンテナンス</string>
+    <string name="maintenance_desc_37" translatable="true">xManager は現在使用できません。後ほど再度お試しください。</string>
+    <string name="thanks_37" translatable="true">感謝します!</string>
+    <string name="language_37" translatable="true">言語</string>
+    <string name="website_37" translatable="true">Webサイト</string>
+    <string name="reddit_37" translatable="true">Reddit</string>
+    <string name="faq_37" translatable="true">FAQ</string>
+    <string name="cloned_version_37" translatable="true">クローンバージョン</string>
+    <string name="cloned_version_desc_37" translatable="true">有効化する事でパッチを当てたアプリのクローン版をダウンロードしてインストールする事ができます。\n\n既に Spotify アプリがインストールされた環境でインストールエラーなどの問題が解決されます。</string>
+    <string name="disable_rewarded_ads_37" translatable="true">リワード広告の無効化</string>
+    <string name="disable_rewarded_ads_desc_37" translatable="true">広告を好まない方は多いと思いますが、広告を表示する事でデータベースやホスティング、アップデート、パッチの提供、ユーザーのニーズに答えるために大いに役立ちます。\n\nこれは寄付や支出をせずに私たちをサポートする最も簡単な方法になります。</string>
+    <string name="installation_failed_37" translatable="true">インストール失敗</string>
+    <string name="installation_failed_desc_37" translatable="true">理由: 現在インストールされているバージョンより低いパッチをインストールしようとしました。\n\n解決策:\nA. 同じバージョンまたはそれ以上の物を選択する。\nB. 現在のバージョンをアンインストールしてダウングレードをする。\n\n問題が解決しない場合は FAQ を参照してください。</string>
+    <string name="installation_failed_spap_desc_37" translatable="true">理由: このデバイスにインストールされているパッチは、xManager またはチーム内で直接提供された物ではありません。\n\n解決策: 現在のバージョンのアプリをアンインストールして、xManager を再起動をして再度お試しください。問題が解決しない場合は、FAQ を参照してください。</string>
+    <string name="installation_failed_cloned_desc_37" translatable="true">理由: このデバイスにインストールされているクローンは、xManager またはチーム内で直接提供された物ではありません。\n\n解決策: 現在のバージョンのアプリをアンインストールして、xManager を再起動をして再度お試しください。問題が解決しない場合は、FAQ を参照してください。</string>
+    <string name="existing_patched_37" translatable="true">既存のパッチ</string>
+    <string name="existing_patched_desc_37" translatable="true">外部ディレクトリで既存のパッチがあります。どうしますか?</string>
+    <string name="close_37" translatable="true">閉じる</string>
+    <string name="cloned_37" translatable="true">クローン</string>
+    <string name="spap_37" translatable="true">SP/AP</string>
+    <string name="install_37" translatable="true">インストール</string>
+    <string name="uninstall_37" translatable="true">アンインストール</string>
+    <string name="ignore_37" translatable="true">無視</string>
+    <string name="delete_37" translatable="true">削除</string>
+    <string name="uninstall_patched_37" translatable="true">パッチをアンインストール</string>
+    <string name="open_settings_37" translatable="true">設定を開く</string>
+    <string name="open_patched_37" translatable="true">アプリを開く</string>
+    <string name="reboot_37" translatable="true">再読み込みと再起動</string>
 </resources>
