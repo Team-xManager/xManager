@@ -154,7 +154,6 @@
     <string name="installation_failed_01" translatable="true">ইনস্টলেশন ব্যর্থ হয়েছে</string>
     <string name="installation_failed_desc_01" translatable="true">কারণ: আপনি বর্তমানে যেটি ইনস্টল করা আছে, তার চেয়ে কম প্যাচ করা সংস্করণ ইনস্টল করার চেষ্টা করেছেন৷\n\nসমাধান:\nA. এর সমান বা বড় সংস্করণ নির্বাচন করুন।\nB. বর্তমান সংস্করণ আনইনস্টল করুন, তারপর ডাউনগ্রেড করুন।\n\nযদি সমস্যাটি থেকে যায়, অনবরত জিজ্ঞাসিত প্রশ্ন দেখুন।</string>
     <string name="installation_failed_spap_desc_01" translatable="true">কারণ: এই ডিভাইসে ইনস্টল করা বর্তমান প্যাচ সরাসরি xManager বা আমাদের দলের কাছ থেকে আসেনি।\n\nসমাধান: অ্যাপ্লিকেশনটির বর্তমান সংস্করণ আনইনস্টল করুন, xManager পুনরায় চালু করুন এবং আবার চেষ্টা করুন। যদি সমস্যাটি থেকে যায়,তাহলে অনবরত জিজ্ঞাসিত প্রশ্ন দেখুন।</string>
-
     <string name="installation_failed_cloned_desc_01" translatable="true">কারণ: এই ডিভাইসে ইনস্টল করা বর্তমান ক্লোন সরাসরি xManager বা আমাদের দলের কাছ থেকে আসেনি।\n\nসমাধান: অ্যাপ্লিকেশনটির বর্তমান সংস্করণ আনইনস্টল করুন, xManager পুনরায় চালু করুন এবং আবার চেষ্টা করুন। যদি সমস্যাটি থেকে যায়, তাহলে অনবরত জিজ্ঞাসিত প্রশ্ন দেখুন।</string>
     <string name="existing_patched_01" translatable="true">বিদ্যমান প্যাচড</string>
     <string name="existing_patched_desc_01" translatable="true">বাহ্যিক ডিরেক্টরিতে একটি বিদ্যমান প্যাচ সনাক্ত করা হয়েছে। আপনি কি করতে চান?</string>
@@ -2478,7 +2477,7 @@
     <string name="manager_tools_29" translatable="true">АЛАТКЕ</string>
     <string name="source_29" translatable="true">ИЗВОР</string>
     <string name="support_29" translatable="true">TELEGRAM</string>
-    <string name="donate_29" translatable="true">ДОНИРАЈТЕ</string>
+    <string name="donate_29" translatable="true">ДОНИРАЈ</string>
     <string name="discord_29" translatable="true">DISCORD</string>
     <string name="about_29" translatable="true">О НАМА</string>
     <string name="main_title_29" translatable="true">xManager</string>
@@ -2486,73 +2485,73 @@
     <string name="about_title_29" translatable="true">О нама</string>
     <string name="list_auto_refresh_29" translatable="true">АУТОМАТСКО ОСВЕЖАВАЊЕ ЛИСТЕ</string>
     <string name="list_auto_refresh_desc_29" translatable="true">Ако ово омогућите, листа ће се аутоматски освежити сваки пут када покренете апликацију.\n\nМожете ручно да освежите листу превлачењем главног екрана надоле.</string>
-    <string name="force_auto_install_29" translatable="true">ФОРСИРАЈТЕ АУТОМАТСКУ ИНСТАЛАЦИЈУ</string>
+    <string name="force_auto_install_29" translatable="true">ПРИСИЛИ АУТОМАТСКУ ИНСТАЛАЦИЈУ</string>
     <string name="force_auto_install_desc_29" translatable="true">Ако ово омогућите, печована апликација ће се аутоматски инсталирати и ажурирати након преузимања.</string>
     <string name="show_themes_29" translatable="true">ТЕМЕ</string>
-    <string name="apk_location_29" translatable="true">APK ЛОКАЦИЈА</string>
-    <string name="apk_location_desc_29" translatable="true">Директоријум у који желите да сачувате копију преузетог фајла. Ако не знате како да конфигуришете ову функцију, оставите ово како јесте.\n\nНАПОМЕНА: Ова функција не подржава спољну меморију (СД картицу) због приступачности, дозвола и ограничења складиштења.</string>
-    <string name="clear_directory_folders_29" translatable="true">ИЗБРИШИТЕ ДИРЕКТОРИЈУМ</string>
-    <string name="clear_directory_folders_desc_29" translatable="true">Додирните да бисте избрисали директоријум. Ово укључује преузете фајлове и ажурирања.</string>
-    <string name="reset_preferences_29" translatable="true">РЕСЕТУЈТЕ ПОДЕШАВАЊА</string>
+    <string name="apk_location_29" translatable="true">ЛОКАЦИЈА APK-а</string>
+    <string name="apk_location_desc_29" translatable="true">Фолдер у који желите да сачувате копију преузетог фајла. Ако не знате како да конфигуришете ову функцију, оставите ово како јесте.\n\nНАПОМЕНА: Ова функција не подржава спољну меморију (SD (меморијску) картицу) због приступачности, дозвола и ограничења складиштења.</string>
+    <string name="clear_directory_folders_29" translatable="true">ИЗБРИШИ ФОЛДЕР</string>
+    <string name="clear_directory_folders_desc_29" translatable="true">Додирните да бисте избрисали фолдер. Ово укључује преузете фајлове и ажурирања.</string>
+    <string name="reset_preferences_29" translatable="true">РЕСЕТУЈ ПОДЕШАВАЊА</string>
     <string name="about_sub_29" translatable="true">Без реклама | Нове функције | Слобода</string>
-    <string name="xmanager_dev_29" translatable="true">Програмери xManager</string>
-    <string name="patched_devs_29" translatable="true">Програмери Spotify мода</string>
+    <string name="xmanager_dev_29" translatable="true">Програмер xManager-а</string>
+    <string name="patched_devs_29" translatable="true">Програмери Spotify печа</string>
     <string name="support_team_29" translatable="true">Telegram | Discord | Reddit тим за подршку</string>
-    <string name="manager_testers_29" translatable="true">Мод и менаџер тестери</string>
-    <string name="manager_hosting_29" translatable="true">База података менаџера и хостинг</string>
+    <string name="manager_testers_29" translatable="true">Тестери печа и менаџера</string>
+    <string name="manager_hosting_29" translatable="true">База података и хостинг менаџера</string>
     <string name="mobilism_team_29" translatable="true">Mobilism тим</string>
     <string name="forum_team_29" translatable="true">FORUM.APK-RELEASE.NET тим</string>
     <string name="contributors_29" translatable="true">ХВАЛА СВИМ САРАДНИЦИМА! ❤️</string>
-    <string name="download_selected_29" translatable="true">Изабрали сте ову печовану верзију. Да ли желите да наставите?</string>
-    <string name="download_ready_29" translatable="true">ИНФОРМАЦИЈЕ О МОДУ</string>
-    <string name="download_ready_desc_29" translatable="true">Преузимање овог печованог APK фајла преписаће претходни фајл који се налази у спољном директоријуму.</string>
+    <string name="download_selected_29" translatable="true">Изабрали сте ову печовану верзију. Желите ли да наставите?</string>
+    <string name="download_ready_29" translatable="true">ИНФОРМАЦИЈЕ О ПЕЧУ</string>
+    <string name="download_ready_desc_29" translatable="true">Овај печ ће заменити претходни фајл који се налази у спољном фолдеру. Наставите с опрезом.</string>
     <string name="downloading_file_29" translatable="true">ПРЕУЗИМАЊЕ ФАЈЛА</string>
     <string name="download_success_29" translatable="true">УСПЕШНО ПРЕУЗЕТО</string>
     <string name="new_update_29" translatable="true">НОВО АЖУРИРАЊЕ МЕНАЏЕРА</string>
-    <string name="continue_1_29" translatable="true">НАСТАВИТЕ</string>
-    <string name="cancel_29" translatable="true">ОТКАЖИТЕ</string>
-    <string name="download_29" translatable="true">ПРЕУЗМИТЕ</string>
+    <string name="continue_1_29" translatable="true">НАСТАВИ</string>
+    <string name="cancel_29" translatable="true">ОТКАЖИ</string>
+    <string name="download_29" translatable="true">ПРЕУЗМИ</string>
     <string name="later_29" translatable="true">КАСНИЈЕ</string>
-    <string name="install_now_29" translatable="true">ИНСТАЛИРАЈТЕ САДА</string>
-    <string name="install_update_29" translatable="true">ИНСТАЛИРАЈТЕ АЖУРИРАЊЕ</string>
+    <string name="install_now_29" translatable="true">ИНСТАЛИРАЈ САДА</string>
+    <string name="install_update_29" translatable="true">ИНСТАЛИРАЈ АЖУРИРАЊЕ</string>
     <string name="go_back_29" translatable="true">НАЗАД</string>
-    <string name="download_update_29" translatable="true">ПРЕУЗМИТЕ АЖУРИРАЊЕ</string>
+    <string name="download_update_29" translatable="true">ПРЕУЗМИ АЖУРИРАЊЕ</string>
     <string name="not_now_29" translatable="true">НЕ САДА</string>
     <string name="mirror_29" translatable="true">MIRROR ЛИНК</string>
     <string name="lite_29" translatable="true">LITE</string>
     <string name="experimental_title_29" translatable="true">Експериментално</string>
     <string name="experimental_version_29" translatable="true">ЕКСПЕРИМЕНТАЛНА ВЕРЗИЈА</string>
     <string name="experimental_version_desc_29" translatable="true">Ако ово омогућите, моћи ћете да преузмете и инсталирате експерименталну верзију печоване апликације.\n\nОво укључује алфа, бета и функције раног приступа, које нису доступне у основној печованој верзији. Поред тога, није загарантована стабилност апликације.</string>
-    <string name="show_support_29" translatable="true">ПОКАЖИТЕ ВАШУ ПОДРШКУ</string>
-    <string name="show_support_desc_29" translatable="true">Ми смо непрофитни, некорпоративни и некомпромитовани тим. Људи попут Вас подстичу нас да направимо апликацију како бисмо ствари учинили много лакшим, посебно од преузимања до инсталирања.\n\nУлажемо све наше време и све напоре како би ствари биле исправне и савршене. Даћемо све од себе да подржавамо ову апликацију колико год можемо.\n\nСваки износ ће помоћи и бити веома цењен!</string>
+    <string name="show_support_29" translatable="true">ПОКАЖИТЕ СВОЈУ ПОДРШКУ</string>
+    <string name="show_support_desc_29" translatable="true">Ми смо непрофитни, некорпоративни и некомпромитовани тим. Људи попут вас подстичу нас да направимо апликацију како бисмо ствари учинили много лакшим, посебно од преузимања до инсталирања.\n\nУлажемо све наше време и све напоре како би ствари биле исправне и савршене. Даћемо све од себе да подржавамо ову апликацију колико год можемо.\n\nСваки износ ће помоћи и бити веома цењен!</string>
     <string name="maintenance_29" translatable="true">ОДРЖАВАЊЕ</string>
-    <string name="maintenance_desc_29" translatable="true">xManager тренутно није доступан. Молимо Вас да касније проверите апликацију!</string>
+    <string name="maintenance_desc_29" translatable="true">xManager тренутно није доступан. Покушајте поново касније.</string>
     <string name="thanks_29" translatable="true">ХВАЛА!</string>
     <string name="language_29" translatable="true">ЈЕЗИК</string>
     <string name="website_29" translatable="true">ВЕБ-САЈТ</string>
     <string name="reddit_29" translatable="true">REDDIT</string>
-    <string name="faq_29" translatable="true">ПИТАЊА</string>
+    <string name="faq_29" translatable="true">ЧПП</string>
     <string name="cloned_version_29" translatable="true">КЛОНИРАНА ВЕРЗИЈА</string>
     <string name="cloned_version_desc_29" translatable="true">Ако ово омогућите, моћи ћете да преузмете и инсталирате клонирану верзију печоване апликације.\n\nОво ће, такође, решити већину грешака или проблема при инсталацији, посебно ако имате унапред инсталирану Spotify апликацију.</string>
-    <string name="disable_rewarded_ads_29" translatable="true">ОНЕМОГУЋИТЕ РЕКЛАМЕ С НАГРАДОМ</string>
+    <string name="disable_rewarded_ads_29" translatable="true">ОНЕМОГУЋИ РЕКЛАМЕ С НАГРАДОМ</string>
     <string name="disable_rewarded_ads_desc_29" translatable="true">Знамо да већина нас не воли рекламе, али, у нашем случају, то нам значајно помаже да финансирамо нашу базу података, хостинг линкова, ажурирања, више печева и дневних потреба.\n\nОво је најједноставнији начин да нас подржите, без донирања или трошења новца.</string>
     <string name="installation_failed_29" translatable="true">ИНСТАЛАЦИЈА НИЈЕ УСПЕЛА</string>
-    <string name="installation_failed_desc_29" translatable="true">Разлог: Покушали сте да инсталирате верзију мода нижу од оне која је тренутно инсталирана.\n\nРешења:\nA. Изаберите верзију, исту или већу.\nB. Деинсталирајте тренутну верзију, а затим снизите.\n\nАко се проблем настави, проверите често постављена питања.</string>
-    <string name="installation_failed_spap_desc_29" translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManagerа или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављена питања.</string>
-    <string name="installation_failed_cloned_desc_29" translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManagerа или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављена питања.</string>
-    <string name="existing_patched_29" translatable="true">ПОСТОЈЕЋИ МОД</string>
-    <string name="existing_patched_desc_29" translatable="true">Постојећи печовани APK фајл пронађен је у једном од директоријума. Коју акцију бисте желели да урадитe?</string>
-    <string name="close_29" translatable="true">ЗАТВОРИТЕ</string>
+    <string name="installation_failed_desc_29" translatable="true">Разлог: Покушали сте да инсталирате верзију мода нижу од оне која је тренутно инсталирана.\n\nРешења:\nA. Изаберите верзију, исту или већу.\nB. Деинсталирајте тренутну верзију, а затим снизите.\n\nАко се проблем настави, проверите често постављана питања.</string>
+    <string name="installation_failed_spap_desc_29" translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManager-а или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављана питања.</string>
+    <string name="installation_failed_cloned_desc_29" translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManager-а или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављана питања.</string>
+    <string name="existing_patched_29" translatable="true">ПОСТОЈЕЋИ ПЕЧ</string>
+    <string name="existing_patched_desc_29" translatable="true">Постојећи фајл је откривен у спољном фолдеру. Коју радњу бисте желели да извршите?</string>
+    <string name="close_29" translatable="true">ЗАТВОРИ</string>
     <string name="cloned_29" translatable="true">КЛОНИРАН</string>
     <string name="spap_29" translatable="true">SP/AP</string>
-    <string name="install_29" translatable="true">ИНСТАЛИРАЈТЕ</string>
-    <string name="uninstall_29" translatable="true">ДЕИНСТАЛИРАЈТЕ</string>
-    <string name="ignore_29" translatable="true">ИГНОРИШИТЕ</string>
-    <string name="delete_29" translatable="true">ИЗБРИШИТЕ</string>
-    <string name="uninstall_patched_29" translatable="true">ДЕИНСТАЛИРАЈТЕ МОД</string>
+    <string name="install_29" translatable="true">ИНСТАЛИРАЈ</string>
+    <string name="uninstall_29" translatable="true">ДЕИНСТАЛИРАЈ</string>
+    <string name="ignore_29" translatable="true">ИГНОРИШИ</string>
+    <string name="delete_29" translatable="true">ИЗБРИШИ</string>
+    <string name="uninstall_patched_29" translatable="true">ДЕИНСТАЛИРАЈТЕ ПЕЧ</string>
     <string name="open_settings_29" translatable="true">ОТВОРИТЕ ПОДЕШАВАЊА</string>
-    <string name="open_patched_29" translatable="true">ОТВОРИТЕ МОД</string>
-    <string name="reboot_29" translatable="true">ПОНОВО ПРИКУПИТЕ ПОДАТКЕ И ПОНОВО ПОКРЕНИТЕ</string>
+    <string name="open_patched_29" translatable="true">ОТВОРИТЕ ПЕЧ</string>
+    <string name="reboot_29" translatable="true">ПРИК. ПОД. И РЕСТАРТУЈ</string>
     
     <!--SERBIAN (LATIN) LANGUAGE-->
     <string name="app_name_30" translatable="true">xManager</string>
@@ -2563,7 +2562,7 @@
     <string name="manager_tools_30" translatable="true">ALATKE</string>
     <string name="source_30" translatable="true">IZVOR</string>
     <string name="support_30" translatable="true">TELEGRAM</string>
-    <string name="donate_30" translatable="true">DONIRAJTE</string>
+    <string name="donate_30" translatable="true">DONIRAJ</string>
     <string name="discord_30" translatable="true">DISCORD</string>
     <string name="about_30" translatable="true">O NAMA</string>
     <string name="main_title_30" translatable="true">xManager</string>
@@ -2571,73 +2570,73 @@
     <string name="about_title_30" translatable="true">O nama</string>
     <string name="list_auto_refresh_30" translatable="true">AUTOMATSKO OSVEŽAVANjE LISTE</string>
     <string name="list_auto_refresh_desc_30" translatable="true">Ako ovo omogućite, lista će se automatski osvežiti svaki put kada pokrenete aplikaciju.\n\nMožete ručno da osvežite listu prevlačenjem glavnog ekrana nadole.</string>
-    <string name="force_auto_install_30" translatable="true">FORSIRAJTE AUTOMATSKU INSTALACIJU</string>
+    <string name="force_auto_install_30" translatable="true">PRISILI AUTOMATSKU INSTALACIJU</string>
     <string name="force_auto_install_desc_30" translatable="true">Ako ovo omogućite, pečovana aplikacija će se automatski instalirati i ažurirati nakon preuzimanja.</string>
     <string name="show_themes_30" translatable="true">TEME</string>
-    <string name="apk_location_30" translatable="true">APK LOKACIJA</string>
-    <string name="apk_location_desc_30" translatable="true">Direktorijum u koji želite da sačuvate kopiju preuzetog fajla. Ako ne znate kako da konfigurišete ovu funkciju, ostavite ovo kako jeste.\n\nNAPOMENA: Ova funkcija ne podržava spoljnu memoriju (SD karticu) zbog pristupačnosti, dozvola i ograničenja skladištenja.</string>
-    <string name="clear_directory_folders_30" translatable="true">IZBRIŠITE DIREKTORIJUM</string>
-    <string name="clear_directory_folders_desc_30" translatable="true">Dodirnite da biste izbrisali direktorijum. Ovo uključuje preuzete fajlove i ažuriranja.</string>
-    <string name="reset_preferences_30" translatable="true">RESETUJTE PODEŠAVANjA</string>
+    <string name="apk_location_30" translatable="true">LOKACIJA APK-a</string>
+    <string name="apk_location_desc_30" translatable="true">Folder u koji želite da sačuvate kopiju preuzetog fajla. Ako ne znate kako da konfigurišete ovu funkciju, ostavite ovo kako jeste.\n\nNAPOMENA: Ova funkcija ne podržava spoljnu memoriju (SD (memorijsku) karticu) zbog pristupačnosti, dozvola i ograničenja skladištenja.</string>
+    <string name="clear_directory_folders_30" translatable="true">IZBRIŠI FOLDER</string>
+    <string name="clear_directory_folders_desc_30" translatable="true">Dodirnite da biste izbrisali folder. Ovo uključuje preuzete fajlove i ažuriranja.</string>
+    <string name="reset_preferences_30" translatable="true">RESETUJ PODEŠAVANjA</string>
     <string name="about_sub_30" translatable="true">Bez reklama | Nove funkcije | Sloboda</string>
-    <string name="xmanager_dev_30" translatable="true">Programeri xManager</string>
-    <string name="patched_devs_30" translatable="true">Programeri Spotify moda</string>
+    <string name="xmanager_dev_30" translatable="true">Programer xManager-a</string>
+    <string name="patched_devs_30" translatable="true">Programeri Spotify peča</string>
     <string name="support_team_30" translatable="true">Telegram | Discord | Reddit tim za podršku</string>
-    <string name="manager_testers_30" translatable="true">Mod i menadžer testeri</string>
-    <string name="manager_hosting_30" translatable="true">Baza podataka menadžera i hosting</string>
+    <string name="manager_testers_30" translatable="true">Testeri peča i menadžera</string>
+    <string name="manager_hosting_30" translatable="true">Baza podataka i hosting menadžera</string>
     <string name="mobilism_team_30" translatable="true">Mobilism tim</string>
     <string name="forum_team_30" translatable="true">FORUM.APK-RELEASE.NET tim</string>
     <string name="contributors_30" translatable="true">HVALA SVIM SARADNICIMA! ❤️</string>
-    <string name="download_selected_30" translatable="true">Izabrali ste ovu pečovanu verziju. Da li želite da nastavite?</string>
-    <string name="download_ready_30" translatable="true">INFORMACIJE O MODU</string>
-    <string name="download_ready_desc_30" translatable="true">Preuzimanje ovog pečovanog APK fajla prepisaće prethodni fajl koji se nalazi u spoljnom direktorijumu.</string>
+    <string name="download_selected_30" translatable="true">Izabrali ste ovu pečovanu verziju. Želite li da nastavite?</string>
+    <string name="download_ready_30" translatable="true">INFORMACIJE O PEČU</string>
+    <string name="download_ready_desc_30" translatable="true">Ovaj peč će zameniti prethodni fajl koji se nalazi u spoljnom folderu. Nastavite s oprezom.</string>
     <string name="downloading_file_30" translatable="true">PREUZIMANjE FAJLA</string>
     <string name="download_success_30" translatable="true">USPEŠNO PREUZETO</string>
     <string name="new_update_30" translatable="true">NOVO AŽURIRANjE MENADžERA</string>
-    <string name="continue_1_30" translatable="true">NASTAVITE</string>
-    <string name="cancel_30" translatable="true">OTKAŽITE</string>
-    <string name="download_30" translatable="true">PREUZMITE</string>
+    <string name="continue_1_30" translatable="true">NASTAVI</string>
+    <string name="cancel_30" translatable="true">OTKAŽI</string>
+    <string name="download_30" translatable="true">PREUZMI</string>
     <string name="later_30" translatable="true">KASNIJE</string>
-    <string name="install_now_30" translatable="true">INSTALIRAJTE SADA</string>
-    <string name="install_update_30" translatable="true">INSTALIRAJTE AŽURIRANjE</string>
+    <string name="install_now_30" translatable="true">INSTALIRAJ SADA</string>
+    <string name="install_update_30" translatable="true">INSTALIRAJ AŽURIRANjE</string>
     <string name="go_back_30" translatable="true">NAZAD</string>
-    <string name="download_update_30" translatable="true">PREUZMITE AŽURIRANjE</string>
+    <string name="download_update_30" translatable="true">PREUZMI AŽURIRANjE</string>
     <string name="not_now_30" translatable="true">NE SADA</string>
     <string name="mirror_30" translatable="true">MIRROR LINK</string>
     <string name="lite_30" translatable="true">LITE</string>
     <string name="experimental_title_30" translatable="true">Eksperimentalno</string>
     <string name="experimental_version_30" translatable="true">EKSPERIMENTALNA VERZIJA</string>
     <string name="experimental_version_desc_30" translatable="true">Ako ovo omogućite, moći ćete da preuzmete i instalirate eksperimentalnu verziju pečovane aplikacije.\n\nOvo uključuje alfa, beta i funkcije ranog pristupa, koje nisu dostupne u osnovnoj pečovanoj verziji. Pored toga, nije zagarantovana stabilnost aplikacije.</string>
-    <string name="show_support_30" translatable="true">POKAŽITE VAŠU PODRŠKU</string>
-    <string name="show_support_desc_30" translatable="true">Mi smo neprofitni, nekorporativni i nekompromitovani tim. Ljudi poput Vas podstiču nas da napravimo aplikaciju kako bismo stvari učinili mnogo lakšim, posebno od preuzimanja do instaliranja.\n\nUlažemo sve naše vreme i sve napore kako bi stvari bile ispravne i savršene. Daćemo sve od sebe da podržavamo ovu aplikaciju koliko god možemo.\n\nSvaki iznos će pomoći i biti veoma cenjen!</string>
+    <string name="show_support_30" translatable="true">POKAŽITE SVOJU PODRŠKU</string>
+    <string name="show_support_desc_30" translatable="true">Mi smo neprofitni, nekorporativni i nekompromitovani tim. Ljudi poput vas podstiču nas da napravimo aplikaciju kako bismo stvari učinili mnogo lakšim, posebno od preuzimanja do instaliranja.\n\nUlažemo sve naše vreme i sve napore kako bi stvari bile ispravne i savršene. Daćemo sve od sebe da podržavamo ovu aplikaciju koliko god možemo.\n\nSvaki iznos će pomoći i biti veoma cenjen!</string>
     <string name="maintenance_30" translatable="true">ODRŽAVANjE</string>
-    <string name="maintenance_desc_30" translatable="true">xManager trenutno nije dostupan. Molimo Vas da kasnije proverite aplikaciju!</string>
+    <string name="maintenance_desc_30" translatable="true">xManager trenutno nije dostupan. Pokušajte ponovo kasnije.</string>
     <string name="thanks_30" translatable="true">HVALA!</string>
     <string name="language_30" translatable="true">JEZIK</string>
     <string name="website_30" translatable="true">VEB-SAJT</string>
     <string name="reddit_30" translatable="true">REDDIT</string>
-    <string name="faq_30" translatable="true">PITANjA</string>
+    <string name="faq_30" translatable="true">ČPP</string>
     <string name="cloned_version_30" translatable="true">KLONIRANA VERZIJA</string>
     <string name="cloned_version_desc_30" translatable="true">Ako ovo omogućite, moći ćete da preuzmete i instalirate kloniranu verziju pečovane aplikacije.\n\nOvo će, takođe, rešiti većinu grešaka ili problema pri instalaciji, posebno ako imate unapred instaliranu Spotify aplikaciju.</string>
-    <string name="disable_rewarded_ads_30" translatable="true">ONEMOGUĆITE REKLAME S NAGRADOM</string>
+    <string name="disable_rewarded_ads_30" translatable="true">ONEMOGUĆI REKLAME S NAGRADOM</string>
     <string name="disable_rewarded_ads_desc_30" translatable="true">Znamo da većina nas ne voli reklame, ali, u našem slučaju, to nam značajno pomaže da finansiramo našu bazu podataka, hosting linkova, ažuriranja, više pečeva i dnevnih potreba.\n\nOvo je najjednostavniji način da nas podržite, bez doniranja ili trošenja novca.</string>
     <string name="installation_failed_30" translatable="true">INSTALACIJA NIJE USPELA</string>
-    <string name="installation_failed_desc_30" translatable="true">Razlog: Pokušali ste da instalirate verziju moda nižu od one koja je trenutno instalirana.\n\nRešenja:\nA. Izaberite verziju, jednaku ili veću.\nB. Deinstalirajte trenutnu verziju, a zatim snizite.\n\nAko se problem nastavi, proverite često postavljena pitanja.</string>
-    <string name="installation_failed_spap_desc_30" translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManagera ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljena pitanja.</string>
-    <string name="installation_failed_cloned_desc_30" translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManagera ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljena pitanja.</string>
-    <string name="existing_patched_30" translatable="true">POSTOJEĆI MOD</string>
-    <string name="existing_patched_desc_30" translatable="true">Postojeći pečovani APK fajl pronađen je u jednom od direktorijuma. Koju akciju biste želeli da uradite?</string>
-    <string name="close_30" translatable="true">ZATVORITE</string>
+    <string name="installation_failed_desc_30" translatable="true">Razlog: Pokušali ste da instalirate verziju moda nižu od one koja je trenutno instalirana.\n\nRešenja:\nA. Izaberite verziju, jednaku ili veću.\nB. Deinstalirajte trenutnu verziju, a zatim snizite.\n\nAko se problem nastavi, proverite često postavljana pitanja.</string>
+    <string name="installation_failed_spap_desc_30" translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManager-a ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljana pitanja.</string>
+    <string name="installation_failed_cloned_desc_30" translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManager-a ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljana pitanja.</string>
+    <string name="existing_patched_30" translatable="true">POSTOJEĆI PEČ</string>
+    <string name="existing_patched_desc_30" translatable="true">Postojeći peč je otkriven u spoljnom folderu. Koju radnju biste želeli da izvršite?</string>
+    <string name="close_30" translatable="true">ZATVORI</string>
     <string name="cloned_30" translatable="true">KLONIRAN</string>
     <string name="spap_30" translatable="true">SP/AP</string>
-    <string name="install_30" translatable="true">INSTALIRAJTE</string>
-    <string name="uninstall_30" translatable="true">DEINSTALIRAJTE</string>
-    <string name="ignore_30" translatable="true">IGNORIŠITE</string>
-    <string name="delete_30" translatable="true">IZBRIŠITE</string>
-    <string name="uninstall_patched_30" translatable="true">DEINSTALIRAJTE MOD</string>
+    <string name="install_30" translatable="true">INSTALIRAJ</string>
+    <string name="uninstall_30" translatable="true">DEINSTALIRAJ</string>
+    <string name="ignore_30" translatable="true">IGNORIŠI</string>
+    <string name="delete_30" translatable="true">IZBRIŠI</string>
+    <string name="uninstall_patched_30" translatable="true">DEINSTALIRAJTE PEČ</string>
     <string name="open_settings_30" translatable="true">OTVORITE PODEŠAVANjA</string>
-    <string name="open_patched_30" translatable="true">OTVORITE MOD</string>
-    <string name="reboot_30" translatable="true">PONOVO PRIKUPITE PODATKE I PONOVO POKRENITE</string>
+    <string name="open_patched_30" translatable="true">OTVORITE PEČ</string>
+    <string name="reboot_30" translatable="true">PRIK. POD. I RESTARTUJ</string>
     
     <!--CATALAN LANGUAGE-->
     <string name="app_name_31" translatable="true">xManager</string>
