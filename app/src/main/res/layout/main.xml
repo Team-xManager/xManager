@@ -601,7 +601,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginLeft="10dp"
-				android:layout_marginTop="8dp"
+				android:layout_marginTop="10dp"
 				android:layout_marginRight="10dp"
 				android:padding="10dp"
 				android:background="#212121"
@@ -672,7 +672,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginLeft="10dp"
-				android:layout_marginTop="8dp"
+				android:layout_marginTop="10dp"
 				android:layout_marginRight="10dp"
 				android:padding="10dp"
 				android:background="#212121"
@@ -742,7 +742,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginLeft="10dp"
-				android:layout_marginTop="8dp"
+				android:layout_marginTop="10dp"
 				android:layout_marginRight="10dp"
 				android:padding="10dp"
 				android:background="#212121"
@@ -949,6 +949,256 @@
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/main_box_21"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginRight="10dp"
+				android:padding="10dp"
+				android:background="#212121"
+				android:orientation="vertical">
+				<LinearLayout
+					android:id="@+id/box_21_sub_1"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="right|center_vertical"
+					android:orientation="horizontal">
+					<LinearLayout
+						android:id="@+id/title_box_12"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/disable_notification"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="8dp"
+							android:text="DISABLE NOTIFICATION"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#1DB954" />
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_disable_notification"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:gravity="right|center_vertical"
+						android:orientation="horizontal">
+						<Switch
+							android:id="@+id/disable_notification_switch"
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginRight="8dp"
+							android:paddingLeft="5dp"
+							android:paddingRight="2dp"
+							android:gravity="center_horizontal|center_vertical"
+							android:textSize="12sp"
+							android:textColor="#000000"
+							android:track="@drawable/track"
+							android:thumb="@drawable/thumb" />
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/box_21_sub_2"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="5dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/disable_notification_info"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Enabling this will remove the reminder notification after installing the patched application."
+						android:textSize="12sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/main_box_20"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginRight="10dp"
+				android:padding="10dp"
+				android:background="#212121"
+				android:orientation="vertical">
+				<LinearLayout
+					android:id="@+id/box_20_sub_1"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="right|center_vertical"
+					android:orientation="horizontal">
+					<LinearLayout
+						android:id="@+id/title_box_8"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/hide_stock_patched"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="8dp"
+							android:text="HIDE STOCK PATCHED"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#1DB954" />
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_hide_stock_patched"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:gravity="right|center_vertical"
+						android:orientation="horizontal">
+						<Switch
+							android:id="@+id/hide_stock_patched_switch"
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginRight="8dp"
+							android:paddingLeft="5dp"
+							android:paddingRight="2dp"
+							android:gravity="center_horizontal|center_vertical"
+							android:textSize="12sp"
+							android:textColor="#000000"
+							android:track="@drawable/track"
+							android:thumb="@drawable/thumb" />
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/box_20_sub_2"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="right|center_vertical"
+					android:orientation="horizontal">
+					<LinearLayout
+						android:id="@+id/title_box_9"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/hide_amoled_patched"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="8dp"
+							android:text="HIDE AMOLED PATCHED"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#1DB954" />
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_hide_amoled_patched"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:gravity="right|center_vertical"
+						android:orientation="horizontal">
+						<Switch
+							android:id="@+id/hide_amoled_patched_switch"
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginRight="8dp"
+							android:paddingLeft="5dp"
+							android:paddingRight="2dp"
+							android:gravity="center_horizontal|center_vertical"
+							android:textSize="12sp"
+							android:textColor="#000000"
+							android:track="@drawable/track"
+							android:thumb="@drawable/thumb" />
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/box_20_sub_3"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="right|center_vertical"
+					android:orientation="horizontal">
+					<LinearLayout
+						android:id="@+id/title_box_10"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/hide_lite_patched"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="8dp"
+							android:text="HIDE LITE PATCHED"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#1DB954" />
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_hide_lite_patched"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:gravity="right|center_vertical"
+						android:orientation="horizontal">
+						<Switch
+							android:id="@+id/hide_lite_patched_switch"
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginRight="8dp"
+							android:paddingLeft="5dp"
+							android:paddingRight="2dp"
+							android:gravity="center_horizontal|center_vertical"
+							android:textSize="12sp"
+							android:textColor="#000000"
+							android:track="@drawable/track"
+							android:thumb="@drawable/thumb" />
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/box_20_sub_4"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="right|center_vertical"
+					android:orientation="horizontal">
+					<LinearLayout
+						android:id="@+id/title_box_11"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:layout_weight="1">
+						<TextView
+							android:id="@+id/hide_wave_patched"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="8dp"
+							android:text="HIDE WAVE PATCHED"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:textColor="#1DB954" />
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/box_hide_wave_patched"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:gravity="right|center_vertical"
+						android:orientation="horizontal">
+						<Switch
+							android:id="@+id/hide_wave_patched_switch"
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginRight="8dp"
+							android:paddingLeft="5dp"
+							android:paddingRight="2dp"
+							android:gravity="center_horizontal|center_vertical"
+							android:textSize="12sp"
+							android:textColor="#000000"
+							android:track="@drawable/track"
+							android:thumb="@drawable/thumb" />
+					</LinearLayout>
 				</LinearLayout>
 			</LinearLayout>
 			<LinearLayout
@@ -2306,7 +2556,7 @@
 					android:paddingLeft="8dp"
 					android:paddingTop="8dp"
 					android:paddingRight="8dp"
-					android:text="Nepali Translation"
+					android:text="Japanese Translation"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#1DB954" />
@@ -2317,7 +2567,51 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
+					android:text="reindex-ot"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_38"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Nepali Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_38"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
 					android:text="iamkishansharma"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_39"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Tamil Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_39"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:text="jothi-prasath"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -2395,7 +2689,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_marginLeft="10dp"
-					android:layout_marginTop="20dp"
+					android:layout_marginTop="15dp"
 					android:layout_marginRight="10dp"
 					android:padding="7dp"
 					android:background="#212121"
@@ -2577,7 +2871,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_marginLeft="10dp"
-					android:layout_marginTop="10dp"
+					android:layout_marginTop="15dp"
 					android:layout_marginRight="10dp"
 					android:padding="7dp"
 					android:background="#212121"
@@ -2758,7 +3052,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_marginLeft="10dp"
-					android:layout_marginTop="10dp"
+					android:layout_marginTop="15dp"
 					android:layout_marginRight="10dp"
 					android:padding="7dp"
 					android:background="#212121"
@@ -2899,7 +3193,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_marginLeft="10dp"
-					android:layout_marginTop="20dp"
+					android:layout_marginTop="15dp"
 					android:layout_marginRight="10dp"
 					android:gravity="center_horizontal|center_vertical"
 					android:orientation="horizontal"
@@ -2946,7 +3240,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_marginLeft="10dp"
-					android:layout_marginTop="10dp"
+					android:layout_marginTop="15dp"
 					android:layout_marginRight="10dp"
 					android:padding="7dp"
 					android:background="#212121"
@@ -3085,7 +3379,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_marginLeft="10dp"
-					android:layout_marginTop="20dp"
+					android:layout_marginTop="15dp"
 					android:layout_marginRight="10dp"
 					android:gravity="center_horizontal|center_vertical"
 					android:orientation="horizontal"
@@ -3132,7 +3426,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_marginLeft="10dp"
-					android:layout_marginTop="10dp"
+					android:layout_marginTop="15dp"
 					android:layout_marginRight="10dp"
 					android:padding="7dp"
 					android:background="#212121"
@@ -3319,7 +3613,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_marginLeft="10dp"
-					android:layout_marginTop="10dp"
+					android:layout_marginTop="15dp"
 					android:layout_marginRight="10dp"
 					android:padding="7dp"
 					android:background="#212121"
