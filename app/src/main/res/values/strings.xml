@@ -3063,88 +3063,88 @@
     <string name="open_patched_35" translatable="true">A PATCHELT ALKALMAZÁS MEGNYITÁSA</string>
     <string name="reboot_35" translatable="true">ÚJRAFETCHELÉS ÉS AZ ALKALMAZÁS ÚJRAINDÍTÁSA</string>
 
-    <!--NEPALI LANGUAGE-->
+    <!--TAMIL LANGUAGE-->
     <string name="app_name_36" translatable="true">xManager</string>
-    <string name="installed_36" translatable="true">स्थापना गरियो</string>
-    <string name="latest_36" translatable="true">नवीनतम</string>
-    <string name="versions_36" translatable="true">संस्करणहरू  </string>
-    <string name="changelogs_36" translatable="true">लगहरू परिवर्तन</string>
-    <string name="manager_tools_36" translatable="true">प्रबन्धक उपकरणहरू</string>
-    <string name="source_36" translatable="true">स्रोत</string>
-    <string name="support_36" translatable="true">टेलिग्राम</string>
-    <string name="donate_36" translatable="true">समर्थन</string>
-    <string name="discord_36" translatable="true">डिस्कोर्ड</string>
-    <string name="about_36" translatable="true">बारेमा</string>
+    <string name="installed_36" translatable="true">நிறுவப்பட்டது</string>
+    <string name="latest_36" translatable="true">புதிதான</string>
+    <string name="versions_36" translatable="true">பதிப்புகள்</string>
+    <string name="changelogs_36" translatable="true">மாற்றப்பட்ட பதிவுகள்</string>
+    <string name="manager_tools_36" translatable="true">மேலாளர் கருவிகள்</string>
+    <string name="source_36" translatable="true">ஆதாரம்</string>
+    <string name="support_36" translatable="true">டெலிகிராம்</string>
+    <string name="donate_36" translatable="true">ஆதரவு</string>
+    <string name="discord_36" translatable="true">டிஸ்கார்ட்</string>
+    <string name="about_36" translatable="true">பற்றி</string>
     <string name="main_title_36" translatable="true">xManager</string>
-    <string name="settings_title_36" translatable="true">सेटिङहरू</string>
-    <string name="about_title_36" translatable="true">बारेमा</string>
-    <string name="list_auto_refresh_36" translatable="true">सूची स्वत: ताजा गर्नुहोस्</string>
-    <string name="list_auto_refresh_desc_36" translatable="true">यसलाई सक्षम गर्नाले प्रत्येक पटक तपाईंले एप सुरु गर्दा सूची स्वतः ताजा हुनेछ।\n\nतपाईंले मुख्य स्क्रिनलाई तल तानेर म्यानुअल रूपमा सूची रिफ्रेस गर्न सक्नुहुन्छ।</string>
-    <string name="force_auto_install_36" translatable="true">बल स्वत: इन्स्टल गर्नुहोस्</string>
-    <string name="force_auto_install_desc_36" translatable="true">यसलाई सक्षम गर्नाले प्याच गरिएको एप्लिकेसन स्वतः इन्स्टल हुनेछ र डाउनलोड भएपछि अद्यावधिक हुनेछ।</string>
-    <string name="show_themes_36" translatable="true">थिमहरू</string>
-    <string name="apk_location_36" translatable="true">APK को स्थान</string>
-    <string name="apk_location_desc_36" translatable="true">डाइरेक्टरी जहाँ तपाईं डाउनलोड गरिएको फाइलको प्रतिलिपि बचत गर्न चाहनुहुन्छ। यदि तपाइँलाई यो सुविधा कसरी कन्फिगर गर्ने थाहा छैन भने, यो जस्तै छोड्नुहोस्।\n\nनोट: पहुँच, अनुमति र भण्डारण सीमितताहरूको कारणले गर्दा यो सुविधाले बाह्य भण्डारण (SD कार्ड) समर्थन गर्दैन।</string>
-    <string name="clear_directory_folders_36" translatable="true">डाइरेक्टरी फोल्डर खाली गर्नुहोस्</string>
-    <string name="clear_directory_folders_desc_36" translatable="true">डाइरेक्टरी फोल्डर मेटाउन ट्याप गर्नुहोस्। यसमा डाउनलोड गरिएका फाइलहरू र अद्यावधिकहरू समावेश छन्।</string>
-    <string name="reset_preferences_36" translatable="true">प्राथमिकताहरू रिसेट गर्नुहोस्</string>
-    <string name="about_sub_36" translatable="true">विज्ञापन-मुक्त | नयाँ सुविधाहरू | स्वतन्त्रता</string>
-    <string name="xmanager_dev_36" translatable="true">xManager विकासकर्ता</string>
-    <string name="patched_devs_36" translatable="true">प्याच गरेका विकासकर्ताहरू</string>
-    <string name="support_team_36" translatable="true">टेलिग्राम | डिस्कोर्ड | रेड्डित समर्थन टोली</string>
-    <string name="manager_testers_36" translatable="true">प्याच र प्रबन्धक परीक्षकहरू</string>
-    <string name="manager_hosting_36" translatable="true">प्रबन्धक डाटाबेस र होस्टिंग</string>
-    <string name="mobilism_team_36" translatable="true">Mobilism Team</string>
-    <string name="forum_team_36" translatable="true">FORUM.APK-RELEASE.NET टोली</string>
-    <string name="contributors_36" translatable="true">सबै योगदानकर्ताहरु लाई धन्यवाद! ❤️</string>
-    <string name="download_selected_36" translatable="true">तपाईंले यो प्याच गरिएको संस्करण चयन गर्नुभयो। के तपाइँ जारी राख्न चाहनुहुन्छ?</string>
-    <string name="download_ready_36" translatable="true">प्याच गरिएको जानकारी</string>
-    <string name="download_ready_desc_36" translatable="true">यो प्याचले बाह्य डाइरेक्टरीमा अवस्थित अघिल्लो फाइल अधिलेखन गर्नेछ। सावधानीपूर्वक अगाडि बढ्नुहोस्।</string>
-    <string name="downloading_file_36" translatable="true">फाइल डाउनलोड गरिँदै</string>
-    <string name="download_success_36" translatable="true">सफलतापूर्वक डाउनलोड गरियो</string>
-    <string name="new_update_36" translatable="true">नयाँ प्रबन्धक अद्यावधिक</string>
-    <string name="continue_1_36" translatable="true">जारी राख्नुहोस्</string>
-    <string name="cancel_36" translatable="true">रद्द गर्नुहोस्</string>
-    <string name="download_36" translatable="true">डाउनलोड गर्नुहोस्</string>
-    <string name="later_36" translatable="true">पछि</string>
-    <string name="install_now_36" translatable="true">प्याच गरिएको इन्स्टल गर्नुहोस्</string>
-    <string name="install_update_36" translatable="true">अद्यावधिक इन्स्टल गर्नुहोस्</string>
-    <string name="go_back_36" translatable="true">पछाडि जानुहोस्</string>
-    <string name="download_update_36" translatable="true">अपडेट डाउनलोड गर्नुहोस्</string>
-    <string name="not_now_36" translatable="true">अहिले होइन</string>
-    <string name="mirror_36" translatable="true">मिरर लिङ्क</string>
-    <string name="lite_36" translatable="true">लाइट</string>
-    <string name="experimental_title_36" translatable="true">प्रयोगात्मक</string>
-    <string name="experimental_version_36" translatable="true">प्रयोगात्मक संस्करण</string>
-    <string name="experimental_version_desc_36" translatable="true">यसलाई सक्षम गर्नाले तपाईंलाई प्याच गरिएको अनुप्रयोगको प्रयोगात्मक संस्करण डाउनलोड र इन्स्टल गर्न अनुमति दिन्छ।\n\nयसमा अल्फा, बिटा र प्रारम्भिक पहुँच सुविधाहरू समावेश छन् जुन स्टक प्याचमा उपलब्ध छैनन्। थप रूपमा, स्थिर ग्यारेन्टी छैन।</string>
-    <string name="show_support_36" translatable="true">आफ्नो समर्थन देखाउनुहोस्</string>
-    <string name="show_support_desc_36" translatable="true">हामी एक गैर-लाभकारी, गैर-कर्पोरेट र गैर-सम्झौता टोली हौं। तपाईं जस्ता मानिसहरूले हामीलाई विशेष गरी डाउनलोडदेखि इन्स्टल गर्नका लागि चीजहरू धेरै सजिलो बनाउनको लागि एउटा एप सिर्जना गर्न प्रोत्साहन दिन्छन्।\n\nहामी चीजहरू सही र सही बनाउनको लागि हाम्रो सबै समय र उत्तम प्रयासहरू खन्याइरहेका छौं। हामी सकेसम्म यो एपलाई समर्थन गर्न सक्दो प्रयास गर्नेछौं।\n\nकुनै पनि रकमले मद्दत गर्नेछ र धेरै सराहना गरिनेछ!</string>
-    <string name="maintenance_36" translatable="true">मर्मतसम्भार</string>
-    <string name="maintenance_desc_36" translatable="true">xManager हाल अनुपलब्ध छ। कृपया पछि पुन: प्रयास गर्नुहोस्।</string>
-    <string name="thanks_36" translatable="true">धन्यवाद!</string>
-    <string name="language_36" translatable="true">भाषा</string>
-    <string name="website_36" translatable="true">वेबसाइट</string>
-    <string name="reddit_36" translatable="true">रेड्डित</string>
-    <string name="faq_36" translatable="true">बारम्बार सोधिने प्रश्नहरू</string>
-    <string name="cloned_version_36" translatable="true">क्लोन गरिएको संस्करण</string>
-    <string name="cloned_version_desc_36" translatable="true">यसलाई सक्षम गर्नाले तपाईंलाई प्याच गरिएको एप्लिकेसनको क्लोन गरिएको संस्करण डाउनलोड र इन्स्टल गर्न अनुमति दिन्छ।\n\nयसले धेरैजसो इन्स्टल त्रुटि वा समस्याहरूलाई पनि समाधान गर्नेछ, विशेष गरी यदि तपाईंसँग पूर्व-स्थापित Spotify अनुप्रयोग छ भने।</string>
-    <string name="disable_rewarded_ads_36" translatable="true">पुरस्कृत विज्ञापनहरू असक्षम पार्नुहोस्</string>
-    <string name="disable_rewarded_ads_desc_36" translatable="true">हामीलाई थाहा छ कि हामी मध्ये धेरैले विज्ञापनहरू मन पराउँदैनन् तर हाम्रो अवस्थामा, यसले हामीलाई हाम्रो डाटाबेस, होस्टिङ लिङ्कहरू, अद्यावधिकहरू, थप प्याचहरू, र दैनिक आवश्यकताहरू पूरा गर्न मद्दत गर्छ।\n\nकुनै पनि दान वा खर्च नगरी हामीलाई सहयोग गर्ने यो सरल तरिका हो ।</string>
-    <string name="installation_failed_36" translatable="true">इन्स्टल असफल भयो</string>
-    <string name="installation_failed_desc_36" translatable="true">कारण: तपाईंले हाल स्थापित भएको भन्दा कम प्याच गरिएको संस्करण इन्स्टल गर्ने प्रयास गर्नुभयो।\n\nसमाधानहरू:\nA. भन्दा बराबर वा माथिको संस्करण चयन गर्नुहोस्।\nB. हालको संस्करणको इन्स्टल रद्द गर्नुहोस्, त्यसपछि डाउनग्रेड गर्नुहोस्।\n\nयदि समस्या रहिरह्यो भने, बारम्बार सोधिने प्रश्नहरू जाँच गर्नुहोस्।</string>
-    <string name="installation_failed_spap_desc_36" translatable="true">कारण: यस यन्त्रमा हालको प्याच गरिएको इन्स्टल सीधा xManager वा हाम्रो टोलीबाट आएको होइन।\n\nसमाधान: अनुप्रयोगको हालको संस्करणको इन्स्टल रद्द गर्नुहोस्, xManager पुन: सुरु गर्नुहोस् र फेरि प्रयास गर्नुहोस्। यदि समस्या रहिरह्यो भने, बारम्बार सोधिने प्रश्नहरू जाँच गर्नुहोस्।</string>
-    <string name="installation_failed_cloned_desc_36" translatable="true">कारण: यस यन्त्रमा हालको क्लोन गरिएको इन्स्टल सीधा xManager वा हाम्रो टोलीबाट आएको होइन।\n\nसमाधान: अनुप्रयोगको हालको संस्करणको इन्स्टल रद्द गर्नुहोस्, xManager पुनः सुरु गर्नुहोस् र फेरि प्रयास गर्नुहोस्। यदि समस्या रहिरह्यो भने, FAQ जाँच गर्नुहोस्।</string>
-    <string name="existing_patched_36" translatable="true">अवस्थित प्याच गरिएको</string>
-    <string name="existing_patched_desc_36" translatable="true">बाहिरी डाइरेक्टरीमा अवस्थित प्याच गरिएको पत्ता लगाइएको छ। तपाईं के कार्य गर्न चाहनुहुन्छ?</string>
-    <string name="close_36" translatable="true">बन्द गर्नुहोस्</string>
-    <string name="cloned_36" translatable="true">क्लोन गरिएको</string>
+    <string name="settings_title_36" translatable="true">அமைப்புகள்</string>
+    <string name="about_title_36" translatable="true">பற்றி</string>
+    <string name="list_auto_refresh_36" translatable="true">தானாக புதுப்பித்தல் பட்டியல்</string>
+    <string name="list_auto_refresh_desc_36" translatable="true">இதை இயக்குவது ஒவ்வொரு முறையும் நீங்கள் பயன்பாட்டைத் தொடங்கும் போது தானாகவே பட்டியலைப் புதுப்பிக்கும்.\n\nதிரையை கீழ்நோக்கி இழுப்பதன் மூலம் பட்டியலை புதுப்பிக்கலாம்.</string>
+    <string name="force_auto_install_36" translatable="true">கட்டாயமாக தானாக நிறுவவும்</string>
+    <string name="force_auto_install_desc_36" translatable="true">இதை இயக்கினால், பேட்ச் செய்யப்பட்ட ஆப்ஸ் தானாகவே நிறுவப்பட்டு, பதிவிறக்கம் செய்யப்பட்டவுடன் புதுப்பிக்கப்படும்.</string>
+    <string name="show_themes_36" translatable="true">தீம்கள்</string>
+    <string name="apk_location_36" translatable="true">APK இடம்</string>
+    <string name="apk_location_desc_36" translatable="true">பதிவிறக்கம் செய்யப்பட்ட கோப்பின் நகலை நீங்கள் சேமிக்க விரும்பும் அடைவு. இந்த அம்சத்தை எவ்வாறு கட்டமைப்பது என்று உங்களுக்குத் தெரியாவிட்டால், இதை அப்படியே விடவும்.\n\nகுறிப்பு: அணுகல்தன்மை, அனுமதிகள் மற்றும் சேமிப்பக வரம்புகள் காரணமாக இந்த அம்சம் வெளிப்புற சேமிப்பகத்தை (எஸ்டி கார்டு) ஆதரிக்காது.</string>
+    <string name="clear_directory_folders_36" translatable="true">கோப்புறையை அழிக்கவும்</string>
+    <string name="clear_directory_folders_desc_36" translatable="true">அடைவு கோப்புறையை நீக்க தட்டவும். பதிவிறக்கம் செய்யப்பட்ட கோப்புகள் மற்றும் புதுப்பிப்புகள் இதில் அடங்கும்.</string>
+    <string name="reset_preferences_36" translatable="true">விருப்பங்களை மீட்டமைக்கவும்</string>
+    <string name="about_sub_36" translatable="true">விளம்பரம் இல்லாத | புதிய அம்சங்கள் | சுதந்திரம்</string>
+    <string name="xmanager_dev_36" translatable="true">xManager டெவலப்பர்</string>
+    <string name="patched_devs_36" translatable="true">பேட்ச் டெவலப்பர்கள்</string>
+    <string name="support_team_36" translatable="true">தந்தி | கருத்து வேறுபாடு | ரெட்டிட் ஆதரவு குழு</string>
+    <string name="manager_testers_36" translatable="true">இணைக்கப்பட்ட மற்றும் மேலாளர் சோதனையாளர்கள்</string>
+    <string name="manager_hosting_36" translatable="true">மேலாளர் தரவுத்தளம் மற்றும் ஹோஸ்டிங்ஸ்</string>
+    <string name="mobilism_team_36" translatable="true">மொபிலிசம் குழு</string>
+    <string name="forum_team_36" translatable="true">FORUM.APK-RELEASE.NET குழு</string>
+    <string name="contributors_36" translatable="true">அனைத்து பங்களிப்பாளர்களுக்கும் நன்றி! ❤️</string>
+    <string name="download_selected_36" translatable="true">இந்த இணைக்கப்பட்ட பதிப்பைத் தேர்ந்தெடுத்துள்ளீர்கள். தொடர வேண்டுமா?</string>
+    <string name="download_ready_36" translatable="true">இணைக்கப்பட்ட தகவல்</string>
+    <string name="download_ready_desc_36" translatable="true">இந்த பேட்ச் ஆனது வெளிப்புற கோப்பகத்தில் உள்ள முந்தைய கோப்பை மேலெழுதும். எச்சரிக்கையுடன் தொடரவும்.</string>
+    <string name="downloading_file_36" translatable="true">கோப்பைப் பதிவிறக்குகிறது</string>
+    <string name="download_success_36" translatable="true">வெற்றிகரமாக பதிவிறக்கம் செய்யப்பட்டது</string>
+    <string name="new_update_36" translatable="true">புதிய மேலாளர் புதுப்பிப்பு</string>
+    <string name="continue_1_36" translatable="true">தொடரவும்</string>
+    <string name="cancel_36" translatable="true">ரத்துசெய்</string>
+    <string name="download_36" translatable="true">பதிவிறக்கம்</string>
+    <string name="later_36" translatable="true">பின்னர்</string>
+    <string name="install_now_36" translatable="true">பேட்ச் செய்யப்பட்டதை நிறுவவும்</string>
+    <string name="install_update_36" translatable="true">புதுப்பிப்பை நிறுவவும்</string>
+    <string name="go_back_36" translatable="true">பின்னே செல்</string>
+    <string name="download_update_36" translatable="true">புதுப்பிப்பைப் பதிவிறக்கவும்</string>
+    <string name="not_now_36" translatable="true">இப்போது இல்லை</string>
+    <string name="mirror_36" translatable="true">இதர இணைப்பு</string>
+    <string name="lite_36" translatable="true">லைட்</string>
+    <string name="experimental_title_36" translatable="true">பரிசோதனை</string>
+    <string name="experimental_version_36" translatable="true">பரிசோதனை பதிப்பு</string>
+    <string name="experimental_version_desc_36" translatable="true">இதை இயக்கினால், பேட்ச் செய்யப்பட்ட பயன்பாட்டின் சோதனைப் பதிப்பைப் பதிவிறக்கி நிறுவ முடியும்.\n\nஇதில் ஆல்பா, பீட்டா மற்றும் ஆரம்ப அணுகல் அம்சங்கள் உள்ளன, அவை பேட்ச் செய்யப்பட்ட ஸ்டாக்கில் இல்லை. கூடுதலாக, நிலையான உத்தரவாதம் இல்லை.</string>
+    <string name="show_support_36" translatable="true">உங்கள் ஆதரவைக் காட்டு</string>
+    <string name="show_support_desc_36" translatable="true">நாங்கள் ஒரு இலாப நோக்கற்ற, பெருநிறுவன மற்றும் சமரசம் செய்யாத அணி. உங்களைப் போன்றவர்கள், குறிப்பாகப் பதிவிறக்குவது முதல் நிறுவுவது வரை விஷயங்களை மிகவும் எளிதாக்குவதற்கு ஒரு பயன்பாட்டை உருவாக்குமாறு எங்களை ஊக்குவிக்கிறார்கள்.\n\nவிஷயங்களைச் சரியாகவும் சிறப்பாகவும் செய்ய எங்களின் முழு நேரத்தையும் சிறந்த முயற்சியையும் செலவிடுகிறோம். எங்களால் முடிந்தவரை இந்த ஆப்ஸை ஆதரிக்க எங்களால் முடிந்த அனைத்தையும் செய்வோம்.\n\nஎந்தத் தொகையும் உதவும் மற்றும் மிகவும் பாராட்டப்படும்!</string>
+    <string name="maintenance_36" translatable="true">பராமரிப்பு</string>
+    <string name="maintenance_desc_36" translatable="true">xManager தற்போது கிடைக்கவில்லை. பிறகு முயற்சிக்கவும்.</string>
+    <string name="thanks_36" translatable="true">நன்றி!</string>
+    <string name="language_36" translatable="true">மொழி</string>
+    <string name="website_36" translatable="true">இணையதளம்</string>
+    <string name="reddit_36" translatable="true">ரெட்டிட்</string>
+    <string name="faq_36" translatable="true">அடிக்கடி கேட்கப்படும் கேள்விகள்</string>
+    <string name="cloned_version_36" translatable="true">குளோன் செய்யப்பட்ட பதிப்பு</string>
+    <string name="cloned_version_desc_36" translatable="true">இதை இயக்கினால், பேட்ச் செய்யப்பட்ட பயன்பாட்டின் குளோன் செய்யப்பட்ட பதிப்பைப் பதிவிறக்கி நிறுவ முடியும்.\n\nஇது பெரும்பாலான நிறுவல் பிழைகள் அல்லது சிக்கல்களைத் தீர்க்கும், குறிப்பாக உங்களிடம் முன்பே நிறுவப்பட்ட Spotify பயன்பாடு இருந்தால்.</string>
+    <string name="disable_rewarded_ads_36" translatable="true">வெகுமதி அளிக்கப்பட்ட விளம்பரங்களை முடக்கு</string>
+    <string name="disable_rewarded_ads_desc_36" translatable="true">எங்களில் பெரும்பாலோர் விளம்பரங்களை விரும்புவதில்லை என்பதை நாங்கள் அறிவோம், ஆனால் எங்கள் விஷயத்தில், இது எங்கள் தரவுத்தளம், ஹோஸ்டிங் இணைப்புகள், புதுப்பிப்புகள், கூடுதல் பேட்ச்கள் மற்றும் அன்றாட தேவைகளுக்கு நிதியளிக்க கணிசமாக உதவுகிறது.\n\nஇது நன்கொடை அல்லது நன்கொடை இல்லாமல் எங்களுக்கு ஆதரவளிப்பதற்கான எளிய வழி. எதையும் செலவு.</string>
+    <string name="installation_failed_36" translatable="true">நிறுவல் தோல்வி அடைந்தது</string>
+    <string name="installation_failed_desc_36" translatable="true">காரணம்: தற்போது நிறுவப்பட்டுள்ளதை விட குறைவான பேட்ச் செய்யப்பட்ட பதிப்பை நிறுவ முயற்சித்தீர்கள்.\n\nதீர்வுகள்:\nA. சமமான அல்லது அதற்கும் அதிகமான பதிப்பைத் தேர்ந்தெடுக்கவும்.\nB. தற்போதைய பதிப்பை நிறுவல் நீக்கி, தரமிறக்கவும்.\n\nசிக்கல் தொடர்ந்தால், அடிக்கடி கேட்கப்படும் கேள்விகளைப் பார்க்கவும்.</string>
+    <string name="installation_failed_spap_desc_36" translatable="true">காரணம்: இந்தச் சாதனத்தில் நிறுவப்பட்ட தற்போதைய இணைப்பு xManager அல்லது எங்கள் குழுவிடமிருந்து நேரடியாக வரவில்லை.\n\nதீர்வு: பயன்பாட்டின் தற்போதைய பதிப்பை நிறுவல் நீக்கி, xManager ஐ மறுதொடக்கம் செய்து மீண்டும் முயற்சிக்கவும். சிக்கல் தொடர்ந்தால், அடிக்கடி கேட்கப்படும் கேள்விகளைப் பார்க்கவும்.</string>
+    <string name="installation_failed_cloned_desc_36" translatable="true">காரணம்: இந்தச் சாதனத்தில் நிறுவப்பட்ட தற்போதைய குளோனிங் நேரடியாக xManager இடமிருந்தோ அல்லது எங்கள் குழுவிலிருந்தோ வரவில்லை.\n\nதீர்வு: பயன்பாட்டின் தற்போதைய பதிப்பை நிறுவல் நீக்கி, xManager ஐ மறுதொடக்கம் செய்து மீண்டும் முயற்சிக்கவும். சிக்கல் தொடர்ந்தால், அடிக்கடி கேட்கப்படும் கேள்விகளைப் பார்க்கவும்.</string>
+    <string name="existing_patched_36" translatable="true">தற்போதுள்ள இணைப்பு</string>
+    <string name="existing_patched_desc_36" translatable="true">வெளிப்புற கோப்பகத்தில் ஏற்கனவே உள்ள இணைப்பு கண்டறியப்பட்டது. நீங்கள் என்ன செயலைச் செய்ய விரும்புகிறீர்கள்?</string>
+    <string name="close_36" translatable="true">மூடவும்</string>
+    <string name="cloned_36" translatable="true">குளோன் செய்யப்பட்டது</string>
     <string name="spap_36" translatable="true">SP/AP</string>
-    <string name="install_36" translatable="true">इन्स्टल गर्नुहोस्</string>
-    <string name="uninstall_36" translatable="true">अनइन्स्टल गर्नुहोस्</string>
-    <string name="ignore_36" translatable="true">बेवास्ता गर्नुहोस्</string>
-    <string name="delete_36" translatable="true">मेटाउन</string>
-    <string name="uninstall_patched_36" translatable="true">अनइन्स्टल प्याच गरियो</string>
-    <string name="open_settings_36" translatable="true">सेटिङ्हरू खोल्नुहोस्</string>
-    <string name="open_patched_36" translatable="true">प्याच गरिएको खोल्नुहोस्</string>
-    <string name="reboot_36" translatable="true">रिफिच र रिबुट गर्नुहोस्</string>
+    <string name="install_36" translatable="true">நிறுவப்பட்ட</string>
+    <string name="uninstall_36" translatable="true">நிறுவல் நீக்கவும்</string>
+    <string name="ignore_36" translatable="true">புறக்கணி</string>
+    <string name="delete_36" translatable="true">அழி</string>
+    <string name="uninstall_patched_36" translatable="true">இணைப்பு நீக்கப்பட்டது</string>
+    <string name="open_settings_36" translatable="true">அமைப்புகளைத் திற</string>
+    <string name="open_patched_36" translatable="true">ஓபன் பேட்ச்</string>
+    <string name="reboot_36" translatable="true">மீட்டெடுத்து மீண்டும் துவக்கவும்</string>
 </resources>
