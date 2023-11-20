@@ -456,93 +456,93 @@
     
     <!--INDONESIAN LANGUAGE-->
     <string name="app_name_05" translatable="true">xManager</string>
-    <string name="installed_05" translatable="true">VERSI TERPASANG</string>
+    <string name="installed_05" translatable="true">TERPASANG</string>
     <string name="latest_05" translatable="true">TERBARU</string>
     <string name="versions_05" translatable="true">VERSI  </string>
-    <string name="changelogs_05" translatable="true">INFORMASI PERUBAHAN</string>
+    <string name="changelogs_05" translatable="true">CATATAN PERUBAHAN</string>
     <string name="manager_tools_05" translatable="true">ALAT PENGELOLA</string>
     <string name="source_05" translatable="true">SUMBER</string>
-    <string name="discord_05" translatable="true">PERSELISIHAN</string>
+    <string name="discord_05" translatable="true">DISCORD</string>
     <string name="support_05" translatable="true">TELEGRAM</string>
-    <string name="donate_05" translatable="true">DONASI</string>
+    <string name="donate_05" translatable="true">DUKUNGAN</string>
     <string name="about_05" translatable="true">TENTANG</string>
     <string name="main_title_05" translatable="true">xManager</string>
     <string name="settings_title_05" translatable="true">Pengaturan</string>
     <string name="about_title_05" translatable="true">Tentang</string>
     <string name="list_auto_refresh_05" translatable="true">LIST AUTO-REFRESH</string>
-    <string name="list_auto_refresh_desc_05" translatable="true">Jika diaktifkan maka setiap aplikasi diluncurkan secara otomatis akan memperbarui daftar.\n\nKamu juga dapat memperbarui daftar secara manual dengan menyeret layar utama ke bawah.</string>
-    <string name="force_auto_install_05" translatable="true">FORCE AUTO-INSTALL</string>
-    <string name="force_auto_install_desc_05" translatable="true">Jika diaktifkan maka fitur pemasangan aplikasi yang sudah dimodifikasi akan dilakukan secara otomatis setelah diunduh.</string>
+    <string name="list_auto_refresh_desc_05" translatable="true">Jika diaktifkan, daftar akan otomatis diperbarui setiap kali aplikasi diluncurkan.\n\nKamu juga dapat memperbarui daftar secara manual dengan menarik layar utama ke bawah.</string>
+    <string name="force_auto_install_05" translatable="true">PAKSA AUTO-INSTALL</string>
+    <string name="force_auto_install_desc_05" translatable="true">Jika diaktifkan, aplikasi yang sudah dimodifikasi akan dipasang secara otomatis setelah diunduh.</string>
     <string name="show_themes_05" translatable="true">LIHAT TEMA</string>
     <string name="apk_location_05" translatable="true">LOKASI APK</string>
-    <string name="apk_location_desc_05" translatable="true">Atur direktori tempat Anda ingin menyimpan file apk yang diunduh. Jika Anda tidak tahu gunanya mengonfigurasi ini, biarkan saja.\n\nCATATAN: Fitur ini tidak mendukung penyimpanan di memori eksternal karena alasan aksesibilitas, izin, dan batasan penyimpanan.</string>
+    <string name="apk_location_desc_05" translatable="true">Atur direktori tempat Anda ingin menyimpan file apk yang diunduh. Jika Anda tidak tahu cara mengonfigurasi ini, biarkan saja.\n\nCATATAN: Fitur ini tidak mendukung penyimpanan di memori eksternal karena alasan aksesibilitas, izin, dan batasan penyimpanan.</string>
     <string name="clear_directory_folders_05" translatable="true">HAPUS FOLDER DIREKTORI</string>
-    <string name="clear_directory_folders_desc_05" translatable="true">Tekan untuk menghapus semua direktori folder, termasuk apk dan pembaruan yang diunduh.</string>
+    <string name="clear_directory_folders_desc_05" translatable="true">Tekan untuk menghapus semua folder direktori, termasuk apk dan pembaruan yang diunduh.</string>
     <string name="reset_preferences_05" translatable="true">RESET PENGATURAN</string>
-    <string name="about_sub_05" translatable="true">No Ads | New Features | Freedom</string>
-    <string name="xmanager_dev_05" translatable="true">xManager Developer</string>
-    <string name="patched_devs_05" translatable="true">Spotify Mod Developers</string>
-    <string name="support_team_05" translatable="true">Team Support Telegram</string>
-    <string name="manager_testers_05" translatable="true">Tester Mod/Manager</string>
-    <string name="manager_hosting_05" translatable="true">Manager Hosting Links</string>
-    <string name="mobilism_team_05" translatable="true">Mobilism Team</string>
-    <string name="forum_team_05" translatable="true">FORUM.APK-RELEASE.NET Team</string>
-    <string name="contributors_05" translatable="true">TERIMAKASIH UNTUK SEMUA KONTRIBUTOR! ❤️</string>
-    <string name="download_selected_05" translatable="true">Kamu telah memilih versi yang dimodifikasi ini. Apakah ingin melanjutkan?</string>
+    <string name="about_sub_05" translatable="true">Tanpa Iklan | Fitur Baru | Kebebasan</string>
+    <string name="xmanager_dev_05" translatable="true">Pengembang xManager</string>
+    <string name="patched_devs_05" translatable="true">Pengembang Mod Spotify</string>
+    <string name="support_team_05" translatable="true">Tim Dukungan Telegram</string>
+    <string name="manager_testers_05" translatable="true">Penguji Mod/Pengelola</string>
+    <string name="manager_hosting_05" translatable="true">Tautan Hosting Pengelola</string>
+    <string name="mobilism_team_05" translatable="true">Tim Mobilism</string>
+    <string name="forum_team_05" translatable="true">Tim FORUM.APK-RELEASE.NET</string>
+    <string name="contributors_05" translatable="true">TERIMA KASIH KEPADA SEMUA KONTRIBUTOR! ❤️</string>
+    <string name="download_selected_05" translatable="true">Kamu memilih versi yang dimodifikasi ini. Apakah ingin melanjutkan?</string>
     <string name="download_ready_05" translatable="true">INFORMASI PATCH</string>
-    <string name="download_ready_desc_05" translatable="true">Mengunduh apk yang ini akan menimpa file sebelumnya yang terletak di direktori.</string>
-    <string name="downloading_file_05" translatable="true">MENGUNDUH FILE</string>
-    <string name="download_success_05" translatable="true">SUKSES MENGUNDUH</string>
-    <string name="new_update_05" translatable="true">UPDATE MANAGER BARU</string>
+    <string name="download_ready_desc_05" translatable="true">Mengunduh apk ini akan menimpa file sebelumnya yang terletak di direktori.</string>
+    <string name="downloading_file_05" translatable="true">SEDANG MENGUNDUH FILE</string>
+    <string name="download_success_05" translatable="true">BERHASIL MENGUNDUH</string>
+    <string name="new_update_05" translatable="true">UPDATE MANAGER TERBARU</string>
     <string name="continue_1_05" translatable="true">LANJUT</string>
-    <string name="cancel_05" translatable="true">BATALKAN</string>
+    <string name="cancel_05" translatable="true">BATAL</string>
     <string name="download_05" translatable="true">UNDUH</string>
     <string name="later_05" translatable="true">NANTI</string>
     <string name="install_now_05" translatable="true">PASANG SEKARANG</string>
-    <string name="install_update_05" translatable="true">PASANG UPDATE</string>
+    <string name="install_update_05" translatable="true">PASANG PEMBARUAN</string>
     <string name="go_back_05" translatable="true">KEMBALI</string>
-    <string name="download_update_05" translatable="true">UNDUH UPDATE</string>
-    <string name="not_now_05" translatable="true">TIDAK SEKARANG</string>
+    <string name="download_update_05" translatable="true">UNDUH PEMBARUAN</string>
+    <string name="not_now_05" translatable="true">NANTI SAJA</string>
     <string name="mirror_05" translatable="true">TAUTAN CERMIN</string>
     <string name="lite_05" translatable="true">LITE</string>
     <string name="experimental_title_05" translatable="true">Eksperimental</string>
     <string name="experimental_version_05" translatable="true">VERSI EKSPERIMENTAL</string>
-    <string name="experimental_version_desc_05" translatable="true">Mengaktifkan ini memungkinkan Anda mengunduh dan menginstal versi eksperimental dari aplikasi yang ditambal.\n\nini mencakup fitur akses alfa, beta, dan awal yang tidak tersedia dalam stok yang ditambal. Selain itu, tidak dijamin stabil.</string>
+    <string name="experimental_version_desc_05" translatable="true">Mengaktifkan ini memungkinkan Anda mengunduh dan menginstal versi eksperimental dari aplikasi yang ditambal.\n\nIni mencakup fitur akses alfa, beta, dan awal yang tidak tersedia dalam versi asli. Selain itu, tidak dijamin stabil.</string>
     <string name="show_support_05" translatable="true">TUNJUKKAN DUKUNGANMU!</string>
-    <string name="show_support_desc_05" translatable="true">Hai, kami semua adalah tim yang nonprofit, non-korporat, dan non-kompromi. Kamu tahu? Orang-orang seperti Kalianlah yang tetap mendorong kami untuk membuat aplikasi yang kiranya dapat memudahkan segalanya dari mengunduh hingga menginstal.\n\nKami mencurahkan semua waktu dan tetap terus mengupayakan yang kami bisa hanya untuk membuat segalanya menjadi lebih baik dan sempurna. Tapi tenang, kami akan tetap melakukan yang terbaik untuk tetap mendukung aplikasi ini selama kami bisa.\n\nBerapa pun jumlahnya akan sangat membantu dan sangat kami hargai!</string>
+    <string name="show_support_desc_05" translatable="true">Hai, kami semua adalah tim yang nirlaba, non-korporat, dan tidak berkompromi. Orang-orang seperti kalian mendorong kami untuk membuat aplikasi yang memudahkan segalanya, mulai dari mengunduh hingga menginstal.\n\nKami menyumbangkan waktu dan upaya terbaik kami hanya untuk membuat semuanya lebih baik dan sempurna. Tenang saja, kami akan terus mendukung aplikasi ini selama mungkin.\n\nSetiap kontribusi sangat membantu dan sangat kami hargai!</string>
     <string name="maintenance_05" translatable="true">PEMELIHARAAN</string>
-    <string name="maintenance_desc_05" translatable="true">xManager saat ini tidak tersedia sekarang. Mohon periksa aplikasinya nanti.</string>
+    <string name="maintenance_desc_05" translatable="true">xManager saat ini tidak tersedia. Silakan coba lagi nanti.</string>
     <string name="thanks_05" translatable="true">TERIMA KASIH!</string>
     <string name="language_05" translatable="true">BAHASA</string>
     <string name="website_05" translatable="true">SITUS WEB</string>
     <string name="reddit_05" translatable="true">REDDIT</string>
     <string name="faq_05" translatable="true">PERTANYAAN</string>
-    <string name="cloned_version_05" translatable="true">VERSI KLONING</string>
-    <string name="cloned_version_desc_05" translatable="true">Mengaktifkan ini memungkinkan Anda untuk mengunduh dan menginstal versi kloning dari aplikasi yang ditambal.\n\nIni juga akan menyelesaikan sebagian besar kesalahan atau masalah instalasi terutama jika Anda memiliki aplikasi spotify yang sudah diinstal sebelumnya.</string>
+    <string name="cloned_version_05" translatable="true">VERSI DIKLONING</string>
+    <string name="cloned_version_desc_05" translatable="true">Mengaktifkan ini memungkinkan Anda mengunduh dan menginstal versi dikloning dari aplikasi yang ditambal.\n\nIni juga akan menyelesaikan sebagian besar kesalahan atau masalah instalasi, terutama jika Anda memiliki aplikasi Spotify yang sudah diinstal sebelumnya.</string>
     <string name="disable_rewarded_ads_05" translatable="true">NONAKTIFKAN IKLAN BERHADIAH</string>
-    <string name="disable_rewarded_ads_desc_05" translatable="true">Kita tahu bahwa kebanyakan dari kita tidak menyukai iklan tetapi dalam kasus kami, ini secara signifikan membantu kita untuk mendanai database kami, Hosting Link, Update, Patch lebih, dan kebutuhan sehari-hari.\n\nIni adalah cara paling sederhana untuk mendukung kami tanpa menyumbang atau menghabiskan apa pun.</string>
-    <string name="installation_failed_05" translatable="true">INSTALASI GAGAL</string>
-    <string name="installation_failed_desc_05" translatable="true">Alasan: Anda mencoba menginstal versi mod lebih rendah dari yang saat ini diinstal.\n\nsolusi: \nA. Pilih versi yang sama dengan atau lebih besar dari.\nB. Uninstall versi saat ini, kemudian downgrade.\n\n jika masalah tetap ada, periksa FAQ.</string>
-    <string name="installation_failed_spap_desc_05" translatable="true">Alasan: Spotify saat ini yang diinstal pada perangkat ini tidak datang langsung dari xManager atau dari tim kami.\n\n solusi: Hapus instalan versi aplikasi saat ini, mulai ulang xManager dan coba lagi. Jika masalah tetap ada, periksa FAQ.</string>
-    <string name="installation_failed_cloned_desc_05" translatable="true">Alasan: kloning saat ini yang diinstal pada perangkat ini tidak datang langsung dari xManager atau dari tim kami.\n\n solusi: Hapus instalan versi aplikasi saat ini, mulai ulang xManager dan coba lagi. Jika masalah tetap ada, periksa FAQ.</string>
-    <string name="existing_patched_05" translatable="true">ADA DITAMBAL</string>
-    <string name="existing_patched_desc_05" translatable="true">File Ditambal Yang Ada ditemukan di salah satu direktori. Tindakan apa yang ingin Anda lakukan?</string>
+    <string name="disable_rewarded_ads_desc_05" translatable="true">Kita tahu bahwa kebanyakan dari kita tidak suka iklan, tetapi dalam kasus kami, ini sangat membantu kami mendanai database, tautan hosting, pembaruan, patch lebih, dan kebutuhan harian.\n\nIni adalah cara termudah untuk mendukung kami tanpa berdonasi atau mengeluarkan biaya apa pun.</string>
+    <string name="installation_failed_05" translatable="true">PEMASANGAN GAGAL</string>
+    <string name="installation_failed_desc_05" translatable="true">Alasan: Anda mencoba menginstal versi mod yang lebih rendah dari yang saat ini diinstal.\n\nSolusi:\nA. Pilih versi yang sama atau lebih besar.\nB. Hapus versi saat ini, kemudian downgrade.\n\nJika masalah tetap ada, periksa FAQ.</string>
+    <string name="installation_failed_spap_desc_05" translatable="true">Alasan: Spotify yang diinstal saat ini pada perangkat ini tidak berasal langsung dari xManager atau tim kami.\n\nSolusi: Hapus versi saat ini, mulai ulang xManager, dan coba lagi. Jika masalah tetap ada, periksa FAQ.</string>
+    <string name="installation_failed_cloned_desc_05" translatable="true">Alasan: Kloning yang diinstal saat ini pada perangkat ini tidak berasal langsung dari xManager atau tim kami.\n\nSolusi: Hapus versi saat ini, mulai ulang xManager, dan coba lagi. Jika masalah tetap ada, periksa FAQ.</string>
+    <string name="existing_patched_05" translatable="true">SUDAH DITAMBAL</string>
+    <string name="existing_patched_desc_05" translatable="true">File yang sudah ditambal ditemukan di salah satu direktori eksternal. Tindakan apa yang ingin Anda lakukan?</string>
 	<string name="disable_notification_05" translatable="true">NONAKTIFKAN NOTIFIKASI</string>
     <string name="disable_notification_desc_05" translatable="true">Mengaktifkan ini akan menghapus pemberitahuan pengingat setelah menginstal aplikasi yang ditambal.</string>
     <string name="hide_stock_patched_05" translatable="true">SEMBUNYIKAN STOK YANG DITAMBAL</string>
     <string name="hide_amoled_patched_05" translatable="true">SEMBUNYIKAN AMOLED YANG DITAMBAL</string>
     <string name="hide_lite_patched_05" translatable="true">SEMBUNYIKAN LITE DITAMBAL</string>
     <string name="hide_wave_patched_05" translatable="true">SEMBUNYIKAN GELOMBANG DITAMBAL</string>
-    <string name="close_05" translatable="true">Sitemap</string>
+    <string name="close_05" translatable="true">Tutup</string>
     <string name="cloned_05" translatable="true">Dikloning</string>
     <string name="spap_05" translatable="true">SP/AP</string>
-    <string name="install_05" translatable="true">Login</string>
-    <string name="uninstall_05" translatable="true">Copot pemasangan</string>
+    <string name="install_05" translatable="true">Pasang</string>
+    <string name="uninstall_05" translatable="true">Copot Pemasangan</string>
     <string name="ignore_05" translatable="true">Abaikan</string>
     <string name="delete_05" translatable="true">Hapus</string>
     <string name="uninstall_patched_05" translatable="true">COPOT PEMASANGAN DITAMBAL</string>
     <string name="open_settings_05" translatable="true">BUKA PENGATURAN</string>
-    <string name="open_patched_05" translatable="true">OPEN PATCHED</string>
+    <string name="open_patched_05" translatable="true">BUKA YANG DITAMBAL</string>
     <string name="reboot_05" translatable="true">AMBIL KEMBALI DAN REBOOT</string>
     
     <!--ITALIAN LANGUAGE-->
