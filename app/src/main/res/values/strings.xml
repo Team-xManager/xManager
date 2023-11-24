@@ -2716,11 +2716,11 @@
     <string name="existing_patched_29" translatable="true">ПОСТОЈЕЋИ ПЕЧ</string>
     <string name="existing_patched_desc_29" translatable="true">Постојећи фајл је откривен у спољном фолдеру. Коју радњу бисте желели да извршите?</string>
 	<string name="disable_notification_29" translatable="true">ОНЕМОГУЋИ ОБАВЕШТЕЊЕ</string>
-    <string name="disable_notification_desc_29" translatable="true">Омогућавањем ове опције избрисаће се обавештење подсетника након инсталирања исправљене апликације.</string>
-    <string name="hide_stock_patched_29" translatable="true">САКРИЈ СКЛАДИШТЕ ЗАЛАТАН</string>
-    <string name="hide_amoled_patched_29" translatable="true">САКРИЈ AMOLED ЗАЛАТАН</string>
-    <string name="hide_lite_patched_29" translatable="true">САКРИЈ ЛАКО ЗАЛАТАН</string>
-    <string name="hide_wave_patched_29" translatable="true">САКРИЈ ТАЛАС ЗАЛАТАН</string>
+    <string name="disable_notification_desc_29" translatable="true">Ако ово омогућите, неће се приказивати обавештење након инсталирања печоване апликације.</string>
+    <string name="hide_stock_patched_29" translatable="true">САКРИЈ STOCK ПЕЧ</string>
+    <string name="hide_amoled_patched_29" translatable="true">САКРИЈ AMOLED ПЕЧ</string>
+    <string name="hide_lite_patched_29" translatable="true">САКРИЈ LITE ПЕЧ</string>
+    <string name="hide_wave_patched_29" translatable="true">САКРИЈ WAVE ПЕЧ</string>
     <string name="close_29" translatable="true">ЗАТВОРИ</string>
     <string name="cloned_29" translatable="true">КЛОНИРАН</string>
     <string name="spap_29" translatable="true">SP/AP</string>
@@ -2807,11 +2807,11 @@
     <string name="existing_patched_30" translatable="true">POSTOJEĆI PEČ</string>
     <string name="existing_patched_desc_30" translatable="true">Postojeći peč je otkriven u spoljnom folderu. Koju radnju biste želeli da izvršite?</string>
 	<string name="disable_notification_30" translatable="true">ONEMOGUĆI OBAVEŠTENJE</string>
-    <string name="disable_notification_desc_30" translatable="true">Omogućavanjem ove opcije izbrisaće se obaveštenje podsetnika nakon instaliranja ispravljene aplikacije.</string>
-    <string name="hide_stock_patched_30" translatable="true">SAKRIJ ISPRAVLJENI STOCK</string>
-    <string name="hide_amoled_patched_30" translatable="true">SAKRIJ ISPRAVLJENI AMOLED</string>
-    <string name="hide_lite_patched_30" translatable="true">SAKRIJ ISPRAVLJENI LITE</string>
-    <string name="hide_wave_patched_30" translatable="true">SAKRIJ ISPRAVLJENI WAVE</string>
+    <string name="disable_notification_desc_30" translatable="true">Ako ovo omogućite, neće se prikazivati obaveštenje nakon instaliranja pečovane aplikacije.</string>
+    <string name="hide_stock_patched_30" translatable="true">SAKRIJ STOCK PEČ</string>
+    <string name="hide_amoled_patched_30" translatable="true">SAKRIJ AMOLED PEČ</string>
+    <string name="hide_lite_patched_30" translatable="true">SAKRIJ LITE PEČ</string>
+    <string name="hide_wave_patched_30" translatable="true">SAKRIJ WAVE PEČ</string>
     <string name="close_30" translatable="true">ZATVORI</string>
     <string name="cloned_30" translatable="true">KLONIRAN</string>
     <string name="spap_30" translatable="true">SP/AP</string>
