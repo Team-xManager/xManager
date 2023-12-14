@@ -50,6 +50,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
+import com.google.android.ads.consent.*;
 import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.FirebaseApp;
 import com.google.gson.Gson;
@@ -86,6 +87,11 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.ump.ConsentForm;
+import com.google.android.ump.ConsentInformation;
+import com.google.android.ump.ConsentRequestParameters;
+import com.google.android.ump.FormError;
+import com.google.android.ump.UserMessagingPlatform;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -159,6 +165,8 @@ public class MainActivity extends AppCompatActivity {
 	private String Installed_Checker_Wave = "";
 	private double Installed_Version_Wave = 0;
 	private double Downloaded_Version_Wave = 0;
+	ConsentInformation consentInformation;
+	ConsentForm consentForm;
 	
 	private ArrayList<String> Language = new ArrayList<>();
 	private ArrayList<String> Theme = new ArrayList<>();
@@ -4884,6 +4892,7 @@ public class MainActivity extends AppCompatActivity {
 		_Gate_Keeper();
 		_Informations();
 		_Theme_Pack();
+		_GDPR_Consent();
 		_Language_Pack();
 		_Dark_Navigation();
 	}
@@ -13827,7 +13836,7 @@ public class MainActivity extends AppCompatActivity {
 						});
 					}
 				};
-				_timer.schedule(Timer, (int)(3000));
+				_timer.schedule(Timer, (int)(2000));
 				if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
 					Window w =MainActivity.this.getWindow();
 					w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -17196,6 +17205,66 @@ public class MainActivity extends AppCompatActivity {
 				if (Build.VERSION.SDK_INT <= 20) {
 						com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "IMPORTANT NOTE: After installing and logging-in, make sure to reopen or force stop the app to enable the patched features.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 				}
+		}
+		
+	}
+	
+	
+	public void _GDRP_Message() {
+		try {
+				UserMessagingPlatform.loadConsentForm(this, new UserMessagingPlatform.OnConsentFormLoadSuccessListener() {
+						@Override
+						public void onConsentFormLoadSuccess(ConsentForm consentForm) {
+								MainActivity.this.consentForm = consentForm;
+								if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.REQUIRED) {
+										consentForm.show(MainActivity.this, new ConsentForm.OnConsentFormDismissedListener() {
+												@Override
+												public void onConsentFormDismissed(@Nullable FormError formError) {
+														if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.OBTAINED) {
+														}
+												}
+										}
+										);
+								} else if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.OBTAINED) {
+								}
+						}
+				},
+				new UserMessagingPlatform.OnConsentFormLoadFailureListener() {
+						@Override
+						public void onConsentFormLoadFailure(FormError formError) {
+						}
+				}
+				);
+		}
+		catch (Exception e) {
+		}
+		
+	}
+	
+	
+	public void _GDPR_Consent() {
+		ConsentRequestParameters params = new ConsentRequestParameters
+		.Builder()
+		.setTagForUnderAgeOfConsent(false)
+		.build();
+		
+		try {
+				consentInformation = UserMessagingPlatform.getConsentInformation(this);
+				consentInformation.requestConsentInfoUpdate(this, params, new ConsentInformation.OnConsentInfoUpdateSuccessListener() {
+						@Override
+						public void onConsentInfoUpdateSuccess() {
+								if (consentInformation.isConsentFormAvailable()) {
+										_GDRP_Message();
+								}
+						}
+				},
+				new ConsentInformation.OnConsentInfoUpdateFailureListener() {
+						@Override
+						public void onConsentInfoUpdateFailure(FormError formError) {
+						}
+				});
+		}
+		catch (Exception e) {
 		}
 		
 	}
