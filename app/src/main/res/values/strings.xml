@@ -1731,42 +1731,42 @@
     <!--VIETNAMESE LANGUAGE-->
     <string name="app_name_19" translatable="true">xManager</string>
     <string name="installed_19" translatable="true">CÀI ĐẶT</string>
-    <string name="latest_19" translatable="true">MỚI NHẤT</string>
-    <string name="versions_19" translatable="true">PHIÊN BẢN</string>
-    <string name="changelogs_19" translatable="true">CHANGELOGS</string>
+    <string name="latest_19" translatable="true">PHIÊN BẢN MỚI NHẤT</string>
+    <string name="versions_19" translatable="true">DANH SÁCH PHIÊN BẢN</string>
+    <string name="changelogs_19" translatable="true">DANH SÁCH THAY ĐỔI</string>
     <string name="manager_tools_19" translatable="true">CÔNG CỤ QUẢN LÝ</string>
     <string name="source_19" translatable="true">MÃ NGUỒN</string>
-    <string name="support_19" translatable="true">TELEGRAM</string>
-    <string name="donate_19" translatable="true">QUYÊN TẶNG</string>
+    <sĐỔItring name="support_19" translatable="true">TELEGRAM</sĐỔItring>
+    <string name="donate_19" translatable="true">ĐÓNG GÓP</string>
     <string name="discord_19" translatable="true">DISCORD</string>
     <string name="about_19" translatable="true">GIỚI THIỆU</string>
     <string name="main_title_19" translatable="true">xManager</string>
     <string name="settings_title_19" translatable="true">Cài đặt</string>
     <string name="about_title_19" translatable="true">Giới thiệu</string>
     <string name="list_auto_refresh_19" translatable="true">TỰ ĐỘNG LÀM MỚI DANH SÁCH</string>
-    <string name="list_auto_refresh_desc_19" translatable="true">Kích hoạt tính năng này sẽ tự động làm mới danh sách mỗi khi bạn khởi chạy ứng dụng. \n\nBạn có thể làm mới danh sách theo cách thủ công bằng cách kéo màn hình chính xuống.</string>
-    <string name="force_auto_install_19" translatable="true">BUỘC TỰ ĐỘNG CÀI ĐẶT</string>
-    <string name="force_auto_install_desc_19" translatable="true">Kích hoạt tính năng này sẽ tự động cài đặt ứng dụng đã vá và cập nhật sau khi tải xuống.</string>
+    <string name="list_auto_refresh_desc_19" translatable="true">Tự động làm mới danh sách mỗi khi vào ứng dụng\n\nCó thể làm mới danh sách thủ công bằng cách kéo màn hình chính xuống.</string>
+    <string name="force_auto_install_19" translatable="true">TỰ ĐỘNG CÀI ĐẶT</string>
+    <string name="force_auto_install_desc_19" translatable="true">Tự động tải và cài đặt bản vá lỗi mới nhất</string>
     <string name="show_themes_19" translatable="true">Giao diện</string>
-    <string name="apk_location_19" translatable="true">VỊ TRÍ APK</string>
-    <string name="apk_location_desc_19" translatable="true">Thư mục tệp nơi bạn muốn lưu tệp đã tải xuống. Nếu bạn không biết cách định cấu hình tính năng này, hãy để nguyên tính năng này. \n\nLƯU Ý: Tính năng này không hỗ trợ bộ nhớ ngoài (Thẻ SD) do giới hạn khả năng truy cập, quyền và bộ nhớ.</string>
+    <string name="apk_location_19" translatable="true">THƯ MỤC APK</string>
+    <string name="apk_location_desc_19" translatable="true">Thư mục lưu file đã tải xuống. Không thay đổi nếu bạn không biết cách cấu hình tính năng này. \n\nLƯU Ý: Tính năng này không hỗ trợ bộ nhớ ngoài (Thẻ SD) do giới hạn khả năng truy cập, quyền và bộ nhớ.</string>
     <string name="clear_directory_folders_19" translatable="true">XÓA THƯ MỤC DỮ LIỆU</string>
     <string name="clear_directory_folders_desc_19" translatable="true">Nhấn để xóa tất cả các thư mục dữ liệu bao gồm các tệp đã tải xuống và các bản cập nhật.</string>
     <string name="reset_preferences_19" translatable="true">ĐẶT LẠI CÁC CÀI ĐẶT</string>
-    <string name="about_sub_19" translatable="true">Không quảng cáo | Tính năng mới | Tự do</string>
+    <string name="about_sub_19" translatable="true">Không quảng cáo | Tính năng mới | Miễn phí</string>
     <string name="xmanager_dev_19" translatable="true">Nhà phát triển xManager</string>
-    <string name="patched_devs_19" translatable="true">Nhà phát triển Spotify Mod</string>
-    <string name="support_team_19" translatable="true">Nhóm hỗ trợ Telegram / Discord</string>
-    <string name="manager_testers_19" translatable="true">Người kiểm tra Mod/Manager</string>
+    <string name="patched_devs_19" translatable="true">Đội ngũ phát triển</string>
+    <string name="support_team_19" translatable="true">Nhóm hỗ trợ Telegram / Discord / Reddit</string>
+    <string name="manager_testers_19" translatable="true">Kiểm thử Mod/Manager</string>
     <string name="manager_hosting_19" translatable="true">Quản lý lưu trữ</string>
     <string name="mobilism_team_19" translatable="true">Đội huy động viên</string>
     <string name="forum_team_19" translatable="true">Nhóm FORUM.APK-RELEASE.NET</string>
-    <string name="contributors_19" translatable="true">CẢM ƠN TẤT CẢ CÁC NHÀ ĐÓNG GÓP! ❤️</string>
+    <string name="contributors_19" translatable="true">CẢM ƠN TẤT CẢ MỌI NGƯỜI ĐÃ HỖ TRỢ! ❤️</string>
     <string name="download_selected_19" translatable="true">Bạn đã chọn bản vá này. Bạn có muốn tiếp tục?</string>
     <string name="download_ready_19" translatable="true">THÔNG TIN ĐÓNG GÓP</string>
-    <string name="download_ready_desc_19" translatable="true">Tải xuống apk đã vá sẽ ghi đè lên tệp trước đó nằm ở thư mục tệp bên ngoài ứng dụng.</string>
+    <string name="download_ready_desc_19" translatable="true">Tải xuống sẽ ghi đè lên tệp trước đó nằm ở thư mục tệp bên ngoài ứng dụng.</string>
     <string name="downloading_file_19" translatable="true">ĐANG TẢI</string>
-    <string name="download_success_19" translatable="true">ĐÃ TẢI XUỐNG THÀNH CÔNG</string>
+    <string name="download_success_19" translatable="true">TẢI XUỐNG THÀNH CÔNG</string>
     <string name="new_update_19" translatable="true">CẬP NHẬT MỚI</string>
     <string name="continue_1_19" translatable="true">TIẾP TỤC</string>
     <string name="cancel_19" translatable="true">HỦY BỎ</string>
@@ -1776,14 +1776,14 @@
     <string name="install_update_19" translatable="true">CÀI ĐẶT CẬP NHẬT</string>
     <string name="go_back_19" translatable="true">QUAY LẠI</string>
     <string name="download_update_19" translatable="true">TẢI XUỐNG BẢN CẬP NHẬT</string>
-    <string name="not_now_19" translatable="true">KHÔNG PHẢI BÂY GIỜ</string>
-    <string name="mirror_19" translatable="true">LIÊN KẾT GƯƠNG</string>
+    <string name="not_now_19" translatable="true">ĐỂ SAU</string>
+    <string name="mirror_19" translatable="true">MIRROR LINK</string>
     <string name="lite_19" translatable="true">LITE</string>
     <string name="experimental_title_19" translatable="true">Thử nghiệm</string>
     <string name="experimental_version_19" translatable="true">PHIÊN BẢN THỬ NGHIỆM</string>
-    <string name="experimental_version_desc_19" translatable="true">bật tính năng này cho phép bạn tải xuống và cài đặt phiên bản thử nghiệm của ứng dụng đã vá.\n\nđiều này bao gồm các tính năng alpha, beta và early accesss không có sẵn trong kho được vá. Ngoài ra, không đảm bảo ổn định.</string>
-    <string name="show_support_19" translatable="true">HIỂN THỊ HỖ TRỢ CỦA BẠN</string>
-    <string name="show_support_desc_19" translatable="true">Chúng tôi là một nhóm phi lợi nhuận, phi công ty và không thỏa hiệp. Những người như bạn khuyến khích chúng tôi tạo một ứng dụng để giúp mọi thứ trở nên dễ dàng hơn nhiều, đặc biệt là từ tải xuống đến cài đặt.\n\nChúng tôi đang dành toàn bộ thời gian và nỗ lực hết mình chỉ để làm cho mọi thứ trở nên đúng đắn và hoàn hảo. Chúng tôi sẽ cố gắng hết sức để hỗ trợ ứng dụng này miễn là chúng tôi có thể.\n\nBất kỳ số tiền nào cũng sẽ hữu ích và được đánh giá rất cao!</string>
+    <string name="experimental_version_desc_19" translatable="true">Bật tính năng này cho phép bạn tải xuống và cài đặt phiên bản thử nghiệm của ứng dụng.\n\nBao gồm các tính năng alpha, beta và truy cập sớm mới nhất. Tuy nhiên, có thể không ổn định.</string>
+    <string name="show_support_19" translatable="true">ĐÓNG GÓP</string>
+    <string name="show_support_desc_19" translatable="true">xManger Team là một nhóm phi lợi nhuận, phi công ty và không thỏa hiệp. Bọn mình đang dành toàn bộ thời gian và công sức cho ứng dụng này và sẽ hộ trợ ứng dụng cho đến khi còn có thể.\n\nSự đóng góp của các bạn sẽ giúp ích cho nhóm rất nhiều. Xin cảm ơn!</string>
     <string name="maintenance_19" translatable="true">BẢO TRÌ</string>
     <string name="maintenance_desc_19" translatable="true">xManager hiện không khả dụng. Vui lòng kiểm tra ứng dụng sau.</string>
     <string name="thanks_19" translatable="true">THANKS!</string>
@@ -1791,10 +1791,10 @@
     <string name="website_19" translatable="true">TRANG WEB</string>
     <string name="reddit_19" translatable="true">REDDIT</string>
     <string name="faq_19" translatable="true">FAQ</string>
-    <string name="cloned_version_19" translatable="true">NHÂN BẢN</string>
-    <string name="cloned_version_desc_19" translatable="true">Kích hoạt tính năng này cho phép bạn tải xuống và cài đặt phiên bản nhân bản của ứng dụng đã vá.\n\nĐiều này cũng sẽ giải quyết hầu hết các lỗi hoặc sự cố cài đặt, đặc biệt nếu bạn đã cài đặt sẵn ứng dụng Spotify.</string>
-    <string name="disable_rewarded_ads_19" translatable="true">TẮT QUẢNG CÁO CÓ THƯỞNG</string>
-    <string name="disable_rewarded_ads_desc_19" translatable="true">Chúng tôi biết rằng hầu hết chúng tôi không thích quảng cáo nhưng trong trường hợp của chúng tôi, điều này giúp chúng tôi đáng kể tài trợ cho cơ sở dữ liệu, liên kết lưu trữ, cập nhật, các bản vá khác và nhu cầu hàng ngày.\n\nĐây là cách đơn giản nhất để hỗ trợ chúng tôi mà không cần đóng góp hoặc chi tiêu bất cứ thứ gì.</string>
+    <string name="cloned_version_19" translatable="true">PHIÊN BẢN CLONE</string>
+    <string name="cloned_version_desc_19" translatable="true">Tải xuống và cài đặt phiên bản clone của ứng dụng.\n\nPhiên bản này sẽ giải quyết hầu hết các lỗi hoặc sự cố cài đặt, đặc biệt nếu như bạn đã cài đặt sẵn ứng dụng Spotify.</string>
+    <string name="disable_rewarded_ads_19" translatable="true">TẮT QUẢNG CÁO</string>
+    <string name="disable_rewarded_ads_desc_19" translatable="true">Quảng cáo giúp chúng mình có kinh phí để có thể duy trì và phát triển ứng dụng, lưu trữ cơ sở dữ liệu và cập nhật các bản vá mới nhất.\n\nNếu không donate thì bạn có thể bật quảng cáo để hỗ trợ nhóm nhé!</string>
     <string name="installation_failed_19" translatable="true">CÀI ĐẶT THẤT BẠI</string>
     <string name="installation_failed_desc_19" translatable="true">Lý do: Bạn đã cố cài đặt phiên bản mod thấp hơn phiên bản hiện đang được cài đặt.\n\nGiải pháp:\nA. Hãy chọn phiên bản bằng hoặc lớn hơn.\nB. Gỡ cài đặt phiên bản hiện tại, sau đó hạ cấp.\n\nNếu sự cố tiếp diễn, hãy kiểm tra câu hỏi thường gặp (FAQ).</string>
     <string name="installation_failed_spap_desc_19" translatable="true">Lý do: Spotify hiện tại được cài đặt trên thiết bị này không đến trực tiếp từ xManager hoặc từ nhóm của chúng tôi.\n\nGiải pháp: Gỡ cài đặt phiên bản hiện tại của ứng dụng, khởi động lại xManager và thử lại. Nếu sự cố vẫn tiếp diễn, hãy kiểm tra câu hỏi thường gặp (FAQ).</string>
@@ -1807,8 +1807,13 @@
     <string name="hide_amoled_patched_19" translatable="true">ẨN AMOLED VÁ</string>
     <string name="hide_lite_patched_19" translatable="true">ẨN LITE VÁ</string>
     <string name="hide_wave_patched_19" translatable="true">ẨN SÓNG VÁ</string>
+    <string name="installation_failed_desc_19" translatable="true">Lý do: Bạn đang cố cài đặt phiên bản mod thấp hơn phiên bản hiện đang được cài đặt.\n\nGiải pháp:\nA. Hãy chọn phiên bản bằng hoặc lớn hơn.\nB. Gỡ cài đặt phiên bản hiện tại, sau đó hạ cấp.\n\nNếu không được, hãy đọc phần câu hỏi thường gặp (FAQ).</string>
+    <string name="installation_failed_spap_desc_19" translatable="true">Lý do: Phiên bản Spotify hiện tại được cài đặt trên thiết bị này không đến từ nhóm xManager.\n\nGiải pháp: Gỡ cài đặt phiên bản hiện tại, khởi động lại xManager và thử lại. Nếu không được, hãy đọc phần câu hỏi thường gặp (FAQ).</string>
+    <string name="installation_failed_cloned_desc_19" translatable="true">Lý do: Phiên bản Spotify clone hiện tại được cài đặt trên thiết bị này không đến từ nhóm xManager.\n\nGiải pháp: Gỡ cài đặt phiên bản hiện tại của ứng dụng, khởi động lại xManager và thử lại. Nếu không được, hãy đọc phần câu hỏi thường gặp (FAQ).</string>
+    <string name="existing_patched_19" translatable="true">PHÁT HIỆN BẢN VÁ</string>
+    <string name="existing_patched_desc_19" translatable="true">Tìm thấy một bản vá trong thư mục điện thoại!</string>
     <string name="close_19" translatable="true">ĐÓNG</string>
-    <string name="cloned_19" translatable="true">NHÂN BẢN</string>
+    <string name="cloned_19" translatable="true">CLONE</string>
     <string name="spap_19" translatable="true">SP/AP</string>
     <string name="install_19" translatable="true">CÀI ĐẶT</string>
     <string name="uninstall_19" translatable="true">GỠ BỎ</string>
