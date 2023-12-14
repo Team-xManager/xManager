@@ -72,6 +72,12 @@
     <string name="installation_failed_cloned_desc" translatable="true">Reason: The current cloned installed on this device did not come directly from xManager or from our team.\n\nSolution: Uninstall the current version of the application, restart xManager and try again. If the issue persists, check the FAQ.</string>
     <string name="existing_patched" translatable="true">EXISTING PATCHED</string>
     <string name="existing_patched_desc" translatable="true">An existing patched has been detected at the external directory. What action would you like to do?</string>
+	<string name="disable_notification" translatable="true">DISABLE NOTIFICATION</string>
+    <string name="disable_notification_desc" translatable="true">Enabling this will remove the reminder notification after installing the patched application.</string>
+    <string name="hide_stock_patched" translatable="true">HIDE STOCK PATCHED</string>
+    <string name="hide_amoled_patched" translatable="true">HIDE AMOLED PATCHED</string>
+    <string name="hide_lite_patched" translatable="true">HIDE LITE PATCHED</string>
+    <string name="hide_wave_patched" translatable="true">HIDE WAVE PATCHED</string>
     <string name="close" translatable="true">CLOSE</string>
     <string name="cloned" translatable="true">CLONED</string>
     <string name="spap" translatable="true">SP/AP</string>
@@ -157,6 +163,12 @@
     <string name="installation_failed_cloned_desc_01" translatable="true">কারণ: এই ডিভাইসে ইনস্টল করা বর্তমান ক্লোন সরাসরি xManager বা আমাদের দলের কাছ থেকে আসেনি।\n\nসমাধান: অ্যাপ্লিকেশনটির বর্তমান সংস্করণ আনইনস্টল করুন, xManager পুনরায় চালু করুন এবং আবার চেষ্টা করুন। যদি সমস্যাটি থেকে যায়, তাহলে অনবরত জিজ্ঞাসিত প্রশ্ন দেখুন।</string>
     <string name="existing_patched_01" translatable="true">বিদ্যমান প্যাচড</string>
     <string name="existing_patched_desc_01" translatable="true">বাহ্যিক ডিরেক্টরিতে একটি বিদ্যমান প্যাচ সনাক্ত করা হয়েছে। আপনি কি করতে চান?</string>
+	<string name="disable_notification_01" translatable="true">বিজ্ঞপ্তি নিষ্ক্রিয় করুন</string>
+    <string name="disable_notification_desc_01" translatable="true">এটি সক্ষম করা প্যাচযুক্ত অ্যাপ্লিকেশনটি ইনস্টল করার পরে অনুস্মারক বিজ্ঞপ্তিটি সরিয়ে ফেলবে৷</string>
+    <string name="hide_stock_patched_01" translatable="true">প্যাচ করা স্টক লুকান</string>
+    <string name="hide_amoled_patched_01" translatable="true">অ্যামোলেড প্যাচড লুকান</string>
+    <string name="hide_lite_patched_01" translatable="true">হালকা প্যাচ লুকান</string>
+    <string name="hide_wave_patched_01" translatable="true">ওয়েভ প্যাচ করা লুকান</string>
     <string name="close_01" translatable="true">বন্ধ করুন</string>
     <string name="cloned_01" translatable="true">ক্লোনড</string>
     <string name="spap_01" translatable="true">SP/AP</string>
@@ -242,6 +254,12 @@
     <string name="installation_failed_cloned_desc_02" translatable="true">原因:此设备上安装的当前克隆版本不是直接来自xManager或来自我们的团队.\n\n解决方法:卸载当前版本的应用程序,重新启动xManager并重试. 如果问题仍然存在,请查看常见问题解答.</string>
     <string name="existing_patched_02" translatable="true">现有补丁</string>
     <string name="existing_patched_desc_02" translatable="true">在目录中找到一个修改过的文件. 您想怎么做?</string>
+	<string name="disable_notification_02" translatable="true">禁用通知</string>
+    <string name="disable_notification_desc_02" translatable="true">启用此功能将在安装修补的应用程序后删除提醒通知.</string>
+    <string name="hide_stock_patched_02" translatable="true">隐藏股票修补</string>
+    <string name="hide_amoled_patched_02" translatable="true">隐藏AMOLED修补</string>
+    <string name="hide_lite_patched_02" translatable="true">隐藏精简版修补</string>
+    <string name="hide_wave_patched_02" translatable="true">隐藏波修补</string>
     <string name="close_02" translatable="true">关闭</string>
     <string name="cloned_02" translatable="true">克隆版</string>
     <string name="spap_02" translatable="true">默认版或纯黑版</string>
@@ -327,6 +345,12 @@
     <string name="installation_failed_cloned_desc_03" translatable="true">Raison: La version clonée actuellement installée sur ce périphérique ne provenait pas directement de xManager ou de notre équipe.\n\nSolution: Désinstallez la version actuelle de l\’application, redémarrez xManager et réessayez. Si le problème persiste, consultez la FAQ.</string>
     <string name="existing_patched_03" translatable="true">ÉXISTANTE MODIFIÉE</string>
     <string name="existing_patched_desc_03" translatable="true">Un fichier patché existant a été trouvé dans l\’un des répertoires. Que voulez-vous faire?</string>
+	<string name="disable_notification_03" translatable="true">DÉSACTIVER LA NOTIFICATION</string>
+    <string name="disable_notification_desc_03" translatable="true">L\'activation de cette option supprimera la notification de rappel après l\'installation de l\'application corrigée.</string>
+    <string name="hide_stock_patched_03" translatable="true">CACHER LE STOCK RAPIÉCÉ</string>
+    <string name="hide_amoled_patched_03" translatable="true">MASQUER AMOLED PATCHÉ</string>
+    <string name="hide_lite_patched_03" translatable="true">MASQUER LITE PATCHÉ</string>
+    <string name="hide_wave_patched_03" translatable="true">CACHER LA VAGUE CORRIGÉE</string>
     <string name="close_03" translatable="true">FERMER</string>
     <string name="cloned_03" translatable="true">CLONER</string>
     <string name="spap_03" translatable="true">SP/AP</string>
@@ -412,6 +436,12 @@
     <string name="installation_failed_cloned_desc_04" translatable="true">Λόγος: το τρέχον κλωνοποιημένο εγκατεστημένο σε αυτήν τη συσκευή δεν προήλθε απευθείας από το xManager ή από την ομάδα μας.\n\nλύση: Καταργήστε την εγκατάσταση της τρέχουσας έκδοσης της εφαρμογής, κάντε επανεκκίνηση του xManager και δοκιμάστε ξανά. Εάν το ζήτημα παραμένει, ελέγξτε τις Συχνές Ερωτήσεις.</string>
     <string name="existing_patched_04" translatable="true">ΥΠΆΡΧΟΝΤΑ PATCHED</string>
     <string name="existing_patched_desc_04" translatable="true">Ένα υπάρχον patched αρχείο που βρέθηκε σε έναν από τους καταλόγους. Τι δράση θα θέλατε να κάνετε;</string>
+	<string name="disable_notification_04" translatable="true">ΑΠΕΝΕΡΓΟΠΟΊΗΣΗ ΕΙΔΟΠΟΊΗΣΗΣ</string>
+    <string name="disable_notification_desc_04" translatable="true">Η ενεργοποίηση αυτού θα καταργήσει την ειδοποίηση υπενθύμισης μετά την εγκατάσταση της εφαρμογής patched.</string>
+    <string name="hide_stock_patched_04" translatable="true">ΑΠΌΚΡΥΨΗ ΑΠΟΘΈΜΑΤΟΣ</string>
+    <string name="hide_amoled_patched_04" translatable="true">ΑΠΌΚΡΥΨΗ AMOLED PATCHED</string>
+    <string name="hide_lite_patched_04" translatable="true">ΑΠΌΚΡΥΨΗ LITE PATCHED</string>
+    <string name="hide_wave_patched_04" translatable="true">ΑΠΌΚΡΥΨΗ ΚΎΜΑΤΟΣ</string>
     <string name="close_04" translatable="true">ΚΛΕΊΣΕΤΕ</string>
     <string name="cloned_04" translatable="true">ΚΛΩΝΟΠΟΙΗΘΕΊ</string>
     <string name="spap_04" translatable="true">SP/AP</string>
@@ -497,6 +527,12 @@
     <string name="installation_failed_cloned_desc_05" translatable="true">Alasan: kloning saat ini yang diinstal pada perangkat ini tidak datang langsung dari xManager atau dari tim kami.\n\n solusi: Hapus instalan versi aplikasi saat ini, mulai ulang xManager dan coba lagi. Jika masalah tetap ada, periksa FAQ.</string>
     <string name="existing_patched_05" translatable="true">ADA DITAMBAL</string>
     <string name="existing_patched_desc_05" translatable="true">File Ditambal Yang Ada ditemukan di salah satu direktori. Tindakan apa yang ingin Anda lakukan?</string>
+	<string name="disable_notification_05" translatable="true">NONAKTIFKAN NOTIFIKASI</string>
+    <string name="disable_notification_desc_05" translatable="true">Mengaktifkan ini akan menghapus pemberitahuan pengingat setelah menginstal aplikasi yang ditambal.</string>
+    <string name="hide_stock_patched_05" translatable="true">SEMBUNYIKAN STOK YANG DITAMBAL</string>
+    <string name="hide_amoled_patched_05" translatable="true">SEMBUNYIKAN AMOLED YANG DITAMBAL</string>
+    <string name="hide_lite_patched_05" translatable="true">SEMBUNYIKAN LITE DITAMBAL</string>
+    <string name="hide_wave_patched_05" translatable="true">SEMBUNYIKAN GELOMBANG DITAMBAL</string>
     <string name="close_05" translatable="true">Sitemap</string>
     <string name="cloned_05" translatable="true">Dikloning</string>
     <string name="spap_05" translatable="true">SP/AP</string>
@@ -582,6 +618,12 @@
     <string name="installation_failed_cloned_desc_06" translatable="true">Motivo: L\'attuale app clone installata su questo dispositivo non proviene direttamente da xManager o dal nostro team.\n\n Soluzione: Disinstallare la versione corrente dell\'applicazione, riavviare xManager e riprovare. Se il problema persiste, controlla le FAQ.</string>
     <string name="existing_patched_06" translatable="true">PATCH ESISTENTI</string>
     <string name="existing_patched_desc_06" translatable="true">Un file con patch esistente trovato in una delle directory. Cosa fare?</string>
+	<string name="disable_notification_06" translatable="true">DISABILITA NOTIFICA</string>
+    <string name="disable_notification_desc_06" translatable="true">Abilitando questo rimuoverà la notifica di promemoria dopo aver installato l\'applicazione patchata.</string>
+    <string name="hide_stock_patched_06" translatable="true">NASCONDERE MAGAZZINO PATCHATO</string>
+    <string name="hide_amoled_patched_06" translatable="true">NASCONDI AMOLED PATCHATO</string>
+    <string name="hide_lite_patched_06" translatable="true">NASCONDI LITE PATCHATO</string>
+    <string name="hide_wave_patched_06" translatable="true">NASCONDI ONDA PATCHATO</string>
     <string name="close_06" translatable="true">CHIUDI</string>
     <string name="cloned_06" translatable="true">CLONA</string>
     <string name="spap_06" translatable="true">SP/AP</string>
@@ -667,6 +709,12 @@
     <string name="installation_failed_cloned_desc_07" translatable="true">Powód: bieżący sklonowany zainstalowany na tym urządzeniu nie pochodzi bezpośrednio z xManagera ani od naszego zespołu.\n\nRozwiązanie: Odinstaluj bieżącą wersję aplikacji, uruchom ponownie xManager i spróbuj ponownie. Jeśli problem nadal występuje, sprawdź FAQ.</string>
     <string name="existing_patched_07" translatable="true">ISTNIEJĄCA MODYFIKACJA</string>
     <string name="existing_patched_desc_07" translatable="true">Znaleziono już pobrany plik APK modyfikacji. Co chcesz z nim zrobić?</string>
+	<string name="disable_notification_07" translatable="true">WYŁĄCZ POWIADOMIENIE</string>
+    <string name="disable_notification_desc_07" translatable="true">Włączenie tego spowoduje usunięcie powiadomienia o przypomnieniu po zainstalowaniu poprawionej aplikacji.</string>
+    <string name="hide_stock_patched_07" translatable="true">UKRYJ ZAPAS POŁATANY</string>
+    <string name="hide_amoled_patched_07" translatable="true">UKRYJ AMOLED ZAŁATANY</string>
+    <string name="hide_lite_patched_07" translatable="true">UKRYJ LITE ZAŁATANE</string>
+    <string name="hide_wave_patched_07" translatable="true">UKRYJ FALĘ ZAŁATANĄ</string>
     <string name="close_07" translatable="true">Zamknij</string>
     <string name="cloned_07" translatable="true">Klona</string>
     <string name="spap_07" translatable="true">ZW/AM</string>
@@ -752,6 +800,12 @@
     <string name="installation_failed_cloned_desc_08" translatable="true">Razão: o clonado atual instalado neste dispositivo não veio diretamente do xManager ou de nossa equipe.\n\nsolução: desinstale a versão atual do aplicativo, reinicie o xManager e tente novamente. Se o problema persistir, verifique o FAQ.</string>
     <string name="existing_patched_08" translatable="true">REMENDADO EXISTENTE</string>
     <string name="existing_patched_desc_08" translatable="true">Um arquivo corrigido existente encontrado em um dos diretórios. Que ação você gostaria de fazer?</string>
+	<string name="disable_notification_08" translatable="true">DESATIVAR NOTIFICAÇÃO</string>
+    <string name="disable_notification_desc_08" translatable="true">Habilitar isso removerá a notificação de lembrete após a instalação do aplicativo Corrigido.</string>
+    <string name="hide_stock_patched_08" translatable="true">OCULTAR ESTOQUE REMENDADO</string>
+    <string name="hide_amoled_patched_08" translatable="true">OCULTAR AMOLED REMENDADO</string>
+    <string name="hide_lite_patched_08" translatable="true">OCULTAR LITE REMENDADA</string>
+    <string name="hide_wave_patched_08" translatable="true">OCULTAR ONDA REMENDADA</string>
     <string name="close_08" translatable="true">FECHAR</string>
     <string name="cloned_08" translatable="true">CLONAR</string>
     <string name="spap_08" translatable="true">SP/AP</string>
@@ -837,6 +891,12 @@
     <string name="installation_failed_cloned_desc_09" translatable="true">Razão: o clonado atual instalado neste dispositivo não veio diretamente do xManager ou de nossa equipe.\n\nsolução: desinstale a versão atual do aplicativo, reinicie o xManager e tente novamente. Se o problema persistir, verifique o FAQ.</string>
     <string name="existing_patched_09" translatable="true">REMENDADO EXISTENTE</string>
     <string name="existing_patched_desc_09" translatable="true">Um arquivo corrigido existente encontrado em um dos diretórios. Que ação você gostaria de fazer?</string>
+	<string name="disable_notification_09" translatable="true">DESATIVAR NOTIFICAÇÃO</string>
+    <string name="disable_notification_desc_09" translatable="true">Habilitar isso removerá a notificação de lembrete após a instalação do aplicativo Corrigido.</string>
+    <string name="hide_stock_patched_09" translatable="true">OCULTAR ESTOQUE REMENDADO</string>
+    <string name="hide_amoled_patched_09" translatable="true">OCULTAR AMOLED REMENDADO</string>
+    <string name="hide_lite_patched_09" translatable="true">OCULTAR LITE REMENDADA</string>
+    <string name="hide_wave_patched_09" translatable="true">OCULTAR ONDA REMENDADA</string>
     <string name="close_09" translatable="true">FECHAR</string>
     <string name="cloned_09" translatable="true">CLONAR</string>
     <string name="spap_09" translatable="true">SP/AP</string>
@@ -922,6 +982,12 @@
     <string name="installation_failed_cloned_desc_10" translatable="true">Причина: Текущий клонированный файл, установленный на этом устройстве, не был получен непосредственно из xManager или от нашей команды.\n\nРешение: Удалите текущую версию приложения, перезапустите xManager и повторите попытку. Если проблема остаётся, обратитесь к ЧАВО.</string>
     <string name="existing_patched_10" translatable="true">СУЩЕСТВУЮЩИЙ ПРОПАТЧЕННЫЙ</string>
     <string name="existing_patched_desc_10" translatable="true">Существующий пропатченный apk найден в одной из папок. Что делать?</string>
+	<string name="disable_notification_10" translatable="true">ОТКЛЮЧИТЬ УВЕДОМЛЕНИЕ</string>
+    <string name="disable_notification_desc_10" translatable="true">Включение этого параметра приведет к удалению уведомления-напоминания после установки исправленного приложения.</string>
+    <string name="hide_stock_patched_10" translatable="true">СКРЫТЬ ИСПРАВЛЕННЫЙ STOCK</string>
+    <string name="hide_amoled_patched_10" translatable="true">СКРЫТЬ ИСПРАВЛЕННЫЙ AMOLED</string>
+    <string name="hide_lite_patched_10" translatable="true">СКРЫТЬ ИСПРАВЛЕННЫЙ LITE</string>
+    <string name="hide_wave_patched_10" translatable="true">СКРЫТЬ ИСПРАВЛЕННЫЙ WAVE</string>
     <string name="close_10" translatable="true">ЗАКРЫТЬ</string>
     <string name="cloned_10" translatable="true">КЛОНИPОВАННЫЙ</string>
     <string name="spap_10" translatable="true">SP/AP</string>
@@ -1007,6 +1073,12 @@
     <string name="installation_failed_cloned_desc_11" translatable="true">Motivo: La aplicación clonada instalada en este dispositivo no provino directamente de xManager ni de nuestro equipo.\n\nSolución: Desinstale la versión actual de la aplicación, reinicie xManager e inténtelo de nuevo. Si el problema persiste, consulte las preguntas frecuentes.</string>
     <string name="existing_patched_11" translatable="true">PARCHE ENCONTRADO</string>
     <string name="existing_patched_desc_11" translatable="true">Se ha encontrado un APK parcheado en la carpeta de descargas. ¿Qué desea hacer?</string>
+	<string name="disable_notification_11" translatable="true">DESHABILITAR NOTIFICACIÓN</string>
+    <string name="disable_notification_desc_11" translatable="true">Habilitar esto eliminará la notificación de recordatorio después de instalar la aplicación parcheada.</string>
+    <string name="hide_stock_patched_11" translatable="true">OCULTAR STOCK PARCHEADO</string>
+    <string name="hide_amoled_patched_11" translatable="true">OCULTAR AMOLED PARCHEADO</string>
+    <string name="hide_lite_patched_11" translatable="true">OCULTAR LITE PARCHEADO</string>
+    <string name="hide_wave_patched_11" translatable="true">OCULTAR WAVE PARCHEADO</string>
     <string name="close_11" translatable="true">CERRAR</string>
     <string name="cloned_11" translatable="true">CLONAR</string>
     <string name="spap_11" translatable="true">SÍ/INFO</string>
@@ -1092,6 +1164,12 @@
     <string name="installation_failed_cloned_desc_12" translatable="true">Причина: поточний клонований, встановлений на цьому пристрої, не був отриманий безпосередньо від xManager або від нашої команди.\n\nрішення: видаліть поточну версію програми, перезапустіть xManager і повторіть спробу. Якщо проблема не вирішена, перегляньте поширені запитання.</string>
     <string name="existing_patched_12" translatable="true">ІСНУЮЧИЙ ВИПPАВЛЕНИЙ</string>
     <string name="existing_patched_desc_12" translatable="true">Існуючий виправлений файл, знайдений в одному з каталогів. Яку дію ви хотіли б зробити?</string>
+	<string name="disable_notification_12" translatable="true">ВІДКЛЮЧИТИ ПОВІДОМЛЕННЯ</string>
+    <string name="disable_notification_desc_12" translatable="true">Включення цього параметра призведе до видалення повідомлення-нагадування після установки виправленого додатки.</string>
+    <string name="hide_stock_patched_12" translatable="true">ПРИХОВАТИ ВИПРАВЛЕНИЙ STOCK</string>
+    <string name="hide_amoled_patched_12" translatable="true">ПРИХОВАТИ ВИПРАВЛЕНИЙ AMOLED</string>
+    <string name="hide_lite_patched_12" translatable="true">ПРИХОВАТИ ВИПРАВЛЕНИЙ LITE</string>
+    <string name="hide_wave_patched_12" translatable="true">ПРИХОВАТИ ВИПРАВЛЕНИЙ WAVE</string>
     <string name="close_12" translatable="true">закривати</string>
     <string name="cloned_12" translatable="true">КЛОНОВАНИЙ</string>
     <string name="spap_12" translatable="true">SP/AP</string>
@@ -1177,6 +1255,12 @@
     <string name="installation_failed_cloned_desc_13" translatable="true">Sebep: Bu aygıta yüklenen geçerli klonlama doğrudan xmanager\'dan veya ekibimizden gelmedi.\n\nÇözüm: Uygulamanın geçerli sürümünü kaldırın, Xmanager\'ı yeniden başlatın ve yeniden deneyin. Sorun devam ederse, SSS bölümüne bakın.</string>
     <string name="existing_patched_13" translatable="true">MEVCUT YAMALI</string>
     <string name="existing_patched_desc_13" translatable="true">Dizinden birinde bulunan varolan bir yamalı dosya. Ne tür bir eylem yapmak istersiniz?</string>
+	<string name="disable_notification_13" translatable="true">BİLDİRİMİ DEVRE DIŞI BIRAK</string>
+    <string name="disable_notification_desc_13" translatable="true">Bunu etkinleştirmek, yamalı uygulamayı yükledikten sonra hatırlatma bildirimini kaldıracaktır.</string>
+    <string name="hide_stock_patched_13" translatable="true">YAMALI STOĞU GİZLE</string>
+    <string name="hide_amoled_patched_13" translatable="true">AMOLED YAMALI GİZLE</string>
+    <string name="hide_lite_patched_13" translatable="true">LİTE YAMALI GİZLE</string>
+    <string name="hide_wave_patched_13" translatable="true">YAMALI DALGAYI GİZLE</string>
     <string name="close_13" translatable="true">kapat</string>
     <string name="cloned_13" translatable="true">KLONLUYORDU</string>
     <string name="spap_13" translatable="true">SP/AP</string>
@@ -1262,6 +1346,12 @@
     <string name="installation_failed_cloned_desc_14" translatable="true">السبب: المستنسخة الحالية المثبتة على هذا الجهاز لم يأت مباشرة من زماناجر أو من فريقنا.الحل: إلغاء تثبيت الإصدار الحالي من التطبيق ، إعادة تشغيل زماناجر وحاول مرة أخرى. إذا استمرت المشكلة ، تحقق من الأسئلة الشائعة.</string>
     <string name="existing_patched_14" translatable="true">القائمة مصححة</string>
     <string name="existing_patched_desc_14" translatable="true">ملف مصححة موجودة وجدت في واحدة من الدليل. ما العمل الذي تريد القيام به?</string>
+	<string name="disable_notification_14" translatable="true">تعطيل الإخطار</string>
+    <string name="disable_notification_desc_14" translatable="true">سيؤدي تمكين هذا إلى إزالة إشعار التذكير بعد تثبيت التطبيق المصحح.</string>
+    <string name="hide_stock_patched_14" translatable="true">إخفاء الأسهم مصححة</string>
+    <string name="hide_amoled_patched_14" translatable="true">إخفاء أمولد مصححة</string>
+    <string name="hide_lite_patched_14" translatable="true">إخفاء لايت مصححة</string>
+    <string name="hide_wave_patched_14" translatable="true">إخفاء موجة مصححة</string>
     <string name="close_14" translatable="true">إغلاق</string>
     <string name="cloned_14" translatable="true">المستنسخة</string>
     <string name="spap_14" translatable="true">ري / آم</string>
@@ -1347,6 +1437,12 @@
     <string name="installation_failed_cloned_desc_15" translatable="true">Razlog: Klonirana različica Spotify, ki je trenutno nameščena na tej napravi ni prišla neposredno iz strani naše xManager ekipe.\n\nRešitev: Odstranite trenutno različico aplikacije, znova zaženite xManager in poskusite znova. Če se težava nadaljuje, preverite rubriko "Pogosta vprašanja".</string>
     <string name="existing_patched_15" translatable="true">OBSTOJEČA DATOTEKA</string>
     <string name="existing_patched_desc_15" translatable="true">Že obstoječa klonirana različica spremenjene aplikacije je bila najdena v mestu datotek. Kako želite nadaljevati?</string>
+	<string name="disable_notification_15" translatable="true">ONEMOGOČI OBVESTILO</string>
+    <string name="disable_notification_desc_15" translatable="true">Če to omogočite, boste po namestitvi popravljene aplikacije odstranili obvestilo opomnika.</string>
+    <string name="hide_stock_patched_15" translatable="true">SKRIJ ZALOGE ZAKRPANE</string>
+    <string name="hide_amoled_patched_15" translatable="true">SKRIJ AMOLED ZAKRPAN</string>
+    <string name="hide_lite_patched_15" translatable="true">SKRIJ LITE ZAKRPAN</string>
+    <string name="hide_wave_patched_15" translatable="true">SKRIJ VAL ZAKRPAN</string>
     <string name="close_15" translatable="true">Zapri</string>
     <string name="cloned_15" translatable="true">Klonirano</string>
     <string name="spap_15" translatable="true">SP/AP</string>
@@ -1432,6 +1528,12 @@
     <string name="installation_failed_cloned_desc_16" translatable="true">Reason: Versiunea curentă a clonei de pe dispozitiv nu a fost creată de echipa noastră.\n\nSoluție: Dezinstalează versiunea curentă a aplicației, restartează xManager și încearcă din nou. Dacă problema persistă, verifică secția Întrebări Frecvente.</string>
     <string name="existing_patched_16" translatable="true">APK EXISTENT</string>
     <string name="existing_patched_desc_16" translatable="true">Un apk existent a fost găsit la locație. Ce acțiune ai dori să întreprinzi?</string>
+	<string name="disable_notification_16" translatable="true">DEZACTIVAȚI NOTIFICAREA</string>
+    <string name="disable_notification_desc_16" translatable="true">Activarea acestui lucru va elimina notificarea de memento după instalarea aplicației patch-uri.</string>
+    <string name="hide_stock_patched_16" translatable="true">ASCUNDE STOC PATCH-URI</string>
+    <string name="hide_amoled_patched_16" translatable="true">ASCUNDE AMOLED PATCH-URI</string>
+    <string name="hide_lite_patched_16" translatable="true">ASCUNDE LITE PATCH-URI</string>
+    <string name="hide_wave_patched_16" translatable="true">ASCUNDE VAL PATCH-URI</string>
     <string name="close_16" translatable="true">ÎNCHIDE</string>
     <string name="cloned_16" translatable="true">CLONĂ</string>
     <string name="spap_16" translatable="true">OB/AM</string>
@@ -1517,6 +1619,12 @@
     <string name="installation_failed_cloned_desc_17" translatable="true">이유: 이 장치에 설치된 복제 앱은 xManager에서 만든 앱이 아닙니다. 현재 버전의 앱을 제거한 뒤 xManager를 다시 시작하고 다시 시도하십시오. 문제가 지속되면 자주 묻는 질문을 확인하세요.</string>
     <string name="existing_patched_17" translatable="true">패치 존재</string>
     <string name="existing_patched_desc_17" translatable="true">해당 버전의 앱이 이미 다운로드되어 있습니다. 어떻게 하시겠습니까?</string>
+	<string name="disable_notification_17" translatable="true">알림 비활성화</string>
+    <string name="disable_notification_desc_17" translatable="true">이 기능을 활성화하면 패치 된 응용 프로그램을 설치 한 후 알림 알림이 제거됩니다.</string>
+    <string name="hide_stock_patched_17" translatable="true">재고 패치 숨기기</string>
+    <string name="hide_amoled_patched_17" translatable="true">패치된 아몰레드 숨기기</string>
+    <string name="hide_lite_patched_17" translatable="true">라이트 패치 숨기기</string>
+    <string name="hide_wave_patched_17" translatable="true">웨이브 패치 숨기기</string>
     <string name="close_17" translatable="true">닫기</string>
     <string name="cloned_17" translatable="true">복제됨</string>
     <string name="spap_17" translatable="true">SP/AP</string>
@@ -1602,6 +1710,12 @@
     <string name="installation_failed_cloned_desc_18" translatable="true">Reden: de huidige gekloonde geïnstalleerd op dit apparaat kwam niet rechtstreeks van xManager of van ons team.\n\noplossing: verwijder de huidige versie van de applicatie, herstart xManager en probeer het opnieuw. Als het probleem blijft bestaan, controleer dan de FAQ.</string>
     <string name="existing_patched_18" translatable="true">BESTAANDE PATCHED</string>
     <string name="existing_patched_desc_18" translatable="true">Een bestaand gepatcht bestand gevonden in een van de directory. Welke actie wilt u ondernemen?</string>
+	<string name="disable_notification_18" translatable="true">NOTIFICATIE UITSCHAKELEN</string>
+    <string name="disable_notification_desc_18" translatable="true">Als u dit inschakelt, wordt de herinneringsmelding verwijderd na het installeren van de gepatchte toepassing.</string>
+    <string name="hide_stock_patched_18" translatable="true">HIDE STOCK PATCHED</string>
+    <string name="hide_amoled_patched_18" translatable="true">HIDE AMOLED PATCHED</string>
+    <string name="hide_lite_patched_18" translatable="true">HIDE LITE PATCHED</string>
+    <string name="hide_wave_patched_18" translatable="true">HIDE WAVE PATCHED</string>
     <string name="close_18" translatable="true">SLUITEN</string>
     <string name="cloned_18" translatable="true">KLONEN</string>
     <string name="spap_18" translatable="true">SP/AP</string>
@@ -1682,6 +1796,17 @@
     <string name="disable_rewarded_ads_19" translatable="true">TẮT QUẢNG CÁO</string>
     <string name="disable_rewarded_ads_desc_19" translatable="true">Quảng cáo giúp chúng mình có kinh phí để có thể duy trì và phát triển ứng dụng, lưu trữ cơ sở dữ liệu và cập nhật các bản vá mới nhất.\n\nNếu không donate thì bạn có thể bật quảng cáo để hỗ trợ nhóm nhé!</string>
     <string name="installation_failed_19" translatable="true">CÀI ĐẶT THẤT BẠI</string>
+    <string name="installation_failed_desc_19" translatable="true">Lý do: Bạn đã cố cài đặt phiên bản mod thấp hơn phiên bản hiện đang được cài đặt.\n\nGiải pháp:\nA. Hãy chọn phiên bản bằng hoặc lớn hơn.\nB. Gỡ cài đặt phiên bản hiện tại, sau đó hạ cấp.\n\nNếu sự cố tiếp diễn, hãy kiểm tra câu hỏi thường gặp (FAQ).</string>
+    <string name="installation_failed_spap_desc_19" translatable="true">Lý do: Spotify hiện tại được cài đặt trên thiết bị này không đến trực tiếp từ xManager hoặc từ nhóm của chúng tôi.\n\nGiải pháp: Gỡ cài đặt phiên bản hiện tại của ứng dụng, khởi động lại xManager và thử lại. Nếu sự cố vẫn tiếp diễn, hãy kiểm tra câu hỏi thường gặp (FAQ).</string>
+    <string name="installation_failed_cloned_desc_19" translatable="true">Lý do: Bản sao hiện được cài đặt trên thiết bị này không đến trực tiếp từ xManager hoặc từ nhóm của chúng tôi.\n\nGiải pháp: Gỡ cài đặt phiên bản hiện tại của ứng dụng, khởi động lại xManager và thử lại. Nếu sự cố vẫn tiếp diễn, hãy kiểm tra câu hỏi thường gặp (FAQ).</string>
+    <string name="existing_patched_19" translatable="true">BẢN VÁ HIỆN TẠI</string>
+    <string name="existing_patched_desc_19" translatable="true">Có một tệp đã vá được tìm thấy ở một trong các thư mục. Bạn muốn thực hiện hành động nào?</string>
+	<string name="disable_notification_19" translatable="true">TẮT THÔNG BÁO</string>
+    <string name="disable_notification_desc_19" translatable="true">Bật tính năng này sẽ xóa thông báo nhắc nhở sau khi cài đặt ứng dụng đã vá.</string>
+    <string name="hide_stock_patched_19" translatable="true">ẨN CỔ VÁ</string>
+    <string name="hide_amoled_patched_19" translatable="true">ẨN AMOLED VÁ</string>
+    <string name="hide_lite_patched_19" translatable="true">ẨN LITE VÁ</string>
+    <string name="hide_wave_patched_19" translatable="true">ẨN SÓNG VÁ</string>
     <string name="installation_failed_desc_19" translatable="true">Lý do: Bạn đang cố cài đặt phiên bản mod thấp hơn phiên bản hiện đang được cài đặt.\n\nGiải pháp:\nA. Hãy chọn phiên bản bằng hoặc lớn hơn.\nB. Gỡ cài đặt phiên bản hiện tại, sau đó hạ cấp.\n\nNếu không được, hãy đọc phần câu hỏi thường gặp (FAQ).</string>
     <string name="installation_failed_spap_desc_19" translatable="true">Lý do: Phiên bản Spotify hiện tại được cài đặt trên thiết bị này không đến từ nhóm xManager.\n\nGiải pháp: Gỡ cài đặt phiên bản hiện tại, khởi động lại xManager và thử lại. Nếu không được, hãy đọc phần câu hỏi thường gặp (FAQ).</string>
     <string name="installation_failed_cloned_desc_19" translatable="true">Lý do: Phiên bản Spotify clone hiện tại được cài đặt trên thiết bị này không đến từ nhóm xManager.\n\nGiải pháp: Gỡ cài đặt phiên bản hiện tại của ứng dụng, khởi động lại xManager và thử lại. Nếu không được, hãy đọc phần câu hỏi thường gặp (FAQ).</string>
@@ -1772,6 +1897,12 @@
     <string name="installation_failed_cloned_desc_20" translatable="true">Grund: Das aktuell auf diesem Gerät installierte geklonte Programm kam nicht direkt von xManager oder von unserem Team.\n\nLösung: Deinstallieren Sie die aktuelle Version der Anwendung, starten Sie xManager neu und versuchen Sie es erneut. Wenn das Problem weiterhin besteht, lesen Sie die FAQ.</string>
     <string name="existing_patched_20" translatable="true">BESTEHENDE GEPATCHT</string>
     <string name="existing_patched_desc_20" translatable="true">Eine vorhandene gepatchte Datei in einem der Verzeichnis gefunden. Welche Aktion möchten Sie tun?</string>
+	<string name="disable_notification_20" translatable="true">BENACHRICHTIGUNG DEAKTIVIEREN</string>
+    <string name="disable_notification_desc_20" translatable="true">Wenn Sie dies aktivieren, wird die Erinnerungsbenachrichtigung nach der Installation der gepatchten Anwendung entfernt.</string>
+    <string name="hide_stock_patched_20" translatable="true">AUSGEBLENDETE BESTÄNDE AUSBLENDEN</string>
+    <string name="hide_amoled_patched_20" translatable="true">AMOLED GEPATCHT AUSBLENDEN</string>
+    <string name="hide_lite_patched_20" translatable="true">LITE GEPATCHT AUSBLENDEN</string>
+    <string name="hide_wave_patched_20" translatable="true">WELLE GEPATCHT AUSBLENDEN</string>
     <string name="close_20" translatable="true">SCHLIEßEN</string>
     <string name="cloned_20" translatable="true">KLONEN</string>
     <string name="spap_20" translatable="true">SP/AP</string>
@@ -1857,6 +1988,12 @@
     <string name="installation_failed_cloned_desc_21" translatable="true">دلیل: کلون فعلی نصب شده روی این دستگاه مستقیما از طرف مدیر یا تیم ما تهیه نشده است.راه حل: نسخه فعلی برنامه را حذف کنید, مدیر برنامه را مجددا راه اندازی کنید و دوباره امتحان کنید. اگر این موضوع ادامه, بررسی پرسش و پاسخ.</string>
     <string name="existing_patched_21" translatable="true">موجود وصله</string>
     <string name="existing_patched_desc_21" translatable="true">یک فایل وصله موجود موجود در یکی از دایرکتوری. چه عمل شما می خواهم به انجام?</string>
+	<string name="disable_notification_21" translatable="true">غیر فعال کردن اطلاع رسانی</string>
+    <string name="disable_notification_desc_21" translatable="true">با فعال کردن این کار ، پس از نصب برنامه پچ شده ، اعلان یادآوری حذف می شود.</string>
+    <string name="hide_stock_patched_21" translatable="true">پنهان کردن سهام پچ شده</string>
+    <string name="hide_amoled_patched_21" translatable="true">پنهان آمولد وصله</string>
+    <string name="hide_lite_patched_21" translatable="true">پنهان لایت وصله</string>
+    <string name="hide_wave_patched_21" translatable="true">پنهان کردن موج وصله</string>
     <string name="close_21" translatable="true">بستن</string>
     <string name="cloned_21" translatable="true">کلون شده</string>
     <string name="spap_21" translatable="true">دوباره / صبح</string>
@@ -1942,6 +2079,12 @@
     <string name="installation_failed_cloned_desc_22" translatable="true">סיבה: הגרסה המשובטת Spotify הנוכחית המותקנת במכשיר זה לא הגיעה ישירות מ־xManager או מהצוות שלנו.\n\פתרון: הסר את ההתקנה של הגרסה הנוכחית של האפליקציה, הפעל מחדש את xManager ונסה שוב. אם הבעיה נמשכת, עיין בשאלות הנפוצות.</string>
     <string name="existing_patched_22" translatable="true">נתיב קיים</string>
     <string name="existing_patched_desc_22" translatable="true">קובץ הורדה קיים נמצא באחת מהספריות. מה ברצונך לעשות?</string>
+	<string name="disable_notification_22" translatable="true">השבת הודעה</string>
+    <string name="disable_notification_desc_22" translatable="true">הפעלה זו תסיר את הודעת התזכורת לאחר התקנת היישום המתוקן.</string>
+    <string name="hide_stock_patched_22" translatable="true">הסתרת מלאי שתוקנה</string>
+    <string name="hide_amoled_patched_22" translatable="true">הסתר טלאים</string>
+    <string name="hide_lite_patched_22" translatable="true">הסתר לייט תוקן</string>
+    <string name="hide_wave_patched_22" translatable="true">הסתר גל תוקן</string>
     <string name="close_22" translatable="true">סגור</string>
     <string name="cloned_22" translatable="true">משובט</string>
     <string name="spap_22" translatable="true">SP/AP</string>
@@ -2031,6 +2174,12 @@
     <string name="installation_failed_cloned_desc_23" translatable="true">Dôvod: Aktuálny klon nainštalovaný na tomto zariadení nepochádza priamo od xManager alebo od nášho tímu.\n\nRiešenie: Odinštalujte aktuálnu verziu aplikácie, reštartujte xManager a skúste to znova. Ak problém pretrváva, pozrite si FAQ.</string>
     <string name="existing_patched_23" translatable="true">EXISTUJÚCE ZAPLÁTANÉ</string>
     <string name="existing_patched_desc_23" translatable="true">V jednom z adresárov sa našiel existujúci zaplátaný súbor APK. Akú akciu chcete urobiť?</string>
+	<string name="disable_notification_23" translatable="true">ZAKÁZAŤ UPOZORNENIE</string>
+    <string name="disable_notification_desc_23" translatable="true">Ak to povolíte, odstráni sa upozornenie na pripomenutie po inštalácii opravenej aplikácie.</string>
+    <string name="hide_stock_patched_23" translatable="true">SKRYŤ ZÁSOBY OPRAVENÉ</string>
+    <string name="hide_amoled_patched_23" translatable="true">SKRYŤ AMOLED OPRAVA</string>
+    <string name="hide_lite_patched_23" translatable="true">SKRYŤ LITE OPRAVA</string>
+    <string name="hide_wave_patched_23" translatable="true">SKRYŤ VLNU OPRAVA</string>
     <string name="close_23" translatable="true">ZAVRIEŤ</string>
     <string name="cloned_23" translatable="true">KLONOVANÝ</string>
     <string name="spap_23" translatable="true">SP/AP</string>
@@ -2116,6 +2265,12 @@
     <string name="installation_failed_cloned_desc_24" translatable="true">Orsak: Den nuvarande klonade installerade på den här enheten kom inte direkt från xManager eller från vårt team.\n\nLösning: Avinstallera den aktuella versionen av applikationen, starta om xManager och försök igen. Om problemet kvarstår, kontrollera FAQ.</string>
     <string name="existing_patched_24" translatable="true">EXISTERANDE PATCHAD</string>
     <string name="existing_patched_desc_24" translatable="true">En befintlig patchad apk hittades i en av katalogerna. Vilken åtgärd skulle du vilja göra?</string>
+	<string name="disable_notification_24" translatable="true">INAKTIVERA MEDDELANDE</string>
+    <string name="disable_notification_desc_24" translatable="true">Om du aktiverar detta kommer påminnelsemeddelandet att tas bort efter installationen av det korrigerade programmet.</string>
+    <string name="hide_stock_patched_24" translatable="true">DÖLJ LAGER PATCHED</string>
+    <string name="hide_amoled_patched_24" translatable="true">DÖLJ AMOLED PATCHED</string>
+    <string name="hide_lite_patched_24" translatable="true">DÖLJ LITE PATCHED</string>
+    <string name="hide_wave_patched_24" translatable="true">DÖLJ VÅG PATCHED</string>
     <string name="close_24" translatable="true">STÄNG</string>
     <string name="cloned_24" translatable="true">KLONAD</string>
     <string name="spap_24" translatable="true">VA/AM</string>
@@ -2201,6 +2356,12 @@
     <string name="installation_failed_cloned_desc_25" translatable="true">Syy: Tälle laitteelle asennettu nykyinen kloonattu versio ei tullut suoraan xManagerista tai tiimiltään.\n\nRatkaisu: Poista sovelluksen nykyinen versio, käynnistä xManager uudelleen ja yritä uudelleen. Jos ongelma jatkuu, tarkista usein kysytyt kysymykset.</string>
     <string name="existing_patched_25" translatable="true">OLEMASSA OLEVA KORJAUSTIEDOSTO</string>
     <string name="existing_patched_desc_25" translatable="true">Yhdestä hakemistosta löytyi olemassa oleva korjattu apk. Millaisen toimenpiteen haluaisit tehdä?</string>
+	<string name="disable_notification_25" translatable="true">POISTA ILMOITUS KÄYTÖSTÄ</string>
+    <string name="disable_notification_desc_25" translatable="true">Tämän ottaminen käyttöön poistaa muistutusilmoituksen paikatun sovelluksen asentamisen jälkeen.</string>
+    <string name="hide_stock_patched_25" translatable="true">PIILOTA VARASTOSSA PAIKATTU</string>
+    <string name="hide_amoled_patched_25" translatable="true">PIILOTA AMOLED PAIKATTU</string>
+    <string name="hide_lite_patched_25" translatable="true">PIILOTA LITE PAIKATTU</string>
+    <string name="hide_wave_patched_25" translatable="true">PIILOAALTO PAIKATTU</string>
     <string name="close_25" translatable="true">SULJE</string>
     <string name="cloned_25" translatable="true">KLOONATTU</string>
     <string name="spap_25" translatable="true">SP/AP</string>
@@ -2286,6 +2447,12 @@
     <string name="installation_failed_cloned_desc_26" translatable="true">Důvod: Momentálně nainstalovaná klonovaná aplikace na tomto zařízení nepochází přímo od xManager týmu.\n\Řešení: Odinstalujte momentální verzi, restartujte xManager a zkuste to znovu. Pokud bude problém přetrvávat, zkontrolujte "FAQ".</string>
     <string name="existing_patched_26" translatable="true">EXISTUJÍCÍ UPRAVENÁ APLIKACE</string>
     <string name="existing_patched_desc_26" translatable="true">Již existuje upravený apk soubor v jednom z adresářů. Jak si přejete pokračovat?</string>
+	<string name="disable_notification_26" translatable="true">ZAKÁZAT OZNÁMENÍ</string>
+    <string name="disable_notification_desc_26" translatable="true">Povolením tohoto odstraníte upozornění na připomenutí po instalaci opravené aplikace.</string>
+    <string name="hide_stock_patched_26" translatable="true">SKRÝT OPRAVENÉ ZÁSOBY</string>
+    <string name="hide_amoled_patched_26" translatable="true">SKRÝT AMOLED ZÁSOBY</string>
+    <string name="hide_lite_patched_26" translatable="true">SKRÝT LITE ZÁSOBY</string>
+    <string name="hide_wave_patched_26" translatable="true">SKRÝT WAVE ZÁSOBY</string>
     <string name="close_26" translatable="true">ZAVŘÍT</string>
     <string name="cloned_26" translatable="true">KLONOVANÁ</string>
     <string name="spap_26" translatable="true">SP/AP</string>
@@ -2371,6 +2538,12 @@
     <string name="installation_failed_cloned_desc_27" translatable="true">原因: 此裝置目前安裝的克隆版本不是直接來自 xManager 或來自我們的團隊。\n\n解決方案: 解除安裝目前版本的應用程式，重新啟動 xManager 並重試。如果問題仍然存在，請檢視常見問題解答。</string>
     <string name="existing_patched_27" translatable="true">現有修補程式</string>
     <string name="existing_patched_desc_27" translatable="true">在目錄中找到一個已修補 APK 檔案。 您想怎麼做？</string>
+	<string name="disable_notification_27" translatable="true">禁用通知</string>
+    <string name="disable_notification_desc_27" translatable="true">启用此功能将在安装修补的应用程序后删除提醒通知.</string>
+    <string name="hide_stock_patched_27" translatable="true">隐藏股票修补</string>
+    <string name="hide_amoled_patched_27" translatable="true">隐藏AMOLED修补</string>
+    <string name="hide_lite_patched_27" translatable="true">隐藏精简版修补</string>
+    <string name="hide_wave_patched_27" translatable="true">隐藏波修补</string>
     <string name="close_27" translatable="true">關閉</string>
     <string name="cloned_27" translatable="true">克隆版本</string>
     <string name="spap_27" translatable="true">預設或純黑版本</string>
@@ -2456,6 +2629,12 @@
     <string name="installation_failed_cloned_desc_28" translatable="true">Причина: Текущата клонирана версия, инсталирана на това устройство, не идва директно от xManager или от нашия екип.\n\nРешение: Деинсталирайте текущата версия на приложението, рестартирайте xManager и опитайте отново. Ако проблемът продължава, проверете в ЧЗВ.</string>
     <string name="existing_patched_28" translatable="true">СЪЩЕСТВУВАЩО КОРИГИРАНО ПРИЛОЖЕНИЕ</string>
     <string name="existing_patched_desc_28" translatable="true">В една от директориите е намерен съществуващ коригиран APK. Какво действие искате да извършите?</string>
+	<string name="disable_notification_28" translatable="true">ИЗКЛЮЧВАНЕ НА ИЗВЕСТЯВАНЕТО</string>
+    <string name="disable_notification_desc_28" translatable="true">Активирането на това ще премахне известието за напомняне след инсталирането на закърпеното приложение.</string>
+    <string name="hide_stock_patched_28" translatable="true">СКРИВАНЕ НА НАЛИЧНОСТИТЕ КРЪПКА</string>
+    <string name="hide_amoled_patched_28" translatable="true">СКРИВАНЕ НА АМОЛЕД КРЪПКА</string>
+    <string name="hide_lite_patched_28" translatable="true">СКРИВАНЕ НА ЛЕКИ КРЪПКИ</string>
+    <string name="hide_wave_patched_28" translatable="true">СКРИВАНЕ НА КРЪПКАТА НА ВЪЛНАТА</string>
     <string name="close_28" translatable="true">ЗАТВАРЯНЕ</string>
     <string name="cloned_28" translatable="true">КЛОНИРАН</string>
     <string name="spap_28" translatable="true">SP/AP</string>
@@ -2541,6 +2720,12 @@
     <string name="installation_failed_cloned_desc_29" translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManager-а или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављана питања.</string>
     <string name="existing_patched_29" translatable="true">ПОСТОЈЕЋИ ПЕЧ</string>
     <string name="existing_patched_desc_29" translatable="true">Постојећи фајл је откривен у спољном фолдеру. Коју радњу бисте желели да извршите?</string>
+	<string name="disable_notification_29" translatable="true">ОНЕМОГУЋИ ОБАВЕШТЕЊЕ</string>
+    <string name="disable_notification_desc_29" translatable="true">Ако ово омогућите, неће се приказивати обавештење након инсталирања печоване апликације.</string>
+    <string name="hide_stock_patched_29" translatable="true">САКРИЈ STOCK ПЕЧ</string>
+    <string name="hide_amoled_patched_29" translatable="true">САКРИЈ AMOLED ПЕЧ</string>
+    <string name="hide_lite_patched_29" translatable="true">САКРИЈ LITE ПЕЧ</string>
+    <string name="hide_wave_patched_29" translatable="true">САКРИЈ WAVE ПЕЧ</string>
     <string name="close_29" translatable="true">ЗАТВОРИ</string>
     <string name="cloned_29" translatable="true">КЛОНИРАН</string>
     <string name="spap_29" translatable="true">SP/AP</string>
@@ -2626,6 +2811,12 @@
     <string name="installation_failed_cloned_desc_30" translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManager-a ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljana pitanja.</string>
     <string name="existing_patched_30" translatable="true">POSTOJEĆI PEČ</string>
     <string name="existing_patched_desc_30" translatable="true">Postojeći peč je otkriven u spoljnom folderu. Koju radnju biste želeli da izvršite?</string>
+	<string name="disable_notification_30" translatable="true">ONEMOGUĆI OBAVEŠTENJE</string>
+    <string name="disable_notification_desc_30" translatable="true">Ako ovo omogućite, neće se prikazivati obaveštenje nakon instaliranja pečovane aplikacije.</string>
+    <string name="hide_stock_patched_30" translatable="true">SAKRIJ STOCK PEČ</string>
+    <string name="hide_amoled_patched_30" translatable="true">SAKRIJ AMOLED PEČ</string>
+    <string name="hide_lite_patched_30" translatable="true">SAKRIJ LITE PEČ</string>
+    <string name="hide_wave_patched_30" translatable="true">SAKRIJ WAVE PEČ</string>
     <string name="close_30" translatable="true">ZATVORI</string>
     <string name="cloned_30" translatable="true">KLONIRAN</string>
     <string name="spap_30" translatable="true">SP/AP</string>
@@ -2711,6 +2902,12 @@
     <string name="installation_failed_cloned_desc_31" translatable="true">Motiu: L\'aplicació clonada instal·lada en aquest dispositiu no provenia directament de xManager ni del nostre equip.\n\nSolució: Desinstal·li la versió actual de l\'aplicació, reiniciï xManager i intenti-ho de nou. Si el problema persisteix, consulti les preguntes freqüents.</string>
     <string name="existing_patched_31" translatable="true">PEGAT TROBAT</string>
     <string name="existing_patched_desc_31" translatable="true">S\'ha trobat un APK pegat en la carpeta de descàrregues. Què desitja fer?</string>
+	<string name="disable_notification_31" translatable="true">DESACTIVA LA NOTIFICACIÓ</string>
+    <string name="disable_notification_desc_31" translatable="true">Habilitar això eliminarà la notificació de recordatori després d\'instal lar l\'aplicació pegada.</string>
+    <string name="hide_stock_patched_31" translatable="true">OCULTA LA PILA APEDAÇADA</string>
+    <string name="hide_amoled_patched_31" translatable="true">OCULTA AMOLED PEGATS</string>
+    <string name="hide_lite_patched_31" translatable="true">OCULTA EL PEGAT LITE</string>
+    <string name="hide_wave_patched_31" translatable="true">OCULTA L\'WAVE PEGADA</string>
     <string name="close_31" translatable="true">TANCAR</string>
     <string name="cloned_31" translatable="true">CLONAR</string>
     <string name="spap_31" translatable="true">SI/INFO</string>
@@ -2796,6 +2993,12 @@
     <string name="installation_failed_cloned_desc_32" translatable="true">Iemesls: \n\nRisinājums: Pašreizējais klonētais, kas instalēts šajā ierīcē, nav nācis tieši no xManager vai no mūsu komandas: Atinstalējiet pašreizējo lietojumprogrammas versiju, restartējiet xManager un mēģiniet vēlreiz. Ja problēma saglabājas, skatiet BUJ.</string>
     <string name="existing_patched_32" translatable="true">EŠOŠAIS IZLABOTS</string>
     <string name="existing_patched_desc_32" translatable="true">Vienā no direktorijām ir atrasts esošais ielāgotais apk. Kādu darbību vēlaties veikt?</string>
+	<string name="disable_notification_32" translatable="true">ATSPĒJOT PAZIŅOJUMU</string>
+    <string name="disable_notification_desc_32" translatable="true">Iespējojot šo noņems atgādinājuma paziņojumu pēc instalēšanas patched pieteikumu.</string>
+    <string name="hide_stock_patched_32" translatable="true">SLĒPT KRĀJUMU PATCHED</string>
+    <string name="hide_amoled_patched_32" translatable="true">SLĒPT AMOLED PATCHED</string>
+    <string name="hide_lite_patched_32" translatable="true">SLĒPT LITE PATCHED</string>
+    <string name="hide_wave_patched_32" translatable="true">SLĒPT VILNIS PATCHED</string>
     <string name="close_32" translatable="true">AIZVERT</string>
     <string name="cloned_32" translatable="true">KLONĒTS</string>
     <string name="spap_32" translatable="true">SP/AP</string>
@@ -2881,6 +3084,12 @@
     <string name="installation_failed_cloned_desc_33" translatable="true">Grund: Der auf diesem Gerät installierte aktuelle Klon stammt nicht direkt von xManager oder von unserem Team. Lösung: Deinstallieren Sie die aktuelle Version der Anwendung, starten Sie xManager neu und versuchen Sie es erneut. Wenn das Problem weiterhin besteht, lesen Sie die FAQ.</string>
     <string name="existing_patched_33" translatable="true">EXISTING PATCHED</string>
     <string name="existing_patched_desc_33" translatable="true">Es wurde eine vorhandene, gepatchte apk im Verzeichnis gefunden. Welche Aktion möchten Sie ausführen?</string>
+	<string name="disable_notification_33" translatable="true">BENACHRICHTIGUNG DEAKTIVIEREN</string>
+    <string name="disable_notification_desc_33" translatable="true">Wenn Sie dies aktivieren, wird die Erinnerungsbenachrichtigung nach der Installation der gepatchten Anwendung entfernt.</string>
+    <string name="hide_stock_patched_33" translatable="true">AUSGEBLENDETE BESTÄNDE AUSBLENDEN</string>
+    <string name="hide_amoled_patched_33" translatable="true">AMOLED GEPATCHT AUSBLENDEN</string>
+    <string name="hide_lite_patched_33" translatable="true">LITE GEPATCHT AUSBLENDEN</string>
+    <string name="hide_wave_patched_33" translatable="true">WELLE GEPATCHT AUSBLENDEN</string>
     <string name="close_33" translatable="true">SCHLIEßEN</string>
     <string name="cloned_33" translatable="true">KLON VERWENDEN</string>
     <string name="spap_33" translatable="true">SP/AP</string>
@@ -2966,6 +3175,12 @@
     <string name="installation_failed_cloned_desc_34" translatable="true">හේතුව: මෙම උපාංගයේ ස්ථාපනය කර ඇති ක්ලෝන කරන ලද ධාරාව සෘජුවම xManager වෙතින් හෝ අපගේ කණ්ඩායමෙන් පැමිණියේ නැත. විසඳුම: යෙදුමේ වත්මන් අනුවාදය අස්ථාපනය කරන්න, xManager නැවත ආරම්භ කර නැවත උත්සාහ කරන්න. ගැටලුව දිගටම පවතින්නේ නම්, නිතර අසන පැන පරීක්ෂා කරන්න.</string>
     <string name="existing_patched_34" translatable="true">පවතින පැච්</string>
     <string name="existing_patched_desc_34" translatable="true">එක් නාමාවලියක පවතින පැච් කළ apk එකක් හමු විය. ඔබ කිරීමට කැමති ක්‍රියාව කුමක්ද?</string>
+	<string name="disable_notification_34" translatable="true">දැනුම්දීම අක්රීය කරන්න</string>
+    <string name="disable_notification_desc_34" translatable="true">මෙය සක් රිය කිරීමෙන්, පැච් කරන ලද යෙදුම ස්ථාපනය කිරීමෙන් පසු මතක් කිරීමේ දැනුම්දීම ඉවත් කරනු ඇත.</string>
+    <string name="hide_stock_patched_34" translatable="true">පැච් කරන ලද තොග සඟවන්න</string>
+    <string name="hide_amoled_patched_34" translatable="true">සැඟවීම අමෝල්ඩ් සඟවන්න</string>
+    <string name="hide_lite_patched_34" translatable="true">ලයිට් පැච් කරලා හංගන්න</string>
+    <string name="hide_wave_patched_34" translatable="true">රැල්ල පැච් කරලා හංගන්න</string>
     <string name="close_34" translatable="true">වසා දමන්න</string>
     <string name="cloned_34" translatable="true">ක්ලෝන</string>
     <string name="spap_34" translatable="true">SP/AP</string>
@@ -3051,6 +3266,12 @@
     <string name="installation_failed_cloned_desc_35" translatable="true">Oka: A jelenleg telepített, klónozott alkalmazás nem az xManager-től, vagy a csapatunktól származik.\n\nA hiba elhárításának módja: Távolítsd el az alkalmazás jelenlegi verzióját, indítsd újra az xManager-t, majd próbáld újra a telepítést. Ha a hiba továbbra is fennáll, látogasd meg a FAQ-t.</string>
     <string name="existing_patched_35" translatable="true">PATCHELT TELEPÍTŐFÁJL MEGTALÁLVA</string>
     <string name="existing_patched_desc_35" translatable="true">Egy meglévő apk-t találtunk a letöltési mappában. Mit szeretnél tenni?</string>
+	<string name="disable_notification_35" translatable="true">ÉRTESÍTÉS LETILTÁSA</string>
+    <string name="disable_notification_desc_35" translatable="true">Ennek engedélyezése eltávolítja az emlékeztető értesítést a javított alkalmazás telepítése után.</string>
+    <string name="hide_stock_patched_35" translatable="true">ELREJTÉS ÁLLOMÁNY FOLTOZOTT</string>
+    <string name="hide_amoled_patched_35" translatable="true">ELREJTÉS AMOLED FOLTOZOTT</string>
+    <string name="hide_lite_patched_35" translatable="true">ELREJTÉS LITE FOLTOZOTT</string>
+    <string name="hide_wave_patched_35" translatable="true">ELREJTÉS HULLÁM FOLTOZOTT</string>
     <string name="close_35" translatable="true">BEZÁRÁS</string>
     <string name="cloned_35" translatable="true">KLÓNOZOTT</string>
     <string name="spap_35" translatable="true">SP/AP</string>
@@ -3062,174 +3283,277 @@
     <string name="open_settings_35" translatable="true">BEÁLLÍTÁSOK MEGNYITÁSA</string>
     <string name="open_patched_35" translatable="true">A PATCHELT ALKALMAZÁS MEGNYITÁSA</string>
     <string name="reboot_35" translatable="true">ÚJRAFETCHELÉS ÉS AZ ALKALMAZÁS ÚJRAINDÍTÁSA</string>
-
-    <!--TAMIL LANGUAGE-->
+	
+	<!--JAPANESE LANGUAGE-->
     <string name="app_name_36" translatable="true">xManager</string>
-    <string name="installed_36" translatable="true">நிறுவப்பட்டது</string>
-    <string name="latest_36" translatable="true">புதிதான</string>
-    <string name="versions_36" translatable="true">பதிப்புகள்</string>
-    <string name="changelogs_36" translatable="true">மாற்றப்பட்ட பதிவுகள்</string>
-    <string name="manager_tools_36" translatable="true">மேலாளர் கருவிகள்</string>
-    <string name="source_36" translatable="true">ஆதாரம்</string>
-    <string name="support_36" translatable="true">டெலிகிராம்</string>
-    <string name="donate_36" translatable="true">ஆதரவு</string>
-    <string name="discord_36" translatable="true">டிஸ்கார்ட்</string>
-    <string name="about_36" translatable="true">பற்றி</string>
+    <string name="installed_36" translatable="true">インストール済み</string>
+    <string name="latest_36" translatable="true">最新</string>
+    <string name="versions_36" translatable="true">バージョン</string>
+    <string name="changelogs_36" translatable="true">更新履歴</string>
+    <string name="manager_tools_36" translatable="true">管理ツール</string>
+    <string name="source_36" translatable="true">ソース</string>
+    <string name="support_36" translatable="true">Telegram</string>
+    <string name="donate_36" translatable="true">サポート</string>
+    <string name="discord_36" translatable="true">Discord</string>
+    <string name="about_36" translatable="true">情報</string>
     <string name="main_title_36" translatable="true">xManager</string>
-    <string name="settings_title_36" translatable="true">அமைப்புகள்</string>
-    <string name="about_title_36" translatable="true">பற்றி</string>
-    <string name="list_auto_refresh_36" translatable="true">தானாக புதுப்பித்தல் பட்டியல்</string>
-    <string name="list_auto_refresh_desc_36" translatable="true">இதை இயக்குவது ஒவ்வொரு முறையும் நீங்கள் பயன்பாட்டைத் தொடங்கும் போது தானாகவே பட்டியலைப் புதுப்பிக்கும்.\n\nதிரையை கீழ்நோக்கி இழுப்பதன் மூலம் பட்டியலை புதுப்பிக்கலாம்.</string>
-    <string name="force_auto_install_36" translatable="true">கட்டாயமாக தானாக நிறுவவும்</string>
-    <string name="force_auto_install_desc_36" translatable="true">இதை இயக்கினால், பேட்ச் செய்யப்பட்ட ஆப்ஸ் தானாகவே நிறுவப்பட்டு, பதிவிறக்கம் செய்யப்பட்டவுடன் புதுப்பிக்கப்படும்.</string>
-    <string name="show_themes_36" translatable="true">தீம்கள்</string>
-    <string name="apk_location_36" translatable="true">APK இடம்</string>
-    <string name="apk_location_desc_36" translatable="true">பதிவிறக்கம் செய்யப்பட்ட கோப்பின் நகலை நீங்கள் சேமிக்க விரும்பும் அடைவு. இந்த அம்சத்தை எவ்வாறு கட்டமைப்பது என்று உங்களுக்குத் தெரியாவிட்டால், இதை அப்படியே விடவும்.\n\nகுறிப்பு: அணுகல்தன்மை, அனுமதிகள் மற்றும் சேமிப்பக வரம்புகள் காரணமாக இந்த அம்சம் வெளிப்புற சேமிப்பகத்தை (எஸ்டி கார்டு) ஆதரிக்காது.</string>
-    <string name="clear_directory_folders_36" translatable="true">கோப்புறையை அழிக்கவும்</string>
-    <string name="clear_directory_folders_desc_36" translatable="true">அடைவு கோப்புறையை நீக்க தட்டவும். பதிவிறக்கம் செய்யப்பட்ட கோப்புகள் மற்றும் புதுப்பிப்புகள் இதில் அடங்கும்.</string>
-    <string name="reset_preferences_36" translatable="true">விருப்பங்களை மீட்டமைக்கவும்</string>
-    <string name="about_sub_36" translatable="true">விளம்பரம் இல்லாத | புதிய அம்சங்கள் | சுதந்திரம்</string>
-    <string name="xmanager_dev_36" translatable="true">xManager டெவலப்பர்</string>
-    <string name="patched_devs_36" translatable="true">பேட்ச் டெவலப்பர்கள்</string>
-    <string name="support_team_36" translatable="true">தந்தி | கருத்து வேறுபாடு | ரெட்டிட் ஆதரவு குழு</string>
-    <string name="manager_testers_36" translatable="true">இணைக்கப்பட்ட மற்றும் மேலாளர் சோதனையாளர்கள்</string>
-    <string name="manager_hosting_36" translatable="true">மேலாளர் தரவுத்தளம் மற்றும் ஹோஸ்டிங்ஸ்</string>
-    <string name="mobilism_team_36" translatable="true">மொபிலிசம் குழு</string>
-    <string name="forum_team_36" translatable="true">FORUM.APK-RELEASE.NET குழு</string>
-    <string name="contributors_36" translatable="true">அனைத்து பங்களிப்பாளர்களுக்கும் நன்றி! ❤️</string>
-    <string name="download_selected_36" translatable="true">இந்த இணைக்கப்பட்ட பதிப்பைத் தேர்ந்தெடுத்துள்ளீர்கள். தொடர வேண்டுமா?</string>
-    <string name="download_ready_36" translatable="true">இணைக்கப்பட்ட தகவல்</string>
-    <string name="download_ready_desc_36" translatable="true">இந்த பேட்ச் ஆனது வெளிப்புற கோப்பகத்தில் உள்ள முந்தைய கோப்பை மேலெழுதும். எச்சரிக்கையுடன் தொடரவும்.</string>
-    <string name="downloading_file_36" translatable="true">கோப்பைப் பதிவிறக்குகிறது</string>
-    <string name="download_success_36" translatable="true">வெற்றிகரமாக பதிவிறக்கம் செய்யப்பட்டது</string>
-    <string name="new_update_36" translatable="true">புதிய மேலாளர் புதுப்பிப்பு</string>
-    <string name="continue_1_36" translatable="true">தொடரவும்</string>
-    <string name="cancel_36" translatable="true">ரத்துசெய்</string>
-    <string name="download_36" translatable="true">பதிவிறக்கம்</string>
-    <string name="later_36" translatable="true">பின்னர்</string>
-    <string name="install_now_36" translatable="true">பேட்ச் செய்யப்பட்டதை நிறுவவும்</string>
-    <string name="install_update_36" translatable="true">புதுப்பிப்பை நிறுவவும்</string>
-    <string name="go_back_36" translatable="true">பின்னே செல்</string>
-    <string name="download_update_36" translatable="true">புதுப்பிப்பைப் பதிவிறக்கவும்</string>
-    <string name="not_now_36" translatable="true">இப்போது இல்லை</string>
-    <string name="mirror_36" translatable="true">இதர இணைப்பு</string>
-    <string name="lite_36" translatable="true">லைட்</string>
-    <string name="experimental_title_36" translatable="true">பரிசோதனை</string>
-    <string name="experimental_version_36" translatable="true">பரிசோதனை பதிப்பு</string>
-    <string name="experimental_version_desc_36" translatable="true">இதை இயக்கினால், பேட்ச் செய்யப்பட்ட பயன்பாட்டின் சோதனைப் பதிப்பைப் பதிவிறக்கி நிறுவ முடியும்.\n\nஇதில் ஆல்பா, பீட்டா மற்றும் ஆரம்ப அணுகல் அம்சங்கள் உள்ளன, அவை பேட்ச் செய்யப்பட்ட ஸ்டாக்கில் இல்லை. கூடுதலாக, நிலையான உத்தரவாதம் இல்லை.</string>
-    <string name="show_support_36" translatable="true">உங்கள் ஆதரவைக் காட்டு</string>
-    <string name="show_support_desc_36" translatable="true">நாங்கள் ஒரு இலாப நோக்கற்ற, பெருநிறுவன மற்றும் சமரசம் செய்யாத அணி. உங்களைப் போன்றவர்கள், குறிப்பாகப் பதிவிறக்குவது முதல் நிறுவுவது வரை விஷயங்களை மிகவும் எளிதாக்குவதற்கு ஒரு பயன்பாட்டை உருவாக்குமாறு எங்களை ஊக்குவிக்கிறார்கள்.\n\nவிஷயங்களைச் சரியாகவும் சிறப்பாகவும் செய்ய எங்களின் முழு நேரத்தையும் சிறந்த முயற்சியையும் செலவிடுகிறோம். எங்களால் முடிந்தவரை இந்த ஆப்ஸை ஆதரிக்க எங்களால் முடிந்த அனைத்தையும் செய்வோம்.\n\nஎந்தத் தொகையும் உதவும் மற்றும் மிகவும் பாராட்டப்படும்!</string>
-    <string name="maintenance_36" translatable="true">பராமரிப்பு</string>
-    <string name="maintenance_desc_36" translatable="true">xManager தற்போது கிடைக்கவில்லை. பிறகு முயற்சிக்கவும்.</string>
-    <string name="thanks_36" translatable="true">நன்றி!</string>
-    <string name="language_36" translatable="true">மொழி</string>
-    <string name="website_36" translatable="true">இணையதளம்</string>
-    <string name="reddit_36" translatable="true">ரெட்டிட்</string>
-    <string name="faq_36" translatable="true">அடிக்கடி கேட்கப்படும் கேள்விகள்</string>
-    <string name="cloned_version_36" translatable="true">குளோன் செய்யப்பட்ட பதிப்பு</string>
-    <string name="cloned_version_desc_36" translatable="true">இதை இயக்கினால், பேட்ச் செய்யப்பட்ட பயன்பாட்டின் குளோன் செய்யப்பட்ட பதிப்பைப் பதிவிறக்கி நிறுவ முடியும்.\n\nஇது பெரும்பாலான நிறுவல் பிழைகள் அல்லது சிக்கல்களைத் தீர்க்கும், குறிப்பாக உங்களிடம் முன்பே நிறுவப்பட்ட Spotify பயன்பாடு இருந்தால்.</string>
-    <string name="disable_rewarded_ads_36" translatable="true">வெகுமதி அளிக்கப்பட்ட விளம்பரங்களை முடக்கு</string>
-    <string name="disable_rewarded_ads_desc_36" translatable="true">எங்களில் பெரும்பாலோர் விளம்பரங்களை விரும்புவதில்லை என்பதை நாங்கள் அறிவோம், ஆனால் எங்கள் விஷயத்தில், இது எங்கள் தரவுத்தளம், ஹோஸ்டிங் இணைப்புகள், புதுப்பிப்புகள், கூடுதல் பேட்ச்கள் மற்றும் அன்றாட தேவைகளுக்கு நிதியளிக்க கணிசமாக உதவுகிறது.\n\nஇது நன்கொடை அல்லது நன்கொடை இல்லாமல் எங்களுக்கு ஆதரவளிப்பதற்கான எளிய வழி. எதையும் செலவு.</string>
-    <string name="installation_failed_36" translatable="true">நிறுவல் தோல்வி அடைந்தது</string>
-    <string name="installation_failed_desc_36" translatable="true">காரணம்: தற்போது நிறுவப்பட்டுள்ளதை விட குறைவான பேட்ச் செய்யப்பட்ட பதிப்பை நிறுவ முயற்சித்தீர்கள்.\n\nதீர்வுகள்:\nA. சமமான அல்லது அதற்கும் அதிகமான பதிப்பைத் தேர்ந்தெடுக்கவும்.\nB. தற்போதைய பதிப்பை நிறுவல் நீக்கி, தரமிறக்கவும்.\n\nசிக்கல் தொடர்ந்தால், அடிக்கடி கேட்கப்படும் கேள்விகளைப் பார்க்கவும்.</string>
-    <string name="installation_failed_spap_desc_36" translatable="true">காரணம்: இந்தச் சாதனத்தில் நிறுவப்பட்ட தற்போதைய இணைப்பு xManager அல்லது எங்கள் குழுவிடமிருந்து நேரடியாக வரவில்லை.\n\nதீர்வு: பயன்பாட்டின் தற்போதைய பதிப்பை நிறுவல் நீக்கி, xManager ஐ மறுதொடக்கம் செய்து மீண்டும் முயற்சிக்கவும். சிக்கல் தொடர்ந்தால், அடிக்கடி கேட்கப்படும் கேள்விகளைப் பார்க்கவும்.</string>
-    <string name="installation_failed_cloned_desc_36" translatable="true">காரணம்: இந்தச் சாதனத்தில் நிறுவப்பட்ட தற்போதைய குளோனிங் நேரடியாக xManager இடமிருந்தோ அல்லது எங்கள் குழுவிலிருந்தோ வரவில்லை.\n\nதீர்வு: பயன்பாட்டின் தற்போதைய பதிப்பை நிறுவல் நீக்கி, xManager ஐ மறுதொடக்கம் செய்து மீண்டும் முயற்சிக்கவும். சிக்கல் தொடர்ந்தால், அடிக்கடி கேட்கப்படும் கேள்விகளைப் பார்க்கவும்.</string>
-    <string name="existing_patched_36" translatable="true">தற்போதுள்ள இணைப்பு</string>
-    <string name="existing_patched_desc_36" translatable="true">வெளிப்புற கோப்பகத்தில் ஏற்கனவே உள்ள இணைப்பு கண்டறியப்பட்டது. நீங்கள் என்ன செயலைச் செய்ய விரும்புகிறீர்கள்?</string>
-    <string name="close_36" translatable="true">மூடவும்</string>
-    <string name="cloned_36" translatable="true">குளோன் செய்யப்பட்டது</string>
+    <string name="settings_title_36" translatable="true">設定</string>
+    <string name="about_title_36" translatable="true">アプリについて</string>
+    <string name="list_auto_refresh_36" translatable="true">リストの自動更新</string>
+    <string name="list_auto_refresh_desc_36" translatable="true">有効化する事でアプリを起動するたびにリストが自動更新されます。\n\nメイン画面の下方向にドラッグで手動でリストを更新できます。</string>
+    <string name="force_auto_install_36" translatable="true">強制自動インストール</string>
+    <string name="force_auto_install_desc_36" translatable="true">有効化する事で、ダウンロード後にパッチが適用されたアプリとアップデートが自動的にインストールされます。</string>
+    <string name="show_themes_36" translatable="true">テーマ</string>
+    <string name="apk_location_36" translatable="true">APKの場所</string>
+    <string name="apk_location_desc_36" translatable="true">ダウンロードしたファイルのコピーを保存するディレクトリになります。\n\n注意: この機能はユーザー補助、アクセス許可、ストレージ制限により外部ストレージ (SD カード) をサポートしていません。</string>
+    <string name="clear_directory_folders_36" translatable="true">ディレクトリフォルダをクリア</string>
+    <string name="clear_directory_folders_desc_36" translatable="true">タップでディレクトリフォルダを削除します。ディレクトリにはダウンロードをしたファイルやアップデートが含まれます。</string>
+    <string name="reset_preferences_36" translatable="true">設定をリセット</string>
+    <string name="about_sub_36" translatable="true">広告なし | 新機能 | 自由</string>
+    <string name="xmanager_dev_36" translatable="true">xManager Developer</string>
+    <string name="patched_devs_36" translatable="true">Patched Developers</string>
+    <string name="support_team_36" translatable="true">Telegram | Discord | Reddit サポートチーム</string>
+    <string name="manager_testers_36" translatable="true">パッチと xManager のテスター</string>
+    <string name="manager_hosting_36" translatable="true">xManager のデータベースとホスティング</string>
+    <string name="mobilism_team_36" translatable="true">Mobilism チーム</string>
+    <string name="forum_team_36" translatable="true">FORUM.APK-RELEASE.NET チーム</string>
+    <string name="contributors_36" translatable="true">すべての貢献者に感謝します! ❤️</string>
+    <string name="download_selected_36" translatable="true">このパッチが適用されたバージョンを選択しました。続行をしますか?</string>
+    <string name="download_ready_36" translatable="true">パッチ済みの情報</string>
+    <string name="download_ready_desc_36" translatable="true">このパッチは、外部ディレクトリ内にある以前のファイルを上書きします。注意してください。</string>
+    <string name="downloading_file_36" translatable="true">ファイルをダウンロード中です</string>
+    <string name="download_success_36" translatable="true">ダウンロードが完了しました</string>
+    <string name="new_update_36" translatable="true">xManager の更新</string>
+    <string name="continue_1_36" translatable="true">続行</string>
+    <string name="cancel_36" translatable="true">キャンセル</string>
+    <string name="download_36" translatable="true">ダウンロード</string>
+    <string name="later_36" translatable="true">後ほど</string>
+    <string name="install_now_36" translatable="true">パッチ済みをインストール</string>
+    <string name="install_update_36" translatable="true">アップデートをインストール</string>
+    <string name="go_back_36" translatable="true">戻る</string>
+    <string name="download_update_36" translatable="true">アップデートをダウンロード</string>
+    <string name="not_now_36" translatable="true">今はしない</string>
+    <string name="mirror_36" translatable="true">ミラーリンク</string>
+    <string name="lite_36" translatable="true">ライト</string>
+    <string name="experimental_title_36" translatable="true">試験的</string>
+    <string name="experimental_version_36" translatable="true">試験的なバージョン</string>
+    <string name="experimental_version_desc_36" translatable="true">有効化する事でパッチを適用したアプリの試験的なバージョンをダウンロードしてインストールする事ができます。\n\nこれにはアルファ版、ベータ版、早期アクセス版の機能が含まれます。また、安定性は保証しません。</string>
+    <string name="show_support_36" translatable="true">サポートへの表明</string>
+    <string name="show_support_desc_36" translatable="true">私たちは非営利、非企業、妥協をしないチームです。色々なユーザーにダウンロードやインストールの作業をはるかに簡単にするアプリの開発を行なっています。\n\n私たちは、物事を正しく完璧にするべく、すべての時間と最善の努力を注いでいます。私たちはできる限りこのアプリをサポートするために最善を尽くします。\n\n寄付の金額は問いません、ありがとうございます!</string>
+    <string name="maintenance_36" translatable="true">メンテナンス</string>
+    <string name="maintenance_desc_36" translatable="true">xManager は現在使用できません。後ほど再度お試しください。</string>
+    <string name="thanks_36" translatable="true">感謝します!</string>
+    <string name="language_36" translatable="true">言語</string>
+    <string name="website_36" translatable="true">Webサイト</string>
+    <string name="reddit_36" translatable="true">Reddit</string>
+    <string name="faq_36" translatable="true">FAQ</string>
+    <string name="cloned_version_36" translatable="true">クローンバージョン</string>
+    <string name="cloned_version_desc_36" translatable="true">有効化する事でパッチを当てたアプリのクローン版をダウンロードしてインストールする事ができます。\n\n既に Spotify アプリがインストールされた環境でインストールエラーなどの問題が解決されます。</string>
+    <string name="disable_rewarded_ads_36" translatable="true">リワード広告の無効化</string>
+    <string name="disable_rewarded_ads_desc_36" translatable="true">広告を好まない方は多いと思いますが、広告を表示する事でデータベースやホスティング、アップデート、パッチの提供、ユーザーのニーズに答えるために大いに役立ちます。\n\nこれは寄付や支出をせずに私たちをサポートする最も簡単な方法になります。</string>
+    <string name="installation_failed_36" translatable="true">インストール失敗</string>
+    <string name="installation_failed_desc_36" translatable="true">理由: 現在インストールされているバージョンより低いパッチをインストールしようとしました。\n\n解決策:\nA. 同じバージョンまたはそれ以上の物を選択する。\nB. 現在のバージョンをアンインストールしてダウングレードをする。\n\n問題が解決しない場合は FAQ を参照してください。</string>
+    <string name="installation_failed_spap_desc_36" translatable="true">理由: このデバイスにインストールされているパッチは、xManager またはチーム内で直接提供された物ではありません。\n\n解決策: 現在のバージョンのアプリをアンインストールして、xManager を再起動をして再度お試しください。問題が解決しない場合は、FAQ を参照してください。</string>
+    <string name="installation_failed_cloned_desc_36" translatable="true">理由: このデバイスにインストールされているクローンは、xManager またはチーム内で直接提供された物ではありません。\n\n解決策: 現在のバージョンのアプリをアンインストールして、xManager を再起動をして再度お試しください。問題が解決しない場合は、FAQ を参照してください。</string>
+    <string name="existing_patched_36" translatable="true">既存のパッチ</string>
+    <string name="existing_patched_desc_36" translatable="true">外部ディレクトリで既存のパッチがあります。どうしますか?</string>
+	<string name="disable_notification_36" translatable="true">通知を無効にする</string>
+    <string name="disable_notification_desc_36" translatable="true">これを有効にすると、パッチを適用したアプリケーションをインストールした後にリマインダー通知が削除されます.</string>
+    <string name="hide_stock_patched_36" translatable="true">隠す 在庫 パッチが適用された</string>
+    <string name="hide_amoled_patched_36" translatable="true">隠す AMOLED パッチが適用された</string>
+    <string name="hide_lite_patched_36" translatable="true">隠す ライト パッチが適用された</string>
+    <string name="hide_wave_patched_36" translatable="true">隠す ウェーブ パッチが適用された</string>
+    <string name="close_36" translatable="true">閉じる</string>
+    <string name="cloned_36" translatable="true">クローン</string>
     <string name="spap_36" translatable="true">SP/AP</string>
-    <string name="install_36" translatable="true">நிறுவப்பட்ட</string>
-    <string name="uninstall_36" translatable="true">நிறுவல் நீக்கவும்</string>
-    <string name="ignore_36" translatable="true">புறக்கணி</string>
-    <string name="delete_36" translatable="true">அழி</string>
-    <string name="uninstall_patched_36" translatable="true">இணைப்பு நீக்கப்பட்டது</string>
-    <string name="open_settings_36" translatable="true">அமைப்புகளைத் திற</string>
-    <string name="open_patched_36" translatable="true">ஓபன் பேட்ச்</string>
-    <string name="reboot_36" translatable="true">மீட்டெடுத்து மீண்டும் துவக்கவும்</string>
-    
-    <!--JAPANESE LANGUAGE-->
+    <string name="install_36" translatable="true">インストール</string>
+    <string name="uninstall_36" translatable="true">アンインストール</string>
+    <string name="ignore_36" translatable="true">無視</string>
+    <string name="delete_36" translatable="true">削除</string>
+    <string name="uninstall_patched_36" translatable="true">パッチをアンインストール</string>
+    <string name="open_settings_36" translatable="true">設定を開く</string>
+    <string name="open_patched_36" translatable="true">アプリを開く</string>
+    <string name="reboot_36" translatable="true">再読み込みと再起動</string>
+	
+	<!--NEPALI LANGUAGE-->
     <string name="app_name_37" translatable="true">xManager</string>
-    <string name="installed_37" translatable="true">インストール済み</string>
-    <string name="latest_37" translatable="true">最新</string>
-    <string name="versions_37" translatable="true">バージョン</string>
-    <string name="changelogs_37" translatable="true">更新履歴</string>
-    <string name="manager_tools_37" translatable="true">管理ツール</string>
-    <string name="source_37" translatable="true">ソース</string>
-    <string name="support_37" translatable="true">Telegram</string>
-    <string name="donate_37" translatable="true">サポート</string>
-    <string name="discord_37" translatable="true">Discord</string>
-    <string name="about_37" translatable="true">情報</string>
+    <string name="installed_37" translatable="true">स्थापना गरियो</string>
+    <string name="latest_37" translatable="true">नवीनतम</string>
+    <string name="versions_37" translatable="true">संस्करणहरू  </string>
+    <string name="changelogs_37" translatable="true">लगहरू परिवर्तन</string>
+    <string name="manager_tools_37" translatable="true">प्रबन्धक उपकरणहरू</string>
+    <string name="source_37" translatable="true">स्रोत</string>
+    <string name="support_37" translatable="true">टेलिग्राम</string>
+    <string name="donate_37" translatable="true">समर्थन</string>
+    <string name="discord_37" translatable="true">डिस्कोर्ड</string>
+    <string name="about_37" translatable="true">बारेमा</string>
     <string name="main_title_37" translatable="true">xManager</string>
-    <string name="settings_title_37" translatable="true">設定</string>
-    <string name="about_title_37" translatable="true">アプリについて</string>
-    <string name="list_auto_refresh_37" translatable="true">リストの自動更新</string>
-    <string name="list_auto_refresh_desc_37" translatable="true">有効化する事でアプリを起動するたびにリストが自動更新されます。\n\nメイン画面の下方向にドラッグで手動でリストを更新できます。</string>
-    <string name="force_auto_install_37" translatable="true">強制自動インストール</string>
-    <string name="force_auto_install_desc_37" translatable="true">有効化する事で、ダウンロード後にパッチが適用されたアプリとアップデートが自動的にインストールされます。</string>
-    <string name="show_themes_37" translatable="true">テーマ</string>
-    <string name="apk_location_37" translatable="true">APKの場所</string>
-    <string name="apk_location_desc_37" translatable="true">ダウンロードしたファイルのコピーを保存するディレクトリになります。\n\n注意: この機能はユーザー補助、アクセス許可、ストレージ制限により外部ストレージ (SD カード) をサポートしていません。</string>
-    <string name="clear_directory_folders_37" translatable="true">ディレクトリフォルダをクリア</string>
-    <string name="clear_directory_folders_desc_37" translatable="true">タップでディレクトリフォルダを削除します。ディレクトリにはダウンロードをしたファイルやアップデートが含まれます。</string>
-    <string name="reset_preferences_37" translatable="true">設定をリセット</string>
-    <string name="about_sub_37" translatable="true">広告なし | 新機能 | 自由</string>
-    <string name="xmanager_dev_37" translatable="true">xManager Developer</string>
-    <string name="patched_devs_37" translatable="true">Patched Developers</string>
-    <string name="support_team_37" translatable="true">Telegram | Discord | Reddit サポートチーム</string>
-    <string name="manager_testers_37" translatable="true">パッチと xManager のテスター</string>
-    <string name="manager_hosting_37" translatable="true">xManager のデータベースとホスティング</string>
-    <string name="mobilism_team_37" translatable="true">Mobilism チーム</string>
-    <string name="forum_team_37" translatable="true">FORUM.APK-RELEASE.NET チーム</string>
-    <string name="contributors_37" translatable="true">すべての貢献者に感謝します! ❤️</string>
-    <string name="download_selected_37" translatable="true">このパッチが適用されたバージョンを選択しました。続行をしますか?</string>
-    <string name="download_ready_37" translatable="true">パッチ済みの情報</string>
-    <string name="download_ready_desc_37" translatable="true">このパッチは、外部ディレクトリ内にある以前のファイルを上書きします。注意してください。</string>
-    <string name="downloading_file_37" translatable="true">ファイルをダウンロード中です</string>
-    <string name="download_success_37" translatable="true">ダウンロードが完了しました</string>
-    <string name="new_update_37" translatable="true">xManager の更新</string>
-    <string name="continue_1_37" translatable="true">続行</string>
-    <string name="cancel_37" translatable="true">キャンセル</string>
-    <string name="download_37" translatable="true">ダウンロード</string>
-    <string name="later_37" translatable="true">後ほど</string>
-    <string name="install_now_37" translatable="true">パッチ済みをインストール</string>
-    <string name="install_update_37" translatable="true">アップデートをインストール</string>
-    <string name="go_back_37" translatable="true">戻る</string>
-    <string name="download_update_37" translatable="true">アップデートをダウンロード</string>
-    <string name="not_now_37" translatable="true">今はしない</string>
-    <string name="mirror_37" translatable="true">ミラーリンク</string>
-    <string name="lite_37" translatable="true">ライト</string>
-    <string name="experimental_title_37" translatable="true">試験的</string>
-    <string name="experimental_version_37" translatable="true">試験的なバージョン</string>
-    <string name="experimental_version_desc_37" translatable="true">有効化する事でパッチを適用したアプリの試験的なバージョンをダウンロードしてインストールする事ができます。\n\nこれにはアルファ版、ベータ版、早期アクセス版の機能が含まれます。また、安定性は保証しません。</string>
-    <string name="show_support_37" translatable="true">サポートへの表明</string>
-    <string name="show_support_desc_37" translatable="true">私たちは非営利、非企業、妥協をしないチームです。色々なユーザーにダウンロードやインストールの作業をはるかに簡単にするアプリの開発を行なっています。\n\n私たちは、物事を正しく完璧にするべく、すべての時間と最善の努力を注いでいます。私たちはできる限りこのアプリをサポートするために最善を尽くします。\n\n寄付の金額は問いません、ありがとうございます!</string>
-    <string name="maintenance_37" translatable="true">メンテナンス</string>
-    <string name="maintenance_desc_37" translatable="true">xManager は現在使用できません。後ほど再度お試しください。</string>
-    <string name="thanks_37" translatable="true">感謝します!</string>
-    <string name="language_37" translatable="true">言語</string>
-    <string name="website_37" translatable="true">Webサイト</string>
-    <string name="reddit_37" translatable="true">Reddit</string>
-    <string name="faq_37" translatable="true">FAQ</string>
-    <string name="cloned_version_37" translatable="true">クローンバージョン</string>
-    <string name="cloned_version_desc_37" translatable="true">有効化する事でパッチを当てたアプリのクローン版をダウンロードしてインストールする事ができます。\n\n既に Spotify アプリがインストールされた環境でインストールエラーなどの問題が解決されます。</string>
-    <string name="disable_rewarded_ads_37" translatable="true">リワード広告の無効化</string>
-    <string name="disable_rewarded_ads_desc_37" translatable="true">広告を好まない方は多いと思いますが、広告を表示する事でデータベースやホスティング、アップデート、パッチの提供、ユーザーのニーズに答えるために大いに役立ちます。\n\nこれは寄付や支出をせずに私たちをサポートする最も簡単な方法になります。</string>
-    <string name="installation_failed_37" translatable="true">インストール失敗</string>
-    <string name="installation_failed_desc_37" translatable="true">理由: 現在インストールされているバージョンより低いパッチをインストールしようとしました。\n\n解決策:\nA. 同じバージョンまたはそれ以上の物を選択する。\nB. 現在のバージョンをアンインストールしてダウングレードをする。\n\n問題が解決しない場合は FAQ を参照してください。</string>
-    <string name="installation_failed_spap_desc_37" translatable="true">理由: このデバイスにインストールされているパッチは、xManager またはチーム内で直接提供された物ではありません。\n\n解決策: 現在のバージョンのアプリをアンインストールして、xManager を再起動をして再度お試しください。問題が解決しない場合は、FAQ を参照してください。</string>
-    <string name="installation_failed_cloned_desc_37" translatable="true">理由: このデバイスにインストールされているクローンは、xManager またはチーム内で直接提供された物ではありません。\n\n解決策: 現在のバージョンのアプリをアンインストールして、xManager を再起動をして再度お試しください。問題が解決しない場合は、FAQ を参照してください。</string>
-    <string name="existing_patched_37" translatable="true">既存のパッチ</string>
-    <string name="existing_patched_desc_37" translatable="true">外部ディレクトリで既存のパッチがあります。どうしますか?</string>
-    <string name="close_37" translatable="true">閉じる</string>
-    <string name="cloned_37" translatable="true">クローン</string>
+    <string name="settings_title_37" translatable="true">सेटिङहरू</string>
+    <string name="about_title_37" translatable="true">बारेमा</string>
+    <string name="list_auto_refresh_37" translatable="true">सूची स्वत: ताजा गर्नुहोस्</string>
+    <string name="list_auto_refresh_desc_37" translatable="true">यसलाई सक्षम गर्नाले प्रत्येक पटक तपाईंले एप सुरु गर्दा सूची स्वतः ताजा हुनेछ।\n\nतपाईंले मुख्य स्क्रिनलाई तल तानेर म्यानुअल रूपमा सूची रिफ्रेस गर्न सक्नुहुन्छ।</string>
+    <string name="force_auto_install_37" translatable="true">बल स्वत: इन्स्टल गर्नुहोस्</string>
+    <string name="force_auto_install_desc_37" translatable="true">यसलाई सक्षम गर्नाले प्याच गरिएको एप्लिकेसन स्वतः इन्स्टल हुनेछ र डाउनलोड भएपछि अद्यावधिक हुनेछ।</string>
+    <string name="show_themes_37" translatable="true">थिमहरू</string>
+    <string name="apk_location_37" translatable="true">APK को स्थान</string>
+    <string name="apk_location_desc_37" translatable="true">डाइरेक्टरी जहाँ तपाईं डाउनलोड गरिएको फाइलको प्रतिलिपि बचत गर्न चाहनुहुन्छ। यदि तपाइँलाई यो सुविधा कसरी कन्फिगर गर्ने थाहा छैन भने, यो जस्तै छोड्नुहोस्।\n\nनोट: पहुँच, अनुमति र भण्डारण सीमितताहरूको कारणले गर्दा यो सुविधाले बाह्य भण्डारण (SD कार्ड) समर्थन गर्दैन।</string>
+    <string name="clear_directory_folders_37" translatable="true">डाइरेक्टरी फोल्डर खाली गर्नुहोस्</string>
+    <string name="clear_directory_folders_desc_37" translatable="true">डाइरेक्टरी फोल्डर मेटाउन ट्याप गर्नुहोस्। यसमा डाउनलोड गरिएका फाइलहरू र अद्यावधिकहरू समावेश छन्।</string>
+    <string name="reset_preferences_37" translatable="true">प्राथमिकताहरू रिसेट गर्नुहोस्</string>
+    <string name="about_sub_37" translatable="true">विज्ञापन-मुक्त | नयाँ सुविधाहरू | स्वतन्त्रता</string>
+    <string name="xmanager_dev_37" translatable="true">xManager विकासकर्ता</string>
+    <string name="patched_devs_37" translatable="true">प्याच गरेका विकासकर्ताहरू</string>
+    <string name="support_team_37" translatable="true">टेलिग्राम | डिस्कोर्ड | रेड्डित समर्थन टोली</string>
+    <string name="manager_testers_37" translatable="true">प्याच र प्रबन्धक परीक्षकहरू</string>
+    <string name="manager_hosting_37" translatable="true">प्रबन्धक डाटाबेस र होस्टिंग</string>
+    <string name="mobilism_team_37" translatable="true">Mobilism Team</string>
+    <string name="forum_team_37" translatable="true">FORUM.APK-RELEASE.NET टोली</string>
+    <string name="contributors_37" translatable="true">सबै योगदानकर्ताहरु लाई धन्यवाद! ❤️</string>
+    <string name="download_selected_37" translatable="true">तपाईंले यो प्याच गरिएको संस्करण चयन गर्नुभयो। के तपाइँ जारी राख्न चाहनुहुन्छ?</string>
+    <string name="download_ready_37" translatable="true">प्याच गरिएको जानकारी</string>
+    <string name="download_ready_desc_37" translatable="true">यो प्याचले बाह्य डाइरेक्टरीमा अवस्थित अघिल्लो फाइल अधिलेखन गर्नेछ। सावधानीपूर्वक अगाडि बढ्नुहोस्।</string>
+    <string name="downloading_file_37" translatable="true">फाइल डाउनलोड गरिँदै</string>
+    <string name="download_success_37" translatable="true">सफलतापूर्वक डाउनलोड गरियो</string>
+    <string name="new_update_37" translatable="true">नयाँ प्रबन्धक अद्यावधिक</string>
+    <string name="continue_1_37" translatable="true">जारी राख्नुहोस्</string>
+    <string name="cancel_37" translatable="true">रद्द गर्नुहोस्</string>
+    <string name="download_37" translatable="true">डाउनलोड गर्नुहोस्</string>
+    <string name="later_37" translatable="true">पछि</string>
+    <string name="install_now_37" translatable="true">प्याच गरिएको इन्स्टल गर्नुहोस्</string>
+    <string name="install_update_37" translatable="true">अद्यावधिक इन्स्टल गर्नुहोस्</string>
+    <string name="go_back_37" translatable="true">पछाडि जानुहोस्</string>
+    <string name="download_update_37" translatable="true">अपडेट डाउनलोड गर्नुहोस्</string>
+    <string name="not_now_37" translatable="true">अहिले होइन</string>
+    <string name="mirror_37" translatable="true">मिरर लिङ्क</string>
+    <string name="lite_37" translatable="true">लाइट</string>
+    <string name="experimental_title_37" translatable="true">प्रयोगात्मक</string>
+    <string name="experimental_version_37" translatable="true">प्रयोगात्मक संस्करण</string>
+    <string name="experimental_version_desc_37" translatable="true">यसलाई सक्षम गर्नाले तपाईंलाई प्याच गरिएको अनुप्रयोगको प्रयोगात्मक संस्करण डाउनलोड र इन्स्टल गर्न अनुमति दिन्छ।\n\nयसमा अल्फा, बिटा र प्रारम्भिक पहुँच सुविधाहरू समावेश छन् जुन स्टक प्याचमा उपलब्ध छैनन्। थप रूपमा, स्थिर ग्यारेन्टी छैन।</string>
+    <string name="show_support_37" translatable="true">आफ्नो समर्थन देखाउनुहोस्</string>
+    <string name="show_support_desc_37" translatable="true">हामी एक गैर-लाभकारी, गैर-कर्पोरेट र गैर-सम्झौता टोली हौं। तपाईं जस्ता मानिसहरूले हामीलाई विशेष गरी डाउनलोडदेखि इन्स्टल गर्नका लागि चीजहरू धेरै सजिलो बनाउनको लागि एउटा एप सिर्जना गर्न प्रोत्साहन दिन्छन्।\n\nहामी चीजहरू सही र सही बनाउनको लागि हाम्रो सबै समय र उत्तम प्रयासहरू खन्याइरहेका छौं। हामी सकेसम्म यो एपलाई समर्थन गर्न सक्दो प्रयास गर्नेछौं।\n\nकुनै पनि रकमले मद्दत गर्नेछ र धेरै सराहना गरिनेछ!</string>
+    <string name="maintenance_37" translatable="true">मर्मतसम्भार</string>
+    <string name="maintenance_desc_37" translatable="true">xManager हाल अनुपलब्ध छ। कृपया पछि पुन: प्रयास गर्नुहोस्।</string>
+    <string name="thanks_37" translatable="true">धन्यवाद!</string>
+    <string name="language_37" translatable="true">भाषा</string>
+    <string name="website_37" translatable="true">वेबसाइट</string>
+    <string name="reddit_37" translatable="true">रेड्डित</string>
+    <string name="faq_37" translatable="true">बारम्बार सोधिने प्रश्नहरू</string>
+    <string name="cloned_version_37" translatable="true">क्लोन गरिएको संस्करण</string>
+    <string name="cloned_version_desc_37" translatable="true">यसलाई सक्षम गर्नाले तपाईंलाई प्याच गरिएको एप्लिकेसनको क्लोन गरिएको संस्करण डाउनलोड र इन्स्टल गर्न अनुमति दिन्छ।\n\nयसले धेरैजसो इन्स्टल त्रुटि वा समस्याहरूलाई पनि समाधान गर्नेछ, विशेष गरी यदि तपाईंसँग पूर्व-स्थापित Spotify अनुप्रयोग छ भने।</string>
+    <string name="disable_rewarded_ads_37" translatable="true">पुरस्कृत विज्ञापनहरू असक्षम पार्नुहोस्</string>
+    <string name="disable_rewarded_ads_desc_37" translatable="true">हामीलाई थाहा छ कि हामी मध्ये धेरैले विज्ञापनहरू मन पराउँदैनन् तर हाम्रो अवस्थामा, यसले हामीलाई हाम्रो डाटाबेस, होस्टिङ लिङ्कहरू, अद्यावधिकहरू, थप प्याचहरू, र दैनिक आवश्यकताहरू पूरा गर्न मद्दत गर्छ।\n\nकुनै पनि दान वा खर्च नगरी हामीलाई सहयोग गर्ने यो सरल तरिका हो ।</string>
+    <string name="installation_failed_37" translatable="true">इन्स्टल असफल भयो</string>
+    <string name="installation_failed_desc_37" translatable="true">कारण: तपाईंले हाल स्थापित भएको भन्दा कम प्याच गरिएको संस्करण इन्स्टल गर्ने प्रयास गर्नुभयो।\n\nसमाधानहरू:\nA. भन्दा बराबर वा माथिको संस्करण चयन गर्नुहोस्।\nB. हालको संस्करणको इन्स्टल रद्द गर्नुहोस्, त्यसपछि डाउनग्रेड गर्नुहोस्।\n\nयदि समस्या रहिरह्यो भने, बारम्बार सोधिने प्रश्नहरू जाँच गर्नुहोस्।</string>
+    <string name="installation_failed_spap_desc_37" translatable="true">कारण: यस यन्त्रमा हालको प्याच गरिएको इन्स्टल सीधा xManager वा हाम्रो टोलीबाट आएको होइन।\n\nसमाधान: अनुप्रयोगको हालको संस्करणको इन्स्टल रद्द गर्नुहोस्, xManager पुन: सुरु गर्नुहोस् र फेरि प्रयास गर्नुहोस्। यदि समस्या रहिरह्यो भने, बारम्बार सोधिने प्रश्नहरू जाँच गर्नुहोस्।</string>
+    <string name="installation_failed_cloned_desc_37" translatable="true">कारण: यस यन्त्रमा हालको क्लोन गरिएको इन्स्टल सीधा xManager वा हाम्रो टोलीबाट आएको होइन।\n\nसमाधान: अनुप्रयोगको हालको संस्करणको इन्स्टल रद्द गर्नुहोस्, xManager पुनः सुरु गर्नुहोस् र फेरि प्रयास गर्नुहोस्। यदि समस्या रहिरह्यो भने, FAQ जाँच गर्नुहोस्।</string>
+    <string name="existing_patched_37" translatable="true">अवस्थित प्याच गरिएको</string>
+    <string name="existing_patched_desc_37" translatable="true">बाहिरी डाइरेक्टरीमा अवस्थित प्याच गरिएको पत्ता लगाइएको छ। तपाईं के कार्य गर्न चाहनुहुन्छ?</string>
+	<string name="disable_notification_37" translatable="true">सूचना अक्षम पार्नुहोस्</string>
+    <string name="disable_notification_desc_37" translatable="true">यसलाई सक्षम पार्दा प्याच गरिएको अनुप्रयोग स्थापना गरेपछि रिमाइन्डर सूचना हटाइनेछ।</string>
+    <string name="hide_stock_patched_37" translatable="true">प्याच गरिएको स्टक लुकाउनुहोस्</string>
+    <string name="hide_amoled_patched_37" translatable="true">एमोलेड प्याच गरिएको लुकाउनुहोस्</string>
+    <string name="hide_lite_patched_37" translatable="true">लाइट प्याच गरिएको लुकाउनुहोस्</string>
+    <string name="hide_wave_patched_37" translatable="true">वेभ प्याच गरिएको लुकाउनुहोस्</string>
+    <string name="close_37" translatable="true">बन्द गर्नुहोस्</string>
+    <string name="cloned_37" translatable="true">क्लोन गरिएको</string>
     <string name="spap_37" translatable="true">SP/AP</string>
-    <string name="install_37" translatable="true">インストール</string>
-    <string name="uninstall_37" translatable="true">アンインストール</string>
-    <string name="ignore_37" translatable="true">無視</string>
-    <string name="delete_37" translatable="true">削除</string>
-    <string name="uninstall_patched_37" translatable="true">パッチをアンインストール</string>
-    <string name="open_settings_37" translatable="true">設定を開く</string>
-    <string name="open_patched_37" translatable="true">アプリを開く</string>
-    <string name="reboot_37" translatable="true">再読み込みと再起動</string>
+    <string name="install_37" translatable="true">इन्स्टल गर्नुहोस्</string>
+    <string name="uninstall_37" translatable="true">अनइन्स्टल गर्नुहोस्</string>
+    <string name="ignore_37" translatable="true">बेवास्ता गर्नुहोस्</string>
+    <string name="delete_37" translatable="true">मेटाउन</string>
+    <string name="uninstall_patched_37" translatable="true">अनइन्स्टल प्याच गरियो</string>
+    <string name="open_settings_37" translatable="true">सेटिङ्हरू खोल्नुहोस्</string>
+    <string name="open_patched_37" translatable="true">प्याच गरिएको खोल्नुहोस्</string>
+    <string name="reboot_37" translatable="true">रिफिच र रिबुट गर्नुहोस्</string>
+	
+	<!--TAMIL LANGUAGE-->
+    <string name="app_name_38" translatable="true">xManager</string>
+    <string name="installed_38" translatable="true">நிறுவப்பட்டது</string>
+    <string name="latest_38" translatable="true">புதிதான</string>
+    <string name="versions_38" translatable="true">பதிப்புகள்</string>
+    <string name="changelogs_38" translatable="true">மாற்றப்பட்ட பதிவுகள்</string>
+    <string name="manager_tools_38" translatable="true">மேலாளர் கருவிகள்</string>
+    <string name="source_38" translatable="true">ஆதாரம்</string>
+    <string name="support_38" translatable="true">டெலிகிராம்</string>
+    <string name="donate_38" translatable="true">ஆதரவு</string>
+    <string name="discord_38" translatable="true">டிஸ்கார்ட்</string>
+    <string name="about_38" translatable="true">பற்றி</string>
+    <string name="main_title_38" translatable="true">xManager</string>
+    <string name="settings_title_38" translatable="true">அமைப்புகள்</string>
+    <string name="about_title_38" translatable="true">பற்றி</string>
+    <string name="list_auto_refresh_38" translatable="true">தானாக புதுப்பித்தல் பட்டியல்</string>
+    <string name="list_auto_refresh_desc_38" translatable="true">இதை இயக்குவது ஒவ்வொரு முறையும் நீங்கள் பயன்பாட்டைத் தொடங்கும் போது தானாகவே பட்டியலைப் புதுப்பிக்கும்.\n\nதிரையை கீழ்நோக்கி இழுப்பதன் மூலம் பட்டியலை புதுப்பிக்கலாம்.</string>
+    <string name="force_auto_install_38" translatable="true">கட்டாயமாக தானாக நிறுவவும்</string>
+    <string name="force_auto_install_desc_38" translatable="true">இதை இயக்கினால், பேட்ச் செய்யப்பட்ட ஆப்ஸ் தானாகவே நிறுவப்பட்டு, பதிவிறக்கம் செய்யப்பட்டவுடன் புதுப்பிக்கப்படும்.</string>
+    <string name="show_themes_38" translatable="true">தீம்கள்</string>
+    <string name="apk_location_38" translatable="true">APK இடம்</string>
+    <string name="apk_location_desc_38" translatable="true">பதிவிறக்கம் செய்யப்பட்ட கோப்பின் நகலை நீங்கள் சேமிக்க விரும்பும் அடைவு. இந்த அம்சத்தை எவ்வாறு கட்டமைப்பது என்று உங்களுக்குத் தெரியாவிட்டால், இதை அப்படியே விடவும்.\n\nகுறிப்பு: அணுகல்தன்மை, அனுமதிகள் மற்றும் சேமிப்பக வரம்புகள் காரணமாக இந்த அம்சம் வெளிப்புற சேமிப்பகத்தை (எஸ்டி கார்டு) ஆதரிக்காது.</string>
+    <string name="clear_directory_folders_38" translatable="true">கோப்புறையை அழிக்கவும்</string>
+    <string name="clear_directory_folders_desc_38" translatable="true">அடைவு கோப்புறையை நீக்க தட்டவும். பதிவிறக்கம் செய்யப்பட்ட கோப்புகள் மற்றும் புதுப்பிப்புகள் இதில் அடங்கும்.</string>
+    <string name="reset_preferences_38" translatable="true">விருப்பங்களை மீட்டமைக்கவும்</string>
+    <string name="about_sub_38" translatable="true">விளம்பரம் இல்லாத | புதிய அம்சங்கள் | சுதந்திரம்</string>
+    <string name="xmanager_dev_38" translatable="true">xManager டெவலப்பர்</string>
+    <string name="patched_devs_38" translatable="true">பேட்ச் டெவலப்பர்கள்</string>
+    <string name="support_team_38" translatable="true">தந்தி | கருத்து வேறுபாடு | ரெட்டிட் ஆதரவு குழு</string>
+    <string name="manager_testers_38" translatable="true">இணைக்கப்பட்ட மற்றும் மேலாளர் சோதனையாளர்கள்</string>
+    <string name="manager_hosting_38" translatable="true">மேலாளர் தரவுத்தளம் மற்றும் ஹோஸ்டிங்ஸ்</string>
+    <string name="mobilism_team_38" translatable="true">மொபிலிசம் குழு</string>
+    <string name="forum_team_38" translatable="true">FORUM.APK-RELEASE.NET குழு</string>
+    <string name="contributors_38" translatable="true">அனைத்து பங்களிப்பாளர்களுக்கும் நன்றி! ❤️</string>
+    <string name="download_selected_38" translatable="true">இந்த இணைக்கப்பட்ட பதிப்பைத் தேர்ந்தெடுத்துள்ளீர்கள். தொடர வேண்டுமா?</string>
+    <string name="download_ready_38" translatable="true">இணைக்கப்பட்ட தகவல்</string>
+    <string name="download_ready_desc_38" translatable="true">இந்த பேட்ச் ஆனது வெளிப்புற கோப்பகத்தில் உள்ள முந்தைய கோப்பை மேலெழுதும். எச்சரிக்கையுடன் தொடரவும்.</string>
+    <string name="downloading_file_38" translatable="true">கோப்பைப் பதிவிறக்குகிறது</string>
+    <string name="download_success_38" translatable="true">வெற்றிகரமாக பதிவிறக்கம் செய்யப்பட்டது</string>
+    <string name="new_update_38" translatable="true">புதிய மேலாளர் புதுப்பிப்பு</string>
+    <string name="continue_1_38" translatable="true">தொடரவும்</string>
+    <string name="cancel_38" translatable="true">ரத்துசெய்</string>
+    <string name="download_38" translatable="true">பதிவிறக்கம்</string>
+    <string name="later_38" translatable="true">பின்னர்</string>
+    <string name="install_now_38" translatable="true">பேட்ச் செய்யப்பட்டதை நிறுவவும்</string>
+    <string name="install_update_38" translatable="true">புதுப்பிப்பை நிறுவவும்</string>
+    <string name="go_back_38" translatable="true">பின்னே செல்</string>
+    <string name="download_update_38" translatable="true">புதுப்பிப்பைப் பதிவிறக்கவும்</string>
+    <string name="not_now_38" translatable="true">இப்போது இல்லை</string>
+    <string name="mirror_38" translatable="true">இதர இணைப்பு</string>
+    <string name="lite_38" translatable="true">லைட்</string>
+    <string name="experimental_title_38" translatable="true">பரிசோதனை</string>
+    <string name="experimental_version_38" translatable="true">பரிசோதனை பதிப்பு</string>
+    <string name="experimental_version_desc_38" translatable="true">இதை இயக்கினால், பேட்ச் செய்யப்பட்ட பயன்பாட்டின் சோதனைப் பதிப்பைப் பதிவிறக்கி நிறுவ முடியும்.\n\nஇதில் ஆல்பா, பீட்டா மற்றும் ஆரம்ப அணுகல் அம்சங்கள் உள்ளன, அவை பேட்ச் செய்யப்பட்ட ஸ்டாக்கில் இல்லை. கூடுதலாக, நிலையான உத்தரவாதம் இல்லை.</string>
+    <string name="show_support_38" translatable="true">உங்கள் ஆதரவைக் காட்டு</string>
+    <string name="show_support_desc_38" translatable="true">நாங்கள் ஒரு இலாப நோக்கற்ற, பெருநிறுவன மற்றும் சமரசம் செய்யாத அணி. உங்களைப் போன்றவர்கள், குறிப்பாகப் பதிவிறக்குவது முதல் நிறுவுவது வரை விஷயங்களை மிகவும் எளிதாக்குவதற்கு ஒரு பயன்பாட்டை உருவாக்குமாறு எங்களை ஊக்குவிக்கிறார்கள்.\n\nவிஷயங்களைச் சரியாகவும் சிறப்பாகவும் செய்ய எங்களின் முழு நேரத்தையும் சிறந்த முயற்சியையும் செலவிடுகிறோம். எங்களால் முடிந்தவரை இந்த ஆப்ஸை ஆதரிக்க எங்களால் முடிந்த அனைத்தையும் செய்வோம்.\n\nஎந்தத் தொகையும் உதவும் மற்றும் மிகவும் பாராட்டப்படும்!</string>
+    <string name="maintenance_38" translatable="true">பராமரிப்பு</string>
+    <string name="maintenance_desc_38" translatable="true">xManager தற்போது கிடைக்கவில்லை. பிறகு முயற்சிக்கவும்.</string>
+    <string name="thanks_38" translatable="true">நன்றி!</string>
+    <string name="language_38" translatable="true">மொழி</string>
+    <string name="website_38" translatable="true">இணையதளம்</string>
+    <string name="reddit_38" translatable="true">ரெட்டிட்</string>
+    <string name="faq_38" translatable="true">அடிக்கடி கேட்கப்படும் கேள்விகள்</string>
+    <string name="cloned_version_38" translatable="true">குளோன் செய்யப்பட்ட பதிப்பு</string>
+    <string name="cloned_version_desc_38" translatable="true">இதை இயக்கினால், பேட்ச் செய்யப்பட்ட பயன்பாட்டின் குளோன் செய்யப்பட்ட பதிப்பைப் பதிவிறக்கி நிறுவ முடியும்.\n\nஇது பெரும்பாலான நிறுவல் பிழைகள் அல்லது சிக்கல்களைத் தீர்க்கும், குறிப்பாக உங்களிடம் முன்பே நிறுவப்பட்ட Spotify பயன்பாடு இருந்தால்.</string>
+    <string name="disable_rewarded_ads_38" translatable="true">வெகுமதி அளிக்கப்பட்ட விளம்பரங்களை முடக்கு</string>
+    <string name="disable_rewarded_ads_desc_38" translatable="true">எங்களில் பெரும்பாலோர் விளம்பரங்களை விரும்புவதில்லை என்பதை நாங்கள் அறிவோம், ஆனால் எங்கள் விஷயத்தில், இது எங்கள் தரவுத்தளம், ஹோஸ்டிங் இணைப்புகள், புதுப்பிப்புகள், கூடுதல் பேட்ச்கள் மற்றும் அன்றாட தேவைகளுக்கு நிதியளிக்க கணிசமாக உதவுகிறது.\n\nஇது நன்கொடை அல்லது நன்கொடை இல்லாமல் எங்களுக்கு ஆதரவளிப்பதற்கான எளிய வழி. எதையும் செலவு.</string>
+    <string name="installation_failed_38" translatable="true">நிறுவல் தோல்வி அடைந்தது</string>
+    <string name="installation_failed_desc_38" translatable="true">காரணம்: தற்போது நிறுவப்பட்டுள்ளதை விட குறைவான பேட்ச் செய்யப்பட்ட பதிப்பை நிறுவ முயற்சித்தீர்கள்.\n\nதீர்வுகள்:\nA. சமமான அல்லது அதற்கும் அதிகமான பதிப்பைத் தேர்ந்தெடுக்கவும்.\nB. தற்போதைய பதிப்பை நிறுவல் நீக்கி, தரமிறக்கவும்.\n\nசிக்கல் தொடர்ந்தால், அடிக்கடி கேட்கப்படும் கேள்விகளைப் பார்க்கவும்.</string>
+    <string name="installation_failed_spap_desc_38" translatable="true">காரணம்: இந்தச் சாதனத்தில் நிறுவப்பட்ட தற்போதைய இணைப்பு xManager அல்லது எங்கள் குழுவிடமிருந்து நேரடியாக வரவில்லை.\n\nதீர்வு: பயன்பாட்டின் தற்போதைய பதிப்பை நிறுவல் நீக்கி, xManager ஐ மறுதொடக்கம் செய்து மீண்டும் முயற்சிக்கவும். சிக்கல் தொடர்ந்தால், அடிக்கடி கேட்கப்படும் கேள்விகளைப் பார்க்கவும்.</string>
+    <string name="installation_failed_cloned_desc_38" translatable="true">காரணம்: இந்தச் சாதனத்தில் நிறுவப்பட்ட தற்போதைய குளோனிங் நேரடியாக xManager இடமிருந்தோ அல்லது எங்கள் குழுவிலிருந்தோ வரவில்லை.\n\nதீர்வு: பயன்பாட்டின் தற்போதைய பதிப்பை நிறுவல் நீக்கி, xManager ஐ மறுதொடக்கம் செய்து மீண்டும் முயற்சிக்கவும். சிக்கல் தொடர்ந்தால், அடிக்கடி கேட்கப்படும் கேள்விகளைப் பார்க்கவும்.</string>
+    <string name="existing_patched_38" translatable="true">தற்போதுள்ள இணைப்பு</string>
+    <string name="existing_patched_desc_38" translatable="true">வெளிப்புற கோப்பகத்தில் ஏற்கனவே உள்ள இணைப்பு கண்டறியப்பட்டது. நீங்கள் என்ன செயலைச் செய்ய விரும்புகிறீர்கள்?</string>
+	<string name="disable_notification_38" translatable="true">அறிவிப்பை முடக்கு</string>
+    <string name="disable_notification_desc_38" translatable="true">இதை இயக்குவது ஒட்டப்பட்ட பயன்பாட்டை நிறுவிய பின் நினைவூட்டல் அறிவிப்பை அகற்றும்.</string>
+    <string name="hide_stock_patched_38" translatable="true">பங்கு ஒட்டியதை மறை</string>
+    <string name="hide_amoled_patched_38" translatable="true">AMOLED ஒட்டியதை மறை</string>
+    <string name="hide_lite_patched_38" translatable="true">லைட் ஒட்டியதை மறை</string>
+    <string name="hide_wave_patched_38" translatable="true">அலை ஒட்டிய மறை</string>
+    <string name="close_38" translatable="true">மூடவும்</string>
+    <string name="cloned_38" translatable="true">குளோன் செய்யப்பட்டது</string>
+    <string name="spap_38" translatable="true">SP/AP</string>
+    <string name="install_38" translatable="true">நிறுவப்பட்ட</string>
+    <string name="uninstall_38" translatable="true">நிறுவல் நீக்கவும்</string>
+    <string name="ignore_38" translatable="true">புறக்கணி</string>
+    <string name="delete_38" translatable="true">அழி</string>
+    <string name="uninstall_patched_38" translatable="true">இணைப்பு நீக்கப்பட்டது</string>
+    <string name="open_settings_38" translatable="true">அமைப்புகளைத் திற</string>
+    <string name="open_patched_38" translatable="true">ஓபன் பேட்ச்</string>
+    <string name="reboot_38" translatable="true">மீட்டெடுத்து மீண்டும் துவக்கவும்</string>
 </resources>

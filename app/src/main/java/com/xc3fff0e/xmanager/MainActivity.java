@@ -246,6 +246,8 @@ public class MainActivity extends AppCompatActivity {
 	private LinearLayout main_box_8;
 	private LinearLayout main_box_11;
 	private LinearLayout main_box_17;
+	private LinearLayout main_box_21;
+	private LinearLayout main_box_20;
 	private LinearLayout main_box_5;
 	private LinearLayout main_box_14;
 	private LinearLayout main_box_9;
@@ -288,6 +290,33 @@ public class MainActivity extends AppCompatActivity {
 	private TextView disable_reward_ad;
 	private Switch disable_reward_ad_switch;
 	private TextView disable_reward_ad_info;
+	private LinearLayout box_21_sub_1;
+	private LinearLayout box_21_sub_2;
+	private LinearLayout title_box_12;
+	private LinearLayout box_disable_notification;
+	private TextView disable_notification;
+	private Switch disable_notification_switch;
+	private TextView disable_notification_info;
+	private LinearLayout box_20_sub_1;
+	private LinearLayout box_20_sub_2;
+	private LinearLayout box_20_sub_3;
+	private LinearLayout box_20_sub_4;
+	private LinearLayout title_box_8;
+	private LinearLayout box_hide_stock_patched;
+	private TextView hide_stock_patched;
+	private Switch hide_stock_patched_switch;
+	private LinearLayout title_box_9;
+	private LinearLayout box_hide_amoled_patched;
+	private TextView hide_amoled_patched;
+	private Switch hide_amoled_patched_switch;
+	private LinearLayout title_box_10;
+	private LinearLayout box_hide_lite_patched;
+	private TextView hide_lite_patched;
+	private Switch hide_lite_patched_switch;
+	private LinearLayout title_box_11;
+	private LinearLayout box_hide_wave_patched;
+	private TextView hide_wave_patched;
+	private Switch hide_wave_patched_switch;
 	private LinearLayout box_5_sub_1;
 	private TextView theme;
 	private LinearLayout box_theme_switch;
@@ -414,6 +443,10 @@ public class MainActivity extends AppCompatActivity {
 	private TextView translator_36;
 	private TextView manager_lang_37;
 	private TextView translator_37;
+	private TextView manager_lang_38;
+	private TextView translator_38;
+	private TextView manager_lang_39;
+	private TextView translator_39;
 	private TextView manager_donors;
 	private TextView donors_1;
 	private ScrollView main_scroll_body;
@@ -567,6 +600,8 @@ public class MainActivity extends AppCompatActivity {
 	private SharedPreferences SWITCH_VERSION;
 	private SharedPreferences REFETCH;
 	private SharedPreferences INITIALIZATION;
+	private SharedPreferences HIDE_PATCHED;
+	private SharedPreferences DISABLE_NOTIFICATION;
 	
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
@@ -652,6 +687,8 @@ public class MainActivity extends AppCompatActivity {
 		main_box_8 = findViewById(R.id.main_box_8);
 		main_box_11 = findViewById(R.id.main_box_11);
 		main_box_17 = findViewById(R.id.main_box_17);
+		main_box_21 = findViewById(R.id.main_box_21);
+		main_box_20 = findViewById(R.id.main_box_20);
 		main_box_5 = findViewById(R.id.main_box_5);
 		main_box_14 = findViewById(R.id.main_box_14);
 		main_box_9 = findViewById(R.id.main_box_9);
@@ -694,6 +731,33 @@ public class MainActivity extends AppCompatActivity {
 		disable_reward_ad = findViewById(R.id.disable_reward_ad);
 		disable_reward_ad_switch = findViewById(R.id.disable_reward_ad_switch);
 		disable_reward_ad_info = findViewById(R.id.disable_reward_ad_info);
+		box_21_sub_1 = findViewById(R.id.box_21_sub_1);
+		box_21_sub_2 = findViewById(R.id.box_21_sub_2);
+		title_box_12 = findViewById(R.id.title_box_12);
+		box_disable_notification = findViewById(R.id.box_disable_notification);
+		disable_notification = findViewById(R.id.disable_notification);
+		disable_notification_switch = findViewById(R.id.disable_notification_switch);
+		disable_notification_info = findViewById(R.id.disable_notification_info);
+		box_20_sub_1 = findViewById(R.id.box_20_sub_1);
+		box_20_sub_2 = findViewById(R.id.box_20_sub_2);
+		box_20_sub_3 = findViewById(R.id.box_20_sub_3);
+		box_20_sub_4 = findViewById(R.id.box_20_sub_4);
+		title_box_8 = findViewById(R.id.title_box_8);
+		box_hide_stock_patched = findViewById(R.id.box_hide_stock_patched);
+		hide_stock_patched = findViewById(R.id.hide_stock_patched);
+		hide_stock_patched_switch = findViewById(R.id.hide_stock_patched_switch);
+		title_box_9 = findViewById(R.id.title_box_9);
+		box_hide_amoled_patched = findViewById(R.id.box_hide_amoled_patched);
+		hide_amoled_patched = findViewById(R.id.hide_amoled_patched);
+		hide_amoled_patched_switch = findViewById(R.id.hide_amoled_patched_switch);
+		title_box_10 = findViewById(R.id.title_box_10);
+		box_hide_lite_patched = findViewById(R.id.box_hide_lite_patched);
+		hide_lite_patched = findViewById(R.id.hide_lite_patched);
+		hide_lite_patched_switch = findViewById(R.id.hide_lite_patched_switch);
+		title_box_11 = findViewById(R.id.title_box_11);
+		box_hide_wave_patched = findViewById(R.id.box_hide_wave_patched);
+		hide_wave_patched = findViewById(R.id.hide_wave_patched);
+		hide_wave_patched_switch = findViewById(R.id.hide_wave_patched_switch);
 		box_5_sub_1 = findViewById(R.id.box_5_sub_1);
 		theme = findViewById(R.id.theme);
 		box_theme_switch = findViewById(R.id.box_theme_switch);
@@ -820,6 +884,10 @@ public class MainActivity extends AppCompatActivity {
 		translator_36 = findViewById(R.id.translator_36);
 		manager_lang_37 = findViewById(R.id.manager_lang_37);
 		translator_37 = findViewById(R.id.translator_37);
+		manager_lang_38 = findViewById(R.id.manager_lang_38);
+		translator_38 = findViewById(R.id.translator_38);
+		manager_lang_39 = findViewById(R.id.manager_lang_39);
+		translator_39 = findViewById(R.id.translator_39);
 		manager_donors = findViewById(R.id.manager_donors);
 		donors_1 = findViewById(R.id.donors_1);
 		main_scroll_body = findViewById(R.id.main_scroll_body);
@@ -968,6 +1036,8 @@ public class MainActivity extends AppCompatActivity {
 		SWITCH_VERSION = getSharedPreferences("SWITCH_VERSION", Activity.MODE_PRIVATE);
 		REFETCH = getSharedPreferences("REFETCH", Activity.MODE_PRIVATE);
 		INITIALIZATION = getSharedPreferences("INITIALIZATION", Activity.MODE_PRIVATE);
+		HIDE_PATCHED = getSharedPreferences("HIDE_PATCHED", Activity.MODE_PRIVATE);
+		DISABLE_NOTIFICATION = getSharedPreferences("DISABLE_NOTIFICATION", Activity.MODE_PRIVATE);
 		
 		box_experiment.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -990,6 +1060,8 @@ public class MainActivity extends AppCompatActivity {
 				main_box_16.setVisibility(View.VISIBLE);
 				main_box_17.setVisibility(View.GONE);
 				main_box_18.setVisibility(View.VISIBLE);
+				main_box_20.setVisibility(View.GONE);
+				main_box_21.setVisibility(View.GONE);
 				apk_path_location.setEnabled(true);
 				main_box_10.setEnabled(false);
 				main_box_10.setAlpha((float)(0.0d));
@@ -1025,6 +1097,8 @@ public class MainActivity extends AppCompatActivity {
 				main_box_16.setVisibility(View.GONE);
 				main_box_17.setVisibility(View.VISIBLE);
 				main_box_18.setVisibility(View.GONE);
+				main_box_20.setVisibility(View.VISIBLE);
+				main_box_21.setVisibility(View.VISIBLE);
 				apk_path_location.setEnabled(true);
 				main_box_10.setEnabled(true);
 				main_box_10.setAlpha((float)(1.0d));
@@ -1178,7 +1252,25 @@ public class MainActivity extends AppCompatActivity {
 				}
 				else {
 					if (DELETE == 0) {
-						com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Directory folder not found or deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+						if (CHECK == 0) {
+								CHECK = 1;
+								Timer = new TimerTask() {
+										@Override
+										public void run() {
+												runOnUiThread(new Runnable() {
+														@Override
+														public void run() {
+																CHECK = 0;
+														}
+												});
+										}
+								};
+								_timer.schedule(Timer, (int)(3000));
+								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Directory folder not found or deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+						}
+						else {
+						}
+						
 					}
 				}
 				_Tap_Animation(main_box_10);
@@ -1519,6 +1611,35 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 		
+		list_auto_refresh_switch.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				try {
+						if (CHECK == 0) {
+								CHECK = 1;
+								Timer = new TimerTask() {
+										@Override
+										public void run() {
+												runOnUiThread(new Runnable() {
+														@Override
+														public void run() {
+																CHECK = 0;
+														}
+												});
+										}
+								};
+								_timer.schedule(Timer, (int)(3000));
+								_Hide_Reminder();
+						}
+						else {
+						}
+				}
+				catch(Exception e) {
+				}
+				
+			}
+		});
+		
 		list_auto_refresh_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
@@ -1558,6 +1679,192 @@ public class MainActivity extends AppCompatActivity {
 				}
 				else {
 					DISABLE_REWARD_AD.edit().putString("REWARD_AD", "OFF").commit();
+				}
+				COUNTER = 1;
+			}
+		});
+		
+		disable_notification_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
+				final boolean _isChecked = _param2;
+				if (_isChecked) {
+					DISABLE_NOTIFICATION.edit().putString("DISABLE", "ON").commit();
+				}
+				else {
+					DISABLE_NOTIFICATION.edit().putString("DISABLE", "OFF").commit();
+				}
+				COUNTER = 1;
+			}
+		});
+		
+		hide_stock_patched_switch.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				try {
+						if (CHECK == 0) {
+								CHECK = 1;
+								Timer = new TimerTask() {
+										@Override
+										public void run() {
+												runOnUiThread(new Runnable() {
+														@Override
+														public void run() {
+																CHECK = 0;
+														}
+												});
+										}
+								};
+								_timer.schedule(Timer, (int)(3000));
+								_Hide_Reminder();
+						}
+						else {
+						}
+				}
+				catch(Exception e) {
+				}
+				
+			}
+		});
+		
+		hide_stock_patched_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
+				final boolean _isChecked = _param2;
+				if (_isChecked) {
+					HIDE_PATCHED.edit().putString("SWITCH_A", "ON").commit();
+				}
+				else {
+					HIDE_PATCHED.edit().putString("SWITCH_A", "OFF").commit();
+				}
+				COUNTER = 1;
+			}
+		});
+		
+		hide_amoled_patched_switch.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				try {
+						if (CHECK == 0) {
+								CHECK = 1;
+								Timer = new TimerTask() {
+										@Override
+										public void run() {
+												runOnUiThread(new Runnable() {
+														@Override
+														public void run() {
+																CHECK = 0;
+														}
+												});
+										}
+								};
+								_timer.schedule(Timer, (int)(3000));
+								_Hide_Reminder();
+						}
+						else {
+						}
+				}
+				catch(Exception e) {
+				}
+				
+			}
+		});
+		
+		hide_amoled_patched_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
+				final boolean _isChecked = _param2;
+				if (_isChecked) {
+					HIDE_PATCHED.edit().putString("SWITCH_B", "ON").commit();
+				}
+				else {
+					HIDE_PATCHED.edit().putString("SWITCH_B", "OFF").commit();
+				}
+				COUNTER = 1;
+			}
+		});
+		
+		hide_lite_patched_switch.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				try {
+						if (CHECK == 0) {
+								CHECK = 1;
+								Timer = new TimerTask() {
+										@Override
+										public void run() {
+												runOnUiThread(new Runnable() {
+														@Override
+														public void run() {
+																CHECK = 0;
+														}
+												});
+										}
+								};
+								_timer.schedule(Timer, (int)(3000));
+								_Hide_Reminder();
+						}
+						else {
+						}
+				}
+				catch(Exception e) {
+				}
+				
+			}
+		});
+		
+		hide_lite_patched_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
+				final boolean _isChecked = _param2;
+				if (_isChecked) {
+					HIDE_PATCHED.edit().putString("SWITCH_C", "ON").commit();
+				}
+				else {
+					HIDE_PATCHED.edit().putString("SWITCH_C", "OFF").commit();
+				}
+				COUNTER = 1;
+			}
+		});
+		
+		hide_wave_patched_switch.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				try {
+						if (CHECK == 0) {
+								CHECK = 1;
+								Timer = new TimerTask() {
+										@Override
+										public void run() {
+												runOnUiThread(new Runnable() {
+														@Override
+														public void run() {
+																CHECK = 0;
+														}
+												});
+										}
+								};
+								_timer.schedule(Timer, (int)(3000));
+								_Hide_Reminder();
+						}
+						else {
+						}
+				}
+				catch(Exception e) {
+				}
+				
+			}
+		});
+		
+		hide_wave_patched_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
+				final boolean _isChecked = _param2;
+				if (_isChecked) {
+					HIDE_PATCHED.edit().putString("SWITCH_D", "ON").commit();
+				}
+				else {
+					HIDE_PATCHED.edit().putString("SWITCH_D", "OFF").commit();
 				}
 				COUNTER = 1;
 			}
@@ -1896,6 +2203,20 @@ public class MainActivity extends AppCompatActivity {
 																																									COUNTER = 1;
 																																									_Language_UI();
 																																								}
+																																								else {
+																																									if (_position == 37) {
+																																										LANGUAGE.edit().putString("LANGUAGE", "37").commit();
+																																										COUNTER = 1;
+																																										_Language_UI();
+																																									}
+																																									else {
+																																										if (_position == 38) {
+																																											LANGUAGE.edit().putString("LANGUAGE", "38").commit();
+																																											COUNTER = 1;
+																																											_Language_UI();
+																																										}
+																																									}
+																																								}
 																																							}
 																																						}
 																																					}
@@ -2058,6 +2379,10 @@ public class MainActivity extends AppCompatActivity {
 				list_auto_refresh_switch.setChecked(false);
 				force_auto_install_switch.setChecked(false);
 				disable_reward_ad_switch.setChecked(false);
+				hide_stock_patched_switch.setChecked(false);
+				hide_amoled_patched_switch.setChecked(false);
+				hide_lite_patched_switch.setChecked(false);
+				hide_wave_patched_switch.setChecked(false);
 				apk_path_location.setText("/storage/emulated/0/Download/");
 				main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
 				main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
@@ -6065,20 +6390,28 @@ public class MainActivity extends AppCompatActivity {
 		e = null;
 		Animation f;
 		f = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		f.setDuration(700); main_box_5.startAnimation(f);
+		f.setDuration(700); main_box_21.startAnimation(f);
 		f = null;
 		Animation g;
 		g = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		g.setDuration(800); main_box_14.startAnimation(g);
+		g.setDuration(800); main_box_20.startAnimation(g);
 		g = null;
 		Animation h;
 		h = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		h.setDuration(900); main_box_10.startAnimation(h);
+		h.setDuration(900); main_box_5.startAnimation(h);
 		h = null;
 		Animation i;
 		i = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		i.setDuration(1000); main_box_13.startAnimation(i);
+		i.setDuration(1000); main_box_14.startAnimation(i);
 		i = null;
+		Animation j;
+		j = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		j.setDuration(1100); main_box_10.startAnimation(j);
+		j = null;
+		Animation k;
+		k = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+		k.setDuration(1200); main_box_13.startAnimation(k);
+		k = null;
 	}
 	
 	
@@ -7121,6 +7454,12 @@ public class MainActivity extends AppCompatActivity {
 			experiment_version_info.setText(R.string.experimental_version_desc);
 			disable_reward_ad.setText(R.string.disable_rewarded_ads);
 			disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc);
+			disable_notification.setText(R.string.disable_notification);
+			disable_notification_info.setText(R.string.disable_notification_desc);
+			hide_stock_patched.setText(R.string.hide_stock_patched);
+			hide_amoled_patched.setText(R.string.hide_amoled_patched);
+			hide_lite_patched.setText(R.string.hide_lite_patched);
+			hide_wave_patched.setText(R.string.hide_wave_patched);
 			show_support.setText(R.string.show_support);
 			show_support_desc.setText(R.string.show_support_desc);
 			maintenance.setText(R.string.maintenance);
@@ -7166,6 +7505,7 @@ public class MainActivity extends AppCompatActivity {
 			installation_failed_desc_0 = installation_failed_desc.getText().toString();
 			installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
 			installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+			
 			select_language.setSelection((int)(0));
 		}
 		else {
@@ -7235,6 +7575,12 @@ public class MainActivity extends AppCompatActivity {
 				experiment_version_info.setText(R.string.experimental_version_desc_01);
 				disable_reward_ad.setText(R.string.disable_rewarded_ads_01);
 				disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_01);
+				disable_notification.setText(R.string.disable_notification_01);
+				disable_notification_info.setText(R.string.disable_notification_desc_01);
+				hide_stock_patched.setText(R.string.hide_stock_patched_01);
+				hide_amoled_patched.setText(R.string.hide_amoled_patched_01);
+				hide_lite_patched.setText(R.string.hide_lite_patched_01);
+				hide_wave_patched.setText(R.string.hide_wave_patched_01);
 				show_support.setText(R.string.show_support_01);
 				show_support_desc.setText(R.string.show_support_desc_01);
 				maintenance.setText(R.string.maintenance_01);
@@ -7349,6 +7695,12 @@ public class MainActivity extends AppCompatActivity {
 					experiment_version_info.setText(R.string.experimental_version_desc_02);
 					disable_reward_ad.setText(R.string.disable_rewarded_ads_02);
 					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_02);
+					disable_notification.setText(R.string.disable_notification_02);
+					disable_notification_info.setText(R.string.disable_notification_desc_02);
+					hide_stock_patched.setText(R.string.hide_stock_patched_02);
+					hide_amoled_patched.setText(R.string.hide_amoled_patched_02);
+					hide_lite_patched.setText(R.string.hide_lite_patched_02);
+					hide_wave_patched.setText(R.string.hide_wave_patched_02);
 					show_support.setText(R.string.show_support_02);
 					show_support_desc.setText(R.string.show_support_desc_02);
 					maintenance.setText(R.string.maintenance_02);
@@ -7463,6 +7815,12 @@ public class MainActivity extends AppCompatActivity {
 						experiment_version_info.setText(R.string.experimental_version_desc_03);
 						disable_reward_ad.setText(R.string.disable_rewarded_ads_03);
 						disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_03);
+						disable_notification.setText(R.string.disable_notification_03);
+						disable_notification_info.setText(R.string.disable_notification_desc_03);
+						hide_stock_patched.setText(R.string.hide_stock_patched_03);
+						hide_amoled_patched.setText(R.string.hide_amoled_patched_03);
+						hide_lite_patched.setText(R.string.hide_lite_patched_03);
+						hide_wave_patched.setText(R.string.hide_wave_patched_03);
 						show_support.setText(R.string.show_support_03);
 						show_support_desc.setText(R.string.show_support_desc_03);
 						maintenance.setText(R.string.maintenance_03);
@@ -7577,6 +7935,12 @@ public class MainActivity extends AppCompatActivity {
 							experiment_version_info.setText(R.string.experimental_version_desc_04);
 							disable_reward_ad.setText(R.string.disable_rewarded_ads_04);
 							disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_04);
+							disable_notification.setText(R.string.disable_notification_04);
+							disable_notification_info.setText(R.string.disable_notification_desc_04);
+							hide_stock_patched.setText(R.string.hide_stock_patched_04);
+							hide_amoled_patched.setText(R.string.hide_amoled_patched_04);
+							hide_lite_patched.setText(R.string.hide_lite_patched_04);
+							hide_wave_patched.setText(R.string.hide_wave_patched_04);
 							show_support.setText(R.string.show_support_04);
 							show_support_desc.setText(R.string.show_support_desc_04);
 							maintenance.setText(R.string.maintenance_04);
@@ -7691,6 +8055,12 @@ public class MainActivity extends AppCompatActivity {
 								experiment_version_info.setText(R.string.experimental_version_desc_05);
 								disable_reward_ad.setText(R.string.disable_rewarded_ads_05);
 								disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_05);
+								disable_notification.setText(R.string.disable_notification_05);
+								disable_notification_info.setText(R.string.disable_notification_desc_05);
+								hide_stock_patched.setText(R.string.hide_stock_patched_05);
+								hide_amoled_patched.setText(R.string.hide_amoled_patched_05);
+								hide_lite_patched.setText(R.string.hide_lite_patched_05);
+								hide_wave_patched.setText(R.string.hide_wave_patched_05);
 								show_support.setText(R.string.show_support_05);
 								show_support_desc.setText(R.string.show_support_desc_05);
 								maintenance.setText(R.string.maintenance_05);
@@ -7805,6 +8175,12 @@ public class MainActivity extends AppCompatActivity {
 									experiment_version_info.setText(R.string.experimental_version_desc_06);
 									disable_reward_ad.setText(R.string.disable_rewarded_ads_06);
 									disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_06);
+									disable_notification.setText(R.string.disable_notification_06);
+									disable_notification_info.setText(R.string.disable_notification_desc_06);
+									hide_stock_patched.setText(R.string.hide_stock_patched_06);
+									hide_amoled_patched.setText(R.string.hide_amoled_patched_06);
+									hide_lite_patched.setText(R.string.hide_lite_patched_06);
+									hide_wave_patched.setText(R.string.hide_wave_patched_06);
 									show_support.setText(R.string.show_support_06);
 									show_support_desc.setText(R.string.show_support_desc_06);
 									maintenance.setText(R.string.maintenance_06);
@@ -7919,6 +8295,12 @@ public class MainActivity extends AppCompatActivity {
 										experiment_version_info.setText(R.string.experimental_version_desc_07);
 										disable_reward_ad.setText(R.string.disable_rewarded_ads_07);
 										disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_07);
+										disable_notification.setText(R.string.disable_notification_07);
+										disable_notification_info.setText(R.string.disable_notification_desc_07);
+										hide_stock_patched.setText(R.string.hide_stock_patched_07);
+										hide_amoled_patched.setText(R.string.hide_amoled_patched_07);
+										hide_lite_patched.setText(R.string.hide_lite_patched_07);
+										hide_wave_patched.setText(R.string.hide_wave_patched_07);
 										show_support.setText(R.string.show_support_07);
 										show_support_desc.setText(R.string.show_support_desc_07);
 										maintenance.setText(R.string.maintenance_07);
@@ -8033,6 +8415,12 @@ public class MainActivity extends AppCompatActivity {
 											experiment_version_info.setText(R.string.experimental_version_desc_08);
 											disable_reward_ad.setText(R.string.disable_rewarded_ads_08);
 											disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_08);
+											disable_notification.setText(R.string.disable_notification_08);
+											disable_notification_info.setText(R.string.disable_notification_desc_08);
+											hide_stock_patched.setText(R.string.hide_stock_patched_08);
+											hide_amoled_patched.setText(R.string.hide_amoled_patched_08);
+											hide_lite_patched.setText(R.string.hide_lite_patched_08);
+											hide_wave_patched.setText(R.string.hide_wave_patched_08);
 											show_support.setText(R.string.show_support_08);
 											show_support_desc.setText(R.string.show_support_desc_08);
 											maintenance.setText(R.string.maintenance_08);
@@ -8147,6 +8535,12 @@ public class MainActivity extends AppCompatActivity {
 												experiment_version_info.setText(R.string.experimental_version_desc_09);
 												disable_reward_ad.setText(R.string.disable_rewarded_ads_09);
 												disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_09);
+												disable_notification.setText(R.string.disable_notification_09);
+												disable_notification_info.setText(R.string.disable_notification_desc_09);
+												hide_stock_patched.setText(R.string.hide_stock_patched_09);
+												hide_amoled_patched.setText(R.string.hide_amoled_patched_09);
+												hide_lite_patched.setText(R.string.hide_lite_patched_09);
+												hide_wave_patched.setText(R.string.hide_wave_patched_09);
 												show_support.setText(R.string.show_support_09);
 												show_support_desc.setText(R.string.show_support_desc_09);
 												maintenance.setText(R.string.maintenance_09);
@@ -8261,6 +8655,12 @@ public class MainActivity extends AppCompatActivity {
 													experiment_version_info.setText(R.string.experimental_version_desc_10);
 													disable_reward_ad.setText(R.string.disable_rewarded_ads_10);
 													disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_10);
+													disable_notification.setText(R.string.disable_notification_10);
+													disable_notification_info.setText(R.string.disable_notification_desc_10);
+													hide_stock_patched.setText(R.string.hide_stock_patched_10);
+													hide_amoled_patched.setText(R.string.hide_amoled_patched_10);
+													hide_lite_patched.setText(R.string.hide_lite_patched_10);
+													hide_wave_patched.setText(R.string.hide_wave_patched_10);
 													show_support.setText(R.string.show_support_10);
 													show_support_desc.setText(R.string.show_support_desc_10);
 													maintenance.setText(R.string.maintenance_10);
@@ -8375,6 +8775,12 @@ public class MainActivity extends AppCompatActivity {
 														experiment_version_info.setText(R.string.experimental_version_desc_11);
 														disable_reward_ad.setText(R.string.disable_rewarded_ads_11);
 														disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_11);
+														disable_notification.setText(R.string.disable_notification_11);
+														disable_notification_info.setText(R.string.disable_notification_desc_11);
+														hide_stock_patched.setText(R.string.hide_stock_patched_11);
+														hide_amoled_patched.setText(R.string.hide_amoled_patched_11);
+														hide_lite_patched.setText(R.string.hide_lite_patched_11);
+														hide_wave_patched.setText(R.string.hide_wave_patched_11);
 														show_support.setText(R.string.show_support_11);
 														show_support_desc.setText(R.string.show_support_desc_11);
 														maintenance.setText(R.string.maintenance_11);
@@ -8489,6 +8895,12 @@ public class MainActivity extends AppCompatActivity {
 															experiment_version_info.setText(R.string.experimental_version_desc_12);
 															disable_reward_ad.setText(R.string.disable_rewarded_ads_12);
 															disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_12);
+															disable_notification.setText(R.string.disable_notification_12);
+															disable_notification_info.setText(R.string.disable_notification_desc_12);
+															hide_stock_patched.setText(R.string.hide_stock_patched_12);
+															hide_amoled_patched.setText(R.string.hide_amoled_patched_12);
+															hide_lite_patched.setText(R.string.hide_lite_patched_12);
+															hide_wave_patched.setText(R.string.hide_wave_patched_12);
 															show_support.setText(R.string.show_support_12);
 															show_support_desc.setText(R.string.show_support_desc_12);
 															maintenance.setText(R.string.maintenance_12);
@@ -8603,6 +9015,12 @@ public class MainActivity extends AppCompatActivity {
 																experiment_version_info.setText(R.string.experimental_version_desc_13);
 																disable_reward_ad.setText(R.string.disable_rewarded_ads_13);
 																disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_13);
+																disable_notification.setText(R.string.disable_notification_13);
+																disable_notification_info.setText(R.string.disable_notification_desc_13);
+																hide_stock_patched.setText(R.string.hide_stock_patched_13);
+																hide_amoled_patched.setText(R.string.hide_amoled_patched_13);
+																hide_lite_patched.setText(R.string.hide_lite_patched_13);
+																hide_wave_patched.setText(R.string.hide_wave_patched_13);
 																show_support.setText(R.string.show_support_13);
 																show_support_desc.setText(R.string.show_support_desc_13);
 																maintenance.setText(R.string.maintenance_13);
@@ -8717,6 +9135,12 @@ public class MainActivity extends AppCompatActivity {
 																	experiment_version_info.setText(R.string.experimental_version_desc_14);
 																	disable_reward_ad.setText(R.string.disable_rewarded_ads_14);
 																	disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_14);
+																	disable_notification.setText(R.string.disable_notification_14);
+																	disable_notification_info.setText(R.string.disable_notification_desc_14);
+																	hide_stock_patched.setText(R.string.hide_stock_patched_14);
+																	hide_amoled_patched.setText(R.string.hide_amoled_patched_14);
+																	hide_lite_patched.setText(R.string.hide_lite_patched_14);
+																	hide_wave_patched.setText(R.string.hide_wave_patched_14);
 																	show_support.setText(R.string.show_support_14);
 																	show_support_desc.setText(R.string.show_support_desc_14);
 																	maintenance.setText(R.string.maintenance_14);
@@ -8831,6 +9255,12 @@ public class MainActivity extends AppCompatActivity {
 																		experiment_version_info.setText(R.string.experimental_version_desc_15);
 																		disable_reward_ad.setText(R.string.disable_rewarded_ads_15);
 																		disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_15);
+																		disable_notification.setText(R.string.disable_notification_15);
+																		disable_notification_info.setText(R.string.disable_notification_desc_15);
+																		hide_stock_patched.setText(R.string.hide_stock_patched_15);
+																		hide_amoled_patched.setText(R.string.hide_amoled_patched_15);
+																		hide_lite_patched.setText(R.string.hide_lite_patched_15);
+																		hide_wave_patched.setText(R.string.hide_wave_patched_15);
 																		show_support.setText(R.string.show_support_15);
 																		show_support_desc.setText(R.string.show_support_desc_15);
 																		maintenance.setText(R.string.maintenance_15);
@@ -8945,6 +9375,12 @@ public class MainActivity extends AppCompatActivity {
 																			experiment_version_info.setText(R.string.experimental_version_desc_16);
 																			disable_reward_ad.setText(R.string.disable_rewarded_ads_16);
 																			disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_16);
+																			disable_notification.setText(R.string.disable_notification_16);
+																			disable_notification_info.setText(R.string.disable_notification_desc_16);
+																			hide_stock_patched.setText(R.string.hide_stock_patched_16);
+																			hide_amoled_patched.setText(R.string.hide_amoled_patched_16);
+																			hide_lite_patched.setText(R.string.hide_lite_patched_16);
+																			hide_wave_patched.setText(R.string.hide_wave_patched_16);
 																			show_support.setText(R.string.show_support_16);
 																			show_support_desc.setText(R.string.show_support_desc_16);
 																			maintenance.setText(R.string.maintenance_16);
@@ -9059,6 +9495,12 @@ public class MainActivity extends AppCompatActivity {
 																				experiment_version_info.setText(R.string.experimental_version_desc_17);
 																				disable_reward_ad.setText(R.string.disable_rewarded_ads_17);
 																				disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_17);
+																				disable_notification.setText(R.string.disable_notification_17);
+																				disable_notification_info.setText(R.string.disable_notification_desc_17);
+																				hide_stock_patched.setText(R.string.hide_stock_patched_17);
+																				hide_amoled_patched.setText(R.string.hide_amoled_patched_17);
+																				hide_lite_patched.setText(R.string.hide_lite_patched_17);
+																				hide_wave_patched.setText(R.string.hide_wave_patched_17);
 																				show_support.setText(R.string.show_support_17);
 																				show_support_desc.setText(R.string.show_support_desc_17);
 																				maintenance.setText(R.string.maintenance_17);
@@ -9173,6 +9615,12 @@ public class MainActivity extends AppCompatActivity {
 																					experiment_version_info.setText(R.string.experimental_version_desc_18);
 																					disable_reward_ad.setText(R.string.disable_rewarded_ads_18);
 																					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_18);
+																					disable_notification.setText(R.string.disable_notification_18);
+																					disable_notification_info.setText(R.string.disable_notification_desc_18);
+																					hide_stock_patched.setText(R.string.hide_stock_patched_18);
+																					hide_amoled_patched.setText(R.string.hide_amoled_patched_18);
+																					hide_lite_patched.setText(R.string.hide_lite_patched_18);
+																					hide_wave_patched.setText(R.string.hide_wave_patched_18);
 																					show_support.setText(R.string.show_support_18);
 																					show_support_desc.setText(R.string.show_support_desc_18);
 																					maintenance.setText(R.string.maintenance_18);
@@ -9287,6 +9735,12 @@ public class MainActivity extends AppCompatActivity {
 																						experiment_version_info.setText(R.string.experimental_version_desc_19);
 																						disable_reward_ad.setText(R.string.disable_rewarded_ads_19);
 																						disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_19);
+																						disable_notification.setText(R.string.disable_notification_19);
+																						disable_notification_info.setText(R.string.disable_notification_desc_19);
+																						hide_stock_patched.setText(R.string.hide_stock_patched_19);
+																						hide_amoled_patched.setText(R.string.hide_amoled_patched_19);
+																						hide_lite_patched.setText(R.string.hide_lite_patched_19);
+																						hide_wave_patched.setText(R.string.hide_wave_patched_19);
 																						show_support.setText(R.string.show_support_19);
 																						show_support_desc.setText(R.string.show_support_desc_19);
 																						maintenance.setText(R.string.maintenance_19);
@@ -9401,6 +9855,12 @@ public class MainActivity extends AppCompatActivity {
 																							experiment_version_info.setText(R.string.experimental_version_desc_20);
 																							disable_reward_ad.setText(R.string.disable_rewarded_ads_20);
 																							disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_20);
+																							disable_notification.setText(R.string.disable_notification_20);
+																							disable_notification_info.setText(R.string.disable_notification_desc_20);
+																							hide_stock_patched.setText(R.string.hide_stock_patched_20);
+																							hide_amoled_patched.setText(R.string.hide_amoled_patched_20);
+																							hide_lite_patched.setText(R.string.hide_lite_patched_20);
+																							hide_wave_patched.setText(R.string.hide_wave_patched_20);
 																							show_support.setText(R.string.show_support_20);
 																							show_support_desc.setText(R.string.show_support_desc_20);
 																							maintenance.setText(R.string.maintenance_20);
@@ -9515,6 +9975,12 @@ public class MainActivity extends AppCompatActivity {
 																								experiment_version_info.setText(R.string.experimental_version_desc_21);
 																								disable_reward_ad.setText(R.string.disable_rewarded_ads_21);
 																								disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_21);
+																								disable_notification.setText(R.string.disable_notification_21);
+																								disable_notification_info.setText(R.string.disable_notification_desc_21);
+																								hide_stock_patched.setText(R.string.hide_stock_patched_21);
+																								hide_amoled_patched.setText(R.string.hide_amoled_patched_21);
+																								hide_lite_patched.setText(R.string.hide_lite_patched_21);
+																								hide_wave_patched.setText(R.string.hide_wave_patched_21);
 																								show_support.setText(R.string.show_support_21);
 																								show_support_desc.setText(R.string.show_support_desc_21);
 																								maintenance.setText(R.string.maintenance_21);
@@ -9629,6 +10095,12 @@ public class MainActivity extends AppCompatActivity {
 																									experiment_version_info.setText(R.string.experimental_version_desc_22);
 																									disable_reward_ad.setText(R.string.disable_rewarded_ads_22);
 																									disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_22);
+																									disable_notification.setText(R.string.disable_notification_22);
+																									disable_notification_info.setText(R.string.disable_notification_desc_22);
+																									hide_stock_patched.setText(R.string.hide_stock_patched_22);
+																									hide_amoled_patched.setText(R.string.hide_amoled_patched_22);
+																									hide_lite_patched.setText(R.string.hide_lite_patched_22);
+																									hide_wave_patched.setText(R.string.hide_wave_patched_22);
 																									show_support.setText(R.string.show_support_22);
 																									show_support_desc.setText(R.string.show_support_desc_22);
 																									maintenance.setText(R.string.maintenance_22);
@@ -9743,6 +10215,12 @@ public class MainActivity extends AppCompatActivity {
 																										experiment_version_info.setText(R.string.experimental_version_desc_23);
 																										disable_reward_ad.setText(R.string.disable_rewarded_ads_23);
 																										disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_23);
+																										disable_notification.setText(R.string.disable_notification_23);
+																										disable_notification_info.setText(R.string.disable_notification_desc_23);
+																										hide_stock_patched.setText(R.string.hide_stock_patched_23);
+																										hide_amoled_patched.setText(R.string.hide_amoled_patched_23);
+																										hide_lite_patched.setText(R.string.hide_lite_patched_23);
+																										hide_wave_patched.setText(R.string.hide_wave_patched_23);
 																										show_support.setText(R.string.show_support_23);
 																										show_support_desc.setText(R.string.show_support_desc_23);
 																										maintenance.setText(R.string.maintenance_23);
@@ -9857,6 +10335,12 @@ public class MainActivity extends AppCompatActivity {
 																											experiment_version_info.setText(R.string.experimental_version_desc_24);
 																											disable_reward_ad.setText(R.string.disable_rewarded_ads_24);
 																											disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_24);
+																											disable_notification.setText(R.string.disable_notification_24);
+																											disable_notification_info.setText(R.string.disable_notification_desc_24);
+																											hide_stock_patched.setText(R.string.hide_stock_patched_24);
+																											hide_amoled_patched.setText(R.string.hide_amoled_patched_24);
+																											hide_lite_patched.setText(R.string.hide_lite_patched_24);
+																											hide_wave_patched.setText(R.string.hide_wave_patched_24);
 																											show_support.setText(R.string.show_support_24);
 																											show_support_desc.setText(R.string.show_support_desc_24);
 																											maintenance.setText(R.string.maintenance_24);
@@ -9971,6 +10455,12 @@ public class MainActivity extends AppCompatActivity {
 																												experiment_version_info.setText(R.string.experimental_version_desc_25);
 																												disable_reward_ad.setText(R.string.disable_rewarded_ads_25);
 																												disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_25);
+																												disable_notification.setText(R.string.disable_notification_25);
+																												disable_notification_info.setText(R.string.disable_notification_desc_25);
+																												hide_stock_patched.setText(R.string.hide_stock_patched_25);
+																												hide_amoled_patched.setText(R.string.hide_amoled_patched_25);
+																												hide_lite_patched.setText(R.string.hide_lite_patched_25);
+																												hide_wave_patched.setText(R.string.hide_wave_patched_25);
 																												show_support.setText(R.string.show_support_25);
 																												show_support_desc.setText(R.string.show_support_desc_25);
 																												maintenance.setText(R.string.maintenance_25);
@@ -10085,6 +10575,12 @@ public class MainActivity extends AppCompatActivity {
 																													experiment_version_info.setText(R.string.experimental_version_desc_26);
 																													disable_reward_ad.setText(R.string.disable_rewarded_ads_26);
 																													disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_26);
+																													disable_notification.setText(R.string.disable_notification_26);
+																													disable_notification_info.setText(R.string.disable_notification_desc_26);
+																													hide_stock_patched.setText(R.string.hide_stock_patched_26);
+																													hide_amoled_patched.setText(R.string.hide_amoled_patched_26);
+																													hide_lite_patched.setText(R.string.hide_lite_patched_26);
+																													hide_wave_patched.setText(R.string.hide_wave_patched_26);
 																													show_support.setText(R.string.show_support_26);
 																													show_support_desc.setText(R.string.show_support_desc_26);
 																													maintenance.setText(R.string.maintenance_26);
@@ -10199,6 +10695,12 @@ public class MainActivity extends AppCompatActivity {
 																														experiment_version_info.setText(R.string.experimental_version_desc_27);
 																														disable_reward_ad.setText(R.string.disable_rewarded_ads_27);
 																														disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_27);
+																														disable_notification.setText(R.string.disable_notification_27);
+																														disable_notification_info.setText(R.string.disable_notification_desc_27);
+																														hide_stock_patched.setText(R.string.hide_stock_patched_27);
+																														hide_amoled_patched.setText(R.string.hide_amoled_patched_27);
+																														hide_lite_patched.setText(R.string.hide_lite_patched_27);
+																														hide_wave_patched.setText(R.string.hide_wave_patched_27);
 																														show_support.setText(R.string.show_support_27);
 																														show_support_desc.setText(R.string.show_support_desc_27);
 																														maintenance.setText(R.string.maintenance_27);
@@ -10313,6 +10815,12 @@ public class MainActivity extends AppCompatActivity {
 																															experiment_version_info.setText(R.string.experimental_version_desc_28);
 																															disable_reward_ad.setText(R.string.disable_rewarded_ads_28);
 																															disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_28);
+																															disable_notification.setText(R.string.disable_notification_28);
+																															disable_notification_info.setText(R.string.disable_notification_desc_28);
+																															hide_stock_patched.setText(R.string.hide_stock_patched_28);
+																															hide_amoled_patched.setText(R.string.hide_amoled_patched_28);
+																															hide_lite_patched.setText(R.string.hide_lite_patched_28);
+																															hide_wave_patched.setText(R.string.hide_wave_patched_28);
 																															show_support.setText(R.string.show_support_28);
 																															show_support_desc.setText(R.string.show_support_desc_28);
 																															maintenance.setText(R.string.maintenance_28);
@@ -10427,6 +10935,12 @@ public class MainActivity extends AppCompatActivity {
 																																experiment_version_info.setText(R.string.experimental_version_desc_29);
 																																disable_reward_ad.setText(R.string.disable_rewarded_ads_29);
 																																disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_29);
+																																disable_notification.setText(R.string.disable_notification_29);
+																																disable_notification_info.setText(R.string.disable_notification_desc_29);
+																																hide_stock_patched.setText(R.string.hide_stock_patched_29);
+																																hide_amoled_patched.setText(R.string.hide_amoled_patched_29);
+																																hide_lite_patched.setText(R.string.hide_lite_patched_29);
+																																hide_wave_patched.setText(R.string.hide_wave_patched_29);
 																																show_support.setText(R.string.show_support_29);
 																																show_support_desc.setText(R.string.show_support_desc_29);
 																																maintenance.setText(R.string.maintenance_29);
@@ -10541,6 +11055,12 @@ public class MainActivity extends AppCompatActivity {
 																																	experiment_version_info.setText(R.string.experimental_version_desc_30);
 																																	disable_reward_ad.setText(R.string.disable_rewarded_ads_30);
 																																	disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_30);
+																																	disable_notification.setText(R.string.disable_notification_30);
+																																	disable_notification_info.setText(R.string.disable_notification_desc_30);
+																																	hide_stock_patched.setText(R.string.hide_stock_patched_30);
+																																	hide_amoled_patched.setText(R.string.hide_amoled_patched_30);
+																																	hide_lite_patched.setText(R.string.hide_lite_patched_30);
+																																	hide_wave_patched.setText(R.string.hide_wave_patched_30);
 																																	show_support.setText(R.string.show_support_30);
 																																	show_support_desc.setText(R.string.show_support_desc_30);
 																																	maintenance.setText(R.string.maintenance_30);
@@ -10655,6 +11175,12 @@ public class MainActivity extends AppCompatActivity {
 																																		experiment_version_info.setText(R.string.experimental_version_desc_31);
 																																		disable_reward_ad.setText(R.string.disable_rewarded_ads_31);
 																																		disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_31);
+																																		disable_notification.setText(R.string.disable_notification_31);
+																																		disable_notification_info.setText(R.string.disable_notification_desc_31);
+																																		hide_stock_patched.setText(R.string.hide_stock_patched_31);
+																																		hide_amoled_patched.setText(R.string.hide_amoled_patched_31);
+																																		hide_lite_patched.setText(R.string.hide_lite_patched_31);
+																																		hide_wave_patched.setText(R.string.hide_wave_patched_31);
 																																		show_support.setText(R.string.show_support_31);
 																																		show_support_desc.setText(R.string.show_support_desc_31);
 																																		maintenance.setText(R.string.maintenance_31);
@@ -10769,6 +11295,12 @@ public class MainActivity extends AppCompatActivity {
 																																			experiment_version_info.setText(R.string.experimental_version_desc_32);
 																																			disable_reward_ad.setText(R.string.disable_rewarded_ads_32);
 																																			disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_32);
+																																			disable_notification.setText(R.string.disable_notification_32);
+																																			disable_notification_info.setText(R.string.disable_notification_desc_32);
+																																			hide_stock_patched.setText(R.string.hide_stock_patched_32);
+																																			hide_amoled_patched.setText(R.string.hide_amoled_patched_32);
+																																			hide_lite_patched.setText(R.string.hide_lite_patched_32);
+																																			hide_wave_patched.setText(R.string.hide_wave_patched_32);
 																																			show_support.setText(R.string.show_support_32);
 																																			show_support_desc.setText(R.string.show_support_desc_32);
 																																			maintenance.setText(R.string.maintenance_32);
@@ -10883,6 +11415,12 @@ public class MainActivity extends AppCompatActivity {
 																																				experiment_version_info.setText(R.string.experimental_version_desc_33);
 																																				disable_reward_ad.setText(R.string.disable_rewarded_ads_33);
 																																				disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_33);
+																																				disable_notification.setText(R.string.disable_notification_33);
+																																				disable_notification_info.setText(R.string.disable_notification_desc_33);
+																																				hide_stock_patched.setText(R.string.hide_stock_patched_33);
+																																				hide_amoled_patched.setText(R.string.hide_amoled_patched_33);
+																																				hide_lite_patched.setText(R.string.hide_lite_patched_33);
+																																				hide_wave_patched.setText(R.string.hide_wave_patched_33);
 																																				show_support.setText(R.string.show_support_33);
 																																				show_support_desc.setText(R.string.show_support_desc_33);
 																																				maintenance.setText(R.string.maintenance_33);
@@ -10997,6 +11535,12 @@ public class MainActivity extends AppCompatActivity {
 																																					experiment_version_info.setText(R.string.experimental_version_desc_34);
 																																					disable_reward_ad.setText(R.string.disable_rewarded_ads_34);
 																																					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_34);
+																																					disable_notification.setText(R.string.disable_notification_34);
+																																					disable_notification_info.setText(R.string.disable_notification_desc_34);
+																																					hide_stock_patched.setText(R.string.hide_stock_patched_34);
+																																					hide_amoled_patched.setText(R.string.hide_amoled_patched_34);
+																																					hide_lite_patched.setText(R.string.hide_lite_patched_34);
+																																					hide_wave_patched.setText(R.string.hide_wave_patched_34);
 																																					show_support.setText(R.string.show_support_34);
 																																					show_support_desc.setText(R.string.show_support_desc_34);
 																																					maintenance.setText(R.string.maintenance_34);
@@ -11111,6 +11655,12 @@ public class MainActivity extends AppCompatActivity {
 																																						experiment_version_info.setText(R.string.experimental_version_desc_35);
 																																						disable_reward_ad.setText(R.string.disable_rewarded_ads_35);
 																																						disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_35);
+																																						disable_notification.setText(R.string.disable_notification_35);
+																																						disable_notification_info.setText(R.string.disable_notification_desc_35);
+																																						hide_stock_patched.setText(R.string.hide_stock_patched_35);
+																																						hide_amoled_patched.setText(R.string.hide_amoled_patched_35);
+																																						hide_lite_patched.setText(R.string.hide_lite_patched_35);
+																																						hide_wave_patched.setText(R.string.hide_wave_patched_35);
 																																						show_support.setText(R.string.show_support_35);
 																																						show_support_desc.setText(R.string.show_support_desc_35);
 																																						maintenance.setText(R.string.maintenance_35);
@@ -11159,7 +11709,6 @@ public class MainActivity extends AppCompatActivity {
 																																						select_language.setSelection((int)(35));
 																																					}
 																																					else {
-//																																						// Nepali Language
 																																						if (LANGUAGE.getString("LANGUAGE", "").equals("36")) {
 																																							sub_text_installed.setText(R.string.installed_36);
 																																							main_title.setText(R.string.main_title_36);
@@ -11170,9 +11719,11 @@ public class MainActivity extends AppCompatActivity {
 																																							sub_text_1.setText(R.string.latest_36);
 																																							sub_text_2.setText(R.string.latest_36);
 																																							sub_text_3.setText(R.string.latest_36);
+																																							sub_text_4.setText(R.string.latest_36);
 																																							versions_1.setText(R.string.versions_36);
 																																							versions_2.setText(R.string.versions_36);
 																																							versions_3.setText(R.string.versions_36);
+																																							versions_4.setText(R.string.versions_36);
 																																							title_sub.setText(R.string.manager_tools_36);
 																																							source.setText(R.string.source_36);
 																																							support.setText(R.string.support_36);
@@ -11224,6 +11775,12 @@ public class MainActivity extends AppCompatActivity {
 																																							experiment_version_info.setText(R.string.experimental_version_desc_36);
 																																							disable_reward_ad.setText(R.string.disable_rewarded_ads_36);
 																																							disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_36);
+																																							disable_notification.setText(R.string.disable_notification_36);
+																																							disable_notification_info.setText(R.string.disable_notification_desc_36);
+																																							hide_stock_patched.setText(R.string.hide_stock_patched_36);
+																																							hide_amoled_patched.setText(R.string.hide_amoled_patched_36);
+																																							hide_lite_patched.setText(R.string.hide_lite_patched_36);
+																																							hide_wave_patched.setText(R.string.hide_wave_patched_36);
 																																							show_support.setText(R.string.show_support_36);
 																																							show_support_desc.setText(R.string.show_support_desc_36);
 																																							maintenance.setText(R.string.maintenance_36);
@@ -11270,6 +11827,248 @@ public class MainActivity extends AppCompatActivity {
 																																							installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
 																																							installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																							select_language.setSelection((int)(36));
+																																						}
+																																						else {
+																																							if (LANGUAGE.getString("LANGUAGE", "").equals("37")) {
+																																								sub_text_installed.setText(R.string.installed_37);
+																																								main_title.setText(R.string.main_title_37);
+																																								about_title.setText(R.string.about_title_37);
+																																								settings_title.setText(R.string.settings_title_37);
+																																								experiment_title.setText(R.string.experimental_title_37);
+																																								sub_title.setText(R.string.about_sub_37);
+																																								sub_text_1.setText(R.string.latest_37);
+																																								sub_text_2.setText(R.string.latest_37);
+																																								sub_text_3.setText(R.string.latest_37);
+																																								sub_text_4.setText(R.string.latest_37);
+																																								versions_1.setText(R.string.versions_37);
+																																								versions_2.setText(R.string.versions_37);
+																																								versions_3.setText(R.string.versions_37);
+																																								versions_4.setText(R.string.versions_37);
+																																								title_sub.setText(R.string.manager_tools_37);
+																																								source.setText(R.string.source_37);
+																																								support.setText(R.string.support_37);
+																																								donate.setText(R.string.donate_37);
+																																								discord.setText(R.string.discord_37);
+																																								about.setText(R.string.about_37);
+																																								website.setText(R.string.website_37);
+																																								reddit.setText(R.string.reddit_37);
+																																								faq.setText(R.string.faq_37);
+																																								theme.setText(R.string.show_themes_37);
+																																								language.setText(R.string.language_37);
+																																								download_update.setText(R.string.download_update_37);
+																																								install_now.setText(R.string.install_now_37);
+																																								install_update.setText(R.string.install_update_37);
+																																								uninstall_patched.setText(R.string.uninstall_patched_37);
+																																								open_settings.setText(R.string.open_settings_37);
+																																								open_patched.setText(R.string.open_patched_37);
+																																								lite.setText(R.string.lite_37);
+																																								cloned.setText(R.string.cloned_37);
+																																								spap.setText(R.string.spap_37);
+																																								mirror.setText(R.string.mirror_37);
+																																								download.setText(R.string.download_37);
+																																								cancel.setText(R.string.cancel_37);
+																																								later.setText(R.string.later_37);
+																																								go_back.setText(R.string.go_back_37);
+																																								not_now.setText(R.string.not_now_37);
+																																								close.setText(R.string.close_37);
+																																								continue_1.setText(R.string.continue_1_37);
+																																								install.setText(R.string.install_37);
+																																								uninstall.setText(R.string.uninstall_37);
+																																								ignore.setText(R.string.ignore_37);
+																																								delete.setText(R.string.delete_37);
+																																								thanks.setText(R.string.thanks_37);
+																																								new_update.setText(R.string.new_update_37);
+																																								changelogs.setText(R.string.changelogs_37);
+																																								reboot.setText(R.string.reboot_37);
+																																								reset_preferences.setText(R.string.reset_preferences_37);
+																																								list_auto_refresh.setText(R.string.list_auto_refresh_37);
+																																								list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_37);
+																																								force_auto_install.setText(R.string.force_auto_install_37);
+																																								force_auto_install_info.setText(R.string.force_auto_install_desc_37);
+																																								apk_location.setText(R.string.apk_location_37);
+																																								apk_location_info.setText(R.string.apk_location_desc_37);
+																																								clear_directory_folders.setText(R.string.clear_directory_folders_37);
+																																								clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_37);
+																																								cloned_version.setText(R.string.cloned_version_37);
+																																								cloned_version_info.setText(R.string.cloned_version_desc_37);
+																																								experiment_version.setText(R.string.experimental_version_37);
+																																								experiment_version_info.setText(R.string.experimental_version_desc_37);
+																																								disable_reward_ad.setText(R.string.disable_rewarded_ads_37);
+																																								disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_37);
+																																								disable_notification.setText(R.string.disable_notification_37);
+																																								disable_notification_info.setText(R.string.disable_notification_desc_37);
+																																								hide_stock_patched.setText(R.string.hide_stock_patched_37);
+																																								hide_amoled_patched.setText(R.string.hide_amoled_patched_37);
+																																								hide_lite_patched.setText(R.string.hide_lite_patched_37);
+																																								hide_wave_patched.setText(R.string.hide_wave_patched_37);
+																																								show_support.setText(R.string.show_support_37);
+																																								show_support_desc.setText(R.string.show_support_desc_37);
+																																								maintenance.setText(R.string.maintenance_37);
+																																								maintenance_desc.setText(R.string.maintenance_desc_37);
+																																								xmanager_dev.setText(R.string.xmanager_dev_37);
+																																								patched_devs.setText(R.string.patched_devs_37);
+																																								support_team.setText(R.string.support_team_37);
+																																								manager_testers.setText(R.string.manager_testers_37);
+																																								manager_hosting.setText(R.string.manager_hosting_37);
+																																								mobilism_team.setText(R.string.mobilism_team_37);
+																																								forum_team.setText(R.string.forum_team_37);
+																																								contributors.setText(R.string.contributors_37);
+																																								download_selected.setText(R.string.download_selected_37);
+																																								download_ready.setText(R.string.download_ready_37);
+																																								download_ready_desc.setText(R.string.download_ready_desc_37);
+																																								downloading_file.setText(R.string.downloading_file_37);
+																																								download_success.setText(R.string.download_success_37);
+																																								installation_failed.setText(R.string.installation_failed_37);
+																																								installation_failed_desc.setText(R.string.installation_failed_desc_37);
+																																								installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_37);
+																																								installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_37);
+																																								existing_patched.setText(R.string.existing_patched_37);
+																																								existing_patched_desc.setText(R.string.existing_patched_desc_37);
+																																								lite_0 = lite.getText().toString();
+																																								download_0 = download.getText().toString();
+																																								continue_0 = continue_1.getText().toString();
+																																								cancel_0 = cancel.getText().toString();
+																																								later_0 = later.getText().toString();
+																																								mirror_0 = mirror.getText().toString();
+																																								install_now_0 = install_now.getText().toString();
+																																								go_back_0 = go_back.getText().toString();
+																																								install_update_0 = install_update.getText().toString();
+																																								close_0 = close.getText().toString();
+																																								uninstall_0 = uninstall.getText().toString();
+																																								existing_patched_0 = existing_patched.getText().toString();
+																																								existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																																								download_selected_0 = download_selected.getText().toString();
+																																								download_ready_0 = download_ready.getText().toString();
+																																								download_ready_desc_0 = download_ready_desc.getText().toString();
+																																								downloading_file_0 = downloading_file.getText().toString();
+																																								download_success_0 = download_success.getText().toString();
+																																								installation_failed_0 = installation_failed.getText().toString();
+																																								installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																																								installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
+																																								installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																																								select_language.setSelection((int)(37));
+																																							}
+																																							else {
+																																								if (LANGUAGE.getString("LANGUAGE", "").equals("38")) {
+																																									sub_text_installed.setText(R.string.installed_38);
+																																									main_title.setText(R.string.main_title_38);
+																																									about_title.setText(R.string.about_title_38);
+																																									settings_title.setText(R.string.settings_title_38);
+																																									experiment_title.setText(R.string.experimental_title_38);
+																																									sub_title.setText(R.string.about_sub_38);
+																																									sub_text_1.setText(R.string.latest_38);
+																																									sub_text_2.setText(R.string.latest_38);
+																																									sub_text_3.setText(R.string.latest_38);
+																																									sub_text_4.setText(R.string.latest_38);
+																																									versions_1.setText(R.string.versions_38);
+																																									versions_2.setText(R.string.versions_38);
+																																									versions_3.setText(R.string.versions_38);
+																																									versions_4.setText(R.string.versions_38);
+																																									title_sub.setText(R.string.manager_tools_38);
+																																									source.setText(R.string.source_38);
+																																									support.setText(R.string.support_38);
+																																									donate.setText(R.string.donate_38);
+																																									discord.setText(R.string.discord_38);
+																																									about.setText(R.string.about_38);
+																																									website.setText(R.string.website_38);
+																																									reddit.setText(R.string.reddit_38);
+																																									faq.setText(R.string.faq_38);
+																																									theme.setText(R.string.show_themes_38);
+																																									language.setText(R.string.language_38);
+																																									download_update.setText(R.string.download_update_38);
+																																									install_now.setText(R.string.install_now_38);
+																																									install_update.setText(R.string.install_update_38);
+																																									uninstall_patched.setText(R.string.uninstall_patched_38);
+																																									open_settings.setText(R.string.open_settings_38);
+																																									open_patched.setText(R.string.open_patched_38);
+																																									lite.setText(R.string.lite_38);
+																																									cloned.setText(R.string.cloned_38);
+																																									spap.setText(R.string.spap_38);
+																																									mirror.setText(R.string.mirror_38);
+																																									download.setText(R.string.download_38);
+																																									cancel.setText(R.string.cancel_38);
+																																									later.setText(R.string.later_38);
+																																									go_back.setText(R.string.go_back_38);
+																																									not_now.setText(R.string.not_now_38);
+																																									close.setText(R.string.close_38);
+																																									continue_1.setText(R.string.continue_1_38);
+																																									install.setText(R.string.install_38);
+																																									uninstall.setText(R.string.uninstall_38);
+																																									ignore.setText(R.string.ignore_38);
+																																									delete.setText(R.string.delete_38);
+																																									thanks.setText(R.string.thanks_38);
+																																									new_update.setText(R.string.new_update_38);
+																																									changelogs.setText(R.string.changelogs_38);
+																																									reboot.setText(R.string.reboot_38);
+																																									reset_preferences.setText(R.string.reset_preferences_38);
+																																									list_auto_refresh.setText(R.string.list_auto_refresh_38);
+																																									list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_38);
+																																									force_auto_install.setText(R.string.force_auto_install_38);
+																																									force_auto_install_info.setText(R.string.force_auto_install_desc_38);
+																																									apk_location.setText(R.string.apk_location_38);
+																																									apk_location_info.setText(R.string.apk_location_desc_38);
+																																									clear_directory_folders.setText(R.string.clear_directory_folders_38);
+																																									clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_38);
+																																									cloned_version.setText(R.string.cloned_version_38);
+																																									cloned_version_info.setText(R.string.cloned_version_desc_38);
+																																									experiment_version.setText(R.string.experimental_version_38);
+																																									experiment_version_info.setText(R.string.experimental_version_desc_38);
+																																									disable_reward_ad.setText(R.string.disable_rewarded_ads_38);
+																																									disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_38);
+																																									disable_notification.setText(R.string.disable_notification_38);
+																																									disable_notification_info.setText(R.string.disable_notification_desc_38);
+																																									hide_stock_patched.setText(R.string.hide_stock_patched_38);
+																																									hide_amoled_patched.setText(R.string.hide_amoled_patched_38);
+																																									hide_lite_patched.setText(R.string.hide_lite_patched_38);
+																																									hide_wave_patched.setText(R.string.hide_wave_patched_38);
+																																									show_support.setText(R.string.show_support_38);
+																																									show_support_desc.setText(R.string.show_support_desc_38);
+																																									maintenance.setText(R.string.maintenance_38);
+																																									maintenance_desc.setText(R.string.maintenance_desc_38);
+																																									xmanager_dev.setText(R.string.xmanager_dev_38);
+																																									patched_devs.setText(R.string.patched_devs_38);
+																																									support_team.setText(R.string.support_team_38);
+																																									manager_testers.setText(R.string.manager_testers_38);
+																																									manager_hosting.setText(R.string.manager_hosting_38);
+																																									mobilism_team.setText(R.string.mobilism_team_38);
+																																									forum_team.setText(R.string.forum_team_38);
+																																									contributors.setText(R.string.contributors_38);
+																																									download_selected.setText(R.string.download_selected_38);
+																																									download_ready.setText(R.string.download_ready_38);
+																																									download_ready_desc.setText(R.string.download_ready_desc_38);
+																																									downloading_file.setText(R.string.downloading_file_38);
+																																									download_success.setText(R.string.download_success_38);
+																																									installation_failed.setText(R.string.installation_failed_38);
+																																									installation_failed_desc.setText(R.string.installation_failed_desc_38);
+																																									installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_38);
+																																									installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_38);
+																																									existing_patched.setText(R.string.existing_patched_38);
+																																									existing_patched_desc.setText(R.string.existing_patched_desc_38);
+																																									lite_0 = lite.getText().toString();
+																																									download_0 = download.getText().toString();
+																																									continue_0 = continue_1.getText().toString();
+																																									cancel_0 = cancel.getText().toString();
+																																									later_0 = later.getText().toString();
+																																									mirror_0 = mirror.getText().toString();
+																																									install_now_0 = install_now.getText().toString();
+																																									go_back_0 = go_back.getText().toString();
+																																									install_update_0 = install_update.getText().toString();
+																																									close_0 = close.getText().toString();
+																																									uninstall_0 = uninstall.getText().toString();
+																																									existing_patched_0 = existing_patched.getText().toString();
+																																									existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																																									download_selected_0 = download_selected.getText().toString();
+																																									download_ready_0 = download_ready.getText().toString();
+																																									download_ready_desc_0 = download_ready_desc.getText().toString();
+																																									downloading_file_0 = downloading_file.getText().toString();
+																																									download_success_0 = download_success.getText().toString();
+																																									installation_failed_0 = installation_failed.getText().toString();
+																																									installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																																									installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
+																																									installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																																									select_language.setSelection((int)(38));
+																																								}
+																																							}
 																																						}
 																																					}
 																																				}
@@ -11347,6 +12146,9 @@ public class MainActivity extends AppCompatActivity {
 		Language.add("German");
 		Language.add("Sinhala");
 		Language.add("Hungarian");
+		Language.add("Japanese");
+		Language.add("Nepali");
+		Language.add("Tamil");
 		select_language.setAdapter(new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, Language));
 		((ArrayAdapter)select_language.getAdapter()).notifyDataSetChanged();
 		select_language.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, Language) {
@@ -11470,6 +12272,12 @@ public class MainActivity extends AppCompatActivity {
 		experiment_version_info.setText(R.string.experimental_version_desc);
 		disable_reward_ad.setText(R.string.disable_rewarded_ads);
 		disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc);
+		disable_notification.setText(R.string.disable_notification);
+		disable_notification_info.setText(R.string.disable_notification_desc);
+		hide_stock_patched.setText(R.string.hide_stock_patched);
+		hide_amoled_patched.setText(R.string.hide_amoled_patched);
+		hide_lite_patched.setText(R.string.hide_lite_patched);
+		hide_wave_patched.setText(R.string.hide_wave_patched);
 		show_support.setText(R.string.show_support);
 		show_support_desc.setText(R.string.show_support_desc);
 		maintenance.setText(R.string.maintenance);
@@ -12883,6 +13691,12 @@ public class MainActivity extends AppCompatActivity {
 		cloned_version_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		disable_reward_ad.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		disable_reward_ad_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		disable_notification.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		disable_notification_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		hide_stock_patched.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		hide_amoled_patched.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		hide_lite_patched.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		hide_wave_patched.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		box_sub_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
@@ -12898,6 +13712,8 @@ public class MainActivity extends AppCompatActivity {
 		main_box_16.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_17.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_18.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		main_box_20.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
+		main_box_21.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_support.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_donate.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_about.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
@@ -13407,6 +14223,7 @@ public class MainActivity extends AppCompatActivity {
 		_Layout_Transition();
 		_Update_Remover();
 		_Language_Fixer();
+		_Hide_Patched();
 		_Switch_Fixer();
 		_Language_UI();
 		_List_Updater();
@@ -13416,6 +14233,7 @@ public class MainActivity extends AppCompatActivity {
 		_Clickers();
 		_Effects();
 		_Extra();
+		_Reminder();
 	}
 	
 	
@@ -13996,6 +14814,8 @@ public class MainActivity extends AppCompatActivity {
 		manager_lang_35.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_36.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_37.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_38.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_39.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -14033,36 +14853,21 @@ public class MainActivity extends AppCompatActivity {
 		translator_35.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_36.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_37.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_38.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_39.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 	}
 	
 	
 	public void _Reminder() {
-		if (Build.VERSION.SDK_INT >= 21) {
-				try {
-						final String App = "xManager";
-						final String contentTitle = "IMPORTANT NOTE";
-						final String contentMessage = "After installing and logging-in, make sure to reopen or force stop the app to enable the patched features.";
-						
-						androidx.core.app.NotificationCompat.Builder builder = new androidx.core.app.NotificationCompat.Builder(MainActivity.this, "id 1");
-						builder.setStyle(new androidx.core.app.NotificationCompat.BigTextStyle(builder).bigText(contentMessage)
-						.setBigContentTitle(contentTitle))
-						.setContentTitle(contentTitle)
-						.setContentText(contentMessage)
-						.setSmallIcon(R.drawable.icon_notification)
-						.setAutoCancel(true);
-						
-						final NotificationManager push = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-						builder.build().flags |= Notification.FLAG_AUTO_CANCEL;
-						push.notify(1, builder.build());
-				}
-				catch(Exception e) {
-				}
-		} else {
-				if (Build.VERSION.SDK_INT <= 20) {
-						com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "IMPORTANT NOTE: After installing and logging-in, make sure to reopen or force stop the app to enable the patched features.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-				}
+		if (DISABLE_NOTIFICATION.getString("DISABLE", "").equals("ON")) {
+			disable_notification_switch.setChecked(true);
 		}
-		
+		else {
+			if (DISABLE_NOTIFICATION.getString("DISABLE", "").equals("OFF")) {
+				disable_notification_switch.setChecked(false);
+				_Install_Reminder();
+			}
+		}
 	}
 	
 	
@@ -16253,6 +17058,145 @@ public class MainActivity extends AppCompatActivity {
 		AlertDialog.setCancelable(false);
 		AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
 		AlertDialog.show();
+		
+	}
+	
+	
+	public void _Hide_Patched() {
+		if (HIDE_PATCHED.getString("SWITCH_A", "").equals("ON")) {
+			hide_stock_patched_switch.setChecked(true);
+			main_box_1.setVisibility(View.GONE);
+		}
+		else {
+			if (HIDE_PATCHED.getString("SWITCH_A", "").equals("OFF")) {
+				hide_stock_patched_switch.setChecked(false);
+				main_box_1.setVisibility(View.VISIBLE);
+			}
+		}
+		if (HIDE_PATCHED.getString("SWITCH_B", "").equals("ON")) {
+			hide_amoled_patched_switch.setChecked(true);
+			main_box_2.setVisibility(View.GONE);
+		}
+		else {
+			if (HIDE_PATCHED.getString("SWITCH_B", "").equals("OFF")) {
+				hide_amoled_patched_switch.setChecked(false);
+				main_box_2.setVisibility(View.VISIBLE);
+			}
+		}
+		if (HIDE_PATCHED.getString("SWITCH_C", "").equals("ON")) {
+			hide_lite_patched_switch.setChecked(true);
+			main_box_3.setVisibility(View.GONE);
+		}
+		else {
+			if (HIDE_PATCHED.getString("SWITCH_C", "").equals("OFF")) {
+				hide_lite_patched_switch.setChecked(false);
+				main_box_3.setVisibility(View.VISIBLE);
+			}
+		}
+		if (HIDE_PATCHED.getString("SWITCH_D", "").equals("ON")) {
+			hide_wave_patched_switch.setChecked(true);
+			main_box_12.setVisibility(View.GONE);
+			main_box_7.setVisibility(View.GONE);
+		}
+		else {
+			if (HIDE_PATCHED.getString("SWITCH_D", "").equals("OFF")) {
+				hide_wave_patched_switch.setChecked(false);
+				main_box_12.setVisibility(View.VISIBLE);
+				main_box_7.setVisibility(View.VISIBLE);
+			}
+		}
+		if (!hide_stock_patched_switch.isChecked() && (hide_amoled_patched_switch.isChecked() && (hide_lite_patched_switch.isChecked() && hide_wave_patched_switch.isChecked()))) {
+			main_box_12.setVisibility(View.GONE);
+			main_box_19.setVisibility(View.VISIBLE);
+		}
+		else {
+			if (hide_stock_patched_switch.isChecked() && (!hide_amoled_patched_switch.isChecked() && (hide_lite_patched_switch.isChecked() && hide_wave_patched_switch.isChecked()))) {
+				main_box_12.setVisibility(View.GONE);
+				main_box_19.setVisibility(View.VISIBLE);
+			}
+			else {
+				if (hide_stock_patched_switch.isChecked() && (hide_amoled_patched_switch.isChecked() && (!hide_lite_patched_switch.isChecked() && hide_wave_patched_switch.isChecked()))) {
+					main_box_12.setVisibility(View.GONE);
+					main_box_19.setVisibility(View.VISIBLE);
+				}
+				else {
+					if (hide_stock_patched_switch.isChecked() && (hide_amoled_patched_switch.isChecked() && (hide_lite_patched_switch.isChecked() && !hide_wave_patched_switch.isChecked()))) {
+						main_box_12.setVisibility(View.GONE);
+						main_box_19.setVisibility(View.VISIBLE);
+					}
+					else {
+						if (hide_stock_patched_switch.isChecked() && (hide_amoled_patched_switch.isChecked() && (hide_lite_patched_switch.isChecked() && hide_wave_patched_switch.isChecked()))) {
+							main_box_12.setVisibility(View.GONE);
+							main_box_19.setVisibility(View.GONE);
+						}
+						else {
+							if (!hide_stock_patched_switch.isChecked() && (!hide_amoled_patched_switch.isChecked() && (!hide_lite_patched_switch.isChecked() && !hide_wave_patched_switch.isChecked()))) {
+								main_box_12.setVisibility(View.VISIBLE);
+								main_box_19.setVisibility(View.VISIBLE);
+							}
+							else {
+								if (hide_stock_patched_switch.isChecked() && (!hide_amoled_patched_switch.isChecked() && (!hide_lite_patched_switch.isChecked() && !hide_wave_patched_switch.isChecked()))) {
+									main_box_12.setVisibility(View.VISIBLE);
+									main_box_19.setVisibility(View.VISIBLE);
+								}
+								else {
+									if (!hide_stock_patched_switch.isChecked() && (hide_amoled_patched_switch.isChecked() && (!hide_lite_patched_switch.isChecked() && !hide_wave_patched_switch.isChecked()))) {
+										main_box_12.setVisibility(View.VISIBLE);
+										main_box_19.setVisibility(View.VISIBLE);
+									}
+									else {
+										if (!hide_stock_patched_switch.isChecked() && (!hide_amoled_patched_switch.isChecked() && (hide_lite_patched_switch.isChecked() && !hide_wave_patched_switch.isChecked()))) {
+											main_box_12.setVisibility(View.VISIBLE);
+											main_box_19.setVisibility(View.VISIBLE);
+										}
+										else {
+											if (!hide_stock_patched_switch.isChecked() && (!hide_amoled_patched_switch.isChecked() && (!hide_lite_patched_switch.isChecked() && hide_wave_patched_switch.isChecked()))) {
+												main_box_12.setVisibility(View.GONE);
+												main_box_19.setVisibility(View.VISIBLE);
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	
+	public void _Hide_Reminder() {
+		com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Requires app to restart for changes to take effect", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+	}
+	
+	
+	public void _Install_Reminder() {
+		if (Build.VERSION.SDK_INT >= 21) {
+				try {
+						final String App = "xManager";
+						final String contentTitle = "IMPORTANT NOTE";
+						final String contentMessage = "After installing and logging-in, make sure to reopen or force stop the app to enable the patched features.";
+						
+						androidx.core.app.NotificationCompat.Builder builder = new androidx.core.app.NotificationCompat.Builder(MainActivity.this, "id 1");
+						builder.setStyle(new androidx.core.app.NotificationCompat.BigTextStyle(builder).bigText(contentMessage)
+						.setBigContentTitle(contentTitle))
+						.setContentTitle(contentTitle)
+						.setContentText(contentMessage)
+						.setSmallIcon(R.drawable.icon_notification)
+						.setAutoCancel(true);
+						
+						final NotificationManager push = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+						builder.build().flags |= Notification.FLAG_AUTO_CANCEL;
+						push.notify(1, builder.build());
+				}
+				catch(Exception e) {
+				}
+		} else {
+				if (Build.VERSION.SDK_INT <= 20) {
+						com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "IMPORTANT NOTE: After installing and logging-in, make sure to reopen or force stop the app to enable the patched features.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+				}
+		}
 		
 	}
 	
