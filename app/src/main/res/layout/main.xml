@@ -1907,7 +1907,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="5dp"
-					android:text="Marco | gdonisi | albertopasqualetto"
+					android:text="albertopasqualetto | Marco | gdonisi"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />

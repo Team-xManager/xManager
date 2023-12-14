@@ -78,7 +78,7 @@ We will support the app as long as we can. Internal improvements may not be guar
 | **French Translation** | The Punisher \| Luxchar \| xerta555 \| GlThibault |
 | **Greek Translation** | Walter's Cousin #CAF |
 | **Indonesian Translation** | Mc.J \| Deraidos |
-| **Italian Translation** | Marco \| gdonisi \| albertopasqualetto |
+| **Italian Translation** | albertopasqualetto \| Marco \| gdonisi |
 | **Portuguese - Brazil Translation** | Loui's™ \| Zilberto Junior |
 | **Portuguese - Portugal Translation** | Androide323 |
 | **Romanian Translation**              | NACH \| f9branza \| StephenTheMoldovan |
