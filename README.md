@@ -66,7 +66,7 @@ We will support the app as long as we can. Internal improvements may not be guar
 | ------------- | ------------- |
 | **Developer** | xC3FFF0E |
 | **Manager Hosting Links** | jetfire</br>Wu Tang Clam |
-| **Contributors** | RishavG</br>meech</br>jetfire</br>Sherlock Holmes</br>Wu Tang Clam</br>Zach</br>aha</br>100RABH</br>juznem</br>Light Yagami</br>Tunelover (Mobilism Team)</br>jar3cki (Manager Tester)</br>cryiotic3 (Manager Icon)</br>farish278 (Manager Icon)</br>zankyr (Notification Fixed)</br>Arian04 (Duplicate Attributes)</br>roosphx (Login Fixed) |
+| **Contributors** | RishavG</br>meech</br>jetfire</br>Sherlock Holmes</br>Wu Tang Clam</br>Zach</br>aha</br>100RABH</br>juznem</br>Light Yagami</br>Tunelover (Mobilism Team)</br>jar3cki (Manager Tester)</br>slavrom21 (Monet Icon)</br>cryiotic3 (Manager Icon)</br>farish278 (Manager Icon)</br>zankyr (Notification Fixed)</br>Arian04 (Duplicate Attributes)</br>roosphx (Login Fixed) |
 
 ---
 
@@ -77,7 +77,7 @@ We will support the app as long as we can. Internal improvements may not be guar
 | **Chinese - Simplified Translation** | Gent G \| Softland99 \| zelixdxin |
 | **French Translation** | The Punisher \| Luxchar \| xerta555 \| GlThibault |
 | **Greek Translation** | Walter's Cousin #CAF |
-| **Indonesian Translation** | Mc.J \| Deraidos |
+| **Indonesian Translation** | Mc.J \| Deraidos \| RelvinArsenio |
 | **Italian Translation** | albertopasqualetto \| Marco \| gdonisi |
 | **Portuguese - Brazil Translation** | Loui's™ \| Zilberto Junior |
 | **Portuguese - Portugal Translation** | Androide323 |
@@ -89,7 +89,7 @@ We will support the app as long as we can. Internal improvements may not be guar
 | **Ukrainian Translation**             | NIKITA🇺🇦[beryllium] #PocoForEver |
 | **Korean Translation**                | Apious \| Annyeong-One |
 | **Dutch Translation**                 | Kevin |
-| **Vietnamese Translation**            | minhtamvn |
+| **Vietnamese Translation**            | minhtamvn \| tungnnnt17 |
 | **German Translation**                | smokedzn |
 | **Persian Translation**               | ohshahab |
 | **Hebrew Translation**                | GreenArmy18 |
