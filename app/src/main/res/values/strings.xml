@@ -180,7 +180,98 @@
     <string name="open_settings_01" translatable="true">সেটিংস খুলুন</string>
     <string name="open_patched_01" translatable="true">প্যাচড খুলুন</string>
     <string name="reboot_01" translatable="true">পুনরায় লোড করুন এবং পুনরায় চালু করুন</string>
-    
+	
+    <!--HINDI LANGUAGE-->
+ <string name="app_name" translatable="true">xManager</string>
+    <string name="installed" translatable="true">स्थापित</string>
+    <string name="latest" translatable="true">नवीनतम</string>
+    <string name="versions" translatable="true">संस्करण </string>
+    <string name="changelogs" translatable="true">परिवर्तन लेख</string>
+    <string name="manager_tools" translatable="true">प्रबंधक साधन</string>
+    <string name="source" translatable="true">स्रोत</string>
+    <string name="support" translatable="true">टेलीग्राम</string>
+    <string name="donate" translatable="true">समर्थन</string>
+    <string name="discord" translatable="true">डिस्कॉर्ड</string>
+    <string name="about" translatable="true">बारे में</string>
+    <string name="main_title" translatable="true">xManager</string>
+    <string name="settings_title" translatable="true">Settings</string>
+    <string name="about_title" translatable="true">बारे में</string>
+    <string name="list_auto_refresh" translatable="true">सूची ऑटो-रिफ़्रेश</string>
+    <string name="list_auto_refresh_desc" translatable="true">इसको इंस्टॉल करने से सूची आपके एप्लिकेशन लॉन्च होने पर स्वत: रिफ़्रेश होगी।\n\nआप मुख्य स्क्रीन को नीचे खींचकर सूची को मैन्युअली रिफ़्रेश कर सकते हैं।</string>
+    <string name="force_auto_install" translatable="true">बलपूर्वक स्वत: स्थापित करें</string>
+    <string name="force_auto_install_desc" translatable="true">इसे इंस्टॉल करने से पैच किए गए एप्लिकेशन को स्वत: ही स्थापित करा जाएगा और एक बार डाउनलोड होने के बाद अपडेट कर दी जाएगी।</string>
+    <string name="show_themes" translatable="true">थीम्स</string>
+    <string name="apk_location" translatable="true">APK स्थान</string>
+    <string name="apk_location_desc" translatable="true">यहाँ वह निर्दिष्टकृत स्थान है जहां आप डाउनलोड की गई फ़ाइल की प्रतिलिपि सहेजना चाहते हैं। इस सुविधा को कैसे कॉन्फ़िगर करें, इसका ज्ञान नहीं होने पर, इसे ऐसा ही छोड़ दें।\n\nनोट: इस सुविधा में बाह्य स्टोरेज (एसडी कार्ड) का समर्थन नहीं है क्योंकि पहुँचने, अनुमतियों और स्टोरेज की सीमाओं के कारण।</string>
+    <string name="clear_directory_folders" translatable="true">निर्देशिका फ़ोल्डर को साफ़ करें</string>
+    <string name="clear_directory_folders_desc" translatable="true">निर्देशिका फ़ोल्डर को हटाने के लिए टैप करें। इसमें डाउनलोड की गई फ़ाइलें और अपडेट्स शामिल हैं</string>
+    <string name="reset_preferences" translatable="true">प्राथमिकताएँ रीसेट करें</string>
+    <string name="about_sub" translatable="true">विज्ञापन रहित | नए सुविधाएँ | स्वतंत्रता</string>
+    <string name="xmanager_dev" translatable="true">xManager डेवेलपर्स</string>
+    <string name="patched_devs" translatable="true">पैच किए गए डेवेलपर्स</string>
+    <string name="support_team" translatable="true">टेलीग्राम | डिस्कॉर्ड | रेडिट समर्थन टीम</string>
+    <string name="manager_testers" translatable="true">पैच्ड और प्रबंधक परीक्षक</string>
+    <string name="manager_hosting" translatable="true">प्रबंधक डेटाबेस और होस्टिंग्स</string>
+    <string name="mobilism_team" translatable="true">मोबाइलिस्म टीम</string>
+    <string name="forum_team" translatable="true">FORUM.APK-RELEASE.NET टीम</string>
+    <string name="contributors" translatable="true">सभी योगदानकर्ताओं का धन्यवाद! ❤️</string>
+    <string name="download_selected" translatable="true">आपने इस पैच किए गए संस्करण को चुना है। क्या आप जारी रखना चाहते हैं?</string>
+    <string name="download_ready" translatable="true">पैच की गई जानकारी</string>
+    <string name="download_ready_desc" translatable="true">यह पैच पूर्ववत बाह्य निर्देशिका में स्थित पिछली फ़ाइल को अधिलेखित कर देगा। सतर्कता से आगे बढ़ें।</string>
+    <string name="downloading_file" translatable="true">फ़ाइल डाउनलोड हो रही है।</string>
+    <string name="download_success" translatable="true">सफलतापूर्वक डाउनलोड हो गया</string>
+    <string name="new_update" translatable="true"नई प्रबंधक अपडेट</string>
+    <string name="continue_1" translatable="true">जारी रखें</string>
+    <string name="cancel" translatable="true">रद्द करें</string>
+    <string name="download" translatable="true">डाउनलोड करेंD</string>
+    <string name="later" translatable="true">बाद में</string>
+    <string name="install_now" translatable="true">इंस्टॉल करें</string>
+    <string name="install_update" translatable="true">इंस्टॉल अपडेट</string>
+    <string name="go_back" translatable="true">पीछे जाओ</string>
+    <string name="download_update" translatable="true">डाउनलोड अपडेट</string>
+    <string name="not_now" translatable="true">अभी नहीं</string>
+    <string name="mirror" translatable="true">मिरर लिंक</string>
+    <string name="lite" translatable="true">लाइट</string>
+    <string name="experimental_title" translatable="true">प्रयोगात्मक</string>
+    <string name="experimental_version" translatable="true">प्रयोगात्मक संस्करण</string>
+    <string name="experimental_version_desc" translatable="true">इसे सक्षम करने से आपको पैच किए गए एप्लिकेशन का प्रयोगात्मक संस्करण डाउनलोड और स्थापित करने की अनुमति होती है।\n\nइसमें ऐसी सुविधाएं शामिल हैं जो स्टॉक पैच के भीतर उपलब्ध नहीं हैं, जैसे कि एल्फा, बीटा, और इयरली एक्सेस। इसके अलावा, स्थिरता की कोई गारंटी नहीं है।</string>
+    <string name="show_support" translatable="true">अपना समर्थन दिखाएं</string>
+    <string name="show_support_desc" translatable="true">हम एक नॉन-प्रॉफिट, गैर-कॉर्पोरेट और गैर-समझौता टीम हैं। आपकी तरह के लोग हमें प्रेरित करते हैं कि हम एक एप्लिकेशन बनाएं जो विशेषकर डाउनलोडिंग से स्थापित करने तक को बहुत सरल बना दे।\n\nहम सभी अपने समय और सर्वोत्तम प्रयासों को लगा रहे हैं ताकि हर चीज़ सही और पूरी हो। हम इस ऐप का समर्थन करने के लिए जितना संभव है, उतना करेंगे।\n\nकोई भी राशि मदद करेगी और हमें बहुत सराहनीय लगेगा।</string>
+    <string name="maintenance" translatable="true">रखरखाव</string>
+    <string name="maintenance_desc" translatable="true">xManager वर्तमान में अनुपलब्ध है। कृपया बाद में पुनः प्रयास करें।"</string>
+    <string name="thanks" translatable="true">धन्यवाद!</string>
+    <string name="language" translatable="true">भाषा</string>
+    <string name="website" translatable="true">वेबसाइट</string>
+    <string name="reddit" translatable="true">रेडिट</string>
+   <string name="faq" translatable="true">सामान्य प्रश्न</string>
+   <string name="cloned_version" translatable="true">क्लोन किया गया संस्करण</string>
+   <string name="cloned_version_desc" translatable="true">इसे सक्षम करने से आपको पैच किए गए एप्लिकेशन के क्लोन संस्करण को डाउनलोड और स्थापित करने की अनुमति होगी।\n\nइससे आपको इंस्टॉलेशन त्रुटियों या समस्याओं का हल होगा, खासकर अगर आपके पास पहले से ही स्पॉटीफ़ाई एप्लिकेशन स्थापित है।</string>
+   <string name="disable_rewarded_ads" translatable="true">पुरस्कृत विज्ञापनों को अक्षम करें</string>
+   <string name="disable_rewarded_ads_desc" translatable="true">हम जानते हैं कि हमें अधिकांश विज्ञापनों से नफरत है, लेकिन हमारे मामले में यह हमें हमारे डेटाबेस, होस्टिंग लिंक्स, अपडेट्स, और दैनिक आवश्यकताओं को अनुदान करने में मदद करता है।\n\nयह हमें बिना कुछ दान या खर्च किए हमारा समर्थन करने का सबसे सरल तरीका है।</string>
+   <string name="installation_failed" translatable="true">स्थापना विफल हो गई</string>
+   <string name="installation_failed_desc" translatable="true">कारण: आपने उस समय का पैच किए गए संस्करण को स्थापित करने का प्रयास किया जो वर्तमान में स्थापित है।\n\nसमाधान:\nA. बराबर या उच्च संस्करण का चयन करें।\nB. वर्तमान संस्करण को अनइंस्टॉल करें, फिर डाउनग्रेड करें।\n\nयदि समस्या बनी रहती है, तो FAQ देखें।</string>
+   <string name="installation_failed_spap_desc" translatable="true">कारण: इस उपकरण पर वर्तमान में स्थापित पैच का सीधा रूप से xManager या हमारी टीम से नहीं आया था।\n\nसमाधान: एप्लिकेशन का वर्तमान संस्करण अनइंस्टॉल करें, xManager को पुनरारंभ करें और पुनः प्रयास करें। यदि समस्या बनी रहती है, तो FAQ देखें।</string>
+   <string name="installation_failed_cloned_desc" translatable="true">कारण: इस उपकरण पर वर्तमान में स्थापित क्लोन किया गया संस्करण सीधा रूप से xManager या हमारी टीम से नहीं आया था।\n\nसमाधान: एप्लिकेशन का वर्तमान संस्करण अनइंस्टॉल करें, xManager को पुनरारंभ करें और पुनः प्रयास करें। यदि समस्या बनी रहती है, तो FAQ देखें।</string>
+    <string name="existing_patched" translatable="true">मौजूदा पैच्ड</string>
+    <string name="existing_patched_desc" translatable="true">एक मौजूदा पैच को बाह्य निर्देशिका में पहचाना गया है। आप कौनसी क्रिया करना चाहेंगे?</string>
+    <string name="disable_notification" translatable="true">सूचना अक्षम करें</string>
+    <string name="disable_notification_desc" translatable="true">इसे इंस्टॉल करने से पैच किए गए एप्लिकेशन को स्थापित करने के बाद याद दिलाने वाले सूचना को हटा दिया जाएगा।</string>
+    <string name="hide_stock_patched" translatable="true">हाइड स्टॉक पैच्ड</string>
+    <string name="hide_amoled_patched" translatable="true">हाइड एमोलेड पैच्ड</string>
+    <string name="hide_lite_patched" translatable="true">हाइड लाइट पैच्ड</string>
+    <string name="hide_wave_patched" translatable="true">हाइड वेव पैच्ड</string>
+    <string name="close" translatable="true">बंद करें</string>
+    <string name="cloned" translatable="true">क्लोन किया गया</string>
+    <string name="spap" translatable="true">SP/AP</string>
+    <string name="install" translatable="true">इंस्टॉल करेंL</string>
+    <string name="uninstall" translatable="true">अनइंस्टॉल करें</string>
+    <string name="ignore" translatable="true">अनदेखा करें</string>
+    <string name="delete" translatable="true">हटाएं</string>
+    <string name="uninstall_patched" translatable="true">पैच को अनइंस्टॉल करें</string>
+    <string name="open_settings" translatable="true">सेटिंग्स खोलें</string>
+    <string name="open_patched" translatable="true">पैच को खोलें</string>
+    <string name="reboot" translatable="true">फिर से पुनः आक्षेपित करें और पुनः आरंभ करें</string>
+	
     <!--CHINESE (SIMPLIFIED) LANGUAGE-->
     <string name="app_name_02" translatable="true">xManager</string>
     <string name="installed_02" translatable="true">已装版本</string>
