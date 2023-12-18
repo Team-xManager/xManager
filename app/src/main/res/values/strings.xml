@@ -2823,6 +2823,97 @@
     <string name="open_settings_30" translatable="true">OTVORITE PODEŠAVANjA</string>
     <string name="open_patched_30" translatable="true">OTVORITE PEČ</string>
     <string name="reboot_30" translatable="true">PRIK. POD. I RESTARTUJ</string>
+
+    <!--CROATIAN LANGUAGE-->
+    <string name="app_name" translatable="true">xManager</string>
+    <string name="installed" translatable="true">INSTALIRANO</string>
+    <string name="latest" translatable="true">AKTUALNI</string>
+    <string name="versions" translatable="true">VERZIJE </string>
+    <string name="changelogs" translatable="true">CHANGELOG</string>
+    <string name="manager_tools" translatable="true">ALATI</string>
+    <string name="source" translatable="true">SOURCE</string>
+    <string name="support" translatable="true">TELEGRAM</string>
+    <string name="donate" translatable="true">SPONZORIRANJE</string>
+    <string name="discord" translatable="true">DISCORD</string>
+    <string name="about" translatable="true">INFORMACIJE</string>
+    <string name="main_title" translatable="true">xManager</string>
+    <string name="settings_title" translatable="true">Postavke</string>
+    <string name="about_title" translatable="true">INFORMACIJE</string>
+    <string name="list_auto_refresh" translatable="true">AUTOMATSKO OSVJEŽAVANJE POPISA</string>
+    <string name="list_auto_refresh_desc" translatable="true">Ako omogućite ovu opciju, popis će se automatski osvježiti svaki put kada pokrenete aplikaciju.\n\nMožete ručno osvježiti popis povlačenjem glavnog zaslona prema dolje..</string>
+    <string name="force_auto_install" translatable="true">PRISILNA AUTO-INSTALACIJA</string>
+    <string name="force_auto_install_desc" translatable="true">Ako omogućite ovu opciju, automatski će se instalirati zakrpana aplikacija i ažuriranje nakon što se preuzmu.</string>
+    <string name="show_themes" translatable="true">TEME</string>
+    <string name="apk_location" translatable="true">LOKACIJA APK</string>
+    <string name="apk_location_desc" translatable="true">Lokaciju u kojem želite spremiti kopiju preuzete datoteke. Ako ne znate kako konfigurirati ovu značajku, ostavite je ovakvu kakva jest.\n\nNAPOMENA: Ova značajka ne podržava vanjsku pohranu (SD karticu) zbog pristupačnosti, dozvola i ograničenja pohrane.</string>
+    <string name="clear_directory_folders" translatable="true">OBRIŠI DIREKTORIJ</string>
+    <string name="clear_directory_folders_desc" translatable="true">Dodirnite da biste izbrisali direktorij. To uključuje preuzete datoteke i ažuriranja.</string>
+    <string name="reset_preferences" translatable="true">RESET POSTAVKI</string>
+    <string name="about_sub" translatable="true">'Ad-Free' | Nove značajke | Sloboda</string>
+    <string name="xmanager_dev" translatable="true">xManager Developer</string>
+    <string name="patched_devs" translatable="true">Patched Developeri</string>
+    <string name="support_team" translatable="true">Telegram | Discord | Reddit Korisnička Služba</string>
+    <string name="manager_testers" translatable="true">Testeri zakrpanih i Manager aplikacija</string>
+    <string name="manager_hosting" translatable="true">Baza podataka i hosting Managera</string>
+    <string name="mobilism_team" translatable="true">Mobilism Tim</string>
+    <string name="forum_team" translatable="true">FORUM.APK-RELEASE.NET TIM</string>
+    <string name="contributors" translatable="true">ZAHVALA SVIM SPONZORIMA! ❤️</string>
+    <string name="download_selected" translatable="true">Odabrali ste ovu zakrpanu verziju. Želite li nastaviti?</string>
+    <string name="download_ready" translatable="true">INFORMACIJE O ZAKRPANOJ APLIKACIJI</string>
+    <string name="download_ready_desc" translatable="true">Ova zakrpana aplikacija će izbrisati prethodnu datoteku koja se nalazi u vanjskom direktoriju. Budite oprezni.</string>
+    <string name="downloading_file" translatable="true">PREUZIMANJE DATOTEKE</string>
+    <string name="download_success" translatable="true">USPJEŠNO PREUZETO</string>
+    <string name="new_update" translatable="true">NOVO AŽURIRANJE MANAGERA</string>
+    <string name="continue_1" translatable="true">NASTAVI</string>
+    <string name="cancel" translatable="true">ODUSTANI</string>
+    <string name="download" translatable="true">PREUZMI</string>
+    <string name="later" translatable="true">KASNIJE</string>
+    <string name="install_now" translatable="true">INSTALIRAJ ZAKRPANU APLIKACIJU</string>
+    <string name="install_update" translatable="true">INSTALIRAJ AŽURIRANJE</string>
+    <string name="go_back" translatable="true">VRATI SE</string>
+    <string name="download_update" translatable="true">PREUZMI AŽURIRANJE</string>
+    <string name="not_now" translatable="true">NE SADA</string>
+    <string name="mirror" translatable="true">MIRROR LINK</string>
+    <string name="lite" translatable="true">LITE</string>
+    <string name="experimental_title" translatable="true">Eksperimentalno</string>
+    <string name="experimental_version" translatable="true">EKSPERIMENTALNA VERZIJA</string>
+    <string name="experimental_version_desc" translatable="true">Omogućavanjem ove opcije možete preuzeti i instalirati eksperimentalnu verziju zakrpane aplikacije.\n\nTo uključuje alfa, beta i rane pristupne značajke koje nisu dostupne u standardnoj zakrpanoj aplikaciji. Osim toga, nije garantirano stabilna.</string>
+    <string name="show_support" translatable="true">POKAŽITE PODRŠKU</string>
+    <string name="show_support_desc" translatable="true">Mi smo neprofitni, nekorporativni i nekompromitirani tim. Ljudi poput vas potiču nas da stvorimo aplikaciju koja će olakšati stvari, posebno od preuzimanja do instaliranja.\n\nUlijevamo sve svoje vrijeme i najbolje napore samo da bismo napravili stvari ispravno i savršeno. Učinit ćemo sve što možemo da podržimo ovu aplikaciju dokle god možemo.\n\nBilo koji iznos će pomoći i biti će vrlo cijenjen!</string>
+    <string name="maintenance" translatable="true">ODRŽAVANJE</string>
+    <string name="maintenance_desc" translatable="true">Aplikacija je trenutno nedostupna. Molimo vas da budete strpljivi dok ne riješimo probleme. Hvala na razumijevanju</string>
+    <string name="thanks" translatable="true">HVALA!</string>
+    <string name="language" translatable="true">JEZIK</string>
+    <string name="website" translatable="true">STRANICA</string>
+    <string name="reddit" translatable="true">REDDIT</string>
+    <string name="faq" translatable="true">FAQ</string>
+    <string name="cloned_version" translatable="true">KLONIRANA VERZIJA</string>
+    <string name="cloned_version_desc" translatable="true">Omogućavanjem ove opcije možete preuzeti i instalirati kloniranu verziju zakrpane aplikacije.\n\nTo će također riješiti većinu pogrešaka ili problema pri instalaciji, isto ako imate već instaliranu Spotify aplikaciju.</string>
+    <string name="disable_rewarded_ads" translatable="true">ONEMOGUĆI OGLASE</string>
+    <string name="disable_rewarded_ads_desc" translatable="true">Znamo da većina nas ne voli oglase, ali u našem slučaju, to nam znatno pomaže da financiramo našu bazu podataka, linkove za hosting, ažuriranja, više zakrpanih aplikacija i dnevne potrebe.\n\nOvo je najjednostavniji način da nas podržite bez doniranja ili trošenja ičega.</string>
+    <string name="installation_failed" translatable="true">INSTALACIJA NIJE USPJELA</string>
+    <string name="installation_failed_desc" translatable="true">Razlog: Pokušali ste instalirati zakrpanu verziju nižu od one koja je trenutno instalirana.\n\nRješenja:\nA. Odaberite verziju jednaku ili veću od trenutne.\nB. Deinstalirajte trenutnu verziju, a zatim je snizite.\n\nAko se problem nastavi, provjerite</string>
+    <string name="installation_failed_spap_desc" translatable="true">Razlog: Trenutna zakrpana aplikacija instalirana na ovom uređaju nije došla izravno od xManagera ili od našeg tima.\n\nRješenje: Deinstalirajte trenutnu verziju aplikacije, ponovno pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, provjerite FAQ</string>
+    <string name="installation_failed_cloned_desc" translatable="true">Razlog: Trenutna zakrpana aplikacija instalirana na ovom uređaju nije došla izravno od xManagera ili od našeg tima.\n\nRješenje: Deinstalirajte trenutnu verziju aplikacije, ponovno pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, provjerite FAQ</string>
+    <string name="existing_patched" translatable="true">POSTOJEĆA ZAKRPANA APLIKACIJA</string>
+    <string name="existing_patched_desc" translatable="true">U vanjskom direktoriju je otkrivena postojeća zakrpana aplikacija. Što želite poduzeti?</string>
+    <string name="disable_notification" translatable="true">DISABLE NOTIFICATION</string>
+    <string name="disable_notification_desc" translatable="true">ONEMOGUĆI OBAVIJEST</string>
+    <string name="hide_stock_patched" translatable="true">SAKRIJ STOCK MOD</string>
+    <string name="hide_amoled_patched" translatable="true">SAKRIJ AMOLED MOD</string>
+    <string name="hide_lite_patched" translatable="true">SAKRIJ LITE MOD</string>
+    <string name="hide_wave_patched" translatable="true">SAKRIJ WAVE MOD</string>
+    <string name="close" translatable="true">ZATVORITI</string>
+    <string name="cloned" translatable="true">KLONIRANO</string>
+    <string name="spap" translatable="true">SP/AP</string>
+    <string name="install" translatable="true">INSTALIRANJE</string>
+    <string name="uninstall" translatable="true">DEINSTALIRANJE</string>
+    <string name="ignore" translatable="true">IGNORIRATI</string>
+    <string name="delete" translatable="true">IZBRISATI</string>
+    <string name="uninstall_patched" translatable="true">DEINSTALACIJA ZAKRPANE APLIKACIJE</string>
+    <string name="open_settings" translatable="true">OTVORITI POSTAVKE</string>
+    <string name="open_patched" translatable="true">OTVORITI ZAKRPANU VERZIJU</string>
+    <string name="reboot" translatable="true">REFETCH AND REBOOT</string>
     
     <!--CATALAN LANGUAGE-->
     <string name="app_name_31" translatable="true">xManager</string>
