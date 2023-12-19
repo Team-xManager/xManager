@@ -3,7 +3,7 @@
     <string name="app_name" translatable="true">xManager</string>
     <string name="installed" translatable="true">INSTALLED</string>
     <string name="latest" translatable="true">LATEST</string>
-    <string name="versions" translatable="true">VERSIONS  </string>
+    <string name="versions" translatable="true">VERSIONS</string>
     <string name="changelogs" translatable="true">CHANGELOGS</string>
     <string name="manager_tools" translatable="true">MANAGER TOOLS</string>
     <string name="source" translatable="true">SOURCE</string>
@@ -52,7 +52,7 @@
     <string name="lite" translatable="true">LITE</string>
     <string name="experimental_title" translatable="true">Experimental</string>
     <string name="experimental_version" translatable="true">EXPERIMENTAL VERSION</string>
-    <string name="experimental_version_desc" translatable="true">Enabling this allow you to download and install the experimental version of the patched application.\n\nThis includes alpha, beta and early accesss features that are not available in the stock patched. In addition, not guaranteed stable.</string>
+    <string name="experimental_version_desc" translatable="true">Enabling this allow you to download and install the experimental version of the patched application.\n\nThis includes alpha, beta and early access features that are not available in the stock patched. In addition, not guaranteed stable.</string>
     <string name="show_support" translatable="true">SHOW YOUR SUPPORT</string>
     <string name="show_support_desc" translatable="true">We are a non-profit, non-corporate and non-compromised team. People like you encourage us to create an app to make things much easier especially from downloading to installing.\n\nWe are pouring all of our time and best efforts just to make things right and perfect. We will do our best to support this app as long as we could.\n\nAny amount will help and be very much appreciated!</string>
     <string name="maintenance" translatable="true">MAINTENANCE</string>
