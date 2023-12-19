@@ -3369,7 +3369,7 @@
     <string name="open_settings_36" translatable="true">アプリの設定を開く</string>
     <string name="open_patched_36" translatable="true">アプリを開く</string>
     <string name="reboot_36" translatable="true">再読み込みと再起動</string>
-	
+
     <!--NEPALI LANGUAGE-->
     <string name="app_name_37" translatable="true">xManager</string>
     <string name="installed_37" translatable="true">स्थापना गरियो</string>
@@ -3551,4 +3551,95 @@
     <string name="open_settings_38" translatable="true">அமைப்புகளைத் திற</string>
     <string name="open_patched_38" translatable="true">ஓபன் பேட்ச்</string>
     <string name="reboot_38" translatable="true">மீட்டெடுத்து மீண்டும் துவக்கவும்</string>
+
+    <!--MARATHI LANGUAGE-->
+    <string name="app_name" translatable="true">xManager</string>
+    <string name="installed" translatable="true">इन्स्टॉल केले</string>
+    <string name="latest" translatable="true">नवीनतम</string>
+    <string name="versions" translatable="true">आवृत्त्या</string>
+    <string name="changelogs" translatable="true">बदल</string>
+    <string name="manager_tools" translatable="true">मॅनेजर साधने</string>
+    <string name="source" translatable="true">स्रोत</string>
+    <string name="support" translatable="true">टेलीग्राम</string>
+    <string name="donate" translatable="true">समर्थन</string>
+    <string name="discord" translatable="true">डिसकॉर्ड</string>
+    <string name="about" translatable="true">विषयी</string>
+    <string name="main_title" translatable="true">xManager</string>
+    <string name="settings_title" translatable="true">सेटिंग्ज</string>
+    <string name="about_title" translatable="true">विषयी</string>
+    <string name="list_auto_refresh" translatable="true">सूची ऑटो-रिफ्रेश</string>
+    <string name="list_auto_refresh_desc" translatable="true">हे सक्षम केल्याने तुम्ही प्रत्येक वेळी अॅप्लिकेशन लाँच करता तेव्हा सूची आपोआप रिफ्रेश होईल.\n\nतुम्ही मुख्य स्क्रीन खाली ड्रॅग करून मॅन्युअली सूची रिफ्रेश करू शकता.</string>
+    <string name="force_auto_install" translatable="true">सक्ती ऑटो-इंस्टॉल करा</string>
+    <string name="force_auto_install_desc" translatable="true">हे सक्षम केल्याने पॅच केलेला अनुप्रयोग स्वयंचलितपणे स्थापित होईल आणि एकदा डाउनलोड झाल्यावर अद्यतनित होईल.</string>
+    <string name="show_themes" translatable="true">थीम्स</string>
+    <string name="apk_location" translatable="true">APK स्थान</string>
+    <string name="apk_location_desc" translatable="true">आपण डाउनलोड केलेल्या फाईलची प्रत जतन करू इच्छित असलेली निर्देशिका. तुम्हाला हे वैशिष्ट्य कसे कॉन्फिगर करायचे हे माहित नसल्यास, हे जसे आहे तसे सोडा.\n\nटीप: प्रवेशयोग्यता, परवानग्या आणि स्टोरेज मर्यादांमुळे हे वैशिष्ट्य बाह्य स्टोरेज (SD कार्ड) ला समर्थन देत नाही.</string>
+    <string name="clear_directory_folders" translatable="true">डिरेक्टरी फोल्डर साफ करा</string>
+    <string name="clear_directory_folders_desc" translatable="true">निर्देशिका फोल्डर हटविण्यासाठी टॅप करा. यात डाउनलोड केलेल्या फायली आणि अद्यतने समाविष्ट आहेत.</string>
+    <string name="reset_preferences" translatable="true">प्राधान्ये रीसेट करा</string>
+    <string name="about_sub" translatable="true">जाहिरात-मुक्त | नवीन वैशिष्ट्ये | स्वातंत्र्य</string>
+    <string name="xmanager_dev" translatable="true">xManager विकसक</string>
+    <string name="patched_devs" translatable="true">पॅच विकसक</string>
+    <string name="support_team" translatable="true">टेलीग्राम | डिसकॉर्ड | रेडिट समर्थन टीम</string>
+    <string name="manager_testers" translatable="true">पॅच आणि मॅनेजर टेस्टर्स</string>
+    <string name="manager_hosting" translatable="true">मॅनेजर डेटाबेस आणि होस्टिंग</string>
+    <string name="mobilism_team" translatable="true">मोबिलिझम टीम</string>
+    <string name="forum_team" translatable="true">FORUM.APK-RELEASE.NET टीम</string>
+    <string name="contributors" translatable="true">सर्व योगदानकर्त्यांचे आभार! ❤️</string>
+    <string name="download_selected" translatable="true">आपण ही पॅच आवृत्ती निवडली. आपण सुरू ठेवू इच्छिता?</string>
+    <string name="download_ready" translatable="true">पॅच माहिती</string>
+    <string name="download_ready_desc" translatable="true">हे पॅच बाह्य निर्देशिकेत स्थित मागील फाईल अधिलिखित करेल. सावधगिरीने पुढे जा.</string>
+    <string name="downloading_file" translatable="true">फाईल डाउनलोड करीत आहे</string>
+    <string name="download_success" translatable="true">यशस्वीरित्या डाउनलोड केले</string>
+    <string name="new_update" translatable="true">नवीन मॅनेजर अद्यतन</string>
+    <string name="continue_1" translatable="true">सुरू ठेवा</string>
+    <string name="cancel" translatable="true">रद्द करा</string>
+    <string name="download" translatable="true">डाउनलोड करा</string>
+    <string name="later" translatable="true">नंतर</string>
+    <string name="install_now" translatable="true">पॅच स्थापित करा</string>
+    <string name="install_update" translatable="true">अद्यतन स्थापित करा</string>
+    <string name="go_back" translatable="true">मागे जा</string>
+    <string name="download_update" translatable="true">अद्यतन डाउनलोड करा</string>
+    <string name="not_now" translatable="true">आत्ता नाही</string>
+    <string name="mirror" translatable="true">मिरर लिंक</string>
+    <string name="lite" translatable="true">लाइट</string>
+    <string name="experimental_title" translatable="true">प्रयोगात्मक</string>
+    <string name="experimental_version" translatable="true">प्रयोगात्मक आवृत्ती</string>
+    <string name="experimental_version_desc" translatable="true">हे सक्षम केल्याने तुम्हाला पॅच केलेल्या अनुप्रयोगाची प्रयोगात्मक आवृत्ती डाउनलोड आणि स्थापित करण्याची अनुमती मिळते.\n\nयामध्ये अल्फा, बीटा आणि लवकर प्रवेश वैशिष्ट्ये समाविष्ट आहेत जी स्टॉक पॅचमध्ये उपलब्ध नाहीत. याव्यतिरिक्त, स्थिर हमी नाही.</string>
+    <string name="show_support" translatable="true">तुमचा सपोर्ट दाखवा</string>
+    <string name="show_support_desc" translatable="true">आम्ही एक ना-नफा, नॉन-कॉर्पोरेट आणि तडजोड न केलेली टीम आहोत. तुमच्यासारखे लोक आम्हाला एक अॅप तयार करण्यासाठी प्रोत्साहित करतात जे विशेषतः डाउनलोड करण्यापासून इंस्टॉल करण्यापर्यंतच्या गोष्टी अधिक सोपे करतात.\n\nगोष्टी योग्य आणि परिपूर्ण करण्यासाठी आम्ही आमचा सर्व वेळ आणि सर्वोत्तम प्रयत्न करत आहोत. आम्ही शक्य तितक्या वेळ या अॅपला समर्थन देण्यासाठी आम्ही आमचे सर्वोत्तम प्रयत्न करू.\n\nकोणतीही रक्कम मदत करेल आणि खूप कौतुक होईल!</string>
+    <string name="maintenance" translatable="true">मेन्टेनन्स</string>
+    <string name="maintenance_desc" translatable="true">xManager सध्या अनुपलब्ध आहे. कृपया नंतर पुन्हा प्रयत्न करा.</string>
+    <string name="thanks" translatable="true">धन्यवाद!</string>
+    <string name="language" translatable="true">भाषा</string>
+    <string name="website" translatable="true">वेबसाइट</string>
+    <string name="reddit" translatable="true">रेडिट</string>
+    <string name="faq" translatable="true">FAQ</string>
+    <string name="cloned_version" translatable="true">क्लोन केलेली आवृत्ती</string>
+    <string name="cloned_version_desc" translatable="true">हे सक्षम केल्याने तुम्हाला पॅच केलेल्या अनुप्रयोगाची क्लोन केलेली आवृत्ती डाउनलोड आणि स्थापित करण्याची अनुमती मिळते.\n\nहे बहुतेक इंस्टॉलेशन त्रुटी किंवा समस्यांचे निराकरण करेल, विशेषत: जर तुमच्याकडे पूर्व-स्थापित स्पॉटिफाई ऍप्लिकेशन असेल.</string>
+    <string name="disable_rewarded_ads" translatable="true">बक्षीस दिलेल्या जाहिराती अक्षम करा</string>
+    <string name="disable_rewarded_ads_desc" translatable="true">आम्हाला माहित आहे की आपल्यापैकी बहुतेकांना जाहिराती आवडत नाहीत परंतु आमच्या बाबतीत, हे आम्हाला आमचा डेटाबेस, होस्टिंग लिंक्स, अपडेट्स, अधिक पॅचेस आणि दैनंदिन गरजा पूर्ण करण्यास मदत करते.\n\nकाहीही देणगी किंवा खर्च न करता आम्हाला पाठिंबा देण्याचा हा सर्वात सोपा मार्ग आहे.</string>
+    <string name="installation_failed" translatable="true">इन्स्टॉलेशन अयशस्वी</string>
+    <string name="installation_failed_desc" translatable="true">कारण: तुम्ही सध्या स्थापित केलेल्या आवृत्तीपेक्षा कमी पॅच केलेली आवृत्ती स्थापित करण्याचा प्रयत्न केला आहे.\n\nSolutions:\nA. पेक्षा समान किंवा मोठी आवृत्ती निवडा.\nB. सध्याची आवृत्ती अनइंस्टॉल करा, नंतर डाउनग्रेड करा.\n\nसमस्या कायम राहिल्यास, FAQ तपासा.</string>
+    <string name="installation_failed_spap_desc" translatable="true">कारण: या डिव्हाइसवर स्थापित केलेले वर्तमान पॅच थेट xManager किंवा आमच्या कार्यसंघाकडून आलेले नाही.\n\nउपाय: अनुप्रयोगाची वर्तमान आवृत्ती अनइंस्टॉल करा, xManager रीस्टार्ट करा आणि पुन्हा प्रयत्न करा. समस्या कायम राहिल्यास, FAQ तपासा.</string>
+    <string name="installation_failed_cloned_desc" translatable="true">कारण: या डिव्हाइसवर स्थापित केलेले वर्तमान क्लोन थेट xManager कडून किंवा आमच्या टीमकडून आलेले नाही.\n\nउपाय: अनुप्रयोगाची वर्तमान आवृत्ती अनइंस्टॉल करा, xManager रीस्टार्ट करा आणि पुन्हा प्रयत्न करा. समस्या कायम राहिल्यास, FAQ तपासा.</string>
+    <string name="existing_patched" translatable="true">विद्यमान पॅच केलेले</string>
+    <string name="existing_patched_desc" translatable="true">बाह्य निर्देशिकेत विद्यमान पॅच आढळले आहे. तुम्हाला कोणती कृती करायला आवडेल?</string>
+    <string name="disable_notification" translatable="true">नोटिफिकेशन अक्षम करा</string>
+    <string name="disable_notification_desc" translatable="true">हे सक्षम केल्याने पॅच केलेला अनुप्रयोग स्थापित केल्यानंतर स्मरणपत्र सूचना काढून टाकली जाईल.</string>
+    <string name="hide_stock_patched" translatable="true">स्टॉक पॅच लपवा</string>
+    <string name="hide_amoled_patched" translatable="true">AMOLED पॅच लपवा</string>
+    <string name="hide_lite_patched" translatable="true">लाइट पॅच लपवा</string>
+    <string name="hide_wave_patched" translatable="true">वेव्ह पॅच लपवा</string>
+    <string name="close" translatable="true">क्लोज</string>
+    <string name="cloned" translatable="true">क्लोन केलेले</string>
+    <string name="spap" translatable="true">SP/AP</string>
+    <string name="install" translatable="true">इन्स्टॉल</string>
+    <string name="uninstall" translatable="true">अनइंस्टॉल</string>
+    <string name="ignore" translatable="true">दुर्लक्ष करा</string>
+    <string name="delete" translatable="true">हटवा</string>
+    <string name="uninstall_patched" translatable="true">अनइन्स्टॉल पॅच केलेले</string>
+    <string name="open_settings" translatable="true">सेटिंग्ज उघडा</string>
+    <string name="open_patched" translatable="true">पॅचेड उघडा</string>
+    <string name="reboot" translatable="true">रिफेच आणि रीबूट करा</string>
 </resources>
