@@ -3551,4 +3551,95 @@
     <string name="open_settings_38" translatable="true">அமைப்புகளைத் திற</string>
     <string name="open_patched_38" translatable="true">ஓபன் பேட்ச்</string>
     <string name="reboot_38" translatable="true">மீட்டெடுத்து மீண்டும் துவக்கவும்</string>
+
+    <!--MALAYALAM LANGUAGE-->
+    <string name="app_name" translatable="true">xManager</string>
+    <string name="installed" translatable="true">ഇൻസ്റ്റാൾ ചെയ്തത്</string>
+    <string name="latest" translatable="true">ഏറ്റവും പുതിയത്</string>
+    <string name="versions" translatable="true">വേർഷനുകൾ</string>
+    <string name="changelogs" translatable="true">മാറ്റങ്ങളുടെ പട്ടിക</string>
+    <string name="manager_tools" translatable="true">ഉപകരണങ്ങൾ</string>
+    <string name="source" translatable="true">ഉറവിടം</string>
+    <string name="support" translatable="true">ട്ടെലിഗ്രാം</string>
+    <string name="donate" translatable="true">പിന്തുണ</string>
+    <string name="discord" translatable="true">ഡിസകോർഡ്</string>
+    <string name="about" translatable="true">കുറിച്ച്</string>
+    <string name="main_title" translatable="true">xManager</string>
+    <string name="settings_title" translatable="true">ക്രമീകരണം</string>
+    <string name="about_title" translatable="true">കുറിച്ച്</string>
+    <string name="list_auto_refresh" translatable="true">ലിസ്റ്റ് ഓട്ടോ റിഫ്രെഷ്</string>
+    <string name="list_auto_refresh_desc" translatable="true">ഇത് ഓണാക്കിയാൽ, ആപ്ലിക്കേഷൻ തുറക്കുമ്പോഴെല്ലാം ലിസ്റ്റ് താനേ അപ്ടേറ്റ് ചെയ്യപ്പെടും.\n\nസ്വമേധയാ അപ്ടേറ്റ് ചെയ്യണമെങ്കിൽ, ഹോം സ്ക്രീനിൽ താഴേയ്ക്ക് സ്വൈപ്പ് ചെയ്യുക.</string>
+    <string name="force_auto_install" translatable="true">ഫോഴ്സ് ഓട്ടോ ഇൻസ്റ്റാൾ</string>
+    <string name="force_auto_install_desc" translatable="true">ഇത് ഓണാക്കിയാൽ, പാച്ച് ചെയ്യപ്പെട്ട ആപ്ലിക്കേഷൻ ഡൗൺലോഡായ ഉടൻ ഇൻസ്റ്റാൾ ചെയ്യപ്പെടും.</string>
+    <string name="show_themes" translatable="true">തീമുകൾ</string>
+    <string name="apk_location" translatable="true">APK -യുടെ ഇരിപ്പിടം</string>
+    <string name="apk_location_desc" translatable="true">ഡൗൺലോഡ് ചെയ്ത ഫയൽ സേവ് ചെയ്യപ്പെടുന്ന ഡിറക്ടറി ഫോൾഡർ. ഈ സവിശേഷത എങ്ങനെ കോൺഫിഗർ ചെയ്യണമെന്ന് നിങ്ങൾക്കറിയില്ലെങ്കിൽ, ഇത് അതേപടി വിടുക.\n\nശ്രദ്ധിക്കുക: ഈ സവിശേഷതയിൽ എക്സ്റ്റെണൽ സ്റ്റോറേജുകളായ SD കാർഡ് തുടങ്ങിയവ, വ്യത്യസ്ഥ കാരണങ്ങളാൽ, ഉപയോഗിക്കാൻ പറ്റുന്നതല്ല.</string>
+    <string name="clear_directory_folders" translatable="true">ക്ലിയർ ഡിറക്ടറി ഫോൾഡർ</string>
+    <string name="clear_directory_folders_desc" translatable="true">ഡിറക്ടറി ഫോൾഡർ ഡിലീറ്റ് ചെയ്യുന്നതിനായി ടാപ്പ് ചെയ്യുക. ഡൗൺലോഡ് ചെയ്‌ത ഫയലുകളും അപ്‌ഡേറ്റുകളും ഇതിൽ ഉൾപ്പെടുന്നു.</string>
+    <string name="reset_preferences" translatable="true">മുൻഗണനകൾ റീസെറ്റ് ചെയ്യുക</string>
+    <string name="about_sub" translatable="true">പരസ്യരഹിതം | പുതിയ സവിശേഷതകൾ | സ്വാതന്ത്ര്യം</string>
+    <string name="xmanager_dev" translatable="true">xManager ഡെവലപ്പർ</string>
+    <string name="patched_devs" translatable="true">പാച്ചട് ഡെവലപ്പർസ്</string>
+    <string name="support_team" translatable="true">ടെലിഗ്രാം | ഡിസകോർഡ് | റെഡിറ്റ് സഹായ സംഘം</string>
+    <string name="manager_testers" translatable="true">പരിശോധനക്കാർ</string>
+    <string name="manager_hosting" translatable="true">ഡാറ്റാബേസും ഹോസ്റ്റിംഗും</string>
+    <string name="mobilism_team" translatable="true">മൊബിലിസം ടീം</string>
+    <string name="forum_team" translatable="true">FORUM.APK-RELEASE.NET സംഘം</string>
+    <string name="contributors" translatable="true">സംഭാവന ചെയ്ത എല്ലാവർക്കും നന്ദി ❤️</string>
+    <string name="download_selected" translatable="true">ഈ വെർഷൻ താങ്കൾ സെലക്ട് ചെയ്തിരിക്കുന്നു. തുടരാൻ തയ്യാർ ആണോ?</string>
+    <string name="download_ready" translatable="true">വിവരം</string>
+    <string name="download_ready_desc" translatable="true">ഈ പാച്ച്ഡ് ഡയറക്‌ടറിയിലുള്ള മുമ്പത്തെ ഫയലിനെ തിരുത്തിയെഴുതും. ശ്രദ്ധയോടെ മുൻപൊട്ട് പോകുക.</string>
+    <string name="downloading_file" translatable="true">ഫയൽ ഡൗൺലോഡ് ചെയ്യപ്പെടുന്നു</string>
+    <string name="download_success" translatable="true">വിജയകരമായി ഡൗൺലോഡ് ചെയ്തിരിക്കുന്നു</string>
+    <string name="new_update" translatable="true">പുതിയ അപ്ടേറ്റ്</string>
+    <string name="continue_1" translatable="true">തുടരുക</string>
+    <string name="cancel" translatable="true">റദ്ദാക്കുക</string>
+    <string name="download" translatable="true">ഡൗൺലോഡ്</string>
+    <string name="later" translatable="true">പിന്നെ</string>
+    <string name="install_now" translatable="true">പാച്ചട് ഇൻസ്റ്റാൾ ചെയ്യുക</string>
+    <string name="install_update" translatable="true">അപ്ടേറ്റ് ഇൻസ്റ്റാൾ ചെയ്യുക</string>
+    <string name="go_back" translatable="true">പിറകിലീക്ക് പോകുക</string>
+    <string name="download_update" translatable="true">അപ്ടേറ്റ് ഡൗൺലോഡ് ചെയ്യുക</string>
+    <string name="not_now" translatable="true">ഇപ്പോൾ വേണ്ട</string>
+    <string name="mirror" translatable="true">മിറർ ലിങ്ക്</string>
+    <string name="lite" translatable="true">ലൈറ്റ്</string>
+    <string name="experimental_title" translatable="true">പരീക്ഷണാത്മകം</string>
+    <string name="experimental_version" translatable="true">എക്സപെറിമെന്റൽ വെർഷൻ</string>
+    <string name="experimental_version_desc" translatable="true">ഇത് ഓണക്കിയാൽ പാച്ചട് ആപ്ലിക്കേഷന്റെ പരീക്ഷണാത്മകമായ വെർഷനുകൾ ഇൻസ്റ്റാൾ ചെയ്യാൻ സാധിക്കും.\n\nസ്റ്റോക്ക് പാച്ചിൽ ലഭ്യമല്ലാത്ത ആൽഫ, ബീറ്റ, ഏർലി ആക്‌സസ് ഫീച്ചറുകൾ എന്നിവ ഇതിൽ ഉൾപ്പെടുന്നു. കൂടാതെ, സ്ഥിരത ഉറപ്പില്ല.</string>
+    <string name="show_support" translatable="true">സപോർട്ട് ചെയ്യുക</string>
+    <string name="show_support_desc" translatable="true">ഞങ്ങൾ ലാഭേച്ഛയില്ലാത്ത, കോർപ്പറേറ്റ് അല്ലാത്ത, വിട്ടുവീഴ്ച ചെയ്യാത്ത സംഘമാണ്. നിങ്ങളെപ്പോലുള്ള ആളുകൾ, പ്രത്യേകിച്ച് ഡൗൺലോഡ് ചെയ്യുന്നത് മുതൽ ഇൻസ്റ്റാൾ ചെയ്യുന്നത് വരെ വളരെ എളുപ്പമാക്കുന്നതിന്, ഒരു ആപ്പ് സൃഷ്ടിക്കാൻ ഞങ്ങളെ പ്രോത്സാഹിപ്പിക്കുന്നു.\n\nകാര്യങ്ങൾ ശരിയും തികവുറ്റതുമാക്കാൻ ഞങ്ങൾ ഞങ്ങളുടെ എല്ലാ സമയവും മികച്ച പരിശ്രമവും ചെലവഴിക്കുന്നു. ഞങ്ങൾക്ക് കഴിയുന്നിടത്തോളം ഈ ആപ്പിനെ പിന്തുണയ്ക്കാൻ ഞങ്ങൾ പരമാവധി ശ്രമിക്കും.\n\nഏത് തുകയും സഹായിക്കുകയും വളരെയധികം അഭിനന്ദിക്കുകയും ചെയ്യും!</string>
+    <string name="maintenance" translatable="true">മെയിൻറനൻസ്</string>
+    <string name="maintenance_desc" translatable="true">xManager നിലവിൽ ലഭ്യമല്ല. ദയവായി അല്പസമയത്തിനു ശേഷം വീണ്ടും ശ്രമിക്കുക.</string>
+    <string name="thanks" translatable="true">നന്ദി!</string>
+    <string name="language" translatable="true">ഭാഷ</string>
+    <string name="website" translatable="true">വെബ്സൈറ്റ്</string>
+    <string name="reddit" translatable="true">റെഡിറ്റ്</string>
+    <string name="faq" translatable="true">പതിവുചോദ്യങ്ങൾ</string>
+    <string name="cloned_version" translatable="true">ക്ലോൺഡ് വെർഷൻ</string>
+    <string name="cloned_version_desc" translatable="true">ഇത് ഓണക്കിയാൽ പാച്ചട് ആപ്ലിക്കേഷന്റെ ക്ലോൺ ചെയ്യപ്പെട്ട വെർഷനുകൾ ഇൻസ്റ്റാൾ ചെയ്യാൻ സാധിക്കും.\n\nഇത് മിക്ക ഇൻസ്റ്റാളേഷൻ പിശകുകളും പ്രശ്നങ്ങളും പരിഹരിക്കും, പ്രത്യേകിച്ചും നിങ്ങൾക്ക് മുൻകൂട്ടി ഇൻസ്റ്റാൾ ചെയ്ത Spotify ആപ്ലിക്കേഷൻ ഉണ്ടെങ്കിൽ.</string>
+    <string name="disable_rewarded_ads" translatable="true">ഡീസേബിൾ റിവാർഡെഡ് അഡ്സ്</string>
+    <string name="disable_rewarded_ads_desc" translatable="true">ഞങ്ങളിൽ ഭൂരിഭാഗവും പരസ്യങ്ങൾ ഇഷ്ടപ്പെടുന്നില്ലെന്ന് ഞങ്ങൾക്കറിയാം, എന്നാൽ ഞങ്ങളുടെ കാര്യത്തിൽ, ഇത് ഞങ്ങളുടെ ഡാറ്റാബേസ്, ഹോസ്റ്റിംഗ് ലിങ്കുകൾ, അപ്‌ഡേറ്റുകൾ, കൂടുതൽ പാച്ചുകൾ, ദൈനംദിന ആവശ്യങ്ങൾ എന്നിവയ്ക്ക് പണം നൽകാൻ ഞങ്ങളെ സഹായിക്കുന്നു.\n\nസംഭാവന നൽകാതെയും ചിലവഴിക്കാതെയും ഞങ്ങളെ പിന്തുണയ്ക്കുന്നതിനുള്ള ഏറ്റവും ലളിതമായ മാർഗമാണിത്.</string>
+    <string name="installation_failed" translatable="true">ഇൻസ്റ്റലേഷൻ പരാജയപ്പെട്ടു</string>
+    <string name="installation_failed_desc" translatable="true">കാരണം: നിങ്ങൾ നിലവിൽ ഇൻസ്‌റ്റാൾ ചെയ്‌തിരിക്കുന്നതിനേക്കാൾ കുറഞ്ഞ പാച്ച്ട് വെർഷൻ ഇൻസ്റ്റാൾ ചെയ്യാൻ ശ്രമിച്ചു.\n\nപരിഹാരങ്ങൾ:\nA. തുല്യമോ അതിലും വലുതോ ആയ വെർഷൻ തിരഞ്ഞെടുക്കുക.\nB. നിലവിലെ വെർഷൻ അൺഇൻസ്റ്റാൾ ചെയ്യുക, തുടർന്ന് ഡൗൺഗ്രേഡ് ചെയ്യുക.\n\nപ്രശ്നം നിലനിൽക്കുകയാണെങ്കിൽ, പതിവുചോദ്യങ്ങൾ പരിശോധിക്കുക.</string>
+    <string name="installation_failed_spap_desc" translatable="true">കാരണം: ഈ ഉപകരണത്തിൽ നിലവിൽ ഇൻസ്റ്റാൾ ചെയ്തിട്ടുള്ള പാച്ച് നേരിട്ട് xManager-ൽ നിന്നോ ഞങ്ങളുടെ ടീമിൽ നിന്നോ വന്നതല്ല.\n\nSolution: ആപ്ലിക്കേഷന്റെ നിലവിലെ വെർഷൻ അൺഇൻസ്റ്റാൾ ചെയ്യുക, xManager റീസ്റ്റാർട്ട് ചെയ്ത് വീണ്ടും ശ്രമിക്കുക. പ്രശ്നം നിലനിൽക്കുകയാണെങ്കിൽ, പതിവുചോദ്യങ്ങൾ പരിശോധിക്കുക.</string>
+    <string name="installation_failed_cloned_desc" translatable="true">കാരണം: ഈ ഉപകരണത്തിൽ നിലവിൽ ഇൻസ്റ്റാൾ ചെയ്തിരിക്കുന്ന ക്ലോൺ xManager-ൽ നിന്നോ ഞങ്ങളുടെ ടീമിൽ നിന്നോ വന്നതല്ല.\n\nSolution: ആപ്ലിക്കേഷന്റെ നിലവിലെ വെർഷൻ അൺഇൻസ്റ്റാൾ ചെയ്യുക, xManager റീസ്റ്റാർട്ട് ചെയ്ത് വീണ്ടും ശ്രമിക്കുക. പ്രശ്നം നിലനിൽക്കുകയാണെങ്കിൽ, പതിവുചോദ്യങ്ങൾ പരിശോധിക്കുക.</string>
+    <string name="existing_patched" translatable="true">എക്സിസ്റ്റിങ് പാച്ചട്</string>
+    <string name="existing_patched_desc" translatable="true">ഡയറക്‌ടറിയിൽ നിലവിലുള്ള ഒരു പാച്ച് കണ്ടെത്തി. നിങ്ങൾ എന്ത് ചെയ്യാൻ ആഗ്രഹിക്കുന്നു?</string>
+    <string name="disable_notification" translatable="true">ഡിസേബിൾ നോട്ടിഫിക്കേഷൻ</string>
+    <string name="disable_notification_desc" translatable="true">ഇത് ഓണാക്കിയാൽ പാച്ച് ചെയ്ത ആപ്ലിക്കേഷൻ ഇൻസ്റ്റാൾ ചെയ്തതിന് ശേഷം നോട്ടിഫിക്കേഷൻ നല്കുന്നതല്ല.</string>
+    <string name="hide_stock_patched" translatable="true">STOCK പാച്ച് മറയ്ക്കുക</string>
+    <string name="hide_amoled_patched" translatable="true">AMOLED പാച്ച് മറയ്ക്കുക</string>
+    <string name="hide_lite_patched" translatable="true">LITE പാച്ച് മറയ്ക്കുക</string>
+    <string name="hide_wave_patched" translatable="true">WAVE പാച്ച് മറയ്ക്കുക</string>
+    <string name="close" translatable="true">അടയ്ക്കുക</string>
+    <string name="cloned" translatable="true">ക്ലോൺ ചെയ്യപ്പെട്ടത്</string>
+    <string name="spap" translatable="true">SP/AP</string>
+    <string name="install" translatable="true">ഇൻസ്റ്റാൾ</string>
+    <string name="uninstall" translatable="true">അണിൻസ്റ്റൾ</string>
+    <string name="ignore" translatable="true">അവഗണിക്കുക</string>
+    <string name="delete" translatable="true">ഡിലീറ്റ്</string>
+    <string name="uninstall_patched" translatable="true">പാച്ച് അൺഇൻസ്റ്റാൾ ചെയ്യുക</string>
+    <string name="open_settings" translatable="true">ക്രമീകരണങ്ങൾ തുറക്കുക</string>
+    <string name="open_patched" translatable="true">പാച്ച് ചെയ്യപ്പെട്ടത് തുറക്കുക</string>
+    <string name="reboot" translatable="true">റീഫെച്ച് ചെയ്ത് റീസ്റ്റാർട്ട് ചെയ്യുക</string>
 </resources>
