@@ -1337,13 +1337,13 @@
     <string name="reddit_14" translatable="true">ريديت</string>
     <string name="faq_14" translatable="true">الأسئلة الشائعة</string>
     <string name="cloned_version_14" translatable="true">نسخة مستنسخة</string>
-    <string name="cloned_version_desc_14" translatable="true">تفعيل هذا يسمح لك بتحميل وتثبيت النسخة المستنسخة من التطبيق المعدل.وهذا أيضا حل معظم أخطاء أو مشاكل التثبيت خاصة إذا كان لديك تطبيق سبوتيفاي مثبت مسبقًا.</string>
+    <string name="cloned_version_desc_14" translatable="true">تفعيل هذا يسمح لك بتحميل وتثبيت النسخة المستنسخة من التطبيق المعدل. وهذا أيضا حل معظم أخطاء أو مشاكل التثبيت خاصة إذا كان لديك تطبيق سبوتيفاي مثبت مسبقًا.</string>
     <string name="disable_rewarded_ads_14" translatable="true">تعطيل الإعلانات بمكافأة</string>
-    <string name="disable_rewarded_ads_desc_14" translatable="true">نحن نعلم أن معظمنا لا يحب الإعلانات ولكن في حالتنا، يساعدنا هذا بشكل كبير في تمويل قاعدة البيانات الخاصة بنا وروابط الاستضافة والتحديثات والمزيد من التعديلات والاحتياجات اليومية.هذا هو أبسط طريقة لدعمنا دون التبرع أو إنفاق أي شيء.</string>
+    <string name="disable_rewarded_ads_desc_14" translatable="true">نحن نعلم أن معظمنا لا يحب الإعلانات ولكن في حالتنا، يساعدنا هذا بشكل كبير في تمويل قاعدة البيانات الخاصة بنا وروابط الاستضافة والتحديثات والمزيد من التعديلات والاحتياجات اليومية. هذه هي أبسط طريقة لدعمنا دون التبرع أو إنفاق أي شيء.</string>
     <string name="installation_failed_14" translatable="true">فشل التثبيت</string>
-    <string name="installation_failed_desc_14" translatable="true">السبب: حاولت تثبيت إصدار معدل أقل مما هو مثبت حاليًا.الحلول: أ. حدد إصدارًا مساويًا أو أعلى منه.ب. إلغاء تثبيت الإصدار الحالي، ثم تقليله.إذا استمرت المشكلة، تحقق من الأسئلة الشائعة.</string>
-    <string name="installation_failed_spap_desc_14" translatable="true">السبب: التطبيق المعدل المثبت حاليًا على هذا الجهاز لم يأت مباشرة من xManager أو من فريقنا.الحل: إلغاء تثبيت الإصدار الحالي من التطبيق، إعادة تشغيل xManager وحاول مرة أخرى. إذا استمرت المشكلة ، تحقق من الأسئلة الشائعة.</string>
-    <string name="installation_failed_cloned_desc_14" translatable="true">السبب: النسخة المستنسخة المثبتة حاليًا على هذا الجهاز لم تأت مباشرة من xManager أو من فريقنا.الحل: إلغاء تثبيت الإصدار الحالي من التطبيق، إعادة تشغيل xManager وحاول مرة أخرى. إذا استمرت المشكلة، تحقق من الأسئلة الشائعة.</string>
+    <string name="installation_failed_desc_14" translatable="true">السبب: حاولت تثبيت إصدار معدل أقل مما هو مثبت حاليًا. الحلول: أ. حدد إصدارًا مساويًا أو أعلى منه. ب. إلغاء تثبيت الإصدار الحالي، ثم تقليله. إذا استمرت المشكلة، تحقق من الأسئلة الشائعة.</string>
+    <string name="installation_failed_spap_desc_14" translatable="true">السبب: التطبيق المعدل المثبت حاليًا على هذا الجهاز لم يأت مباشرة من xManager أو من فريقنا. الحل: إلغاء تثبيت الإصدار الحالي من التطبيق، إعادة تشغيل xManager وحاول مرة أخرى. إذا استمرت المشكلة، تحقق من الأسئلة الشائعة.</string>
+    <string name="installation_failed_cloned_desc_14" translatable="true">السبب: النسخة المستنسخة المثبتة حاليًا على هذا الجهاز لم تأت مباشرة من xManager أو من فريقنا. الحل: إلغاء تثبيت الإصدار الحالي من التطبيق، إعادة تشغيل xManager وحاول مرة أخرى. إذا استمرت المشكلة، تحقق من الأسئلة الشائعة.</string>
     <string name="existing_patched_14" translatable="true">التعديل موجود</string>
     <string name="existing_patched_desc_14" translatable="true">ملف التطبيق المعدل موجود في المسار الخارجي. ما الذي تريد القيام به?</string>
     <string name="disable_notification_14" translatable="true">تعطيل الإخطار</string>
