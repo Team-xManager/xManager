@@ -3551,4 +3551,95 @@
     <string name="open_settings_38" translatable="true">அமைப்புகளைத் திற</string>
     <string name="open_patched_38" translatable="true">ஓபன் பேட்ச்</string>
     <string name="reboot_38" translatable="true">மீட்டெடுத்து மீண்டும் துவக்கவும்</string>
+    
+    <!--THAI LANGUAGE-->
+    <string name="app_name_39" translatable="true">xManager</string>
+    <string name="installed_39" translatable="true">ติดตั้งแล้ว</string>
+    <string name="latest_39" translatable="true">ล่าสุด</string>
+    <string name="versions_39" translatable="true">เวอร์ชัน</string>
+    <string name="changelogs_39" translatable="true">การเปลี่ยนแปลง</string>
+    <string name="manager_tools_39" translatable="true">เครื่องมือตัวจัดการ</string>
+    <string name="source_39" translatable="true">ซอร์สโค้ด</string>
+    <string name="support_39" translatable="true">เทเลแกรม</string>
+    <string name="donate_39" translatable="true">สนับสนุน</string>
+    <string name="discord_39" translatable="true">ดิสคอร์ด</string>
+    <string name="about_39" translatable="true">เกี่ยวกับ</string>
+    <string name="main_title_39" translatable="true">xManager</string>
+    <string name="settings_title_39" translatable="true">การตั้งค่า</string>
+    <string name="about_title_39" translatable="true">เกี่ยวกับ</string>
+    <string name="list_auto_refresh_39" translatable="true">รีเฟรชรายการอัตโนมัติ</string>
+    <string name="list_auto_refresh_desc_39" translatable="true">การเปิดใช้งานนี้จะรีเฟรชรายการอัตโนมัติทุกครั้งที่คุณเปิดแอป\n\nคุณสามารถรีเฟรชรายการเองได้โดยลากหน้าจอหลักลง</string>
+    <string name="force_auto_install_39" translatable="true">บังคับให้ติดตั้งอัตโนมัติ</string>
+    <string name="force_auto_install_desc_39" translatable="true">การเปิดใช้งานนี้จะติดตั้งแอปที่แพตช์แล้วโดยอัตโนมัติและอัปเดตเมื่อดาวน์โหลดแล้ว</string>
+    <string name="show_themes_39" translatable="true">ธีม</string>
+    <string name="apk_location_39" translatable="true">ตำแหน่งของ APK</string>
+    <string name="apk_location_desc_39" translatable="true">ไดเรกทอรีที่ต้องการบันทึกไฟล์ที่ดาวน์โหลด หากคุณไม่ทราบวิธีตั้งค่าฟีเจอร์นี้ ให้ปล่อยไว้เหมือนเดิม\n\nNOTE: ฟีเจอร์นี้ไม่รองรับที่จัดเก็บข้อมูลภายนอก (การ์ด SD) เนื่องจากการเข้าถึง, สิทธิ์ และข้อจำกัดด้านการเก็บข้อมูล</string>
+    <string name="clear_directory_folders_39" translatable="true">ล้างโฟลเดอร์ไดเรกทอรี</string>
+    <string name="clear_directory_folders_desc_39" translatable="true">แตะเพื่อลบโฟลเดอร์ไดเร็กทอรี ซึ่งรวมถึงไฟล์ที่ดาวน์โหลดและการอัปเดต</string>
+    <string name="reset_preferences_39" translatable="true">รีเซ็ตการตั้งค่า</string>
+    <string name="about_sub_39" translatable="true">ไร้โฆษณา | ฟีเจอร์ใหม่ๆ | ความอิสระ</string>
+    <string name="xmanager_dev_39" translatable="true">นักพัฒนา xManager</string>
+    <string name="patched_devs_39" translatable="true">นักพัฒนาแพทช์</string>
+    <string name="support_team_39" translatable="true">เทเลแกรม | ดิสคอร์ด | ทีมสนับสนุนเรดดิต</string>
+    <string name="manager_testers_39" translatable="true">ผู้ทดสอบแพตซ์และตัวจัดการ</string>
+    <string name="manager_hosting_39" translatable="true">ฐานข้อมูลและโฮสติ้งตัวจัดการ</string>
+    <string name="mobilism_team_39" translatable="true">ทีม Mobilism</string>
+    <string name="forum_team_39" translatable="true">ทีม FORUM.APK-RELEASE.NET</string>
+    <string name="contributors_39" translatable="true">ขอขอบคุณผู้มีส่วนร่วมทุกท่าน! ❤️</string>
+    <string name="download_selected_39" translatable="true">คุณได้เลือกแพตซ์เวอร์ชันนี้ คุณต้องการดำเนินการต่อหรือไม่?</string>
+    <string name="download_ready_39" translatable="true">ข้อมูลแพตซ์</string>
+    <string name="download_ready_desc_39" translatable="true">แพตช์นี้จะเขียนทับไฟล์ก่อนหน้าซึ่งอยู่ที่ไดเร็กทอรีภายนอก ดำเนินการด้วยความระมัดระวัง</string>
+    <string name="downloading_file_39" translatable="true">กำลังดาวน์โหลดไฟล์</string>
+    <string name="download_success_39" translatable="true">ดาวน์โหลดสำเร็จแล้ว</string>
+    <string name="new_update_39" translatable="true">อัปเดตตัวจัดการใหม่</string>
+    <string name="continue_1_39" translatable="true">ดำเนินการต่อ</string>
+    <string name="cancel_39" translatable="true">ยกเลิก</string>
+    <string name="download_39" translatable="true">ดาวน์โหลด</string>
+    <string name="later_39" translatable="true">ภายหลัง</string>
+    <string name="install_now_39" translatable="true">ติดตั้งแพตซ์</string>
+    <string name="install_update_39" translatable="true">ติดตั้งอัปเดต</string>
+    <string name="go_back" translatable_39="true">ย้อนกลับ</string>
+    <string name="download_update_39" translatable="true">ดาวน์โหลดอัปเดต</string>
+    <string name="not_now_39" translatable="true">ไม่ใช่ตอนนี้</string>
+    <string name="mirror_39" translatable="true">ลิงก์ MIRROR </string>
+    <string name="lite_39" translatable="true">LITE</string>
+    <string name="experimental_title_39" translatable="true">การทดลอง</string>
+    <string name="experimental_version_39" translatable="true">เวอร์ชันทดลอง</string>
+    <string name="experimental_version_desc_39" translatable="true">การเปิดใช้งานนี้จะอนุญาตให้ดาวน์โหลดและติดตั้งแอปเวอร์ชันทดลองของแพตซ์\n\nซึ่งรวมถึงฟีเจอร์จากเวอร์ชัน alpha, beta และ early access ที่ไม่มีอยู่ในแพตช์ stock และนอกจากนี้ยังไม่รับประกันความเสถียร</string>
+    <string name="show_support_39" translatable="true">แสดงการสนับสนุน</string>
+    <string name="show_support_desc_39" translatable="true">เราเป็นทีมงานที่ไม่แสวงหากำไร ไม่เป็นองค์กร และไม่ประนีประนอม ผู้คนที่เหมือนคุณสนับสนุนให้เราสร้างแอปเพื่อทำสิ่งต่างๆ ง่ายขึ้น โดยเฉพาะตั้งแต่การดาวน์โหลดไปจนถึงการติดตั้ง\n\nเราทุ่มเทเวลาและความพยายามอย่างเต็มที่เพื่อทำให้ถูกต้องและสมบูรณ์แบบ เราจะพยายามดีที่สุดเพื่อสนับสนุนแอปนี้เท่าที่เราทำได้\n\nจำนวนเท่าไรก็ได้ที่ต้องการจะช่วย และขอบคุณอย่างมาก!</string>
+    <string name="maintenance_39" translatable="true">การซ่อมบำรุง</string>
+    <string name="maintenance_desc_39" translatable="true">xManager ไม่สามารถใช้งานได้ในขณะนี้ โปรดลองอีกครั้งในภายหลัง</string>
+    <string name="thanks_39" translatable="true">ขอบคุณ!</string>
+    <string name="language_39" translatable="true">ภาษา</string>
+    <string name="website_39" translatable="true">เว็บไซต์</string>
+    <string name="reddit_39" translatable="true">เรดดิต</string>
+    <string name="faq_39" translatable="true">คำถามที่พบบ่อย</string>
+    <string name="cloned_version_39" translatable="true">เวอร์ชัน CLONE</string>
+    <string name="cloned_version_desc_39" translatable="true">การเปิดใช้งานนี้จะอนุญาตให้ดาวน์โหลดและติดตั้งแอปเวอร์ชัน CLONE ของแพตซ์\n\nวิธีนี้จะแก้ไขข้อผิดพลาดหรือปัญหาในการติดตั้งส่วนใหญ่ด้วย โดยเฉพาะอย่างยิ่งหากมีแอป Spotify ที่ติดตั้งไว้ล่วงหน้า</string>
+    <string name="disable_rewarded_ads_39" translatable="true">ปิดการใช้งานโฆษณาที่มีการให้รางวัล</string>
+    <string name="disable_rewarded_ads_desc_39" translatable="true">เรารู้ว่าผู้คนส่วนใหญ่ไม่ชอบโฆษณา แต่ในกรณีของเรา สิ่งนี้ช่วยเราได้อย่างมากในการหาเงินทุนสำหรับฐานข้อมูล, ลิงก์โฮสติ้ง, การอัปเดต แพตช์เพิ่มเติม และความต้องการรายวัน\n\nนี่เป็นวิธีที่ง่ายที่สุดในการสนับสนุนเราโดยไม่ต้องบริจาคหรือจ่ายอะไรเลย</string>
+    <string name="installation_failed_39" translatable="true">การติดตั้งไม่สำเร็จ</string>
+    <string name="installation_failed_desc_39" translatable="true">เหตุผล: คุณพยายามติดตั้งเวอร์ชันแพตช์ที่ต่ำกว่าเวอร์ชันที่ติดตั้งอยู่\n\nวิธีการแก้ไข:\nA. เลือกเวอร์ชันที่เท่ากันหรือมากกว่า\nB. ถอนการติดตั้งเวอร์ชันปัจจุบัน แล้วดาวน์เกรด\n\nหากปัญหายังคงอยู่ ให้ดูคำถามที่พบบ่อย</string>
+    <string name="installation_failed_spap_desc_39" translatable="true">เหตุผล: แพตช์ปัจจุบันที่ติดตั้งบนอุปกรณ์นี้ไม่ได้มาจาก xManager หรือจากทีมงานของเรา\n\nวิธีการแก้ไข: ถอนการติดตั้งแอปเวอร์ชันปัจจุบัน เริ่มต้น xManager ใหม่ แล้วลองอีกครั้ง หากปัญหายังคงอยู่ ให้ดูคำถามที่พบบ่อย</string>
+    <string name="installation_failed_cloned_desc_39" translatable="true">Reason: เวอร์ชัน CLONE ปัจจุบันที่ติดตั้งบนอุปกรณ์นี้ไม่ได้มาจาก xManager หรือจากทีมงานของเรา\n\nวิธีการแก้ไข: ถอนการติดตั้งแอปเวอร์ชันปัจจุบัน เริ่มต้น xManager ใหม่ แล้วลองอีกครั้ง หากปัญหายังคงอยู่ ให้ดูคำถามที่พบบ่อย</string>
+    <string name="existing_patched_39" translatable="true">แพทช์ที่มีอยู่แล้ว</string>
+    <string name="existing_patched_desc_39" translatable="true">ตรวจพบแพตช์ที่มีอยู่แล้วที่ไดเร็กทอรีภายนอก คุณต้องการดำเนินการสิ่งใด?</string>
+    <string name="disable_notification_39" translatable="true">ปิดการแจ้งเตือน</string>
+    <string name="disable_notification_desc_39" translatable="true">การเปิดใช้งานนี้จะลบการเตือนหลังจากติดตั้งแอปแพตซ์แล้ว</string>
+    <string name="hide_stock_patched_39" translatable="true">ซ่อนแพตซ์ STOCK</string>
+    <string name="hide_amoled_patched_39" translatable="true">ซ่อนแพตช์ AMOLED</string>
+    <string name="hide_lite_patched_39" translatable="true">ซ่อนแพตช์ LITE</string>
+    <string name="hide_wave_patched_39" translatable="true">ซ่อนแพตช์ WAVE</string>
+    <string name="close_39" translatable="true">ปิด</string>
+    <string name="cloned_39" translatable="true">CLONED</string>
+    <string name="spap_39" translatable="true">SP/AP</string>
+    <string name="install_39" translatable="true">ติดตั้ง</string>
+    <string name="uninstall_39" translatable="true">ถอนการติดตั้ง</string>
+    <string name="ignore_39" translatable="true">เพิกเฉย</string>
+    <string name="delete_39" translatable="true">ลบ</string>
+    <string name="uninstall_patched_39" translatable="true">ถอนการติดตั้งแพตซ์</string>
+    <string name="open_settings_39" translatable="true">เปิดการตั้งค่า</string>
+    <string name="open_patched_39" translatable="true">เปิดแพตซ์</string>
+    <string name="reboot_39" translatable="true">ดึงข้อมูลและรีบูต</string>
 </resources>
