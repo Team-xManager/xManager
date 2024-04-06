@@ -93,7 +93,6 @@ import com.google.android.ump.ConsentRequestParameters;
 import com.google.android.ump.FormError;
 import com.google.android.ump.UserMessagingPlatform;
 
-
 public class MainActivity extends AppCompatActivity {
 	
      private RewardedAd mRewardedAd;
@@ -455,6 +454,16 @@ public class MainActivity extends AppCompatActivity {
 	private TextView translator_38;
 	private TextView manager_lang_39;
 	private TextView translator_39;
+	private TextView manager_lang_40;
+	private TextView translator_40;
+	private TextView manager_lang_41;
+	private TextView translator_41;
+	private TextView manager_lang_42;
+	private TextView translator_42;
+	private TextView manager_lang_43;
+	private TextView translator_43;
+	private TextView manager_lang_44;
+	private TextView translator_44;
 	private TextView manager_donors;
 	private TextView donors_1;
 	private ScrollView main_scroll_body;
@@ -896,6 +905,16 @@ public class MainActivity extends AppCompatActivity {
 		translator_38 = findViewById(R.id.translator_38);
 		manager_lang_39 = findViewById(R.id.manager_lang_39);
 		translator_39 = findViewById(R.id.translator_39);
+		manager_lang_40 = findViewById(R.id.manager_lang_40);
+		translator_40 = findViewById(R.id.translator_40);
+		manager_lang_41 = findViewById(R.id.manager_lang_41);
+		translator_41 = findViewById(R.id.translator_41);
+		manager_lang_42 = findViewById(R.id.manager_lang_42);
+		translator_42 = findViewById(R.id.translator_42);
+		manager_lang_43 = findViewById(R.id.manager_lang_43);
+		translator_43 = findViewById(R.id.translator_43);
+		manager_lang_44 = findViewById(R.id.manager_lang_44);
+		translator_44 = findViewById(R.id.translator_44);
 		manager_donors = findViewById(R.id.manager_donors);
 		donors_1 = findViewById(R.id.donors_1);
 		main_scroll_body = findViewById(R.id.main_scroll_body);
@@ -1168,12 +1187,17 @@ public class MainActivity extends AppCompatActivity {
 														                public void onClick(DialogInterface Update_Authorized, int p) {
 															AlertDialog.setCancelable(true);
 															try {
-																if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
-																	_Download_Update_Install(hidden_update.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
+																if (android.os.Build.VERSION.SDK_INT >= 34) {
+																	_Browser(hidden_update.getText().toString());
 																}
 																else {
-																	if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
-																		_Download_Update(hidden_update.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
+																	if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
+																		_Download_Update_Install(hidden_update.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																	else {
+																		if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
+																			_Download_Update(hidden_update.getText().toString(), "/storage/emulated/0/Download/");
+																		}
 																	}
 																}
 															}
@@ -2223,6 +2247,41 @@ public class MainActivity extends AppCompatActivity {
 																																											COUNTER = 1;
 																																											_Language_UI();
 																																										}
+																																										else {
+																																											if (_position == 39) {
+																																												LANGUAGE.edit().putString("LANGUAGE", "39").commit();
+																																												COUNTER = 1;
+																																												_Language_UI();
+																																											}
+																																											else {
+																																												if (_position == 40) {
+																																													LANGUAGE.edit().putString("LANGUAGE", "40").commit();
+																																													COUNTER = 1;
+																																													_Language_UI();
+																																												}
+																																												else {
+																																													if (_position == 41) {
+																																														LANGUAGE.edit().putString("LANGUAGE", "41").commit();
+																																														COUNTER = 1;
+																																														_Language_UI();
+																																													}
+																																													else {
+																																														if (_position == 42) {
+																																															LANGUAGE.edit().putString("LANGUAGE", "42").commit();
+																																															COUNTER = 1;
+																																															_Language_UI();
+																																														}
+																																														else {
+																																															if (_position == 43) {
+																																																LANGUAGE.edit().putString("LANGUAGE", "43").commit();
+																																																COUNTER = 1;
+																																																_Language_UI();
+																																															}
+																																														}
+																																													}
+																																												}
+																																											}
+																																										}
 																																									}
 																																								}
 																																							}
@@ -2333,12 +2392,12 @@ public class MainActivity extends AppCompatActivity {
 											});
 										}
 									};
-									_timer.schedule(Timer, (int)(9000));
+									_timer.schedule(Timer, (int)(1000));
 								}
 							});
 						}
 					};
-					_timer.schedule(Timer, (int)(8000));
+					_timer.schedule(Timer, (int)(500));
 					Timer = new TimerTask() {
 						@Override
 						public void run() {
@@ -2358,7 +2417,7 @@ public class MainActivity extends AppCompatActivity {
 							});
 						}
 					};
-					_timer.schedule(Timer, (int)(10000));
+					_timer.schedule(Timer, (int)(1500));
 					if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
 						Window w =MainActivity.this.getWindow();
 						w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -2387,11 +2446,12 @@ public class MainActivity extends AppCompatActivity {
 				list_auto_refresh_switch.setChecked(false);
 				force_auto_install_switch.setChecked(false);
 				disable_reward_ad_switch.setChecked(false);
+				disable_notification_switch.setChecked(false);
 				hide_stock_patched_switch.setChecked(false);
 				hide_amoled_patched_switch.setChecked(false);
 				hide_lite_patched_switch.setChecked(false);
 				hide_wave_patched_switch.setChecked(false);
-				apk_path_location.setText("/storage/emulated/0/Download/");
+				apk_path_location.setText("/storage/emulated/0/xManager/");
 				main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
 				main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
 				main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
@@ -2661,7 +2721,7 @@ public class MainActivity extends AppCompatActivity {
 			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
 				final int _position = _param3;
 				try {
-					if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")) {
+					if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched (xManager).apk") || FileUtil.isExistFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk")) {
 						final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
 						
 						String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
@@ -2677,11 +2737,11 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface File_Exist, int p) {
 								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk")) {
+								if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched (xManager).apk")) {
 									_Extension_4();
 								}
 								else {
-									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")) {
+									if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk")) {
 										_Extension_5();
 									}
 								}
@@ -2694,8 +2754,8 @@ public class MainActivity extends AppCompatActivity {
 								
 								AlertDialog.setCancelable(true);
 								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk");
-								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk");
+								FileUtil.deleteFile("/storage/emulated/0/Download/Patched (xManager).apk");
+								FileUtil.deleteFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk");
 								                }
 							            });
 						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
@@ -2784,102 +2844,117 @@ public class MainActivity extends AppCompatActivity {
 									                @Override
 									                public void onClick(DialogInterface Selected_Patched, int p) {
 										try {
-											if (SWITCH_VERSION.getString("SWITCH", "").contains("A") || SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
-												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-													AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-														else {
-															_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-														}
-													}
-													_File_Remover();
-												}
-												else {
-													if (mRewardedAd != null) {
-														  Activity activityContext = MainActivity.this;
-														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-															    @Override
-															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																       AlertDialog.setCancelable(true);
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																	else {
-																		_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																}
-																else {
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																			_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																		}
-																		else {
-																			_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																		}
-																	}
-																}
-																_File_Remover();
-																      int rewardAmount = rewardItem.getAmount();
-																      String rewardType = rewardItem.getType();
-																    }
-															  });
-													} else {
+											if (android.os.Build.VERSION.SDK_INT >= 34) {
+												if (SWITCH_VERSION.getString("SWITCH", "").contains("A") || SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
+													if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 														AlertDialog.setCancelable(true);
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Browser(hidden_download_3.getText().toString());
+															_Reminder();
 														}
 														else {
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-																else {
-																	_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-															}
+															_Browser(hidden_download_2.getText().toString());
 														}
 														_File_Remover();
+													}
+													else {
+														if (mRewardedAd != null) {
+															  Activity activityContext = MainActivity.this;
+															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																    @Override
+																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																	       AlertDialog.setCancelable(true);
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Browser(hidden_download_3.getText().toString());
+																		_Reminder();
+																	}
+																	else {
+																		_Browser(hidden_download_2.getText().toString());
+																	}
+																	_File_Remover();
+																	      int rewardAmount = rewardItem.getAmount();
+																	      String rewardType = rewardItem.getType();
+																	    }
+																  });
+														} else {
+															AlertDialog.setCancelable(true);
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Browser(hidden_download_3.getText().toString());
+																_Reminder();
+															}
+															else {
+																_Browser(hidden_download_2.getText().toString());
+															}
+															_File_Remover();
+														}
+													}
+												}
+												else {
+													if (SWITCH_VERSION.getString("SWITCH", "").contains("B") || SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
+														if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+															AlertDialog.setCancelable(true);
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Browser(hidden_download_3.getText().toString());
+																_Reminder();
+															}
+															else {
+																_Browser(hidden_download_2.getText().toString());
+															}
+															_File_Remover();
+														}
+														else {
+															if (mRewardedAd != null) {
+																  Activity activityContext = MainActivity.this;
+																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																	    @Override
+																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																		       AlertDialog.setCancelable(true);
+																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																			_Browser(hidden_download_3.getText().toString());
+																			_Reminder();
+																		}
+																		else {
+																			_Browser(hidden_download_2.getText().toString());
+																		}
+																		_File_Remover();
+																		      int rewardAmount = rewardItem.getAmount();
+																		      String rewardType = rewardItem.getType();
+																		    }
+																	  });
+															} else {
+																AlertDialog.setCancelable(true);
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Browser(hidden_download_3.getText().toString());
+																	_Reminder();
+																}
+																else {
+																	_Browser(hidden_download_2.getText().toString());
+																}
+																_File_Remover();
+															}
+														}
 													}
 												}
 											}
 											else {
-												if (SWITCH_VERSION.getString("SWITCH", "").contains("B") || SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
+												if (SWITCH_VERSION.getString("SWITCH", "").contains("A") || SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
 													if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 														AlertDialog.setCancelable(true);
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 															}
 															else {
-																_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 															}
 														}
 														else {
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 																}
 																else {
-																	_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 																}
 															}
 														}
@@ -2894,19 +2969,19 @@ public class MainActivity extends AppCompatActivity {
 																	       AlertDialog.setCancelable(true);
 																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																			_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																			_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 																		}
 																		else {
-																			_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																			_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 																		}
 																	}
 																	else {
 																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 																			if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																				_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																				_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 																			}
 																			else {
-																				_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																				_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 																			}
 																		}
 																	}
@@ -2919,23 +2994,102 @@ public class MainActivity extends AppCompatActivity {
 															AlertDialog.setCancelable(true);
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 																}
 																else {
-																	_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 																}
 															}
 															else {
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 																	}
 																	else {
-																		_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 																	}
 																}
 															}
 															_File_Remover();
+														}
+													}
+												}
+												else {
+													if (SWITCH_VERSION.getString("SWITCH", "").contains("B") || SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
+														if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+															AlertDialog.setCancelable(true);
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																}
+																else {
+																	_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																}
+															}
+															else {
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																	else {
+																		_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																}
+															}
+															_File_Remover();
+														}
+														else {
+															if (mRewardedAd != null) {
+																  Activity activityContext = MainActivity.this;
+																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																	    @Override
+																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																		       AlertDialog.setCancelable(true);
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																			if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																				_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																			}
+																			else {
+																				_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																			}
+																		}
+																		else {
+																			if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																				if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																					_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																				}
+																				else {
+																					_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																				}
+																			}
+																		}
+																		_File_Remover();
+																		      int rewardAmount = rewardItem.getAmount();
+																		      String rewardType = rewardItem.getType();
+																		    }
+																	  });
+															} else {
+																AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																	else {
+																		_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																}
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																			_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																		}
+																		else {
+																			_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																		}
+																	}
+																}
+																_File_Remover();
+															}
 														}
 													}
 												}
@@ -2945,6 +3099,112 @@ public class MainActivity extends AppCompatActivity {
 										}
 										                }
 									            });
+								if (android.os.Build.VERSION.SDK_INT >= 34) {
+								}
+								else {
+									Selected_Patched.setNegativeButton(mirror_0, new DialogInterface.OnClickListener(){
+										
+										                @Override
+										                public void onClick(DialogInterface Selected_Patched, int p) {
+											
+											AlertDialog.setCancelable(true);
+											try {
+												if (SWITCH_VERSION.getString("SWITCH", "").contains("A") || SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
+													if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+														AlertDialog.setCancelable(true);
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Browser(hidden_download_3.getText().toString());
+															_Reminder();
+														}
+														else {
+															_Browser(hidden_download_2.getText().toString());
+														}
+														_File_Remover();
+													}
+													else {
+														if (mRewardedAd != null) {
+															  Activity activityContext = MainActivity.this;
+															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																    @Override
+																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																	       AlertDialog.setCancelable(true);
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Browser(hidden_download_3.getText().toString());
+																		_Reminder();
+																	}
+																	else {
+																		_Browser(hidden_download_2.getText().toString());
+																	}
+																	_File_Remover();
+																	      int rewardAmount = rewardItem.getAmount();
+																	      String rewardType = rewardItem.getType();
+																	    }
+																  });
+														} else {
+															AlertDialog.setCancelable(true);
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Browser(hidden_download_3.getText().toString());
+																_Reminder();
+															}
+															else {
+																_Browser(hidden_download_2.getText().toString());
+															}
+															_File_Remover();
+														}
+													}
+												}
+												else {
+													if (SWITCH_VERSION.getString("SWITCH", "").contains("B") || SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
+														if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+															AlertDialog.setCancelable(true);
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Browser(hidden_download_3.getText().toString());
+																_Reminder();
+															}
+															else {
+																_Browser(hidden_download_2.getText().toString());
+															}
+															_File_Remover();
+														}
+														else {
+															if (mRewardedAd != null) {
+																  Activity activityContext = MainActivity.this;
+																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																	    @Override
+																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																		       AlertDialog.setCancelable(true);
+																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																			_Browser(hidden_download_3.getText().toString());
+																			_Reminder();
+																		}
+																		else {
+																			_Browser(hidden_download_2.getText().toString());
+																		}
+																		_File_Remover();
+																		      int rewardAmount = rewardItem.getAmount();
+																		      String rewardType = rewardItem.getType();
+																		    }
+																	  });
+															} else {
+																AlertDialog.setCancelable(true);
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Browser(hidden_download_3.getText().toString());
+																	_Reminder();
+																}
+																else {
+																	_Browser(hidden_download_2.getText().toString());
+																}
+																_File_Remover();
+															}
+														}
+													}
+												}
+											}
+											catch(Exception e) {
+											}
+											                }
+										            });
+								}
 								 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
 									
 									                @Override
@@ -3046,102 +3306,117 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface Selected_Patched, int p) {
 								try {
-									if (SWITCH_VERSION.getString("SWITCH", "").contains("A") || SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
-										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-											AlertDialog.setCancelable(true);
-											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-												else {
-													_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-											}
-											else {
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-													else {
-														_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-												}
-											}
-											_File_Remover();
-										}
-										else {
-											if (mRewardedAd != null) {
-												  Activity activityContext = MainActivity.this;
-												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-													    @Override
-													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-														       AlertDialog.setCancelable(true);
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-														}
-														else {
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-																else {
-																	_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-															}
-														}
-														_File_Remover();
-														      int rewardAmount = rewardItem.getAmount();
-														      String rewardType = rewardItem.getType();
-														    }
-													  });
-											} else {
+									if (android.os.Build.VERSION.SDK_INT >= 34) {
+										if (SWITCH_VERSION.getString("SWITCH", "").contains("A") || SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
+											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-													else {
-														_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Browser(hidden_download_3.getText().toString());
+													_Reminder();
 												}
 												else {
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-														else {
-															_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
+													_Browser(hidden_download_2.getText().toString());
 												}
 												_File_Remover();
+											}
+											else {
+												if (mRewardedAd != null) {
+													  Activity activityContext = MainActivity.this;
+													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+														    @Override
+														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+															       AlertDialog.setCancelable(true);
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Browser(hidden_download_3.getText().toString());
+																_Reminder();
+															}
+															else {
+																_Browser(hidden_download_2.getText().toString());
+															}
+															_File_Remover();
+															      int rewardAmount = rewardItem.getAmount();
+															      String rewardType = rewardItem.getType();
+															    }
+														  });
+												} else {
+													AlertDialog.setCancelable(true);
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Browser(hidden_download_3.getText().toString());
+														_Reminder();
+													}
+													else {
+														_Browser(hidden_download_2.getText().toString());
+													}
+													_File_Remover();
+												}
+											}
+										}
+										else {
+											if (SWITCH_VERSION.getString("SWITCH", "").contains("B") || SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
+												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+													AlertDialog.setCancelable(true);
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Browser(hidden_download_3.getText().toString());
+														_Reminder();
+													}
+													else {
+														_Browser(hidden_download_2.getText().toString());
+													}
+													_File_Remover();
+												}
+												else {
+													if (mRewardedAd != null) {
+														  Activity activityContext = MainActivity.this;
+														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+															    @Override
+															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																       AlertDialog.setCancelable(true);
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Browser(hidden_download_3.getText().toString());
+																	_Reminder();
+																}
+																else {
+																	_Browser(hidden_download_2.getText().toString());
+																}
+																_File_Remover();
+																      int rewardAmount = rewardItem.getAmount();
+																      String rewardType = rewardItem.getType();
+																    }
+															  });
+													} else {
+														AlertDialog.setCancelable(true);
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Browser(hidden_download_3.getText().toString());
+															_Reminder();
+														}
+														else {
+															_Browser(hidden_download_2.getText().toString());
+														}
+														_File_Remover();
+													}
+												}
 											}
 										}
 									}
 									else {
-										if (SWITCH_VERSION.getString("SWITCH", "").contains("B") || SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
+										if (SWITCH_VERSION.getString("SWITCH", "").contains("A") || SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
 											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 													}
 													else {
-														_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 													}
 												}
 												else {
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 														}
 														else {
-															_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 														}
 													}
 												}
@@ -3156,19 +3431,19 @@ public class MainActivity extends AppCompatActivity {
 															       AlertDialog.setCancelable(true);
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 																}
 																else {
-																	_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 																}
 															}
 															else {
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 																	}
 																	else {
-																		_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 																	}
 																}
 															}
@@ -3181,23 +3456,102 @@ public class MainActivity extends AppCompatActivity {
 													AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 														}
 														else {
-															_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 														}
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 															}
 															else {
-																_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 															}
 														}
 													}
 													_File_Remover();
+												}
+											}
+										}
+										else {
+											if (SWITCH_VERSION.getString("SWITCH", "").contains("B") || SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
+												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+													AlertDialog.setCancelable(true);
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+														}
+														else {
+															_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+														}
+													}
+													else {
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+															}
+															else {
+																_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+															}
+														}
+													}
+													_File_Remover();
+												}
+												else {
+													if (mRewardedAd != null) {
+														  Activity activityContext = MainActivity.this;
+														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+															    @Override
+															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																       AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																	else {
+																		_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																}
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																			_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																		}
+																		else {
+																			_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																		}
+																	}
+																}
+																_File_Remover();
+																      int rewardAmount = rewardItem.getAmount();
+																      String rewardType = rewardItem.getType();
+																    }
+															  });
+													} else {
+														AlertDialog.setCancelable(true);
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+															}
+															else {
+																_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+															}
+														}
+														else {
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																}
+																else {
+																	_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																}
+															}
+														}
+														_File_Remover();
+													}
 												}
 											}
 										}
@@ -3207,6 +3561,111 @@ public class MainActivity extends AppCompatActivity {
 								}
 								                }
 							            });
+						if (android.os.Build.VERSION.SDK_INT >= 34) {
+						}
+						else {
+							Selected_Patched.setNegativeButton(mirror_0, new DialogInterface.OnClickListener(){
+								
+								                @Override
+								                public void onClick(DialogInterface Selected_Patched, int p) {
+									
+									try {
+										if (SWITCH_VERSION.getString("SWITCH", "").contains("A") || SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
+											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+												AlertDialog.setCancelable(true);
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Browser(hidden_download_3.getText().toString());
+													_Reminder();
+												}
+												else {
+													_Browser(hidden_download_2.getText().toString());
+												}
+												_File_Remover();
+											}
+											else {
+												if (mRewardedAd != null) {
+													  Activity activityContext = MainActivity.this;
+													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+														    @Override
+														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+															       AlertDialog.setCancelable(true);
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Browser(hidden_download_3.getText().toString());
+																_Reminder();
+															}
+															else {
+																_Browser(hidden_download_2.getText().toString());
+															}
+															_File_Remover();
+															      int rewardAmount = rewardItem.getAmount();
+															      String rewardType = rewardItem.getType();
+															    }
+														  });
+												} else {
+													AlertDialog.setCancelable(true);
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Browser(hidden_download_3.getText().toString());
+														_Reminder();
+													}
+													else {
+														_Browser(hidden_download_2.getText().toString());
+													}
+													_File_Remover();
+												}
+											}
+										}
+										else {
+											if (SWITCH_VERSION.getString("SWITCH", "").contains("B") || SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
+												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+													AlertDialog.setCancelable(true);
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Browser(hidden_download_3.getText().toString());
+														_Reminder();
+													}
+													else {
+														_Browser(hidden_download_2.getText().toString());
+													}
+													_File_Remover();
+												}
+												else {
+													if (mRewardedAd != null) {
+														  Activity activityContext = MainActivity.this;
+														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+															    @Override
+															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																       AlertDialog.setCancelable(true);
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Browser(hidden_download_3.getText().toString());
+																	_Reminder();
+																}
+																else {
+																	_Browser(hidden_download_2.getText().toString());
+																}
+																_File_Remover();
+																      int rewardAmount = rewardItem.getAmount();
+																      String rewardType = rewardItem.getType();
+																    }
+															  });
+													} else {
+														AlertDialog.setCancelable(true);
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Browser(hidden_download_3.getText().toString());
+															_Reminder();
+														}
+														else {
+															_Browser(hidden_download_2.getText().toString());
+														}
+														_File_Remover();
+													}
+												}
+											}
+										}
+									}
+									catch(Exception e) {
+									}
+									                }
+								            });
+						}
 						 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
 							
 							                @Override
@@ -3261,7 +3720,7 @@ public class MainActivity extends AppCompatActivity {
 			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
 				final int _position = _param3;
 				try {
-					if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")) {
+					if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched (xManager).apk") || FileUtil.isExistFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk")) {
 						final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
 						
 						String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
@@ -3277,11 +3736,11 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface File_Exist, int p) {
 								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk")) {
+								if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched (xManager).apk")) {
 									_Extension_4();
 								}
 								else {
-									if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")) {
+									if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk")) {
 										_Extension_5();
 									}
 								}
@@ -3294,8 +3753,8 @@ public class MainActivity extends AppCompatActivity {
 								
 								AlertDialog.setCancelable(true);
 								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk");
-								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk");
+								FileUtil.deleteFile("/storage/emulated/0/Download/Patched (xManager).apk");
+								FileUtil.deleteFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk");
 								                }
 							            });
 						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
@@ -3384,102 +3843,117 @@ public class MainActivity extends AppCompatActivity {
 									                @Override
 									                public void onClick(DialogInterface Selected_Patched, int p) {
 										try {
-											if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-													AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-														else {
-															_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-														}
-													}
-													_File_Remover();
-												}
-												else {
-													if (mRewardedAd != null) {
-														  Activity activityContext = MainActivity.this;
-														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-															    @Override
-															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																       AlertDialog.setCancelable(true);
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																	else {
-																		_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																}
-																else {
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																			_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																		}
-																		else {
-																			_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																		}
-																	}
-																}
-																_File_Remover();
-																      int rewardAmount = rewardItem.getAmount();
-																      String rewardType = rewardItem.getType();
-																    }
-															  });
-													} else {
+											if (android.os.Build.VERSION.SDK_INT >= 34) {
+												if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+													if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 														AlertDialog.setCancelable(true);
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Browser(hidden_download_3.getText().toString());
+															_Reminder();
 														}
 														else {
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-																else {
-																	_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-															}
+															_Browser(hidden_download_2.getText().toString());
 														}
 														_File_Remover();
+													}
+													else {
+														if (mRewardedAd != null) {
+															  Activity activityContext = MainActivity.this;
+															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																    @Override
+																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																	       AlertDialog.setCancelable(true);
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Browser(hidden_download_3.getText().toString());
+																		_Reminder();
+																	}
+																	else {
+																		_Browser(hidden_download_2.getText().toString());
+																	}
+																	_File_Remover();
+																	      int rewardAmount = rewardItem.getAmount();
+																	      String rewardType = rewardItem.getType();
+																	    }
+																  });
+														} else {
+															AlertDialog.setCancelable(true);
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Browser(hidden_download_3.getText().toString());
+																_Reminder();
+															}
+															else {
+																_Browser(hidden_download_2.getText().toString());
+															}
+															_File_Remover();
+														}
+													}
+												}
+												else {
+													if (SWITCH_VERSION.getString("SWITCH", "").equals("B") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+														if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+															AlertDialog.setCancelable(true);
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Browser(hidden_download_3.getText().toString());
+																_Reminder();
+															}
+															else {
+																_Browser(hidden_download_2.getText().toString());
+															}
+															_File_Remover();
+														}
+														else {
+															if (mRewardedAd != null) {
+																  Activity activityContext = MainActivity.this;
+																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																	    @Override
+																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																		       AlertDialog.setCancelable(true);
+																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																			_Browser(hidden_download_3.getText().toString());
+																			_Reminder();
+																		}
+																		else {
+																			_Browser(hidden_download_2.getText().toString());
+																		}
+																		_File_Remover();
+																		      int rewardAmount = rewardItem.getAmount();
+																		      String rewardType = rewardItem.getType();
+																		    }
+																	  });
+															} else {
+																AlertDialog.setCancelable(true);
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Browser(hidden_download_3.getText().toString());
+																	_Reminder();
+																}
+																else {
+																	_Browser(hidden_download_2.getText().toString());
+																}
+																_File_Remover();
+															}
+														}
 													}
 												}
 											}
 											else {
-												if (SWITCH_VERSION.getString("SWITCH", "").equals("B") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+												if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
 													if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 														AlertDialog.setCancelable(true);
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 															}
 															else {
-																_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 															}
 														}
 														else {
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 																}
 																else {
-																	_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 																}
 															}
 														}
@@ -3494,19 +3968,19 @@ public class MainActivity extends AppCompatActivity {
 																	       AlertDialog.setCancelable(true);
 																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																			_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																			_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 																		}
 																		else {
-																			_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																			_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 																		}
 																	}
 																	else {
 																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 																			if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																				_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																				_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 																			}
 																			else {
-																				_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																				_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 																			}
 																		}
 																	}
@@ -3519,23 +3993,102 @@ public class MainActivity extends AppCompatActivity {
 															AlertDialog.setCancelable(true);
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 																}
 																else {
-																	_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 																}
 															}
 															else {
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 																	}
 																	else {
-																		_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 																	}
 																}
 															}
 															_File_Remover();
+														}
+													}
+												}
+												else {
+													if (SWITCH_VERSION.getString("SWITCH", "").equals("B") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+														if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+															AlertDialog.setCancelable(true);
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																}
+																else {
+																	_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																}
+															}
+															else {
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																	else {
+																		_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																}
+															}
+															_File_Remover();
+														}
+														else {
+															if (mRewardedAd != null) {
+																  Activity activityContext = MainActivity.this;
+																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																	    @Override
+																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																		       AlertDialog.setCancelable(true);
+																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																			if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																				_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																			}
+																			else {
+																				_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																			}
+																		}
+																		else {
+																			if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																				if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																					_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																				}
+																				else {
+																					_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																				}
+																			}
+																		}
+																		_File_Remover();
+																		      int rewardAmount = rewardItem.getAmount();
+																		      String rewardType = rewardItem.getType();
+																		    }
+																	  });
+															} else {
+																AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																	else {
+																		_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																}
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																			_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																		}
+																		else {
+																			_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																		}
+																	}
+																}
+																_File_Remover();
+															}
 														}
 													}
 												}
@@ -3545,6 +4098,112 @@ public class MainActivity extends AppCompatActivity {
 										}
 										                }
 									            });
+								if (android.os.Build.VERSION.SDK_INT >= 34) {
+								}
+								else {
+									Selected_Patched.setNegativeButton(mirror_0, new DialogInterface.OnClickListener(){
+										
+										                @Override
+										                public void onClick(DialogInterface Selected_Patched, int p) {
+											
+											AlertDialog.setCancelable(true);
+											try {
+												if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+													if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+														AlertDialog.setCancelable(true);
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Browser(hidden_download_3.getText().toString());
+															_Reminder();
+														}
+														else {
+															_Browser(hidden_download_2.getText().toString());
+														}
+														_File_Remover();
+													}
+													else {
+														if (mRewardedAd != null) {
+															  Activity activityContext = MainActivity.this;
+															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																    @Override
+																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																	       AlertDialog.setCancelable(true);
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Browser(hidden_download_3.getText().toString());
+																		_Reminder();
+																	}
+																	else {
+																		_Browser(hidden_download_2.getText().toString());
+																	}
+																	_File_Remover();
+																	      int rewardAmount = rewardItem.getAmount();
+																	      String rewardType = rewardItem.getType();
+																	    }
+																  });
+														} else {
+															AlertDialog.setCancelable(true);
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Browser(hidden_download_3.getText().toString());
+																_Reminder();
+															}
+															else {
+																_Browser(hidden_download_2.getText().toString());
+															}
+															_File_Remover();
+														}
+													}
+												}
+												else {
+													if (SWITCH_VERSION.getString("SWITCH", "").equals("B") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+														if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+															AlertDialog.setCancelable(true);
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Browser(hidden_download_3.getText().toString());
+																_Reminder();
+															}
+															else {
+																_Browser(hidden_download_2.getText().toString());
+															}
+															_File_Remover();
+														}
+														else {
+															if (mRewardedAd != null) {
+																  Activity activityContext = MainActivity.this;
+																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+																	    @Override
+																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																		       AlertDialog.setCancelable(true);
+																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																			_Browser(hidden_download_3.getText().toString());
+																			_Reminder();
+																		}
+																		else {
+																			_Browser(hidden_download_2.getText().toString());
+																		}
+																		_File_Remover();
+																		      int rewardAmount = rewardItem.getAmount();
+																		      String rewardType = rewardItem.getType();
+																		    }
+																	  });
+															} else {
+																AlertDialog.setCancelable(true);
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Browser(hidden_download_3.getText().toString());
+																	_Reminder();
+																}
+																else {
+																	_Browser(hidden_download_2.getText().toString());
+																}
+																_File_Remover();
+															}
+														}
+													}
+												}
+											}
+											catch(Exception e) {
+											}
+											                }
+										            });
+								}
 								 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
 									
 									                @Override
@@ -3646,102 +4305,117 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface Selected_Patched, int p) {
 								try {
-									if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-											AlertDialog.setCancelable(true);
-											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-												else {
-													_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-											}
-											else {
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-													else {
-														_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-												}
-											}
-											_File_Remover();
-										}
-										else {
-											if (mRewardedAd != null) {
-												  Activity activityContext = MainActivity.this;
-												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-													    @Override
-													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-														       AlertDialog.setCancelable(true);
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-														}
-														else {
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-																else {
-																	_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																}
-															}
-														}
-														_File_Remover();
-														      int rewardAmount = rewardItem.getAmount();
-														      String rewardType = rewardItem.getType();
-														    }
-													  });
-											} else {
+									if (android.os.Build.VERSION.SDK_INT >= 34) {
+										if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
-													else {
-														_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-													}
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Browser(hidden_download_3.getText().toString());
+													_Reminder();
 												}
 												else {
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-														else {
-															_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
+													_Browser(hidden_download_2.getText().toString());
 												}
 												_File_Remover();
+											}
+											else {
+												if (mRewardedAd != null) {
+													  Activity activityContext = MainActivity.this;
+													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+														    @Override
+														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+															       AlertDialog.setCancelable(true);
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Browser(hidden_download_3.getText().toString());
+																_Reminder();
+															}
+															else {
+																_Browser(hidden_download_2.getText().toString());
+															}
+															_File_Remover();
+															      int rewardAmount = rewardItem.getAmount();
+															      String rewardType = rewardItem.getType();
+															    }
+														  });
+												} else {
+													AlertDialog.setCancelable(true);
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Browser(hidden_download_3.getText().toString());
+														_Reminder();
+													}
+													else {
+														_Browser(hidden_download_2.getText().toString());
+													}
+													_File_Remover();
+												}
+											}
+										}
+										else {
+											if (SWITCH_VERSION.getString("SWITCH", "").equals("B") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+													AlertDialog.setCancelable(true);
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Browser(hidden_download_3.getText().toString());
+														_Reminder();
+													}
+													else {
+														_Browser(hidden_download_2.getText().toString());
+													}
+													_File_Remover();
+												}
+												else {
+													if (mRewardedAd != null) {
+														  Activity activityContext = MainActivity.this;
+														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+															    @Override
+															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																       AlertDialog.setCancelable(true);
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Browser(hidden_download_3.getText().toString());
+																	_Reminder();
+																}
+																else {
+																	_Browser(hidden_download_2.getText().toString());
+																}
+																_File_Remover();
+																      int rewardAmount = rewardItem.getAmount();
+																      String rewardType = rewardItem.getType();
+																    }
+															  });
+													} else {
+														AlertDialog.setCancelable(true);
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Browser(hidden_download_3.getText().toString());
+															_Reminder();
+														}
+														else {
+															_Browser(hidden_download_2.getText().toString());
+														}
+														_File_Remover();
+													}
+												}
 											}
 										}
 									}
 									else {
-										if (SWITCH_VERSION.getString("SWITCH", "").equals("B") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+										if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
 											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 												AlertDialog.setCancelable(true);
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 													}
 													else {
-														_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 													}
 												}
 												else {
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 														}
 														else {
-															_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 														}
 													}
 												}
@@ -3756,19 +4430,19 @@ public class MainActivity extends AppCompatActivity {
 															       AlertDialog.setCancelable(true);
 															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 																}
 																else {
-																	_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 																}
 															}
 															else {
 																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 																	}
 																	else {
-																		_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																		_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 																	}
 																}
 															}
@@ -3781,23 +4455,102 @@ public class MainActivity extends AppCompatActivity {
 													AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 														}
 														else {
-															_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 														}
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 															}
 															else {
-																_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 															}
 														}
 													}
 													_File_Remover();
+												}
+											}
+										}
+										else {
+											if (SWITCH_VERSION.getString("SWITCH", "").equals("B") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+													AlertDialog.setCancelable(true);
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+														}
+														else {
+															_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+														}
+													}
+													else {
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+															}
+															else {
+																_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+															}
+														}
+													}
+													_File_Remover();
+												}
+												else {
+													if (mRewardedAd != null) {
+														  Activity activityContext = MainActivity.this;
+														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+															    @Override
+															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																       AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																	else {
+																		_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																}
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																			_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																		}
+																		else {
+																			_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																		}
+																	}
+																}
+																_File_Remover();
+																      int rewardAmount = rewardItem.getAmount();
+																      String rewardType = rewardItem.getType();
+																    }
+															  });
+													} else {
+														AlertDialog.setCancelable(true);
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+															}
+															else {
+																_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+															}
+														}
+														else {
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																}
+																else {
+																	_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																}
+															}
+														}
+														_File_Remover();
+													}
 												}
 											}
 										}
@@ -3807,6 +4560,112 @@ public class MainActivity extends AppCompatActivity {
 								}
 								                }
 							            });
+						if (android.os.Build.VERSION.SDK_INT >= 34) {
+						}
+						else {
+							Selected_Patched.setNegativeButton(mirror_0, new DialogInterface.OnClickListener(){
+								
+								                @Override
+								                public void onClick(DialogInterface Selected_Patched, int p) {
+									
+									AlertDialog.setCancelable(true);
+									try {
+										if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
+											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+												AlertDialog.setCancelable(true);
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Browser(hidden_download_3.getText().toString());
+													_Reminder();
+												}
+												else {
+													_Browser(hidden_download_2.getText().toString());
+												}
+												_File_Remover();
+											}
+											else {
+												if (mRewardedAd != null) {
+													  Activity activityContext = MainActivity.this;
+													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+														    @Override
+														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+															       AlertDialog.setCancelable(true);
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Browser(hidden_download_3.getText().toString());
+																_Reminder();
+															}
+															else {
+																_Browser(hidden_download_2.getText().toString());
+															}
+															_File_Remover();
+															      int rewardAmount = rewardItem.getAmount();
+															      String rewardType = rewardItem.getType();
+															    }
+														  });
+												} else {
+													AlertDialog.setCancelable(true);
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Browser(hidden_download_3.getText().toString());
+														_Reminder();
+													}
+													else {
+														_Browser(hidden_download_2.getText().toString());
+													}
+													_File_Remover();
+												}
+											}
+										}
+										else {
+											if (SWITCH_VERSION.getString("SWITCH", "").equals("B") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
+												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+													AlertDialog.setCancelable(true);
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Browser(hidden_download_3.getText().toString());
+														_Reminder();
+													}
+													else {
+														_Browser(hidden_download_2.getText().toString());
+													}
+													_File_Remover();
+												}
+												else {
+													if (mRewardedAd != null) {
+														  Activity activityContext = MainActivity.this;
+														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+															    @Override
+															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																       AlertDialog.setCancelable(true);
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Browser(hidden_download_3.getText().toString());
+																	_Reminder();
+																}
+																else {
+																	_Browser(hidden_download_2.getText().toString());
+																}
+																_File_Remover();
+																      int rewardAmount = rewardItem.getAmount();
+																      String rewardType = rewardItem.getType();
+																    }
+															  });
+													} else {
+														AlertDialog.setCancelable(true);
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Browser(hidden_download_3.getText().toString());
+															_Reminder();
+														}
+														else {
+															_Browser(hidden_download_2.getText().toString());
+														}
+														_File_Remover();
+													}
+												}
+											}
+										}
+									}
+									catch(Exception e) {
+									}
+									                }
+								            });
+						}
 						 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
 							
 							                @Override
@@ -3861,7 +4720,7 @@ public class MainActivity extends AppCompatActivity {
 			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
 				final int _position = _param3;
 				try {
-					if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk")) {
+					if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Lite (xManager).apk")) {
 						final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
 						
 						String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
@@ -3877,7 +4736,7 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface File_Exist, int p) {
 								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk")) {
+								if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Lite (xManager).apk")) {
 									_Extension_6();
 								}
 								                }
@@ -3889,7 +4748,7 @@ public class MainActivity extends AppCompatActivity {
 								
 								AlertDialog.setCancelable(true);
 								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk");
+								FileUtil.deleteFile("/storage/emulated/0/Download/Patched Lite (xManager).apk");
 								                }
 							            });
 						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
@@ -3922,79 +4781,125 @@ public class MainActivity extends AppCompatActivity {
 									                @Override
 									                public void onClick(DialogInterface Selected_Patched, int p) {
 										try {
-											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-												AlertDialog.setCancelable(true);
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+											if (android.os.Build.VERSION.SDK_INT >= 34) {
+												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+													AlertDialog.setCancelable(true);
 													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														_Browser(hidden_download_3.getText().toString());
+														_Reminder();
 													}
 													else {
-														_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														_Browser(hidden_download_2.getText().toString());
 													}
+													_File_Remover();
 												}
 												else {
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-														else {
-															_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-												}
-												_File_Remover();
-											}
-											else {
-												if (mRewardedAd != null) {
-													  Activity activityContext = MainActivity.this;
-													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-														    @Override
-														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-															       AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													if (mRewardedAd != null) {
+														  Activity activityContext = MainActivity.this;
+														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+															    @Override
+															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																       AlertDialog.setCancelable(true);
 																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	_Browser(hidden_download_3.getText().toString());
+																	_Reminder();
 																}
 																else {
-																	_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	_Browser(hidden_download_2.getText().toString());
 																}
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																	else {
-																		_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																}
-															}
-															_File_Remover();
-															      int rewardAmount = rewardItem.getAmount();
-															      String rewardType = rewardItem.getType();
-															    }
-														  });
-												} else {
+																_File_Remover();
+																      int rewardAmount = rewardItem.getAmount();
+																      String rewardType = rewardItem.getType();
+																    }
+															  });
+													} else {
+														AlertDialog.setCancelable(true);
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Browser(hidden_download_3.getText().toString());
+															_Reminder();
+														}
+														else {
+															_Browser(hidden_download_2.getText().toString());
+														}
+														_File_Remover();
+													}
+												}
+											}
+											else {
+												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 													AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 														}
 														else {
-															_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 														}
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 															}
 															else {
-																_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 															}
 														}
 													}
 													_File_Remover();
+												}
+												else {
+													if (mRewardedAd != null) {
+														  Activity activityContext = MainActivity.this;
+														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+															    @Override
+															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																       AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																	else {
+																		_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																}
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																			_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																		}
+																		else {
+																			_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																		}
+																	}
+																}
+																_File_Remover();
+																      int rewardAmount = rewardItem.getAmount();
+																      String rewardType = rewardItem.getType();
+																    }
+															  });
+													} else {
+														AlertDialog.setCancelable(true);
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+															}
+															else {
+																_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+															}
+														}
+														else {
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																}
+																else {
+																	_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																}
+															}
+														}
+														_File_Remover();
+													}
 												}
 											}
 										}
@@ -4002,6 +4907,64 @@ public class MainActivity extends AppCompatActivity {
 										}
 										                }
 									            });
+								if (android.os.Build.VERSION.SDK_INT >= 34) {
+								}
+								else {
+									Selected_Patched.setNegativeButton(mirror_0, new DialogInterface.OnClickListener(){
+										
+										                @Override
+										                public void onClick(DialogInterface Selected_Patched, int p) {
+											
+											AlertDialog.setCancelable(true);
+											try {
+												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+													AlertDialog.setCancelable(true);
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Browser(hidden_download_3.getText().toString());
+														_Reminder();
+													}
+													else {
+														_Browser(hidden_download_2.getText().toString());
+													}
+													_File_Remover();
+												}
+												else {
+													if (mRewardedAd != null) {
+														  Activity activityContext = MainActivity.this;
+														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+															    @Override
+															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																       AlertDialog.setCancelable(true);
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Browser(hidden_download_3.getText().toString());
+																	_Reminder();
+																}
+																else {
+																	_Browser(hidden_download_2.getText().toString());
+																}
+																_File_Remover();
+																      int rewardAmount = rewardItem.getAmount();
+																      String rewardType = rewardItem.getType();
+																    }
+															  });
+													} else {
+														AlertDialog.setCancelable(true);
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Browser(hidden_download_3.getText().toString());
+															_Reminder();
+														}
+														else {
+															_Browser(hidden_download_2.getText().toString());
+														}
+														_File_Remover();
+													}
+												}
+											}
+											catch(Exception e) {
+											}
+											                }
+										            });
+								}
 								 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
 									
 									                @Override
@@ -4047,79 +5010,125 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface Selected_Patched, int p) {
 								try {
-									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-										AlertDialog.setCancelable(true);
-										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+									if (android.os.Build.VERSION.SDK_INT >= 34) {
+										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+											AlertDialog.setCancelable(true);
 											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-												_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												_Browser(hidden_download_3.getText().toString());
+												_Reminder();
 											}
 											else {
-												_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												_Browser(hidden_download_2.getText().toString());
 											}
+											_File_Remover();
 										}
 										else {
-											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-												else {
-													_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-											}
-										}
-										_File_Remover();
-									}
-									else {
-										if (mRewardedAd != null) {
-											  Activity activityContext = MainActivity.this;
-											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-												    @Override
-												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-													       AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+											if (mRewardedAd != null) {
+												  Activity activityContext = MainActivity.this;
+												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+													    @Override
+													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+														       AlertDialog.setCancelable(true);
 														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															_Browser(hidden_download_3.getText().toString());
+															_Reminder();
 														}
 														else {
-															_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															_Browser(hidden_download_2.getText().toString());
 														}
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-														}
-													}
-													_File_Remover();
-													      int rewardAmount = rewardItem.getAmount();
-													      String rewardType = rewardItem.getType();
-													    }
-												  });
-										} else {
+														_File_Remover();
+														      int rewardAmount = rewardItem.getAmount();
+														      String rewardType = rewardItem.getType();
+														    }
+													  });
+											} else {
+												AlertDialog.setCancelable(true);
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Browser(hidden_download_3.getText().toString());
+													_Reminder();
+												}
+												else {
+													_Browser(hidden_download_2.getText().toString());
+												}
+												_File_Remover();
+											}
+										}
+									}
+									else {
+										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 											AlertDialog.setCancelable(true);
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 												}
 												else {
-													_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 												}
 											}
 											else {
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 													}
 													else {
-														_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 													}
 												}
 											}
 											_File_Remover();
+										}
+										else {
+											if (mRewardedAd != null) {
+												  Activity activityContext = MainActivity.this;
+												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+													    @Override
+													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+														       AlertDialog.setCancelable(true);
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+															}
+															else {
+																_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+															}
+														}
+														else {
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																}
+																else {
+																	_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																}
+															}
+														}
+														_File_Remover();
+														      int rewardAmount = rewardItem.getAmount();
+														      String rewardType = rewardItem.getType();
+														    }
+													  });
+											} else {
+												AlertDialog.setCancelable(true);
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+													}
+													else {
+														_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+													}
+												}
+												else {
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+														}
+														else {
+															_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+														}
+													}
+												}
+												_File_Remover();
+											}
 										}
 									}
 								}
@@ -4127,6 +5136,63 @@ public class MainActivity extends AppCompatActivity {
 								}
 								                }
 							            });
+						if (android.os.Build.VERSION.SDK_INT >= 34) {
+						}
+						else {
+							Selected_Patched.setNegativeButton(mirror_0, new DialogInterface.OnClickListener(){
+								
+								                @Override
+								                public void onClick(DialogInterface Selected_Patched, int p) {
+									
+									try {
+										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+											AlertDialog.setCancelable(true);
+											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+												_Browser(hidden_download_3.getText().toString());
+												_Reminder();
+											}
+											else {
+												_Browser(hidden_download_2.getText().toString());
+											}
+											_File_Remover();
+										}
+										else {
+											if (mRewardedAd != null) {
+												  Activity activityContext = MainActivity.this;
+												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+													    @Override
+													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+														       AlertDialog.setCancelable(true);
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Browser(hidden_download_3.getText().toString());
+															_Reminder();
+														}
+														else {
+															_Browser(hidden_download_2.getText().toString());
+														}
+														_File_Remover();
+														      int rewardAmount = rewardItem.getAmount();
+														      String rewardType = rewardItem.getType();
+														    }
+													  });
+											} else {
+												AlertDialog.setCancelable(true);
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Browser(hidden_download_3.getText().toString());
+													_Reminder();
+												}
+												else {
+													_Browser(hidden_download_2.getText().toString());
+												}
+												_File_Remover();
+											}
+										}
+									}
+									catch(Exception e) {
+									}
+									                }
+								            });
+						}
 						 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
 							
 							                @Override
@@ -4155,7 +5221,7 @@ public class MainActivity extends AppCompatActivity {
 			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
 				final int _position = _param3;
 				try {
-					if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Wave (xManager).apk")) {
+					if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Wave (xManager).apk")) {
 						final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
 						
 						String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
@@ -4171,7 +5237,7 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface File_Exist, int p) {
 								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Wave (xManager).apk")) {
+								if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Wave (xManager).apk")) {
 									_Extension_8();
 								}
 								                }
@@ -4183,7 +5249,7 @@ public class MainActivity extends AppCompatActivity {
 								
 								AlertDialog.setCancelable(true);
 								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-								FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Wave (xManager).apk");
+								FileUtil.deleteFile("/storage/emulated/0/Download/Patched Wave (xManager).apk");
 								                }
 							            });
 						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
@@ -4216,79 +5282,125 @@ public class MainActivity extends AppCompatActivity {
 									                @Override
 									                public void onClick(DialogInterface Selected_Patched, int p) {
 										try {
-											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-												AlertDialog.setCancelable(true);
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+											if (android.os.Build.VERSION.SDK_INT >= 34) {
+												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+													AlertDialog.setCancelable(true);
 													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Install_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														_Browser(hidden_download_3.getText().toString());
+														_Reminder();
 													}
 													else {
-														_Download_Install_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														_Browser(hidden_download_2.getText().toString());
 													}
+													_File_Remover();
 												}
 												else {
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-														else {
-															_Download_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-														}
-													}
-												}
-												_File_Remover();
-											}
-											else {
-												if (mRewardedAd != null) {
-													  Activity activityContext = MainActivity.this;
-													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-														    @Override
-														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-															       AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													if (mRewardedAd != null) {
+														  Activity activityContext = MainActivity.this;
+														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+															    @Override
+															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																       AlertDialog.setCancelable(true);
 																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Install_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	_Browser(hidden_download_3.getText().toString());
+																	_Reminder();
 																}
 																else {
-																	_Download_Install_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																	_Browser(hidden_download_2.getText().toString());
 																}
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																	else {
-																		_Download_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-																	}
-																}
-															}
-															_File_Remover();
-															      int rewardAmount = rewardItem.getAmount();
-															      String rewardType = rewardItem.getType();
-															    }
-														  });
-												} else {
+																_File_Remover();
+																      int rewardAmount = rewardItem.getAmount();
+																      String rewardType = rewardItem.getType();
+																    }
+															  });
+													} else {
+														AlertDialog.setCancelable(true);
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Browser(hidden_download_3.getText().toString());
+															_Reminder();
+														}
+														else {
+															_Browser(hidden_download_2.getText().toString());
+														}
+														_File_Remover();
+													}
+												}
+											}
+											else {
+												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 													AlertDialog.setCancelable(true);
 													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															_Download_Install_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 														}
 														else {
-															_Download_Install_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															_Download_Install_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 														}
 													}
 													else {
 														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																_Download_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 															}
 															else {
-																_Download_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+																_Download_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 															}
 														}
 													}
 													_File_Remover();
+												}
+												else {
+													if (mRewardedAd != null) {
+														  Activity activityContext = MainActivity.this;
+														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+															    @Override
+															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																       AlertDialog.setCancelable(true);
+																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																		_Download_Install_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																	else {
+																		_Download_Install_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																	}
+																}
+																else {
+																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																			_Download_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																		}
+																		else {
+																			_Download_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																		}
+																	}
+																}
+																_File_Remover();
+																      int rewardAmount = rewardItem.getAmount();
+																      String rewardType = rewardItem.getType();
+																    }
+															  });
+													} else {
+														AlertDialog.setCancelable(true);
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Install_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+															}
+															else {
+																_Download_Install_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+															}
+														}
+														else {
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																}
+																else {
+																	_Download_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																}
+															}
+														}
+														_File_Remover();
+													}
 												}
 											}
 										}
@@ -4296,6 +5408,63 @@ public class MainActivity extends AppCompatActivity {
 										}
 										                }
 									            });
+								if (android.os.Build.VERSION.SDK_INT >= 34) {
+								}
+								else {
+									Selected_Patched.setNegativeButton(mirror_0, new DialogInterface.OnClickListener(){
+										
+										                @Override
+										                public void onClick(DialogInterface Selected_Patched, int p) {
+											
+											try {
+												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+													AlertDialog.setCancelable(true);
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Browser(hidden_download_3.getText().toString());
+														_Reminder();
+													}
+													else {
+														_Browser(hidden_download_2.getText().toString());
+													}
+													_File_Remover();
+												}
+												else {
+													if (mRewardedAd != null) {
+														  Activity activityContext = MainActivity.this;
+														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+															    @Override
+															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+																       AlertDialog.setCancelable(true);
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Browser(hidden_download_3.getText().toString());
+																	_Reminder();
+																}
+																else {
+																	_Browser(hidden_download_2.getText().toString());
+																}
+																_File_Remover();
+																      int rewardAmount = rewardItem.getAmount();
+																      String rewardType = rewardItem.getType();
+																    }
+															  });
+													} else {
+														AlertDialog.setCancelable(true);
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Browser(hidden_download_3.getText().toString());
+															_Reminder();
+														}
+														else {
+															_Browser(hidden_download_2.getText().toString());
+														}
+														_File_Remover();
+													}
+												}
+											}
+											catch(Exception e) {
+											}
+											                }
+										            });
+								}
 								 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
 									
 									                @Override
@@ -4341,79 +5510,125 @@ public class MainActivity extends AppCompatActivity {
 							                @Override
 							                public void onClick(DialogInterface Selected_Patched, int p) {
 								try {
-									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-										AlertDialog.setCancelable(true);
-										if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+									if (android.os.Build.VERSION.SDK_INT >= 34) {
+										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+											AlertDialog.setCancelable(true);
 											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-												_Download_Install_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												_Browser(hidden_download_3.getText().toString());
+												_Reminder();
 											}
 											else {
-												_Download_Install_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+												_Browser(hidden_download_2.getText().toString());
 											}
+											_File_Remover();
 										}
 										else {
-											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Download_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-												else {
-													_Download_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-												}
-											}
-										}
-										_File_Remover();
-									}
-									else {
-										if (mRewardedAd != null) {
-											  Activity activityContext = MainActivity.this;
-											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-												    @Override
-												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-													       AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+											if (mRewardedAd != null) {
+												  Activity activityContext = MainActivity.this;
+												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+													    @Override
+													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+														       AlertDialog.setCancelable(true);
 														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															_Browser(hidden_download_3.getText().toString());
+															_Reminder();
 														}
 														else {
-															_Download_Install_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+															_Browser(hidden_download_2.getText().toString());
 														}
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-															else {
-																_Download_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
-															}
-														}
-													}
-													_File_Remover();
-													      int rewardAmount = rewardItem.getAmount();
-													      String rewardType = rewardItem.getType();
-													    }
-												  });
-										} else {
+														_File_Remover();
+														      int rewardAmount = rewardItem.getAmount();
+														      String rewardType = rewardItem.getType();
+														    }
+													  });
+											} else {
+												AlertDialog.setCancelable(true);
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Browser(hidden_download_3.getText().toString());
+													_Reminder();
+												}
+												else {
+													_Browser(hidden_download_2.getText().toString());
+												}
+												_File_Remover();
+											}
+										}
+									}
+									else {
+										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 											AlertDialog.setCancelable(true);
 											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
 												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Download_Install_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													_Download_Install_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 												}
 												else {
-													_Download_Install_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+													_Download_Install_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 												}
 											}
 											else {
 												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
 													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														_Download_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
 													}
 													else {
-														_Download_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/");
+														_Download_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
 													}
 												}
 											}
 											_File_Remover();
+										}
+										else {
+											if (mRewardedAd != null) {
+												  Activity activityContext = MainActivity.this;
+												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+													    @Override
+													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+														       AlertDialog.setCancelable(true);
+														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																_Download_Install_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+															}
+															else {
+																_Download_Install_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+															}
+														}
+														else {
+															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+																	_Download_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+																}
+																else {
+																	_Download_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+																}
+															}
+														}
+														_File_Remover();
+														      int rewardAmount = rewardItem.getAmount();
+														      String rewardType = rewardItem.getType();
+														    }
+													  });
+											} else {
+												AlertDialog.setCancelable(true);
+												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Download_Install_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+													}
+													else {
+														_Download_Install_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+													}
+												}
+												else {
+													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Download_Wave(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
+														}
+														else {
+															_Download_Wave(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
+														}
+													}
+												}
+												_File_Remover();
+											}
 										}
 									}
 								}
@@ -4421,6 +5636,63 @@ public class MainActivity extends AppCompatActivity {
 								}
 								                }
 							            });
+						if (android.os.Build.VERSION.SDK_INT >= 34) {
+						}
+						else {
+							Selected_Patched.setNegativeButton(mirror_0, new DialogInterface.OnClickListener(){
+								
+								                @Override
+								                public void onClick(DialogInterface Selected_Patched, int p) {
+									
+									try {
+										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+											AlertDialog.setCancelable(true);
+											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+												_Browser(hidden_download_3.getText().toString());
+												_Reminder();
+											}
+											else {
+												_Browser(hidden_download_2.getText().toString());
+											}
+											_File_Remover();
+										}
+										else {
+											if (mRewardedAd != null) {
+												  Activity activityContext = MainActivity.this;
+												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+													    @Override
+													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+														       AlertDialog.setCancelable(true);
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Browser(hidden_download_3.getText().toString());
+															_Reminder();
+														}
+														else {
+															_Browser(hidden_download_2.getText().toString());
+														}
+														_File_Remover();
+														      int rewardAmount = rewardItem.getAmount();
+														      String rewardType = rewardItem.getType();
+														    }
+													  });
+											} else {
+												AlertDialog.setCancelable(true);
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Browser(hidden_download_3.getText().toString());
+													_Reminder();
+												}
+												else {
+													_Browser(hidden_download_2.getText().toString());
+												}
+												_File_Remover();
+											}
+										}
+									}
+									catch(Exception e) {
+									}
+									                }
+								            });
+						}
 						 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
 							
 							                @Override
@@ -4892,7 +6164,6 @@ public class MainActivity extends AppCompatActivity {
 		_Gate_Keeper();
 		_Informations();
 		_Theme_Pack();
-		_GDPR_Consent();
 		_Language_Pack();
 		_Dark_Navigation();
 	}
@@ -4935,7 +6206,6 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 	
-
 	public void _Informations() {
 		Timer = new TimerTask() {
 			@Override
@@ -4949,283 +6219,121 @@ public class MainActivity extends AppCompatActivity {
 								runOnUiThread(new Runnable() {
 									@Override
 									public void run() {
-										if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("true") && (Installed_Checker_Lite.equals("true") && Installed_Checker_Wave.equals("true")))) {
+										if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("true") && Installed_Checker_Lite.equals("true"))) {
 											sub_installed.setVisibility(View.VISIBLE);
 											sub_separator_1.setVisibility(View.VISIBLE);
 											sub_installed_c.setVisibility(View.VISIBLE);
 											sub_separator_2.setVisibility(View.VISIBLE);
 											sub_installed_l.setVisibility(View.VISIBLE);
-											sub_separator_3.setVisibility(View.VISIBLE);
-											sub_installed_w.setVisibility(View.VISIBLE);
 											sub_installed.setTextColor(0xFFFFFFFF);
 											sub_separator_1.setTextColor(0xFF616161);
 											sub_installed_c.setTextColor(0xFFBDBDBD);
 											sub_separator_2.setTextColor(0xFF616161);
 											sub_installed_l.setTextColor(0xFF78909C);
-											sub_separator_3.setTextColor(0xFF616161);
-											sub_installed_w.setTextColor(0xFF63F2F2);
 										}
 										else {
-											if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("false") && (Installed_Checker_Lite.equals("false") && Installed_Checker_Wave.equals("false")))) {
+											if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("false") && Installed_Checker_Lite.equals("false"))) {
 												sub_installed.setVisibility(View.VISIBLE);
 												sub_separator_1.setVisibility(View.GONE);
 												sub_installed_c.setVisibility(View.GONE);
 												sub_separator_2.setVisibility(View.GONE);
 												sub_installed_l.setVisibility(View.GONE);
-												sub_separator_3.setVisibility(View.GONE);
-												sub_installed_w.setVisibility(View.GONE);
 												sub_installed.setTextColor(0xFFFFFFFF);
 												sub_separator_1.setTextColor(0xFF616161);
 												sub_installed_c.setTextColor(0xFFBDBDBD);
 												sub_separator_2.setTextColor(0xFF616161);
 												sub_installed_l.setTextColor(0xFF78909C);
-												sub_separator_3.setTextColor(0xFF616161);
-												sub_installed_w.setTextColor(0xFF63F2F2);
 											}
 											else {
-												if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("false") && (Installed_Checker_Lite.equals("false") && Installed_Checker_Wave.equals("false")))) {
+												if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("false") && Installed_Checker_Lite.equals("false"))) {
 													sub_installed.setVisibility(View.VISIBLE);
 													sub_separator_1.setVisibility(View.GONE);
 													sub_installed_c.setVisibility(View.GONE);
 													sub_separator_2.setVisibility(View.GONE);
 													sub_installed_l.setVisibility(View.GONE);
-													sub_separator_3.setVisibility(View.GONE);
-													sub_installed_w.setVisibility(View.GONE);
 													sub_installed.setTextColor(0xFFFFFFFF);
 													sub_separator_1.setTextColor(0xFF616161);
 													sub_installed_c.setTextColor(0xFFBDBDBD);
 													sub_separator_2.setTextColor(0xFF616161);
 													sub_installed_l.setTextColor(0xFF78909C);
-													sub_separator_3.setTextColor(0xFF616161);
-													sub_installed_w.setTextColor(0xFF63F2F2);
 												}
 												else {
-													if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("true") && (Installed_Checker_Lite.equals("false") && Installed_Checker_Wave.equals("false")))) {
+													if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("true") && Installed_Checker_Lite.equals("false"))) {
 														sub_installed.setVisibility(View.GONE);
 														sub_separator_1.setVisibility(View.GONE);
 														sub_installed_c.setVisibility(View.VISIBLE);
 														sub_separator_2.setVisibility(View.GONE);
 														sub_installed_l.setVisibility(View.GONE);
-														sub_separator_3.setVisibility(View.GONE);
-														sub_installed_w.setVisibility(View.GONE);
 														sub_installed.setTextColor(0xFFFFFFFF);
 														sub_separator_1.setTextColor(0xFF616161);
 														sub_installed_c.setTextColor(0xFFBDBDBD);
 														sub_separator_2.setTextColor(0xFF616161);
 														sub_installed_l.setTextColor(0xFF78909C);
-														sub_separator_3.setTextColor(0xFF616161);
-														sub_installed_w.setTextColor(0xFF63F2F2);
 													}
 													else {
-														if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("false") && (Installed_Checker_Lite.equals("true") && Installed_Checker_Wave.equals("false")))) {
+														if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("false") && Installed_Checker_Lite.equals("true"))) {
 															sub_installed.setVisibility(View.GONE);
 															sub_separator_1.setVisibility(View.GONE);
 															sub_installed_c.setVisibility(View.GONE);
 															sub_separator_2.setVisibility(View.GONE);
 															sub_installed_l.setVisibility(View.VISIBLE);
-															sub_separator_3.setVisibility(View.GONE);
-															sub_installed_w.setVisibility(View.GONE);
 															sub_installed.setTextColor(0xFFFFFFFF);
 															sub_separator_1.setTextColor(0xFF616161);
 															sub_installed_c.setTextColor(0xFFBDBDBD);
 															sub_separator_2.setTextColor(0xFF616161);
 															sub_installed_l.setTextColor(0xFF78909C);
-															sub_separator_3.setTextColor(0xFF616161);
-															sub_installed_w.setTextColor(0xFF63F2F2);
 														}
 														else {
-															if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("false") && (Installed_Checker_Lite.equals("false") && Installed_Checker_Wave.equals("true")))) {
-																sub_installed.setVisibility(View.GONE);
-																sub_separator_1.setVisibility(View.GONE);
-																sub_installed_c.setVisibility(View.GONE);
-																sub_separator_2.setVisibility(View.GONE);
-																sub_installed_l.setVisibility(View.GONE);
-																sub_separator_3.setVisibility(View.GONE);
-																sub_installed_w.setVisibility(View.VISIBLE);
+															if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("true") && Installed_Checker_Lite.equals("true"))) {
+																sub_installed.setVisibility(View.VISIBLE);
+																sub_separator_1.setVisibility(View.VISIBLE);
+																sub_installed_c.setVisibility(View.VISIBLE);
+																sub_separator_2.setVisibility(View.VISIBLE);
+																sub_installed_l.setVisibility(View.VISIBLE);
 																sub_installed.setTextColor(0xFFFFFFFF);
 																sub_separator_1.setTextColor(0xFF616161);
 																sub_installed_c.setTextColor(0xFFBDBDBD);
 																sub_separator_2.setTextColor(0xFF616161);
 																sub_installed_l.setTextColor(0xFF78909C);
-																sub_separator_3.setTextColor(0xFF616161);
-																sub_installed_w.setTextColor(0xFF63F2F2);
 															}
 															else {
-																if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("true") && (Installed_Checker_Lite.equals("true") && Installed_Checker_Wave.equals("false")))) {
+																if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("true") && Installed_Checker_Lite.equals("false"))) {
 																	sub_installed.setVisibility(View.VISIBLE);
 																	sub_separator_1.setVisibility(View.VISIBLE);
 																	sub_installed_c.setVisibility(View.VISIBLE);
-																	sub_separator_2.setVisibility(View.VISIBLE);
-																	sub_installed_l.setVisibility(View.VISIBLE);
-																	sub_separator_3.setVisibility(View.GONE);
-																	sub_installed_w.setVisibility(View.GONE);
+																	sub_separator_2.setVisibility(View.GONE);
+																	sub_installed_l.setVisibility(View.GONE);
 																	sub_installed.setTextColor(0xFFFFFFFF);
 																	sub_separator_1.setTextColor(0xFF616161);
 																	sub_installed_c.setTextColor(0xFFBDBDBD);
 																	sub_separator_2.setTextColor(0xFF616161);
 																	sub_installed_l.setTextColor(0xFF78909C);
-																	sub_separator_3.setTextColor(0xFF616161);
-																	sub_installed_w.setTextColor(0xFF63F2F2);
 																}
 																else {
-																	if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("true") && (Installed_Checker_Lite.equals("false") && Installed_Checker_Wave.equals("true")))) {
+																	if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("false") && Installed_Checker_Lite.equals("true"))) {
 																		sub_installed.setVisibility(View.VISIBLE);
-																		sub_separator_1.setVisibility(View.VISIBLE);
-																		sub_installed_c.setVisibility(View.VISIBLE);
-																		sub_separator_2.setVisibility(View.GONE);
-																		sub_installed_l.setVisibility(View.GONE);
-																		sub_separator_3.setVisibility(View.VISIBLE);
-																		sub_installed_w.setVisibility(View.VISIBLE);
+																		sub_separator_1.setVisibility(View.GONE);
+																		sub_installed_c.setVisibility(View.GONE);
+																		sub_separator_2.setVisibility(View.VISIBLE);
+																		sub_installed_l.setVisibility(View.VISIBLE);
 																		sub_installed.setTextColor(0xFFFFFFFF);
 																		sub_separator_1.setTextColor(0xFF616161);
 																		sub_installed_c.setTextColor(0xFFBDBDBD);
 																		sub_separator_2.setTextColor(0xFF616161);
 																		sub_installed_l.setTextColor(0xFF78909C);
-																		sub_separator_3.setTextColor(0xFF616161);
-																		sub_installed_w.setTextColor(0xFF63F2F2);
 																	}
 																	else {
-																		if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("false") && (Installed_Checker_Lite.equals("true") && Installed_Checker_Wave.equals("true")))) {
-																			sub_installed.setVisibility(View.VISIBLE);
+																		if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("true") && Installed_Checker_Lite.equals("true"))) {
+																			sub_installed.setVisibility(View.GONE);
 																			sub_separator_1.setVisibility(View.GONE);
-																			sub_installed_c.setVisibility(View.GONE);
+																			sub_installed_c.setVisibility(View.VISIBLE);
 																			sub_separator_2.setVisibility(View.VISIBLE);
 																			sub_installed_l.setVisibility(View.VISIBLE);
-																			sub_separator_3.setVisibility(View.VISIBLE);
-																			sub_installed_w.setVisibility(View.VISIBLE);
 																			sub_installed.setTextColor(0xFFFFFFFF);
 																			sub_separator_1.setTextColor(0xFF616161);
 																			sub_installed_c.setTextColor(0xFFBDBDBD);
 																			sub_separator_2.setTextColor(0xFF616161);
 																			sub_installed_l.setTextColor(0xFF78909C);
-																			sub_separator_3.setTextColor(0xFF616161);
-																			sub_installed_w.setTextColor(0xFF63F2F2);
-																		}
-																		else {
-																			if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("true") && (Installed_Checker_Lite.equals("true") && Installed_Checker_Wave.equals("true")))) {
-																				sub_installed.setVisibility(View.GONE);
-																				sub_separator_1.setVisibility(View.GONE);
-																				sub_installed_c.setVisibility(View.VISIBLE);
-																				sub_separator_2.setVisibility(View.VISIBLE);
-																				sub_installed_l.setVisibility(View.VISIBLE);
-																				sub_separator_3.setVisibility(View.VISIBLE);
-																				sub_installed_w.setVisibility(View.VISIBLE);
-																				sub_installed.setTextColor(0xFFFFFFFF);
-																				sub_separator_1.setTextColor(0xFF616161);
-																				sub_installed_c.setTextColor(0xFFBDBDBD);
-																				sub_separator_2.setTextColor(0xFF616161);
-																				sub_installed_l.setTextColor(0xFF78909C);
-																				sub_separator_3.setTextColor(0xFF616161);
-																				sub_installed_w.setTextColor(0xFF63F2F2);
-																			}
-																			else {
-																				if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("true") && (Installed_Checker_Lite.equals("false") && Installed_Checker_Wave.equals("false")))) {
-																					sub_installed.setVisibility(View.VISIBLE);
-																					sub_separator_1.setVisibility(View.VISIBLE);
-																					sub_installed_c.setVisibility(View.VISIBLE);
-																					sub_separator_2.setVisibility(View.GONE);
-																					sub_installed_l.setVisibility(View.GONE);
-																					sub_separator_3.setVisibility(View.GONE);
-																					sub_installed_w.setVisibility(View.GONE);
-																					sub_installed.setTextColor(0xFFFFFFFF);
-																					sub_separator_1.setTextColor(0xFF616161);
-																					sub_installed_c.setTextColor(0xFFBDBDBD);
-																					sub_separator_2.setTextColor(0xFF616161);
-																					sub_installed_l.setTextColor(0xFF78909C);
-																					sub_separator_3.setTextColor(0xFF616161);
-																					sub_installed_w.setTextColor(0xFF63F2F2);
-																				}
-																				else {
-																					if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("false") && (Installed_Checker_Lite.equals("true") && Installed_Checker_Wave.equals("false")))) {
-																						sub_installed.setVisibility(View.VISIBLE);
-																						sub_separator_1.setVisibility(View.GONE);
-																						sub_installed_c.setVisibility(View.GONE);
-																						sub_separator_2.setVisibility(View.VISIBLE);
-																						sub_installed_l.setVisibility(View.VISIBLE);
-																						sub_separator_3.setVisibility(View.GONE);
-																						sub_installed_w.setVisibility(View.GONE);
-																						sub_installed.setTextColor(0xFFFFFFFF);
-																						sub_separator_1.setTextColor(0xFF616161);
-																						sub_installed_c.setTextColor(0xFFBDBDBD);
-																						sub_separator_2.setTextColor(0xFF616161);
-																						sub_installed_l.setTextColor(0xFF78909C);
-																						sub_separator_3.setTextColor(0xFF616161);
-																						sub_installed_w.setTextColor(0xFF63F2F2);
-																					}
-																					else {
-																						if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("false") && (Installed_Checker_Lite.equals("false") && Installed_Checker_Wave.equals("true")))) {
-																							sub_installed.setVisibility(View.VISIBLE);
-																							sub_separator_1.setVisibility(View.GONE);
-																							sub_installed_c.setVisibility(View.GONE);
-																							sub_separator_2.setVisibility(View.GONE);
-																							sub_installed_l.setVisibility(View.GONE);
-																							sub_separator_3.setVisibility(View.VISIBLE);
-																							sub_installed_w.setVisibility(View.VISIBLE);
-																							sub_installed.setTextColor(0xFFFFFFFF);
-																							sub_separator_1.setTextColor(0xFF616161);
-																							sub_installed_c.setTextColor(0xFFBDBDBD);
-																							sub_separator_2.setTextColor(0xFF616161);
-																							sub_installed_l.setTextColor(0xFF78909C);
-																							sub_separator_3.setTextColor(0xFF616161);
-																							sub_installed_w.setTextColor(0xFF63F2F2);
-																						}
-																						else {
-																							if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("false") && (Installed_Checker_Lite.equals("true") && Installed_Checker_Wave.equals("true")))) {
-																								sub_installed.setVisibility(View.GONE);
-																								sub_separator_1.setVisibility(View.GONE);
-																								sub_installed_c.setVisibility(View.GONE);
-																								sub_separator_2.setVisibility(View.GONE);
-																								sub_installed_l.setVisibility(View.VISIBLE);
-																								sub_separator_3.setVisibility(View.VISIBLE);
-																								sub_installed_w.setVisibility(View.VISIBLE);
-																								sub_installed.setTextColor(0xFFFFFFFF);
-																								sub_separator_1.setTextColor(0xFF616161);
-																								sub_installed_c.setTextColor(0xFFBDBDBD);
-																								sub_separator_2.setTextColor(0xFF616161);
-																								sub_installed_l.setTextColor(0xFF78909C);
-																								sub_separator_3.setTextColor(0xFF616161);
-																								sub_installed_w.setTextColor(0xFF63F2F2);
-																							}
-																							else {
-																								if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("true") && (Installed_Checker_Lite.equals("false") && Installed_Checker_Wave.equals("true")))) {
-																									sub_installed.setVisibility(View.GONE);
-																									sub_separator_1.setVisibility(View.GONE);
-																									sub_installed_c.setVisibility(View.VISIBLE);
-																									sub_separator_2.setVisibility(View.GONE);
-																									sub_installed_l.setVisibility(View.GONE);
-																									sub_separator_3.setVisibility(View.VISIBLE);
-																									sub_installed_w.setVisibility(View.VISIBLE);
-																									sub_installed.setTextColor(0xFFFFFFFF);
-																									sub_separator_1.setTextColor(0xFF616161);
-																									sub_installed_c.setTextColor(0xFFBDBDBD);
-																									sub_separator_2.setTextColor(0xFF616161);
-																									sub_installed_l.setTextColor(0xFF78909C);
-																									sub_separator_3.setTextColor(0xFF616161);
-																									sub_installed_w.setTextColor(0xFF63F2F2);
-																								}
-																								else {
-																									if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("true") && (Installed_Checker_Lite.equals("true") && Installed_Checker_Wave.equals("false")))) {
-																										sub_installed.setVisibility(View.GONE);
-																										sub_separator_1.setVisibility(View.GONE);
-																										sub_installed_c.setVisibility(View.VISIBLE);
-																										sub_separator_2.setVisibility(View.VISIBLE);
-																										sub_installed_l.setVisibility(View.VISIBLE);
-																										sub_separator_3.setVisibility(View.GONE);
-																										sub_installed_w.setVisibility(View.GONE);
-																										sub_installed.setTextColor(0xFFFFFFFF);
-																										sub_separator_1.setTextColor(0xFF616161);
-																										sub_installed_c.setTextColor(0xFFBDBDBD);
-																										sub_separator_2.setTextColor(0xFF616161);
-																										sub_installed_l.setTextColor(0xFF78909C);
-																										sub_separator_3.setTextColor(0xFF616161);
-																										sub_installed_w.setTextColor(0xFF63F2F2);
-																									}
-																								}
-																							}
-																						}
-																					}
-																				}
-																			}
 																		}
 																	}
 																}
@@ -5238,7 +6346,6 @@ public class MainActivity extends AppCompatActivity {
 										sub_installed.setText("N/A");
 										sub_installed_c.setText("N/A");
 										sub_installed_l.setText("N/A");
-										sub_installed_w.setText("N/A");
 										String uri = "com.spotify.music";
 										android.content.pm.PackageManager pm = getPackageManager();
 										
@@ -5284,21 +6391,6 @@ public class MainActivity extends AppCompatActivity {
 												Installed_Checker_Lite = "false";
 										}
 										
-										String uri_w = "com.aspiro.tidal";
-										android.content.pm.PackageManager pm_w = getPackageManager();
-										
-										try {
-												android.content.pm.PackageInfo pInfo = pm_w.getPackageInfo(uri_w, android.content.pm.PackageManager.GET_ACTIVITIES);
-												String version_w = pInfo.versionName;
-												sub_installed_w.setText(version_w);
-												Installed_Checker_Wave = "true";
-										}
-										
-										catch (Exception e) {
-												sub_installed_w.setText("N/A");
-												Installed_Checker_Wave = "false";
-										}
-										
 										String app = "com.xc3fff0e.xmanager";
 										android.content.pm.PackageManager ver = getPackageManager();
 										
@@ -5340,7 +6432,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "Patched (xManager).apk");
+				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "Patched (xManager).apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -5414,27 +6506,6 @@ public class MainActivity extends AppCompatActivity {
 																										public void run() {
 																												prog.dismiss();
 																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												try {
-																														_Reminder();
-																														_Browser(hidden_download_3.getText().toString());
-																												} catch (Exception e) {
-																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																												}
 																										}
 																								}, 0);
 																						}
@@ -5557,7 +6628,7 @@ public class MainActivity extends AppCompatActivity {
 																						@Override
 																						public void run() {	
 																								try {
-																										FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk", apk_path_location.getText().toString().concat("Patched (xManager).apk"));
+																										FileUtil.copyFile("/storage/emulated/0/Download/Patched (xManager).apk", apk_path_location.getText().toString().concat("Patched (xManager).apk"));
 																								}
 																								catch(Exception e) {
 																								}
@@ -5588,11 +6659,11 @@ public class MainActivity extends AppCompatActivity {
 	
 	
 	public void _File_Remover() {
-		if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/")) {
-			FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/");
+		if (FileUtil.isExistFile(apk_path_location.getText().toString())) {
+			FileUtil.deleteFile(apk_path_location.getText().toString());
 		}
 		else {
-			if (!FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/")) {
+			if (!FileUtil.isExistFile(apk_path_location.getText().toString())) {
 				
 			}
 		}
@@ -5600,11 +6671,11 @@ public class MainActivity extends AppCompatActivity {
 	
 	
 	public void _Update_Remover() {
-		if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")) {
-			FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk");
+		if (FileUtil.isExistFile("/storage/emulated/0/Download/xManager Update.apk")) {
+			FileUtil.deleteFile("/storage/emulated/0/Download/xManager Update.apk");
 		}
-		if (FileUtil.isExistFile("/storage/emulated/0/xManager/Update/xManager Update.apk")) {
-			FileUtil.deleteFile("/storage/emulated/0/xManager/Update/xManager Update.apk");
+		if (FileUtil.isExistFile("/storage/emulated/0/Download/xManager Update.apk")) {
+			FileUtil.deleteFile("/storage/emulated/0/Download/xManager Update.apk");
 		}
 	}
 	
@@ -5743,12 +6814,17 @@ public class MainActivity extends AppCompatActivity {
 						                public void onClick(DialogInterface Update_Authorized, int p) {
 							AlertDialog.setCancelable(true);
 							try {
-								if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
-									_Download_Update_Install(hidden_update.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
+								if (android.os.Build.VERSION.SDK_INT >= 34) {
+									_Browser(hidden_update.getText().toString());
 								}
 								else {
-									if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
-										_Download_Update(hidden_update.getText().toString(), "/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/");
+									if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
+										_Download_Update_Install(hidden_update.getText().toString(), "/storage/emulated/0/Download/");
+									}
+									else {
+										if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
+											_Download_Update(hidden_update.getText().toString(), "/storage/emulated/0/Download/");
+										}
 									}
 								}
 							}
@@ -5843,7 +6919,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "/Update/xManager Update.apk");
+				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "xManager Update.apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -5917,27 +6993,6 @@ public class MainActivity extends AppCompatActivity {
 																										public void run() {
 																												prog.dismiss();
 																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												try {
-																														_Reminder();
-																														_Browser(hidden_update.getText().toString());
-																												} catch (Exception e) {
-																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																												}
 																										}
 																								}, 0);
 																						}
@@ -6327,28 +7382,24 @@ public class MainActivity extends AppCompatActivity {
 		d = null;
 		Animation e;
 		e = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		e.setDuration(600); main_box_7.startAnimation(e);
+		e.setDuration(600); main_box_19.startAnimation(e);
 		e = null;
 		Animation f;
 		f = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		f.setDuration(700); main_box_19.startAnimation(f);
+		f.setDuration(700); main_box_6.startAnimation(f);
 		f = null;
 		Animation g;
 		g = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		g.setDuration(800); main_box_6.startAnimation(g);
+		g.setDuration(800); box_sub_header.startAnimation(g);
 		g = null;
 		Animation h;
 		h = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		h.setDuration(900); box_sub_header.startAnimation(h);
+		h.setDuration(900); main_box_4.startAnimation(h);
 		h = null;
 		Animation i;
 		i = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		i.setDuration(1000); main_box_4.startAnimation(i);
+		i.setDuration(1000); main_box_15.startAnimation(i);
 		i = null;
-		Animation j;
-		j = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		j.setDuration(1100); main_box_15.startAnimation(j);
-		j = null;
 		Animation k;
 		k = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
 		k.setDuration(300); title_header.startAnimation(k);
@@ -6633,68 +7684,41 @@ public class MainActivity extends AppCompatActivity {
 																			public void run() {
 																				Animation animation;
 																				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
-																				animation.setDuration(500); version_oc_04.startAnimation(animation);
+																				animation.setDuration(500); changelogs_oc.startAnimation(animation);
 																				animation = null;
 																				list_items_1.setVisibility(View.GONE);
 																				list_items_2.setVisibility(View.GONE);
 																				list_items_3.setVisibility(View.GONE);
-																				list_items_4.setVisibility(View.VISIBLE);
-																				list_items_5.setVisibility(View.GONE);
+																				list_items_4.setVisibility(View.GONE);
+																				list_items_5.setVisibility(View.VISIBLE);
 																				version_oc_01.setImageResource(R.drawable.close);
 																				version_oc_02.setImageResource(R.drawable.close);
 																				version_oc_03.setImageResource(R.drawable.close);
-																				version_oc_04.setImageResource(R.drawable.open);
-																				changelogs_oc.setImageResource(R.drawable.close);
-																				list_items_4.setAdapter(new List_items_4Adapter(wave_patched));
-																				((BaseAdapter)list_items_4.getAdapter()).notifyDataSetChanged();
+																				version_oc_04.setImageResource(R.drawable.close);
+																				changelogs_oc.setImageResource(R.drawable.open);
+																				list_items_5.setAdapter(new List_items_5Adapter(patched_changelogs));
+																				((BaseAdapter)list_items_5.getAdapter()).notifyDataSetChanged();
 																				Timer = new TimerTask() {
 																					@Override
 																					public void run() {
 																						runOnUiThread(new Runnable() {
 																							@Override
 																							public void run() {
-																								Animation animation;
-																								animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
-																								animation.setDuration(500); changelogs_oc.startAnimation(animation);
-																								animation = null;
+																								main_refresh_layout.setRefreshing(false);
 																								list_items_1.setVisibility(View.GONE);
 																								list_items_2.setVisibility(View.GONE);
 																								list_items_3.setVisibility(View.GONE);
 																								list_items_4.setVisibility(View.GONE);
-																								list_items_5.setVisibility(View.VISIBLE);
+																								list_items_5.setVisibility(View.GONE);
 																								version_oc_01.setImageResource(R.drawable.close);
 																								version_oc_02.setImageResource(R.drawable.close);
 																								version_oc_03.setImageResource(R.drawable.close);
 																								version_oc_04.setImageResource(R.drawable.close);
-																								changelogs_oc.setImageResource(R.drawable.open);
-																								list_items_5.setAdapter(new List_items_5Adapter(patched_changelogs));
-																								((BaseAdapter)list_items_5.getAdapter()).notifyDataSetChanged();
-																								Timer = new TimerTask() {
-																									@Override
-																									public void run() {
-																										runOnUiThread(new Runnable() {
-																											@Override
-																											public void run() {
-																												main_refresh_layout.setRefreshing(false);
-																												list_items_1.setVisibility(View.GONE);
-																												list_items_2.setVisibility(View.GONE);
-																												list_items_3.setVisibility(View.GONE);
-																												list_items_4.setVisibility(View.GONE);
-																												list_items_5.setVisibility(View.GONE);
-																												version_oc_01.setImageResource(R.drawable.close);
-																												version_oc_02.setImageResource(R.drawable.close);
-																												version_oc_03.setImageResource(R.drawable.close);
-																												version_oc_04.setImageResource(R.drawable.close);
-																												changelogs_oc.setImageResource(R.drawable.close);
-																												main_body.setAlpha((float)(1.0d));
-																												String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
-																												
-																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Data List Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																											}
-																										});
-																									}
-																								};
-																								_timer.schedule(Timer, (int)(800));
+																								changelogs_oc.setImageResource(R.drawable.close);
+																								main_body.setAlpha((float)(1.0d));
+																								String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
+																								
+																								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Data List Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																							}
 																						});
 																					}
@@ -6730,7 +7754,7 @@ public class MainActivity extends AppCompatActivity {
 	
 	public void _Default_Path() {
 		if (PATH.equals("")) {
-			apk_path_location.setText("/storage/emulated/0/Download/");
+			apk_path_location.setText("/storage/emulated/0/xManager/");
 		}
 		else {
 			APK_PATH.edit().putString("PATH", apk_path_location.getText().toString()).commit();
@@ -6753,7 +7777,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "Patched (xManager).apk");
+				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "Patched (xManager).apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -6827,27 +7851,6 @@ public class MainActivity extends AppCompatActivity {
 																										public void run() {
 																												prog.dismiss();
 																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												try {
-																														_Reminder();
-																														_Browser(hidden_download_3.getText().toString());
-																												} catch (Exception e) {
-																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																												}
 																										}
 																								}, 0);
 																						}
@@ -6970,7 +7973,7 @@ public class MainActivity extends AppCompatActivity {
 																						@Override
 																						public void run() {	
 																								try {
-																										FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk", apk_path_location.getText().toString().concat("Patched (xManager).apk"));
+																										FileUtil.copyFile("/storage/emulated/0/Download/Patched (xManager).apk", apk_path_location.getText().toString().concat("Patched (xManager).apk"));
 																								}
 																								catch(Exception e) {
 																								}
@@ -6989,7 +7992,7 @@ public class MainActivity extends AppCompatActivity {
 																																						try {
 																																								Intent intent = new Intent(Intent.ACTION_VIEW);
 																																								intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
+																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
 																																								startActivity(intent);
 																																								_Reminder();
 																																						}
@@ -6998,7 +8001,7 @@ public class MainActivity extends AppCompatActivity {
 																																				} else {
 																																						try {
 																																								Intent intent = new Intent(Intent.ACTION_VIEW);
-																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
+																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
 																																								startActivity(intent);
 																																								_Reminder();
 																																						}
@@ -7114,7 +8117,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "/Update/xManager Update.apk");
+				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "xManager Update.apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -7188,27 +8191,6 @@ public class MainActivity extends AppCompatActivity {
 																										public void run() {
 																												prog.dismiss();
 																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												try {
-																														_Reminder();
-																														_Browser(hidden_update.getText().toString());
-																												} catch (Exception e) {
-																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																												}
 																										}
 																								}, 0);
 																						}
@@ -7342,7 +8324,7 @@ public class MainActivity extends AppCompatActivity {
 																										try {
 																												Intent intent = new Intent(Intent.ACTION_VIEW);
 																												intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																												intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
+																												intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/xManager Update.apk")), "application/vnd.android.package-archive");
 																												startActivity(intent);
 																										}
 																										catch(Exception e) {
@@ -7350,7 +8332,7 @@ public class MainActivity extends AppCompatActivity {
 																								} else {
 																										try {
 																												Intent intent = new Intent(Intent.ACTION_VIEW);
-																												intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
+																												intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/xManager Update.apk")), "application/vnd.android.package-archive");
 																												startActivity(intent);
 																										}
 																										catch(Exception e) {
@@ -12077,6 +13059,611 @@ public class MainActivity extends AppCompatActivity {
 																																									installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																									select_language.setSelection((int)(38));
 																																								}
+																																								else {
+																																									if (LANGUAGE.getString("LANGUAGE", "").equals("39")) {
+																																										sub_text_installed.setText(R.string.installed_39);
+																																										main_title.setText(R.string.main_title_39);
+																																										about_title.setText(R.string.about_title_39);
+																																										settings_title.setText(R.string.settings_title_39);
+																																										experiment_title.setText(R.string.experimental_title_39);
+																																										sub_title.setText(R.string.about_sub_39);
+																																										sub_text_1.setText(R.string.latest_39);
+																																										sub_text_2.setText(R.string.latest_39);
+																																										sub_text_3.setText(R.string.latest_39);
+																																										sub_text_4.setText(R.string.latest_39);
+																																										versions_1.setText(R.string.versions_39);
+																																										versions_2.setText(R.string.versions_39);
+																																										versions_3.setText(R.string.versions_39);
+																																										versions_4.setText(R.string.versions_39);
+																																										title_sub.setText(R.string.manager_tools_39);
+																																										source.setText(R.string.source_39);
+																																										support.setText(R.string.support_39);
+																																										donate.setText(R.string.donate_39);
+																																										discord.setText(R.string.discord_39);
+																																										about.setText(R.string.about_39);
+																																										website.setText(R.string.website_39);
+																																										reddit.setText(R.string.reddit_39);
+																																										faq.setText(R.string.faq_39);
+																																										theme.setText(R.string.show_themes_39);
+																																										language.setText(R.string.language_39);
+																																										download_update.setText(R.string.download_update_39);
+																																										install_now.setText(R.string.install_now_39);
+																																										install_update.setText(R.string.install_update_39);
+																																										uninstall_patched.setText(R.string.uninstall_patched_39);
+																																										open_settings.setText(R.string.open_settings_39);
+																																										open_patched.setText(R.string.open_patched_39);
+																																										lite.setText(R.string.lite_39);
+																																										cloned.setText(R.string.cloned_39);
+																																										spap.setText(R.string.spap_39);
+																																										mirror.setText(R.string.mirror_39);
+																																										download.setText(R.string.download_39);
+																																										cancel.setText(R.string.cancel_39);
+																																										later.setText(R.string.later_39);
+																																										go_back.setText(R.string.go_back_39);
+																																										not_now.setText(R.string.not_now_39);
+																																										close.setText(R.string.close_39);
+																																										continue_1.setText(R.string.continue_1_39);
+																																										install.setText(R.string.install_39);
+																																										uninstall.setText(R.string.uninstall_39);
+																																										ignore.setText(R.string.ignore_39);
+																																										delete.setText(R.string.delete_39);
+																																										thanks.setText(R.string.thanks_39);
+																																										new_update.setText(R.string.new_update_39);
+																																										changelogs.setText(R.string.changelogs_39);
+																																										reboot.setText(R.string.reboot_39);
+																																										reset_preferences.setText(R.string.reset_preferences_39);
+																																										list_auto_refresh.setText(R.string.list_auto_refresh_39);
+																																										list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_39);
+																																										force_auto_install.setText(R.string.force_auto_install_39);
+																																										force_auto_install_info.setText(R.string.force_auto_install_desc_39);
+																																										apk_location.setText(R.string.apk_location_39);
+																																										apk_location_info.setText(R.string.apk_location_desc_39);
+																																										clear_directory_folders.setText(R.string.clear_directory_folders_39);
+																																										clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_39);
+																																										cloned_version.setText(R.string.cloned_version_39);
+																																										cloned_version_info.setText(R.string.cloned_version_desc_39);
+																																										experiment_version.setText(R.string.experimental_version_39);
+																																										experiment_version_info.setText(R.string.experimental_version_desc_39);
+																																										disable_reward_ad.setText(R.string.disable_rewarded_ads_39);
+																																										disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_39);
+																																										disable_notification.setText(R.string.disable_notification_39);
+																																										disable_notification_info.setText(R.string.disable_notification_desc_39);
+																																										hide_stock_patched.setText(R.string.hide_stock_patched_39);
+																																										hide_amoled_patched.setText(R.string.hide_amoled_patched_39);
+																																										hide_lite_patched.setText(R.string.hide_lite_patched_39);
+																																										hide_wave_patched.setText(R.string.hide_wave_patched_39);
+																																										show_support.setText(R.string.show_support_39);
+																																										show_support_desc.setText(R.string.show_support_desc_39);
+																																										maintenance.setText(R.string.maintenance_39);
+																																										maintenance_desc.setText(R.string.maintenance_desc_39);
+																																										xmanager_dev.setText(R.string.xmanager_dev_39);
+																																										patched_devs.setText(R.string.patched_devs_39);
+																																										support_team.setText(R.string.support_team_39);
+																																										manager_testers.setText(R.string.manager_testers_39);
+																																										manager_hosting.setText(R.string.manager_hosting_39);
+																																										mobilism_team.setText(R.string.mobilism_team_39);
+																																										forum_team.setText(R.string.forum_team_39);
+																																										contributors.setText(R.string.contributors_39);
+																																										download_selected.setText(R.string.download_selected_39);
+																																										download_ready.setText(R.string.download_ready_39);
+																																										download_ready_desc.setText(R.string.download_ready_desc_39);
+																																										downloading_file.setText(R.string.downloading_file_39);
+																																										download_success.setText(R.string.download_success_39);
+																																										installation_failed.setText(R.string.installation_failed_39);
+																																										installation_failed_desc.setText(R.string.installation_failed_desc_39);
+																																										installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_39);
+																																										installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_39);
+																																										existing_patched.setText(R.string.existing_patched_39);
+																																										existing_patched_desc.setText(R.string.existing_patched_desc_39);
+																																										lite_0 = lite.getText().toString();
+																																										download_0 = download.getText().toString();
+																																										continue_0 = continue_1.getText().toString();
+																																										cancel_0 = cancel.getText().toString();
+																																										later_0 = later.getText().toString();
+																																										mirror_0 = mirror.getText().toString();
+																																										install_now_0 = install_now.getText().toString();
+																																										go_back_0 = go_back.getText().toString();
+																																										install_update_0 = install_update.getText().toString();
+																																										close_0 = close.getText().toString();
+																																										uninstall_0 = uninstall.getText().toString();
+																																										existing_patched_0 = existing_patched.getText().toString();
+																																										existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																																										download_selected_0 = download_selected.getText().toString();
+																																										download_ready_0 = download_ready.getText().toString();
+																																										download_ready_desc_0 = download_ready_desc.getText().toString();
+																																										downloading_file_0 = downloading_file.getText().toString();
+																																										download_success_0 = download_success.getText().toString();
+																																										installation_failed_0 = installation_failed.getText().toString();
+																																										installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																																										installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
+																																										installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																																										select_language.setSelection((int)(39));
+																																									}
+																																									else {
+																																										if (LANGUAGE.getString("LANGUAGE", "").equals("40")) {
+																																											sub_text_installed.setText(R.string.installed_40);
+																																											main_title.setText(R.string.main_title_40);
+																																											about_title.setText(R.string.about_title_40);
+																																											settings_title.setText(R.string.settings_title_40);
+																																											experiment_title.setText(R.string.experimental_title_40);
+																																											sub_title.setText(R.string.about_sub_40);
+																																											sub_text_1.setText(R.string.latest_40);
+																																											sub_text_2.setText(R.string.latest_40);
+																																											sub_text_3.setText(R.string.latest_40);
+																																											sub_text_4.setText(R.string.latest_40);
+																																											versions_1.setText(R.string.versions_40);
+																																											versions_2.setText(R.string.versions_40);
+																																											versions_3.setText(R.string.versions_40);
+																																											versions_4.setText(R.string.versions_40);
+																																											title_sub.setText(R.string.manager_tools_40);
+																																											source.setText(R.string.source_40);
+																																											support.setText(R.string.support_40);
+																																											donate.setText(R.string.donate_40);
+																																											discord.setText(R.string.discord_40);
+																																											about.setText(R.string.about_40);
+																																											website.setText(R.string.website_40);
+																																											reddit.setText(R.string.reddit_40);
+																																											faq.setText(R.string.faq_40);
+																																											theme.setText(R.string.show_themes_40);
+																																											language.setText(R.string.language_40);
+																																											download_update.setText(R.string.download_update_40);
+																																											install_now.setText(R.string.install_now_40);
+																																											install_update.setText(R.string.install_update_40);
+																																											uninstall_patched.setText(R.string.uninstall_patched_40);
+																																											open_settings.setText(R.string.open_settings_40);
+																																											open_patched.setText(R.string.open_patched_40);
+																																											lite.setText(R.string.lite_40);
+																																											cloned.setText(R.string.cloned_40);
+																																											spap.setText(R.string.spap_40);
+																																											mirror.setText(R.string.mirror_40);
+																																											download.setText(R.string.download_40);
+																																											cancel.setText(R.string.cancel_40);
+																																											later.setText(R.string.later_40);
+																																											go_back.setText(R.string.go_back_40);
+																																											not_now.setText(R.string.not_now_40);
+																																											close.setText(R.string.close_40);
+																																											continue_1.setText(R.string.continue_1_40);
+																																											install.setText(R.string.install_40);
+																																											uninstall.setText(R.string.uninstall_40);
+																																											ignore.setText(R.string.ignore_40);
+																																											delete.setText(R.string.delete_40);
+																																											thanks.setText(R.string.thanks_40);
+																																											new_update.setText(R.string.new_update_40);
+																																											changelogs.setText(R.string.changelogs_40);
+																																											reboot.setText(R.string.reboot_40);
+																																											reset_preferences.setText(R.string.reset_preferences_40);
+																																											list_auto_refresh.setText(R.string.list_auto_refresh_40);
+																																											list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_40);
+																																											force_auto_install.setText(R.string.force_auto_install_40);
+																																											force_auto_install_info.setText(R.string.force_auto_install_desc_40);
+																																											apk_location.setText(R.string.apk_location_40);
+																																											apk_location_info.setText(R.string.apk_location_desc_40);
+																																											clear_directory_folders.setText(R.string.clear_directory_folders_40);
+																																											clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_40);
+																																											cloned_version.setText(R.string.cloned_version_40);
+																																											cloned_version_info.setText(R.string.cloned_version_desc_40);
+																																											experiment_version.setText(R.string.experimental_version_40);
+																																											experiment_version_info.setText(R.string.experimental_version_desc_40);
+																																											disable_reward_ad.setText(R.string.disable_rewarded_ads_40);
+																																											disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_40);
+																																											disable_notification.setText(R.string.disable_notification_40);
+																																											disable_notification_info.setText(R.string.disable_notification_desc_40);
+																																											hide_stock_patched.setText(R.string.hide_stock_patched_40);
+																																											hide_amoled_patched.setText(R.string.hide_amoled_patched_40);
+																																											hide_lite_patched.setText(R.string.hide_lite_patched_40);
+																																											hide_wave_patched.setText(R.string.hide_wave_patched_40);
+																																											show_support.setText(R.string.show_support_40);
+																																											show_support_desc.setText(R.string.show_support_desc_40);
+																																											maintenance.setText(R.string.maintenance_40);
+																																											maintenance_desc.setText(R.string.maintenance_desc_40);
+																																											xmanager_dev.setText(R.string.xmanager_dev_40);
+																																											patched_devs.setText(R.string.patched_devs_40);
+																																											support_team.setText(R.string.support_team_40);
+																																											manager_testers.setText(R.string.manager_testers_40);
+																																											manager_hosting.setText(R.string.manager_hosting_40);
+																																											mobilism_team.setText(R.string.mobilism_team_40);
+																																											forum_team.setText(R.string.forum_team_40);
+																																											contributors.setText(R.string.contributors_40);
+																																											download_selected.setText(R.string.download_selected_40);
+																																											download_ready.setText(R.string.download_ready_40);
+																																											download_ready_desc.setText(R.string.download_ready_desc_40);
+																																											downloading_file.setText(R.string.downloading_file_40);
+																																											download_success.setText(R.string.download_success_40);
+																																											installation_failed.setText(R.string.installation_failed_40);
+																																											installation_failed_desc.setText(R.string.installation_failed_desc_40);
+																																											installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_40);
+																																											installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_40);
+																																											existing_patched.setText(R.string.existing_patched_40);
+																																											existing_patched_desc.setText(R.string.existing_patched_desc_40);
+																																											lite_0 = lite.getText().toString();
+																																											download_0 = download.getText().toString();
+																																											continue_0 = continue_1.getText().toString();
+																																											cancel_0 = cancel.getText().toString();
+																																											later_0 = later.getText().toString();
+																																											mirror_0 = mirror.getText().toString();
+																																											install_now_0 = install_now.getText().toString();
+																																											go_back_0 = go_back.getText().toString();
+																																											install_update_0 = install_update.getText().toString();
+																																											close_0 = close.getText().toString();
+																																											uninstall_0 = uninstall.getText().toString();
+																																											existing_patched_0 = existing_patched.getText().toString();
+																																											existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																																											download_selected_0 = download_selected.getText().toString();
+																																											download_ready_0 = download_ready.getText().toString();
+																																											download_ready_desc_0 = download_ready_desc.getText().toString();
+																																											downloading_file_0 = downloading_file.getText().toString();
+																																											download_success_0 = download_success.getText().toString();
+																																											installation_failed_0 = installation_failed.getText().toString();
+																																											installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																																											installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
+																																											installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																																											select_language.setSelection((int)(40));
+																																										}
+																																										else {
+																																											if (LANGUAGE.getString("LANGUAGE", "").equals("41")) {
+																																												sub_text_installed.setText(R.string.installed_41);
+																																												main_title.setText(R.string.main_title_41);
+																																												about_title.setText(R.string.about_title_41);
+																																												settings_title.setText(R.string.settings_title_41);
+																																												experiment_title.setText(R.string.experimental_title_41);
+																																												sub_title.setText(R.string.about_sub_41);
+																																												sub_text_1.setText(R.string.latest_41);
+																																												sub_text_2.setText(R.string.latest_41);
+																																												sub_text_3.setText(R.string.latest_41);
+																																												sub_text_4.setText(R.string.latest_41);
+																																												versions_1.setText(R.string.versions_41);
+																																												versions_2.setText(R.string.versions_41);
+																																												versions_3.setText(R.string.versions_41);
+																																												versions_4.setText(R.string.versions_41);
+																																												title_sub.setText(R.string.manager_tools_41);
+																																												source.setText(R.string.source_41);
+																																												support.setText(R.string.support_41);
+																																												donate.setText(R.string.donate_41);
+																																												discord.setText(R.string.discord_41);
+																																												about.setText(R.string.about_41);
+																																												website.setText(R.string.website_41);
+																																												reddit.setText(R.string.reddit_41);
+																																												faq.setText(R.string.faq_41);
+																																												theme.setText(R.string.show_themes_41);
+																																												language.setText(R.string.language_41);
+																																												download_update.setText(R.string.download_update_41);
+																																												install_now.setText(R.string.install_now_41);
+																																												install_update.setText(R.string.install_update_41);
+																																												uninstall_patched.setText(R.string.uninstall_patched_41);
+																																												open_settings.setText(R.string.open_settings_41);
+																																												open_patched.setText(R.string.open_patched_41);
+																																												lite.setText(R.string.lite_41);
+																																												cloned.setText(R.string.cloned_41);
+																																												spap.setText(R.string.spap_41);
+																																												mirror.setText(R.string.mirror_41);
+																																												download.setText(R.string.download_41);
+																																												cancel.setText(R.string.cancel_41);
+																																												later.setText(R.string.later_41);
+																																												go_back.setText(R.string.go_back_41);
+																																												not_now.setText(R.string.not_now_41);
+																																												close.setText(R.string.close_41);
+																																												continue_1.setText(R.string.continue_1_41);
+																																												install.setText(R.string.install_41);
+																																												uninstall.setText(R.string.uninstall_41);
+																																												ignore.setText(R.string.ignore_41);
+																																												delete.setText(R.string.delete_41);
+																																												thanks.setText(R.string.thanks_41);
+																																												new_update.setText(R.string.new_update_41);
+																																												changelogs.setText(R.string.changelogs_41);
+																																												reboot.setText(R.string.reboot_41);
+																																												reset_preferences.setText(R.string.reset_preferences_41);
+																																												list_auto_refresh.setText(R.string.list_auto_refresh_41);
+																																												list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_41);
+																																												force_auto_install.setText(R.string.force_auto_install_41);
+																																												force_auto_install_info.setText(R.string.force_auto_install_desc_41);
+																																												apk_location.setText(R.string.apk_location_41);
+																																												apk_location_info.setText(R.string.apk_location_desc_41);
+																																												clear_directory_folders.setText(R.string.clear_directory_folders_41);
+																																												clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_41);
+																																												cloned_version.setText(R.string.cloned_version_41);
+																																												cloned_version_info.setText(R.string.cloned_version_desc_41);
+																																												experiment_version.setText(R.string.experimental_version_41);
+																																												experiment_version_info.setText(R.string.experimental_version_desc_41);
+																																												disable_reward_ad.setText(R.string.disable_rewarded_ads_41);
+																																												disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_41);
+																																												disable_notification.setText(R.string.disable_notification_41);
+																																												disable_notification_info.setText(R.string.disable_notification_desc_41);
+																																												hide_stock_patched.setText(R.string.hide_stock_patched_41);
+																																												hide_amoled_patched.setText(R.string.hide_amoled_patched_41);
+																																												hide_lite_patched.setText(R.string.hide_lite_patched_41);
+																																												hide_wave_patched.setText(R.string.hide_wave_patched_41);
+																																												show_support.setText(R.string.show_support_41);
+																																												show_support_desc.setText(R.string.show_support_desc_41);
+																																												maintenance.setText(R.string.maintenance_41);
+																																												maintenance_desc.setText(R.string.maintenance_desc_41);
+																																												xmanager_dev.setText(R.string.xmanager_dev_41);
+																																												patched_devs.setText(R.string.patched_devs_41);
+																																												support_team.setText(R.string.support_team_41);
+																																												manager_testers.setText(R.string.manager_testers_41);
+																																												manager_hosting.setText(R.string.manager_hosting_41);
+																																												mobilism_team.setText(R.string.mobilism_team_41);
+																																												forum_team.setText(R.string.forum_team_41);
+																																												contributors.setText(R.string.contributors_41);
+																																												download_selected.setText(R.string.download_selected_41);
+																																												download_ready.setText(R.string.download_ready_41);
+																																												download_ready_desc.setText(R.string.download_ready_desc_41);
+																																												downloading_file.setText(R.string.downloading_file_41);
+																																												download_success.setText(R.string.download_success_41);
+																																												installation_failed.setText(R.string.installation_failed_41);
+																																												installation_failed_desc.setText(R.string.installation_failed_desc_41);
+																																												installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_41);
+																																												installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_41);
+																																												existing_patched.setText(R.string.existing_patched_41);
+																																												existing_patched_desc.setText(R.string.existing_patched_desc_41);
+																																												lite_0 = lite.getText().toString();
+																																												download_0 = download.getText().toString();
+																																												continue_0 = continue_1.getText().toString();
+																																												cancel_0 = cancel.getText().toString();
+																																												later_0 = later.getText().toString();
+																																												mirror_0 = mirror.getText().toString();
+																																												install_now_0 = install_now.getText().toString();
+																																												go_back_0 = go_back.getText().toString();
+																																												install_update_0 = install_update.getText().toString();
+																																												close_0 = close.getText().toString();
+																																												uninstall_0 = uninstall.getText().toString();
+																																												existing_patched_0 = existing_patched.getText().toString();
+																																												existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																																												download_selected_0 = download_selected.getText().toString();
+																																												download_ready_0 = download_ready.getText().toString();
+																																												download_ready_desc_0 = download_ready_desc.getText().toString();
+																																												downloading_file_0 = downloading_file.getText().toString();
+																																												download_success_0 = download_success.getText().toString();
+																																												installation_failed_0 = installation_failed.getText().toString();
+																																												installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																																												installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
+																																												installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																																												select_language.setSelection((int)(41));
+																																											}
+																																											else {
+																																												if (LANGUAGE.getString("LANGUAGE", "").equals("42")) {
+																																													sub_text_installed.setText(R.string.installed_42);
+																																													main_title.setText(R.string.main_title_42);
+																																													about_title.setText(R.string.about_title_42);
+																																													settings_title.setText(R.string.settings_title_42);
+																																													experiment_title.setText(R.string.experimental_title_42);
+																																													sub_title.setText(R.string.about_sub_42);
+																																													sub_text_1.setText(R.string.latest_42);
+																																													sub_text_2.setText(R.string.latest_42);
+																																													sub_text_3.setText(R.string.latest_42);
+																																													sub_text_4.setText(R.string.latest_42);
+																																													versions_1.setText(R.string.versions_42);
+																																													versions_2.setText(R.string.versions_42);
+																																													versions_3.setText(R.string.versions_42);
+																																													versions_4.setText(R.string.versions_42);
+																																													title_sub.setText(R.string.manager_tools_42);
+																																													source.setText(R.string.source_42);
+																																													support.setText(R.string.support_42);
+																																													donate.setText(R.string.donate_42);
+																																													discord.setText(R.string.discord_42);
+																																													about.setText(R.string.about_42);
+																																													website.setText(R.string.website_42);
+																																													reddit.setText(R.string.reddit_42);
+																																													faq.setText(R.string.faq_42);
+																																													theme.setText(R.string.show_themes_42);
+																																													language.setText(R.string.language_42);
+																																													download_update.setText(R.string.download_update_42);
+																																													install_now.setText(R.string.install_now_42);
+																																													install_update.setText(R.string.install_update_42);
+																																													uninstall_patched.setText(R.string.uninstall_patched_42);
+																																													open_settings.setText(R.string.open_settings_42);
+																																													open_patched.setText(R.string.open_patched_42);
+																																													lite.setText(R.string.lite_42);
+																																													cloned.setText(R.string.cloned_42);
+																																													spap.setText(R.string.spap_42);
+																																													mirror.setText(R.string.mirror_42);
+																																													download.setText(R.string.download_42);
+																																													cancel.setText(R.string.cancel_42);
+																																													later.setText(R.string.later_42);
+																																													go_back.setText(R.string.go_back_42);
+																																													not_now.setText(R.string.not_now_42);
+																																													close.setText(R.string.close_42);
+																																													continue_1.setText(R.string.continue_1_42);
+																																													install.setText(R.string.install_42);
+																																													uninstall.setText(R.string.uninstall_42);
+																																													ignore.setText(R.string.ignore_42);
+																																													delete.setText(R.string.delete_42);
+																																													thanks.setText(R.string.thanks_42);
+																																													new_update.setText(R.string.new_update_42);
+																																													changelogs.setText(R.string.changelogs_42);
+																																													reboot.setText(R.string.reboot_42);
+																																													reset_preferences.setText(R.string.reset_preferences_42);
+																																													list_auto_refresh.setText(R.string.list_auto_refresh_42);
+																																													list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_42);
+																																													force_auto_install.setText(R.string.force_auto_install_42);
+																																													force_auto_install_info.setText(R.string.force_auto_install_desc_42);
+																																													apk_location.setText(R.string.apk_location_42);
+																																													apk_location_info.setText(R.string.apk_location_desc_42);
+																																													clear_directory_folders.setText(R.string.clear_directory_folders_42);
+																																													clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_42);
+																																													cloned_version.setText(R.string.cloned_version_42);
+																																													cloned_version_info.setText(R.string.cloned_version_desc_42);
+																																													experiment_version.setText(R.string.experimental_version_42);
+																																													experiment_version_info.setText(R.string.experimental_version_desc_42);
+																																													disable_reward_ad.setText(R.string.disable_rewarded_ads_42);
+																																													disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_42);
+																																													disable_notification.setText(R.string.disable_notification_42);
+																																													disable_notification_info.setText(R.string.disable_notification_desc_42);
+																																													hide_stock_patched.setText(R.string.hide_stock_patched_42);
+																																													hide_amoled_patched.setText(R.string.hide_amoled_patched_42);
+																																													hide_lite_patched.setText(R.string.hide_lite_patched_42);
+																																													hide_wave_patched.setText(R.string.hide_wave_patched_42);
+																																													show_support.setText(R.string.show_support_42);
+																																													show_support_desc.setText(R.string.show_support_desc_42);
+																																													maintenance.setText(R.string.maintenance_42);
+																																													maintenance_desc.setText(R.string.maintenance_desc_42);
+																																													xmanager_dev.setText(R.string.xmanager_dev_42);
+																																													patched_devs.setText(R.string.patched_devs_42);
+																																													support_team.setText(R.string.support_team_42);
+																																													manager_testers.setText(R.string.manager_testers_42);
+																																													manager_hosting.setText(R.string.manager_hosting_42);
+																																													mobilism_team.setText(R.string.mobilism_team_42);
+																																													forum_team.setText(R.string.forum_team_42);
+																																													contributors.setText(R.string.contributors_42);
+																																													download_selected.setText(R.string.download_selected_42);
+																																													download_ready.setText(R.string.download_ready_42);
+																																													download_ready_desc.setText(R.string.download_ready_desc_42);
+																																													downloading_file.setText(R.string.downloading_file_42);
+																																													download_success.setText(R.string.download_success_42);
+																																													installation_failed.setText(R.string.installation_failed_42);
+																																													installation_failed_desc.setText(R.string.installation_failed_desc_42);
+																																													installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_42);
+																																													installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_42);
+																																													existing_patched.setText(R.string.existing_patched_42);
+																																													existing_patched_desc.setText(R.string.existing_patched_desc_42);
+																																													lite_0 = lite.getText().toString();
+																																													download_0 = download.getText().toString();
+																																													continue_0 = continue_1.getText().toString();
+																																													cancel_0 = cancel.getText().toString();
+																																													later_0 = later.getText().toString();
+																																													mirror_0 = mirror.getText().toString();
+																																													install_now_0 = install_now.getText().toString();
+																																													go_back_0 = go_back.getText().toString();
+																																													install_update_0 = install_update.getText().toString();
+																																													close_0 = close.getText().toString();
+																																													uninstall_0 = uninstall.getText().toString();
+																																													existing_patched_0 = existing_patched.getText().toString();
+																																													existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																																													download_selected_0 = download_selected.getText().toString();
+																																													download_ready_0 = download_ready.getText().toString();
+																																													download_ready_desc_0 = download_ready_desc.getText().toString();
+																																													downloading_file_0 = downloading_file.getText().toString();
+																																													download_success_0 = download_success.getText().toString();
+																																													installation_failed_0 = installation_failed.getText().toString();
+																																													installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																																													installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
+																																													installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																																													select_language.setSelection((int)(42));
+																																												}
+																																												else {
+																																													if (LANGUAGE.getString("LANGUAGE", "").equals("43")) {
+																																														sub_text_installed.setText(R.string.installed_43);
+																																														main_title.setText(R.string.main_title_43);
+																																														about_title.setText(R.string.about_title_43);
+																																														settings_title.setText(R.string.settings_title_43);
+																																														experiment_title.setText(R.string.experimental_title_43);
+																																														sub_title.setText(R.string.about_sub_43);
+																																														sub_text_1.setText(R.string.latest_43);
+																																														sub_text_2.setText(R.string.latest_43);
+																																														sub_text_3.setText(R.string.latest_43);
+																																														sub_text_4.setText(R.string.latest_43);
+																																														versions_1.setText(R.string.versions_43);
+																																														versions_2.setText(R.string.versions_43);
+																																														versions_3.setText(R.string.versions_43);
+																																														versions_4.setText(R.string.versions_43);
+																																														title_sub.setText(R.string.manager_tools_43);
+																																														source.setText(R.string.source_43);
+																																														support.setText(R.string.support_43);
+																																														donate.setText(R.string.donate_43);
+																																														discord.setText(R.string.discord_43);
+																																														about.setText(R.string.about_43);
+																																														website.setText(R.string.website_43);
+																																														reddit.setText(R.string.reddit_43);
+																																														faq.setText(R.string.faq_43);
+																																														theme.setText(R.string.show_themes_43);
+																																														language.setText(R.string.language_43);
+																																														download_update.setText(R.string.download_update_43);
+																																														install_now.setText(R.string.install_now_43);
+																																														install_update.setText(R.string.install_update_43);
+																																														uninstall_patched.setText(R.string.uninstall_patched_43);
+																																														open_settings.setText(R.string.open_settings_43);
+																																														open_patched.setText(R.string.open_patched_43);
+																																														lite.setText(R.string.lite_43);
+																																														cloned.setText(R.string.cloned_43);
+																																														spap.setText(R.string.spap_43);
+																																														mirror.setText(R.string.mirror_43);
+																																														download.setText(R.string.download_43);
+																																														cancel.setText(R.string.cancel_43);
+																																														later.setText(R.string.later_43);
+																																														go_back.setText(R.string.go_back_43);
+																																														not_now.setText(R.string.not_now_43);
+																																														close.setText(R.string.close_43);
+																																														continue_1.setText(R.string.continue_1_43);
+																																														install.setText(R.string.install_43);
+																																														uninstall.setText(R.string.uninstall_43);
+																																														ignore.setText(R.string.ignore_43);
+																																														delete.setText(R.string.delete_43);
+																																														thanks.setText(R.string.thanks_43);
+																																														new_update.setText(R.string.new_update_43);
+																																														changelogs.setText(R.string.changelogs_43);
+																																														reboot.setText(R.string.reboot_43);
+																																														reset_preferences.setText(R.string.reset_preferences_43);
+																																														list_auto_refresh.setText(R.string.list_auto_refresh_43);
+																																														list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_43);
+																																														force_auto_install.setText(R.string.force_auto_install_43);
+																																														force_auto_install_info.setText(R.string.force_auto_install_desc_43);
+																																														apk_location.setText(R.string.apk_location_43);
+																																														apk_location_info.setText(R.string.apk_location_desc_43);
+																																														clear_directory_folders.setText(R.string.clear_directory_folders_43);
+																																														clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_43);
+																																														cloned_version.setText(R.string.cloned_version_43);
+																																														cloned_version_info.setText(R.string.cloned_version_desc_43);
+																																														experiment_version.setText(R.string.experimental_version_43);
+																																														experiment_version_info.setText(R.string.experimental_version_desc_43);
+																																														disable_reward_ad.setText(R.string.disable_rewarded_ads_43);
+																																														disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_43);
+																																														disable_notification.setText(R.string.disable_notification_43);
+																																														disable_notification_info.setText(R.string.disable_notification_desc_43);
+																																														hide_stock_patched.setText(R.string.hide_stock_patched_43);
+																																														hide_amoled_patched.setText(R.string.hide_amoled_patched_43);
+																																														hide_lite_patched.setText(R.string.hide_lite_patched_43);
+																																														hide_wave_patched.setText(R.string.hide_wave_patched_43);
+																																														show_support.setText(R.string.show_support_43);
+																																														show_support_desc.setText(R.string.show_support_desc_43);
+																																														maintenance.setText(R.string.maintenance_43);
+																																														maintenance_desc.setText(R.string.maintenance_desc_43);
+																																														xmanager_dev.setText(R.string.xmanager_dev_43);
+																																														patched_devs.setText(R.string.patched_devs_43);
+																																														support_team.setText(R.string.support_team_43);
+																																														manager_testers.setText(R.string.manager_testers_43);
+																																														manager_hosting.setText(R.string.manager_hosting_43);
+																																														mobilism_team.setText(R.string.mobilism_team_43);
+																																														forum_team.setText(R.string.forum_team_43);
+																																														contributors.setText(R.string.contributors_43);
+																																														download_selected.setText(R.string.download_selected_43);
+																																														download_ready.setText(R.string.download_ready_43);
+																																														download_ready_desc.setText(R.string.download_ready_desc_43);
+																																														downloading_file.setText(R.string.downloading_file_43);
+																																														download_success.setText(R.string.download_success_43);
+																																														installation_failed.setText(R.string.installation_failed_43);
+																																														installation_failed_desc.setText(R.string.installation_failed_desc_43);
+																																														installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_43);
+																																														installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_43);
+																																														existing_patched.setText(R.string.existing_patched_43);
+																																														existing_patched_desc.setText(R.string.existing_patched_desc_43);
+																																														lite_0 = lite.getText().toString();
+																																														download_0 = download.getText().toString();
+																																														continue_0 = continue_1.getText().toString();
+																																														cancel_0 = cancel.getText().toString();
+																																														later_0 = later.getText().toString();
+																																														mirror_0 = mirror.getText().toString();
+																																														install_now_0 = install_now.getText().toString();
+																																														go_back_0 = go_back.getText().toString();
+																																														install_update_0 = install_update.getText().toString();
+																																														close_0 = close.getText().toString();
+																																														uninstall_0 = uninstall.getText().toString();
+																																														existing_patched_0 = existing_patched.getText().toString();
+																																														existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																																														download_selected_0 = download_selected.getText().toString();
+																																														download_ready_0 = download_ready.getText().toString();
+																																														download_ready_desc_0 = download_ready_desc.getText().toString();
+																																														downloading_file_0 = downloading_file.getText().toString();
+																																														download_success_0 = download_success.getText().toString();
+																																														installation_failed_0 = installation_failed.getText().toString();
+																																														installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																																														installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
+																																														installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																																														select_language.setSelection((int)(43));
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
 																																							}
 																																						}
 																																					}
@@ -12158,6 +13745,11 @@ public class MainActivity extends AppCompatActivity {
 		Language.add("Japanese");
 		Language.add("Nepali");
 		Language.add("Tamil");
+		Language.add("Thai");
+		Language.add("Marathi");
+		Language.add("Malayalam");
+		Language.add("Croatian");
+		Language.add("Hindi");
 		select_language.setAdapter(new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, Language));
 		((ArrayAdapter)select_language.getAdapter()).notifyDataSetChanged();
 		select_language.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, Language) {
@@ -12447,28 +14039,24 @@ public class MainActivity extends AppCompatActivity {
 		d = null;
 		Animation e;
 		e = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		e.setDuration(600); main_box_7.startAnimation(e);
+		e.setDuration(600); main_box_19.startAnimation(e);
 		e = null;
 		Animation f;
 		f = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		f.setDuration(700); main_box_19.startAnimation(f);
+		f.setDuration(700); main_box_6.startAnimation(f);
 		f = null;
 		Animation g;
 		g = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		g.setDuration(800); main_box_6.startAnimation(g);
+		g.setDuration(800); box_sub_header.startAnimation(g);
 		g = null;
 		Animation h;
 		h = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		h.setDuration(900); box_sub_header.startAnimation(h);
+		h.setDuration(900); main_box_4.startAnimation(h);
 		h = null;
 		Animation i;
 		i = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		i.setDuration(1000); main_box_4.startAnimation(i);
+		i.setDuration(1000); main_box_15.startAnimation(i);
 		i = null;
-		Animation j;
-		j = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		j.setDuration(1100); main_box_15.startAnimation(j);
-		j = null;
 	}
 	
 	
@@ -12627,7 +14215,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "Patched Cloned (xManager).apk");
+				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "Patched Cloned (xManager).apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -12701,27 +14289,6 @@ public class MainActivity extends AppCompatActivity {
 																										public void run() {
 																												prog.dismiss();
 																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												try {
-																														_Reminder();
-																														_Browser(hidden_download_3.getText().toString());
-																												} catch (Exception e) {
-																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																												}
 																										}
 																								}, 0);
 																						}
@@ -12844,7 +14411,7 @@ public class MainActivity extends AppCompatActivity {
 																						@Override
 																						public void run() {	
 																								try {
-																										FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk", apk_path_location.getText().toString().concat("Patched Cloned (xManager).apk"));
+																										FileUtil.copyFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk", apk_path_location.getText().toString().concat("Patched Cloned (xManager).apk"));
 																								}
 																								catch(Exception e) {
 																								}
@@ -12889,7 +14456,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "Patched Cloned (xManager).apk");
+				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "Patched Cloned (xManager).apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -12963,27 +14530,6 @@ public class MainActivity extends AppCompatActivity {
 																										public void run() {
 																												prog.dismiss();
 																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												try {
-																														_Reminder();
-																														_Browser(hidden_download_3.getText().toString());
-																												} catch (Exception e) {
-																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																												}
 																										}
 																								}, 0);
 																						}
@@ -13106,7 +14652,7 @@ public class MainActivity extends AppCompatActivity {
 																						@Override
 																						public void run() {	
 																								try {
-																										FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk", apk_path_location.getText().toString().concat("Patched Cloned (xManager).apk"));
+																										FileUtil.copyFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk", apk_path_location.getText().toString().concat("Patched Cloned (xManager).apk"));
 																								}
 																								catch(Exception e) {
 																								}
@@ -13125,7 +14671,7 @@ public class MainActivity extends AppCompatActivity {
 																																						try {
 																																								Intent intent = new Intent(Intent.ACTION_VIEW);
 																																								intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
+																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
 																																								startActivity(intent);
 																																								_Reminder();
 																																						}
@@ -13134,7 +14680,7 @@ public class MainActivity extends AppCompatActivity {
 																																				} else {
 																																						try {
 																																								Intent intent = new Intent(Intent.ACTION_VIEW);
-																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
+																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
 																																								startActivity(intent);
 																																								_Reminder();
 																																						}
@@ -13777,8 +15323,8 @@ public class MainActivity extends AppCompatActivity {
 						prog.show();
 				}
 				
-				if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/")) {
-					FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/");
+				if (FileUtil.isExistFile(apk_path_location.getText().toString())) {
+					FileUtil.deleteFile(apk_path_location.getText().toString());
 				}
 				Timer = new TimerTask() {
 					@Override
@@ -13856,12 +15402,6 @@ public class MainActivity extends AppCompatActivity {
 		else {
 			try {
 				if (!REFETCH.getString("REFETCH", "").equals("X")) {
-					sub_1.setVisibility(View.VISIBLE);
-					sub_2.setVisibility(View.VISIBLE);
-					sub_9.setVisibility(View.VISIBLE);
-					sub_1.setText("N/A");
-					sub_2.setText("N/A");
-					sub_9.setText("N/A");
 					_Refetch();
 				}
 				else {
@@ -13939,6 +15479,7 @@ public class MainActivity extends AppCompatActivity {
 					icon_switch.setAlpha((float)(1.0d));
 					icon_update.setAlpha((float)(1.0d));
 					main_body.setAlpha((float)(0.50d));
+					_GDPR_Consent();
 					_Permission();
 					_API_Token();
 					_Updater();
@@ -14096,68 +15637,41 @@ public class MainActivity extends AppCompatActivity {
 																				public void run() {
 																					Animation animation;
 																					animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
-																					animation.setDuration(500); version_oc_04.startAnimation(animation);
+																					animation.setDuration(500); changelogs_oc.startAnimation(animation);
 																					animation = null;
 																					list_items_1.setVisibility(View.GONE);
 																					list_items_2.setVisibility(View.GONE);
 																					list_items_3.setVisibility(View.GONE);
-																					list_items_4.setVisibility(View.VISIBLE);
-																					list_items_5.setVisibility(View.GONE);
+																					list_items_4.setVisibility(View.GONE);
+																					list_items_5.setVisibility(View.VISIBLE);
 																					version_oc_01.setImageResource(R.drawable.close);
 																					version_oc_02.setImageResource(R.drawable.close);
 																					version_oc_03.setImageResource(R.drawable.close);
-																					version_oc_04.setImageResource(R.drawable.open);
-																					changelogs_oc.setImageResource(R.drawable.close);
-																					list_items_4.setAdapter(new List_items_4Adapter(wave_patched));
-																					((BaseAdapter)list_items_4.getAdapter()).notifyDataSetChanged();
+																					version_oc_04.setImageResource(R.drawable.close);
+																					changelogs_oc.setImageResource(R.drawable.open);
+																					list_items_5.setAdapter(new List_items_5Adapter(patched_changelogs));
+																					((BaseAdapter)list_items_5.getAdapter()).notifyDataSetChanged();
 																					Timer = new TimerTask() {
 																						@Override
 																						public void run() {
 																							runOnUiThread(new Runnable() {
 																								@Override
 																								public void run() {
-																									Animation animation;
-																									animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
-																									animation.setDuration(500); changelogs_oc.startAnimation(animation);
-																									animation = null;
+																									main_refresh_layout.setRefreshing(false);
 																									list_items_1.setVisibility(View.GONE);
 																									list_items_2.setVisibility(View.GONE);
 																									list_items_3.setVisibility(View.GONE);
 																									list_items_4.setVisibility(View.GONE);
-																									list_items_5.setVisibility(View.VISIBLE);
+																									list_items_5.setVisibility(View.GONE);
 																									version_oc_01.setImageResource(R.drawable.close);
 																									version_oc_02.setImageResource(R.drawable.close);
 																									version_oc_03.setImageResource(R.drawable.close);
 																									version_oc_04.setImageResource(R.drawable.close);
-																									changelogs_oc.setImageResource(R.drawable.open);
-																									list_items_5.setAdapter(new List_items_5Adapter(patched_changelogs));
-																									((BaseAdapter)list_items_5.getAdapter()).notifyDataSetChanged();
-																									Timer = new TimerTask() {
-																										@Override
-																										public void run() {
-																											runOnUiThread(new Runnable() {
-																												@Override
-																												public void run() {
-																													main_refresh_layout.setRefreshing(false);
-																													list_items_1.setVisibility(View.GONE);
-																													list_items_2.setVisibility(View.GONE);
-																													list_items_3.setVisibility(View.GONE);
-																													list_items_4.setVisibility(View.GONE);
-																													list_items_5.setVisibility(View.GONE);
-																													version_oc_01.setImageResource(R.drawable.close);
-																													version_oc_02.setImageResource(R.drawable.close);
-																													version_oc_03.setImageResource(R.drawable.close);
-																													version_oc_04.setImageResource(R.drawable.close);
-																													changelogs_oc.setImageResource(R.drawable.close);
-																													main_body.setAlpha((float)(1.0d));
-																													String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
-																													
-																													com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Data List Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																												}
-																											});
-																										}
-																									};
-																									_timer.schedule(Timer, (int)(800));
+																									changelogs_oc.setImageResource(R.drawable.close);
+																									main_body.setAlpha((float)(1.0d));
+																									String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
+																									
+																									com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Data List Updated | " + (currentDateTimeString), com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 																								}
 																							});
 																						}
@@ -14242,7 +15756,6 @@ public class MainActivity extends AppCompatActivity {
 		_Clickers();
 		_Effects();
 		_Extra();
-		_Reminder();
 	}
 	
 	
@@ -14331,7 +15844,7 @@ public class MainActivity extends AppCompatActivity {
 												try {
 														Intent intent = new Intent(Intent.ACTION_VIEW);
 														intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
+														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
 														_Reminder();
 												}
@@ -14340,7 +15853,7 @@ public class MainActivity extends AppCompatActivity {
 										} else {
 												try {
 														Intent intent = new Intent(Intent.ACTION_VIEW);
-														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
+														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
 														_Reminder();
 												}
@@ -14449,7 +15962,7 @@ public class MainActivity extends AppCompatActivity {
 												try {
 														Intent intent = new Intent(Intent.ACTION_VIEW);
 														intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
+														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
 														_Reminder();
 												}
@@ -14458,7 +15971,7 @@ public class MainActivity extends AppCompatActivity {
 										} else {
 												try {
 														Intent intent = new Intent(Intent.ACTION_VIEW);
-														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
+														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
 														_Reminder();
 												}
@@ -14565,7 +16078,7 @@ public class MainActivity extends AppCompatActivity {
 								try {
 										Intent intent = new Intent(Intent.ACTION_VIEW);
 										intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
+										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/xManager Update.apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
 								}
 								catch(Exception e) {
@@ -14573,7 +16086,7 @@ public class MainActivity extends AppCompatActivity {
 						} else {
 								try {
 										Intent intent = new Intent(Intent.ACTION_VIEW);
-										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Update/xManager Update.apk")), "application/vnd.android.package-archive");
+										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/xManager Update.apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
 								}
 								catch(Exception e) {
@@ -14603,7 +16116,7 @@ public class MainActivity extends AppCompatActivity {
 								try {
 										Intent intent = new Intent(Intent.ACTION_VIEW);
 										intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
+										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
 						                _Reminder();
 								}
@@ -14613,7 +16126,7 @@ public class MainActivity extends AppCompatActivity {
 						} else {
 								try {
 										Intent intent = new Intent(Intent.ACTION_VIEW);
-										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
+										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
 						                _Reminder();
 								}
@@ -14698,7 +16211,7 @@ public class MainActivity extends AppCompatActivity {
 								try {
 										Intent intent = new Intent(Intent.ACTION_VIEW);
 										intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
+										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
 						                _Reminder();
 								}
@@ -14708,7 +16221,7 @@ public class MainActivity extends AppCompatActivity {
 						} else {
 								try {
 										Intent intent = new Intent(Intent.ACTION_VIEW);
-										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
+										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
 						                _Reminder();
 								}
@@ -14825,6 +16338,11 @@ public class MainActivity extends AppCompatActivity {
 		manager_lang_37.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_38.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_39.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_40.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_41.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_42.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_43.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_44.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -14864,6 +16382,11 @@ public class MainActivity extends AppCompatActivity {
 		translator_37.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_38.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_39.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_40.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_41.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_42.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_43.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_44.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 	}
 	
 	
@@ -14977,7 +16500,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "Patched Lite (xManager).apk");
+				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "Patched Lite (xManager).apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -15051,27 +16574,6 @@ public class MainActivity extends AppCompatActivity {
 																										public void run() {
 																												prog.dismiss();
 																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												try {
-																														_Reminder();
-																														_Browser(hidden_download_3.getText().toString());
-																												} catch (Exception e) {
-																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																												}
 																										}
 																								}, 0);
 																						}
@@ -15194,7 +16696,7 @@ public class MainActivity extends AppCompatActivity {
 																						@Override
 																						public void run() {	
 																								try {
-																										FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk", apk_path_location.getText().toString().concat("Patched Lite (xManager).apk"));
+																										FileUtil.copyFile("/storage/emulated/0/Download/Patched Lite (xManager).apk", apk_path_location.getText().toString().concat("Patched Lite (xManager).apk"));
 																								}
 																								catch(Exception e) {
 																								}
@@ -15239,7 +16741,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "Patched Lite (xManager).apk");
+				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "Patched Lite (xManager).apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -15313,27 +16815,6 @@ public class MainActivity extends AppCompatActivity {
 																										public void run() {
 																												prog.dismiss();
 																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												try {
-																														_Reminder();
-																														_Browser(hidden_download_3.getText().toString());
-																												} catch (Exception e) {
-																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																												}
 																										}
 																								}, 0);
 																						}
@@ -15456,7 +16937,7 @@ public class MainActivity extends AppCompatActivity {
 																						@Override
 																						public void run() {	
 																								try {
-																										FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk", apk_path_location.getText().toString().concat("Patched Lite (xManager).apk"));
+																										FileUtil.copyFile("/storage/emulated/0/Download/Patched Lite (xManager).apk", apk_path_location.getText().toString().concat("Patched Lite (xManager).apk"));
 																								}
 																								catch(Exception e) {
 																								}
@@ -15475,7 +16956,7 @@ public class MainActivity extends AppCompatActivity {
 																																						try {
 																																								Intent intent = new Intent(Intent.ACTION_VIEW);
 																																								intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
+																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
 																																								startActivity(intent);
 																																								_Reminder();
 																																						}
@@ -15484,7 +16965,7 @@ public class MainActivity extends AppCompatActivity {
 																																				} else {
 																																						try {
 																																								Intent intent = new Intent(Intent.ACTION_VIEW);
-																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
+																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
 																																								startActivity(intent);
 																																								_Reminder();
 																																						}
@@ -15592,7 +17073,7 @@ public class MainActivity extends AppCompatActivity {
 						if(android.os.Build.VERSION.SDK_INT >= 29){
 								try {
 										Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
+										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
 						                intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 										startActivity(intent);
 										_Reminder();
@@ -15603,7 +17084,7 @@ public class MainActivity extends AppCompatActivity {
 						} else {
 								try {
 										Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
+										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
 										_Reminder();
 								}
@@ -15695,7 +17176,7 @@ public class MainActivity extends AppCompatActivity {
 										if(android.os.Build.VERSION.SDK_INT >= 29){
 												try {
 														Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
+														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
 														intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 														startActivity(intent);
 														_Reminder();
@@ -15705,7 +17186,7 @@ public class MainActivity extends AppCompatActivity {
 										} else {
 												try {
 														Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
+														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
 														_Reminder();
 												}
@@ -16054,52 +17535,52 @@ public class MainActivity extends AppCompatActivity {
 																																								});
 																																							}
 																																						};
-																																						_timer.schedule(Timer, (int)(950));
+																																						_timer.schedule(Timer, (int)(900));
 																																					}
 																																				});
 																																			}
 																																		};
-																																		_timer.schedule(Timer, (int)(750));
+																																		_timer.schedule(Timer, (int)(700));
 																																	}
 																																});
 																															}
 																														};
-																														_timer.schedule(Timer, (int)(900));
+																														_timer.schedule(Timer, (int)(850));
 																													}
 																												});
 																											}
 																										};
-																										_timer.schedule(Timer, (int)(700));
+																										_timer.schedule(Timer, (int)(650));
 																									}
 																								});
 																							}
 																						};
-																						_timer.schedule(Timer, (int)(850));
+																						_timer.schedule(Timer, (int)(800));
 																					}
 																				});
 																			}
 																		};
-																		_timer.schedule(Timer, (int)(650));
+																		_timer.schedule(Timer, (int)(600));
 																	}
 																});
 															}
 														};
-														_timer.schedule(Timer, (int)(800));
+														_timer.schedule(Timer, (int)(750));
 													}
 												});
 											}
 										};
-										_timer.schedule(Timer, (int)(600));
+										_timer.schedule(Timer, (int)(550));
 									}
 								});
 							}
 						};
-						_timer.schedule(Timer, (int)(750));
+						_timer.schedule(Timer, (int)(700));
 					}
 				});
 			}
 		};
-		_timer.schedule(Timer, (int)(550));
+		_timer.schedule(Timer, (int)(500));
 	}
 	
 	
@@ -16128,7 +17609,7 @@ public class MainActivity extends AppCompatActivity {
 						});
 				}
 		};
-		_timer.schedule(Timer, (int)(3000));
+		_timer.schedule(Timer, (int)(1000));
 		if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
 				Window w =MainActivity.this.getWindow();
 				w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -16138,13 +17619,14 @@ public class MainActivity extends AppCompatActivity {
 		title_header_separator.setTextColor(0xFFFFFFFF);
 		title_header_beta.setTextColor(0xFFFFFFFF);
 		box_header.setBackgroundColor(0xFF171717);
-		main_body_optimization.setVisibility(View.GONE);
+		box_header.setVisibility(View.GONE);
+		main_body_optimization.setVisibility(View.VISIBLE);
 		main_scroll_settings.setVisibility(View.GONE);
 		main_scroll_about.setVisibility(View.GONE);
-		main_refresh_layout.setVisibility(View.VISIBLE);
-		box_experiment.setVisibility(View.VISIBLE);
-		box_switch.setVisibility(View.VISIBLE);
-		box_update.setVisibility(View.VISIBLE);
+		main_refresh_layout.setVisibility(View.GONE);
+		box_experiment.setVisibility(View.GONE);
+		box_switch.setVisibility(View.GONE);
+		box_update.setVisibility(View.GONE);
 		icon_experiment.setAlpha((float)(1.0d));
 		icon_switch.setAlpha((float)(1.0d));
 		icon_update.setAlpha((float)(1.0d));
@@ -16168,7 +17650,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "Patched Wave (xManager).apk");
+				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "Patched Wave (xManager).apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -16242,27 +17724,6 @@ public class MainActivity extends AppCompatActivity {
 																										public void run() {
 																												prog.dismiss();
 																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												try {
-																														_Reminder();
-																														_Browser(hidden_download_3.getText().toString());
-																												} catch (Exception e) {
-																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																												}
 																										}
 																								}, 0);
 																						}
@@ -16385,7 +17846,7 @@ public class MainActivity extends AppCompatActivity {
 																						@Override
 																						public void run() {	
 																								try {
-																										FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Wave (xManager).apk", apk_path_location.getText().toString().concat("Patched Wave (xManager).apk"));
+																										FileUtil.copyFile("/storage/emulated/0/Download/Patched Wave (xManager).apk", apk_path_location.getText().toString().concat("Patched Wave (xManager).apk"));
 																								}
 																								catch(Exception e) {
 																								}
@@ -16430,7 +17891,7 @@ public class MainActivity extends AppCompatActivity {
 				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
 				request.setMimeType("application/vnd.android.package-archive");
 				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "Patched Wave (xManager).apk");
+				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "Patched Wave (xManager).apk");
 				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
 				final long downloadId = manager.enqueue(request);
 				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
@@ -16504,27 +17965,6 @@ public class MainActivity extends AppCompatActivity {
 																										public void run() {
 																												prog.dismiss();
 																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.setButton(DialogInterface.BUTTON_NEUTRAL, mirror_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												try {
-																														_Reminder();
-																														_Browser(hidden_download_3.getText().toString());
-																												} catch (Exception e) {
-																														com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																												}
 																										}
 																								}, 0);
 																						}
@@ -16647,7 +18087,7 @@ public class MainActivity extends AppCompatActivity {
 																						@Override
 																						public void run() {	
 																								try {
-																										FileUtil.copyFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Wave (xManager).apk", apk_path_location.getText().toString().concat("Patched Wave (xManager).apk"));
+																										FileUtil.copyFile("/storage/emulated/0/Download/Patched Wave (xManager).apk", apk_path_location.getText().toString().concat("Patched Wave (xManager).apk"));
 																								}
 																								catch(Exception e) {
 																								}
@@ -16666,7 +18106,7 @@ public class MainActivity extends AppCompatActivity {
 																																						try {
 																																								Intent intent = new Intent(Intent.ACTION_VIEW);
 																																								intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Wave (xManager).apk")), "application/vnd.android.package-archive");
+																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Wave (xManager).apk")), "application/vnd.android.package-archive");
 																																								startActivity(intent);
 																																								_Reminder();
 																																						}
@@ -16675,7 +18115,7 @@ public class MainActivity extends AppCompatActivity {
 																																				} else {
 																																						try {
 																																								Intent intent = new Intent(Intent.ACTION_VIEW);
-																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Wave (xManager).apk")), "application/vnd.android.package-archive");
+																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Wave (xManager).apk")), "application/vnd.android.package-archive");
 																																								startActivity(intent);
 																																								_Reminder();
 																																						}
@@ -16865,7 +18305,7 @@ public class MainActivity extends AppCompatActivity {
 						if(android.os.Build.VERSION.SDK_INT >= 29){
 								try {
 										Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Wave (xManager).apk")), "application/vnd.android.package-archive");
+										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Wave (xManager).apk")), "application/vnd.android.package-archive");
 						                intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 										startActivity(intent);
 										_Reminder();
@@ -16876,7 +18316,7 @@ public class MainActivity extends AppCompatActivity {
 						} else {
 								try {
 										Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Wave (xManager).apk")), "application/vnd.android.package-archive");
+										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Wave (xManager).apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
 										_Reminder();
 								}
@@ -16968,7 +18408,7 @@ public class MainActivity extends AppCompatActivity {
 										if(android.os.Build.VERSION.SDK_INT >= 29){
 												try {
 														Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Wave (xManager).apk")), "application/vnd.android.package-archive");
+														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Wave (xManager).apk")), "application/vnd.android.package-archive");
 														intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 														startActivity(intent);
 														_Reminder();
@@ -16978,7 +18418,7 @@ public class MainActivity extends AppCompatActivity {
 										} else {
 												try {
 														Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/Download/Patched Wave (xManager).apk")), "application/vnd.android.package-archive");
+														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Wave (xManager).apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
 														_Reminder();
 												}
@@ -17102,76 +18542,6 @@ public class MainActivity extends AppCompatActivity {
 				main_box_3.setVisibility(View.VISIBLE);
 			}
 		}
-		if (HIDE_PATCHED.getString("SWITCH_D", "").equals("ON")) {
-			hide_wave_patched_switch.setChecked(true);
-			main_box_12.setVisibility(View.GONE);
-			main_box_7.setVisibility(View.GONE);
-		}
-		else {
-			if (HIDE_PATCHED.getString("SWITCH_D", "").equals("OFF")) {
-				hide_wave_patched_switch.setChecked(false);
-				main_box_12.setVisibility(View.VISIBLE);
-				main_box_7.setVisibility(View.VISIBLE);
-			}
-		}
-		if (!hide_stock_patched_switch.isChecked() && (hide_amoled_patched_switch.isChecked() && (hide_lite_patched_switch.isChecked() && hide_wave_patched_switch.isChecked()))) {
-			main_box_12.setVisibility(View.GONE);
-			main_box_19.setVisibility(View.VISIBLE);
-		}
-		else {
-			if (hide_stock_patched_switch.isChecked() && (!hide_amoled_patched_switch.isChecked() && (hide_lite_patched_switch.isChecked() && hide_wave_patched_switch.isChecked()))) {
-				main_box_12.setVisibility(View.GONE);
-				main_box_19.setVisibility(View.VISIBLE);
-			}
-			else {
-				if (hide_stock_patched_switch.isChecked() && (hide_amoled_patched_switch.isChecked() && (!hide_lite_patched_switch.isChecked() && hide_wave_patched_switch.isChecked()))) {
-					main_box_12.setVisibility(View.GONE);
-					main_box_19.setVisibility(View.VISIBLE);
-				}
-				else {
-					if (hide_stock_patched_switch.isChecked() && (hide_amoled_patched_switch.isChecked() && (hide_lite_patched_switch.isChecked() && !hide_wave_patched_switch.isChecked()))) {
-						main_box_12.setVisibility(View.GONE);
-						main_box_19.setVisibility(View.VISIBLE);
-					}
-					else {
-						if (hide_stock_patched_switch.isChecked() && (hide_amoled_patched_switch.isChecked() && (hide_lite_patched_switch.isChecked() && hide_wave_patched_switch.isChecked()))) {
-							main_box_12.setVisibility(View.GONE);
-							main_box_19.setVisibility(View.GONE);
-						}
-						else {
-							if (!hide_stock_patched_switch.isChecked() && (!hide_amoled_patched_switch.isChecked() && (!hide_lite_patched_switch.isChecked() && !hide_wave_patched_switch.isChecked()))) {
-								main_box_12.setVisibility(View.VISIBLE);
-								main_box_19.setVisibility(View.VISIBLE);
-							}
-							else {
-								if (hide_stock_patched_switch.isChecked() && (!hide_amoled_patched_switch.isChecked() && (!hide_lite_patched_switch.isChecked() && !hide_wave_patched_switch.isChecked()))) {
-									main_box_12.setVisibility(View.VISIBLE);
-									main_box_19.setVisibility(View.VISIBLE);
-								}
-								else {
-									if (!hide_stock_patched_switch.isChecked() && (hide_amoled_patched_switch.isChecked() && (!hide_lite_patched_switch.isChecked() && !hide_wave_patched_switch.isChecked()))) {
-										main_box_12.setVisibility(View.VISIBLE);
-										main_box_19.setVisibility(View.VISIBLE);
-									}
-									else {
-										if (!hide_stock_patched_switch.isChecked() && (!hide_amoled_patched_switch.isChecked() && (hide_lite_patched_switch.isChecked() && !hide_wave_patched_switch.isChecked()))) {
-											main_box_12.setVisibility(View.VISIBLE);
-											main_box_19.setVisibility(View.VISIBLE);
-										}
-										else {
-											if (!hide_stock_patched_switch.isChecked() && (!hide_amoled_patched_switch.isChecked() && (!hide_lite_patched_switch.isChecked() && hide_wave_patched_switch.isChecked()))) {
-												main_box_12.setVisibility(View.GONE);
-												main_box_19.setVisibility(View.VISIBLE);
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
 	}
 	
 	
@@ -17221,11 +18591,17 @@ public class MainActivity extends AppCompatActivity {
 												@Override
 												public void onConsentFormDismissed(@Nullable FormError formError) {
 														if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.OBTAINED) {
+																_Personalized_Ads();
+														} else {
+																_Non_Personalized_Ads();
 														}
 												}
 										}
 										);
 								} else if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.OBTAINED) {
+										_Personalized_Ads();
+								} else {
+										_Personalized_Ads();
 								}
 						}
 				},
@@ -17267,6 +18643,16 @@ public class MainActivity extends AppCompatActivity {
 		catch (Exception e) {
 		}
 		
+	}
+	
+	
+	public void _Personalized_Ads() {
+		_Rewarded_AdMob();
+	}
+	
+	
+	public void _Non_Personalized_Ads() {
+		_Rewarded_AdMob();
 	}
 	
 	public class List_items_1Adapter extends BaseAdapter {
