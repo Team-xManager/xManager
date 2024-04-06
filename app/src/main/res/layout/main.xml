@@ -1163,7 +1163,8 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:gravity="right|center_vertical"
-					android:orientation="horizontal">
+					android:orientation="horizontal"
+					android:visibility="gone">
 					<LinearLayout
 						android:id="@+id/title_box_11"
 						android:layout_width="match_parent"
@@ -1323,7 +1324,7 @@
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:gravity="left|right|center_vertical"
-						android:text="/storage/emulated/0/Download/"
+						android:text="/storage/emulated/0/xManager/"
 						android:textSize="12sp"
 						android:textStyle="bold"
 						android:textColor="#FFFFFF"
@@ -1654,7 +1655,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
-					android:text="RishavG\nmeech\njetfire\nSherlock Holmes\nWu Tang Clam\nZach\naha\njar3cki\njuznem\nroosphx\n100RABH\nLight Yagami\nTunelover (Mobilism)\ncryiotic3 (Manager Icon)\nfarish278 (Manager Icon)\nzankyr (Notification Fixed)\nArian04 (Duplicate Attributes)"
+					android:text="RishavG\nmeech\njetfire\nSherlock Holmes\nWu Tang Clam\nZach\naha\njar3cki\njuznem\nroosphx\n100RABH\nLight Yagami\nTunelover (Mobilism)\nslavrom21 (Monet Icon)\ncryiotic3 (Manager Icon)\nfarish278 (Manager Icon)\nzankyr (Notification Fixed)\nArian04 (Duplicate Attributes)"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -1775,7 +1776,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="5dp"
-					android:text="Yazan Kasem"
+					android:text="Yazan Kasem | Infinitesimal"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -1885,7 +1886,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="5dp"
-					android:text="Mc. J | Deraidos"
+					android:text="Mc. J | Deraidos | RelvinArsenio"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -1907,7 +1908,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="5dp"
-					android:text="albertopasqualetto | Marco | gdonisi"
+					android:text="Marco | gdonisi | albertopasqualetto"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -2061,7 +2062,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="5dp"
-					android:text="Berkay"
+					android:text="Berkay | mikropsoft"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -2149,7 +2150,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="5dp"
-					android:text="minhtamvn"
+					android:text="minhtamvn | tungnnnt17"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -2259,7 +2260,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="5dp"
-					android:text="Dyras"
+					android:text="Dyras | TheChilledBuffalo"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -2612,6 +2613,116 @@
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
 					android:text="jothi-prasath"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_40"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Thai Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_40"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:text="MaxNjtk"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_41"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Marathi Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_41"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:text="5eeTheaveragecoder"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_42"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Malayalam Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_42"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:text="TheChilledBuffalo"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_43"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Croatian Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_43"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:text="mrki1111"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_44"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Hindi Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_44"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:text="askadityapandey"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -3198,6 +3309,7 @@
 					android:gravity="center_horizontal|center_vertical"
 					android:orientation="horizontal"
 					android:layout_gravity="center_horizontal|center_vertical"
+					android:visibility="gone"
 					android:animateLayoutChanges="true">
 					<LinearLayout
 						android:id="@+id/box_separator_6"
@@ -3245,6 +3357,7 @@
 					android:padding="7dp"
 					android:background="#212121"
 					android:orientation="vertical"
+					android:visibility="gone"
 					android:animateLayoutChanges="true">
 					<LinearLayout
 						android:id="@+id/box_10"
@@ -3535,7 +3648,8 @@
 								android:textSize="14sp"
 								android:textStyle="bold"
 								android:textColor="#FFFFFF"
-								android:layout_gravity="right|center_vertical" />
+								android:layout_gravity="right|center_vertical"
+								android:visibility="gone" />
 							<TextView
 								android:id="@+id/sub_installed_w"
 								android:layout_width="wrap_content"
@@ -3547,7 +3661,8 @@
 								android:textSize="12sp"
 								android:textStyle="bold"
 								android:textColor="#FFFFFF"
-								android:layout_gravity="right|center_vertical" />
+								android:layout_gravity="right|center_vertical"
+								android:visibility="gone" />
 						</LinearLayout>
 					</LinearLayout>
 					<LinearLayout
