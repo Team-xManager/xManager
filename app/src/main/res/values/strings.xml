@@ -1277,81 +1277,81 @@
     <string name="app_name_14" translatable="true">xManager</string>
     <string name="installed_14" translatable="true">تم التثبيت</string>
     <string name="latest_14" translatable="true">الأحدث</string>
-    <string name="versions_14" translatable="true">الاصدارات </string>
+    <string name="versions_14" translatable="true">الإصدارات </string>
     <string name="changelogs_14" translatable="true">سجل التغييرات</string>
-    <string name="manager_tools_14" translatable="true">أدوات المسؤول</string>
+    <string name="manager_tools_14" translatable="true">أدوات المدير</string>
     <string name="source_14" translatable="true">المصدر</string>
-    <string name="support_14" translatable="true">تلغرام</string>
+    <string name="support_14" translatable="true">تيليجرام</string>
     <string name="donate_14" translatable="true">تبرع</string>
     <string name="discord_14" translatable="true">ديسكورد</string>
     <string name="about_14" translatable="true">حول</string>
     <string name="main_title_14" translatable="true">xManager</string>
-    <string name="settings_title_14" translatable="true">الاعدادات</string>
+    <string name="settings_title_14" translatable="true">الإعدادات</string>
     <string name="about_title_14" translatable="true">حول</string>
     <string name="list_auto_refresh_14" translatable="true">التحديث التلقائي للقائمة</string>
-    <string name="list_auto_refresh_desc_14" translatable="true">سيؤدي تفعيل هذا الخيار إلى تحديث القائمة تلقائياً كل مرة تشغل فيها التطبيق \n\nتستطيع يدوياً تحديث القائمة عن طريق السحب للأسفل في الشاشة الرئيسية</string>
+    <string name="list_auto_refresh_desc_14" translatable="true">سيؤدي تفعيل هذا الخيار إلى تحديث القائمة تلقائيًا في كل مرة تقوم فيها بتشغيل التطبيق \n\nتستطيع يدويًا تحديث القائمة عن طريق السحب لأسفل في الشاشة الرئيسية</string>
     <string name="force_auto_install_14" translatable="true">فرض التثبيت التلقائي</string>
-    <string name="force_auto_install_desc_14" translatable="true">تفعيل هذا الخيار سيؤدي لتثبيت التطبيق المعدل وتحديثه بمجرد تنزيله.</string>
+    <string name="force_auto_install_desc_14" translatable="true">تفعيل هذا الخيار سيؤدي لتثبيت التطبيق المعدل وتحديثه بمجرد تحميله.</string>
     <string name="show_themes_14" translatable="true">عرض الثيمات</string>
     <string name="apk_location_14" translatable="true">مسار التطبيق</string>
-    <string name="apk_location_desc_14" translatable="true">  مسار الملفات حيث تريد حفظ الملف الذي تم تحميله. إذا كنت لا تعرف كيفية تعديل هذه الميزة ، فاتركها كما هي. \n\nملاحظة: هذه الميزة لا تدعم التخزين الخارجي (بطاقة SD) بسبب إمكانية الوصول والأذونات وقيود التخزين.</string>
+    <string name="apk_location_desc_14" translatable="true">  مسار الملفات حيث تريد حفظ الملف الذي تم تحميله. إذا كنت لا تعرف كيفية تعديل هذه الميزة، فاتركها كما هي. \n\nملاحظة: هذه الميزة لا تدعم التخزين الخارجي (بطاقة SD) بسبب إمكانية الوصول والأذونات وقيود التخزين.</string>
     <string name="clear_directory_folders_14" translatable="true">مسح مجلدات التطبيق</string>
-    <string name="clear_directory_folders_desc_14" translatable="true">اضغط هنا لحذف جميع المجلدات بما في ذلك التطبيقات والتحديثات التي تم تنزيلها.</string>
-    <string name="reset_preferences_14" translatable="true">اعادة ضبط الاعدادات</string>
-    <string name="about_sub_14" translatable="true">بلا اعلانات | مميزات جديدة | بكل حرية</string>
+    <string name="clear_directory_folders_desc_14" translatable="true">اضغط هنا لحذف جميع المجلدات بما في ذلك التطبيقات والتحديثات التي تم تحميلها.</string>
+    <string name="reset_preferences_14" translatable="true">إعادة ضبط الإعدادات</string>
+    <string name="about_sub_14" translatable="true">بلا إعلانات | مميزات جديدة | بكل حرية</string>
     <string name="xmanager_dev_14" translatable="true">مطور xManager</string>
-    <string name="patched_devs_14" translatable="true">مطوري تطبيق Spotify المعدل</string>
-    <string name="support_team_14" translatable="true">فريق الدعم على تلغرام وديسكورد</string>
+    <string name="patched_devs_14" translatable="true">مطوري التطبيق المعدل</string>
+    <string name="support_team_14" translatable="true">فريق الدعم على تيليجرام وديسكورد</string>
     <string name="manager_testers_14" translatable="true">مختبري Mod/Manager</string>
     <string name="manager_hosting_14" translatable="true">مديري روابط الاستضافة</string>
     <string name="mobilism_team_14" translatable="true">فريق Mobilism</string>
     <string name="forum_team_14" translatable="true">فريق FORUM.APK-RELEASE.NET</string>
-    <string name="contributors_14" translatable="true">شكراً لجميع المساهمين! ❤️</string>
+    <string name="contributors_14" translatable="true">شكرًا لجميع المساهمين! ❤️</string>
     <string name="download_selected_14" translatable="true">لقد حددت هذه النسخة المعدلة. هل تريد الاستمرار؟</string>
-    <string name="download_ready_14" translatable="true">معلومات التصحيح</string>
-    <string name="download_ready_desc_14" translatable="true">سيؤدي تنزيل ملف apk المعدل هذا إلى استبدال الملف السابق الموجود في مسار الملف الخارجي للتطبيق.</string>
+    <string name="download_ready_14" translatable="true">معلومات التعديل</string>
+    <string name="download_ready_desc_14" translatable="true">سيؤدي تحميل ملف apk المعدل هذا إلى استبدال الملف السابق الموجود في مسار الملف الخارجي للتطبيق.</string>
     <string name="downloading_file_14" translatable="true">جاري تحميل الملف..</string>
     <string name="download_success_14" translatable="true">تم التحميل بنجاح</string>
     <string name="new_update_14" translatable="true">يوجد تحديث جديد</string>
     <string name="continue_1_14" translatable="true">استمرار</string>
     <string name="cancel_14" translatable="true">إلغاء</string>
     <string name="download_14" translatable="true">تحميل</string>
-    <string name="later_14" translatable="true">لاحقاً</string>
+    <string name="later_14" translatable="true">لاحقًا</string>
     <string name="install_now_14" translatable="true">تثبيت الآن</string>
     <string name="install_update_14" translatable="true">تثبيت التحديث</string>
     <string name="go_back_14" translatable="true">الرجوع للخلف</string>
     <string name="download_update_14" translatable="true">تحميل التحديث</string>
     <string name="not_now_14" translatable="true">ليس الآن</string>
-    <string name="mirror_14" translatable="true">رابط المرآة</string>
+    <string name="mirror_14" translatable="true">رابط مرآة</string>
     <string name="lite_14" translatable="true">لايت</string>
     <string name="experimental_title_14" translatable="true">تجريبي</string>
     <string name="experimental_version_14" translatable="true">النسخة التجريبية</string>
-    <string name="experimental_version_desc_14" translatable="true">تمكين هذا يسمح لك بتحميل وتثبيت الإصدار التجريبي من التطبيق مصححة.\ ن \ ن ويشمل ذلك ألفا ، بيتا والوصول المبكر الميزات التي لا تتوفر في الأوراق المالية مصححة. بالإضافة إلى ذلك ، ليست مضمونة مستقرة.</string>
+    <string name="experimental_version_desc_14" translatable="true">تفعيل هذا يسمح لك بتحميل وتثبيت الإصدار التجريبي من التطبيق المعدل.\ ن \ ن ويشمل ذلك ألفا، بيتا والوصول المبكر للميزات التي لا تتوفر في الإصدار المعدل العادي. بالإضافة إلى ذلك، ليس مضمون أن يكون مستقر.</string>
     <string name="show_support_14" translatable="true">أظهر دعمك</string>
-    <string name="show_support_desc_14" translatable="true">نحن فريق غير هادف للربح وغير مؤسسي وغير معرض للخطر. يشجعنا أشخاص مثلك على إنشاء تطبيق لجعل الأمور أسهل كثيرًا خاصة من التنزيل إلى التثبيت.\n\nنحن نبذل قصارى جهدنا ونبذل قصارى جهدنا فقط لجعل الأمور في نصابها الصحيح ومحاولة الوصول للكمال. سنبذل قصارى جهدنا لدعم هذا التطبيق قدر استطاعتنا.\n\nأي مبلغ سيساعد وسيكون موضع تقدير كبير!</string>
+    <string name="show_support_desc_14" translatable="true">نحن فريق غير ربحي وغير مؤسسي وغير معرض للخطر. يشجعنا أشخاص مثلك على إنشاء تطبيق لجعل الأمور أكثر سهولة خاصة من التحميل إلى التثبيت.\n\nنحن نبذل كل وقتنا وقصارى جهدنا فقط لجعل الأمور في نصابها الصحيح وبشكل مثالي. سنبذل قصارى جهدنا لدعم هذا التطبيق قدر استطاعتنا.\n\nأي مبلغ سيساعد وسيكون موضع تقدير كبير!</string>
     <string name="maintenance_14" translatable="true">يوجد صيانة</string>
-    <string name="maintenance_desc_14" translatable="true">تطبيق xManager غير متوفر حاليًا. يرجى التحقق من التطبيق في وقت لاحق.</string>
-    <string name="thanks_14" translatable="true">شكراً</string>
+    <string name="maintenance_desc_14" translatable="true">تطبيق xManager غير متوفر حاليًا. يرجى التحقق لاحقًا.</string>
+    <string name="thanks_14" translatable="true">شكرًا</string>
     <string name="language_14" translatable="true">اللغة</string>
-    <string name="website_14" translatable="true">الموقع الالكتروني</string>
+    <string name="website_14" translatable="true">الموقع</string>
     <string name="reddit_14" translatable="true">ريديت</string>
     <string name="faq_14" translatable="true">الأسئلة الشائعة</string>
     <string name="cloned_version_14" translatable="true">نسخة مستنسخة</string>
-    <string name="cloned_version_desc_14" translatable="true">تفعيل هذا يسمح لك بتحميل وتثبيت النسخة المستنسخة من التطبيق مصححة.وهذا أيضا حل معظم أخطاء التثبيت أو مشاكل خاصة إذا كان لديك تطبيق سبوتيفي مثبتة مسبقا.</string>
+    <string name="cloned_version_desc_14" translatable="true">تفعيل هذا يسمح لك بتحميل وتثبيت النسخة المستنسخة من التطبيق المعدل. وهذا أيضا حل معظم أخطاء أو مشاكل التثبيت خاصة إذا كان لديك تطبيق سبوتيفاي مثبت مسبقًا.</string>
     <string name="disable_rewarded_ads_14" translatable="true">تعطيل الإعلانات بمكافأة</string>
-    <string name="disable_rewarded_ads_desc_14" translatable="true">نحن نعلم أن معظمنا لا يحب الإعلانات ولكن في حالتنا ، يساعدنا هذا بشكل كبير في تمويل قاعدة البيانات الخاصة بنا وروابط الاستضافة والتحديثات والمزيد من التصحيحات والاحتياجات اليومية.هذا هو أبسط طريقة لدعمنا دون التبرع أو إنفاق أي شيء.</string>
+    <string name="disable_rewarded_ads_desc_14" translatable="true">نحن نعلم أن معظمنا لا يحب الإعلانات ولكن في حالتنا، يساعدنا هذا بشكل كبير في تمويل قاعدة البيانات الخاصة بنا وروابط الاستضافة والتحديثات والمزيد من التعديلات والاحتياجات اليومية. هذه هي أبسط طريقة لدعمنا دون التبرع أو إنفاق أي شيء.</string>
     <string name="installation_failed_14" translatable="true">فشل التثبيت</string>
-    <string name="installation_failed_desc_14" translatable="true">السبب: حاولت تثبيت إصدار وزارة الدفاع أقل مما هو مثبت حاليا.الحلول: أ. حدد إصدارا مساويا أو أكبر من.ب. إلغاء تثبيت الإصدار الحالي ، ثم تقليله.إذا استمرت المشكلة ، تحقق من الأسئلة الشائعة.</string>
-    <string name="installation_failed_spap_desc_14" translatable="true">السبب: سبوتيفي الحالية المثبتة على هذا الجهاز لم يأت مباشرة من زماناجر أو من فريقنا.الحل: إلغاء تثبيت الإصدار الحالي من التطبيق ، إعادة تشغيل زماناجر وحاول مرة أخرى. إذا استمرت المشكلة ، تحقق من الأسئلة الشائعة.</string>
-    <string name="installation_failed_cloned_desc_14" translatable="true">السبب: المستنسخة الحالية المثبتة على هذا الجهاز لم يأت مباشرة من زماناجر أو من فريقنا.الحل: إلغاء تثبيت الإصدار الحالي من التطبيق ، إعادة تشغيل زماناجر وحاول مرة أخرى. إذا استمرت المشكلة ، تحقق من الأسئلة الشائعة.</string>
-    <string name="existing_patched_14" translatable="true">القائمة مصححة</string>
-    <string name="existing_patched_desc_14" translatable="true">ملف مصححة موجودة وجدت في واحدة من الدليل. ما العمل الذي تريد القيام به?</string>
+    <string name="installation_failed_desc_14" translatable="true">السبب: حاولت تثبيت إصدار معدل أقل مما هو مثبت حاليًا. الحلول: أ. حدد إصدارًا مساويًا أو أعلى منه. ب. إلغاء تثبيت الإصدار الحالي، ثم تقليله. إذا استمرت المشكلة، تحقق من الأسئلة الشائعة.</string>
+    <string name="installation_failed_spap_desc_14" translatable="true">السبب: التطبيق المعدل المثبت حاليًا على هذا الجهاز لم يأت مباشرة من xManager أو من فريقنا. الحل: إلغاء تثبيت الإصدار الحالي من التطبيق، إعادة تشغيل xManager وحاول مرة أخرى. إذا استمرت المشكلة، تحقق من الأسئلة الشائعة.</string>
+    <string name="installation_failed_cloned_desc_14" translatable="true">السبب: النسخة المستنسخة المثبتة حاليًا على هذا الجهاز لم تأت مباشرة من xManager أو من فريقنا. الحل: إلغاء تثبيت الإصدار الحالي من التطبيق، إعادة تشغيل xManager وحاول مرة أخرى. إذا استمرت المشكلة، تحقق من الأسئلة الشائعة.</string>
+    <string name="existing_patched_14" translatable="true">التعديل موجود</string>
+    <string name="existing_patched_desc_14" translatable="true">ملف التطبيق المعدل موجود في المسار الخارجي. ما الذي تريد القيام به?</string>
     <string name="disable_notification_14" translatable="true">تعطيل الإخطار</string>
-    <string name="disable_notification_desc_14" translatable="true">سيؤدي تمكين هذا إلى إزالة إشعار التذكير بعد تثبيت التطبيق المصحح.</string>
-    <string name="hide_stock_patched_14" translatable="true">إخفاء الأسهم مصححة</string>
-    <string name="hide_amoled_patched_14" translatable="true">إخفاء أمولد مصححة</string>
-    <string name="hide_lite_patched_14" translatable="true">إخفاء لايت مصححة</string>
-    <string name="hide_wave_patched_14" translatable="true">إخفاء موجة مصححة</string>
+    <string name="disable_notification_desc_14" translatable="true">سيؤدي تفعيل هذا إلى إزالة إشعار التذكير بعد تثبيت التطبيق المعدل.</string>
+    <string name="hide_stock_patched_14" translatable="true">إخفاء العادي المعدل</string>
+    <string name="hide_amoled_patched_14" translatable="true">إخفاء AMOLED المعدل</string>
+    <string name="hide_lite_patched_14" translatable="true">إخفاء لايت المعدل</string>
+    <string name="hide_wave_patched_14" translatable="true">إخفاء Wave المعدل</string>
     <string name="close_14" translatable="true">إغلاق</string>
     <string name="cloned_14" translatable="true">المستنسخة</string>
     <string name="spap_14" translatable="true">ري / آم</string>
@@ -1359,9 +1359,9 @@
     <string name="uninstall_14" translatable="true">إلغاء التثبيت</string>
     <string name="ignore_14" translatable="true">تجاهل</string>
     <string name="delete_14" translatable="true">حذف</string>
-    <string name="uninstall_patched_14" translatable="true">إلغاء تثبيت مصححة</string>
-    <string name="open_settings_14" translatable="true">افتح الإعدادات</string>
-    <string name="open_patched_14" translatable="true">فتح مصححة</string>
+    <string name="uninstall_patched_14" translatable="true">إلغاء تثبيت المعدلة</string>
+    <string name="open_settings_14" translatable="true">فتح الإعدادات</string>
+    <string name="open_patched_14" translatable="true">فتح المعدلة</string>
     <string name="reboot_14" translatable="true">إعادة الجلب وإعادة التشغيل</string>
     
     <!--SLOVENIAN LANGUAGE-->
