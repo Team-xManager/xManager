@@ -1271,11 +1271,11 @@ public class MainActivity extends AppCompatActivity {
 		main_box_10.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/")) {
-					FileUtil.deleteFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/");
+				if (FileUtil.isExistFile("/storage/emulated/0/xManager/")) {
+					FileUtil.deleteFile("/storage/emulated/0/xManager/");
 				}
 				else {
-					if (!FileUtil.isExistFile("/storage/emulated/0/Android/data/com.xc3fff0e.xmanager/files/")) {
+					if (!FileUtil.isExistFile("/storage/emulated/0/xManager/")) {
 						
 					}
 				}
@@ -2754,8 +2754,17 @@ public class MainActivity extends AppCompatActivity {
 								
 								AlertDialog.setCancelable(true);
 								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-								FileUtil.deleteFile("/storage/emulated/0/Download/Patched (xManager).apk");
-								FileUtil.deleteFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk");
+								if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched (xManager).apk")) {
+									FileUtil.deleteFile("/storage/emulated/0/Download/Patched (xManager).apk");
+								}
+								else {
+									if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk")) {
+										FileUtil.deleteFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk");
+									}
+									else {
+										
+									}
+								}
 								                }
 							            });
 						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
@@ -3753,8 +3762,17 @@ public class MainActivity extends AppCompatActivity {
 								
 								AlertDialog.setCancelable(true);
 								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-								FileUtil.deleteFile("/storage/emulated/0/Download/Patched (xManager).apk");
-								FileUtil.deleteFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk");
+								if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched (xManager).apk")) {
+									FileUtil.deleteFile("/storage/emulated/0/Download/Patched (xManager).apk");
+								}
+								else {
+									if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk")) {
+										FileUtil.deleteFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk");
+									}
+									else {
+										
+									}
+								}
 								                }
 							            });
 						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
@@ -4748,7 +4766,12 @@ public class MainActivity extends AppCompatActivity {
 								
 								AlertDialog.setCancelable(true);
 								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-								FileUtil.deleteFile("/storage/emulated/0/Download/Patched Lite (xManager).apk");
+								if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Lite (xManager).apk")) {
+									FileUtil.deleteFile("/storage/emulated/0/Download/Patched Lite (xManager).apk");
+								}
+								else {
+									
+								}
 								                }
 							            });
 						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
@@ -5249,7 +5272,12 @@ public class MainActivity extends AppCompatActivity {
 								
 								AlertDialog.setCancelable(true);
 								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-								FileUtil.deleteFile("/storage/emulated/0/Download/Patched Wave (xManager).apk");
+								if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Wave (xManager).apk")) {
+									FileUtil.deleteFile("/storage/emulated/0/Download/Patched Wave (xManager).apk");
+								}
+								else {
+									
+								}
 								                }
 							            });
 						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
@@ -6404,6 +6432,9 @@ public class MainActivity extends AppCompatActivity {
 												SketchwareUtil.showMessage(getApplicationContext(), "Fatal Error");
 										}
 										
+										if (apk_path_location.getText().toString().equals("/storage/emulated/0/Download/")) {
+												apk_path_location.setText("/storage/emulated/0/xManager/");
+										}
 									}
 								});
 							}
@@ -6659,11 +6690,11 @@ public class MainActivity extends AppCompatActivity {
 	
 	
 	public void _File_Remover() {
-		if (FileUtil.isExistFile(apk_path_location.getText().toString())) {
-			FileUtil.deleteFile(apk_path_location.getText().toString());
+		if (FileUtil.isExistFile("/storage/emulated/0/xManager/")) {
+			FileUtil.deleteFile("/storage/emulated/0/xManager/");
 		}
 		else {
-			if (!FileUtil.isExistFile(apk_path_location.getText().toString())) {
+			if (!FileUtil.isExistFile("/storage/emulated/0/xManager/")) {
 				
 			}
 		}
@@ -6674,8 +6705,10 @@ public class MainActivity extends AppCompatActivity {
 		if (FileUtil.isExistFile("/storage/emulated/0/Download/xManager Update.apk")) {
 			FileUtil.deleteFile("/storage/emulated/0/Download/xManager Update.apk");
 		}
-		if (FileUtil.isExistFile("/storage/emulated/0/Download/xManager Update.apk")) {
-			FileUtil.deleteFile("/storage/emulated/0/Download/xManager Update.apk");
+		else {
+			if (!FileUtil.isExistFile("/storage/emulated/0/Download/xManager Update.apk")) {
+				
+			}
 		}
 	}
 	
@@ -15323,8 +15356,8 @@ public class MainActivity extends AppCompatActivity {
 						prog.show();
 				}
 				
-				if (FileUtil.isExistFile(apk_path_location.getText().toString())) {
-					FileUtil.deleteFile(apk_path_location.getText().toString());
+				if (FileUtil.isExistFile("/storage/emulated/0/xManager/")) {
+					FileUtil.deleteFile("/storage/emulated/0/xManager/");
 				}
 				Timer = new TimerTask() {
 					@Override
