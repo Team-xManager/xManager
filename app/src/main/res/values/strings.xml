@@ -1184,94 +1184,94 @@
     
     <!--TURKISH LANGUAGE-->
     <string name="app_name_13" translatable="true">xManager</string>
-    <string name="installed_13" translatable="true">YÜKLENDİ</string>
-    <string name="latest_13" translatable="true">EN SON</string>
-    <string name="versions_13" translatable="true">SÜRÜMLER</string>
+    <string name="installed_13" translatable="true">KURULDU</string>
+    <string name="latest_13" translatable="true">SON SÜRÜM</string>
+    <string name="versions_13" translatable="true">VERSİYONLAR  </string>
     <string name="changelogs_13" translatable="true">DEĞİŞİKLİKLER</string>
     <string name="manager_tools_13" translatable="true">YÖNETİCİ ARAÇLARI</string>
     <string name="source_13" translatable="true">KAYNAK</string>
     <string name="support_13" translatable="true">TELEGRAM</string>
-    <string name="donate_13" translatable="true">DESTEK</string>
+    <string name="donate_13" translatable="true">BAĞIŞ</string>
     <string name="discord_13" translatable="true">DISCORD</string>
     <string name="about_13" translatable="true">HAKKINDA</string>
     <string name="main_title_13" translatable="true">xManager</string>
     <string name="settings_title_13" translatable="true">Ayarlar</string>
     <string name="about_title_13" translatable="true">Hakkında</string>
-    <string name="list_auto_refresh_13" translatable="true">LİSTEYİ OTOMATİK YENİLE</string>
-    <string name="list_auto_refresh_desc_13" translatable="true">Bunu etkinleştirdiğinizde, uygulamayı her başlattığınızda liste otomatik olarak yenilenecektir.\n\nAna ekranı aşağı doğru sürükleyerek listeyi manuel olarak yenileyebilirsiniz.</string>
+    <string name="list_auto_refresh_13" translatable="true">LİSTE OTOMATİK YENİLEME</string>
+    <string name="list_auto_refresh_desc_13" translatable="true">Bu ayarı etkinleştirmek, uygulamayı her başlattığınızda listeyi otomatik olarak yenileyecektir.\n\nAna ekranı aşağı doğru sürükleyerek listeyi manuel olarak yenileyebilirsiniz.</string>
     <string name="force_auto_install_13" translatable="true">OTOMATİK YÜKLEMEYİ ZORLA</string>
-    <string name="force_auto_install_desc_13" translatable="true">Bunun etkinleştirilmesi, yamalı uygulamayı otomatik olarak yükleyecek ve indirildikten sonra güncelleyecektir.</string>
+    <string name="force_auto_install_desc_13" translatable="true">Bunu etkinleştirmek, yamalı uygulamayı otomatik olarak yükleyecek ve indirildikten sonra güncellenecektir.</string>
     <string name="show_themes_13" translatable="true">TEMALAR</string>
     <string name="apk_location_13" translatable="true">APK KONUMU</string>
-    <string name="apk_location_desc_13" translatable="true">İndirilen dosyanın kopyasını kaydetmek istediğiniz dizin. Bu özelliği nasıl yapılandıracağınızı bilmiyorsanız, bunu olduğu gibi bırakın.\n\nNOT: Bu özellik, erişilebilirlik, izinler ve depolama sınırlamaları nedeniyle harici depolamayı (SD Kart) desteklemez.</string>
-    <string name="clear_directory_folders_13" translatable="true">DİZİN KLASÖRÜNÜ TEMİZLE</string>
-    <string name="clear_directory_folders_desc_13" translatable="true">Dizin klasörünü silmek için üzerine dokunun. Bu, indirilen dosyaları ve güncellemeleri içerir.</string>
-    <string name="reset_preferences_13" translatable="true">TERCİHLERİ SIFIRLA</string>
-    <string name="about_sub_13" translatable="true">Reklamsızlık | Yeni Özellikler | Özgürlük</string>
+    <string name="apk_location_desc_13" translatable="true">İndirilen dosyayı kaydetmek istediğiniz dosya dizini. Bu özelliği nasıl yapılandıracağınızı bilmiyorsanız, olduğu gibi bırakın.\n\nNOT: Bu özellik harici depolamayı (SD Kart) desteklemez.</string>
+    <string name="clear_directory_folders_13" translatable="true">TEMİZLE DİZİN KLASÖRLERİ</string>
+    <string name="clear_directory_folders_desc_13" translatable="true">İndirilen dosyalar ve güncellemeler dahil tüm dizin klasörlerini silmek için dokunun.</string>
+    <string name="reset_preferences_13" translatable="true">AYARLARI SIFIRLA</string>
+    <string name="about_sub_13" translatable="true">Reklamsız | Yeni Özellikler | Özgürlük | Ücretsiz</string>
     <string name="xmanager_dev_13" translatable="true">xManager Geliştiricisi</string>
-    <string name="patched_devs_13" translatable="true">Yama geliştiricileri</string>
-    <string name="support_team_13" translatable="true">Telegram | Discord | Reddit Destek Ekibi</string>
-    <string name="manager_testers_13" translatable="true">Yama ve Yönetici Test Cihazları</string>
-    <string name="manager_hosting_13" translatable="true">Veritabanı ve Barındırma Yöneticisi</string>
+    <string name="patched_devs_13" translatable="true">Spotify Mod Geliştiricileri</string>
+    <string name="support_team_13" translatable="true">Telegram/Discord Destek Ekibi</string>
+    <string name="manager_testers_13" translatable="true">Mod/Yönetici Test Ekibi</string>
+    <string name="manager_hosting_13" translatable="true">Yönetici Barındırma Bağlantıları</string>
     <string name="mobilism_team_13" translatable="true">Mobilism Ekibi</string>
     <string name="forum_team_13" translatable="true">FORUM.APK-RELEASE.NET Ekibi</string>
-    <string name="contributors_13" translatable="true">TÜM KATKIDA BULUNANLARA TEŞEKKÜRLER! ❤️</string>
-    <string name="download_selected_13" translatable="true">Bu yamalı sürümü seçtiniz. Devam etmek istiyor musunuz?</string>
-    <string name="download_ready_13" translatable="true">YAMA BİLGİSİ</string>
-    <string name="download_ready_desc_13" translatable="true">Bu yama, harici dizinde bulunan önceki dosyanın üzerine yazılacaktır. Dikkatli bir şekilde ilerleyin.</string>
+    <string name="contributors_13" translatable="true">TÜM KATILIMCILARA TEŞEKKÜRLER! ❤️</string>
+    <string name="download_selected_13" translatable="true">Bu yamalı sürümü seçtiniz. Devam etmek istiyor musun?</string>
+    <string name="download_ready_13" translatable="true">YAMA BİLGİLERİ</string>
+    <string name="download_ready_desc_13" translatable="true">Bu yamalı apk\'yı indirmek, uygulamanın harici dosya dizininde bulunan önceki dosyanın üzerine yazacaktır.</string>
     <string name="downloading_file_13" translatable="true">DOSYA İNDİRİLİYOR</string>
     <string name="download_success_13" translatable="true">BAŞARIYLA İNDİRİLDİ</string>
-    <string name="new_update_13" translatable="true">YENİ YÖNETİCİ GÜNCELLEMESİ</string>
-    <string name="continue_1_13" translatable="true">DEVAM</string>
-    <string name="cancel_13" translatable="true">İPTAL</string>
-    <string name="download_13" translatable="true">İNDİR</string>
+    <string name="new_update_13" translatable="true">YENİ YÖNETİCİ GÜNCELLEMESİ</string>
+    <string name="continue_1_13" translatable="true">DEVAM ET</string>
+    <string name="cancel_13" translatable="true">İPTAL ET</string>
+    <string name="download_13" translatable="true">İNDİRME</string>
     <string name="later_13" translatable="true">SONRA</string>
-    <string name="install_now_13" translatable="true">YAMAYI YÜKLE</string>
+    <string name="install_now_13" translatable="true">ŞİMDİ KUR</string>
     <string name="install_update_13" translatable="true">GÜNCELLEMEYİ YÜKLE</string>
-    <string name="go_back_13" translatable="true">GERİ DÖN</string>
+    <string name="go_back_13" translatable="true">GERİ GİT</string>
     <string name="download_update_13" translatable="true">GÜNCELLEMEYİ İNDİR</string>
     <string name="not_now_13" translatable="true">ŞİMDİ DEĞİL</string>
-    <string name="mirror_13" translatable="true">YANSI BAĞLANTISI</string>
-    <string name="lite_13" translatable="true">HAFİF</string>
+    <string name="mirror_13" translatable="true">YANSITMA BAĞLANTISI</string>
+    <string name="lite_13" translatable="true">LİTE</string>
     <string name="experimental_title_13" translatable="true">Deneysel</string>
     <string name="experimental_version_13" translatable="true">DENEYSEL SÜRÜM</string>
-    <string name="experimental_version_desc_13" translatable="true">Bunu etkinleştirmek, yamalı uygulamanın deneysel sürümünü indirmenize ve yüklemenize olanak tanır.\n\nBu, stok yamasında bulunmayan alfa, beta ve erken erişim özelliklerini içerir. Ayrıca, kararlı olduğu garanti edilmez.</string>
+    <string name="experimental_version_desc_13" translatable="true">Bunu etkinleştirmek, yamalı uygulamanın deneysel sürümünü indirip yüklemenize izin verir.\n\nBu, yamalı stokta bulunmayan alfa, beta ve erken erişim özelliklerini içerir. Buna ek olarak, istikrarlı garanti edilmez.</string>
     <string name="show_support_13" translatable="true">DESTEĞİNİZİ GÖSTERİN</string>
-    <string name="show_support_desc_13" translatable="true">Biz kar amacı gütmeyen, kurumsal olmayan ve taviz vermeyen bir ekibiz. Sizin gibi insanlar, özellikle indirmeden yüklemeye kadar işleri çok daha kolay hale getirmek için bir uygulama oluşturmamızı teşvik ediyor.\n\nSadece işleri doğru ve mükemmel hale getirmek için tüm zamanımızı ve en iyi çabalarımızı döküyoruz. Bu uygulamayı elimizden geldiğince desteklemek için elimizden gelenin en iyisini yapacağız \n\nHerhangi bir miktar yardımcı olacak ve çok takdir edilecektir!</string>
+    <string name="show_support_desc_13" translatable="true">Kar amacı gütmeyen, kurumsal olmayan ve ödün vermeyen bir ekibiz. Sizin gibi insanlar, özellikle indirmeden yüklemeye kadar işleri çok daha kolay hale getirmek için bir uygulama oluşturmaya bizi teşvik ediyor.\n\nKar amacı gütmeyen, kurumsal olmayan ve ödün vermeyen bir ekibiz. Sizin gibi insanlar, özellikle indirmeden yüklemeye kadar işleri çok daha kolay hale getirmek için bir uygulama oluşturmaya bizi teşvik ediyor.\n\nHepsini akıtıyoruz Herhangi bir miktar yardımcı olacak ve çok takdir edilecektir!</string>
     <string name="maintenance_13" translatable="true">BAKIM</string>
-    <string name="maintenance_desc_13" translatable="true">xManager şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin.</string>
+    <string name="maintenance_desc_13" translatable="true">xManager şu anda kullanılamıyor. Lütfen uygulamayı daha sonra kontrol edin.</string>
     <string name="thanks_13" translatable="true">TEŞEKKÜRLER!</string>
     <string name="language_13" translatable="true">DİL</string>
-    <string name="website_13" translatable="true">WEB SİTESİ</string>
+    <string name="website_13" translatable="true">İNTERNET SİTESİ</string>
     <string name="reddit_13" translatable="true">REDDIT</string>
-    <string name="faq_13" translatable="true">SSS</string>
+    <string name="faq_13" translatable="true">SIK SORULAN SORU</string>
     <string name="cloned_version_13" translatable="true">KLONLANMIŞ SÜRÜM</string>
-    <string name="cloned_version_desc_13" translatable="true">Bunu etkinleştirmek, yamalı uygulamanın klonlanmış sürümünü indirmenize ve yüklemenize olanak tanır.\n\nBu, özellikle önceden yüklenmiş bir Spotify uygulamanız varsa, kurulum hatalarının veya sorunlarının çoğunu da çözecektir.</string>
-    <string name="disable_rewarded_ads_13" translatable="true">ÖDÜLLÜ REKLAMLARI DEVRE DIŞI BIRAK</string>
-    <string name="disable_rewarded_ads_desc_13" translatable="true">Çoğumuzun reklamlardan hoşlanmadığını biliyoruz, ancak bizim durumumuzda bu, veritabanımızı, barındırma bağlantılarımızı, güncellemelerimizi, daha fazla yamayı ve günlük ihtiyaçlarımızı finanse etmemize önemli ölçüde yardımcı oluyor.\n\nBu, bağış yapmadan veya hiçbir şey harcamadan bizi desteklemenin en basit yoludur.</string>
-    <string name="installation_failed_13" translatable="true">İNDİRME BAŞARISIZ</string>
-    <string name="installation_failed_desc_13" translatable="true">Sebep: Şu anda yüklü olandan daha düşük bir yamalı sürüm yüklemeye çalıştınız.\n\nÇözümler:\nA. Eşit veya daha yüksek bir sürüm seçin.\nB. Geçerli sürümü kaldırın, ardından sürüm düşürün.\n\nSorun devam ederse SSS bölümünü kontrol edin.</string>
-    <string name="installation_failed_spap_desc_13" translatable="true">Sebep: Bu cihazda yüklü olan mevcut yama doğrudan xManager\'dan veya ekibimizden gelmedi.\n\nÇözüm: Uygulamanın mevcut sürümünü kaldırın, xManager\'ı yeniden başlatın ve tekrar deneyin. Sorun devam ederse SSS bölümünü kontrol edin.</string>
-    <string name="installation_failed_cloned_desc_13" translatable="true">Sebep: Bu cihaza yüklenen mevcut klonlanmış doğrudan xManager\'dan veya ekibimizden gelmedi.\n\nÇözüm: Uygulamanın mevcut sürümünü kaldırın, xManager\'ı yeniden başlatın ve tekrar deneyin. Sorun devam ederse SSS bölümünü kontrol edin.</string>
-    <string name="existing_patched_13" translatable="true">ZATEN YAMALANMIŞ</string>
-    <string name="existing_patched_desc_13" translatable="true">Harici dizinde mevcut bir yama tespit edildi. Hangi işlemi yapmak istersiniz?</string>
+    <string name="cloned_version_desc_13" translatable="true">Bunu etkinleştirmek, yamalı uygulamanın klonlanmış sürümünü indirmenize ve yüklemenize izin verir.\n\nBu, özellikle önceden yüklenmiş bir spotify uygulamanız varsa, yükleme hatalarının veya sorunlarının çoğunu da çözecektir.</string>
+    <string name="disable_rewarded_ads_13" translatable="true">ÖDÜLLENDİRİLEN REKLAMLARI DEVRE DIŞI BIRAK</string>
+    <string name="disable_rewarded_ads_desc_13" translatable="true">Çoğumuzun reklamları sevmediğini biliyoruz, ancak bizim durumumuzda bu, veritabanımızı finanse etmemize, bağlantılar, güncellemeler, daha fazla düzeltme eki ve günlük ihtiyaçlar barındırmamıza önemli ölçüde yardımcı oluyor.\n\nBu, hiçbir şey bağışlamadan veya harcamadan bizi desteklemenin en kolay yoludur.</string>
+    <string name="installation_failed_13" translatable="true">YÜKLEME BAŞARISIZ OLDU</string>
+    <string name="installation_failed_desc_13" translatable="true">Nedeni: Şu anda yüklü olandan daha düşük bir mod sürümü yüklemeye çalıştınız.\n\nÇözümler\nA. Eşit veya daha büyük bir sürüm seçin.\nB. Geçerli sürümü kaldırın, sonra düşürün.\n\n Sorun devam ederse, SSS bölümüne bakın.</string>
+    <string name="installation_failed_spap_desc_13" translatable="true">Sebep: Bu cihazda yüklü olan mevcut Spotify doğrudan Xmanager\'dan veya ekibimizden gelmedi.\n\nÇözüm: Uygulamanın geçerli sürümünü kaldırın, Xmanager\'ı yeniden başlatın ve yeniden deneyin. Sorun devam ederse, SSS bölümüne bakın.</string>
+    <string name="installation_failed_cloned_desc_13" translatable="true">Sebep: Bu aygıta yüklenen geçerli klonlama doğrudan xmanager\'dan veya ekibimizden gelmedi.\n\nÇözüm: Uygulamanın geçerli sürümünü kaldırın, Xmanager\'ı yeniden başlatın ve yeniden deneyin. Sorun devam ederse, SSS bölümüne bakın.</string>
+    <string name="existing_patched_13" translatable="true">MEVCUT YAMALI</string>
+    <string name="existing_patched_desc_13" translatable="true">Dizinden birinde bulunan varolan bir yamalı dosya. Ne tür bir eylem yapmak istersiniz?</string>
     <string name="disable_notification_13" translatable="true">BİLDİRİMİ DEVRE DIŞI BIRAK</string>
     <string name="disable_notification_desc_13" translatable="true">Bunu etkinleştirmek, yamalı uygulamayı yükledikten sonra hatırlatma bildirimini kaldıracaktır.</string>
-    <string name="hide_stock_patched_13" translatable="true">STOK YAMAYI GİZLE</string>
-    <string name="hide_amoled_patched_13" translatable="true">AMOLED YAMAYI GİZLE</string>
-    <string name="hide_lite_patched_13" translatable="true">HAFİF YAMAYI GİZLE</string>
-    <string name="hide_wave_patched_13" translatable="true">DALGA YAMAYI GİZLE</string>
-    <string name="close_13" translatable="true">KAPAT</string>
-    <string name="cloned_13" translatable="true">KLONLANMIŞ</string>
+    <string name="hide_stock_patched_13" translatable="true">YAMALI STOĞU GİZLE</string>
+    <string name="hide_amoled_patched_13" translatable="true">AMOLED YAMALI GİZLE</string>
+    <string name="hide_lite_patched_13" translatable="true">LİTE YAMALI GİZLE</string>
+    <string name="hide_wave_patched_13" translatable="true">YAMALI DALGAYI GİZLE</string>
+    <string name="close_13" translatable="true">kapat</string>
+    <string name="cloned_13" translatable="true">KLONLUYORDU</string>
     <string name="spap_13" translatable="true">SP/AP</string>
-    <string name="install_13" translatable="true">İNDİR</string>
-    <string name="uninstall_13" translatable="true">KALDIR</string>
-    <string name="ignore_13" translatable="true">UNUT</string>
-    <string name="delete_13" translatable="true">SİL</string>
-    <string name="uninstall_patched_13" translatable="true">YAMAYI KALDIR</string>
+    <string name="install_13" translatable="true">yüklemek</string>
+    <string name="uninstall_13" translatable="true">kaldırmak</string>
+    <string name="ignore_13" translatable="true">görmezlikten gelmek</string>
+    <string name="delete_13" translatable="true">silmek</string>
+    <string name="uninstall_patched_13" translatable="true">YAMALI KALDIR</string>
     <string name="open_settings_13" translatable="true">AYARLARI AÇ</string>
-    <string name="open_patched_13" translatable="true">YAMAYI AÇ</string>
-    <string name="reboot_13" translatable="true">YENİDEN GETİR VE YENİDEN BAŞLAT</string>
+    <string name="open_patched_13" translatable="true">AÇIK YAMALI</string>
+    <string name="reboot_13" translatable="true">YENİDEN AL VE YENİDEN BAŞLAT</string>
     
     <!--ARABIC LANGUAGE-->
     <string name="app_name_14" translatable="true">xManager</string>
@@ -1549,11 +1549,11 @@
     <!--KOREAN LANGUAGE-->
     <string name="app_name_17" translatable="true">xManager</string>
     <string name="installed_17" translatable="true">설치됨</string>
-    <string name="latest_17" translatable="true">최근</string>
+    <string name="latest_17" translatable="true">최신</string>
     <string name="versions_17" translatable="true">버전  </string>
     <string name="changelogs_17" translatable="true">업데이트 내역</string>
     <string name="manager_tools_17" translatable="true">관리 도구</string>
-    <string name="source_17" translatable="true">소스</string>
+    <string name="source_17" translatable="true">깃허브</string>
     <string name="support_17" translatable="true">텔레그램</string>
     <string name="donate_17" translatable="true">기부</string>
     <string name="discord_17" translatable="true">디스코드</string>
@@ -1562,12 +1562,12 @@
     <string name="settings_title_17" translatable="true">설정</string>
     <string name="about_title_17" translatable="true">정보</string>
     <string name="list_auto_refresh_17" translatable="true">자동 새로고침</string>
-    <string name="list_auto_refresh_desc_17" translatable="true">앱을 실행할 때마다 버전 정보를 새로고침합니다.\n\n화면을 아래로 드래그해 수동으로 새로고침할 수 있습니다.</string>
+    <string name="list_auto_refresh_desc_17" translatable="true">앱을 실행할 때마다 버전 정보를 새로고침합니다.\n화면을 아래로 스와이프하여 수동으로 새로고침을 할 수 있습니다.</string>
     <string name="force_auto_install_17" translatable="true">자동 설치</string>
-    <string name="force_auto_install_desc_17" translatable="true">자동으로 새 버전을 다운로드 및 설치합니다.</string>
+    <string name="force_auto_install_desc_17" translatable="true">자동으로 최신 버전을 다운로드 및 설치합니다.</string>
     <string name="show_themes_17" translatable="true">테마</string>
-    <string name="apk_location_17" translatable="true">APK 저장 위치</string>
-    <string name="apk_location_desc_17" translatable="true">APK를 저장할 경로를 지정합니다. 기본 경로를 수정하지 않는 것을 추천드립니다.\n\n안내: 저장공간 사용 권한이 필요합니다! 권한 제한으로 인하여 외부 저장소를 지원하지 않습니다.</string>
+    <string name="apk_location_17" translatable="true">APK 저장 폴더</string>
+    <string name="apk_location_desc_17" translatable="true">APK를 저장할 폴더의 경로를 지정합니다. 기본 경로를 수정하지 않는 것을 추천드립니다.\n\n알림: \'파일 및 미디어\' 사용 권한이 필요합니다. 권한 제한으로 인하여 외부 저장소를 지원하지 않습니다.</string>
     <string name="clear_directory_folders_17" translatable="true">폴더 청소</string>
     <string name="clear_directory_folders_desc_17" translatable="true">다운로드된 모든 파일을 삭제합니다.</string>
     <string name="reset_preferences_17" translatable="true">설정 초기화</string>
@@ -1579,12 +1579,12 @@
     <string name="manager_hosting_17" translatable="true">Manager 호스팅 링크</string>
     <string name="mobilism_team_17" translatable="true">모빌리즘 팀</string>
     <string name="forum_team_17" translatable="true">FORUM.APK-RELEASE.NET 팀</string>
-    <string name="contributors_17" translatable="true">모든 기여자 분들께 감사합니다! ❤️</string>
+    <string name="contributors_17" translatable="true">도와주신 모든 분들, 감사합니다! ❤️</string>
     <string name="download_selected_17" translatable="true">이 버전을 선택하셨습니다. 다운로드를 진행하시겠습니까?</string>
     <string name="download_ready_17" translatable="true">패치 정보</string>
-    <string name="download_ready_desc_17" translatable="true">다운로드를 계속 진행할 경우, 원래의 파일이 덮어씌워지게 됩니다.</string>
+    <string name="download_ready_desc_17" translatable="true">다운로드할 파일이 존재하는 경우에는 덮어씌워지게 됩니다.</string>
     <string name="downloading_file_17" translatable="true">파일 다운로드</string>
-    <string name="download_success_17" translatable="true">다운로드 완료!</string>
+    <string name="download_success_17" translatable="true">다운로드 완료</string>
     <string name="new_update_17" translatable="true">새 버전 업데이트</string>
     <string name="continue_1_17" translatable="true">계속</string>
     <string name="cancel_17" translatable="true">취소</string>
@@ -1592,16 +1592,16 @@
     <string name="later_17" translatable="true">나중에</string>
     <string name="install_now_17" translatable="true">지금 설치</string>
     <string name="install_update_17" translatable="true">업데이트 설치</string>
-    <string name="go_back_17" translatable="true">뒤로</string>
+    <string name="go_back_17" translatable="true">뒤로 가기</string>
     <string name="download_update_17" translatable="true">다운로드 업데이트</string>
     <string name="not_now_17" translatable="true">나중에</string>
     <string name="mirror_17" translatable="true">미러 링크</string>
-    <string name="lite_17" translatable="true">라이트</string>
-    <string name="experimental_title_17" translatable="true">실험적</string>
-    <string name="experimental_version_17" translatable="true">실험 버전</string>
-    <string name="experimental_version_desc_17" translatable="true">이 기능을 사용하면 패치 된 응용 프로그램의 실험 버전을 다운로드하고 설치할 수 있습니다.\엔\엔 이 알파 포함,재고 패치에서 사용할 수없는 베타 및 초기 액세스 기능. 또한,안정을 보장 할 수 없습니다.</string>
-    <string name="show_support_17" translatable="true">여러분의 지원을 기다립니다</string>
-    <string name="show_support_desc_17" translatable="true">우리 개발팀은 비영리로 운영됩니다. 사용자에게 쉽게 사용 가능한 앱을 만들겠습니다.\n\n저희는 완벽한 앱을 만들기 위해 모든 시간과 노력을 투자합니다.\n\n우리는 이 앱을 지원하기 위해 최선을 다할 것입니다.\n\n모든 기부금은 도움이 됩니다. 대단히 감사합니다!</string>
+    <string name="lite_17" translatable="true">라이트 앱</string>
+    <string name="experimental_title_17" translatable="true">테스트</string>
+    <string name="experimental_version_17" translatable="true">테스트 버전</string>
+    <string name="experimental_version_desc_17" translatable="true">이 기능을 활성화하면 현재 테스트중인 기능을 포함한 앱을 다운로드할 수 있습니다. 일반 버전에서 포함되지 않은 기능을 앞서 사용할 수 있지만, 앱 안정성을 보장할 수 없고 문제점이 발생할 수 있습니다.</string>
+    <string name="show_support_17" translatable="true">여러분의 도움을 기다립니다</string>
+    <string name="show_support_desc_17" translatable="true">xManager 개발팀은 비영리로 운영되고 있습니다.\n\n사용자분들이 다운로드부터 사용까지의 단계를 손쉽게 사용 가능한 앱을 만들 수 있도록 격려해주세요.\n\n문제없는 완벽한 앱을 만들기 위해 모든 시간과 노력을 투자하고 있습니다.\n\n할 수 있는 한 최선을 다해 이 앱을 개발할 것입니다.\n\n도움을 주고 싶은 분들이라면 조금이라도 좋으니 도움을 주셨으면 정말 감사하겠습니다.</string>
     <string name="maintenance_17" translatable="true">유지 관리(설치된 앱)</string>
     <string name="maintenance_desc_17" translatable="true">현재 xManager를 사용할 수 없습니다. 나중에 다시 시도해주세요.</string>
     <string name="thanks_17" translatable="true">감사합니다!</string>
@@ -1609,25 +1609,25 @@
     <string name="website_17" translatable="true">웹사이트</string>
     <string name="reddit_17" translatable="true">레딧</string>
     <string name="faq_17" translatable="true">자주 질문</string>
-    <string name="cloned_version_17" translatable="true">복제된 버전</string>
-    <string name="cloned_version_desc_17" translatable="true">이 기능을 활성화하면 패치된 앱의 \'복제된 버전\'을 다운로드하여 설치할 수 있습니다. 앱의 설치 과정 중에 발생하는 대부분의 오류를 해결합니다. 특히 기본 Spotify 앱이 설치되어 있는 경우 도움이 될 수 있습니다.</string>
+    <string name="cloned_version_17" translatable="true">복제 버전</string>
+    <string name="cloned_version_desc_17" translatable="true">이 기능을 활성화하면 앱 패키지명이 변경된 \'복제 버전\'을 다운로드할 수 있습니다. 대부분의 설치 오류를 해결할 수 있고. 수정이 되지 않은 원본 Spotify 앱과 함께 사용할 수 있습니다.</string>
     <string name="disable_rewarded_ads_17" translatable="true">광고 사용 중지</string>
-    <string name="disable_rewarded_ads_desc_17" translatable="true">우리는 여러분이 광고를 좋아하지 않는다는 것을 알고 있지만, 저희에게 광고는 데이터베이스 운영, 호스팅, 업데이트, 더 많은 패치 및 일일 요구 사항에 자금을 지원하는 데 크게 도움이 됩니다. 이는 아무것도 지출하지 않고 저희 팀을 지원하는 가장 간단한 방법입니다.</string>
+    <string name="disable_rewarded_ads_desc_17" translatable="true">대부분의 사용자분들이 광고를 좋아하지 않는다는 것을 알고 있지만, 저희에게 광고는 데이터베이스 운영, 호스팅, 업데이트, 더 많은 패치 및 요구 사항을 해결하는 데 크게 도움이 됩니다. 광고는 아무것도 지출하지 않고 저희 팀에게 도움을 주는 가장 쉬운 방법입니다.</string>
     <string name="installation_failed_17" translatable="true">설치 실패</string>
-    <string name="installation_failed_desc_17" translatable="true">이유: 현재 설치된 것보다 낮은 버전의 앱을 설치하려고 했습니다. 현재버전보다 높은 버전을 선택하시거나, 현재 버전을 제거한 다음 다운그레이드하십시오. 문제가 지속되면 자주 묻는 질문을 확인하세요.</string>
-    <string name="installation_failed_spap_desc_17" translatable="true">이유: 이 장치에 설치된 Spotify는 xManager에서 만든 앱이 아닙니다. 현재 버전의 앱을 제거한 뒤 xManager를 다시 시작하고 다시 시도하십시오. 문제가 지속되면 자주 묻는 질문을 확인하세요.</string>
-    <string name="installation_failed_cloned_desc_17" translatable="true">이유: 이 장치에 설치된 복제 앱은 xManager에서 만든 앱이 아닙니다. 현재 버전의 앱을 제거한 뒤 xManager를 다시 시작하고 다시 시도하십시오. 문제가 지속되면 자주 묻는 질문을 확인하세요.</string>
+    <string name="installation_failed_desc_17" translatable="true">이유: 현재 설치된 앱 버전보다 낮은 버전을 설치하려고 합니다. 현재 버전보다 높은 버전을 선택하시거나, 현재 버전을 제거하사고 설치하세요. 문제가 지속되면 자주 묻는 질문을 확인하세요.</string>
+    <string name="installation_failed_spap_desc_17" translatable="true">이유: 이 기기에 설치된 Spotify 앱 xManager에서 만든 앱이 아닙니다. 앱을 제거하시고 xManager 앱을 재시작한 후에 다시 시도하세요. 문제가 지속되면 자주 묻는 질문을 확인하세요.</string>
+    <string name="installation_failed_cloned_desc_17" translatable="true">이유: 이 기기에 설치된 복제 앱은 xManager에서 만든 앱이 아닙니다. 앱을 제거하시고 xManager 앱을 재시작한 후에 다시 시도하세요.  문제가 지속되면 자주 묻는 질문을 확인하세요.</string>
     <string name="existing_patched_17" translatable="true">패치 존재</string>
     <string name="existing_patched_desc_17" translatable="true">해당 버전의 앱이 이미 다운로드되어 있습니다. 어떻게 하시겠습니까?</string>
-    <string name="disable_notification_17" translatable="true">알림 비활성화</string>
-    <string name="disable_notification_desc_17" translatable="true">이 기능을 활성화하면 패치 된 응용 프로그램을 설치 한 후 알림 알림이 제거됩니다.</string>
-    <string name="hide_stock_patched_17" translatable="true">재고 패치 숨기기</string>
-    <string name="hide_amoled_patched_17" translatable="true">패치된 아몰레드 숨기기</string>
+    <string name="disable_notification_17" translatable="true">팝업 알림 비활성화</string>
+    <string name="disable_notification_desc_17" translatable="true">이 기능을 활성화하면 앱을 설치 한 후에 발생하는 팝업 알림이 제거됩니다.</string>
+    <string name="hide_stock_patched_17" translatable="true">순정 테마 패치 숨기기</string>
+    <string name="hide_amoled_patched_17" translatable="true">아몰레드 테마 패치 숨기기</string>
     <string name="hide_lite_patched_17" translatable="true">라이트 패치 숨기기</string>
     <string name="hide_wave_patched_17" translatable="true">웨이브 패치 숨기기</string>
     <string name="close_17" translatable="true">닫기</string>
-    <string name="cloned_17" translatable="true">복제됨</string>
-    <string name="spap_17" translatable="true">SP/AP</string>
+    <string name="cloned_17" translatable="true">복제 앱</string>
+    <string name="spap_17" translatable="true">Mod 앱</string>
     <string name="install_17" translatable="true">설치</string>
     <string name="uninstall_17" translatable="true">제거</string>
     <string name="ignore_17" translatable="true">무시</string>
@@ -1635,7 +1635,7 @@
     <string name="uninstall_patched_17" translatable="true">패치 제거</string>
     <string name="open_settings_17" translatable="true">설정 열기</string>
     <string name="open_patched_17" translatable="true">패치 열기</string>
-    <string name="reboot_17" translatable="true">리페치 및 재부팅</string>
+    <string name="reboot_17" translatable="true">재패치 및 재부팅</string>
     
     <!--DUTCH LANGUAGE-->
     <string name="app_name_18" translatable="true">xManager</string>
@@ -3279,7 +3279,7 @@
     <string name="open_patched_35" translatable="true">A PATCHELT ALKALMAZÁS MEGNYITÁSA</string>
     <string name="reboot_35" translatable="true">ÚJRAFETCHELÉS ÉS AZ ALKALMAZÁS ÚJRAINDÍTÁSA</string>
 	
-	<!--JAPANESE LANGUAGE-->
+    <!--JAPANESE LANGUAGE-->
     <string name="app_name_36" translatable="true">xManager</string>
     <string name="installed_36" translatable="true">インストール済み</string>
     <string name="latest_36" translatable="true">最新</string>
@@ -3370,7 +3370,7 @@
     <string name="open_patched_36" translatable="true">アプリを開く</string>
     <string name="reboot_36" translatable="true">再読み込みと再起動</string>
 	
-	<!--NEPALI LANGUAGE-->
+    <!--NEPALI LANGUAGE-->
     <string name="app_name_37" translatable="true">xManager</string>
     <string name="installed_37" translatable="true">स्थापना गरियो</string>
     <string name="latest_37" translatable="true">नवीनतम</string>
@@ -3461,7 +3461,7 @@
     <string name="open_patched_37" translatable="true">प्याच गरिएको खोल्नुहोस्</string>
     <string name="reboot_37" translatable="true">रिफिच र रिबुट गर्नुहोस्</string>
 	
-	<!--TAMIL LANGUAGE-->
+    <!--TAMIL LANGUAGE-->
     <string name="app_name_38" translatable="true">xManager</string>
     <string name="installed_38" translatable="true">நிறுவப்பட்டது</string>
     <string name="latest_38" translatable="true">புதிதான</string>
