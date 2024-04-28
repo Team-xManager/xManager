@@ -913,40 +913,40 @@
     <string name="app_name_09" translatable="true">xManager</string>
     <string name="installed_09" translatable="true">INSTALADA</string>
     <string name="latest_09" translatable="true">ÚLTIMA</string>
-    <string name="versions_09" translatable="true">VERSÕES  </string>
+    <string name="versions_09" translatable="true">VERSÕES</string>
     <string name="changelogs_09" translatable="true">NOTAS DA VERSÃO</string>
     <string name="manager_tools_09" translatable="true">FERRAMENTAS DO MANAGER</string>
     <string name="source_09" translatable="true">FONTE</string>
-    <string name="discord_09" translatable="true">DISCORDIA</string>
-    <string name="support_09" translatable="true">TELEGRAMA</string>
+    <string name="discord_09" translatable="true">DISCORD</string>
+    <string name="support_09" translatable="true">TELEGRAM</string>
     <string name="donate_09" translatable="true">DOAR</string>
     <string name="about_09" translatable="true">SOBRE</string>
     <string name="main_title_09" translatable="true">xManager</string>
     <string name="settings_title_09" translatable="true">Definições</string>
     <string name="about_title_09" translatable="true">Sobre</string>
     <string name="list_auto_refresh_09" translatable="true">AUTO-REFRESCAR A LISTA</string>
-    <string name="list_auto_refresh_desc_09" translatable="true">Ativar isto irá automaticamente refrescar a lista a cada vez que abrires a aplicação.\n\nPodes manualmente refrescar a lista ao arrastar o ecrã principal para baixo.</string>
+    <string name="list_auto_refresh_desc_09" translatable="true">Ativar isto irá automaticamente refrescar a lista a cada vez que abrires a aplicação.\n\nPodes refrescar manualmente a lista ao arrastar o ecrã principal para baixo.</string>
     <string name="force_auto_install_09" translatable="true">FORÇAR AUTO-INSTALAR</string>
-    <string name="force_auto_install_desc_09" translatable="true">Ativar isto irá automaticamente instalar a aplicação modificada e atualizar uma vez que feita a transferência.</string>
-    <string name="show_themes_09" translatable="true">MOSTRAR TEMAS</string>
+    <string name="force_auto_install_desc_09" translatable="true">Ativar isto irá instalar automaticamente a aplicação modificada e atualizar uma vez que feita a transferência.</string>
+    <string name="show_themes_09" translatable="true">TEMAS</string>
     <string name="apk_location_09" translatable="true">LOCALIZAÇÃO DA APK</string>
-    <string name="apk_location_desc_09" translatable="true">Diretório do ficheiro onde queres guardar a apk transferida. Se não souberes como configurar esta funcionalidade, então deixa isto como está.\n\nNOTA: Esta funcionalidade não suporta armazenamento externo (Cartão SD) devido à acessibilidade, permissões e limitações de armazenamento.</string>
-    <string name="clear_directory_folders_09" translatable="true">LIMPAR AS PASTAS DO DIRETÓRIO</string>
-    <string name="clear_directory_folders_desc_09" translatable="true">Toca para apagar todas as pastas do diretório incluindo as apks transferidas e atualizações.</string>
+    <string name="apk_location_desc_09" translatable="true">O diretório onde queres guardar a cópia da apk transferida. Se não souberes como configurar esta funcionalidade, então deixa isto como está.\n\nNOTA: Esta funcionalidade não suporta armazenamento externo (Cartão SD) devido à acessibilidade, permissões e limitações de armazenamento.</string>
+    <string name="clear_directory_folders_09" translatable="true">LIMPAR A PASTA DO DIRETÓRIO</string>
+    <string name="clear_directory_folders_desc_09" translatable="true">Toca para apagar a pasta do diretório. Isto inclui as apks transferidas e atualizações.</string>
     <string name="reset_preferences_09" translatable="true">REINICIAR DEFINIÇÕES</string>
     <string name="about_sub_09" translatable="true">Sem Anúncios | Novas Funcionalidades | Liberdade</string>
     <string name="xmanager_dev_09" translatable="true">Desenvolvedor do xManager</string>
     <string name="patched_devs_09" translatable="true">Desenvolvedores do Mod do Spotify</string>
-    <string name="support_team_09" translatable="true">Equipa de Suporte do Telegram</string>
+    <string name="support_team_09" translatable="true">Equipa de Suporte do Telegram | Discord | Reddit</string>
     <string name="manager_testers_09" translatable="true">Testadores do Mod/Manager</string>
-    <string name="manager_hosting_09" translatable="true">Links de Armazenamento do Manager</string>
+    <string name="manager_hosting_09" translatable="true">Base de Dados e Links de Armazenamento do Manager</string>
     <string name="mobilism_team_09" translatable="true">Equipa do Mobilism</string>
     <string name="forum_team_09" translatable="true">Equipa do FORUM.APK-RELEASE.NET</string>
     <string name="contributors_09" translatable="true">OBRIGADO A TODOS OS CONTRIBUIDORES! ❤️</string>
     <string name="download_selected_09" translatable="true">Selecionaste esta versão modificada. Queres continuar?</string>
-    <string name="download_ready_09" translatable="true">INFORMAÇÃO DO PATCH</string>
-    <string name="download_ready_desc_09" translatable="true">Transferir esta apk modificada irá substituir o ficheiro anterior localizado no directório de ficheiros externos da aplicação.</string>
-    <string name="downloading_file_09" translatable="true">A FAZER TRANSFERÊNCIA DO FICHEIRO</string>
+    <string name="download_ready_09" translatable="true">INFORMAÇÃO DA MODIFICAÇÃO</string>
+    <string name="download_ready_desc_09" translatable="true">Esta apk modificada irá substituir o ficheiro anterior localizado no directório de ficheiros externos. Continua com cuidado.</string>
+    <string name="downloading_file_09" translatable="true">A FAZER A TRANSFERÊNCIA DO FICHEIRO</string>
     <string name="download_success_09" translatable="true">TRANSFERÊNCIA FEITA COM SUCESSO</string>
     <string name="new_update_09" translatable="true">NOVA ATUALIZAÇÃO DO MANAGER</string>
     <string name="continue_1_09" translatable="true">CONTINUAR</string>
@@ -958,47 +958,47 @@
     <string name="go_back_09" translatable="true">VOLTAR ATRÁS</string>
     <string name="download_update_09" translatable="true">FAZER TRANSFERÊNCIA DA ATUALIZAÇÃO</string>
     <string name="not_now_09" translatable="true">AGORA NÃO</string>
-    <string name="mirror_09" translatable="true">LIGAÇÃO DO ESPELHO</string>
-    <string name="lite_09" translatable="true">LITE</string>
+    <string name="mirror_09" translatable="true">TRANSFERÊNCIA ALTERNATIVA</string>
+    <string name="lite_09" translatable="true">VERSÃO LEVE</string>
     <string name="experimental_title_09" translatable="true">Experimental</string>
-    <string name="experimental_version_09" translatable="true">EXPERIMENTAL VERSION</string>
-    <string name="experimental_version_desc_09" translatable="true">habilitando isso permite que você baixe e instale a versão experimental do aplicativo Corrigido.\n\nisso inclui recursos de acesso alfa, beta e antecipado que não estão disponíveis no estoque corrigido. Além disso, não é garantido estável.</string>
+    <string name="experimental_version_09" translatable="true">VERSÃO EXPERIMENTAL</string>
+    <string name="experimental_version_desc_09" translatable="true">Ligar isto permite que transfiras e instales a versão experimental da aplicação modificada.\n\nIsto inclui recursos de acesso alpha, beta e de antecipado que não estão disponíveis na modificação normal. Além disso, não garantimos que seja estável.</string>
     <string name="show_support_09" translatable="true">MOSTRA O TEU SUPORTE</string>
     <string name="show_support_desc_09" translatable="true">Somos uma equipa sem fins lucrativos, não empresarial e não comprometida. Pessoas como tu encorajam-nos a criar uma aplicação para tornar as coisas muito mais fáceis especialmente desde a transferência até à instalação.\n\nEstamos a dedicar todo o nosso tempo e melhores esforços apenas para fazer as coisas direitas e perfeitas. Faremos o nosso melhor para suportar esta aplicação o máximo de tempo possível.\n\nQualquer quantia ajudará e será muito apreciada!</string>
     <string name="maintenance_09" translatable="true">MANUTENÇÃO</string>
-    <string name="maintenance_desc_09" translatable="true">O xManager está indisponível neste momento. Por favor abre a aplicação mais tarde.</string>
+    <string name="maintenance_desc_09" translatable="true">O xManager está indisponível neste momento. Por favor tenta mais tarde.</string>
     <string name="thanks_09" translatable="true">OBRIGADO!</string>
     <string name="language_09" translatable="true">IDIOMA</string>
-    <string name="website_09" translatable="true">SITE</string>
+    <string name="website_09" translatable="true">WEBSITE</string>
     <string name="reddit_09" translatable="true">REDDIT</string>
-    <string name="faq_09" translatable="true">PERGUNTA</string>
+    <string name="faq_09" translatable="true">FAQ</string>
     <string name="cloned_version_09" translatable="true">VERSÃO CLONADA</string>
-    <string name="cloned_version_desc_09" translatable="true">Ativando isso, você pode baixar e instalar a versão clonada do aplicativo Corrigido.\n\nisso também resolverá a maioria dos erros ou problemas de instalação, especialmente se você tiver um aplicativo spotify pré-instalado.</string>
+    <string name="cloned_version_desc_09" translatable="true">Ligar isto permite que transfiras e instales a versão clonada da aplicação modificada.\n\nIsto também resolverá a maioria dos erros ou problemas de instalação, especialmente se tiveres uma versão do Spotify pré-instalada.</string>
     <string name="disable_rewarded_ads_09" translatable="true">DESATIVAR ANÚNCIOS RECOMPENSADOS</string>
-    <string name="disable_rewarded_ads_desc_09" translatable="true">Sabemos que a maioria de nós não gosta de anúncios, mas no nosso caso, isso nos ajuda significativamente a financiar nosso banco de dados, links de hospedagem, atualizações, mais patches e necessidades diárias.\n\nesta é a maneira mais simples de nos apoiar sem doar ou gastar nada.</string>
+    <string name="disable_rewarded_ads_desc_09" translatable="true">Sabemos que a maioria de nós não gosta de anúncios, mas no nosso caso isso ajuda-nos significativamente a financiar a nossa base de dados, links de hospedagem, atualizações, mais modificações e necessidades diárias.\n\nEsta é a forma mais simples de nos apoiares sem doares ou gastares nada.</string>
     <string name="installation_failed_09" translatable="true">FALHA NA INSTALAÇÃO</string>
-    <string name="installation_failed_desc_09" translatable="true">Razão: você tentou instalar uma versão mod menor do que o que está instalado atualmente.\n\n soluções: \nA. Selecione uma versão igual ou maior que.\nB. desinstale a versão atual e faça o downgrade.\n\nSe o problema persistir, verifique o FAQ.</string>
-    <string name="installation_failed_spap_desc_09" translatable="true">Motivo: o Spotify atual instalado neste dispositivo não veio diretamente do xManager ou de nossa equipe.\n\nsolução: desinstale a versão atual do aplicativo, reinicie o xManager e tente novamente. Se o problema persistir, verifique o FAQ.</string>
-    <string name="installation_failed_cloned_desc_09" translatable="true">Razão: o clonado atual instalado neste dispositivo não veio diretamente do xManager ou de nossa equipe.\n\nsolução: desinstale a versão atual do aplicativo, reinicie o xManager e tente novamente. Se o problema persistir, verifique o FAQ.</string>
-    <string name="existing_patched_09" translatable="true">REMENDADO EXISTENTE</string>
-    <string name="existing_patched_desc_09" translatable="true">Um arquivo corrigido existente encontrado em um dos diretórios. Que ação você gostaria de fazer?</string>
-	<string name="disable_notification_09" translatable="true">DESATIVAR NOTIFICAÇÃO</string>
-    <string name="disable_notification_desc_09" translatable="true">Habilitar isso removerá a notificação de lembrete após a instalação do aplicativo Corrigido.</string>
-    <string name="hide_stock_patched_09" translatable="true">OCULTAR ESTOQUE REMENDADO</string>
-    <string name="hide_amoled_patched_09" translatable="true">OCULTAR AMOLED REMENDADO</string>
-    <string name="hide_lite_patched_09" translatable="true">OCULTAR LITE REMENDADA</string>
-    <string name="hide_wave_patched_09" translatable="true">OCULTAR ONDA REMENDADA</string>
+    <string name="installation_failed_desc_09" translatable="true">Motivo: Tentaste instalar uma versão da modificação inferior à que está instalada atualmente.\n\n Soluções:\nA. Seleciona uma versão igual ou superior.\nB. Desinstala a versão atual e depois instala a versão inferior.\n\nSe o problema persistir, verifica as FAQ.</string>
+    <string name="installation_failed_spap_desc_09" translatable="true">Motivo: O Spotify instalado atualmente neste dispositivo não veio diretamente do xManager ou da nossa equipa.\n\nSolução: desinstala a versão atual da aplicação, reinicia o xManager e tenta outra vez. Se o problema persistir, verifica as FAQ.</string>
+    <string name="installation_failed_cloned_desc_09" translatable="true">Motivo: A versão clone instalada atualmente neste dispositivo não veio diretamente do xManager ou da nossa equipa.\n\nSolução: desinstala a versão atual da aplicação, reinicia o xManager e tenta outra vez. Se o problema persistir, verifica as FAQ.</string>
+    <string name="existing_patched_09" translatable="true">MODIFICAÇÕES EXISTENTES</string>
+    <string name="existing_patched_desc_09" translatable="true">Uma modificação existente foi encontrada num dos diretórios esternos. Que ação gostarias de fazer?</string>
+    <string name="disable_notification_09" translatable="true">DESATIVAR NOTIFICAÇÃO</string>
+    <string name="disable_notification_desc_09" translatable="true">Ligar isto irá remover a notificação de lembrete após a instalação da aplicação modificada.</string>
+    <string name="hide_stock_patched_09" translatable="true">OCULTAR MODIFICAÇÃO</string>
+    <string name="hide_amoled_patched_09" translatable="true">OCULTAR MODIFICAÇÃO AMOLED</string>
+    <string name="hide_lite_patched_09" translatable="true">OCULTAR MODIFICAÇÃO VERSÃO LEVE</string>
+    <string name="hide_wave_patched_09" translatable="true">OCULTAR MODIFICAÇÃO WAVE</string>
     <string name="close_09" translatable="true">FECHAR</string>
-    <string name="cloned_09" translatable="true">CLONAR</string>
+    <string name="cloned_09" translatable="true">CLONE</string>
     <string name="spap_09" translatable="true">SP/AP</string>
     <string name="install_09" translatable="true">INSTALAR</string>
-    <string name="uninstall_09" translatable="true">INSTALAR</string>
+    <string name="uninstall_09" translatable="true">DESINSTALAR</string>
     <string name="ignore_09" translatable="true">IGNORAR</string>
-    <string name="delete_09" translatable="true">EXCLUIR</string>
-    <string name="uninstall_patched_09" translatable="true">DESINSTALAR CORRIGIDO</string>
-    <string name="open_settings_09" translatable="true">ABRIR CONFIGURAÇÕES</string>
-    <string name="open_patched_09" translatable="true">ABERTO CORRIGIDO</string>
-    <string name="reboot_09" translatable="true">RECUPERAR E REINICIAR</string>
+    <string name="delete_09" translatable="true">APAGAR</string>
+    <string name="uninstall_patched_09" translatable="true">DESINSTALAR MODIFICAÇÃO</string>
+    <string name="open_settings_09" translatable="true">ABRIR DEFINIÇÕES</string>
+    <string name="open_patched_09" translatable="true">ABRIR MODIFICAÇÃO</string>
+    <string name="reboot_09" translatable="true">REPÔR E REINICIAR</string>
     
     <!--RUSSIAN LANGUAGE-->
     <string name="app_name_10" translatable="true">xManager</string>
