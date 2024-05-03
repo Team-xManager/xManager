@@ -9,7 +9,7 @@
 | **Status** | <img src="https://img.shields.io/github/release-date/xManager-App/xManager?label=UPDATED%20SINCE&style=for-the-badge"></br><img src="https://img.shields.io/github/v/tag/xManager-App/xManager?label=LATEST%20VERSION&style=for-the-badge"> |
 | :-------------: | :-------------: |
 | **Download Milestone** | **<img src="https://img.shields.io/github/downloads/xManager-App/xManager/total?label=OMNIBUS%20(ACTIVE)&style=for-the-badge"></br><img src="https://img.shields.io/badge/ORIGINS%20(SHUTDOWN)-1.1M-red.svg?style=for-the-badge"></br><img src="https://img.shields.io/badge/LEGACY%20(SHUTDOWN)-400K-red.svg?style=for-the-badge">** |
-| **Miscellaneous** | **<a href="https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones"><img src="https://img.shields.io/badge/Roadmaps%20&%20Changelogs-Click%20Here-white.svg?style=for-the-badge"/></br><a href="https://www.virustotal.com/gui/file/94b1a3a8ca03393d1120a023e12afca4d4393aac0b5b5901bc4478386d2b8901/detection"><img src="https://img.shields.io/badge/VirusTotal%20Analysis-Click%20Here-blue.svg?style=for-the-badge"/>** |
+| **Miscellaneous** | **<a href="https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones"><img src="https://img.shields.io/badge/Roadmaps%20&%20Changelogs-Click%20Here-white.svg?style=for-the-badge"/></br><a href="https://www.virustotal.com/gui/file/75d294fddbdb6cca8d366f85ed4af34d72fa10ac451844be33c0e296030dfa32/detection"><img src="https://img.shields.io/badge/VirusTotal%20Analysis-Click%20Here-blue.svg?style=for-the-badge"/>** |
 | **Trust Seal** | **<a href="https://monitor2025.sucuri.net/m/verify/?r=ccceaab79b44b4835a6a85d916bf5613b9c98436db"><img src="https://i.ibb.co/vLvdNCR/trustseal.gif"/>** |
 | **Donation/Sponsor** | **[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I3I0IPJ3W)** |
 
@@ -104,7 +104,7 @@ We will support the app as long as we can. Internal improvements may not be guar
 | **Serbian (Cyrillic) Translation** | nexiRS |
 | **Serbian (Latin) Translation** | nexiRS |
 | **Catalan Translation** | tomaquet18 |
-| **Latvian Translation** | ClientSiderz |
+| **Latvian Translation** | ClientSiderz \| gatesbydude |
 | **German Translation** | 4NDROM3DA |
 | **Sinhala Translation** | Psycho649 |
 | **Hungarian Translation** | gurtnyi |
