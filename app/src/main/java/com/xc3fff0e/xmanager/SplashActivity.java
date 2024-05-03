@@ -2,8 +2,10 @@ package com.xc3fff0e.xmanager;
 
 import android.animation.*;
 import android.app.*;
+import android.app.Activity;
 import android.content.*;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.*;
 import android.graphics.*;
 import android.graphics.Typeface;
@@ -51,6 +53,7 @@ public class SplashActivity extends AppCompatActivity {
 	
 	private TimerTask Timer;
 	private Intent Switch_Activity = new Intent();
+	private SharedPreferences THEME;
 	
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
@@ -67,6 +70,7 @@ public class SplashActivity extends AppCompatActivity {
 		main_body = findViewById(R.id.main_body);
 		icon_splash = findViewById(R.id.icon_splash);
 		title_splash = findViewById(R.id.title_splash);
+		THEME = getSharedPreferences("THEME", Activity.MODE_PRIVATE);
 	}
 	
 	private void initializeLogic() {
@@ -129,6 +133,7 @@ public class SplashActivity extends AppCompatActivity {
 		_timer.schedule(Timer, (int)(1000));
 		
 		_Dark_Navigation();
+		_Theme_UI();
 	}
 	
 	@Override
@@ -140,6 +145,46 @@ public class SplashActivity extends AppCompatActivity {
 				getWindow().setNavigationBarColor(Color.parseColor("#171717"));
 		}
 		
+	}
+	
+	
+	public void _Theme_UI() {
+		if (THEME.getString("THEME", "").equals("14")) {
+			main_body.setBackgroundColor(0xFF1B5E20);
+		}
+		else {
+			if (THEME.getString("THEME", "").equals("15")) {
+				main_body.setBackgroundColor(0xFF00008B);
+			}
+			else {
+				if (THEME.getString("THEME", "").equals("16")) {
+					main_body.setBackgroundColor(0xFF8B0000);
+				}
+				else {
+					if (THEME.getString("THEME", "").equals("17")) {
+						main_body.setBackgroundColor(0xFFFF8C00);
+					}
+					else {
+						if (THEME.getString("THEME", "").equals("18")) {
+							main_body.setBackgroundColor(0xFFAA336A);
+						}
+						else {
+							if (THEME.getString("THEME", "").equals("19")) {
+								main_body.setBackgroundColor(0xFF301934);
+							}
+							else {
+								if (THEME.getString("THEME", "").equals("20")) {
+									main_body.setBackgroundColor(0xFF008B8B);
+								}
+								else {
+									main_body.setBackgroundColor(0xFF171717);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	
