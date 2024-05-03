@@ -77,7 +77,6 @@
     <string name="hide_stock_patched" translatable="true">HIDE STOCK PATCHED</string>
     <string name="hide_amoled_patched" translatable="true">HIDE AMOLED PATCHED</string>
     <string name="hide_lite_patched" translatable="true">HIDE LITE PATCHED</string>
-    <string name="hide_wave_patched" translatable="true">HIDE WAVE PATCHED</string>
     <string name="close" translatable="true">CLOSE</string>
     <string name="cloned" translatable="true">CLONED</string>
     <string name="spap" translatable="true">SP/AP</string>
@@ -168,7 +167,6 @@
     <string name="hide_stock_patched_01" translatable="true">প্যাচ করা স্টক লুকান</string>
     <string name="hide_amoled_patched_01" translatable="true">অ্যামোলেড প্যাচড লুকান</string>
     <string name="hide_lite_patched_01" translatable="true">হালকা প্যাচ লুকান</string>
-    <string name="hide_wave_patched_01" translatable="true">ওয়েভ প্যাচ করা লুকান</string>
     <string name="close_01" translatable="true">বন্ধ করুন</string>
     <string name="cloned_01" translatable="true">ক্লোনড</string>
     <string name="spap_01" translatable="true">SP/AP</string>
@@ -259,7 +257,6 @@
     <string name="hide_stock_patched_02" translatable="true">隐藏股票修补</string>
     <string name="hide_amoled_patched_02" translatable="true">隐藏AMOLED修补</string>
     <string name="hide_lite_patched_02" translatable="true">隐藏精简版修补</string>
-    <string name="hide_wave_patched_02" translatable="true">隐藏波修补</string>
     <string name="close_02" translatable="true">关闭</string>
     <string name="cloned_02" translatable="true">克隆版</string>
     <string name="spap_02" translatable="true">默认版或纯黑版</string>
@@ -350,7 +347,6 @@
     <string name="hide_stock_patched_03" translatable="true">CACHER LE STOCK RAPIÉCÉ</string>
     <string name="hide_amoled_patched_03" translatable="true">MASQUER AMOLED PATCHÉ</string>
     <string name="hide_lite_patched_03" translatable="true">MASQUER LITE PATCHÉ</string>
-    <string name="hide_wave_patched_03" translatable="true">CACHER LA VAGUE CORRIGÉE</string>
     <string name="close_03" translatable="true">FERMER</string>
     <string name="cloned_03" translatable="true">CLONER</string>
     <string name="spap_03" translatable="true">SP/AP</string>
@@ -441,7 +437,6 @@
     <string name="hide_stock_patched_04" translatable="true">ΑΠΌΚΡΥΨΗ ΑΠΟΘΈΜΑΤΟΣ</string>
     <string name="hide_amoled_patched_04" translatable="true">ΑΠΌΚΡΥΨΗ AMOLED PATCHED</string>
     <string name="hide_lite_patched_04" translatable="true">ΑΠΌΚΡΥΨΗ LITE PATCHED</string>
-    <string name="hide_wave_patched_04" translatable="true">ΑΠΌΚΡΥΨΗ ΚΎΜΑΤΟΣ</string>
     <string name="close_04" translatable="true">ΚΛΕΊΣΕΤΕ</string>
     <string name="cloned_04" translatable="true">ΚΛΩΝΟΠΟΙΗΘΕΊ</string>
     <string name="spap_04" translatable="true">SP/AP</string>
@@ -532,7 +527,6 @@
     <string name="hide_stock_patched_05" translatable="true">SEMBUNYIKAN STOK YANG DITAMBAL</string>
     <string name="hide_amoled_patched_05" translatable="true">SEMBUNYIKAN AMOLED YANG DITAMBAL</string>
     <string name="hide_lite_patched_05" translatable="true">SEMBUNYIKAN LITE DITAMBAL</string>
-    <string name="hide_wave_patched_05" translatable="true">SEMBUNYIKAN GELOMBANG DITAMBAL</string>
     <string name="close_05" translatable="true">Tutup</string>
     <string name="cloned_05" translatable="true">Dikloning</string>
     <string name="spap_05" translatable="true">SP/AP</string>
@@ -623,7 +617,6 @@
     <string name="hide_stock_patched_06" translatable="true">NASCONDI PATCH STOCK</string>
     <string name="hide_amoled_patched_06" translatable="true">NASCONDI PATCH AMOLED</string>
     <string name="hide_lite_patched_06" translatable="true">NASCONDI PATCH LITE</string>
-    <string name="hide_wave_patched_06" translatable="true">NASCONDI PATCH WAVE</string>
     <string name="close_06" translatable="true">CHIUDI</string>
     <string name="cloned_06" translatable="true">CLONA</string>
     <string name="spap_06" translatable="true">SP/AP</string>
@@ -714,7 +707,6 @@
     <string name="hide_stock_patched_07" translatable="true">UKRYJ ZAPAS POŁATANY</string>
     <string name="hide_amoled_patched_07" translatable="true">UKRYJ AMOLED ZAŁATANY</string>
     <string name="hide_lite_patched_07" translatable="true">UKRYJ LITE ZAŁATANE</string>
-    <string name="hide_wave_patched_07" translatable="true">UKRYJ FALĘ ZAŁATANĄ</string>
     <string name="close_07" translatable="true">Zamknij</string>
     <string name="cloned_07" translatable="true">Klona</string>
     <string name="spap_07" translatable="true">ZW/AM</string>
@@ -805,7 +797,6 @@
     <string name="hide_stock_patched_08" translatable="true">OCULTAR ESTOQUE REMENDADO</string>
     <string name="hide_amoled_patched_08" translatable="true">OCULTAR AMOLED REMENDADO</string>
     <string name="hide_lite_patched_08" translatable="true">OCULTAR LITE REMENDADA</string>
-    <string name="hide_wave_patched_08" translatable="true">OCULTAR ONDA REMENDADA</string>
     <string name="close_08" translatable="true">FECHAR</string>
     <string name="cloned_08" translatable="true">CLONAR</string>
     <string name="spap_08" translatable="true">SP/AP</string>
@@ -822,40 +813,40 @@
     <string name="app_name_09" translatable="true">xManager</string>
     <string name="installed_09" translatable="true">INSTALADA</string>
     <string name="latest_09" translatable="true">ÚLTIMA</string>
-    <string name="versions_09" translatable="true">VERSÕES  </string>
+    <string name="versions_09" translatable="true">VERSÕES</string>
     <string name="changelogs_09" translatable="true">NOTAS DA VERSÃO</string>
     <string name="manager_tools_09" translatable="true">FERRAMENTAS DO MANAGER</string>
     <string name="source_09" translatable="true">FONTE</string>
-    <string name="discord_09" translatable="true">DISCORDIA</string>
-    <string name="support_09" translatable="true">TELEGRAMA</string>
+    <string name="discord_09" translatable="true">DISCORD</string>
+    <string name="support_09" translatable="true">TELEGRAM</string>
     <string name="donate_09" translatable="true">DOAR</string>
     <string name="about_09" translatable="true">SOBRE</string>
     <string name="main_title_09" translatable="true">xManager</string>
     <string name="settings_title_09" translatable="true">Definições</string>
     <string name="about_title_09" translatable="true">Sobre</string>
     <string name="list_auto_refresh_09" translatable="true">AUTO-REFRESCAR A LISTA</string>
-    <string name="list_auto_refresh_desc_09" translatable="true">Ativar isto irá automaticamente refrescar a lista a cada vez que abrires a aplicação.\n\nPodes manualmente refrescar a lista ao arrastar o ecrã principal para baixo.</string>
+    <string name="list_auto_refresh_desc_09" translatable="true">Ativar isto irá automaticamente refrescar a lista a cada vez que abrires a aplicação.\n\nPodes refrescar manualmente a lista ao arrastar o ecrã principal para baixo.</string>
     <string name="force_auto_install_09" translatable="true">FORÇAR AUTO-INSTALAR</string>
-    <string name="force_auto_install_desc_09" translatable="true">Ativar isto irá automaticamente instalar a aplicação modificada e atualizar uma vez que feita a transferência.</string>
-    <string name="show_themes_09" translatable="true">MOSTRAR TEMAS</string>
+    <string name="force_auto_install_desc_09" translatable="true">Ativar isto irá instalar automaticamente a aplicação modificada e atualizar uma vez que feita a transferência.</string>
+    <string name="show_themes_09" translatable="true">TEMAS</string>
     <string name="apk_location_09" translatable="true">LOCALIZAÇÃO DA APK</string>
-    <string name="apk_location_desc_09" translatable="true">Diretório do ficheiro onde queres guardar a apk transferida. Se não souberes como configurar esta funcionalidade, então deixa isto como está.\n\nNOTA: Esta funcionalidade não suporta armazenamento externo (Cartão SD) devido à acessibilidade, permissões e limitações de armazenamento.</string>
-    <string name="clear_directory_folders_09" translatable="true">LIMPAR AS PASTAS DO DIRETÓRIO</string>
-    <string name="clear_directory_folders_desc_09" translatable="true">Toca para apagar todas as pastas do diretório incluindo as apks transferidas e atualizações.</string>
+    <string name="apk_location_desc_09" translatable="true">O diretório onde queres guardar a cópia da apk transferida. Se não souberes como configurar esta funcionalidade, então deixa isto como está.\n\nNOTA: Esta funcionalidade não suporta armazenamento externo (Cartão SD) devido à acessibilidade, permissões e limitações de armazenamento.</string>
+    <string name="clear_directory_folders_09" translatable="true">LIMPAR A PASTA DO DIRETÓRIO</string>
+    <string name="clear_directory_folders_desc_09" translatable="true">Toca para apagar a pasta do diretório. Isto inclui as apks transferidas e atualizações.</string>
     <string name="reset_preferences_09" translatable="true">REINICIAR DEFINIÇÕES</string>
     <string name="about_sub_09" translatable="true">Sem Anúncios | Novas Funcionalidades | Liberdade</string>
     <string name="xmanager_dev_09" translatable="true">Desenvolvedor do xManager</string>
     <string name="patched_devs_09" translatable="true">Desenvolvedores do Mod do Spotify</string>
-    <string name="support_team_09" translatable="true">Equipa de Suporte do Telegram</string>
+    <string name="support_team_09" translatable="true">Equipa de Suporte do Telegram | Discord | Reddit</string>
     <string name="manager_testers_09" translatable="true">Testadores do Mod/Manager</string>
-    <string name="manager_hosting_09" translatable="true">Links de Armazenamento do Manager</string>
+    <string name="manager_hosting_09" translatable="true">Base de Dados e Links de Armazenamento do Manager</string>
     <string name="mobilism_team_09" translatable="true">Equipa do Mobilism</string>
     <string name="forum_team_09" translatable="true">Equipa do FORUM.APK-RELEASE.NET</string>
     <string name="contributors_09" translatable="true">OBRIGADO A TODOS OS CONTRIBUIDORES! ❤️</string>
     <string name="download_selected_09" translatable="true">Selecionaste esta versão modificada. Queres continuar?</string>
-    <string name="download_ready_09" translatable="true">INFORMAÇÃO DO PATCH</string>
-    <string name="download_ready_desc_09" translatable="true">Transferir esta apk modificada irá substituir o ficheiro anterior localizado no directório de ficheiros externos da aplicação.</string>
-    <string name="downloading_file_09" translatable="true">A FAZER TRANSFERÊNCIA DO FICHEIRO</string>
+    <string name="download_ready_09" translatable="true">INFORMAÇÃO DA MODIFICAÇÃO</string>
+    <string name="download_ready_desc_09" translatable="true">Esta apk modificada irá substituir o ficheiro anterior localizado no directório de ficheiros externos. Continua com cuidado.</string>
+    <string name="downloading_file_09" translatable="true">A FAZER A TRANSFERÊNCIA DO FICHEIRO</string>
     <string name="download_success_09" translatable="true">TRANSFERÊNCIA FEITA COM SUCESSO</string>
     <string name="new_update_09" translatable="true">NOVA ATUALIZAÇÃO DO MANAGER</string>
     <string name="continue_1_09" translatable="true">CONTINUAR</string>
@@ -867,47 +858,46 @@
     <string name="go_back_09" translatable="true">VOLTAR ATRÁS</string>
     <string name="download_update_09" translatable="true">FAZER TRANSFERÊNCIA DA ATUALIZAÇÃO</string>
     <string name="not_now_09" translatable="true">AGORA NÃO</string>
-    <string name="mirror_09" translatable="true">LIGAÇÃO DO ESPELHO</string>
-    <string name="lite_09" translatable="true">LITE</string>
+    <string name="mirror_09" translatable="true">TRANSFERÊNCIA ALTERNATIVA</string>
+    <string name="lite_09" translatable="true">VERSÃO LEVE</string>
     <string name="experimental_title_09" translatable="true">Experimental</string>
-    <string name="experimental_version_09" translatable="true">EXPERIMENTAL VERSION</string>
-    <string name="experimental_version_desc_09" translatable="true">habilitando isso permite que você baixe e instale a versão experimental do aplicativo Corrigido.\n\nisso inclui recursos de acesso alfa, beta e antecipado que não estão disponíveis no estoque corrigido. Além disso, não é garantido estável.</string>
+    <string name="experimental_version_09" translatable="true">VERSÃO EXPERIMENTAL</string>
+    <string name="experimental_version_desc_09" translatable="true">Ligar isto permite que transfiras e instales a versão experimental da aplicação modificada.\n\nIsto inclui recursos de acesso alpha, beta e de antecipado que não estão disponíveis na modificação normal. Além disso, não garantimos que seja estável.</string>
     <string name="show_support_09" translatable="true">MOSTRA O TEU SUPORTE</string>
     <string name="show_support_desc_09" translatable="true">Somos uma equipa sem fins lucrativos, não empresarial e não comprometida. Pessoas como tu encorajam-nos a criar uma aplicação para tornar as coisas muito mais fáceis especialmente desde a transferência até à instalação.\n\nEstamos a dedicar todo o nosso tempo e melhores esforços apenas para fazer as coisas direitas e perfeitas. Faremos o nosso melhor para suportar esta aplicação o máximo de tempo possível.\n\nQualquer quantia ajudará e será muito apreciada!</string>
     <string name="maintenance_09" translatable="true">MANUTENÇÃO</string>
-    <string name="maintenance_desc_09" translatable="true">O xManager está indisponível neste momento. Por favor abre a aplicação mais tarde.</string>
+    <string name="maintenance_desc_09" translatable="true">O xManager está indisponível neste momento. Por favor tenta mais tarde.</string>
     <string name="thanks_09" translatable="true">OBRIGADO!</string>
     <string name="language_09" translatable="true">IDIOMA</string>
-    <string name="website_09" translatable="true">SITE</string>
+    <string name="website_09" translatable="true">WEBSITE</string>
     <string name="reddit_09" translatable="true">REDDIT</string>
-    <string name="faq_09" translatable="true">PERGUNTA</string>
+    <string name="faq_09" translatable="true">FAQ</string>
     <string name="cloned_version_09" translatable="true">VERSÃO CLONADA</string>
-    <string name="cloned_version_desc_09" translatable="true">Ativando isso, você pode baixar e instalar a versão clonada do aplicativo Corrigido.\n\nisso também resolverá a maioria dos erros ou problemas de instalação, especialmente se você tiver um aplicativo spotify pré-instalado.</string>
+    <string name="cloned_version_desc_09" translatable="true">Ligar isto permite que transfiras e instales a versão clonada da aplicação modificada.\n\nIsto também resolverá a maioria dos erros ou problemas de instalação, especialmente se tiveres uma versão do Spotify pré-instalada.</string>
     <string name="disable_rewarded_ads_09" translatable="true">DESATIVAR ANÚNCIOS RECOMPENSADOS</string>
-    <string name="disable_rewarded_ads_desc_09" translatable="true">Sabemos que a maioria de nós não gosta de anúncios, mas no nosso caso, isso nos ajuda significativamente a financiar nosso banco de dados, links de hospedagem, atualizações, mais patches e necessidades diárias.\n\nesta é a maneira mais simples de nos apoiar sem doar ou gastar nada.</string>
+    <string name="disable_rewarded_ads_desc_09" translatable="true">Sabemos que a maioria de nós não gosta de anúncios, mas no nosso caso isso ajuda-nos significativamente a financiar a nossa base de dados, links de hospedagem, atualizações, mais modificações e necessidades diárias.\n\nEsta é a forma mais simples de nos apoiares sem doares ou gastares nada.</string>
     <string name="installation_failed_09" translatable="true">FALHA NA INSTALAÇÃO</string>
-    <string name="installation_failed_desc_09" translatable="true">Razão: você tentou instalar uma versão mod menor do que o que está instalado atualmente.\n\n soluções: \nA. Selecione uma versão igual ou maior que.\nB. desinstale a versão atual e faça o downgrade.\n\nSe o problema persistir, verifique o FAQ.</string>
-    <string name="installation_failed_spap_desc_09" translatable="true">Motivo: o Spotify atual instalado neste dispositivo não veio diretamente do xManager ou de nossa equipe.\n\nsolução: desinstale a versão atual do aplicativo, reinicie o xManager e tente novamente. Se o problema persistir, verifique o FAQ.</string>
-    <string name="installation_failed_cloned_desc_09" translatable="true">Razão: o clonado atual instalado neste dispositivo não veio diretamente do xManager ou de nossa equipe.\n\nsolução: desinstale a versão atual do aplicativo, reinicie o xManager e tente novamente. Se o problema persistir, verifique o FAQ.</string>
-    <string name="existing_patched_09" translatable="true">REMENDADO EXISTENTE</string>
-    <string name="existing_patched_desc_09" translatable="true">Um arquivo corrigido existente encontrado em um dos diretórios. Que ação você gostaria de fazer?</string>
+    <string name="installation_failed_desc_09" translatable="true">Motivo: Tentaste instalar uma versão da modificação inferior à que está instalada atualmente.\n\n Soluções:\nA. Seleciona uma versão igual ou superior.\nB. Desinstala a versão atual e depois instala a versão inferior.\n\nSe o problema persistir, verifica as FAQ.</string>
+    <string name="installation_failed_spap_desc_09" translatable="true">Motivo: O Spotify instalado atualmente neste dispositivo não veio diretamente do xManager ou da nossa equipa.\n\nSolução: desinstala a versão atual da aplicação, reinicia o xManager e tenta outra vez. Se o problema persistir, verifica as FAQ.</string>
+    <string name="installation_failed_cloned_desc_09" translatable="true">Motivo: A versão clone instalada atualmente neste dispositivo não veio diretamente do xManager ou da nossa equipa.\n\nSolução: desinstala a versão atual da aplicação, reinicia o xManager e tenta outra vez. Se o problema persistir, verifica as FAQ.</string>
+    <string name="existing_patched_09" translatable="true">MODIFICAÇÕES EXISTENTES</string>
+    <string name="existing_patched_desc_09" translatable="true">Uma modificação existente foi encontrada num dos diretórios esternos. Que ação gostarias de fazer?</string>
     <string name="disable_notification_09" translatable="true">DESATIVAR NOTIFICAÇÃO</string>
-    <string name="disable_notification_desc_09" translatable="true">Habilitar isso removerá a notificação de lembrete após a instalação do aplicativo Corrigido.</string>
-    <string name="hide_stock_patched_09" translatable="true">OCULTAR ESTOQUE REMENDADO</string>
-    <string name="hide_amoled_patched_09" translatable="true">OCULTAR AMOLED REMENDADO</string>
-    <string name="hide_lite_patched_09" translatable="true">OCULTAR LITE REMENDADA</string>
-    <string name="hide_wave_patched_09" translatable="true">OCULTAR ONDA REMENDADA</string>
+    <string name="disable_notification_desc_09" translatable="true">Ligar isto irá remover a notificação de lembrete após a instalação da aplicação modificada.</string>
+    <string name="hide_stock_patched_09" translatable="true">OCULTAR MODIFICAÇÃO</string>
+    <string name="hide_amoled_patched_09" translatable="true">OCULTAR MODIFICAÇÃO AMOLED</string>
+    <string name="hide_lite_patched_09" translatable="true">OCULTAR MODIFICAÇÃO VERSÃO LEVE</string>
     <string name="close_09" translatable="true">FECHAR</string>
-    <string name="cloned_09" translatable="true">CLONAR</string>
+    <string name="cloned_09" translatable="true">CLONE</string>
     <string name="spap_09" translatable="true">SP/AP</string>
     <string name="install_09" translatable="true">INSTALAR</string>
-    <string name="uninstall_09" translatable="true">INSTALAR</string>
+    <string name="uninstall_09" translatable="true">DESINSTALAR</string>
     <string name="ignore_09" translatable="true">IGNORAR</string>
-    <string name="delete_09" translatable="true">EXCLUIR</string>
-    <string name="uninstall_patched_09" translatable="true">DESINSTALAR CORRIGIDO</string>
-    <string name="open_settings_09" translatable="true">ABRIR CONFIGURAÇÕES</string>
-    <string name="open_patched_09" translatable="true">ABERTO CORRIGIDO</string>
-    <string name="reboot_09" translatable="true">RECUPERAR E REINICIAR</string>
+    <string name="delete_09" translatable="true">APAGAR</string>
+    <string name="uninstall_patched_09" translatable="true">DESINSTALAR MODIFICAÇÃO</string>
+    <string name="open_settings_09" translatable="true">ABRIR DEFINIÇÕES</string>
+    <string name="open_patched_09" translatable="true">ABRIR MODIFICAÇÃO</string>
+    <string name="reboot_09" translatable="true">REPÔR E REINICIAR</string>
     
     <!--RUSSIAN LANGUAGE-->
     <string name="app_name_10" translatable="true">xManager</string>
@@ -987,7 +977,6 @@
     <string name="hide_stock_patched_10" translatable="true">СКРЫТЬ ИСПРАВЛЕННЫЙ STOCK</string>
     <string name="hide_amoled_patched_10" translatable="true">СКРЫТЬ ИСПРАВЛЕННЫЙ AMOLED</string>
     <string name="hide_lite_patched_10" translatable="true">СКРЫТЬ ИСПРАВЛЕННЫЙ LITE</string>
-    <string name="hide_wave_patched_10" translatable="true">СКРЫТЬ ИСПРАВЛЕННЫЙ WAVE</string>
     <string name="close_10" translatable="true">ЗАКРЫТЬ</string>
     <string name="cloned_10" translatable="true">КЛОНИPОВАННЫЙ</string>
     <string name="spap_10" translatable="true">SP/AP</string>
@@ -1078,7 +1067,6 @@
     <string name="hide_stock_patched_11" translatable="true">OCULTAR STOCK PARCHEADO</string>
     <string name="hide_amoled_patched_11" translatable="true">OCULTAR AMOLED PARCHEADO</string>
     <string name="hide_lite_patched_11" translatable="true">OCULTAR LITE PARCHEADO</string>
-    <string name="hide_wave_patched_11" translatable="true">OCULTAR WAVE PARCHEADO</string>
     <string name="close_11" translatable="true">CERRAR</string>
     <string name="cloned_11" translatable="true">CLONAR</string>
     <string name="spap_11" translatable="true">SÍ/INFO</string>
@@ -1169,7 +1157,6 @@
     <string name="hide_stock_patched_12" translatable="true">ПРИХОВАТИ ВИПРАВЛЕНИЙ STOCK</string>
     <string name="hide_amoled_patched_12" translatable="true">ПРИХОВАТИ ВИПРАВЛЕНИЙ AMOLED</string>
     <string name="hide_lite_patched_12" translatable="true">ПРИХОВАТИ ВИПРАВЛЕНИЙ LITE</string>
-    <string name="hide_wave_patched_12" translatable="true">ПРИХОВАТИ ВИПРАВЛЕНИЙ WAVE</string>
     <string name="close_12" translatable="true">закривати</string>
     <string name="cloned_12" translatable="true">КЛОНОВАНИЙ</string>
     <string name="spap_12" translatable="true">SP/AP</string>
@@ -1260,7 +1247,6 @@
     <string name="hide_stock_patched_13" translatable="true">STOK YAMAYI GİZLE</string>
     <string name="hide_amoled_patched_13" translatable="true">AMOLED YAMAYI GİZLE</string>
     <string name="hide_lite_patched_13" translatable="true">HAFİF YAMAYI GİZLE</string>
-    <string name="hide_wave_patched_13" translatable="true">DALGA YAMAYI GİZLE</string>
     <string name="close_13" translatable="true">KAPAT</string>
     <string name="cloned_13" translatable="true">KLONLANMIŞ</string>
     <string name="spap_13" translatable="true">SP/AP</string>
@@ -1351,7 +1337,6 @@
     <string name="hide_stock_patched_14" translatable="true">إخفاء العادي المعدل</string>
     <string name="hide_amoled_patched_14" translatable="true">إخفاء AMOLED المعدل</string>
     <string name="hide_lite_patched_14" translatable="true">إخفاء لايت المعدل</string>
-    <string name="hide_wave_patched_14" translatable="true">إخفاء Wave المعدل</string>
     <string name="close_14" translatable="true">إغلاق</string>
     <string name="cloned_14" translatable="true">المستنسخة</string>
     <string name="spap_14" translatable="true">ري / آم</string>
@@ -1442,7 +1427,6 @@
     <string name="hide_stock_patched_15" translatable="true">SKRIJ ZALOGE ZAKRPANE</string>
     <string name="hide_amoled_patched_15" translatable="true">SKRIJ AMOLED ZAKRPAN</string>
     <string name="hide_lite_patched_15" translatable="true">SKRIJ LITE ZAKRPAN</string>
-    <string name="hide_wave_patched_15" translatable="true">SKRIJ VAL ZAKRPAN</string>
     <string name="close_15" translatable="true">Zapri</string>
     <string name="cloned_15" translatable="true">Klonirano</string>
     <string name="spap_15" translatable="true">SP/AP</string>
@@ -1533,7 +1517,6 @@
     <string name="hide_stock_patched_16" translatable="true">ASCUNDE STOC PATCH-URI</string>
     <string name="hide_amoled_patched_16" translatable="true">ASCUNDE AMOLED PATCH-URI</string>
     <string name="hide_lite_patched_16" translatable="true">ASCUNDE LITE PATCH-URI</string>
-    <string name="hide_wave_patched_16" translatable="true">ASCUNDE VAL PATCH-URI</string>
     <string name="close_16" translatable="true">ÎNCHIDE</string>
     <string name="cloned_16" translatable="true">CLONĂ</string>
     <string name="spap_16" translatable="true">OB/AM</string>
@@ -1624,7 +1607,6 @@
     <string name="hide_stock_patched_17" translatable="true">재고 패치 숨기기</string>
     <string name="hide_amoled_patched_17" translatable="true">패치된 아몰레드 숨기기</string>
     <string name="hide_lite_patched_17" translatable="true">라이트 패치 숨기기</string>
-    <string name="hide_wave_patched_17" translatable="true">웨이브 패치 숨기기</string>
     <string name="close_17" translatable="true">닫기</string>
     <string name="cloned_17" translatable="true">복제됨</string>
     <string name="spap_17" translatable="true">SP/AP</string>
@@ -1715,7 +1697,6 @@
     <string name="hide_stock_patched_18" translatable="true">HIDE STOCK PATCHED</string>
     <string name="hide_amoled_patched_18" translatable="true">HIDE AMOLED PATCHED</string>
     <string name="hide_lite_patched_18" translatable="true">HIDE LITE PATCHED</string>
-    <string name="hide_wave_patched_18" translatable="true">HIDE WAVE PATCHED</string>
     <string name="close_18" translatable="true">SLUITEN</string>
     <string name="cloned_18" translatable="true">KLONEN</string>
     <string name="spap_18" translatable="true">SP/AP</string>
@@ -1806,7 +1787,6 @@
     <string name="hide_stock_patched_19" translatable="true">ẨN CỔ VÁ</string>
     <string name="hide_amoled_patched_19" translatable="true">ẨN AMOLED VÁ</string>
     <string name="hide_lite_patched_19" translatable="true">ẨN LITE VÁ</string>
-    <string name="hide_wave_patched_19" translatable="true">ẨN SÓNG VÁ</string>
     <string name="close_19" translatable="true">ĐÓNG</string>
     <string name="cloned_19" translatable="true">CLONE</string>
     <string name="spap_19" translatable="true">SP/AP</string>
@@ -1818,7 +1798,7 @@
     <string name="open_settings_19" translatable="true">MỞ CÁC THIẾT LẬP</string>
     <string name="open_patched_19" translatable="true">MỞ BẢN VÁ</string>
     <string name="reboot_19" translatable="true">REFETCH VÀ KHỞI ĐỘNG LẠI</string>
-    
+
     <!--GERMAN LANGUAGE-->
     <string name="app_name_20" translatable="true">xManager</string>
     <string name="installed_20" translatable="true">INSTALLIERT</string>
@@ -1897,7 +1877,6 @@
     <string name="hide_stock_patched_20" translatable="true">AUSGEBLENDETE BESTÄNDE AUSBLENDEN</string>
     <string name="hide_amoled_patched_20" translatable="true">AMOLED GEPATCHT AUSBLENDEN</string>
     <string name="hide_lite_patched_20" translatable="true">LITE GEPATCHT AUSBLENDEN</string>
-    <string name="hide_wave_patched_20" translatable="true">WELLE GEPATCHT AUSBLENDEN</string>
     <string name="close_20" translatable="true">SCHLIEßEN</string>
     <string name="cloned_20" translatable="true">KLONEN</string>
     <string name="spap_20" translatable="true">SP/AP</string>
@@ -1988,7 +1967,6 @@
     <string name="hide_stock_patched_21" translatable="true">پنهان کردن سهام پچ شده</string>
     <string name="hide_amoled_patched_21" translatable="true">پنهان آمولد وصله</string>
     <string name="hide_lite_patched_21" translatable="true">پنهان لایت وصله</string>
-    <string name="hide_wave_patched_21" translatable="true">پنهان کردن موج وصله</string>
     <string name="close_21" translatable="true">بستن</string>
     <string name="cloned_21" translatable="true">کلون شده</string>
     <string name="spap_21" translatable="true">دوباره / صبح</string>
@@ -2079,7 +2057,6 @@
     <string name="hide_stock_patched_22" translatable="true">הסתרת מלאי שתוקנה</string>
     <string name="hide_amoled_patched_22" translatable="true">הסתר טלאים</string>
     <string name="hide_lite_patched_22" translatable="true">הסתר לייט תוקן</string>
-    <string name="hide_wave_patched_22" translatable="true">הסתר גל תוקן</string>
     <string name="close_22" translatable="true">סגור</string>
     <string name="cloned_22" translatable="true">משובט</string>
     <string name="spap_22" translatable="true">SP/AP</string>
@@ -2174,7 +2151,6 @@
     <string name="hide_stock_patched_23" translatable="true">SKRYŤ ZÁSOBY OPRAVENÉ</string>
     <string name="hide_amoled_patched_23" translatable="true">SKRYŤ AMOLED OPRAVA</string>
     <string name="hide_lite_patched_23" translatable="true">SKRYŤ LITE OPRAVA</string>
-    <string name="hide_wave_patched_23" translatable="true">SKRYŤ VLNU OPRAVA</string>
     <string name="close_23" translatable="true">ZAVRIEŤ</string>
     <string name="cloned_23" translatable="true">KLONOVANÝ</string>
     <string name="spap_23" translatable="true">SP/AP</string>
@@ -2265,7 +2241,6 @@
     <string name="hide_stock_patched_24" translatable="true">DÖLJ LAGER PATCHED</string>
     <string name="hide_amoled_patched_24" translatable="true">DÖLJ AMOLED PATCHED</string>
     <string name="hide_lite_patched_24" translatable="true">DÖLJ LITE PATCHED</string>
-    <string name="hide_wave_patched_24" translatable="true">DÖLJ VÅG PATCHED</string>
     <string name="close_24" translatable="true">STÄNG</string>
     <string name="cloned_24" translatable="true">KLONAD</string>
     <string name="spap_24" translatable="true">VA/AM</string>
@@ -2356,7 +2331,6 @@
     <string name="hide_stock_patched_25" translatable="true">PIILOTA VARASTOSSA PAIKATTU</string>
     <string name="hide_amoled_patched_25" translatable="true">PIILOTA AMOLED PAIKATTU</string>
     <string name="hide_lite_patched_25" translatable="true">PIILOTA LITE PAIKATTU</string>
-    <string name="hide_wave_patched_25" translatable="true">PIILOAALTO PAIKATTU</string>
     <string name="close_25" translatable="true">SULJE</string>
     <string name="cloned_25" translatable="true">KLOONATTU</string>
     <string name="spap_25" translatable="true">SP/AP</string>
@@ -2447,7 +2421,6 @@
     <string name="hide_stock_patched_26" translatable="true">SKRÝT OPRAVENÉ ZÁSOBY</string>
     <string name="hide_amoled_patched_26" translatable="true">SKRÝT AMOLED ZÁSOBY</string>
     <string name="hide_lite_patched_26" translatable="true">SKRÝT LITE ZÁSOBY</string>
-    <string name="hide_wave_patched_26" translatable="true">SKRÝT WAVE ZÁSOBY</string>
     <string name="close_26" translatable="true">ZAVŘÍT</string>
     <string name="cloned_26" translatable="true">KLONOVANÁ</string>
     <string name="spap_26" translatable="true">SP/AP</string>
@@ -2538,7 +2511,6 @@
     <string name="hide_stock_patched_27" translatable="true">隱藏原始版本修補程式</string>
     <string name="hide_amoled_patched_27" translatable="true">隱藏純黑版本修補程式</string>
     <string name="hide_lite_patched_27" translatable="true">隱藏精簡版本修補程式</string>
-    <string name="hide_wave_patched_27" translatable="true">隱藏 Wave 修補程式</string>
     <string name="close_27" translatable="true">關閉</string>
     <string name="cloned_27" translatable="true">克隆版本</string>
     <string name="spap_27" translatable="true">預設或純黑版本</string>
@@ -2629,7 +2601,6 @@
     <string name="hide_stock_patched_28" translatable="true">СКРИВАНЕ НА НАЛИЧНОСТИТЕ КРЪПКА</string>
     <string name="hide_amoled_patched_28" translatable="true">СКРИВАНЕ НА АМОЛЕД КРЪПКА</string>
     <string name="hide_lite_patched_28" translatable="true">СКРИВАНЕ НА ЛЕКИ КРЪПКИ</string>
-    <string name="hide_wave_patched_28" translatable="true">СКРИВАНЕ НА КРЪПКАТА НА ВЪЛНАТА</string>
     <string name="close_28" translatable="true">ЗАТВАРЯНЕ</string>
     <string name="cloned_28" translatable="true">КЛОНИРАН</string>
     <string name="spap_28" translatable="true">SP/AP</string>
@@ -2720,7 +2691,6 @@
     <string name="hide_stock_patched_29" translatable="true">САКРИЈ STOCK ПЕЧ</string>
     <string name="hide_amoled_patched_29" translatable="true">САКРИЈ AMOLED ПЕЧ</string>
     <string name="hide_lite_patched_29" translatable="true">САКРИЈ LITE ПЕЧ</string>
-    <string name="hide_wave_patched_29" translatable="true">САКРИЈ WAVE ПЕЧ</string>
     <string name="close_29" translatable="true">ЗАТВОРИ</string>
     <string name="cloned_29" translatable="true">КЛОНИРАН</string>
     <string name="spap_29" translatable="true">SP/AP</string>
@@ -2811,7 +2781,6 @@
     <string name="hide_stock_patched_30" translatable="true">SAKRIJ STOCK PEČ</string>
     <string name="hide_amoled_patched_30" translatable="true">SAKRIJ AMOLED PEČ</string>
     <string name="hide_lite_patched_30" translatable="true">SAKRIJ LITE PEČ</string>
-    <string name="hide_wave_patched_30" translatable="true">SAKRIJ WAVE PEČ</string>
     <string name="close_30" translatable="true">ZATVORI</string>
     <string name="cloned_30" translatable="true">KLONIRAN</string>
     <string name="spap_30" translatable="true">SP/AP</string>
@@ -2902,7 +2871,6 @@
     <string name="hide_stock_patched_31" translatable="true">OCULTA LA PILA APEDAÇADA</string>
     <string name="hide_amoled_patched_31" translatable="true">OCULTA AMOLED PEGATS</string>
     <string name="hide_lite_patched_31" translatable="true">OCULTA EL PEGAT LITE</string>
-    <string name="hide_wave_patched_31" translatable="true">OCULTA L\'WAVE PEGADA</string>
     <string name="close_31" translatable="true">TANCAR</string>
     <string name="cloned_31" translatable="true">CLONAR</string>
     <string name="spap_31" translatable="true">SI/INFO</string>
@@ -2931,80 +2899,79 @@
     <string name="settings_title_32" translatable="true">Iestatījumi</string>
     <string name="about_title_32" translatable="true">Par</string>
     <string name="list_auto_refresh_32" translatable="true">SARAKSTA AUTOMĀTISKA ATJAUNOŠANA</string>
-    <string name="list_auto_refresh_desc_32" translatable="true">Aktivizējot šito, saraksts tiks automātiski atjaunots ikreiz, kad palaižat programmu. Varat manuāli atjaunināt sarakstu, velkot galveno ekrānu uz leju.\n\nJūs varat manuāli atjaunināt sarakstu, velkot galveno ekrānu uz leju.</string>
+    <string name="list_auto_refresh_desc_32" translatable="true">Aktivizējot šo, saraksts tiks automātiski atjaunots ikreiz, kad palaižat programmu.\n\nJūs varat manuāli atjaunināt sarakstu, velkot galveno ekrānu uz leju.</string>
     <string name="force_auto_install_32" translatable="true">PIESPIEDU AUTOMĀTISKĀ INSTALĒŠANA</string>
-    <string name="force_auto_install_desc_32" translatable="true">Ieslēdzot šo, automātiski tiks instalēta labotā lietojumprogramma un atjauninājums pēc tā lejupielādes.</string>
+    <string name="force_auto_install_desc_32" translatable="true">Ieslēdzot šo, automātiski tiks instalēta modificētā lietojumprogramma un atjauninājums pēc tā lejupielādes.</string>
     <string name="show_themes_32" translatable="true">VIZUĀLĀS TĒMAS</string>
-    <string name="apk_location_32" translatable="true">APK ATRAŠANA VIETA</string>
+    <string name="apk_location_32" translatable="true">APK FAILA ATRAŠANA VIETA</string>
     <string name="apk_location_desc_32" translatable="true">Atrašanās Vieta, kurā vēlaties saglabāt lejupielādētā faila kopiju. Ja nezināt, kā konfigurēt šo funkciju, atstājiet to tādu, kāda tā ir.\n\nPIEZĪME: Šī funkcija neatbalsta ārējo atmiņu (SD karti) pieejamības, atļauju un glabāšanas ierobežojumu dēļ.</string>
     <string name="clear_directory_folders_32" translatable="true">DZĒST ATRAŠANAS VIETU</string>
-    <string name="clear_directory_folders_desc_32" translatable="true">Uzpiežiet uz ekrānu, lai dzēstu direktoriju mapi. Tas ietver lejupielādētos failus un atjauninājumus.</string>
+    <string name="clear_directory_folders_desc_32" translatable="true">Uzpiežiet uz ekrānu, lai dzēstu mapi, kas ietver lejupielādētos failus un atjauninājumus.</string>
     <string name="reset_preferences_32" translatable="true">ATIESTĀTĪT IESTĀTIJUMUS</string>
-    <string name="about_sub_32" translatable="true">Reklāmu-Brīvs | Jaunas Funkcijas | Brīvība</string>
-    <string name="xmanager_dev_32" translatable="true">xManager Programmētajs</string>
-    <string name="patched_devs_32" translatable="true">Spotify Patched Programmētaji</string>
-    <string name="support_team_32" translatable="true">Telegram | Discord | Reddit Pabalstu Komanda</string>
+    <string name="about_sub_32" translatable="true">Bez reklāmām | Jaunas Funkcijas | Brīvība</string>
+    <string name="xmanager_dev_32" translatable="true">xManager izstrādātājs</string>
+    <string name="patched_devs_32" translatable="true">Spotify Patched izstrādātāji</string>
+    <string name="support_team_32" translatable="true">Telegram | Discord | Reddit Pabalsta Komanda</string>
     <string name="manager_testers_32" translatable="true">Patched and Manager Testētāji</string>
     <string name="manager_hosting_32" translatable="true">Manager Datubāze un Hostings</string>
-    <string name="mobilism_team_32" translatable="true">Mobilitātes komandam</string>
+    <string name="mobilism_team_32" translatable="true">Mobilism komanda</string>
     <string name="forum_team_32" translatable="true">FORUM.APK-RELEASE.NET Komanda</string>
-    <string name="contributors_32" translatable="true">PALDIES VISIEM DALĪBNIEKIEM! ❤️</string>
+    <string name="contributors_32" translatable="true">PALDIES VISIEM, KAS PALĪDZ! ❤️</string>
     <string name="download_selected_32" translatable="true">Jūs izvēlējāties šo laboto versiju. Vai vēlaties turpināt?</string>
     <string name="download_ready_32" translatable="true">LABOTU VERSIJU INFORMĀCIJA</string>
-    <string name="download_ready_desc_32" translatable="true">Lejupielādējot šo laboto apk, tiks pārrakstīts iepriekšējais fails, kas atrodas ārējā direktorijā.</string>
-    <string name="downloading_file_32" translatable="true">LEJUPIELĀDĒJU FAILU</string>
+    <string name="download_ready_desc_32" translatable="true">Lejupielādējot šo modificēto apk failu, tiks pārrakstīts iepriekšējais fails, kas atrodas ārējā mapē.</string>
+    <string name="downloading_file_32" translatable="true">TIEK LEJUPIELĀDĒTS FAILS</string>
     <string name="download_success_32" translatable="true">VEIKSMĪGI LEJUPIELĀDĒTS</string>
-    <string name="new_update_32" translatable="true">JAUNĀ MENEDŽARA ATJAUNINĀJUMS</string>
+    <string name="new_update_32" translatable="true">JAUNS PĀRVALDNIEKA ATJAUNINĀJUMS</string>
     <string name="continue_1_32" translatable="true">TURPINĀT</string>
     <string name="cancel_32" translatable="true">ATCELT</string>
     <string name="download_32" translatable="true">LEJUPIELĀDĒT</string>
     <string name="later_32" translatable="true">VĒLĀK</string>
     <string name="install_now_32" translatable="true">INSTALĒT TAGAD</string>
     <string name="install_update_32" translatable="true">INSTALĒT ATJAUNINĀJUMU</string>
-    <string name="go_back_32" translatable="true">IET ATPAKAĻ</string>
+    <string name="go_back_32" translatable="true">ATPAKAĻ</string>
     <string name="download_update_32" translatable="true">LEJUPIELĀDĒT ATJAUNINĀJUMU</string>
-    <string name="not_now_32" translatable="true">NE TAGAD</string>
-    <string name="mirror_32" translatable="true">MIRROR LINK</string>
+    <string name="not_now_32" translatable="true">NE ŠOBRĪD</string>
+    <string name="mirror_32" translatable="true">SPOGUĻSAITE</string>
     <string name="lite_32" translatable="true">LITE</string>
     <string name="experimental_title_32" translatable="true">Eksperimentāls</string>
     <string name="experimental_version_32" translatable="true">EKSPERIMENTĀLĀ VERSIJA</string>
-    <string name="experimental_version_desc_32" translatable="true">šī iespējošana ļauj lejupielādēt un instalēt patched lietojumprogrammas eksperimentālo versiju.\n\ntas ietver alfa, beta un agrīnās piekļuves funkcijas, kas nav pieejamas krājumā. Turklāt nav garantēta stabila.</string>
-    <string name="show_support_32" translatable="true">PARĀDIET SAVU ATBALSTU</string>
-    <string name="show_support_desc_32" translatable="true">Mēs esam bezpeļņas, nekorporatīva un bezkompromisa komanda. Tādi cilvēki kā jūs mudina mūs izveidot lietotni, lai padarītu lietas daudz vieglāk, jo īpaši no lejupielādes līdz instalēšanai.\n\nMēs ielejam visu savu laiku un labākos centienus, lai padarītu lietas pareizas un perfektas. Mēs darīsim visu iespējamo, lai atbalstītu šo lietotni tik ilgi, cik vien mēs varētu.\n\nKatra summa palīdzēs un būs ļoti novertēts!</string>
-    <string name="maintenance_32" translatable="true">UZTURĒŠANA</string>
-    <string name="maintenance_desc_32" translatable="true">xManager pašlaik nav pieejama. Lūdzu, pārbaudiet aplikāciju vēlāk.</string>
+    <string name="experimental_version_desc_32" translatable="true">Šī aktivizēšana ļauj lejupielādēt un instalēt modificētās lietojumprogrammas eksperimentālo versiju.\n\nTas ietver agrīnās piekļuves funkcijas, kas nav pieejamas šobrīd. Stabilitāte nav garantēta.</string>
+    <string name="show_support_32" translatable="true">ATBALSTIET MŪS!</string>
+    <string name="show_support_desc_32" translatable="true">Mēs esam bezpeļņas, nekorporatīva un bezkompromisa komanda. Tādi cilvēki, kā jūs mudina mūs attīstīt šo lietotni, lai padarītu lietas daudz vieglāk, no lejupielādes līdz instalācijai.\n\nMēs ieliekam visu savu laiku un piepūles, lai padarītu aplikāciju korektu un perfektu. Mēs darīsim visu iespējamo, lai atbalstītu šo lietotni tik ilgi, cik vien mēs vien varam.\n\nJebkāda summa palīdzēs un būs ļoti novertēta!</string>
+    <string name="maintenance_32" translatable="true">TIEK VEIKTA APRŪPE</string>
+    <string name="maintenance_desc_32" translatable="true">xManager pašlaik nav pieejams. Lūdzu, pārbaudiet aplikāciju vēlāk.</string>
     <string name="thanks_32" translatable="true">PALDIES!</string>
     <string name="language_32" translatable="true">VALODA</string>
-    <string name="website_32" translatable="true">TĪMEKĻU VIETNE</string>
+    <string name="website_32" translatable="true">MĀJAS LAPA</string>
     <string name="reddit_32" translatable="true">REDDIT</string>
     <string name="faq_32" translatable="true">BUJ</string>
     <string name="cloned_version_32" translatable="true">KLONĒTA VERSIJA</string>
-    <string name="cloned_version_desc_32" translatable="true">Ieslēdzot šito ļauj lejupielādēt un instalēt ielāgotās lietojumprogrammas klonēto versiju. \n\nTas arī atrisinās lielāko daļu instalēšanas kļūdu vai problēmu, īpaši, ja jums ir iepriekš instalēta Spotify lietojumprogramma.</string>
-    <string name="disable_rewarded_ads_32" translatable="true">IZSLĒGT ATALGOTĀS REKLĀMAS</string>
-    <string name="disable_rewarded_ads_desc_32" translatable="true">Mēs zinām, ka lielākajai daļai no mums nepatīk reklāmas, bet mūsu gadījumā tas ievērojami palīdz mums finansēt mūsu datu bāzi, hostinga saites, atjauninājumus, vairāk ielāpus un ikdienas vajadzības.\n\nŠis ir vienkāršākais veids, kā mūs atbalstīt, neveicot ziedojumus un netērējot.</string>
+    <string name="cloned_version_desc_32" translatable="true">Šīs funkcijas aktivizēšana ļauj lejupielādēt un instalēt modificētās lietojumprogrammas klonēto versiju. \n\nTas arī ļoti iespējams atrisinās lielāko daļu instalēšanas kļūdu vai problēmu it īpaši, ja jums ir iepriekš ir bijis instalēts Spotify.</string>
+    <string name="disable_rewarded_ads_32" translatable="true">IZSLĒGT REKLĀMAS</string>
+    <string name="disable_rewarded_ads_desc_32" translatable="true">Mēs zinām, ka lielākajai daļai no mums riebjas reklāmas, bet mūsu gadījumā tās ievērojami palīdz mums finansēt mūsu datu bāzi, hostinga izmaksas, atjauninājumus un ikdienas vajadzības.\n\nŠis ir vienkāršākais veids, kā mūs atbalstīt, neveicot monetārus ziedojumus.</string>
     <string name="installation_failed_32" translatable="true">INSTALĒŠANA NEIZDEVĀS</string>
-    <string name="installation_failed_desc_32" translatable="true">Iemesls: Jūs mēģinājāt instalēt moda versiju, kas ir zemāka par pašlaik instalēto. \n\nRisinājumi:\nA. Izvēlieties versiju, kas ir vienāda ar vai lielāka par.\nB. Atinstalējiet pašreizējo versiju un pēc tam pazeminiet to uz zemāku līmeni.\n\nJa problēma saglabājas, skatiet BUJ.</string>
-    <string name="installation_failed_spap_desc_32" translatable="true">Iemesls: \n\nRisinājums: Šajā ierīcē instalētais pašreizējais Spotify nav saņemts tieši no xManager vai no mūsu komandas: Atinstalējiet pašreizējo lietojumprogrammas versiju, restartējiet xManager un mēģiniet vēlreiz. Ja problēma saglabājas, skatiet BUJ.</string>
-    <string name="installation_failed_cloned_desc_32" translatable="true">Iemesls: \n\nRisinājums: Pašreizējais klonētais, kas instalēts šajā ierīcē, nav nācis tieši no xManager vai no mūsu komandas: Atinstalējiet pašreizējo lietojumprogrammas versiju, restartējiet xManager un mēģiniet vēlreiz. Ja problēma saglabājas, skatiet BUJ.</string>
-    <string name="existing_patched_32" translatable="true">EŠOŠAIS IZLABOTS</string>
-    <string name="existing_patched_desc_32" translatable="true">Vienā no direktorijām ir atrasts esošais ielāgotais apk. Kādu darbību vēlaties veikt?</string>
-    <string name="disable_notification_32" translatable="true">ATSPĒJOT PAZIŅOJUMU</string>
-    <string name="disable_notification_desc_32" translatable="true">Iespējojot šo noņems atgādinājuma paziņojumu pēc instalēšanas patched pieteikumu.</string>
-    <string name="hide_stock_patched_32" translatable="true">SLĒPT KRĀJUMU PATCHED</string>
+    <string name="installation_failed_desc_32" translatable="true">Iemesls: Jūs mēģinājāt instalēt modifikācijas versiju, kas ir zemāka par pašlaik instalēto. \n\nRisinājumi:\nA. Izvēlieties versiju, kas ir vienāda ar vai lielāka par šobrīd instalēto versiju.\nB. Atinstalējiet pašreizējo versiju un pēc tam mēģiniet vēlreiz.\n\nJa problēma saglabājas, skatiet BUJ.</string>
+    <string name="installation_failed_spap_desc_32" translatable="true">Iemesls: \n\nŠajā ierīcē instalētais pašreizējais Spotify nav saņemts tieši no xManager \n\nRisinājums: Atinstalējiet pašreizējo lietojumprogrammas versiju, restartējiet xManager un mēģiniet vēlreiz. Ja problēma saglabājas, skatiet BUJ.</string>
+    <string name="installation_failed_cloned_desc_32" translatable="true">Iemesls: Pašreizējā klonētā aplikācijq, kas ir instalēta šajā ierīcē, nav nācis tieši no xManager./n/nRisinājums: Atinstalējiet pašreizējo lietojumprogrammas versiju, restartējiet xManager un mēģiniet vēlreiz. Ja problēma saglabājas, skatiet BUJ.</string>
+    <string name="existing_patched_32" translatable="true">EKSISTĒJOŠS MODIFICĒTAIS FAILS</string>
+    <string name="existing_patched_desc_32" translatable="true">Vienā no mapēm ir atrasts esošs modificētās aplikācijas apk fails. Kādu darbību vēlaties veikt?</string>
+    <string name="disable_notification_32" translatable="true">IZSLĒGT PAZIŅOJUMU</string>
+    <string name="disable_notification_desc_32" translatable="true">Aktivizējot šo, vairs nerādīsies lejupielādētā faila instalācijas atgādinājuma paziņojums.</string>
+    <string name="hide_stock_patched_32" translatable="true">SLĒPT PARASTO PATCHED</string>
     <string name="hide_amoled_patched_32" translatable="true">SLĒPT AMOLED PATCHED</string>
     <string name="hide_lite_patched_32" translatable="true">SLĒPT LITE PATCHED</string>
-    <string name="hide_wave_patched_32" translatable="true">SLĒPT VILNIS PATCHED</string>
     <string name="close_32" translatable="true">AIZVERT</string>
     <string name="cloned_32" translatable="true">KLONĒTS</string>
     <string name="spap_32" translatable="true">SP/AP</string>
     <string name="install_32" translatable="true">INSTALĒT</string>
-    <string name="uninstall_32" translatable="true">UNINSTALLĒT</string>
+    <string name="uninstall_32" translatable="true">ATINSTALLĒT</string>
     <string name="ignore_32" translatable="true">IGNORĒT</string>
-    <string name="delete_32" translatable="true">IZDZĒST</string>
-    <string name="uninstall_patched_32" translatable="true">IZDZĒST LABOTO</string>
-    <string name="open_settings_32" translatable="true">ATVERT IESTATIJUMUS</string>
-    <string name="open_patched_32" translatable="true">ATVERT IZLABOTO</string>
-    <string name="reboot_32" translatable="true">REFETCH UN REBOOT</string>
+    <string name="delete_32" translatable="true">DZĒST</string>
+    <string name="uninstall_patched_32" translatable="true">DZĒST PATCHED</string>
+    <string name="open_settings_32" translatable="true">ATVĒRT IESTATĪJUMUS</string>
+    <string name="open_patched_32" translatable="true">ATVERT PATCHED</string>
+    <string name="reboot_32" translatable="true">ATSVAIDZINĀT UN RESTARTĒT</string>
     
     <!--GERMAN LANGUAGE-->
     <string name="app_name_33" translatable="true">xManager</string>
@@ -3084,7 +3051,6 @@
     <string name="hide_stock_patched_33" translatable="true">AUSGEBLENDETE BESTÄNDE AUSBLENDEN</string>
     <string name="hide_amoled_patched_33" translatable="true">AMOLED GEPATCHT AUSBLENDEN</string>
     <string name="hide_lite_patched_33" translatable="true">LITE GEPATCHT AUSBLENDEN</string>
-    <string name="hide_wave_patched_33" translatable="true">WELLE GEPATCHT AUSBLENDEN</string>
     <string name="close_33" translatable="true">SCHLIEßEN</string>
     <string name="cloned_33" translatable="true">KLON VERWENDEN</string>
     <string name="spap_33" translatable="true">SP/AP</string>
@@ -3175,7 +3141,6 @@
     <string name="hide_stock_patched_34" translatable="true">පැච් කරන ලද තොග සඟවන්න</string>
     <string name="hide_amoled_patched_34" translatable="true">සැඟවීම අමෝල්ඩ් සඟවන්න</string>
     <string name="hide_lite_patched_34" translatable="true">ලයිට් පැච් කරලා හංගන්න</string>
-    <string name="hide_wave_patched_34" translatable="true">රැල්ල පැච් කරලා හංගන්න</string>
     <string name="close_34" translatable="true">වසා දමන්න</string>
     <string name="cloned_34" translatable="true">ක්ලෝන</string>
     <string name="spap_34" translatable="true">SP/AP</string>
@@ -3266,7 +3231,6 @@
     <string name="hide_stock_patched_35" translatable="true">ELREJTÉS ÁLLOMÁNY FOLTOZOTT</string>
     <string name="hide_amoled_patched_35" translatable="true">ELREJTÉS AMOLED FOLTOZOTT</string>
     <string name="hide_lite_patched_35" translatable="true">ELREJTÉS LITE FOLTOZOTT</string>
-    <string name="hide_wave_patched_35" translatable="true">ELREJTÉS HULLÁM FOLTOZOTT</string>
     <string name="close_35" translatable="true">BEZÁRÁS</string>
     <string name="cloned_35" translatable="true">KLÓNOZOTT</string>
     <string name="spap_35" translatable="true">SP/AP</string>
@@ -3279,7 +3243,7 @@
     <string name="open_patched_35" translatable="true">A PATCHELT ALKALMAZÁS MEGNYITÁSA</string>
     <string name="reboot_35" translatable="true">ÚJRAFETCHELÉS ÉS AZ ALKALMAZÁS ÚJRAINDÍTÁSA</string>
 	
-	<!--JAPANESE LANGUAGE-->
+    <!--JAPANESE LANGUAGE-->
     <string name="app_name_36" translatable="true">xManager</string>
     <string name="installed_36" translatable="true">インストール済み</string>
     <string name="latest_36" translatable="true">最新</string>
@@ -3357,7 +3321,6 @@
     <string name="hide_stock_patched_36" translatable="true">Stock のパッチ済みを非表示にする</string>
     <string name="hide_amoled_patched_36" translatable="true">AMOLED のパッチ済みを非表示にする</string>
     <string name="hide_lite_patched_36" translatable="true">Lite のパッチ済みを非表示にする</string>
-    <string name="hide_wave_patched_36" translatable="true">WAVE のパッチ済みを非表示にする</string>
     <string name="close_36" translatable="true">閉じる</string>
     <string name="cloned_36" translatable="true">クローン</string>
     <string name="spap_36" translatable="true">SP/AP</string>
@@ -3370,7 +3333,7 @@
     <string name="open_patched_36" translatable="true">アプリを開く</string>
     <string name="reboot_36" translatable="true">再読み込みと再起動</string>
 	
-	<!--NEPALI LANGUAGE-->
+    <!--NEPALI LANGUAGE-->
     <string name="app_name_37" translatable="true">xManager</string>
     <string name="installed_37" translatable="true">स्थापना गरियो</string>
     <string name="latest_37" translatable="true">नवीनतम</string>
@@ -3448,7 +3411,6 @@
     <string name="hide_stock_patched_37" translatable="true">प्याच गरिएको स्टक लुकाउनुहोस्</string>
     <string name="hide_amoled_patched_37" translatable="true">एमोलेड प्याच गरिएको लुकाउनुहोस्</string>
     <string name="hide_lite_patched_37" translatable="true">लाइट प्याच गरिएको लुकाउनुहोस्</string>
-    <string name="hide_wave_patched_37" translatable="true">वेभ प्याच गरिएको लुकाउनुहोस्</string>
     <string name="close_37" translatable="true">बन्द गर्नुहोस्</string>
     <string name="cloned_37" translatable="true">क्लोन गरिएको</string>
     <string name="spap_37" translatable="true">SP/AP</string>
@@ -3461,7 +3423,7 @@
     <string name="open_patched_37" translatable="true">प्याच गरिएको खोल्नुहोस्</string>
     <string name="reboot_37" translatable="true">रिफिच र रिबुट गर्नुहोस्</string>
 	
-	<!--TAMIL LANGUAGE-->
+    <!--TAMIL LANGUAGE-->
     <string name="app_name_38" translatable="true">xManager</string>
     <string name="installed_38" translatable="true">நிறுவப்பட்டது</string>
     <string name="latest_38" translatable="true">புதிதான</string>
@@ -3539,7 +3501,6 @@
     <string name="hide_stock_patched_38" translatable="true">பங்கு ஒட்டியதை மறை</string>
     <string name="hide_amoled_patched_38" translatable="true">AMOLED ஒட்டியதை மறை</string>
     <string name="hide_lite_patched_38" translatable="true">லைட் ஒட்டியதை மறை</string>
-    <string name="hide_wave_patched_38" translatable="true">அலை ஒட்டிய மறை</string>
     <string name="close_38" translatable="true">மூடவும்</string>
     <string name="cloned_38" translatable="true">குளோன் செய்யப்பட்டது</string>
     <string name="spap_38" translatable="true">SP/AP</string>
@@ -3630,7 +3591,6 @@
     <string name="hide_stock_patched_39" translatable="true">ซ่อนแพตซ์ STOCK</string>
     <string name="hide_amoled_patched_39" translatable="true">ซ่อนแพตช์ AMOLED</string>
     <string name="hide_lite_patched_39" translatable="true">ซ่อนแพตช์ LITE</string>
-    <string name="hide_wave_patched_39" translatable="true">ซ่อนแพตช์ WAVE</string>
     <string name="close_39" translatable="true">ปิด</string>
     <string name="cloned_39" translatable="true">CLONED</string>
     <string name="spap_39" translatable="true">SP/AP</string>
@@ -3721,7 +3681,6 @@
     <string name="hide_stock_patched_40" translatable="true">स्टॉक पॅच लपवा</string>
     <string name="hide_amoled_patched_40" translatable="true">AMOLED पॅच लपवा</string>
     <string name="hide_lite_patched_40" translatable="true">लाइट पॅच लपवा</string>
-    <string name="hide_wave_patched_40" translatable="true">वेव्ह पॅच लपवा</string>
     <string name="close_40" translatable="true">क्लोज</string>
     <string name="cloned_40" translatable="true">क्लोन केलेले</string>
     <string name="spap_40" translatable="true">SP/AP</string>
@@ -3812,7 +3771,6 @@
     <string name="hide_stock_patched_41" translatable="true">STOCK പാച്ച് മറയ്ക്കുക</string>
     <string name="hide_amoled_patched_41" translatable="true">AMOLED പാച്ച് മറയ്ക്കുക</string>
     <string name="hide_lite_patched_41" translatable="true">LITE പാച്ച് മറയ്ക്കുക</string>
-    <string name="hide_wave_patched_41" translatable="true">WAVE പാച്ച് മറയ്ക്കുക</string>
     <string name="close_41" translatable="true">അടയ്ക്കുക</string>
     <string name="cloned_41" translatable="true">ക്ലോൺ ചെയ്യപ്പെട്ടത്</string>
     <string name="spap_41" translatable="true">SP/AP</string>
@@ -3903,7 +3861,6 @@
     <string name="hide_stock_patched_42" translatable="true">SAKRIJ STOCK MOD</string>
     <string name="hide_amoled_patched_42" translatable="true">SAKRIJ AMOLED MOD</string>
     <string name="hide_lite_patched_42" translatable="true">SAKRIJ LITE MOD</string>
-    <string name="hide_wave_patched_42" translatable="true">SAKRIJ WAVE MOD</string>
     <string name="close_42" translatable="true">ZATVORITI</string>
     <string name="cloned_42" translatable="true">KLONIRANO</string>
     <string name="spap_42" translatable="true">SP/AP</string>
@@ -3994,7 +3951,6 @@
     <string name="hide_stock_patched_43" translatable="true">हाइड स्टॉक पैच्ड</string>
     <string name="hide_amoled_patched_43" translatable="true">हाइड एमोलेड पैच्ड</string>
     <string name="hide_lite_patched_43" translatable="true">हाइड लाइट पैच्ड</string>
-    <string name="hide_wave_patched_43" translatable="true">हाइड वेव पैच्ड</string>
     <string name="close_43" translatable="true">बंद करें</string>
     <string name="cloned_43" translatable="true">क्लोन किया गया</string>
     <string name="spap_43" translatable="true">SP/AP</string>
