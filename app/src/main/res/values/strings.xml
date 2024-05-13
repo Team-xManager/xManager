@@ -4008,7 +4008,7 @@
     <string name="reboot_43" translatable="true">फिर से पुनः आक्षेपित करें और पुनः आरंभ करें</string>
 	<!--MONGOLIAN LANGUAGE-->
      <string name="app_name_43" translatable="true">xManager</string>
-    <string name="installed_43" translatable="true">Суулгасан</string>
+    <string name="installed_43" translatable="true">Суулгасан version</string>
     <string name="latest_43" translatable="true">Хамгийн сүүлийн хувилбарууд</string>
     <string name="versions_43" translatable="true">Хувилбарууд </string>
     <string name="changelogs_43" translatable="true">Өөрчлөлтийн бүртгэлүүд</string>
@@ -4020,29 +4020,29 @@
     <string name="about_43" translatable="true">Бидний тухай</string>
     <string name="main_title_43" translatable="true">xManager</string>
     <string name="settings_title_43" translatable="true">Тохиргоо</string>
-    <string name="about_title_43" translatable="true">тухай</string>
-    <string name="list_auto_refresh_43" translatable="true">Жагсаалтыг автоматаар шинэчлэх</string>
+    <string name="about_title_43" translatable="true">Tухай</string>
+    <string name="list_auto_refresh_43" translatable="true">Жагсаалтыг автоматаар-шинэчлэх</string>
     <string name="list_auto_refresh_desc_43" translatable="true">Үүнийг идэвхжүүлснээр таныг аппликешныг эхлүүлэх бүрд жагсаалт автоматаар шинэчлэгдэх болно.\n\nТа үндсэн дэлгэцийг доош чирж гараар жагсаалтыг сэргээх боломжтой.</string>
     <string name="force_auto_install_43" translatable="true">Хүчээр автоматаар суулгах</string>
     <string name="force_auto_install_desc_43" translatable="true">Үүнийг идэвхжүүлснээр засварласан программыг автоматаар суулгаж, татаж авсны дараа шинэчлэх болно.</string>
-    <string name="show_themes_43" translatable="true">Өнгөний сэдэв</string>
+    <string name="show_themes_43" translatable="true">Өнгөний theme</string>
     <string name="apk_location_43" translatable="true">APK байршил</string>
     <string name="apk_location_desc_43" translatable="true">Татаж авсан файлын хуулбарыг хадгалахыг хүссэн директор. Хэрэв та энэ функцийг хэрхэн тохируулахаа мэдэхгүй байгаа бол үүнийг байгаагаар нь үлдээнэ үү.\n\nNOTE: Хандалт, зөвшөөрөл, хадгалах сангийн хязгаарлалтын улмаас энэ функц нь гадаад санах ойг (SD карт) дэмждэггүй.</string>
-    <string name="clear_directory_folders_43" translatable="true">Лавлах хавтасыг арилгах</string>
-    <string name="clear_directory_folders_desc_43" translatable="true">Лавлах хавтсыг устгахын тулд товшино уу. Үүнд татаж авсан файлууд болон шинэчлэлтүүд багтана</string>
+    <string name="clear_directory_folders_43" translatable="true">Directory folder-ыг арилгах</string>
+    <string name="clear_directory_folders_desc_43" translatable="true">Directory folder-ыг устгахын тулд товшино уу. Үүнд татаж авсан файлууд болон шинэчлэлтүүд багтана</string>
     <string name="reset_preferences_43" translatable="true">Тохиргоог дахин тохируулах</string>
     <string name="about_sub_43" translatable="true">Зар сурталчилгаагүй | Шинэ боломжууд | Эрх чөлөө</string>
     <string name="xmanager_dev_43" translatable="true">xManager хөгжүүлэгч</string>
-    <string name="patched_devs_43" translatable="true">Нөөц хөгжүүлэгчид</string>
+    <string name="patched_devs_43" translatable="true">Patched хөгжүүлэгчид</string>
     <string name="support_team_43" translatable="true">Telegram | Discord | Reddit тусламжийн баг</string>
-    <string name="manager_testers" translatable="true">Нөөцтэй болон Менежер шалгагч</string>
+    <string name="manager_testers" translatable="true">Patched болон Manager шалгагч</string>
      <string name="manager_hosting" translatable="true">Менежерийн мэдээллийн сан ба хостинг</string>
-     <string name="mobilism_team" translatable="true">Хөдөлгөөний баг</string>
+     <string name="mobilism_team" translatable="true">Гар утасны програм хөгжүүлэх баг</string>
      <string name="forum_team" translatable="true">FORUM.APK-RELEASE.NET баг</string>
-     <string name="contributors" translatable="true">БҮХ ХҮНИЙГ ОРУУЛАГЧДАА БАЯРЛАЛАА! ❤️</string>
+     <string name="contributors" translatable="true">Хувь нэмэр оруулсан бүх хүмүүст баярлалаа! ❤️</string>
      <string name="download_selected" translatable="true">Та энэ засварласан хувилбарыг сонгосон. Та үргэлжлүүлэхийг хүсэж байна уу?</ string >
-     <string name = "download_ready" translatable = "true">ТӨЛБӨРИЙН МЭДЭЭЛЭЛ</ string>
-     <string name="download_ready_desc" translatable="true">Энэ нөхөөс нь гадаад директор дээр байрлах өмнөх файлыг дарж бичих болно. Болгоомжтой үргэлжлүүлээрэй.</ string >
+     <string name = "download_ready" translatable = "true">PATCHED МЭДЭЭЛЭЛ</ string>
+     <string name="download_ready_desc" translatable="true">Энэ patched нь гадаад директор дээр байрлах өмнөх файлыг дарж бичих болно. Болгоомжтой үргэлжлүүлээрэй.</ string >
      <string name="downloading_file" translatable="true">ФАЙЛ ТАТАЖ АВАХ</string>
      <string name="download_success" translatable="true">АМЖИЛТТАЙ ТАТАЖ АВСАН</string>
      <string name="new_update" translatable="true">ШИНЭ МЕНЕЖЕРИЙН ШИНЭЧЛЭЛ</ string>
@@ -4055,7 +4055,7 @@
      <string name="go_back" translatable="true">БУЦАХ</string>
      <string name="download_update" translatable="true">ШИНЭЧЛЭЛТИЙГ ТАТАЖ АВАХ</string>
      <string name="not_now" translatable="true">ОДОО БИШ</string>
-     <string name="mirror" translatable="true">Тольны холбоос</string>
+     <string name="mirror" translatable="true">Mirror link</string>
      <string name="lite" translatable="true">LITE</string>
      <string name="experimental_title" translatable="true">Туршилтын</string>
      <string name="experimental_version" translatable="true">ТУРШИЛТЫН ХУВИЛБАР</string>
@@ -4071,29 +4071,28 @@
      <string name="faq" translatable="true">Түгээмэл асуултууд</ string>
      <string name="cloned_version" translatable="true">КЛОНДСОН ХУВИЛБАР</string>
      <string name="cloned_version_desc" translatable="true">Үүнийг идэвхжүүлснээр засварласан програмын хувилсан хувилбарыг татаж аваад суулгах боломжтой болно.\n\nЭнэ нь мөн суулгацын ихэнх алдаа эсвэл асуудлыг шийдвэрлэх болно, ялангуяа хэрэв танд өмнө нь суулгасан бол -Spotify програмыг суулгасан.</ string >
-     <string name="disable_rewarded_ads" translatable="true">ШАГНАЛТАЙ ЗАРЫГ ИДЭВХЖҮҮЛЭХ</string>
+     <string name="disable_rewarded_ads" translatable="true">ШАГНАЛТАЙ ЗАРЫГ Идэвхгүй болгох</string>
      <string name="disable_rewarded_ads_desc" translatable="true">Бидний ихэнх нь зар сурталчилгаанд дургүй гэдгийг бид мэднэ, гэхдээ бидний хувьд энэ нь мэдээллийн сан, байршуулах холбоос, шинэчлэлт, нэмэлт засварууд болон өдөр тутмын хэрэгцээгээ санхүүжүүлэхэд ихээхэн тусалдаг.\ n\nЭнэ бол хандив, зардал гаргахгүйгээр биднийг дэмжих хамгийн энгийн арга юм.</string>
-     <string name = "installation_failed" translatable = "true">СУУРИЛУУЛАЛТ БОЛЛОО</ string>
+     <string name = "installation_failed" translatable = "true">INSTALLATION амжилтгүй болсон</ string>
      <string name="installation_failed_desc" translatable="true">Шалтгаан: Та одоо суулгасан хувилбараас доогуур засвар хийсэн хувилбарыг суулгахыг оролдсон байна.\n\nШийдлүүд:\nA. Тэнцүү буюу түүнээс их хувилбарыг сонгоно уу.\nB. Одоогийн хувилбарыг устгаад, доошлуулаарай.\n\nХэрэв асуудал хэвээр байвал Түгээмэл асуултуудыг шалгана уу.</string>
-     <string name="installation_failed_spap_desc" translatable="true">Шалтгаан: Энэ төхөөрөмж дээр суулгасан одоогийн нөхөөс нь xManager эсвэл манай багаас шууд ирээгүй.\n\nШийдвэр: Програмын одоогийн хувилбарыг устгаад xManager-г дахин эхлүүлээд оролдоод үзээрэй. дахин. Хэрэв асуудал арилаагүй бол Түгээмэл асуултуудыг шалгана уу.</ string >
+     <string name="installation_failed_spap_desc" translatable="true">Шалтгаан: Энэ төхөөрөмж дээр суулгасан одоогийн patched нь xManager эсвэл манай багаас шууд ирээгүй.\n\nШийдвэр: Програмын одоогийн хувилбарыг устгаад xManager-г дахин эхлүүлээд оролдоод үзээрэй. дахин. Хэрэв асуудал арилаагүй бол Түгээмэл асуултуудыг шалгана уу.</ string >
      <string name="installation_failed_cloned_desc" translatable="true">Шалтгаан: Энэ төхөөрөмж дээр суулгасан одоогийн клон нь xManager эсвэл манай багаас шууд ирээгүй.\n\nШийдвэр: Програмын одоогийн хувилбарыг устгаад xManager-г дахин эхлүүлээд оролдоод үзээрэй. дахин. Хэрэв асуудал арилаагүй бол Түгээмэл асуултуудыг шалгана уу.</ string >
-     <string name = "existing_patched" translatable = "true"> БАЙГАА НАСАНД ХИЙСЭН</ string>
-     <string name="existing_patched_desc" translatable="true">Одоо байгаа нөхөөсийг гадаад лавлахаас илрүүллээ. Та ямар үйлдэл хиймээр байна?</ string >
-     <string name="disable_notification" translatable="true">МЭДЭГДЭЛИЙГ ИДЭВХЖҮҮЛЭХ</ string>
+     <string name = "existing_patched" translatable = "true"> БАЙГАА PATCHED</ string>
+     <string name="existing_patched_desc" translatable="true">Одоо байгаа patched-ийг гадаад лавлахаас илрүүллээ. Та ямар үйлдэл хиймээр байна?</ string >
+     <string name="disable_notification" translatable="true">МЭДЭГДЭЛИЙГ Идэвхгүй болгох</ string>
      <string name="disable_notification_desc" translatable="true">Үүнийг идэвхжүүлснээр засварласан програмыг суулгасны дараа сануулагч мэдэгдлийг арилгах болно.</ string>
-     <string name = "hide_stock_patched" translatable = "true">НӨХЦӨЛИЙГ НАСАХ</string>
-     <string name="hide_amoled_patched" translatable="true">AMOLED PATCHED-ИЙГ НУУЦ</string>
-     <string name="hide_lite_patched" translatable="true">LITE PATCHED-Г НУУЦ</string>
-     <string name="hide_wave_patched" translatable="true">ДАЛГАЛГАНЫ НАСАНД ХИЙХИЙГ НУУЦ</string>
+     <string name = "hide_stock_patched" translatable = "true">үндсэн patched-ийг нух</string>
+     <string name="hide_amoled_patched" translatable="true">AMOLED PATCHED-ИЙГ НУУX</string>
+     <string name="hide_lite_patched" translatable="true">LITE PATCHED-Г НУУX</string>
      <string name="close" translatable="true">ХААХ</string>
      <string name="cloned" translatable="true">CLONED</string>
      <string name="spap" translatable="true">SP/AP</string>
      <string name="install" translatable="true">СУУЛГАХ</string>
      <string name="uninstall" translatable="true">УСТГАХ</string>
-     <string name="ignore" translatable="true">ҮЛГҮЙ</string>
+     <string name="ignore" translatable="true">IGNORE</string>
      <string name="delete" translatable="true">УСТГАХ</string>
      <string name = "uninstall_patched" translatable = "true">PATCHED УСТГАХ</ string>
      <string name = "open_settings" translatable = "true">НЭЭЛТТЭЙ Тохиргоо</ string>
-     <string name = "open_patched" translatable = "true">НЭЭЛТТЭЙ НӨХЦӨЛ</ string>
-     <string name="reboot" translatable="true">ДАХИН ДАХИН АЧАХ, ДАХИН АЧАХ</string>
+     <string name = "open_patched" translatable = "true">НЭЭЛТТЭЙ PATCHED</ string>
+     <string name="reboot" translatable="true"> ДАХИН АЧАХ, REBOOT</string>
 </resources>
