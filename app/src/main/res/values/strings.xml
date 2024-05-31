@@ -1005,7 +1005,7 @@
     <string name="settings_title_11" translatable="true">Ajustes</string>
     <string name="about_title_11" translatable="true">Acerca de</string>
     <string name="list_auto_refresh_11" translatable="true">ACTUALIZACIÓN AUTOMÁTICA DE LA LISTA</string>
-    <string name="list_auto_refresh_desc_11" translatable="true">Al activar esta opción, la lista se actualizara automáticamente cada vez que inicie la aplicación.\n\nPuede actualizar la lista manualmente arrastrando la pantalla principal hacia abajo.</string>
+    <string name="list_auto_refresh_desc_11" translatable="true">Al activar esta opción, la lista se actualizará automáticamente cada vez que inicie la aplicación.\n\nPuede actualizar la lista manualmente arrastrando la pantalla principal hacia abajo.</string>
     <string name="force_auto_install_11" translatable="true">FORZAR LA AUTOINSTALACIÓN</string>
     <string name="force_auto_install_desc_11" translatable="true">Al activar esta opción, se instalará automáticamente la aplicación modificada y la actualización una vez descargadas.</string>
     <string name="show_themes_11" translatable="true">TEMAS</string>
@@ -1032,7 +1032,7 @@
     <string name="continue_1_11" translatable="true">CONTINUAR</string>
     <string name="cancel_11" translatable="true">CANCELAR</string>
     <string name="download_11" translatable="true">DESCARGAR</string>
-    <string name="later_11" translatable="true">MAS TARDE</string>
+    <string name="later_11" translatable="true">MÁS TARDE</string>
     <string name="install_now_11" translatable="true">INSTALAR AHORA</string>
     <string name="install_update_11" translatable="true">INSTALAR ACTUALIZACIÓN</string>
     <string name="go_back_11" translatable="true">VOLVER</string>
@@ -1042,7 +1042,7 @@
     <string name="lite_11" translatable="true">LITE</string>
     <string name="experimental_title_11" translatable="true">Experimental</string>
     <string name="experimental_version_11" translatable="true">VERSIÓN EXPERIMENTAL</string>
-    <string name="experimental_version_desc_11" translatable="true">Habilitar esto le permite descargar e instalar la versión experimental de la aplicación parcheada.\n\nEsto incluye funciones alfa, beta y de acceso anticipado que no están disponibles en el parche de stock. Además, no se garantiza estable.</string>
+    <string name="experimental_version_desc_11" translatable="true">Habilitar esto le permite descargar e instalar la versión experimental de la aplicación parcheada.\n\nEsto incluye funciones alfa, beta y de acceso anticipado que no están disponibles en el parche de stock. Además, no se garantiza que sea estable.</string>
     <string name="show_support_11" translatable="true">DEMUESTRE SU APOYO</string>
     <string name="show_support_desc_11" translatable="true">Somos un equipo no corporativo y sin fines de lucro. Las personas como usted nos animan a crear una aplicación para facilitar las cosas, especialmente desde la descarga hasta la instalación del mod.\n\nEstamos invirtiendo todo nuestro tiempo y esfuerzos para hacer las cosas bien. Haremos todo lo posible para continuar desarrollando esta aplicación tanto como podamos.\n\nEstaremos muy agradecidos con tu donación, cualquier monto nos ayudará!</string>
     <string name="maintenance_11" translatable="true">MANTENIMIENTO</string>
