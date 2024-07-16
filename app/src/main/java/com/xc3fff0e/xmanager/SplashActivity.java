@@ -87,21 +87,21 @@ public class SplashActivity extends AppCompatActivity {
 		}
 		else {
 			if (1 == SketchwareUtil.getRandom((int)(0), (int)(4))) {
-				title_splash.setText("It's A Movement");
+				title_splash.setText("Still Kickin'");
 				title_splash.setTextSize((int)25);
 			}
 			else {
 				if (2 == SketchwareUtil.getRandom((int)(0), (int)(4))) {
-					title_splash.setText("We Are Resistance");
+					title_splash.setText("It's A Movement");
 					title_splash.setTextSize((int)25);
 				}
 				else {
 					if (3 == SketchwareUtil.getRandom((int)(0), (int)(4))) {
-						title_splash.setText("Freedom For Everyone");
-						title_splash.setTextSize((int)20);
+						title_splash.setText("We Are Resistance");
+						title_splash.setTextSize((int)25);
 					}
 					else {
-						title_splash.setText("Don't Make Us Popular!");
+						title_splash.setText("Freedom For Everyone");
 						title_splash.setTextSize((int)20);
 					}
 				}
