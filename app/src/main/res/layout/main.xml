@@ -1528,182 +1528,6 @@
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
-				<TextView
-					android:id="@+id/patched_devs"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingTop="8dp"
-					android:paddingRight="8dp"
-					android:text="Patched Developers"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#1DB954" />
-				<TextView
-					android:id="@+id/developer_2"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingRight="8dp"
-					android:paddingBottom="8dp"
-					android:text="xC3FFF0E\nSherlock Holmes (Features &amp; Amoled)\njetfire (Extended Contribution, Android &amp; MacOS)\nMrDude (Retired)"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#FFFFFF" />
-			</LinearLayout>
-			<LinearLayout
-				android:id="@+id/box_about_2"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="10dp"
-				android:layout_marginTop="10dp"
-				android:layout_marginRight="10dp"
-				android:padding="7dp"
-				android:background="#424242"
-				android:orientation="vertical">
-				<TextView
-					android:id="@+id/support_team"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingTop="8dp"
-					android:paddingRight="8dp"
-					android:text="Telegram | Discord | Reddit Team"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#1DB954" />
-				<TextView
-					android:id="@+id/support_1"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingRight="8dp"
-					android:paddingBottom="8dp"
-					android:text="jetfire\nmeech\nRishavG\nSherlock Holmes\njuznem\nCivaaBTW (Discord Helper)\nDominik (Discord Helper)\nParadox (Discord Helper)\nmilindgoel15 (Reddit Moderator) [r/Vanced]\nstiles_stillinski (Reddit Moderator) [r/ApksApps]"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#FFFFFF" />
-			</LinearLayout>
-			<LinearLayout
-				android:id="@+id/box_about_3"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="10dp"
-				android:layout_marginTop="10dp"
-				android:layout_marginRight="10dp"
-				android:padding="7dp"
-				android:background="#424242"
-				android:orientation="vertical">
-				<TextView
-					android:id="@+id/manager_testers"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingTop="8dp"
-					android:paddingRight="8dp"
-					android:text="Patched and Manager Testers"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#1DB954" />
-				<TextView
-					android:id="@+id/testers_1"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingRight="8dp"
-					android:paddingBottom="8dp"
-					android:text="RishavG\nmeech\njetfire\nSherlock Holmes\nWu Tang Clam\nZach\naha\njar3cki\njuznem\nroosphx\n100RABH\nLight Yagami\nTunelover (Mobilism)\nslavrom21 (Monet Icon)\ncryiotic3 (Manager Icon)\nfarish278 (Manager Icon)\nzankyr (Notification Fixed)\nArian04 (Duplicate Attributes)"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#FFFFFF" />
-				<TextView
-					android:id="@+id/manager_hosting"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingTop="8dp"
-					android:paddingRight="8dp"
-					android:text="Manager Database and Hostings"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#1DB954" />
-				<TextView
-					android:id="@+id/hosting_1"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingRight="8dp"
-					android:paddingBottom="8dp"
-					android:text="jetfire\nWu Tang Clam"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#FFFFFF" />
-			</LinearLayout>
-			<LinearLayout
-				android:id="@+id/box_about_4"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="10dp"
-				android:layout_marginTop="10dp"
-				android:layout_marginRight="10dp"
-				android:padding="7dp"
-				android:background="#424242"
-				android:orientation="vertical">
-				<TextView
-					android:id="@+id/mobilism_team"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingTop="8dp"
-					android:paddingRight="8dp"
-					android:text="Mobilism Team"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#1DB954" />
-				<TextView
-					android:id="@+id/mobilism_1"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingRight="8dp"
-					android:paddingBottom="8dp"
-					android:text="Balatan\nRishavG\nmeech\nTunelover"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#FFFFFF" />
-			</LinearLayout>
-			<LinearLayout
-				android:id="@+id/box_about_5"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="10dp"
-				android:layout_marginTop="10dp"
-				android:layout_marginRight="10dp"
-				android:padding="7dp"
-				android:background="#424242"
-				android:orientation="vertical">
-				<TextView
-					android:id="@+id/forum_team"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingTop="8dp"
-					android:paddingRight="8dp"
-					android:text="FORUM.APK-RELEASE.NET Team"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#1DB954" />
-				<TextView
-					android:id="@+id/forum_1"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:paddingLeft="8dp"
-					android:paddingRight="8dp"
-					android:paddingBottom="8dp"
-					android:text="Balatan"
-					android:textSize="14sp"
-					android:textStyle="bold"
-					android:textColor="#FFFFFF" />
 			</LinearLayout>
 			<LinearLayout
 				android:id="@+id/box_about_6"
@@ -1997,7 +1821,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="5dp"
-					android:text="PetFix | Snapdragon845GMS | Zkyclad"
+					android:text="PetFix | Snapdragon845GMS | Zkyclad | c-franco"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -2680,6 +2504,28 @@
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
 					android:text="askadityapandey"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_45"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Mongolian Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_45"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:text="Madvellony"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
