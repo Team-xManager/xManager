@@ -9,7 +9,7 @@
 | **Status** | <img src="https://img.shields.io/github/release-date/xManager-App/xManager?label=UPDATED%20SINCE&style=for-the-badge"></br><img src="https://img.shields.io/github/v/tag/xManager-App/xManager?label=LATEST%20VERSION&style=for-the-badge"> |
 | :-------------: | :-------------: |
 | **Download Milestone** | **<img src="https://img.shields.io/github/downloads/xManager-App/xManager/total?label=OMNIBUS%20(ACTIVE)&style=for-the-badge"></br><img src="https://img.shields.io/badge/ORIGINS%20(SHUTDOWN)-1.1M-red.svg?style=for-the-badge"></br><img src="https://img.shields.io/badge/LEGACY%20(SHUTDOWN)-400K-red.svg?style=for-the-badge">** |
-| **Miscellaneous** | **<a href="https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones"><img src="https://img.shields.io/badge/Roadmaps%20&%20Changelogs-Click%20Here-white.svg?style=for-the-badge"/></br><a href="https://www.virustotal.com/gui/file/75d294fddbdb6cca8d366f85ed4af34d72fa10ac451844be33c0e296030dfa32/detection"><img src="https://img.shields.io/badge/VirusTotal%20Analysis-Click%20Here-blue.svg?style=for-the-badge"/>** |
+| **Miscellaneous** | **<a href="https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones"><img src="https://img.shields.io/badge/Roadmaps%20&%20Changelogs-Click%20Here-white.svg?style=for-the-badge"/></br><a href="https://www.virustotal.com/gui/file/ac59023a178aa231a5a2ab35fa3449c7e3300550ba190daf58405acfd1643785/detection"><img src="https://img.shields.io/badge/VirusTotal%20Analysis-Click%20Here-blue.svg?style=for-the-badge"/>** |
 | **Trust Seal** | **<a href="https://monitor2025.sucuri.net/m/verify/?r=ccceaab79b44b4835a6a85d916bf5613b9c98436db"><img src="https://i.ibb.co/vLvdNCR/trustseal.gif"/>** |
 | **Donation/Sponsor** | **[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I3I0IPJ3W)** |
 
@@ -65,8 +65,6 @@ We will support the app as long as we can. Internal improvements may not be guar
 | **The Team**  | **Names/Alias** |
 | ------------- | ------------- |
 | **Developer** | xC3FFF0E |
-| **Manager Hosting Links** | jetfire</br>Wu Tang Clam |
-| **Contributors** | RishavG</br>meech</br>jetfire</br>Sherlock Holmes</br>Wu Tang Clam</br>Zach</br>aha</br>100RABH</br>juznem</br>Light Yagami</br>Tunelover (Mobilism Team)</br>jar3cki (Manager Tester)</br>slavrom21 (Monet Icon)</br>cryiotic3 (Manager Icon)</br>farish278 (Manager Icon)</br>zankyr (Notification Fixed)</br>Arian04 (Duplicate Attributes)</br>roosphx (Login Fixed) |
 
 ---
 
@@ -84,7 +82,7 @@ We will support the app as long as we can. Internal improvements may not be guar
 | **Romanian Translation**              | NACH \| f9branza \| StephenTheMoldovan |
 | **Russian Translation**               | Pegioner \| vanja-san |
 | **Slovenian Translation**             | MysticX |
-| **Spanish - Spain Translation**       | PetFix \| Snapdragon845GMS \| Zkyclad |
+| **Spanish - Spain Translation**       | PetFix \| Snapdragon845GMS \| Zkyclad \| c-franco |
 | **Turkish Translation**               | Berkay \| mikropsoft |
 | **Ukrainian Translation**             | NIKITA🇺🇦[beryllium] #PocoForEver |
 | **Korean Translation**                | Apious \| Annyeong-One |
@@ -116,6 +114,7 @@ We will support the app as long as we can. Internal improvements may not be guar
 | **Malayalam Translation** | TheChilledBuffalo |
 | **Croatian Translation** | mrki1111 |
 | **Hindi Translation** | askadityapandey |
+| **Mongolian Translation** | Madvellony |
 
 </div>
 
