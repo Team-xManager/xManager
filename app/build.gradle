@@ -12,7 +12,7 @@ android {
 		minSdkVersion 21
 		targetSdkVersion 28
 		versionCode 210209
-		versionName "5.5"
+		versionName "5.6"
 	}
 	
 	buildTypes {
