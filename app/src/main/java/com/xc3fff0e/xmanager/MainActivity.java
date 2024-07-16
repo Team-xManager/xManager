@@ -345,10 +345,6 @@ public class MainActivity extends AppCompatActivity {
 	private LinearLayout box_about_header;
 	private LinearLayout box_about_sub;
 	private LinearLayout box_about_1;
-	private LinearLayout box_about_2;
-	private LinearLayout box_about_3;
-	private LinearLayout box_about_4;
-	private LinearLayout box_about_5;
 	private LinearLayout box_about_6;
 	private LinearLayout box_about_7;
 	private TextView contributors;
@@ -359,18 +355,6 @@ public class MainActivity extends AppCompatActivity {
 	private TextView sub_title;
 	private TextView xmanager_dev;
 	private TextView developer_1;
-	private TextView patched_devs;
-	private TextView developer_2;
-	private TextView support_team;
-	private TextView support_1;
-	private TextView manager_testers;
-	private TextView testers_1;
-	private TextView manager_hosting;
-	private TextView hosting_1;
-	private TextView mobilism_team;
-	private TextView mobilism_1;
-	private TextView forum_team;
-	private TextView forum_1;
 	private TextView manager_lang_13;
 	private TextView translator_13;
 	private TextView manager_lang_1;
@@ -459,6 +443,8 @@ public class MainActivity extends AppCompatActivity {
 	private TextView translator_43;
 	private TextView manager_lang_44;
 	private TextView translator_44;
+	private TextView manager_lang_45;
+	private TextView translator_45;
 	private TextView manager_donors;
 	private TextView donors_1;
 	private ScrollView main_scroll_body;
@@ -769,10 +755,6 @@ public class MainActivity extends AppCompatActivity {
 		box_about_header = findViewById(R.id.box_about_header);
 		box_about_sub = findViewById(R.id.box_about_sub);
 		box_about_1 = findViewById(R.id.box_about_1);
-		box_about_2 = findViewById(R.id.box_about_2);
-		box_about_3 = findViewById(R.id.box_about_3);
-		box_about_4 = findViewById(R.id.box_about_4);
-		box_about_5 = findViewById(R.id.box_about_5);
 		box_about_6 = findViewById(R.id.box_about_6);
 		box_about_7 = findViewById(R.id.box_about_7);
 		contributors = findViewById(R.id.contributors);
@@ -783,18 +765,6 @@ public class MainActivity extends AppCompatActivity {
 		sub_title = findViewById(R.id.sub_title);
 		xmanager_dev = findViewById(R.id.xmanager_dev);
 		developer_1 = findViewById(R.id.developer_1);
-		patched_devs = findViewById(R.id.patched_devs);
-		developer_2 = findViewById(R.id.developer_2);
-		support_team = findViewById(R.id.support_team);
-		support_1 = findViewById(R.id.support_1);
-		manager_testers = findViewById(R.id.manager_testers);
-		testers_1 = findViewById(R.id.testers_1);
-		manager_hosting = findViewById(R.id.manager_hosting);
-		hosting_1 = findViewById(R.id.hosting_1);
-		mobilism_team = findViewById(R.id.mobilism_team);
-		mobilism_1 = findViewById(R.id.mobilism_1);
-		forum_team = findViewById(R.id.forum_team);
-		forum_1 = findViewById(R.id.forum_1);
 		manager_lang_13 = findViewById(R.id.manager_lang_13);
 		translator_13 = findViewById(R.id.translator_13);
 		manager_lang_1 = findViewById(R.id.manager_lang_1);
@@ -883,6 +853,8 @@ public class MainActivity extends AppCompatActivity {
 		translator_43 = findViewById(R.id.translator_43);
 		manager_lang_44 = findViewById(R.id.manager_lang_44);
 		translator_44 = findViewById(R.id.translator_44);
+		manager_lang_45 = findViewById(R.id.manager_lang_45);
+		translator_45 = findViewById(R.id.translator_45);
 		manager_donors = findViewById(R.id.manager_donors);
 		donors_1 = findViewById(R.id.donors_1);
 		main_scroll_body = findViewById(R.id.main_scroll_body);
@@ -1664,6 +1636,35 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 		
+		force_auto_install_switch.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				try {
+						if (CHECK == 0) {
+								CHECK = 1;
+								Timer = new TimerTask() {
+										@Override
+										public void run() {
+												runOnUiThread(new Runnable() {
+														@Override
+														public void run() {
+																CHECK = 0;
+														}
+												});
+										}
+								};
+								_timer.schedule(Timer, (int)(3000));
+								_Hide_Reminder();
+						}
+						else {
+						}
+				}
+				catch(Exception e) {
+				}
+				
+			}
+		});
+		
 		force_auto_install_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
@@ -1680,6 +1681,35 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 		
+		disable_reward_ad_switch.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				try {
+						if (CHECK == 0) {
+								CHECK = 1;
+								Timer = new TimerTask() {
+										@Override
+										public void run() {
+												runOnUiThread(new Runnable() {
+														@Override
+														public void run() {
+																CHECK = 0;
+														}
+												});
+										}
+								};
+								_timer.schedule(Timer, (int)(3000));
+								_Hide_Reminder();
+						}
+						else {
+						}
+				}
+				catch(Exception e) {
+				}
+				
+			}
+		});
+		
 		disable_reward_ad_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
@@ -1691,6 +1721,35 @@ public class MainActivity extends AppCompatActivity {
 					DISABLE_REWARD_AD.edit().putString("REWARD_AD", "OFF").commit();
 				}
 				COUNTER = 1;
+			}
+		});
+		
+		disable_notification_switch.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				try {
+						if (CHECK == 0) {
+								CHECK = 1;
+								Timer = new TimerTask() {
+										@Override
+										public void run() {
+												runOnUiThread(new Runnable() {
+														@Override
+														public void run() {
+																CHECK = 0;
+														}
+												});
+										}
+								};
+								_timer.schedule(Timer, (int)(3000));
+								_Hide_Reminder();
+						}
+						else {
+						}
+				}
+				catch(Exception e) {
+				}
+				
 			}
 		});
 		
@@ -2260,6 +2319,13 @@ public class MainActivity extends AppCompatActivity {
 																																																LANGUAGE.edit().putString("LANGUAGE", "43").commit();
 																																																COUNTER = 1;
 																																																_Language_UI();
+																																															}
+																																															else {
+																																																if (_position == 44) {
+																																																	LANGUAGE.edit().putString("LANGUAGE", "44").commit();
+																																																	COUNTER = 1;
+																																																	_Language_UI();
+																																																}
 																																															}
 																																														}
 																																													}
@@ -6321,10 +6387,6 @@ public class MainActivity extends AppCompatActivity {
 																	box_faq.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
 																	box_about_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
 																	box_about_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
-																	box_about_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
-																	box_about_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
-																	box_about_4.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
-																	box_about_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
 																	box_about_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
 																	box_about_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
 																	box_about_sub.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
@@ -6354,12 +6416,6 @@ public class MainActivity extends AppCompatActivity {
 																	reboot.setTextColor(0xFFFFFFFF);
 																	reset_preferences.setTextColor(0xFFFFFFFF);
 																	xmanager_dev.setTextColor(0xFFF2F3F4);
-																	patched_devs.setTextColor(0xFFF2F3F4);
-																	support_team.setTextColor(0xFFF2F3F4);
-																	manager_testers.setTextColor(0xFFF2F3F4);
-																	manager_hosting.setTextColor(0xFFF2F3F4);
-																	mobilism_team.setTextColor(0xFFF2F3F4);
-																	forum_team.setTextColor(0xFFF2F3F4);
 																	manager_lang_1.setTextColor(0xFFF2F3F4);
 																	manager_lang_2.setTextColor(0xFFF2F3F4);
 																	manager_lang_3.setTextColor(0xFFF2F3F4);
@@ -6404,6 +6460,7 @@ public class MainActivity extends AppCompatActivity {
 																	manager_lang_42.setTextColor(0xFFF2F3F4);
 																	manager_lang_43.setTextColor(0xFFF2F3F4);
 																	manager_lang_44.setTextColor(0xFFF2F3F4);
+																	manager_lang_45.setTextColor(0xFFF2F3F4);
 																	manager_donors.setTextColor(0xFFF2F3F4);
 																	contributors.setTextColor(0xFF1B5E20);
 																	title_1.setTextColor(0xFFF2F3F4);
@@ -6456,10 +6513,6 @@ public class MainActivity extends AppCompatActivity {
 																		box_faq.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
 																		box_about_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
 																		box_about_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
-																		box_about_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
-																		box_about_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
-																		box_about_4.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
-																		box_about_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
 																		box_about_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
 																		box_about_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
 																		box_about_sub.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
@@ -6489,12 +6542,6 @@ public class MainActivity extends AppCompatActivity {
 																		reboot.setTextColor(0xFFFFFFFF);
 																		reset_preferences.setTextColor(0xFFFFFFFF);
 																		xmanager_dev.setTextColor(0xFFF2F3F4);
-																		patched_devs.setTextColor(0xFFF2F3F4);
-																		support_team.setTextColor(0xFFF2F3F4);
-																		manager_testers.setTextColor(0xFFF2F3F4);
-																		manager_hosting.setTextColor(0xFFF2F3F4);
-																		mobilism_team.setTextColor(0xFFF2F3F4);
-																		forum_team.setTextColor(0xFFF2F3F4);
 																		manager_lang_1.setTextColor(0xFFF2F3F4);
 																		manager_lang_2.setTextColor(0xFFF2F3F4);
 																		manager_lang_3.setTextColor(0xFFF2F3F4);
@@ -6539,6 +6586,7 @@ public class MainActivity extends AppCompatActivity {
 																		manager_lang_42.setTextColor(0xFFF2F3F4);
 																		manager_lang_43.setTextColor(0xFFF2F3F4);
 																		manager_lang_44.setTextColor(0xFFF2F3F4);
+																		manager_lang_45.setTextColor(0xFFF2F3F4);
 																		manager_donors.setTextColor(0xFFF2F3F4);
 																		contributors.setTextColor(0xFF00008B);
 																		title_1.setTextColor(0xFFF2F3F4);
@@ -6591,10 +6639,6 @@ public class MainActivity extends AppCompatActivity {
 																			box_faq.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
 																			box_about_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
 																			box_about_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
-																			box_about_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
-																			box_about_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
-																			box_about_4.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
-																			box_about_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
 																			box_about_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
 																			box_about_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
 																			box_about_sub.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
@@ -6624,12 +6668,6 @@ public class MainActivity extends AppCompatActivity {
 																			reboot.setTextColor(0xFFFFFFFF);
 																			reset_preferences.setTextColor(0xFFFFFFFF);
 																			xmanager_dev.setTextColor(0xFFF2F3F4);
-																			patched_devs.setTextColor(0xFFF2F3F4);
-																			support_team.setTextColor(0xFFF2F3F4);
-																			manager_testers.setTextColor(0xFFF2F3F4);
-																			manager_hosting.setTextColor(0xFFF2F3F4);
-																			mobilism_team.setTextColor(0xFFF2F3F4);
-																			forum_team.setTextColor(0xFFF2F3F4);
 																			manager_lang_1.setTextColor(0xFFF2F3F4);
 																			manager_lang_2.setTextColor(0xFFF2F3F4);
 																			manager_lang_3.setTextColor(0xFFF2F3F4);
@@ -6674,6 +6712,7 @@ public class MainActivity extends AppCompatActivity {
 																			manager_lang_42.setTextColor(0xFFF2F3F4);
 																			manager_lang_43.setTextColor(0xFFF2F3F4);
 																			manager_lang_44.setTextColor(0xFFF2F3F4);
+																			manager_lang_45.setTextColor(0xFFF2F3F4);
 																			manager_donors.setTextColor(0xFFF2F3F4);
 																			contributors.setTextColor(0xFF8B0000);
 																			title_1.setTextColor(0xFFF2F3F4);
@@ -6726,10 +6765,6 @@ public class MainActivity extends AppCompatActivity {
 																				box_faq.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
 																				box_about_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
 																				box_about_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
-																				box_about_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
-																				box_about_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
-																				box_about_4.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
-																				box_about_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
 																				box_about_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
 																				box_about_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
 																				box_about_sub.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
@@ -6759,12 +6794,6 @@ public class MainActivity extends AppCompatActivity {
 																				reboot.setTextColor(0xFFFFFFFF);
 																				reset_preferences.setTextColor(0xFFFFFFFF);
 																				xmanager_dev.setTextColor(0xFFF2F3F4);
-																				patched_devs.setTextColor(0xFFF2F3F4);
-																				support_team.setTextColor(0xFFF2F3F4);
-																				manager_testers.setTextColor(0xFFF2F3F4);
-																				manager_hosting.setTextColor(0xFFF2F3F4);
-																				mobilism_team.setTextColor(0xFFF2F3F4);
-																				forum_team.setTextColor(0xFFF2F3F4);
 																				manager_lang_1.setTextColor(0xFFF2F3F4);
 																				manager_lang_2.setTextColor(0xFFF2F3F4);
 																				manager_lang_3.setTextColor(0xFFF2F3F4);
@@ -6809,6 +6838,7 @@ public class MainActivity extends AppCompatActivity {
 																				manager_lang_42.setTextColor(0xFFF2F3F4);
 																				manager_lang_43.setTextColor(0xFFF2F3F4);
 																				manager_lang_44.setTextColor(0xFFF2F3F4);
+																				manager_lang_45.setTextColor(0xFFF2F3F4);
 																				manager_donors.setTextColor(0xFFF2F3F4);
 																				contributors.setTextColor(0xFFFF8C00);
 																				title_1.setTextColor(0xFFF2F3F4);
@@ -6861,10 +6891,6 @@ public class MainActivity extends AppCompatActivity {
 																					box_faq.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
 																					box_about_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
 																					box_about_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
-																					box_about_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
-																					box_about_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
-																					box_about_4.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
-																					box_about_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
 																					box_about_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
 																					box_about_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
 																					box_about_sub.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
@@ -6894,12 +6920,6 @@ public class MainActivity extends AppCompatActivity {
 																					reboot.setTextColor(0xFFFFFFFF);
 																					reset_preferences.setTextColor(0xFFFFFFFF);
 																					xmanager_dev.setTextColor(0xFFF2F3F4);
-																					patched_devs.setTextColor(0xFFF2F3F4);
-																					support_team.setTextColor(0xFFF2F3F4);
-																					manager_testers.setTextColor(0xFFF2F3F4);
-																					manager_hosting.setTextColor(0xFFF2F3F4);
-																					mobilism_team.setTextColor(0xFFF2F3F4);
-																					forum_team.setTextColor(0xFFF2F3F4);
 																					manager_lang_1.setTextColor(0xFFF2F3F4);
 																					manager_lang_2.setTextColor(0xFFF2F3F4);
 																					manager_lang_3.setTextColor(0xFFF2F3F4);
@@ -6944,6 +6964,7 @@ public class MainActivity extends AppCompatActivity {
 																					manager_lang_42.setTextColor(0xFFF2F3F4);
 																					manager_lang_43.setTextColor(0xFFF2F3F4);
 																					manager_lang_44.setTextColor(0xFFF2F3F4);
+																					manager_lang_45.setTextColor(0xFFF2F3F4);
 																					manager_donors.setTextColor(0xFFF2F3F4);
 																					contributors.setTextColor(0xFFAA336A);
 																					title_1.setTextColor(0xFFF2F3F4);
@@ -6996,10 +7017,6 @@ public class MainActivity extends AppCompatActivity {
 																						box_faq.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
 																						box_about_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
 																						box_about_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
-																						box_about_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
-																						box_about_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
-																						box_about_4.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
-																						box_about_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
 																						box_about_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
 																						box_about_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
 																						box_about_sub.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
@@ -7029,12 +7046,6 @@ public class MainActivity extends AppCompatActivity {
 																						reboot.setTextColor(0xFFFFFFFF);
 																						reset_preferences.setTextColor(0xFFFFFFFF);
 																						xmanager_dev.setTextColor(0xFFF2F3F4);
-																						patched_devs.setTextColor(0xFFF2F3F4);
-																						support_team.setTextColor(0xFFF2F3F4);
-																						manager_testers.setTextColor(0xFFF2F3F4);
-																						manager_hosting.setTextColor(0xFFF2F3F4);
-																						mobilism_team.setTextColor(0xFFF2F3F4);
-																						forum_team.setTextColor(0xFFF2F3F4);
 																						manager_lang_1.setTextColor(0xFFF2F3F4);
 																						manager_lang_2.setTextColor(0xFFF2F3F4);
 																						manager_lang_3.setTextColor(0xFFF2F3F4);
@@ -7079,6 +7090,7 @@ public class MainActivity extends AppCompatActivity {
 																						manager_lang_42.setTextColor(0xFFF2F3F4);
 																						manager_lang_43.setTextColor(0xFFF2F3F4);
 																						manager_lang_44.setTextColor(0xFFF2F3F4);
+																						manager_lang_45.setTextColor(0xFFF2F3F4);
 																						manager_donors.setTextColor(0xFFF2F3F4);
 																						contributors.setTextColor(0xFF301934);
 																						title_1.setTextColor(0xFFF2F3F4);
@@ -7131,10 +7143,6 @@ public class MainActivity extends AppCompatActivity {
 																							box_faq.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
 																							box_about_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
 																							box_about_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
-																							box_about_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
-																							box_about_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
-																							box_about_4.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
-																							box_about_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
 																							box_about_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
 																							box_about_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
 																							box_about_sub.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
@@ -7164,12 +7172,6 @@ public class MainActivity extends AppCompatActivity {
 																							reboot.setTextColor(0xFFFFFFFF);
 																							reset_preferences.setTextColor(0xFFFFFFFF);
 																							xmanager_dev.setTextColor(0xFFF2F3F4);
-																							patched_devs.setTextColor(0xFFF2F3F4);
-																							support_team.setTextColor(0xFFF2F3F4);
-																							manager_testers.setTextColor(0xFFF2F3F4);
-																							manager_hosting.setTextColor(0xFFF2F3F4);
-																							mobilism_team.setTextColor(0xFFF2F3F4);
-																							forum_team.setTextColor(0xFFF2F3F4);
 																							manager_lang_1.setTextColor(0xFFF2F3F4);
 																							manager_lang_2.setTextColor(0xFFF2F3F4);
 																							manager_lang_3.setTextColor(0xFFF2F3F4);
@@ -7214,6 +7216,7 @@ public class MainActivity extends AppCompatActivity {
 																							manager_lang_42.setTextColor(0xFFF2F3F4);
 																							manager_lang_43.setTextColor(0xFFF2F3F4);
 																							manager_lang_44.setTextColor(0xFFF2F3F4);
+																							manager_lang_45.setTextColor(0xFFF2F3F4);
 																							manager_donors.setTextColor(0xFFF2F3F4);
 																							contributors.setTextColor(0xFF008B8B);
 																							title_1.setTextColor(0xFFF2F3F4);
@@ -7990,32 +7993,16 @@ public class MainActivity extends AppCompatActivity {
 		e = null;
 		Animation f;
 		f = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		f.setDuration(600); box_about_2.startAnimation(f);
+		f.setDuration(600); box_about_6.startAnimation(f);
 		f = null;
 		Animation g;
 		g = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		g.setDuration(700); box_about_3.startAnimation(g);
+		g.setDuration(700); box_about_7.startAnimation(g);
 		g = null;
 		Animation h;
 		h = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		h.setDuration(800); box_about_4.startAnimation(h);
+		h.setDuration(800); contributors.startAnimation(h);
 		h = null;
-		Animation i;
-		i = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		i.setDuration(900); box_about_5.startAnimation(i);
-		i = null;
-		Animation j;
-		j = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		j.setDuration(1000); box_about_6.startAnimation(j);
-		j = null;
-		Animation k;
-		k = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		k.setDuration(1100); box_about_7.startAnimation(k);
-		k = null;
-		Animation l;
-		l = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		l.setDuration(1200); contributors.startAnimation(l);
-		l = null;
 	}
 	
 	
@@ -8506,7 +8493,7 @@ public class MainActivity extends AppCompatActivity {
 																																								intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
 																																								startActivity(intent);
-																																								_Reminder();
+																																								_Install_Reminder();
 																																						}
 																																						catch(Exception e) {
 																																						}
@@ -8515,7 +8502,7 @@ public class MainActivity extends AppCompatActivity {
 																																								Intent intent = new Intent(Intent.ACTION_VIEW);
 																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
 																																								startActivity(intent);
-																																								_Reminder();
+																																								_Install_Reminder();
 																																						}
 																																						catch(Exception e) {
 																																						}
@@ -9000,12 +8987,6 @@ public class MainActivity extends AppCompatActivity {
 			maintenance.setText(R.string.maintenance);
 			maintenance_desc.setText(R.string.maintenance_desc);
 			xmanager_dev.setText(R.string.xmanager_dev);
-			patched_devs.setText(R.string.patched_devs);
-			support_team.setText(R.string.support_team);
-			manager_testers.setText(R.string.manager_testers);
-			manager_hosting.setText(R.string.manager_hosting);
-			mobilism_team.setText(R.string.mobilism_team);
-			forum_team.setText(R.string.forum_team);
 			contributors.setText(R.string.contributors);
 			download_selected.setText(R.string.download_selected);
 			download_ready.setText(R.string.download_ready);
@@ -9118,12 +9099,6 @@ public class MainActivity extends AppCompatActivity {
 				maintenance.setText(R.string.maintenance_01);
 				maintenance_desc.setText(R.string.maintenance_desc_01);
 				xmanager_dev.setText(R.string.xmanager_dev_01);
-				patched_devs.setText(R.string.patched_devs_01);
-				support_team.setText(R.string.support_team_01);
-				manager_testers.setText(R.string.manager_testers_01);
-				manager_hosting.setText(R.string.manager_hosting_01);
-				mobilism_team.setText(R.string.mobilism_team_01);
-				forum_team.setText(R.string.forum_team_01);
 				contributors.setText(R.string.contributors_01);
 				download_selected.setText(R.string.download_selected_01);
 				download_ready.setText(R.string.download_ready_01);
@@ -9235,12 +9210,6 @@ public class MainActivity extends AppCompatActivity {
 					maintenance.setText(R.string.maintenance_02);
 					maintenance_desc.setText(R.string.maintenance_desc_02);
 					xmanager_dev.setText(R.string.xmanager_dev_02);
-					patched_devs.setText(R.string.patched_devs_02);
-					support_team.setText(R.string.support_team_02);
-					manager_testers.setText(R.string.manager_testers_02);
-					manager_hosting.setText(R.string.manager_hosting_02);
-					mobilism_team.setText(R.string.mobilism_team_02);
-					forum_team.setText(R.string.forum_team_02);
 					contributors.setText(R.string.contributors_02);
 					download_selected.setText(R.string.download_selected_02);
 					download_ready.setText(R.string.download_ready_02);
@@ -9352,12 +9321,6 @@ public class MainActivity extends AppCompatActivity {
 						maintenance.setText(R.string.maintenance_03);
 						maintenance_desc.setText(R.string.maintenance_desc_03);
 						xmanager_dev.setText(R.string.xmanager_dev_03);
-						patched_devs.setText(R.string.patched_devs_03);
-						support_team.setText(R.string.support_team_03);
-						manager_testers.setText(R.string.manager_testers_03);
-						manager_hosting.setText(R.string.manager_hosting_03);
-						mobilism_team.setText(R.string.mobilism_team_03);
-						forum_team.setText(R.string.forum_team_03);
 						contributors.setText(R.string.contributors_03);
 						download_selected.setText(R.string.download_selected_03);
 						download_ready.setText(R.string.download_ready_03);
@@ -9469,12 +9432,6 @@ public class MainActivity extends AppCompatActivity {
 							maintenance.setText(R.string.maintenance_04);
 							maintenance_desc.setText(R.string.maintenance_desc_04);
 							xmanager_dev.setText(R.string.xmanager_dev_04);
-							patched_devs.setText(R.string.patched_devs_04);
-							support_team.setText(R.string.support_team_04);
-							manager_testers.setText(R.string.manager_testers_04);
-							manager_hosting.setText(R.string.manager_hosting_04);
-							mobilism_team.setText(R.string.mobilism_team_04);
-							forum_team.setText(R.string.forum_team_04);
 							contributors.setText(R.string.contributors_04);
 							download_selected.setText(R.string.download_selected_04);
 							download_ready.setText(R.string.download_ready_04);
@@ -9586,12 +9543,6 @@ public class MainActivity extends AppCompatActivity {
 								maintenance.setText(R.string.maintenance_05);
 								maintenance_desc.setText(R.string.maintenance_desc_05);
 								xmanager_dev.setText(R.string.xmanager_dev_05);
-								patched_devs.setText(R.string.patched_devs_05);
-								support_team.setText(R.string.support_team_05);
-								manager_testers.setText(R.string.manager_testers_05);
-								manager_hosting.setText(R.string.manager_hosting_05);
-								mobilism_team.setText(R.string.mobilism_team_05);
-								forum_team.setText(R.string.forum_team_05);
 								contributors.setText(R.string.contributors_05);
 								download_selected.setText(R.string.download_selected_05);
 								download_ready.setText(R.string.download_ready_05);
@@ -9703,12 +9654,6 @@ public class MainActivity extends AppCompatActivity {
 									maintenance.setText(R.string.maintenance_06);
 									maintenance_desc.setText(R.string.maintenance_desc_06);
 									xmanager_dev.setText(R.string.xmanager_dev_06);
-									patched_devs.setText(R.string.patched_devs_06);
-									support_team.setText(R.string.support_team_06);
-									manager_testers.setText(R.string.manager_testers_06);
-									manager_hosting.setText(R.string.manager_hosting_06);
-									mobilism_team.setText(R.string.mobilism_team_06);
-									forum_team.setText(R.string.forum_team_06);
 									contributors.setText(R.string.contributors_06);
 									download_selected.setText(R.string.download_selected_06);
 									download_ready.setText(R.string.download_ready_06);
@@ -9820,12 +9765,6 @@ public class MainActivity extends AppCompatActivity {
 										maintenance.setText(R.string.maintenance_07);
 										maintenance_desc.setText(R.string.maintenance_desc_07);
 										xmanager_dev.setText(R.string.xmanager_dev_07);
-										patched_devs.setText(R.string.patched_devs_07);
-										support_team.setText(R.string.support_team_07);
-										manager_testers.setText(R.string.manager_testers_07);
-										manager_hosting.setText(R.string.manager_hosting_07);
-										mobilism_team.setText(R.string.mobilism_team_07);
-										forum_team.setText(R.string.forum_team_07);
 										contributors.setText(R.string.contributors_07);
 										download_selected.setText(R.string.download_selected_07);
 										download_ready.setText(R.string.download_ready_07);
@@ -9937,12 +9876,6 @@ public class MainActivity extends AppCompatActivity {
 											maintenance.setText(R.string.maintenance_08);
 											maintenance_desc.setText(R.string.maintenance_desc_08);
 											xmanager_dev.setText(R.string.xmanager_dev_08);
-											patched_devs.setText(R.string.patched_devs_08);
-											support_team.setText(R.string.support_team_08);
-											manager_testers.setText(R.string.manager_testers_08);
-											manager_hosting.setText(R.string.manager_hosting_08);
-											mobilism_team.setText(R.string.mobilism_team_08);
-											forum_team.setText(R.string.forum_team_08);
 											contributors.setText(R.string.contributors_08);
 											download_selected.setText(R.string.download_selected_08);
 											download_ready.setText(R.string.download_ready_08);
@@ -10054,12 +9987,6 @@ public class MainActivity extends AppCompatActivity {
 												maintenance.setText(R.string.maintenance_09);
 												maintenance_desc.setText(R.string.maintenance_desc_09);
 												xmanager_dev.setText(R.string.xmanager_dev_09);
-												patched_devs.setText(R.string.patched_devs_09);
-												support_team.setText(R.string.support_team_09);
-												manager_testers.setText(R.string.manager_testers_09);
-												manager_hosting.setText(R.string.manager_hosting_09);
-												mobilism_team.setText(R.string.mobilism_team_09);
-												forum_team.setText(R.string.forum_team_09);
 												contributors.setText(R.string.contributors_09);
 												download_selected.setText(R.string.download_selected_09);
 												download_ready.setText(R.string.download_ready_09);
@@ -10171,12 +10098,6 @@ public class MainActivity extends AppCompatActivity {
 													maintenance.setText(R.string.maintenance_10);
 													maintenance_desc.setText(R.string.maintenance_desc_10);
 													xmanager_dev.setText(R.string.xmanager_dev_10);
-													patched_devs.setText(R.string.patched_devs_10);
-													support_team.setText(R.string.support_team_10);
-													manager_testers.setText(R.string.manager_testers_10);
-													manager_hosting.setText(R.string.manager_hosting_10);
-													mobilism_team.setText(R.string.mobilism_team_10);
-													forum_team.setText(R.string.forum_team_10);
 													contributors.setText(R.string.contributors_10);
 													download_selected.setText(R.string.download_selected_10);
 													download_ready.setText(R.string.download_ready_10);
@@ -10288,12 +10209,6 @@ public class MainActivity extends AppCompatActivity {
 														maintenance.setText(R.string.maintenance_11);
 														maintenance_desc.setText(R.string.maintenance_desc_11);
 														xmanager_dev.setText(R.string.xmanager_dev_11);
-														patched_devs.setText(R.string.patched_devs_11);
-														support_team.setText(R.string.support_team_11);
-														manager_testers.setText(R.string.manager_testers_11);
-														manager_hosting.setText(R.string.manager_hosting_11);
-														mobilism_team.setText(R.string.mobilism_team_11);
-														forum_team.setText(R.string.forum_team_11);
 														contributors.setText(R.string.contributors_11);
 														download_selected.setText(R.string.download_selected_11);
 														download_ready.setText(R.string.download_ready_11);
@@ -10405,12 +10320,6 @@ public class MainActivity extends AppCompatActivity {
 															maintenance.setText(R.string.maintenance_12);
 															maintenance_desc.setText(R.string.maintenance_desc_12);
 															xmanager_dev.setText(R.string.xmanager_dev_12);
-															patched_devs.setText(R.string.patched_devs_12);
-															support_team.setText(R.string.support_team_12);
-															manager_testers.setText(R.string.manager_testers_12);
-															manager_hosting.setText(R.string.manager_hosting_12);
-															mobilism_team.setText(R.string.mobilism_team_12);
-															forum_team.setText(R.string.forum_team_12);
 															contributors.setText(R.string.contributors_12);
 															download_selected.setText(R.string.download_selected_12);
 															download_ready.setText(R.string.download_ready_12);
@@ -10522,12 +10431,6 @@ public class MainActivity extends AppCompatActivity {
 																maintenance.setText(R.string.maintenance_13);
 																maintenance_desc.setText(R.string.maintenance_desc_13);
 																xmanager_dev.setText(R.string.xmanager_dev_13);
-																patched_devs.setText(R.string.patched_devs_13);
-																support_team.setText(R.string.support_team_13);
-																manager_testers.setText(R.string.manager_testers_13);
-																manager_hosting.setText(R.string.manager_hosting_13);
-																mobilism_team.setText(R.string.mobilism_team_13);
-																forum_team.setText(R.string.forum_team_13);
 																contributors.setText(R.string.contributors_13);
 																download_selected.setText(R.string.download_selected_13);
 																download_ready.setText(R.string.download_ready_13);
@@ -10639,12 +10542,6 @@ public class MainActivity extends AppCompatActivity {
 																	maintenance.setText(R.string.maintenance_14);
 																	maintenance_desc.setText(R.string.maintenance_desc_14);
 																	xmanager_dev.setText(R.string.xmanager_dev_14);
-																	patched_devs.setText(R.string.patched_devs_14);
-																	support_team.setText(R.string.support_team_14);
-																	manager_testers.setText(R.string.manager_testers_14);
-																	manager_hosting.setText(R.string.manager_hosting_14);
-																	mobilism_team.setText(R.string.mobilism_team_14);
-																	forum_team.setText(R.string.forum_team_14);
 																	contributors.setText(R.string.contributors_14);
 																	download_selected.setText(R.string.download_selected_14);
 																	download_ready.setText(R.string.download_ready_14);
@@ -10756,12 +10653,6 @@ public class MainActivity extends AppCompatActivity {
 																		maintenance.setText(R.string.maintenance_15);
 																		maintenance_desc.setText(R.string.maintenance_desc_15);
 																		xmanager_dev.setText(R.string.xmanager_dev_15);
-																		patched_devs.setText(R.string.patched_devs_15);
-																		support_team.setText(R.string.support_team_15);
-																		manager_testers.setText(R.string.manager_testers_15);
-																		manager_hosting.setText(R.string.manager_hosting_15);
-																		mobilism_team.setText(R.string.mobilism_team_15);
-																		forum_team.setText(R.string.forum_team_15);
 																		contributors.setText(R.string.contributors_15);
 																		download_selected.setText(R.string.download_selected_15);
 																		download_ready.setText(R.string.download_ready_15);
@@ -10873,12 +10764,6 @@ public class MainActivity extends AppCompatActivity {
 																			maintenance.setText(R.string.maintenance_16);
 																			maintenance_desc.setText(R.string.maintenance_desc_16);
 																			xmanager_dev.setText(R.string.xmanager_dev_16);
-																			patched_devs.setText(R.string.patched_devs_16);
-																			support_team.setText(R.string.support_team_16);
-																			manager_testers.setText(R.string.manager_testers_16);
-																			manager_hosting.setText(R.string.manager_hosting_16);
-																			mobilism_team.setText(R.string.mobilism_team_16);
-																			forum_team.setText(R.string.forum_team_16);
 																			contributors.setText(R.string.contributors_16);
 																			download_selected.setText(R.string.download_selected_16);
 																			download_ready.setText(R.string.download_ready_16);
@@ -10990,12 +10875,6 @@ public class MainActivity extends AppCompatActivity {
 																				maintenance.setText(R.string.maintenance_17);
 																				maintenance_desc.setText(R.string.maintenance_desc_17);
 																				xmanager_dev.setText(R.string.xmanager_dev_17);
-																				patched_devs.setText(R.string.patched_devs_17);
-																				support_team.setText(R.string.support_team_17);
-																				manager_testers.setText(R.string.manager_testers_17);
-																				manager_hosting.setText(R.string.manager_hosting_17);
-																				mobilism_team.setText(R.string.mobilism_team_17);
-																				forum_team.setText(R.string.forum_team_17);
 																				contributors.setText(R.string.contributors_17);
 																				download_selected.setText(R.string.download_selected_17);
 																				download_ready.setText(R.string.download_ready_17);
@@ -11107,12 +10986,6 @@ public class MainActivity extends AppCompatActivity {
 																					maintenance.setText(R.string.maintenance_18);
 																					maintenance_desc.setText(R.string.maintenance_desc_18);
 																					xmanager_dev.setText(R.string.xmanager_dev_18);
-																					patched_devs.setText(R.string.patched_devs_18);
-																					support_team.setText(R.string.support_team_18);
-																					manager_testers.setText(R.string.manager_testers_18);
-																					manager_hosting.setText(R.string.manager_hosting_18);
-																					mobilism_team.setText(R.string.mobilism_team_18);
-																					forum_team.setText(R.string.forum_team_18);
 																					contributors.setText(R.string.contributors_18);
 																					download_selected.setText(R.string.download_selected_18);
 																					download_ready.setText(R.string.download_ready_18);
@@ -11224,12 +11097,6 @@ public class MainActivity extends AppCompatActivity {
 																						maintenance.setText(R.string.maintenance_19);
 																						maintenance_desc.setText(R.string.maintenance_desc_19);
 																						xmanager_dev.setText(R.string.xmanager_dev_19);
-																						patched_devs.setText(R.string.patched_devs_19);
-																						support_team.setText(R.string.support_team_19);
-																						manager_testers.setText(R.string.manager_testers_19);
-																						manager_hosting.setText(R.string.manager_hosting_19);
-																						mobilism_team.setText(R.string.mobilism_team_19);
-																						forum_team.setText(R.string.forum_team_19);
 																						contributors.setText(R.string.contributors_19);
 																						download_selected.setText(R.string.download_selected_19);
 																						download_ready.setText(R.string.download_ready_19);
@@ -11341,12 +11208,6 @@ public class MainActivity extends AppCompatActivity {
 																							maintenance.setText(R.string.maintenance_20);
 																							maintenance_desc.setText(R.string.maintenance_desc_20);
 																							xmanager_dev.setText(R.string.xmanager_dev_20);
-																							patched_devs.setText(R.string.patched_devs_20);
-																							support_team.setText(R.string.support_team_20);
-																							manager_testers.setText(R.string.manager_testers_20);
-																							manager_hosting.setText(R.string.manager_hosting_20);
-																							mobilism_team.setText(R.string.mobilism_team_20);
-																							forum_team.setText(R.string.forum_team_20);
 																							contributors.setText(R.string.contributors_20);
 																							download_selected.setText(R.string.download_selected_20);
 																							download_ready.setText(R.string.download_ready_20);
@@ -11458,12 +11319,6 @@ public class MainActivity extends AppCompatActivity {
 																								maintenance.setText(R.string.maintenance_21);
 																								maintenance_desc.setText(R.string.maintenance_desc_21);
 																								xmanager_dev.setText(R.string.xmanager_dev_21);
-																								patched_devs.setText(R.string.patched_devs_21);
-																								support_team.setText(R.string.support_team_21);
-																								manager_testers.setText(R.string.manager_testers_21);
-																								manager_hosting.setText(R.string.manager_hosting_21);
-																								mobilism_team.setText(R.string.mobilism_team_21);
-																								forum_team.setText(R.string.forum_team_21);
 																								contributors.setText(R.string.contributors_21);
 																								download_selected.setText(R.string.download_selected_21);
 																								download_ready.setText(R.string.download_ready_21);
@@ -11575,12 +11430,6 @@ public class MainActivity extends AppCompatActivity {
 																									maintenance.setText(R.string.maintenance_22);
 																									maintenance_desc.setText(R.string.maintenance_desc_22);
 																									xmanager_dev.setText(R.string.xmanager_dev_22);
-																									patched_devs.setText(R.string.patched_devs_22);
-																									support_team.setText(R.string.support_team_22);
-																									manager_testers.setText(R.string.manager_testers_22);
-																									manager_hosting.setText(R.string.manager_hosting_22);
-																									mobilism_team.setText(R.string.mobilism_team_22);
-																									forum_team.setText(R.string.forum_team_22);
 																									contributors.setText(R.string.contributors_22);
 																									download_selected.setText(R.string.download_selected_22);
 																									download_ready.setText(R.string.download_ready_22);
@@ -11692,12 +11541,6 @@ public class MainActivity extends AppCompatActivity {
 																										maintenance.setText(R.string.maintenance_23);
 																										maintenance_desc.setText(R.string.maintenance_desc_23);
 																										xmanager_dev.setText(R.string.xmanager_dev_23);
-																										patched_devs.setText(R.string.patched_devs_23);
-																										support_team.setText(R.string.support_team_23);
-																										manager_testers.setText(R.string.manager_testers_23);
-																										manager_hosting.setText(R.string.manager_hosting_23);
-																										mobilism_team.setText(R.string.mobilism_team_23);
-																										forum_team.setText(R.string.forum_team_23);
 																										contributors.setText(R.string.contributors_23);
 																										download_selected.setText(R.string.download_selected_23);
 																										download_ready.setText(R.string.download_ready_23);
@@ -11809,12 +11652,6 @@ public class MainActivity extends AppCompatActivity {
 																											maintenance.setText(R.string.maintenance_24);
 																											maintenance_desc.setText(R.string.maintenance_desc_24);
 																											xmanager_dev.setText(R.string.xmanager_dev_24);
-																											patched_devs.setText(R.string.patched_devs_24);
-																											support_team.setText(R.string.support_team_24);
-																											manager_testers.setText(R.string.manager_testers_24);
-																											manager_hosting.setText(R.string.manager_hosting_24);
-																											mobilism_team.setText(R.string.mobilism_team_24);
-																											forum_team.setText(R.string.forum_team_24);
 																											contributors.setText(R.string.contributors_24);
 																											download_selected.setText(R.string.download_selected_24);
 																											download_ready.setText(R.string.download_ready_24);
@@ -11926,12 +11763,6 @@ public class MainActivity extends AppCompatActivity {
 																												maintenance.setText(R.string.maintenance_25);
 																												maintenance_desc.setText(R.string.maintenance_desc_25);
 																												xmanager_dev.setText(R.string.xmanager_dev_25);
-																												patched_devs.setText(R.string.patched_devs_25);
-																												support_team.setText(R.string.support_team_25);
-																												manager_testers.setText(R.string.manager_testers_25);
-																												manager_hosting.setText(R.string.manager_hosting_25);
-																												mobilism_team.setText(R.string.mobilism_team_25);
-																												forum_team.setText(R.string.forum_team_25);
 																												contributors.setText(R.string.contributors_25);
 																												download_selected.setText(R.string.download_selected_25);
 																												download_ready.setText(R.string.download_ready_25);
@@ -12043,12 +11874,6 @@ public class MainActivity extends AppCompatActivity {
 																													maintenance.setText(R.string.maintenance_26);
 																													maintenance_desc.setText(R.string.maintenance_desc_26);
 																													xmanager_dev.setText(R.string.xmanager_dev_26);
-																													patched_devs.setText(R.string.patched_devs_26);
-																													support_team.setText(R.string.support_team_26);
-																													manager_testers.setText(R.string.manager_testers_26);
-																													manager_hosting.setText(R.string.manager_hosting_26);
-																													mobilism_team.setText(R.string.mobilism_team_26);
-																													forum_team.setText(R.string.forum_team_26);
 																													contributors.setText(R.string.contributors_26);
 																													download_selected.setText(R.string.download_selected_26);
 																													download_ready.setText(R.string.download_ready_26);
@@ -12160,12 +11985,6 @@ public class MainActivity extends AppCompatActivity {
 																														maintenance.setText(R.string.maintenance_27);
 																														maintenance_desc.setText(R.string.maintenance_desc_27);
 																														xmanager_dev.setText(R.string.xmanager_dev_27);
-																														patched_devs.setText(R.string.patched_devs_27);
-																														support_team.setText(R.string.support_team_27);
-																														manager_testers.setText(R.string.manager_testers_27);
-																														manager_hosting.setText(R.string.manager_hosting_27);
-																														mobilism_team.setText(R.string.mobilism_team_27);
-																														forum_team.setText(R.string.forum_team_27);
 																														contributors.setText(R.string.contributors_27);
 																														download_selected.setText(R.string.download_selected_27);
 																														download_ready.setText(R.string.download_ready_27);
@@ -12277,12 +12096,6 @@ public class MainActivity extends AppCompatActivity {
 																															maintenance.setText(R.string.maintenance_28);
 																															maintenance_desc.setText(R.string.maintenance_desc_28);
 																															xmanager_dev.setText(R.string.xmanager_dev_28);
-																															patched_devs.setText(R.string.patched_devs_28);
-																															support_team.setText(R.string.support_team_28);
-																															manager_testers.setText(R.string.manager_testers_28);
-																															manager_hosting.setText(R.string.manager_hosting_28);
-																															mobilism_team.setText(R.string.mobilism_team_28);
-																															forum_team.setText(R.string.forum_team_28);
 																															contributors.setText(R.string.contributors_28);
 																															download_selected.setText(R.string.download_selected_28);
 																															download_ready.setText(R.string.download_ready_28);
@@ -12394,12 +12207,6 @@ public class MainActivity extends AppCompatActivity {
 																																maintenance.setText(R.string.maintenance_29);
 																																maintenance_desc.setText(R.string.maintenance_desc_29);
 																																xmanager_dev.setText(R.string.xmanager_dev_29);
-																																patched_devs.setText(R.string.patched_devs_29);
-																																support_team.setText(R.string.support_team_29);
-																																manager_testers.setText(R.string.manager_testers_29);
-																																manager_hosting.setText(R.string.manager_hosting_29);
-																																mobilism_team.setText(R.string.mobilism_team_29);
-																																forum_team.setText(R.string.forum_team_29);
 																																contributors.setText(R.string.contributors_29);
 																																download_selected.setText(R.string.download_selected_29);
 																																download_ready.setText(R.string.download_ready_29);
@@ -12511,12 +12318,6 @@ public class MainActivity extends AppCompatActivity {
 																																	maintenance.setText(R.string.maintenance_30);
 																																	maintenance_desc.setText(R.string.maintenance_desc_30);
 																																	xmanager_dev.setText(R.string.xmanager_dev_30);
-																																	patched_devs.setText(R.string.patched_devs_30);
-																																	support_team.setText(R.string.support_team_30);
-																																	manager_testers.setText(R.string.manager_testers_30);
-																																	manager_hosting.setText(R.string.manager_hosting_30);
-																																	mobilism_team.setText(R.string.mobilism_team_30);
-																																	forum_team.setText(R.string.forum_team_30);
 																																	contributors.setText(R.string.contributors_30);
 																																	download_selected.setText(R.string.download_selected_30);
 																																	download_ready.setText(R.string.download_ready_30);
@@ -12628,12 +12429,6 @@ public class MainActivity extends AppCompatActivity {
 																																		maintenance.setText(R.string.maintenance_31);
 																																		maintenance_desc.setText(R.string.maintenance_desc_31);
 																																		xmanager_dev.setText(R.string.xmanager_dev_31);
-																																		patched_devs.setText(R.string.patched_devs_31);
-																																		support_team.setText(R.string.support_team_31);
-																																		manager_testers.setText(R.string.manager_testers_31);
-																																		manager_hosting.setText(R.string.manager_hosting_31);
-																																		mobilism_team.setText(R.string.mobilism_team_31);
-																																		forum_team.setText(R.string.forum_team_31);
 																																		contributors.setText(R.string.contributors_31);
 																																		download_selected.setText(R.string.download_selected_31);
 																																		download_ready.setText(R.string.download_ready_31);
@@ -12745,12 +12540,6 @@ public class MainActivity extends AppCompatActivity {
 																																			maintenance.setText(R.string.maintenance_32);
 																																			maintenance_desc.setText(R.string.maintenance_desc_32);
 																																			xmanager_dev.setText(R.string.xmanager_dev_32);
-																																			patched_devs.setText(R.string.patched_devs_32);
-																																			support_team.setText(R.string.support_team_32);
-																																			manager_testers.setText(R.string.manager_testers_32);
-																																			manager_hosting.setText(R.string.manager_hosting_32);
-																																			mobilism_team.setText(R.string.mobilism_team_32);
-																																			forum_team.setText(R.string.forum_team_32);
 																																			contributors.setText(R.string.contributors_32);
 																																			download_selected.setText(R.string.download_selected_32);
 																																			download_ready.setText(R.string.download_ready_32);
@@ -12862,12 +12651,6 @@ public class MainActivity extends AppCompatActivity {
 																																				maintenance.setText(R.string.maintenance_33);
 																																				maintenance_desc.setText(R.string.maintenance_desc_33);
 																																				xmanager_dev.setText(R.string.xmanager_dev_33);
-																																				patched_devs.setText(R.string.patched_devs_33);
-																																				support_team.setText(R.string.support_team_33);
-																																				manager_testers.setText(R.string.manager_testers_33);
-																																				manager_hosting.setText(R.string.manager_hosting_33);
-																																				mobilism_team.setText(R.string.mobilism_team_33);
-																																				forum_team.setText(R.string.forum_team_33);
 																																				contributors.setText(R.string.contributors_33);
 																																				download_selected.setText(R.string.download_selected_33);
 																																				download_ready.setText(R.string.download_ready_33);
@@ -12979,12 +12762,6 @@ public class MainActivity extends AppCompatActivity {
 																																					maintenance.setText(R.string.maintenance_34);
 																																					maintenance_desc.setText(R.string.maintenance_desc_34);
 																																					xmanager_dev.setText(R.string.xmanager_dev_34);
-																																					patched_devs.setText(R.string.patched_devs_34);
-																																					support_team.setText(R.string.support_team_34);
-																																					manager_testers.setText(R.string.manager_testers_34);
-																																					manager_hosting.setText(R.string.manager_hosting_34);
-																																					mobilism_team.setText(R.string.mobilism_team_34);
-																																					forum_team.setText(R.string.forum_team_34);
 																																					contributors.setText(R.string.contributors_34);
 																																					download_selected.setText(R.string.download_selected_34);
 																																					download_ready.setText(R.string.download_ready_34);
@@ -13096,12 +12873,6 @@ public class MainActivity extends AppCompatActivity {
 																																						maintenance.setText(R.string.maintenance_35);
 																																						maintenance_desc.setText(R.string.maintenance_desc_35);
 																																						xmanager_dev.setText(R.string.xmanager_dev_35);
-																																						patched_devs.setText(R.string.patched_devs_35);
-																																						support_team.setText(R.string.support_team_35);
-																																						manager_testers.setText(R.string.manager_testers_35);
-																																						manager_hosting.setText(R.string.manager_hosting_35);
-																																						mobilism_team.setText(R.string.mobilism_team_35);
-																																						forum_team.setText(R.string.forum_team_35);
 																																						contributors.setText(R.string.contributors_35);
 																																						download_selected.setText(R.string.download_selected_35);
 																																						download_ready.setText(R.string.download_ready_35);
@@ -13213,12 +12984,6 @@ public class MainActivity extends AppCompatActivity {
 																																							maintenance.setText(R.string.maintenance_36);
 																																							maintenance_desc.setText(R.string.maintenance_desc_36);
 																																							xmanager_dev.setText(R.string.xmanager_dev_36);
-																																							patched_devs.setText(R.string.patched_devs_36);
-																																							support_team.setText(R.string.support_team_36);
-																																							manager_testers.setText(R.string.manager_testers_36);
-																																							manager_hosting.setText(R.string.manager_hosting_36);
-																																							mobilism_team.setText(R.string.mobilism_team_36);
-																																							forum_team.setText(R.string.forum_team_36);
 																																							contributors.setText(R.string.contributors_36);
 																																							download_selected.setText(R.string.download_selected_36);
 																																							download_ready.setText(R.string.download_ready_36);
@@ -13330,12 +13095,6 @@ public class MainActivity extends AppCompatActivity {
 																																								maintenance.setText(R.string.maintenance_37);
 																																								maintenance_desc.setText(R.string.maintenance_desc_37);
 																																								xmanager_dev.setText(R.string.xmanager_dev_37);
-																																								patched_devs.setText(R.string.patched_devs_37);
-																																								support_team.setText(R.string.support_team_37);
-																																								manager_testers.setText(R.string.manager_testers_37);
-																																								manager_hosting.setText(R.string.manager_hosting_37);
-																																								mobilism_team.setText(R.string.mobilism_team_37);
-																																								forum_team.setText(R.string.forum_team_37);
 																																								contributors.setText(R.string.contributors_37);
 																																								download_selected.setText(R.string.download_selected_37);
 																																								download_ready.setText(R.string.download_ready_37);
@@ -13447,12 +13206,6 @@ public class MainActivity extends AppCompatActivity {
 																																									maintenance.setText(R.string.maintenance_38);
 																																									maintenance_desc.setText(R.string.maintenance_desc_38);
 																																									xmanager_dev.setText(R.string.xmanager_dev_38);
-																																									patched_devs.setText(R.string.patched_devs_38);
-																																									support_team.setText(R.string.support_team_38);
-																																									manager_testers.setText(R.string.manager_testers_38);
-																																									manager_hosting.setText(R.string.manager_hosting_38);
-																																									mobilism_team.setText(R.string.mobilism_team_38);
-																																									forum_team.setText(R.string.forum_team_38);
 																																									contributors.setText(R.string.contributors_38);
 																																									download_selected.setText(R.string.download_selected_38);
 																																									download_ready.setText(R.string.download_ready_38);
@@ -13564,12 +13317,6 @@ public class MainActivity extends AppCompatActivity {
 																																										maintenance.setText(R.string.maintenance_39);
 																																										maintenance_desc.setText(R.string.maintenance_desc_39);
 																																										xmanager_dev.setText(R.string.xmanager_dev_39);
-																																										patched_devs.setText(R.string.patched_devs_39);
-																																										support_team.setText(R.string.support_team_39);
-																																										manager_testers.setText(R.string.manager_testers_39);
-																																										manager_hosting.setText(R.string.manager_hosting_39);
-																																										mobilism_team.setText(R.string.mobilism_team_39);
-																																										forum_team.setText(R.string.forum_team_39);
 																																										contributors.setText(R.string.contributors_39);
 																																										download_selected.setText(R.string.download_selected_39);
 																																										download_ready.setText(R.string.download_ready_39);
@@ -13681,12 +13428,6 @@ public class MainActivity extends AppCompatActivity {
 																																											maintenance.setText(R.string.maintenance_40);
 																																											maintenance_desc.setText(R.string.maintenance_desc_40);
 																																											xmanager_dev.setText(R.string.xmanager_dev_40);
-																																											patched_devs.setText(R.string.patched_devs_40);
-																																											support_team.setText(R.string.support_team_40);
-																																											manager_testers.setText(R.string.manager_testers_40);
-																																											manager_hosting.setText(R.string.manager_hosting_40);
-																																											mobilism_team.setText(R.string.mobilism_team_40);
-																																											forum_team.setText(R.string.forum_team_40);
 																																											contributors.setText(R.string.contributors_40);
 																																											download_selected.setText(R.string.download_selected_40);
 																																											download_ready.setText(R.string.download_ready_40);
@@ -13798,12 +13539,6 @@ public class MainActivity extends AppCompatActivity {
 																																												maintenance.setText(R.string.maintenance_41);
 																																												maintenance_desc.setText(R.string.maintenance_desc_41);
 																																												xmanager_dev.setText(R.string.xmanager_dev_41);
-																																												patched_devs.setText(R.string.patched_devs_41);
-																																												support_team.setText(R.string.support_team_41);
-																																												manager_testers.setText(R.string.manager_testers_41);
-																																												manager_hosting.setText(R.string.manager_hosting_41);
-																																												mobilism_team.setText(R.string.mobilism_team_41);
-																																												forum_team.setText(R.string.forum_team_41);
 																																												contributors.setText(R.string.contributors_41);
 																																												download_selected.setText(R.string.download_selected_41);
 																																												download_ready.setText(R.string.download_ready_41);
@@ -13915,12 +13650,6 @@ public class MainActivity extends AppCompatActivity {
 																																													maintenance.setText(R.string.maintenance_42);
 																																													maintenance_desc.setText(R.string.maintenance_desc_42);
 																																													xmanager_dev.setText(R.string.xmanager_dev_42);
-																																													patched_devs.setText(R.string.patched_devs_42);
-																																													support_team.setText(R.string.support_team_42);
-																																													manager_testers.setText(R.string.manager_testers_42);
-																																													manager_hosting.setText(R.string.manager_hosting_42);
-																																													mobilism_team.setText(R.string.mobilism_team_42);
-																																													forum_team.setText(R.string.forum_team_42);
 																																													contributors.setText(R.string.contributors_42);
 																																													download_selected.setText(R.string.download_selected_42);
 																																													download_ready.setText(R.string.download_ready_42);
@@ -14032,12 +13761,6 @@ public class MainActivity extends AppCompatActivity {
 																																														maintenance.setText(R.string.maintenance_43);
 																																														maintenance_desc.setText(R.string.maintenance_desc_43);
 																																														xmanager_dev.setText(R.string.xmanager_dev_43);
-																																														patched_devs.setText(R.string.patched_devs_43);
-																																														support_team.setText(R.string.support_team_43);
-																																														manager_testers.setText(R.string.manager_testers_43);
-																																														manager_hosting.setText(R.string.manager_hosting_43);
-																																														mobilism_team.setText(R.string.mobilism_team_43);
-																																														forum_team.setText(R.string.forum_team_43);
 																																														contributors.setText(R.string.contributors_43);
 																																														download_selected.setText(R.string.download_selected_43);
 																																														download_ready.setText(R.string.download_ready_43);
@@ -14073,6 +13796,118 @@ public class MainActivity extends AppCompatActivity {
 																																														installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
 																																														installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																														select_language.setSelection((int)(43));
+																																													}
+																																													else {
+																																														if (LANGUAGE.getString("LANGUAGE", "").equals("44")) {
+																																															sub_text_installed.setText(R.string.installed_44);
+																																															main_title.setText(R.string.main_title_44);
+																																															about_title.setText(R.string.about_title_44);
+																																															settings_title.setText(R.string.settings_title_44);
+																																															experiment_title.setText(R.string.experimental_title_44);
+																																															sub_title.setText(R.string.about_sub_44);
+																																															sub_text_1.setText(R.string.latest_44);
+																																															sub_text_2.setText(R.string.latest_44);
+																																															sub_text_3.setText(R.string.latest_44);
+																																															versions_1.setText(R.string.versions_44);
+																																															versions_2.setText(R.string.versions_44);
+																																															versions_3.setText(R.string.versions_44);
+																																															title_sub.setText(R.string.manager_tools_44);
+																																															source.setText(R.string.source_44);
+																																															support.setText(R.string.support_44);
+																																															donate.setText(R.string.donate_44);
+																																															discord.setText(R.string.discord_44);
+																																															about.setText(R.string.about_44);
+																																															website.setText(R.string.website_44);
+																																															reddit.setText(R.string.reddit_44);
+																																															faq.setText(R.string.faq_44);
+																																															theme.setText(R.string.show_themes_44);
+																																															language.setText(R.string.language_44);
+																																															download_update.setText(R.string.download_update_44);
+																																															install_now.setText(R.string.install_now_44);
+																																															install_update.setText(R.string.install_update_44);
+																																															uninstall_patched.setText(R.string.uninstall_patched_44);
+																																															open_settings.setText(R.string.open_settings_44);
+																																															open_patched.setText(R.string.open_patched_44);
+																																															lite.setText(R.string.lite_44);
+																																															cloned.setText(R.string.cloned_44);
+																																															spap.setText(R.string.spap_44);
+																																															mirror.setText(R.string.mirror_44);
+																																															download.setText(R.string.download_44);
+																																															cancel.setText(R.string.cancel_44);
+																																															later.setText(R.string.later_44);
+																																															go_back.setText(R.string.go_back_44);
+																																															not_now.setText(R.string.not_now_44);
+																																															close.setText(R.string.close_44);
+																																															continue_1.setText(R.string.continue_1_44);
+																																															install.setText(R.string.install_44);
+																																															uninstall.setText(R.string.uninstall_44);
+																																															ignore.setText(R.string.ignore_44);
+																																															delete.setText(R.string.delete_44);
+																																															thanks.setText(R.string.thanks_44);
+																																															new_update.setText(R.string.new_update_44);
+																																															changelogs.setText(R.string.changelogs_44);
+																																															reboot.setText(R.string.reboot_44);
+																																															reset_preferences.setText(R.string.reset_preferences_44);
+																																															list_auto_refresh.setText(R.string.list_auto_refresh_44);
+																																															list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_44);
+																																															force_auto_install.setText(R.string.force_auto_install_44);
+																																															force_auto_install_info.setText(R.string.force_auto_install_desc_44);
+																																															apk_location.setText(R.string.apk_location_44);
+																																															apk_location_info.setText(R.string.apk_location_desc_44);
+																																															clear_directory_folders.setText(R.string.clear_directory_folders_44);
+																																															clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_44);
+																																															cloned_version.setText(R.string.cloned_version_44);
+																																															cloned_version_info.setText(R.string.cloned_version_desc_44);
+																																															experiment_version.setText(R.string.experimental_version_44);
+																																															experiment_version_info.setText(R.string.experimental_version_desc_44);
+																																															disable_reward_ad.setText(R.string.disable_rewarded_ads_44);
+																																															disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_44);
+																																															disable_notification.setText(R.string.disable_notification_44);
+																																															disable_notification_info.setText(R.string.disable_notification_desc_44);
+																																															hide_stock_patched.setText(R.string.hide_stock_patched_44);
+																																															hide_amoled_patched.setText(R.string.hide_amoled_patched_44);
+																																															hide_lite_patched.setText(R.string.hide_lite_patched_44);
+																																															show_support.setText(R.string.show_support_44);
+																																															show_support_desc.setText(R.string.show_support_desc_44);
+																																															maintenance.setText(R.string.maintenance_44);
+																																															maintenance_desc.setText(R.string.maintenance_desc_44);
+																																															xmanager_dev.setText(R.string.xmanager_dev_44);
+																																															contributors.setText(R.string.contributors_44);
+																																															download_selected.setText(R.string.download_selected_44);
+																																															download_ready.setText(R.string.download_ready_44);
+																																															download_ready_desc.setText(R.string.download_ready_desc_44);
+																																															downloading_file.setText(R.string.downloading_file_44);
+																																															download_success.setText(R.string.download_success_44);
+																																															installation_failed.setText(R.string.installation_failed_44);
+																																															installation_failed_desc.setText(R.string.installation_failed_desc_44);
+																																															installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_44);
+																																															installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_44);
+																																															existing_patched.setText(R.string.existing_patched_44);
+																																															existing_patched_desc.setText(R.string.existing_patched_desc_44);
+																																															lite_0 = lite.getText().toString();
+																																															download_0 = download.getText().toString();
+																																															continue_0 = continue_1.getText().toString();
+																																															cancel_0 = cancel.getText().toString();
+																																															later_0 = later.getText().toString();
+																																															mirror_0 = mirror.getText().toString();
+																																															install_now_0 = install_now.getText().toString();
+																																															go_back_0 = go_back.getText().toString();
+																																															install_update_0 = install_update.getText().toString();
+																																															close_0 = close.getText().toString();
+																																															uninstall_0 = uninstall.getText().toString();
+																																															existing_patched_0 = existing_patched.getText().toString();
+																																															existing_patched_desc_0 = existing_patched_desc.getText().toString();
+																																															download_selected_0 = download_selected.getText().toString();
+																																															download_ready_0 = download_ready.getText().toString();
+																																															download_ready_desc_0 = download_ready_desc.getText().toString();
+																																															downloading_file_0 = downloading_file.getText().toString();
+																																															download_success_0 = download_success.getText().toString();
+																																															installation_failed_0 = installation_failed.getText().toString();
+																																															installation_failed_desc_0 = installation_failed_desc.getText().toString();
+																																															installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
+																																															installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
+																																															select_language.setSelection((int)(44));
+																																														}
 																																													}
 																																												}
 																																											}
@@ -14165,6 +14000,7 @@ public class MainActivity extends AppCompatActivity {
 		Language.add("Malayalam");
 		Language.add("Croatian");
 		Language.add("Hindi");
+		Language.add("Mongolian");
 		select_language.setAdapter(new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, Language));
 		((ArrayAdapter)select_language.getAdapter()).notifyDataSetChanged();
 		select_language.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, Language) {
@@ -14303,12 +14139,12 @@ public class MainActivity extends AppCompatActivity {
 		maintenance.setText(R.string.maintenance);
 		maintenance_desc.setText(R.string.maintenance_desc);
 		xmanager_dev.setText(R.string.xmanager_dev);
-		patched_devs.setText(R.string.patched_devs);
-		support_team.setText(R.string.support_team);
-		manager_testers.setText(R.string.manager_testers);
-		manager_hosting.setText(R.string.manager_hosting);
-		mobilism_team.setText(R.string.mobilism_team);
-		forum_team.setText(R.string.forum_team);
+		
+		
+		
+		
+		
+		
 		contributors.setText(R.string.contributors);
 		download_selected.setText(R.string.download_selected);
 		download_ready.setText(R.string.download_ready);
@@ -15150,7 +14986,7 @@ public class MainActivity extends AppCompatActivity {
 																																								intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
 																																								startActivity(intent);
-																																								_Reminder();
+																																								_Install_Reminder();
 																																						}
 																																						catch(Exception e) {
 																																						}
@@ -15159,7 +14995,7 @@ public class MainActivity extends AppCompatActivity {
 																																								Intent intent = new Intent(Intent.ACTION_VIEW);
 																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
 																																								startActivity(intent);
-																																								_Reminder();
+																																								_Install_Reminder();
 																																						}
 																																						catch(Exception e) {
 																																						}
@@ -15651,19 +15487,7 @@ public class MainActivity extends AppCompatActivity {
 		title_about.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		local_version.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		xmanager_dev.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		patched_devs.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		support_team.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_testers.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		manager_hosting.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		mobilism_team.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		forum_team.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		developer_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		developer_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		support_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		testers_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		hosting_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		mobilism_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		forum_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		contributors.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_donors.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		donors_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -15722,10 +15546,6 @@ public class MainActivity extends AppCompatActivity {
 		box_faq.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_about_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1DB954));
 		box_about_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		box_about_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		box_about_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		box_about_4.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		box_about_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_about_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_about_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_about_sub.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF2962FF));
@@ -16154,6 +15974,7 @@ public class MainActivity extends AppCompatActivity {
 		_Scroll_Fixed();
 		_Ads_AdMob();
 		_Theme_UI();
+		_Reminder();
 		_Clickers();
 		_Effects();
 		_Extra();
@@ -16247,7 +16068,7 @@ public class MainActivity extends AppCompatActivity {
 														intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
-														_Reminder();
+														_Install_Reminder();
 												}
 												catch(Exception e) {
 												}
@@ -16256,7 +16077,7 @@ public class MainActivity extends AppCompatActivity {
 														Intent intent = new Intent(Intent.ACTION_VIEW);
 														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
-														_Reminder();
+														_Install_Reminder();
 												}
 												catch(Exception e) {
 												}
@@ -16366,7 +16187,7 @@ public class MainActivity extends AppCompatActivity {
 														intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
-														_Reminder();
+														_Install_Reminder();
 												}
 												catch(Exception e) {
 												}
@@ -16375,7 +16196,7 @@ public class MainActivity extends AppCompatActivity {
 														Intent intent = new Intent(Intent.ACTION_VIEW);
 														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
-														_Reminder();
+														_Install_Reminder();
 												}
 												catch(Exception e) {
 												}
@@ -16520,7 +16341,7 @@ public class MainActivity extends AppCompatActivity {
 										intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
-										_Reminder();
+										_Install_Reminder();
 								}
 								catch(Exception e) {
 										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
@@ -16530,7 +16351,7 @@ public class MainActivity extends AppCompatActivity {
 										Intent intent = new Intent(Intent.ACTION_VIEW);
 										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
-										_Reminder();
+										_Install_Reminder();
 								}
 								catch(Exception e) {
 										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
@@ -16616,7 +16437,7 @@ public class MainActivity extends AppCompatActivity {
 										intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
-										_Reminder();
+										_Install_Reminder();
 								}
 								catch(Exception e) {
 										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
@@ -16626,7 +16447,7 @@ public class MainActivity extends AppCompatActivity {
 										Intent intent = new Intent(Intent.ACTION_VIEW);
 										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
-										_Reminder();
+										_Install_Reminder();
 								}
 								catch(Exception e) {
 										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
@@ -16747,6 +16568,7 @@ public class MainActivity extends AppCompatActivity {
 		manager_lang_42.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_43.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		manager_lang_44.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		manager_lang_45.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -16791,6 +16613,7 @@ public class MainActivity extends AppCompatActivity {
 		translator_42.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_43.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		translator_44.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
+		translator_45.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 	}
 	
 	
@@ -16801,7 +16624,6 @@ public class MainActivity extends AppCompatActivity {
 		else {
 			if (DISABLE_NOTIFICATION.getString("DISABLE", "").equals("OFF")) {
 				disable_notification_switch.setChecked(false);
-				_Install_Reminder();
 			}
 		}
 	}
@@ -17433,7 +17255,7 @@ public class MainActivity extends AppCompatActivity {
 																																								intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
 																																								startActivity(intent);
-																																								_Reminder();
+																																								_Install_Reminder();
 																																						}
 																																						catch(Exception e) {
 																																						}
@@ -17442,7 +17264,7 @@ public class MainActivity extends AppCompatActivity {
 																																								Intent intent = new Intent(Intent.ACTION_VIEW);
 																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
 																																								startActivity(intent);
-																																								_Reminder();
+																																								_Install_Reminder();
 																																						}
 																																						catch(Exception e) {
 																																						}
@@ -17551,7 +17373,7 @@ public class MainActivity extends AppCompatActivity {
 										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
 										intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 										startActivity(intent);
-										_Reminder();
+										_Install_Reminder();
 								}
 								catch(Exception e) {
 										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
@@ -17561,7 +17383,7 @@ public class MainActivity extends AppCompatActivity {
 										Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
 										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
 										startActivity(intent);
-										_Reminder();
+										_Install_Reminder();
 								}
 								catch(Exception e) {
 										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
@@ -17656,7 +17478,7 @@ public class MainActivity extends AppCompatActivity {
 														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
 														intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 														startActivity(intent);
-														_Reminder();
+														_Install_Reminder();
 												}
 												catch(Exception e) {
 												}
@@ -17665,7 +17487,7 @@ public class MainActivity extends AppCompatActivity {
 														Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
 														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
 														startActivity(intent);
-														_Reminder();
+														_Install_Reminder();
 												}
 												catch(Exception e) {
 												}
@@ -18146,29 +17968,35 @@ public class MainActivity extends AppCompatActivity {
 	
 	
 	public void _Install_Reminder() {
-		if (Build.VERSION.SDK_INT >= 21) {
-				try {
-						final String App = "xManager";
-						final String contentTitle = "IMPORTANT NOTE";
-						final String contentMessage = "After installing and logging-in, make sure to reopen or force stop the app to enable the patched features.";
-						
-						androidx.core.app.NotificationCompat.Builder builder = new androidx.core.app.NotificationCompat.Builder(MainActivity.this, "id 1");
-						builder.setStyle(new androidx.core.app.NotificationCompat.BigTextStyle(builder).bigText(contentMessage)
-						.setBigContentTitle(contentTitle))
-						.setContentTitle(contentTitle)
-						.setContentText(contentMessage)
-						.setSmallIcon(R.drawable.icon_notification)
-						.setAutoCancel(true);
-						
-						final NotificationManager push = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-						builder.build().flags |= Notification.FLAG_AUTO_CANCEL;
-						push.notify(1, builder.build());
-				}
-				catch(Exception e) {
-				}
+		if (disable_notification_switch.isChecked()) {
 		} else {
-				if (Build.VERSION.SDK_INT <= 20) {
-						com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "IMPORTANT NOTE: After installing and logging-in, make sure to reopen or force stop the app to enable the patched features.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+				if (!disable_notification_switch.isChecked()) {
+						if (Build.VERSION.SDK_INT >= 21) {
+								try {
+										final String App = "xManager";
+										final String contentTitle = "IMPORTANT NOTE";
+										final String contentMessage = "After installing and logging-in, make sure to reopen or force stop the app to enable the patched features.";
+										
+										androidx.core.app.NotificationCompat.Builder builder = new androidx.core.app.NotificationCompat.Builder(MainActivity.this, "id 1");
+										builder.setStyle(new androidx.core.app.NotificationCompat.BigTextStyle(builder).bigText(contentMessage)
+										.setBigContentTitle(contentTitle))
+										.setContentTitle(contentTitle)
+										.setContentText(contentMessage)
+										.setSmallIcon(R.drawable.icon_notification)
+										.setAutoCancel(true);
+										
+										final NotificationManager push = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+										builder.build().flags |= Notification.FLAG_AUTO_CANCEL;
+										push.notify(1, builder.build());
+								}
+								catch(Exception e) {
+								}
+						} else {
+								if (Build.VERSION.SDK_INT <= 20) {
+										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "IMPORTANT NOTE: After installing and logging-in, make sure to reopen or force stop the app to enable the patched features.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+								}
+						}
+						
 				}
 		}
 		
@@ -18281,10 +18109,6 @@ public class MainActivity extends AppCompatActivity {
 		box_faq.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_about_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1DB954));
 		box_about_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		box_about_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		box_about_3.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		box_about_4.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		box_about_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_about_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_about_7.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_about_sub.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF2962FF));
@@ -18313,12 +18137,6 @@ public class MainActivity extends AppCompatActivity {
 		reboot.setTextColor(0xFFFFFFFF);
 		reset_preferences.setTextColor(0xFFFFFFFF);
 		xmanager_dev.setTextColor(0xFF1DB954);
-		patched_devs.setTextColor(0xFF1DB954);
-		support_team.setTextColor(0xFF1DB954);
-		manager_testers.setTextColor(0xFF1DB954);
-		manager_hosting.setTextColor(0xFF1DB954);
-		mobilism_team.setTextColor(0xFF1DB954);
-		forum_team.setTextColor(0xFF1DB954);
 		manager_lang_1.setTextColor(0xFF1DB954);
 		manager_lang_2.setTextColor(0xFF1DB954);
 		manager_lang_3.setTextColor(0xFF1DB954);
@@ -18363,6 +18181,7 @@ public class MainActivity extends AppCompatActivity {
 		manager_lang_42.setTextColor(0xFF1DB954);
 		manager_lang_43.setTextColor(0xFF1DB954);
 		manager_lang_44.setTextColor(0xFF1DB954);
+		manager_lang_45.setTextColor(0xFF1DB954);
 		manager_donors.setTextColor(0xFF1DB954);
 		contributors.setTextColor(0xFF1DB954);
 		title_1.setTextColor(0xFF1DB954);
