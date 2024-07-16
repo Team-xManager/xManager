@@ -26,12 +26,6 @@
     <string name="reset_preferences" translatable="true">RESET PREFERENCES</string>
     <string name="about_sub" translatable="true">Ad-Free | New Features | Freedom</string>
     <string name="xmanager_dev" translatable="true">xManager Developer</string>
-    <string name="patched_devs" translatable="true">Patched Developers</string>
-    <string name="support_team" translatable="true">Telegram | Discord | Reddit Support Team</string>
-    <string name="manager_testers" translatable="true">Patched and Manager Testers</string>
-    <string name="manager_hosting" translatable="true">Manager Database and Hostings</string>
-    <string name="mobilism_team" translatable="true">Mobilism Team</string>
-    <string name="forum_team" translatable="true">FORUM.APK-RELEASE.NET Team</string>
     <string name="contributors" translatable="true">THANKS TO ALL CONTRIBUTORS! ❤️</string>
     <string name="download_selected" translatable="true">You selected this patched version. Do you want to continue?</string>
     <string name="download_ready" translatable="true">PATCHED INFORMATION</string>
@@ -116,12 +110,6 @@
     <string name="reset_preferences_01" translatable="true">সেটিংস রিসেট করুন</string>
     <string name="about_sub_01" translatable="true">বিজ্ঞাপন মুক্ত | নতুন বৈশিষ্ট্য | স্বাধীনতা</string>
     <string name="xmanager_dev_01" translatable="true">xManager ডেভেলপার</string>
-    <string name="patched_devs_01" translatable="true">Spotify Mod ডেভেলপার</string>
-    <string name="support_team_01" translatable="true">টেলিগ্রাম | ডিসকর্ড | রেডিট সমর্থন দল</string>
-    <string name="manager_testers_01" translatable="true">প্যাচড এবং ম্যানেজার পরীক্ষক</string>
-    <string name="manager_hosting_01" translatable="true">ম্যানেজার ডাটাবেস এবং হোস্টিং</string>
-    <string name="mobilism_team_01" translatable="true">Mobilism দল</string>
-    <string name="forum_team_01" translatable="true">FORUM.APK-RELEASE.NET দল</string>
     <string name="contributors_01" translatable="true">সকল অবদানকারীদের ধন্যবাদ! ❤️</string>
     <string name="download_selected_01" translatable="true">আপনি এই প্যাচ করা সংস্করণটি নির্বাচন করেছেন। আপনি কি চালিয়ে যেতে চান?</string>
     <string name="download_ready_01" translatable="true">প্যাচ তথ্য</string>
@@ -206,12 +194,6 @@
     <string name="reset_preferences_02" translatable="true">重置设置</string>
     <string name="about_sub_02" translatable="true">无广告|新功能|全免费</string>
     <string name="xmanager_dev_02" translatable="true">xManager 开发团队</string>
-    <string name="patched_devs_02" translatable="true">Spotify 修改团队</string>
-    <string name="support_team_02" translatable="true">Telegram/Discord 支持团队</string>
-    <string name="manager_testers_02" translatable="true">Mod/Manager 测试团队</string>
-    <string name="manager_hosting_02" translatable="true">管理器网址维护</string>
-    <string name="mobilism_team_02" translatable="true">Mobilism 团队</string>
-    <string name="forum_team_02" translatable="true">FORUM.APK-RELEASE.NET 团队</string>
     <string name="contributors_02" translatable="true">❤感谢所有参与人员❤️</string>
     <string name="download_selected_02" translatable="true">版本已选定，是否继续？</string>
     <string name="download_ready_02" translatable="true">补丁信息</string>
@@ -296,12 +278,6 @@
     <string name="reset_preferences_03" translatable="true">RÉINITIALISER LES RÉGLAGES</string>
     <string name="about_sub_03" translatable="true">Sans Pubs | Nouvelles Fonctions | Liberté</string>
     <string name="xmanager_dev_03" translatable="true">Développeur de xManager</string>
-    <string name="patched_devs_03" translatable="true">Développeurs du Patch Spotify</string>
-    <string name="support_team_03" translatable="true">Telegram | Discord | Équipe Support Reddit</string>
-    <string name="manager_testers_03" translatable="true">Testeurs du Patch Spotify et du xManager</string>
-    <string name="manager_hosting_03" translatable="true">Gestionnaires Bases de données et Hébergements</string>
-    <string name="mobilism_team_03" translatable="true">Équipe Mobilism</string>
-    <string name="forum_team_03" translatable="true">Équipe FORUM.APK-RELEASE.NET</string>
     <string name="contributors_03" translatable="true">MERCI À TOUS LES CONTRIBUTEURS! ❤️</string>
     <string name="download_selected_03" translatable="true">Vous avez sélectionné cette version modifiée. Voulez-vous continuer ?</string>
     <string name="download_ready_03" translatable="true">INFORMATIONS SUR LES CORRECTIFS</string>
@@ -386,12 +362,6 @@
     <string name="reset_preferences_04" translatable="true">ΕΠΑΝΑΦΟΡΑ ΡΥΘΜΙΣΕΩΝ</string>
     <string name="about_sub_04" translatable="true">Χωρίς Διαφημίσεις | Νέες Δυνατότητες | Ελευθερία</string>
     <string name="xmanager_dev_04" translatable="true">Προγραμματιστής xManager</string>
-    <string name="patched_devs_04" translatable="true">Προγραμματιστές Τροποποιημένου Spotify</string>
-    <string name="support_team_04" translatable="true">Ομάδα Υποστήριξης - Telegram</string>
-    <string name="manager_testers_04" translatable="true">Δοκιμαστές Τροποποίησης/Manager</string>
-    <string name="manager_hosting_04" translatable="true">Σύνδεσμοι φιλοξενίας Manager</string>
-    <string name="mobilism_team_04" translatable="true">Ομάδα Mobilism</string>
-    <string name="forum_team_04" translatable="true">Ομάδα FORUM.APK-RELEASE.NET</string>
     <string name="contributors_04" translatable="true">ΕΥΧΑΡΙΣΤΟΥΜΕ ΟΛΟΥΣ ΠΟΥ ΣΥΝΕΙΣΦΕΡΑΝΕ! ❤️</string>
     <string name="download_selected_04" translatable="true">Επιλέξατε αυτή την τροποποιημένη έκδοση. Θέλετε να συνεχίσετε;</string>
     <string name="download_ready_04" translatable="true">ΠΛΗPΟΦΟΡΊΕΣ PATCH</string>
@@ -476,12 +446,6 @@
     <string name="reset_preferences_05" translatable="true">RESET PENGATURAN</string>
     <string name="about_sub_05" translatable="true">Tanpa Iklan | Fitur Baru | Kebebasan</string>
     <string name="xmanager_dev_05" translatable="true">Pengembang xManager</string>
-    <string name="patched_devs_05" translatable="true">Pengembang Mod Spotify</string>
-    <string name="support_team_05" translatable="true">Tim Dukungan Telegram</string>
-    <string name="manager_testers_05" translatable="true">Penguji Mod/Pengelola</string>
-    <string name="manager_hosting_05" translatable="true">Tautan Hosting Pengelola</string>
-    <string name="mobilism_team_05" translatable="true">Tim Mobilism</string>
-    <string name="forum_team_05" translatable="true">Tim FORUM.APK-RELEASE.NET</string>
     <string name="contributors_05" translatable="true">TERIMA KASIH KEPADA SEMUA KONTRIBUTOR! ❤️</string>
     <string name="download_selected_05" translatable="true">Kamu memilih versi yang dimodifikasi ini. Apakah ingin melanjutkan?</string>
     <string name="download_ready_05" translatable="true">INFORMASI PATCH</string>
@@ -566,12 +530,6 @@
     <string name="reset_preferences_06" translatable="true">RIPRISTINA IMPOSTAZIONI</string>
     <string name="about_sub_06" translatable="true">Niente Annunci | Nuove Funzionalità | Libertà</string>
     <string name="xmanager_dev_06" translatable="true">Sviluppatore di xManager</string>
-    <string name="patched_devs_06" translatable="true">Sviluppatori della Patch di Spotify</string>
-    <string name="support_team_06" translatable="true">Team di Supporto Telegram | Discord | Reddit</string>
-    <string name="manager_testers_06" translatable="true">Tester per Patch e Manager</string>
-    <string name="manager_hosting_06" translatable="true">Link di hosting del Manager</string>
-    <string name="mobilism_team_06" translatable="true">Team di Mobilism</string>
-    <string name="forum_team_06" translatable="true">Team di FORUM.APK-RELEASE.NET</string>
     <string name="contributors_06" translatable="true">GRAZIE A TUTTI I COLLABORATORI! ❤️</string>
     <string name="download_selected_06" translatable="true">Hai selezionato questa versione patchata. Vuoi continuare?</string>
     <string name="download_ready_06" translatable="true">INFORMAZIONI SULLE PATCH</string>
@@ -656,12 +614,6 @@
     <string name="reset_preferences_07" translatable="true">RESETUJ USTAWIENIA</string>
     <string name="about_sub_07" translatable="true">Bez Reklam | Nowe Funkcje | Wolność</string>
     <string name="xmanager_dev_07" translatable="true">Deweloper xManagera</string>
-    <string name="patched_devs_07" translatable="true">Deweloperzy Moda Spotify</string>
-    <string name="support_team_07" translatable="true">Grupa Pomocy z Telegramu/Discorda</string>
-    <string name="manager_testers_07" translatable="true">Testerzy Moda/Menadżera</string>
-    <string name="manager_hosting_07" translatable="true">Linki pobierania Menadżera</string>
-    <string name="mobilism_team_07" translatable="true">Wsparcie z Mobilism</string>
-    <string name="forum_team_07" translatable="true">Wsparcie z FORUM.APK-RELEASE.NET</string>
     <string name="contributors_07" translatable="true">DZIĘKI DLA WSZYSTKICH WSPIERAJĄCYCH! ❤️</string>
     <string name="download_selected_07" translatable="true">Wybrałeś tę zmodyfikowaną wersję. Czy chcesz kontynuować?</string>
     <string name="download_ready_07" translatable="true">INFORMACJE O ŁATACH</string>
@@ -746,12 +698,6 @@
     <string name="reset_preferences_08" translatable="true">REDEFINIR AS CONFIGURAÇÕES</string>
     <string name="about_sub_08" translatable="true">Livre de anúncios | Novos recursos | Liberdade</string>
     <string name="xmanager_dev_08" translatable="true">Desenvolvedor xManager</string>
-    <string name="patched_devs_08" translatable="true">Desenvolvedores do Mod Spotify</string>
-    <string name="support_team_08" translatable="true">Equipe de suporte do Telegram/Discord</string>
-    <string name="manager_testers_08" translatable="true">Testadores Mod/Manager</string>
-    <string name="manager_hosting_08" translatable="true">Links de hospedagem do gerente</string>
-    <string name="mobilism_team_08" translatable="true">Equipe de Mobilismo</string>
-    <string name="forum_team_08" translatable="true">Equipe FORUM.APK-RELEASE.NET</string>
     <string name="contributors_08" translatable="true">OBRIGADO A TODOS OS CONTRIBUIDORES! ❤️</string>
     <string name="download_selected_08" translatable="true">Você selecionou esta versão corrigida. Você quer continuar?</string>
     <string name="download_ready_08" translatable="true">INFORMAÇÃO DO PATCH</string>
@@ -836,12 +782,6 @@
     <string name="reset_preferences_09" translatable="true">REINICIAR DEFINIÇÕES</string>
     <string name="about_sub_09" translatable="true">Sem Anúncios | Novas Funcionalidades | Liberdade</string>
     <string name="xmanager_dev_09" translatable="true">Desenvolvedor do xManager</string>
-    <string name="patched_devs_09" translatable="true">Desenvolvedores do Mod do Spotify</string>
-    <string name="support_team_09" translatable="true">Equipa de Suporte do Telegram | Discord | Reddit</string>
-    <string name="manager_testers_09" translatable="true">Testadores do Mod/Manager</string>
-    <string name="manager_hosting_09" translatable="true">Base de Dados e Links de Armazenamento do Manager</string>
-    <string name="mobilism_team_09" translatable="true">Equipa do Mobilism</string>
-    <string name="forum_team_09" translatable="true">Equipa do FORUM.APK-RELEASE.NET</string>
     <string name="contributors_09" translatable="true">OBRIGADO A TODOS OS CONTRIBUIDORES! ❤️</string>
     <string name="download_selected_09" translatable="true">Selecionaste esta versão modificada. Queres continuar?</string>
     <string name="download_ready_09" translatable="true">INFORMAÇÃO DA MODIFICAÇÃO</string>
@@ -926,12 +866,6 @@
     <string name="reset_preferences_10" translatable="true">СБPОСИТЬ НАСТPОЙКИ</string>
     <string name="about_sub_10" translatable="true">Без рекламы | Новые функции | Свободное</string>
     <string name="xmanager_dev_10" translatable="true">Pазработчик xManager</string>
-    <string name="patched_devs_10" translatable="true">Pазработчики патчей</string>
-    <string name="support_team_10" translatable="true">Команда поддержки из соц. сетей</string>
-    <string name="manager_testers_10" translatable="true">Тестеры патчей и менеджера</string>
-    <string name="manager_hosting_10" translatable="true">Хостинги и БД менеджера</string>
-    <string name="mobilism_team_10" translatable="true">Команда Mobilism</string>
-    <string name="forum_team_10" translatable="true">Команда FORUM.APK-RELEASE.NET</string>
     <string name="contributors_10" translatable="true">СПАСИБО ВСЕМ УЧАСТНИКАМ! ❤️</string>
     <string name="download_selected_10" translatable="true">Выбрана эта пропатченная версия. Продолжить?</string>
     <string name="download_ready_10" translatable="true">ИНФОPМАЦИЯ О ПАТЧЕ</string>
@@ -1016,12 +950,6 @@
     <string name="reset_preferences_11" translatable="true">RESTABLECER AJUSTES</string>
     <string name="about_sub_11" translatable="true">Sin anuncios | Nuevas funciones | Libertad</string>
     <string name="xmanager_dev_11" translatable="true">Desarrollador de xManager</string>
-    <string name="patched_devs_11" translatable="true">Desarrolladores del mod de Spotify</string>
-    <string name="support_team_11" translatable="true">Equipo de soporte de Discord, Reddit y Telegram</string>
-    <string name="manager_testers_11" translatable="true">Testers del mod/gestor</string>
-    <string name="manager_hosting_11" translatable="true">Base de datos y alojamiento del gestor</string>
-    <string name="mobilism_team_11" translatable="true">Equipo de Mobilism</string>
-    <string name="forum_team_11" translatable="true">Equipo de FORUM.APK-RELEASE.NET</string>
     <string name="contributors_11" translatable="true">¡GRACIAS A TODOS LOS COLABORADORES! ❤️</string>
     <string name="download_selected_11" translatable="true">Ha seleccionado esta versión modificada. ¿Desea continuar?</string>
     <string name="download_ready_11" translatable="true">INFORMACIÓN DEL PARCHE</string>
@@ -1106,12 +1034,6 @@
     <string name="reset_preferences_12" translatable="true">СКИНУТИ НАЛАШТУВАННЯ</string>
     <string name="about_sub_12" translatable="true">Без реклами | Нові функції | Свобода</string>
     <string name="xmanager_dev_12" translatable="true">Pозробник xManager</string>
-    <string name="patched_devs_12" translatable="true">Pозробники Spotify Mod</string>
-    <string name="support_team_12" translatable="true">Команда підтримки Telegram/Discord</string>
-    <string name="manager_testers_12" translatable="true">Тестери Mod/Manager</string>
-    <string name="manager_hosting_12" translatable="true">Хостинг посилань менеджера</string>
-    <string name="mobilism_team_12" translatable="true">Команда Mobilism</string>
-    <string name="forum_team_12" translatable="true">Команда FORUM.APK-RELEASE.NET</string>
     <string name="contributors_12" translatable="true">ДЯКУЄМО ВСІМ УЧАСНИКАМ! ❤️</string>
     <string name="download_selected_12" translatable="true">Ви обрали цю версію модифікації. Продовжити?</string>
     <string name="download_ready_12" translatable="true">ІНФОPМАЦІЯ ПPО ВИПPАВЛЕННЯ</string>
@@ -1196,12 +1118,6 @@
     <string name="reset_preferences_13" translatable="true">TERCİHLERİ SIFIRLA</string>
     <string name="about_sub_13" translatable="true">Reklamsızlık | Yeni Özellikler | Özgürlük</string>
     <string name="xmanager_dev_13" translatable="true">xManager Geliştiricisi</string>
-    <string name="patched_devs_13" translatable="true">Yama geliştiricileri</string>
-    <string name="support_team_13" translatable="true">Telegram | Discord | Reddit Destek Ekibi</string>
-    <string name="manager_testers_13" translatable="true">Yama ve Yönetici Test Cihazları</string>
-    <string name="manager_hosting_13" translatable="true">Veritabanı ve Barındırma Yöneticisi</string>
-    <string name="mobilism_team_13" translatable="true">Mobilism Ekibi</string>
-    <string name="forum_team_13" translatable="true">FORUM.APK-RELEASE.NET Ekibi</string>
     <string name="contributors_13" translatable="true">TÜM KATKIDA BULUNANLARA TEŞEKKÜRLER! ❤️</string>
     <string name="download_selected_13" translatable="true">Bu yamalı sürümü seçtiniz. Devam etmek istiyor musunuz?</string>
     <string name="download_ready_13" translatable="true">YAMA BİLGİSİ</string>
@@ -1286,12 +1202,6 @@
     <string name="reset_preferences_14" translatable="true">إعادة ضبط الإعدادات</string>
     <string name="about_sub_14" translatable="true">بلا إعلانات | مميزات جديدة | بكل حرية</string>
     <string name="xmanager_dev_14" translatable="true">مطور xManager</string>
-    <string name="patched_devs_14" translatable="true">مطوري التطبيق المعدل</string>
-    <string name="support_team_14" translatable="true">فريق الدعم على تيليجرام وديسكورد</string>
-    <string name="manager_testers_14" translatable="true">مختبري Mod/Manager</string>
-    <string name="manager_hosting_14" translatable="true">مديري روابط الاستضافة</string>
-    <string name="mobilism_team_14" translatable="true">فريق Mobilism</string>
-    <string name="forum_team_14" translatable="true">فريق FORUM.APK-RELEASE.NET</string>
     <string name="contributors_14" translatable="true">شكرًا لجميع المساهمين! ❤️</string>
     <string name="download_selected_14" translatable="true">لقد حددت هذه النسخة المعدلة. هل تريد الاستمرار؟</string>
     <string name="download_ready_14" translatable="true">معلومات التعديل</string>
@@ -1376,12 +1286,6 @@
     <string name="reset_preferences_15" translatable="true">PONASTAVITE NASTAVITVE</string>
     <string name="about_sub_15" translatable="true">Brez Oglasov | Nove Funkcije | Svoboda</string>
     <string name="xmanager_dev_15" translatable="true">xManager Razvijalec</string>
-    <string name="patched_devs_15" translatable="true">Spotify Mod Razvijalci</string>
-    <string name="support_team_15" translatable="true">Telegram/Discord Ekipa za Podporo</string>
-    <string name="manager_testers_15" translatable="true">Mod/xManager Preizkuševalci</string>
-    <string name="manager_hosting_15" translatable="true">Povezave za Gostovanje</string>
-    <string name="mobilism_team_15" translatable="true">Mobilism Ekipa</string>
-    <string name="forum_team_15" translatable="true">FORUM.APK-RELEASE.NET Team</string>
     <string name="contributors_15" translatable="true">HVALA VSEM SODELUJO\u010cIM! ❤️</string>
     <string name="download_selected_15" translatable="true">Izbrali ste to spremenjeno verzijo. Ali želite nadaljevati?</string>
     <string name="download_ready_15" translatable="true">INFORMACIJE O DATOTEKI</string>
@@ -1466,12 +1370,6 @@
     <string name="reset_preferences_16" translatable="true">RESTABILEȘTE SETĂRILE</string>
     <string name="about_sub_16" translatable="true">Fără Reclame | Funcții Noi | Libertate</string>
     <string name="xmanager_dev_16" translatable="true">Dezvoltator xManager</string>
-    <string name="patched_devs_16" translatable="true">Dezvoltatorii Spotify Modificat</string>
-    <string name="support_team_16" translatable="true">Echipa de Suport Telegram | Discord | Reddit</string>
-    <string name="manager_testers_16" translatable="true">Testeri xManager și Spotify Modificat</string>
-    <string name="manager_hosting_16" translatable="true">Baza de Date și Găzduire pentru xManager</string>
-    <string name="mobilism_team_16" translatable="true">Echipa Mobilism</string>
-    <string name="forum_team_16" translatable="true">Echipa FORUM.APK-RELEASE.NET</string>
     <string name="contributors_16" translatable="true">MULȚUMIRI TUTUROR CONTRIBUITORILOR! ❤️</string>
     <string name="download_selected_16" translatable="true">Ai selectată această versiune modificată. Dorești să continui?</string>
     <string name="download_ready_16" translatable="true">INFORMAȚIE DESPRE VERSIUNE</string>
@@ -1556,12 +1454,6 @@
     <string name="reset_preferences_17" translatable="true">설정 초기화</string>
     <string name="about_sub_17" translatable="true">광고 제거 | 기능 추가 | 프리덤</string>
     <string name="xmanager_dev_17" translatable="true">xManager 개발자</string>
-    <string name="patched_devs_17" translatable="true">Spotify Mod 개발자</string>
-    <string name="support_team_17" translatable="true">텔레그램/디스코드 지원팀</string>
-    <string name="manager_testers_17" translatable="true">Mod/Manager 테스터</string>
-    <string name="manager_hosting_17" translatable="true">Manager 호스팅 링크</string>
-    <string name="mobilism_team_17" translatable="true">모빌리즘 팀</string>
-    <string name="forum_team_17" translatable="true">FORUM.APK-RELEASE.NET 팀</string>
     <string name="contributors_17" translatable="true">모든 기여자 분들께 감사합니다! ❤️</string>
     <string name="download_selected_17" translatable="true">이 버전을 선택하셨습니다. 다운로드를 진행하시겠습니까?</string>
     <string name="download_ready_17" translatable="true">패치 정보</string>
@@ -1646,12 +1538,6 @@
     <string name="reset_preferences_18" translatable="true">INSTELLING RESETTEN</string>
     <string name="about_sub_18" translatable="true">Advertentievrij | Nieuwe Functies | Vrijheid</string>
     <string name="xmanager_dev_18" translatable="true">xManager Ontwikkelaar</string>
-    <string name="patched_devs_18" translatable="true">Spotify Mod Ontwikkelaars</string>
-    <string name="support_team_18" translatable="true">Telegram/Discord Ondersteuningsteam</string>
-    <string name="manager_testers_18" translatable="true">Mod/Manager Testers</string>
-    <string name="manager_hosting_18" translatable="true">Manager Hostende Links</string>
-    <string name="mobilism_team_18" translatable="true">Mobilism Team</string>
-    <string name="forum_team_18" translatable="true">FORUM.APK-RELEASE.NET Team</string>
     <string name="contributors_18" translatable="true">DANK AAN ALLE BIJDRAGERS! ❤️</string>
     <string name="download_selected_18" translatable="true">Je hebt deze gepatchte versie geselecteert. Wil je verder gaan?</string>
     <string name="download_ready_18" translatable="true">PATCH-INFORMATIE</string>
@@ -1736,12 +1622,6 @@
     <string name="reset_preferences_19" translatable="true">ĐẶT LẠI CÁC CÀI ĐẶT</string>
     <string name="about_sub_19" translatable="true">Không quảng cáo | Tính năng mới | Miễn phí</string>
     <string name="xmanager_dev_19" translatable="true">Nhà phát triển xManager</string>
-    <string name="patched_devs_19" translatable="true">Đội ngũ phát triển</string>
-    <string name="support_team_19" translatable="true">Nhóm hỗ trợ Telegram / Discord / Reddit</string>
-    <string name="manager_testers_19" translatable="true">Kiểm thử Mod/Manager</string>
-    <string name="manager_hosting_19" translatable="true">Quản lý lưu trữ</string>
-    <string name="mobilism_team_19" translatable="true">Đội huy động viên</string>
-    <string name="forum_team_19" translatable="true">Nhóm FORUM.APK-RELEASE.NET</string>
     <string name="contributors_19" translatable="true">CẢM ƠN TẤT CẢ MỌI NGƯỜI ĐÃ HỖ TRỢ! ❤️</string>
     <string name="download_selected_19" translatable="true">Bạn đã chọn bản vá này. Bạn có muốn tiếp tục?</string>
     <string name="download_ready_19" translatable="true">THÔNG TIN ĐÓNG GÓP</string>
@@ -1826,12 +1706,6 @@
     <string name="reset_preferences_20" translatable="true">EINSTELLUNGEN ZURÜCKSETZEN</string>
     <string name="about_sub_20" translatable="true">Werbefrei | Neue Funktionen | Unabhängigkeit</string>
     <string name="xmanager_dev_20" translatable="true">xManager Entwickler</string>
-    <string name="patched_devs_20" translatable="true">Spotify Mod Entwickler</string>
-    <string name="support_team_20" translatable="true">Telegram/Discord Support Team</string>
-    <string name="manager_testers_20" translatable="true">Mod/Manager Tester</string>
-    <string name="manager_hosting_20" translatable="true">Manager Hosting Links</string>
-    <string name="mobilism_team_20" translatable="true">Mobilism Team</string>
-    <string name="forum_team_20" translatable="true">FORUM.APK-RELEASE.NET Team</string>
     <string name="contributors_20" translatable="true">DANKE AN ALLE MITWIRKENDEN! ❤️</string>
     <string name="download_selected_20" translatable="true">Du hast diese gepatchte Version ausgewählt. Möchtest Du fortfahren?</string>
     <string name="download_ready_20" translatable="true">GEPATCHTE DATEN</string>
@@ -1916,12 +1790,6 @@
     <string name="reset_preferences_21" translatable="true">بازنشانی تنظیمات</string>
     <string name="about_sub_21" translatable="true">بدون تبلیغات | قابلیت های جدید | آزادی</string>
     <string name="xmanager_dev_21" translatable="true">سازنده xManager</string>
-    <string name="patched_devs_21" translatable="true">سازندگان اسپاتیفای مود شده</string>
-    <string name="support_team_21" translatable="true">تیم پشتیبانی تلگرام و دیسکورد</string>
-    <string name="manager_testers_21" translatable="true">آزمایش Mod/Manager</string>
-    <string name="manager_hosting_21" translatable="true">میزبانی لینک های برنامه</string>
-    <string name="mobilism_team_21" translatable="true">تیم Mobilism</string>
-    <string name="forum_team_21" translatable="true">تیم FORUM.APK-RELEASE.NET</string>
     <string name="contributors_21" translatable="true">با تشکر از تمام مشارکت کنندگان! ❤️</string>
     <string name="download_selected_21" translatable="true">شما این نسخه پچ شده را انتخاب کردید. آیا می خواهید ادامه دهید؟</string>
     <string name="download_ready_21" translatable="true">مشخصات پچ</string>
@@ -2006,12 +1874,6 @@
     <string name="reset_preferences_22" translatable="true">איפוס הגדרות</string>
     <string name="about_sub_22" translatable="true">נקי מפרסומות | חדשני | חופשי</string>
     <string name="xmanager_dev_22" translatable="true">מפתח xManager</string>
-    <string name="patched_devs_22" translatable="true">Spotify Patched Developers</string>
-    <string name="support_team_22" translatable="true">טלגרם | דיסקורד | קבוצת תמיכה ברדיט</string>
-    <string name="manager_testers_22" translatable="true">הבודקים והמתקנים של xManager</string>
-    <string name="manager_hosting_22" translatable="true">מסד הנתונים ומארח הדומיין של xManager</string>
-    <string name="mobilism_team_22" translatable="true">Mobilism Team</string>
-    <string name="forum_team_22" translatable="true">FORUM.APK-RELEASE.NET Team</string>
     <string name="contributors_22" translatable="true">תודה לכל התורמים! ❤️</string>
     <string name="download_selected_22" translatable="true">בחרת להוריד את גרסה זו. האם ברצנוך להמשיך?</string>
     <string name="download_ready_22" translatable="true">מידע על הקובץ</string>
@@ -2099,12 +1961,6 @@
     <string name="reset_preferences_23" translatable="true">OBNOVIŤ NASTAVENIA</string>
     <string name="about_sub_23" translatable="true">Bez reklám | Nové funkcie | Sloboda</string>
     <string name="xmanager_dev_23" translatable="true">xManager vývojár</string>
-    <string name="patched_devs_23" translatable="true">Vývojári zaplátaného Spotify</string>
-    <string name="support_team_23" translatable="true">Telegram | Discord | Reddit tím podpory</string>
-    <string name="manager_testers_23" translatable="true">Skúšači záplat a manažéra</string>
-    <string name="manager_hosting_23" translatable="true">Databáza a hosting manažéra</string>
-    <string name="mobilism_team_23" translatable="true">Tím mobilizmu</string>
-    <string name="forum_team_23" translatable="true">FORUM.APK-RELEASE.NET tím</string>
     <string name="contributors_23" translatable="true">ĎAKUJEME VŠETKÝM PRISPIEVATEĽOM! ❤️</string>
     <string name="download_selected_23" translatable="true">Vybrali ste túto zaplátanú verziu. Chcete pokračovať?</string>
     <string name="download_ready_23" translatable="true">ZAPLÁTANÉ INFORMÁCIE</string>
@@ -2190,12 +2046,6 @@
     <string name="reset_preferences_24" translatable="true">ÅTERSTÄLL INSTÄLLNINGARNA</string>
     <string name="about_sub_24" translatable="true">Reklamfritt | Nya funktioner | Frihet</string>
     <string name="xmanager_dev_24" translatable="true">Utvecklare av xManager</string>
-    <string name="patched_devs_24" translatable="true">Utvecklare av Spotify Patched</string>
-    <string name="support_team_24" translatable="true">Telegram | Discord | Reddit Support-teamet</string>
-    <string name="manager_testers_24" translatable="true">Patched- och Manager-testare</string>
-    <string name="manager_hosting_24" translatable="true">Manager-databas och Hostings</string>
-    <string name="mobilism_team_24" translatable="true">Mobilism-teamet</string>
-    <string name="forum_team_24" translatable="true">FORUM.APK-RELEASE.NET-teamet</string>
     <string name="contributors_24" translatable="true">TACK TILL ALLA BIDRAGSGIVARE! ❤️</string>
     <string name="download_selected_24" translatable="true">Du har valt denna patchade version. Vill du fortsätta?</string>
     <string name="download_ready_24" translatable="true">PATCHAD INFORMATION</string>
@@ -2280,12 +2130,6 @@
     <string name="reset_preferences_25" translatable="true">PALAUTA OLETUSASETUKSET</string>
     <string name="about_sub_25" translatable="true">Ei mainoksia | Uusia ominaisuuksia | Vapaus</string>
     <string name="xmanager_dev_25" translatable="true">xManager Ohjelmoija</string>
-    <string name="patched_devs_25" translatable="true">Spotify korjaustiedosto ohjelmoija</string>
-    <string name="support_team_25" translatable="true">Telegram | Discord | Reddit Tukitiimi</string>
-    <string name="manager_testers_25" translatable="true">Korjaustiedosto- ja Manager Testaajat</string>
-    <string name="manager_hosting_25" translatable="true">Manager Tietokanta ja Hostaukset</string>
-    <string name="mobilism_team_25" translatable="true">Mobilism Tiimi</string>
-    <string name="forum_team_25" translatable="true">FORUM.APK-RELEASE.NET Tiimi</string>
     <string name="contributors_25" translatable="true">KIITOKSET KAIKILLE AVUSATAJILLE! ❤️</string>
     <string name="download_selected_25" translatable="true">Valitsit tämän korjaustiedoston version. Haluatko jatkaa?</string>
     <string name="download_ready_25" translatable="true">KORJAUSTIEDOSTO TIETOJA</string>
@@ -2370,12 +2214,6 @@
     <string name="reset_preferences_26" translatable="true">DEFAULTNÍ NASTAVENÍ</string>
     <string name="about_sub_26" translatable="true">Bez reklam | Nové funkce | Svoboda</string>
     <string name="xmanager_dev_26" translatable="true">xManager vývojář</string>
-    <string name="patched_devs_26" translatable="true">Vývojář upraveného Spotify</string>
-    <string name="support_team_26" translatable="true">Telegram | Discord | Reddit tým podpory</string>
-    <string name="manager_testers_26" translatable="true">Testeři Spotify aplikace a manažera</string>
-    <string name="manager_hosting_26" translatable="true">Databáze Managera a hostingy</string>
-    <string name="mobilism_team_26" translatable="true">Mobilní tým</string>
-    <string name="forum_team_26" translatable="true">Tým z FORUM.APK-RELEASE.NET</string>
     <string name="contributors_26" translatable="true">DĚKUJEME VŠEM PŘISPĚVATELŮM! ❤️</string>
     <string name="download_selected_26" translatable="true">Vybrali jste si tuto upravenou verzi. Opravdu chcete pokračovat?</string>
     <string name="download_ready_26" translatable="true">INFORMACE K UPRAVENÉ APLIKACI</string>
@@ -2460,12 +2298,6 @@
     <string name="reset_preferences_27" translatable="true">重設組態</string>
     <string name="about_sub_27" translatable="true">不含廣告 | 新增功能 | 完全免費</string>
     <string name="xmanager_dev_27" translatable="true">xManager 開發人員</string>
-    <string name="patched_devs_27" translatable="true">修補程式開發人員</string>
-    <string name="support_team_27" translatable="true">Telegram | Discord | Reddit 支援團隊</string>
-    <string name="manager_testers_27" translatable="true">修補程式和管理器測試人員</string>
-    <string name="manager_hosting_27" translatable="true">管理器資料庫和主機維護</string>
-    <string name="mobilism_team_27" translatable="true">Mobilism 團隊</string>
-    <string name="forum_team_27" translatable="true">FORUM.APK-RELEASE.NET 團隊</string>
     <string name="contributors_27" translatable="true">感謝所有貢獻者! ❤️</string>
     <string name="download_selected_27" translatable="true">已選定版本，是否繼續？</string>
     <string name="download_ready_27" translatable="true">修補程式資訊</string>
@@ -2550,12 +2382,6 @@
     <string name="reset_preferences_28" translatable="true">НУЛИРАНЕ НА НАСТРОЙКИТЕ</string>
     <string name="about_sub_28" translatable="true">Без реклами | Нови функции | Свобода</string>
     <string name="xmanager_dev_28" translatable="true">Разработчик на xManager</string>
-    <string name="patched_devs_28" translatable="true">Разработчици на коригирания Spotify</string>
-    <string name="support_team_28" translatable="true">Telegram | Discord | Поддръжка в Reddit</string>
-    <string name="manager_testers_28" translatable="true">Тестери на пачовете и мениджъра</string>
-    <string name="manager_hosting_28" translatable="true">База данни и хостинги на мениджъра</string>
-    <string name="mobilism_team_28" translatable="true">Екип на Mobilism</string>
-    <string name="forum_team_28" translatable="true">Екип на FORUM.APK-RELEASE.NET</string>
     <string name="contributors_28" translatable="true">БЛАГОДАРИМ НА ВСИЧКИ СЪТРУДНИЦИ! ❤️</string>
     <string name="download_selected_28" translatable="true">Избрали сте тази коригирана версия. Искате ли да продължите?</string>
     <string name="download_ready_28" translatable="true">ИНФОРМАЦИЯ ЗА КРЪПКАТА</string>
@@ -2640,12 +2466,6 @@
     <string name="reset_preferences_29" translatable="true">РЕСЕТУЈ ПОДЕШАВАЊА</string>
     <string name="about_sub_29" translatable="true">Без реклама | Нове функције | Слобода</string>
     <string name="xmanager_dev_29" translatable="true">Програмер xManager-а</string>
-    <string name="patched_devs_29" translatable="true">Програмери Spotify печа</string>
-    <string name="support_team_29" translatable="true">Telegram | Discord | Reddit тим за подршку</string>
-    <string name="manager_testers_29" translatable="true">Тестери печа и менаџера</string>
-    <string name="manager_hosting_29" translatable="true">База података и хостинг менаџера</string>
-    <string name="mobilism_team_29" translatable="true">Mobilism тим</string>
-    <string name="forum_team_29" translatable="true">FORUM.APK-RELEASE.NET тим</string>
     <string name="contributors_29" translatable="true">ХВАЛА СВИМ САРАДНИЦИМА! ❤️</string>
     <string name="download_selected_29" translatable="true">Изабрали сте ову печовану верзију. Желите ли да наставите?</string>
     <string name="download_ready_29" translatable="true">ИНФОРМАЦИЈЕ О ПЕЧУ</string>
@@ -2730,12 +2550,6 @@
     <string name="reset_preferences_30" translatable="true">RESETUJ PODEŠAVANjA</string>
     <string name="about_sub_30" translatable="true">Bez reklama | Nove funkcije | Sloboda</string>
     <string name="xmanager_dev_30" translatable="true">Programer xManager-a</string>
-    <string name="patched_devs_30" translatable="true">Programeri Spotify peča</string>
-    <string name="support_team_30" translatable="true">Telegram | Discord | Reddit tim za podršku</string>
-    <string name="manager_testers_30" translatable="true">Testeri peča i menadžera</string>
-    <string name="manager_hosting_30" translatable="true">Baza podataka i hosting menadžera</string>
-    <string name="mobilism_team_30" translatable="true">Mobilism tim</string>
-    <string name="forum_team_30" translatable="true">FORUM.APK-RELEASE.NET tim</string>
     <string name="contributors_30" translatable="true">HVALA SVIM SARADNICIMA! ❤️</string>
     <string name="download_selected_30" translatable="true">Izabrali ste ovu pečovanu verziju. Želite li da nastavite?</string>
     <string name="download_ready_30" translatable="true">INFORMACIJE O PEČU</string>
@@ -2821,11 +2635,6 @@
     <string name="about_sub_31" translatable="true">Sense anuncis | Noves funcionis | Llibertat</string>
     <string name="xmanager_dev_31" translatable="true">Desenvolupador de xManager</string>
     <string name="patched_devs_31" translatable="true">Desenvolupadors del mod de Spotify</string>
-    <string name="support_team_31" translatable="true">Equip de suport de Discord, Reddit i Telegram</string>
-    <string name="manager_testers_31" translatable="true">Testers del mod/gestor</string>
-    <string name="manager_hosting_31" translatable="true">Base de dades i allotjament del gestor</string>
-    <string name="mobilism_team_31" translatable="true">Equip de Mobilism</string>
-    <string name="forum_team_31" translatable="true">Equip de FORUM.APK-RELEASE.NET</string>
     <string name="contributors_31" translatable="true">GRÀCIES A TOTS ELS COL·LABORADORS! ❤️</string>
     <string name="download_selected_31" translatable="true">Ha seleccionat aquesta versió modificada. Desitja continuar?</string>
     <string name="download_ready_31" translatable="true">INFORMACIÓ DEL PEGAT</string>
@@ -2910,12 +2719,6 @@
     <string name="reset_preferences_32" translatable="true">ATIESTĀTĪT IESTĀTIJUMUS</string>
     <string name="about_sub_32" translatable="true">Bez reklāmām | Jaunas Funkcijas | Brīvība</string>
     <string name="xmanager_dev_32" translatable="true">xManager izstrādātājs</string>
-    <string name="patched_devs_32" translatable="true">Spotify Patched izstrādātāji</string>
-    <string name="support_team_32" translatable="true">Telegram | Discord | Reddit Pabalsta Komanda</string>
-    <string name="manager_testers_32" translatable="true">Patched and Manager Testētāji</string>
-    <string name="manager_hosting_32" translatable="true">Manager Datubāze un Hostings</string>
-    <string name="mobilism_team_32" translatable="true">Mobilism komanda</string>
-    <string name="forum_team_32" translatable="true">FORUM.APK-RELEASE.NET Komanda</string>
     <string name="contributors_32" translatable="true">PALDIES VISIEM, KAS PALĪDZ! ❤️</string>
     <string name="download_selected_32" translatable="true">Jūs izvēlējāties šo laboto versiju. Vai vēlaties turpināt?</string>
     <string name="download_ready_32" translatable="true">LABOTU VERSIJU INFORMĀCIJA</string>
@@ -3000,12 +2803,6 @@
     <string name="reset_preferences_33" translatable="true">EINSTELLUNGEN ZURÜCKSETZEN</string>
     <string name="about_sub_33" translatable="true">Werbefrei | Neue funktionen | Freiheit</string>
     <string name="xmanager_dev_33" translatable="true">xManager Entwickler</string>
-    <string name="patched_devs_33" translatable="true">Entwickler der Spotify Patches</string>
-    <string name="support_team_33" translatable="true">Telegram | Discord | Reddit Unterstützungs Team</string>
-    <string name="manager_testers_33" translatable="true">Tester für Manager und Patches</string>
-    <string name="manager_hosting_33" translatable="true">Manager Datenbank und Hosting</string>
-    <string name="mobilism_team_33" translatable="true">Mobilism Team</string>
-    <string name="forum_team_33" translatable="true">FORUM.APK-RELEASE.NET Team</string>
     <string name="contributors_33" translatable="true">DANKE AN ALLE UNTERSTÜTZER! ❤️</string>
     <string name="download_selected_33" translatable="true">Sie haben diese gepatchte Version ausgewählt. Möchten sie fortfahren</string>
     <string name="download_ready_33" translatable="true">PATCH INFORMATIONEN</string>
@@ -3090,12 +2887,6 @@
     <string name="reset_preferences_34" translatable="true">මනාප යළි පිහිටුවන්න</string>
     <string name="about_sub_34" translatable="true">දැන්වීම්-රහිත අත්දැකීමක් | නව විශේෂාංග | නිදහස</string>
     <string name="xmanager_dev_34" translatable="true">xManager සංවර්ධකයා</string>
-    <string name="patched_devs_34" translatable="true">පැච් සංවර්ධකවරු</string>
-    <string name="support_team_34" translatable="true">Telegram | Discord | Reddit සහාය කණ්ඩායම</string>
-    <string name="manager_testers_34" translatable="true">පැච් සහ කළමනාකරු පරීක්ෂකයින්</string>
-    <string name="manager_hosting_34" translatable="true">දත්ත සමුදාය සහ සත්කාරක කළමනාකරු</string>
-    <string name="mobilism_team_34" translatable="true">Mobilism කණ්ඩායම</string>
-    <string name="forum_team_34" translatable="true">FORUM.APK-RELEASE.NET කණ්ඩායම</string>
     <string name="contributors_34" translatable="true">සියලුම දායකයින්ට ස්තූතියි! ❤️</string>
     <string name="download_selected_34" translatable="true">ඔබ මෙම පැච් කළ අනුවාදය තෝරා ඇත. ඔබට ඉදිරියට යාමට අවශ්‍යද?</string>
     <string name="download_ready_34" translatable="true">පැච් තොරතුරු</string>
@@ -3180,12 +2971,6 @@
     <string name="reset_preferences_35" translatable="true">BEÁLLÍTÁSOK VISSZAÁLLÍTÁSA</string>
     <string name="about_sub_35" translatable="true">Hirdetésmentes | Új funkciók | Szabadság</string>
     <string name="xmanager_dev_35" translatable="true">xManager Fejlesztő</string>
-    <string name="patched_devs_35" translatable="true">A patchelt alkalmazás fejlesztői</string>
-    <string name="support_team_35" translatable="true">Telegram | Discord | Reddit Támogatás Csapat</string>
-    <string name="manager_testers_35" translatable="true">A patchelt app és a Manager tesztelői</string>
-    <string name="manager_hosting_35" translatable="true">Manager adatbázis és tárhely</string>
-    <string name="mobilism_team_35" translatable="true">Mobilism Csapat</string>
-    <string name="forum_team_35" translatable="true">FORUM.APK-RELEASE.NET Csapat</string>
     <string name="contributors_35" translatable="true">KÖSZÖNET MINDEN KÖZREMŰKÖDŐNEK! ❤️</string>
     <string name="download_selected_35" translatable="true">Ezt a patchelt verziót választottad ki. Szeretnéd folytatni?</string>
     <string name="download_ready_35" translatable="true">INFORMÁCIÓ A PATCHELT APPRÓL</string>
@@ -3270,12 +3055,6 @@
     <string name="reset_preferences_36" translatable="true">設定をリセット</string>
     <string name="about_sub_36" translatable="true">広告なし | 新機能 | 自由</string>
     <string name="xmanager_dev_36" translatable="true">xManager の開発者</string>
-    <string name="patched_devs_36" translatable="true">パッチ済みの開発者</string>
-    <string name="support_team_36" translatable="true">Telegram | Discord | Reddit サポートチーム</string>
-    <string name="manager_testers_36" translatable="true">パッチと xManager のテスター</string>
-    <string name="manager_hosting_36" translatable="true">xManager のデータベースとホスティング</string>
-    <string name="mobilism_team_36" translatable="true">Mobilism チーム</string>
-    <string name="forum_team_36" translatable="true">FORUM.APK-RELEASE.NET チーム</string>
     <string name="contributors_36" translatable="true">すべての貢献者に感謝します! ❤️</string>
     <string name="download_selected_36" translatable="true">このパッチが適用されたバージョンを選択しました。続行をしますか?</string>
     <string name="download_ready_36" translatable="true">パッチ済みの情報</string>
@@ -3360,12 +3139,6 @@
     <string name="reset_preferences_37" translatable="true">प्राथमिकताहरू रिसेट गर्नुहोस्</string>
     <string name="about_sub_37" translatable="true">विज्ञापन-मुक्त | नयाँ सुविधाहरू | स्वतन्त्रता</string>
     <string name="xmanager_dev_37" translatable="true">xManager विकासकर्ता</string>
-    <string name="patched_devs_37" translatable="true">प्याच गरेका विकासकर्ताहरू</string>
-    <string name="support_team_37" translatable="true">टेलिग्राम | डिस्कोर्ड | रेड्डित समर्थन टोली</string>
-    <string name="manager_testers_37" translatable="true">प्याच र प्रबन्धक परीक्षकहरू</string>
-    <string name="manager_hosting_37" translatable="true">प्रबन्धक डाटाबेस र होस्टिंग</string>
-    <string name="mobilism_team_37" translatable="true">Mobilism Team</string>
-    <string name="forum_team_37" translatable="true">FORUM.APK-RELEASE.NET टोली</string>
     <string name="contributors_37" translatable="true">सबै योगदानकर्ताहरु लाई धन्यवाद! ❤️</string>
     <string name="download_selected_37" translatable="true">तपाईंले यो प्याच गरिएको संस्करण चयन गर्नुभयो। के तपाइँ जारी राख्न चाहनुहुन्छ?</string>
     <string name="download_ready_37" translatable="true">प्याच गरिएको जानकारी</string>
@@ -3450,12 +3223,6 @@
     <string name="reset_preferences_38" translatable="true">விருப்பங்களை மீட்டமைக்கவும்</string>
     <string name="about_sub_38" translatable="true">விளம்பரம் இல்லாத | புதிய அம்சங்கள் | சுதந்திரம்</string>
     <string name="xmanager_dev_38" translatable="true">xManager டெவலப்பர்</string>
-    <string name="patched_devs_38" translatable="true">பேட்ச் டெவலப்பர்கள்</string>
-    <string name="support_team_38" translatable="true">தந்தி | கருத்து வேறுபாடு | ரெட்டிட் ஆதரவு குழு</string>
-    <string name="manager_testers_38" translatable="true">இணைக்கப்பட்ட மற்றும் மேலாளர் சோதனையாளர்கள்</string>
-    <string name="manager_hosting_38" translatable="true">மேலாளர் தரவுத்தளம் மற்றும் ஹோஸ்டிங்ஸ்</string>
-    <string name="mobilism_team_38" translatable="true">மொபிலிசம் குழு</string>
-    <string name="forum_team_38" translatable="true">FORUM.APK-RELEASE.NET குழு</string>
     <string name="contributors_38" translatable="true">அனைத்து பங்களிப்பாளர்களுக்கும் நன்றி! ❤️</string>
     <string name="download_selected_38" translatable="true">இந்த இணைக்கப்பட்ட பதிப்பைத் தேர்ந்தெடுத்துள்ளீர்கள். தொடர வேண்டுமா?</string>
     <string name="download_ready_38" translatable="true">இணைக்கப்பட்ட தகவல்</string>
@@ -3540,12 +3307,6 @@
     <string name="reset_preferences_39" translatable="true">รีเซ็ตการตั้งค่า</string>
     <string name="about_sub_39" translatable="true">ไร้โฆษณา | ฟีเจอร์ใหม่ๆ | ความอิสระ</string>
     <string name="xmanager_dev_39" translatable="true">นักพัฒนา xManager</string>
-    <string name="patched_devs_39" translatable="true">นักพัฒนาแพทช์</string>
-    <string name="support_team_39" translatable="true">เทเลแกรม | ดิสคอร์ด | ทีมสนับสนุนเรดดิต</string>
-    <string name="manager_testers_39" translatable="true">ผู้ทดสอบแพตซ์และตัวจัดการ</string>
-    <string name="manager_hosting_39" translatable="true">ฐานข้อมูลและโฮสติ้งตัวจัดการ</string>
-    <string name="mobilism_team_39" translatable="true">ทีม Mobilism</string>
-    <string name="forum_team_39" translatable="true">ทีม FORUM.APK-RELEASE.NET</string>
     <string name="contributors_39" translatable="true">ขอขอบคุณผู้มีส่วนร่วมทุกท่าน! ❤️</string>
     <string name="download_selected_39" translatable="true">คุณได้เลือกแพตซ์เวอร์ชันนี้ คุณต้องการดำเนินการต่อหรือไม่?</string>
     <string name="download_ready_39" translatable="true">ข้อมูลแพตซ์</string>
@@ -3630,12 +3391,6 @@
     <string name="reset_preferences_40" translatable="true">प्राधान्ये रीसेट करा</string>
     <string name="about_sub_40" translatable="true">जाहिरात-मुक्त | नवीन वैशिष्ट्ये | स्वातंत्र्य</string>
     <string name="xmanager_dev_40" translatable="true">xManager विकसक</string>
-    <string name="patched_devs_40" translatable="true">पॅच विकसक</string>
-    <string name="support_team_40" translatable="true">टेलीग्राम | डिसकॉर्ड | रेडिट समर्थन टीम</string>
-    <string name="manager_testers_40" translatable="true">पॅच आणि मॅनेजर टेस्टर्स</string>
-    <string name="manager_hosting_40" translatable="true">मॅनेजर डेटाबेस आणि होस्टिंग</string>
-    <string name="mobilism_team_40" translatable="true">मोबिलिझम टीम</string>
-    <string name="forum_team_40" translatable="true">FORUM.APK-RELEASE.NET टीम</string>
     <string name="contributors_40" translatable="true">सर्व योगदानकर्त्यांचे आभार! ❤️</string>
     <string name="download_selected_40" translatable="true">आपण ही पॅच आवृत्ती निवडली. आपण सुरू ठेवू इच्छिता?</string>
     <string name="download_ready_40" translatable="true">पॅच माहिती</string>
@@ -3720,12 +3475,6 @@
     <string name="reset_preferences_41" translatable="true">മുൻഗണനകൾ റീസെറ്റ് ചെയ്യുക</string>
     <string name="about_sub_41" translatable="true">പരസ്യരഹിതം | പുതിയ സവിശേഷതകൾ | സ്വാതന്ത്ര്യം</string>
     <string name="xmanager_dev_41" translatable="true">xManager ഡെവലപ്പർ</string>
-    <string name="patched_devs_41" translatable="true">പാച്ചട് ഡെവലപ്പർസ്</string>
-    <string name="support_team_41" translatable="true">ടെലിഗ്രാം | ഡിസകോർഡ് | റെഡിറ്റ് സഹായ സംഘം</string>
-    <string name="manager_testers_41" translatable="true">പരിശോധനക്കാർ</string>
-    <string name="manager_hosting_41" translatable="true">ഡാറ്റാബേസും ഹോസ്റ്റിംഗും</string>
-    <string name="mobilism_team_41" translatable="true">മൊബിലിസം ടീം</string>
-    <string name="forum_team_41" translatable="true">FORUM.APK-RELEASE.NET സംഘം</string>
     <string name="contributors_41" translatable="true">സംഭാവന ചെയ്ത എല്ലാവർക്കും നന്ദി ❤️</string>
     <string name="download_selected_41" translatable="true">ഈ വെർഷൻ താങ്കൾ സെലക്ട് ചെയ്തിരിക്കുന്നു. തുടരാൻ തയ്യാർ ആണോ?</string>
     <string name="download_ready_41" translatable="true">വിവരം</string>
@@ -3809,13 +3558,7 @@
     <string name="clear_directory_folders_desc_42" translatable="true">Dodirnite da biste izbrisali direktorij. To uključuje preuzete datoteke i ažuriranja.</string>
     <string name="reset_preferences_42" translatable="true">RESET POSTAVKI</string>
     <string name="about_sub_42" translatable="true">Ad-Free | Nove značajke | Sloboda</string>
-    <string name="xmanager_dev_42" translatable="true">xManager Developer</string>
-    <string name="patched_devs_42" translatable="true">Patched Developeri</string>
-    <string name="support_team_42" translatable="true">Telegram | Discord | Reddit Korisnička Služba</string>
-    <string name="manager_testers_42" translatable="true">Testeri zakrpanih i Manager aplikacija</string>
-    <string name="manager_hosting_42" translatable="true">Baza podataka i hosting Managera</string>
-    <string name="mobilism_team_42" translatable="true">Mobilism Tim</string>
-    <string name="forum_team_42" translatable="true">FORUM.APK-RELEASE.NET TIM</string>
+    <string name="xmanager_dev_42" translatable="true">App &amp; Patched Developer</string>
     <string name="contributors_42" translatable="true">ZAHVALA SVIM SPONZORIMA! ❤️</string>
     <string name="download_selected_42" translatable="true">Odabrali ste ovu zakrpanu verziju. Želite li nastaviti?</string>
     <string name="download_ready_42" translatable="true">INFORMACIJE O ZAKRPANOJ APLIKACIJI</string>
@@ -3900,12 +3643,6 @@
     <string name="reset_preferences_43" translatable="true">प्राथमिकताएँ रीसेट करें</string>
     <string name="about_sub_43" translatable="true">विज्ञापन रहित | नए सुविधाएँ | स्वतंत्रता</string>
     <string name="xmanager_dev_43" translatable="true">xManager डेवेलपर्स</string>
-    <string name="patched_devs_43" translatable="true">पैच किए गए डेवेलपर्स</string>
-    <string name="support_team_43" translatable="true">टेलीग्राम | डिस्कॉर्ड | रेडिट समर्थन टीम</string>
-    <string name="manager_testers_43" translatable="true">पैच्ड और प्रबंधक परीक्षक</string>
-    <string name="manager_hosting_43" translatable="true">प्रबंधक डेटाबेस और होस्टिंग्स</string>
-    <string name="mobilism_team_43" translatable="true">मोबाइलिस्म टीम</string>
-    <string name="forum_team_43" translatable="true">FORUM.APK-RELEASE.NET टीम</string>
     <string name="contributors_43" translatable="true">सभी योगदानकर्ताओं का धन्यवाद! ❤️</string>
     <string name="download_selected_43" translatable="true">आपने इस पैच किए गए संस्करण को चुना है। क्या आप जारी रखना चाहते हैं?</string>
     <string name="download_ready_43" translatable="true">पैच की गई जानकारी</string>
@@ -3962,93 +3699,88 @@
     <string name="open_settings_43" translatable="true">सेटिंग्स खोलें</string>
     <string name="open_patched_43" translatable="true">पैच को खोलें</string>
     <string name="reboot_43" translatable="true">फिर से पुनः आक्षेपित करें और पुनः आरंभ करें</string>
-	<!--MONGOLIAN LANGUAGE-->
-     <string name="app_name_43" translatable="true">xManager</string>
-    <string name="installed_43" translatable="true">Суулгасан version</string>
-    <string name="latest_43" translatable="true">Хамгийн сүүлийн хувилбарууд</string>
-    <string name="versions_43" translatable="true">Хувилбарууд </string>
-    <string name="changelogs_43" translatable="true">Өөрчлөлтийн бүртгэлүүд</string>
-    <string name="manager_tools_43" translatable="true">Менежерийн хэрэгсэл</string>
-    <string name="source_43" translatable="true">Эх сурвалж</string>
-    <string name="support_43" translatable="true">Телеграм</string>
-    <string name="donate_43" translatable="true">Дэмжлэг</string>
-    <string name="discord_43" translatable="true">Дискорд</string>
-    <string name="about_43" translatable="true">Бидний тухай</string>
-    <string name="main_title_43" translatable="true">xManager</string>
-    <string name="settings_title_43" translatable="true">Тохиргоо</string>
-    <string name="about_title_43" translatable="true">Tухай</string>
-    <string name="list_auto_refresh_43" translatable="true">Жагсаалтыг автоматаар-шинэчлэх</string>
-    <string name="list_auto_refresh_desc_43" translatable="true">Үүнийг идэвхжүүлснээр таныг аппликешныг эхлүүлэх бүрд жагсаалт автоматаар шинэчлэгдэх болно.\n\nТа үндсэн дэлгэцийг доош чирж гараар жагсаалтыг сэргээх боломжтой.</string>
-    <string name="force_auto_install_43" translatable="true">Хүчээр автоматаар суулгах</string>
-    <string name="force_auto_install_desc_43" translatable="true">Үүнийг идэвхжүүлснээр засварласан программыг автоматаар суулгаж, татаж авсны дараа шинэчлэх болно.</string>
-    <string name="show_themes_43" translatable="true">Өнгөний theme</string>
-    <string name="apk_location_43" translatable="true">APK байршил</string>
-    <string name="apk_location_desc_43" translatable="true">Татаж авсан файлын хуулбарыг хадгалахыг хүссэн директор. Хэрэв та энэ функцийг хэрхэн тохируулахаа мэдэхгүй байгаа бол үүнийг байгаагаар нь үлдээнэ үү.\n\nNOTE: Хандалт, зөвшөөрөл, хадгалах сангийн хязгаарлалтын улмаас энэ функц нь гадаад санах ойг (SD карт) дэмждэггүй.</string>
-    <string name="clear_directory_folders_43" translatable="true">Directory folder-ыг арилгах</string>
-    <string name="clear_directory_folders_desc_43" translatable="true">Directory folder-ыг устгахын тулд товшино уу. Үүнд татаж авсан файлууд болон шинэчлэлтүүд багтана</string>
-    <string name="reset_preferences_43" translatable="true">Тохиргоог дахин тохируулах</string>
-    <string name="about_sub_43" translatable="true">Зар сурталчилгаагүй | Шинэ боломжууд | Эрх чөлөө</string>
-    <string name="xmanager_dev_43" translatable="true">xManager хөгжүүлэгч</string>
-    <string name="patched_devs_43" translatable="true">Patched хөгжүүлэгчид</string>
-    <string name="support_team_43" translatable="true">Telegram | Discord | Reddit тусламжийн баг</string>
-    <string name="manager_testers" translatable="true">Patched болон Manager шалгагч</string>
-     <string name="manager_hosting" translatable="true">Менежерийн мэдээллийн сан ба хостинг</string>
-     <string name="mobilism_team" translatable="true">Гар утасны програм хөгжүүлэх баг</string>
-     <string name="forum_team" translatable="true">FORUM.APK-RELEASE.NET баг</string>
-     <string name="contributors" translatable="true">Хувь нэмэр оруулсан бүх хүмүүст баярлалаа! ❤️</string>
-     <string name="download_selected" translatable="true">Та энэ засварласан хувилбарыг сонгосон. Та үргэлжлүүлэхийг хүсэж байна уу?</ string >
-     <string name = "download_ready" translatable = "true">PATCHED МЭДЭЭЛЭЛ</ string>
-     <string name="download_ready_desc" translatable="true">Энэ patched нь гадаад директор дээр байрлах өмнөх файлыг дарж бичих болно. Болгоомжтой үргэлжлүүлээрэй.</ string >
-     <string name="downloading_file" translatable="true">ФАЙЛ ТАТАЖ АВАХ</string>
-     <string name="download_success" translatable="true">АМЖИЛТТАЙ ТАТАЖ АВСАН</string>
-     <string name="new_update" translatable="true">ШИНЭ МЕНЕЖЕРИЙН ШИНЭЧЛЭЛ</ string>
-     <string name="continue_1" translatable="true">ҮРГЭЛЖЛҮҮЛЭХ</string>
-     <string name="cancel" translatable="true">Цуцлах</string>
-     <string name="download" translatable="true">ТАТАЖ АВАХ</string>
-     <string name="later" translatable="true">Дараа нь</string>
-     <string name="install_now" translatable="true">PATCHED СУУРИЛУУЛАХ</string>
-     <string name="install_update" translatable="true">ШИНЭЧЛЭЛИЙГ СУУРИЛУУЛАХ</string>
-     <string name="go_back" translatable="true">БУЦАХ</string>
-     <string name="download_update" translatable="true">ШИНЭЧЛЭЛТИЙГ ТАТАЖ АВАХ</string>
-     <string name="not_now" translatable="true">ОДОО БИШ</string>
-     <string name="mirror" translatable="true">Mirror link</string>
-     <string name="lite" translatable="true">LITE</string>
-     <string name="experimental_title" translatable="true">Туршилтын</string>
-     <string name="experimental_version" translatable="true">ТУРШИЛТЫН ХУВИЛБАР</string>
-     <string name="experimental_version_desc" translatable="true">Үүнийг идэвхжүүлснээр засвар хийгдсэн аппликешны туршилтын хувилбарыг татаж авах, суулгах боломж олгоно.\n\nҮүнд альфа, бета болон нөөцийн засварт байхгүй эрт хандалтын функцүүд багтана. Үүнээс гадна тогтвортой байх баталгаа байхгүй.</ string >
-     <string name="show_support" translatable="true">ДЭМЖЛЭГЭЭ ҮЗҮҮЛЭЭРЭЙ</string>
-     <string name="show_support_desc" translatable="true">Бид ашгийн төлөө бус, корпорацийн бус, эвлэрэлгүй баг юм. Тантай адил хүмүүс биднийг ялангуяа татаж авахаас эхлээд суулгах хүртэл бүх зүйлийг илүү хялбар болгохын тулд апп бүтээхийг зөвлөж байна.\n\nБид бүх зүйлийг зөв, төгс болгохын тулд бүхий л цаг зав, хүчин чармайлтаа зориулж байна. Бид чадах чинээгээрээ энэ аппликейшнийг дэмжихийн тулд чадах бүхнээ хийх болно.\n\nЯмар ч хэмжээгээр тусалж, маш их талархах болно!</string>
-     <string name="maintenance" translatable="true">ЗАСВАР ҮЙЛЧИЛГЭЭ</string>
-     <string name="maintenance_desc" translatable="true">xManager одоогоор боломжгүй байна. Дараа дахин оролдоно уу.</ string >
-     <string name="thanks" translatable="true">БАЯРЛАЛАА!</string>
-     <string name="language" translatable="true">ХЭЛ</string>
-     <string name="website" translatable="true">ВЭБСАЙТ</string>
-     <string name="reddit" translatable="true">REDDIT</string>
-     <string name="faq" translatable="true">Түгээмэл асуултууд</ string>
-     <string name="cloned_version" translatable="true">КЛОНДСОН ХУВИЛБАР</string>
-     <string name="cloned_version_desc" translatable="true">Үүнийг идэвхжүүлснээр засварласан програмын хувилсан хувилбарыг татаж аваад суулгах боломжтой болно.\n\nЭнэ нь мөн суулгацын ихэнх алдаа эсвэл асуудлыг шийдвэрлэх болно, ялангуяа хэрэв танд өмнө нь суулгасан бол -Spotify програмыг суулгасан.</ string >
-     <string name="disable_rewarded_ads" translatable="true">ШАГНАЛТАЙ ЗАРЫГ Идэвхгүй болгох</string>
-     <string name="disable_rewarded_ads_desc" translatable="true">Бидний ихэнх нь зар сурталчилгаанд дургүй гэдгийг бид мэднэ, гэхдээ бидний хувьд энэ нь мэдээллийн сан, байршуулах холбоос, шинэчлэлт, нэмэлт засварууд болон өдөр тутмын хэрэгцээгээ санхүүжүүлэхэд ихээхэн тусалдаг.\ n\nЭнэ бол хандив, зардал гаргахгүйгээр биднийг дэмжих хамгийн энгийн арга юм.</string>
-     <string name = "installation_failed" translatable = "true">INSTALLATION амжилтгүй болсон</ string>
-     <string name="installation_failed_desc" translatable="true">Шалтгаан: Та одоо суулгасан хувилбараас доогуур засвар хийсэн хувилбарыг суулгахыг оролдсон байна.\n\nШийдлүүд:\nA. Тэнцүү буюу түүнээс их хувилбарыг сонгоно уу.\nB. Одоогийн хувилбарыг устгаад, доошлуулаарай.\n\nХэрэв асуудал хэвээр байвал Түгээмэл асуултуудыг шалгана уу.</string>
-     <string name="installation_failed_spap_desc" translatable="true">Шалтгаан: Энэ төхөөрөмж дээр суулгасан одоогийн patched нь xManager эсвэл манай багаас шууд ирээгүй.\n\nШийдвэр: Програмын одоогийн хувилбарыг устгаад xManager-г дахин эхлүүлээд оролдоод үзээрэй. дахин. Хэрэв асуудал арилаагүй бол Түгээмэл асуултуудыг шалгана уу.</ string >
-     <string name="installation_failed_cloned_desc" translatable="true">Шалтгаан: Энэ төхөөрөмж дээр суулгасан одоогийн клон нь xManager эсвэл манай багаас шууд ирээгүй.\n\nШийдвэр: Програмын одоогийн хувилбарыг устгаад xManager-г дахин эхлүүлээд оролдоод үзээрэй. дахин. Хэрэв асуудал арилаагүй бол Түгээмэл асуултуудыг шалгана уу.</ string >
-     <string name = "existing_patched" translatable = "true"> БАЙГАА PATCHED</ string>
-     <string name="existing_patched_desc" translatable="true">Одоо байгаа patched-ийг гадаад лавлахаас илрүүллээ. Та ямар үйлдэл хиймээр байна?</ string >
-     <string name="disable_notification" translatable="true">МЭДЭГДЭЛИЙГ Идэвхгүй болгох</ string>
-     <string name="disable_notification_desc" translatable="true">Үүнийг идэвхжүүлснээр засварласан програмыг суулгасны дараа сануулагч мэдэгдлийг арилгах болно.</ string>
-     <string name = "hide_stock_patched" translatable = "true">үндсэн patched-ийг нух</string>
-     <string name="hide_amoled_patched" translatable="true">AMOLED PATCHED-ИЙГ НУУX</string>
-     <string name="hide_lite_patched" translatable="true">LITE PATCHED-Г НУУX</string>
-     <string name="close" translatable="true">ХААХ</string>
-     <string name="cloned" translatable="true">CLONED</string>
-     <string name="spap" translatable="true">SP/AP</string>
-     <string name="install" translatable="true">СУУЛГАХ</string>
-     <string name="uninstall" translatable="true">УСТГАХ</string>
-     <string name="ignore" translatable="true">IGNORE</string>
-     <string name="delete" translatable="true">УСТГАХ</string>
-     <string name = "uninstall_patched" translatable = "true">PATCHED УСТГАХ</ string>
-     <string name = "open_settings" translatable = "true">НЭЭЛТТЭЙ Тохиргоо</ string>
-     <string name = "open_patched" translatable = "true">НЭЭЛТТЭЙ PATCHED</ string>
-     <string name="reboot" translatable="true"> ДАХИН АЧАХ, REBOOT</string>
+    
+    <!--MONGOLIAN LANGUAGE-->
+    <string name="app_name_44" translatable="true">xManager</string>
+    <string name="installed_44" translatable="true">Суулгасан version</string>
+    <string name="latest_44" translatable="true">Хамгийн сүүлийн хувилбарууд</string>
+    <string name="versions_44" translatable="true">Хувилбарууд </string>
+    <string name="changelogs_44" translatable="true">Өөрчлөлтийн бүртгэлүүд</string>
+    <string name="manager_tools_44" translatable="true">Менежерийн хэрэгсэл</string>
+    <string name="source_44" translatable="true">Эх сурвалж</string>
+    <string name="support_44" translatable="true">Телеграм</string>
+    <string name="donate_44" translatable="true">Дэмжлэг</string>
+    <string name="discord_44" translatable="true">Дискорд</string>
+    <string name="about_44" translatable="true">Бидний тухай</string>
+    <string name="main_title_44" translatable="true">xManager</string>
+    <string name="settings_title_44" translatable="true">Тохиргоо</string>
+    <string name="about_title_44" translatable="true">Tухай</string>
+    <string name="list_auto_refresh_44" translatable="true">Жагсаалтыг автоматаар-шинэчлэх</string>
+    <string name="list_auto_refresh_desc_44" translatable="true">Үүнийг идэвхжүүлснээр таныг аппликешныг эхлүүлэх бүрд жагсаалт автоматаар шинэчлэгдэх болно.\n\nТа үндсэн дэлгэцийг доош чирж гараар жагсаалтыг сэргээх боломжтой.</string>
+    <string name="force_auto_install_44" translatable="true">Хүчээр автоматаар суулгах</string>
+    <string name="force_auto_install_desc_44" translatable="true">Үүнийг идэвхжүүлснээр засварласан программыг автоматаар суулгаж, татаж авсны дараа шинэчлэх болно.</string>
+    <string name="show_themes_44" translatable="true">Өнгөний theme</string>
+    <string name="apk_location_44" translatable="true">APK байршил</string>
+    <string name="apk_location_desc_44" translatable="true">Татаж авсан файлын хуулбарыг хадгалахыг хүссэн директор. Хэрэв та энэ функцийг хэрхэн тохируулахаа мэдэхгүй байгаа бол үүнийг байгаагаар нь үлдээнэ үү.\n\nNOTE: Хандалт, зөвшөөрөл, хадгалах сангийн хязгаарлалтын улмаас энэ функц нь гадаад санах ойг (SD карт) дэмждэггүй.</string>
+    <string name="clear_directory_folders_44" translatable="true">Directory folder-ыг арилгах</string>
+    <string name="clear_directory_folders_desc_44" translatable="true">Directory folder-ыг устгахын тулд товшино уу. Үүнд татаж авсан файлууд болон шинэчлэлтүүд багтана</string>
+    <string name="reset_preferences_44" translatable="true">Тохиргоог дахин тохируулах</string>
+    <string name="about_sub_44" translatable="true">Зар сурталчилгаагүй | Шинэ боломжууд | Эрх чөлөө</string>
+    <string name="xmanager_dev_44" translatable="true">xManager хөгжүүлэгч</string>
+    <string name="contributors_44" translatable="true">Хувь нэмэр оруулсан бүх хүмүүст баярлалаа! ❤️</string>
+    <string name="download_selected_44" translatable="true">Та энэ засварласан хувилбарыг сонгосон. Та үргэлжлүүлэхийг хүсэж байна уу?</string>
+    <string name="download_ready_44" translatable="true">PATCHED МЭДЭЭЛЭЛ</string>
+    <string name="download_ready_desc_44" translatable="true">Энэ patched нь гадаад директор дээр байрлах өмнөх файлыг дарж бичих болно. Болгоомжтой үргэлжлүүлээрэй.</string>
+    <string name="downloading_file_44" translatable="true">ФАЙЛ ТАТАЖ АВАХ</string>
+    <string name="download_success_44" translatable="true">АМЖИЛТТАЙ ТАТАЖ АВСАН</string>
+    <string name="new_update_44" translatable="true">ШИНЭ МЕНЕЖЕРИЙН ШИНЭЧЛЭЛ</string>
+    <string name="continue_1_44" translatable="true">ҮРГЭЛЖЛҮҮЛЭХ</string>
+    <string name="cancel_44" translatable="true">Цуцлах</string>
+    <string name="download_44" translatable="true">ТАТАЖ АВАХ</string>
+    <string name="later_44" translatable="true">Дараа нь</string>
+    <string name="install_now_44" translatable="true">PATCHED СУУРИЛУУЛАХ</string>
+    <string name="install_update_44" translatable="true">ШИНЭЧЛЭЛИЙГ СУУРИЛУУЛАХ</string>
+    <string name="go_back_44" translatable="true">БУЦАХ</string>
+    <string name="download_update_44" translatable="true">ШИНЭЧЛЭЛТИЙГ ТАТАЖ АВАХ</string>
+    <string name="not_now_44" translatable="true">ОДОО БИШ</string>
+    <string name="mirror_44" translatable="true">Mirror link</string>
+    <string name="lite_44" translatable="true">LITE</string>
+    <string name="experimental_title_44" translatable="true">Туршилтын</string>
+    <string name="experimental_version_44" translatable="true">ТУРШИЛТЫН ХУВИЛБАР</string>
+    <string name="experimental_version_desc_44" translatable="true">Үүнийг идэвхжүүлснээр засвар хийгдсэн аппликешны туршилтын хувилбарыг татаж авах, суулгах боломж олгоно.\n\nҮүнд альфа, бета болон нөөцийн засварт байхгүй эрт хандалтын функцүүд багтана. Үүнээс гадна тогтвортой байх баталгаа байхгүй.</string>
+    <string name="show_support_44" translatable="true">ДЭМЖЛЭГЭЭ ҮЗҮҮЛЭЭРЭЙ</string>
+    <string name="show_support_desc_44" translatable="true">Бид ашгийн төлөө бус, корпорацийн бус, эвлэрэлгүй баг юм. Тантай адил хүмүүс биднийг ялангуяа татаж авахаас эхлээд суулгах хүртэл бүх зүйлийг илүү хялбар болгохын тулд апп бүтээхийг зөвлөж байна.\n\nБид бүх зүйлийг зөв, төгс болгохын тулд бүхий л цаг зав, хүчин чармайлтаа зориулж байна. Бид чадах чинээгээрээ энэ аппликейшнийг дэмжихийн тулд чадах бүхнээ хийх болно.\n\nЯмар ч хэмжээгээр тусалж, маш их талархах болно!</string>
+    <string name="maintenance_44" translatable="true">ЗАСВАР ҮЙЛЧИЛГЭЭ</string>
+    <string name="maintenance_desc_44" translatable="true">xManager одоогоор боломжгүй байна. Дараа дахин оролдоно уу.</string>
+    <string name="thanks_44" translatable="true">БАЯРЛАЛАА!</string>
+    <string name="language_44" translatable="true">ХЭЛ</string>
+    <string name="website_44" translatable="true">ВЭБСАЙТ</string>
+    <string name="reddit_44" translatable="true">REDDIT</string>
+    <string name="faq_44" translatable="true">Түгээмэл асуултууд</string>
+    <string name="cloned_version_44" translatable="true">КЛОНДСОН ХУВИЛБАР</string>
+    <string name="cloned_version_desc_44" translatable="true">Үүнийг идэвхжүүлснээр засварласан програмын хувилсан хувилбарыг татаж аваад суулгах боломжтой болно.\n\nЭнэ нь мөн суулгацын ихэнх алдаа эсвэл асуудлыг шийдвэрлэх болно, ялангуяа хэрэв танд өмнө нь суулгасан бол -Spotify програмыг суулгасан.</string>
+    <string name="disable_rewarded_ads_44" translatable="true">ШАГНАЛТАЙ ЗАРЫГ Идэвхгүй болгох</string>
+    <string name="disable_rewarded_ads_desc_44" translatable="true">Бидний ихэнх нь зар сурталчилгаанд дургүй гэдгийг бид мэднэ, гэхдээ бидний хувьд энэ нь мэдээллийн сан, байршуулах холбоос, шинэчлэлт, нэмэлт засварууд болон өдөр тутмын хэрэгцээгээ санхүүжүүлэхэд ихээхэн тусалдаг.\ n\nЭнэ бол хандив, зардал гаргахгүйгээр биднийг дэмжих хамгийн энгийн арга юм.</string>
+    <string name="installation_failed_44" translatable="true">INSTALLATION амжилтгүй болсон</string>
+    <string name="installation_failed_desc_44" translatable="true">Шалтгаан: Та одоо суулгасан хувилбараас доогуур засвар хийсэн хувилбарыг суулгахыг оролдсон байна.\n\nШийдлүүд:\nA. Тэнцүү буюу түүнээс их хувилбарыг сонгоно уу.\nB. Одоогийн хувилбарыг устгаад, доошлуулаарай.\n\nХэрэв асуудал хэвээр байвал Түгээмэл асуултуудыг шалгана уу.</string>
+    <string name="installation_failed_spap_desc_44" translatable="true">Шалтгаан: Энэ төхөөрөмж дээр суулгасан одоогийн patched нь xManager эсвэл манай багаас шууд ирээгүй.\n\nШийдвэр: Програмын одоогийн хувилбарыг устгаад xManager-г дахин эхлүүлээд оролдоод үзээрэй. дахин. Хэрэв асуудал арилаагүй бол Түгээмэл асуултуудыг шалгана уу.</string>
+    <string name="installation_failed_cloned_desc_44" translatable="true">Шалтгаан: Энэ төхөөрөмж дээр суулгасан одоогийн клон нь xManager эсвэл манай багаас шууд ирээгүй.\n\nШийдвэр: Програмын одоогийн хувилбарыг устгаад xManager-г дахин эхлүүлээд оролдоод үзээрэй. дахин. Хэрэв асуудал арилаагүй бол Түгээмэл асуултуудыг шалгана уу.</string>
+    <string name="existing_patched_44" translatable="true">БАЙГАА PATCHED</string>
+    <string name="existing_patched_desc_44" translatable="true">Одоо байгаа patched-ийг гадаад лавлахаас илрүүллээ. Та ямар үйлдэл хиймээр байна?</string>
+    <string name="disable_notification_44" translatable="true">МЭДЭГДЭЛИЙГ Идэвхгүй болгох</string>
+    <string name="disable_notification_desc_44" translatable="true">Үүнийг идэвхжүүлснээр засварласан програмыг суулгасны дараа сануулагч мэдэгдлийг арилгах болно.</string>
+    <string name="hide_stock_patched_44" translatable="true">үндсэн patched-ийг нух</string>
+    <string name="hide_amoled_patched_44" translatable="true">AMOLED PATCHED-ИЙГ НУУX</string>
+    <string name="hide_lite_patched_44" translatable="true">LITE PATCHED-Г НУУX</string>
+    <string name="close_44" translatable="true">ХААХ</string>
+    <string name="cloned_44" translatable="true">CLONED</string>
+    <string name="spap_44" translatable="true">SP/AP</string>
+    <string name="install_44" translatable="true">СУУЛГАХ</string>
+    <string name="uninstall_44" translatable="true">УСТГАХ</string>
+    <string name="ignore_44" translatable="true">IGNORE</string>
+    <string name="delete_44" translatable="true">УСТГАХ</string>
+    <string name="uninstall_patched_44" translatable="true">PATCHED УСТГАХ</string>
+    <string name="open_settings_44" translatable="true">НЭЭЛТТЭЙ Тохиргоо</string>
+    <string name="open_patched_44" translatable="true">НЭЭЛТТЭЙ PATCHED</string>
+    <string name="reboot_44" translatable="true">ДАХИН АЧАХ, REBOOT</string>
 </resources>
