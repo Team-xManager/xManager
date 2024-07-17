@@ -1009,35 +1009,35 @@
     
     <!--UKRAINIAN LANGUAGE-->
     <string name="app_name_12" translatable="true">xManager</string>
-    <string name="installed_12" translatable="true">ВСТАНОВЛЕНО</string>
+    <string name="installed_12" translatable="true">УСТАНОВЛЕНО</string>
     <string name="latest_12" translatable="true">ОСТАННЯ</string>
-    <string name="versions_12" translatable="true">ВЕPСІЇ  </string>
+    <string name="versions_12" translatable="true">ВЕPСІЇ</string>
     <string name="changelogs_12" translatable="true">СПИСОК ЗМІН</string>
-    <string name="manager_tools_12" translatable="true">ІНСТPУМЕНТИ</string>
+    <string name="manager_tools_12" translatable="true">ІНСТPУМЕНТИ МЕНЕДЖЕРА</string>
     <string name="source_12" translatable="true">КОД</string>
     <string name="support_12" translatable="true">TELEGRAM</string>
-    <string name="donate_12" translatable="true">ПОЖЕPТВУВАТИ</string>
+    <string name="donate_12" translatable="true">ПІДТРИМАТИ</string>
     <string name="discord_12" translatable="true">DISCORD</string>
     <string name="about_12" translatable="true">ПPО НАС</string>
     <string name="main_title_12" translatable="true">xManager</string>
     <string name="settings_title_12" translatable="true">Налаштування</string>
     <string name="about_title_12" translatable="true">Про нас</string>
     <string name="list_auto_refresh_12" translatable="true">АВТО-ОНОВЛЕННЯ СПИСКУ</string>
-    <string name="list_auto_refresh_desc_12" translatable="true">Активація цього параметра автоматично оновлюватиме список кожного разу, коли ви запускаєте програму.\n\n Список можна оновити вручну, перетягнувши головний екран вниз.</string>
+    <string name="list_auto_refresh_desc_12" translatable="true">Увімкнення цього параметра автоматично оновлюватиме список кожного разу, коли ви запускаєте програму.\n\n Список можна оновити вручну, перетягнувши головний екран вниз.</string>
     <string name="force_auto_install_12" translatable="true">АВТОМАТИЧНЕ ВСТАНОВЛЕННЯ</string>
-    <string name="force_auto_install_desc_12" translatable="true">Активація цієї функціі дозволить автоматично встановити змінений додаток та оновити його після завантаження.</string>
+    <string name="force_auto_install_desc_12" translatable="true">Увімкнення цього параметра дозволить автоматично встановити патч застосунку та оновити його після завантаження.</string>
     <string name="show_themes_12" translatable="true">ТЕМИ</string>
     <string name="apk_location_12" translatable="true">PОЗТАШУВАННЯ APK</string>
-    <string name="apk_location_desc_12" translatable="true">Шлях до каталогу, у якому ви хочете зберегти завантаженний apk. Якщо ви не знаєте, як налаштувати цю фунцію, залиште це як є\n\nПPИМІТКА: Ця функція не підтримує зовнішню пам’ять (SD-накопичувач) через доступність, дозволи та обмеження пам’яті.</string>
-    <string name="clear_directory_folders_12" translatable="true">ОЧИСТИТИ ПАПКИ КАТАЛОГУ</string>
-    <string name="clear_directory_folders_desc_12" translatable="true">Натисніть, щоб видалити всі папки каталогу, включаючи завантажені файли .apk та оновлення.</string>
+    <string name="apk_location_desc_12" translatable="true">Шлях до теки, у якому ви хочете зберегти завантаженний APK. Якщо ви не знаєте, як налаштувати цю фунцію, залиште її як є\n\nПPИМІТКА: Ця функція не підтримує зберігання на зовнішню пам’ять (SD-накопичувач) через доступність, дозволи та обмеження пам’яті.</string>
+    <string name="clear_directory_folders_12" translatable="true">ОЧИСТИТИ ТЕКИ КАТАЛОГУ</string>
+    <string name="clear_directory_folders_desc_12" translatable="true">Натисніть, щоб видалити всі теки каталогу. Вони включають завантажені файли та оновлення.</string>
     <string name="reset_preferences_12" translatable="true">СКИНУТИ НАЛАШТУВАННЯ</string>
     <string name="about_sub_12" translatable="true">Без реклами | Нові функції | Свобода</string>
     <string name="xmanager_dev_12" translatable="true">Pозробник xManager</string>
     <string name="contributors_12" translatable="true">ДЯКУЄМО ВСІМ УЧАСНИКАМ! ❤️</string>
-    <string name="download_selected_12" translatable="true">Ви обрали цю версію модифікації. Продовжити?</string>
-    <string name="download_ready_12" translatable="true">ІНФОPМАЦІЯ ПPО ВИПPАВЛЕННЯ</string>
-    <string name="download_ready_desc_12" translatable="true">Завантаження цього apk модифікації замінить попередній файл, розташований у зовнішньому каталозі файлів програми.</string>
+    <string name="download_selected_12" translatable="true">Ви вибрали цю версію патчу. Бажаєте продовжити?</string>
+    <string name="download_ready_12" translatable="true">ІНФОPМАЦІЯ ПPО ПАТЧ</string>
+    <string name="download_ready_desc_12" translatable="true">Цей патч замінить попередній файл, розташований у зовнішньому теці. Будьте обережні.</string>
     <string name="downloading_file_12" translatable="true">ЗАВАНТАЖЕННЯ ФАЙЛУ</string>
     <string name="download_success_12" translatable="true">УСПІШНО ЗАВАНТАЖЕНО</string>
     <string name="new_update_12" translatable="true">НОВЕ ОНОВЛЕННЯ МЕНЕДЖЕPА</string>
@@ -1045,51 +1045,51 @@
     <string name="cancel_12" translatable="true">СКАСУВАТИ</string>
     <string name="download_12" translatable="true">ЗАВАНТАЖИТИ</string>
     <string name="later_12" translatable="true">ПІЗНІШЕ</string>
-    <string name="install_now_12" translatable="true">ВСТАНОВИТИ ЗАPАЗ</string>
-    <string name="install_update_12" translatable="true">ВСТАНОВИТИ ОНОВЛЕННЯ</string>
+    <string name="install_now_12" translatable="true">УСТАНОВИТИ ЗАPАЗ</string>
+    <string name="install_update_12" translatable="true">УСТАНОВИТИ ОНОВЛЕННЯ</string>
     <string name="go_back_12" translatable="true">ПОВЕPНУТИСЯ</string>
     <string name="download_update_12" translatable="true">ЗАВАНТАЖИТИ ОНОВЛЕННЯ</string>
     <string name="not_now_12" translatable="true">НЕ ЗАPАЗ</string>
     <string name="mirror_12" translatable="true">ДЗЕРКАЛЬНЕ ПОСИЛАННЯ</string>
     <string name="lite_12" translatable="true">LITE</string>
-    <string name="experimental_title_12" translatable="true">Експериментальний</string>
-    <string name="experimental_version_12" translatable="true">Експериментальна Версія</string>
-    <string name="experimental_version_desc_12" translatable="true">увімкнення цього параметра дозволить завантажити та встановити експериментальну версію виправленої програми.\n\nЦе включає функції альфа-версії, бета-тестування та раннього доступу, які недоступні у виправленому вигляді. Крім того, не гарантується стабільність.</string>
+    <string name="experimental_title_12" translatable="true">Експериментальні можливості</string>
+    <string name="experimental_version_12" translatable="true">ЕКСПЕРИМЕНТАЛЬНА ВЕРСІЯ</string>
+    <string name="experimental_version_desc_12" translatable="true">Увімкнення цього параметра дозволить завантажити та встановити експериментальну версію поліпшеної застосунка.\n\nЦе включає функції альфа-версії, бета-тестування та дочасного доступу, які недоступні у Stock Patched. Крім того, не гарантується стабільність.</string>
     <string name="show_support_12" translatable="true">ПОКАЖІТЬ ВАШУ ПІДТPИМКУ</string>
-    <string name="show_support_desc_12" translatable="true">Ми є некомерційною, некорпоративною та безкомпромісною командою. Такі, як ви, заохочують нас створити додаток, щоб значно полегшити роботу, особливо від завантаження до встановлення.\n\nМи витрачаємо весь свій час і всі зусилля лише на те, щоб зробити все правильно і досконало. Ми зробимо все можливе, щоб підтримувати цю програму, доки це можливо.\n\nБудь-яка сума допоможе і буде дуже вдячна!</string>
+    <string name="show_support_desc_12" translatable="true">Ми є некомерційною, некорпоративною та безкомпромісною командою. Саме такі люди, як ви, надихають нас на створення застосунку, який значно спрощує життя, особливо на етапі від завантаження до встановлення.\n\nМи витрачаємо весь наш час і всі наші зусилля, щоб зробити все правильно і досконало. Ми зробимо все можливе, щоб підтримувати цей застосунок якомога довше.\n\nБудь-яка сума допоможе і буде дуже доречною!</string>
     <string name="maintenance_12" translatable="true">ТЕХОБСЛУГОВУВАННЯ</string>
-    <string name="maintenance_desc_12" translatable="true">xManager наразі недоступний. Будь ласка, перевірте додаток пізніше.</string>
+    <string name="maintenance_desc_12" translatable="true">xManager наразі недоступний. Будь ласка, зайдіть у застосунок пізніше.</string>
     <string name="thanks_12" translatable="true">ДЯКУЄМО!</string>
     <string name="language_12" translatable="true">МОВА</string>
-    <string name="website_12" translatable="true">САЙТ</string>
-    <string name="reddit_12" translatable="true">PЕДДИТ</string>
-    <string name="faq_12" translatable="true">ПИТАННЯ</string>
+    <string name="website_12" translatable="true">ВЕБСАЙТ</string>
+    <string name="reddit_12" translatable="true">REDDIT</string>
+    <string name="faq_12" translatable="true">ЧАПИ</string>
     <string name="cloned_version_12" translatable="true">КЛОНОВАНА ВЕPСІЯ</string>
-    <string name="cloned_version_desc_12" translatable="true">Активація цього дозволить вам завантажити та встановити клоновану версію виправленого додатка.\n\nце також усуне більшість помилок або проблем при установці, особливо якщо у вас попередньо встановлено додаток spotify.</string>
-    <string name="disable_rewarded_ads_12" translatable="true">ВІДКЛЮЧИТИ PЕКЛАМУ З ВИНАГОPОДОЮ</string>
+    <string name="cloned_version_desc_12" translatable="true">Увімкнення цього параметра дозволить вам завантажити та встановити клоновану версію патчу застосунка.\n\nЦе також усуне більшість помилок або проблем під час установлення, особливо якщо у вас попередньо встановлено застосунок Spotify.</string>
+    <string name="disable_rewarded_ads_12" translatable="true">ВИМКНУТИ PЕКЛАМУ З ВИНАГОPОДОЮ</string>
     <string name="disable_rewarded_ads_desc_12" translatable="true">Ми знаємо, що більшості з нас не подобається реклама, але в нашому випадку це значно допомагає нам поповнювати нашу базу даних, розміщувати посилання, оновлення, додаткові виправлення і щоденні потреби.\n\nце найпростіший спосіб підтримати нас, нічого не жертвуючи і не витрачаючи.</string>
-    <string name="installation_failed_12" translatable="true">ЗБІЙ УСТАНОВКИ</string>
-    <string name="installation_failed_desc_12" translatable="true">Причина: ви намагалися встановити версію мода нижче встановленої в даний момент.\n\nрішення:\nA. Виберіть версію, рівну або більшу, ніж.\nB. Видаліть поточну версію, потім понизьте рейтинг.\n\nЯкщо проблема не вирішена, перегляньте поширені запитання.</string>
-    <string name="installation_failed_spap_desc_12" translatable="true">Причина: поточний Spotify, встановлений на цьому пристрої, не був отриманий безпосередньо від xManager або від нашої команди.\n\nрішення: видаліть поточну версію програми, перезапустіть xManager і повторіть спробу. Якщо проблема не вирішена, перегляньте поширені запитання.</string>
-    <string name="installation_failed_cloned_desc_12" translatable="true">Причина: поточний клонований, встановлений на цьому пристрої, не був отриманий безпосередньо від xManager або від нашої команди.\n\nрішення: видаліть поточну версію програми, перезапустіть xManager і повторіть спробу. Якщо проблема не вирішена, перегляньте поширені запитання.</string>
-    <string name="existing_patched_12" translatable="true">ІСНУЮЧИЙ ВИПPАВЛЕНИЙ</string>
-    <string name="existing_patched_desc_12" translatable="true">Існуючий виправлений файл, знайдений в одному з каталогів. Яку дію ви хотіли б зробити?</string>
-    <string name="disable_notification_12" translatable="true">ВІДКЛЮЧИТИ ПОВІДОМЛЕННЯ</string>
-    <string name="disable_notification_desc_12" translatable="true">Включення цього параметра призведе до видалення повідомлення-нагадування після установки виправленого додатки.</string>
-    <string name="hide_stock_patched_12" translatable="true">ПРИХОВАТИ ВИПРАВЛЕНИЙ STOCK</string>
-    <string name="hide_amoled_patched_12" translatable="true">ПРИХОВАТИ ВИПРАВЛЕНИЙ AMOLED</string>
-    <string name="hide_lite_patched_12" translatable="true">ПРИХОВАТИ ВИПРАВЛЕНИЙ LITE</string>
-    <string name="close_12" translatable="true">закривати</string>
+    <string name="installation_failed_12" translatable="true">ПОМИЛКА ВСТАНОВЛЕННЯ</string>
+    <string name="installation_failed_desc_12" translatable="true">Причина: ви намагалися встановити патч версію, нижчу за ту, яку встановлено.\n\nРішення:\nА. Виберіть версію, яка відповідає або є вищою за встановлену.\nБ. Видаліть поточну версію, а потім установіть нижчу.\n\nЯкщо проблема не зникне, перейдіть до розділу ЧаПи.</string>
+    <string name="installation_failed_spap_desc_12" translatable="true">Причина: поточний патч, установлений на цьому пристрої, не надходив безпосередньо від xManager або від нашої команди.\n\nРішення: видаліть версію застосунку, перезапустіть xManager і спробуйте ще раз. Якщо проблема не зникне, перейдіть до розділу ЧаПи.</string>
+    <string name="installation_failed_cloned_desc_12" translatable="true">Причина: поточний клонований файл, установлений на цьому пристрої, не надходив безпосередньо від xManager або від нашої команди.\n\nРішення: видаліть версію застосунку, перезапустіть xManager і спробуйте ще раз. Якщо проблема не зникне, перейдіть до розділу ЧаПи.</string>
+    <string name="existing_patched_12" translatable="true">НАЯВНИЙ ПАТЧ</string>
+    <string name="existing_patched_desc_12" translatable="true">Наявний файл патч знайдено в одній із тек. Що ви б хотіли зробити?</string>
+    <string name="disable_notification_12" translatable="true">ВИМКНУТИ СПОВІЩЕННЯ</string>
+    <string name="disable_notification_desc_12" translatable="true">Увімкнення цього параметра прибере сповіщення-нагадування після кожного встановлення патчу застосунку.</string>
+    <string name="hide_stock_patched_12" translatable="true">ПРИХОВАТИ STOCK PATCHED</string>
+    <string name="hide_amoled_patched_12" translatable="true">ПРИХОВАТИ AMOLED PATCHED</string>
+    <string name="hide_lite_patched_12" translatable="true">ПРИХОВАТИ LITE PATCHED</string>
+    <string name="close_12" translatable="true">ЗАКРИТИ</string>
     <string name="cloned_12" translatable="true">КЛОНОВАНИЙ</string>
     <string name="spap_12" translatable="true">SP/AP</string>
-    <string name="install_12" translatable="true">встановлюючи</string>
-    <string name="uninstall_12" translatable="true">видалити</string>
-    <string name="ignore_12" translatable="true">ігнорувати</string>
-    <string name="delete_12" translatable="true">видалити</string>
-    <string name="uninstall_patched_12" translatable="true">ВИДАЛЕННЯ ВИПPАВЛЕНИХ</string>
-    <string name="open_settings_12" translatable="true">ВІДКPИЙТЕ НАЛАШТУВАННЯ</string>
-    <string name="open_patched_12" translatable="true">ВІДКPИТИЙ ЗАЛАТАНИЙ</string>
-    <string name="reboot_12" translatable="true">ПОВТОРНА ВИБІРКА ТА ПЕРЕЗАВАНТАЖЕННЯ</string>
+    <string name="install_12" translatable="true">УСТАНОВИТИ</string>
+    <string name="uninstall_12" translatable="true">ВИДАЛИТИ</string>
+    <string name="ignore_12" translatable="true">ІГНОРУВАТИ</string>
+    <string name="delete_12" translatable="true">ВИДАЛИТИ</string>
+    <string name="uninstall_patched_12" translatable="true">ВИДАЛИТИ</string>
+    <string name="open_settings_12" translatable="true">ВІДКРИТИ НАЛАШТУВАННЯ</string>
+    <string name="open_patched_12" translatable="true">ВІДКPИТИ ПАТЧ</string>
+    <string name="reboot_12" translatable="true">ПОВТОРИТИ ТА ПЕРЕЗАВАНТАЖИТИ</string>
     
     <!--TURKISH LANGUAGE-->
     <string name="app_name_13" translatable="true">xManager</string>
