@@ -13968,7 +13968,7 @@ public class MainActivity extends AppCompatActivity {
 		Language.add("Portuguese (Portugal)");
 		Language.add("Russian");
 		Language.add("Spanish");
-		Language.add("Ukranian");
+		Language.add("Ukrainian");
 		Language.add("Turkish");
 		Language.add("Arabic");
 		Language.add("Slovenian");
