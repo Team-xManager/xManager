@@ -3456,20 +3456,20 @@
     <string name="changelogs_41" translatable="true">മാറ്റങ്ങളുടെ പട്ടിക</string>
     <string name="manager_tools_41" translatable="true">ഉപകരണങ്ങൾ</string>
     <string name="source_41" translatable="true">ഉറവിടം</string>
-    <string name="support_41" translatable="true">ട്ടെലിഗ്രാം</string>
+    <string name="support_41" translatable="true">ടെലിഗ്രാം</string>
     <string name="donate_41" translatable="true">പിന്തുണ</string>
-    <string name="discord_41" translatable="true">ഡിസകോർഡ്</string>
-    <string name="about_41" translatable="true">കുറിച്ച്</string>
+    <string name="discord_41" translatable="true">ഡിസ്‌കോർഡ്</string>
+    <string name="about_41" translatable="true">സംബന്ധിച്ച്</string>
     <string name="main_title_41" translatable="true">xManager</string>
-    <string name="settings_title_41" translatable="true">ക്രമീകരണം</string>
-    <string name="about_title_41" translatable="true">കുറിച്ച്</string>
+    <string name="settings_title_41" translatable="true">ക്രമീകരണങ്ങൾ</string>
+    <string name="about_title_41" translatable="true">സംബന്ധിച്ച്</string>
     <string name="list_auto_refresh_41" translatable="true">ലിസ്റ്റ് ഓട്ടോ റിഫ്രെഷ്</string>
-    <string name="list_auto_refresh_desc_41" translatable="true">ഇത് ഓണാക്കിയാൽ, ആപ്ലിക്കേഷൻ തുറക്കുമ്പോഴെല്ലാം ലിസ്റ്റ് താനേ അപ്ടേറ്റ് ചെയ്യപ്പെടും.\n\nസ്വമേധയാ അപ്ടേറ്റ് ചെയ്യണമെങ്കിൽ, ഹോം സ്ക്രീനിൽ താഴേയ്ക്ക് സ്വൈപ്പ് ചെയ്യുക.</string>
+    <string name="list_auto_refresh_desc_41" translatable="true">ഇത് ഓണാക്കിയാൽ, ആപ്ലിക്കേഷൻ തുറക്കുമ്പോഴെല്ലാം ലിസ്റ്റ് താനേ അപ്ഡേറ്റ് ചെയ്യപ്പെടും.\n\nസ്വമേധയാ അപ്ഡേറ്റ് ചെയ്യണമെങ്കിൽ, ഹോം സ്ക്രീനിൽ താഴേയ്ക്ക് സ്വൈപ്പ് ചെയ്യുക.</string>
     <string name="force_auto_install_41" translatable="true">ഫോഴ്സ് ഓട്ടോ ഇൻസ്റ്റാൾ</string>
     <string name="force_auto_install_desc_41" translatable="true">ഇത് ഓണാക്കിയാൽ, പാച്ച് ചെയ്യപ്പെട്ട ആപ്ലിക്കേഷൻ ഡൗൺലോഡായ ഉടൻ ഇൻസ്റ്റാൾ ചെയ്യപ്പെടും.</string>
     <string name="show_themes_41" translatable="true">തീമുകൾ</string>
-    <string name="apk_location_41" translatable="true">APK -യുടെ ഇരിപ്പിടം</string>
-    <string name="apk_location_desc_41" translatable="true">ഡൗൺലോഡ് ചെയ്ത ഫയൽ സേവ് ചെയ്യപ്പെടുന്ന ഡിറക്ടറി ഫോൾഡർ. ഈ സവിശേഷത എങ്ങനെ കോൺഫിഗർ ചെയ്യണമെന്ന് നിങ്ങൾക്കറിയില്ലെങ്കിൽ, ഇത് അതേപടി വിടുക.\n\nശ്രദ്ധിക്കുക: ഈ സവിശേഷതയിൽ എക്സ്റ്റെണൽ സ്റ്റോറേജുകളായ SD കാർഡ് തുടങ്ങിയവ, വ്യത്യസ്ഥ കാരണങ്ങളാൽ, ഉപയോഗിക്കാൻ പറ്റുന്നതല്ല.</string>
+    <string name="apk_location_41" translatable="true">APK -യുടെ ലൊക്കേഷൻ</string>
+    <string name="apk_location_desc_41" translatable="true">ഡൗൺലോഡ് ചെയ്ത ഫയൽ സേവ് ചെയ്യപ്പെടുന്ന ഡയറക്ടറി ഫോൾഡർ. ഈ സവിശേഷത എങ്ങനെ കോൺഫിഗർ ചെയ്യണമെന്ന് നിങ്ങൾക്കറിയില്ലെങ്കിൽ, ഇത് അതേപടി വിടുക.\n\nശ്രദ്ധിക്കുക: ഈ സവിശേഷതയിൽ എക്സ്റ്റെണൽ സ്റ്റോറേജുകളായ SD കാർഡ് തുടങ്ങിയവ, വ്യത്യസ്ഥ കാരണങ്ങളാൽ, ഉപയോഗിക്കാൻ പറ്റുന്നതല്ല.</string>
     <string name="clear_directory_folders_41" translatable="true">ക്ലിയർ ഡിറക്ടറി ഫോൾഡർ</string>
     <string name="clear_directory_folders_desc_41" translatable="true">ഡിറക്ടറി ഫോൾഡർ ഡിലീറ്റ് ചെയ്യുന്നതിനായി ടാപ്പ് ചെയ്യുക. ഡൗൺലോഡ് ചെയ്‌ത ഫയലുകളും അപ്‌ഡേറ്റുകളും ഇതിൽ ഉൾപ്പെടുന്നു.</string>
     <string name="reset_preferences_41" translatable="true">മുൻഗണനകൾ റീസെറ്റ് ചെയ്യുക</string>
@@ -3481,29 +3481,29 @@
     <string name="download_ready_desc_41" translatable="true">ഈ പാച്ച്ഡ് ഡയറക്‌ടറിയിലുള്ള മുമ്പത്തെ ഫയലിനെ തിരുത്തിയെഴുതും. ശ്രദ്ധയോടെ മുൻപൊട്ട് പോകുക.</string>
     <string name="downloading_file_41" translatable="true">ഫയൽ ഡൗൺലോഡ് ചെയ്യപ്പെടുന്നു</string>
     <string name="download_success_41" translatable="true">വിജയകരമായി ഡൗൺലോഡ് ചെയ്തിരിക്കുന്നു</string>
-    <string name="new_update_41" translatable="true">പുതിയ അപ്ടേറ്റ്</string>
+    <string name="new_update_41" translatable="true">പുതിയ അപ്ഡേറ്റ്</string>
     <string name="continue_1_41" translatable="true">തുടരുക</string>
     <string name="cancel_41" translatable="true">റദ്ദാക്കുക</string>
     <string name="download_41" translatable="true">ഡൗൺലോഡ്</string>
-    <string name="later_41" translatable="true">പിന്നെ</string>
+    <string name="later_41" translatable="true">പിന്നീട്</string>
     <string name="install_now_41" translatable="true">പാച്ചട് ഇൻസ്റ്റാൾ ചെയ്യുക</string>
-    <string name="install_update_41" translatable="true">അപ്ടേറ്റ് ഇൻസ്റ്റാൾ ചെയ്യുക</string>
-    <string name="go_back_41" translatable="true">പിറകിലീക്ക് പോകുക</string>
-    <string name="download_update_41" translatable="true">അപ്ടേറ്റ് ഡൗൺലോഡ് ചെയ്യുക</string>
+    <string name="install_update_41" translatable="true">അപ്ഡേറ്റ് ഇൻസ്റ്റാൾ ചെയ്യുക</string>
+    <string name="go_back_41" translatable="true">പുറകിലേക്ക് പോകുക</string>
+    <string name="download_update_41" translatable="true">അപ്ഡേറ്റ് ഡൗൺലോഡ് ചെയ്യുക</string>
     <string name="not_now_41" translatable="true">ഇപ്പോൾ വേണ്ട</string>
     <string name="mirror_41" translatable="true">മിറർ ലിങ്ക്</string>
     <string name="lite_41" translatable="true">ലൈറ്റ്</string>
     <string name="experimental_title_41" translatable="true">പരീക്ഷണാത്മകം</string>
     <string name="experimental_version_41" translatable="true">എക്സപെറിമെന്റൽ വെർഷൻ</string>
     <string name="experimental_version_desc_41" translatable="true">ഇത് ഓണക്കിയാൽ പാച്ചട് ആപ്ലിക്കേഷന്റെ പരീക്ഷണാത്മകമായ വെർഷനുകൾ ഇൻസ്റ്റാൾ ചെയ്യാൻ സാധിക്കും.\n\nസ്റ്റോക്ക് പാച്ചിൽ ലഭ്യമല്ലാത്ത ആൽഫ, ബീറ്റ, ഏർലി ആക്‌സസ് ഫീച്ചറുകൾ എന്നിവ ഇതിൽ ഉൾപ്പെടുന്നു. കൂടാതെ, സ്ഥിരത ഉറപ്പില്ല.</string>
-    <string name="show_support_41" translatable="true">സപോർട്ട് ചെയ്യുക</string>
+    <string name="show_support_41" translatable="true">സപ്പോർട്ട് ചെയ്യുക</string>
     <string name="show_support_desc_41" translatable="true">ഞങ്ങൾ ലാഭേച്ഛയില്ലാത്ത, കോർപ്പറേറ്റ് അല്ലാത്ത, വിട്ടുവീഴ്ച ചെയ്യാത്ത സംഘമാണ്. നിങ്ങളെപ്പോലുള്ള ആളുകൾ, പ്രത്യേകിച്ച് ഡൗൺലോഡ് ചെയ്യുന്നത് മുതൽ ഇൻസ്റ്റാൾ ചെയ്യുന്നത് വരെ വളരെ എളുപ്പമാക്കുന്നതിന്, ഒരു ആപ്പ് സൃഷ്ടിക്കാൻ ഞങ്ങളെ പ്രോത്സാഹിപ്പിക്കുന്നു.\n\nകാര്യങ്ങൾ ശരിയും തികവുറ്റതുമാക്കാൻ ഞങ്ങൾ ഞങ്ങളുടെ എല്ലാ സമയവും മികച്ച പരിശ്രമവും ചെലവഴിക്കുന്നു. ഞങ്ങൾക്ക് കഴിയുന്നിടത്തോളം ഈ ആപ്പിനെ പിന്തുണയ്ക്കാൻ ഞങ്ങൾ പരമാവധി ശ്രമിക്കും.\n\nഏത് തുകയും സഹായിക്കുകയും വളരെയധികം അഭിനന്ദിക്കുകയും ചെയ്യും!</string>
-    <string name="maintenance_41" translatable="true">മെയിൻറനൻസ്</string>
+    <string name="maintenance_41" translatable="true">അറ്റകുറ്റപ്പണി</string>
     <string name="maintenance_desc_41" translatable="true">xManager നിലവിൽ ലഭ്യമല്ല. ദയവായി അല്പസമയത്തിനു ശേഷം വീണ്ടും ശ്രമിക്കുക.</string>
     <string name="thanks_41" translatable="true">നന്ദി!</string>
     <string name="language_41" translatable="true">ഭാഷ</string>
     <string name="website_41" translatable="true">വെബ്സൈറ്റ്</string>
-    <string name="reddit_41" translatable="true">റെഡിറ്റ്</string>
+    <string name="reddit_41" translatable="true">റെഡ്ഡിറ്റ്</string>
     <string name="faq_41" translatable="true">പതിവുചോദ്യങ്ങൾ</string>
     <string name="cloned_version_41" translatable="true">ക്ലോൺഡ് വെർഷൻ</string>
     <string name="cloned_version_desc_41" translatable="true">ഇത് ഓണക്കിയാൽ പാച്ചട് ആപ്ലിക്കേഷന്റെ ക്ലോൺ ചെയ്യപ്പെട്ട വെർഷനുകൾ ഇൻസ്റ്റാൾ ചെയ്യാൻ സാധിക്കും.\n\nഇത് മിക്ക ഇൻസ്റ്റാളേഷൻ പിശകുകളും പ്രശ്നങ്ങളും പരിഹരിക്കും, പ്രത്യേകിച്ചും നിങ്ങൾക്ക് മുൻകൂട്ടി ഇൻസ്റ്റാൾ ചെയ്ത Spotify ആപ്ലിക്കേഷൻ ഉണ്ടെങ്കിൽ.</string>
