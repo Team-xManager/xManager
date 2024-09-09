@@ -88,7 +88,7 @@ We will support the app as long as we can. Internal improvements may not be guar
 | **Korean Translation**                | Apious \| Annyeong-One |
 | **Dutch Translation**                 | Kevin |
 | **Vietnamese Translation**            | minhtamvn \| tungnnnt17 |
-| **German Translation**                | smokedzn |
+| **German Translation**                | smokedzn \| 4NDROM3DA |
 | **Persian Translation**               | ohshahab |
 | **Hebrew Translation**                | GreenArmy18 |
 | **Polish Translation**                | dearminder |
@@ -103,7 +103,6 @@ We will support the app as long as we can. Internal improvements may not be guar
 | **Serbian (Latin) Translation** | nexiRS |
 | **Catalan Translation** | tomaquet18 |
 | **Latvian Translation** | ClientSiderz \| gatesbydude |
-| **German Translation** | 4NDROM3DA |
 | **Sinhala Translation** | Psycho649 |
 | **Hungarian Translation** | gurtnyi |
 | **Japanese Translation** | reindex-ot |
