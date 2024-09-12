@@ -81,32 +81,15 @@ public class SplashActivity extends AppCompatActivity {
 		}
 		Glide.with(getApplicationContext()).load(Uri.parse("file:///android_asset/splash.gif")).into(icon_splash);
 		title_splash.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_glitch.ttf"), 1);
-		if (0 == SketchwareUtil.getRandom((int)(0), (int)(4))) {
-			title_splash.setText("xManager");
-			title_splash.setTextSize((int)25);
-		}
-		else {
-			if (1 == SketchwareUtil.getRandom((int)(0), (int)(4))) {
-				title_splash.setText("Still Kickin'");
-				title_splash.setTextSize((int)25);
-			}
-			else {
-				if (2 == SketchwareUtil.getRandom((int)(0), (int)(4))) {
-					title_splash.setText("It's A Movement");
-					title_splash.setTextSize((int)25);
-				}
-				else {
-					if (3 == SketchwareUtil.getRandom((int)(0), (int)(4))) {
-						title_splash.setText("We Are Resistance");
-						title_splash.setTextSize((int)25);
-					}
-					else {
-						title_splash.setText("Freedom For Everyone");
-						title_splash.setTextSize((int)20);
-					}
-				}
-			}
-		}
+
+		String[] titles = {
+				"xManager", "Still Kickin'", "It's A Movement",
+				"We Are Resistance", "Freedom For Everyone"
+		};
+		int randomValue = SketchwareUtil.getRandom(0, 4);
+		title_splash.setText(titles[randomValue]);
+		title_splash.setTextSize(randomValue == 4 ? 20 : 25);
+
 		Animation animation_icon;
 		animation_icon = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
 		animation_icon.setDuration(800); icon_splash.startAnimation(animation_icon);
@@ -149,42 +132,17 @@ public class SplashActivity extends AppCompatActivity {
 	
 	
 	public void _Theme_UI() {
-		if (THEME.getString("THEME", "").equals("14")) {
-			main_body.setBackgroundColor(0xFF1B5E20);
-		}
-		else {
-			if (THEME.getString("THEME", "").equals("15")) {
-				main_body.setBackgroundColor(0xFF00008B);
-			}
-			else {
-				if (THEME.getString("THEME", "").equals("16")) {
-					main_body.setBackgroundColor(0xFF8B0000);
-				}
-				else {
-					if (THEME.getString("THEME", "").equals("17")) {
-						main_body.setBackgroundColor(0xFFFF8C00);
-					}
-					else {
-						if (THEME.getString("THEME", "").equals("18")) {
-							main_body.setBackgroundColor(0xFFAA336A);
-						}
-						else {
-							if (THEME.getString("THEME", "").equals("19")) {
-								main_body.setBackgroundColor(0xFF301934);
-							}
-							else {
-								if (THEME.getString("THEME", "").equals("20")) {
-									main_body.setBackgroundColor(0xFF008B8B);
-								}
-								else {
-									main_body.setBackgroundColor(0xFF171717);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		Map<String, Integer> themeColors = new HashMap<>();
+		themeColors.put("14", 0xFF1B5E20);
+		themeColors.put("15", 0xFF00008B);
+		themeColors.put("16", 0xFF8B0000);
+		themeColors.put("17", 0xFFFF8C00);
+		themeColors.put("18", 0xFFAA336A);
+		themeColors.put("19", 0xFF301934);
+		themeColors.put("20", 0xFF008B8B);
+
+		int color = themeColors.getOrDefault(THEME.getString("THEME", ""), 0xFF171717);
+		main_body.setBackgroundColor(color);
 	}
 	
 	
