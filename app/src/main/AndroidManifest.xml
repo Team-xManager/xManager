@@ -22,7 +22,7 @@
 		android:networkSecurityConfig="@xml/network_security_config">
 		<activity
 			android:name=".MainActivity"
-			android:exported="true"
+            android:exported="true"
 			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
 			android:hardwareAccelerated="true"
 			android:supportsPictureInPicture="true"

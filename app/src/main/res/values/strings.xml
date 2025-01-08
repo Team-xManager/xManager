@@ -3783,4 +3783,89 @@
     <string name="open_settings_44" translatable="true">НЭЭЛТТЭЙ Тохиргоо</string>
     <string name="open_patched_44" translatable="true">НЭЭЛТТЭЙ PATCHED</string>
     <string name="reboot_44" translatable="true">ДАХИН АЧАХ, REBOOT</string>
+
+    <!--ARMENIAN LANGUAGE-->
+    <string name="app_name_45" translatable="true">xManager</string>
+    <string name="installed_45" translatable="true">ՏԵՂԱԴՐՎԱԾ</string>
+    <string name="latest_45" translatable="true">ԹԱՐՄ</string>
+    <string name="versions_45" translatable="true">ԹՈՂԱՐԿՈՒՄՆԵՐ</string>
+    <string name="changelogs_45" translatable="true">ՓՈՓՈԽՈՒԹՅՈՒՆՆԵՐ</string>
+    <string name="manager_tools_45" translatable="true">ԳՈՐԾԻՔՆԵՐ</string>
+    <string name="source_45" translatable="true">ԱՂԲՅՈՒՐ</string>
+    <string name="support_45" translatable="true">TELEGRAM</string>
+    <string name="donate_45" translatable="true">ԱՋԱԿՑՈՒՄ</string>
+    <string name="discord_45" translatable="true">DISCORD</string>
+    <string name="about_45" translatable="true">ՄԵՐ ՄԱՍԻՆ</string>
+    <string name="main_title_45" translatable="true">xManager</string>
+    <string name="settings_title_45" translatable="true">Կարգավորումներ</string>
+    <string name="about_title_45" translatable="true">Մեր մասին</string>
+    <string name="list_auto_refresh_45" translatable="true">ՑԱՆԿԻ ԱՎՏՈ-ԹԱՐՄԱՑՈՒՄ</string>
+    <string name="list_auto_refresh_desc_45" translatable="true">Սա միացնելը ավտոմատ կերպով կթարմացնի ցուցակը ամեն անգամ, երբ գործարկում եք հավելվածը:\n\nԴուք կարող եք ձեռքով թարմացնել ցուցակը՝ հիմնական մենյուում ներքև քաշելով:</string>
+    <string name="force_auto_install_45" translatable="true">ՍՏԻՊՎԱԾ ԱՎՏՈ-ՏԵՂԱԴՐՈՒՄ</string>
+    <string name="force_auto_install_desc_45" translatable="true">Սա միացնելով ավտոմատ կերպով կտեղադրվի patch արված հավելվածը և ներբեռնվելուց հետո կթարմացվի:</string>
+    <string name="show_themes_45" translatable="true">ԹԵՄԱՆԵՐ</string>
+    <string name="apk_location_45" translatable="true">APK-Ի ԳՏՆՎԵԼՈՒ ՎԱՅՐԸ</string>
+    <string name="apk_location_desc_45" translatable="true">Պանակը, որտեղ ցանկանում եք պահպանել ներբեռնված ֆայլի պատճենը: Եթե ​​չգիտեք, թե ինչպես կարգավորել այս գործառույթը, թողեք այն այնպես, ինչպես կա:\n\nՆՇՈՒՄ. Այս հատկությունը չի աշխատում արտաքին պահեստավորմանը (SD Card)՝ Android System-ի թույլտվությունների և պահեստավորման սահմանափակումների պատճառով:</string>
+    <string name="clear_directory_folders_45" translatable="true">ՄԱՔՐԵԼ ՊԱՆԱԿԸ</string>
+    <string name="clear_directory_folders_desc_45" translatable="true">Հպեք՝ գրացուցակի պանակը ջնջելու համար: Սա ներառում է ներբեռնված ֆայլերը և թարմացումները:</string>
+    <string name="reset_preferences_45" translatable="true">ՎԵՐԱԿԱՆԳՆԵԼ ԿԱՐԳԱՎՈՐՈՒՄՆԵՐԸ</string>
+    <string name="about_sub_45" translatable="true">Գովազդազուրկ | Նոր Հատկանիշներ | Ազատություն</string>
+    <string name="xmanager_dev_45" translatable="true">xManager-ի ծրագրավորող</string>
+    <string name="contributors_45" translatable="true">ՇՆՈՐՀԱԿԱԼՈՒԹՅՈՒՆ ԲՈԼՈՐ ՆԵՐԴՐԱԿԱՆՆԵՐԻՆ! ❤️</string>
+    <string name="download_selected_45" translatable="true">Դուք ընտրել եք այս patch արված տարբերակը: Ցանկանու՞մ եք շարունակել։</string>
+    <string name="download_ready_45" translatable="true">PATCH-Ի ՄԱՍԻՆ ԻՆՖՈՐՄԱՑԻԱ</string>
+    <string name="download_ready_desc_45" translatable="true">Այս patch-ը կվերագրի պանակում գտնվող նախորդ ֆայլը: Շարունակեք զգուշությամբ։</string>
+    <string name="downloading_file_45" translatable="true">ՖԱՅԼԸ ՆԵՐԲԵՌՆՎՈՒՄ Է</string>
+    <string name="download_success_45" translatable="true">ՖԱՅԼԸ ՀԱՋՈՂԱԲԱՐ ՆԵՐԲԵՌՆՎԱԾ Է</string>
+    <string name="new_update_45" translatable="true">ՆՈՐ ԹԱՐՄԱՑՈՒՄ</string>
+    <string name="continue_1_45" translatable="true">ՇԱՐՈՒՆԱԿԵԼ</string>
+    <string name="cancel_45" translatable="true">ՉԵՂԱՐԿԵԼ</string>
+    <string name="download_45" translatable="true">ՆԵՐԲԵՌՆԵԼ</string>
+    <string name="later_45" translatable="true">ՀԵՏՈ</string>
+    <string name="install_now_45" translatable="true">ՏԵՂԱԴՐՈՒՄԸ PATCH ԵՂԱՎ</string>
+    <string name="install_update_45" translatable="true">ՏԵՂԱԴՐԵԼ ԹԱՐՄԱՑՈՒՄԸ</string>
+    <string name="go_back_45" translatable="true">ՀԵՏ ԳՆԱԼ</string>
+    <string name="download_update_45" translatable="true">ԲԵՌՆԵԼ ԹԱՐՄԱՑՈՒՄԸ</string>
+    <string name="not_now_45" translatable="true">ՀԻՄԱ ՉԷ</string>
+    <string name="mirror_45" translatable="true">MIRROR-Ի ՀՂՈՒՄ</string>
+    <string name="lite_45" translatable="true">LITE</string>
+    <string name="experimental_title_45" translatable="true">Փորձնական</string>
+    <string name="experimental_version_45" translatable="true">ՓՈՐՁՆԱԿԱՆ ԹՈՂԱՐԿՈՒՄ</string>
+    <string name="experimental_version_desc_45" translatable="true">Սա միացնելը թույլ է տալիս ներբեռնել և տեղադրել patch արված հավելվածի փորձնական թողարկումը:\n\nՍա ներառում է ալֆա, բետա և վաղ հասանելիության թողարկումներ, որոնք հասանելի չեն patch արված ֆոնդում: Բացի այդ, երաշխավորված չէ կայունությունը։</string>
+    <string name="show_support_45" translatable="true">ՑՈՒՅՑ ՏՎԵՔ ՁԵՐ ԱՋԱԿՑՈՒԹՅՈՒՆԸ</string>
+    <string name="show_support_desc_45" translatable="true">Մենք շահույթ չհետապնդող, ոչ կորպորատիվ և ոչ կոմպրոմիսային թիմ ենք: Ձեր նման մարդիկ մեզ խրախուսում են ստեղծել հավելված, որը շատ ավելի հեշտ կդարձնի ամեն ինչ՝ հատկապես ներբեռնումից մինչև տեղադրում:\n\nՄենք ծախսում ենք մեր ամբողջ ժամանակն ու լավագույն ջանքերը, որպեսզի ամեն ինչ ճիշտ և կատարյալ լինի: Մենք կանենք ամեն ինչ՝ աջակցելու այս հավելվածին այնքան ժամանակ, որքան կարող ենք:\n\nՑանկացած գումար կօգնի և շատ գնահատելի կլինի:</string>
+    <string name="maintenance_45" translatable="true">ՍՊԱՍԱՐԿՎՈՒՄ Է</string>
+    <string name="maintenance_desc_45" translatable="true">xManager-ը ժամանակավոր հասանելի չէ։ Փորձեք կրկին միքիչ հետո։</string>
+    <string name="thanks_45" translatable="true">ՇՆՈՐՀԱԿԱԼՈՒԹՅՈՒՆ!</string>
+    <string name="language_45" translatable="true">ԼԵԶՈՒ</string>
+    <string name="website_45" translatable="true">ԿԱՅՔ</string>
+    <string name="reddit_45" translatable="true">REDDIT</string>
+    <string name="faq_45" translatable="true">FAQ</string>
+    <string name="cloned_version_45" translatable="true">ԿԼՈՆԱՎՈՐՎԱԾ ՏԱՐԲԵՐԱԿ</string>
+    <string name="cloned_version_desc_45" translatable="true">Սա միացնելը թույլ է տալիս ներբեռնել և տեղադրել patch արված հավելվածի կլոնավորված տարբերակը:\n\nՍա նաև կլուծի տեղադրման սխալների կամ խնդիրների մեծ մասը, հատկապես, եթե ունեք նախապես տեղադրված Spotify հավելված:</string>
+    <string name="disable_rewarded_ads_45" translatable="true">ԱՆՋԱՏԵԼ ՊԱՐԳԵՎԱՏՐՎԱԾ ԳՈՎԱԶԴՆԵՐԸ</string>
+    <string name="disable_rewarded_ads_desc_45" translatable="true">Մենք գիտենք, որ շատերը չեն սիրում գովազդներ, բայց մեր դեպքում դա էապես օգնում է մեզ ֆինանսավորել մեր տվյալների բազան, հոսթինգի հղումները, թարմացումները, ավելի շատ patch-երը և ամենօրյա կարիքները:\n\nՍա մեզ աջակցելու ամենապարզ միջոցն է առանց նվիրատվությունների կամ նվիրատվության:</string>
+    <string name="installation_failed_45" translatable="true">ՏԵՂԱԴՐՈՒՄԸ ԽԱՓԱՆՎԵՑ</string>
+    <string name="installation_failed_desc_45" translatable="true">Պատճառը․ Դուք փորձել եք տեղադրել patch արված թողարկում ավելի ցածր, քան ներկայումս տեղադրված է:\n\nԼուծումներ՝\nԱ. Ընտրեք հավասար կամ ավելի նոր թողարկում:\nB. Ապատեղադրեք ընթացիկ թողարկումը, ապա ցածրացրեք թողարկումը:\n\nԵթե խնդիրը չվերանա, ստուգեք FAQ-ը:</string>
+    <string name="installation_failed_spap_desc_45" translatable="true">Պատճառը․ Այս սարքում տեղադրված ընթացիկ patch-ը չի ներբեռնվել xManager-ից կամ մեր թիմից:\n\nԼուծում. ապատեղադրեք հավելվածի ընթացիկ թողարկումը, վերագործարկեք xManager-ը և նորից փորձեք: Եթե ​​խնդիրը շարունակվի, ստուգեք FAQ-ը։</string>
+    <string name="installation_failed_cloned_desc_45" translatable="true">Պատճառը․ Այս սարքում տեղադրված ընթացիկ կլոնավորվածը չի ներբեռնվել xManager-ից կամ մեր թիմից:\n\nԼուծում. ապատեղադրեք հավելվածի ընթացիկ թողարկումը, վերագործարկեք xManager-ը և նորից փորձեք: Եթե ​​խնդիրը շարունակվի, ստուգեք FAQ-ը։</string>
+    <string name="existing_patched_45" translatable="true">ԳՈՐԾՈՂ PATCH</string>
+    <string name="existing_patched_desc_45" translatable="true">Պանակում հայտնաբերվել է առկա patch: Ի՞նչ կցանկանայիք անել:</string>
+    <string name="disable_notification_45" translatable="true">ԱՆՋԱՏԵԼ ԾԱՆՈՒՑՈՒՄԸ</string>
+    <string name="disable_notification_desc_45" translatable="true">Սա միացնելը կապատեղադրի հիշեցման ծանուցումը patch արված հավելվածը տեղադրելուց հետո:</string>
+    <string name="hide_stock_patched_45" translatable="true">ԹԱՔՑՆԵԼ ՍՏԱՆԴԱՐՏ PATCH-Ը</string>
+    <string name="hide_amoled_patched_45" translatable="true">ԹԱՔՑՆԵԼ AMOLED PATCH-Ը</string>
+    <string name="hide_lite_patched_45" translatable="true">ԹԱԿՑՆԵԼ LITE PATCH-Ը</string>
+    <string name="close_45" translatable="true">ՓԱԿԵԼ</string>
+    <string name="cloned_45" translatable="true">ԿԼՈՆԱՎՈՐՎԱԾ</string>
+    <string name="spap_45" translatable="true">SP/AP</string>
+    <string name="install_45" translatable="true">ՏԵՂԱԴՐԵԼ</string>
+    <string name="uninstall_45" translatable="true">ԱՊԱՏԵՂԱԴՐԵԼ</string>
+    <string name="ignore_45" translatable="true">ԱՆՏԵՍԵԼ</string>
+    <string name="delete_45" translatable="true">ՋՆՋԵԼ</string>
+    <string name="uninstall_patched_45" translatable="true">ԱՊԱՏԵՂԱԴՐԵԼ PATCH-Ը</string>
+    <string name="open_settings_45" translatable="true">ԲԱՑԵԼ ԿԱՐԳԱՎՈՐՈՒՄՆԵՐԸ</string>
+    <string name="open_patched_45" translatable="true">ԲԱՑԵԼ PATCH-Ը</string>
+    <string name="reboot_45" translatable="true">ՎԵՐԱԲԵՐՈՒՄ ԵՎ ՎԵՐԱԳՈՐԾԱՐԿՈՒՄ</string>
+
 </resources>
