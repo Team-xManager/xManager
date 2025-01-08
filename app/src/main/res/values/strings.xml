@@ -2505,7 +2505,7 @@
     <string name="installation_failed_spap_desc_29" translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManager-а или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављана питања.</string>
     <string name="installation_failed_cloned_desc_29" translatable="true">Разлог: Тренутно инсталиран Spotify, на овом уређају, није дошао директно од xManager-а или нашег тима.\n\nРешење: Деинсталирајте тренутну верзију апликације, поново покрените xManager и покушајте поново. Ако се проблем настави, проверите често постављана питања.</string>
     <string name="existing_patched_29" translatable="true">ПОСТОЈЕЋА ЗАКРПА</string>
-    <string name="existing_patched_desc_29" translatable="true">Постојећа закрпа је откривен у спољном фолдеру. Коју радњу бисте желели да извршите?</string>
+    <string name="existing_patched_desc_29" translatable="true">Постојећа закрпа је откривена у спољном фолдеру. Коју радњу бисте желели да извршите?</string>
     <string name="disable_notification_29" translatable="true">ОНЕМОГУЋИ ОБАВЕШТЕЊЕ</string>
     <string name="disable_notification_desc_29" translatable="true">Ако ово омогућите, неће се приказивати обавештење након инсталирања закрпљене апликације.</string>
     <string name="hide_stock_patched_29" translatable="true">САКРИЈ STOCK ЗАКРПУ</string>
@@ -2589,7 +2589,7 @@
     <string name="installation_failed_spap_desc_30" translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManager-a ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljana pitanja.</string>
     <string name="installation_failed_cloned_desc_30" translatable="true">Razlog: Trenutno instaliran Spotify, na ovom uređaju, nije došao direktno od xManager-a ili našeg tima.\n\nRešenje: Deinstalirajte trenutnu verziju aplikacije, ponovo pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, proverite često postavljana pitanja.</string>
     <string name="existing_patched_30" translatable="true">POSTOJEĆA ZAKRPA</string>
-    <string name="existing_patched_desc_30" translatable="true">Postojeća zakrpa je otkriven u spoljnom folderu. Koju radnju biste želeli da izvršite?</string>
+    <string name="existing_patched_desc_30" translatable="true">Postojeća zakrpa je otkrivena u spoljnom folderu. Koju radnju biste želeli da izvršite?</string>
     <string name="disable_notification_30" translatable="true">ONEMOGUĆI OBAVEŠTENJE</string>
     <string name="disable_notification_desc_30" translatable="true">Ako ovo omogućite, neće se prikazivati obaveštenje nakon instaliranja zakrpljene aplikacije.</string>
     <string name="hide_stock_patched_30" translatable="true">SAKRIJ STOCK ZAKRPU</string>
@@ -3594,7 +3594,7 @@
     <string name="disable_rewarded_ads_42" translatable="true">ONEMOGUĆI OGLASE</string>
     <string name="disable_rewarded_ads_desc_42" translatable="true">Znamo da većina nas ne voli oglase, ali u našem slučaju, to nam znatno pomaže da financiramo našu bazu podataka, linkove za hosting, ažuriranja, više zakrpanih aplikacija i dnevne potrebe.\n\nOvo je najjednostavniji način da nas podržite bez doniranja ili trošenja ičega.</string>
     <string name="installation_failed_42" translatable="true">INSTALACIJA NIJE USPJELA</string>
-    <string name="installation_failed_desc_42" translatable="true">Razlog: Pokušali ste instalirati zakrpanu verziju nižu od one koja je trenutno instalirana.\n\nRješenja:\nA. Odaberite verziju jednaku ili veću od trenutne.\nB. Deinstalirajte trenutnu verziju, a zatim je snizite.\n\nAko se problem nastavi, provjerite</string>
+    <string name="installation_failed_desc_42" translatable="true">Razlog: Pokušali ste instalirati zakrpanu verziju nižu od one koja je trenutno instalirana.\n\nRješenja:\nA. Odaberite verziju jednaku ili veću od trenutne.\nB. Deinstalirajte trenutnu verziju, a zatim je snizite.\n\nAko se problem nastavi, provjerite FAQ</string>
     <string name="installation_failed_spap_desc_42" translatable="true">Razlog: Trenutna zakrpana aplikacija instalirana na ovom uređaju nije došla izravno od xManagera ili od našeg tima.\n\nRješenje: Deinstalirajte trenutnu verziju aplikacije, ponovno pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, provjerite FAQ</string>
     <string name="installation_failed_cloned_desc_42" translatable="true">Razlog: Trenutna zakrpana aplikacija instalirana na ovom uređaju nije došla izravno od xManagera ili od našeg tima.\n\nRješenje: Deinstalirajte trenutnu verziju aplikacije, ponovno pokrenite xManager i pokušajte ponovo. Ako se problem nastavi, provjerite FAQ</string>
     <string name="existing_patched_42" translatable="true">POSTOJEĆA ZAKRPANA APLIKACIJA</string>
