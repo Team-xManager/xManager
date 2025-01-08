@@ -3783,7 +3783,7 @@
     <string name="open_settings_44" translatable="true">НЭЭЛТТЭЙ Тохиргоо</string>
     <string name="open_patched_44" translatable="true">НЭЭЛТТЭЙ PATCHED</string>
     <string name="reboot_44" translatable="true">ДАХИН АЧАХ, REBOOT</string>
-
+    
     <!--ARMENIAN LANGUAGE-->
     <string name="app_name_45" translatable="true">xManager</string>
     <string name="installed_45" translatable="true">ՏԵՂԱԴՐՎԱԾ</string>
@@ -3867,5 +3867,4 @@
     <string name="open_settings_45" translatable="true">ԲԱՑԵԼ ԿԱՐԳԱՎՈՐՈՒՄՆԵՐԸ</string>
     <string name="open_patched_45" translatable="true">ԲԱՑԵԼ PATCH-Ը</string>
     <string name="reboot_45" translatable="true">ՎԵՐԱԲԵՐՈՒՄ ԵՎ ՎԵՐԱԳՈՐԾԱՐԿՈՒՄ</string>
-
 </resources>
