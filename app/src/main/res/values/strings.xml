@@ -1390,7 +1390,7 @@
     <string name="lite_16" translatable="true">LITE</string>
     <string name="experimental_title_16" translatable="true">Experimental</string>
     <string name="experimental_version_16" translatable="true">Versiune Experimentală</string>
-    <string name="experimental_version_desc_16" translatable="true">activarea acestui lucru vă permite să descărcați și să instalați versiunea experimentală a aplicației patch-uri.\n\naceasta include caracteristici alfa, beta și early accesss care nu sunt disponibile în stoc patch-uri. În plus, nu este garantat stabil.</string>
+    <string name="experimental_version_desc_16" translatable="true">Activarea acesteia va permite descărcarea și instalarea versiunii experimentate a aplicației modificate.\n\nAsta include funcționalități alpha, beta sau cu acces timpuriu care nu sunt disponibile în versiunea de bază modificată. Funcționarea stabilă nu este garantată.</string>
     <string name="show_support_16" translatable="true">OFERĂ-NE SPRIJIN</string>
     <string name="show_support_desc_16" translatable="true">Noi suntem o echipă nonprofit, noncorporativă și necompromisă. Oameni ca tine ne dau curajul să creăm o aplicație care face lucrurile mult mai ușoare, de la descărcat până la instalare.\n\nNoi dedicăm tot timpul și efortul nostru pentru a face totul bine și perfect. O să facem tot ce putem ca să întreținem această aplicație pentru cât mai mult timp.\n\nOrice sumă ne va ajuta și va fi enorm apreciată!</string>
     <string name="maintenance_16" translatable="true">MENTENANȚĂ</string>
@@ -1407,14 +1407,14 @@
     <string name="installation_failed_16" translatable="true">INSTALAREA A EȘUAT</string>
     <string name="installation_failed_desc_16" translatable="true">Motivul: Ai încercat să instalezi o versiune mai veche decât versiunea deja instalată.\n\nSoluții:\nA. Alege o versiune egală sau mai nouă.\nB. Dezinstalează versiunea curentă și instalează versiunea veche.\n\nDacă problema persistă, verifică secția Întrebări Frecvente.</string>
     <string name="installation_failed_spap_desc_16" translatable="true">Motivul: Versiunea curentă Spotify de pe dispozitiv nu a fost creată de echipa noastră.\n\nSoluție: Dezinstalează versiunea curentă a aplicației, restartează xManager și încearcă din nou. Dacă problema persistă, verifică secția Întrebări Frecvente.</string>
-    <string name="installation_failed_cloned_desc_16" translatable="true">Reason: Versiunea curentă a clonei de pe dispozitiv nu a fost creată de echipa noastră.\n\nSoluție: Dezinstalează versiunea curentă a aplicației, restartează xManager și încearcă din nou. Dacă problema persistă, verifică secția Întrebări Frecvente.</string>
+    <string name="installation_failed_cloned_desc_16" translatable="true">Motivul: Versiunea curentă a clonei de pe dispozitiv nu a fost creată de echipa noastră.\n\nSoluție: Dezinstalează versiunea curentă a aplicației, restartează xManager și încearcă din nou. Dacă problema persistă, verifică secția Întrebări Frecvente.</string>
     <string name="existing_patched_16" translatable="true">APK EXISTENT</string>
     <string name="existing_patched_desc_16" translatable="true">Un apk existent a fost găsit la locație. Ce acțiune ai dori să întreprinzi?</string>
-    <string name="disable_notification_16" translatable="true">DEZACTIVAȚI NOTIFICAREA</string>
-    <string name="disable_notification_desc_16" translatable="true">Activarea acestui lucru va elimina notificarea de memento după instalarea aplicației patch-uri.</string>
-    <string name="hide_stock_patched_16" translatable="true">ASCUNDE STOC PATCH-URI</string>
-    <string name="hide_amoled_patched_16" translatable="true">ASCUNDE AMOLED PATCH-URI</string>
-    <string name="hide_lite_patched_16" translatable="true">ASCUNDE LITE PATCH-URI</string>
+    <string name="disable_notification_16" translatable="true">DEZACTIVEAZĂ NOTIFICAREA</string>
+    <string name="disable_notification_desc_16" translatable="true">Activarea acesteia va elimina notificarea după instalarea aplicației modificate.</string>
+    <string name="hide_stock_patched_16" translatable="true">ASCUNDE VER. DE BAZĂ MODIFICATĂ</string>
+    <string name="hide_amoled_patched_16" translatable="true">ASCUNDE VER. AMOLED MODIFICATĂ</string>
+    <string name="hide_lite_patched_16" translatable="true">ASCUNDE VER. LITE MODIFICATĂ</string>
     <string name="close_16" translatable="true">ÎNCHIDE</string>
     <string name="cloned_16" translatable="true">CLONĂ</string>
     <string name="spap_16" translatable="true">OB/AM</string>
@@ -1425,7 +1425,7 @@
     <string name="uninstall_patched_16" translatable="true">DEZINSTALEAZĂ VERSIUNEA MODIFICATĂ</string>
     <string name="open_settings_16" translatable="true">DESCHIDE SETĂRI</string>
     <string name="open_patched_16" translatable="true">DESCHIDE VERSIUNEA MODIFICATĂ</string>
-    <string name="reboot_16" translatable="true">REFETCH ȘI REBOOT</string>
+    <string name="reboot_16" translatable="true">PREIA DIN NOU ȘI REPORNEȘTE</string>
     
     <!--KOREAN LANGUAGE-->
     <string name="app_name_17" translatable="true">xManager</string>
