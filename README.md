@@ -9,7 +9,7 @@
 | **Status** | <img src="https://img.shields.io/github/release-date/xManager-App/xManager?label=UPDATED%20SINCE&style=for-the-badge"></br><img src="https://img.shields.io/github/v/tag/xManager-App/xManager?label=LATEST%20VERSION&style=for-the-badge"> |
 | :-------------: | :-------------: |
 | **Download Milestone** | **<img src="https://img.shields.io/github/downloads/xManager-App/xManager/total?label=OMNIBUS%20(ACTIVE)&style=for-the-badge"></br><img src="https://img.shields.io/badge/ORIGINS%20(SHUTDOWN)-1.1M-red.svg?style=for-the-badge"></br><img src="https://img.shields.io/badge/LEGACY%20(SHUTDOWN)-400K-red.svg?style=for-the-badge">** |
-| **Miscellaneous** | **<a href="https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones"><img src="https://img.shields.io/badge/Roadmaps%20&%20Changelogs-Click%20Here-white.svg?style=for-the-badge"/></br><a href="https://www.virustotal.com/gui/file/901eae37c506484e432c8dd3d96b8cc52063cca98dfc65e7318545d0ac90369c/detection"><img src="https://img.shields.io/badge/VirusTotal%20Analysis-Click%20Here-blue.svg?style=for-the-badge"/>** |
+| **Miscellaneous** | **<a href="https://github.com/xManager-v2/xManager/wiki/xManager-Roadmaps,-Changelogs-and-Milestones"><img src="https://img.shields.io/badge/Roadmaps%20&%20Changelogs-Click%20Here-white.svg?style=for-the-badge"/></br><a href="https://www.virustotal.com/gui/file/967daa70faf2bd992a674cf2764699ac92b5f7d54d4d858ed459f880f1ffabc9/detection"><img src="https://img.shields.io/badge/VirusTotal%20Analysis-Click%20Here-blue.svg?style=for-the-badge"/>** |
 | **Trust Seal** | **<a href="https://monitor2025.sucuri.net/m/verify/?r=ccceaab79b44b4835a6a85d916bf5613b9c98436db"><img src="https://i.ibb.co/vLvdNCR/trustseal.gif"/>** |
 | **Donation/Sponsor** | **[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I3I0IPJ3W)** |
 
@@ -99,8 +99,8 @@ We will support the app as long as we can. Internal improvements may not be guar
 | **Czech Translation**                 | rex2630 |
 | **Chinese (Traditional) Translation** | cracky5322 \| TragicLifeHu |
 | **Bulgarian Translation** | meorro \| martinov83 |
-| **Serbian (Cyrillic) Translation** | nexiRS |
-| **Serbian (Latin) Translation** | nexiRS |
+| **Serbian (Cyrillic) Translation** | nexiRS \| momcilovicluka |
+| **Serbian (Latin) Translation** | nexiRS \| momcilovicluka |
 | **Catalan Translation** | tomaquet18 |
 | **Latvian Translation** | ClientSiderz \| gatesbydude |
 | **Sinhala Translation** | Psycho649 |
@@ -111,9 +111,10 @@ We will support the app as long as we can. Internal improvements may not be guar
 | **Thai Translation** | MaxNjtk |
 | **Marathi Translation** | 5eeTheaveragecoder |
 | **Malayalam Translation** | TheChilledBuffalo |
-| **Croatian Translation** | mrki1111 |
+| **Croatian Translation** | mrki1111 \| momcilovicluka |
 | **Hindi Translation** | askadityapandey |
 | **Mongolian Translation** | Madvellony |
+| **Armenian Translation** | AAVVIronAlex |
 
 </div>
 

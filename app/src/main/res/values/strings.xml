@@ -3783,7 +3783,7 @@
     <string name="open_settings_44" translatable="true">НЭЭЛТТЭЙ Тохиргоо</string>
     <string name="open_patched_44" translatable="true">НЭЭЛТТЭЙ PATCHED</string>
     <string name="reboot_44" translatable="true">ДАХИН АЧАХ, REBOOT</string>
-
+    
     <!--ARMENIAN LANGUAGE-->
     <string name="app_name_45" translatable="true">xManager</string>
     <string name="installed_45" translatable="true">ՏԵՂԱԴՐՎԱԾ</string>
@@ -3868,4 +3868,87 @@
     <string name="open_patched_45" translatable="true">ԲԱՑԵԼ PATCH-Ը</string>
     <string name="reboot_45" translatable="true">ՎԵՐԱԲԵՐՈՒՄ ԵՎ ՎԵՐԱԳՈՐԾԱՐԿՈՒՄ</string>
 
+    <!--GUJARATI LANGUAGE-->
+    <string name="app_name_46" translatable="true">xManager</string>
+    <string name="installed_46" translatable="true">ઇન્સ્ટોલ કર્યું</string>
+    <string name="latest_46" translatable="true">નવુ</string>
+    <string name="versions_46" translatable="true">સંસ્કરણો</string>
+    <string name="changelogs_46" translatable="true">પરિવર્તનો</string>
+    <string name="manager_tools_46" translatable="true">મેનેજર ટૂલ્સ</string>
+    <string name="source_46" translatable="true">સ્રોત</string>
+    <string name="support_46" translatable="true">ટેલિગ્રામ</string>
+    <string name="donate_46" translatable="true">સમર્થન</string>
+    <string name="discord_46" translatable="true">ડિસ્કોર્ડ</string>
+    <string name="about_46" translatable="true">વિગતવાર</string>
+    <string name="main_title_46" translatable="true">xManager</string>
+    <string name="settings_title_46" translatable="true">સેટિંગ્સ</string>
+    <string name="about_title_46" translatable="true">વિગતવાર</string>
+    <string name="list_auto_refresh_46" translatable="true">યાદી સ્વયં-રિફ્રેશ</string>
+    <string name="list_auto_refresh_desc_46" translatable="true">આ સક્રિય કરવાથી દરેક વખતે તમે એપ્લિકેશન શરૂ કરો ત્યારે યાદી આપમેળે તાજી થશે.\n\nતમે મુખ્ય સ્ક્રીનને નીચે ખેંચીને યાદી જાતે તાજી કરી શકો છો.</string>
+    <string name="force_auto_install_46" translatable="true">ફોર્સ ઓટો-ઇન્સ્ટોલ</string>
+    <string name="force_auto_install_desc_46" translatable="true">આ સક્રિય કરવાથી પેચ થયેલ એપ્લિકેશન આપમેળે ઇન્સ્ટોલ થશે અને અપડેટ થશે.</string>
+    <string name="show_themes_46" translatable="true">થીમ્સ</string>
+    <string name="apk_location_46" translatable="true">APK સ્થાન</string>
+    <string name="apk_location_desc_46" translatable="true">તે ડિરેક્ટરી જ્યાં તમે ડાઉનલોડ થયેલ ફાઇલની નકલ સાચવવી છે. જો તમને આ સુવિધા કેવી રીતે સેટ કરવી એ ખબર ન હોય તો એ જ રાખો.\n\nનોંધ: આ સુવિધા એક્સ્ટર્નલ સ્ટોરેજ (SD કાર્ડ) ને સપોર્ટ કરતી નથી કારણ કે ઍક્સેસ, પરવાનગીઓ અને સ્ટોરેજ મર્યાદાઓ.</string>
+    <string name="clear_directory_folders_46" translatable="true">ડિરેક્ટરી ફોલ્ડર સાફ કરો</string>
+    <string name="clear_directory_folders_desc_46" translatable="true">ડિરેક્ટરી ફોલ્ડર કાઢી નાખવા માટે ટૅપ કરો. તેમાં ડાઉનલોડ થયેલ ફાઇલો અને અપડેટ્સનો સમાવેશ થાય છે.</string>
+    <string name="reset_preferences_46" translatable="true">પસંદગીઓ રીસેટ કરો</string>
+    <string name="about_sub_46" translatable="true">જાહેરાત-મુક્ત | નવી સુવિધાઓ | સ્વતંત્રતા</string>
+    <string name="xmanager_dev_46" translatable="true">xManager ડેવલપર</string>
+    <string name="contributors_46" translatable="true">બધા સહયોગીઓનો આભાર! ❤️</string>
+    <string name="download_selected_46" translatable="true">તમે આ પેચ થયેલું સંસ્કરણ પસંદ કર્યું છે. શું તમે આગળ વધવા માંગો છો?</string>
+    <string name="download_ready_46" translatable="true">પેચ માહિતી</string>
+    <string name="download_ready_desc_46" translatable="true">આ પેચ પહેલાની ફાઇલને બાહ્ય ડિરેક્ટરીમાં ઓવરરાઇટ કરશે. કૃપા કરીને સાવધાનીથી આગળ વધો.</string>
+    <string name="downloading_file_46" translatable="true">ફાઇલ ડાઉનલોડ થઈ રહી છે</string>
+    <string name="download_success_46" translatable="true">સફળતાપૂર્વક ડાઉનલોડ કર્યું</string>
+    <string name="new_update_46" translatable="true">નવી મેનેજર અપડેટ</string>
+    <string name="continue_1_46" translatable="true">ચાલુ રાખો</string>
+    <string name="cancel_46" translatable="true">રદ કરો</string>
+    <string name="download_46" translatable="true">ડાઉનલોડ</string>
+    <string name="later_46" translatable="true">પછી</string>
+    <string name="install_now_46" translatable="true">પેચ ઇન્સ્ટોલ કરો</string>
+    <string name="install_update_46" translatable="true">અપડેટ ઇન્સ્ટોલ કરો</string>
+    <string name="go_back_46" translatable="true">પાછા જાવ</string>
+    <string name="download_update_46" translatable="true">અપડેટ ડાઉનલોડ કરો</string>
+    <string name="not_now_46" translatable="true">હવે નહીં</string>
+    <string name="mirror_46" translatable="true">મિરર લિંક</string>
+    <string name="lite_46" translatable="true">લાઇટ</string>
+    <string name="experimental_title_46" translatable="true">પ્રયોગાત્મક</string>
+    <string name="experimental_version_46" translatable="true">પ્રયોગાત્મક સંસ્કરણ</string>
+    <string name="experimental_version_desc_46" translatable="true">આ સક્રિય કરવાથી તમે પેચ થયેલ એપ્લિકેશનનું પ્રયોગાત્મક સંસ્કરણ ડાઉનલોડ અને ઇન્સ્ટોલ કરી શકો છો.\n\nઆમાં અલ્ફા, બીટા અને પ્રારંભિક એક્સેસ ફીચર્સ શામેલ છે જે સ્ટોક પેચમાં ઉપલબ્ધ નથી. ઉપરાંત, તેનું સ્થિર હોવું ખાતરી નથી.</string>
+    <string name="show_support_46" translatable="true">તમારો સમર્થન બતાવો</string>
+    <string name="show_support_desc_46" translatable="true">અમે નફો ન કરતું, બિન-કોર્પોરેટ અને બિન-સમજોતો કરનારું ટીમ છીએ. તમારા જેવા લોકો અમને એપ બનાવવા માટે પ્રોત્સાહિત કરે છે જેથી ખાસ કરીને ડાઉનલોડિંગથી લઇને ઇન્સ્ટોલિંગ સુધી બધું સરળ બને.\n\nઅમે અમારા બધો સમય અને શ્રેષ્ઠ પ્રયાસ એમાં મૂકી રહ્યાં છીએ કે બધું યોગ્ય અને પરિપૂર્ણ બનાવાય. જ્યાં સુધી શક્ય હોય ત્યાં સુધી અમે આ એપને સમર્થન આપીએશું.\n\nકોઈ પણ રકમ મદદરૂપ થશે અને ખૂબ જ આભારી રહીશું!</string>
+    <string name="maintenance_46" translatable="true">રખેંલ</string>
+    <string name="maintenance_desc_46" translatable="true">xManager હાલમાં ઉપલબ્ધ નથી. કૃપા કરીને થોડીવાર પછી ફરી પ્રયાસ કરો.</string>
+    <string name="thanks_46" translatable="true">આભાર!</string>
+    <string name="language_46" translatable="true">ભાષા</string>
+    <string name="website_46" translatable="true">વેબસાઈટ</string>
+    <string name="reddit_46" translatable="true">રેડિટ</string>
+    <string name="faq_46" translatable="true">વારંવાર પૂછાતા પ્રશ્નો</string>
+    <string name="cloned_version_46" translatable="true">ક્લોન થયેલું સંસ્કરણ</string>
+    <string name="cloned_version_desc_46" translatable="true">આ સક્રિય કરવાથી તમે પેચ થયેલી એપ્લિકેશનનું ક્લોન થયેલું સંસ્કરણ ડાઉનલોડ અને ઇન્સ્ટોલ કરી શકો છો.\n\nઆમાથી તમે ઘણા ઇન્સ્ટોલેશનની ભૂલો અથવા સમસ્યાઓ ઉકેલી શકો છો, ખાસ કરીને જો તમારી પાસે પહેલાથી જ Spotify એપ્લિકેશન છે.</string>
+    <string name="disable_rewarded_ads_46" translatable="true">ઇનામવાળી જાહેરાતો બંધ કરો</string>
+    <string name="disable_rewarded_ads_desc_46" translatable="true">અમે જાણીએ છીએ કે ઘણાને જાહેરાતો ગમતી નથી પણ અમારી બાબતમાં, આ અમને અમારા ડેટાબેસ, હોસ્ટિંગ લિંક્સ, અપડેટ્સ, વધુ પેચ અને દૈનિક જરૂરિયાતો માટે નાણાં મેળવવામાં ઘણી મદદ કરે છે.\n\nઆ અમને દાન આપ્યા વિના કે કોઈપણ ખર્ચ વિના સમર્થન આપવાનો સૌથી સરળ રસ્તો છે.</string>
+    <string name="installation_failed_46" translatable="true">ઇન્સ્ટોલેશન નિષ્ફળ ગયું</string>
+    <string name="installation_failed_desc_46" translatable="true">કારણ: તમે હાલ ઇન્સ્ટોલ કરેલી સંસ્કરણ કરતા ઓછી પેચ થયેલી સંસ્કરણ ઇન્સ્ટોલ કરવાનો પ્રયાસ કર્યો.\n\nઉકેલ:\nA. સમાન અથવા વધુ સંસ્કરણ પસંદ કરો.\nB. હાલનું સંસ્કરણ અનઇન્સ્ટોલ કરો, પછી ડાઉન્ગ્રેડ કરો.\n\nજો સમસ્યા યથાવત રહેશે તો, FAQ ચકાસો.</string>
+    <string name="installation_failed_spap_desc_46" translatable="true">કારણ: આ ઉપકરણમાં હાલ ઇન્સ્ટોલ થયેલ પેચ સીધો xManager અથવા અમારી ટીમ તરફથી આવ્યો નથી.\n\nઉકેલ: હાલનું સંસ્કરણ અનઇન્સ્ટોલ કરો, xManager પુન: શરૂ કરો અને ફરી પ્રયત્ન કરો. જો સમસ્યા યથાવત રહે, તો FAQ ચકાસો.</string>
+    <string name="installation_failed_cloned_desc_46" translatable="true">કારણ: આ ઉપકરણમાં હાલ ઇન્સ્ટોલ થયેલ ક્લોન સીધો xManager અથવા અમારી ટીમ તરફથી આવ્યો નથી.\n\nઉકેલ: હાલનું સંસ્કરણ અનઇન્સ્ટોલ કરો, xManager પુન: શરૂ કરો અને ફરી પ્રયત્ન કરો. જો સમસ્યા યથાવત રહે, તો FAQ ચકાસો.</string>
+    <string name="existing_patched_46" translatable="true">હાલનું પેચ થયેલું</string>
+    <string name="existing_patched_desc_46" translatable="true">બાહ્ય ડિરેક્ટરીમાં હાલનું પેચ થયેલું ફાઇલ મળી છે. તમે શું કરવું છે?</string>
+    <string name="disable_notification_46" translatable="true">નોટિફિકેશન બંધ કરો</string>
+    <string name="disable_notification_desc_46" translatable="true">આ સક્રિય કરવાથી પેચ થયેલી એપ્લિકેશન ઇન્સ્ટોલ કર્યા પછી યાદી આપતી નોટિફિકેશન દૂર થઈ જશે.</string>
+    <string name="hide_stock_patched_46" translatable="true">સ્ટોક પેચ છુપાવો</string>
+    <string name="hide_amoled_patched_46" translatable="true">AMOLED પેચ છુપાવો</string>
+    <string name="hide_lite_patched_46" translatable="true">લાઇટ પેચ છુપાવો</string>
+    <string name="close_46" translatable="true">બંધ કરો</string>
+    <string name="cloned_46" translatable="true">ક્લોન થયેલું</string>
+    <string name="spap_46" translatable="true">SP/AP</string>
+    <string name="install_46" translatable="true">ઇન્સ્ટોલ કરો</string>
+    <string name="uninstall_46" translatable="true">અનઇન્સ્ટોલ કરો</string>
+    <string name="ignore_46" translatable="true">અવગણના કરો</string>
+    <string name="delete_46" translatable="true">કાઢી નાંખો</string>
+    <string name="uninstall_patched_46" translatable="true">પેચ અનઇન્સ્ટોલ કરો</string>
+    <string name="open_settings_46" translatable="true">સેટિંગ્સ ખોલો</string>
+    <string name="open_patched_46" translatable="true">પેચ ખોલો</string>
+    <string name="reboot_46" translatable="true">પુનઃપ્રાપ્ત કરો અને રિબૂટ કરો</string>
 </resources>

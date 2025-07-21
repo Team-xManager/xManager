@@ -2195,7 +2195,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="5dp"
-					android:text="nexiRS | crnobog69"
+					android:text="nexiRS | crnobog69 | momcilovicluka"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -2217,7 +2217,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="5dp"
-					android:text="nexiRS | crnobog69"
+					android:text="nexiRS | crnobog69 | momcilovicluka"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -2481,7 +2481,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
-					android:text="mrki1111"
+					android:text="mrki1111 | momcilovicluka"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
@@ -2526,6 +2526,28 @@
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
 					android:text="Madvellony"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/manager_lang_46"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="Armenian Translation"
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#1DB954" />
+				<TextView
+					android:id="@+id/translator_46"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:paddingRight="8dp"
+					android:paddingBottom="8dp"
+					android:text="AAVVIronAlex"
 					android:textSize="14sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF" />
