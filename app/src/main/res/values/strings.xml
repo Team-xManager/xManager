@@ -29,7 +29,7 @@
     <string name="contributors" translatable="true">THANKS TO ALL CONTRIBUTORS! ❤️</string>
     <string name="download_selected" translatable="true">You selected this patched version. Do you want to continue?</string>
     <string name="download_ready" translatable="true">PATCHED INFORMATION</string>
-    <string name="download_ready_desc" translatable="true">This patched will overwrite the previous file located at the external directory. Proceed with caution.</string>
+    <string name="download_ready_desc" translatable="true">This will overwrite the previous file located at the external directory. Proceed with caution.</string>
     <string name="downloading_file" translatable="true">DOWNLOADING FILE</string>
     <string name="download_success" translatable="true">SUCCESSFULLY DOWNLOADED</string>
     <string name="new_update" translatable="true">NEW MANAGER UPDATE</string>
