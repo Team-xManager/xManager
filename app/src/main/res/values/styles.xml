@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<resources>
+<?xml version="1.0" encoding="UTF-8"?><resources>
     <style name="Theme_Origins" parent="Theme.Material3.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowContentOverlay">@null</item>
@@ -13,6 +12,7 @@
         <item name="android:colorBackground">#212121</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">13sp</item>
+        <item name="snackbarStyle">@style/Snackbar_MUI</item>
     </style>
     <style name="Theme_Origins.Splash" parent="Theme_Origins"/>
     <style name="Progress_Dialog" parent="Theme.Material3.Light.Dialog">
@@ -188,5 +188,11 @@
     <style name="Animations">
         <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
         <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
+    <style name="Snackbar_MUI" parent="Widget.MaterialComponents.Snackbar">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_margin">36dp</item>
+        <item name="android:maxLines">3</item>
     </style>
 </resources>
