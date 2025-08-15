@@ -18,8 +18,6 @@ import android.media.*;
 import android.net.*;
 import android.os.*;
 import android.text.*;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.text.style.*;
 import android.util.*;
 import android.view.*;
@@ -32,7 +30,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -44,7 +41,6 @@ import androidx.annotation.*;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.FileProvider;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -52,12 +48,10 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
 import com.google.android.ads.consent.*;
 import com.google.android.gms.ads.MobileAds;
-import com.google.firebase.FirebaseApp;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.wuyr.rippleanimation.*;
 import java.io.*;
-import java.io.File;
 import java.text.*;
 import java.text.DecimalFormat;
 import java.util.*;
@@ -72,12 +66,15 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.widget.NestedScrollView;
 import androidx.core.content.ContextCompat;
 import androidx.core.app.ActivityCompat;
+import android.provider.Settings;
 import androidx.annotation.NonNull;
 import com.google.android.gms.ads.*;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.LoadAdError;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.browser.customtabs.CustomTabsIntent;
 import com.google.android.gms.ads.rewarded.RewardItem;
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
@@ -93,79 +90,37 @@ import com.google.android.ump.ConsentRequestParameters;
 import com.google.android.ump.FormError;
 import com.google.android.ump.UserMessagingPlatform;
 
-
 public class MainActivity extends AppCompatActivity {
 	
      private RewardedAd mRewardedAd;
 	private Timer _timer = new Timer();
 	
 	private double CHECK = 0;
-	private String PATH = "";
 	private double COUNTER = 0;
-	private double DELETE = 0;
-	private String download_selected_0 = "";
 	private String download_ready_0 = "";
 	private String download_ready_desc_0 = "";
-	private String downloading_file_0 = "";
-	private String download_success_0 = "";
 	private String download_0 = "";
 	private String cancel_0 = "";
-	private String continue_0 = "";
-	private String later_0 = "";
-	private String install_now_0 = "";
-	private String go_back_0 = "";
-	private String install_update_0 = "";
 	private double CLOSER_1 = 0;
 	private double CLOSER_2 = 0;
 	private String Installed_Checker = "";
 	private String Installed_Checker_Cloned = "";
-	private double Installed_Version = 0;
-	private double Downloaded_Version = 0;
-	private double Installed_Version_Cloned = 0;
-	private double Downloaded_Version_Cloned = 0;
-	private String installation_failed_0 = "";
-	private String installation_failed_desc_0 = "";
-	private String installation_failed_cloned_desc_0 = "";
-	private String close_0 = "";
-	private String uninstall_0 = "";
-	private String existing_patched_0 = "";
-	private String existing_patched_desc_0 = "";
 	private HashMap<String, Object> Datas = new HashMap<>();
-	private String Regular = "";
-	private String Amoled = "";
-	private String Regular_Cloned = "";
-	private String Amoled_Cloned = "";
-	private String Mod_Changelogs = "";
 	private double Current_Version = 0;
 	private double Latest_Version = 0;
 	private double CLICKER_1 = 0;
 	private double CLICKER_2 = 0;
 	private double CLICKER_3 = 0;
 	private  AlertDialog AlertDialog;
-	private String Lite = "";
 	private double CLICKER_4 = 0;
-	private double Installed_Version_Lite = 0;
-	private double Downloaded_Version_Lite = 0;
-	private String Installed_Checker_Lite = "";
 	private String Stock_Patched = "";
 	private String Amoled_Patched = "";
 	private String Stock_Cloned_Patched = "";
 	private String Amoled_Cloned_Patched = "";
-	private String Lite_Patched = "";
 	private String Patched_Changelogs = "";
-	private String Stock_Experimental_Patched = "";
-	private String Amoled_Experimental_Patched = "";
-	private String Stock_Experimental_Cloned_Patched = "";
-	private String Amoled_Experimental_Cloned_Patched = "";
-	private String lite_0 = "";
-	private String mirror_0 = "";
-	private String installation_failed_spap_desc_0 = "";
-	private String Wave_Patched = "";
-	private String Installed_Checker_Wave = "";
-	private double Installed_Version_Wave = 0;
-	private double Downloaded_Version_Wave = 0;
 	ConsentInformation consentInformation;
 	ConsentForm consentForm;
+	private String Other_Patched = "";
 	
 	private ArrayList<String> Language = new ArrayList<>();
 	private ArrayList<String> Theme = new ArrayList<>();
@@ -173,13 +128,8 @@ public class MainActivity extends AppCompatActivity {
 	private ArrayList<HashMap<String, Object>> amoled_patched = new ArrayList<>();
 	private ArrayList<HashMap<String, Object>> stock_cloned_patched = new ArrayList<>();
 	private ArrayList<HashMap<String, Object>> amoled_cloned_patched = new ArrayList<>();
-	private ArrayList<HashMap<String, Object>> lite_patched = new ArrayList<>();
 	private ArrayList<HashMap<String, Object>> patched_changelogs = new ArrayList<>();
-	private ArrayList<HashMap<String, Object>> stock_experimental_patched = new ArrayList<>();
-	private ArrayList<HashMap<String, Object>> amoled_experimental_patched = new ArrayList<>();
-	private ArrayList<HashMap<String, Object>> stock_experimental_cloned_patched = new ArrayList<>();
-	private ArrayList<HashMap<String, Object>> amoled_experimental_cloned_patched = new ArrayList<>();
-	private ArrayList<HashMap<String, Object>> wave_patched = new ArrayList<>();
+	private ArrayList<HashMap<String, Object>> other_patched = new ArrayList<>();
 	
 	private LinearLayout box_header;
 	private LinearLayout main_body_optimization;
@@ -249,16 +199,12 @@ public class MainActivity extends AppCompatActivity {
 	private LinearLayout main_body_settings;
 	private LinearLayout box_settings_close;
 	private LinearLayout main_box_16;
-	private LinearLayout main_box_18;
 	private LinearLayout main_box_8;
-	private LinearLayout main_box_11;
 	private LinearLayout main_box_17;
 	private LinearLayout main_box_21;
 	private LinearLayout main_box_20;
 	private LinearLayout main_box_5;
 	private LinearLayout main_box_14;
-	private LinearLayout main_box_9;
-	private LinearLayout main_box_10;
 	private LinearLayout main_box_13;
 	private LinearLayout box_settings_icon_close;
 	private ImageView settings_icon_close;
@@ -269,13 +215,6 @@ public class MainActivity extends AppCompatActivity {
 	private TextView cloned_version;
 	private Switch cloned_version_switch;
 	private TextView cloned_version_info;
-	private LinearLayout box_18_sub_1;
-	private LinearLayout box_18_sub_2;
-	private LinearLayout title_box_7;
-	private LinearLayout box_experiment_version;
-	private TextView experiment_version;
-	private Switch experiment_version_switch;
-	private TextView experiment_version_info;
 	private LinearLayout box_8_sub_1;
 	private LinearLayout box_8_sub_2;
 	private LinearLayout title_box_1;
@@ -283,13 +222,6 @@ public class MainActivity extends AppCompatActivity {
 	private TextView list_auto_refresh;
 	private Switch list_auto_refresh_switch;
 	private TextView list_auto_refresh_info;
-	private LinearLayout box_11_sub_1;
-	private LinearLayout box_11_sub_2;
-	private LinearLayout title_box_2;
-	private LinearLayout box_force_auto_install;
-	private TextView force_auto_install;
-	private Switch force_auto_install_switch;
-	private TextView force_auto_install_info;
 	private LinearLayout box_17_sub_1;
 	private LinearLayout box_17_sub_2;
 	private LinearLayout title_box_6;
@@ -306,7 +238,6 @@ public class MainActivity extends AppCompatActivity {
 	private TextView disable_notification_info;
 	private LinearLayout box_20_sub_1;
 	private LinearLayout box_20_sub_2;
-	private LinearLayout box_20_sub_3;
 	private LinearLayout title_box_8;
 	private LinearLayout box_hide_stock_patched;
 	private TextView hide_stock_patched;
@@ -315,10 +246,6 @@ public class MainActivity extends AppCompatActivity {
 	private LinearLayout box_hide_amoled_patched;
 	private TextView hide_amoled_patched;
 	private Switch hide_amoled_patched_switch;
-	private LinearLayout title_box_10;
-	private LinearLayout box_hide_lite_patched;
-	private TextView hide_lite_patched;
-	private Switch hide_lite_patched_switch;
 	private LinearLayout box_5_sub_1;
 	private TextView theme;
 	private LinearLayout box_theme_switch;
@@ -327,15 +254,6 @@ public class MainActivity extends AppCompatActivity {
 	private TextView language;
 	private LinearLayout box_language_switch;
 	private Spinner select_language;
-	private LinearLayout box_9_sub_1;
-	private LinearLayout box_9_sub_2;
-	private TextView apk_location;
-	private EditText apk_path_location;
-	private TextView apk_location_info;
-	private LinearLayout box_10_sub_1;
-	private LinearLayout box_10_sub_2;
-	private TextView clear_directory_folders;
-	private TextView clear_directory_folders_info;
 	private LinearLayout box_reboot;
 	private LinearLayout box_reset_preferences;
 	private TextView reboot;
@@ -471,8 +389,6 @@ public class MainActivity extends AppCompatActivity {
 	private LinearLayout box_switch_1;
 	private TextView sub_1;
 	private TextView sub_3;
-	private TextView sub_5;
-	private TextView sub_7;
 	private TextView versions_1;
 	private LinearLayout box_sub_5;
 	private ImageView version_oc_01;
@@ -488,22 +404,16 @@ public class MainActivity extends AppCompatActivity {
 	private LinearLayout box_switch_2;
 	private TextView sub_2;
 	private TextView sub_4;
-	private TextView sub_6;
-	private TextView sub_8;
 	private TextView versions_2;
 	private LinearLayout box_sub_6;
 	private ImageView version_oc_02;
 	private LinearLayout box_7;
-	private LinearLayout box_8;
 	private LinearLayout box_separator_3;
 	private LinearLayout box_9;
 	private ListView list_items_3;
 	private TextView title_3;
 	private LinearLayout box_3_sub;
 	private TextView patched_3;
-	private TextView sub_text_3;
-	private LinearLayout box_switch_3;
-	private TextView sub_9;
 	private TextView versions_3;
 	private LinearLayout box_sub_7;
 	private ImageView version_oc_03;
@@ -520,8 +430,6 @@ public class MainActivity extends AppCompatActivity {
 	private TextView sub_installed;
 	private TextView sub_separator_1;
 	private TextView sub_installed_c;
-	private TextView sub_separator_2;
-	private TextView sub_installed_l;
 	private TextView changelogs;
 	private LinearLayout box_changelogs;
 	private ImageView changelogs_oc;
@@ -566,12 +474,7 @@ public class MainActivity extends AppCompatActivity {
 	private SharedPreferences DESC_X;
 	private RequestNetwork Connection;
 	private RequestNetwork.RequestListener _Connection_request_listener;
-	private FileProvider FileProvider;
-	private File File_Fixer;
 	private SharedPreferences LIST_REFRESH;
-	private SharedPreferences APK_PATH;
-	private SharedPreferences FORCE_INSTALL;
-	private SharedPreferences FORCE_INSTALL_UPDATE;
 	private SharedPreferences LANGUAGE;
 	private SharedPreferences DISABLE_REWARD_AD;
 	private SharedPreferences AD_UNIT;
@@ -586,10 +489,24 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.main);
 		initialize(_savedInstanceState);
-		FirebaseApp.initializeApp(this);
+		
 		MobileAds.initialize(this);
 		
-		initializeLogic();
+		
+		if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED
+		|| ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+			ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1000);
+		} else {
+			initializeLogic();
+		}
+	}
+	
+	@Override
+	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+		if (requestCode == 1000) {
+			initializeLogic();
+		}
 	}
 	
 	private void initialize(Bundle _savedInstanceState) {
@@ -661,16 +578,12 @@ public class MainActivity extends AppCompatActivity {
 		main_body_settings = findViewById(R.id.main_body_settings);
 		box_settings_close = findViewById(R.id.box_settings_close);
 		main_box_16 = findViewById(R.id.main_box_16);
-		main_box_18 = findViewById(R.id.main_box_18);
 		main_box_8 = findViewById(R.id.main_box_8);
-		main_box_11 = findViewById(R.id.main_box_11);
 		main_box_17 = findViewById(R.id.main_box_17);
 		main_box_21 = findViewById(R.id.main_box_21);
 		main_box_20 = findViewById(R.id.main_box_20);
 		main_box_5 = findViewById(R.id.main_box_5);
 		main_box_14 = findViewById(R.id.main_box_14);
-		main_box_9 = findViewById(R.id.main_box_9);
-		main_box_10 = findViewById(R.id.main_box_10);
 		main_box_13 = findViewById(R.id.main_box_13);
 		box_settings_icon_close = findViewById(R.id.box_settings_icon_close);
 		settings_icon_close = findViewById(R.id.settings_icon_close);
@@ -681,13 +594,6 @@ public class MainActivity extends AppCompatActivity {
 		cloned_version = findViewById(R.id.cloned_version);
 		cloned_version_switch = findViewById(R.id.cloned_version_switch);
 		cloned_version_info = findViewById(R.id.cloned_version_info);
-		box_18_sub_1 = findViewById(R.id.box_18_sub_1);
-		box_18_sub_2 = findViewById(R.id.box_18_sub_2);
-		title_box_7 = findViewById(R.id.title_box_7);
-		box_experiment_version = findViewById(R.id.box_experiment_version);
-		experiment_version = findViewById(R.id.experiment_version);
-		experiment_version_switch = findViewById(R.id.experiment_version_switch);
-		experiment_version_info = findViewById(R.id.experiment_version_info);
 		box_8_sub_1 = findViewById(R.id.box_8_sub_1);
 		box_8_sub_2 = findViewById(R.id.box_8_sub_2);
 		title_box_1 = findViewById(R.id.title_box_1);
@@ -695,13 +601,6 @@ public class MainActivity extends AppCompatActivity {
 		list_auto_refresh = findViewById(R.id.list_auto_refresh);
 		list_auto_refresh_switch = findViewById(R.id.list_auto_refresh_switch);
 		list_auto_refresh_info = findViewById(R.id.list_auto_refresh_info);
-		box_11_sub_1 = findViewById(R.id.box_11_sub_1);
-		box_11_sub_2 = findViewById(R.id.box_11_sub_2);
-		title_box_2 = findViewById(R.id.title_box_2);
-		box_force_auto_install = findViewById(R.id.box_force_auto_install);
-		force_auto_install = findViewById(R.id.force_auto_install);
-		force_auto_install_switch = findViewById(R.id.force_auto_install_switch);
-		force_auto_install_info = findViewById(R.id.force_auto_install_info);
 		box_17_sub_1 = findViewById(R.id.box_17_sub_1);
 		box_17_sub_2 = findViewById(R.id.box_17_sub_2);
 		title_box_6 = findViewById(R.id.title_box_6);
@@ -718,7 +617,6 @@ public class MainActivity extends AppCompatActivity {
 		disable_notification_info = findViewById(R.id.disable_notification_info);
 		box_20_sub_1 = findViewById(R.id.box_20_sub_1);
 		box_20_sub_2 = findViewById(R.id.box_20_sub_2);
-		box_20_sub_3 = findViewById(R.id.box_20_sub_3);
 		title_box_8 = findViewById(R.id.title_box_8);
 		box_hide_stock_patched = findViewById(R.id.box_hide_stock_patched);
 		hide_stock_patched = findViewById(R.id.hide_stock_patched);
@@ -727,10 +625,6 @@ public class MainActivity extends AppCompatActivity {
 		box_hide_amoled_patched = findViewById(R.id.box_hide_amoled_patched);
 		hide_amoled_patched = findViewById(R.id.hide_amoled_patched);
 		hide_amoled_patched_switch = findViewById(R.id.hide_amoled_patched_switch);
-		title_box_10 = findViewById(R.id.title_box_10);
-		box_hide_lite_patched = findViewById(R.id.box_hide_lite_patched);
-		hide_lite_patched = findViewById(R.id.hide_lite_patched);
-		hide_lite_patched_switch = findViewById(R.id.hide_lite_patched_switch);
 		box_5_sub_1 = findViewById(R.id.box_5_sub_1);
 		theme = findViewById(R.id.theme);
 		box_theme_switch = findViewById(R.id.box_theme_switch);
@@ -739,15 +633,6 @@ public class MainActivity extends AppCompatActivity {
 		language = findViewById(R.id.language);
 		box_language_switch = findViewById(R.id.box_language_switch);
 		select_language = findViewById(R.id.select_language);
-		box_9_sub_1 = findViewById(R.id.box_9_sub_1);
-		box_9_sub_2 = findViewById(R.id.box_9_sub_2);
-		apk_location = findViewById(R.id.apk_location);
-		apk_path_location = findViewById(R.id.apk_path_location);
-		apk_location_info = findViewById(R.id.apk_location_info);
-		box_10_sub_1 = findViewById(R.id.box_10_sub_1);
-		box_10_sub_2 = findViewById(R.id.box_10_sub_2);
-		clear_directory_folders = findViewById(R.id.clear_directory_folders);
-		clear_directory_folders_info = findViewById(R.id.clear_directory_folders_info);
 		box_reboot = findViewById(R.id.box_reboot);
 		box_reset_preferences = findViewById(R.id.box_reset_preferences);
 		reboot = findViewById(R.id.reboot);
@@ -883,8 +768,6 @@ public class MainActivity extends AppCompatActivity {
 		box_switch_1 = findViewById(R.id.box_switch_1);
 		sub_1 = findViewById(R.id.sub_1);
 		sub_3 = findViewById(R.id.sub_3);
-		sub_5 = findViewById(R.id.sub_5);
-		sub_7 = findViewById(R.id.sub_7);
 		versions_1 = findViewById(R.id.versions_1);
 		box_sub_5 = findViewById(R.id.box_sub_5);
 		version_oc_01 = findViewById(R.id.version_oc_01);
@@ -900,22 +783,16 @@ public class MainActivity extends AppCompatActivity {
 		box_switch_2 = findViewById(R.id.box_switch_2);
 		sub_2 = findViewById(R.id.sub_2);
 		sub_4 = findViewById(R.id.sub_4);
-		sub_6 = findViewById(R.id.sub_6);
-		sub_8 = findViewById(R.id.sub_8);
 		versions_2 = findViewById(R.id.versions_2);
 		box_sub_6 = findViewById(R.id.box_sub_6);
 		version_oc_02 = findViewById(R.id.version_oc_02);
 		box_7 = findViewById(R.id.box_7);
-		box_8 = findViewById(R.id.box_8);
 		box_separator_3 = findViewById(R.id.box_separator_3);
 		box_9 = findViewById(R.id.box_9);
 		list_items_3 = findViewById(R.id.list_items_3);
 		title_3 = findViewById(R.id.title_3);
 		box_3_sub = findViewById(R.id.box_3_sub);
 		patched_3 = findViewById(R.id.patched_3);
-		sub_text_3 = findViewById(R.id.sub_text_3);
-		box_switch_3 = findViewById(R.id.box_switch_3);
-		sub_9 = findViewById(R.id.sub_9);
 		versions_3 = findViewById(R.id.versions_3);
 		box_sub_7 = findViewById(R.id.box_sub_7);
 		version_oc_03 = findViewById(R.id.version_oc_03);
@@ -932,8 +809,6 @@ public class MainActivity extends AppCompatActivity {
 		sub_installed = findViewById(R.id.sub_installed);
 		sub_separator_1 = findViewById(R.id.sub_separator_1);
 		sub_installed_c = findViewById(R.id.sub_installed_c);
-		sub_separator_2 = findViewById(R.id.sub_separator_2);
-		sub_installed_l = findViewById(R.id.sub_installed_l);
 		changelogs = findViewById(R.id.changelogs);
 		box_changelogs = findViewById(R.id.box_changelogs);
 		changelogs_oc = findViewById(R.id.changelogs_oc);
@@ -976,9 +851,6 @@ public class MainActivity extends AppCompatActivity {
 		DESC_X = getSharedPreferences("DESC_X", Activity.MODE_PRIVATE);
 		Connection = new RequestNetwork(this);
 		LIST_REFRESH = getSharedPreferences("LIST_REFRESH", Activity.MODE_PRIVATE);
-		APK_PATH = getSharedPreferences("APK_PATH", Activity.MODE_PRIVATE);
-		FORCE_INSTALL = getSharedPreferences("FORCE_INSTALL", Activity.MODE_PRIVATE);
-		FORCE_INSTALL_UPDATE = getSharedPreferences("FORCE_INSTALL_UPDATE", Activity.MODE_PRIVATE);
 		LANGUAGE = getSharedPreferences("LANGUAGE", Activity.MODE_PRIVATE);
 		DISABLE_REWARD_AD = getSharedPreferences("DISABLE_REWARD_AD", Activity.MODE_PRIVATE);
 		AD_UNIT = getSharedPreferences("AD_UNIT", Activity.MODE_PRIVATE);
@@ -1001,19 +873,19 @@ public class MainActivity extends AppCompatActivity {
 				box_update.setVisibility(View.GONE);
 				main_box_5.setVisibility(View.GONE);
 				main_box_8.setVisibility(View.GONE);
-				main_box_9.setVisibility(View.VISIBLE);
-				main_box_10.setVisibility(View.GONE);
-				main_box_11.setVisibility(View.GONE);
+				
+				
+				
 				main_box_13.setVisibility(View.GONE);
 				main_box_14.setVisibility(View.GONE);
 				main_box_16.setVisibility(View.VISIBLE);
 				main_box_17.setVisibility(View.GONE);
-				main_box_18.setVisibility(View.VISIBLE);
+				
 				main_box_20.setVisibility(View.GONE);
 				main_box_21.setVisibility(View.GONE);
-				apk_path_location.setEnabled(true);
-				main_box_10.setEnabled(false);
-				main_box_10.setAlpha((float)(0.0d));
+				
+				
+				
 				title_header.setText(experiment_title.getText().toString());
 				title_header_beta.setTextColor(Color.TRANSPARENT);
 				title_header_separator.setTextColor(Color.TRANSPARENT);
@@ -1038,19 +910,12 @@ public class MainActivity extends AppCompatActivity {
 				box_update.setVisibility(View.GONE);
 				main_box_5.setVisibility(View.VISIBLE);
 				main_box_8.setVisibility(View.VISIBLE);
-				main_box_9.setVisibility(View.GONE);
-				main_box_10.setVisibility(View.VISIBLE);
-				main_box_11.setVisibility(View.VISIBLE);
 				main_box_13.setVisibility(View.VISIBLE);
 				main_box_14.setVisibility(View.VISIBLE);
 				main_box_16.setVisibility(View.GONE);
 				main_box_17.setVisibility(View.VISIBLE);
-				main_box_18.setVisibility(View.GONE);
 				main_box_20.setVisibility(View.VISIBLE);
 				main_box_21.setVisibility(View.VISIBLE);
-				apk_path_location.setEnabled(true);
-				main_box_10.setEnabled(true);
-				main_box_10.setAlpha((float)(1.0d));
 				title_header.setText(settings_title.getText().toString());
 				title_header_beta.setTextColor(Color.TRANSPARENT);
 				title_header_separator.setTextColor(Color.TRANSPARENT);
@@ -1109,23 +974,11 @@ public class MainActivity extends AppCompatActivity {
 														                public void onClick(DialogInterface Update_Authorized, int p) {
 															AlertDialog.setCancelable(true);
 															try {
-																if (android.os.Build.VERSION.SDK_INT >= 34) {
-																	_Browser(hidden_update.getText().toString());
-																}
-																else {
-																	if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
-																		_Download_Update_Install(hidden_update.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																	else {
-																		if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
-																			_Download_Update(hidden_update.getText().toString(), "/storage/emulated/0/Download/");
-																		}
-																	}
-																}
+																_Browser(hidden_update.getText().toString());
 															}
 															catch(Exception e) {
+																com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 															}
-															_Update_Remover();
 															                }
 														            });
 													 Update_Authorized.setNeutralButton(not_now.getText().toString(), new DialogInterface.OnClickListener(){
@@ -1190,80 +1043,6 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 		
-		main_box_10.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View _view) {
-				if (FileUtil.isExistFile("/storage/emulated/0/xManager/")) {
-					FileUtil.deleteFile("/storage/emulated/0/xManager/");
-				}
-				else {
-					if (!FileUtil.isExistFile("/storage/emulated/0/xManager/")) {
-						
-					}
-				}
-				if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched (xManager).apk")) {
-					FileUtil.deleteFile("/storage/emulated/0/Download/Patched (xManager).apk");
-				}
-				else {
-					if (!FileUtil.isExistFile("/storage/emulated/0/Download/Patched (xManager).apk")) {
-						
-					}
-				}
-				if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk")) {
-					FileUtil.deleteFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk");
-				}
-				else {
-					if (!FileUtil.isExistFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk")) {
-						
-					}
-				}
-				if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Lite (xManager).apk")) {
-					FileUtil.deleteFile("/storage/emulated/0/Download/Patched Lite (xManager).apk");
-				}
-				else {
-					if (!FileUtil.isExistFile("/storage/emulated/0/Download/Patched Lite (xManager).apk")) {
-						
-					}
-				}
-				if (FileUtil.isExistFile("/storage/emulated/0/Download/xManager Update.apk")) {
-					FileUtil.deleteFile("/storage/emulated/0/Download/xManager Update.apk");
-				}
-				else {
-					if (!FileUtil.isExistFile("/storage/emulated/0/Download/xManager Update.apk")) {
-						
-					}
-				}
-				if (DELETE == 1) {
-					com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Successfully Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-				}
-				else {
-					if (DELETE == 0) {
-						if (CHECK == 0) {
-								CHECK = 1;
-								Timer = new TimerTask() {
-										@Override
-										public void run() {
-												runOnUiThread(new Runnable() {
-														@Override
-														public void run() {
-																CHECK = 0;
-														}
-												});
-										}
-								};
-								_timer.schedule(Timer, (int)(3000));
-								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Directory folder not found or deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-						}
-						else {
-						}
-						
-					}
-				}
-				_Tap_Animation(main_box_10);
-				DELETE = 0;
-			}
-		});
-		
 		box_settings_icon_close.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
@@ -1275,7 +1054,6 @@ public class MainActivity extends AppCompatActivity {
 				box_experiment.setVisibility(View.VISIBLE);
 				box_switch.setVisibility(View.VISIBLE);
 				box_update.setVisibility(View.VISIBLE);
-				apk_path_location.setEnabled(false);
 				title_header.setText(main_title.getText().toString());
 				title_header_beta.setTextColor(0xFFFFFFFF);
 				title_header_separator.setTextColor(0xFFFFFFFF);
@@ -1293,12 +1071,12 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
 				final boolean _isChecked = _param2;
-				if (!_isChecked && !experiment_version_switch.isChecked()) {
+				if (!_isChecked) {
 					SWITCH_VERSION.edit().putString("SWITCH", "A").commit();
 					title_1.setText("STOCK PATCHED");
 					title_2.setText("AMOLED PATCHED");
-					patched_1.setText("Ad-free, unlimited skips and play on-demand");
-					patched_2.setText("Same features but in amoled black theme");
+					patched_1.setText("Ad-free, unlimited skips, and play on-demand");
+					patched_2.setText("Same features but in an AMOLED black theme");
 					patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
 					patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
 					patched_1.setTextSize((int)12);
@@ -1307,10 +1085,6 @@ public class MainActivity extends AppCompatActivity {
 					sub_2.setVisibility(View.VISIBLE);
 					sub_3.setVisibility(View.GONE);
 					sub_4.setVisibility(View.GONE);
-					sub_5.setVisibility(View.GONE);
-					sub_6.setVisibility(View.GONE);
-					sub_7.setVisibility(View.GONE);
-					sub_8.setVisibility(View.GONE);
 					list_items_1.setVisibility(View.GONE);
 					list_items_2.setVisibility(View.GONE);
 					list_items_3.setVisibility(View.GONE);
@@ -1329,12 +1103,12 @@ public class MainActivity extends AppCompatActivity {
 					CLICKER_4 = 1;
 				}
 				else {
-					if (_isChecked && !experiment_version_switch.isChecked()) {
+					if (_isChecked) {
 						SWITCH_VERSION.edit().putString("SWITCH", "B").commit();
 						title_1.setText("STOCK CLONED PATCHED");
 						title_2.setText("AMOLED CLONED PATCHED");
 						patched_1.setText("A cloned version of the stock patched");
-						patched_2.setText("A cloned version of the stock patched with amoled black theme");
+						patched_2.setText("A cloned version of the stock patched with an AMOLED black theme");
 						patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
 						patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
 						patched_1.setTextSize((int)12);
@@ -1343,10 +1117,6 @@ public class MainActivity extends AppCompatActivity {
 						sub_2.setVisibility(View.GONE);
 						sub_3.setVisibility(View.VISIBLE);
 						sub_4.setVisibility(View.VISIBLE);
-						sub_5.setVisibility(View.GONE);
-						sub_6.setVisibility(View.GONE);
-						sub_7.setVisibility(View.GONE);
-						sub_8.setVisibility(View.GONE);
 						list_items_1.setVisibility(View.GONE);
 						list_items_2.setVisibility(View.GONE);
 						list_items_3.setVisibility(View.GONE);
@@ -1363,234 +1133,6 @@ public class MainActivity extends AppCompatActivity {
 						CLICKER_2 = 1;
 						CLICKER_3 = 1;
 						CLICKER_4 = 1;
-					}
-					else {
-						if (!_isChecked && experiment_version_switch.isChecked()) {
-							SWITCH_VERSION.edit().putString("SWITCH", "C").commit();
-							title_1.setText("STOCK EXP PATCHED");
-							title_2.setText("AMOLED EXP PATCHED");
-							patched_1.setText("Experimental. New features. Unstable.");
-							patched_2.setText("Same experimental features but in amoled black theme. Unstable.");
-							patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-							patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-							patched_1.setTextSize((int)12);
-							patched_2.setTextSize((int)12);
-							sub_1.setVisibility(View.GONE);
-							sub_2.setVisibility(View.GONE);
-							sub_3.setVisibility(View.GONE);
-							sub_4.setVisibility(View.GONE);
-							sub_5.setVisibility(View.VISIBLE);
-							sub_6.setVisibility(View.VISIBLE);
-							sub_7.setVisibility(View.GONE);
-							sub_8.setVisibility(View.GONE);
-							list_items_1.setVisibility(View.GONE);
-							list_items_2.setVisibility(View.GONE);
-							list_items_3.setVisibility(View.GONE);
-							list_items_5.setVisibility(View.GONE);
-							version_oc_01.setImageResource(R.drawable.close);
-							version_oc_02.setImageResource(R.drawable.close);
-							version_oc_03.setImageResource(R.drawable.close);
-							changelogs_oc.setImageResource(R.drawable.close);
-							list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_patched));
-							list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_patched));
-							((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
-							((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
-							CLICKER_1 = 1;
-							CLICKER_2 = 1;
-							CLICKER_3 = 1;
-							CLICKER_4 = 1;
-						}
-						else {
-							if (_isChecked && experiment_version_switch.isChecked()) {
-								SWITCH_VERSION.edit().putString("SWITCH", "D").commit();
-								title_1.setText("SE CLONED PATCHED");
-								title_2.setText("AE CLONED PATCHED");
-								patched_1.setText("Experimental cloned. Unstable.");
-								patched_2.setText("Same experimental cloned features. Unstable.");
-								patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-								patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-								patched_1.setTextSize((int)12);
-								patched_2.setTextSize((int)12);
-								sub_1.setVisibility(View.GONE);
-								sub_2.setVisibility(View.GONE);
-								sub_3.setVisibility(View.GONE);
-								sub_4.setVisibility(View.GONE);
-								sub_5.setVisibility(View.GONE);
-								sub_6.setVisibility(View.GONE);
-								sub_7.setVisibility(View.VISIBLE);
-								sub_8.setVisibility(View.VISIBLE);
-								list_items_1.setVisibility(View.GONE);
-								list_items_2.setVisibility(View.GONE);
-								list_items_3.setVisibility(View.GONE);
-								list_items_5.setVisibility(View.GONE);
-								version_oc_01.setImageResource(R.drawable.close);
-								version_oc_02.setImageResource(R.drawable.close);
-								version_oc_03.setImageResource(R.drawable.close);
-								changelogs_oc.setImageResource(R.drawable.close);
-								list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_cloned_patched));
-								list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_cloned_patched));
-								((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
-								((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
-								CLICKER_1 = 1;
-								CLICKER_2 = 1;
-								CLICKER_3 = 1;
-								CLICKER_4 = 1;
-							}
-						}
-					}
-				}
-				COUNTER = 1;
-			}
-		});
-		
-		experiment_version_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
-				final boolean _isChecked = _param2;
-				if (!_isChecked && !cloned_version_switch.isChecked()) {
-					SWITCH_VERSION.edit().putString("SWITCH", "A").commit();
-					title_1.setText("STOCK PATCHED");
-					title_2.setText("AMOLED PATCHED");
-					patched_1.setText("Ad-free, unlimited skips and play on-demand");
-					patched_2.setText("Same features but in amoled black theme");
-					patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-					patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-					patched_1.setTextSize((int)12);
-					patched_2.setTextSize((int)12);
-					sub_1.setVisibility(View.VISIBLE);
-					sub_2.setVisibility(View.VISIBLE);
-					sub_3.setVisibility(View.GONE);
-					sub_4.setVisibility(View.GONE);
-					sub_5.setVisibility(View.GONE);
-					sub_6.setVisibility(View.GONE);
-					sub_7.setVisibility(View.GONE);
-					sub_8.setVisibility(View.GONE);
-					list_items_1.setVisibility(View.GONE);
-					list_items_2.setVisibility(View.GONE);
-					list_items_3.setVisibility(View.GONE);
-					list_items_5.setVisibility(View.GONE);
-					version_oc_01.setImageResource(R.drawable.close);
-					version_oc_02.setImageResource(R.drawable.close);
-					version_oc_03.setImageResource(R.drawable.close);
-					changelogs_oc.setImageResource(R.drawable.close);
-					list_items_1.setAdapter(new List_items_1Adapter(stock_patched));
-					list_items_2.setAdapter(new List_items_2Adapter(amoled_patched));
-					((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
-					((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
-					CLICKER_1 = 1;
-					CLICKER_2 = 1;
-					CLICKER_3 = 1;
-					CLICKER_4 = 1;
-				}
-				else {
-					if (!_isChecked && cloned_version_switch.isChecked()) {
-						SWITCH_VERSION.edit().putString("SWITCH", "B").commit();
-						title_1.setText("STOCK CLONED PATCHED");
-						title_2.setText("AMOLED CLONED PATCHED");
-						patched_1.setText("A cloned version of the stock patched");
-						patched_2.setText("A cloned version of the stock patched with amoled black theme");
-						patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-						patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-						patched_1.setTextSize((int)12);
-						patched_2.setTextSize((int)12);
-						sub_1.setVisibility(View.GONE);
-						sub_2.setVisibility(View.GONE);
-						sub_3.setVisibility(View.VISIBLE);
-						sub_4.setVisibility(View.VISIBLE);
-						sub_5.setVisibility(View.GONE);
-						sub_6.setVisibility(View.GONE);
-						sub_7.setVisibility(View.GONE);
-						sub_8.setVisibility(View.GONE);
-						list_items_1.setVisibility(View.GONE);
-						list_items_2.setVisibility(View.GONE);
-						list_items_3.setVisibility(View.GONE);
-						list_items_5.setVisibility(View.GONE);
-						version_oc_01.setImageResource(R.drawable.close);
-						version_oc_02.setImageResource(R.drawable.close);
-						version_oc_03.setImageResource(R.drawable.close);
-						changelogs_oc.setImageResource(R.drawable.close);
-						list_items_1.setAdapter(new List_items_1Adapter(stock_cloned_patched));
-						list_items_2.setAdapter(new List_items_2Adapter(amoled_cloned_patched));
-						((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
-						((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
-						CLICKER_1 = 1;
-						CLICKER_2 = 1;
-						CLICKER_3 = 1;
-						CLICKER_4 = 1;
-					}
-					else {
-						if (_isChecked && !cloned_version_switch.isChecked()) {
-							SWITCH_VERSION.edit().putString("SWITCH", "C").commit();
-							title_1.setText("STOCK EXP PATCHED");
-							title_2.setText("AMOLED EXP PATCHED");
-							patched_1.setText("Experimental. New features. Unstable.");
-							patched_2.setText("Same experimental features but in amoled black theme. Unstable.");
-							patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-							patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-							patched_1.setTextSize((int)12);
-							patched_2.setTextSize((int)12);
-							sub_1.setVisibility(View.GONE);
-							sub_2.setVisibility(View.GONE);
-							sub_3.setVisibility(View.GONE);
-							sub_4.setVisibility(View.GONE);
-							sub_5.setVisibility(View.VISIBLE);
-							sub_6.setVisibility(View.VISIBLE);
-							sub_7.setVisibility(View.GONE);
-							sub_8.setVisibility(View.GONE);
-							list_items_1.setVisibility(View.GONE);
-							list_items_2.setVisibility(View.GONE);
-							list_items_3.setVisibility(View.GONE);
-							list_items_5.setVisibility(View.GONE);
-							version_oc_01.setImageResource(R.drawable.close);
-							version_oc_02.setImageResource(R.drawable.close);
-							version_oc_03.setImageResource(R.drawable.close);
-							changelogs_oc.setImageResource(R.drawable.close);
-							list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_patched));
-							list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_patched));
-							((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
-							((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
-							CLICKER_1 = 1;
-							CLICKER_2 = 1;
-							CLICKER_3 = 1;
-							CLICKER_4 = 1;
-						}
-						else {
-							if (_isChecked && cloned_version_switch.isChecked()) {
-								SWITCH_VERSION.edit().putString("SWITCH", "D").commit();
-								title_1.setText("SE CLONED PATCHED");
-								title_2.setText("AE CLONED PATCHED");
-								patched_1.setText("Experimental cloned. Unstable.");
-								patched_2.setText("Same experimental cloned features. Unstable.");
-								patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-								patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
-								patched_1.setTextSize((int)12);
-								patched_2.setTextSize((int)12);
-								sub_1.setVisibility(View.GONE);
-								sub_2.setVisibility(View.GONE);
-								sub_3.setVisibility(View.GONE);
-								sub_4.setVisibility(View.GONE);
-								sub_5.setVisibility(View.GONE);
-								sub_6.setVisibility(View.GONE);
-								sub_7.setVisibility(View.VISIBLE);
-								sub_8.setVisibility(View.VISIBLE);
-								list_items_1.setVisibility(View.GONE);
-								list_items_2.setVisibility(View.GONE);
-								list_items_3.setVisibility(View.GONE);
-								list_items_5.setVisibility(View.GONE);
-								version_oc_01.setImageResource(R.drawable.close);
-								version_oc_02.setImageResource(R.drawable.close);
-								version_oc_03.setImageResource(R.drawable.close);
-								changelogs_oc.setImageResource(R.drawable.close);
-								list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_cloned_patched));
-								list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_cloned_patched));
-								((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
-								((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
-								CLICKER_1 = 1;
-								CLICKER_2 = 1;
-								CLICKER_3 = 1;
-								CLICKER_4 = 1;
-							}
-						}
 					}
 				}
 				COUNTER = 1;
@@ -1635,51 +1177,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				else {
 					LIST_REFRESH.edit().putString("UPDATE", "OFF").commit();
-				}
-				COUNTER = 1;
-			}
-		});
-		
-		force_auto_install_switch.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View _view) {
-				try {
-						if (CHECK == 0) {
-								CHECK = 1;
-								Timer = new TimerTask() {
-										@Override
-										public void run() {
-												runOnUiThread(new Runnable() {
-														@Override
-														public void run() {
-																CHECK = 0;
-														}
-												});
-										}
-								};
-								_timer.schedule(Timer, (int)(3000));
-								_Hide_Reminder();
-						}
-						else {
-						}
-				}
-				catch(Exception e) {
-				}
-				
-			}
-		});
-		
-		force_auto_install_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
-				final boolean _isChecked = _param2;
-				if (_isChecked) {
-					FORCE_INSTALL.edit().putString("FORCE_INSTALL", "X").commit();
-					FORCE_INSTALL_UPDATE.edit().putString("FORCE_INSTALL_UPDATE", "XX").commit();
-				}
-				else {
-					FORCE_INSTALL.edit().putString("FORCE_INSTALL", "Y").commit();
-					FORCE_INSTALL_UPDATE.edit().putString("FORCE_INSTALL_UPDATE", "YY").commit();
 				}
 				COUNTER = 1;
 			}
@@ -1852,49 +1349,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 				else {
 					HIDE_PATCHED.edit().putString("SWITCH_B", "OFF").commit();
-				}
-				COUNTER = 1;
-			}
-		});
-		
-		hide_lite_patched_switch.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View _view) {
-				try {
-						if (CHECK == 0) {
-								CHECK = 1;
-								Timer = new TimerTask() {
-										@Override
-										public void run() {
-												runOnUiThread(new Runnable() {
-														@Override
-														public void run() {
-																CHECK = 0;
-														}
-												});
-										}
-								};
-								_timer.schedule(Timer, (int)(3000));
-								_Hide_Reminder();
-						}
-						else {
-						}
-				}
-				catch(Exception e) {
-				}
-				
-			}
-		});
-		
-		hide_lite_patched_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton _param1, boolean _param2) {
-				final boolean _isChecked = _param2;
-				if (_isChecked) {
-					HIDE_PATCHED.edit().putString("SWITCH_C", "ON").commit();
-				}
-				else {
-					HIDE_PATCHED.edit().putString("SWITCH_C", "OFF").commit();
 				}
 				COUNTER = 1;
 			}
@@ -2389,25 +1843,6 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 		
-		apk_path_location.addTextChangedListener(new TextWatcher() {
-			@Override
-			public void onTextChanged(CharSequence _param1, int _param2, int _param3, int _param4) {
-				final String _charSeq = _param1.toString();
-				PATH = _charSeq;
-				_Default_Path();
-			}
-			
-			@Override
-			public void beforeTextChanged(CharSequence _param1, int _param2, int _param3, int _param4) {
-				
-			}
-			
-			@Override
-			public void afterTextChanged(Editable _param1) {
-				
-			}
-		});
-		
 		box_reboot.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
@@ -2503,15 +1938,11 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View _view) {
 				cloned_version_switch.setChecked(false);
-				experiment_version_switch.setChecked(false);
 				list_auto_refresh_switch.setChecked(false);
-				force_auto_install_switch.setChecked(false);
 				disable_reward_ad_switch.setChecked(false);
 				disable_notification_switch.setChecked(false);
 				hide_stock_patched_switch.setChecked(false);
 				hide_amoled_patched_switch.setChecked(false);
-				hide_lite_patched_switch.setChecked(false);
-				apk_path_location.setText("/storage/emulated/0/xManager/");
 				main_refresh_layout.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
 				main_scroll_about.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
 				main_scroll_settings.setBackground(new GradientDrawable(GradientDrawable.Orientation.BR_TL, new int[] {0xFF000000,0xFF000000}));
@@ -2565,20 +1996,6 @@ public class MainActivity extends AppCompatActivity {
 							list_items_1.setAdapter(new List_items_1Adapter(stock_cloned_patched));
 							((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
 						}
-						else {
-							if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-								list_items_1.setVisibility(View.VISIBLE);
-								list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_patched));
-								((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
-							}
-							else {
-								if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-									list_items_1.setVisibility(View.VISIBLE);
-									list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_cloned_patched));
-									((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
-								}
-							}
-						}
 					}
 					version_oc_01.setImageResource(R.drawable.open);
 					version_oc_02.setImageResource(R.drawable.close);
@@ -2621,20 +2038,6 @@ public class MainActivity extends AppCompatActivity {
 							list_items_2.setAdapter(new List_items_2Adapter(amoled_cloned_patched));
 							((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 						}
-						else {
-							if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-								list_items_2.setVisibility(View.VISIBLE);
-								list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_patched));
-								((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
-							}
-							else {
-								if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-									list_items_2.setVisibility(View.VISIBLE);
-									list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_cloned_patched));
-									((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
-								}
-							}
-						}
 					}
 					version_oc_01.setImageResource(R.drawable.close);
 					version_oc_02.setImageResource(R.drawable.open);
@@ -2674,7 +2077,7 @@ public class MainActivity extends AppCompatActivity {
 					list_items_2.setVisibility(View.GONE);
 					list_items_3.setVisibility(View.VISIBLE);
 					list_items_5.setVisibility(View.GONE);
-					list_items_3.setAdapter(new List_items_3Adapter(lite_patched));
+					list_items_3.setAdapter(new List_items_3Adapter(other_patched));
 					((BaseAdapter)list_items_3.getAdapter()).notifyDataSetChanged();
 					CLICKER_1 = 1;
 					CLICKER_2 = 1;
@@ -2733,535 +2136,15 @@ public class MainActivity extends AppCompatActivity {
 			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
 				final int _position = _param3;
 				try {
-					if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched (xManager).apk") || FileUtil.isExistFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk")) {
-						final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-						
-						String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
-						String TitleColor = "1DB954";
-						
-						File_Exist.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-						String Message = existing_patched_desc.getText().toString();
-						String MessageColor = "FFFFFF";
-						
-						File_Exist.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-						File_Exist.setPositiveButton(install.getText().toString(), new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface File_Exist, int p) {
-								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched (xManager).apk")) {
-									_Extension_4();
-								}
-								else {
-									if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk")) {
-										_Extension_5();
-									}
-								}
-								                }
-							            });
-						File_Exist.setNegativeButton(delete.getText().toString(), new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface File_Exist, int p) {
-								
-								AlertDialog.setCancelable(true);
-								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-								if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched (xManager).apk")) {
-									FileUtil.deleteFile("/storage/emulated/0/Download/Patched (xManager).apk");
-								}
-								else {
-									if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk")) {
-										FileUtil.deleteFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk");
-									}
-									else {
-										
-									}
-								}
-								                }
-							            });
-						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface File_Exist, int p) {
-								AlertDialog.setCancelable(true);
-								final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-								
-								String Title = "<b>".concat(download_ready_0.concat("</b>"));
-								String TitleColor = "1DB954";
-								
-								Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-								if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
-									if (_position < 1) {
-										if ((_position % 1) == 0) {
-											String Message = "<b>VERSION: </b>".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
-											String MessageColor = "FFFFFF";
-											
-											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-									}
-									else {
-										String Message = "<b>VERSION: </b>".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
-										String MessageColor = "FFFFFF";
-										
-										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-									}
-								}
-								else {
-									if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-										if (_position < 1) {
-											if ((_position % 1) == 0) {
-												String Message = "<b>VERSION: </b>".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
-												String MessageColor = "FFFFFF";
-												
-												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-											}
-										}
-										else {
-											String Message = "<b>VERSION: </b>".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
-											String MessageColor = "FFFFFF";
-											
-											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-									}
-									else {
-										if (SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
-											if (_position < 1) {
-												if ((_position % 1) == 0) {
-													String Message = "<b>VERSION: </b>".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
-													String MessageColor = "FFFFFF";
-													
-													Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-												}
-											}
-											else {
-												String Message = "<b>VERSION: </b>".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
-												String MessageColor = "FFFFFF";
-												
-												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-											}
-										}
-										else {
-											if (SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
-												if (_position < 1) {
-													if ((_position % 1) == 0) {
-														String Message = "<b>VERSION: </b>".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
-														String MessageColor = "FFFFFF";
-														
-														Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-													}
-												}
-												else {
-													String Message = "<b>VERSION: </b>".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
-													String MessageColor = "FFFFFF";
-													
-													Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-												}
-											}
-										}
-									}
-								}
-								Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
-									
-									                @Override
-									                public void onClick(DialogInterface Selected_Patched, int p) {
-										try {
-											if (android.os.Build.VERSION.SDK_INT >= 34) {
-												if (SWITCH_VERSION.getString("SWITCH", "").contains("A") || SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
-													if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-														AlertDialog.setCancelable(true);
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Browser(hidden_download_3.getText().toString());
-															_Reminder();
-														}
-														else {
-															_Browser(hidden_download_2.getText().toString());
-														}
-														_File_Remover();
-													}
-													else {
-														if (mRewardedAd != null) {
-															  Activity activityContext = MainActivity.this;
-															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																    @Override
-																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																	       AlertDialog.setCancelable(true);
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Browser(hidden_download_3.getText().toString());
-																		_Reminder();
-																	}
-																	else {
-																		_Browser(hidden_download_2.getText().toString());
-																	}
-																	_File_Remover();
-																	      int rewardAmount = rewardItem.getAmount();
-																	      String rewardType = rewardItem.getType();
-																	    }
-																  });
-														} else {
-															AlertDialog.setCancelable(true);
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Browser(hidden_download_3.getText().toString());
-																_Reminder();
-															}
-															else {
-																_Browser(hidden_download_2.getText().toString());
-															}
-															_File_Remover();
-														}
-													}
-												}
-												else {
-													if (SWITCH_VERSION.getString("SWITCH", "").contains("B") || SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
-														if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-															AlertDialog.setCancelable(true);
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Browser(hidden_download_3.getText().toString());
-																_Reminder();
-															}
-															else {
-																_Browser(hidden_download_2.getText().toString());
-															}
-															_File_Remover();
-														}
-														else {
-															if (mRewardedAd != null) {
-																  Activity activityContext = MainActivity.this;
-																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																	    @Override
-																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																		       AlertDialog.setCancelable(true);
-																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																			_Browser(hidden_download_3.getText().toString());
-																			_Reminder();
-																		}
-																		else {
-																			_Browser(hidden_download_2.getText().toString());
-																		}
-																		_File_Remover();
-																		      int rewardAmount = rewardItem.getAmount();
-																		      String rewardType = rewardItem.getType();
-																		    }
-																	  });
-															} else {
-																AlertDialog.setCancelable(true);
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Browser(hidden_download_3.getText().toString());
-																	_Reminder();
-																}
-																else {
-																	_Browser(hidden_download_2.getText().toString());
-																}
-																_File_Remover();
-															}
-														}
-													}
-												}
-											}
-											else {
-												if (SWITCH_VERSION.getString("SWITCH", "").contains("A") || SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
-													if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-														AlertDialog.setCancelable(true);
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-															}
-															else {
-																_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-															}
-														}
-														else {
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																}
-																else {
-																	_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																}
-															}
-														}
-														_File_Remover();
-													}
-													else {
-														if (mRewardedAd != null) {
-															  Activity activityContext = MainActivity.this;
-															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																    @Override
-																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																	       AlertDialog.setCancelable(true);
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																			_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																		}
-																		else {
-																			_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																		}
-																	}
-																	else {
-																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																			if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																				_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																			}
-																			else {
-																				_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																			}
-																		}
-																	}
-																	_File_Remover();
-																	      int rewardAmount = rewardItem.getAmount();
-																	      String rewardType = rewardItem.getType();
-																	    }
-																  });
-														} else {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																}
-																else {
-																	_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																}
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																	else {
-																		_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																}
-															}
-															_File_Remover();
-														}
-													}
-												}
-												else {
-													if (SWITCH_VERSION.getString("SWITCH", "").contains("B") || SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
-														if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																}
-																else {
-																	_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																}
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																	else {
-																		_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																}
-															}
-															_File_Remover();
-														}
-														else {
-															if (mRewardedAd != null) {
-																  Activity activityContext = MainActivity.this;
-																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																	    @Override
-																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																		       AlertDialog.setCancelable(true);
-																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																			if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																				_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																			}
-																			else {
-																				_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																			}
-																		}
-																		else {
-																			if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																				if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																					_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																				}
-																				else {
-																					_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																				}
-																			}
-																		}
-																		_File_Remover();
-																		      int rewardAmount = rewardItem.getAmount();
-																		      String rewardType = rewardItem.getType();
-																		    }
-																	  });
-															} else {
-																AlertDialog.setCancelable(true);
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																	else {
-																		_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																}
-																else {
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																			_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																		}
-																		else {
-																			_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																		}
-																	}
-																}
-																_File_Remover();
-															}
-														}
-													}
-												}
-											}
-										}
-										catch(Exception e) {
-										}
-										                }
-									            });
-								if (android.os.Build.VERSION.SDK_INT >= 34) {
-								}
-								else {
-									Selected_Patched.setNegativeButton(mirror_0, new DialogInterface.OnClickListener(){
-										
-										                @Override
-										                public void onClick(DialogInterface Selected_Patched, int p) {
-											
-											AlertDialog.setCancelable(true);
-											try {
-												if (SWITCH_VERSION.getString("SWITCH", "").contains("A") || SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
-													if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-														AlertDialog.setCancelable(true);
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Browser(hidden_download_3.getText().toString());
-															_Reminder();
-														}
-														else {
-															_Browser(hidden_download_2.getText().toString());
-														}
-														_File_Remover();
-													}
-													else {
-														if (mRewardedAd != null) {
-															  Activity activityContext = MainActivity.this;
-															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																    @Override
-																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																	       AlertDialog.setCancelable(true);
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Browser(hidden_download_3.getText().toString());
-																		_Reminder();
-																	}
-																	else {
-																		_Browser(hidden_download_2.getText().toString());
-																	}
-																	_File_Remover();
-																	      int rewardAmount = rewardItem.getAmount();
-																	      String rewardType = rewardItem.getType();
-																	    }
-																  });
-														} else {
-															AlertDialog.setCancelable(true);
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Browser(hidden_download_3.getText().toString());
-																_Reminder();
-															}
-															else {
-																_Browser(hidden_download_2.getText().toString());
-															}
-															_File_Remover();
-														}
-													}
-												}
-												else {
-													if (SWITCH_VERSION.getString("SWITCH", "").contains("B") || SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
-														if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-															AlertDialog.setCancelable(true);
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Browser(hidden_download_3.getText().toString());
-																_Reminder();
-															}
-															else {
-																_Browser(hidden_download_2.getText().toString());
-															}
-															_File_Remover();
-														}
-														else {
-															if (mRewardedAd != null) {
-																  Activity activityContext = MainActivity.this;
-																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																	    @Override
-																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																		       AlertDialog.setCancelable(true);
-																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																			_Browser(hidden_download_3.getText().toString());
-																			_Reminder();
-																		}
-																		else {
-																			_Browser(hidden_download_2.getText().toString());
-																		}
-																		_File_Remover();
-																		      int rewardAmount = rewardItem.getAmount();
-																		      String rewardType = rewardItem.getType();
-																		    }
-																	  });
-															} else {
-																AlertDialog.setCancelable(true);
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Browser(hidden_download_3.getText().toString());
-																	_Reminder();
-																}
-																else {
-																	_Browser(hidden_download_2.getText().toString());
-																}
-																_File_Remover();
-															}
-														}
-													}
-												}
-											}
-											catch(Exception e) {
-											}
-											                }
-										            });
-								}
-								 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
-									
-									                @Override
-									                public void onClick(DialogInterface Selected_Patched, int p) {
-										AlertDialog.setCancelable(true);
-										                }
-									            });
-								AlertDialog = Selected_Patched.create();
-								AlertDialog.setCancelable(false);
-								_AlertDialog_Color();
-								AlertDialog.show();
-								DELETE = 1;
-								                }
-							            });
-						AlertDialog = File_Exist.create();
-						AlertDialog.setCancelable(false);
-						_AlertDialog_Color();
-						AlertDialog.show();
-					}
-					else {
-						final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-						
-						String Title = "<b>".concat(download_ready_0.concat("</b>"));
-						String TitleColor = "1DB954";
-						
-						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-						if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
-							if (_position < 1) {
-								if ((_position % 1) == 0) {
-									String Message = "<b>VERSION: </b>".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
-									String MessageColor = "FFFFFF";
-									
-									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-								}
-							}
-							else {
+					final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+					
+					String Title = "<b>".concat(download_ready_0.concat("</b>"));
+					String TitleColor = "1DB954";
+					
+					Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+					if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
+						if (_position < 1) {
+							if ((_position % 1) == 0) {
 								String Message = "<b>VERSION: </b>".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
 								String MessageColor = "FFFFFF";
 								
@@ -3269,16 +2152,16 @@ public class MainActivity extends AppCompatActivity {
 							}
 						}
 						else {
-							if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-								if (_position < 1) {
-									if ((_position % 1) == 0) {
-										String Message = "<b>VERSION: </b>".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
-										String MessageColor = "FFFFFF";
-										
-										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-									}
-								}
-								else {
+							String Message = "<b>VERSION: </b>".concat(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK<br/><br/>").concat(download_ready_desc_0)));
+							String MessageColor = "FFFFFF";
+							
+							Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+						}
+					}
+					else {
+						if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
+							if (_position < 1) {
+								if ((_position % 1) == 0) {
 									String Message = "<b>VERSION: </b>".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
 									String MessageColor = "FFFFFF";
 									
@@ -3286,448 +2169,124 @@ public class MainActivity extends AppCompatActivity {
 								}
 							}
 							else {
-								if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-									if (_position < 1) {
-										if ((_position % 1) == 0) {
-											String Message = "<b>VERSION: </b>".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
-											String MessageColor = "FFFFFF";
-											
-											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+								String Message = "<b>VERSION: </b>".concat(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK CLONED<br/><br/>").concat(download_ready_desc_0)));
+								String MessageColor = "FFFFFF";
+								
+								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+							}
+						}
+					}
+					Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
+						
+						                @Override
+						                public void onClick(DialogInterface Selected_Patched, int p) {
+							try {
+								if (SWITCH_VERSION.getString("SWITCH", "").contains("A")) {
+									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+										AlertDialog.setCancelable(true);
+										if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+											_Browser(hidden_download_1.getText().toString());
+										}
+										else {
+											_Browser(hidden_download_2.getText().toString());
 										}
 									}
 									else {
-										String Message = "<b>VERSION: </b>".concat(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
-										String MessageColor = "FFFFFF";
-										
-										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										if (mRewardedAd != null) {
+											  Activity activityContext = MainActivity.this;
+											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+												    @Override
+												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+													       AlertDialog.setCancelable(true);
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Browser(hidden_download_1.getText().toString());
+													}
+													else {
+														_Browser(hidden_download_2.getText().toString());
+													}
+													      int rewardAmount = rewardItem.getAmount();
+													      String rewardType = rewardItem.getType();
+													    }
+												  });
+										} else {
+											AlertDialog.setCancelable(true);
+											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+												_Browser(hidden_download_1.getText().toString());
+											}
+											else {
+												_Browser(hidden_download_2.getText().toString());
+											}
+										}
 									}
 								}
 								else {
-									if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-										if (_position < 1) {
-											if ((_position % 1) == 0) {
-												String Message = "<b>VERSION: </b>".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
-												String MessageColor = "FFFFFF";
-												
-												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+									if (SWITCH_VERSION.getString("SWITCH", "").contains("B")) {
+										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+											AlertDialog.setCancelable(true);
+											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+												_Browser(hidden_download_1.getText().toString());
+											}
+											else {
+												_Browser(hidden_download_2.getText().toString());
 											}
 										}
 										else {
-											String Message = "<b>VERSION: </b>".concat(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("STOCK EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
-											String MessageColor = "FFFFFF";
-											
-											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+											if (mRewardedAd != null) {
+												  Activity activityContext = MainActivity.this;
+												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+													    @Override
+													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+														       AlertDialog.setCancelable(true);
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Browser(hidden_download_1.getText().toString());
+														}
+														else {
+															_Browser(hidden_download_2.getText().toString());
+														}
+														      int rewardAmount = rewardItem.getAmount();
+														      String rewardType = rewardItem.getType();
+														    }
+													  });
+											} else {
+												AlertDialog.setCancelable(true);
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Browser(hidden_download_1.getText().toString());
+												}
+												else {
+													_Browser(hidden_download_2.getText().toString());
+												}
+											}
 										}
 									}
 								}
 							}
-						}
-						Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
+							catch(Exception e) {
+								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+							}
+							                }
+						            });
+					Selected_Patched.setNegativeButton(cancel_0, new DialogInterface.OnClickListener(){
+						
+						                @Override
+						                public void onClick(DialogInterface Selected_Patched, int p) {
 							
-							                @Override
-							                public void onClick(DialogInterface Selected_Patched, int p) {
-								try {
-									if (android.os.Build.VERSION.SDK_INT >= 34) {
-										if (SWITCH_VERSION.getString("SWITCH", "").contains("A") || SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
-											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-												AlertDialog.setCancelable(true);
-												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Browser(hidden_download_3.getText().toString());
-													_Reminder();
-												}
-												else {
-													_Browser(hidden_download_2.getText().toString());
-												}
-												_File_Remover();
-											}
-											else {
-												if (mRewardedAd != null) {
-													  Activity activityContext = MainActivity.this;
-													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-														    @Override
-														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-															       AlertDialog.setCancelable(true);
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Browser(hidden_download_3.getText().toString());
-																_Reminder();
-															}
-															else {
-																_Browser(hidden_download_2.getText().toString());
-															}
-															_File_Remover();
-															      int rewardAmount = rewardItem.getAmount();
-															      String rewardType = rewardItem.getType();
-															    }
-														  });
-												} else {
-													AlertDialog.setCancelable(true);
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Browser(hidden_download_3.getText().toString());
-														_Reminder();
-													}
-													else {
-														_Browser(hidden_download_2.getText().toString());
-													}
-													_File_Remover();
-												}
-											}
-										}
-										else {
-											if (SWITCH_VERSION.getString("SWITCH", "").contains("B") || SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
-												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-													AlertDialog.setCancelable(true);
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Browser(hidden_download_3.getText().toString());
-														_Reminder();
-													}
-													else {
-														_Browser(hidden_download_2.getText().toString());
-													}
-													_File_Remover();
-												}
-												else {
-													if (mRewardedAd != null) {
-														  Activity activityContext = MainActivity.this;
-														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-															    @Override
-															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																       AlertDialog.setCancelable(true);
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Browser(hidden_download_3.getText().toString());
-																	_Reminder();
-																}
-																else {
-																	_Browser(hidden_download_2.getText().toString());
-																}
-																_File_Remover();
-																      int rewardAmount = rewardItem.getAmount();
-																      String rewardType = rewardItem.getType();
-																    }
-															  });
-													} else {
-														AlertDialog.setCancelable(true);
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Browser(hidden_download_3.getText().toString());
-															_Reminder();
-														}
-														else {
-															_Browser(hidden_download_2.getText().toString());
-														}
-														_File_Remover();
-													}
-												}
-											}
-										}
-									}
-									else {
-										if (SWITCH_VERSION.getString("SWITCH", "").contains("A") || SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
-											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-												AlertDialog.setCancelable(true);
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-													}
-													else {
-														_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-													}
-												}
-												else {
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-														}
-														else {
-															_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-														}
-													}
-												}
-												_File_Remover();
-											}
-											else {
-												if (mRewardedAd != null) {
-													  Activity activityContext = MainActivity.this;
-													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-														    @Override
-														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-															       AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																}
-																else {
-																	_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																}
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																	else {
-																		_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																}
-															}
-															_File_Remover();
-															      int rewardAmount = rewardItem.getAmount();
-															      String rewardType = rewardItem.getType();
-															    }
-														  });
-												} else {
-													AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-														}
-														else {
-															_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-														}
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-															}
-															else {
-																_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-															}
-														}
-													}
-													_File_Remover();
-												}
-											}
-										}
-										else {
-											if (SWITCH_VERSION.getString("SWITCH", "").contains("B") || SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
-												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-													AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-														}
-														else {
-															_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-														}
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-															}
-															else {
-																_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-															}
-														}
-													}
-													_File_Remover();
-												}
-												else {
-													if (mRewardedAd != null) {
-														  Activity activityContext = MainActivity.this;
-														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-															    @Override
-															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																       AlertDialog.setCancelable(true);
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																	else {
-																		_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																}
-																else {
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																			_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																		}
-																		else {
-																			_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																		}
-																	}
-																}
-																_File_Remover();
-																      int rewardAmount = rewardItem.getAmount();
-																      String rewardType = rewardItem.getType();
-																    }
-															  });
-													} else {
-														AlertDialog.setCancelable(true);
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-															}
-															else {
-																_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-															}
-														}
-														else {
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																}
-																else {
-																	_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																}
-															}
-														}
-														_File_Remover();
-													}
-												}
-											}
-										}
-									}
-								}
-								catch(Exception e) {
-								}
-								                }
-							            });
-						if (android.os.Build.VERSION.SDK_INT >= 34) {
-						}
-						else {
-							Selected_Patched.setNegativeButton(mirror_0, new DialogInterface.OnClickListener(){
-								
-								                @Override
-								                public void onClick(DialogInterface Selected_Patched, int p) {
-									
-									try {
-										if (SWITCH_VERSION.getString("SWITCH", "").contains("A") || SWITCH_VERSION.getString("SWITCH", "").contains("C")) {
-											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-												AlertDialog.setCancelable(true);
-												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Browser(hidden_download_3.getText().toString());
-													_Reminder();
-												}
-												else {
-													_Browser(hidden_download_2.getText().toString());
-												}
-												_File_Remover();
-											}
-											else {
-												if (mRewardedAd != null) {
-													  Activity activityContext = MainActivity.this;
-													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-														    @Override
-														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-															       AlertDialog.setCancelable(true);
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Browser(hidden_download_3.getText().toString());
-																_Reminder();
-															}
-															else {
-																_Browser(hidden_download_2.getText().toString());
-															}
-															_File_Remover();
-															      int rewardAmount = rewardItem.getAmount();
-															      String rewardType = rewardItem.getType();
-															    }
-														  });
-												} else {
-													AlertDialog.setCancelable(true);
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Browser(hidden_download_3.getText().toString());
-														_Reminder();
-													}
-													else {
-														_Browser(hidden_download_2.getText().toString());
-													}
-													_File_Remover();
-												}
-											}
-										}
-										else {
-											if (SWITCH_VERSION.getString("SWITCH", "").contains("B") || SWITCH_VERSION.getString("SWITCH", "").contains("D")) {
-												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-													AlertDialog.setCancelable(true);
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Browser(hidden_download_3.getText().toString());
-														_Reminder();
-													}
-													else {
-														_Browser(hidden_download_2.getText().toString());
-													}
-													_File_Remover();
-												}
-												else {
-													if (mRewardedAd != null) {
-														  Activity activityContext = MainActivity.this;
-														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-															    @Override
-															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																       AlertDialog.setCancelable(true);
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Browser(hidden_download_3.getText().toString());
-																	_Reminder();
-																}
-																else {
-																	_Browser(hidden_download_2.getText().toString());
-																}
-																_File_Remover();
-																      int rewardAmount = rewardItem.getAmount();
-																      String rewardType = rewardItem.getType();
-																    }
-															  });
-													} else {
-														AlertDialog.setCancelable(true);
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Browser(hidden_download_3.getText().toString());
-															_Reminder();
-														}
-														else {
-															_Browser(hidden_download_2.getText().toString());
-														}
-														_File_Remover();
-													}
-												}
-											}
-										}
-									}
-									catch(Exception e) {
-									}
-									                }
-								            });
-						}
-						 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface Selected_Patched, int p) {
-								AlertDialog.setCancelable(true);
-								                }
-							            });
-						AlertDialog = Selected_Patched.create();
-						AlertDialog.setCancelable(false);
-						_AlertDialog_Color();
-						AlertDialog.show();
-						DELETE = 1;
-					}
+							AlertDialog.setCancelable(true);
+							                }
+						            });
+					AlertDialog = Selected_Patched.create();
+					AlertDialog.setCancelable(false);
+					_AlertDialog_Color();
+					AlertDialog.show();
 					if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
 						hidden_patched.setText(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Title").toString());
 						hidden_download_1.setText(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Link_1").toString());
 						hidden_download_2.setText(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Link_2").toString());
-						hidden_download_3.setText(stock_patched.get((int)(stock_patched.size() - 1) - _position).get("Mirror").toString());
 					}
 					else {
 						if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
 							hidden_patched.setText(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString());
 							hidden_download_1.setText(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Link_1").toString());
 							hidden_download_2.setText(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Link_2").toString());
-							hidden_download_3.setText(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Mirror").toString());
-						}
-						else {
-							if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-								hidden_patched.setText(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString());
-								hidden_download_1.setText(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Link_1").toString());
-								hidden_download_2.setText(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Link_2").toString());
-								hidden_download_3.setText(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Mirror").toString());
-							}
-							else {
-								if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-									hidden_patched.setText(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString());
-									hidden_download_1.setText(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Link_1").toString());
-									hidden_download_2.setText(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Link_2").toString());
-									hidden_download_3.setText(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Mirror").toString());
-								}
-							}
 						}
 					}
 				}
@@ -3741,535 +2300,15 @@ public class MainActivity extends AppCompatActivity {
 			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
 				final int _position = _param3;
 				try {
-					if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched (xManager).apk") || FileUtil.isExistFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk")) {
-						final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-						
-						String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
-						String TitleColor = "1DB954";
-						
-						File_Exist.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-						String Message = existing_patched_desc.getText().toString();
-						String MessageColor = "FFFFFF";
-						
-						File_Exist.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-						File_Exist.setPositiveButton(install.getText().toString(), new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface File_Exist, int p) {
-								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched (xManager).apk")) {
-									_Extension_4();
-								}
-								else {
-									if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk")) {
-										_Extension_5();
-									}
-								}
-								                }
-							            });
-						File_Exist.setNegativeButton(delete.getText().toString(), new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface File_Exist, int p) {
-								
-								AlertDialog.setCancelable(true);
-								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-								if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched (xManager).apk")) {
-									FileUtil.deleteFile("/storage/emulated/0/Download/Patched (xManager).apk");
-								}
-								else {
-									if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk")) {
-										FileUtil.deleteFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk");
-									}
-									else {
-										
-									}
-								}
-								                }
-							            });
-						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface File_Exist, int p) {
-								AlertDialog.setCancelable(true);
-								final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-								
-								String Title = "<b>".concat(download_ready_0.concat("</b>"));
-								String TitleColor = "1DB954";
-								
-								Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-								if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
-									if (_position < 1) {
-										if ((_position % 1) == 0) {
-											String Message = "<b>VERSION: </b>".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
-											String MessageColor = "FFFFFF";
-											
-											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-									}
-									else {
-										String Message = "<b>VERSION: </b>".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
-										String MessageColor = "FFFFFF";
-										
-										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-									}
-								}
-								else {
-									if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-										if (_position < 1) {
-											if ((_position % 1) == 0) {
-												String Message = "<b>VERSION: </b>".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
-												String MessageColor = "FFFFFF";
-												
-												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-											}
-										}
-										else {
-											String Message = "<b>VERSION: </b>".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
-											String MessageColor = "FFFFFF";
-											
-											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-										}
-									}
-									else {
-										if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-											if (_position < 1) {
-												if ((_position % 1) == 0) {
-													String Message = "<b>VERSION: </b>".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
-													String MessageColor = "FFFFFF";
-													
-													Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-												}
-											}
-											else {
-												String Message = "<b>VERSION: </b>".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
-												String MessageColor = "FFFFFF";
-												
-												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-											}
-										}
-										else {
-											if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-												if (_position < 1) {
-													if ((_position % 1) == 0) {
-														String Message = "<b>VERSION: </b>".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
-														String MessageColor = "FFFFFF";
-														
-														Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-													}
-												}
-												else {
-													String Message = "<b>VERSION: </b>".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
-													String MessageColor = "FFFFFF";
-													
-													Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-												}
-											}
-										}
-									}
-								}
-								Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
-									
-									                @Override
-									                public void onClick(DialogInterface Selected_Patched, int p) {
-										try {
-											if (android.os.Build.VERSION.SDK_INT >= 34) {
-												if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-													if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-														AlertDialog.setCancelable(true);
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Browser(hidden_download_3.getText().toString());
-															_Reminder();
-														}
-														else {
-															_Browser(hidden_download_2.getText().toString());
-														}
-														_File_Remover();
-													}
-													else {
-														if (mRewardedAd != null) {
-															  Activity activityContext = MainActivity.this;
-															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																    @Override
-																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																	       AlertDialog.setCancelable(true);
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Browser(hidden_download_3.getText().toString());
-																		_Reminder();
-																	}
-																	else {
-																		_Browser(hidden_download_2.getText().toString());
-																	}
-																	_File_Remover();
-																	      int rewardAmount = rewardItem.getAmount();
-																	      String rewardType = rewardItem.getType();
-																	    }
-																  });
-														} else {
-															AlertDialog.setCancelable(true);
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Browser(hidden_download_3.getText().toString());
-																_Reminder();
-															}
-															else {
-																_Browser(hidden_download_2.getText().toString());
-															}
-															_File_Remover();
-														}
-													}
-												}
-												else {
-													if (SWITCH_VERSION.getString("SWITCH", "").equals("B") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-														if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-															AlertDialog.setCancelable(true);
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Browser(hidden_download_3.getText().toString());
-																_Reminder();
-															}
-															else {
-																_Browser(hidden_download_2.getText().toString());
-															}
-															_File_Remover();
-														}
-														else {
-															if (mRewardedAd != null) {
-																  Activity activityContext = MainActivity.this;
-																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																	    @Override
-																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																		       AlertDialog.setCancelable(true);
-																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																			_Browser(hidden_download_3.getText().toString());
-																			_Reminder();
-																		}
-																		else {
-																			_Browser(hidden_download_2.getText().toString());
-																		}
-																		_File_Remover();
-																		      int rewardAmount = rewardItem.getAmount();
-																		      String rewardType = rewardItem.getType();
-																		    }
-																	  });
-															} else {
-																AlertDialog.setCancelable(true);
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Browser(hidden_download_3.getText().toString());
-																	_Reminder();
-																}
-																else {
-																	_Browser(hidden_download_2.getText().toString());
-																}
-																_File_Remover();
-															}
-														}
-													}
-												}
-											}
-											else {
-												if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-													if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-														AlertDialog.setCancelable(true);
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-															}
-															else {
-																_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-															}
-														}
-														else {
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																}
-																else {
-																	_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																}
-															}
-														}
-														_File_Remover();
-													}
-													else {
-														if (mRewardedAd != null) {
-															  Activity activityContext = MainActivity.this;
-															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																    @Override
-																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																	       AlertDialog.setCancelable(true);
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																			_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																		}
-																		else {
-																			_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																		}
-																	}
-																	else {
-																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																			if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																				_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																			}
-																			else {
-																				_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																			}
-																		}
-																	}
-																	_File_Remover();
-																	      int rewardAmount = rewardItem.getAmount();
-																	      String rewardType = rewardItem.getType();
-																	    }
-																  });
-														} else {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																}
-																else {
-																	_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																}
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																	else {
-																		_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																}
-															}
-															_File_Remover();
-														}
-													}
-												}
-												else {
-													if (SWITCH_VERSION.getString("SWITCH", "").equals("B") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-														if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-															AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																}
-																else {
-																	_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																}
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																	else {
-																		_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																}
-															}
-															_File_Remover();
-														}
-														else {
-															if (mRewardedAd != null) {
-																  Activity activityContext = MainActivity.this;
-																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																	    @Override
-																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																		       AlertDialog.setCancelable(true);
-																		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																			if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																				_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																			}
-																			else {
-																				_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																			}
-																		}
-																		else {
-																			if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																				if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																					_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																				}
-																				else {
-																					_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																				}
-																			}
-																		}
-																		_File_Remover();
-																		      int rewardAmount = rewardItem.getAmount();
-																		      String rewardType = rewardItem.getType();
-																		    }
-																	  });
-															} else {
-																AlertDialog.setCancelable(true);
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																	else {
-																		_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																}
-																else {
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																			_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																		}
-																		else {
-																			_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																		}
-																	}
-																}
-																_File_Remover();
-															}
-														}
-													}
-												}
-											}
-										}
-										catch(Exception e) {
-										}
-										                }
-									            });
-								if (android.os.Build.VERSION.SDK_INT >= 34) {
-								}
-								else {
-									Selected_Patched.setNegativeButton(mirror_0, new DialogInterface.OnClickListener(){
-										
-										                @Override
-										                public void onClick(DialogInterface Selected_Patched, int p) {
-											
-											AlertDialog.setCancelable(true);
-											try {
-												if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-													if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-														AlertDialog.setCancelable(true);
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Browser(hidden_download_3.getText().toString());
-															_Reminder();
-														}
-														else {
-															_Browser(hidden_download_2.getText().toString());
-														}
-														_File_Remover();
-													}
-													else {
-														if (mRewardedAd != null) {
-															  Activity activityContext = MainActivity.this;
-															  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																    @Override
-																    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																	       AlertDialog.setCancelable(true);
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Browser(hidden_download_3.getText().toString());
-																		_Reminder();
-																	}
-																	else {
-																		_Browser(hidden_download_2.getText().toString());
-																	}
-																	_File_Remover();
-																	      int rewardAmount = rewardItem.getAmount();
-																	      String rewardType = rewardItem.getType();
-																	    }
-																  });
-														} else {
-															AlertDialog.setCancelable(true);
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Browser(hidden_download_3.getText().toString());
-																_Reminder();
-															}
-															else {
-																_Browser(hidden_download_2.getText().toString());
-															}
-															_File_Remover();
-														}
-													}
-												}
-												else {
-													if (SWITCH_VERSION.getString("SWITCH", "").equals("B") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-														if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-															AlertDialog.setCancelable(true);
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Browser(hidden_download_3.getText().toString());
-																_Reminder();
-															}
-															else {
-																_Browser(hidden_download_2.getText().toString());
-															}
-															_File_Remover();
-														}
-														else {
-															if (mRewardedAd != null) {
-																  Activity activityContext = MainActivity.this;
-																  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-																	    @Override
-																	    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																		       AlertDialog.setCancelable(true);
-																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																			_Browser(hidden_download_3.getText().toString());
-																			_Reminder();
-																		}
-																		else {
-																			_Browser(hidden_download_2.getText().toString());
-																		}
-																		_File_Remover();
-																		      int rewardAmount = rewardItem.getAmount();
-																		      String rewardType = rewardItem.getType();
-																		    }
-																	  });
-															} else {
-																AlertDialog.setCancelable(true);
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Browser(hidden_download_3.getText().toString());
-																	_Reminder();
-																}
-																else {
-																	_Browser(hidden_download_2.getText().toString());
-																}
-																_File_Remover();
-															}
-														}
-													}
-												}
-											}
-											catch(Exception e) {
-											}
-											                }
-										            });
-								}
-								 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
-									
-									                @Override
-									                public void onClick(DialogInterface Selected_Patched, int p) {
-										AlertDialog.setCancelable(true);
-										                }
-									            });
-								AlertDialog = Selected_Patched.create();
-								AlertDialog.setCancelable(false);
-								_AlertDialog_Color();
-								AlertDialog.show();
-								DELETE = 1;
-								                }
-							            });
-						AlertDialog = File_Exist.create();
-						AlertDialog.setCancelable(false);
-						_AlertDialog_Color();
-						AlertDialog.show();
-					}
-					else {
-						final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-						
-						String Title = "<b>".concat(download_ready_0.concat("</b>"));
-						String TitleColor = "1DB954";
-						
-						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-						if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
-							if (_position < 1) {
-								if ((_position % 1) == 0) {
-									String Message = "<b>VERSION: </b>".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
-									String MessageColor = "FFFFFF";
-									
-									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-								}
-							}
-							else {
+					final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+					
+					String Title = "<b>".concat(download_ready_0.concat("</b>"));
+					String TitleColor = "1DB954";
+					
+					Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+					if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
+						if (_position < 1) {
+							if ((_position % 1) == 0) {
 								String Message = "<b>VERSION: </b>".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
 								String MessageColor = "FFFFFF";
 								
@@ -4277,16 +2316,16 @@ public class MainActivity extends AppCompatActivity {
 							}
 						}
 						else {
-							if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
-								if (_position < 1) {
-									if ((_position % 1) == 0) {
-										String Message = "<b>VERSION: </b>".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
-										String MessageColor = "FFFFFF";
-										
-										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-									}
-								}
-								else {
+							String Message = "<b>VERSION: </b>".concat(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED<br/><br/>").concat(download_ready_desc_0)));
+							String MessageColor = "FFFFFF";
+							
+							Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+						}
+					}
+					else {
+						if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
+							if (_position < 1) {
+								if ((_position % 1) == 0) {
 									String Message = "<b>VERSION: </b>".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
 									String MessageColor = "FFFFFF";
 									
@@ -4294,449 +2333,124 @@ public class MainActivity extends AppCompatActivity {
 								}
 							}
 							else {
-								if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-									if (_position < 1) {
-										if ((_position % 1) == 0) {
-											String Message = "<b>VERSION: </b>".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
-											String MessageColor = "FFFFFF";
-											
-											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+								String Message = "<b>VERSION: </b>".concat(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED CLONED<br/><br/>").concat(download_ready_desc_0)));
+								String MessageColor = "FFFFFF";
+								
+								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+							}
+						}
+					}
+					Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
+						
+						                @Override
+						                public void onClick(DialogInterface Selected_Patched, int p) {
+							try {
+								if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
+									if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+										AlertDialog.setCancelable(true);
+										if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+											_Browser(hidden_download_1.getText().toString());
+										}
+										else {
+											_Browser(hidden_download_2.getText().toString());
 										}
 									}
 									else {
-										String Message = "<b>VERSION: </b>".concat(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL<br/><br/>").concat(download_ready_desc_0)));
-										String MessageColor = "FFFFFF";
-										
-										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+										if (mRewardedAd != null) {
+											  Activity activityContext = MainActivity.this;
+											  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+												    @Override
+												    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+													       AlertDialog.setCancelable(true);
+													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+														_Browser(hidden_download_1.getText().toString());
+													}
+													else {
+														_Browser(hidden_download_2.getText().toString());
+													}
+													      int rewardAmount = rewardItem.getAmount();
+													      String rewardType = rewardItem.getType();
+													    }
+												  });
+										} else {
+											AlertDialog.setCancelable(true);
+											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+												_Browser(hidden_download_1.getText().toString());
+											}
+											else {
+												_Browser(hidden_download_2.getText().toString());
+											}
+										}
 									}
 								}
 								else {
-									if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-										if (_position < 1) {
-											if ((_position % 1) == 0) {
-												String Message = "<b>VERSION: </b>".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
-												String MessageColor = "FFFFFF";
-												
-												Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+									if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
+										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+											AlertDialog.setCancelable(true);
+											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+												_Browser(hidden_download_1.getText().toString());
+											}
+											else {
+												_Browser(hidden_download_2.getText().toString());
 											}
 										}
 										else {
-											String Message = "<b>VERSION: </b>".concat(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("AMOLED EXPERIMENTAL CLONED<br/><br/>").concat(download_ready_desc_0)));
-											String MessageColor = "FFFFFF";
-											
-											Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+											if (mRewardedAd != null) {
+												  Activity activityContext = MainActivity.this;
+												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+													    @Override
+													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+														       AlertDialog.setCancelable(true);
+														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+															_Browser(hidden_download_1.getText().toString());
+														}
+														else {
+															_Browser(hidden_download_2.getText().toString());
+														}
+														      int rewardAmount = rewardItem.getAmount();
+														      String rewardType = rewardItem.getType();
+														    }
+													  });
+											} else {
+												AlertDialog.setCancelable(true);
+												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+													_Browser(hidden_download_1.getText().toString());
+												}
+												else {
+													_Browser(hidden_download_2.getText().toString());
+												}
+											}
 										}
 									}
 								}
 							}
-						}
-						Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
+							catch(Exception e) {
+								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+							}
+							                }
+						            });
+					Selected_Patched.setNegativeButton(cancel_0, new DialogInterface.OnClickListener(){
+						
+						                @Override
+						                public void onClick(DialogInterface Selected_Patched, int p) {
 							
-							                @Override
-							                public void onClick(DialogInterface Selected_Patched, int p) {
-								try {
-									if (android.os.Build.VERSION.SDK_INT >= 34) {
-										if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-												AlertDialog.setCancelable(true);
-												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Browser(hidden_download_3.getText().toString());
-													_Reminder();
-												}
-												else {
-													_Browser(hidden_download_2.getText().toString());
-												}
-												_File_Remover();
-											}
-											else {
-												if (mRewardedAd != null) {
-													  Activity activityContext = MainActivity.this;
-													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-														    @Override
-														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-															       AlertDialog.setCancelable(true);
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Browser(hidden_download_3.getText().toString());
-																_Reminder();
-															}
-															else {
-																_Browser(hidden_download_2.getText().toString());
-															}
-															_File_Remover();
-															      int rewardAmount = rewardItem.getAmount();
-															      String rewardType = rewardItem.getType();
-															    }
-														  });
-												} else {
-													AlertDialog.setCancelable(true);
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Browser(hidden_download_3.getText().toString());
-														_Reminder();
-													}
-													else {
-														_Browser(hidden_download_2.getText().toString());
-													}
-													_File_Remover();
-												}
-											}
-										}
-										else {
-											if (SWITCH_VERSION.getString("SWITCH", "").equals("B") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-													AlertDialog.setCancelable(true);
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Browser(hidden_download_3.getText().toString());
-														_Reminder();
-													}
-													else {
-														_Browser(hidden_download_2.getText().toString());
-													}
-													_File_Remover();
-												}
-												else {
-													if (mRewardedAd != null) {
-														  Activity activityContext = MainActivity.this;
-														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-															    @Override
-															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																       AlertDialog.setCancelable(true);
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Browser(hidden_download_3.getText().toString());
-																	_Reminder();
-																}
-																else {
-																	_Browser(hidden_download_2.getText().toString());
-																}
-																_File_Remover();
-																      int rewardAmount = rewardItem.getAmount();
-																      String rewardType = rewardItem.getType();
-																    }
-															  });
-													} else {
-														AlertDialog.setCancelable(true);
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Browser(hidden_download_3.getText().toString());
-															_Reminder();
-														}
-														else {
-															_Browser(hidden_download_2.getText().toString());
-														}
-														_File_Remover();
-													}
-												}
-											}
-										}
-									}
-									else {
-										if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-												AlertDialog.setCancelable(true);
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-													}
-													else {
-														_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-													}
-												}
-												else {
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-														}
-														else {
-															_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-														}
-													}
-												}
-												_File_Remover();
-											}
-											else {
-												if (mRewardedAd != null) {
-													  Activity activityContext = MainActivity.this;
-													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-														    @Override
-														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-															       AlertDialog.setCancelable(true);
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																}
-																else {
-																	_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																}
-															}
-															else {
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																	else {
-																		_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																}
-															}
-															_File_Remover();
-															      int rewardAmount = rewardItem.getAmount();
-															      String rewardType = rewardItem.getType();
-															    }
-														  });
-												} else {
-													AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-														}
-														else {
-															_Download_Install(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-														}
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-															}
-															else {
-																_Download(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-															}
-														}
-													}
-													_File_Remover();
-												}
-											}
-										}
-										else {
-											if (SWITCH_VERSION.getString("SWITCH", "").equals("B") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-													AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-														}
-														else {
-															_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-														}
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-															}
-															else {
-																_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-															}
-														}
-													}
-													_File_Remover();
-												}
-												else {
-													if (mRewardedAd != null) {
-														  Activity activityContext = MainActivity.this;
-														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-															    @Override
-															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																       AlertDialog.setCancelable(true);
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																	else {
-																		_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																}
-																else {
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																			_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																		}
-																		else {
-																			_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																		}
-																	}
-																}
-																_File_Remover();
-																      int rewardAmount = rewardItem.getAmount();
-																      String rewardType = rewardItem.getType();
-																    }
-															  });
-													} else {
-														AlertDialog.setCancelable(true);
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Install_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-															}
-															else {
-																_Download_Install_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-															}
-														}
-														else {
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Cloned(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																}
-																else {
-																	_Download_Cloned(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																}
-															}
-														}
-														_File_Remover();
-													}
-												}
-											}
-										}
-									}
-								}
-								catch(Exception e) {
-								}
-								                }
-							            });
-						if (android.os.Build.VERSION.SDK_INT >= 34) {
-						}
-						else {
-							Selected_Patched.setNegativeButton(mirror_0, new DialogInterface.OnClickListener(){
-								
-								                @Override
-								                public void onClick(DialogInterface Selected_Patched, int p) {
-									
-									AlertDialog.setCancelable(true);
-									try {
-										if (SWITCH_VERSION.getString("SWITCH", "").equals("A") || SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-											if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-												AlertDialog.setCancelable(true);
-												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Browser(hidden_download_3.getText().toString());
-													_Reminder();
-												}
-												else {
-													_Browser(hidden_download_2.getText().toString());
-												}
-												_File_Remover();
-											}
-											else {
-												if (mRewardedAd != null) {
-													  Activity activityContext = MainActivity.this;
-													  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-														    @Override
-														    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-															       AlertDialog.setCancelable(true);
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Browser(hidden_download_3.getText().toString());
-																_Reminder();
-															}
-															else {
-																_Browser(hidden_download_2.getText().toString());
-															}
-															_File_Remover();
-															      int rewardAmount = rewardItem.getAmount();
-															      String rewardType = rewardItem.getType();
-															    }
-														  });
-												} else {
-													AlertDialog.setCancelable(true);
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Browser(hidden_download_3.getText().toString());
-														_Reminder();
-													}
-													else {
-														_Browser(hidden_download_2.getText().toString());
-													}
-													_File_Remover();
-												}
-											}
-										}
-										else {
-											if (SWITCH_VERSION.getString("SWITCH", "").equals("B") || SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-													AlertDialog.setCancelable(true);
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Browser(hidden_download_3.getText().toString());
-														_Reminder();
-													}
-													else {
-														_Browser(hidden_download_2.getText().toString());
-													}
-													_File_Remover();
-												}
-												else {
-													if (mRewardedAd != null) {
-														  Activity activityContext = MainActivity.this;
-														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-															    @Override
-															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																       AlertDialog.setCancelable(true);
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Browser(hidden_download_3.getText().toString());
-																	_Reminder();
-																}
-																else {
-																	_Browser(hidden_download_2.getText().toString());
-																}
-																_File_Remover();
-																      int rewardAmount = rewardItem.getAmount();
-																      String rewardType = rewardItem.getType();
-																    }
-															  });
-													} else {
-														AlertDialog.setCancelable(true);
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Browser(hidden_download_3.getText().toString());
-															_Reminder();
-														}
-														else {
-															_Browser(hidden_download_2.getText().toString());
-														}
-														_File_Remover();
-													}
-												}
-											}
-										}
-									}
-									catch(Exception e) {
-									}
-									                }
-								            });
-						}
-						 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface Selected_Patched, int p) {
-								AlertDialog.setCancelable(true);
-								                }
-							            });
-						AlertDialog = Selected_Patched.create();
-						AlertDialog.setCancelable(false);
-						_AlertDialog_Color();
-						AlertDialog.show();
-						DELETE = 1;
-					}
+							AlertDialog.setCancelable(true);
+							                }
+						            });
+					AlertDialog = Selected_Patched.create();
+					AlertDialog.setCancelable(false);
+					_AlertDialog_Color();
+					AlertDialog.show();
 					if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
 						hidden_patched.setText(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Title").toString());
 						hidden_download_1.setText(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Link_1").toString());
 						hidden_download_2.setText(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Link_2").toString());
-						hidden_download_3.setText(amoled_patched.get((int)(amoled_patched.size() - 1) - _position).get("Mirror").toString());
 					}
 					else {
 						if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
 							hidden_patched.setText(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString());
 							hidden_download_1.setText(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Link_1").toString());
 							hidden_download_2.setText(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Link_2").toString());
-							hidden_download_3.setText(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Mirror").toString());
-						}
-						else {
-							if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-								hidden_patched.setText(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString());
-								hidden_download_1.setText(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Link_1").toString());
-								hidden_download_2.setText(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Link_2").toString());
-								hidden_download_3.setText(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Mirror").toString());
-							}
-							else {
-								if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-									hidden_patched.setText(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString());
-									hidden_download_1.setText(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Link_1").toString());
-									hidden_download_2.setText(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Link_2").toString());
-									hidden_download_3.setText(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Mirror").toString());
-								}
-							}
 						}
 					}
 				}
@@ -4750,501 +2464,88 @@ public class MainActivity extends AppCompatActivity {
 			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
 				final int _position = _param3;
 				try {
-					if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Lite (xManager).apk")) {
-						final AlertDialog.Builder File_Exist = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-						
-						String Title = "<b>".concat(existing_patched.getText().toString().concat("</b>"));
-						String TitleColor = "1DB954";
-						
-						File_Exist.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-						String Message = existing_patched_desc.getText().toString();
-						String MessageColor = "FFFFFF";
-						
-						File_Exist.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-						File_Exist.setPositiveButton(install.getText().toString(), new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface File_Exist, int p) {
-								AlertDialog.setCancelable(true);
-								if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Lite (xManager).apk")) {
-									_Extension_6();
-								}
-								                }
-							            });
-						File_Exist.setNegativeButton(delete.getText().toString(), new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface File_Exist, int p) {
-								
-								AlertDialog.setCancelable(true);
-								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Patched File Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-								if (FileUtil.isExistFile("/storage/emulated/0/Download/Patched Lite (xManager).apk")) {
-									FileUtil.deleteFile("/storage/emulated/0/Download/Patched Lite (xManager).apk");
-								}
-								else {
-									
-								}
-								                }
-							            });
-						 File_Exist.setNeutralButton(ignore.getText().toString(), new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface File_Exist, int p) {
-								AlertDialog.setCancelable(true);
-								final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-								
-								String Title = "<b>".concat(download_ready_0.concat("</b>"));
-								String TitleColor = "1DB954";
-								
-								Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-								if (_position < 1) {
-									if ((_position % 1) == 0) {
-										String Message = "<b>VERSION: </b>".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)));
-										String MessageColor = "FFFFFF";
-										
-										Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-									}
-								}
-								else {
-									String Message = "<b>VERSION: </b>".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)));
-									String MessageColor = "FFFFFF";
-									
-									Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-								}
-								Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
-									
-									                @Override
-									                public void onClick(DialogInterface Selected_Patched, int p) {
-										try {
-											if (android.os.Build.VERSION.SDK_INT >= 34) {
-												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-													AlertDialog.setCancelable(true);
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Browser(hidden_download_3.getText().toString());
-														_Reminder();
-													}
-													else {
-														_Browser(hidden_download_2.getText().toString());
-													}
-													_File_Remover();
-												}
-												else {
-													if (mRewardedAd != null) {
-														  Activity activityContext = MainActivity.this;
-														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-															    @Override
-															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																       AlertDialog.setCancelable(true);
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Browser(hidden_download_3.getText().toString());
-																	_Reminder();
-																}
-																else {
-																	_Browser(hidden_download_2.getText().toString());
-																}
-																_File_Remover();
-																      int rewardAmount = rewardItem.getAmount();
-																      String rewardType = rewardItem.getType();
-																    }
-															  });
-													} else {
-														AlertDialog.setCancelable(true);
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Browser(hidden_download_3.getText().toString());
-															_Reminder();
-														}
-														else {
-															_Browser(hidden_download_2.getText().toString());
-														}
-														_File_Remover();
-													}
-												}
-											}
-											else {
-												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-													AlertDialog.setCancelable(true);
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-														}
-														else {
-															_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-														}
-													}
-													else {
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-															}
-															else {
-																_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-															}
-														}
-													}
-													_File_Remover();
-												}
-												else {
-													if (mRewardedAd != null) {
-														  Activity activityContext = MainActivity.this;
-														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-															    @Override
-															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																       AlertDialog.setCancelable(true);
-																if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-																	if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																		_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																	else {
-																		_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																	}
-																}
-																else {
-																	if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																		if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																			_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																		}
-																		else {
-																			_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																		}
-																	}
-																}
-																_File_Remover();
-																      int rewardAmount = rewardItem.getAmount();
-																      String rewardType = rewardItem.getType();
-																    }
-															  });
-													} else {
-														AlertDialog.setCancelable(true);
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-															}
-															else {
-																_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-															}
-														}
-														else {
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																}
-																else {
-																	_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																}
-															}
-														}
-														_File_Remover();
-													}
-												}
-											}
-										}
-										catch(Exception e) {
-										}
-										                }
-									            });
-								if (android.os.Build.VERSION.SDK_INT >= 34) {
-								}
-								else {
-									Selected_Patched.setNegativeButton(mirror_0, new DialogInterface.OnClickListener(){
-										
-										                @Override
-										                public void onClick(DialogInterface Selected_Patched, int p) {
-											
-											AlertDialog.setCancelable(true);
-											try {
-												if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-													AlertDialog.setCancelable(true);
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Browser(hidden_download_3.getText().toString());
-														_Reminder();
-													}
-													else {
-														_Browser(hidden_download_2.getText().toString());
-													}
-													_File_Remover();
-												}
-												else {
-													if (mRewardedAd != null) {
-														  Activity activityContext = MainActivity.this;
-														  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-															    @Override
-															    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-																       AlertDialog.setCancelable(true);
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Browser(hidden_download_3.getText().toString());
-																	_Reminder();
-																}
-																else {
-																	_Browser(hidden_download_2.getText().toString());
-																}
-																_File_Remover();
-																      int rewardAmount = rewardItem.getAmount();
-																      String rewardType = rewardItem.getType();
-																    }
-															  });
-													} else {
-														AlertDialog.setCancelable(true);
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Browser(hidden_download_3.getText().toString());
-															_Reminder();
-														}
-														else {
-															_Browser(hidden_download_2.getText().toString());
-														}
-														_File_Remover();
-													}
-												}
-											}
-											catch(Exception e) {
-											}
-											                }
-										            });
-								}
-								 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
-									
-									                @Override
-									                public void onClick(DialogInterface Selected_Patched, int p) {
-										AlertDialog.setCancelable(true);
-										                }
-									            });
-								AlertDialog = Selected_Patched.create();
-								AlertDialog.setCancelable(false);
-								_AlertDialog_Color();
-								AlertDialog.show();
-								DELETE = 1;
-								                }
-							            });
-						AlertDialog = File_Exist.create();
-						AlertDialog.setCancelable(false);
-						_AlertDialog_Color();
-						AlertDialog.show();
-					}
-					else {
-						final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-						
-						String Title = "<b>".concat(download_ready_0.concat("</b>"));
-						String TitleColor = "1DB954";
-						
-						Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-						if (_position < 1) {
-							if ((_position % 1) == 0) {
-								String Message = "<b>VERSION: </b>".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)));
-								String MessageColor = "FFFFFF";
-								
-								Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-							}
-						}
-						else {
-							String Message = "<b>VERSION: </b>".concat(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("LITE<br/><br/>").concat(download_ready_desc_0)));
+					final AlertDialog.Builder Selected_Patched = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
+					
+					String Title = "<b>".concat(download_ready_0.concat("</b>"));
+					String TitleColor = "1DB954";
+					
+					Selected_Patched.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
+					if (_position < 1) {
+						if ((_position % 1) == 0) {
+							String Message = "<b>NAME: </b>".concat(other_patched.get((int)(other_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>FEATURES: </b>".concat(other_patched.get((int)(other_patched.size() - 1) - _position).get("Description").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("OTHER<br/><br/>").concat(download_ready_desc_0)))));
 							String MessageColor = "FFFFFF";
 							
 							Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
 						}
-						Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
-							
-							                @Override
-							                public void onClick(DialogInterface Selected_Patched, int p) {
-								try {
-									if (android.os.Build.VERSION.SDK_INT >= 34) {
-										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-											AlertDialog.setCancelable(true);
-											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-												_Browser(hidden_download_3.getText().toString());
-												_Reminder();
-											}
-											else {
-												_Browser(hidden_download_2.getText().toString());
-											}
-											_File_Remover();
-										}
-										else {
-											if (mRewardedAd != null) {
-												  Activity activityContext = MainActivity.this;
-												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-													    @Override
-													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-														       AlertDialog.setCancelable(true);
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Browser(hidden_download_3.getText().toString());
-															_Reminder();
-														}
-														else {
-															_Browser(hidden_download_2.getText().toString());
-														}
-														_File_Remover();
-														      int rewardAmount = rewardItem.getAmount();
-														      String rewardType = rewardItem.getType();
-														    }
-													  });
-											} else {
-												AlertDialog.setCancelable(true);
-												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Browser(hidden_download_3.getText().toString());
-													_Reminder();
-												}
-												else {
-													_Browser(hidden_download_2.getText().toString());
-												}
-												_File_Remover();
-											}
-										}
+					}
+					else {
+						String Message = "<b>NAME: </b>".concat(other_patched.get((int)(other_patched.size() - 1) - _position).get("Title").toString().concat("<br/><b>FEATURES: </b>".concat(other_patched.get((int)(other_patched.size() - 1) - _position).get("Description").toString().concat("<br/><b>PATCHED TYPE: </b>".concat("OTHER<br/><br/>").concat(download_ready_desc_0)))));
+						String MessageColor = "FFFFFF";
+						
+						Selected_Patched.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
+					}
+					Selected_Patched.setPositiveButton(download_0, new DialogInterface.OnClickListener(){
+						
+						                @Override
+						                public void onClick(DialogInterface Selected_Patched, int p) {
+							try {
+								if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
+									AlertDialog.setCancelable(true);
+									if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+										_Browser(hidden_download_1.getText().toString());
 									}
 									else {
-										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-											AlertDialog.setCancelable(true);
-											if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-												}
-												else {
-													_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-												}
-											}
-											else {
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-													}
-													else {
-														_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-													}
-												}
-											}
-											_File_Remover();
-										}
-										else {
-											if (mRewardedAd != null) {
-												  Activity activityContext = MainActivity.this;
-												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-													    @Override
-													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-														       AlertDialog.setCancelable(true);
-														if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-															if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-															}
-															else {
-																_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-															}
-														}
-														else {
-															if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-																if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-																	_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-																}
-																else {
-																	_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-																}
-															}
-														}
-														_File_Remover();
-														      int rewardAmount = rewardItem.getAmount();
-														      String rewardType = rewardItem.getType();
-														    }
-													  });
-											} else {
-												AlertDialog.setCancelable(true);
-												if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X")) {
-													if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-														_Download_Install_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-													}
-													else {
-														_Download_Install_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-													}
-												}
-												else {
-													if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y")) {
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Download_Lite(hidden_download_1.getText().toString(), "/storage/emulated/0/Download/");
-														}
-														else {
-															_Download_Lite(hidden_download_2.getText().toString(), "/storage/emulated/0/Download/");
-														}
-													}
-												}
-												_File_Remover();
-											}
-										}
+										_Browser(hidden_download_2.getText().toString());
 									}
 								}
-								catch(Exception e) {
-								}
-								                }
-							            });
-						if (android.os.Build.VERSION.SDK_INT >= 34) {
-						}
-						else {
-							Selected_Patched.setNegativeButton(mirror_0, new DialogInterface.OnClickListener(){
-								
-								                @Override
-								                public void onClick(DialogInterface Selected_Patched, int p) {
-									
-									try {
-										if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
-											AlertDialog.setCancelable(true);
-											if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-												_Browser(hidden_download_3.getText().toString());
-												_Reminder();
-											}
-											else {
-												_Browser(hidden_download_2.getText().toString());
-											}
-											_File_Remover();
-										}
-										else {
-											if (mRewardedAd != null) {
-												  Activity activityContext = MainActivity.this;
-												  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-													    @Override
-													    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-														       AlertDialog.setCancelable(true);
-														if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-															_Browser(hidden_download_3.getText().toString());
-															_Reminder();
-														}
-														else {
-															_Browser(hidden_download_2.getText().toString());
-														}
-														_File_Remover();
-														      int rewardAmount = rewardItem.getAmount();
-														      String rewardType = rewardItem.getType();
-														    }
-													  });
-											} else {
-												AlertDialog.setCancelable(true);
+								else {
+									if (mRewardedAd != null) {
+										  Activity activityContext = MainActivity.this;
+										  mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+											    @Override
+											    public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+												       AlertDialog.setCancelable(true);
 												if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
-													_Browser(hidden_download_3.getText().toString());
-													_Reminder();
+													_Browser(hidden_download_1.getText().toString());
 												}
 												else {
 													_Browser(hidden_download_2.getText().toString());
 												}
-												_File_Remover();
-											}
+												      int rewardAmount = rewardItem.getAmount();
+												      String rewardType = rewardItem.getType();
+												    }
+											  });
+									} else {
+										AlertDialog.setCancelable(true);
+										if (0 == SketchwareUtil.getRandom((int)(0), (int)(1))) {
+											_Browser(hidden_download_1.getText().toString());
+										}
+										else {
+											_Browser(hidden_download_2.getText().toString());
 										}
 									}
-									catch(Exception e) {
-									}
-									                }
-								            });
-						}
-						 Selected_Patched.setNeutralButton(cancel_0, new DialogInterface.OnClickListener(){
+								}
+							}
+							catch(Exception e) {
+								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+							}
+							                }
+						            });
+					Selected_Patched.setNegativeButton(cancel_0, new DialogInterface.OnClickListener(){
+						
+						                @Override
+						                public void onClick(DialogInterface Selected_Patched, int p) {
 							
-							                @Override
-							                public void onClick(DialogInterface Selected_Patched, int p) {
-								AlertDialog.setCancelable(true);
-								                }
-							            });
-						AlertDialog = Selected_Patched.create();
-						AlertDialog.setCancelable(false);
-						_AlertDialog_Color();
-						AlertDialog.show();
-						DELETE = 1;
-					}
-					hidden_patched.setText(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString());
-					hidden_download_1.setText(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Link_1").toString());
-					hidden_download_2.setText(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Link_2").toString());
-					hidden_download_3.setText(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Mirror").toString());
+							AlertDialog.setCancelable(true);
+							                }
+						            });
+					AlertDialog = Selected_Patched.create();
+					AlertDialog.setCancelable(false);
+					_AlertDialog_Color();
+					AlertDialog.show();
+					hidden_patched.setText(other_patched.get((int)(other_patched.size() - 1) - _position).get("Title").toString());
+					hidden_download_1.setText(other_patched.get((int)(other_patched.size() - 1) - _position).get("Link_1").toString());
+					hidden_download_2.setText(other_patched.get((int)(other_patched.size() - 1) - _position).get("Link_2").toString());
 				}
 				catch(Exception e) {
 				}
@@ -5292,24 +2593,8 @@ public class MainActivity extends AppCompatActivity {
 							try {
 									Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
 									startActivity(intent);
-							} catch (Exception e) {
-									com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Application not found or uninstalled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+							} catch (Exception e) {	com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Application not found or uninstalled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 							}
-							
-							                }
-						            });
-					 Uninstall.setNeutralButton(lite.getText().toString(), new DialogInterface.OnClickListener(){
-						
-						                @Override
-						                public void onClick(DialogInterface Uninstall, int p) {
-							AlertDialog.setCancelable(true);
-							try {
-									Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
-									startActivity(intent);
-							} catch (Exception e) {
-									com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Application not found or uninstalled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-							}
-							
 							                }
 						            });
 					AlertDialog = Uninstall.create();
@@ -5346,8 +2631,18 @@ public class MainActivity extends AppCompatActivity {
 						                @Override
 						                public void onClick(DialogInterface Settings, int p) {
 							AlertDialog.setCancelable(true);
-							Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS); intent.setData(Uri.parse("package:com.spotify.music")); 
-							startActivity(intent);
+							try {
+									Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+									intent.setData(Uri.parse("package:com.spotify.music"));
+									if (intent.resolveActivity(getPackageManager()) != null) {
+											startActivity(intent);
+									} else {
+											com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Unable to open app settings", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+									}
+							} catch (Exception e) {
+									com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Application not found or uninstalled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+							}
+							
 							                }
 						            });
 					Settings.setNegativeButton(cloned.getText().toString(), new DialogInterface.OnClickListener(){
@@ -5356,17 +2651,18 @@ public class MainActivity extends AppCompatActivity {
 						                public void onClick(DialogInterface Settings, int p) {
 							
 							AlertDialog.setCancelable(true);
-							Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS); intent.setData(Uri.parse("package:com.spotify.musix")); 
-							startActivity(intent);
-							                }
-						            });
-					 Settings.setNeutralButton(lite.getText().toString(), new DialogInterface.OnClickListener(){
-						
-						                @Override
-						                public void onClick(DialogInterface Settings, int p) {
-							AlertDialog.setCancelable(true);
-							Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS); intent.setData(Uri.parse("package:com.spotify.lite")); 
-							startActivity(intent);
+							try {
+									Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+									intent.setData(Uri.parse("package:com.spotify.musix"));
+									if (intent.resolveActivity(getPackageManager()) != null) {
+											startActivity(intent);
+									} else {
+											com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Unable to open app settings.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+									}
+							} catch (Exception e) {
+									com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Application not found or uninstalled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
+							}
+							
 							                }
 						            });
 					AlertDialog = Settings.create();
@@ -5376,7 +2672,6 @@ public class MainActivity extends AppCompatActivity {
 					_Tap_Animation(box_settings);
 				}
 				catch(Exception e) {
-					SketchwareUtil.CustomToast(getApplicationContext(), "Application not installed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 				}
 			}
 		});
@@ -5408,10 +2703,9 @@ public class MainActivity extends AppCompatActivity {
 						};
 						_timer.schedule(Timer, (int)(2000));
 						if (Build.VERSION.SDK_INT <= 30) {
-								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.music/") || (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.musix/") || FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.lite/"))) {
+								if (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.music/") || (FileUtil.isExistFile("/storage/emulated/0/Android/data/com.spotify.musix/"))) {
 										FileUtil.deleteFile("/storage/emulated/0/Android/data/com.spotify.music/");
 										FileUtil.deleteFile("/storage/emulated/0/Android/data/com.spotify.musix/");
-										FileUtil.deleteFile("/storage/emulated/0/Android/data/com.spotify.lite/");
 										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Successfully Deleted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 								}
 								else {
@@ -5454,18 +2748,24 @@ public class MainActivity extends AppCompatActivity {
 						                @Override
 						                public void onClick(DialogInterface Open, int p) {
 							AlertDialog.setCancelable(true);
-							String packageName = "com.spotify.music"; 
+							String packageName = "com.spotify.music";
 							
 							Intent intent = getPackageManager().getLaunchIntentForPackage(packageName);
-							if(intent == null) {
-								
-								try {
-									intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + packageName));
-								} catch (Exception e) {
-									SketchwareUtil.CustomToast(getApplicationContext(), "Spotify not installed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-								}
+							
+							if (intent == null) {
+									try {
+											intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + packageName));
+											intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+									} catch (Exception e) {
+											intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + packageName));
+											intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+									}
+							} else {
+									intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 							}
+							
 							startActivity(intent);
+							
 							                }
 						            });
 					Open.setNegativeButton(cloned.getText().toString(), new DialogInterface.OnClickListener(){
@@ -5474,37 +2774,24 @@ public class MainActivity extends AppCompatActivity {
 						                public void onClick(DialogInterface Open, int p) {
 							
 							AlertDialog.setCancelable(true);
-							String packageName = "com.spotify.musix"; 
+							String packageName = "com.spotify.musix";
 							
 							Intent intent = getPackageManager().getLaunchIntentForPackage(packageName);
-							if(intent == null) {
-								
-								try {
-									intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + packageName));
-								} catch (Exception e) {
-									SketchwareUtil.CustomToast(getApplicationContext(), "Cloned not installed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-								}
-							}
-							startActivity(intent);
-							                }
-						            });
-					 Open.setNeutralButton(lite.getText().toString(), new DialogInterface.OnClickListener(){
-						
-						                @Override
-						                public void onClick(DialogInterface Open, int p) {
-							AlertDialog.setCancelable(true);
-							String packageName = "com.spotify.lite"; 
 							
-							Intent intent = getPackageManager().getLaunchIntentForPackage(packageName);
-							if(intent == null) {
-								
-								try {
-									intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + packageName));
-								} catch (Exception e) {
-									SketchwareUtil.CustomToast(getApplicationContext(), "Cloned not installed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-								}
+							if (intent == null) {
+									try {
+											intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + packageName));
+											intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+									} catch (Exception e) {
+											intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + packageName));
+											intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+									}
+							} else {
+									intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 							}
+							
 							startActivity(intent);
+							
 							                }
 						            });
 					AlertDialog = Open.create();
@@ -5514,7 +2801,6 @@ public class MainActivity extends AppCompatActivity {
 					_Tap_Animation(box_open);
 				}
 				catch(Exception e) {
-					SketchwareUtil.CustomToast(getApplicationContext(), "Application not installed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
 				}
 			}
 		});
@@ -5740,7 +3026,6 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 	
-
 	public void _Informations() {
 		Timer = new TimerTask() {
 			@Override
@@ -5754,126 +3039,40 @@ public class MainActivity extends AppCompatActivity {
 								runOnUiThread(new Runnable() {
 									@Override
 									public void run() {
-										if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("true") && Installed_Checker_Lite.equals("true"))) {
+										if (Installed_Checker.equals("true") && Installed_Checker_Cloned.equals("true")) {
 											sub_installed.setVisibility(View.VISIBLE);
 											sub_separator_1.setVisibility(View.VISIBLE);
 											sub_installed_c.setVisibility(View.VISIBLE);
-											sub_separator_2.setVisibility(View.VISIBLE);
-											sub_installed_l.setVisibility(View.VISIBLE);
 											sub_installed.setTextColor(0xFFFFFFFF);
 											sub_separator_1.setTextColor(0xFF616161);
 											sub_installed_c.setTextColor(0xFFBDBDBD);
-											sub_separator_2.setTextColor(0xFF616161);
-											sub_installed_l.setTextColor(0xFF78909C);
 										}
 										else {
-											if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("false") && Installed_Checker_Lite.equals("false"))) {
+											if (Installed_Checker.equals("false") && Installed_Checker_Cloned.equals("false")) {
 												sub_installed.setVisibility(View.VISIBLE);
 												sub_separator_1.setVisibility(View.GONE);
 												sub_installed_c.setVisibility(View.GONE);
-												sub_separator_2.setVisibility(View.GONE);
-												sub_installed_l.setVisibility(View.GONE);
 												sub_installed.setTextColor(0xFFFFFFFF);
 												sub_separator_1.setTextColor(0xFF616161);
 												sub_installed_c.setTextColor(0xFFBDBDBD);
-												sub_separator_2.setTextColor(0xFF616161);
-												sub_installed_l.setTextColor(0xFF78909C);
 											}
 											else {
-												if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("false") && Installed_Checker_Lite.equals("false"))) {
+												if (Installed_Checker.equals("true") && Installed_Checker_Cloned.equals("false")) {
 													sub_installed.setVisibility(View.VISIBLE);
 													sub_separator_1.setVisibility(View.GONE);
 													sub_installed_c.setVisibility(View.GONE);
-													sub_separator_2.setVisibility(View.GONE);
-													sub_installed_l.setVisibility(View.GONE);
 													sub_installed.setTextColor(0xFFFFFFFF);
 													sub_separator_1.setTextColor(0xFF616161);
 													sub_installed_c.setTextColor(0xFFBDBDBD);
-													sub_separator_2.setTextColor(0xFF616161);
-													sub_installed_l.setTextColor(0xFF78909C);
 												}
 												else {
-													if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("true") && Installed_Checker_Lite.equals("false"))) {
+													if (Installed_Checker.equals("false") && Installed_Checker_Cloned.equals("true")) {
 														sub_installed.setVisibility(View.GONE);
 														sub_separator_1.setVisibility(View.GONE);
 														sub_installed_c.setVisibility(View.VISIBLE);
-														sub_separator_2.setVisibility(View.GONE);
-														sub_installed_l.setVisibility(View.GONE);
 														sub_installed.setTextColor(0xFFFFFFFF);
 														sub_separator_1.setTextColor(0xFF616161);
 														sub_installed_c.setTextColor(0xFFBDBDBD);
-														sub_separator_2.setTextColor(0xFF616161);
-														sub_installed_l.setTextColor(0xFF78909C);
-													}
-													else {
-														if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("false") && Installed_Checker_Lite.equals("true"))) {
-															sub_installed.setVisibility(View.GONE);
-															sub_separator_1.setVisibility(View.GONE);
-															sub_installed_c.setVisibility(View.GONE);
-															sub_separator_2.setVisibility(View.GONE);
-															sub_installed_l.setVisibility(View.VISIBLE);
-															sub_installed.setTextColor(0xFFFFFFFF);
-															sub_separator_1.setTextColor(0xFF616161);
-															sub_installed_c.setTextColor(0xFFBDBDBD);
-															sub_separator_2.setTextColor(0xFF616161);
-															sub_installed_l.setTextColor(0xFF78909C);
-														}
-														else {
-															if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("true") && Installed_Checker_Lite.equals("true"))) {
-																sub_installed.setVisibility(View.VISIBLE);
-																sub_separator_1.setVisibility(View.VISIBLE);
-																sub_installed_c.setVisibility(View.VISIBLE);
-																sub_separator_2.setVisibility(View.VISIBLE);
-																sub_installed_l.setVisibility(View.VISIBLE);
-																sub_installed.setTextColor(0xFFFFFFFF);
-																sub_separator_1.setTextColor(0xFF616161);
-																sub_installed_c.setTextColor(0xFFBDBDBD);
-																sub_separator_2.setTextColor(0xFF616161);
-																sub_installed_l.setTextColor(0xFF78909C);
-															}
-															else {
-																if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("true") && Installed_Checker_Lite.equals("false"))) {
-																	sub_installed.setVisibility(View.VISIBLE);
-																	sub_separator_1.setVisibility(View.VISIBLE);
-																	sub_installed_c.setVisibility(View.VISIBLE);
-																	sub_separator_2.setVisibility(View.GONE);
-																	sub_installed_l.setVisibility(View.GONE);
-																	sub_installed.setTextColor(0xFFFFFFFF);
-																	sub_separator_1.setTextColor(0xFF616161);
-																	sub_installed_c.setTextColor(0xFFBDBDBD);
-																	sub_separator_2.setTextColor(0xFF616161);
-																	sub_installed_l.setTextColor(0xFF78909C);
-																}
-																else {
-																	if (Installed_Checker.equals("true") && (Installed_Checker_Cloned.equals("false") && Installed_Checker_Lite.equals("true"))) {
-																		sub_installed.setVisibility(View.VISIBLE);
-																		sub_separator_1.setVisibility(View.GONE);
-																		sub_installed_c.setVisibility(View.GONE);
-																		sub_separator_2.setVisibility(View.VISIBLE);
-																		sub_installed_l.setVisibility(View.VISIBLE);
-																		sub_installed.setTextColor(0xFFFFFFFF);
-																		sub_separator_1.setTextColor(0xFF616161);
-																		sub_installed_c.setTextColor(0xFFBDBDBD);
-																		sub_separator_2.setTextColor(0xFF616161);
-																		sub_installed_l.setTextColor(0xFF78909C);
-																	}
-																	else {
-																		if (Installed_Checker.equals("false") && (Installed_Checker_Cloned.equals("true") && Installed_Checker_Lite.equals("true"))) {
-																			sub_installed.setVisibility(View.GONE);
-																			sub_separator_1.setVisibility(View.GONE);
-																			sub_installed_c.setVisibility(View.VISIBLE);
-																			sub_separator_2.setVisibility(View.VISIBLE);
-																			sub_installed_l.setVisibility(View.VISIBLE);
-																			sub_installed.setTextColor(0xFFFFFFFF);
-																			sub_separator_1.setTextColor(0xFF616161);
-																			sub_installed_c.setTextColor(0xFFBDBDBD);
-																			sub_separator_2.setTextColor(0xFF616161);
-																			sub_installed_l.setTextColor(0xFF78909C);
-																		}
-																	}
-																}
-															}
-														}
 													}
 												}
 											}
@@ -5908,21 +3107,6 @@ public class MainActivity extends AppCompatActivity {
 												Installed_Checker_Cloned = "false";
 										}
 										
-										String uri_l = "com.spotify.lite";
-										android.content.pm.PackageManager pm_l = getPackageManager();
-										
-										try {
-												android.content.pm.PackageInfo pInfo = pm_l.getPackageInfo(uri_l, android.content.pm.PackageManager.GET_ACTIVITIES);
-												String version_l = pInfo.versionName;
-												sub_installed_l.setText(version_l);
-												Installed_Checker_Lite = "true";
-										}
-										
-										catch (Exception e) {
-												sub_installed_l.setText("N/A");
-												Installed_Checker_Lite = "false";
-										}
-										
 										String app = "com.xc3fff0e.xmanager";
 										android.content.pm.PackageManager ver = getPackageManager();
 										
@@ -5936,9 +3120,6 @@ public class MainActivity extends AppCompatActivity {
 												SketchwareUtil.showMessage(getApplicationContext(), "Fatal Error");
 										}
 										
-										if (apk_path_location.getText().toString().equals("/storage/emulated/0/Download/")) {
-												apk_path_location.setText("/storage/emulated/0/xManager/");
-										}
 									}
 								});
 							}
@@ -5949,306 +3130,6 @@ public class MainActivity extends AppCompatActivity {
 			}
 		};
 		_timer.scheduleAtFixedRate(Timer, (int)(0), (int)(150));
-	}
-	
-	
-	public void _Download(final String _url, final String _path) {
-		android.net.ConnectivityManager connMgr = (android.net.ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-		android.net.NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-		if (networkInfo != null && networkInfo.isConnected()) {
-				final String urlDownload = _url;
-				final DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
-				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
-				final String cookies = CookieManager.getInstance().getCookie(urlDownload);
-				final String userAgent = "USER_AGENT";
-				request.addRequestHeader("cookie", cookies);
-				request.addRequestHeader("User-Agent", userAgent);
-				request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
-				request.setMimeType("application/vnd.android.package-archive");
-				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "Patched (xManager).apk");
-				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-				final long downloadId = manager.enqueue(request);
-				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
-				final ProgressDialog check = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
-				if (THEME.getString("THEME", "").equals("14")) {
-						prog.getWindow().setBackgroundDrawableResource(R.drawable.light_green);
-						check.getWindow().setBackgroundDrawableResource(R.drawable.light_green);
-				} else {
-						if (THEME.getString("THEME", "").equals("15")) {
-								prog.getWindow().setBackgroundDrawableResource(R.drawable.light_blue);
-								check.getWindow().setBackgroundDrawableResource(R.drawable.light_blue);
-						} else {
-								if (THEME.getString("THEME", "").equals("16")) {
-										prog.getWindow().setBackgroundDrawableResource(R.drawable.light_red);
-										check.getWindow().setBackgroundDrawableResource(R.drawable.light_red);
-								} else {
-										if (THEME.getString("THEME", "").equals("17")) {
-												prog.getWindow().setBackgroundDrawableResource(R.drawable.light_orange);
-												check.getWindow().setBackgroundDrawableResource(R.drawable.light_orange);;
-										} else {
-												if (THEME.getString("THEME", "").equals("18")) {
-														prog.getWindow().setBackgroundDrawableResource(R.drawable.light_pink);
-														check.getWindow().setBackgroundDrawableResource(R.drawable.light_pink);
-												} else {
-														if (THEME.getString("THEME", "").equals("19")) {
-																prog.getWindow().setBackgroundDrawableResource(R.drawable.light_purple);
-																check.getWindow().setBackgroundDrawableResource(R.drawable.light_purple);
-														} else {
-																if (THEME.getString("THEME", "").equals("20")) {
-																		prog.getWindow().setBackgroundDrawableResource(R.drawable.light_cyan);
-																		check.getWindow().setBackgroundDrawableResource(R.drawable.light_cyan);
-																} else {
-																		prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																		check.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																}
-														}
-												}
-										}
-								}
-						}
-				}
-				Thread progress = new Thread() {
-						@Override
-						public void run() {
-								boolean downloading = true;
-								while (downloading) {
-										DownloadManager.Query q = new DownloadManager.Query();
-										q.setFilterById(downloadId);
-										android.database.Cursor cursor = manager.query(q);
-										if (cursor != null) { 
-												if (cursor.moveToFirst()) {
-														int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
-														int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
-														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
-																downloading = false;
-														}
-														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
-																runOnUiThread(new Runnable() {
-																		public void run() {
-																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																				_File_Remover();
-																		}
-																});
-														}				
-														final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
-														final int dl_max = (int) (100);
-														final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
-														final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
-														String file_min = String.format("%.2f", file_front);
-														String file_fix = String.format("%.2f", file_end);
-														String file_max = file_fix.replace("-", "");
-														runOnUiThread(new Runnable() {
-																@Override
-																public void run() {
-																		final Handler handler = new Handler();
-																		handler.postDelayed(new Runnable() {
-																				@Override
-																				public void run() {
-																						if (prog.getProgress() < dl_progress) {
-																								prog.incrementProgressBy(1);
-																						}
-																				}
-																		}, 10);
-																		ObjectAnimator animation = ObjectAnimator.ofInt(prog, "progress", prog.getProgress(), prog.getMax());
-																		animation.setDuration(1500);
-																		animation.setInterpolator(new DecelerateInterpolator());
-																		animation.start();
-																		if (!MainActivity.this.isFinishing()) {
-																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																				String TitleColor = "1DB954";
-																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																				prog.setProgressNumberFormat((hidden_patched.getText().toString()) + " | " + (file_max) + " MB");
-																				prog.setCancelable(false);
-																				prog.setMax(dl_max);
-																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.show();
-																		}
-																}
-														});
-														if (bytes_downloaded == bytes_total) {
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("PREPARING");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																								prog.dismiss();
-																								check.show();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(1500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING PATCHED");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(3500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING SIGNATURE");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(4500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("FINALIZING");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(5500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {	
-																								try {
-																										FileUtil.copyFile("/storage/emulated/0/Download/Patched (xManager).apk", apk_path_location.getText().toString().concat("Patched (xManager).apk"));
-																								}
-																								catch(Exception e) {
-																								}
-																								if (!MainActivity.this.isFinishing()) {
-																										_Extension_1();
-																										prog.dismiss();
-																								}
-																								prog.dismiss();
-																								check.dismiss();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(6500));
-														}
-												}
-												cursor.close();
-										}
-								}
-						}
-				};
-				progress.start();
-		} else {
-				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-		}
-		
-	}
-	
-	
-	public void _File_Remover() {
-		if (FileUtil.isExistFile("/storage/emulated/0/xManager/")) {
-			FileUtil.deleteFile("/storage/emulated/0/xManager/");
-		}
-		else {
-			if (!FileUtil.isExistFile("/storage/emulated/0/xManager/")) {
-				
-			}
-		}
-	}
-	
-	
-	public void _Update_Remover() {
-		if (FileUtil.isExistFile("/storage/emulated/0/Download/xManager Update.apk")) {
-			FileUtil.deleteFile("/storage/emulated/0/Download/xManager Update.apk");
-		}
-		else {
-			if (!FileUtil.isExistFile("/storage/emulated/0/Download/xManager Update.apk")) {
-				
-			}
-		}
 	}
 	
 	
@@ -6379,13 +3260,9 @@ public class MainActivity extends AppCompatActivity {
 																	main_box_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
 																	main_box_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
 																	main_box_8.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
-																	main_box_9.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
-																	main_box_10.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
-																	main_box_11.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
 																	main_box_14.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
 																	main_box_16.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
 																	main_box_17.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
-																	main_box_18.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
 																	main_box_20.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
 																	main_box_21.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
 																	box_support.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF1B5E20));
@@ -6412,18 +3289,13 @@ public class MainActivity extends AppCompatActivity {
 																	
 																	title_header.setTextColor(0xFFF2F3F4);
 																	cloned_version.setTextColor(0xFFF2F3F4);
-																	experiment_version.setTextColor(0xFFF2F3F4);
 																	list_auto_refresh.setTextColor(0xFFF2F3F4);
-																	force_auto_install.setTextColor(0xFFF2F3F4);
 																	disable_reward_ad.setTextColor(0xFFF2F3F4);
 																	disable_notification.setTextColor(0xFFF2F3F4);
 																	hide_stock_patched.setTextColor(0xFFF2F3F4);
 																	hide_amoled_patched.setTextColor(0xFFF2F3F4);
-																	hide_lite_patched.setTextColor(0xFFF2F3F4);
 																	theme.setTextColor(0xFFF2F3F4);
 																	language.setTextColor(0xFFF2F3F4);
-																	apk_location.setTextColor(0xFFF2F3F4);
-																	clear_directory_folders.setTextColor(0xFFF2F3F4);
 																	reboot.setTextColor(0xFFFFFFFF);
 																	reset_preferences.setTextColor(0xFFFFFFFF);
 																	xmanager_dev.setTextColor(0xFFF2F3F4);
@@ -6505,13 +3377,9 @@ public class MainActivity extends AppCompatActivity {
 																		main_box_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
 																		main_box_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
 																		main_box_8.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
-																		main_box_9.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
-																		main_box_10.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
-																		main_box_11.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
 																		main_box_14.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
 																		main_box_16.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
 																		main_box_17.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
-																		main_box_18.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
 																		main_box_20.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
 																		main_box_21.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
 																		box_support.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF00008B));
@@ -6538,18 +3406,13 @@ public class MainActivity extends AppCompatActivity {
 																		
 																		title_header.setTextColor(0xFFF2F3F4);
 																		cloned_version.setTextColor(0xFFF2F3F4);
-																		experiment_version.setTextColor(0xFFF2F3F4);
 																		list_auto_refresh.setTextColor(0xFFF2F3F4);
-																		force_auto_install.setTextColor(0xFFF2F3F4);
 																		disable_reward_ad.setTextColor(0xFFF2F3F4);
 																		disable_notification.setTextColor(0xFFF2F3F4);
 																		hide_stock_patched.setTextColor(0xFFF2F3F4);
 																		hide_amoled_patched.setTextColor(0xFFF2F3F4);
-																		hide_lite_patched.setTextColor(0xFFF2F3F4);
 																		theme.setTextColor(0xFFF2F3F4);
 																		language.setTextColor(0xFFF2F3F4);
-																		apk_location.setTextColor(0xFFF2F3F4);
-																		clear_directory_folders.setTextColor(0xFFF2F3F4);
 																		reboot.setTextColor(0xFFFFFFFF);
 																		reset_preferences.setTextColor(0xFFFFFFFF);
 																		xmanager_dev.setTextColor(0xFFF2F3F4);
@@ -6631,13 +3494,9 @@ public class MainActivity extends AppCompatActivity {
 																			main_box_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
 																			main_box_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
 																			main_box_8.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
-																			main_box_9.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
-																			main_box_10.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
-																			main_box_11.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
 																			main_box_14.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
 																			main_box_16.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
 																			main_box_17.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
-																			main_box_18.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
 																			main_box_20.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
 																			main_box_21.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
 																			box_support.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF8B0000));
@@ -6664,18 +3523,13 @@ public class MainActivity extends AppCompatActivity {
 																			
 																			title_header.setTextColor(0xFFF2F3F4);
 																			cloned_version.setTextColor(0xFFF2F3F4);
-																			experiment_version.setTextColor(0xFFF2F3F4);
 																			list_auto_refresh.setTextColor(0xFFF2F3F4);
-																			force_auto_install.setTextColor(0xFFF2F3F4);
 																			disable_reward_ad.setTextColor(0xFFF2F3F4);
 																			disable_notification.setTextColor(0xFFF2F3F4);
 																			hide_stock_patched.setTextColor(0xFFF2F3F4);
 																			hide_amoled_patched.setTextColor(0xFFF2F3F4);
-																			hide_lite_patched.setTextColor(0xFFF2F3F4);
 																			theme.setTextColor(0xFFF2F3F4);
 																			language.setTextColor(0xFFF2F3F4);
-																			apk_location.setTextColor(0xFFF2F3F4);
-																			clear_directory_folders.setTextColor(0xFFF2F3F4);
 																			reboot.setTextColor(0xFFFFFFFF);
 																			reset_preferences.setTextColor(0xFFFFFFFF);
 																			xmanager_dev.setTextColor(0xFFF2F3F4);
@@ -6757,13 +3611,9 @@ public class MainActivity extends AppCompatActivity {
 																				main_box_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
 																				main_box_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
 																				main_box_8.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
-																				main_box_9.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
-																				main_box_10.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
-																				main_box_11.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
 																				main_box_14.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
 																				main_box_16.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
 																				main_box_17.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
-																				main_box_18.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
 																				main_box_20.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
 																				main_box_21.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
 																				box_support.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFFF8C00));
@@ -6790,18 +3640,13 @@ public class MainActivity extends AppCompatActivity {
 																				
 																				title_header.setTextColor(0xFFF2F3F4);
 																				cloned_version.setTextColor(0xFFF2F3F4);
-																				experiment_version.setTextColor(0xFFF2F3F4);
 																				list_auto_refresh.setTextColor(0xFFF2F3F4);
-																				force_auto_install.setTextColor(0xFFF2F3F4);
 																				disable_reward_ad.setTextColor(0xFFF2F3F4);
 																				disable_notification.setTextColor(0xFFF2F3F4);
 																				hide_stock_patched.setTextColor(0xFFF2F3F4);
 																				hide_amoled_patched.setTextColor(0xFFF2F3F4);
-																				hide_lite_patched.setTextColor(0xFFF2F3F4);
 																				theme.setTextColor(0xFFF2F3F4);
 																				language.setTextColor(0xFFF2F3F4);
-																				apk_location.setTextColor(0xFFF2F3F4);
-																				clear_directory_folders.setTextColor(0xFFF2F3F4);
 																				reboot.setTextColor(0xFFFFFFFF);
 																				reset_preferences.setTextColor(0xFFFFFFFF);
 																				xmanager_dev.setTextColor(0xFFF2F3F4);
@@ -6883,13 +3728,9 @@ public class MainActivity extends AppCompatActivity {
 																					main_box_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
 																					main_box_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
 																					main_box_8.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
-																					main_box_9.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
-																					main_box_10.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
-																					main_box_11.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
 																					main_box_14.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
 																					main_box_16.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
 																					main_box_17.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
-																					main_box_18.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
 																					main_box_20.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
 																					main_box_21.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
 																					box_support.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFFAA336A));
@@ -6916,18 +3757,13 @@ public class MainActivity extends AppCompatActivity {
 																					
 																					title_header.setTextColor(0xFFF2F3F4);
 																					cloned_version.setTextColor(0xFFF2F3F4);
-																					experiment_version.setTextColor(0xFFF2F3F4);
 																					list_auto_refresh.setTextColor(0xFFF2F3F4);
-																					force_auto_install.setTextColor(0xFFF2F3F4);
 																					disable_reward_ad.setTextColor(0xFFF2F3F4);
 																					disable_notification.setTextColor(0xFFF2F3F4);
 																					hide_stock_patched.setTextColor(0xFFF2F3F4);
 																					hide_amoled_patched.setTextColor(0xFFF2F3F4);
-																					hide_lite_patched.setTextColor(0xFFF2F3F4);
 																					theme.setTextColor(0xFFF2F3F4);
 																					language.setTextColor(0xFFF2F3F4);
-																					apk_location.setTextColor(0xFFF2F3F4);
-																					clear_directory_folders.setTextColor(0xFFF2F3F4);
 																					reboot.setTextColor(0xFFFFFFFF);
 																					reset_preferences.setTextColor(0xFFFFFFFF);
 																					xmanager_dev.setTextColor(0xFFF2F3F4);
@@ -7009,13 +3845,9 @@ public class MainActivity extends AppCompatActivity {
 																						main_box_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
 																						main_box_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
 																						main_box_8.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
-																						main_box_9.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
-																						main_box_10.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
-																						main_box_11.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
 																						main_box_14.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
 																						main_box_16.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
 																						main_box_17.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
-																						main_box_18.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
 																						main_box_20.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
 																						main_box_21.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
 																						box_support.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF301934));
@@ -7042,18 +3874,13 @@ public class MainActivity extends AppCompatActivity {
 																						
 																						title_header.setTextColor(0xFFF2F3F4);
 																						cloned_version.setTextColor(0xFFF2F3F4);
-																						experiment_version.setTextColor(0xFFF2F3F4);
 																						list_auto_refresh.setTextColor(0xFFF2F3F4);
-																						force_auto_install.setTextColor(0xFFF2F3F4);
 																						disable_reward_ad.setTextColor(0xFFF2F3F4);
 																						disable_notification.setTextColor(0xFFF2F3F4);
 																						hide_stock_patched.setTextColor(0xFFF2F3F4);
 																						hide_amoled_patched.setTextColor(0xFFF2F3F4);
-																						hide_lite_patched.setTextColor(0xFFF2F3F4);
 																						theme.setTextColor(0xFFF2F3F4);
 																						language.setTextColor(0xFFF2F3F4);
-																						apk_location.setTextColor(0xFFF2F3F4);
-																						clear_directory_folders.setTextColor(0xFFF2F3F4);
 																						reboot.setTextColor(0xFFFFFFFF);
 																						reset_preferences.setTextColor(0xFFFFFFFF);
 																						xmanager_dev.setTextColor(0xFFF2F3F4);
@@ -7135,13 +3962,9 @@ public class MainActivity extends AppCompatActivity {
 																							main_box_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
 																							main_box_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
 																							main_box_8.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
-																							main_box_9.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
-																							main_box_10.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
-																							main_box_11.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
 																							main_box_14.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
 																							main_box_16.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
 																							main_box_17.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
-																							main_box_18.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
 																							main_box_20.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
 																							main_box_21.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
 																							box_support.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF008B8B));
@@ -7168,18 +3991,13 @@ public class MainActivity extends AppCompatActivity {
 																							
 																							title_header.setTextColor(0xFFF2F3F4);
 																							cloned_version.setTextColor(0xFFF2F3F4);
-																							experiment_version.setTextColor(0xFFF2F3F4);
 																							list_auto_refresh.setTextColor(0xFFF2F3F4);
-																							force_auto_install.setTextColor(0xFFF2F3F4);
 																							disable_reward_ad.setTextColor(0xFFF2F3F4);
 																							disable_notification.setTextColor(0xFFF2F3F4);
 																							hide_stock_patched.setTextColor(0xFFF2F3F4);
 																							hide_amoled_patched.setTextColor(0xFFF2F3F4);
-																							hide_lite_patched.setTextColor(0xFFF2F3F4);
 																							theme.setTextColor(0xFFF2F3F4);
 																							language.setTextColor(0xFFF2F3F4);
-																							apk_location.setTextColor(0xFFF2F3F4);
-																							clear_directory_folders.setTextColor(0xFFF2F3F4);
 																							reboot.setTextColor(0xFFFFFFFF);
 																							reset_preferences.setTextColor(0xFFFFFFFF);
 																							xmanager_dev.setTextColor(0xFFF2F3F4);
@@ -7289,23 +4107,11 @@ public class MainActivity extends AppCompatActivity {
 						                public void onClick(DialogInterface Update_Authorized, int p) {
 							AlertDialog.setCancelable(true);
 							try {
-								if (android.os.Build.VERSION.SDK_INT >= 34) {
-									_Browser(hidden_update.getText().toString());
-								}
-								else {
-									if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
-										_Download_Update_Install(hidden_update.getText().toString(), "/storage/emulated/0/Download/");
-									}
-									else {
-										if (FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
-											_Download_Update(hidden_update.getText().toString(), "/storage/emulated/0/Download/");
-										}
-									}
-								}
+								_Browser(hidden_update.getText().toString());
 							}
 							catch(Exception e) {
+								com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
 							}
-							_Update_Remover();
 							                }
 						            });
 					 Update_Authorized.setNeutralButton(not_now.getText().toString(), new DialogInterface.OnClickListener(){
@@ -7376,277 +4182,6 @@ public class MainActivity extends AppCompatActivity {
 		}
 		catch(Exception e) {
 		}
-	}
-	
-	
-	public void _Download_Update(final String _url, final String _path) {
-		android.net.ConnectivityManager connMgr = (android.net.ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-		android.net.NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-		if (networkInfo != null && networkInfo.isConnected()) {
-				final String urlDownload = _url;
-				final DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
-				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
-				final String cookies = CookieManager.getInstance().getCookie(urlDownload);
-				final String userAgent = "USER_AGENT";
-				request.addRequestHeader("cookie", cookies);
-				request.addRequestHeader("User-Agent", userAgent);
-				request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
-				request.setMimeType("application/vnd.android.package-archive");
-				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "xManager Update.apk");
-				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-				final long downloadId = manager.enqueue(request);
-				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
-				final ProgressDialog check = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
-				if (THEME.getString("THEME", "").equals("14")) {
-						prog.getWindow().setBackgroundDrawableResource(R.drawable.light_green);
-						check.getWindow().setBackgroundDrawableResource(R.drawable.light_green);
-				} else {
-						if (THEME.getString("THEME", "").equals("15")) {
-								prog.getWindow().setBackgroundDrawableResource(R.drawable.light_blue);
-								check.getWindow().setBackgroundDrawableResource(R.drawable.light_blue);
-						} else {
-								if (THEME.getString("THEME", "").equals("16")) {
-										prog.getWindow().setBackgroundDrawableResource(R.drawable.light_red);
-										check.getWindow().setBackgroundDrawableResource(R.drawable.light_red);
-								} else {
-										if (THEME.getString("THEME", "").equals("17")) {
-												prog.getWindow().setBackgroundDrawableResource(R.drawable.light_orange);
-												check.getWindow().setBackgroundDrawableResource(R.drawable.light_orange);;
-										} else {
-												if (THEME.getString("THEME", "").equals("18")) {
-														prog.getWindow().setBackgroundDrawableResource(R.drawable.light_pink);
-														check.getWindow().setBackgroundDrawableResource(R.drawable.light_pink);
-												} else {
-														if (THEME.getString("THEME", "").equals("19")) {
-																prog.getWindow().setBackgroundDrawableResource(R.drawable.light_purple);
-																check.getWindow().setBackgroundDrawableResource(R.drawable.light_purple);
-														} else {
-																if (THEME.getString("THEME", "").equals("20")) {
-																		prog.getWindow().setBackgroundDrawableResource(R.drawable.light_cyan);
-																		check.getWindow().setBackgroundDrawableResource(R.drawable.light_cyan);
-																} else {
-																		prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																		check.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																}
-														}
-												}
-										}
-								}
-						}
-				}
-				Thread progress = new Thread() {
-						@Override
-						public void run() {
-								boolean downloading = true;
-								while (downloading) {
-										DownloadManager.Query q = new DownloadManager.Query();
-										q.setFilterById(downloadId);
-										android.database.Cursor cursor = manager.query(q);
-										if (cursor != null) { 
-												if (cursor.moveToFirst()) {
-														int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
-														int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
-														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
-																downloading = false;
-														}
-														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
-																runOnUiThread(new Runnable() {
-																		public void run() {
-																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																				_File_Remover();
-																		}
-																});
-														}				
-														final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
-														final int dl_max = (int) (100);
-														final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
-														final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
-														String file_min = String.format("%.2f", file_front);
-														String file_fix = String.format("%.2f", file_end);
-														String file_max = file_fix.replace("-", "");
-														runOnUiThread(new Runnable() {
-																@Override
-																public void run() {
-																		final Handler handler = new Handler();
-																		handler.postDelayed(new Runnable() {
-																				@Override
-																				public void run() {
-																						if (prog.getProgress() < dl_progress) {
-																								prog.incrementProgressBy(1);
-																						}
-																				}
-																		}, 10);
-																		ObjectAnimator animation = ObjectAnimator.ofInt(prog, "progress", prog.getProgress(), prog.getMax());
-																		animation.setDuration(1500);
-																		animation.setInterpolator(new DecelerateInterpolator());
-																		animation.start();
-																		if (!MainActivity.this.isFinishing()) {
-																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																				String TitleColor = "1DB954";
-																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																				prog.setProgressNumberFormat((Datas.get("Server").toString()) + " | " + (file_max) + " MB");
-																				prog.setCancelable(false);
-																				prog.setMax(dl_max);
-																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.show();
-																		}
-																}
-														});
-														if (bytes_downloaded == bytes_total) {
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("PREPARING");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																								prog.dismiss();
-																								check.show();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(1500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING UPDATE");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(3500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING SIGNATURE");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(4500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("FINALIZING");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(5500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								if (!MainActivity.this.isFinishing()) {
-																										_Extension_3();
-																										prog.dismiss();
-																								}
-																								prog.dismiss();
-																								check.dismiss();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(6500));
-														}
-												}
-												cursor.close();
-										}
-								}
-						}
-				};
-				progress.start();
-		} else {
-				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-		}
-		
 	}
 	
 	
@@ -7946,37 +4481,29 @@ public class MainActivity extends AppCompatActivity {
 		c = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
 		c.setDuration(400); main_box_8.startAnimation(c);
 		c = null;
-		Animation d;
-		d = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		d.setDuration(500); main_box_11.startAnimation(d);
-		d = null;
 		Animation e;
 		e = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		e.setDuration(600); main_box_17.startAnimation(e);
+		e.setDuration(500); main_box_17.startAnimation(e);
 		e = null;
 		Animation f;
 		f = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		f.setDuration(700); main_box_21.startAnimation(f);
+		f.setDuration(600); main_box_21.startAnimation(f);
 		f = null;
 		Animation g;
 		g = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		g.setDuration(800); main_box_20.startAnimation(g);
+		g.setDuration(700); main_box_20.startAnimation(g);
 		g = null;
 		Animation h;
 		h = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		h.setDuration(900); main_box_5.startAnimation(h);
+		h.setDuration(800); main_box_5.startAnimation(h);
 		h = null;
 		Animation i;
 		i = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		i.setDuration(1000); main_box_14.startAnimation(i);
+		i.setDuration(900); main_box_14.startAnimation(i);
 		i = null;
-		Animation j;
-		j = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		j.setDuration(1100); main_box_10.startAnimation(j);
-		j = null;
 		Animation k;
 		k = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		k.setDuration(1200); main_box_13.startAnimation(k);
+		k.setDuration(1000); main_box_13.startAnimation(k);
 		k = null;
 	}
 	
@@ -8053,26 +4580,6 @@ public class MainActivity extends AppCompatActivity {
 										list_items_1.setAdapter(new List_items_1Adapter(stock_cloned_patched));
 										((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
 									}
-									else {
-										if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-											list_items_1.setVisibility(View.VISIBLE);
-											list_items_2.setVisibility(View.GONE);
-											list_items_3.setVisibility(View.GONE);
-											list_items_5.setVisibility(View.GONE);
-											list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_patched));
-											((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
-										}
-										else {
-											if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-												list_items_1.setVisibility(View.VISIBLE);
-												list_items_2.setVisibility(View.GONE);
-												list_items_3.setVisibility(View.GONE);
-												list_items_5.setVisibility(View.GONE);
-												list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_cloned_patched));
-												((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
-											}
-										}
-									}
 								}
 								Animation animation;
 								animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
@@ -8105,26 +4612,6 @@ public class MainActivity extends AppCompatActivity {
 														list_items_2.setAdapter(new List_items_2Adapter(amoled_cloned_patched));
 														((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 													}
-													else {
-														if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-															list_items_1.setVisibility(View.GONE);
-															list_items_2.setVisibility(View.VISIBLE);
-															list_items_3.setVisibility(View.GONE);
-															list_items_5.setVisibility(View.GONE);
-															list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_patched));
-															((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
-														}
-														else {
-															if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-																list_items_1.setVisibility(View.GONE);
-																list_items_2.setVisibility(View.VISIBLE);
-																list_items_3.setVisibility(View.GONE);
-																list_items_5.setVisibility(View.GONE);
-																list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_cloned_patched));
-																((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
-															}
-														}
-													}
 												}
 												Animation animation;
 												animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
@@ -8152,7 +4639,7 @@ public class MainActivity extends AppCompatActivity {
 																version_oc_02.setImageResource(R.drawable.close);
 																version_oc_03.setImageResource(R.drawable.open);
 																changelogs_oc.setImageResource(R.drawable.close);
-																list_items_3.setAdapter(new List_items_3Adapter(lite_patched));
+																list_items_3.setAdapter(new List_items_3Adapter(other_patched));
 																((BaseAdapter)list_items_3.getAdapter()).notifyDataSetChanged();
 																Timer = new TimerTask() {
 																	@Override
@@ -8226,692 +4713,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	public void _Default_Path() {
-		if (PATH.equals("")) {
-			apk_path_location.setText("/storage/emulated/0/xManager/");
-		}
-		else {
-			APK_PATH.edit().putString("PATH", apk_path_location.getText().toString()).commit();
-		}
-	}
-	
-	
-	public void _Download_Install(final String _url, final String _path) {
-		android.net.ConnectivityManager connMgr = (android.net.ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-		android.net.NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-		if (networkInfo != null && networkInfo.isConnected()) {
-				final String urlDownload = _url;
-				final DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
-				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
-				final String cookies = CookieManager.getInstance().getCookie(urlDownload);
-				final String userAgent = "USER_AGENT";
-				request.addRequestHeader("cookie", cookies);
-				request.addRequestHeader("User-Agent", userAgent);
-				request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
-				request.setMimeType("application/vnd.android.package-archive");
-				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "Patched (xManager).apk");
-				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-				final long downloadId = manager.enqueue(request);
-				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
-				final ProgressDialog check = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
-				if (THEME.getString("THEME", "").equals("14")) {
-						prog.getWindow().setBackgroundDrawableResource(R.drawable.light_green);
-						check.getWindow().setBackgroundDrawableResource(R.drawable.light_green);
-				} else {
-						if (THEME.getString("THEME", "").equals("15")) {
-								prog.getWindow().setBackgroundDrawableResource(R.drawable.light_blue);
-								check.getWindow().setBackgroundDrawableResource(R.drawable.light_blue);
-						} else {
-								if (THEME.getString("THEME", "").equals("16")) {
-										prog.getWindow().setBackgroundDrawableResource(R.drawable.light_red);
-										check.getWindow().setBackgroundDrawableResource(R.drawable.light_red);
-								} else {
-										if (THEME.getString("THEME", "").equals("17")) {
-												prog.getWindow().setBackgroundDrawableResource(R.drawable.light_orange);
-												check.getWindow().setBackgroundDrawableResource(R.drawable.light_orange);;
-										} else {
-												if (THEME.getString("THEME", "").equals("18")) {
-														prog.getWindow().setBackgroundDrawableResource(R.drawable.light_pink);
-														check.getWindow().setBackgroundDrawableResource(R.drawable.light_pink);
-												} else {
-														if (THEME.getString("THEME", "").equals("19")) {
-																prog.getWindow().setBackgroundDrawableResource(R.drawable.light_purple);
-																check.getWindow().setBackgroundDrawableResource(R.drawable.light_purple);
-														} else {
-																if (THEME.getString("THEME", "").equals("20")) {
-																		prog.getWindow().setBackgroundDrawableResource(R.drawable.light_cyan);
-																		check.getWindow().setBackgroundDrawableResource(R.drawable.light_cyan);
-																} else {
-																		prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																		check.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																}
-														}
-												}
-										}
-								}
-						}
-				}
-				Thread progress = new Thread() {
-						@Override
-						public void run() {
-								boolean downloading = true;
-								while (downloading) {
-										DownloadManager.Query q = new DownloadManager.Query();
-										q.setFilterById(downloadId);
-										android.database.Cursor cursor = manager.query(q);
-										if (cursor != null) { 
-												if (cursor.moveToFirst()) {
-														int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
-														int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
-														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
-																downloading = false;
-														}
-														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
-																runOnUiThread(new Runnable() {
-																		public void run() {
-																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																				_File_Remover();
-																		}
-																});
-														}				
-														final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
-														final int dl_max = (int) (100);
-														final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
-														final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
-														String file_min = String.format("%.2f", file_front);
-														String file_fix = String.format("%.2f", file_end);
-														String file_max = file_fix.replace("-", "");
-														runOnUiThread(new Runnable() {
-																@Override
-																public void run() {
-																		final Handler handler = new Handler();
-																		handler.postDelayed(new Runnable() {
-																				@Override
-																				public void run() {
-																						if (prog.getProgress() < dl_progress) {
-																								prog.incrementProgressBy(1);
-																						}
-																				}
-																		}, 10);
-																		ObjectAnimator animation = ObjectAnimator.ofInt(prog, "progress", prog.getProgress(), prog.getMax());
-																		animation.setDuration(1500);
-																		animation.setInterpolator(new DecelerateInterpolator());
-																		animation.start();
-																		if (!MainActivity.this.isFinishing()) {
-																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																				String TitleColor = "1DB954";
-																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																				prog.setProgressNumberFormat((hidden_patched.getText().toString()) + " | " + (file_max) + " MB");
-																				prog.setCancelable(false);
-																				prog.setMax(dl_max);
-																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.show();
-																		}
-																}
-														});
-														if (bytes_downloaded == bytes_total) {
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("PREPARING");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																								prog.dismiss();
-																								check.show();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(1500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING PATCHED");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(3500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING SIGNATURE");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(4500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("FINALIZING");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(5500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {	
-																								try {
-																										FileUtil.copyFile("/storage/emulated/0/Download/Patched (xManager).apk", apk_path_location.getText().toString().concat("Patched (xManager).apk"));
-																								}
-																								catch(Exception e) {
-																								}
-																								Timer = new TimerTask() {
-																										@Override
-																										public void run() {
-																												runOnUiThread(new Runnable() {
-																														@Override
-																														public void run() {
-																																prog.dismiss();
-																																check.dismiss();
-																																_Downgrade_Checker();
-																																if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
-																																		if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
-																																				StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																																				if(android.os.Build.VERSION.SDK_INT >= 29){
-																																						try {
-																																								Intent intent = new Intent(Intent.ACTION_VIEW);
-																																								intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
-																																								startActivity(intent);
-																																								_Install_Reminder();
-																																						}
-																																						catch(Exception e) {
-																																						}
-																																				} else {
-																																						try {
-																																								Intent intent = new Intent(Intent.ACTION_VIEW);
-																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
-																																								startActivity(intent);
-																																								_Install_Reminder();
-																																						}
-																																						catch(Exception e) {
-																																						}
-																																				} 
-																																		} else {
-																																				if (!MainActivity.this.isFinishing()) {
-																																						final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																						String TitleColor = "1DB954";
-																																						Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																						String Message = installation_failed_spap_desc_0.replace("\n", "<br/>");
-																																						String MessageColor = "FFFFFF";
-																																						Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																						Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																								@Override
-																																								public void onClick(DialogInterface Signature_Check, int p) {
-																																										AlertDialog.setCancelable(true);
-																																										try {
-																																												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
-																																												startActivity(intent);
-																																										}
-																																										catch(Exception e) {
-																																										}
-																																								}
-																																						});
-																																						Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																								@Override
-																																								public void onClick(DialogInterface Signature_Check, int p) {
-																																										AlertDialog.setCancelable(true);
-																																								}
-																																						});
-																																						AlertDialog = Signature_Check.create();
-																																						AlertDialog.setCancelable(false);
-																																						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																						AlertDialog.show();
-																																				}
-																																		}	
-																																}
-																																else {
-																																		if (Downloaded_Version < Installed_Version) {
-																																				if (!MainActivity.this.isFinishing()) {
-																																						final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																						String TitleColor = "1DB954";
-																																						Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																						String Message = installation_failed_desc_0.replace("\n", "<br/>");
-																																						String MessageColor = "FFFFFF";
-																																						Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																						Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																								@Override
-																																								public void onClick(DialogInterface Downgrade_Check, int p) {
-																																										AlertDialog.setCancelable(true);
-																																										try {
-																																												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
-																																												startActivity(intent);
-																																										}
-																																										catch(Exception e) {
-																																										}
-																																								}
-																																						});
-																																						Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																								@Override
-																																								public void onClick(DialogInterface Downgrade_Check, int p) {
-																																										AlertDialog.setCancelable(true);
-																																								}
-																																						});
-																																						AlertDialog = Downgrade_Check.create();
-																																						AlertDialog.setCancelable(false);
-																																						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																						AlertDialog.show();
-																																				}
-																																		}
-																																}
-																														}
-																												});
-																										}
-																								};
-																								_timer.schedule(Timer, (int)(100));
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(6500));
-														}
-												}
-												cursor.close();
-										}
-								}
-						}
-				};
-				progress.start();
-		} else {
-				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-		}
-		
-	}
-	
-	
-	public void _Download_Update_Install(final String _url, final String _path) {
-		android.net.ConnectivityManager connMgr = (android.net.ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-		android.net.NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-		if (networkInfo != null && networkInfo.isConnected()) {
-				final String urlDownload = _url;
-				final DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
-				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
-				final String cookies = CookieManager.getInstance().getCookie(urlDownload);
-				final String userAgent = "USER_AGENT";
-				request.addRequestHeader("cookie", cookies);
-				request.addRequestHeader("User-Agent", userAgent);
-				request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
-				request.setMimeType("application/vnd.android.package-archive");
-				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "xManager Update.apk");
-				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-				final long downloadId = manager.enqueue(request);
-				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
-				final ProgressDialog check = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
-				if (THEME.getString("THEME", "").equals("14")) {
-						prog.getWindow().setBackgroundDrawableResource(R.drawable.light_green);
-						check.getWindow().setBackgroundDrawableResource(R.drawable.light_green);
-				} else {
-						if (THEME.getString("THEME", "").equals("15")) {
-								prog.getWindow().setBackgroundDrawableResource(R.drawable.light_blue);
-								check.getWindow().setBackgroundDrawableResource(R.drawable.light_blue);
-						} else {
-								if (THEME.getString("THEME", "").equals("16")) {
-										prog.getWindow().setBackgroundDrawableResource(R.drawable.light_red);
-										check.getWindow().setBackgroundDrawableResource(R.drawable.light_red);
-								} else {
-										if (THEME.getString("THEME", "").equals("17")) {
-												prog.getWindow().setBackgroundDrawableResource(R.drawable.light_orange);
-												check.getWindow().setBackgroundDrawableResource(R.drawable.light_orange);;
-										} else {
-												if (THEME.getString("THEME", "").equals("18")) {
-														prog.getWindow().setBackgroundDrawableResource(R.drawable.light_pink);
-														check.getWindow().setBackgroundDrawableResource(R.drawable.light_pink);
-												} else {
-														if (THEME.getString("THEME", "").equals("19")) {
-																prog.getWindow().setBackgroundDrawableResource(R.drawable.light_purple);
-																check.getWindow().setBackgroundDrawableResource(R.drawable.light_purple);
-														} else {
-																if (THEME.getString("THEME", "").equals("20")) {
-																		prog.getWindow().setBackgroundDrawableResource(R.drawable.light_cyan);
-																		check.getWindow().setBackgroundDrawableResource(R.drawable.light_cyan);
-																} else {
-																		prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																		check.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																}
-														}
-												}
-										}
-								}
-						}
-				}
-				Thread progress = new Thread() {
-						@Override
-						public void run() {
-								boolean downloading = true;
-								while (downloading) {
-										DownloadManager.Query q = new DownloadManager.Query();
-										q.setFilterById(downloadId);
-										android.database.Cursor cursor = manager.query(q);
-										if (cursor != null) { 
-												if (cursor.moveToFirst()) {
-														int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
-														int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
-														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
-																downloading = false;
-														}
-														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
-																runOnUiThread(new Runnable() {
-																		public void run() {
-																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																				_File_Remover();
-																		}
-																});
-														}				
-														final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
-														final int dl_max = (int) (100);
-														final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
-														final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
-														String file_min = String.format("%.2f", file_front);
-														String file_fix = String.format("%.2f", file_end);
-														String file_max = file_fix.replace("-", "");
-														runOnUiThread(new Runnable() {
-																@Override
-																public void run() {
-																		final Handler handler = new Handler();
-																		handler.postDelayed(new Runnable() {
-																				@Override
-																				public void run() {
-																						if (prog.getProgress() < dl_progress) {
-																								prog.incrementProgressBy(1);
-																						}
-																				}
-																		}, 10);
-																		ObjectAnimator animation = ObjectAnimator.ofInt(prog, "progress", prog.getProgress(), prog.getMax());
-																		animation.setDuration(1500);
-																		animation.setInterpolator(new DecelerateInterpolator());
-																		animation.start();
-																		if (!MainActivity.this.isFinishing()) {
-																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																				String TitleColor = "1DB954";
-																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																				prog.setProgressNumberFormat((Datas.get("Server").toString()) + " | " + (file_max) + " MB");
-																				prog.setCancelable(false);
-																				prog.setMax(dl_max);
-																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.show();
-																		}
-																}
-														});
-														if (bytes_downloaded == bytes_total) {
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("PREPARING");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																								prog.dismiss();
-																								check.show();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(1500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING UPDATE");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(3500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING SIGNATURE");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(4500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(title_header.getText().toString().concat(" v".concat(Datas.get("Server").toString().concat("</b>"))));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("FINALIZING");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(5500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								try {
-																										prog.dismiss();
-																										check.dismiss();
-																								}
-																								catch(Exception e) {
-																								}
-																								prog.dismiss();
-																								StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																								if(android.os.Build.VERSION.SDK_INT >= 29){
-																										try {
-																												Intent intent = new Intent(Intent.ACTION_VIEW);
-																												intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																												intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/xManager Update.apk")), "application/vnd.android.package-archive");
-																												startActivity(intent);
-																										}
-																										catch(Exception e) {
-																										}
-																								} else {
-																										try {
-																												Intent intent = new Intent(Intent.ACTION_VIEW);
-																												intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/xManager Update.apk")), "application/vnd.android.package-archive");
-																												startActivity(intent);
-																										}
-																										catch(Exception e) {
-																										}
-																								}
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(6500));
-														}
-												}
-												cursor.close();
-										}
-								}
-						}
-				};
-				progress.start();
-		} else {
-				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-		}
-		
-	}
-	
-	
 	public void _Switch_Fixer() {
-		if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("X") && FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("XX")) {
-			force_auto_install_switch.setChecked(true);
-		}
-		else {
-			if (FORCE_INSTALL.getString("FORCE_INSTALL", "").equals("Y") && FORCE_INSTALL_UPDATE.getString("FORCE_INSTALL_UPDATE", "").equals("YY")) {
-				force_auto_install_switch.setChecked(false);
-			}
-		}
 		if (DISABLE_REWARD_AD.getString("REWARD_AD", "").equals("ON")) {
 			disable_reward_ad_switch.setChecked(true);
 		}
@@ -8933,7 +4735,6 @@ public class MainActivity extends AppCompatActivity {
 			sub_title.setText(R.string.about_sub);
 			sub_text_1.setText(R.string.latest);
 			sub_text_2.setText(R.string.latest);
-			sub_text_3.setText(R.string.latest);
 			versions_1.setText(R.string.versions);
 			versions_2.setText(R.string.versions);
 			versions_3.setText(R.string.versions);
@@ -8976,62 +4777,29 @@ public class MainActivity extends AppCompatActivity {
 			reset_preferences.setText(R.string.reset_preferences);
 			list_auto_refresh.setText(R.string.list_auto_refresh);
 			list_auto_refresh_info.setText(R.string.list_auto_refresh_desc);
-			force_auto_install.setText(R.string.force_auto_install);
-			force_auto_install_info.setText(R.string.force_auto_install_desc);
-			apk_location.setText(R.string.apk_location);
-			apk_location_info.setText(R.string.apk_location_desc);
-			clear_directory_folders.setText(R.string.clear_directory_folders);
-			clear_directory_folders_info.setText(R.string.clear_directory_folders_desc);
 			cloned_version.setText(R.string.cloned_version);
 			cloned_version_info.setText(R.string.cloned_version_desc);
-			experiment_version.setText(R.string.experimental_version);
-			experiment_version_info.setText(R.string.experimental_version_desc);
 			disable_reward_ad.setText(R.string.disable_rewarded_ads);
 			disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc);
 			disable_notification.setText(R.string.disable_notification);
 			disable_notification_info.setText(R.string.disable_notification_desc);
 			hide_stock_patched.setText(R.string.hide_stock_patched);
 			hide_amoled_patched.setText(R.string.hide_amoled_patched);
-			hide_lite_patched.setText(R.string.hide_lite_patched);
 			show_support.setText(R.string.show_support);
 			show_support_desc.setText(R.string.show_support_desc);
 			maintenance.setText(R.string.maintenance);
 			maintenance_desc.setText(R.string.maintenance_desc);
 			xmanager_dev.setText(R.string.xmanager_dev);
 			contributors.setText(R.string.contributors);
-			download_selected.setText(R.string.download_selected);
 			download_ready.setText(R.string.download_ready);
 			download_ready_desc.setText(R.string.download_ready_desc);
-			downloading_file.setText(R.string.downloading_file);
-			download_success.setText(R.string.download_success);
-			installation_failed.setText(R.string.installation_failed);
-			installation_failed_desc.setText(R.string.installation_failed_desc);
 			installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc);
-			installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc);
 			existing_patched.setText(R.string.existing_patched);
 			existing_patched_desc.setText(R.string.existing_patched_desc);
-			lite_0 = lite.getText().toString();
 			download_0 = download.getText().toString();
-			continue_0 = continue_1.getText().toString();
 			cancel_0 = cancel.getText().toString();
-			later_0 = later.getText().toString();
-			mirror_0 = mirror.getText().toString();
-			install_now_0 = install_now.getText().toString();
-			go_back_0 = go_back.getText().toString();
-			install_update_0 = install_update.getText().toString();
-			close_0 = close.getText().toString();
-			uninstall_0 = uninstall.getText().toString();
-			existing_patched_0 = existing_patched.getText().toString();
-			existing_patched_desc_0 = existing_patched_desc.getText().toString();
-			download_selected_0 = download_selected.getText().toString();
 			download_ready_0 = download_ready.getText().toString();
 			download_ready_desc_0 = download_ready_desc.getText().toString();
-			downloading_file_0 = downloading_file.getText().toString();
-			download_success_0 = download_success.getText().toString();
-			installation_failed_0 = installation_failed.getText().toString();
-			installation_failed_desc_0 = installation_failed_desc.getText().toString();
-			installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-			installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 			
 			select_language.setSelection((int)(0));
 		}
@@ -9045,7 +4813,6 @@ public class MainActivity extends AppCompatActivity {
 				sub_title.setText(R.string.about_sub_01);
 				sub_text_1.setText(R.string.latest_01);
 				sub_text_2.setText(R.string.latest_01);
-				sub_text_3.setText(R.string.latest_01);
 				versions_1.setText(R.string.versions_01);
 				versions_2.setText(R.string.versions_01);
 				versions_3.setText(R.string.versions_01);
@@ -9088,62 +4855,29 @@ public class MainActivity extends AppCompatActivity {
 				reset_preferences.setText(R.string.reset_preferences_01);
 				list_auto_refresh.setText(R.string.list_auto_refresh_01);
 				list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_01);
-				force_auto_install.setText(R.string.force_auto_install_01);
-				force_auto_install_info.setText(R.string.force_auto_install_desc_01);
-				apk_location.setText(R.string.apk_location_01);
-				apk_location_info.setText(R.string.apk_location_desc_01);
-				clear_directory_folders.setText(R.string.clear_directory_folders_01);
-				clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_01);
 				cloned_version.setText(R.string.cloned_version_01);
 				cloned_version_info.setText(R.string.cloned_version_desc_01);
-				experiment_version.setText(R.string.experimental_version_01);
-				experiment_version_info.setText(R.string.experimental_version_desc_01);
 				disable_reward_ad.setText(R.string.disable_rewarded_ads_01);
 				disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_01);
 				disable_notification.setText(R.string.disable_notification_01);
 				disable_notification_info.setText(R.string.disable_notification_desc_01);
 				hide_stock_patched.setText(R.string.hide_stock_patched_01);
 				hide_amoled_patched.setText(R.string.hide_amoled_patched_01);
-				hide_lite_patched.setText(R.string.hide_lite_patched_01);
 				show_support.setText(R.string.show_support_01);
 				show_support_desc.setText(R.string.show_support_desc_01);
 				maintenance.setText(R.string.maintenance_01);
 				maintenance_desc.setText(R.string.maintenance_desc_01);
 				xmanager_dev.setText(R.string.xmanager_dev_01);
 				contributors.setText(R.string.contributors_01);
-				download_selected.setText(R.string.download_selected_01);
 				download_ready.setText(R.string.download_ready_01);
 				download_ready_desc.setText(R.string.download_ready_desc_01);
-				downloading_file.setText(R.string.downloading_file_01);
-				download_success.setText(R.string.download_success_01);
-				installation_failed.setText(R.string.installation_failed_01);
-				installation_failed_desc.setText(R.string.installation_failed_desc_01);
 				installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_01);
-				installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_01);
 				existing_patched.setText(R.string.existing_patched_01);
 				existing_patched_desc.setText(R.string.existing_patched_desc_01);
-				lite_0 = lite.getText().toString();
 				download_0 = download.getText().toString();
-				continue_0 = continue_1.getText().toString();
 				cancel_0 = cancel.getText().toString();
-				later_0 = later.getText().toString();
-				mirror_0 = mirror.getText().toString();
-				install_now_0 = install_now.getText().toString();
-				go_back_0 = go_back.getText().toString();
-				install_update_0 = install_update.getText().toString();
-				close_0 = close.getText().toString();
-				uninstall_0 = uninstall.getText().toString();
-				existing_patched_0 = existing_patched.getText().toString();
-				existing_patched_desc_0 = existing_patched_desc.getText().toString();
-				download_selected_0 = download_selected.getText().toString();
 				download_ready_0 = download_ready.getText().toString();
 				download_ready_desc_0 = download_ready_desc.getText().toString();
-				downloading_file_0 = downloading_file.getText().toString();
-				download_success_0 = download_success.getText().toString();
-				installation_failed_0 = installation_failed.getText().toString();
-				installation_failed_desc_0 = installation_failed_desc.getText().toString();
-				installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-				installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 				select_language.setSelection((int)(1));
 			}
 			else {
@@ -9156,7 +4890,6 @@ public class MainActivity extends AppCompatActivity {
 					sub_title.setText(R.string.about_sub_02);
 					sub_text_1.setText(R.string.latest_02);
 					sub_text_2.setText(R.string.latest_02);
-					sub_text_3.setText(R.string.latest_02);
 					versions_1.setText(R.string.versions_02);
 					versions_2.setText(R.string.versions_02);
 					versions_3.setText(R.string.versions_02);
@@ -9199,62 +4932,29 @@ public class MainActivity extends AppCompatActivity {
 					reset_preferences.setText(R.string.reset_preferences_02);
 					list_auto_refresh.setText(R.string.list_auto_refresh_02);
 					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_02);
-					force_auto_install.setText(R.string.force_auto_install_02);
-					force_auto_install_info.setText(R.string.force_auto_install_desc_02);
-					apk_location.setText(R.string.apk_location_02);
-					apk_location_info.setText(R.string.apk_location_desc_02);
-					clear_directory_folders.setText(R.string.clear_directory_folders_02);
-					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_02);
 					cloned_version.setText(R.string.cloned_version_02);
 					cloned_version_info.setText(R.string.cloned_version_desc_02);
-					experiment_version.setText(R.string.experimental_version_02);
-					experiment_version_info.setText(R.string.experimental_version_desc_02);
 					disable_reward_ad.setText(R.string.disable_rewarded_ads_02);
 					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_02);
 					disable_notification.setText(R.string.disable_notification_02);
 					disable_notification_info.setText(R.string.disable_notification_desc_02);
 					hide_stock_patched.setText(R.string.hide_stock_patched_02);
 					hide_amoled_patched.setText(R.string.hide_amoled_patched_02);
-					hide_lite_patched.setText(R.string.hide_lite_patched_02);
 					show_support.setText(R.string.show_support_02);
 					show_support_desc.setText(R.string.show_support_desc_02);
 					maintenance.setText(R.string.maintenance_02);
 					maintenance_desc.setText(R.string.maintenance_desc_02);
 					xmanager_dev.setText(R.string.xmanager_dev_02);
 					contributors.setText(R.string.contributors_02);
-					download_selected.setText(R.string.download_selected_02);
 					download_ready.setText(R.string.download_ready_02);
 					download_ready_desc.setText(R.string.download_ready_desc_02);
-					downloading_file.setText(R.string.downloading_file_02);
-					download_success.setText(R.string.download_success_02);
-					installation_failed.setText(R.string.installation_failed_02);
-					installation_failed_desc.setText(R.string.installation_failed_desc_02);
 					installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_02);
-					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_02);
 					existing_patched.setText(R.string.existing_patched_02);
 					existing_patched_desc.setText(R.string.existing_patched_desc_02);
-					lite_0 = lite.getText().toString();
 					download_0 = download.getText().toString();
-					continue_0 = continue_1.getText().toString();
 					cancel_0 = cancel.getText().toString();
-					later_0 = later.getText().toString();
-					mirror_0 = mirror.getText().toString();
-					install_now_0 = install_now.getText().toString();
-					go_back_0 = go_back.getText().toString();
-					install_update_0 = install_update.getText().toString();
-					close_0 = close.getText().toString();
-					uninstall_0 = uninstall.getText().toString();
-					existing_patched_0 = existing_patched.getText().toString();
-					existing_patched_desc_0 = existing_patched_desc.getText().toString();
-					download_selected_0 = download_selected.getText().toString();
 					download_ready_0 = download_ready.getText().toString();
 					download_ready_desc_0 = download_ready_desc.getText().toString();
-					downloading_file_0 = downloading_file.getText().toString();
-					download_success_0 = download_success.getText().toString();
-					installation_failed_0 = installation_failed.getText().toString();
-					installation_failed_desc_0 = installation_failed_desc.getText().toString();
-					installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 					select_language.setSelection((int)(2));
 				}
 				else {
@@ -9267,7 +4967,6 @@ public class MainActivity extends AppCompatActivity {
 						sub_title.setText(R.string.about_sub_03);
 						sub_text_1.setText(R.string.latest_03);
 						sub_text_2.setText(R.string.latest_03);
-						sub_text_3.setText(R.string.latest_03);
 						versions_1.setText(R.string.versions_03);
 						versions_2.setText(R.string.versions_03);
 						versions_3.setText(R.string.versions_03);
@@ -9310,62 +5009,29 @@ public class MainActivity extends AppCompatActivity {
 						reset_preferences.setText(R.string.reset_preferences_03);
 						list_auto_refresh.setText(R.string.list_auto_refresh_03);
 						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_03);
-						force_auto_install.setText(R.string.force_auto_install_03);
-						force_auto_install_info.setText(R.string.force_auto_install_desc_03);
-						apk_location.setText(R.string.apk_location_03);
-						apk_location_info.setText(R.string.apk_location_desc_03);
-						clear_directory_folders.setText(R.string.clear_directory_folders_03);
-						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_03);
 						cloned_version.setText(R.string.cloned_version_03);
 						cloned_version_info.setText(R.string.cloned_version_desc_03);
-						experiment_version.setText(R.string.experimental_version_03);
-						experiment_version_info.setText(R.string.experimental_version_desc_03);
 						disable_reward_ad.setText(R.string.disable_rewarded_ads_03);
 						disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_03);
 						disable_notification.setText(R.string.disable_notification_03);
 						disable_notification_info.setText(R.string.disable_notification_desc_03);
 						hide_stock_patched.setText(R.string.hide_stock_patched_03);
 						hide_amoled_patched.setText(R.string.hide_amoled_patched_03);
-						hide_lite_patched.setText(R.string.hide_lite_patched_03);
 						show_support.setText(R.string.show_support_03);
 						show_support_desc.setText(R.string.show_support_desc_03);
 						maintenance.setText(R.string.maintenance_03);
 						maintenance_desc.setText(R.string.maintenance_desc_03);
 						xmanager_dev.setText(R.string.xmanager_dev_03);
 						contributors.setText(R.string.contributors_03);
-						download_selected.setText(R.string.download_selected_03);
 						download_ready.setText(R.string.download_ready_03);
 						download_ready_desc.setText(R.string.download_ready_desc_03);
-						downloading_file.setText(R.string.downloading_file_03);
-						download_success.setText(R.string.download_success_03);
-						installation_failed.setText(R.string.installation_failed_03);
-						installation_failed_desc.setText(R.string.installation_failed_desc_03);
 						installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_03);
-						installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_03);
 						existing_patched.setText(R.string.existing_patched_03);
 						existing_patched_desc.setText(R.string.existing_patched_desc_03);
-						lite_0 = lite.getText().toString();
 						download_0 = download.getText().toString();
-						continue_0 = continue_1.getText().toString();
 						cancel_0 = cancel.getText().toString();
-						later_0 = later.getText().toString();
-						mirror_0 = mirror.getText().toString();
-						install_now_0 = install_now.getText().toString();
-						go_back_0 = go_back.getText().toString();
-						install_update_0 = install_update.getText().toString();
-						close_0 = close.getText().toString();
-						uninstall_0 = uninstall.getText().toString();
-						existing_patched_0 = existing_patched.getText().toString();
-						existing_patched_desc_0 = existing_patched_desc.getText().toString();
-						download_selected_0 = download_selected.getText().toString();
 						download_ready_0 = download_ready.getText().toString();
 						download_ready_desc_0 = download_ready_desc.getText().toString();
-						downloading_file_0 = downloading_file.getText().toString();
-						download_success_0 = download_success.getText().toString();
-						installation_failed_0 = installation_failed.getText().toString();
-						installation_failed_desc_0 = installation_failed_desc.getText().toString();
-						installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-						installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 						select_language.setSelection((int)(3));
 					}
 					else {
@@ -9378,7 +5044,6 @@ public class MainActivity extends AppCompatActivity {
 							sub_title.setText(R.string.about_sub_04);
 							sub_text_1.setText(R.string.latest_04);
 							sub_text_2.setText(R.string.latest_04);
-							sub_text_3.setText(R.string.latest_04);
 							versions_1.setText(R.string.versions_04);
 							versions_2.setText(R.string.versions_04);
 							versions_3.setText(R.string.versions_04);
@@ -9421,62 +5086,29 @@ public class MainActivity extends AppCompatActivity {
 							reset_preferences.setText(R.string.reset_preferences_04);
 							list_auto_refresh.setText(R.string.list_auto_refresh_04);
 							list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_04);
-							force_auto_install.setText(R.string.force_auto_install_04);
-							force_auto_install_info.setText(R.string.force_auto_install_desc_04);
-							apk_location.setText(R.string.apk_location_04);
-							apk_location_info.setText(R.string.apk_location_desc_04);
-							clear_directory_folders.setText(R.string.clear_directory_folders_04);
-							clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_04);
 							cloned_version.setText(R.string.cloned_version_04);
 							cloned_version_info.setText(R.string.cloned_version_desc_04);
-							experiment_version.setText(R.string.experimental_version_04);
-							experiment_version_info.setText(R.string.experimental_version_desc_04);
 							disable_reward_ad.setText(R.string.disable_rewarded_ads_04);
 							disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_04);
 							disable_notification.setText(R.string.disable_notification_04);
 							disable_notification_info.setText(R.string.disable_notification_desc_04);
 							hide_stock_patched.setText(R.string.hide_stock_patched_04);
 							hide_amoled_patched.setText(R.string.hide_amoled_patched_04);
-							hide_lite_patched.setText(R.string.hide_lite_patched_04);
 							show_support.setText(R.string.show_support_04);
 							show_support_desc.setText(R.string.show_support_desc_04);
 							maintenance.setText(R.string.maintenance_04);
 							maintenance_desc.setText(R.string.maintenance_desc_04);
 							xmanager_dev.setText(R.string.xmanager_dev_04);
 							contributors.setText(R.string.contributors_04);
-							download_selected.setText(R.string.download_selected_04);
 							download_ready.setText(R.string.download_ready_04);
 							download_ready_desc.setText(R.string.download_ready_desc_04);
-							downloading_file.setText(R.string.downloading_file_04);
-							download_success.setText(R.string.download_success_04);
-							installation_failed.setText(R.string.installation_failed_04);
-							installation_failed_desc.setText(R.string.installation_failed_desc_04);
 							installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_04);
-							installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_04);
 							existing_patched.setText(R.string.existing_patched_04);
 							existing_patched_desc.setText(R.string.existing_patched_desc_04);
-							lite_0 = lite.getText().toString();
 							download_0 = download.getText().toString();
-							continue_0 = continue_1.getText().toString();
 							cancel_0 = cancel.getText().toString();
-							later_0 = later.getText().toString();
-							mirror_0 = mirror.getText().toString();
-							install_now_0 = install_now.getText().toString();
-							go_back_0 = go_back.getText().toString();
-							install_update_0 = install_update.getText().toString();
-							close_0 = close.getText().toString();
-							uninstall_0 = uninstall.getText().toString();
-							existing_patched_0 = existing_patched.getText().toString();
-							existing_patched_desc_0 = existing_patched_desc.getText().toString();
-							download_selected_0 = download_selected.getText().toString();
 							download_ready_0 = download_ready.getText().toString();
 							download_ready_desc_0 = download_ready_desc.getText().toString();
-							downloading_file_0 = downloading_file.getText().toString();
-							download_success_0 = download_success.getText().toString();
-							installation_failed_0 = installation_failed.getText().toString();
-							installation_failed_desc_0 = installation_failed_desc.getText().toString();
-							installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-							installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 							select_language.setSelection((int)(4));
 						}
 						else {
@@ -9489,7 +5121,6 @@ public class MainActivity extends AppCompatActivity {
 								sub_title.setText(R.string.about_sub_05);
 								sub_text_1.setText(R.string.latest_05);
 								sub_text_2.setText(R.string.latest_05);
-								sub_text_3.setText(R.string.latest_05);
 								versions_1.setText(R.string.versions_05);
 								versions_2.setText(R.string.versions_05);
 								versions_3.setText(R.string.versions_05);
@@ -9532,62 +5163,29 @@ public class MainActivity extends AppCompatActivity {
 								reset_preferences.setText(R.string.reset_preferences_05);
 								list_auto_refresh.setText(R.string.list_auto_refresh_05);
 								list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_05);
-								force_auto_install.setText(R.string.force_auto_install_05);
-								force_auto_install_info.setText(R.string.force_auto_install_desc_05);
-								apk_location.setText(R.string.apk_location_05);
-								apk_location_info.setText(R.string.apk_location_desc_05);
-								clear_directory_folders.setText(R.string.clear_directory_folders_05);
-								clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_05);
 								cloned_version.setText(R.string.cloned_version_05);
 								cloned_version_info.setText(R.string.cloned_version_desc_05);
-								experiment_version.setText(R.string.experimental_version_05);
-								experiment_version_info.setText(R.string.experimental_version_desc_05);
 								disable_reward_ad.setText(R.string.disable_rewarded_ads_05);
 								disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_05);
 								disable_notification.setText(R.string.disable_notification_05);
 								disable_notification_info.setText(R.string.disable_notification_desc_05);
 								hide_stock_patched.setText(R.string.hide_stock_patched_05);
 								hide_amoled_patched.setText(R.string.hide_amoled_patched_05);
-								hide_lite_patched.setText(R.string.hide_lite_patched_05);
 								show_support.setText(R.string.show_support_05);
 								show_support_desc.setText(R.string.show_support_desc_05);
 								maintenance.setText(R.string.maintenance_05);
 								maintenance_desc.setText(R.string.maintenance_desc_05);
 								xmanager_dev.setText(R.string.xmanager_dev_05);
 								contributors.setText(R.string.contributors_05);
-								download_selected.setText(R.string.download_selected_05);
 								download_ready.setText(R.string.download_ready_05);
 								download_ready_desc.setText(R.string.download_ready_desc_05);
-								downloading_file.setText(R.string.downloading_file_05);
-								download_success.setText(R.string.download_success_05);
-								installation_failed.setText(R.string.installation_failed_05);
-								installation_failed_desc.setText(R.string.installation_failed_desc_05);
 								installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_05);
-								installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_05);
 								existing_patched.setText(R.string.existing_patched_05);
 								existing_patched_desc.setText(R.string.existing_patched_desc_05);
-								lite_0 = lite.getText().toString();
 								download_0 = download.getText().toString();
-								continue_0 = continue_1.getText().toString();
 								cancel_0 = cancel.getText().toString();
-								later_0 = later.getText().toString();
-								mirror_0 = mirror.getText().toString();
-								install_now_0 = install_now.getText().toString();
-								go_back_0 = go_back.getText().toString();
-								install_update_0 = install_update.getText().toString();
-								close_0 = close.getText().toString();
-								uninstall_0 = uninstall.getText().toString();
-								existing_patched_0 = existing_patched.getText().toString();
-								existing_patched_desc_0 = existing_patched_desc.getText().toString();
-								download_selected_0 = download_selected.getText().toString();
 								download_ready_0 = download_ready.getText().toString();
 								download_ready_desc_0 = download_ready_desc.getText().toString();
-								downloading_file_0 = downloading_file.getText().toString();
-								download_success_0 = download_success.getText().toString();
-								installation_failed_0 = installation_failed.getText().toString();
-								installation_failed_desc_0 = installation_failed_desc.getText().toString();
-								installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-								installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 								select_language.setSelection((int)(5));
 							}
 							else {
@@ -9600,7 +5198,6 @@ public class MainActivity extends AppCompatActivity {
 									sub_title.setText(R.string.about_sub_06);
 									sub_text_1.setText(R.string.latest_06);
 									sub_text_2.setText(R.string.latest_06);
-									sub_text_3.setText(R.string.latest_06);
 									versions_1.setText(R.string.versions_06);
 									versions_2.setText(R.string.versions_06);
 									versions_3.setText(R.string.versions_06);
@@ -9643,62 +5240,29 @@ public class MainActivity extends AppCompatActivity {
 									reset_preferences.setText(R.string.reset_preferences_06);
 									list_auto_refresh.setText(R.string.list_auto_refresh_06);
 									list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_06);
-									force_auto_install.setText(R.string.force_auto_install_06);
-									force_auto_install_info.setText(R.string.force_auto_install_desc_06);
-									apk_location.setText(R.string.apk_location_06);
-									apk_location_info.setText(R.string.apk_location_desc_06);
-									clear_directory_folders.setText(R.string.clear_directory_folders_06);
-									clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_06);
 									cloned_version.setText(R.string.cloned_version_06);
 									cloned_version_info.setText(R.string.cloned_version_desc_06);
-									experiment_version.setText(R.string.experimental_version_06);
-									experiment_version_info.setText(R.string.experimental_version_desc_06);
 									disable_reward_ad.setText(R.string.disable_rewarded_ads_06);
 									disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_06);
 									disable_notification.setText(R.string.disable_notification_06);
 									disable_notification_info.setText(R.string.disable_notification_desc_06);
 									hide_stock_patched.setText(R.string.hide_stock_patched_06);
 									hide_amoled_patched.setText(R.string.hide_amoled_patched_06);
-									hide_lite_patched.setText(R.string.hide_lite_patched_06);
 									show_support.setText(R.string.show_support_06);
 									show_support_desc.setText(R.string.show_support_desc_06);
 									maintenance.setText(R.string.maintenance_06);
 									maintenance_desc.setText(R.string.maintenance_desc_06);
 									xmanager_dev.setText(R.string.xmanager_dev_06);
 									contributors.setText(R.string.contributors_06);
-									download_selected.setText(R.string.download_selected_06);
 									download_ready.setText(R.string.download_ready_06);
 									download_ready_desc.setText(R.string.download_ready_desc_06);
-									downloading_file.setText(R.string.downloading_file_06);
-									download_success.setText(R.string.download_success_06);
-									installation_failed.setText(R.string.installation_failed_06);
-									installation_failed_desc.setText(R.string.installation_failed_desc_06);
 									installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_06);
-									installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_06);
 									existing_patched.setText(R.string.existing_patched_06);
 									existing_patched_desc.setText(R.string.existing_patched_desc_06);
-									lite_0 = lite.getText().toString();
 									download_0 = download.getText().toString();
-									continue_0 = continue_1.getText().toString();
 									cancel_0 = cancel.getText().toString();
-									later_0 = later.getText().toString();
-									mirror_0 = mirror.getText().toString();
-									install_now_0 = install_now.getText().toString();
-									go_back_0 = go_back.getText().toString();
-									install_update_0 = install_update.getText().toString();
-									close_0 = close.getText().toString();
-									uninstall_0 = uninstall.getText().toString();
-									existing_patched_0 = existing_patched.getText().toString();
-									existing_patched_desc_0 = existing_patched_desc.getText().toString();
-									download_selected_0 = download_selected.getText().toString();
 									download_ready_0 = download_ready.getText().toString();
 									download_ready_desc_0 = download_ready_desc.getText().toString();
-									downloading_file_0 = downloading_file.getText().toString();
-									download_success_0 = download_success.getText().toString();
-									installation_failed_0 = installation_failed.getText().toString();
-									installation_failed_desc_0 = installation_failed_desc.getText().toString();
-									installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-									installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 									select_language.setSelection((int)(6));
 								}
 								else {
@@ -9711,7 +5275,6 @@ public class MainActivity extends AppCompatActivity {
 										sub_title.setText(R.string.about_sub_07);
 										sub_text_1.setText(R.string.latest_07);
 										sub_text_2.setText(R.string.latest_07);
-										sub_text_3.setText(R.string.latest_07);
 										versions_1.setText(R.string.versions_07);
 										versions_2.setText(R.string.versions_07);
 										versions_3.setText(R.string.versions_07);
@@ -9754,62 +5317,29 @@ public class MainActivity extends AppCompatActivity {
 										reset_preferences.setText(R.string.reset_preferences_07);
 										list_auto_refresh.setText(R.string.list_auto_refresh_07);
 										list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_07);
-										force_auto_install.setText(R.string.force_auto_install_07);
-										force_auto_install_info.setText(R.string.force_auto_install_desc_07);
-										apk_location.setText(R.string.apk_location_07);
-										apk_location_info.setText(R.string.apk_location_desc_07);
-										clear_directory_folders.setText(R.string.clear_directory_folders_07);
-										clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_07);
 										cloned_version.setText(R.string.cloned_version_07);
 										cloned_version_info.setText(R.string.cloned_version_desc_07);
-										experiment_version.setText(R.string.experimental_version_07);
-										experiment_version_info.setText(R.string.experimental_version_desc_07);
 										disable_reward_ad.setText(R.string.disable_rewarded_ads_07);
 										disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_07);
 										disable_notification.setText(R.string.disable_notification_07);
 										disable_notification_info.setText(R.string.disable_notification_desc_07);
 										hide_stock_patched.setText(R.string.hide_stock_patched_07);
 										hide_amoled_patched.setText(R.string.hide_amoled_patched_07);
-										hide_lite_patched.setText(R.string.hide_lite_patched_07);
 										show_support.setText(R.string.show_support_07);
 										show_support_desc.setText(R.string.show_support_desc_07);
 										maintenance.setText(R.string.maintenance_07);
 										maintenance_desc.setText(R.string.maintenance_desc_07);
 										xmanager_dev.setText(R.string.xmanager_dev_07);
 										contributors.setText(R.string.contributors_07);
-										download_selected.setText(R.string.download_selected_07);
 										download_ready.setText(R.string.download_ready_07);
 										download_ready_desc.setText(R.string.download_ready_desc_07);
-										downloading_file.setText(R.string.downloading_file_07);
-										download_success.setText(R.string.download_success_07);
-										installation_failed.setText(R.string.installation_failed_07);
-										installation_failed_desc.setText(R.string.installation_failed_desc_07);
 										installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_07);
-										installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_07);
 										existing_patched.setText(R.string.existing_patched_07);
 										existing_patched_desc.setText(R.string.existing_patched_desc_07);
-										lite_0 = lite.getText().toString();
 										download_0 = download.getText().toString();
-										continue_0 = continue_1.getText().toString();
 										cancel_0 = cancel.getText().toString();
-										later_0 = later.getText().toString();
-										mirror_0 = mirror.getText().toString();
-										install_now_0 = install_now.getText().toString();
-										go_back_0 = go_back.getText().toString();
-										install_update_0 = install_update.getText().toString();
-										close_0 = close.getText().toString();
-										uninstall_0 = uninstall.getText().toString();
-										existing_patched_0 = existing_patched.getText().toString();
-										existing_patched_desc_0 = existing_patched_desc.getText().toString();
-										download_selected_0 = download_selected.getText().toString();
 										download_ready_0 = download_ready.getText().toString();
 										download_ready_desc_0 = download_ready_desc.getText().toString();
-										downloading_file_0 = downloading_file.getText().toString();
-										download_success_0 = download_success.getText().toString();
-										installation_failed_0 = installation_failed.getText().toString();
-										installation_failed_desc_0 = installation_failed_desc.getText().toString();
-										installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-										installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 										select_language.setSelection((int)(7));
 									}
 									else {
@@ -9822,7 +5352,6 @@ public class MainActivity extends AppCompatActivity {
 											sub_title.setText(R.string.about_sub_08);
 											sub_text_1.setText(R.string.latest_08);
 											sub_text_2.setText(R.string.latest_08);
-											sub_text_3.setText(R.string.latest_08);
 											versions_1.setText(R.string.versions_08);
 											versions_2.setText(R.string.versions_08);
 											versions_3.setText(R.string.versions_08);
@@ -9865,62 +5394,29 @@ public class MainActivity extends AppCompatActivity {
 											reset_preferences.setText(R.string.reset_preferences_08);
 											list_auto_refresh.setText(R.string.list_auto_refresh_08);
 											list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_08);
-											force_auto_install.setText(R.string.force_auto_install_08);
-											force_auto_install_info.setText(R.string.force_auto_install_desc_08);
-											apk_location.setText(R.string.apk_location_08);
-											apk_location_info.setText(R.string.apk_location_desc_08);
-											clear_directory_folders.setText(R.string.clear_directory_folders_08);
-											clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_08);
 											cloned_version.setText(R.string.cloned_version_08);
 											cloned_version_info.setText(R.string.cloned_version_desc_08);
-											experiment_version.setText(R.string.experimental_version_08);
-											experiment_version_info.setText(R.string.experimental_version_desc_08);
 											disable_reward_ad.setText(R.string.disable_rewarded_ads_08);
 											disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_08);
 											disable_notification.setText(R.string.disable_notification_08);
 											disable_notification_info.setText(R.string.disable_notification_desc_08);
 											hide_stock_patched.setText(R.string.hide_stock_patched_08);
 											hide_amoled_patched.setText(R.string.hide_amoled_patched_08);
-											hide_lite_patched.setText(R.string.hide_lite_patched_08);
 											show_support.setText(R.string.show_support_08);
 											show_support_desc.setText(R.string.show_support_desc_08);
 											maintenance.setText(R.string.maintenance_08);
 											maintenance_desc.setText(R.string.maintenance_desc_08);
 											xmanager_dev.setText(R.string.xmanager_dev_08);
 											contributors.setText(R.string.contributors_08);
-											download_selected.setText(R.string.download_selected_08);
 											download_ready.setText(R.string.download_ready_08);
 											download_ready_desc.setText(R.string.download_ready_desc_08);
-											downloading_file.setText(R.string.downloading_file_08);
-											download_success.setText(R.string.download_success_08);
-											installation_failed.setText(R.string.installation_failed_08);
-											installation_failed_desc.setText(R.string.installation_failed_desc_08);
 											installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_08);
-											installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_08);
 											existing_patched.setText(R.string.existing_patched_08);
 											existing_patched_desc.setText(R.string.existing_patched_desc_08);
-											lite_0 = lite.getText().toString();
 											download_0 = download.getText().toString();
-											continue_0 = continue_1.getText().toString();
 											cancel_0 = cancel.getText().toString();
-											later_0 = later.getText().toString();
-											mirror_0 = mirror.getText().toString();
-											install_now_0 = install_now.getText().toString();
-											go_back_0 = go_back.getText().toString();
-											install_update_0 = install_update.getText().toString();
-											close_0 = close.getText().toString();
-											uninstall_0 = uninstall.getText().toString();
-											existing_patched_0 = existing_patched.getText().toString();
-											existing_patched_desc_0 = existing_patched_desc.getText().toString();
-											download_selected_0 = download_selected.getText().toString();
 											download_ready_0 = download_ready.getText().toString();
 											download_ready_desc_0 = download_ready_desc.getText().toString();
-											downloading_file_0 = downloading_file.getText().toString();
-											download_success_0 = download_success.getText().toString();
-											installation_failed_0 = installation_failed.getText().toString();
-											installation_failed_desc_0 = installation_failed_desc.getText().toString();
-											installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-											installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 											select_language.setSelection((int)(8));
 										}
 										else {
@@ -9933,7 +5429,6 @@ public class MainActivity extends AppCompatActivity {
 												sub_title.setText(R.string.about_sub_09);
 												sub_text_1.setText(R.string.latest_09);
 												sub_text_2.setText(R.string.latest_09);
-												sub_text_3.setText(R.string.latest_09);
 												versions_1.setText(R.string.versions_09);
 												versions_2.setText(R.string.versions_09);
 												versions_3.setText(R.string.versions_09);
@@ -9976,62 +5471,29 @@ public class MainActivity extends AppCompatActivity {
 												reset_preferences.setText(R.string.reset_preferences_09);
 												list_auto_refresh.setText(R.string.list_auto_refresh_09);
 												list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_09);
-												force_auto_install.setText(R.string.force_auto_install_09);
-												force_auto_install_info.setText(R.string.force_auto_install_desc_09);
-												apk_location.setText(R.string.apk_location_09);
-												apk_location_info.setText(R.string.apk_location_desc_09);
-												clear_directory_folders.setText(R.string.clear_directory_folders_09);
-												clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_09);
 												cloned_version.setText(R.string.cloned_version_09);
 												cloned_version_info.setText(R.string.cloned_version_desc_09);
-												experiment_version.setText(R.string.experimental_version_09);
-												experiment_version_info.setText(R.string.experimental_version_desc_09);
 												disable_reward_ad.setText(R.string.disable_rewarded_ads_09);
 												disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_09);
 												disable_notification.setText(R.string.disable_notification_09);
 												disable_notification_info.setText(R.string.disable_notification_desc_09);
 												hide_stock_patched.setText(R.string.hide_stock_patched_09);
 												hide_amoled_patched.setText(R.string.hide_amoled_patched_09);
-												hide_lite_patched.setText(R.string.hide_lite_patched_09);
 												show_support.setText(R.string.show_support_09);
 												show_support_desc.setText(R.string.show_support_desc_09);
 												maintenance.setText(R.string.maintenance_09);
 												maintenance_desc.setText(R.string.maintenance_desc_09);
 												xmanager_dev.setText(R.string.xmanager_dev_09);
 												contributors.setText(R.string.contributors_09);
-												download_selected.setText(R.string.download_selected_09);
 												download_ready.setText(R.string.download_ready_09);
 												download_ready_desc.setText(R.string.download_ready_desc_09);
-												downloading_file.setText(R.string.downloading_file_09);
-												download_success.setText(R.string.download_success_09);
-												installation_failed.setText(R.string.installation_failed_09);
-												installation_failed_desc.setText(R.string.installation_failed_desc_09);
 												installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_09);
-												installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_09);
 												existing_patched.setText(R.string.existing_patched_09);
 												existing_patched_desc.setText(R.string.existing_patched_desc_09);
-												lite_0 = lite.getText().toString();
 												download_0 = download.getText().toString();
-												continue_0 = continue_1.getText().toString();
 												cancel_0 = cancel.getText().toString();
-												later_0 = later.getText().toString();
-												mirror_0 = mirror.getText().toString();
-												install_now_0 = install_now.getText().toString();
-												go_back_0 = go_back.getText().toString();
-												install_update_0 = install_update.getText().toString();
-												close_0 = close.getText().toString();
-												uninstall_0 = uninstall.getText().toString();
-												existing_patched_0 = existing_patched.getText().toString();
-												existing_patched_desc_0 = existing_patched_desc.getText().toString();
-												download_selected_0 = download_selected.getText().toString();
 												download_ready_0 = download_ready.getText().toString();
 												download_ready_desc_0 = download_ready_desc.getText().toString();
-												downloading_file_0 = downloading_file.getText().toString();
-												download_success_0 = download_success.getText().toString();
-												installation_failed_0 = installation_failed.getText().toString();
-												installation_failed_desc_0 = installation_failed_desc.getText().toString();
-												installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-												installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 												select_language.setSelection((int)(9));
 											}
 											else {
@@ -10044,7 +5506,6 @@ public class MainActivity extends AppCompatActivity {
 													sub_title.setText(R.string.about_sub_10);
 													sub_text_1.setText(R.string.latest_10);
 													sub_text_2.setText(R.string.latest_10);
-													sub_text_3.setText(R.string.latest_10);
 													versions_1.setText(R.string.versions_10);
 													versions_2.setText(R.string.versions_10);
 													versions_3.setText(R.string.versions_10);
@@ -10087,62 +5548,29 @@ public class MainActivity extends AppCompatActivity {
 													reset_preferences.setText(R.string.reset_preferences_10);
 													list_auto_refresh.setText(R.string.list_auto_refresh_10);
 													list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_10);
-													force_auto_install.setText(R.string.force_auto_install_10);
-													force_auto_install_info.setText(R.string.force_auto_install_desc_10);
-													apk_location.setText(R.string.apk_location_10);
-													apk_location_info.setText(R.string.apk_location_desc_10);
-													clear_directory_folders.setText(R.string.clear_directory_folders_10);
-													clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_10);
 													cloned_version.setText(R.string.cloned_version_10);
 													cloned_version_info.setText(R.string.cloned_version_desc_10);
-													experiment_version.setText(R.string.experimental_version_10);
-													experiment_version_info.setText(R.string.experimental_version_desc_10);
 													disable_reward_ad.setText(R.string.disable_rewarded_ads_10);
 													disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_10);
 													disable_notification.setText(R.string.disable_notification_10);
 													disable_notification_info.setText(R.string.disable_notification_desc_10);
 													hide_stock_patched.setText(R.string.hide_stock_patched_10);
 													hide_amoled_patched.setText(R.string.hide_amoled_patched_10);
-													hide_lite_patched.setText(R.string.hide_lite_patched_10);
 													show_support.setText(R.string.show_support_10);
 													show_support_desc.setText(R.string.show_support_desc_10);
 													maintenance.setText(R.string.maintenance_10);
 													maintenance_desc.setText(R.string.maintenance_desc_10);
 													xmanager_dev.setText(R.string.xmanager_dev_10);
 													contributors.setText(R.string.contributors_10);
-													download_selected.setText(R.string.download_selected_10);
 													download_ready.setText(R.string.download_ready_10);
 													download_ready_desc.setText(R.string.download_ready_desc_10);
-													downloading_file.setText(R.string.downloading_file_10);
-													download_success.setText(R.string.download_success_10);
-													installation_failed.setText(R.string.installation_failed_10);
-													installation_failed_desc.setText(R.string.installation_failed_desc_10);
 													installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_10);
-													installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_10);
 													existing_patched.setText(R.string.existing_patched_10);
 													existing_patched_desc.setText(R.string.existing_patched_desc_10);
-													lite_0 = lite.getText().toString();
 													download_0 = download.getText().toString();
-													continue_0 = continue_1.getText().toString();
 													cancel_0 = cancel.getText().toString();
-													later_0 = later.getText().toString();
-													mirror_0 = mirror.getText().toString();
-													install_now_0 = install_now.getText().toString();
-													go_back_0 = go_back.getText().toString();
-													install_update_0 = install_update.getText().toString();
-													close_0 = close.getText().toString();
-													uninstall_0 = uninstall.getText().toString();
-													existing_patched_0 = existing_patched.getText().toString();
-													existing_patched_desc_0 = existing_patched_desc.getText().toString();
-													download_selected_0 = download_selected.getText().toString();
 													download_ready_0 = download_ready.getText().toString();
 													download_ready_desc_0 = download_ready_desc.getText().toString();
-													downloading_file_0 = downloading_file.getText().toString();
-													download_success_0 = download_success.getText().toString();
-													installation_failed_0 = installation_failed.getText().toString();
-													installation_failed_desc_0 = installation_failed_desc.getText().toString();
-													installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-													installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 													select_language.setSelection((int)(10));
 												}
 												else {
@@ -10155,7 +5583,6 @@ public class MainActivity extends AppCompatActivity {
 														sub_title.setText(R.string.about_sub_11);
 														sub_text_1.setText(R.string.latest_11);
 														sub_text_2.setText(R.string.latest_11);
-														sub_text_3.setText(R.string.latest_11);
 														versions_1.setText(R.string.versions_11);
 														versions_2.setText(R.string.versions_11);
 														versions_3.setText(R.string.versions_11);
@@ -10198,62 +5625,29 @@ public class MainActivity extends AppCompatActivity {
 														reset_preferences.setText(R.string.reset_preferences_11);
 														list_auto_refresh.setText(R.string.list_auto_refresh_11);
 														list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_11);
-														force_auto_install.setText(R.string.force_auto_install_11);
-														force_auto_install_info.setText(R.string.force_auto_install_desc_11);
-														apk_location.setText(R.string.apk_location_11);
-														apk_location_info.setText(R.string.apk_location_desc_11);
-														clear_directory_folders.setText(R.string.clear_directory_folders_11);
-														clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_11);
 														cloned_version.setText(R.string.cloned_version_11);
 														cloned_version_info.setText(R.string.cloned_version_desc_11);
-														experiment_version.setText(R.string.experimental_version_11);
-														experiment_version_info.setText(R.string.experimental_version_desc_11);
 														disable_reward_ad.setText(R.string.disable_rewarded_ads_11);
 														disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_11);
 														disable_notification.setText(R.string.disable_notification_11);
 														disable_notification_info.setText(R.string.disable_notification_desc_11);
 														hide_stock_patched.setText(R.string.hide_stock_patched_11);
 														hide_amoled_patched.setText(R.string.hide_amoled_patched_11);
-														hide_lite_patched.setText(R.string.hide_lite_patched_11);
 														show_support.setText(R.string.show_support_11);
 														show_support_desc.setText(R.string.show_support_desc_11);
 														maintenance.setText(R.string.maintenance_11);
 														maintenance_desc.setText(R.string.maintenance_desc_11);
 														xmanager_dev.setText(R.string.xmanager_dev_11);
 														contributors.setText(R.string.contributors_11);
-														download_selected.setText(R.string.download_selected_11);
 														download_ready.setText(R.string.download_ready_11);
 														download_ready_desc.setText(R.string.download_ready_desc_11);
-														downloading_file.setText(R.string.downloading_file_11);
-														download_success.setText(R.string.download_success_11);
-														installation_failed.setText(R.string.installation_failed_11);
-														installation_failed_desc.setText(R.string.installation_failed_desc_11);
 														installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_11);
-														installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_11);
 														existing_patched.setText(R.string.existing_patched_11);
 														existing_patched_desc.setText(R.string.existing_patched_desc_11);
-														lite_0 = lite.getText().toString();
 														download_0 = download.getText().toString();
-														continue_0 = continue_1.getText().toString();
 														cancel_0 = cancel.getText().toString();
-														later_0 = later.getText().toString();
-														mirror_0 = mirror.getText().toString();
-														install_now_0 = install_now.getText().toString();
-														go_back_0 = go_back.getText().toString();
-														install_update_0 = install_update.getText().toString();
-														close_0 = close.getText().toString();
-														uninstall_0 = uninstall.getText().toString();
-														existing_patched_0 = existing_patched.getText().toString();
-														existing_patched_desc_0 = existing_patched_desc.getText().toString();
-														download_selected_0 = download_selected.getText().toString();
 														download_ready_0 = download_ready.getText().toString();
 														download_ready_desc_0 = download_ready_desc.getText().toString();
-														downloading_file_0 = downloading_file.getText().toString();
-														download_success_0 = download_success.getText().toString();
-														installation_failed_0 = installation_failed.getText().toString();
-														installation_failed_desc_0 = installation_failed_desc.getText().toString();
-														installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-														installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 														select_language.setSelection((int)(11));
 													}
 													else {
@@ -10266,7 +5660,6 @@ public class MainActivity extends AppCompatActivity {
 															sub_title.setText(R.string.about_sub_12);
 															sub_text_1.setText(R.string.latest_12);
 															sub_text_2.setText(R.string.latest_12);
-															sub_text_3.setText(R.string.latest_12);
 															versions_1.setText(R.string.versions_12);
 															versions_2.setText(R.string.versions_12);
 															versions_3.setText(R.string.versions_12);
@@ -10309,62 +5702,29 @@ public class MainActivity extends AppCompatActivity {
 															reset_preferences.setText(R.string.reset_preferences_12);
 															list_auto_refresh.setText(R.string.list_auto_refresh_12);
 															list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_12);
-															force_auto_install.setText(R.string.force_auto_install_12);
-															force_auto_install_info.setText(R.string.force_auto_install_desc_12);
-															apk_location.setText(R.string.apk_location_12);
-															apk_location_info.setText(R.string.apk_location_desc_12);
-															clear_directory_folders.setText(R.string.clear_directory_folders_12);
-															clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_12);
 															cloned_version.setText(R.string.cloned_version_12);
 															cloned_version_info.setText(R.string.cloned_version_desc_12);
-															experiment_version.setText(R.string.experimental_version_12);
-															experiment_version_info.setText(R.string.experimental_version_desc_12);
 															disable_reward_ad.setText(R.string.disable_rewarded_ads_12);
 															disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_12);
 															disable_notification.setText(R.string.disable_notification_12);
 															disable_notification_info.setText(R.string.disable_notification_desc_12);
 															hide_stock_patched.setText(R.string.hide_stock_patched_12);
 															hide_amoled_patched.setText(R.string.hide_amoled_patched_12);
-															hide_lite_patched.setText(R.string.hide_lite_patched_12);
 															show_support.setText(R.string.show_support_12);
 															show_support_desc.setText(R.string.show_support_desc_12);
 															maintenance.setText(R.string.maintenance_12);
 															maintenance_desc.setText(R.string.maintenance_desc_12);
 															xmanager_dev.setText(R.string.xmanager_dev_12);
 															contributors.setText(R.string.contributors_12);
-															download_selected.setText(R.string.download_selected_12);
 															download_ready.setText(R.string.download_ready_12);
 															download_ready_desc.setText(R.string.download_ready_desc_12);
-															downloading_file.setText(R.string.downloading_file_12);
-															download_success.setText(R.string.download_success_12);
-															installation_failed.setText(R.string.installation_failed_12);
-															installation_failed_desc.setText(R.string.installation_failed_desc_12);
 															installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_12);
-															installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_12);
 															existing_patched.setText(R.string.existing_patched_12);
 															existing_patched_desc.setText(R.string.existing_patched_desc_12);
-															lite_0 = lite.getText().toString();
 															download_0 = download.getText().toString();
-															continue_0 = continue_1.getText().toString();
 															cancel_0 = cancel.getText().toString();
-															later_0 = later.getText().toString();
-															mirror_0 = mirror.getText().toString();
-															install_now_0 = install_now.getText().toString();
-															go_back_0 = go_back.getText().toString();
-															install_update_0 = install_update.getText().toString();
-															close_0 = close.getText().toString();
-															uninstall_0 = uninstall.getText().toString();
-															existing_patched_0 = existing_patched.getText().toString();
-															existing_patched_desc_0 = existing_patched_desc.getText().toString();
-															download_selected_0 = download_selected.getText().toString();
 															download_ready_0 = download_ready.getText().toString();
 															download_ready_desc_0 = download_ready_desc.getText().toString();
-															downloading_file_0 = downloading_file.getText().toString();
-															download_success_0 = download_success.getText().toString();
-															installation_failed_0 = installation_failed.getText().toString();
-															installation_failed_desc_0 = installation_failed_desc.getText().toString();
-															installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-															installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 															select_language.setSelection((int)(12));
 														}
 														else {
@@ -10377,7 +5737,6 @@ public class MainActivity extends AppCompatActivity {
 																sub_title.setText(R.string.about_sub_13);
 																sub_text_1.setText(R.string.latest_13);
 																sub_text_2.setText(R.string.latest_13);
-																sub_text_3.setText(R.string.latest_13);
 																versions_1.setText(R.string.versions_13);
 																versions_2.setText(R.string.versions_13);
 																versions_3.setText(R.string.versions_13);
@@ -10420,62 +5779,29 @@ public class MainActivity extends AppCompatActivity {
 																reset_preferences.setText(R.string.reset_preferences_13);
 																list_auto_refresh.setText(R.string.list_auto_refresh_13);
 																list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_13);
-																force_auto_install.setText(R.string.force_auto_install_13);
-																force_auto_install_info.setText(R.string.force_auto_install_desc_13);
-																apk_location.setText(R.string.apk_location_13);
-																apk_location_info.setText(R.string.apk_location_desc_13);
-																clear_directory_folders.setText(R.string.clear_directory_folders_13);
-																clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_13);
 																cloned_version.setText(R.string.cloned_version_13);
 																cloned_version_info.setText(R.string.cloned_version_desc_13);
-																experiment_version.setText(R.string.experimental_version_13);
-																experiment_version_info.setText(R.string.experimental_version_desc_13);
 																disable_reward_ad.setText(R.string.disable_rewarded_ads_13);
 																disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_13);
 																disable_notification.setText(R.string.disable_notification_13);
 																disable_notification_info.setText(R.string.disable_notification_desc_13);
 																hide_stock_patched.setText(R.string.hide_stock_patched_13);
 																hide_amoled_patched.setText(R.string.hide_amoled_patched_13);
-																hide_lite_patched.setText(R.string.hide_lite_patched_13);
 																show_support.setText(R.string.show_support_13);
 																show_support_desc.setText(R.string.show_support_desc_13);
 																maintenance.setText(R.string.maintenance_13);
 																maintenance_desc.setText(R.string.maintenance_desc_13);
 																xmanager_dev.setText(R.string.xmanager_dev_13);
 																contributors.setText(R.string.contributors_13);
-																download_selected.setText(R.string.download_selected_13);
 																download_ready.setText(R.string.download_ready_13);
 																download_ready_desc.setText(R.string.download_ready_desc_13);
-																downloading_file.setText(R.string.downloading_file_13);
-																download_success.setText(R.string.download_success_13);
-																installation_failed.setText(R.string.installation_failed_13);
-																installation_failed_desc.setText(R.string.installation_failed_desc_13);
 																installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_13);
-																installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_13);
 																existing_patched.setText(R.string.existing_patched_13);
 																existing_patched_desc.setText(R.string.existing_patched_desc_13);
-																lite_0 = lite.getText().toString();
 																download_0 = download.getText().toString();
-																continue_0 = continue_1.getText().toString();
 																cancel_0 = cancel.getText().toString();
-																later_0 = later.getText().toString();
-																mirror_0 = mirror.getText().toString();
-																install_now_0 = install_now.getText().toString();
-																go_back_0 = go_back.getText().toString();
-																install_update_0 = install_update.getText().toString();
-																close_0 = close.getText().toString();
-																uninstall_0 = uninstall.getText().toString();
-																existing_patched_0 = existing_patched.getText().toString();
-																existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																download_selected_0 = download_selected.getText().toString();
 																download_ready_0 = download_ready.getText().toString();
 																download_ready_desc_0 = download_ready_desc.getText().toString();
-																downloading_file_0 = downloading_file.getText().toString();
-																download_success_0 = download_success.getText().toString();
-																installation_failed_0 = installation_failed.getText().toString();
-																installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																select_language.setSelection((int)(13));
 															}
 															else {
@@ -10488,7 +5814,6 @@ public class MainActivity extends AppCompatActivity {
 																	sub_title.setText(R.string.about_sub_14);
 																	sub_text_1.setText(R.string.latest_14);
 																	sub_text_2.setText(R.string.latest_14);
-																	sub_text_3.setText(R.string.latest_14);
 																	versions_1.setText(R.string.versions_14);
 																	versions_2.setText(R.string.versions_14);
 																	versions_3.setText(R.string.versions_14);
@@ -10531,62 +5856,29 @@ public class MainActivity extends AppCompatActivity {
 																	reset_preferences.setText(R.string.reset_preferences_14);
 																	list_auto_refresh.setText(R.string.list_auto_refresh_14);
 																	list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_14);
-																	force_auto_install.setText(R.string.force_auto_install_14);
-																	force_auto_install_info.setText(R.string.force_auto_install_desc_14);
-																	apk_location.setText(R.string.apk_location_14);
-																	apk_location_info.setText(R.string.apk_location_desc_14);
-																	clear_directory_folders.setText(R.string.clear_directory_folders_14);
-																	clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_14);
 																	cloned_version.setText(R.string.cloned_version_14);
 																	cloned_version_info.setText(R.string.cloned_version_desc_14);
-																	experiment_version.setText(R.string.experimental_version_14);
-																	experiment_version_info.setText(R.string.experimental_version_desc_14);
 																	disable_reward_ad.setText(R.string.disable_rewarded_ads_14);
 																	disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_14);
 																	disable_notification.setText(R.string.disable_notification_14);
 																	disable_notification_info.setText(R.string.disable_notification_desc_14);
 																	hide_stock_patched.setText(R.string.hide_stock_patched_14);
 																	hide_amoled_patched.setText(R.string.hide_amoled_patched_14);
-																	hide_lite_patched.setText(R.string.hide_lite_patched_14);
 																	show_support.setText(R.string.show_support_14);
 																	show_support_desc.setText(R.string.show_support_desc_14);
 																	maintenance.setText(R.string.maintenance_14);
 																	maintenance_desc.setText(R.string.maintenance_desc_14);
 																	xmanager_dev.setText(R.string.xmanager_dev_14);
 																	contributors.setText(R.string.contributors_14);
-																	download_selected.setText(R.string.download_selected_14);
 																	download_ready.setText(R.string.download_ready_14);
 																	download_ready_desc.setText(R.string.download_ready_desc_14);
-																	downloading_file.setText(R.string.downloading_file_14);
-																	download_success.setText(R.string.download_success_14);
-																	installation_failed.setText(R.string.installation_failed_14);
-																	installation_failed_desc.setText(R.string.installation_failed_desc_14);
 																	installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_14);
-																	installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_14);
 																	existing_patched.setText(R.string.existing_patched_14);
 																	existing_patched_desc.setText(R.string.existing_patched_desc_14);
-																	lite_0 = lite.getText().toString();
 																	download_0 = download.getText().toString();
-																	continue_0 = continue_1.getText().toString();
 																	cancel_0 = cancel.getText().toString();
-																	later_0 = later.getText().toString();
-																	mirror_0 = mirror.getText().toString();
-																	install_now_0 = install_now.getText().toString();
-																	go_back_0 = go_back.getText().toString();
-																	install_update_0 = install_update.getText().toString();
-																	close_0 = close.getText().toString();
-																	uninstall_0 = uninstall.getText().toString();
-																	existing_patched_0 = existing_patched.getText().toString();
-																	existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																	download_selected_0 = download_selected.getText().toString();
 																	download_ready_0 = download_ready.getText().toString();
 																	download_ready_desc_0 = download_ready_desc.getText().toString();
-																	downloading_file_0 = downloading_file.getText().toString();
-																	download_success_0 = download_success.getText().toString();
-																	installation_failed_0 = installation_failed.getText().toString();
-																	installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																	installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																	installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																	select_language.setSelection((int)(14));
 																}
 																else {
@@ -10599,7 +5891,6 @@ public class MainActivity extends AppCompatActivity {
 																		sub_title.setText(R.string.about_sub_15);
 																		sub_text_1.setText(R.string.latest_15);
 																		sub_text_2.setText(R.string.latest_15);
-																		sub_text_3.setText(R.string.latest_15);
 																		versions_1.setText(R.string.versions_15);
 																		versions_2.setText(R.string.versions_15);
 																		versions_3.setText(R.string.versions_15);
@@ -10642,62 +5933,29 @@ public class MainActivity extends AppCompatActivity {
 																		reset_preferences.setText(R.string.reset_preferences_15);
 																		list_auto_refresh.setText(R.string.list_auto_refresh_15);
 																		list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_15);
-																		force_auto_install.setText(R.string.force_auto_install_15);
-																		force_auto_install_info.setText(R.string.force_auto_install_desc_15);
-																		apk_location.setText(R.string.apk_location_15);
-																		apk_location_info.setText(R.string.apk_location_desc_15);
-																		clear_directory_folders.setText(R.string.clear_directory_folders_15);
-																		clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_15);
 																		cloned_version.setText(R.string.cloned_version_15);
 																		cloned_version_info.setText(R.string.cloned_version_desc_15);
-																		experiment_version.setText(R.string.experimental_version_15);
-																		experiment_version_info.setText(R.string.experimental_version_desc_15);
 																		disable_reward_ad.setText(R.string.disable_rewarded_ads_15);
 																		disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_15);
 																		disable_notification.setText(R.string.disable_notification_15);
 																		disable_notification_info.setText(R.string.disable_notification_desc_15);
 																		hide_stock_patched.setText(R.string.hide_stock_patched_15);
 																		hide_amoled_patched.setText(R.string.hide_amoled_patched_15);
-																		hide_lite_patched.setText(R.string.hide_lite_patched_15);
 																		show_support.setText(R.string.show_support_15);
 																		show_support_desc.setText(R.string.show_support_desc_15);
 																		maintenance.setText(R.string.maintenance_15);
 																		maintenance_desc.setText(R.string.maintenance_desc_15);
 																		xmanager_dev.setText(R.string.xmanager_dev_15);
 																		contributors.setText(R.string.contributors_15);
-																		download_selected.setText(R.string.download_selected_15);
 																		download_ready.setText(R.string.download_ready_15);
 																		download_ready_desc.setText(R.string.download_ready_desc_15);
-																		downloading_file.setText(R.string.downloading_file_15);
-																		download_success.setText(R.string.download_success_15);
-																		installation_failed.setText(R.string.installation_failed_15);
-																		installation_failed_desc.setText(R.string.installation_failed_desc_15);
 																		installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_15);
-																		installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_15);
 																		existing_patched.setText(R.string.existing_patched_15);
 																		existing_patched_desc.setText(R.string.existing_patched_desc_15);
-																		lite_0 = lite.getText().toString();
 																		download_0 = download.getText().toString();
-																		continue_0 = continue_1.getText().toString();
 																		cancel_0 = cancel.getText().toString();
-																		later_0 = later.getText().toString();
-																		mirror_0 = mirror.getText().toString();
-																		install_now_0 = install_now.getText().toString();
-																		go_back_0 = go_back.getText().toString();
-																		install_update_0 = install_update.getText().toString();
-																		close_0 = close.getText().toString();
-																		uninstall_0 = uninstall.getText().toString();
-																		existing_patched_0 = existing_patched.getText().toString();
-																		existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																		download_selected_0 = download_selected.getText().toString();
 																		download_ready_0 = download_ready.getText().toString();
 																		download_ready_desc_0 = download_ready_desc.getText().toString();
-																		downloading_file_0 = downloading_file.getText().toString();
-																		download_success_0 = download_success.getText().toString();
-																		installation_failed_0 = installation_failed.getText().toString();
-																		installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																		installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																		installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																		select_language.setSelection((int)(15));
 																	}
 																	else {
@@ -10710,7 +5968,6 @@ public class MainActivity extends AppCompatActivity {
 																			sub_title.setText(R.string.about_sub_16);
 																			sub_text_1.setText(R.string.latest_16);
 																			sub_text_2.setText(R.string.latest_16);
-																			sub_text_3.setText(R.string.latest_16);
 																			versions_1.setText(R.string.versions_16);
 																			versions_2.setText(R.string.versions_16);
 																			versions_3.setText(R.string.versions_16);
@@ -10753,62 +6010,29 @@ public class MainActivity extends AppCompatActivity {
 																			reset_preferences.setText(R.string.reset_preferences_16);
 																			list_auto_refresh.setText(R.string.list_auto_refresh_16);
 																			list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_16);
-																			force_auto_install.setText(R.string.force_auto_install_16);
-																			force_auto_install_info.setText(R.string.force_auto_install_desc_16);
-																			apk_location.setText(R.string.apk_location_16);
-																			apk_location_info.setText(R.string.apk_location_desc_16);
-																			clear_directory_folders.setText(R.string.clear_directory_folders_16);
-																			clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_16);
 																			cloned_version.setText(R.string.cloned_version_16);
 																			cloned_version_info.setText(R.string.cloned_version_desc_16);
-																			experiment_version.setText(R.string.experimental_version_16);
-																			experiment_version_info.setText(R.string.experimental_version_desc_16);
 																			disable_reward_ad.setText(R.string.disable_rewarded_ads_16);
 																			disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_16);
 																			disable_notification.setText(R.string.disable_notification_16);
 																			disable_notification_info.setText(R.string.disable_notification_desc_16);
 																			hide_stock_patched.setText(R.string.hide_stock_patched_16);
 																			hide_amoled_patched.setText(R.string.hide_amoled_patched_16);
-																			hide_lite_patched.setText(R.string.hide_lite_patched_16);
 																			show_support.setText(R.string.show_support_16);
 																			show_support_desc.setText(R.string.show_support_desc_16);
 																			maintenance.setText(R.string.maintenance_16);
 																			maintenance_desc.setText(R.string.maintenance_desc_16);
 																			xmanager_dev.setText(R.string.xmanager_dev_16);
 																			contributors.setText(R.string.contributors_16);
-																			download_selected.setText(R.string.download_selected_16);
 																			download_ready.setText(R.string.download_ready_16);
 																			download_ready_desc.setText(R.string.download_ready_desc_16);
-																			downloading_file.setText(R.string.downloading_file_16);
-																			download_success.setText(R.string.download_success_16);
-																			installation_failed.setText(R.string.installation_failed_16);
-																			installation_failed_desc.setText(R.string.installation_failed_desc_16);
 																			installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_16);
-																			installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_16);
 																			existing_patched.setText(R.string.existing_patched_16);
 																			existing_patched_desc.setText(R.string.existing_patched_desc_16);
-																			lite_0 = lite.getText().toString();
 																			download_0 = download.getText().toString();
-																			continue_0 = continue_1.getText().toString();
 																			cancel_0 = cancel.getText().toString();
-																			later_0 = later.getText().toString();
-																			mirror_0 = mirror.getText().toString();
-																			install_now_0 = install_now.getText().toString();
-																			go_back_0 = go_back.getText().toString();
-																			install_update_0 = install_update.getText().toString();
-																			close_0 = close.getText().toString();
-																			uninstall_0 = uninstall.getText().toString();
-																			existing_patched_0 = existing_patched.getText().toString();
-																			existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																			download_selected_0 = download_selected.getText().toString();
 																			download_ready_0 = download_ready.getText().toString();
 																			download_ready_desc_0 = download_ready_desc.getText().toString();
-																			downloading_file_0 = downloading_file.getText().toString();
-																			download_success_0 = download_success.getText().toString();
-																			installation_failed_0 = installation_failed.getText().toString();
-																			installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																			installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																			installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																			select_language.setSelection((int)(16));
 																		}
 																		else {
@@ -10821,7 +6045,6 @@ public class MainActivity extends AppCompatActivity {
 																				sub_title.setText(R.string.about_sub_17);
 																				sub_text_1.setText(R.string.latest_17);
 																				sub_text_2.setText(R.string.latest_17);
-																				sub_text_3.setText(R.string.latest_17);
 																				versions_1.setText(R.string.versions_17);
 																				versions_2.setText(R.string.versions_17);
 																				versions_3.setText(R.string.versions_17);
@@ -10864,62 +6087,29 @@ public class MainActivity extends AppCompatActivity {
 																				reset_preferences.setText(R.string.reset_preferences_17);
 																				list_auto_refresh.setText(R.string.list_auto_refresh_17);
 																				list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_17);
-																				force_auto_install.setText(R.string.force_auto_install_17);
-																				force_auto_install_info.setText(R.string.force_auto_install_desc_17);
-																				apk_location.setText(R.string.apk_location_17);
-																				apk_location_info.setText(R.string.apk_location_desc_17);
-																				clear_directory_folders.setText(R.string.clear_directory_folders_17);
-																				clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_17);
 																				cloned_version.setText(R.string.cloned_version_17);
 																				cloned_version_info.setText(R.string.cloned_version_desc_17);
-																				experiment_version.setText(R.string.experimental_version_17);
-																				experiment_version_info.setText(R.string.experimental_version_desc_17);
 																				disable_reward_ad.setText(R.string.disable_rewarded_ads_17);
 																				disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_17);
 																				disable_notification.setText(R.string.disable_notification_17);
 																				disable_notification_info.setText(R.string.disable_notification_desc_17);
 																				hide_stock_patched.setText(R.string.hide_stock_patched_17);
 																				hide_amoled_patched.setText(R.string.hide_amoled_patched_17);
-																				hide_lite_patched.setText(R.string.hide_lite_patched_17);
 																				show_support.setText(R.string.show_support_17);
 																				show_support_desc.setText(R.string.show_support_desc_17);
 																				maintenance.setText(R.string.maintenance_17);
 																				maintenance_desc.setText(R.string.maintenance_desc_17);
 																				xmanager_dev.setText(R.string.xmanager_dev_17);
 																				contributors.setText(R.string.contributors_17);
-																				download_selected.setText(R.string.download_selected_17);
 																				download_ready.setText(R.string.download_ready_17);
 																				download_ready_desc.setText(R.string.download_ready_desc_17);
-																				downloading_file.setText(R.string.downloading_file_17);
-																				download_success.setText(R.string.download_success_17);
-																				installation_failed.setText(R.string.installation_failed_17);
-																				installation_failed_desc.setText(R.string.installation_failed_desc_17);
 																				installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_17);
-																				installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_17);
 																				existing_patched.setText(R.string.existing_patched_17);
 																				existing_patched_desc.setText(R.string.existing_patched_desc_17);
-																				lite_0 = lite.getText().toString();
 																				download_0 = download.getText().toString();
-																				continue_0 = continue_1.getText().toString();
 																				cancel_0 = cancel.getText().toString();
-																				later_0 = later.getText().toString();
-																				mirror_0 = mirror.getText().toString();
-																				install_now_0 = install_now.getText().toString();
-																				go_back_0 = go_back.getText().toString();
-																				install_update_0 = install_update.getText().toString();
-																				close_0 = close.getText().toString();
-																				uninstall_0 = uninstall.getText().toString();
-																				existing_patched_0 = existing_patched.getText().toString();
-																				existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																				download_selected_0 = download_selected.getText().toString();
 																				download_ready_0 = download_ready.getText().toString();
 																				download_ready_desc_0 = download_ready_desc.getText().toString();
-																				downloading_file_0 = downloading_file.getText().toString();
-																				download_success_0 = download_success.getText().toString();
-																				installation_failed_0 = installation_failed.getText().toString();
-																				installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																				installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																				installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																				select_language.setSelection((int)(17));
 																			}
 																			else {
@@ -10932,7 +6122,6 @@ public class MainActivity extends AppCompatActivity {
 																					sub_title.setText(R.string.about_sub_18);
 																					sub_text_1.setText(R.string.latest_18);
 																					sub_text_2.setText(R.string.latest_18);
-																					sub_text_3.setText(R.string.latest_18);
 																					versions_1.setText(R.string.versions_18);
 																					versions_2.setText(R.string.versions_18);
 																					versions_3.setText(R.string.versions_18);
@@ -10975,62 +6164,29 @@ public class MainActivity extends AppCompatActivity {
 																					reset_preferences.setText(R.string.reset_preferences_18);
 																					list_auto_refresh.setText(R.string.list_auto_refresh_18);
 																					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_18);
-																					force_auto_install.setText(R.string.force_auto_install_18);
-																					force_auto_install_info.setText(R.string.force_auto_install_desc_18);
-																					apk_location.setText(R.string.apk_location_18);
-																					apk_location_info.setText(R.string.apk_location_desc_18);
-																					clear_directory_folders.setText(R.string.clear_directory_folders_18);
-																					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_18);
 																					cloned_version.setText(R.string.cloned_version_18);
 																					cloned_version_info.setText(R.string.cloned_version_desc_18);
-																					experiment_version.setText(R.string.experimental_version_18);
-																					experiment_version_info.setText(R.string.experimental_version_desc_18);
 																					disable_reward_ad.setText(R.string.disable_rewarded_ads_18);
 																					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_18);
 																					disable_notification.setText(R.string.disable_notification_18);
 																					disable_notification_info.setText(R.string.disable_notification_desc_18);
 																					hide_stock_patched.setText(R.string.hide_stock_patched_18);
 																					hide_amoled_patched.setText(R.string.hide_amoled_patched_18);
-																					hide_lite_patched.setText(R.string.hide_lite_patched_18);
 																					show_support.setText(R.string.show_support_18);
 																					show_support_desc.setText(R.string.show_support_desc_18);
 																					maintenance.setText(R.string.maintenance_18);
 																					maintenance_desc.setText(R.string.maintenance_desc_18);
 																					xmanager_dev.setText(R.string.xmanager_dev_18);
 																					contributors.setText(R.string.contributors_18);
-																					download_selected.setText(R.string.download_selected_18);
 																					download_ready.setText(R.string.download_ready_18);
 																					download_ready_desc.setText(R.string.download_ready_desc_18);
-																					downloading_file.setText(R.string.downloading_file_18);
-																					download_success.setText(R.string.download_success_18);
-																					installation_failed.setText(R.string.installation_failed_18);
-																					installation_failed_desc.setText(R.string.installation_failed_desc_18);
 																					installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_18);
-																					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_18);
 																					existing_patched.setText(R.string.existing_patched_18);
 																					existing_patched_desc.setText(R.string.existing_patched_desc_18);
-																					lite_0 = lite.getText().toString();
 																					download_0 = download.getText().toString();
-																					continue_0 = continue_1.getText().toString();
 																					cancel_0 = cancel.getText().toString();
-																					later_0 = later.getText().toString();
-																					mirror_0 = mirror.getText().toString();
-																					install_now_0 = install_now.getText().toString();
-																					go_back_0 = go_back.getText().toString();
-																					install_update_0 = install_update.getText().toString();
-																					close_0 = close.getText().toString();
-																					uninstall_0 = uninstall.getText().toString();
-																					existing_patched_0 = existing_patched.getText().toString();
-																					existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																					download_selected_0 = download_selected.getText().toString();
 																					download_ready_0 = download_ready.getText().toString();
 																					download_ready_desc_0 = download_ready_desc.getText().toString();
-																					downloading_file_0 = downloading_file.getText().toString();
-																					download_success_0 = download_success.getText().toString();
-																					installation_failed_0 = installation_failed.getText().toString();
-																					installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																					installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																					select_language.setSelection((int)(18));
 																				}
 																				else {
@@ -11043,7 +6199,6 @@ public class MainActivity extends AppCompatActivity {
 																						sub_title.setText(R.string.about_sub_19);
 																						sub_text_1.setText(R.string.latest_19);
 																						sub_text_2.setText(R.string.latest_19);
-																						sub_text_3.setText(R.string.latest_19);
 																						versions_1.setText(R.string.versions_19);
 																						versions_2.setText(R.string.versions_19);
 																						versions_3.setText(R.string.versions_19);
@@ -11086,62 +6241,29 @@ public class MainActivity extends AppCompatActivity {
 																						reset_preferences.setText(R.string.reset_preferences_19);
 																						list_auto_refresh.setText(R.string.list_auto_refresh_19);
 																						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_19);
-																						force_auto_install.setText(R.string.force_auto_install_19);
-																						force_auto_install_info.setText(R.string.force_auto_install_desc_19);
-																						apk_location.setText(R.string.apk_location_19);
-																						apk_location_info.setText(R.string.apk_location_desc_19);
-																						clear_directory_folders.setText(R.string.clear_directory_folders_19);
-																						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_19);
 																						cloned_version.setText(R.string.cloned_version_19);
 																						cloned_version_info.setText(R.string.cloned_version_desc_19);
-																						experiment_version.setText(R.string.experimental_version_19);
-																						experiment_version_info.setText(R.string.experimental_version_desc_19);
 																						disable_reward_ad.setText(R.string.disable_rewarded_ads_19);
 																						disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_19);
 																						disable_notification.setText(R.string.disable_notification_19);
 																						disable_notification_info.setText(R.string.disable_notification_desc_19);
 																						hide_stock_patched.setText(R.string.hide_stock_patched_19);
 																						hide_amoled_patched.setText(R.string.hide_amoled_patched_19);
-																						hide_lite_patched.setText(R.string.hide_lite_patched_19);
 																						show_support.setText(R.string.show_support_19);
 																						show_support_desc.setText(R.string.show_support_desc_19);
 																						maintenance.setText(R.string.maintenance_19);
 																						maintenance_desc.setText(R.string.maintenance_desc_19);
 																						xmanager_dev.setText(R.string.xmanager_dev_19);
 																						contributors.setText(R.string.contributors_19);
-																						download_selected.setText(R.string.download_selected_19);
 																						download_ready.setText(R.string.download_ready_19);
 																						download_ready_desc.setText(R.string.download_ready_desc_19);
-																						downloading_file.setText(R.string.downloading_file_19);
-																						download_success.setText(R.string.download_success_19);
-																						installation_failed.setText(R.string.installation_failed_19);
-																						installation_failed_desc.setText(R.string.installation_failed_desc_19);
 																						installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_19);
-																						installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_19);
 																						existing_patched.setText(R.string.existing_patched_19);
 																						existing_patched_desc.setText(R.string.existing_patched_desc_19);
-																						lite_0 = lite.getText().toString();
 																						download_0 = download.getText().toString();
-																						continue_0 = continue_1.getText().toString();
 																						cancel_0 = cancel.getText().toString();
-																						later_0 = later.getText().toString();
-																						mirror_0 = mirror.getText().toString();
-																						install_now_0 = install_now.getText().toString();
-																						go_back_0 = go_back.getText().toString();
-																						install_update_0 = install_update.getText().toString();
-																						close_0 = close.getText().toString();
-																						uninstall_0 = uninstall.getText().toString();
-																						existing_patched_0 = existing_patched.getText().toString();
-																						existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																						download_selected_0 = download_selected.getText().toString();
 																						download_ready_0 = download_ready.getText().toString();
 																						download_ready_desc_0 = download_ready_desc.getText().toString();
-																						downloading_file_0 = downloading_file.getText().toString();
-																						download_success_0 = download_success.getText().toString();
-																						installation_failed_0 = installation_failed.getText().toString();
-																						installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																						installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																						installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																						select_language.setSelection((int)(19));
 																					}
 																					else {
@@ -11154,7 +6276,6 @@ public class MainActivity extends AppCompatActivity {
 																							sub_title.setText(R.string.about_sub_20);
 																							sub_text_1.setText(R.string.latest_20);
 																							sub_text_2.setText(R.string.latest_20);
-																							sub_text_3.setText(R.string.latest_20);
 																							versions_1.setText(R.string.versions_20);
 																							versions_2.setText(R.string.versions_20);
 																							versions_3.setText(R.string.versions_20);
@@ -11197,62 +6318,29 @@ public class MainActivity extends AppCompatActivity {
 																							reset_preferences.setText(R.string.reset_preferences_20);
 																							list_auto_refresh.setText(R.string.list_auto_refresh_20);
 																							list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_20);
-																							force_auto_install.setText(R.string.force_auto_install_20);
-																							force_auto_install_info.setText(R.string.force_auto_install_desc_20);
-																							apk_location.setText(R.string.apk_location_20);
-																							apk_location_info.setText(R.string.apk_location_desc_20);
-																							clear_directory_folders.setText(R.string.clear_directory_folders_20);
-																							clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_20);
 																							cloned_version.setText(R.string.cloned_version_20);
 																							cloned_version_info.setText(R.string.cloned_version_desc_20);
-																							experiment_version.setText(R.string.experimental_version_20);
-																							experiment_version_info.setText(R.string.experimental_version_desc_20);
 																							disable_reward_ad.setText(R.string.disable_rewarded_ads_20);
 																							disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_20);
 																							disable_notification.setText(R.string.disable_notification_20);
 																							disable_notification_info.setText(R.string.disable_notification_desc_20);
 																							hide_stock_patched.setText(R.string.hide_stock_patched_20);
 																							hide_amoled_patched.setText(R.string.hide_amoled_patched_20);
-																							hide_lite_patched.setText(R.string.hide_lite_patched_20);
 																							show_support.setText(R.string.show_support_20);
 																							show_support_desc.setText(R.string.show_support_desc_20);
 																							maintenance.setText(R.string.maintenance_20);
 																							maintenance_desc.setText(R.string.maintenance_desc_20);
 																							xmanager_dev.setText(R.string.xmanager_dev_20);
 																							contributors.setText(R.string.contributors_20);
-																							download_selected.setText(R.string.download_selected_20);
 																							download_ready.setText(R.string.download_ready_20);
 																							download_ready_desc.setText(R.string.download_ready_desc_20);
-																							downloading_file.setText(R.string.downloading_file_20);
-																							download_success.setText(R.string.download_success_20);
-																							installation_failed.setText(R.string.installation_failed_20);
-																							installation_failed_desc.setText(R.string.installation_failed_desc_20);
 																							installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_20);
-																							installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_20);
 																							existing_patched.setText(R.string.existing_patched_20);
 																							existing_patched_desc.setText(R.string.existing_patched_desc_20);
-																							lite_0 = lite.getText().toString();
 																							download_0 = download.getText().toString();
-																							continue_0 = continue_1.getText().toString();
 																							cancel_0 = cancel.getText().toString();
-																							later_0 = later.getText().toString();
-																							mirror_0 = mirror.getText().toString();
-																							install_now_0 = install_now.getText().toString();
-																							go_back_0 = go_back.getText().toString();
-																							install_update_0 = install_update.getText().toString();
-																							close_0 = close.getText().toString();
-																							uninstall_0 = uninstall.getText().toString();
-																							existing_patched_0 = existing_patched.getText().toString();
-																							existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																							download_selected_0 = download_selected.getText().toString();
 																							download_ready_0 = download_ready.getText().toString();
 																							download_ready_desc_0 = download_ready_desc.getText().toString();
-																							downloading_file_0 = downloading_file.getText().toString();
-																							download_success_0 = download_success.getText().toString();
-																							installation_failed_0 = installation_failed.getText().toString();
-																							installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																							installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																							installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																							select_language.setSelection((int)(20));
 																						}
 																						else {
@@ -11265,7 +6353,6 @@ public class MainActivity extends AppCompatActivity {
 																								sub_title.setText(R.string.about_sub_21);
 																								sub_text_1.setText(R.string.latest_21);
 																								sub_text_2.setText(R.string.latest_21);
-																								sub_text_3.setText(R.string.latest_21);
 																								versions_1.setText(R.string.versions_21);
 																								versions_2.setText(R.string.versions_21);
 																								versions_3.setText(R.string.versions_21);
@@ -11308,62 +6395,29 @@ public class MainActivity extends AppCompatActivity {
 																								reset_preferences.setText(R.string.reset_preferences_21);
 																								list_auto_refresh.setText(R.string.list_auto_refresh_21);
 																								list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_21);
-																								force_auto_install.setText(R.string.force_auto_install_21);
-																								force_auto_install_info.setText(R.string.force_auto_install_desc_21);
-																								apk_location.setText(R.string.apk_location_21);
-																								apk_location_info.setText(R.string.apk_location_desc_21);
-																								clear_directory_folders.setText(R.string.clear_directory_folders_21);
-																								clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_21);
 																								cloned_version.setText(R.string.cloned_version_21);
 																								cloned_version_info.setText(R.string.cloned_version_desc_21);
-																								experiment_version.setText(R.string.experimental_version_21);
-																								experiment_version_info.setText(R.string.experimental_version_desc_21);
 																								disable_reward_ad.setText(R.string.disable_rewarded_ads_21);
 																								disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_21);
 																								disable_notification.setText(R.string.disable_notification_21);
 																								disable_notification_info.setText(R.string.disable_notification_desc_21);
 																								hide_stock_patched.setText(R.string.hide_stock_patched_21);
 																								hide_amoled_patched.setText(R.string.hide_amoled_patched_21);
-																								hide_lite_patched.setText(R.string.hide_lite_patched_21);
 																								show_support.setText(R.string.show_support_21);
 																								show_support_desc.setText(R.string.show_support_desc_21);
 																								maintenance.setText(R.string.maintenance_21);
 																								maintenance_desc.setText(R.string.maintenance_desc_21);
 																								xmanager_dev.setText(R.string.xmanager_dev_21);
 																								contributors.setText(R.string.contributors_21);
-																								download_selected.setText(R.string.download_selected_21);
 																								download_ready.setText(R.string.download_ready_21);
 																								download_ready_desc.setText(R.string.download_ready_desc_21);
-																								downloading_file.setText(R.string.downloading_file_21);
-																								download_success.setText(R.string.download_success_21);
-																								installation_failed.setText(R.string.installation_failed_21);
-																								installation_failed_desc.setText(R.string.installation_failed_desc_21);
 																								installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_21);
-																								installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_21);
 																								existing_patched.setText(R.string.existing_patched_21);
 																								existing_patched_desc.setText(R.string.existing_patched_desc_21);
-																								lite_0 = lite.getText().toString();
 																								download_0 = download.getText().toString();
-																								continue_0 = continue_1.getText().toString();
 																								cancel_0 = cancel.getText().toString();
-																								later_0 = later.getText().toString();
-																								mirror_0 = mirror.getText().toString();
-																								install_now_0 = install_now.getText().toString();
-																								go_back_0 = go_back.getText().toString();
-																								install_update_0 = install_update.getText().toString();
-																								close_0 = close.getText().toString();
-																								uninstall_0 = uninstall.getText().toString();
-																								existing_patched_0 = existing_patched.getText().toString();
-																								existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																								download_selected_0 = download_selected.getText().toString();
 																								download_ready_0 = download_ready.getText().toString();
 																								download_ready_desc_0 = download_ready_desc.getText().toString();
-																								downloading_file_0 = downloading_file.getText().toString();
-																								download_success_0 = download_success.getText().toString();
-																								installation_failed_0 = installation_failed.getText().toString();
-																								installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																								installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																								installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																								select_language.setSelection((int)(21));
 																							}
 																							else {
@@ -11376,7 +6430,6 @@ public class MainActivity extends AppCompatActivity {
 																									sub_title.setText(R.string.about_sub_22);
 																									sub_text_1.setText(R.string.latest_22);
 																									sub_text_2.setText(R.string.latest_22);
-																									sub_text_3.setText(R.string.latest_22);
 																									versions_1.setText(R.string.versions_22);
 																									versions_2.setText(R.string.versions_22);
 																									versions_3.setText(R.string.versions_22);
@@ -11419,62 +6472,29 @@ public class MainActivity extends AppCompatActivity {
 																									reset_preferences.setText(R.string.reset_preferences_22);
 																									list_auto_refresh.setText(R.string.list_auto_refresh_22);
 																									list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_22);
-																									force_auto_install.setText(R.string.force_auto_install_22);
-																									force_auto_install_info.setText(R.string.force_auto_install_desc_22);
-																									apk_location.setText(R.string.apk_location_22);
-																									apk_location_info.setText(R.string.apk_location_desc_22);
-																									clear_directory_folders.setText(R.string.clear_directory_folders_22);
-																									clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_22);
 																									cloned_version.setText(R.string.cloned_version_22);
 																									cloned_version_info.setText(R.string.cloned_version_desc_22);
-																									experiment_version.setText(R.string.experimental_version_22);
-																									experiment_version_info.setText(R.string.experimental_version_desc_22);
 																									disable_reward_ad.setText(R.string.disable_rewarded_ads_22);
 																									disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_22);
 																									disable_notification.setText(R.string.disable_notification_22);
 																									disable_notification_info.setText(R.string.disable_notification_desc_22);
 																									hide_stock_patched.setText(R.string.hide_stock_patched_22);
 																									hide_amoled_patched.setText(R.string.hide_amoled_patched_22);
-																									hide_lite_patched.setText(R.string.hide_lite_patched_22);
 																									show_support.setText(R.string.show_support_22);
 																									show_support_desc.setText(R.string.show_support_desc_22);
 																									maintenance.setText(R.string.maintenance_22);
 																									maintenance_desc.setText(R.string.maintenance_desc_22);
 																									xmanager_dev.setText(R.string.xmanager_dev_22);
 																									contributors.setText(R.string.contributors_22);
-																									download_selected.setText(R.string.download_selected_22);
 																									download_ready.setText(R.string.download_ready_22);
 																									download_ready_desc.setText(R.string.download_ready_desc_22);
-																									downloading_file.setText(R.string.downloading_file_22);
-																									download_success.setText(R.string.download_success_22);
-																									installation_failed.setText(R.string.installation_failed_22);
-																									installation_failed_desc.setText(R.string.installation_failed_desc_22);
 																									installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_22);
-																									installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_22);
 																									existing_patched.setText(R.string.existing_patched_22);
 																									existing_patched_desc.setText(R.string.existing_patched_desc_22);
-																									lite_0 = lite.getText().toString();
 																									download_0 = download.getText().toString();
-																									continue_0 = continue_1.getText().toString();
 																									cancel_0 = cancel.getText().toString();
-																									later_0 = later.getText().toString();
-																									mirror_0 = mirror.getText().toString();
-																									install_now_0 = install_now.getText().toString();
-																									go_back_0 = go_back.getText().toString();
-																									install_update_0 = install_update.getText().toString();
-																									close_0 = close.getText().toString();
-																									uninstall_0 = uninstall.getText().toString();
-																									existing_patched_0 = existing_patched.getText().toString();
-																									existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																									download_selected_0 = download_selected.getText().toString();
 																									download_ready_0 = download_ready.getText().toString();
 																									download_ready_desc_0 = download_ready_desc.getText().toString();
-																									downloading_file_0 = downloading_file.getText().toString();
-																									download_success_0 = download_success.getText().toString();
-																									installation_failed_0 = installation_failed.getText().toString();
-																									installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																									installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																									installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																									select_language.setSelection((int)(22));
 																								}
 																								else {
@@ -11487,7 +6507,6 @@ public class MainActivity extends AppCompatActivity {
 																										sub_title.setText(R.string.about_sub_23);
 																										sub_text_1.setText(R.string.latest_23);
 																										sub_text_2.setText(R.string.latest_23);
-																										sub_text_3.setText(R.string.latest_23);
 																										versions_1.setText(R.string.versions_23);
 																										versions_2.setText(R.string.versions_23);
 																										versions_3.setText(R.string.versions_23);
@@ -11530,62 +6549,29 @@ public class MainActivity extends AppCompatActivity {
 																										reset_preferences.setText(R.string.reset_preferences_23);
 																										list_auto_refresh.setText(R.string.list_auto_refresh_23);
 																										list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_23);
-																										force_auto_install.setText(R.string.force_auto_install_23);
-																										force_auto_install_info.setText(R.string.force_auto_install_desc_23);
-																										apk_location.setText(R.string.apk_location_23);
-																										apk_location_info.setText(R.string.apk_location_desc_23);
-																										clear_directory_folders.setText(R.string.clear_directory_folders_23);
-																										clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_23);
 																										cloned_version.setText(R.string.cloned_version_23);
 																										cloned_version_info.setText(R.string.cloned_version_desc_23);
-																										experiment_version.setText(R.string.experimental_version_23);
-																										experiment_version_info.setText(R.string.experimental_version_desc_23);
 																										disable_reward_ad.setText(R.string.disable_rewarded_ads_23);
 																										disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_23);
 																										disable_notification.setText(R.string.disable_notification_23);
 																										disable_notification_info.setText(R.string.disable_notification_desc_23);
 																										hide_stock_patched.setText(R.string.hide_stock_patched_23);
 																										hide_amoled_patched.setText(R.string.hide_amoled_patched_23);
-																										hide_lite_patched.setText(R.string.hide_lite_patched_23);
 																										show_support.setText(R.string.show_support_23);
 																										show_support_desc.setText(R.string.show_support_desc_23);
 																										maintenance.setText(R.string.maintenance_23);
 																										maintenance_desc.setText(R.string.maintenance_desc_23);
 																										xmanager_dev.setText(R.string.xmanager_dev_23);
 																										contributors.setText(R.string.contributors_23);
-																										download_selected.setText(R.string.download_selected_23);
 																										download_ready.setText(R.string.download_ready_23);
 																										download_ready_desc.setText(R.string.download_ready_desc_23);
-																										downloading_file.setText(R.string.downloading_file_23);
-																										download_success.setText(R.string.download_success_23);
-																										installation_failed.setText(R.string.installation_failed_23);
-																										installation_failed_desc.setText(R.string.installation_failed_desc_23);
 																										installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_23);
-																										installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_23);
 																										existing_patched.setText(R.string.existing_patched_23);
 																										existing_patched_desc.setText(R.string.existing_patched_desc_23);
-																										lite_0 = lite.getText().toString();
 																										download_0 = download.getText().toString();
-																										continue_0 = continue_1.getText().toString();
 																										cancel_0 = cancel.getText().toString();
-																										later_0 = later.getText().toString();
-																										mirror_0 = mirror.getText().toString();
-																										install_now_0 = install_now.getText().toString();
-																										go_back_0 = go_back.getText().toString();
-																										install_update_0 = install_update.getText().toString();
-																										close_0 = close.getText().toString();
-																										uninstall_0 = uninstall.getText().toString();
-																										existing_patched_0 = existing_patched.getText().toString();
-																										existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																										download_selected_0 = download_selected.getText().toString();
 																										download_ready_0 = download_ready.getText().toString();
 																										download_ready_desc_0 = download_ready_desc.getText().toString();
-																										downloading_file_0 = downloading_file.getText().toString();
-																										download_success_0 = download_success.getText().toString();
-																										installation_failed_0 = installation_failed.getText().toString();
-																										installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																										installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																										installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																										select_language.setSelection((int)(23));
 																									}
 																									else {
@@ -11598,7 +6584,6 @@ public class MainActivity extends AppCompatActivity {
 																											sub_title.setText(R.string.about_sub_24);
 																											sub_text_1.setText(R.string.latest_24);
 																											sub_text_2.setText(R.string.latest_24);
-																											sub_text_3.setText(R.string.latest_24);
 																											versions_1.setText(R.string.versions_24);
 																											versions_2.setText(R.string.versions_24);
 																											versions_3.setText(R.string.versions_24);
@@ -11641,62 +6626,29 @@ public class MainActivity extends AppCompatActivity {
 																											reset_preferences.setText(R.string.reset_preferences_24);
 																											list_auto_refresh.setText(R.string.list_auto_refresh_24);
 																											list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_24);
-																											force_auto_install.setText(R.string.force_auto_install_24);
-																											force_auto_install_info.setText(R.string.force_auto_install_desc_24);
-																											apk_location.setText(R.string.apk_location_24);
-																											apk_location_info.setText(R.string.apk_location_desc_24);
-																											clear_directory_folders.setText(R.string.clear_directory_folders_24);
-																											clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_24);
 																											cloned_version.setText(R.string.cloned_version_24);
 																											cloned_version_info.setText(R.string.cloned_version_desc_24);
-																											experiment_version.setText(R.string.experimental_version_24);
-																											experiment_version_info.setText(R.string.experimental_version_desc_24);
 																											disable_reward_ad.setText(R.string.disable_rewarded_ads_24);
 																											disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_24);
 																											disable_notification.setText(R.string.disable_notification_24);
 																											disable_notification_info.setText(R.string.disable_notification_desc_24);
 																											hide_stock_patched.setText(R.string.hide_stock_patched_24);
 																											hide_amoled_patched.setText(R.string.hide_amoled_patched_24);
-																											hide_lite_patched.setText(R.string.hide_lite_patched_24);
 																											show_support.setText(R.string.show_support_24);
 																											show_support_desc.setText(R.string.show_support_desc_24);
 																											maintenance.setText(R.string.maintenance_24);
 																											maintenance_desc.setText(R.string.maintenance_desc_24);
 																											xmanager_dev.setText(R.string.xmanager_dev_24);
 																											contributors.setText(R.string.contributors_24);
-																											download_selected.setText(R.string.download_selected_24);
 																											download_ready.setText(R.string.download_ready_24);
 																											download_ready_desc.setText(R.string.download_ready_desc_24);
-																											downloading_file.setText(R.string.downloading_file_24);
-																											download_success.setText(R.string.download_success_24);
-																											installation_failed.setText(R.string.installation_failed_24);
-																											installation_failed_desc.setText(R.string.installation_failed_desc_24);
 																											installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_24);
-																											installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_24);
 																											existing_patched.setText(R.string.existing_patched_24);
 																											existing_patched_desc.setText(R.string.existing_patched_desc_24);
-																											lite_0 = lite.getText().toString();
 																											download_0 = download.getText().toString();
-																											continue_0 = continue_1.getText().toString();
 																											cancel_0 = cancel.getText().toString();
-																											later_0 = later.getText().toString();
-																											mirror_0 = mirror.getText().toString();
-																											install_now_0 = install_now.getText().toString();
-																											go_back_0 = go_back.getText().toString();
-																											install_update_0 = install_update.getText().toString();
-																											close_0 = close.getText().toString();
-																											uninstall_0 = uninstall.getText().toString();
-																											existing_patched_0 = existing_patched.getText().toString();
-																											existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																											download_selected_0 = download_selected.getText().toString();
 																											download_ready_0 = download_ready.getText().toString();
 																											download_ready_desc_0 = download_ready_desc.getText().toString();
-																											downloading_file_0 = downloading_file.getText().toString();
-																											download_success_0 = download_success.getText().toString();
-																											installation_failed_0 = installation_failed.getText().toString();
-																											installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																											installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																											installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																											select_language.setSelection((int)(24));
 																										}
 																										else {
@@ -11709,7 +6661,6 @@ public class MainActivity extends AppCompatActivity {
 																												sub_title.setText(R.string.about_sub_25);
 																												sub_text_1.setText(R.string.latest_25);
 																												sub_text_2.setText(R.string.latest_25);
-																												sub_text_3.setText(R.string.latest_25);
 																												versions_1.setText(R.string.versions_25);
 																												versions_2.setText(R.string.versions_25);
 																												versions_3.setText(R.string.versions_25);
@@ -11752,62 +6703,29 @@ public class MainActivity extends AppCompatActivity {
 																												reset_preferences.setText(R.string.reset_preferences_25);
 																												list_auto_refresh.setText(R.string.list_auto_refresh_25);
 																												list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_25);
-																												force_auto_install.setText(R.string.force_auto_install_25);
-																												force_auto_install_info.setText(R.string.force_auto_install_desc_25);
-																												apk_location.setText(R.string.apk_location_25);
-																												apk_location_info.setText(R.string.apk_location_desc_25);
-																												clear_directory_folders.setText(R.string.clear_directory_folders_25);
-																												clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_25);
 																												cloned_version.setText(R.string.cloned_version_25);
 																												cloned_version_info.setText(R.string.cloned_version_desc_25);
-																												experiment_version.setText(R.string.experimental_version_25);
-																												experiment_version_info.setText(R.string.experimental_version_desc_25);
 																												disable_reward_ad.setText(R.string.disable_rewarded_ads_25);
 																												disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_25);
 																												disable_notification.setText(R.string.disable_notification_25);
 																												disable_notification_info.setText(R.string.disable_notification_desc_25);
 																												hide_stock_patched.setText(R.string.hide_stock_patched_25);
 																												hide_amoled_patched.setText(R.string.hide_amoled_patched_25);
-																												hide_lite_patched.setText(R.string.hide_lite_patched_25);
 																												show_support.setText(R.string.show_support_25);
 																												show_support_desc.setText(R.string.show_support_desc_25);
 																												maintenance.setText(R.string.maintenance_25);
 																												maintenance_desc.setText(R.string.maintenance_desc_25);
 																												xmanager_dev.setText(R.string.xmanager_dev_25);
 																												contributors.setText(R.string.contributors_25);
-																												download_selected.setText(R.string.download_selected_25);
 																												download_ready.setText(R.string.download_ready_25);
 																												download_ready_desc.setText(R.string.download_ready_desc_25);
-																												downloading_file.setText(R.string.downloading_file_25);
-																												download_success.setText(R.string.download_success_25);
-																												installation_failed.setText(R.string.installation_failed_25);
-																												installation_failed_desc.setText(R.string.installation_failed_desc_25);
 																												installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_25);
-																												installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_25);
 																												existing_patched.setText(R.string.existing_patched_25);
 																												existing_patched_desc.setText(R.string.existing_patched_desc_25);
-																												lite_0 = lite.getText().toString();
 																												download_0 = download.getText().toString();
-																												continue_0 = continue_1.getText().toString();
 																												cancel_0 = cancel.getText().toString();
-																												later_0 = later.getText().toString();
-																												mirror_0 = mirror.getText().toString();
-																												install_now_0 = install_now.getText().toString();
-																												go_back_0 = go_back.getText().toString();
-																												install_update_0 = install_update.getText().toString();
-																												close_0 = close.getText().toString();
-																												uninstall_0 = uninstall.getText().toString();
-																												existing_patched_0 = existing_patched.getText().toString();
-																												existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																												download_selected_0 = download_selected.getText().toString();
 																												download_ready_0 = download_ready.getText().toString();
 																												download_ready_desc_0 = download_ready_desc.getText().toString();
-																												downloading_file_0 = downloading_file.getText().toString();
-																												download_success_0 = download_success.getText().toString();
-																												installation_failed_0 = installation_failed.getText().toString();
-																												installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																												installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																												installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																												select_language.setSelection((int)(25));
 																											}
 																											else {
@@ -11820,7 +6738,6 @@ public class MainActivity extends AppCompatActivity {
 																													sub_title.setText(R.string.about_sub_26);
 																													sub_text_1.setText(R.string.latest_26);
 																													sub_text_2.setText(R.string.latest_26);
-																													sub_text_3.setText(R.string.latest_26);
 																													versions_1.setText(R.string.versions_26);
 																													versions_2.setText(R.string.versions_26);
 																													versions_3.setText(R.string.versions_26);
@@ -11863,62 +6780,29 @@ public class MainActivity extends AppCompatActivity {
 																													reset_preferences.setText(R.string.reset_preferences_26);
 																													list_auto_refresh.setText(R.string.list_auto_refresh_26);
 																													list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_26);
-																													force_auto_install.setText(R.string.force_auto_install_26);
-																													force_auto_install_info.setText(R.string.force_auto_install_desc_26);
-																													apk_location.setText(R.string.apk_location_26);
-																													apk_location_info.setText(R.string.apk_location_desc_26);
-																													clear_directory_folders.setText(R.string.clear_directory_folders_26);
-																													clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_26);
 																													cloned_version.setText(R.string.cloned_version_26);
 																													cloned_version_info.setText(R.string.cloned_version_desc_26);
-																													experiment_version.setText(R.string.experimental_version_26);
-																													experiment_version_info.setText(R.string.experimental_version_desc_26);
 																													disable_reward_ad.setText(R.string.disable_rewarded_ads_26);
 																													disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_26);
 																													disable_notification.setText(R.string.disable_notification_26);
 																													disable_notification_info.setText(R.string.disable_notification_desc_26);
 																													hide_stock_patched.setText(R.string.hide_stock_patched_26);
 																													hide_amoled_patched.setText(R.string.hide_amoled_patched_26);
-																													hide_lite_patched.setText(R.string.hide_lite_patched_26);
 																													show_support.setText(R.string.show_support_26);
 																													show_support_desc.setText(R.string.show_support_desc_26);
 																													maintenance.setText(R.string.maintenance_26);
 																													maintenance_desc.setText(R.string.maintenance_desc_26);
 																													xmanager_dev.setText(R.string.xmanager_dev_26);
 																													contributors.setText(R.string.contributors_26);
-																													download_selected.setText(R.string.download_selected_26);
 																													download_ready.setText(R.string.download_ready_26);
 																													download_ready_desc.setText(R.string.download_ready_desc_26);
-																													downloading_file.setText(R.string.downloading_file_26);
-																													download_success.setText(R.string.download_success_26);
-																													installation_failed.setText(R.string.installation_failed_26);
-																													installation_failed_desc.setText(R.string.installation_failed_desc_26);
 																													installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_26);
-																													installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_26);
 																													existing_patched.setText(R.string.existing_patched_26);
 																													existing_patched_desc.setText(R.string.existing_patched_desc_26);
-																													lite_0 = lite.getText().toString();
 																													download_0 = download.getText().toString();
-																													continue_0 = continue_1.getText().toString();
 																													cancel_0 = cancel.getText().toString();
-																													later_0 = later.getText().toString();
-																													mirror_0 = mirror.getText().toString();
-																													install_now_0 = install_now.getText().toString();
-																													go_back_0 = go_back.getText().toString();
-																													install_update_0 = install_update.getText().toString();
-																													close_0 = close.getText().toString();
-																													uninstall_0 = uninstall.getText().toString();
-																													existing_patched_0 = existing_patched.getText().toString();
-																													existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																													download_selected_0 = download_selected.getText().toString();
 																													download_ready_0 = download_ready.getText().toString();
 																													download_ready_desc_0 = download_ready_desc.getText().toString();
-																													downloading_file_0 = downloading_file.getText().toString();
-																													download_success_0 = download_success.getText().toString();
-																													installation_failed_0 = installation_failed.getText().toString();
-																													installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																													installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																													installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																													select_language.setSelection((int)(26));
 																												}
 																												else {
@@ -11931,7 +6815,6 @@ public class MainActivity extends AppCompatActivity {
 																														sub_title.setText(R.string.about_sub_27);
 																														sub_text_1.setText(R.string.latest_27);
 																														sub_text_2.setText(R.string.latest_27);
-																														sub_text_3.setText(R.string.latest_27);
 																														versions_1.setText(R.string.versions_27);
 																														versions_2.setText(R.string.versions_27);
 																														versions_3.setText(R.string.versions_27);
@@ -11974,62 +6857,29 @@ public class MainActivity extends AppCompatActivity {
 																														reset_preferences.setText(R.string.reset_preferences_27);
 																														list_auto_refresh.setText(R.string.list_auto_refresh_27);
 																														list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_27);
-																														force_auto_install.setText(R.string.force_auto_install_27);
-																														force_auto_install_info.setText(R.string.force_auto_install_desc_27);
-																														apk_location.setText(R.string.apk_location_27);
-																														apk_location_info.setText(R.string.apk_location_desc_27);
-																														clear_directory_folders.setText(R.string.clear_directory_folders_27);
-																														clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_27);
 																														cloned_version.setText(R.string.cloned_version_27);
 																														cloned_version_info.setText(R.string.cloned_version_desc_27);
-																														experiment_version.setText(R.string.experimental_version_27);
-																														experiment_version_info.setText(R.string.experimental_version_desc_27);
 																														disable_reward_ad.setText(R.string.disable_rewarded_ads_27);
 																														disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_27);
 																														disable_notification.setText(R.string.disable_notification_27);
 																														disable_notification_info.setText(R.string.disable_notification_desc_27);
 																														hide_stock_patched.setText(R.string.hide_stock_patched_27);
 																														hide_amoled_patched.setText(R.string.hide_amoled_patched_27);
-																														hide_lite_patched.setText(R.string.hide_lite_patched_27);
 																														show_support.setText(R.string.show_support_27);
 																														show_support_desc.setText(R.string.show_support_desc_27);
 																														maintenance.setText(R.string.maintenance_27);
 																														maintenance_desc.setText(R.string.maintenance_desc_27);
 																														xmanager_dev.setText(R.string.xmanager_dev_27);
 																														contributors.setText(R.string.contributors_27);
-																														download_selected.setText(R.string.download_selected_27);
 																														download_ready.setText(R.string.download_ready_27);
 																														download_ready_desc.setText(R.string.download_ready_desc_27);
-																														downloading_file.setText(R.string.downloading_file_27);
-																														download_success.setText(R.string.download_success_27);
-																														installation_failed.setText(R.string.installation_failed_27);
-																														installation_failed_desc.setText(R.string.installation_failed_desc_27);
 																														installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_27);
-																														installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_27);
 																														existing_patched.setText(R.string.existing_patched_27);
 																														existing_patched_desc.setText(R.string.existing_patched_desc_27);
-																														lite_0 = lite.getText().toString();
 																														download_0 = download.getText().toString();
-																														continue_0 = continue_1.getText().toString();
 																														cancel_0 = cancel.getText().toString();
-																														later_0 = later.getText().toString();
-																														mirror_0 = mirror.getText().toString();
-																														install_now_0 = install_now.getText().toString();
-																														go_back_0 = go_back.getText().toString();
-																														install_update_0 = install_update.getText().toString();
-																														close_0 = close.getText().toString();
-																														uninstall_0 = uninstall.getText().toString();
-																														existing_patched_0 = existing_patched.getText().toString();
-																														existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																														download_selected_0 = download_selected.getText().toString();
 																														download_ready_0 = download_ready.getText().toString();
 																														download_ready_desc_0 = download_ready_desc.getText().toString();
-																														downloading_file_0 = downloading_file.getText().toString();
-																														download_success_0 = download_success.getText().toString();
-																														installation_failed_0 = installation_failed.getText().toString();
-																														installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																														installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																														installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																														select_language.setSelection((int)(27));
 																													}
 																													else {
@@ -12042,7 +6892,6 @@ public class MainActivity extends AppCompatActivity {
 																															sub_title.setText(R.string.about_sub_28);
 																															sub_text_1.setText(R.string.latest_28);
 																															sub_text_2.setText(R.string.latest_28);
-																															sub_text_3.setText(R.string.latest_28);
 																															versions_1.setText(R.string.versions_28);
 																															versions_2.setText(R.string.versions_28);
 																															versions_3.setText(R.string.versions_28);
@@ -12085,62 +6934,29 @@ public class MainActivity extends AppCompatActivity {
 																															reset_preferences.setText(R.string.reset_preferences_28);
 																															list_auto_refresh.setText(R.string.list_auto_refresh_28);
 																															list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_28);
-																															force_auto_install.setText(R.string.force_auto_install_28);
-																															force_auto_install_info.setText(R.string.force_auto_install_desc_28);
-																															apk_location.setText(R.string.apk_location_28);
-																															apk_location_info.setText(R.string.apk_location_desc_28);
-																															clear_directory_folders.setText(R.string.clear_directory_folders_28);
-																															clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_28);
 																															cloned_version.setText(R.string.cloned_version_28);
 																															cloned_version_info.setText(R.string.cloned_version_desc_28);
-																															experiment_version.setText(R.string.experimental_version_28);
-																															experiment_version_info.setText(R.string.experimental_version_desc_28);
 																															disable_reward_ad.setText(R.string.disable_rewarded_ads_28);
 																															disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_28);
 																															disable_notification.setText(R.string.disable_notification_28);
 																															disable_notification_info.setText(R.string.disable_notification_desc_28);
 																															hide_stock_patched.setText(R.string.hide_stock_patched_28);
 																															hide_amoled_patched.setText(R.string.hide_amoled_patched_28);
-																															hide_lite_patched.setText(R.string.hide_lite_patched_28);
 																															show_support.setText(R.string.show_support_28);
 																															show_support_desc.setText(R.string.show_support_desc_28);
 																															maintenance.setText(R.string.maintenance_28);
 																															maintenance_desc.setText(R.string.maintenance_desc_28);
 																															xmanager_dev.setText(R.string.xmanager_dev_28);
 																															contributors.setText(R.string.contributors_28);
-																															download_selected.setText(R.string.download_selected_28);
 																															download_ready.setText(R.string.download_ready_28);
 																															download_ready_desc.setText(R.string.download_ready_desc_28);
-																															downloading_file.setText(R.string.downloading_file_28);
-																															download_success.setText(R.string.download_success_28);
-																															installation_failed.setText(R.string.installation_failed_28);
-																															installation_failed_desc.setText(R.string.installation_failed_desc_28);
 																															installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_28);
-																															installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_28);
 																															existing_patched.setText(R.string.existing_patched_28);
 																															existing_patched_desc.setText(R.string.existing_patched_desc_28);
-																															lite_0 = lite.getText().toString();
 																															download_0 = download.getText().toString();
-																															continue_0 = continue_1.getText().toString();
 																															cancel_0 = cancel.getText().toString();
-																															later_0 = later.getText().toString();
-																															mirror_0 = mirror.getText().toString();
-																															install_now_0 = install_now.getText().toString();
-																															go_back_0 = go_back.getText().toString();
-																															install_update_0 = install_update.getText().toString();
-																															close_0 = close.getText().toString();
-																															uninstall_0 = uninstall.getText().toString();
-																															existing_patched_0 = existing_patched.getText().toString();
-																															existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																															download_selected_0 = download_selected.getText().toString();
 																															download_ready_0 = download_ready.getText().toString();
 																															download_ready_desc_0 = download_ready_desc.getText().toString();
-																															downloading_file_0 = downloading_file.getText().toString();
-																															download_success_0 = download_success.getText().toString();
-																															installation_failed_0 = installation_failed.getText().toString();
-																															installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																															installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																															installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																															select_language.setSelection((int)(28));
 																														}
 																														else {
@@ -12153,7 +6969,6 @@ public class MainActivity extends AppCompatActivity {
 																																sub_title.setText(R.string.about_sub_29);
 																																sub_text_1.setText(R.string.latest_29);
 																																sub_text_2.setText(R.string.latest_29);
-																																sub_text_3.setText(R.string.latest_29);
 																																versions_1.setText(R.string.versions_29);
 																																versions_2.setText(R.string.versions_29);
 																																versions_3.setText(R.string.versions_29);
@@ -12196,62 +7011,29 @@ public class MainActivity extends AppCompatActivity {
 																																reset_preferences.setText(R.string.reset_preferences_29);
 																																list_auto_refresh.setText(R.string.list_auto_refresh_29);
 																																list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_29);
-																																force_auto_install.setText(R.string.force_auto_install_29);
-																																force_auto_install_info.setText(R.string.force_auto_install_desc_29);
-																																apk_location.setText(R.string.apk_location_29);
-																																apk_location_info.setText(R.string.apk_location_desc_29);
-																																clear_directory_folders.setText(R.string.clear_directory_folders_29);
-																																clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_29);
 																																cloned_version.setText(R.string.cloned_version_29);
 																																cloned_version_info.setText(R.string.cloned_version_desc_29);
-																																experiment_version.setText(R.string.experimental_version_29);
-																																experiment_version_info.setText(R.string.experimental_version_desc_29);
 																																disable_reward_ad.setText(R.string.disable_rewarded_ads_29);
 																																disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_29);
 																																disable_notification.setText(R.string.disable_notification_29);
 																																disable_notification_info.setText(R.string.disable_notification_desc_29);
 																																hide_stock_patched.setText(R.string.hide_stock_patched_29);
 																																hide_amoled_patched.setText(R.string.hide_amoled_patched_29);
-																																hide_lite_patched.setText(R.string.hide_lite_patched_29);
 																																show_support.setText(R.string.show_support_29);
 																																show_support_desc.setText(R.string.show_support_desc_29);
 																																maintenance.setText(R.string.maintenance_29);
 																																maintenance_desc.setText(R.string.maintenance_desc_29);
 																																xmanager_dev.setText(R.string.xmanager_dev_29);
 																																contributors.setText(R.string.contributors_29);
-																																download_selected.setText(R.string.download_selected_29);
 																																download_ready.setText(R.string.download_ready_29);
 																																download_ready_desc.setText(R.string.download_ready_desc_29);
-																																downloading_file.setText(R.string.downloading_file_29);
-																																download_success.setText(R.string.download_success_29);
-																																installation_failed.setText(R.string.installation_failed_29);
-																																installation_failed_desc.setText(R.string.installation_failed_desc_29);
 																																installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_29);
-																																installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_29);
 																																existing_patched.setText(R.string.existing_patched_29);
 																																existing_patched_desc.setText(R.string.existing_patched_desc_29);
-																																lite_0 = lite.getText().toString();
 																																download_0 = download.getText().toString();
-																																continue_0 = continue_1.getText().toString();
 																																cancel_0 = cancel.getText().toString();
-																																later_0 = later.getText().toString();
-																																mirror_0 = mirror.getText().toString();
-																																install_now_0 = install_now.getText().toString();
-																																go_back_0 = go_back.getText().toString();
-																																install_update_0 = install_update.getText().toString();
-																																close_0 = close.getText().toString();
-																																uninstall_0 = uninstall.getText().toString();
-																																existing_patched_0 = existing_patched.getText().toString();
-																																existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																download_selected_0 = download_selected.getText().toString();
 																																download_ready_0 = download_ready.getText().toString();
 																																download_ready_desc_0 = download_ready_desc.getText().toString();
-																																downloading_file_0 = downloading_file.getText().toString();
-																																download_success_0 = download_success.getText().toString();
-																																installation_failed_0 = installation_failed.getText().toString();
-																																installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																select_language.setSelection((int)(29));
 																															}
 																															else {
@@ -12264,7 +7046,6 @@ public class MainActivity extends AppCompatActivity {
 																																	sub_title.setText(R.string.about_sub_30);
 																																	sub_text_1.setText(R.string.latest_30);
 																																	sub_text_2.setText(R.string.latest_30);
-																																	sub_text_3.setText(R.string.latest_30);
 																																	versions_1.setText(R.string.versions_30);
 																																	versions_2.setText(R.string.versions_30);
 																																	versions_3.setText(R.string.versions_30);
@@ -12307,62 +7088,29 @@ public class MainActivity extends AppCompatActivity {
 																																	reset_preferences.setText(R.string.reset_preferences_30);
 																																	list_auto_refresh.setText(R.string.list_auto_refresh_30);
 																																	list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_30);
-																																	force_auto_install.setText(R.string.force_auto_install_30);
-																																	force_auto_install_info.setText(R.string.force_auto_install_desc_30);
-																																	apk_location.setText(R.string.apk_location_30);
-																																	apk_location_info.setText(R.string.apk_location_desc_30);
-																																	clear_directory_folders.setText(R.string.clear_directory_folders_30);
-																																	clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_30);
 																																	cloned_version.setText(R.string.cloned_version_30);
 																																	cloned_version_info.setText(R.string.cloned_version_desc_30);
-																																	experiment_version.setText(R.string.experimental_version_30);
-																																	experiment_version_info.setText(R.string.experimental_version_desc_30);
 																																	disable_reward_ad.setText(R.string.disable_rewarded_ads_30);
 																																	disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_30);
 																																	disable_notification.setText(R.string.disable_notification_30);
 																																	disable_notification_info.setText(R.string.disable_notification_desc_30);
 																																	hide_stock_patched.setText(R.string.hide_stock_patched_30);
 																																	hide_amoled_patched.setText(R.string.hide_amoled_patched_30);
-																																	hide_lite_patched.setText(R.string.hide_lite_patched_30);
 																																	show_support.setText(R.string.show_support_30);
 																																	show_support_desc.setText(R.string.show_support_desc_30);
 																																	maintenance.setText(R.string.maintenance_30);
 																																	maintenance_desc.setText(R.string.maintenance_desc_30);
 																																	xmanager_dev.setText(R.string.xmanager_dev_30);
 																																	contributors.setText(R.string.contributors_30);
-																																	download_selected.setText(R.string.download_selected_30);
 																																	download_ready.setText(R.string.download_ready_30);
 																																	download_ready_desc.setText(R.string.download_ready_desc_30);
-																																	downloading_file.setText(R.string.downloading_file_30);
-																																	download_success.setText(R.string.download_success_30);
-																																	installation_failed.setText(R.string.installation_failed_30);
-																																	installation_failed_desc.setText(R.string.installation_failed_desc_30);
 																																	installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_30);
-																																	installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_30);
 																																	existing_patched.setText(R.string.existing_patched_30);
 																																	existing_patched_desc.setText(R.string.existing_patched_desc_30);
-																																	lite_0 = lite.getText().toString();
 																																	download_0 = download.getText().toString();
-																																	continue_0 = continue_1.getText().toString();
 																																	cancel_0 = cancel.getText().toString();
-																																	later_0 = later.getText().toString();
-																																	mirror_0 = mirror.getText().toString();
-																																	install_now_0 = install_now.getText().toString();
-																																	go_back_0 = go_back.getText().toString();
-																																	install_update_0 = install_update.getText().toString();
-																																	close_0 = close.getText().toString();
-																																	uninstall_0 = uninstall.getText().toString();
-																																	existing_patched_0 = existing_patched.getText().toString();
-																																	existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																	download_selected_0 = download_selected.getText().toString();
 																																	download_ready_0 = download_ready.getText().toString();
 																																	download_ready_desc_0 = download_ready_desc.getText().toString();
-																																	downloading_file_0 = downloading_file.getText().toString();
-																																	download_success_0 = download_success.getText().toString();
-																																	installation_failed_0 = installation_failed.getText().toString();
-																																	installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																	installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																	installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																	select_language.setSelection((int)(30));
 																																}
 																																else {
@@ -12375,7 +7123,6 @@ public class MainActivity extends AppCompatActivity {
 																																		sub_title.setText(R.string.about_sub_31);
 																																		sub_text_1.setText(R.string.latest_31);
 																																		sub_text_2.setText(R.string.latest_31);
-																																		sub_text_3.setText(R.string.latest_31);
 																																		versions_1.setText(R.string.versions_31);
 																																		versions_2.setText(R.string.versions_31);
 																																		versions_3.setText(R.string.versions_31);
@@ -12418,62 +7165,29 @@ public class MainActivity extends AppCompatActivity {
 																																		reset_preferences.setText(R.string.reset_preferences_31);
 																																		list_auto_refresh.setText(R.string.list_auto_refresh_31);
 																																		list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_31);
-																																		force_auto_install.setText(R.string.force_auto_install_31);
-																																		force_auto_install_info.setText(R.string.force_auto_install_desc_31);
-																																		apk_location.setText(R.string.apk_location_31);
-																																		apk_location_info.setText(R.string.apk_location_desc_31);
-																																		clear_directory_folders.setText(R.string.clear_directory_folders_31);
-																																		clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_31);
 																																		cloned_version.setText(R.string.cloned_version_31);
 																																		cloned_version_info.setText(R.string.cloned_version_desc_31);
-																																		experiment_version.setText(R.string.experimental_version_31);
-																																		experiment_version_info.setText(R.string.experimental_version_desc_31);
 																																		disable_reward_ad.setText(R.string.disable_rewarded_ads_31);
 																																		disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_31);
 																																		disable_notification.setText(R.string.disable_notification_31);
 																																		disable_notification_info.setText(R.string.disable_notification_desc_31);
 																																		hide_stock_patched.setText(R.string.hide_stock_patched_31);
 																																		hide_amoled_patched.setText(R.string.hide_amoled_patched_31);
-																																		hide_lite_patched.setText(R.string.hide_lite_patched_31);
 																																		show_support.setText(R.string.show_support_31);
 																																		show_support_desc.setText(R.string.show_support_desc_31);
 																																		maintenance.setText(R.string.maintenance_31);
 																																		maintenance_desc.setText(R.string.maintenance_desc_31);
 																																		xmanager_dev.setText(R.string.xmanager_dev_31);
 																																		contributors.setText(R.string.contributors_31);
-																																		download_selected.setText(R.string.download_selected_31);
 																																		download_ready.setText(R.string.download_ready_31);
 																																		download_ready_desc.setText(R.string.download_ready_desc_31);
-																																		downloading_file.setText(R.string.downloading_file_31);
-																																		download_success.setText(R.string.download_success_31);
-																																		installation_failed.setText(R.string.installation_failed_31);
-																																		installation_failed_desc.setText(R.string.installation_failed_desc_31);
 																																		installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_31);
-																																		installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_31);
 																																		existing_patched.setText(R.string.existing_patched_31);
 																																		existing_patched_desc.setText(R.string.existing_patched_desc_31);
-																																		lite_0 = lite.getText().toString();
 																																		download_0 = download.getText().toString();
-																																		continue_0 = continue_1.getText().toString();
 																																		cancel_0 = cancel.getText().toString();
-																																		later_0 = later.getText().toString();
-																																		mirror_0 = mirror.getText().toString();
-																																		install_now_0 = install_now.getText().toString();
-																																		go_back_0 = go_back.getText().toString();
-																																		install_update_0 = install_update.getText().toString();
-																																		close_0 = close.getText().toString();
-																																		uninstall_0 = uninstall.getText().toString();
-																																		existing_patched_0 = existing_patched.getText().toString();
-																																		existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																		download_selected_0 = download_selected.getText().toString();
 																																		download_ready_0 = download_ready.getText().toString();
 																																		download_ready_desc_0 = download_ready_desc.getText().toString();
-																																		downloading_file_0 = downloading_file.getText().toString();
-																																		download_success_0 = download_success.getText().toString();
-																																		installation_failed_0 = installation_failed.getText().toString();
-																																		installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																		installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																		installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																		select_language.setSelection((int)(31));
 																																	}
 																																	else {
@@ -12486,7 +7200,6 @@ public class MainActivity extends AppCompatActivity {
 																																			sub_title.setText(R.string.about_sub_32);
 																																			sub_text_1.setText(R.string.latest_32);
 																																			sub_text_2.setText(R.string.latest_32);
-																																			sub_text_3.setText(R.string.latest_32);
 																																			versions_1.setText(R.string.versions_32);
 																																			versions_2.setText(R.string.versions_32);
 																																			versions_3.setText(R.string.versions_32);
@@ -12529,62 +7242,29 @@ public class MainActivity extends AppCompatActivity {
 																																			reset_preferences.setText(R.string.reset_preferences_32);
 																																			list_auto_refresh.setText(R.string.list_auto_refresh_32);
 																																			list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_32);
-																																			force_auto_install.setText(R.string.force_auto_install_32);
-																																			force_auto_install_info.setText(R.string.force_auto_install_desc_32);
-																																			apk_location.setText(R.string.apk_location_32);
-																																			apk_location_info.setText(R.string.apk_location_desc_32);
-																																			clear_directory_folders.setText(R.string.clear_directory_folders_32);
-																																			clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_32);
 																																			cloned_version.setText(R.string.cloned_version_32);
 																																			cloned_version_info.setText(R.string.cloned_version_desc_32);
-																																			experiment_version.setText(R.string.experimental_version_32);
-																																			experiment_version_info.setText(R.string.experimental_version_desc_32);
 																																			disable_reward_ad.setText(R.string.disable_rewarded_ads_32);
 																																			disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_32);
 																																			disable_notification.setText(R.string.disable_notification_32);
 																																			disable_notification_info.setText(R.string.disable_notification_desc_32);
 																																			hide_stock_patched.setText(R.string.hide_stock_patched_32);
 																																			hide_amoled_patched.setText(R.string.hide_amoled_patched_32);
-																																			hide_lite_patched.setText(R.string.hide_lite_patched_32);
 																																			show_support.setText(R.string.show_support_32);
 																																			show_support_desc.setText(R.string.show_support_desc_32);
 																																			maintenance.setText(R.string.maintenance_32);
 																																			maintenance_desc.setText(R.string.maintenance_desc_32);
 																																			xmanager_dev.setText(R.string.xmanager_dev_32);
 																																			contributors.setText(R.string.contributors_32);
-																																			download_selected.setText(R.string.download_selected_32);
 																																			download_ready.setText(R.string.download_ready_32);
 																																			download_ready_desc.setText(R.string.download_ready_desc_32);
-																																			downloading_file.setText(R.string.downloading_file_32);
-																																			download_success.setText(R.string.download_success_32);
-																																			installation_failed.setText(R.string.installation_failed_32);
-																																			installation_failed_desc.setText(R.string.installation_failed_desc_32);
 																																			installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_32);
-																																			installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_32);
 																																			existing_patched.setText(R.string.existing_patched_32);
 																																			existing_patched_desc.setText(R.string.existing_patched_desc_32);
-																																			lite_0 = lite.getText().toString();
 																																			download_0 = download.getText().toString();
-																																			continue_0 = continue_1.getText().toString();
 																																			cancel_0 = cancel.getText().toString();
-																																			later_0 = later.getText().toString();
-																																			mirror_0 = mirror.getText().toString();
-																																			install_now_0 = install_now.getText().toString();
-																																			go_back_0 = go_back.getText().toString();
-																																			install_update_0 = install_update.getText().toString();
-																																			close_0 = close.getText().toString();
-																																			uninstall_0 = uninstall.getText().toString();
-																																			existing_patched_0 = existing_patched.getText().toString();
-																																			existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																			download_selected_0 = download_selected.getText().toString();
 																																			download_ready_0 = download_ready.getText().toString();
 																																			download_ready_desc_0 = download_ready_desc.getText().toString();
-																																			downloading_file_0 = downloading_file.getText().toString();
-																																			download_success_0 = download_success.getText().toString();
-																																			installation_failed_0 = installation_failed.getText().toString();
-																																			installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																			installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																			installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																			select_language.setSelection((int)(32));
 																																		}
 																																		else {
@@ -12597,7 +7277,6 @@ public class MainActivity extends AppCompatActivity {
 																																				sub_title.setText(R.string.about_sub_33);
 																																				sub_text_1.setText(R.string.latest_33);
 																																				sub_text_2.setText(R.string.latest_33);
-																																				sub_text_3.setText(R.string.latest_33);
 																																				versions_1.setText(R.string.versions_33);
 																																				versions_2.setText(R.string.versions_33);
 																																				versions_3.setText(R.string.versions_33);
@@ -12640,62 +7319,29 @@ public class MainActivity extends AppCompatActivity {
 																																				reset_preferences.setText(R.string.reset_preferences_33);
 																																				list_auto_refresh.setText(R.string.list_auto_refresh_33);
 																																				list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_33);
-																																				force_auto_install.setText(R.string.force_auto_install_33);
-																																				force_auto_install_info.setText(R.string.force_auto_install_desc_33);
-																																				apk_location.setText(R.string.apk_location_33);
-																																				apk_location_info.setText(R.string.apk_location_desc_33);
-																																				clear_directory_folders.setText(R.string.clear_directory_folders_33);
-																																				clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_33);
 																																				cloned_version.setText(R.string.cloned_version_33);
 																																				cloned_version_info.setText(R.string.cloned_version_desc_33);
-																																				experiment_version.setText(R.string.experimental_version_33);
-																																				experiment_version_info.setText(R.string.experimental_version_desc_33);
 																																				disable_reward_ad.setText(R.string.disable_rewarded_ads_33);
 																																				disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_33);
 																																				disable_notification.setText(R.string.disable_notification_33);
 																																				disable_notification_info.setText(R.string.disable_notification_desc_33);
 																																				hide_stock_patched.setText(R.string.hide_stock_patched_33);
 																																				hide_amoled_patched.setText(R.string.hide_amoled_patched_33);
-																																				hide_lite_patched.setText(R.string.hide_lite_patched_33);
 																																				show_support.setText(R.string.show_support_33);
 																																				show_support_desc.setText(R.string.show_support_desc_33);
 																																				maintenance.setText(R.string.maintenance_33);
 																																				maintenance_desc.setText(R.string.maintenance_desc_33);
 																																				xmanager_dev.setText(R.string.xmanager_dev_33);
 																																				contributors.setText(R.string.contributors_33);
-																																				download_selected.setText(R.string.download_selected_33);
 																																				download_ready.setText(R.string.download_ready_33);
 																																				download_ready_desc.setText(R.string.download_ready_desc_33);
-																																				downloading_file.setText(R.string.downloading_file_33);
-																																				download_success.setText(R.string.download_success_33);
-																																				installation_failed.setText(R.string.installation_failed_33);
-																																				installation_failed_desc.setText(R.string.installation_failed_desc_33);
 																																				installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_33);
-																																				installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_33);
 																																				existing_patched.setText(R.string.existing_patched_33);
 																																				existing_patched_desc.setText(R.string.existing_patched_desc_33);
-																																				lite_0 = lite.getText().toString();
 																																				download_0 = download.getText().toString();
-																																				continue_0 = continue_1.getText().toString();
 																																				cancel_0 = cancel.getText().toString();
-																																				later_0 = later.getText().toString();
-																																				mirror_0 = mirror.getText().toString();
-																																				install_now_0 = install_now.getText().toString();
-																																				go_back_0 = go_back.getText().toString();
-																																				install_update_0 = install_update.getText().toString();
-																																				close_0 = close.getText().toString();
-																																				uninstall_0 = uninstall.getText().toString();
-																																				existing_patched_0 = existing_patched.getText().toString();
-																																				existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																				download_selected_0 = download_selected.getText().toString();
 																																				download_ready_0 = download_ready.getText().toString();
 																																				download_ready_desc_0 = download_ready_desc.getText().toString();
-																																				downloading_file_0 = downloading_file.getText().toString();
-																																				download_success_0 = download_success.getText().toString();
-																																				installation_failed_0 = installation_failed.getText().toString();
-																																				installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																				installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																				installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																				select_language.setSelection((int)(33));
 																																			}
 																																			else {
@@ -12708,7 +7354,6 @@ public class MainActivity extends AppCompatActivity {
 																																					sub_title.setText(R.string.about_sub_34);
 																																					sub_text_1.setText(R.string.latest_34);
 																																					sub_text_2.setText(R.string.latest_34);
-																																					sub_text_3.setText(R.string.latest_34);
 																																					versions_1.setText(R.string.versions_34);
 																																					versions_2.setText(R.string.versions_34);
 																																					versions_3.setText(R.string.versions_34);
@@ -12751,62 +7396,29 @@ public class MainActivity extends AppCompatActivity {
 																																					reset_preferences.setText(R.string.reset_preferences_34);
 																																					list_auto_refresh.setText(R.string.list_auto_refresh_34);
 																																					list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_34);
-																																					force_auto_install.setText(R.string.force_auto_install_34);
-																																					force_auto_install_info.setText(R.string.force_auto_install_desc_34);
-																																					apk_location.setText(R.string.apk_location_34);
-																																					apk_location_info.setText(R.string.apk_location_desc_34);
-																																					clear_directory_folders.setText(R.string.clear_directory_folders_34);
-																																					clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_34);
 																																					cloned_version.setText(R.string.cloned_version_34);
 																																					cloned_version_info.setText(R.string.cloned_version_desc_34);
-																																					experiment_version.setText(R.string.experimental_version_34);
-																																					experiment_version_info.setText(R.string.experimental_version_desc_34);
 																																					disable_reward_ad.setText(R.string.disable_rewarded_ads_34);
 																																					disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_34);
 																																					disable_notification.setText(R.string.disable_notification_34);
 																																					disable_notification_info.setText(R.string.disable_notification_desc_34);
 																																					hide_stock_patched.setText(R.string.hide_stock_patched_34);
 																																					hide_amoled_patched.setText(R.string.hide_amoled_patched_34);
-																																					hide_lite_patched.setText(R.string.hide_lite_patched_34);
 																																					show_support.setText(R.string.show_support_34);
 																																					show_support_desc.setText(R.string.show_support_desc_34);
 																																					maintenance.setText(R.string.maintenance_34);
 																																					maintenance_desc.setText(R.string.maintenance_desc_34);
 																																					xmanager_dev.setText(R.string.xmanager_dev_34);
 																																					contributors.setText(R.string.contributors_34);
-																																					download_selected.setText(R.string.download_selected_34);
 																																					download_ready.setText(R.string.download_ready_34);
 																																					download_ready_desc.setText(R.string.download_ready_desc_34);
-																																					downloading_file.setText(R.string.downloading_file_34);
-																																					download_success.setText(R.string.download_success_34);
-																																					installation_failed.setText(R.string.installation_failed_34);
-																																					installation_failed_desc.setText(R.string.installation_failed_desc_34);
 																																					installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_34);
-																																					installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_34);
 																																					existing_patched.setText(R.string.existing_patched_34);
 																																					existing_patched_desc.setText(R.string.existing_patched_desc_34);
-																																					lite_0 = lite.getText().toString();
 																																					download_0 = download.getText().toString();
-																																					continue_0 = continue_1.getText().toString();
 																																					cancel_0 = cancel.getText().toString();
-																																					later_0 = later.getText().toString();
-																																					mirror_0 = mirror.getText().toString();
-																																					install_now_0 = install_now.getText().toString();
-																																					go_back_0 = go_back.getText().toString();
-																																					install_update_0 = install_update.getText().toString();
-																																					close_0 = close.getText().toString();
-																																					uninstall_0 = uninstall.getText().toString();
-																																					existing_patched_0 = existing_patched.getText().toString();
-																																					existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																					download_selected_0 = download_selected.getText().toString();
 																																					download_ready_0 = download_ready.getText().toString();
 																																					download_ready_desc_0 = download_ready_desc.getText().toString();
-																																					downloading_file_0 = downloading_file.getText().toString();
-																																					download_success_0 = download_success.getText().toString();
-																																					installation_failed_0 = installation_failed.getText().toString();
-																																					installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																					installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																					installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																					select_language.setSelection((int)(34));
 																																				}
 																																				else {
@@ -12819,7 +7431,6 @@ public class MainActivity extends AppCompatActivity {
 																																						sub_title.setText(R.string.about_sub_35);
 																																						sub_text_1.setText(R.string.latest_35);
 																																						sub_text_2.setText(R.string.latest_35);
-																																						sub_text_3.setText(R.string.latest_35);
 																																						versions_1.setText(R.string.versions_35);
 																																						versions_2.setText(R.string.versions_35);
 																																						versions_3.setText(R.string.versions_35);
@@ -12862,62 +7473,29 @@ public class MainActivity extends AppCompatActivity {
 																																						reset_preferences.setText(R.string.reset_preferences_35);
 																																						list_auto_refresh.setText(R.string.list_auto_refresh_35);
 																																						list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_35);
-																																						force_auto_install.setText(R.string.force_auto_install_35);
-																																						force_auto_install_info.setText(R.string.force_auto_install_desc_35);
-																																						apk_location.setText(R.string.apk_location_35);
-																																						apk_location_info.setText(R.string.apk_location_desc_35);
-																																						clear_directory_folders.setText(R.string.clear_directory_folders_35);
-																																						clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_35);
 																																						cloned_version.setText(R.string.cloned_version_35);
 																																						cloned_version_info.setText(R.string.cloned_version_desc_35);
-																																						experiment_version.setText(R.string.experimental_version_35);
-																																						experiment_version_info.setText(R.string.experimental_version_desc_35);
 																																						disable_reward_ad.setText(R.string.disable_rewarded_ads_35);
 																																						disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_35);
 																																						disable_notification.setText(R.string.disable_notification_35);
 																																						disable_notification_info.setText(R.string.disable_notification_desc_35);
 																																						hide_stock_patched.setText(R.string.hide_stock_patched_35);
 																																						hide_amoled_patched.setText(R.string.hide_amoled_patched_35);
-																																						hide_lite_patched.setText(R.string.hide_lite_patched_35);
 																																						show_support.setText(R.string.show_support_35);
 																																						show_support_desc.setText(R.string.show_support_desc_35);
 																																						maintenance.setText(R.string.maintenance_35);
 																																						maintenance_desc.setText(R.string.maintenance_desc_35);
 																																						xmanager_dev.setText(R.string.xmanager_dev_35);
 																																						contributors.setText(R.string.contributors_35);
-																																						download_selected.setText(R.string.download_selected_35);
 																																						download_ready.setText(R.string.download_ready_35);
 																																						download_ready_desc.setText(R.string.download_ready_desc_35);
-																																						downloading_file.setText(R.string.downloading_file_35);
-																																						download_success.setText(R.string.download_success_35);
-																																						installation_failed.setText(R.string.installation_failed_35);
-																																						installation_failed_desc.setText(R.string.installation_failed_desc_35);
 																																						installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_35);
-																																						installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_35);
 																																						existing_patched.setText(R.string.existing_patched_35);
 																																						existing_patched_desc.setText(R.string.existing_patched_desc_35);
-																																						lite_0 = lite.getText().toString();
 																																						download_0 = download.getText().toString();
-																																						continue_0 = continue_1.getText().toString();
 																																						cancel_0 = cancel.getText().toString();
-																																						later_0 = later.getText().toString();
-																																						mirror_0 = mirror.getText().toString();
-																																						install_now_0 = install_now.getText().toString();
-																																						go_back_0 = go_back.getText().toString();
-																																						install_update_0 = install_update.getText().toString();
-																																						close_0 = close.getText().toString();
-																																						uninstall_0 = uninstall.getText().toString();
-																																						existing_patched_0 = existing_patched.getText().toString();
-																																						existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																						download_selected_0 = download_selected.getText().toString();
 																																						download_ready_0 = download_ready.getText().toString();
 																																						download_ready_desc_0 = download_ready_desc.getText().toString();
-																																						downloading_file_0 = downloading_file.getText().toString();
-																																						download_success_0 = download_success.getText().toString();
-																																						installation_failed_0 = installation_failed.getText().toString();
-																																						installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																						installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																						installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																						select_language.setSelection((int)(35));
 																																					}
 																																					else {
@@ -12930,7 +7508,6 @@ public class MainActivity extends AppCompatActivity {
 																																							sub_title.setText(R.string.about_sub_36);
 																																							sub_text_1.setText(R.string.latest_36);
 																																							sub_text_2.setText(R.string.latest_36);
-																																							sub_text_3.setText(R.string.latest_36);
 																																							versions_1.setText(R.string.versions_36);
 																																							versions_2.setText(R.string.versions_36);
 																																							versions_3.setText(R.string.versions_36);
@@ -12973,62 +7550,29 @@ public class MainActivity extends AppCompatActivity {
 																																							reset_preferences.setText(R.string.reset_preferences_36);
 																																							list_auto_refresh.setText(R.string.list_auto_refresh_36);
 																																							list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_36);
-																																							force_auto_install.setText(R.string.force_auto_install_36);
-																																							force_auto_install_info.setText(R.string.force_auto_install_desc_36);
-																																							apk_location.setText(R.string.apk_location_36);
-																																							apk_location_info.setText(R.string.apk_location_desc_36);
-																																							clear_directory_folders.setText(R.string.clear_directory_folders_36);
-																																							clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_36);
 																																							cloned_version.setText(R.string.cloned_version_36);
 																																							cloned_version_info.setText(R.string.cloned_version_desc_36);
-																																							experiment_version.setText(R.string.experimental_version_36);
-																																							experiment_version_info.setText(R.string.experimental_version_desc_36);
 																																							disable_reward_ad.setText(R.string.disable_rewarded_ads_36);
 																																							disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_36);
 																																							disable_notification.setText(R.string.disable_notification_36);
 																																							disable_notification_info.setText(R.string.disable_notification_desc_36);
 																																							hide_stock_patched.setText(R.string.hide_stock_patched_36);
 																																							hide_amoled_patched.setText(R.string.hide_amoled_patched_36);
-																																							hide_lite_patched.setText(R.string.hide_lite_patched_36);
 																																							show_support.setText(R.string.show_support_36);
 																																							show_support_desc.setText(R.string.show_support_desc_36);
 																																							maintenance.setText(R.string.maintenance_36);
 																																							maintenance_desc.setText(R.string.maintenance_desc_36);
 																																							xmanager_dev.setText(R.string.xmanager_dev_36);
 																																							contributors.setText(R.string.contributors_36);
-																																							download_selected.setText(R.string.download_selected_36);
 																																							download_ready.setText(R.string.download_ready_36);
 																																							download_ready_desc.setText(R.string.download_ready_desc_36);
-																																							downloading_file.setText(R.string.downloading_file_36);
-																																							download_success.setText(R.string.download_success_36);
-																																							installation_failed.setText(R.string.installation_failed_36);
-																																							installation_failed_desc.setText(R.string.installation_failed_desc_36);
 																																							installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_36);
-																																							installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_36);
 																																							existing_patched.setText(R.string.existing_patched_36);
 																																							existing_patched_desc.setText(R.string.existing_patched_desc_36);
-																																							lite_0 = lite.getText().toString();
 																																							download_0 = download.getText().toString();
-																																							continue_0 = continue_1.getText().toString();
 																																							cancel_0 = cancel.getText().toString();
-																																							later_0 = later.getText().toString();
-																																							mirror_0 = mirror.getText().toString();
-																																							install_now_0 = install_now.getText().toString();
-																																							go_back_0 = go_back.getText().toString();
-																																							install_update_0 = install_update.getText().toString();
-																																							close_0 = close.getText().toString();
-																																							uninstall_0 = uninstall.getText().toString();
-																																							existing_patched_0 = existing_patched.getText().toString();
-																																							existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																							download_selected_0 = download_selected.getText().toString();
 																																							download_ready_0 = download_ready.getText().toString();
 																																							download_ready_desc_0 = download_ready_desc.getText().toString();
-																																							downloading_file_0 = downloading_file.getText().toString();
-																																							download_success_0 = download_success.getText().toString();
-																																							installation_failed_0 = installation_failed.getText().toString();
-																																							installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																							installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																							installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																							select_language.setSelection((int)(36));
 																																						}
 																																						else {
@@ -13041,7 +7585,6 @@ public class MainActivity extends AppCompatActivity {
 																																								sub_title.setText(R.string.about_sub_37);
 																																								sub_text_1.setText(R.string.latest_37);
 																																								sub_text_2.setText(R.string.latest_37);
-																																								sub_text_3.setText(R.string.latest_37);
 																																								versions_1.setText(R.string.versions_37);
 																																								versions_2.setText(R.string.versions_37);
 																																								versions_3.setText(R.string.versions_37);
@@ -13084,62 +7627,29 @@ public class MainActivity extends AppCompatActivity {
 																																								reset_preferences.setText(R.string.reset_preferences_37);
 																																								list_auto_refresh.setText(R.string.list_auto_refresh_37);
 																																								list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_37);
-																																								force_auto_install.setText(R.string.force_auto_install_37);
-																																								force_auto_install_info.setText(R.string.force_auto_install_desc_37);
-																																								apk_location.setText(R.string.apk_location_37);
-																																								apk_location_info.setText(R.string.apk_location_desc_37);
-																																								clear_directory_folders.setText(R.string.clear_directory_folders_37);
-																																								clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_37);
 																																								cloned_version.setText(R.string.cloned_version_37);
 																																								cloned_version_info.setText(R.string.cloned_version_desc_37);
-																																								experiment_version.setText(R.string.experimental_version_37);
-																																								experiment_version_info.setText(R.string.experimental_version_desc_37);
 																																								disable_reward_ad.setText(R.string.disable_rewarded_ads_37);
 																																								disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_37);
 																																								disable_notification.setText(R.string.disable_notification_37);
 																																								disable_notification_info.setText(R.string.disable_notification_desc_37);
 																																								hide_stock_patched.setText(R.string.hide_stock_patched_37);
 																																								hide_amoled_patched.setText(R.string.hide_amoled_patched_37);
-																																								hide_lite_patched.setText(R.string.hide_lite_patched_37);
 																																								show_support.setText(R.string.show_support_37);
 																																								show_support_desc.setText(R.string.show_support_desc_37);
 																																								maintenance.setText(R.string.maintenance_37);
 																																								maintenance_desc.setText(R.string.maintenance_desc_37);
 																																								xmanager_dev.setText(R.string.xmanager_dev_37);
 																																								contributors.setText(R.string.contributors_37);
-																																								download_selected.setText(R.string.download_selected_37);
 																																								download_ready.setText(R.string.download_ready_37);
 																																								download_ready_desc.setText(R.string.download_ready_desc_37);
-																																								downloading_file.setText(R.string.downloading_file_37);
-																																								download_success.setText(R.string.download_success_37);
-																																								installation_failed.setText(R.string.installation_failed_37);
-																																								installation_failed_desc.setText(R.string.installation_failed_desc_37);
 																																								installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_37);
-																																								installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_37);
 																																								existing_patched.setText(R.string.existing_patched_37);
 																																								existing_patched_desc.setText(R.string.existing_patched_desc_37);
-																																								lite_0 = lite.getText().toString();
 																																								download_0 = download.getText().toString();
-																																								continue_0 = continue_1.getText().toString();
 																																								cancel_0 = cancel.getText().toString();
-																																								later_0 = later.getText().toString();
-																																								mirror_0 = mirror.getText().toString();
-																																								install_now_0 = install_now.getText().toString();
-																																								go_back_0 = go_back.getText().toString();
-																																								install_update_0 = install_update.getText().toString();
-																																								close_0 = close.getText().toString();
-																																								uninstall_0 = uninstall.getText().toString();
-																																								existing_patched_0 = existing_patched.getText().toString();
-																																								existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																								download_selected_0 = download_selected.getText().toString();
 																																								download_ready_0 = download_ready.getText().toString();
 																																								download_ready_desc_0 = download_ready_desc.getText().toString();
-																																								downloading_file_0 = downloading_file.getText().toString();
-																																								download_success_0 = download_success.getText().toString();
-																																								installation_failed_0 = installation_failed.getText().toString();
-																																								installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																								installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																								installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																								select_language.setSelection((int)(37));
 																																							}
 																																							else {
@@ -13152,7 +7662,6 @@ public class MainActivity extends AppCompatActivity {
 																																									sub_title.setText(R.string.about_sub_38);
 																																									sub_text_1.setText(R.string.latest_38);
 																																									sub_text_2.setText(R.string.latest_38);
-																																									sub_text_3.setText(R.string.latest_38);
 																																									versions_1.setText(R.string.versions_38);
 																																									versions_2.setText(R.string.versions_38);
 																																									versions_3.setText(R.string.versions_38);
@@ -13195,62 +7704,29 @@ public class MainActivity extends AppCompatActivity {
 																																									reset_preferences.setText(R.string.reset_preferences_38);
 																																									list_auto_refresh.setText(R.string.list_auto_refresh_38);
 																																									list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_38);
-																																									force_auto_install.setText(R.string.force_auto_install_38);
-																																									force_auto_install_info.setText(R.string.force_auto_install_desc_38);
-																																									apk_location.setText(R.string.apk_location_38);
-																																									apk_location_info.setText(R.string.apk_location_desc_38);
-																																									clear_directory_folders.setText(R.string.clear_directory_folders_38);
-																																									clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_38);
 																																									cloned_version.setText(R.string.cloned_version_38);
 																																									cloned_version_info.setText(R.string.cloned_version_desc_38);
-																																									experiment_version.setText(R.string.experimental_version_38);
-																																									experiment_version_info.setText(R.string.experimental_version_desc_38);
 																																									disable_reward_ad.setText(R.string.disable_rewarded_ads_38);
 																																									disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_38);
 																																									disable_notification.setText(R.string.disable_notification_38);
 																																									disable_notification_info.setText(R.string.disable_notification_desc_38);
 																																									hide_stock_patched.setText(R.string.hide_stock_patched_38);
 																																									hide_amoled_patched.setText(R.string.hide_amoled_patched_38);
-																																									hide_lite_patched.setText(R.string.hide_lite_patched_38);
 																																									show_support.setText(R.string.show_support_38);
 																																									show_support_desc.setText(R.string.show_support_desc_38);
 																																									maintenance.setText(R.string.maintenance_38);
 																																									maintenance_desc.setText(R.string.maintenance_desc_38);
 																																									xmanager_dev.setText(R.string.xmanager_dev_38);
 																																									contributors.setText(R.string.contributors_38);
-																																									download_selected.setText(R.string.download_selected_38);
 																																									download_ready.setText(R.string.download_ready_38);
 																																									download_ready_desc.setText(R.string.download_ready_desc_38);
-																																									downloading_file.setText(R.string.downloading_file_38);
-																																									download_success.setText(R.string.download_success_38);
-																																									installation_failed.setText(R.string.installation_failed_38);
-																																									installation_failed_desc.setText(R.string.installation_failed_desc_38);
 																																									installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_38);
-																																									installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_38);
 																																									existing_patched.setText(R.string.existing_patched_38);
 																																									existing_patched_desc.setText(R.string.existing_patched_desc_38);
-																																									lite_0 = lite.getText().toString();
 																																									download_0 = download.getText().toString();
-																																									continue_0 = continue_1.getText().toString();
 																																									cancel_0 = cancel.getText().toString();
-																																									later_0 = later.getText().toString();
-																																									mirror_0 = mirror.getText().toString();
-																																									install_now_0 = install_now.getText().toString();
-																																									go_back_0 = go_back.getText().toString();
-																																									install_update_0 = install_update.getText().toString();
-																																									close_0 = close.getText().toString();
-																																									uninstall_0 = uninstall.getText().toString();
-																																									existing_patched_0 = existing_patched.getText().toString();
-																																									existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																									download_selected_0 = download_selected.getText().toString();
 																																									download_ready_0 = download_ready.getText().toString();
 																																									download_ready_desc_0 = download_ready_desc.getText().toString();
-																																									downloading_file_0 = downloading_file.getText().toString();
-																																									download_success_0 = download_success.getText().toString();
-																																									installation_failed_0 = installation_failed.getText().toString();
-																																									installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																									installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																									installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																									select_language.setSelection((int)(38));
 																																								}
 																																								else {
@@ -13263,7 +7739,6 @@ public class MainActivity extends AppCompatActivity {
 																																										sub_title.setText(R.string.about_sub_39);
 																																										sub_text_1.setText(R.string.latest_39);
 																																										sub_text_2.setText(R.string.latest_39);
-																																										sub_text_3.setText(R.string.latest_39);
 																																										versions_1.setText(R.string.versions_39);
 																																										versions_2.setText(R.string.versions_39);
 																																										versions_3.setText(R.string.versions_39);
@@ -13306,62 +7781,29 @@ public class MainActivity extends AppCompatActivity {
 																																										reset_preferences.setText(R.string.reset_preferences_39);
 																																										list_auto_refresh.setText(R.string.list_auto_refresh_39);
 																																										list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_39);
-																																										force_auto_install.setText(R.string.force_auto_install_39);
-																																										force_auto_install_info.setText(R.string.force_auto_install_desc_39);
-																																										apk_location.setText(R.string.apk_location_39);
-																																										apk_location_info.setText(R.string.apk_location_desc_39);
-																																										clear_directory_folders.setText(R.string.clear_directory_folders_39);
-																																										clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_39);
 																																										cloned_version.setText(R.string.cloned_version_39);
 																																										cloned_version_info.setText(R.string.cloned_version_desc_39);
-																																										experiment_version.setText(R.string.experimental_version_39);
-																																										experiment_version_info.setText(R.string.experimental_version_desc_39);
 																																										disable_reward_ad.setText(R.string.disable_rewarded_ads_39);
 																																										disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_39);
 																																										disable_notification.setText(R.string.disable_notification_39);
 																																										disable_notification_info.setText(R.string.disable_notification_desc_39);
 																																										hide_stock_patched.setText(R.string.hide_stock_patched_39);
 																																										hide_amoled_patched.setText(R.string.hide_amoled_patched_39);
-																																										hide_lite_patched.setText(R.string.hide_lite_patched_39);
 																																										show_support.setText(R.string.show_support_39);
 																																										show_support_desc.setText(R.string.show_support_desc_39);
 																																										maintenance.setText(R.string.maintenance_39);
 																																										maintenance_desc.setText(R.string.maintenance_desc_39);
 																																										xmanager_dev.setText(R.string.xmanager_dev_39);
 																																										contributors.setText(R.string.contributors_39);
-																																										download_selected.setText(R.string.download_selected_39);
 																																										download_ready.setText(R.string.download_ready_39);
 																																										download_ready_desc.setText(R.string.download_ready_desc_39);
-																																										downloading_file.setText(R.string.downloading_file_39);
-																																										download_success.setText(R.string.download_success_39);
-																																										installation_failed.setText(R.string.installation_failed_39);
-																																										installation_failed_desc.setText(R.string.installation_failed_desc_39);
 																																										installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_39);
-																																										installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_39);
 																																										existing_patched.setText(R.string.existing_patched_39);
 																																										existing_patched_desc.setText(R.string.existing_patched_desc_39);
-																																										lite_0 = lite.getText().toString();
 																																										download_0 = download.getText().toString();
-																																										continue_0 = continue_1.getText().toString();
 																																										cancel_0 = cancel.getText().toString();
-																																										later_0 = later.getText().toString();
-																																										mirror_0 = mirror.getText().toString();
-																																										install_now_0 = install_now.getText().toString();
-																																										go_back_0 = go_back.getText().toString();
-																																										install_update_0 = install_update.getText().toString();
-																																										close_0 = close.getText().toString();
-																																										uninstall_0 = uninstall.getText().toString();
-																																										existing_patched_0 = existing_patched.getText().toString();
-																																										existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																										download_selected_0 = download_selected.getText().toString();
 																																										download_ready_0 = download_ready.getText().toString();
 																																										download_ready_desc_0 = download_ready_desc.getText().toString();
-																																										downloading_file_0 = downloading_file.getText().toString();
-																																										download_success_0 = download_success.getText().toString();
-																																										installation_failed_0 = installation_failed.getText().toString();
-																																										installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																										installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																										installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																										select_language.setSelection((int)(39));
 																																									}
 																																									else {
@@ -13374,7 +7816,6 @@ public class MainActivity extends AppCompatActivity {
 																																											sub_title.setText(R.string.about_sub_40);
 																																											sub_text_1.setText(R.string.latest_40);
 																																											sub_text_2.setText(R.string.latest_40);
-																																											sub_text_3.setText(R.string.latest_40);
 																																											versions_1.setText(R.string.versions_40);
 																																											versions_2.setText(R.string.versions_40);
 																																											versions_3.setText(R.string.versions_40);
@@ -13417,62 +7858,29 @@ public class MainActivity extends AppCompatActivity {
 																																											reset_preferences.setText(R.string.reset_preferences_40);
 																																											list_auto_refresh.setText(R.string.list_auto_refresh_40);
 																																											list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_40);
-																																											force_auto_install.setText(R.string.force_auto_install_40);
-																																											force_auto_install_info.setText(R.string.force_auto_install_desc_40);
-																																											apk_location.setText(R.string.apk_location_40);
-																																											apk_location_info.setText(R.string.apk_location_desc_40);
-																																											clear_directory_folders.setText(R.string.clear_directory_folders_40);
-																																											clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_40);
 																																											cloned_version.setText(R.string.cloned_version_40);
 																																											cloned_version_info.setText(R.string.cloned_version_desc_40);
-																																											experiment_version.setText(R.string.experimental_version_40);
-																																											experiment_version_info.setText(R.string.experimental_version_desc_40);
 																																											disable_reward_ad.setText(R.string.disable_rewarded_ads_40);
 																																											disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_40);
 																																											disable_notification.setText(R.string.disable_notification_40);
 																																											disable_notification_info.setText(R.string.disable_notification_desc_40);
 																																											hide_stock_patched.setText(R.string.hide_stock_patched_40);
 																																											hide_amoled_patched.setText(R.string.hide_amoled_patched_40);
-																																											hide_lite_patched.setText(R.string.hide_lite_patched_40);
 																																											show_support.setText(R.string.show_support_40);
 																																											show_support_desc.setText(R.string.show_support_desc_40);
 																																											maintenance.setText(R.string.maintenance_40);
 																																											maintenance_desc.setText(R.string.maintenance_desc_40);
 																																											xmanager_dev.setText(R.string.xmanager_dev_40);
 																																											contributors.setText(R.string.contributors_40);
-																																											download_selected.setText(R.string.download_selected_40);
 																																											download_ready.setText(R.string.download_ready_40);
 																																											download_ready_desc.setText(R.string.download_ready_desc_40);
-																																											downloading_file.setText(R.string.downloading_file_40);
-																																											download_success.setText(R.string.download_success_40);
-																																											installation_failed.setText(R.string.installation_failed_40);
-																																											installation_failed_desc.setText(R.string.installation_failed_desc_40);
 																																											installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_40);
-																																											installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_40);
 																																											existing_patched.setText(R.string.existing_patched_40);
 																																											existing_patched_desc.setText(R.string.existing_patched_desc_40);
-																																											lite_0 = lite.getText().toString();
 																																											download_0 = download.getText().toString();
-																																											continue_0 = continue_1.getText().toString();
 																																											cancel_0 = cancel.getText().toString();
-																																											later_0 = later.getText().toString();
-																																											mirror_0 = mirror.getText().toString();
-																																											install_now_0 = install_now.getText().toString();
-																																											go_back_0 = go_back.getText().toString();
-																																											install_update_0 = install_update.getText().toString();
-																																											close_0 = close.getText().toString();
-																																											uninstall_0 = uninstall.getText().toString();
-																																											existing_patched_0 = existing_patched.getText().toString();
-																																											existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																											download_selected_0 = download_selected.getText().toString();
 																																											download_ready_0 = download_ready.getText().toString();
 																																											download_ready_desc_0 = download_ready_desc.getText().toString();
-																																											downloading_file_0 = downloading_file.getText().toString();
-																																											download_success_0 = download_success.getText().toString();
-																																											installation_failed_0 = installation_failed.getText().toString();
-																																											installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																											installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																											installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																											select_language.setSelection((int)(40));
 																																										}
 																																										else {
@@ -13485,7 +7893,6 @@ public class MainActivity extends AppCompatActivity {
 																																												sub_title.setText(R.string.about_sub_41);
 																																												sub_text_1.setText(R.string.latest_41);
 																																												sub_text_2.setText(R.string.latest_41);
-																																												sub_text_3.setText(R.string.latest_41);
 																																												versions_1.setText(R.string.versions_41);
 																																												versions_2.setText(R.string.versions_41);
 																																												versions_3.setText(R.string.versions_41);
@@ -13528,62 +7935,29 @@ public class MainActivity extends AppCompatActivity {
 																																												reset_preferences.setText(R.string.reset_preferences_41);
 																																												list_auto_refresh.setText(R.string.list_auto_refresh_41);
 																																												list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_41);
-																																												force_auto_install.setText(R.string.force_auto_install_41);
-																																												force_auto_install_info.setText(R.string.force_auto_install_desc_41);
-																																												apk_location.setText(R.string.apk_location_41);
-																																												apk_location_info.setText(R.string.apk_location_desc_41);
-																																												clear_directory_folders.setText(R.string.clear_directory_folders_41);
-																																												clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_41);
 																																												cloned_version.setText(R.string.cloned_version_41);
 																																												cloned_version_info.setText(R.string.cloned_version_desc_41);
-																																												experiment_version.setText(R.string.experimental_version_41);
-																																												experiment_version_info.setText(R.string.experimental_version_desc_41);
 																																												disable_reward_ad.setText(R.string.disable_rewarded_ads_41);
 																																												disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_41);
 																																												disable_notification.setText(R.string.disable_notification_41);
 																																												disable_notification_info.setText(R.string.disable_notification_desc_41);
 																																												hide_stock_patched.setText(R.string.hide_stock_patched_41);
 																																												hide_amoled_patched.setText(R.string.hide_amoled_patched_41);
-																																												hide_lite_patched.setText(R.string.hide_lite_patched_41);
 																																												show_support.setText(R.string.show_support_41);
 																																												show_support_desc.setText(R.string.show_support_desc_41);
 																																												maintenance.setText(R.string.maintenance_41);
 																																												maintenance_desc.setText(R.string.maintenance_desc_41);
 																																												xmanager_dev.setText(R.string.xmanager_dev_41);
 																																												contributors.setText(R.string.contributors_41);
-																																												download_selected.setText(R.string.download_selected_41);
 																																												download_ready.setText(R.string.download_ready_41);
 																																												download_ready_desc.setText(R.string.download_ready_desc_41);
-																																												downloading_file.setText(R.string.downloading_file_41);
-																																												download_success.setText(R.string.download_success_41);
-																																												installation_failed.setText(R.string.installation_failed_41);
-																																												installation_failed_desc.setText(R.string.installation_failed_desc_41);
 																																												installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_41);
-																																												installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_41);
 																																												existing_patched.setText(R.string.existing_patched_41);
 																																												existing_patched_desc.setText(R.string.existing_patched_desc_41);
-																																												lite_0 = lite.getText().toString();
 																																												download_0 = download.getText().toString();
-																																												continue_0 = continue_1.getText().toString();
 																																												cancel_0 = cancel.getText().toString();
-																																												later_0 = later.getText().toString();
-																																												mirror_0 = mirror.getText().toString();
-																																												install_now_0 = install_now.getText().toString();
-																																												go_back_0 = go_back.getText().toString();
-																																												install_update_0 = install_update.getText().toString();
-																																												close_0 = close.getText().toString();
-																																												uninstall_0 = uninstall.getText().toString();
-																																												existing_patched_0 = existing_patched.getText().toString();
-																																												existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																												download_selected_0 = download_selected.getText().toString();
 																																												download_ready_0 = download_ready.getText().toString();
 																																												download_ready_desc_0 = download_ready_desc.getText().toString();
-																																												downloading_file_0 = downloading_file.getText().toString();
-																																												download_success_0 = download_success.getText().toString();
-																																												installation_failed_0 = installation_failed.getText().toString();
-																																												installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																												installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																												installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																												select_language.setSelection((int)(41));
 																																											}
 																																											else {
@@ -13596,7 +7970,6 @@ public class MainActivity extends AppCompatActivity {
 																																													sub_title.setText(R.string.about_sub_42);
 																																													sub_text_1.setText(R.string.latest_42);
 																																													sub_text_2.setText(R.string.latest_42);
-																																													sub_text_3.setText(R.string.latest_42);
 																																													versions_1.setText(R.string.versions_42);
 																																													versions_2.setText(R.string.versions_42);
 																																													versions_3.setText(R.string.versions_42);
@@ -13639,62 +8012,29 @@ public class MainActivity extends AppCompatActivity {
 																																													reset_preferences.setText(R.string.reset_preferences_42);
 																																													list_auto_refresh.setText(R.string.list_auto_refresh_42);
 																																													list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_42);
-																																													force_auto_install.setText(R.string.force_auto_install_42);
-																																													force_auto_install_info.setText(R.string.force_auto_install_desc_42);
-																																													apk_location.setText(R.string.apk_location_42);
-																																													apk_location_info.setText(R.string.apk_location_desc_42);
-																																													clear_directory_folders.setText(R.string.clear_directory_folders_42);
-																																													clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_42);
 																																													cloned_version.setText(R.string.cloned_version_42);
 																																													cloned_version_info.setText(R.string.cloned_version_desc_42);
-																																													experiment_version.setText(R.string.experimental_version_42);
-																																													experiment_version_info.setText(R.string.experimental_version_desc_42);
 																																													disable_reward_ad.setText(R.string.disable_rewarded_ads_42);
 																																													disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_42);
 																																													disable_notification.setText(R.string.disable_notification_42);
 																																													disable_notification_info.setText(R.string.disable_notification_desc_42);
 																																													hide_stock_patched.setText(R.string.hide_stock_patched_42);
 																																													hide_amoled_patched.setText(R.string.hide_amoled_patched_42);
-																																													hide_lite_patched.setText(R.string.hide_lite_patched_42);
 																																													show_support.setText(R.string.show_support_42);
 																																													show_support_desc.setText(R.string.show_support_desc_42);
 																																													maintenance.setText(R.string.maintenance_42);
 																																													maintenance_desc.setText(R.string.maintenance_desc_42);
 																																													xmanager_dev.setText(R.string.xmanager_dev_42);
 																																													contributors.setText(R.string.contributors_42);
-																																													download_selected.setText(R.string.download_selected_42);
 																																													download_ready.setText(R.string.download_ready_42);
 																																													download_ready_desc.setText(R.string.download_ready_desc_42);
-																																													downloading_file.setText(R.string.downloading_file_42);
-																																													download_success.setText(R.string.download_success_42);
-																																													installation_failed.setText(R.string.installation_failed_42);
-																																													installation_failed_desc.setText(R.string.installation_failed_desc_42);
 																																													installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_42);
-																																													installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_42);
 																																													existing_patched.setText(R.string.existing_patched_42);
 																																													existing_patched_desc.setText(R.string.existing_patched_desc_42);
-																																													lite_0 = lite.getText().toString();
 																																													download_0 = download.getText().toString();
-																																													continue_0 = continue_1.getText().toString();
 																																													cancel_0 = cancel.getText().toString();
-																																													later_0 = later.getText().toString();
-																																													mirror_0 = mirror.getText().toString();
-																																													install_now_0 = install_now.getText().toString();
-																																													go_back_0 = go_back.getText().toString();
-																																													install_update_0 = install_update.getText().toString();
-																																													close_0 = close.getText().toString();
-																																													uninstall_0 = uninstall.getText().toString();
-																																													existing_patched_0 = existing_patched.getText().toString();
-																																													existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																													download_selected_0 = download_selected.getText().toString();
 																																													download_ready_0 = download_ready.getText().toString();
 																																													download_ready_desc_0 = download_ready_desc.getText().toString();
-																																													downloading_file_0 = downloading_file.getText().toString();
-																																													download_success_0 = download_success.getText().toString();
-																																													installation_failed_0 = installation_failed.getText().toString();
-																																													installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																													installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																													installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																													select_language.setSelection((int)(42));
 																																												}
 																																												else {
@@ -13707,7 +8047,6 @@ public class MainActivity extends AppCompatActivity {
 																																														sub_title.setText(R.string.about_sub_43);
 																																														sub_text_1.setText(R.string.latest_43);
 																																														sub_text_2.setText(R.string.latest_43);
-																																														sub_text_3.setText(R.string.latest_43);
 																																														versions_1.setText(R.string.versions_43);
 																																														versions_2.setText(R.string.versions_43);
 																																														versions_3.setText(R.string.versions_43);
@@ -13750,62 +8089,29 @@ public class MainActivity extends AppCompatActivity {
 																																														reset_preferences.setText(R.string.reset_preferences_43);
 																																														list_auto_refresh.setText(R.string.list_auto_refresh_43);
 																																														list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_43);
-																																														force_auto_install.setText(R.string.force_auto_install_43);
-																																														force_auto_install_info.setText(R.string.force_auto_install_desc_43);
-																																														apk_location.setText(R.string.apk_location_43);
-																																														apk_location_info.setText(R.string.apk_location_desc_43);
-																																														clear_directory_folders.setText(R.string.clear_directory_folders_43);
-																																														clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_43);
 																																														cloned_version.setText(R.string.cloned_version_43);
 																																														cloned_version_info.setText(R.string.cloned_version_desc_43);
-																																														experiment_version.setText(R.string.experimental_version_43);
-																																														experiment_version_info.setText(R.string.experimental_version_desc_43);
 																																														disable_reward_ad.setText(R.string.disable_rewarded_ads_43);
 																																														disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_43);
 																																														disable_notification.setText(R.string.disable_notification_43);
 																																														disable_notification_info.setText(R.string.disable_notification_desc_43);
 																																														hide_stock_patched.setText(R.string.hide_stock_patched_43);
 																																														hide_amoled_patched.setText(R.string.hide_amoled_patched_43);
-																																														hide_lite_patched.setText(R.string.hide_lite_patched_43);
 																																														show_support.setText(R.string.show_support_43);
 																																														show_support_desc.setText(R.string.show_support_desc_43);
 																																														maintenance.setText(R.string.maintenance_43);
 																																														maintenance_desc.setText(R.string.maintenance_desc_43);
 																																														xmanager_dev.setText(R.string.xmanager_dev_43);
 																																														contributors.setText(R.string.contributors_43);
-																																														download_selected.setText(R.string.download_selected_43);
 																																														download_ready.setText(R.string.download_ready_43);
 																																														download_ready_desc.setText(R.string.download_ready_desc_43);
-																																														downloading_file.setText(R.string.downloading_file_43);
-																																														download_success.setText(R.string.download_success_43);
-																																														installation_failed.setText(R.string.installation_failed_43);
-																																														installation_failed_desc.setText(R.string.installation_failed_desc_43);
 																																														installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_43);
-																																														installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_43);
 																																														existing_patched.setText(R.string.existing_patched_43);
 																																														existing_patched_desc.setText(R.string.existing_patched_desc_43);
-																																														lite_0 = lite.getText().toString();
 																																														download_0 = download.getText().toString();
-																																														continue_0 = continue_1.getText().toString();
 																																														cancel_0 = cancel.getText().toString();
-																																														later_0 = later.getText().toString();
-																																														mirror_0 = mirror.getText().toString();
-																																														install_now_0 = install_now.getText().toString();
-																																														go_back_0 = go_back.getText().toString();
-																																														install_update_0 = install_update.getText().toString();
-																																														close_0 = close.getText().toString();
-																																														uninstall_0 = uninstall.getText().toString();
-																																														existing_patched_0 = existing_patched.getText().toString();
-																																														existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																														download_selected_0 = download_selected.getText().toString();
 																																														download_ready_0 = download_ready.getText().toString();
 																																														download_ready_desc_0 = download_ready_desc.getText().toString();
-																																														downloading_file_0 = downloading_file.getText().toString();
-																																														download_success_0 = download_success.getText().toString();
-																																														installation_failed_0 = installation_failed.getText().toString();
-																																														installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																														installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																														installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																														select_language.setSelection((int)(43));
 																																													}
 																																													else {
@@ -13818,7 +8124,6 @@ public class MainActivity extends AppCompatActivity {
 																																															sub_title.setText(R.string.about_sub_44);
 																																															sub_text_1.setText(R.string.latest_44);
 																																															sub_text_2.setText(R.string.latest_44);
-																																															sub_text_3.setText(R.string.latest_44);
 																																															versions_1.setText(R.string.versions_44);
 																																															versions_2.setText(R.string.versions_44);
 																																															versions_3.setText(R.string.versions_44);
@@ -13861,62 +8166,29 @@ public class MainActivity extends AppCompatActivity {
 																																															reset_preferences.setText(R.string.reset_preferences_44);
 																																															list_auto_refresh.setText(R.string.list_auto_refresh_44);
 																																															list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_44);
-																																															force_auto_install.setText(R.string.force_auto_install_44);
-																																															force_auto_install_info.setText(R.string.force_auto_install_desc_44);
-																																															apk_location.setText(R.string.apk_location_44);
-																																															apk_location_info.setText(R.string.apk_location_desc_44);
-																																															clear_directory_folders.setText(R.string.clear_directory_folders_44);
-																																															clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_44);
 																																															cloned_version.setText(R.string.cloned_version_44);
 																																															cloned_version_info.setText(R.string.cloned_version_desc_44);
-																																															experiment_version.setText(R.string.experimental_version_44);
-																																															experiment_version_info.setText(R.string.experimental_version_desc_44);
 																																															disable_reward_ad.setText(R.string.disable_rewarded_ads_44);
 																																															disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_44);
 																																															disable_notification.setText(R.string.disable_notification_44);
 																																															disable_notification_info.setText(R.string.disable_notification_desc_44);
 																																															hide_stock_patched.setText(R.string.hide_stock_patched_44);
 																																															hide_amoled_patched.setText(R.string.hide_amoled_patched_44);
-																																															hide_lite_patched.setText(R.string.hide_lite_patched_44);
 																																															show_support.setText(R.string.show_support_44);
 																																															show_support_desc.setText(R.string.show_support_desc_44);
 																																															maintenance.setText(R.string.maintenance_44);
 																																															maintenance_desc.setText(R.string.maintenance_desc_44);
 																																															xmanager_dev.setText(R.string.xmanager_dev_44);
 																																															contributors.setText(R.string.contributors_44);
-																																															download_selected.setText(R.string.download_selected_44);
 																																															download_ready.setText(R.string.download_ready_44);
 																																															download_ready_desc.setText(R.string.download_ready_desc_44);
-																																															downloading_file.setText(R.string.downloading_file_44);
-																																															download_success.setText(R.string.download_success_44);
-																																															installation_failed.setText(R.string.installation_failed_44);
-																																															installation_failed_desc.setText(R.string.installation_failed_desc_44);
 																																															installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_44);
-																																															installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_44);
 																																															existing_patched.setText(R.string.existing_patched_44);
 																																															existing_patched_desc.setText(R.string.existing_patched_desc_44);
-																																															lite_0 = lite.getText().toString();
 																																															download_0 = download.getText().toString();
-																																															continue_0 = continue_1.getText().toString();
 																																															cancel_0 = cancel.getText().toString();
-																																															later_0 = later.getText().toString();
-																																															mirror_0 = mirror.getText().toString();
-																																															install_now_0 = install_now.getText().toString();
-																																															go_back_0 = go_back.getText().toString();
-																																															install_update_0 = install_update.getText().toString();
-																																															close_0 = close.getText().toString();
-																																															uninstall_0 = uninstall.getText().toString();
-																																															existing_patched_0 = existing_patched.getText().toString();
-																																															existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																															download_selected_0 = download_selected.getText().toString();
 																																															download_ready_0 = download_ready.getText().toString();
 																																															download_ready_desc_0 = download_ready_desc.getText().toString();
-																																															downloading_file_0 = downloading_file.getText().toString();
-																																															download_success_0 = download_success.getText().toString();
-																																															installation_failed_0 = installation_failed.getText().toString();
-																																															installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																															installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																															installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																															select_language.setSelection((int)(44));
 																																														}
 																																														else {
@@ -13929,7 +8201,6 @@ public class MainActivity extends AppCompatActivity {
 																																																sub_title.setText(R.string.about_sub_45);
 																																																sub_text_1.setText(R.string.latest_45);
 																																																sub_text_2.setText(R.string.latest_45);
-																																																sub_text_3.setText(R.string.latest_45);
 																																																versions_1.setText(R.string.versions_45);
 																																																versions_2.setText(R.string.versions_45);
 																																																versions_3.setText(R.string.versions_45);
@@ -13972,62 +8243,29 @@ public class MainActivity extends AppCompatActivity {
 																																																reset_preferences.setText(R.string.reset_preferences_45);
 																																																list_auto_refresh.setText(R.string.list_auto_refresh_45);
 																																																list_auto_refresh_info.setText(R.string.list_auto_refresh_desc_45);
-																																																force_auto_install.setText(R.string.force_auto_install_45);
-																																																force_auto_install_info.setText(R.string.force_auto_install_desc_45);
-																																																apk_location.setText(R.string.apk_location_45);
-																																																apk_location_info.setText(R.string.apk_location_desc_45);
-																																																clear_directory_folders.setText(R.string.clear_directory_folders_45);
-																																																clear_directory_folders_info.setText(R.string.clear_directory_folders_desc_45);
 																																																cloned_version.setText(R.string.cloned_version_45);
 																																																cloned_version_info.setText(R.string.cloned_version_desc_45);
-																																																experiment_version.setText(R.string.experimental_version_45);
-																																																experiment_version_info.setText(R.string.experimental_version_desc_45);
 																																																disable_reward_ad.setText(R.string.disable_rewarded_ads_45);
 																																																disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc_45);
 																																																disable_notification.setText(R.string.disable_notification_45);
 																																																disable_notification_info.setText(R.string.disable_notification_desc_45);
 																																																hide_stock_patched.setText(R.string.hide_stock_patched_45);
 																																																hide_amoled_patched.setText(R.string.hide_amoled_patched_45);
-																																																hide_lite_patched.setText(R.string.hide_lite_patched_45);
 																																																show_support.setText(R.string.show_support_45);
 																																																show_support_desc.setText(R.string.show_support_desc_45);
 																																																maintenance.setText(R.string.maintenance_45);
 																																																maintenance_desc.setText(R.string.maintenance_desc_45);
 																																																xmanager_dev.setText(R.string.xmanager_dev_45);
 																																																contributors.setText(R.string.contributors_45);
-																																																download_selected.setText(R.string.download_selected_45);
 																																																download_ready.setText(R.string.download_ready_45);
 																																																download_ready_desc.setText(R.string.download_ready_desc_45);
-																																																downloading_file.setText(R.string.downloading_file_45);
-																																																download_success.setText(R.string.download_success_45);
-																																																installation_failed.setText(R.string.installation_failed_45);
-																																																installation_failed_desc.setText(R.string.installation_failed_desc_45);
 																																																installation_failed_spap_desc.setText(R.string.installation_failed_spap_desc_45);
-																																																installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc_45);
 																																																existing_patched.setText(R.string.existing_patched_45);
 																																																existing_patched_desc.setText(R.string.existing_patched_desc_45);
-																																																lite_0 = lite.getText().toString();
 																																																download_0 = download.getText().toString();
-																																																continue_0 = continue_1.getText().toString();
 																																																cancel_0 = cancel.getText().toString();
-																																																later_0 = later.getText().toString();
-																																																mirror_0 = mirror.getText().toString();
-																																																install_now_0 = install_now.getText().toString();
-																																																go_back_0 = go_back.getText().toString();
-																																																install_update_0 = install_update.getText().toString();
-																																																close_0 = close.getText().toString();
-																																																uninstall_0 = uninstall.getText().toString();
-																																																existing_patched_0 = existing_patched.getText().toString();
-																																																existing_patched_desc_0 = existing_patched_desc.getText().toString();
-																																																download_selected_0 = download_selected.getText().toString();
 																																																download_ready_0 = download_ready.getText().toString();
 																																																download_ready_desc_0 = download_ready_desc.getText().toString();
-																																																downloading_file_0 = downloading_file.getText().toString();
-																																																download_success_0 = download_success.getText().toString();
-																																																installation_failed_0 = installation_failed.getText().toString();
-																																																installation_failed_desc_0 = installation_failed_desc.getText().toString();
-																																																installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-																																																installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 																																																select_language.setSelection((int)(45));
 																																															}
 																																														}
@@ -14198,7 +8436,6 @@ public class MainActivity extends AppCompatActivity {
 		sub_title.setText(R.string.about_sub);
 		sub_text_1.setText(R.string.latest);
 		sub_text_2.setText(R.string.latest);
-		sub_text_3.setText(R.string.latest);
 		versions_1.setText(R.string.versions);
 		versions_2.setText(R.string.versions);
 		versions_3.setText(R.string.versions);
@@ -14241,34 +8478,19 @@ public class MainActivity extends AppCompatActivity {
 		reset_preferences.setText(R.string.reset_preferences);
 		list_auto_refresh.setText(R.string.list_auto_refresh);
 		list_auto_refresh_info.setText(R.string.list_auto_refresh_desc);
-		force_auto_install.setText(R.string.force_auto_install);
-		force_auto_install_info.setText(R.string.force_auto_install_desc);
-		apk_location.setText(R.string.apk_location);
-		apk_location_info.setText(R.string.apk_location_desc);
-		clear_directory_folders.setText(R.string.clear_directory_folders);
-		clear_directory_folders_info.setText(R.string.clear_directory_folders_desc);
 		cloned_version.setText(R.string.cloned_version);
 		cloned_version_info.setText(R.string.cloned_version_desc);
-		experiment_version.setText(R.string.experimental_version);
-		experiment_version_info.setText(R.string.experimental_version_desc);
 		disable_reward_ad.setText(R.string.disable_rewarded_ads);
 		disable_reward_ad_info.setText(R.string.disable_rewarded_ads_desc);
 		disable_notification.setText(R.string.disable_notification);
 		disable_notification_info.setText(R.string.disable_notification_desc);
 		hide_stock_patched.setText(R.string.hide_stock_patched);
 		hide_amoled_patched.setText(R.string.hide_amoled_patched);
-		hide_lite_patched.setText(R.string.hide_lite_patched);
 		show_support.setText(R.string.show_support);
 		show_support_desc.setText(R.string.show_support_desc);
 		maintenance.setText(R.string.maintenance);
 		maintenance_desc.setText(R.string.maintenance_desc);
 		xmanager_dev.setText(R.string.xmanager_dev);
-		
-		
-		
-		
-		
-		
 		contributors.setText(R.string.contributors);
 		download_selected.setText(R.string.download_selected);
 		download_ready.setText(R.string.download_ready);
@@ -14281,34 +8503,21 @@ public class MainActivity extends AppCompatActivity {
 		installation_failed_cloned_desc.setText(R.string.installation_failed_cloned_desc);
 		existing_patched.setText(R.string.existing_patched);
 		existing_patched_desc.setText(R.string.existing_patched_desc);
-		lite_0 = lite.getText().toString();
 		download_0 = download.getText().toString();
-		continue_0 = continue_1.getText().toString();
 		cancel_0 = cancel.getText().toString();
-		later_0 = later.getText().toString();
-		mirror_0 = mirror.getText().toString();
-		install_now_0 = install_now.getText().toString();
-		go_back_0 = go_back.getText().toString();
-		install_update_0 = install_update.getText().toString();
-		close_0 = close.getText().toString();
-		uninstall_0 = uninstall.getText().toString();
-		existing_patched_0 = existing_patched.getText().toString();
-		existing_patched_desc_0 = existing_patched_desc.getText().toString();
-		download_selected_0 = download_selected.getText().toString();
 		download_ready_0 = download_ready.getText().toString();
 		download_ready_desc_0 = download_ready_desc.getText().toString();
-		downloading_file_0 = downloading_file.getText().toString();
-		download_success_0 = download_success.getText().toString();
-		installation_failed_0 = installation_failed.getText().toString();
-		installation_failed_desc_0 = installation_failed_desc.getText().toString();
-		installation_failed_spap_desc_0 = installation_failed_spap_desc.getText().toString();
-		installation_failed_cloned_desc_0 = installation_failed_cloned_desc.getText().toString();
 	}
 	
 	
 	public void _Browser(final String _String_Text) {
 		androidx.browser.customtabs.CustomTabsIntent.Builder builder = new androidx.browser.customtabs.CustomTabsIntent.Builder();
 		androidx.browser.customtabs.CustomTabsIntent customTabsIntent = builder.build();
+		
+		builder.setShareState(CustomTabsIntent.SHARE_STATE_OFF);
+		builder.setStartAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
+		builder.setExitAnimations(this, R.anim.slide_in_left, R.anim.slide_out_right);
+		builder.setToolbarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
 		customTabsIntent.launchUrl(getCurrentContext(this), Uri.parse(_String_Text));
 		
 	} public Context getCurrentContext(Context c) {
@@ -14320,18 +8529,11 @@ public class MainActivity extends AppCompatActivity {
 	} public Context getCurrentContext(DialogFragment c) {
 			return c.getActivity();
 			
-	}
-	
-	{
-			
-			
 			
 	}
 	
 	
 	public void _Gate_Keeper() {
-		
-		
 	}
 	
 	
@@ -14484,883 +8686,6 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	public void _Signature_Checker() {
-	}
-	public String getISignature(Context context) {
-			try {
-					android.content.pm.PackageInfo packageInfo = context.getPackageManager().getPackageInfo("com.spotify.music", PackageManager.GET_SIGNATURES);
-					for (android.content.pm.Signature signature : packageInfo.signatures) {
-							String i_sha1 = geti_SHA1_(signature.toByteArray());
-							return i_sha1;
-					}
-			} catch (android.content.pm.PackageManager.NameNotFoundException e) {
-			}
-			return "";
-	}
-	
-	public String geti_SHA1_(byte[] sig) {
-			try {
-					java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA1");
-					digest.update(sig);
-					byte[] hashtext = digest.digest();
-					return i_bytes_To_Hex_(hashtext);
-			} catch (java.security.NoSuchAlgorithmException e) {
-			}
-			return "";
-	}
-	
-	public String i_bytes_To_Hex_(byte[] bytes) {
-			final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
-					'9', 'A', 'B', 'C', 'D', 'E', 'F' };
-			char[] hexChars = new char[bytes.length * 2];
-			int v;
-			for (int j = 0; j < bytes.length; j++) {
-					v = bytes[j] & 0xFF;
-					hexChars[j * 2] = hexArray[v >>> 4];
-					hexChars[j * 2 + 1] = hexArray[v & 0x0F];
-			}
-			return new String(hexChars);
-	}
-	{
-			
-			
-	}
-	public String getDSignature(Context context) {
-			try {
-					android.content.pm.PackageInfo packageArchiveInfo = context.getPackageManager().getPackageArchiveInfo(apk_path_location.getText().toString().concat("Patched (xManager).apk"), PackageManager.GET_SIGNATURES);
-					for (android.content.pm.Signature signature : packageArchiveInfo.signatures) {
-							String d_sha1 = getd_SHA1_(signature.toByteArray());
-							return d_sha1;
-					}
-			} catch (Exception e) {
-			}
-			return "";
-	}
-	
-	public String getd_SHA1_(byte[] sig) {
-			try {
-					java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA1");
-					digest.update(sig);
-					byte[] hashtext = digest.digest();
-					return d_bytes_To_Hex_(hashtext);
-			} catch (java.security.NoSuchAlgorithmException e) {
-			}
-			return "";
-	}
-	
-	public String d_bytes_To_Hex_(byte[] bytes) {
-			final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
-					'9', 'A', 'B', 'C', 'D', 'E', 'F' };
-			char[] hexChars = new char[bytes.length * 2];
-			int v;
-			for (int j = 0; j < bytes.length; j++) {
-					v = bytes[j] & 0xFF;
-					hexChars[j * 2] = hexArray[v >>> 4];
-					hexChars[j * 2 + 1] = hexArray[v & 0x0F];
-			}
-			return new String(hexChars);
-	}
-	{
-			
-			
-	}
-	
-	
-	public void _Download_Cloned(final String _url, final String _path) {
-		android.net.ConnectivityManager connMgr = (android.net.ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-		android.net.NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-		if (networkInfo != null && networkInfo.isConnected()) {
-				final String urlDownload = _url;
-				final DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
-				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
-				final String cookies = CookieManager.getInstance().getCookie(urlDownload);
-				final String userAgent = "USER_AGENT";
-				request.addRequestHeader("cookie", cookies);
-				request.addRequestHeader("User-Agent", userAgent);
-				request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
-				request.setMimeType("application/vnd.android.package-archive");
-				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "Patched Cloned (xManager).apk");
-				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-				final long downloadId = manager.enqueue(request);
-				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
-				final ProgressDialog check = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
-				if (THEME.getString("THEME", "").equals("14")) {
-						prog.getWindow().setBackgroundDrawableResource(R.drawable.light_green);
-						check.getWindow().setBackgroundDrawableResource(R.drawable.light_green);
-				} else {
-						if (THEME.getString("THEME", "").equals("15")) {
-								prog.getWindow().setBackgroundDrawableResource(R.drawable.light_blue);
-								check.getWindow().setBackgroundDrawableResource(R.drawable.light_blue);
-						} else {
-								if (THEME.getString("THEME", "").equals("16")) {
-										prog.getWindow().setBackgroundDrawableResource(R.drawable.light_red);
-										check.getWindow().setBackgroundDrawableResource(R.drawable.light_red);
-								} else {
-										if (THEME.getString("THEME", "").equals("17")) {
-												prog.getWindow().setBackgroundDrawableResource(R.drawable.light_orange);
-												check.getWindow().setBackgroundDrawableResource(R.drawable.light_orange);;
-										} else {
-												if (THEME.getString("THEME", "").equals("18")) {
-														prog.getWindow().setBackgroundDrawableResource(R.drawable.light_pink);
-														check.getWindow().setBackgroundDrawableResource(R.drawable.light_pink);
-												} else {
-														if (THEME.getString("THEME", "").equals("19")) {
-																prog.getWindow().setBackgroundDrawableResource(R.drawable.light_purple);
-																check.getWindow().setBackgroundDrawableResource(R.drawable.light_purple);
-														} else {
-																if (THEME.getString("THEME", "").equals("20")) {
-																		prog.getWindow().setBackgroundDrawableResource(R.drawable.light_cyan);
-																		check.getWindow().setBackgroundDrawableResource(R.drawable.light_cyan);
-																} else {
-																		prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																		check.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																}
-														}
-												}
-										}
-								}
-						}
-				}
-				Thread progress = new Thread() {
-						@Override
-						public void run() {
-								boolean downloading = true;
-								while (downloading) {
-										DownloadManager.Query q = new DownloadManager.Query();
-										q.setFilterById(downloadId);
-										android.database.Cursor cursor = manager.query(q);
-										if (cursor != null) { 
-												if (cursor.moveToFirst()) {
-														int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
-														int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
-														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
-																downloading = false;
-														}
-														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
-																runOnUiThread(new Runnable() {
-																		public void run() {
-																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																				_File_Remover();
-																		}
-																});
-														}				
-														final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
-														final int dl_max = (int) (100);
-														final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
-														final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
-														String file_min = String.format("%.2f", file_front);
-														String file_fix = String.format("%.2f", file_end);
-														String file_max = file_fix.replace("-", "");
-														runOnUiThread(new Runnable() {
-																@Override
-																public void run() {
-																		final Handler handler = new Handler();
-																		handler.postDelayed(new Runnable() {
-																				@Override
-																				public void run() {
-																						if (prog.getProgress() < dl_progress) {
-																								prog.incrementProgressBy(1);
-																						}
-																				}
-																		}, 10);
-																		ObjectAnimator animation = ObjectAnimator.ofInt(prog, "progress", prog.getProgress(), prog.getMax());
-																		animation.setDuration(1500);
-																		animation.setInterpolator(new DecelerateInterpolator());
-																		animation.start();
-																		if (!MainActivity.this.isFinishing()) {
-																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																				String TitleColor = "1DB954";
-																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																				prog.setProgressNumberFormat((hidden_patched.getText().toString()) + " | " + (file_max) + " MB");
-																				prog.setCancelable(false);
-																				prog.setMax(dl_max);
-																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.show();
-																		}
-																}
-														});
-														if (bytes_downloaded == bytes_total) {
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("PREPARING");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																								prog.dismiss();
-																								check.show();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(1500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING PATCHED");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(3500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING SIGNATURE");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(4500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("FINALIZING");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(5500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {	
-																								try {
-																										FileUtil.copyFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk", apk_path_location.getText().toString().concat("Patched Cloned (xManager).apk"));
-																								}
-																								catch(Exception e) {
-																								}
-																								if (!MainActivity.this.isFinishing()) {
-																										_Extension_2();
-																										prog.dismiss();
-																								}
-																								prog.dismiss();
-																								check.dismiss();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(6500));
-														}
-												}
-												cursor.close();
-										}
-								}
-						}
-				};
-				progress.start();
-		} else {
-				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-		}
-		
-	}
-	
-	
-	public void _Download_Install_Cloned(final String _url, final String _path) {
-		android.net.ConnectivityManager connMgr = (android.net.ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-		android.net.NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-		if (networkInfo != null && networkInfo.isConnected()) {
-				final String urlDownload = _url;
-				final DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
-				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
-				final String cookies = CookieManager.getInstance().getCookie(urlDownload);
-				final String userAgent = "USER_AGENT";
-				request.addRequestHeader("cookie", cookies);
-				request.addRequestHeader("User-Agent", userAgent);
-				request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
-				request.setMimeType("application/vnd.android.package-archive");
-				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "Patched Cloned (xManager).apk");
-				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-				final long downloadId = manager.enqueue(request);
-				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
-				final ProgressDialog check = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
-				if (THEME.getString("THEME", "").equals("14")) {
-						prog.getWindow().setBackgroundDrawableResource(R.drawable.light_green);
-						check.getWindow().setBackgroundDrawableResource(R.drawable.light_green);
-				} else {
-						if (THEME.getString("THEME", "").equals("15")) {
-								prog.getWindow().setBackgroundDrawableResource(R.drawable.light_blue);
-								check.getWindow().setBackgroundDrawableResource(R.drawable.light_blue);
-						} else {
-								if (THEME.getString("THEME", "").equals("16")) {
-										prog.getWindow().setBackgroundDrawableResource(R.drawable.light_red);
-										check.getWindow().setBackgroundDrawableResource(R.drawable.light_red);
-								} else {
-										if (THEME.getString("THEME", "").equals("17")) {
-												prog.getWindow().setBackgroundDrawableResource(R.drawable.light_orange);
-												check.getWindow().setBackgroundDrawableResource(R.drawable.light_orange);;
-										} else {
-												if (THEME.getString("THEME", "").equals("18")) {
-														prog.getWindow().setBackgroundDrawableResource(R.drawable.light_pink);
-														check.getWindow().setBackgroundDrawableResource(R.drawable.light_pink);
-												} else {
-														if (THEME.getString("THEME", "").equals("19")) {
-																prog.getWindow().setBackgroundDrawableResource(R.drawable.light_purple);
-																check.getWindow().setBackgroundDrawableResource(R.drawable.light_purple);
-														} else {
-																if (THEME.getString("THEME", "").equals("20")) {
-																		prog.getWindow().setBackgroundDrawableResource(R.drawable.light_cyan);
-																		check.getWindow().setBackgroundDrawableResource(R.drawable.light_cyan);
-																} else {
-																		prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																		check.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																}
-														}
-												}
-										}
-								}
-						}
-				}
-				Thread progress = new Thread() {
-						@Override
-						public void run() {
-								boolean downloading = true;
-								while (downloading) {
-										DownloadManager.Query q = new DownloadManager.Query();
-										q.setFilterById(downloadId);
-										android.database.Cursor cursor = manager.query(q);
-										if (cursor != null) { 
-												if (cursor.moveToFirst()) {
-														int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
-														int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
-														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
-																downloading = false;
-														}
-														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
-																runOnUiThread(new Runnable() {
-																		public void run() {
-																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																				_File_Remover();
-																		}
-																});
-														}				
-														final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
-														final int dl_max = (int) (100);
-														final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
-														final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
-														String file_min = String.format("%.2f", file_front);
-														String file_fix = String.format("%.2f", file_end);
-														String file_max = file_fix.replace("-", "");
-														runOnUiThread(new Runnable() {
-																@Override
-																public void run() {
-																		final Handler handler = new Handler();
-																		handler.postDelayed(new Runnable() {
-																				@Override
-																				public void run() {
-																						if (prog.getProgress() < dl_progress) {
-																								prog.incrementProgressBy(1);
-																						}
-																				}
-																		}, 10);
-																		ObjectAnimator animation = ObjectAnimator.ofInt(prog, "progress", prog.getProgress(), prog.getMax());
-																		animation.setDuration(1500);
-																		animation.setInterpolator(new DecelerateInterpolator());
-																		animation.start();
-																		if (!MainActivity.this.isFinishing()) {
-																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																				String TitleColor = "1DB954";
-																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																				prog.setProgressNumberFormat((hidden_patched.getText().toString()) + " | " + (file_max) + " MB");
-																				prog.setCancelable(false);
-																				prog.setMax(dl_max);
-																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.show();
-																		}
-																}
-														});
-														if (bytes_downloaded == bytes_total) {
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("PREPARING");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																								prog.dismiss();
-																								check.show();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(1500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING PATCHED");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(3500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING SIGNATURE");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(4500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("FINALIZING");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(5500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {	
-																								try {
-																										FileUtil.copyFile("/storage/emulated/0/Download/Patched Cloned (xManager).apk", apk_path_location.getText().toString().concat("Patched Cloned (xManager).apk"));
-																								}
-																								catch(Exception e) {
-																								}
-																								Timer = new TimerTask() {
-																										@Override
-																										public void run() {
-																												runOnUiThread(new Runnable() {
-																														@Override
-																														public void run() {
-																																prog.dismiss();
-																																check.dismiss();
-																																_Downgrade_Checker();
-																																if ((Installed_Version_Cloned < Downloaded_Version_Cloned) || ((Downloaded_Version_Cloned > Installed_Version_Cloned) || ((Installed_Version_Cloned == Downloaded_Version_Cloned) || Installed_Checker_Cloned.equals("false")))) {
-																																		if (getICSignature(getApplicationContext()).equals(getDCSignature(getApplicationContext())) || Installed_Checker_Cloned.equals("false")) {
-																																				StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																																				if(android.os.Build.VERSION.SDK_INT >= 29){
-																																						try {
-																																								Intent intent = new Intent(Intent.ACTION_VIEW);
-																																								intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
-																																								startActivity(intent);
-																																								_Install_Reminder();
-																																						}
-																																						catch(Exception e) {
-																																						}
-																																				} else {
-																																						try {
-																																								Intent intent = new Intent(Intent.ACTION_VIEW);
-																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
-																																								startActivity(intent);
-																																								_Install_Reminder();
-																																						}
-																																						catch(Exception e) {
-																																						}
-																																				} 
-																																		} else {
-																																				if (!MainActivity.this.isFinishing()) {
-																																						final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																						String TitleColor = "1DB954";
-																																						Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																						String Message = installation_failed_spap_desc_0.replace("\n", "<br/>");
-																																						String MessageColor = "FFFFFF";
-																																						Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																						Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																								@Override
-																																								public void onClick(DialogInterface Signature_Check, int p) {
-																																										AlertDialog.setCancelable(true);
-																																										try {
-																																												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
-																																												startActivity(intent);
-																																										}
-																																										catch(Exception e) {
-																																										}
-																																								}
-																																						});
-																																						Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																								@Override
-																																								public void onClick(DialogInterface Signature_Check, int p) {
-																																										AlertDialog.setCancelable(true);
-																																								}
-																																						});
-																																						AlertDialog = Signature_Check.create();
-																																						AlertDialog.setCancelable(false);
-																																						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																						AlertDialog.show();
-																																				}
-																																		}	
-																																}
-																																else {
-																																		if (Downloaded_Version_Cloned < Installed_Version_Cloned) {
-																																				if (!MainActivity.this.isFinishing()) {
-																																						final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																						String TitleColor = "1DB954";
-																																						Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																						String Message = installation_failed_desc_0.replace("\n", "<br/>");
-																																						String MessageColor = "FFFFFF";
-																																						Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																						Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																								@Override
-																																								public void onClick(DialogInterface Downgrade_Check, int p) {
-																																										AlertDialog.setCancelable(true);
-																																										try {
-																																												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
-																																												startActivity(intent);
-																																										}
-																																										catch(Exception e) {
-																																										}
-																																								}
-																																						});
-																																						Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																								@Override
-																																								public void onClick(DialogInterface Downgrade_Check, int p) {
-																																										AlertDialog.setCancelable(true);
-																																								}
-																																						});
-																																						AlertDialog = Downgrade_Check.create();
-																																						AlertDialog.setCancelable(false);
-																																						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																						AlertDialog.show();
-																																				}
-																																		}
-																																}
-																														}
-																												});
-																										}
-																								};
-																								_timer.schedule(Timer, (int)(100));
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(6500));
-														}
-												}
-												cursor.close();
-										}
-								}
-						}
-				};
-				progress.start();
-		} else {
-				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-		}
-		
-	}
-	
-	
-	public void _Signature_Checker_Cloned() {
-	}
-	public String getICSignature(Context context) {
-			try {
-					android.content.pm.PackageInfo packageInfo = context.getPackageManager().getPackageInfo("com.spotify.musix", PackageManager.GET_SIGNATURES);
-					for (android.content.pm.Signature signature : packageInfo.signatures) {
-							String ic_sha1 = getic_SHA1_(signature.toByteArray());
-							return ic_sha1;
-					}
-			} catch(android.content.pm.PackageManager.NameNotFoundException e) {
-			}
-			return "";
-	}
-	
-	public String getic_SHA1_(byte[] sig) {
-			try {
-					java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA1");
-					digest.update(sig);
-					byte[] hashtext = digest.digest();
-					return ic_bytes_To_Hex_(hashtext);
-			} catch(java.security.NoSuchAlgorithmException e) {}
-			return "";
-	}
-	
-	public String ic_bytes_To_Hex_(byte[] bytes) {
-			final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
-					'9', 'A', 'B', 'C', 'D', 'E', 'F' };
-			char[] hexChars = new char[bytes.length * 2];
-			int v;
-			for (int j = 0; j < bytes.length; j++) {
-					v = bytes[j] & 0xFF;
-					hexChars[j * 2] = hexArray[v >>> 4];
-					hexChars[j * 2 + 1] = hexArray[v & 0x0F];
-			}
-			return new String(hexChars);
-	}
-	{
-			
-			
-	}
-	public String getDCSignature(Context context) {
-			try {
-					android.content.pm.PackageInfo packageArchiveInfo = context.getPackageManager().getPackageArchiveInfo(apk_path_location.getText().toString().concat("Patched Cloned (xManager).apk"), PackageManager.GET_SIGNATURES);
-					for (android.content.pm.Signature signature : packageArchiveInfo.signatures) {
-							
-							String dc_sha1 = getdc_SHA1_(signature.toByteArray());
-							return dc_sha1;
-					}
-			} catch(Exception e) {
-			}
-			return "";
-	}
-	
-	public String getdc_SHA1_(byte[] sig) {
-			try {
-					java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA1");
-					digest.update(sig);
-					byte[] hashtext = digest.digest();
-					return dc_bytes_To_Hex_(hashtext);
-			} catch(java.security.NoSuchAlgorithmException e) {}
-			return "";
-	}
-	
-	public String dc_bytes_To_Hex_(byte[] bytes) {
-			final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
-					'9', 'A', 'B', 'C', 'D', 'E', 'F' };
-			char[] hexChars = new char[bytes.length * 2];
-			int v;
-			for (int j = 0; j < bytes.length; j++) {
-					v = bytes[j] & 0xFF;
-					hexChars[j * 2] = hexArray[v >>> 4];
-					hexChars[j * 2 + 1] = hexArray[v & 0x0F];
-			}
-			return new String(hexChars);
-	}
-	{
-			
-			
-	}
-	
-	
-	public void _Downgrade_Checker() {
-		String uri_check = "com.spotify.music";
-		android.content.pm.PackageManager pm_check = getPackageManager();
-		
-		try {
-				android.content.pm.PackageInfo Installed_Reg = pm_check.getPackageInfo(uri_check, android.content.pm.PackageManager.GET_ACTIVITIES);
-				Installed_Version = Installed_Reg.versionCode;
-		}
-		catch (Exception e) {
-		}
-		
-		
-		try {
-				android.content.pm.PackageInfo Downloaded_Reg = this.getPackageManager().getPackageArchiveInfo(apk_path_location.getText().toString().concat("Patched (xManager).apk"), PackageManager.GET_ACTIVITIES);
-				Downloaded_Version = Downloaded_Reg.versionCode;
-		}
-		catch (Exception e) {
-				Downloaded_Version = Installed_Version;
-		}
-		
-		
-		String uri_cloned = "com.spotify.musix";
-		android.content.pm.PackageManager pm_cloned = getPackageManager();
-		
-		try {
-				android.content.pm.PackageInfo Installed_Cloned = pm_cloned.getPackageInfo(uri_cloned, android.content.pm.PackageManager.GET_ACTIVITIES);
-				Installed_Version_Cloned = Installed_Cloned.versionCode;
-		}
-		catch (Exception e) {
-		}
-		
-		
-		try {
-				android.content.pm.PackageInfo Downloaded_Cloned = this.getPackageManager().getPackageArchiveInfo(apk_path_location.getText().toString().concat("Patched Cloned (xManager).apk"), PackageManager.GET_ACTIVITIES);
-				Downloaded_Version_Cloned = Downloaded_Cloned.versionCode;
-		}
-		catch (Exception e) {
-				Downloaded_Version_Cloned = Installed_Version_Cloned;
-		}
-		
-		String uri_lite = "com.spotify.lite";
-		android.content.pm.PackageManager pm_lite = getPackageManager();
-		
-		try {
-				android.content.pm.PackageInfo Installed_Lite = pm_lite.getPackageInfo(uri_lite, android.content.pm.PackageManager.GET_ACTIVITIES);
-				Installed_Version_Lite = Installed_Lite.versionCode;
-		}
-		catch (Exception e) {
-		}
-		
-		
-		try {
-				android.content.pm.PackageInfo Downloaded_Lite = this.getPackageManager().getPackageArchiveInfo(apk_path_location.getText().toString().concat("Patched Lite (xManager).apk"), PackageManager.GET_ACTIVITIES);
-				Downloaded_Version_Lite = Downloaded_Lite.versionCode;
-		}
-		catch (Exception e) {
-				Downloaded_Version_Lite = Installed_Version_Lite;
-		}
-		
-	}
-	
-	
 	public void _Maintenance() {
 		try {
 			final AlertDialog.Builder Update_Unauthorized = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
@@ -15484,31 +8809,18 @@ public class MainActivity extends AppCompatActivity {
 							Amoled_Patched = (new Gson()).toJson(Datas.get("Amoled_Patched"), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							Stock_Cloned_Patched = (new Gson()).toJson(Datas.get("Stock_Cloned_Patched"), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							Amoled_Cloned_Patched = (new Gson()).toJson(Datas.get("Amoled_Cloned_Patched"), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
-							Stock_Experimental_Patched = (new Gson()).toJson(Datas.get("Stock_Experimental_Patched"), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
-							Amoled_Experimental_Patched = (new Gson()).toJson(Datas.get("Amoled_Experimental_Patched"), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
-							Stock_Experimental_Cloned_Patched = (new Gson()).toJson(Datas.get("Stock_Experimental_Cloned_Patched"), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
-							Amoled_Experimental_Cloned_Patched = (new Gson()).toJson(Datas.get("Amoled_Experimental_Cloned_Patched"), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
-							Lite_Patched = (new Gson()).toJson(Datas.get("Lite_Patched"), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
+							Other_Patched = (new Gson()).toJson(Datas.get("Other_Patched"), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							Patched_Changelogs = (new Gson()).toJson(Datas.get("Patched_Changelogs"), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							stock_patched = new Gson().fromJson(Stock_Patched, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							amoled_patched = new Gson().fromJson(Amoled_Patched, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							stock_cloned_patched = new Gson().fromJson(Stock_Cloned_Patched, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							amoled_cloned_patched = new Gson().fromJson(Amoled_Cloned_Patched, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
-							stock_experimental_patched = new Gson().fromJson(Stock_Experimental_Patched, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
-							amoled_experimental_patched = new Gson().fromJson(Amoled_Experimental_Patched, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
-							stock_experimental_cloned_patched = new Gson().fromJson(Stock_Experimental_Cloned_Patched, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
-							amoled_experimental_cloned_patched = new Gson().fromJson(Amoled_Experimental_Cloned_Patched, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
-							lite_patched = new Gson().fromJson(Lite_Patched, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
+							other_patched = new Gson().fromJson(Other_Patched, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							patched_changelogs = new Gson().fromJson(Patched_Changelogs, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 							sub_1.setText(Datas.get("Stock_Patched_Latest").toString());
 							sub_2.setText(Datas.get("Amoled_Patched_Latest").toString());
 							sub_3.setText(Datas.get("SCP_Latest").toString());
 							sub_4.setText(Datas.get("ACP_Latest").toString());
-							sub_5.setText(Datas.get("SE_Patched_Latest").toString());
-							sub_6.setText(Datas.get("AE_Patched_Latest").toString());
-							sub_7.setText(Datas.get("SECP_Latest").toString());
-							sub_8.setText(Datas.get("AECP_Latest").toString());
-							sub_9.setText(Datas.get("Lite_Patched_Latest").toString());
 							donors_1.setText(Datas.get("Supporters").toString());
 							hidden_update.setText(Datas.get("Update").toString());
 							app_changelogs.setText(Datas.get("App_Changelogs").toString());
@@ -15528,24 +8840,8 @@ public class MainActivity extends AppCompatActivity {
 									((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
 									((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 								}
-								else {
-									if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-										list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_patched));
-										list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_patched));
-										((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
-										((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
-									}
-									else {
-										if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-											list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_cloned_patched));
-											list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_cloned_patched));
-											((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
-											((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
-										}
-									}
-								}
 							}
-							list_items_3.setAdapter(new List_items_3Adapter(lite_patched));
+							list_items_3.setAdapter(new List_items_3Adapter(other_patched));
 							list_items_5.setAdapter(new List_items_5Adapter(patched_changelogs));
 							((BaseAdapter)list_items_3.getAdapter()).notifyDataSetChanged();
 							((BaseAdapter)list_items_5.getAdapter()).notifyDataSetChanged();
@@ -15581,22 +8877,14 @@ public class MainActivity extends AppCompatActivity {
 		sub_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_4.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_5.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_6.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_7.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_8.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_9.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_text_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_text_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_text_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		versions_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		versions_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		versions_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_installed.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_separator_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_installed_c.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_separator_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		sub_installed_l.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		sub_text_installed.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_sub.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		support.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -15619,22 +8907,14 @@ public class MainActivity extends AppCompatActivity {
 		sub_title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		list_auto_refresh.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		list_auto_refresh_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		apk_location_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		apk_location.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		reboot.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		reset_preferences.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		clear_directory_folders.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		force_auto_install.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		force_auto_install_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		clear_directory_folders_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		language.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		patched_1.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
 		patched_2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
 		patched_3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 0);
 		title_header_beta.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		title_header_separator.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		experiment_version.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		experiment_version_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		cloned_version.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		cloned_version_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		disable_reward_ad.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
@@ -15643,7 +8923,6 @@ public class MainActivity extends AppCompatActivity {
 		disable_notification_info.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		hide_stock_patched.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		hide_amoled_patched.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-		hide_lite_patched.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 		box_sub_header.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_1.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_2.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
@@ -15651,13 +8930,9 @@ public class MainActivity extends AppCompatActivity {
 		main_box_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_8.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		main_box_9.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		main_box_10.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		main_box_11.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_14.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_16.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_17.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		main_box_18.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_20.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_21.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_support.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
@@ -15685,10 +8960,6 @@ public class MainActivity extends AppCompatActivity {
 		sub_2.setVisibility(View.GONE);
 		sub_3.setVisibility(View.GONE);
 		sub_4.setVisibility(View.GONE);
-		sub_5.setVisibility(View.GONE);
-		sub_6.setVisibility(View.GONE);
-		sub_7.setVisibility(View.GONE);
-		sub_8.setVisibility(View.GONE);
 		list_items_1.setVisibility(View.GONE);
 		list_items_2.setVisibility(View.GONE);
 		list_items_3.setVisibility(View.GONE);
@@ -15790,56 +9061,18 @@ public class MainActivity extends AppCompatActivity {
 				else {
 					if (SWITCH_VERSION.getString("SWITCH", "").equals("A")) {
 						cloned_version_switch.setChecked(false);
-						experiment_version_switch.setChecked(false);
 						sub_1.setVisibility(View.VISIBLE);
 						sub_2.setVisibility(View.VISIBLE);
 						sub_3.setVisibility(View.GONE);
 						sub_4.setVisibility(View.GONE);
-						sub_5.setVisibility(View.GONE);
-						sub_6.setVisibility(View.GONE);
-						sub_7.setVisibility(View.GONE);
-						sub_8.setVisibility(View.GONE);
 					}
 					else {
 						if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
 							cloned_version_switch.setChecked(true);
-							experiment_version_switch.setChecked(false);
 							sub_1.setVisibility(View.GONE);
 							sub_2.setVisibility(View.GONE);
 							sub_3.setVisibility(View.VISIBLE);
 							sub_4.setVisibility(View.VISIBLE);
-							sub_5.setVisibility(View.GONE);
-							sub_6.setVisibility(View.GONE);
-							sub_7.setVisibility(View.GONE);
-							sub_8.setVisibility(View.GONE);
-						}
-						else {
-							if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-								cloned_version_switch.setChecked(false);
-								experiment_version_switch.setChecked(true);
-								sub_1.setVisibility(View.GONE);
-								sub_2.setVisibility(View.GONE);
-								sub_3.setVisibility(View.GONE);
-								sub_4.setVisibility(View.GONE);
-								sub_5.setVisibility(View.VISIBLE);
-								sub_6.setVisibility(View.VISIBLE);
-								sub_7.setVisibility(View.GONE);
-								sub_8.setVisibility(View.GONE);
-							}
-							else {
-								if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-									cloned_version_switch.setChecked(true);
-									experiment_version_switch.setChecked(true);
-									sub_1.setVisibility(View.GONE);
-									sub_2.setVisibility(View.GONE);
-									sub_3.setVisibility(View.GONE);
-									sub_4.setVisibility(View.GONE);
-									sub_5.setVisibility(View.GONE);
-									sub_6.setVisibility(View.GONE);
-									sub_7.setVisibility(View.VISIBLE);
-									sub_8.setVisibility(View.VISIBLE);
-								}
-							}
 						}
 					}
 					if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
@@ -15863,7 +9096,6 @@ public class MainActivity extends AppCompatActivity {
 					icon_update.setAlpha((float)(1.0d));
 					main_body.setAlpha((float)(0.50d));
 					_GDPR_Consent();
-					_Permission();
 					_API_Token();
 					_Updater();
 				}
@@ -15899,26 +9131,6 @@ public class MainActivity extends AppCompatActivity {
 											list_items_1.setAdapter(new List_items_1Adapter(stock_cloned_patched));
 											((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
 										}
-										else {
-											if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-												list_items_1.setVisibility(View.VISIBLE);
-												list_items_2.setVisibility(View.GONE);
-												list_items_3.setVisibility(View.GONE);
-												list_items_5.setVisibility(View.GONE);
-												list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_patched));
-												((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
-											}
-											else {
-												if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-													list_items_1.setVisibility(View.VISIBLE);
-													list_items_2.setVisibility(View.GONE);
-													list_items_3.setVisibility(View.GONE);
-													list_items_5.setVisibility(View.GONE);
-													list_items_1.setAdapter(new List_items_1Adapter(stock_experimental_cloned_patched));
-													((BaseAdapter)list_items_1.getAdapter()).notifyDataSetChanged();
-												}
-											}
-										}
 									}
 									Animation animation;
 									animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
@@ -15951,26 +9163,6 @@ public class MainActivity extends AppCompatActivity {
 															list_items_2.setAdapter(new List_items_2Adapter(amoled_cloned_patched));
 															((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
 														}
-														else {
-															if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-																list_items_1.setVisibility(View.GONE);
-																list_items_2.setVisibility(View.VISIBLE);
-																list_items_3.setVisibility(View.GONE);
-																list_items_5.setVisibility(View.GONE);
-																list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_patched));
-																((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
-															}
-															else {
-																if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-																	list_items_1.setVisibility(View.GONE);
-																	list_items_2.setVisibility(View.VISIBLE);
-																	list_items_3.setVisibility(View.GONE);
-																	list_items_5.setVisibility(View.GONE);
-																	list_items_2.setAdapter(new List_items_2Adapter(amoled_experimental_cloned_patched));
-																	((BaseAdapter)list_items_2.getAdapter()).notifyDataSetChanged();
-																}
-															}
-														}
 													}
 													Animation animation;
 													animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
@@ -15998,7 +9190,7 @@ public class MainActivity extends AppCompatActivity {
 																	version_oc_02.setImageResource(R.drawable.close);
 																	version_oc_03.setImageResource(R.drawable.open);
 																	changelogs_oc.setImageResource(R.drawable.close);
-																	list_items_3.setAdapter(new List_items_3Adapter(lite_patched));
+																	list_items_3.setAdapter(new List_items_3Adapter(other_patched));
 																	((BaseAdapter)list_items_3.getAdapter()).notifyDataSetChanged();
 																	Timer = new TimerTask() {
 																		@Override
@@ -16084,11 +9276,9 @@ public class MainActivity extends AppCompatActivity {
 				notificationManager.createNotificationChannel(channel);
 		}
 		
-		apk_path_location.setText(APK_PATH.getString("PATH", ""));
 		CHECK = 0;
 		_Rewarded_AdMob();
 		_Layout_Transition();
-		_Update_Remover();
 		_Language_Fixer();
 		_Hide_Patched();
 		_Switch_Fixer();
@@ -16170,480 +9360,6 @@ public class MainActivity extends AppCompatActivity {
 		CLICKER_2 = 1;
 		CLICKER_3 = 1;
 		CLICKER_4 = 1;
-	}
-	
-	
-	public void _Extension_1() {
-		final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Other_Dialog);
-		String Title = "<b>".concat(download_success_0.concat("</b>"));
-		String TitleColor = "1DB954";
-		Success_Download.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-		Success_Download.setPositiveButton(install_now_0, new DialogInterface.OnClickListener(){
-				@Override
-				public void onClick(DialogInterface Success_Download, int p) {
-						AlertDialog.setCancelable(true);
-						_Downgrade_Checker();
-						if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
-								if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
-										StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-										if(android.os.Build.VERSION.SDK_INT >= 29){
-												try {
-														Intent intent = new Intent(Intent.ACTION_VIEW);
-														intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
-														startActivity(intent);
-														_Install_Reminder();
-												}
-												catch(Exception e) {
-												}
-										} else {
-												try {
-														Intent intent = new Intent(Intent.ACTION_VIEW);
-														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
-														startActivity(intent);
-														_Install_Reminder();
-												}
-												catch(Exception e) {
-												}
-										} 
-								} else {
-										if (!MainActivity.this.isFinishing()) {
-												final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-												String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-												String TitleColor = "1DB954";
-												Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-												String Message = installation_failed_spap_desc_0.replace("\n", "<br/>");
-												String MessageColor = "FFFFFF";
-												Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-												Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-														@Override
-														public void onClick(DialogInterface Signature_Check, int p) {
-																AlertDialog.setCancelable(true);
-																try {
-																		Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
-																		startActivity(intent);
-																}
-																catch(Exception e) {
-																}
-														}
-												});
-												Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-														@Override
-														public void onClick(DialogInterface Signature_Check, int p) {
-																AlertDialog.setCancelable(true);
-														}
-												});
-												AlertDialog = Signature_Check.create();
-												AlertDialog.setCancelable(false);
-												_AlertDialog_Color();
-												AlertDialog.show();
-										}
-								}	
-						}
-						else {
-								if (Downloaded_Version < Installed_Version) {
-										if (!MainActivity.this.isFinishing()) {
-												final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-												String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-												String TitleColor = "1DB954";
-												Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-												String Message = installation_failed_desc_0.replace("\n", "<br/>");
-												String MessageColor = "FFFFFF";
-												Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-												Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-														@Override
-														public void onClick(DialogInterface Downgrade_Check, int p) {
-																AlertDialog.setCancelable(true);
-																try {
-																		Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
-																		startActivity(intent);
-																}
-																catch(Exception e) {
-																}
-														}
-												});
-												Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-														@Override
-														public void onClick(DialogInterface Downgrade_Check, int p) {
-																AlertDialog.setCancelable(true);
-														}
-												});
-												AlertDialog = Downgrade_Check.create();
-												AlertDialog.setCancelable(false);
-												_AlertDialog_Color();
-												AlertDialog.show();
-										}
-								}
-						}
-				}
-		});
-		Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener(){
-				@Override
-				public void onClick(DialogInterface Success_Download, int p) {
-						AlertDialog.setCancelable(true);
-						_Reminder();
-				}
-		});
-		AlertDialog = Success_Download.create();
-		AlertDialog.setCancelable(false);
-		_AlertDialog_Color();
-		AlertDialog.show();
-		
-	}
-	
-	
-	public void _Extension_2() {
-		final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Other_Dialog);
-		String Title = "<b>".concat(download_success_0.concat("</b>"));
-		String TitleColor = "1DB954";
-		Success_Download.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-		Success_Download.setPositiveButton(install_now_0, new DialogInterface.OnClickListener(){
-				@Override
-				public void onClick(DialogInterface Success_Download, int p) {
-						AlertDialog.setCancelable(true);
-						_Downgrade_Checker();
-						if ((Installed_Version_Cloned < Downloaded_Version_Cloned) || ((Downloaded_Version_Cloned > Installed_Version_Cloned) || ((Installed_Version_Cloned == Downloaded_Version_Cloned) || Installed_Checker_Cloned.equals("false")))) {
-								if (getICSignature(getApplicationContext()).equals(getDCSignature(getApplicationContext())) || Installed_Checker_Cloned.equals("false")) {
-										StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-										if(android.os.Build.VERSION.SDK_INT >= 29){
-												try {
-														Intent intent = new Intent(Intent.ACTION_VIEW);
-														intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
-														startActivity(intent);
-														_Install_Reminder();
-												}
-												catch(Exception e) {
-												}
-										} else {
-												try {
-														Intent intent = new Intent(Intent.ACTION_VIEW);
-														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
-														startActivity(intent);
-														_Install_Reminder();
-												}
-												catch(Exception e) {
-												}
-										} 
-								} else {
-										if (!MainActivity.this.isFinishing()) {
-												final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-												String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-												String TitleColor = "1DB954";
-												Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-												String Message = installation_failed_cloned_desc_0.replace("\n", "<br/>");
-												String MessageColor = "FFFFFF";
-												Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-												Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-														@Override
-														public void onClick(DialogInterface Signature_Check, int p) {
-																AlertDialog.setCancelable(true);
-																try {
-																		Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
-																		startActivity(intent);
-																}
-																catch(Exception e) {
-																}
-														}
-												});
-												Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-														@Override
-														public void onClick(DialogInterface Signature_Check, int p) {
-																AlertDialog.setCancelable(true);
-														}
-												});
-												AlertDialog = Signature_Check.create();
-												AlertDialog.setCancelable(false);
-												_AlertDialog_Color();
-												AlertDialog.show();
-										}
-								}	
-						}
-						else {
-								if (!MainActivity.this.isFinishing()) {
-										if (Downloaded_Version_Cloned < Installed_Version_Cloned) {
-												final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-												String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-												String TitleColor = "1DB954";
-												Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-												String Message = installation_failed_desc_0.replace("\n", "<br/>");
-												String MessageColor = "FFFFFF";
-												Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-												Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-														@Override
-														public void onClick(DialogInterface Downgrade_Check, int p) {
-																AlertDialog.setCancelable(true);
-																try {
-																		Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
-																		startActivity(intent);
-																}
-																catch(Exception e) {
-																}
-														}
-												});
-												Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-														@Override
-														public void onClick(DialogInterface Downgrade_Check, int p) {
-																AlertDialog.setCancelable(true);
-														}
-												});
-												AlertDialog = Downgrade_Check.create();
-												AlertDialog.setCancelable(false);
-												_AlertDialog_Color();
-												AlertDialog.show();
-										}
-								}
-						}
-				}
-		});
-		Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener(){
-				@Override
-				public void onClick(DialogInterface Success_Download, int p) {
-						AlertDialog.setCancelable(true);
-						_Reminder();
-				}
-		});
-		AlertDialog = Success_Download.create();
-		AlertDialog.setCancelable(false);
-		_AlertDialog_Color();
-		AlertDialog.show();
-		
-	}
-	
-	
-	public void _Extension_3() {
-		final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Other_Dialog);
-		String Title = "<b>".concat(download_success_0.concat("</b>"));
-		String TitleColor = "1DB954";
-		Success_Download.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-		Success_Download.setPositiveButton(install_update_0, new DialogInterface.OnClickListener(){
-				@Override
-				public void onClick(DialogInterface Success_Download, int p) {
-						AlertDialog.setCancelable(true);
-						StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-						if(android.os.Build.VERSION.SDK_INT >= 29){
-								try {
-										Intent intent = new Intent(Intent.ACTION_VIEW);
-										intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/xManager Update.apk")), "application/vnd.android.package-archive");
-										startActivity(intent);
-								}
-								catch(Exception e) {
-								}
-						} else {
-								try {
-										Intent intent = new Intent(Intent.ACTION_VIEW);
-										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/xManager Update.apk")), "application/vnd.android.package-archive");
-										startActivity(intent);
-								}
-								catch(Exception e) {
-								}
-						}
-				}
-		});
-		Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener(){
-				@Override
-				public void onClick(DialogInterface Success_Download, int p) {
-						AlertDialog.setCancelable(true);
-				}
-		});
-		AlertDialog = Success_Download.create();
-		AlertDialog.setCancelable(false);
-		_AlertDialog_Color();
-		AlertDialog.show();
-		
-	}
-	
-	
-	public void _Extension_4() {
-		if ((Installed_Version < Downloaded_Version) || ((Downloaded_Version > Installed_Version) || ((Installed_Version == Downloaded_Version) || Installed_Checker.equals("false")))) {
-				if (getISignature(getApplicationContext()).equals(getDSignature(getApplicationContext())) || Installed_Checker.equals("false")) {
-						StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-						if(android.os.Build.VERSION.SDK_INT >= 29){
-								try {
-										Intent intent = new Intent(Intent.ACTION_VIEW);
-										intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
-										startActivity(intent);
-										_Install_Reminder();
-								}
-								catch(Exception e) {
-										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-								}
-						} else {
-								try {
-										Intent intent = new Intent(Intent.ACTION_VIEW);
-										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched (xManager).apk")), "application/vnd.android.package-archive");
-										startActivity(intent);
-										_Install_Reminder();
-								}
-								catch(Exception e) {
-										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-								}
-						} 
-				} else {
-						final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-						String TitleColor = "1DB954";
-						Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-						String Message = installation_failed_spap_desc_0.replace("\n", "<br/>");
-						String MessageColor = "FFFFFF";
-						Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-						Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-								@Override
-								public void onClick(DialogInterface Signature_Check, int p) {
-										AlertDialog.setCancelable(true);
-										try {
-												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
-												startActivity(intent);
-										}
-										catch(Exception e) {
-										}
-								}
-						});
-						Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-								@Override
-								public void onClick(DialogInterface Signature_Check, int p) {
-										AlertDialog.setCancelable(true);
-								}
-						});
-						AlertDialog = Signature_Check.create();
-						AlertDialog.setCancelable(false);
-						_AlertDialog_Color();
-						AlertDialog.show();
-				}	
-		}
-		else {
-				if (Downloaded_Version < Installed_Version) {
-						final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-						String TitleColor = "1DB954";
-						Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-						String Message = installation_failed_desc_0.replace("\n", "<br/>");
-						String MessageColor = "FFFFFF";
-						Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-						Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-								@Override
-								public void onClick(DialogInterface Downgrade_Check, int p) {
-										AlertDialog.setCancelable(true);
-										try {
-												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.music")); 
-												startActivity(intent);
-										}
-										catch(Exception e) {
-										}
-								}
-						});
-						Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-								@Override
-								public void onClick(DialogInterface Downgrade_Check, int p) {
-										AlertDialog.setCancelable(true);
-								}
-						});
-						AlertDialog = Downgrade_Check.create();
-						AlertDialog.setCancelable(false);
-						_AlertDialog_Color();
-						AlertDialog.show();
-				}
-		}	
-		_Downgrade_Checker();
-		
-	}
-	
-	
-	public void _Extension_5() {
-		if ((Installed_Version_Cloned < Downloaded_Version_Cloned) || ((Downloaded_Version_Cloned > Installed_Version_Cloned) || ((Installed_Version_Cloned == Downloaded_Version_Cloned) || Installed_Checker_Cloned.equals("false")))) {
-				if (getICSignature(getApplicationContext()).equals(getDCSignature(getApplicationContext())) || Installed_Checker_Cloned.equals("false")) {
-						StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-						if(android.os.Build.VERSION.SDK_INT >= 29){
-								try {
-										Intent intent = new Intent(Intent.ACTION_VIEW);
-										intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
-										startActivity(intent);
-										_Install_Reminder();
-								}
-								catch(Exception e) {
-										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-								}
-						} else {
-								try {
-										Intent intent = new Intent(Intent.ACTION_VIEW);
-										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Cloned (xManager).apk")), "application/vnd.android.package-archive");
-										startActivity(intent);
-										_Install_Reminder();
-								}
-								catch(Exception e) {
-										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-								}
-						} 
-				} else {
-						final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-						String TitleColor = "1DB954";
-						Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-						String Message = installation_failed_cloned_desc_0.replace("\n", "<br/>");
-						String MessageColor = "FFFFFF";
-						Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-						Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-								@Override
-								public void onClick(DialogInterface Signature_Check, int p) {
-										AlertDialog.setCancelable(true);
-										try {
-												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
-												startActivity(intent);
-										}
-										catch(Exception e) {
-										}
-								}
-						});
-						Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-								@Override
-								public void onClick(DialogInterface Signature_Check, int p) {
-										AlertDialog.setCancelable(true);
-								}
-						});
-						AlertDialog = Signature_Check.create();
-						AlertDialog.setCancelable(false);
-						_AlertDialog_Color();
-						AlertDialog.show();
-				}	
-		}
-		else {
-				if (Downloaded_Version_Cloned < Installed_Version_Cloned) {
-						final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-						String TitleColor = "1DB954";
-						Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-						String Message = installation_failed_desc_0.replace("\n", "<br/>");
-						String MessageColor = "FFFFFF";
-						Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-						Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-								@Override
-								public void onClick(DialogInterface Downgrade_Check, int p) {
-										AlertDialog.setCancelable(true);
-										try {
-												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.musix")); 
-												startActivity(intent);
-										}
-										catch(Exception e) {
-										}
-								}
-						});
-						Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-								@Override
-								public void onClick(DialogInterface Downgrade_Check, int p) {
-										AlertDialog.setCancelable(true);
-								}
-						});
-						AlertDialog = Downgrade_Check.create();
-						AlertDialog.setCancelable(false);
-						_AlertDialog_Color();
-						AlertDialog.show();
-				}
-		}
-		_Downgrade_Checker();
-		
 	}
 	
 	
@@ -16753,1070 +9469,6 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	public void _Signature_Checker_Lite() {
-	}
-	public String getILSignature(Context context) {
-			try {
-					android.content.pm.PackageInfo packageInfo = context.getPackageManager().getPackageInfo("com.spotify.lite", PackageManager.GET_SIGNATURES);
-					for (android.content.pm.Signature signature : packageInfo.signatures) {
-							String il_sha1 = geti_SHA1_(signature.toByteArray());
-							return il_sha1;
-					}
-			} catch (android.content.pm.PackageManager.NameNotFoundException e) {
-			}
-			return "";
-	}
-	
-	public String getil_SHA1_(byte[] sig) {
-			try {
-					java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA1");
-					digest.update(sig);
-					byte[] hashtext = digest.digest();
-					return il_bytes_To_Hex_(hashtext);
-			} catch (java.security.NoSuchAlgorithmException e) {
-			}
-			return "";
-	}
-	
-	public String il_bytes_To_Hex_(byte[] bytes) {
-			final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
-					'9', 'A', 'B', 'C', 'D', 'E', 'F' };
-			char[] hexChars = new char[bytes.length * 2];
-			int v;
-			for (int j = 0; j < bytes.length; j++) {
-					v = bytes[j] & 0xFF;
-					hexChars[j * 2] = hexArray[v >>> 4];
-					hexChars[j * 2 + 1] = hexArray[v & 0x0F];
-			}
-			return new String(hexChars);
-	}
-	{
-			
-			
-	}
-	public String getDLSignature(Context context) {
-			try {
-					android.content.pm.PackageInfo packageArchiveInfo = context.getPackageManager().getPackageArchiveInfo(apk_path_location.getText().toString().concat("Patched Lite (xManager).apk"), PackageManager.GET_SIGNATURES);
-					for (android.content.pm.Signature signature : packageArchiveInfo.signatures) {
-							String dl_sha1 = getd_SHA1_(signature.toByteArray());
-							return dl_sha1;
-					}
-			} catch (Exception e) {
-			}
-			return "";
-	}
-	
-	public String getdl_SHA1_(byte[] sig) {
-			try {
-					java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA1");
-					digest.update(sig);
-					byte[] hashtext = digest.digest();
-					return dl_bytes_To_Hex_(hashtext);
-			} catch (java.security.NoSuchAlgorithmException e) {
-			}
-			return "";
-	}
-	
-	public String dl_bytes_To_Hex_(byte[] bytes) {
-			final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
-					'9', 'A', 'B', 'C', 'D', 'E', 'F' };
-			char[] hexChars = new char[bytes.length * 2];
-			int v;
-			for (int j = 0; j < bytes.length; j++) {
-					v = bytes[j] & 0xFF;
-					hexChars[j * 2] = hexArray[v >>> 4];
-					hexChars[j * 2 + 1] = hexArray[v & 0x0F];
-			}
-			return new String(hexChars);
-	}
-	{
-			
-			
-	}
-	
-	
-	public void _Download_Lite(final String _url, final String _path) {
-		android.net.ConnectivityManager connMgr = (android.net.ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-		android.net.NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-		if (networkInfo != null && networkInfo.isConnected()) {
-				final String urlDownload = _url;
-				final DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
-				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
-				final String cookies = CookieManager.getInstance().getCookie(urlDownload);
-				final String userAgent = "USER_AGENT";
-				request.addRequestHeader("cookie", cookies);
-				request.addRequestHeader("User-Agent", userAgent);
-				request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
-				request.setMimeType("application/vnd.android.package-archive");
-				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "Patched Lite (xManager).apk");
-				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-				final long downloadId = manager.enqueue(request);
-				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
-				final ProgressDialog check = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
-				if (THEME.getString("THEME", "").equals("14")) {
-						prog.getWindow().setBackgroundDrawableResource(R.drawable.light_green);
-						check.getWindow().setBackgroundDrawableResource(R.drawable.light_green);
-				} else {
-						if (THEME.getString("THEME", "").equals("15")) {
-								prog.getWindow().setBackgroundDrawableResource(R.drawable.light_blue);
-								check.getWindow().setBackgroundDrawableResource(R.drawable.light_blue);
-						} else {
-								if (THEME.getString("THEME", "").equals("16")) {
-										prog.getWindow().setBackgroundDrawableResource(R.drawable.light_red);
-										check.getWindow().setBackgroundDrawableResource(R.drawable.light_red);
-								} else {
-										if (THEME.getString("THEME", "").equals("17")) {
-												prog.getWindow().setBackgroundDrawableResource(R.drawable.light_orange);
-												check.getWindow().setBackgroundDrawableResource(R.drawable.light_orange);;
-										} else {
-												if (THEME.getString("THEME", "").equals("18")) {
-														prog.getWindow().setBackgroundDrawableResource(R.drawable.light_pink);
-														check.getWindow().setBackgroundDrawableResource(R.drawable.light_pink);
-												} else {
-														if (THEME.getString("THEME", "").equals("19")) {
-																prog.getWindow().setBackgroundDrawableResource(R.drawable.light_purple);
-																check.getWindow().setBackgroundDrawableResource(R.drawable.light_purple);
-														} else {
-																if (THEME.getString("THEME", "").equals("20")) {
-																		prog.getWindow().setBackgroundDrawableResource(R.drawable.light_cyan);
-																		check.getWindow().setBackgroundDrawableResource(R.drawable.light_cyan);
-																} else {
-																		prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																		check.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																}
-														}
-												}
-										}
-								}
-						}
-				}
-				Thread progress = new Thread() {
-						@Override
-						public void run() {
-								boolean downloading = true;
-								while (downloading) {
-										DownloadManager.Query q = new DownloadManager.Query();
-										q.setFilterById(downloadId);
-										android.database.Cursor cursor = manager.query(q);
-										if (cursor != null) { 
-												if (cursor.moveToFirst()) {
-														int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
-														int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
-														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
-																downloading = false;
-														}
-														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
-																runOnUiThread(new Runnable() {
-																		public void run() {
-																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																				_File_Remover();
-																		}
-																});
-														}				
-														final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
-														final int dl_max = (int) (100);
-														final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
-														final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
-														String file_min = String.format("%.2f", file_front);
-														String file_fix = String.format("%.2f", file_end);
-														String file_max = file_fix.replace("-", "");
-														runOnUiThread(new Runnable() {
-																@Override
-																public void run() {
-																		final Handler handler = new Handler();
-																		handler.postDelayed(new Runnable() {
-																				@Override
-																				public void run() {
-																						if (prog.getProgress() < dl_progress) {
-																								prog.incrementProgressBy(1);
-																						}
-																				}
-																		}, 10);
-																		ObjectAnimator animation = ObjectAnimator.ofInt(prog, "progress", prog.getProgress(), prog.getMax());
-																		animation.setDuration(1500);
-																		animation.setInterpolator(new DecelerateInterpolator());
-																		animation.start();
-																		if (!MainActivity.this.isFinishing()) {
-																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																				String TitleColor = "1DB954";
-																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																				prog.setProgressNumberFormat((hidden_patched.getText().toString()) + " | " + (file_max) + " MB");
-																				prog.setCancelable(false);
-																				prog.setMax(dl_max);
-																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.show();
-																		}
-																}
-														});
-														if (bytes_downloaded == bytes_total) {
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("PREPARING");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																								prog.dismiss();
-																								check.show();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(1500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING PATCHED");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(3500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING SIGNATURE");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(4500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("FINALIZING");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(5500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {	
-																								try {
-																										FileUtil.copyFile("/storage/emulated/0/Download/Patched Lite (xManager).apk", apk_path_location.getText().toString().concat("Patched Lite (xManager).apk"));
-																								}
-																								catch(Exception e) {
-																								}
-																								if (!MainActivity.this.isFinishing()) {
-																										_Extension_7();
-																										prog.dismiss();
-																								}
-																								prog.dismiss();
-																								check.dismiss();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(6500));
-														}
-												}
-												cursor.close();
-										}
-								}
-						}
-				};
-				progress.start();
-		} else {
-				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-		}
-		
-	}
-	
-	
-	public void _Download_Install_Lite(final String _url, final String _path) {
-		android.net.ConnectivityManager connMgr = (android.net.ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-		android.net.NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-		if (networkInfo != null && networkInfo.isConnected()) {
-				final String urlDownload = _url;
-				final DownloadManager.Request request = new DownloadManager.Request(Uri.parse(urlDownload));
-				final String fileName = URLUtil.guessFileName(urlDownload, null, null);
-				final String cookies = CookieManager.getInstance().getCookie(urlDownload);
-				final String userAgent = "USER_AGENT";
-				request.addRequestHeader("cookie", cookies);
-				request.addRequestHeader("User-Agent", userAgent);
-				request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-				request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
-				request.setMimeType("application/vnd.android.package-archive");
-				request.allowScanningByMediaScanner();
-				request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "Patched Lite (xManager).apk");
-				final DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-				final long downloadId = manager.enqueue(request);
-				final ProgressDialog prog = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
-				final ProgressDialog check = new ProgressDialog(MainActivity.this, R.style.Progress_Dialog);
-				if (THEME.getString("THEME", "").equals("14")) {
-						prog.getWindow().setBackgroundDrawableResource(R.drawable.light_green);
-						check.getWindow().setBackgroundDrawableResource(R.drawable.light_green);
-				} else {
-						if (THEME.getString("THEME", "").equals("15")) {
-								prog.getWindow().setBackgroundDrawableResource(R.drawable.light_blue);
-								check.getWindow().setBackgroundDrawableResource(R.drawable.light_blue);
-						} else {
-								if (THEME.getString("THEME", "").equals("16")) {
-										prog.getWindow().setBackgroundDrawableResource(R.drawable.light_red);
-										check.getWindow().setBackgroundDrawableResource(R.drawable.light_red);
-								} else {
-										if (THEME.getString("THEME", "").equals("17")) {
-												prog.getWindow().setBackgroundDrawableResource(R.drawable.light_orange);
-												check.getWindow().setBackgroundDrawableResource(R.drawable.light_orange);;
-										} else {
-												if (THEME.getString("THEME", "").equals("18")) {
-														prog.getWindow().setBackgroundDrawableResource(R.drawable.light_pink);
-														check.getWindow().setBackgroundDrawableResource(R.drawable.light_pink);
-												} else {
-														if (THEME.getString("THEME", "").equals("19")) {
-																prog.getWindow().setBackgroundDrawableResource(R.drawable.light_purple);
-																check.getWindow().setBackgroundDrawableResource(R.drawable.light_purple);
-														} else {
-																if (THEME.getString("THEME", "").equals("20")) {
-																		prog.getWindow().setBackgroundDrawableResource(R.drawable.light_cyan);
-																		check.getWindow().setBackgroundDrawableResource(R.drawable.light_cyan);
-																} else {
-																		prog.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																		check.getWindow().setBackgroundDrawableResource(R.drawable.progress_dialog);
-																}
-														}
-												}
-										}
-								}
-						}
-				}
-				Thread progress = new Thread() {
-						@Override
-						public void run() {
-								boolean downloading = true;
-								while (downloading) {
-										DownloadManager.Query q = new DownloadManager.Query();
-										q.setFilterById(downloadId);
-										android.database.Cursor cursor = manager.query(q);
-										if (cursor != null) { 
-												if (cursor.moveToFirst()) {
-														int bytes_downloaded = cursor.getInt(cursor .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
-														int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
-														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
-																downloading = false;
-														}
-														if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_FAILED) {
-																runOnUiThread(new Runnable() {
-																		public void run() {
-																				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "The file or link is currently unavailable. Please try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																				_File_Remover();
-																		}
-																});
-														}				
-														final int dl_progress = (int) (bytes_total != 0 ? (bytes_downloaded * 100l) / bytes_total : 0) ;
-														final int dl_max = (int) (100);
-														final float file_front = (float) ((bytes_downloaded * 1.0) / 1048576.0);
-														final float file_end = (float) ((bytes_total * 1.0) / 1048576.0);
-														String file_min = String.format("%.2f", file_front);
-														String file_fix = String.format("%.2f", file_end);
-														String file_max = file_fix.replace("-", "");
-														runOnUiThread(new Runnable() {
-																@Override
-																public void run() {
-																		final Handler handler = new Handler();
-																		handler.postDelayed(new Runnable() {
-																				@Override
-																				public void run() {
-																						if (prog.getProgress() < dl_progress) {
-																								prog.incrementProgressBy(1);
-																						}
-																				}
-																		}, 10);
-																		ObjectAnimator animation = ObjectAnimator.ofInt(prog, "progress", prog.getProgress(), prog.getMax());
-																		animation.setDuration(1500);
-																		animation.setInterpolator(new DecelerateInterpolator());
-																		animation.start();
-																		if (!MainActivity.this.isFinishing()) {
-																				String Title = "<b>".concat(downloading_file_0.concat("</b>"));
-																				String TitleColor = "1DB954";
-																				prog.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																				prog.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																				prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																				prog.setProgressNumberFormat((hidden_patched.getText().toString()) + " | " + (file_max) + " MB");
-																				prog.setCancelable(false);
-																				prog.setMax(dl_max);
-																				prog.setButton(DialogInterface.BUTTON_NEGATIVE, cancel_0, new DialogInterface.OnClickListener() {
-																						@Override
-																						public void onClick(DialogInterface dialog, int which) {
-																								prog.setCancelable(true);
-																								manager.remove(downloadId);
-																								_File_Remover();
-																								final Handler handler = new Handler();
-																								handler.postDelayed(new Runnable() {
-																										@Override
-																										public void run() {
-																												prog.dismiss();
-																												com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Download Cancelled", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-																										}
-																								}, 0);
-																						}
-																				});
-																				prog.show();
-																		}
-																}
-														});
-														if (bytes_downloaded == bytes_total) {
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("PREPARING");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																								prog.dismiss();
-																								check.show();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(1500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING PATCHED");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(3500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("VERIFYING SIGNATURE");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(4500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {
-																								ValueAnimator finalize = ValueAnimator.ofInt(0, 100);
-																								finalize.setDuration(1800);
-																								finalize.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-																										public void onAnimationUpdate(ValueAnimator animation) {
-																												check.setProgress((int) animation.getAnimatedValue());
-																												String Title = "<b>".concat(hidden_patched.getText().toString().concat("</b>"));
-																												String TitleColor = "1DB954";
-																												check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																												check.setProgressDrawable(getResources().getDrawable(R.drawable.progress_bar));
-																												check.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-																												check.setProgressNumberFormat("FINALIZING");
-																												check.setCancelable(false);
-																										}
-																								});
-																								finalize.start();
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(5500));
-																Timer = new TimerTask() {
-																		@Override
-																		public void run() {
-																				runOnUiThread(new Runnable() {
-																						@Override
-																						public void run() {	
-																								try {
-																										FileUtil.copyFile("/storage/emulated/0/Download/Patched Lite (xManager).apk", apk_path_location.getText().toString().concat("Patched Lite (xManager).apk"));
-																								}
-																								catch(Exception e) {
-																								}
-																								Timer = new TimerTask() {
-																										@Override
-																										public void run() {
-																												runOnUiThread(new Runnable() {
-																														@Override
-																														public void run() {
-																																prog.dismiss();
-																																check.dismiss();
-																																_Downgrade_Checker();
-																																if ((Installed_Version_Lite < Downloaded_Version_Lite) || ((Downloaded_Version_Lite > Installed_Version_Lite) || ((Installed_Version_Lite == Downloaded_Version_Lite) || Installed_Checker_Lite.equals("false")))) {
-																																		if (getILSignature(getApplicationContext()).equals(getDLSignature(getApplicationContext())) || Installed_Checker_Lite.equals("false")) {
-																																				StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-																																				if(android.os.Build.VERSION.SDK_INT >= 29){
-																																						try {
-																																								Intent intent = new Intent(Intent.ACTION_VIEW);
-																																								intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-																																								intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
-																																								startActivity(intent);
-																																								_Install_Reminder();
-																																						}
-																																						catch(Exception e) {
-																																						}
-																																				} else {
-																																						try {
-																																								Intent intent = new Intent(Intent.ACTION_VIEW);
-																																								intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
-																																								startActivity(intent);
-																																								_Install_Reminder();
-																																						}
-																																						catch(Exception e) {
-																																						}
-																																				} 
-																																		} else {
-																																				if (!MainActivity.this.isFinishing()) {
-																																						final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																						String TitleColor = "1DB954";
-																																						Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																						String Message = installation_failed_spap_desc_0.replace("\n", "<br/>");
-																																						String MessageColor = "FFFFFF";
-																																						Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																						Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																								@Override
-																																								public void onClick(DialogInterface Signature_Check, int p) {
-																																										AlertDialog.setCancelable(true);
-																																										try {
-																																												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
-																																												startActivity(intent);
-																																										}
-																																										catch(Exception e) {
-																																										}
-																																								}
-																																						});
-																																						Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																								@Override
-																																								public void onClick(DialogInterface Signature_Check, int p) {
-																																										AlertDialog.setCancelable(true);
-																																								}
-																																						});
-																																						AlertDialog = Signature_Check.create();
-																																						AlertDialog.setCancelable(false);
-																																						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																						AlertDialog.show();
-																																				}
-																																		}	
-																																}
-																																else {
-																																		if (Downloaded_Version_Lite < Installed_Version_Lite) {
-																																				if (!MainActivity.this.isFinishing()) {
-																																						final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-																																						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-																																						String TitleColor = "1DB954";
-																																						Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-																																						String Message = installation_failed_desc_0.replace("\n", "<br/>");
-																																						String MessageColor = "FFFFFF";
-																																						Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-																																						Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-																																								@Override
-																																								public void onClick(DialogInterface Downgrade_Check, int p) {
-																																										AlertDialog.setCancelable(true);
-																																										try {
-																																												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
-																																												startActivity(intent);
-																																										}
-																																										catch(Exception e) {
-																																										}
-																																								}
-																																						});
-																																						Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-																																								@Override
-																																								public void onClick(DialogInterface Downgrade_Check, int p) {
-																																										AlertDialog.setCancelable(true);
-																																								}
-																																						});
-																																						AlertDialog = Downgrade_Check.create();
-																																						AlertDialog.setCancelable(false);
-																																						AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-																																						AlertDialog.show();
-																																				}
-																																		}
-																																}
-																														}
-																												});
-																										}
-																								};
-																								_timer.schedule(Timer, (int)(100));
-																						}
-																				});
-																		}
-																};
-																_timer.schedule(Timer, (int)(6500));
-														}
-												}
-												cursor.close();
-										}
-								}
-						}
-				};
-				progress.start();
-		} else {
-				com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Slow or no internet connection. Try again later.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-		}
-		
-	}
-	
-	
-	public void _Extension_6() {
-		if ((Installed_Version_Lite < Downloaded_Version_Lite) || ((Downloaded_Version_Lite > Installed_Version_Lite) || ((Installed_Version_Lite == Downloaded_Version_Lite) || Installed_Checker_Lite.equals("false")))) {
-				if (getILSignature(getApplicationContext()).equals(getDLSignature(getApplicationContext())) || Installed_Checker_Lite.equals("false")) {
-						StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-						if(android.os.Build.VERSION.SDK_INT >= 29){
-								try {
-										Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-										intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
-										intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-										startActivity(intent);
-										_Install_Reminder();
-								}
-								catch(Exception e) {
-										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-								}
-						} else {
-								try {
-										Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-										intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
-										startActivity(intent);
-										_Install_Reminder();
-								}
-								catch(Exception e) {
-										SketchwareUtil.CustomToast(getApplicationContext(), "Installation Failed", 0xFF000000, 14, 0xFFE0E0E0, 30, SketchwareUtil.BOTTOM);
-								}
-						} 
-				} else {
-						final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-						String TitleColor = "1DB954";
-						Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-						String Message = installation_failed_cloned_desc_0.replace("\n", "<br/>");
-						String MessageColor = "FFFFFF";
-						Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-						Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-								@Override
-								public void onClick(DialogInterface Signature_Check, int p) {
-										AlertDialog.setCancelable(true);
-										try {
-												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
-												startActivity(intent);
-										}
-										catch(Exception e) {
-										}
-								}
-						});
-						Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-								@Override
-								public void onClick(DialogInterface Signature_Check, int p) {
-										AlertDialog.setCancelable(true);
-								}
-						});
-						AlertDialog = Signature_Check.create();
-						AlertDialog.setCancelable(false);
-						_AlertDialog_Color();
-						AlertDialog.show();
-				}	
-		}
-		else {
-				if (Downloaded_Version_Lite < Installed_Version_Lite) {
-						final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-						String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-						String TitleColor = "1DB954";
-						Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-						String Message = installation_failed_desc_0.replace("\n", "<br/>");
-						String MessageColor = "FFFFFF";
-						Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-						Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-								@Override
-								public void onClick(DialogInterface Downgrade_Check, int p) {
-										AlertDialog.setCancelable(true);
-										try {
-												Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
-												startActivity(intent);
-										}
-										catch(Exception e) {
-										}
-								}
-						});
-						Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-								@Override
-								public void onClick(DialogInterface Downgrade_Check, int p) {
-										AlertDialog.setCancelable(true);
-								}
-						});
-						AlertDialog = Downgrade_Check.create();
-						AlertDialog.setCancelable(false);
-						_AlertDialog_Color();
-						AlertDialog.show();
-				}
-		}
-		_Downgrade_Checker();
-		
-	}
-	
-	
-	public void _Extension_7() {
-		final AlertDialog.Builder Success_Download = new AlertDialog.Builder(MainActivity.this, R.style.Other_Dialog);
-		String Title = "<b>".concat(download_success_0.concat("</b>"));
-		String TitleColor = "1DB954";
-		Success_Download.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-		Success_Download.setPositiveButton(install_now_0, new DialogInterface.OnClickListener(){
-				@Override
-				public void onClick(DialogInterface Success_Download, int p) {
-						AlertDialog.setCancelable(true);
-						_Downgrade_Checker();
-						if ((Installed_Version_Lite < Downloaded_Version_Lite) || ((Downloaded_Version_Lite > Installed_Version_Lite) || ((Installed_Version_Lite == Downloaded_Version_Lite) || Installed_Checker_Lite.equals("false")))) {
-								if (getILSignature(getApplicationContext()).equals(getDLSignature(getApplicationContext())) || Installed_Checker_Lite.equals("false")) {
-										StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
-										if(android.os.Build.VERSION.SDK_INT >= 29){
-												try {
-														Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-														intent.setDataAndType(FileProvider.getUriForFile(MainActivity.this, "com.xc3fff0e.xmanager.provider", new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
-														intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-														startActivity(intent);
-														_Install_Reminder();
-												}
-												catch(Exception e) {
-												}
-										} else {
-												try {
-														Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-														intent.setDataAndType(Uri.fromFile(new File("/storage/emulated/0/Download/Patched Lite (xManager).apk")), "application/vnd.android.package-archive");
-														startActivity(intent);
-														_Install_Reminder();
-												}
-												catch(Exception e) {
-												}
-										} 
-								} else {
-										if (!MainActivity.this.isFinishing()) {
-												final AlertDialog.Builder Signature_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-												String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-												String TitleColor = "1DB954";
-												Signature_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-												String Message = installation_failed_cloned_desc_0.replace("\n", "<br/>");
-												String MessageColor = "FFFFFF";
-												Signature_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-												Signature_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-														@Override
-														public void onClick(DialogInterface Signature_Check, int p) {
-																AlertDialog.setCancelable(true);
-																try {
-																		Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
-																		startActivity(intent);
-																}
-																catch(Exception e) {
-																}
-														}
-												});
-												Signature_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-														@Override
-														public void onClick(DialogInterface Signature_Check, int p) {
-																AlertDialog.setCancelable(true);
-														}
-												});
-												AlertDialog = Signature_Check.create();
-												AlertDialog.setCancelable(false);
-												_AlertDialog_Color();
-												AlertDialog.show();
-										}
-								}	
-						}
-						else {
-								if (!MainActivity.this.isFinishing()) {
-										if (Downloaded_Version_Lite < Installed_Version_Lite) {
-												final AlertDialog.Builder Downgrade_Check = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-												String Title = "<b>".concat(installation_failed_0.concat("</b>"));
-												String TitleColor = "1DB954";
-												Downgrade_Check.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-												String Message = installation_failed_desc_0.replace("\n", "<br/>");
-												String MessageColor = "FFFFFF";
-												Downgrade_Check.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-												Downgrade_Check.setPositiveButton(uninstall_0, new DialogInterface.OnClickListener(){
-														@Override
-														public void onClick(DialogInterface Downgrade_Check, int p) {
-																AlertDialog.setCancelable(true);
-																try {
-																		Intent intent = new Intent(Intent.ACTION_DELETE); intent.setData(Uri.parse("package:com.spotify.lite")); 
-																		startActivity(intent);
-																}
-																catch(Exception e) {
-																}
-														}
-												});
-												Downgrade_Check.setNeutralButton(close_0, new DialogInterface.OnClickListener(){
-														@Override
-														public void onClick(DialogInterface Downgrade_Check, int p) {
-																AlertDialog.setCancelable(true);
-														}
-												});
-												AlertDialog = Downgrade_Check.create();
-												AlertDialog.setCancelable(false);
-												_AlertDialog_Color();
-												AlertDialog.show();
-										}
-								}
-						}
-				}
-		});
-		Success_Download.setNeutralButton(later_0, new DialogInterface.OnClickListener(){
-				@Override
-				public void onClick(DialogInterface Success_Download, int p) {
-						AlertDialog.setCancelable(true);
-						_Reminder();
-				}
-		});
-		AlertDialog = Success_Download.create();
-		AlertDialog.setCancelable(false);
-		_AlertDialog_Color();
-		AlertDialog.show();
-		
-	}
-	
-	
-	public void _Permission() {
-		if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED
-		|| ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
-				_Storage_Permission();
-		}
-	}
-	
-	public void requestReadExternalStorage() {
-			ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1000);
-	}
-	
-	@Override
-	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-			super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-					try {
-							_Installation_Permission();
-							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Permission Granted", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-					} catch (Exception e) {	
-					}
-			} else {
-					final AlertDialog.Builder Storage_Failed = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-					String Message = "Storage permission not granted. You need to manually enable it.";
-					String MessageColor = "FFFFFF";
-					Storage_Failed.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-					Storage_Failed.setPositiveButton("SETUP", new DialogInterface.OnClickListener(){
-							@Override
-							public void onClick(DialogInterface Storage_Failed, int p) {
-									AlertDialog.setCancelable(true);
-									if (SDK_INT >= Build.VERSION_CODES.R) {
-											try {
-													Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-													intent.addCategory("android.intent.category.DEFAULT");
-													intent.setData(Uri.parse(String.format("package:%s",getApplicationContext().getPackageName())));
-													startActivityForResult(intent, 1000);
-											} catch (Exception e) {
-													Intent intent = new Intent();
-													intent.setAction(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-													startActivityForResult(intent, 1000);
-											}
-									}
-									if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-											final AlertDialog.Builder Storage = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-											AlertDialog = Storage.create();
-											AlertDialog.dismiss();
-									}else{
-											_Permission();
-									}
-							}
-					});
-					try {
-							AlertDialog = Storage_Failed.create();
-							AlertDialog.setCancelable(false);
-							AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-							AlertDialog.show();
-							com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Permission Denied", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-					} catch (Exception e) {
-					}
-			}
-			
-	}
-	
-	
-	public void _Storage_Permission() {
-		final AlertDialog.Builder Storage = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-		String Title = "<b>".concat("STORAGE PERMISSION".concat("</b>"));
-		String TitleColor = "1DB954";
-		Storage.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-		String Message = "xManager needs this permission to utilize the APK Location feature and to save the downloaded patched within that folder.";
-		String MessageColor = "FFFFFF";
-		Storage.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-		Storage.setPositiveButton("SETUP", new DialogInterface.OnClickListener(){
-				@Override
-				public void onClick(DialogInterface Storage, int p) {
-						AlertDialog.setCancelable(true);
-						try {
-								requestReadExternalStorage();
-						} catch (Exception e) {
-						}
-				}
-		});
-		AlertDialog = Storage.create();
-		AlertDialog.setCancelable(false);
-		AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-		AlertDialog.show();
-		
-	}
-	
-	
-	public void _Installation_Permission() {
-		final AlertDialog.Builder Installation = new AlertDialog.Builder(MainActivity.this, R.style.Alert_Dialog);
-		String Title = "<b>".concat("INSTALLATION PERMISSION".concat("</b>"));
-		String TitleColor = "1DB954";
-		Installation.setTitle(Html.fromHtml("<font color=\"#" + TitleColor + "\">"+Title+"</font>"));
-		String Message = "xManager needs this permission to install the downloaded patched.";
-		String MessageColor = "FFFFFF";
-		Installation.setMessage(Html.fromHtml("<font color=\"#" + MessageColor + "\">"+Message+"</font>"));
-		Installation.setPositiveButton("SETUP", new DialogInterface.OnClickListener(){
-				@Override
-				public void onClick(DialogInterface Installation, int p) {
-						AlertDialog.setCancelable(true);
-						try {
-								startActivity(new Intent(android.provider.Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, Uri.parse("package:com.xc3fff0e.xmanager")));
-						} catch (Exception e) {		
-						}
-				}
-		});
-		AlertDialog = Installation.create();
-		AlertDialog.setCancelable(false);
-		AlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.background);
-		AlertDialog.show();
-		
-	}
-	
-	
 	public void _Animation_4() {
 		Animation a;
 		a = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
@@ -17830,14 +9482,6 @@ public class MainActivity extends AppCompatActivity {
 		c = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
 		c.setDuration(400); main_box_16.startAnimation(c);
 		c = null;
-		Animation d;
-		d = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		d.setDuration(500); main_box_18.startAnimation(d);
-		d = null;
-		Animation e;
-		e = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
-		e.setDuration(600); main_box_9.startAnimation(e);
-		e = null;
 	}
 	
 	
@@ -17898,76 +9542,28 @@ public class MainActivity extends AppCompatActivity {
 												runOnUiThread(new Runnable() {
 													@Override
 													public void run() {
-														experiment_version_switch.setChecked(true);
+														list_auto_refresh_switch.setChecked(true);
 														Timer = new TimerTask() {
 															@Override
 															public void run() {
 																runOnUiThread(new Runnable() {
 																	@Override
 																	public void run() {
-																		experiment_version_switch.setChecked(false);
+																		list_auto_refresh_switch.setChecked(false);
 																		Timer = new TimerTask() {
 																			@Override
 																			public void run() {
 																				runOnUiThread(new Runnable() {
 																					@Override
 																					public void run() {
-																						list_auto_refresh_switch.setChecked(true);
+																						disable_reward_ad_switch.setChecked(true);
 																						Timer = new TimerTask() {
 																							@Override
 																							public void run() {
 																								runOnUiThread(new Runnable() {
 																									@Override
 																									public void run() {
-																										list_auto_refresh_switch.setChecked(false);
-																										Timer = new TimerTask() {
-																											@Override
-																											public void run() {
-																												runOnUiThread(new Runnable() {
-																													@Override
-																													public void run() {
-																														force_auto_install_switch.setChecked(true);
-																														Timer = new TimerTask() {
-																															@Override
-																															public void run() {
-																																runOnUiThread(new Runnable() {
-																																	@Override
-																																	public void run() {
-																																		force_auto_install_switch.setChecked(false);
-																																		Timer = new TimerTask() {
-																																			@Override
-																																			public void run() {
-																																				runOnUiThread(new Runnable() {
-																																					@Override
-																																					public void run() {
-																																						disable_reward_ad_switch.setChecked(true);
-																																						Timer = new TimerTask() {
-																																							@Override
-																																							public void run() {
-																																								runOnUiThread(new Runnable() {
-																																									@Override
-																																									public void run() {
-																																										disable_reward_ad_switch.setChecked(false);
-																																									}
-																																								});
-																																							}
-																																						};
-																																						_timer.schedule(Timer, (int)(900));
-																																					}
-																																				});
-																																			}
-																																		};
-																																		_timer.schedule(Timer, (int)(700));
-																																	}
-																																});
-																															}
-																														};
-																														_timer.schedule(Timer, (int)(850));
-																													}
-																												});
-																											}
-																										};
-																										_timer.schedule(Timer, (int)(650));
+																										disable_reward_ad_switch.setChecked(false);
 																									}
 																								});
 																							}
@@ -18073,57 +9669,11 @@ public class MainActivity extends AppCompatActivity {
 				main_box_2.setVisibility(View.VISIBLE);
 			}
 		}
-		if (HIDE_PATCHED.getString("SWITCH_C", "").equals("ON")) {
-			hide_lite_patched_switch.setChecked(true);
-			main_box_3.setVisibility(View.GONE);
-		}
-		else {
-			if (HIDE_PATCHED.getString("SWITCH_C", "").equals("OFF")) {
-				hide_lite_patched_switch.setChecked(false);
-				main_box_3.setVisibility(View.VISIBLE);
-			}
-		}
 	}
 	
 	
 	public void _Hide_Reminder() {
 		com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "Requires app to restart for changes to take effect", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-	}
-	
-	
-	public void _Install_Reminder() {
-		if (disable_notification_switch.isChecked()) {
-		} else {
-				if (!disable_notification_switch.isChecked()) {
-						if (Build.VERSION.SDK_INT >= 21) {
-								try {
-										final String App = "xManager";
-										final String contentTitle = "IMPORTANT NOTE";
-										final String contentMessage = "After installing and logging-in, make sure to reopen or force stop the app to enable the patched features.";
-										
-										androidx.core.app.NotificationCompat.Builder builder = new androidx.core.app.NotificationCompat.Builder(MainActivity.this, "id 1");
-										builder.setStyle(new androidx.core.app.NotificationCompat.BigTextStyle(builder).bigText(contentMessage)
-										.setBigContentTitle(contentTitle))
-										.setContentTitle(contentTitle)
-										.setContentText(contentMessage)
-										.setSmallIcon(R.drawable.icon_notification)
-										.setAutoCancel(true);
-										
-										final NotificationManager push = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-										builder.build().flags |= Notification.FLAG_AUTO_CANCEL;
-										push.notify(1, builder.build());
-								}
-								catch(Exception e) {
-								}
-						} else {
-								if (Build.VERSION.SDK_INT <= 20) {
-										com.google.android.material.snackbar.Snackbar.make(main_refresh_layout, "IMPORTANT NOTE: After installing and logging-in, make sure to reopen or force stop the app to enable the patched features.", com.google.android.material.snackbar.Snackbar.LENGTH_LONG).show();
-								}
-						}
-						
-				}
-		}
-		
 	}
 	
 	
@@ -18214,13 +9764,9 @@ public class MainActivity extends AppCompatActivity {
 		main_box_5.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_6.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_8.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		main_box_9.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		main_box_10.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		main_box_11.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_14.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_16.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_17.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
-		main_box_18.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_20.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		main_box_21.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
 		box_support.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF171717));
@@ -18246,18 +9792,14 @@ public class MainActivity extends AppCompatActivity {
 		box_separator_9.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b) { this.setCornerRadius(a); this.setColor(b); return this; } }.getIns((int)25, 0xFF616161));
 		title_header.setTextColor(0xFF1DB954);
 		cloned_version.setTextColor(0xFF1DB954);
-		experiment_version.setTextColor(0xFF1DB954);
 		list_auto_refresh.setTextColor(0xFF1DB954);
-		force_auto_install.setTextColor(0xFF1DB954);
 		disable_reward_ad.setTextColor(0xFF1DB954);
 		disable_notification.setTextColor(0xFF1DB954);
 		hide_stock_patched.setTextColor(0xFF1DB954);
 		hide_amoled_patched.setTextColor(0xFF1DB954);
-		hide_lite_patched.setTextColor(0xFF1DB954);
+		
 		theme.setTextColor(0xFF1DB954);
 		language.setTextColor(0xFF1DB954);
-		apk_location.setTextColor(0xFF1DB954);
-		clear_directory_folders.setTextColor(0xFF1DB954);
 		reboot.setTextColor(0xFFFFFFFF);
 		reset_preferences.setTextColor(0xFFFFFFFF);
 		xmanager_dev.setTextColor(0xFF1DB954);
@@ -18409,13 +9951,13 @@ public class MainActivity extends AppCompatActivity {
 				title.setVisibility(View.VISIBLE);
 				if (_position < 1) {
 					sub.setTextColor(0xFFFF1744);
-					sub.setText("LATEST RELEASE");
+					sub.setText("LATEST");
 					sub_separator.setTextColor(0xFF616161);
 					sub_separator.setText("|");
 				}
 				else {
 					sub.setTextColor(0xFFBDBDBD);
-					sub.setText("OLDER RELEASE");
+					sub.setText("OLDER");
 					sub_separator.setTextColor(0xFF616161);
 					sub_separator.setText("|");
 				}
@@ -18428,16 +9970,6 @@ public class MainActivity extends AppCompatActivity {
 				else {
 					if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
 						title.setText(stock_cloned_patched.get((int)(stock_cloned_patched.size() - 1) - _position).get("Title").toString());
-					}
-					else {
-						if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-							title.setText(stock_experimental_patched.get((int)(stock_experimental_patched.size() - 1) - _position).get("Title").toString());
-						}
-						else {
-							if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-								title.setText(stock_experimental_cloned_patched.get((int)(stock_experimental_cloned_patched.size() - 1) - _position).get("Title").toString());
-							}
-						}
 					}
 				}
 				Animation animation;
@@ -18496,13 +10028,13 @@ public class MainActivity extends AppCompatActivity {
 				title.setVisibility(View.VISIBLE);
 				if (_position < 1) {
 					sub.setTextColor(0xFFFF1744);
-					sub.setText("LATEST RELEASE");
+					sub.setText("LATEST");
 					sub_separator.setTextColor(0xFF616161);
 					sub_separator.setText("|");
 				}
 				else {
 					sub.setTextColor(0xFFBDBDBD);
-					sub.setText("OLDER RELEASE");
+					sub.setText("OLDER");
 					sub_separator.setTextColor(0xFF616161);
 					sub_separator.setText("|");
 				}
@@ -18515,16 +10047,6 @@ public class MainActivity extends AppCompatActivity {
 				else {
 					if (SWITCH_VERSION.getString("SWITCH", "").equals("B")) {
 						title.setText(amoled_cloned_patched.get((int)(amoled_cloned_patched.size() - 1) - _position).get("Title").toString());
-					}
-					else {
-						if (SWITCH_VERSION.getString("SWITCH", "").equals("C")) {
-							title.setText(amoled_experimental_patched.get((int)(amoled_experimental_patched.size() - 1) - _position).get("Title").toString());
-						}
-						else {
-							if (SWITCH_VERSION.getString("SWITCH", "").equals("D")) {
-								title.setText(amoled_experimental_cloned_patched.get((int)(amoled_experimental_cloned_patched.size() - 1) - _position).get("Title").toString());
-							}
-						}
 					}
 				}
 				Animation animation;
@@ -18585,20 +10107,20 @@ public class MainActivity extends AppCompatActivity {
 				mirror.setVisibility(View.GONE);
 				if (_position < 1) {
 					sub.setTextColor(0xFFFF1744);
-					sub.setText("LATEST RELEASE");
+					sub.setText("NEW");
 					sub_separator.setTextColor(0xFF616161);
 					sub_separator.setText("|");
 				}
 				else {
 					sub.setTextColor(0xFFBDBDBD);
-					sub.setText("OLDER RELEASE");
+					sub.setText("RECENT");
 					sub_separator.setTextColor(0xFF616161);
 					sub_separator.setText("|");
 				}
 				sub.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 				sub_separator.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
 				title.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/base_font.ttf"), 1);
-				title.setText(lite_patched.get((int)(lite_patched.size() - 1) - _position).get("Title").toString());
+				title.setText(other_patched.get((int)(other_patched.size() - 1) - _position).get("Title").toString());
 				Animation animation;
 				animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in);
 				animation.setDuration(500); box.startAnimation(animation);
