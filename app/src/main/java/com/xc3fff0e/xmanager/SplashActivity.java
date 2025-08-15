@@ -33,7 +33,6 @@ import androidx.fragment.app.FragmentManager;
 import com.bumptech.glide.Glide;
 import com.google.android.ads.consent.*;
 import com.google.android.gms.ads.MobileAds;
-import com.google.firebase.FirebaseApp;
 import com.wuyr.rippleanimation.*;
 import java.io.*;
 import java.text.*;
@@ -60,7 +59,7 @@ public class SplashActivity extends AppCompatActivity {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.splash);
 		initialize(_savedInstanceState);
-		FirebaseApp.initializeApp(this);
+		
 		MobileAds.initialize(this);
 		
 		initializeLogic();
